@@ -20,6 +20,7 @@ state is `signal`, data goes through `src/lib/net.ts`.
 | `docs/ANDROID.md` | host, packaging, install, device debugging |
 | `docs/SHOTS.md` | screenshot QA and what a good screen looks like |
 | `docs/A11Y_AUDIT.md` | contrast, touch targets, small screens |
+| `docs/FDROID.md` | the self-hosted repository, repo keys, publishing |
 | `docs/SITE_PARITY.md`, `docs/COMPETITORS.md` | what the app owes the site, and the market |
 
 Skills (load with the skill tool): `beu-native` for authoring, `beu-qa` for

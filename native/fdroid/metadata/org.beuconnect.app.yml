@@ -1,0 +1,45 @@
+Categories:
+  - Education
+License: AGPL-3.0-or-later
+AuthorName: Prit Kumar
+AuthorEmail: pritkumarrrr@gmail.com
+WebSite: https://beu.prit.eu.org
+SourceCode: https://github.com/pritkr/beuConnect
+IssueTracker: https://github.com/pritkr/beuConnect/issues
+Changelog: https://github.com/pritkr/beuConnect/releases
+
+AutoName: BEUConnect
+Summary: Syllabus, PYQs, results, rank and attendance for BEU students
+Description: |
+  BEUConnect is a student app for Bihar Engineering University (BEU). It keeps
+  the syllabus, previous year papers, notes, notices and college rosters on the
+  device, so most of it works without a connection.
+
+  Features:
+  * Syllabus for BEU branches and semesters, with topics, GATE papers and a
+    saved list.
+  * Previous year papers with PDFs and a paper finder.
+  * Results from BEU's JSON API, a saved copy, the published result tables, or
+    BEU's own result page.
+  * University rank, merit list and a side-by-side result comparison.
+  * Attendance tracker, SGPA calculator and predictor, routine and holiday
+    calendar.
+  * Notes, planner, notices and search across the bundled data.
+  * Students: published college and branch rosters and CGPA leaders.
+
+  Data and privacy:
+  A registration number is stored on the device and sent only to BEU's result
+  endpoints to resolve a name and result. No account is required and there are
+  no ads or analytics. Feedback is sent only when you submit it.
+
+  Source code: https://github.com/pritkr/beuConnect (AGPL-3.0-or-later).
+
+RepoType: git
+Repo: https://github.com/pritkr/beuConnect.git
+
+ArchivePolicy: 0 versions
+AutoUpdateMode: None
+UpdateCheckMode: None
+CurrentVersion: 1.1.0
+CurrentVersionCode: 2
+AllowedAPKSigningKeys: 7f6a14260ebc1fb7fd06cb34e5dcf49caa489674a268ff04bc72265596057076
