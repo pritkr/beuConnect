@@ -58,7 +58,9 @@ published here.** The modules that read them are stubbed or absent:
 - `native/assets/data/students-gecs.json`, `public/data/`, `beu_dataset/`,
   `guardianno/` and the PDF corpora are excluded.
 
-The live app still has every feature; it reads the same data from the site API.
+The live app still has every feature: the published APK ships the register, and
+results, notices and papers come from the site API at runtime. A clone of this
+repository builds, but its roster screens start empty until you supply the data.
 
 ## Privacy
 
