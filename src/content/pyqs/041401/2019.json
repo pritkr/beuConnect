@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 4th Semester Exam., 2019",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "041401",
+    "year": 2019,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer the following questions briefly (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "If doping level in a crystal diode is increased, what will happen to the width of depletion layer?"
+            },
+            {
+              "id": "b",
+              "text": "How does Zener diode behave in the breakdown region?"
+            },
+            {
+              "id": "c",
+              "text": "At which voltage avalanche occurs in a diode?"
+            },
+            {
+              "id": "d",
+              "text": "If the maximum DC current rating of diodes in bridge rectifier is 2A, then what is the maximum DC load current?"
+            },
+            {
+              "id": "e",
+              "text": "A half-wave rectifier has an input voltage of 240 V r.m.s. If the step-down transformer has a turns ratio of 8 : 1, what is the peak load voltage? Ignore diode drop."
+            },
+            {
+              "id": "f",
+              "text": "If $V_{CC} = +20 \\text{ V}$, voltage-divider resistor $R_1$ is $5 \\text{ k\\Omega}$ and $R_2$ is $2 \\text{ k\\Omega}$, what is the base bias voltage?"
+            },
+            {
+              "id": "g",
+              "text": "When does thermal runaway occur?"
+            },
+            {
+              "id": "h",
+              "text": "With the E-MOSFET, what is the value of drain current when gate input voltage is zero?"
+            },
+            {
+              "id": "i",
+              "text": "What is the bandwidth of an ideal operational amplifier?"
+            },
+            {
+              "id": "j",
+              "text": "If gate current is increased, then what will happen to anode-cathode voltage at which SCR closes?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Differentiate between ideal and practical voltage sources. Give their graphical representations and convert $20 \\text{ V}$ voltage source with its series resistance of $10 \\text{ \\Omega}$ into its equivalent current source.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Derive continuity equation for carrier concentration in body of a semiconductor.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Derive the expressions for (i) $I_{rms}$, (ii) $I_{dc}$, (iii) ripple factor and (iv) efficiency of rectification; in case of full-wave rectifier.",
+              "marks": 6
+            },
+            {
+              "id": "b",
+              "text": "Draw a sketch to show various currents in an N-P-N transistor and derive the relationship between various components.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "A 4 : 1 transformer supplies a bridge rectifier that is driving a load of 400 ohms. If the transformer input is $230 \\text{ V}/50 \\text{ Hz}$ supply, calculate the d.c. output voltage, P-I-V and the output frequency. Assume the rectifier diodes to be ideal.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Draw diode I-V characteristics, discuss its temperature dependence and obtain the expression for diode dynamic resistance.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Using a common collector N-P-N transistor configuration, derive the expressions for voltage gain and current gain.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Design the voltage divider bias circuit to operate from $20 \\text{ V}$ supply. The bias conditions are $V_{CE} = 5 \\text{ V}, V_E = 7 \\text{ V}$ and $I_C = 5 \\text{ mA}$.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "A collector to base circuit has $V_{CB} = 30 \\text{ V}, R_B = 200 \\text{ k\\Omega}, R_C = 4 \\text{ k\\Omega}$ and $V_{CE} = 20 \\text{ V}$. Calculate $h_{FE}$ and determine $V_{CE}$ when a new transistor is replaced having $h_{FE} = 150$.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Draw two-dimensional structure of n-channel MOSFET. Explain its working.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "An n-channel FET is utilized by amplifier shown in figure for which $V_p = -3.0 \\text{ V}$ and $I_{DSS} = 2 \\text{ mA}$. It is desired to bias the circuit at $I_D = 1 \\text{ mA}$, using $V_{DD} = 26 \\text{ V}$. Assume $r_d \\gg R_d$. Find (i) $V_{GS}$, (ii) $g_m$ and (iii) $R_S$.\n\n[Diagram: Self-bias JFET amplifier circuit with $R_G, R_D, R_S$ and bypass capacitor $C_S$, coupling capacitor $C_c$.]",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Explain the working of BJT voltage divider bias circuit. Derive the expression for Q-point ($I_{CQ}, V_{CEQ}$) in terms of circuit parameters.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Explain a voltage-series feedback amplifier with suitable example.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Using an op-amp, explain the circuits for a voltage gain amplifier (with least components) and current to voltage converter.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Explain the working principle of unijunction transistor (UJT).",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Describe the structure, symbol and operation of SCR with the help of suitable diagrams.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2019",
+    "subject": "OPERATING SYSTEMS",
+    "subject_slug": "operating-systems",
+    "subject_code": "061503",
+    "year": 2019,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct answer from any seven of the following :",
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "What is operating system?",
+          "options": [
+            "Collection of programs that manages hardware resources",
+            "System service provider to the application programs",
+            "Interface between user and hardware",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "The processes that are residing in main memory and are ready and waiting to execute are kept on a list called",
+          "options": [
+            "job queue",
+            "ready queue",
+            "execution queue",
+            "process queue"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "Which of the following conditions is required for deadlock to be possible?",
+          "options": [
+            "Mutual exclusion",
+            "A process may hold allocated resources while awaiting assignment of other resources",
+            "No resource can be forcibly removed from a process holding it",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "Which one of the following is the deadlock avoidance algorithm?",
+          "options": [
+            "Banker's algorithm",
+            "Round-robin algorithm",
+            "Elevator algorithm",
+            "Karn's algorithm"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "Physical memory is broken into fixed-sized blocks called",
+          "options": [
+            "frames",
+            "pages",
+            "backing store",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2",
+      "questions": [
+        {
+          "id": "q2",
+          "type": "theory",
+          "text": "What is process control block? Explain it. Discuss the difference among short-term, medium-term and long-term scheduling."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3",
+      "questions": [
+        {
+          "id": "q3",
+          "type": "numerical",
+          "text": "Consider the following process :\n\n| Process | Arrival Time | Burst Time |\n| :--- | :--- | :--- |\n| P1 | 0.0 | 7 |\n| P2 | 2.0 | 4 |\n| P3 | 4.0 | 1 |\n| P4 | 5.0 | 4 |\n\nConsidering non-preemptive and preemptive SJF algorithm, find out average waiting time and average turnaround time in both cases."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4",
+      "questions": [
+        {
+          "id": "q4",
+          "type": "theory",
+          "text": "What do you understand by race condition? Give few example of arising of race condition in concurrent processing."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5",
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "Define semaphore. Give a scheme for implementation of semaphore primitives.",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "What do you mean by critical section problem? What is the solution to the critical section problem?",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "What is a thread?",
+          "total_marks": 4
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "How is thread different from a process?",
+          "total_marks": 5
+        },
+        {
+          "id": "q6_c",
+          "type": "theory",
+          "text": "What resources are used when a thread is created?",
+          "total_marks": 5
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7",
+      "questions": [
+        {
+          "id": "q7",
+          "type": "numerical",
+          "text": "How many page faults would occur for the following reference string for four page frames and three page frames using LRU and FIFO algorithms :\n\n1, 2, 3, 4, 5, 5, 3, 4, 1, 6, 7, 8, 7, 8, 9, 7, 8, 9, 5, 4, 5, 4, 2."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8",
+      "questions": [
+        {
+          "id": "q8",
+          "type": "numerical",
+          "text": "Define deadlock. List four necessary conditions for occurrence of deadlock. A system contains six units of resource, and $n$ processes that use the resource. What is the maximum value of $n$ for which the system will be deadlock free if the maximum requirement of each process is 3?"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9",
+      "questions": [
+        {
+          "id": "q9",
+          "type": "theory",
+          "text": "Explain shortest-seek-time-first (SSTF) disk scheduling. Why SSTF scheduling tends to favour middle cylinders over the innermost and outermost cylinders?"
+        }
+      ]
+    }
+  ]
+}

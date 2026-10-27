@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 1st Semester Exam., 2018 (New)",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100101",
+    "year": 2018,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven short answer-type questions :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Introduce resistance, inductance and capacitance."
+            },
+            {
+              "id": "1b",
+              "text": "State superposition theorem."
+            },
+            {
+              "id": "1c",
+              "text": "A sinusoidal voltage of 60 Hz has a maximum value of $100\\sqrt{2}$ volts. At what time measured from a positive maximum value will the instantaneous voltage be 100 volts?"
+            },
+            {
+              "id": "1d",
+              "text": "What are the two main advantages of DC excitation system?"
+            },
+            {
+              "id": "1e",
+              "text": "In two-wattmeter method, what will be the power factor when both wattmeters show 50 watts readings?"
+            },
+            {
+              "id": "1f",
+              "text": "Explain power triangle."
+            },
+            {
+              "id": "1g",
+              "text": "How do hysteresis and eddy current loss depend on frequency?"
+            },
+            {
+              "id": "1h",
+              "text": "Define average value and RMS value."
+            },
+            {
+              "id": "1i",
+              "text": "Explain generation of rotating magnetic field in electrical machine."
+            },
+            {
+              "id": "1j",
+              "text": "Differentiate among neutral, grounding and earthing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "numerical",
+              "text": "Find $R$ to have maximum power transfer in the circuit shown in Fig. 1. Also obtain the amount of maximum power : [Diagram: Fig 1. A circuit with a 2A current source, resistors of 10\u03a9, 5\u03a9, 2\u03a9, voltage sources of 6V and 10V, and a load resistor R.]",
+              "marks": 6
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "A coil having resistance of $10 \\Omega$ and inductance of $1 \\text{ H}$ is switched on to a direct voltage of $100 \\text{ V}$. Calculate the rate of change of the current (i) at the instant of closing the switch and (ii) when $t = L/R$. Also find the steady-state value of the current.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "What is the phase relationship between R, L and C components in a series AC circuit? What are active power, reactive power and apparent power?",
+              "marks": 6
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "On a power distribution system, three loads run in parallel : Load A : 100 VA, 0.5 pf (lag); Load B : 150 W, 0.8 pf (lead); Load C : 200 VA, 100 var (lag). Find the net power position.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "What is eddy-current loss? What are the undesirable effects of eddy currents? How can they be minimized? Mention some applications of eddy-currents.",
+              "marks": 6
+            },
+            {
+              "id": "4b",
+              "type": "numerical",
+              "text": "An iron ring of cross-sectional area $5 \\text{ cm}^2$ is wound with a wire of 120 turns and has a cut of $3 \\text{ mm}$. Calculate the magnetizing current required to produce a flux of $0.3 \\text{ mWb}$, if mean length of magnetic path is $25 \\text{ cm}$ and relative permeability of iron is 650.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "theory",
+              "text": "Define voltage regulation of a transformer and derive conditions for (i) zero regulation and (ii) maximum regulation. Also draw the curve of variation of voltage regulation with power factor.",
+              "marks": 6
+            },
+            {
+              "id": "5b",
+              "type": "numerical",
+              "text": "Derive an expression for the induced e.m.f. of a transformer. A 3000/200 V, 50 Hz, single-phase transformer is built on a core having an effective cross-sectional area of $150 \\text{ cm}^2$ and has 80 turns in the low-voltage winding. Calculate\u2014 (i) the value of the maximum flux density in the core; (ii) the number of turns in the high-voltage winding.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "type": "numerical",
+          "text": "The circuit shown in Fig. 2(i) is the Thevenin equivalent circuit of the circuit shown in Fig. 2(ii). Find the value of the open circuit voltage, $V_{oc}$ and Thevenin resistance, $R_{th}$. [Diagram: Fig 2(i) Thevenin equivalent. Fig 2(ii) A circuit with 2A source, 2V source and resistors 3\u03a9, 6\u03a9, 6\u03a9.]",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "type": "numerical",
+          "text": "Determine current in $12 \\Omega$ resistance using Norton's theorem in the network shown in Fig. 3 : [Diagram: Fig 3. A multi-loop DC circuit with 15V and 35V sources and resistors 10\u03a9, 5\u03a9, 8\u03a9, 12\u03a9.]",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "type": "numerical",
+          "text": "A 100 MVA Y-connected 13.2 kV synchronous generator is connected to a 13.2/132 kV, 100 MVA delta-star transformer. The generators are $X_d'' = 0.1 \\text{ pu}$, $X_d' = 0.25 \\text{ pu}$, $X_d = 1.2 \\text{ pu}$ on a 100 MVA base, while transformer reactance is $0.1 \\text{ pu}$ on the same base. The machine is operating on no load, at rated voltage when a three-phase fault occurs at the HT terminals of transformer. Determine\u2014 (a) the sub-transient, transient and steady-state symmetrical fault currents in pu and amperes; (b) the maximum possible DC component; (c) the maximum value of instantaneous current.",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "Derive the expressions of equivalent star network resistances from the delta network comprising of $R_{12}$, $R_{23}$, $R_{31}$, where nodes are termed as 1, 2, 3 respectively.",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "theory",
+              "text": "What is the main purpose of providing taps in transformer? Suggest the addition in a simplified transformer model when it is used for tap changing transformer.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

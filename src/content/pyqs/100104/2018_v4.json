@@ -1,0 +1,254 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Exam., 2018 (New)",
+    "subject": "Programming for Problem Solving",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100104",
+    "year": 2018,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of these, best describes an array?</p>",
+          "options": [
+            "A data structure that shows a hierarchical behaviour",
+            "Container of objects of similar types",
+            "Container of objects of mixed types",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>How do you initialize an array in C?</p>",
+          "options": [
+            "int arr[3] = (1,2,3);",
+            "int arr(3) = {1,2,3};",
+            "int arr[3] = {1,2,3};",
+            "int arr(3) = (1,2,3);"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>When does the segmentation fault occur?</p>",
+          "options": [
+            "Compile-time",
+            "Run-time",
+            "Both of the above",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>What is the output of the following program?<br/>\n                        void main(){<br/>\n                          int a;<br/>\n                          a=1;<br/>\n                          while(a&lt;=1)<br/>\n                            if(a%2)<br/>\n                              printf(\"%d\", a++);<br/>\n                            else<br/>\n                              printf(\"%d\", ++a);<br/>\n                          printf(\"%d\", a+10);<br/>\n                        }</p>",
+          "options": [
+            "011",
+            "012",
+            "111",
+            "112"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the output of the following code?<br/>\n                        void main()<br/>\n                        {<br/>\n                          int i;<br/>\n                          i=0;<br/>\n                          if(i=15,10,5)<br/>\n                            printf(\"Programming %d\",i);<br/>\n                          else<br/>\n                            printf(\"Skills %d\",i);<br/>\n                          getch();<br/>\n                        }</p>",
+          "options": [
+            "Skills 15",
+            "Programming 5",
+            "Programming 15",
+            "Skills 5"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What will be printed as the result of the operation below?<br/>\n                        main()<br/>\n                        {<br/>\n                          char s1[]=\"Cisco\";<br/>\n                          char s2[]=\"systems\";<br/>\n                          printf (\"%s\", s1);<br/>\n                        }</p>",
+          "options": [
+            "System",
+            "error",
+            "Cisco",
+            "Compilation fail"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Process of inserting an element in stack is called</p>",
+          "options": [
+            "create",
+            "push",
+            "evaluation",
+            "Pop"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Consider the following segment of C-code:<br/>\n                        int j, n;<br/>\n                        j=1;<br/>\n                        while (j&lt;=n)<br/>\n                          j=j*2;<br/>\n                        The number of comparisons made in the execution of the loop for any n&gt;0 is: (Base of log is\n                        2 in all options)</p>",
+          "options": [
+            "CEIL(log n)",
+            "CEIL(log n)+2",
+            "FLOOR(log n)+2",
+            "n"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The minimum number of comparisons required to find the minimum and the maximum of 100 numbers is\n                    </p>",
+          "options": [
+            "100",
+            "200",
+            "150",
+            "148"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>What is the output of following program?<br/>\n                        #include &lt;stdio.h&gt;<br/>\n                        int main()<br/>\n                        {<br/>\n                          int a=1;<br/>\n                          int b=1;<br/>\n                          int c=a || --b;<br/>\n                          int d=a-- &amp;&amp; --b;<br/>\n                          printf(\"a=%d, b=%d, c=%d, d=%d\", a, b, c, d);<br/>\n                          return 0;<br/>\n                        }</p>",
+          "options": [
+            "a = 0, b = 1, c = 1, d = 0",
+            "a = 0, b = 0, c = 1, d = 0",
+            "a = 1, b = 1, c = 1, d = 1",
+            "a = 0, b = 0, c = 0, d = 0"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>How array and pointers are related? Explain with the help of suitable diagrams.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Write a C program to count the number lines input by the user.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Explain the difference between call by reference and call by value with the help of a suitable\n                        example.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>With the help of an example, differentiate between static and dynamic memory allocations.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What are library functions and their users in C language? Can we write our own functions and\n                        include them in C library?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Write a \"recursive\" C program to print—<br/>(a) Fibonacci series; <br/>(b) factorial of a given\n                        number.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Write the differences between structure and union. Compare them with the help of an example.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Write a C program to convert an infix expression into postfix expression. In particular, an infix\n                        expression: \\((1-2)*(4+5)\\) will have postfix expression: \\(12-45+*\\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Write a C program to illustrate reading of data from a file.</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,618 @@
+---
+import { renderMarkdown } from '../utils/markdown';
+
+interface Props {
+  sections: any[];
+  subject?: string;
+  year?: number;
+}
+
+const { sections, subject = "this subject", year = "" } = Astro.props;
+
+function cleanId(id: string) {
+  if (!id) return '';
+  let clean = id.replace(/^(question|q)_?/i, '');
+  return clean.replace(/_/g, '.');
+}
+
+function getLetter(index: number) {
+  return String.fromCharCode(97 + index); // 0 -> a, 1 -> b
+}
+
+function sanitizeForPrompt(text: string) {
+  if (!text) return "";
+  // Strip markdown images to prevent URL Too Long errors
+  return text.replace(/!\[.*?\]\(.*?\)/g, '[Image omitted in prompt]');
+}
+
+function getQuestionText(item: any) {
+  if (!item) return '';
+
+  const text = typeof item.text === 'string' ? item.text : '';
+  const question = typeof item.question === 'string' ? item.question : '';
+  const normalizedText = text.trim().toLowerCase();
+
+  if (question && (!text || normalizedText === 'answer the following:' || normalizedText === '<p></p>')) {
+    return question;
+  }
+
+  return text || question;
+}
+
+function getSubQuestions(item: any) {
+  if (Array.isArray(item?.sub_questions) && item.sub_questions.length > 0) {
+    return item.sub_questions;
+  }
+
+  if (Array.isArray(item?.subQuestions) && item.subQuestions.length > 0) {
+    return item.subQuestions;
+  }
+
+  return [];
+}
+
+function getSubparts(item: any) {
+  return Array.isArray(item?.subparts) ? item.subparts : [];
+}
+
+function buildSectionPrompt(section: any, subj: string, yr: number | string) {
+  const isObjectiveSection = section.questions && section.questions.length > 0 && (section.questions[0].type === 'mcq' || (section.questions[0].options && section.questions[0].options.length > 0));
+  
+  let prompt = "";
+  if (isObjectiveSection) {
+    const totalMarks = section.total_marks ? `[${section.total_marks} Marks]` : '';
+    prompt = `Act as an expert engineering professor. Solve these BEU (Bihar Engineering University) ${subj} ${yr} objective questions ${totalMarks}. For each question, identify the correct option and provide a concise explanation.\n\n`;
+  } else {
+    const totalMarks = section.total_marks ? `[${section.total_marks} Marks]` : '';
+    prompt = `Act as an expert engineering professor grading a university exam. Provide a comprehensive, exhaustive, exam-style answer for this BEU (Bihar Engineering University) ${subj} ${yr} question to guarantee full marks ${totalMarks}.\n\nInclude relevant images, examples, diagrams, code, and step-by-step calculations as required to construct a complete, structured answer.\n\n`;
+  }
+  
+  prompt += `Main Question / Context: ${sanitizeForPrompt(section.section_title)}\n`;
+  
+  if (section.questions && section.questions.length > 0) {
+    section.questions.forEach((q: any) => {
+      const questionText = getQuestionText(q);
+      const subQuestions = getSubQuestions(q);
+      prompt += `\nPart: ${q.marks ? `[${q.marks} Marks] ` : ''}${sanitizeForPrompt(questionText)}\n`;
+      if (q.options && q.options.length > 0) {
+        q.options.forEach((opt: string, i: number) => {
+          prompt += `   ${getLetter(i)}) ${sanitizeForPrompt(opt)}\n`;
+        });
+      }
+      if (subQuestions.length > 0) {
+        subQuestions.forEach((sub: any, si: number) => {
+          const subText = getQuestionText(sub);
+          prompt += `   ${getLetter(si)}) ${sub.marks ? `[${sub.marks} Marks] ` : ''}${sanitizeForPrompt(subText)}\n`;
+          if (sub.options && sub.options.length > 0) {
+            sub.options.forEach((sopt: string, soi: number) => {
+              prompt += `      ${getLetter(soi)}. ${sanitizeForPrompt(sopt)}\n`;
+            });
+          }
+
+          getSubparts(sub).forEach((part: any) => {
+            const partLabel = part.label ? `${part.label}) ` : '';
+            const partText = getQuestionText(part);
+            prompt += `      ${partLabel}${sanitizeForPrompt(partText)}\n`;
+          });
+        });
+      }
+    });
+  }
+  return prompt;
+}
+
+function buildFullPromptText(q: any, sectionTitle: string, subj: string, yr: number | string, sectionTotalMarks: any) {
+  const isObjective = q.type === 'mcq' || (q.options && q.options.length > 0);
+  const marks = q.marks != null ? q.marks : sectionTotalMarks;
+  
+  let prompt = "";
+  if (isObjective) {
+    const totalMarks = marks != null ? `[${marks} Marks]` : '';
+    prompt = `Act as an expert engineering professor. Solve this BEU (Bihar Engineering University) ${subj} ${yr} objective question ${totalMarks}. Identify the correct option and provide a concise explanation.\n\n`;
+  } else {
+    const totalMarks = marks != null ? `[${marks} Marks]` : '[14 Marks]';
+    prompt = `Act as an expert engineering professor grading a university exam. Provide a comprehensive, exhaustive, exam-style answer for this BEU (Bihar Engineering University) ${subj} ${yr} question to guarantee full marks ${totalMarks}.\n\nInclude relevant images, examples, diagrams, code, and step-by-step calculations as required to construct a complete, structured answer.\n\n`;
+  }
+  
+  prompt += `Context: ${sanitizeForPrompt(sectionTitle)}\n`;
+  const questionText = getQuestionText(q);
+  const subQuestions = getSubQuestions(q);
+
+  prompt += `Question: ${sanitizeForPrompt(questionText)}\n`;
+  
+  if (q.options && q.options.length > 0) {
+    prompt += `\nOptions:\n`;
+    q.options.forEach((opt: string, i: number) => {
+      prompt += `${getLetter(i)}) ${sanitizeForPrompt(opt)}\n`;
+    });
+  }
+  
+  if (subQuestions.length > 0) {
+    prompt += `\nSub-questions:\n`;
+    subQuestions.forEach((sub: any, si: number) => {
+      const subMarks = sub.marks ? `[${sub.marks} Marks] ` : '';
+      prompt += `${getLetter(si)}) ${subMarks}${sanitizeForPrompt(getQuestionText(sub))}\n`;
+      if (sub.options && sub.options.length > 0) {
+        sub.options.forEach((sopt: string, soi: number) => {
+          prompt += `   ${getLetter(soi)}. ${sanitizeForPrompt(sopt)}\n`;
+        });
+      }
+
+      getSubparts(sub).forEach((part: any) => {
+        const partLabel = part.label ? `${part.label}) ` : '';
+        prompt += `   ${partLabel}${sanitizeForPrompt(getQuestionText(part))}\n`;
+      });
+    });
+  }
+  
+  return prompt;
+}
+
+function getAiUrl(type: 'gpt' | 'claude' | 'gemini', fullPrompt: string) {
+  const encodedPrompt = encodeURIComponent(fullPrompt);
+  if (type === 'gpt') return `https://chatgpt.com/?q=${encodedPrompt}`;
+  if (type === 'gemini') return `https://gemini.google.com/app?prompt=${encodedPrompt}`;
+  return `https://claude.ai/new?q=${encodedPrompt}`;
+}
+---
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+  integrity="sha384-n9jH495vst9M6zVVQUivj9u8nQu8qZi6paasUTtr7MsmGoGCA819GLQZByFHLInm"
+  crossorigin="anonymous"
+/>
+
+<div class="pyq-dense-renderer">
+  {sections.map((section) => {
+    const sectionPrompt = buildSectionPrompt(section, subject, year);
+    return (
+    <div class="section-group">
+      <div class="section-header-row">
+        <h4 class="section-heading">
+          <span class="heading-text" set:html={renderMarkdown(section.section_title)} />
+          {section.total_marks && <span class="m-tag big section-marks">[{section.total_marks} Marks]</span>}
+        </h4>
+        <div class="ai-dropdown section-ai">
+          <button class="ai-btn-main outline">Ask AI</button>
+          <div class="ai-menu">
+            <button data-prompt={sectionPrompt} data-url={getAiUrl('gpt', sectionPrompt)} title="Ask ChatGPT" class="ai-menu-item gpt ai-action-btn">ChatGPT</button>
+            <button data-prompt={sectionPrompt} data-url={getAiUrl('gemini', sectionPrompt)} title="Ask Gemini" class="ai-menu-item gem ai-action-btn">Gemini</button>
+            <button data-prompt={sectionPrompt} data-url={getAiUrl('claude', sectionPrompt)} title="Ask Claude" class="ai-menu-item cld ai-action-btn">Claude</button>
+          </div>
+        </div>
+      </div>
+      
+      {section.questions && section.questions.length > 0 && (
+      <div class="questions-list">
+        {section.questions.map((q: any) => {
+          const fullPrompt = buildFullPromptText(q, section.section_title, subject, year, section.total_marks);
+          const questionText = getQuestionText(q);
+          const subQuestions = getSubQuestions(q);
+          return (
+          <div class="q-box">
+            <div class="q-main">
+              <div class="q-num">Q{cleanId(q.id)}</div>
+              <div class="q-content">
+                <div class="q-text content-rich" set:html={renderMarkdown(questionText)} />
+
+                {q.options && q.options.length > 0 && (
+                  <div class="options-grid">
+                    {q.options.map((opt: string, i: number) => (
+                      <div class="opt-item">
+                        <span class="opt-lbl">{getLetter(i)})</span>
+                        <div class="opt-val content-rich" set:html={renderMarkdown(opt)} />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {subQuestions.length > 0 && (
+                  <div class="sub-list">
+                    {subQuestions.map((sub: any, si: number) => (
+                      <div class="sub-item">
+                        <span class="sub-lbl">{getLetter(si)})</span>
+                        <div class="sub-body">
+                          <div class="sub-text content-rich" set:html={renderMarkdown(getQuestionText(sub))} />
+                          {getSubparts(sub).length > 0 && (
+                            <div class="subparts-list">
+                              {getSubparts(sub).map((part: any) => (
+                                <div class="subpart-item">
+                                  <span class="subpart-lbl">{part.label ? `${part.label})` : '-'}</span>
+                                  <div class="subpart-text content-rich" set:html={renderMarkdown(getQuestionText(part))} />
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {sub.options && (
+                            <div class="options-grid mini">
+                              {sub.options.map((sopt: string, soi: number) => (
+                                <div class="opt-item">
+                                  <span class="opt-lbl">{getLetter(soi)})</span>
+                                  <div class="opt-val content-rich" set:html={renderMarkdown(sopt)} />
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                        {sub.marks && <span class="m-tag">[{sub.marks} Marks]</span>}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div class="q-actions">
+                {(q.marks != null ? <span class="m-tag big">[{q.marks} Marks]</span> : (section.total_marks != null ? <span class="m-tag big">[{section.total_marks} Marks]</span> : null))}
+                <div class="ai-dropdown">
+                  <button class="ai-btn-main">Ask AI</button>
+                  <div class="ai-menu">
+                    <button data-prompt={fullPrompt} data-url={getAiUrl('gpt', fullPrompt)} title="Ask ChatGPT" class="ai-menu-item gpt ai-action-btn">ChatGPT</button>
+                    <button data-prompt={fullPrompt} data-url={getAiUrl('gemini', fullPrompt)} title="Ask Gemini" class="ai-menu-item gem ai-action-btn">Gemini</button>
+                    <button data-prompt={fullPrompt} data-url={getAiUrl('claude', fullPrompt)} title="Ask Claude" class="ai-menu-item cld ai-action-btn">Claude</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          );
+        })}
+      </div>
+      )}
+    </div>
+    );
+  })}
+</div>
+
+<script>
+  // Handle AI Dropdown toggles
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    
+    // Close all menus if clicking outside
+    if (!target.closest('.ai-dropdown')) {
+      document.querySelectorAll('.ai-menu').forEach(menu => menu.classList.remove('show'));
+    }
+
+    // Toggle specific menu
+    if (target.classList.contains('ai-btn-main')) {
+      const menu = target.nextElementSibling;
+      const isShowing = menu?.classList.contains('show');
+      document.querySelectorAll('.ai-menu').forEach(m => m.classList.remove('show'));
+      if (!isShowing) menu?.classList.add('show');
+    }
+
+    // Universal AI Prompt Copier & Redirector
+    if (target.classList.contains('ai-action-btn')) {
+      const prompt = target.getAttribute('data-prompt');
+      const url = target.getAttribute('data-url');
+      const isGemini = target.classList.contains('gem');
+      
+      if (prompt && url) {
+        if (isGemini) {
+          // Gemini relies on copy-pasting for complex long prompts
+          navigator.clipboard.writeText(prompt).then(() => {
+            const toast = document.createElement('div');
+            toast.className = 'copy-toast';
+            toast.textContent = `Prompt copied! Paste it in Gemini.`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+            window.open('https://gemini.google.com/app', '_blank');
+          }).catch(err => {
+            console.error('Failed to copy prompt:', err);
+            window.open(url, '_blank');
+          });
+        } else {
+          // ChatGPT and Claude handle URL params gracefully
+          window.open(url, '_blank');
+        }
+      }
+    }
+  });
+</script>
+
+<style is:global>
+  .content-rich img {
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    display: block;
+  }
+  .content-rich p { margin: 0; }
+  .content-rich table { font-size: 0.8rem; margin: 0.5rem 0; width: auto; color: rgba(255, 255, 255, 0.9); }
+  .content-rich { color: rgba(255, 255, 255, 0.95); }
+  .content-rich p, .content-rich li, .content-rich span:not(.katex *), .content-rich strong, .content-rich em { color: rgba(255, 255, 255, 0.95); }
+  
+  .copy-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 9999;
+    animation: fadeInOut 3s ease forwards;
+  }
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, 1rem); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    90% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, 1rem); }
+  }
+</style>
+
+<style>
+  .pyq-dense-renderer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .section-group {
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.01);
+    /* Removed overflow: hidden so dropdowns don't get clipped */
+  }
+
+  .section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255,255,255,0.03);
+    padding: 0.4rem 0.6rem;
+    border-bottom: 1px solid var(--border-subtle);
+    border-radius: 8px 8px 0 0;
+  }
+
+  .section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 700;
+  }
+  
+  .heading-text p {
+    margin: 0;
+    display: inline;
+  }
+
+  .section-marks {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.3rem;
+    color: var(--accent-purple);
+    background: rgba(139, 92, 246, 0.15);
+  }
+
+  .section-ai .ai-btn-main {
+    background: transparent;
+    color: var(--text-muted);
+    border-color: var(--border-subtle);
+    white-space: nowrap;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+  }
+  
+  .section-ai .ai-btn-main:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+  }
+
+  .q-box {
+    border-bottom: 1px dashed var(--border-subtle);
+    padding: 0.6rem 0.75rem;
+    position: relative; /* Essential for dropdown rendering */
+  }
+  .q-box:last-child { border-bottom: none; }
+
+  .q-main {
+    display: grid;
+    grid-template-columns: 2.2rem 1fr auto;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .q-num {
+    font-weight: 900;
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+  }
+
+  .q-content { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.35rem; 
+    min-width: 0;
+  }
+
+  /* Modified to 1fr to ensure long options have full line */
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.25rem;
+    margin-top: 0.15rem;
+    min-width: 0;
+  }
+  .options-grid.mini { grid-template-columns: 1fr; }
+
+  .opt-item {
+    display: flex;
+    gap: 0.3rem;
+    background: rgba(255,255,255,0.02);
+    padding: 0.25rem 0.45rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    min-width: 0;
+  }
+  .opt-item:hover { border-color: var(--accent-blue); }
+  .opt-lbl { font-weight: 700; color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; }
+  .opt-val { min-width: 0; overflow-wrap: break-word; }
+
+  .sub-list {
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid rgba(255,255,255,0.05);
+    min-width: 0;
+  }
+
+  .sub-item { display: flex; gap: 0.35rem; position: relative; min-width: 0; }
+  .sub-lbl { font-weight: 700; color: rgba(255, 255, 255, 0.9); min-width: 1rem; font-size: 0.85rem; }
+  .sub-body { flex: 1; min-width: 0; overflow-wrap: break-word; }
+
+  .subparts-list {
+    margin-top: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding-left: 0.5rem;
+  }
+
+  .subpart-item {
+    display: flex;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+
+  .subpart-lbl {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 700;
+    min-width: 1.2rem;
+    font-size: 0.78rem;
+  }
+
+  .subpart-text {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  .q-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    min-width: 70px;
+    z-index: 5; /* Keep relative context */
+  }
+
+  .m-tag {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.05);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+  }
+  .m-tag.big { background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); padding: 0.15rem 0.35rem; font-size: 0.7rem; }
+
+  /* AI Dropdown Styles */
+  .ai-dropdown {
+    position: relative;
+    /* Removed margin-left: auto from generic dropdowns as it broke flow */
+  }
+  
+  .section-ai {
+    margin-left: auto;
+  }
+  
+  .q-actions .ai-dropdown {
+    margin-left: 0;
+  }
+
+  .ai-btn-main {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--border-accent);
+    color: var(--accent-blue);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .ai-btn-main:hover {
+    background: var(--accent-blue);
+    color: white;
+  }
+
+  .ai-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0; /* Lock right edge by default */
+    left: auto; /* Don't allow left auto-expanding to break viewport */
+    margin-top: 0.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    flex-direction: column;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    min-width: max-content; /* Ensure items fit tightly */
+  }
+
+  .ai-menu.show {
+    display: flex;
+  }
+
+  .ai-menu-item {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .ai-menu-item:last-child { border-bottom: none; }
+  
+  .ai-menu-item:hover { background: rgba(255,255,255,0.05); }
+  .ai-menu-item.gpt:hover { color: #10a37f; }
+  .ai-menu-item.gem:hover { color: #4285f4; }
+  .ai-menu-item.cld:hover { color: #d97757; }
+
+  @media (max-width: 600px) {
+    .q-main { grid-template-columns: 1fr; gap: 0.4rem; }
+    .q-num { background: rgba(59, 130, 246, 0.1); width: fit-content; padding: 0 0.4rem; border-radius: 4px; }
+    
+    /* Ensure the actions row doesn't break boundaries */
+    .q-actions { 
+      flex-direction: row; 
+      justify-content: flex-end; /* Force button to right side */
+      align-items: center; 
+      border-top: 1px solid var(--border-subtle); 
+      padding-top: 0.5rem; 
+      margin-top: 0.4rem; 
+      gap: 1rem;
+    }
+    
+    /* Push marks to extreme left, leaving Ask AI on extreme right */
+    .q-actions .m-tag { margin-right: auto; }
+    
+    /* Safely anchor the dropdown internally to not exceed the right bound */
+    .ai-menu {
+      right: 0;
+      left: auto;
+    }
+  }
+</style>

@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 4th Semester Special Exam., 2020 (Old Course)",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "041401",
+    "year": 2020,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer the following questions briefly (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "type": "theory",
+              "text": "Compute the collector current if base current is $60 \\mu A$ and current gain is 70.",
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "type": "theory",
+              "text": "Define ripple as referred to in a rectifier circuit.",
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "type": "theory",
+              "text": "A Zener diode has how many p-n junctions?",
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "type": "theory",
+              "text": "Write the formula for total power dissipated by a transistor in terms of voltage and current associated to transistor circuit.",
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "type": "theory",
+              "text": "What is the value of $V_{BE}$ for a C-E configuration, when a silicon transistor is forward biased?",
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "type": "theory",
+              "text": "In a base resistor method, if the value of $\\beta$ changes by 50, then by what factor collector current will change?",
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "type": "numerical",
+              "text": "In voltage divider bias, $V_{CC} = 25 V$. $R_1 = 10 k\\Omega$, $R_2 = 2.2 k\\Omega$, $R_C = 3.6 k\\Omega$ and $R_E = 1 k\\Omega$. What is the emitter voltage?",
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "type": "theory",
+              "text": "When drain voltage equals the pinch-off-voltage, then what will happen to drain current if drain voltage increases?",
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "type": "theory",
+              "text": "At which point in JFET biasing, the JFET is not longer able to control the current?",
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "type": "theory",
+              "text": "Why is an SCR made of silicon and not germanium?",
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "Explain Hall effect phenomenon and list out its applications. Quantitatively discuss the use of Hall effect to determine mobility.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "theory",
+              "text": "Define static and dynamic resistances of diode. What are their uses?",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "numerical",
+              "text": "In the circuit given below, the Zener voltage ($V_Z$) = 6 V, knee current ($I_Z$) = 6 mA and maximum power dissipated in Zener diode ($P_{max}$) = 0.4 W. Compute maximum and minimum values of $R_L$ such that $V_o = 11 V$ for the satisfactory operation of this circuit : [Diagram: Zener regulator with source 15V, series resistor $R_s=80\\Omega$, Zener diode $V_Z=6V$ in series with a 5V source, and output voltage $V_o=11V$ across load resistor $R_L$.]",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "theory",
+              "text": "Draw the circuit diagram of full-wave bridge rectifier and give its input and output waveforms. Also derive the expression for the DC current.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "Explain the working of full-wave bridge rectifier with the help of its circuit diagram, input and output waveforms. List the advantages and disadvantages of this rectifier.",
+              "marks": 7
+            },
+            {
+              "id": "4b",
+              "type": "theory",
+              "text": "Define stabilization factors S, S' and S''. Derive the expression of S for fixed bias transistor circuit.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "numerical",
+              "text": "A transistor amplifier connected in CE mode has $\\beta = 80$ and $I_B = 30 \\mu A$. Compute the values of $I_C, I_E$ and $\\alpha$.",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "type": "numerical",
+              "text": "Explain the working of RC low-pass filter and draw its frequency response. Compute the cut-off frequency if RC circuit consisting of a resistor of $8 k\\Omega$ in series with a capacitor of 60 nF.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "Compute the stability factor S for emitter feedback bias circuit. How the stability of Q-point is better in emitter feedback bias compare to fixed bias circuit?",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "theory",
+              "text": "Why is an FET known as a unipolar device? How do you compare this device with BJT?",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "numerical",
+              "text": "Data sheet of an EMOSFET specifies the following parameters : $I_{D(on)} = 60 mA$ at $V_{GS} = 7 V$ and $V_T$, the threshold voltage for EMOSFET is equal to 3 V. Determine the drain current at $V_{GS} = 4 V$.",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "type": "theory",
+              "text": "Explain thermal runaway. Show graphically that thermal runaway cannot take place if the quiescent point is located at $V_{CE} < (1/2) V_{CC}$.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "numerical",
+              "text": "An inverting op-amp has $R_f = 120 k\\Omega$ and $R_1 = 4 k\\Omega$. Find the voltage gain of the amplifier. Also find the amplifier input resistance, input current and the output voltage, if the Input voltage is 0.2 V. Assume op-amp to be ideal.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "theory",
+              "text": "Discuss a current-series feedback amplifier and compute the expression for transconductance using low-frequency approximate h-model of amplifier with an unbypassed emitter resistance.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "Draw the V-I characteristic of silicon-controlled rectifier (SCR) and explain different parameters of the curve. Explain any two SCR triggering or turn-on methods.",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "theory",
+              "text": "Explain the characteristics of an ideal op-amp. Mention two applications of op-amp. Draw the integrator circuit using op-amp.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

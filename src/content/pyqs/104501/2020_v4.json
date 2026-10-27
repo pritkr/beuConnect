@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University",
+    "exam_title": "B.Tech 5th Semester Exam., 2020 (New Course)",
+    "subject": "COMPUTER NETWORKS & SECURITY",
+    "subject_slug": "computer-networks-security",
+    "subject_code": "104501",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which transmission media provides the highest transmission speed in a network?</p>",
+          "options": [
+            "Coaxial cable",
+            "Twisted pair cable",
+            "Optical fiber",
+            "Electrical cable"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The data link layer takes the packets from network layer and encapsulates them into frames for\n                        transmission.</p>",
+          "options": [
+            "network layer",
+            "physical layer",
+            "transport layer",
+            "application layer"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A 4-byte IP address consists of</p>",
+          "options": [
+            "only network address",
+            "only host address",
+            "network address and host address",
+            "network address and MAC address"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Network layer firewall works as a</p>",
+          "options": [
+            "frame filter",
+            "packet filter",
+            "content filter",
+            "virus filter"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which of the following is false with respect to TCP?</p>",
+          "options": [
+            "Connection-oriented",
+            "Process-to-process",
+            "Transport layer protocol",
+            "Unreliable"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The header length of an IPv6 datagram is</p>",
+          "options": [
+            "10 bytes",
+            "25 bytes",
+            "30 bytes",
+            "40 bytes"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following are transport layer protocols used in networking?</p>",
+          "options": [
+            "TCP and FTP",
+            "UDP and HTTP",
+            "TCP and UDP",
+            "HTTP and FTP"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which layer of the TCP/IP stack corresponds to the OSI model transport layer?</p>",
+          "options": [
+            "Host-to-host",
+            "Application",
+            "Internet",
+            "Network access"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Public key encryption/decryption is not preferred because</p>",
+          "options": [
+            "it is slow",
+            "it is hardware/software intensive",
+            "it has a high computational load",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which one of the following is not a public key distribution means?</p>",
+          "options": [
+            "Public key certificates",
+            "Hashing certificates",
+            "Publicly available directories",
+            "Public-key authorities"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define computer network. Discuss various types of network topologies in computer network. Also\n                        discuss various advantages and disadvantages of each topology.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain different types of errors in data transmission. Write about redundancy, detection versus\n                        correction, forward error correction versus re-transmission and coding.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Discuss the terms 'sub-netting' and 'super-netting'. You are given the IP address of\n                        193.103.20.0/24\n                        and need 50 subnets. How many hosts per network and total networks do you get once subnetted?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain RIP in your own words. Take a network graph (group of routers) and explain how routing is\n                        performed.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Differentiate between TCP and UDP. Suppose a process in host C has a UDP socket with port number\n                        6789. Suppose both host A and host B, each sends a UDP segment to host C with destination port\n                        number 6789. Will both of these segments be directed to the same socket at host C? If so, how\n                        will\n                        the process at host C know that these two segments originated from two different hosts?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>(a) SNMP<br/>\n                        (b) FTP<br/>\n                        (c) SMTP<br/>\n                        (d) WWW</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Design a security service that provides data integrity, data confidentiality and non-repudiation\n                        using public-key cryptography in a two-party communication system over an insecure channel. Give\n                        a\n                        rationale that data integrity, confidentiality and non-repudiation are achieved by your\n                        solution.\n                        (Recommendation : Consider the corresponding threats in your argumentation)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain public-key cryptosystem. In a public-key system using RSA, you intercept the ciphertext\n                        \\(\n                        C=10 \\) sent to a user whose public key is \\( e=5 \\), \\( n=35 \\). What is the plaintext M?\n                    </p>"
+        }
+      ]
+    }
+  ]
+}

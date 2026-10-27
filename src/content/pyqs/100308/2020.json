@@ -1,0 +1,295 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020 (New Course)",
+    "subject": "Electromagnetic Field Theory",
+    "subject_slug": "electromagnetic-field-theory",
+    "subject_code": "100308",
+    "year": 2020,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Symbols and notations carry their usual meanings."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In free space, the Poisson equation becomes</p>",
+          "options": [
+            "Maxwell equation",
+            "Ampere equation",
+            "Laplace equation",
+            "steady-state equation"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Poisson equation can be derived from which of the following equations?</p>",
+          "options": [
+            "Point form of Gauss law",
+            "Integral form of Gauss law",
+            "Point form of Ampere law",
+            "Integral form of Ampere law"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Poynting vector gives the</p>",
+          "options": [
+            "rate of energy flow",
+            "direction of polarization",
+            "intensity of electric field",
+            "intensity of magnetic field"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Using volume integral, which quantity can be calculated?</p>",
+          "options": [
+            "Area of cube",
+            "Area of cuboid",
+            "Volume of cube",
+            "Distance of vector"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Electric flux density in electric field is referred to as</p>",
+          "options": [
+            "number of flux lines",
+            "ratio of flux lines crossing a surface and the surface area",
+            "direction of flux at a point",
+            "flux lines per unit area"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following correctly states Gauss law?</p>",
+          "options": [
+            "Electric flux is equal to charge",
+            "Electric flux per unit volume is equal to charge",
+            "Electric field is equal to charge density",
+            "Electric flux per unit volume is equal to volume charge density"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Find the power reflected in a transmission line, when the reflection coefficient and input power\n                        are\n                        0.45 and 18 W respectively.</p>",
+          "options": [
+            "3.645",
+            "6.453",
+            "4.563",
+            "5.463"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>In a waveguide, which of the following conditions is true always?</p>",
+          "options": [
+            "Phase velocity = c",
+            "Group velocity = c",
+            "Phase velocity &gt; c",
+            "Phase velocity &lt; c"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The phase and group velocities do not depend on which of the following?</p>",
+          "options": [
+            "Frequency",
+            "Wavelength",
+            "Phase constant",
+            "Attenuation constant"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Attempt any two parts of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>A rectangular waveguide with dimensions of \\( 3 \\text{ cm} \\times 2 \\text{ cm} \\) operates\n                        at 10\n                        GHz. Find: (i) cut-off frequency \\( (f_c) \\); (ii) cut-off wavelength \\( (\\lambda_c) \\);\n                        (iii)\n                        guided wavelength \\( (\\lambda_g) \\); (iv) phase constant \\( (\\beta_g) \\).</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What do you mean by transmission line? Derive an expression for transmission line equations.</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>Determine the expression for average power of Poynting vector.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Attempt any two parts of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>(i) Define quality factor. Give its relation with attenuation factor. (ii) Define reflection\n                        coefficient and VSWR. Also write their interrelation.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>(i) Compare wave impedance and characteristic impedance. (ii) Define tangent loss.</p>"
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>Derive the field components when wave is propagating inside a rectangular waveguide with TM mode\n                        propagation.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Attempt any two parts of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for input impedance when transmission line is terminated with any load\n                        impedance.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What is equipotential surface? Explain Poynting vector and average Poynting vector.</p>"
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>State and prove Ampere's work law as \\( \\nabla \\times \\vec{H} = J \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Attempt any two parts of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Derive the Gauss divergence theorem and Stokes' theorem along with their significances.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain the wave between parallel planes. Derive the expression for the attenuation in parallel\n                        plane\n                        guide.</p>"
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>Derive the expressions for the reflection and refraction of the waves by the perfect dielectric.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Attempt any two parts of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Find the reflection and transmission\n                        coefficient for the interface between air\n                        and freshwater \\( \\epsilon+ j180 \\) in the\n                        case of perpendicular incidence.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Derive the relationship between the\n                        following:\n                        (i) Standing-wave ratio and magnitude\n                        of reflection coefficient.\n                        (ii) Standing-wave ratio and the\n                        reflection coefficient.</p>"
+        },
+        {
+          "id": "q6_3",
+          "type": "theory",
+          "text": "<p>(i) Write the condition for a line to be\n                        distortionless.\n                        (ii) Define the term 'phase velocity'.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Attempt any two parts of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is polarization of wave? Discuss the properties of S- and P-polarized light. Explain why\n                        P-polarized light is also called as TM-polarized light.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain the term 'standing-wave ratio' related to transmission line. What will be the values of\n                        input\n                        impedances when output impedances are (i) open-circuited and (ii) short-circuited?</p>"
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>Explain why TEM wave does not propagate in waveguide.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Attempt any two parts of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A transmission line has a characteristic impedance of 100 ohms and is terminated in a load\n                        impedance\n                        of \\( 200 + j180 \\) ohms. Find the voltage reflection coefficient.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is the penetration depth in current penetration in copper at a frequency of \\( 10^4 \\)\n                        MHz, if\n                        the resistivity is \\( 1.7 \\times 10^{-6} \\Omega \\) cm?</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>What are the satisfactory conditions for low-loss transmission lines?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Attempt any two parts of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>A uniform plane wave propagating in a medium has \\( E = 2e^{-\\alpha z}\\sin(10^8t - \\beta\n                        z)a_y\n                        \\). If the medium is characterized by \\( \\epsilon_r = 1 \\), \\( \\mu_r = 20 \\) and \\(\n                        \\sigma\n                        = 3 \\text{ mhos/m} \\), then find \\( \\alpha \\), \\( \\beta \\) and \\( \\vec{H} \\).</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>In a non-magnetic medium \\( E = 4 \\sin(2\\pi \\times 10^7 - 0.8x)a_z \\text{ V/m} \\). Find (i)\n                        the\n                        time-average power carried by the wave; (ii) the total power crossing \\( 100 \\text{ cm}^2 \\)\n                        of\n                        plane \\( 2x + y = 5 \\).</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>What is the boundary condition for metal dielectric interface?</p>"
+        }
+      ]
+    }
+  ]
+}

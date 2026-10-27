@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2013",
+    "subject": "Formal Languages and Automata Theory",
+    "subject_slug": "formal-languages-and-automata-theory",
+    "subject_code": "105301",
+    "year": 2013,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain the differences between NFA and DFA.",
+              "marks": 7,
+              "id": "1a"
+            },
+            {
+              "text": "Design a DFA which accepts all strings which are ending with 101 over an alphabet {0, 1}.",
+              "marks": 7,
+              "id": "1b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Obtain the regular expression for the following sets :",
+              "subparts": [
+                {
+                  "label": "i",
+                  "text": "Set of strings over $\\Sigma = \\{a, b\\}$ with exactly two $a$'s."
+                },
+                {
+                  "label": "ii",
+                  "text": "Set of all strings over $\\Sigma = \\{0, 1\\}$ which should not contain the substring 101."
+                },
+                {
+                  "label": "iii",
+                  "text": "$L = \\{ vwv \\mid v, w \\in \\{a, b\\}^*, |v| = 2 \\}$."
+                },
+                {
+                  "label": "iv",
+                  "text": "Set of strings over $\\Sigma = \\{a, b, c\\}$ with no runs of $a$ which has length greater than three."
+                }
+              ],
+              "marks": 7,
+              "id": "2a"
+            },
+            {
+              "text": "Construct an NFA (without using Thompson's rule) for the following set :\nSet of strings over $\\Sigma = \\{0, 1\\}$ with alternate 0's and 1's.",
+              "marks": 7,
+              "id": "2b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Give DFA for the following NFA ($s$ is the final state) : [Table required]",
+              "marks": 7,
+              "id": "3a"
+            },
+            {
+              "text": "Construct an NFA using $\\epsilon$ move for $r = (b | c)^* a (b | c)^*$.",
+              "marks": 7,
+              "id": "3b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Give DFA for the NFA constructed in Question No. 3 (b).",
+              "marks": 7,
+              "id": "4a"
+            },
+            {
+              "text": "Find out the regular expression for the following transition diagram : [Diagram required]",
+              "marks": 7,
+              "id": "4b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Design a Moore machine to determine the residue mode 4 for each binary string treated as integer.",
+              "marks": 7,
+              "id": "5a"
+            },
+            {
+              "text": "Design a Mealy machine that uses its state to remember the last symbol read and emits output $y$ whenever current input matches the previous one, and emits $n$ otherwise.",
+              "marks": 7,
+              "id": "5b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Construct a Moore machine equivalent to the following Mealy machine : [Table required]",
+              "marks": 7,
+              "id": "6a"
+            },
+            {
+              "text": "Show using pumping lemma that the language $L = \\{ a^i b^i \\mid i \\geq 1 \\}$ is regular or not.",
+              "marks": 7,
+              "id": "6b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Reduce the grammar $G$ given by\n$S \\rightarrow aAa; A \\rightarrow Sb / bcc / DaA; C \\rightarrow abb / DD; E \\rightarrow ac; D \\rightarrow aDA$\ninto an equivalent grammar by removing useless symbols and useless productions from it.",
+              "marks": 7,
+              "id": "7a"
+            },
+            {
+              "text": "Convert the following grammar into CNF :\n$S \\rightarrow aAD; A \\rightarrow aB / bAB; B \\rightarrow b; D \\rightarrow d$",
+              "marks": 7,
+              "id": "7b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Let $G$ be the grammar given by\n$S \\rightarrow aABB / aAA; A \\rightarrow aBB / a; B \\rightarrow bBB / A$\nConstruct the PDA that accepts the language generated by this grammar $G$.",
+              "marks": 7,
+              "id": "8a"
+            },
+            {
+              "text": "Define deterministic push-down automata. Explain with an example.",
+              "marks": 7,
+              "id": "8b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Give a Turing machine\u2014that computes one's complement of a binary number;",
+              "marks": 7,
+              "id": "9a"
+            },
+            {
+              "text": "Give a Turing machine\u2014that shifts the input string over the alphabet $\\{0, 1\\}$ by one position right by inserting '#' as the first character.",
+              "marks": 7,
+              "id": "9b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "10",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain about deterministic context-free language and deterministic PDA.",
+              "marks": 7,
+              "id": "10a"
+            },
+            {
+              "text": "Show that $L = \\{ a^n b^n c^n : n \\geq 1 \\}$ is a CSL.",
+              "marks": 7,
+              "id": "10b"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

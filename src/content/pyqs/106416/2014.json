@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 4th Year Examination, 2014",
+    "subject": "Artificial Intelligence",
+    "subject_slug": "artificial-intelligence",
+    "subject_code": "106416",
+    "year": 2014,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are TEN questions in this paper.",
+    "Attempt any FIVE questions."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "theory",
+          "text": "Define production system. Develop a production system for the following problem:",
+          "marks": 14,
+          "context": "The water jug problem: You are given two jugs, a 4-litre one and a 3-litre one. Neither has any measuring markers on it. There is a pump that can be used to fill the jugs with water. Develop a production system to get exactly 2 litres of water into 4-litre jug."
+        },
+        {
+          "id": "q2",
+          "parts": [
+            {
+              "id": "q2_a",
+              "type": "theory",
+              "text": "How to perform iteration and recursion in LISP? Explain with example.",
+              "marks": 8
+            },
+            {
+              "id": "q2_b",
+              "type": "theory",
+              "text": "Explain the various inference rules for propositional logic.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "q3",
+          "type": "theory",
+          "text": "What is a clause? With the help of following wff, explain how to convert a wff to a set of clauses?",
+          "marks": 14,
+          "context": "$(\\forall x) \\{ P(x) \\Rightarrow ((\\forall y)[P(y) \\Rightarrow P(f(x, y))] \\wedge (\\forall y)[Q(x, y) \\Rightarrow P(y)]) \\}$"
+        },
+        {
+          "id": "q4",
+          "parts": [
+            {
+              "id": "q4_a",
+              "type": "theory",
+              "text": "Explain different syntactical structures of predicate logic.",
+              "marks": 7
+            },
+            {
+              "id": "q4_b",
+              "type": "theory",
+              "text": "Discuss different types of resolution.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "q5",
+          "parts": [
+            {
+              "id": "q5_a",
+              "type": "theory",
+              "text": "Explain truth maintenance system.",
+              "marks": 7
+            },
+            {
+              "id": "q5_b",
+              "type": "theory",
+              "text": "What is default reasoning?",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "q6",
+          "type": "theory",
+          "text": "What is meant by heuristic search? Explain $A^*$ algorithm.",
+          "marks": 14
+        },
+        {
+          "id": "q7",
+          "parts": [
+            {
+              "id": "q7_a",
+              "type": "theory",
+              "text": "Explain fuzzy logic with suitable example.",
+              "marks": 6
+            },
+            {
+              "id": "q7_b",
+              "type": "theory",
+              "text": "Explain non-monotonic reasoning.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "q8",
+          "type": "theory",
+          "text": "Explain the working principle of RETE matching algorithm.",
+          "marks": 14
+        },
+        {
+          "id": "q9",
+          "type": "theory",
+          "text": "Write short notes on the following:",
+          "marks": 14,
+          "parts": [
+            {
+              "id": "q9_a",
+              "type": "theory",
+              "text": "Simulated annealing",
+              "marks": 5
+            },
+            {
+              "id": "q9_b",
+              "type": "theory",
+              "text": "Frames",
+              "marks": 4
+            },
+            {
+              "id": "q9_c",
+              "type": "theory",
+              "text": "Pattern recognition",
+              "marks": 5
+            }
+          ]
+        },
+        {
+          "id": "q10",
+          "parts": [
+            {
+              "id": "q10_a",
+              "type": "theory",
+              "text": "What are different types of measure used for matching process?",
+              "marks": 8
+            },
+            {
+              "id": "q10_b",
+              "type": "theory",
+              "text": "What is partial matching?",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

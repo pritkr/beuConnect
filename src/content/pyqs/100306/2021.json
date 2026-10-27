@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B. Tech 3rd Semester Exam., 2021",
+    "subject": "ELECTRICAL CIRCUIT ANALYSIS",
+    "subject_slug": "electrical-circuit-analysis",
+    "subject_code": "100306",
+    "year": 2021,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "The voltage across a 1.1-kW toaster that produces a current of 10 A is",
+          "options": [
+            "11 kV",
+            "1100 V",
+            "110 V",
+            "11 V"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "The current $I$ in the following circuit is",
+          "options": [
+            "0.8 A",
+            "-0.2 A",
+            "0.2 A",
+            "-0.8 A"
+          ],
+          "has_diagram": true
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "The current through a branch in a linear network is 2 A when the input source voltage is 10 V. If the voltage is reduced to 1 V and the polarity is reversed, the current through the branch is",
+          "options": [
+            "-2 A",
+            "-0.2 A",
+            "0.2 A",
+            "2 A"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "A load is connected to a network. At the terminals to which the load is connected, $R_{th} = 10\\ \\Omega$ and $V_{th} = 20\\text{ V}$. The maximum possible power supplied to the load is",
+          "options": [
+            "160 W",
+            "80 W",
+            "40 W",
+            "1 W"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "If a two-port is reciprocal, which of the following is not true?",
+          "options": [
+            "$Z_{21} = Z_{12}$",
+            "$y_{21} = y_{12}$",
+            "$h_{21} = h_{12}$",
+            "$AD = BC + 1$"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "For the three coupled coils in the following figure, calculate the total inductance:",
+          "options": [
+            "10 H",
+            "12 H",
+            "38 H",
+            "24 H"
+          ],
+          "has_diagram": true
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "A network which contains one or more source of e.m.f. is known as",
+          "options": [
+            "linear network",
+            "non-linear network",
+            "passive network",
+            "active network"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "The circuit having some properties for either direction of current is known as ___ circuit.",
+          "options": [
+            "bilateral",
+            "unilateral",
+            "irreversible",
+            "reversible"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "Which of the following theorems can be applied to linear, non-linear, active, passive, time-variant, time-invariant, all kinds of circuits?",
+          "options": [
+            "Thevenin theorem",
+            "Norton theorem",
+            "Tellegen theorem",
+            "Superposition theorem"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "Ideal current source has",
+          "options": [
+            "zero internal resistance",
+            "infinite internal resistance",
+            "low value of voltage",
+            "large value of current"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "2. Using nodal analysis, find $I_o$ and $V_o$ in the following circuit :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2",
+          "type": "theory",
+          "text": "Using nodal analysis, find $I_o$ and $V_o$ in the following circuit :",
+          "has_diagram": true
+        }
+      ]
+    },
+    {
+      "section_title": "3. Apply mesh analysis to find $i$ in the following figure :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3",
+          "type": "theory",
+          "text": "Apply mesh analysis to find $i$ in the following figure :",
+          "has_diagram": true
+        }
+      ]
+    },
+    {
+      "section_title": "4.",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "(i) In the following circuit, calculate $V_o$ and $I_o$ when $V_s = 1\\text{ V}$. (ii) Find $V_o$ and $I_o$ when $V_s = 10\\text{ V}$. (iii) What are $V_o$ and $I_o$ when each of the $1\\ \\Omega$ resistors is replaced by a $10\\ \\Omega$ resistor and $V = 10\\text{ V}$?",
+          "has_diagram": true,
+          "sub_marks": 7
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "What do you understand by resonance? For a series $R-L-C$ circuit, derive the formula for (i) resonance frequency and (ii) cut-off frequency.",
+          "sub_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "5.",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "Explain the pole zero concept. How does this concept provide the knowledge of a stable system?",
+          "sub_marks": 5
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "Use the superposition principle to find $V_o$ and $I_o$ in the circuit below:",
+          "has_diagram": true,
+          "sub_marks": 9
+        }
+      ]
+    },
+    {
+      "section_title": "6. Determine $R_{th}$ and $V_{th}$ at terminals 1-2 of each of the circuits drawn below :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6",
+          "type": "theory",
+          "text": "Determine $R_{th}$ and $V_{th}$ at terminals 1-2 of each of the circuits drawn below :",
+          "has_diagram": true
+        }
+      ]
+    },
+    {
+      "section_title": "7.",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "State and describe maximum power transfer theorem with a suitable example.",
+          "sub_marks": 5
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "Compute the value of $R$ for which maximum power transfer can be offered to $10\\ \\Omega$ resistor in the following figure. Also find the maximum power that can be transferred.",
+          "has_diagram": true,
+          "sub_marks": 9
+        }
+      ]
+    },
+    {
+      "section_title": "8.",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "Find $v_o(t)$, using Laplace transform. Consider initial conditions to be zero. (i) If the switch in the circuit below, has been opened for a long time and is closed at $t = 0$. (ii) Suppose that the switch has been closed for a long time and is opened at $t = 0$.",
+          "has_diagram": true,
+          "sub_marks": 7
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "Determine the step response $V_o(t)$ to $V_s = 9u(t)\\text{ V}$ in the following circuit without using Laplace transform.",
+          "has_diagram": true,
+          "sub_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "9. For the bridge circuit in the following figure, obtain—",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9",
+          "type": "theory",
+          "text": "For the bridge circuit in the following figure, obtain— (i) the $z$-parameters; (ii) the $h$-parameters; (iii) the transmission parameters using the parameters obtained in parts (i) and (ii) separately. Compare the results obtained.",
+          "has_diagram": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "branch": "civil",
+  "sem": 5,
+  "subjects": [
+    {
+      "code": "PCC CE 301",
+      "name": "Mechanics of Materials",
+      "vvi": [
+        {
+          "topic": "Strain energy and Castigliano's theorem",
+          "note": "Strain energy in axial load is P²L/2AE, in bending ∫M²dx/2EI and in torsion T²L/2GJ. Castigliano's first theorem gives the deflection as the partial derivative of the total strain energy with respect to the load. The unit-load method is the same idea applied to a point where no load acts.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Thick cylinders and Lame's equations",
+          "note": "For a thick cylinder the hoop and radial stresses are σθ = a + b/r² and σr = a − b/r², with a and b fixed by the internal and external pressures. The hoop stress is maximum at the inner surface and the radial stress equals the applied pressure there. A shrink fit and a compound cylinder use the same equations to pre-stress the wall.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Combined direct and bending stress, and the kern",
+          "note": "An eccentric load produces a direct stress P/A plus a bending stress My/I, and the two add on one face and subtract on the other. The stress distribution is found from σ = P/A ± My/I, and no tension occurs when the resultant stays inside the kern. For a rectangular section the kern is the middle third, for a circular section the middle quarter.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Unsymmetrical bending and shear centre",
+          "note": "When the load plane is not a principal plane, resolve the moment into components about the two principal axes and superpose σ = Mx·y/Ix + My·x/Iy. The neutral axis passes through the centroid and is not perpendicular to the load. The shear centre is the point through which a transverse load must act to avoid twisting the section.",
+          "marks": 7,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Curved beams",
+          "note": "In a curved beam the bending stress is not linear because the fibres have different lengths, so σ = M(R − r)/(A e r) with e the distance from the centroidal to the neutral axis. The stress is highest at the inner fibre for a beam curved towards the load. Crane hooks, chain links and rings are the standard examples.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC CE 302",
+      "name": "Hydraulic Engineering",
+      "vvi": [
+        {
+          "topic": "Flow measurement by notches, weirs and flumes",
+          "note": "A rectangular notch discharges Q = (2/3)Cd√(2g)·L·H^(3/2), and a triangular notch Q = (8/15)Cd√(2g)·tan(θ/2)·H^(5/2). A broad-crested weir and a venturi flume measure flow with a smaller head loss, which suits an irrigation channel. End contraction reduces the effective length of a suppressed weir.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Uniform flow: Manning and Chezy equations, most economical section",
+          "note": "Chezy gives V = C√(RS) and Manning gives V = (1/n)R^(2/3)S^(1/2), with R the hydraulic radius and n the roughness. Normal depth is where the discharge equals the rating curve for the given slope and section. The most economical rectangular section has a hydraulic radius of half the depth, and the trapezoidal case has half-hexagon proportions.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Specific energy, critical depth and the hydraulic jump",
+          "note": "Specific energy E = y + V²/2g, and the critical depth is where E is minimum, with Fr = 1 and V = √(gy). Flow is subcritical above the critical depth and supercritical below it. A hydraulic jump converts supercritical to subcritical flow with an energy loss (y2 − y1)³/4y1y2, which is used as a stilling basin.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Gradually varied flow and water-surface profiles",
+          "note": "The differential equation dy/dx = (S0 − Sf)/(1 − Fr²) gives the water-surface slope, and its sign changes at the normal and critical depths. The twelve profiles are classified as mild, steep, critical, horizontal and adverse, with M1, M2, S2 and S3 the common ones. A backwater curve behind a weir is an M1 profile.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Orifices, mouthpieces and hydraulic similitude",
+          "note": "An orifice discharges Q = Cd·A√(2gh), with Cc, Cv and Cd linked by Cd = Cc·Cv; an internal mouthpiece runs full and gives a larger coefficient. Similitude for a free-surface model uses Froude scaling, where velocity scales with √L and discharge with L^(5/2). Reynolds scaling applies instead when viscosity dominates.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC CE 303",
+      "name": "Analysis and Design of Concrete",
+      "vvi": [
+        {
+          "topic": "Working stress versus limit state method",
+          "note": "The working stress method keeps the concrete and steel stresses below permissible values with a linear elastic section, so it ignores the reserve strength after cracking. The limit state method applies partial safety factors to loads and materials and checks collapse and serviceability separately. IS 456 uses limit state design, with 1.5 on dead and live load and 0.87fy for the steel stress.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Singly reinforced beam: balanced, under and over-reinforced sections",
+          "note": "The neutral axis depth xu is found by equating the compressive and tensile forces, 0.36fck·b·xu = 0.87fy·Ast. A balanced section reaches the limiting xu/d of 0.53 for Fe415 at the same time as the steel yields; an under-reinforced section is ductile and preferred, and an over-reinforced one fails suddenly. The moment of resistance comes from the couple 0.36fck·b·xu(d − 0.42xu).",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Doubly reinforced and T-beams",
+          "note": "Compression steel adds a second couple and is used when the section is limited by headroom or when it must resist reversal. A T-beam takes an effective flange width from IS 456, and the neutral axis may fall in the flange or the web, which changes the force equation. The flange concrete in compression is what makes a T-beam economical.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Shear, bond and development length",
+          "note": "Nominal shear stress τv = Vu/(b·d) is compared with τc from the steel percentage, and the excess is carried by stirrups: Vus = 0.87fy·Asv·d/sv. Development length Ld = φσs/(4τbd) anchors the bar so it can reach its design stress. Shear reinforcement is mandatory even where τv is below τc, and the maximum spacing is 0.75d.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Design of one-way slabs and short columns",
+          "note": "A one-way slab spans in one direction when the long-to-short ratio exceeds two, and is designed as a beam of unit width with the same force equations plus a check on deflection by the span-to-depth ratio. A short column fails by crushing, with Pu = 0.4fck·Ac + 0.67fy·Asc and a minimum eccentricity moment. Ties, cover and the minimum steel of 0.8% are the detailing checks.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Serviceability: deflection and crack control",
+          "note": "Deflection is controlled by limiting the span-to-effective-depth ratio, modified by the steel percentage and the flanged section. Cracks are controlled by bar spacing and cover rules rather than by calculation in normal cases. A rigorous check uses the effective moment of inertia between the cracked and uncracked values.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC CE 304",
+      "name": "Geotechnical Engineering -I",
+      "vvi": [
+        {
+          "topic": "Three-phase soil system and index properties",
+          "note": "Soil is a skeleton of solids with water and air in the voids, so the phase diagram gives e = Vv/Vs, n = e/(1 + e), w = Ww/Ws and γ = (G + Se)γw/(1 + e). A saturated soil has S = 1 and a dry soil S = 0. The relations between e, w, G and γ are the ones used in almost every numerical question.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Classification of soils and the Atterberg limits",
+          "note": "The liquid limit, plastic limit and shrinkage limit give the plasticity index and the consistency indices, and a high PI means a compressible clay. The IS classification uses particle size for coarse soils and plasticity for fines, with the A-line separating clays from silts. Group symbols such as SM, CL and CH are read from the plasticity chart.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Permeability and seepage",
+          "note": "Darcy's law gives v = ki, with k from the constant-head test for coarse soil and the falling-head test for fine soil. Layered deposits give an equivalent k by the harmonic mean for vertical flow and the arithmetic mean for horizontal flow. A flow net has square elements, with the discharge q = kH(Nf/Nd) and the exit gradient from the last square.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Effective stress and capillary action",
+          "note": "Effective stress is σ' = σ − u, and it is the stress that controls settlement and shear strength. Capillary rise adds negative pore pressure above the water table, which increases the effective stress and gives apparent cohesion. Boiling and piping occur when the upward seepage force exceeds the submerged weight, at a factor of safety against heave.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Compaction and consolidation",
+          "note": "The Proctor test gives the optimum moisture content at maximum dry density, and the zero-air-void line bounds every compaction curve. Consolidation is the time-dependent expulsion of water under load, with the coefficient of consolidation from the log-time or root-time construction. The compression index comes from the slope of the e-log p curve, and the preconsolidation pressure from Casagrande's construction.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Shear strength: Mohr-Coulomb criterion and triaxial tests",
+          "note": "The Mohr-Coulomb envelope is τ = c + σ' tan φ, drawn tangent to the Mohr circles at failure. The direct shear test is quick but forces the failure plane, while the triaxial test controls the drainage: UU gives φ = 0 and cu, CU gives c' and φ', and CD gives the drained parameters. Skempton's pore pressure parameters explain the difference.",
+          "marks": 8,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "PCC CE 305",
+      "name": "Hydrology & Water Resources",
+      "vvi": [
+        {
+          "topic": "Hydrologic cycle and precipitation analysis",
+          "note": "The cycle balances precipitation, evaporation, transpiration, infiltration and runoff over a catchment. The mean areal depth comes from the arithmetic mean, the Thiessen polygon or the isohyetal method, and the last is the most accurate. A double-mass curve checks the consistency of a rain-gauge record.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Infiltration, evaporation and the phi index",
+          "note": "Infiltration is described by Horton's equation or the Phillip equation, and the φ index is the constant loss rate that explains the measured runoff from a storm. Evaporation is measured by an evaporimeter and estimated by the Penman or Blaney-Criddle formula. Transpiration is the loss through plants, and evapotranspiration combines the two.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Runoff hydrograph and the unit hydrograph",
+          "note": "A hydrograph has a rising limb, a peak and a recession, with base flow separated by the straight-line or fixed-base method. A unit hydrograph is the direct runoff from 1 cm of rainfall in a unit duration, and it is used by convolution for any storm of the same duration. The S-curve converts a unit hydrograph to another duration.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Flood estimation and frequency analysis",
+          "note": "The rational method gives Q = CiA for small catchments, while a large catchment uses the unit hydrograph or an empirical formula. Frequency analysis fits the annual peak series to a Gumbel or log-Pearson distribution and reads the flood for a return period. The return period is the reciprocal of the exceedance probability.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Duty, delta and crop water requirement",
+          "note": "Duty is the area irrigated per unit discharge, and delta is the total depth of water needed by a crop over its base period. They are linked by delta = 8.64B/D, with B in days and D in hectares per cumec. The duty falls as the crop matures and varies with the irrigation method and the soil.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Groundwater and well hydraulics",
+          "note": "Dupuit's equation for steady radial flow gives Q = πk(H² − h²)/ln(R/r) for an unconfined aquifer, while a confined aquifer gives Q = 2πkb(H − h)/ln(R/r). A pumping test measures the drawdown and recovers the transmissivity and storage coefficient. Specific yield, specific retention and the safe yield of a basin set how much can be extracted without mining the storage.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC CE 306",
+      "name": "Environmental Engineering -I",
+      "vvi": [
+        {
+          "topic": "Water demand and population forecasting",
+          "note": "Per capita demand is the total annual consumption divided by the population and the number of days, and it varies with climate, income and metering. Fire demand is added by the Kuichling formula or the IS recommendation. Population is forecast by the arithmetic, geometric, incremental-increase or logistic method, and the design period is usually 30 years.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Water quality standards and tests",
+          "note": "Physical tests cover turbidity, colour and taste, chemical tests cover pH, hardness, chlorides and nitrates, and bacteriological tests count coliforms. BOD measures the oxygen consumed by bacteria over five days, and COD measures the chemical oxidant demand, so COD is always higher. The MPN test and the membrane filter give the coliform index against the IS limit.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Sedimentation and coagulation-flocculation",
+          "note": "A plain settling tank removes particles whose settling velocity exceeds the surface overflow rate, V = Q/A. Colloidal clay does not settle because of its surface charge, so alum or ferric chloride is added and the pH is adjusted to coagulate. Rapid mixing, flocculation and sedimentation then follow in sequence.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Filtration: slow sand and rapid sand filters",
+          "note": "A rapid sand filter uses a graded sand bed with a rate of about 5 m³/m²/h and is cleaned by backwashing, while a slow sand filter runs at a tenth of that rate and is cleaned by scraping the top layer. The filter removes the remaining turbidity and most of the bacteria, and the head loss rises until the terminal head is reached. Underdrainage, gravel support and the schmutzdecke are the parts to name.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Disinfection and water softening",
+          "note": "Chlorination is the usual disinfection, with breakpoint chlorination destroying the combined chlorine demand before free residual appears; the residual must reach the far end of the distribution system. Ozone and UV leave no residual, so they are used with chlorine. Softening by lime-soda removes temporary and permanent hardness, and ion exchange gives zero hardness.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Distribution systems and appurtenances",
+          "note": "A distribution network is laid as a dead end, grid or ring system, and a ring is preferred because a break affects only one section. The pipe sizes come from the peak demand and the minimum residual pressure, and Hardy Cross balances the loops. Valves, hydrants, meters and service reservoirs are the appurtenances.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC CE 307",
+      "name": "Transportation Engineering",
+      "vvi": [
+        {
+          "topic": "Highway geometric design: camber, gradient and sight distance",
+          "note": "Camber drains the surface and is expressed as a cross slope, a straight or a parabolic crown. The ruling gradient is the steepest that can be used without excessive cost, with limiting and exceptional gradients as fallbacks. Stopping sight distance is the lag plus braking distance, SSD = 0.278Vt + V²/(254f), and overtaking sight distance is the sum of three time-based components.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Horizontal curves: superelevation, extra widening and transition",
+          "note": "Superelevation balances the centrifugal force, e + f = V²/(127R), and is limited to 7% on plain terrain because of slow traffic and ice. Extra widening at a curve covers the off-tracking of the rear axle and the driver's tendency to keep away from the edge. A transition curve is an Euler spiral, and its length is set by the rate of change of centrifugal acceleration.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Pavement structure: flexible, rigid and the CBR method",
+          "note": "A flexible pavement is a layered structure of subgrade, sub-base, base and wearing course, and the CBR method designs the total thickness from the soaked CBR of the subgrade and the design traffic. A rigid pavement carries the load by slab action, with joints, dowel bars and a tie bar, and its thickness comes from the Westergaard equations. ESWL converts an axle group to an equivalent single wheel load.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Traffic engineering: volume, speed, density and PCU",
+          "note": "Traffic volume is counted manually or by an automatic counter, and the peak hour factor converts the peak 15 minutes to an hourly flow. Speed is measured as spot speed and journey speed, and density is volume over speed. The passenger car unit converts a mixed stream to an equivalent car flow, and the capacity follows from the level of service.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Railway: gauge, coning and cant",
+          "note": "Indian railways use broad, metre and narrow gauges, and the wheel coning keeps the axle centred and reduces flange wear. Cant or superelevation balances the centrifugal force, e = GV²/127R, with cant deficiency and cant excess limited on curves. Sleeper density and the creep of rails are the other track parameters.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Airport and port planning basics",
+          "note": "An airport has a runway, taxiway, apron and terminal, and the runway length is corrected for elevation, temperature and gradient from the basic length. The basic runway length assumes standard conditions, and the corrections are applied in that order. A port is planned around the berth length, the draft and the cargo-handling equipment.",
+          "marks": 5,
+          "confidence": "low"
+        }
+      ]
+    }
+  ]
+}

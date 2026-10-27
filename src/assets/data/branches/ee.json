@@ -1,0 +1,939 @@
+{
+	"branch": "ece",
+	"semesters": {
+		"1": {
+			"subjects": [
+				{
+					"code": "100110",
+					"name": "Engineering Physics",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Quantum Physics of Atoms, Molecules, Solids, Nuclei and Particles, R. Eisberg R.",
+						"Resnick, Wiley India Pvt. Ltd ISBN 978-81-265-0818-1",
+						"2. Theory of Vibration with Application, W.T. Thomson M. D. Dahleh, Pearson India ISBN",
+						"978-81-317-0482-0",
+						"3. Introduction to Electrodynamics, D.J. Griffiths, Pearson India, ISBN 978-93-325-5044-5",
+						"4. Electromagnetism, I.S. Grant, W. R. Phillips, Wiley India Pvt. Ltd ISBN 978-04-719-",
+						"2712-9",
+						"5. The Feynman Lectures on Physics, R.P. Feynman R. B. Leighton, Pearson India ISBN",
+						"978-00-710-7458-2",
+						"6. Optics, Ajay Ghatak ,McGraw Hill ISBN 978-93-901-1359-0",
+						"7. Physics of Vibration and Waves, H. J. Pain, Wiley India Pvt. Ltd, ISBN 978-04-700-",
+						"1296-3",
+						"8. Concept of Modern Physics, Arthur Beiser, McGraw Hill ISBN 978-93-513-4185-7",
+						"9. Introduction to Solid State Physics, C. Kittle , Wiley India Pvt. Ltd, ISBN 978-81-265-",
+						"7843-6"
+					],
+					"content": "Unit- 1.0\n1. Frame of Reference: 2 hrs\nNon-Inertial frame of reference, rotating coordinate system, centripetal and Coriolis acceleration and its application in weather system.\n2. Oscillations: 3 hrs\nHarmonic Oscillator, Damped Harmonic motion – overdamped, critically Damped and lightly damped oscillators, Force Oscillators and Resonance.\nUnit- 2.0\n1. Optics: 4 hrs\nHuygens’s Principle, Superposition of Waves and interference of Light by wave front-splitting and amplitude-splitting; Young’s double slit experiment, Michelson interferometer, Fraunhofer diffraction from single slit and circular aperture, Diffraction Grating and their resolving power\n2. LASER: 4 hrs\nEinstein’s theory of matter-radiations interaction, Einstein’s Coefficients (A and B), Amplification by population inversion, Different types of lasers – Gas Laser, Helium-Neon Laser, Solid State Laser (Ruby, Neodymium), Semiconductor Laser.\nUnit- 3.0\n1. Quantum Mechanics: 5 hrs\nCompton Effect, Photoelectric Effect, Wave Particle duality, de Broglie’s hypothesis, Heisenberg’s Uncertainty Principle, Wave function and wave packets, phase and group velocities, Schrodinger’s Wave Equation, Normalization, Expectation values, Eigenvalues and Eigenfunction.\n2. Applications in One dimensions: 2 hrs\nApplication of Schrodinger Wave Equation for particle in one dimensional box – its wavefunction and eigenvalue of energy and momentum.\nUnit- 4.0\n1. Vector Calculus: 2 hrs\nGradient, Divergence and Curl, Line, Surface and Volume integrals, Gauss’s Divergence theorem and Stokes’ theorem in Cartesian Coordinate.\n2. Electrostatics: 4 hrs\nGauss’s Law and its applications, Divergence and Curl of Electrostatic fields, Electrostatic Potential, Boundary Conditions, Poisson’s and Laplace’s equations, Dielectrics, Polarization, Bound Charges, Electric displacement, Boundary Conditions in dielectrics.\nUnit- 5.0\n1. Magnetostatics: 4 hrs\nLorentz force, Biot-Savart and Ampere’s circuital laws and their applications, Divergence and Curl of Magneto static fields, Magnetic vector potential, Force and torque on a magnetic dipole, Magnetic Materials, Magnetization, Bound currents, Boundary conditions.\n2. Electrodynamics and Electromagnetic Waves: 4 hrs\nOhm’s law, Motional EMF, Faraday’s Law, Lenz’s law, Self and mutual inductance, Energy stored in magnetic field, Maxwell’s equations in vacuum and nonconducting medium, Continuity Equation, Poynting Theorem, Wave Equations: plain electromagnetic wave in vacuum and their transverse nature and Polarization.\nUnit- 6.0\n1. Introduction to Solids and Semi-Conductors: 3 hrs\nFree electron theory of metal, fermi level, Bloch’s theorem for particle in a periodic Potential, Kroning-Penney model and origin of energy band.\n2. Electronic Materials: 3 hrs\nMetals, semiconductors and insulators, intrinsic and extrinsic semiconductors,Carriertransport, diffusion and drift, P-N junction."
+				},
+				{
+					"code": "100102",
+					"name": "Engineering Mathematics–I",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"1. AICTE’s Prescribed Textbook: Mathematics-I (Calculus & Linear Algebra), ReenaGarg,",
+						"Khanna Book Publishing Co. ISBN-10 9391505171",
+						"2. Advanced Engineering Mathematics, Chandrika Prasad &ReenaGarg, Khanna Book",
+						"Publishing Co., 2021. ISBN 10: 9386173522 / ISBN 13: 9789386173522.",
+						"3. Higher Engineering Mathematics, B.V. Ramana, Tata McGraw Hill New Delhi, 11th",
+						"Reprint, 2010,ISBN-10 007063419X ISBN-13978- 0070634190.",
+						"4. Advanced Engineering Mathematics, SrkIyengarRk Jain,Narosa,5thEdition,ISBN-10",
+						"8184875606I",
+						"SBN-13978-8184875607",
+						"5. Advanced Engineering Mathematics, Erwin Kreyszig, 9th Edition, John Wiley & Sons,",
+						"2006."
+					],
+					"content": "Unit- 1.0: Linear Algebra-I 7 hrs\nElementary Row operations, Gauss -Jordan Method for finding the inverse of Matrix, Complex Matrix : Hermitian , Skew Hermitian and Unitary Matrix, Vector space, Sub Spaces, Linear dependence and Independences of Vectors, Linear Span, Basis, Dimension, Extension of basis of subspace, The rank of a matrix, Row and column space, Solvability of system of linear equations.\nUnit- 2.0: Linear Algebra-II 7 hrs\nLinear Transformations, Kernel and Range of linear transformation, Matrix Representation of a linear transformation, Rank-Nullity Theorem, Eigen Value and Eigen Vectors, Properties of Eigen vectors, Eigen Bases, Orthogonal Transformation, Similarity Transformation, Matrix Diagonalization, Cayley- Hamilton Theorem.\nUnit- 3.0: Calculus for single variable 7 hrs\nInderminate form, L’Hospital Rule, Rolle’s Theorem, Mean Value Theorem, Expansion of function (single variable), Taylor and Maclaurin Series, Riemann Integration, Riemann Sum, Improper Integrals, Beta and Gamma function and their properties.\nUnit- 4.0 : Multivariable Calculus (Differentiation) 7 hrs\nFunction with two or more variable, Limit, continuity and Partial differentiation, Total Differentiation Taylor’s series and Maclaurin’s series for function with two variable, Jacobian, Maxima and Minima, Method of Lagrange’s multiplier.\nUnit-5.0: Multivariable Calculus (Integration) 7 hrs\nDouble Integral, change of order of integration, Triple integral, Change of Variable in a Double and Triple Integrals, Change to polar coordinate, Change to cylindrical coordinate, Change to spherical polar coordinate, Application to area and volume using double and triple integral\nUnit- 6.0: Vector Calculus 7 hrs\nScalar and vector fields, Gradient, Directional derivative, Divergence, Curl and their properties, Line integral, Green’s theorem in plane (without proof), Surface integral, Stoke’s theorem (without proof), Volume Integral, Gauss-Divergence’ theorem (without proof)."
+				},
+				{
+					"code": "100111",
+					"name": "Programming for Problem Solving",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Programming in ANSI C 4th Ed,EBalagurusamy, McGraw Hill Education India",
+						"Private Limited, ISBN-978-9339219666, 7th Edition",
+						"2. The C Programming Language 2e,W. Kernighan / Dennis Ritchie,Pearson Education",
+						"India, 978-9332549449, 2nd Edition",
+						"3. Computer Fundamentals and Programming in C,ReemaThareja,Oxford University Press,",
+						"ISBN- 978-9354977893, 3rd Edition"
+					],
+					"content": "Unit- 1.0 Introduction to Programming 6 hrs\nIntroduction to components of a computer system (disks, memory, processor, where a program is stored and executed, operating system, compilers etc.). Idea of Algorithm: steps to solve logical and numerical problems. Representation of Algorithm: Flowchart/ Pseudo code with examples. From algorithms to programs; source code, variables (with data types) variables and memory locations, Syntax and Logical Errors in compilation, object and executable code.\nUnit- 2.0 Operators, Conditional Branching and Loops 8 hrs\nArithmetic expressions/arithmetic operators, relational operators, logical operators, bitwise operators and precedence.Writing and evaluation of conditionals and consequent branching, Iteration and loops.\nUnit- 3.0 Arrays and String 6 hrs\nArray declaration & initialization, bound checking arrays (1-d, 2-d), character arrays and strings.\nUnit- 4.0 Function, Recursion and Pointers 9 hrs\nFunctions (including using built in libraries), Parameter passing in functions, call by value, passing arrays to functions: Recursion, as a different way of solving problems. Example programs, such as Finding Factorial, Fibonacci series, Ackerman function etc. Idea of pointers, Defining pointers, Use of Pointers in self- referential structures, idea of call by reference.\nUnit- 5.0 User defined Data Types and File handling 8 hrs\nStructure- defining, declaring, initializing; accessing structure members, processing of structure, array of structures, structures within structure, structure and function, type definition; Union— definition, declaration, accessing union members, initializing union. Introduction, file declaration, opening and closing a file, working with text and binary files, I/O operations on file, error handling, random access to files\nUnit- 6.0 Basic Algorithms 5 hrs\nSearching, Basic Sorting Algorithms (Bubble, Insertion and Selection), Finding roots of equations, notion of order of complexity through example programs (no formal definition required)"
+				},
+				{
+					"code": "100106",
+					"name": "Basic Electrical Engineering",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Basic Electrical Engineering, D.P. Kothari et al,McGraw-Hill Education 4th Edition,2019",
+						"2. Electrical and Electronic Technology Edward Hughes, 12th edition, 2016",
+						"3. Principles Electrical Engineering and Electronics, V.K Mehata, Rohit Mehta, S Chand",
+						"and Company 2nd edition, 2015",
+						"4. Basic Electrical Engineering, J. B. Gupta, Katson Publication",
+						"5. A textbook of Electrical Technology B. L. Thereja, A. K. Thereja Vol. 1, 2, and 3 S",
+						"Chand Publication"
+					],
+					"content": "Unit- 1.0 8 hrs\nDC Circuit Analysis and Network Theorems: Concepts of Network, Active and Passive elements, voltage and current sources, concept of linearity and linear network, unilateral and bilateral elements. R L and C as linear elements.Source Transformation. Kirchhoff’s Law, loop and nodal methods of analysis; star – delta transformation; Network Theorems: Superposition Theorem, Thevenin’s Theorem, Norton’s Theorem, Maximum Power Transfer Theorem. (Simple Numerical Problems)\nUnit- 2.0 5 hrs\nMagnetic Circuit: Magnetic circuit concepts, analogy between Electric & Magnetic circuits, Magnetic circuits with DC and AC excitation, Magnetic leakage. B-H curve, Hysteresis and Eddy Current losses, Magnetic circuit calculations.\nUnit- 3.0 8 hrs\nSteady State Analysis of Single-Phase AC Circuits: Sinusoidal, Square and Triangular waveforms–average and effective values, form and peak factors, concept of phasors, phasor representation of sinusoidally varying voltage and current. Analysis of series, parallel, and series – parallel RLC Circuits: Apparent, Active & Reactive Powers, Power factor, causes and problems of low power factor, power factor improvement. Resonance in Series and Parallel Circuits. (Simple Numerical Problems)\nUnit- 4.0 5 hrs\nThree Phase AC Circuits: Three Phase System – its necessity and advantages, meaning of phase sequence and star and delta connections, balanced supply and balanced load, line and phase voltage/ current relations, three phase power and its measurement. (Simple Numerical Problems)\nUnit- 5.0 10 hrs\nIntroduction to DC Machines:Principal, Operation, Construction, and types of DC machines, e.m.f. equation of generator and torque equation of motor. Single Phase Transformer: Principle of Operation, Construction, e.m.f. equation, losses in transformer, efficiency. Three Phase Induction Motor:Principal, Operation, and Construction (Simple Numerical Problems)\nUnit- 6.0 6 hrs\nSoldering- Soldering and desoldering techniques, breadboard wiring, general-purpose PCB soldering/wiring. Wiring-Types of residential and commercial wiring systems, general rules and guidelines for installation, loadcalculation and sizing of wire, rating of main switch, distribution board."
+				},
+				{
+					"code": "100112",
+					"name": "Workshop Practices",
+					"type": "Theory",
+					"credits": 2,
+					"summary": {
+						"lecture": 2,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. HajraChoudhury S.K., HajraChoudhury A.K. And Nirjhar Roy S.K., ―ElementsOf Workshop",
+						"Technology‖, Vol. I 2008 And Vol. Ii 2010, Media PromotersAnd Publishers Private Limited,",
+						"Mumbai.",
+						"2. Kalpakjian S. And Steven S. Schmid, ―Manufacturing Engineering AndTechnology‖, 4th Edition,",
+						"Pearson Education India Edition, 2002.",
+						"3. Gowri P. HariharanAnd A. Suresh Babu,‖Manufacturing Technology – I‖Pearson Education,",
+						"2008.",
+						"4. Roy A. Lindberg, ―Processes And Materials Of Manufacture‖, 4th Edition,Prentice Hall India,",
+						"1998.",
+						"5. Rao P.N., ―Manufacturing Technology‖, Vol. I And Vol. Ii, Tata McgrawhillHouse, 2017."
+					],
+					"content": "Unit-1 Sheet Metal Working: 6 hrs\nSheet material: GI sheets, aluminium, tin plate, copper, brass etc; Tools: steel rule, verniercallipers, micrometer, sheet metal gauge, scriber, divider, punches, chisels, hammers, snips, pliers, stakes etc.; operations: scribing, bending, shearing, punching etc; Product development: hexagonal box with cap, funnel etc.\nUnit-2 Joining: 6 hrs\nClassifications of joining processes; Brazing, Soldering, and Mechanical Joints, Arc welding, Gas welding etc.\nUnit-3 Pattern Making and Foundry Practice: 6 hrs\nPattern material: wood, cast iron, brass, aluminium, waxes etc.; Types of patterns: split, single piece, match plate etc; Tools: cope, drag, core, core prints, shovel, riddle, rammer, trowel, slick, lifter, sprue pin, bellow, mallet, vent rod, furnace etc. Moulding sands: green sand, dry sand, loam sand, facing sand etc., Sand casting: Sand preparation, mould making, melting, pouring, and cleaning\nUnit-4 Fitting Shop 10 hrs\nIntroduction to Fitting; Fitting Tools: Files and their classification, Holding Tools, Cutting Tools, Measuring and Marking Tools, Thread Making Tools, Various Fitting Power Tools; Methods Of Filing: Cross Filling and Draw Filing, Other associated operations Marking. Sawing and Chipping; Safety and Precautions in Fitting Shop.\nUnit-5 Carpentry Shop 7 hrs\nIntroduction to Carpentry Shop; Types of Wood; Seasoning of Wood: Ty[es of Seasoning Methods; Defects in wood; Structure of Wood; Car[entry Tools; Measuring Tools, Marking Tools, Cutting Tools, Planning Tools, Drilling and Boring Tools, Holding Tools, Striking Tools, Auxiliary tools and materials used in Carpentry; Wood working Processes; Carpentry joints; wood Working Machines: Wood Working Lathe, Circular Saw, Thickness Planer, Band sawSafety and precautions in Carpentry Shop.\nUnit-6 Smithy Shop 5 hrs\nIntroduction to Smithy Sho; Forging Tools and Equipment; Forging Operations: Drawing, Upsetting, Swaging, Punching, Drifting, Fullering, Bending; Hot Working Processes: Rolling, Drop Forging, Press Forging, Hot Extrusion, Hot Drawing, Cold Working Process, Safety and Precautions in Smithy Shop."
+				},
+				{
+					"code": "100115P",
+					"name": "Swatch Bharat Mission",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Objectives:\n1. Understanding the importance of cleanliness and sanitation: The course could aim to create awareness about the significance of cleanliness and sanitation in maintaining personal health, environmental sustainability, and community well-being. It could cover topics such as waste management, sanitation practices, and the impact of poor sanitation on public health.\n2. Developing skills for effective waste management: The course could provide training on various waste management techniques, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. It could also emphasize the importance of reducing waste generation and promoting sustainable waste management practices.\n3. Promoting behavioural change towards cleanliness: The course could focus on influencing positivebehavioural change among individuals and communities towards cleanliness. It could include modules on promoting good hygiene practices, creating awareness about the harmful effects of littering and open defecation, and encouraging responsible waste disposal habits.\n4. Creating awareness about Swachh Bharat Mission initiatives: The course could provide information about the Swachh Bharat Mission initiatives and campaigns launched by the Government of India to promote cleanliness and sanitation, such as SwachhSurvekshan, Swachh Bharat Abhiyan, and Clean India Campaign. It could also discuss the progress made, challenges faced, and future prospects of the Swachh Bharat Mission.\n5. Engaging in community participation and advocacy: The course could emphasize the importance of community participation in the Swachh Bharat Mission and provide tools and strategies for engaging with local communities to promote cleanliness and sanitation. It could also encourage advocacy for policy changes and innovations to address sanitation-related issues at the community, regional, and national levels.\n6. Pre-requisite: Nil\n7. Course Outcome:\n8. Increased awareness and knowledge about cleanliness and sanitation: Participants of the course may gain a deeper understanding of the importance of cleanliness and sanitation, including the impact on personal health, environmental sustainability, and community well- being. They may learn about various waste management techniques, hygiene practices, and the initiatives of the Swachh Bharat Mission.\n9. Enhanced skills for effective waste management: Participants may acquire practical skills related to waste management, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. They may also develop skills in reducing waste generation and promoting sustainable waste management practices in their communities or workplaces.\n10. Positive behavioral change towards cleanliness: The course may influence participants to adopt positive behavioral changes towards cleanliness, such as avoiding littering, practicing good hygiene habits, and promoting responsible waste disposal. Participants may develop a sense of responsibility towards maintaining cleanliness in their surroundings and actively contribute towards creating a cleaner environment.\n11. Increased community participation and advocacy: Participants may become actively engaged in community participation and advocacy efforts related to cleanliness and sanitation. They may collaborate with local communities, government bodies, and non- governmental organizations (NGOs) to raise awareness, implement cleanliness initiatives, and advocate for policy changes or innovations to address sanitation-related issues.\n12. Contribution towards Swachh Bharat Mission objectives: Participants may contribute towards the objectives of the Swachh Bharat Mission, such as promoting cleanliness, ensuring proper waste management, and eliminating open defecation. They may actively participate in Swachh Bharat Mission campaigns, initiatives, and activities, and make a positive impact on their communities and society at large.\n13. List of Reports:\n14. Any topics related to Swatch Bharat Mission"
+				},
+				{
+					"code": "100110P",
+					"name": "Engineering Physics Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments\n1. Determination of the capacitance and permittivity of the given material.\n2. Determination of e/m of electron.\n3. Determination of Planck’s constant and Photoelectric Work Function using Photoelectric cell.\n4. Verification of inverse square law using photocell.\n5. Determination of Wavelength of (He-Ne) LASER using Diffraction Grating Method.\n6. Calculation of Energy Band Gap of a semiconductor.\n7. Determination of Dielectric constant using resonance method.\n8. Determination of Wavelength of Sodium light by measuring the diameter of the Newton’s Ring.\n9. Determination of curvature of convex surface of a lens by Newton’s ring.\n10. Verification of existence of Bohr’s Energy level with Frank-Hertz apparatus.\n11. Determination of the Earth’s horizontal magnetic field intensity and magnetic Moment of a magnet by employing magnetometer.\n12. Verification of Faraday’s Law and Lenz’s Law of Electromagnetic Induction."
+				},
+				{
+					"code": "100111P",
+					"name": "Programming for Problem Solving Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments\n1. Tutorial 1: Problem solving using computers: Lab1: Familiarization with programming environment\n2. Tutorial 2: Variable types and type conversions: Lab 2: Simple computational problems using arithmetic expressions\n3. Tutorial 3: Branching and logical expressions: Lab 3: Problems involving if-then-else structures\n4. Tutorial 4: Loops, while and for loops: Lab 4: Iterative problems e.g., sum of series\n5. Tutorial 5: 1D Arrays: searching, sorting: Lab 5: 1D Array manipulation\n6. Tutorial 6: 2D arrays and Strings Lab 6: Matrix problems, String operations\n7. Tutorial 7: Functions, call by value: Lab 7: Simple functions\n8. Tutorial 8 &9: Numerical methods (Root finding, numerical differentiation, numerical integration): Lab 8 and 9: Programming for solving Numerical methods problems\n9. Tutorial 10: Recursion, structure of recursive calls Lab 10: Recursive functions\n10. Tutorial 11: Pointers, structures and dynamic memory allocation Lab 11: Pointers and structures\n11. Tutorial 12: File handling: Lab 12: File operations"
+				},
+				{
+					"code": "100106P",
+					"name": "Basic Electrical Engineering Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments\n1. Verification of Kirchhoff’s laws.\n2. Verification of Superposition Theorem.\n3. Verification of Thevenin’s Theorem.\n4. Verification of Norton’s Theorem.\n5. Verification of Maximum Power Transfer Theorem.\n6. Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor.\n7. Star to Delta and Delta to Star conversion of the three circuit.\n8. Determination of Efficiency by load test of a 1 – Ø Transformer.\n9. To study the typical BHK house wiring\n10. Study of safety precautions while working on electrical installations and necessity of earthing"
+				},
+				{
+					"code": "100112P",
+					"name": "Workshop Practices Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform all Experiments List of Practical:\n1. Learn and apply of different fitting tools –like work holding, marking, measuring, cutting, finishing and miscellaneous. Student will also prepare the report with sketch, specifications and applications of fitting tools demonstrated.\n2. Prepare one simple and another male-female type fitting jobs as per given drawings- 2 jobs\n3. Learn and apply of different tin smithy tools. Student will also prepare the report with sketch, specifications and applications of tin smithy tools demonstrated.\n4. Learn and apply of welding equipments and making minimum one model.\n5. Learn and apply of foundry tools and making minimum one model.\n6. Learn and apply of carpentry tools and making minimum one model.\n7. Learn and apply of Sheet Metal tools and making minimum one model.\n8. Learn and apply of Lathe Tools & operations for making a job.\n9. Learn and apply the application of measuring tools.\n10. Learn and apply any casting process for making a model"
+				}
+			]
+		},
+		"2": {
+			"subjects": [
+				{
+					"code": "100215",
+					"name": "Engineering Chemistry",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. University Chemistry, B.H. Mahan,Pearson",
+						"2. Chemistry, principles and application, M.J. Sienko and R.A. Plane, McGraw Hill",
+						"International",
+						"3. Fundamentals of molecular Spectroscopy, C.N. Banwell , McGraw Hill International",
+						"4. Engineering Chemistry (NPTEL Web- Book), B.L. Tembe, Kamaluddin and M.S.",
+						"Krishnan, NPTEL",
+						"5. Physical Chemistry, P.W. Atkins, Oxford University Press",
+						"6. A text book of engineering chemistry, S. Chawala, DhanpatRai Publication",
+						"7. General Chemistry Part 1, R. Sarkar, New Central Book agency"
+					],
+					"content": "Unit 1.0- Atomic and Molecular Structure 8 hrs\nElectromagnetic radiations, Dual nature of electron and Heisenberg uncertainty Principle.Photoelectric effect, Planck's theory.Principles for the combination of atomic orbitals to form a molecular diagram of molecular orbitals.Bent's rule, VSEPR theory (typical example) co- ordination numbers and geometries. Isomerism in transition metal compounds. Metal Carbonyls; Synthesis and Structure.\nUnit 2.0- Spectroscopy 6 hrs\nPrinciple of rotational and vibrational spectroscopy, selection rule for application in diatomic molecules, elementary idea of electronic spectroscopy, UV-VIS spectroscopy with related to rules and its applications. Basic Principle of nuclear Magnetic resonance spectroscopy with applications.\nUnit 3.0 -Electrochemistry and Fuels 6 hrs\nNernst equation, EMF and electrochemical cell, the introduction of corrosion, corrosion mechanism, types of corrosion, water line corrosion, stress corrosion, pitting corrosion, Lead acid storage cell, leclanche cell. Calorific value of fuels, proximate and ultimate analysis of coals, fuel cells, Bio fuels.\nUnit 4.0- Water Chemistry 8 hrs\nHardness of water, estimation of water hardness by EDTA and Alkalinity method.Removal of the hardness of water- soda lime process, zeolite process, Ion exchange process, Boiler problem, sludge, and scale formation, priming and foaming, Boiler corrosion, and Caustic embrittlement.\nUnit 5.0 - Polymer and Plastics 8 hrs\nPolymerization techniques (free radical, ionic, and co-ordination mechanism)Preparation properties, and technical application of phenol-formaldehyde resins, elastomers, synthetic rubbers (Buna-S, Buna-N, neoprene). Inorganic polymers, Silicones, adhesives, epoxy resins. the structural difference between thermoplastic and thermosetting Plastics, the Importance of commercially important thermoplastics and thermosets; Poly ethylene, Polyvinyl chloride, Polystyrene.\nUnit 6.0- Organic Reactions and Synthesis of A Drug Molecul 6 hrs\nIntroduction to intermediate and reaction involving Substitution, addition, elimination, oxidation- reduction. Diels Elder cyclization and epoxide ring opening reactions, synthesis of commonly used drug molecules like aspirin."
+				},
+				{
+					"code": "100202",
+					"name": "Engineering Mathematics– II",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"1. Advanced Engineering Mathematics, Kreyszig Erwin, John Wiley and Sons,10th",
+						"Edition,2020 ISBN:978-0470-45836-5",
+						"2. Advanced Engineering Mathematics, Dass H.K., S Chand and Company pvt.Ltd.,22nd",
+						"Edition,2018 ISBN:978-93-5283-718-2",
+						"3. Higher Engineering Mathematics, Grewal B.S., Khanna Publishers,44th Edition,2023",
+						"ISBN:9788174091154",
+						"4. Complex Variables (Theory and Applications), Kasana H.S., PHI,2nd Edition.2015",
+						"ISBN:978-81-203-2641-5",
+						"5. A Text Book of Engineering Mathematics, Bali N.P., Goyal Manish Laxmi",
+						"Publications,9th Edition,2014",
+						"6. Higher Engineering Mathematics, Ramana B.V., Tata McGraw Hill New Delhi, 11th",
+						"Reprint, 2010, ISBN-10 007063419X ISBN-13 978- 0070634190",
+						"7. Differential Equations, Ross S.L.,Wiley Publications,3rd edition,2016 ISBN:978-81-",
+						"265—1537-0",
+						"8. Advanced Differential Equations, Raisinghania M.D., S.Chand and Company",
+						"PVT.LTD.,18th Edition,2015 ISBN:978-81-219-0893-1",
+						"9. Schaum’s Outlines Complex Variables, Spiegel Murray R, Lipschutz Seymour, Schiller J",
+						"John and Spellman Dennis, MC Graw Hill Education Private Ltd.2nd Edition,2010",
+						"ISBN:978-0-07-008538-1"
+					],
+					"content": "Unit- 1.0 Complex Analysis – I 6 hrs\nFunctions of complex variable, limit, Continuity, Differentiability, Analytic function, Cauchy- Riemann Equations in Cartesian and polar form, harmonic function and harmonic conjugate.\nUnit- 2.0 Complex Analysis – II 8 hrs\nLine Integral, contour integrals, Cauchy theorem, Cauchy’s Integral formula(without proof), Taylors series, zero of analytic functions, singularities, Laurent’s series, residue, Cauchy residue theorem(without Proof) and its applications.\nUnit- 3.0 Ordinary Differential Equations 8 hrs\nLinear differential equations of nth Order with constant coefficients, solution of Homogeneous and Non-Homogeneous Equations, Equations with variable coefficients, Cauchy- Euler Equations, Method of Variation of Parameters.\nUnit- 4.0 Sequence and Series 6 hrs\nIntroduction of Sequence and Series, Nature of series Tests of convergence of Series: Comparison test, D’Alembert ratio test, Cauchy’s Root test, Raabe’s test, Logarithmic test, Cauchy’s condensation test.\nUnit- 5.0 Laplace Transform 8 hrs\nLaplace Transform, Existence theorem, properties of Laplace Transform, Laplace Transform of Periodic functions, Inverse Laplace Transform, convolution theorem. Application of Laplace Transform to solve Ordinary differential equations.\nUnit- 6.0 Fourier Series 6 hrs\nFourier Series, Fourier Series for odd and even functions, Half range sine and cosine series, Parseval’s theorem."
+				},
+				{
+					"code": "100216",
+					"name": "Communicative English",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. English language and communication skills for engineers, Sanjay Kumar,Pushplata,",
+						"Oxford university Press",
+						"2. Communicative English for Technical student, Dr. BijayBhadur Singh and Dr.",
+						"KalpanaSinha, Foundation publishing House (FPM)",
+						"University Press",
+						"4. A course in Listening & Speaking, V. Sasi Kumar ,P. KiranmaiDutt and",
+						"GeethaRajeevan, Foundation Books"
+					],
+					"content": "Unit-1.0: Vocabulary Building 7 hrs\nNature of Word Formation; Root Word and Morpheme; Prefix and Suffix; Foreign Expressions in English; Synonym and Antonym; Homophone and Homograph; Abbreviation and Acronym.\nUnit-2.0: Basic Writing Skills 7 hrs\nParts of Speech: Types of Words; Structures of Sentence; Kind of Sentence; Phrase and Clause; Punctuation Marks; Capitalization; Tenses: Present, Past and Future; Voices: Active and Passive; Formation of Questions using Primary Auxiliaries, Modals and Wh-Words.\nUnit-3.0: Common Errors in English 7 hrs\nArticles; Prepositions; Modifiers; Subject-Verb Agreement; Noun-Pronoun agreement; Redundancies; Cliches; Spelling Error.\nUnit-4.0: Principles of Appropriate Writi 7 hrs\nDefining: Describing, Classifying and Exemplifying; Introduction, Body, and Conclusion; References, Quotations and Illustrations; Organizing the Paragraphs in a Document; 7Cs of the Professional Writing: Clear, Concise, Concrete, Correct, Coherent, Complete and Courteous.\nUnit-5.0: Practices of Formal Writing 7 hrs\nFormal Letter: Cover-Letter and Application; Resume Writing; Report Writing; Minutes of Meeting; Memorandum; Notice; Essay Writing: Personal and Impersonal; Email Writing Etiquettes; Article Writing; Writing for Current Social Media.\nUnit-6.0: Comprehension of Written English 7 hrs\nOf Studies (Essay) by Sir Francis Bacon; The Sun Rising (Poem) by John Donne; The Last Leaf (Story) by O Henry; Unseen/Untaught Passage."
+				},
+				{
+					"code": "100220P",
+					"name": "Sports/Yoga/NCC/NSS",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Course Objectives: (a) Encouraging creativity and innovation: The course could aim to foster a culture of creativity and innovation among engineering students. It could provide opportunities for students to generate and develop new ideas, think critically, and come up with innovative solutions to real- worldproblems. This objective could be achieved through brainstorming sessions, design thinking exercises, and hands-on projects. (b) Enhancing problem-solving skills: The course could focus on enhancing the problem-solving skills of engineering students. It could provide training on various problem-solving techniques, such as root cause analysis, critical thinking, and decision-making. Students may learn how to identify and analyse complex problems, develop feasible solutions, and implement them effectively. (c) Developing project management skills: The course could aim to develop project management skills among engineering students. It could cover topics such as project planning, scheduling, budgeting, and risk management. Students may learn how to manage resources, communicate effectively, and work collaboratively in a project-based environment. (d) Promoting interdisciplinary collaboration: The course could encourage interdisciplinary collaboration among engineering students. It could provide opportunities for students from different engineering disciplines to work together on innovative projects. This could foster cross- disciplinary learning, encourage diverse perspectives, and promote teamwork and collaboration skills. (e) Facilitating practical application of engineering concepts: The course could focus on the\npractical application of engineering concepts and principles. It could provide students with opportunities to apply their theoretical knowledge to real-world projects, prototypes, or simulations. Students may learn how to translate engineering theories into practical solutions and develop hands-on experience in implementing innovative projects. Pre-requisite: Nil Course Outcome:\n1. Developed innovative projects: Students may have successfully developed innovative projects that demonstrate their creativity, problem-solving skills, and technical competence. These projects could be prototypes, models, simulations, or practical solutions to real-world problems, showcasing their ability to apply engineering concepts in a creative and innovative manner.\n2. Improved critical thinking and problem-solving skills: Students may have honed their critical thinking and problem-solving skills through various course activities, such as brainstorming, design thinking, and project development. They may have learned to analyse complex problems, identify viable solutions, and make informed decisions based on technical, economic, and social considerations.\n3. Enhanced project management and teamwork skills: Students may have gained practical experience in managing projects, including planning, scheduling, budgeting, and risk management. They may have learned how to work effectively in a team, collaborate with diverse team members, and communicate project progress and results professionally.\n4. Increased interdisciplinary knowledge and collaboration: Students may have gained exposure to interdisciplinary concepts and collaborated with peers from different engineering disciplines. They may have learned to appreciate diverse perspectives, leverage interdisciplinary knowledge, and work collaboratively to develop innovative solutions that integrate multiple domains of engineering.\n5. Cultivated a mindset of innovation and entrepreneurship: Students may have developed a mindset of innovation and entrepreneurship, recognizing the importance of creativity, adaptability, and continuous improvement in engineering practice. They may have learned to identify opportunities, think critically, and take risks to develop and implement innovative projects with commercial or societal potential. List of Reports: Any topics related to innovative project."
+				},
+				{
+					"code": "100209",
+					"name": "Basic Electronics",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Electronic Device & Circuit theory Boylestad and Nashelsky Pearson",
+						"2. Electronic Principles Albert Malvino& Davis J. Bates TMH",
+						"3. Digital logic and computer design M. Morris Mano PHI",
+						"4. Electronic Devices and Circuit David A Bell Oxford",
+						"5. Microelectronic Circuit: Theory and Application Sedra and Smith Oxford"
+					],
+					"content": "Unit- 1.0 Semiconductor diode 9 hrs\nIntrinsic and extrinsic types, energy band in intrinsic and extrinsic Semiconductor, equilibrium carrier concentration Direct and indirect band-gap semiconductor. Ideal diode Construction, p-n junction under open circuit, drift, and diffusion current, built in potential, forward bias, and reverse bias condition. Effect of temperature, static and dynamic resistance, breakdown mechanism in diode, Junction capacitance.Zener diode Working, VI characteristics Light emitting Diode, Photodiode, Solar cell.\nUnit- 2.0 Diode Applications 7 hrs\nHalf wave rectifiers, Full wave rectifiers & Rectifier with filters, Zener diode application as voltage regulator, Clipping and Clamping circuits, Voltage doubler (includes numerical on rectifier, filter, and Zener regulator)\nUnit- 3.0 Bipolar Junction Transistor 8 hrs\nBJT introduction: Construction, Symbol, and types (PNP and NPN), working of BJT, BJT configuration and characteristics, Load line analysis, Operating point, Need for Biasing, different Biasing circuits, Bias stability. BJT as a switch &Amplifier, low frequency small signal model of BJT, CE amplifier with and without feedback\nUnit- 4.0 Field Effect Transistor 6hrs\nGeneral characteristics of FET; Comparison between FET & BJT; JFET: Construction, Principle of Operation, Shockley equation. Outputand transfer characteristics; Depletion & Enhancement Type MOSFET: Construction, Principle of operation. Output and transfer characteristics;\nUnit- 5.0 Operational Amplifier 6 hrs\nBlock diagram of an Operational amplifier, schematic symbol, characteristics of an ideal and practical operational amplifier, concept of virtual ground, Inverting and non-inverting amplifier, voltage follower, adder, subtractor, integrator and differentiator.\nUnit- 6.0 Fundamental of Digital Electronics 6 hrs\nIntroduction to number system: octal, Hexadecimal, Binary numbers, Binary addition using 1’s and 2’s complement method. logic gates, Universal gates, Boolean Algebra, De Morgan’s theorems, Simplification, and realization of Boolean expression using basic gates and NAND gates."
+				},
+				{
+					"code": "100217",
+					"name": "Engineering Graphics and Design",
+					"type": "Theory",
+					"credits": 1,
+					"summary": {
+						"lecture": 1,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Engineering Drawing, N.D. Bhatt, Charotar Publishing House, 53rd Edition, ISBN: 978-",
+						"9380358277",
+						"2. A Textbook of Engineering Drawing, R.K. Dhawan, S. Chand Publishing, Revised",
+						"Edition, ISBN: 978-8121929571",
+						"3. Engineering Drawing and Graphics, K. Venugopal, V. Prabhu Raja, New Age",
+						"International Publishers, 3rd Edition, ISBN: 978-8122430120",
+						"4. Engineering Graphics with AutoCAD, D.M. Kulkarni, A.P. Rastogi, A.K. Sarkar, PHI",
+						"Learning Pvt. Ltd., 1stEdition, ISBN: 978-8120337834"
+					],
+					"content": "Unit- 1.0: Introduction to Engineering Drawing 7hrs\nPrinciples of Engineering Graphics and Their Significance, Usage of Drawing Instruments, Lettering, Conic Sections including the Rectangular Hyperbola (General Method Only); Cycloid, Epicycloid, Hypocycloid and Involute; Scales Plain, Diagonal and Vernier Scales\nUnit- 2.0 Orthographic Projections 7hrs\nPrinciples of Orthographic Projections - Conventions -Projections of Points and Lines Inclined to Both Planes; Projections of Planes Inclined Planes Auxiliary Planes.\nUnit- 3.0 Projections of Regular Solids 7hrs\nTypes of Solids, Projects of Solids (Prism, pyramids, cone, and cylinder): Inclined to Both the Planes- Auxiliary Views; Draw Simple Annotation, Dimensioning and Scale.\nUnit- 4.0 Sections and Sectional Views of Right Angular Solids 7hrs\nSection of Solids (Prism, Cylinder, Pyramid, Cone), Auxiliary Views; Development of Surfaces Of Right Regular Solids- Prism, Pyramid, Cylinder And Cone; Draw The Sectional Orthographic Views of Geometrical Solids, Objects From Industry And Dwellings (Foundation To Slab Only).\nUnit- 5.0 Isometric Projections 7hrs\nIsometric Views, Compound Solids; Principles of Isometric Projection Isometric Scale, Conventions; Isometric Views of Lines, Planes, Simple and Conversion of Isometric Views toOrthographic Views And Vice-Versa, Conventions.\nUnit- 6.0 Overview of Computer Graphics 7hrs\nListing the Computer Technologies that Impact on Graphical Communication, Demonstrating Knowledge of the Theory of CAD Software [Such As: The Menu System, Toolbars (Standard, Object Properties, Draw, Modify And Dimension), Drawing Area (Background, Crosshairs, Coordinate System), Dialog Boxes And Windows, Shortcut Menus (Button Bars), The Command Line (Where Applicable), The Status Bar, Different Methods of Zoom as Used in CAD, Select and Erase Objects.; Isometric Views of Lines, Planes, Simple And Compound Solids."
+				},
+				{
+					"code": "100215P",
+					"name": "Engineering Chemistry Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments\n1. To estimate hardness of water by alkalinity method\n2. To estimate hardness of water by EDTA method\n3. To remove hardness of water by ion exchange method\n4. Determination of pH of a given acid solution using a standard sodium hydroxide solution\n5. Determination of surface tension and viscosity\n6. Chemical analysis of salt (Acid radical and basic radical)\n7. Adsorption of acetic acid by charcoal\n8. Test of adulteration of fat butter, sugar, turmeric powder, chilli powder and pepper\n9. Saponification/ acid value of an oil\n10. Identification of organic substances and their functional groups\n11. Potentiometric determination of redox potentials and emf\n12. Synthesis of drug/ polymer like ASPRIN/ Urea- formaldehyde resin\n13. Thin layer chromatography\n14. Analysis of flue gas by orsatapparatus"
+				},
+				{
+					"code": "100216P",
+					"name": "Communicative English Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments Introduction: Language Lab of English includes Listening Comprehension, Reading Comprehension, Speaking Skills: Phonetics, International Phonetic Alphabet Symbols (IPAS), Sounds: Vowels and Consonants, Pronunciation, Intonation, Stress and Rhythm, Just A Minute Technique (JAM), Communication: Verbal and Non-Verbal; Ethical Usage of Artificial Intelligence, Self-Introduction: Social, Academic and Professional; Interview: Online and Vocabulary Activities.\n1. Listening Comprehension and Speed (Software)\n2. Reading Comprehension and Speed (Software)\n3. Pronunciation: Learning and Test (Software)\n4. Self-Introduction: Social, Academic and Professional\n5. English Typing: Microsoft Word Document (MS Word), and Microsoft Power Point Presentation (PPT)\n6. Oral Presentation\n7. Interview: Online and Offline\n8. Just A Minute Technique (JAM) and Extempore\n9. Debate\n10. Group Discussion\n11. Activities: Role Play, Peer Activities, and Group Activities\n12. Anchoring and Addressing: an Assembly, a Meeting, a Seminar, a Party"
+				},
+				{
+					"code": "100209P",
+					"name": "Basic Electronics Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments\n1. Study of Cathode Ray Oscilloscope (CRO) (a) Measurement of amplitude, time period and frequency of unknown continuous signals.\n2. Identification of active and passive component.\n3. Study the characteristics of P-N junction diode under (a) Forward bias, and (b) Reverse bias.\n4. Study of clipping circuits and clamping circuits.\n5. To recognize a half -wave rectifier and full-wave rectifier using sinusoidal voltage.\n6. Study of Full wave rectifier using Capacitor filter.\n7. To recognize voltage regulator using Zener diode.\n8. Study of the input and output characterization of common base (CB) bipolar junction transistor.\n9. Study the input and output characterization of common emitter (CE) bipolar junction transistor.\n10. Study the output and transfer characteristics of JFET (Junction field effect transistor)\n11. Study of operational amplifier as (i) Inverting (ii) Non-inverting amplifier.\n12. Study of operational amplifier as (i) Integrator (ii) Differentiator.\n13. Construction and verification of all other gate (AND, OR, NOT, XOR) using only a) NOR gate b) only NAND gate."
+				},
+				{
+					"code": "100217P",
+					"name": "Engineering Graphics and Design Lab",
+					"type": "Practical",
+					"credits": 2,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 4
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments\n1. (Which includes dimensioning methods, different types of line, construction of different polygon, divide the line and angle in parts, use of stencil)\n2. Construction of Plane, Diagonal &Vernier Scales.\n3. Construction of Ellipses, Parabolas, and Hyperbolas using the general method.\n4. Construction of cycloid, epicycloid, hypocycloid, and involute of a circle.\n5. Projection of Points and Lines inclined to both planes.\n6. Projections of Planes (e.g., rectangular, triangular) in inclined positions.\n7. Projection of Solids (prisms,pyramids, cones, and cylinders)\n8. Drawing of Sections of Prisms, Cylinders, Pyramids, and Cones.\n9. Development of Surfaces for prisms, pyramids, cylinders, and cones.\n10. Construction of Isometric views of lines, planes, and simple solids.\n11. Introduction to CAD Software.\n12. Use of CAD software to draw basic geometric shapes, apply dimensions, and modify objects."
+				}
+			]
+		},
+		"3": {
+			"subjects": [
+				{
+					"code": "103301",
+					"name": "Electrical Circuit Analysis",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"1. M. E. Van Valkenburg, “Network Analysis”, Prentice Hall, 2006.",
+						"2. D. Roy Choudhury, “Networks and Systems”, New Age International Publications, 1998.",
+						"3. W. H. Hayt & J. E. Kemmerly, “Engineering Circuit Analysis”, McGraw-Hill Education, 2013.",
+						"4. C. K. Alexander and M. N. O. Sadiku, “Electric Circuits”, McGraw-Hill Education, 2004.",
+						"5. K. V. V. Murthy and M. S. Kamath, “Basic Circuit Analysis”, Jaico Publishers, 1999",
+						"6. Kuo, Franklin. Network analysis and synthesis. John Wiley & Sons, 2006"
+					],
+					"content": "Unit-1.0: Introduction to Electrical Circuit Analysis 5 hrs\nCircuit Elements, Linear and Non-Linear Devices, Active and Passive Devices, Unilateral and Bilateral Devices, Energy Sources (Voltage Source & Current Source), Source Transformation, Analysis with dependent current and voltage sources. Node and Mesh Analysis. Concept of duality and dual networks.\nUnit-2.0: Network Theorems 8 hrs\nSuperposition theorem, Thevenin theorem, Norton theorem, Maximum power transfer theorem, Reciprocity theorem, Compensation theorem, Millman‟s Theorem, Tellegen‟s Theorem, Substitution Theorem.\nUnit-3.0: Solution of First and Second Order Networks 8 hrs\nSolution of first and second order differential equations for Series and parallel R-L, R-C, R-L-C circuits, initial and final conditions in network elements, forced and free response, time constants, steady state and transient state response.\nUnit-4.0: Electrical Circuit Analysis Using Laplace Transforms 8 hrs\nReview of Laplace Transform, Analysis of electrical circuits using Laplace Transform for standard inputs, inverse Laplace transform, transformed network with initial conditions. Transfer function representation. Poles and Zeros. Series and parallel resonances\nUnit-5.0: Two-Port Network 7 hrs\nTwo Port Networks, terminal pairs, relationship of two port variables, impedance parameters, admittance parameters, transmission parameters, and hybrid parameters, interconnections of two port networks\nUnit-6.0: Network Graph and Applications 6 hrs\nNetwork Graph and their applications in Network Analysis."
+				},
+				{
+					"code": "103302",
+					"name": "Analog Electronics",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"1. A. S. Sedra and K. C. Smith, “Microelectronic Circuits”, New York, Oxford University Press, 1998.",
+						"2. J. V. Wait, L. P. Huelsman and G. A. Korn, “Introduction to Operational Amplifier theory and",
+						"applications”, McGraw Hill U. S., 1992.",
+						"3. J. Millman and A. Grabel, “Microelectronics”, McGraw Hill Education, 1988.",
+						"4. P. Horowitz and W. Hill, “The Art of Electronics”, Cambridge University Press,1989.",
+						"5. P.R. Gray, R.G. Meyer and S. Lewis, “Analysis and Design of Analog Integrated Circuits”, John",
+						"Wiley & Sons, 2001.",
+						"6. “Fundamentals of Microelectronics”, B. Razavi, 2nd Edition.",
+						"7. “Microelectronic Circuits”, A. S. Sedra and K. C. Smith, 7th Edition"
+					],
+					"content": "Unit-1.0: Diode circuits 6 hrs\nIntroduction: Example of an electronic system, basic concept of signal, noise etc. P-N junction diode, I- V characteristics of a diode; review of half-wave and full-wave rectifiers, Zener diodes, clamping and clipping circuits.\nUnit-2.0: BJT circuits 8 hrs\nStructure and I-V characteristics of a BJT; BJT as a switch. BJT as an amplifier: small-signal model, biasing circuits, Current mirror: Basic topology and its variants, V-I characteristics, output resistance and minimum sustainable voltage (VON), maximum usable load, generation of current source.; common- emitter, common-base and common collector amplifiers; Small signal equivalent circuits, high-frequency equivalent circuits, Miller‟s theorem.\nUnit-3.0: MOSFET circuits 8 hrs\nMOSFET structure and I-V characteristics. MOSFET as a switch. MOSFET as an amplifier: small signal model and biasing circuits, common-source, common-gate and common-drain amplifiers; small signal equivalent circuits-gain, input and output impedances, trans-conductance, high frequency equivalent circuit.\nUnit-4.0: Differential, multi-stage and operational amplifiers 6 hrs\nVoltage amplifier, current amplifier, trans-conductance amplifier and trans-resistance amplifier;Differential amplifier; power amplifier; direct coupled multi-stage amplifier; internal structure of an operational amplifier, ideal op-amp, non-idealities in an op-amp (Output offset voltage, input bias current, input offset current, slew rate, gain bandwidth product), Frequency Response of the amplifier.\nUnit-5.0: Linear applications of op-amp 8 hrs\nIdealized analysis of op-amp circuits. Inverting and non-inverting amplifier, differential amplifier, +instrumentation amplifier, integrator, active filter, P, PI and PID controllers and lead/lag compensator using an op-amp, voltage regulator, Feedback amplifiers and Oscillators design (Wein bridge and phase shift); multivibrators (astable, monostable & bistable); Analog to Digital Conversion.\nUnit-6.0: Nonlinear applications of op-amp 6 hrs\nHysteretic Comparator, Zero Crossing Detector, Square-wave and triangular-wave generators. Precision rectifier, peak detector. Monoshot; Design of two-stage amplifier, frequency compensation, generalized structure of multistage amplifier."
+				},
+				{
+					"code": "103303",
+					"name": "Electrical Machine-1",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [],
+					"content": "Unit-1.0: Basic Concept of Magnetic Circuits 4 hrs\nConcepts of MMF, Flux and reluctance, Electromagnetic induction phenomenon, Magnetic Circuit and application, Elementary machine working principle as motor and generator, Magnetic curves and core losses.\nUnit-2.0: Single-Phase Transformers 8 hrs\nConstructional features of Ideal transformer and practical transformer, Principles of operation, Emf equation. Operation on load - magnetizing and core loss components phasor diagrams, equivalent circuit, and determination of its parameters from O.C and S.C tests; Per unit parameter values and their importance; Regulation, efficiency, and all-day efficiency expressions and calculations. Sumpner Test.\nUnit-3.0: Three-Phase Transformers 8 hrs\nConstructional features as a single unit and a bank of three units. Vector groups for various connections: Scott connection –Open delta operation, Conversion from three-phase to one- phase, two-phase, and multi-phase, Per-phase analysis; tertiary winding. Parallel operation and load sharing Types of Transformer: Auto Transformer (saving of copper –rating of autotransformers), Pulse Transformer, Isolation Transformer, Grounding Transformer, power transformer, distribution transformer\nUnit-4.0: Basics of Electrical Rotating Machine 6 hrs\nElectromechanical energy conversion Principle: Field energy and co-energy, Torque and force in singly excited and multiple excited electromechanical systems and applications. Windings: Types of winding in DC and AC Machine, MMF in field and armature Winding of machines Working Principle: Elementary Machine, Torque generation in DC and AC Machine, types of Losses and efficiency in rotating machine\nUnit-5.0: DC Machines- Construction and types 8 hrs\nArmature windings –simplex lap and wave windings, pole pitch, coil span, winding pitch, commutator pitch--equalizer ring connections-power flow diagram-numerical problems- dummy coils – methods of setting brushes in DC machines. Basic construction of a DC machine, magnetic structure - stator yoke, stator poles, pole-faces or shoes, air gap, and armature core, Commutation; Type of Commutation. air gap flux density distribution, and armature MMF wave. Type of DC generators and motors; Methods of excitation – separately excited, shunt, series and compound machines. Induced EMF: EMF equations- electromagnetic torque- numerical problems. Derivation of the back EMF equation and torque equation. Armature Reaction; demagnetizing and cross-magnetizing armature MMF; variation with brush position; compensating winding; interpoles-numerical problems\nUnit-6.0: DC Machine – Operation & Performance 8 hrs\nArmature circuit equation for DC Motor and DC Generator; Types of field excitations, Open circuit characteristic of DC Generator, voltage build-up in a DC Generator, critical field resistance, and critical speed; V-I characteristics and torque-speed characteristics of DC Motors; DC Motor Speed Control. Testing of DC motors -Swinburne's test; Hopkinson's test and retardation test; Calculation of losses and efficiency; DC motor applications. Parallel operation – parallel operation of shunt series and compound generations Starting of DC motors- starters –2 point, 3point and 4 point starters; Speed control of DC motors - field control, armature control; Braking of DC motors- Power flow diagram – losses and efficiency. Text /Reference:\n1. Principles of Electric Machines and Power Electronics, P.C. Sen, 2nd Edition, 2007, Wiley Publication\n2. Electrical Machinery, A. E. Fitzgerald, C. Kingsley, S. D. Umans; 6th Edition, 2003, Tata McGraw-Hill\n3. AC Machines: Puchstein, Lloyd &Hunte\n4. Electrical Machinery, P. S. Bimbhra, Khanna Publishers\n5. Electric Machines, I. J. Nagrath& D. P. Kothari, Tata McGraw-Hill Publication"
+				},
+				{
+					"code": "103304",
+					"name": "Engineering Mathematics-III (PDE, Prob/stat)",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"1. Erwin Kreyszig, Advanced Engineering Mathematics, 9thEdition, John Wiley & Sons, 2006.",
+						"2. N.P. Bali and Manish Goyal, A text book of Engineering Mathematics, Laxmi Publications.",
+						"3. P. G. Hoel, S. C. Port and C. J. Stone, Introduction to Probability Theory, Universal Book Stall.",
+						"4. S. Ross, A First Course in Probability, 6th Ed., Pearson Education India,2002."
+					],
+					"content": "Unit 1.0 7 hrs\nDefinition of Partial Differential Equations, First order partial differential equations, solutions of first order linear PDEs; Solution to homogenous and non-homogenous linear partial differential equations of second order by complimentary function and particular integral method.\nUnit 2.0 8 hrs\nSecond-order linear equations and their classification, Initial and boundary conditions, D‟Alembert‟s solution of the wave equation; Duhamel‟s principle for one dimensional wave equation. Heat diffusion and vibration problems, Separation of variables method to simple problems in Cartesian coordinates. The Laplacian in plane, cylindrical and spherical polar coordinates, solutions with Bessel functions and Legendre functions. One dimensional diffusion equation and its solution by separation of variables\nUnit 3.0 8 hrs\nProbability spaces, conditional probability, independence; Discrete random variables, Independent random variables, the multinomial distribution, Poisson approximation to the binomial distribution, infinite sequences of Bernoulli trials, sums of independent random variables; Expectation of Discrete Random Variables, Moments, Variance of a sum, Correlation coefficient, Chebyshev‟s Inequality.\nUnit 4.0 5 hrs\nContinuous random variables and their properties, distribution functions and densities, normal, exponential and gamma densities.Bivariate distributions and their properties, distribution of sums and quotients, conditional densities, Bayes‟ rule.\nUnit 5.0 - 7hrs\nBasic Statistics, Measures of Central tendency: Moments, skewness and Kurtosis – Probability distributions: Binomial, Poisson and Normal – evaluation of statistical parameters for these three distributions, Correlation and regression – Rank correlation. Curve fitting by the method of least squares- fitting of straight lines, second degree parabolas and more general curves.\nUnit 6.0- 7 hrs\nTest of significance: Large sample test for single proportion, difference of proportions, Tests for single mean, difference of means, and difference of standard deviations. Test for ratio of variances – Chi- square test for goodness of fit and independence of attributes."
+				},
+				{
+					"code": "103305",
+					"name": "Engineering Mechanics",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"1. Engineering Mechanics statics and dynamics R. C. Hibbeler Pearson Publication, 12th Edition.",
+						"ISBN-10: 0-13-814929-1 ISBN-13:978-0-13-814929-1",
+						"2. Engineering Mechanics statics and dynamics, J. L. Meriam and L. G. Craige, John Willey and",
+						"Son‟s publication. 9th Edition. ISBN: 978-1-119-39098-5",
+						"3. Engineering Mechanics, S. P. Timoshenko, D. H. Young, J. V. Rao &S.Pati, McGraw- Hill",
+						"publication, 5th Edition ISBN-10:9781259062667",
+						"4. Engineering Mechanics statics and dynamics,A. K. Dhiman, P. Dhiman & D. Kulshreshtha,",
+						"McGraw-Hill publication ISBN-10:9789339219178"
+					],
+					"content": "Unit- 1.0: Fundamentals of Mechanics 7hrs\nOverview of engineering mechanics. Vector and scalar quantities. Units of physical quantities. Dimensions of physical quantities. Units and Dimensions. Dimensional analysis.\nUnit- 2.0: Force Systems and Equilibrium 7hrs\nForce Systems Basic Concepts, Particle Equilibrium in 2-D & 3-D, Rigid Body Equilibrium, System of Forces: oplanar Concurrent Forces, Components in Space, Resultant and Moment of Forces and its Application, Couples and Resultant of Force System, Free Body Diagrams, Equations of Equilibrium of Coplanar Systems and Spatial Systems.\nUnit- 3.0: Friction and Structural Analysis 7hrs\nTypes of Friction: Limiting, Static, and Dynamic, Laws of Friction, Motion of Bodies and Wedge Friction, Equilibrium in Three Dimensions, Method of Sections and Method of Joints, Tension and Compression in Members, Simple Trusses, Zero Force Members, Beams, Types of Beams, Frames and Machines.\nUnit- 4.0: Centroid, Centre of Gravity, and Moment of Inertia 7hrs\nCentroid of Simple Figures from First Principle, Centroid of Composite Sections, Centre of Gravity and Its Implications, Area Moment of Inertia: Definition and Theorems Moment of Inertia of Plane Sections, Standard Sections, and Composite Sections, Mass Moment Inertia of Circular Plate, Cylinder, Cone, Sphere, Hook.\nUnit- 5.0: Virtual Work, Energy Method, and Particle Dynamics 7hrs\nVirtual Displacements and Principle of Virtual Work, Degrees of Freedom and Active Force Diagram, Conservative Forces and Potential Energy, Energy Equation for Equilibrium, Applications of Energy Method for Equilibrium, Stability of Equilibrium, Review of Particle Dynamics: Rectilinear and Plane Curvilinear Motion, Relative and Constrained Motion, Newton‟s 2nd Law Work-Kinetic Energy, Power, Potential Energy Impulse-Momentum and Impact.\nUnit- 6.0: Kinetics of Rigid Bodies 7hrs\nIntroduction to Kinetics of Rigid Bodies Basic Terms and General Principles in Dynamics Types of Motion and Instantaneous Centre of Rotation in Plane Motion Simple Problems D‟Alembert‟s Principle and Its Applications in Plane Motion and Connected Bodies Work-Energy Principle and Its Application in Plane Motion of Connected Bodies Kinetics of Rigid Body Rotation."
+				},
+				{
+					"code": "103306",
+					"name": "Universal Human Values",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": "Unit- 1.0: Introduction to Value Education 5 hrs\nRight Understanding, Relationship and Physical Facility (Holistic Development and the Role of Education), Understanding Value Education Sharing about Oneself, Self-exploration as the Process for Value Education, Continuous Happiness and Prosperity – the Basic Human Aspirations, Exploring Human Consciousness, Happiness and Prosperity – Current Scenario, Method to Fulfil the Basic Human Aspirations,\nUnit- 2.0: Harmony in the Human Being 4 hrs\nUnderstanding Human being as the Co-existence of the Self and the Body, Distinguishing between the Needs of the Self and the Body, The Body as an Instrument of the Self, Understanding Harmony in the Self, Harmony of the Self with the Body, Programme to ensure self-regulation and Health.\nUnit- 3.0: Harmony in the Family and Society 5 hrs\nHarmony in the Family – the Basic Unit of Human Interaction, ‗Trust„ – the Foundational Value in Relationship, ‗Respect„ – as the Right Evaluation, Other Feelings, Justice in Human-to-Human Relationship, Understanding Harmony in the Society, Vision for the Universal Human Order.\nUnit- 4.0: Harmony in the Nature/Existence 6 hrs\nUnderstanding Harmony in the Nature, Interconnectedness, self-regulation and Mutual Fulfilment among the Four Orders of Nature, Realizing Existence as Co-existence at All Levels, The Holistic Perception of Harmony in Existence.\nUnit- 5.0: Implications of the Holistic Understanding – a Look at Professional 5 hrs\nNatural Acceptance of Human Values, Definitiveness of (Ethical) Human Conduct, A Basis for Humanistic Education, Humanistic Constitution and Universal Human Order, Competence in Professional Ethics, Holistic Technologies, Production Systems and Management Models-Typical Case Studies, Strategies for Transition towards Value-based Life and Profession .\nUnit- 6.0: 3hrs\nCompetence in Professional Ethics, Holistic Technologies, Production Systems and Management Models- Typical Case Studies, Strategies for Transition towards Value-based Life and Profession. Text /Reference:\n1. A Foundation Course in Human Values and Professional Ethics, R R Gaur, R Asthana, G P Bagaria, 2nd Revised Edition, Excel Books, New Delhi, 2019. ISBN 978-93-8703447.\n2. JeevanVidya: EkParichaya, A Nagaraj, JeevanVidyaPrakashan, Amarkantak, 1999.\n3. Human Values, A.N. Tripathi, New Age Intl. Publishers, New Delhi, 2004.\n4. The Story of Stuff (Book).\n5. The Story of My Experiments with Truth – by Mohandas Karamchand Gandhi.\n6. Small is Beautiful – E. F Schumacher.\n7. Slow is Beautiful – Cecile Andrews.\n8. Economy of Permanence – J C Kumarappa.\n9. Bharat Mein Angreji Raj – Pandit Sunderlal.\n10. Rediscovering India – by Dharampal.\n11. Hind Swaraj or Indian Home Rule – by Mohandas K. Gandhi.\n12. India Wins Freedom – Maulana Abdul Kalam Azad.\n13. Vivekananda – Romain Rolland (English)"
+				},
+				{
+					"code": "103307",
+					"name": "Indian Knowledge System",
+					"type": "Theory",
+					"credits": 0,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Introduction to Indian Knowledge System: Concepts and Applications, Archak, K.B. (2012)., Kaveri",
+						"Books, New Delhi, ISBN-13:978-9391818203",
+						"2. Introduction To Indian Knowledge System: Concepts and Applications, Mahadevan, B. Bhat,",
+						"VinayakRajat, NagendraPavana R.N., PHI, ISBN: 9789391818203.",
+						"3. Glimpse into Kautilya‟s Arthashastra Ramachandrudu P. (2010) , Sanskrit Academy, Hyderabad,",
+						"ISBN:9788380171074.",
+						"4. “Introduction” in Studies in Epics and Purāṇas, (Eds.), KM Munshi and N ChandrashekaraAiyer",
+						"BhartiyaVidyaBhavan."
+					],
+					"content": "Unit-1.0 7 hrs\nIntroduction to Indian Knowledge Systems Overview of IKS, Organization of IKS , Conception and constitution of knowledge in indian tradition, The oral tradition, Models and Strategies of IKS.\nUnit-2.0 5 hrs\nOverview of IKS Domains The vedasas the basis of IKS, Overview of all the six vedāṅgas.\nUnit-3.0 8 hrs\nRelevance in Current Technical Education System I Relevance of following IKS domains in present technical education system: Arthashastra (Indian economics and political systems), Ganitaand Jyamiti(indianmathematics, astronomy and geometry, Rasayana (indianchemical Sciences).\nUnit-4.0 8 hrs\nRelevance in Current Technical Education System II Ayurveda (Indian Biological Sciences / Diet & Nutrition), JyotishVidya (observational astronomy and calendar systems), PrakritiVidya(indian system of terrestrial/ material sciences/ecology and atmospheric sciences).\nUnit-5.0 7 hrs\nRelevance in Current Technical Education System III VastuVidya(indian system of aesthetics-iconography and built-environment /architecture), NyayaShastra(indian systems of social ethics, logic and law).\nUnit-6.0 7 hrs\nShilpa andNatyaShastra (indian classical arts: performing and fine arts), Sankhyaand Yoga Darshna(indian psychology, yoga and consciousness studies), Vrikshayurveda(plant science/sustainable agriculture/food preservation methods)."
+				},
+				{
+					"code": "103301P",
+					"name": "Electrical Circuit Analysis Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform the following experiments List of Experiments:\n1. Verification of the Superposition Theorem\n2. Verification of Thevenin & Norton Theorem\n3. Verification of the Maximum Power Transfer Theorem\n4. To Calculate the Characteristics Impedance of T & Pi Network\n5. To determine the Driving Point & Transfer Function of a Two-Port Network\n6. To study Series, Parallel & Cascade Connection of Two-Port Network\n7. To study Series & Parallel Resonance Circuit\n8. To study Transient & Steady State Response Of R-L-C Circuit\n9. To study the Frequency Response of the Twin T-Notch Filter\n10. To study the Z-H Parameter of a Two-Port Network"
+				},
+				{
+					"code": "103302P",
+					"name": "Analog Electronics Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments List of Experiments\n1. To verify and plot the V-I characteristics of silicon diode & Zener diode in forward and Reverse bias.\n2. To verify and plot the wave form of half wave rectifier & full wave rectifier\n3. To verify and draw input and output characteristics of BJT (PNP or NPN) in CE, CB & CC configuration.\n4. To study h- parameter of transistors in C.E configuration, C.B configuration & C.C Configuration\n5. To study Wein bridge oscillator.\n6. To study phase shift oscillator.\n7. To study of clipping circuit.\n8. To study of clamping circuit.\n9. To study of characteristics of MOSFET\n10. To study the operational amplifier as differentiator& integrator.\n11. To study the operational amplifier as inverting amplifier & non inverting Amplifier."
+				},
+				{
+					"code": "103303P",
+					"name": "Electrical Machine-I Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform the following Experiments List of Experiments:\n1. Experiment to determine self and mutual inductances of two coupled inductors\n2. Open circuit and short circuit tests on a single-phase transformer and determination of parameters.\n3. Calculating the regulation and efficiency of a Single-Phase transformer\n4. Parallel Operation of Two Single-Phase Transformers\n5. Study of different types of transformers\n6. Vector Group Test of the Three-Phase Transformer\n7. Determination of the characteristics of a DC Shunt Generator\n8. Determination of the efficiency of the DC machine through Hopkinson's Test\n9. Study of DC Shunt, DC Series, and DC Compound Machines\n10. Speed Control of DC Motor using armature voltage and field control"
+				},
+				{
+					"code": "103308",
+					"name": "Internship – I",
+					"type": "Practical",
+					"credits": 2,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": "Internship I Guidelines: Internship I is of a minimum duration of two weeks which can be completed in an Industry/Institute in consultation with concerned Engineering College/ Institute. After completion of internship a detailed report of the internship mentioning the training undertaken along with certificate should be submitted."
+				}
+			]
+		},
+		"4": {
+			"subjects": [
+				{
+					"code": "PCC-EEE06",
+					"name": "Analog Electronics",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"➔ A. S. Sedra and K. C. Smith, “Microelectronic Circuits”, New York, Oxford",
+						"University Press, 1998.",
+						"➔ J. V. Wait, L. P. Huelsman and G. A. Korn, “Introduction to Operational",
+						"Amplifier theory and applications”, McGraw Hill U. S., 1992.",
+						"➔ J. Millman and A. Grabel, “Microelectronics”, McGraw Hill Education, 1988.",
+						"➔ P. Horowitz and W. Hill, “The Art of Electronics”, Cambridge University Press,",
+						"1989.",
+						"➔ P.R. Gray, R.G. Meyer and S. Lewis, “Analysis and Design of Analog Integrated",
+						"Circuits”, John Wiley & Sons, 2001.",
+						"2"
+					],
+					"content": "Detailed contents:\nModule 1 Diode circuits: P-N junction diode, I-V characteristics of a diode; review of half-wave and full-wave rectifiers, Zener diodes, clamping and clipping circuits. 1\nModule 2 BJT circuits: Structure and I-V characteristics of a BJT; BJT as a switch. BJT as an amplifier: small-signal model, biasing circuits, current mirror; common-emitter, common-base and common-collector amplifiers; Small signal equivalent circuits, high-frequency equivalent circuits\nModule 3 MOSFET circuits: MOSFET structure and I-V characteristics. MOSFET as a switch. MOSFET as an amplifier: small signal model and biasing circuits, common-source, common-gate and common-drain amplifiers; small signal equivalent circuits - gain, input and output impedances, trans-conductance, high frequency equivalent circuit.\nModule 4 Differential, multi-stage and operational amplifiers: Differential amplifier; power amplifier; direct coupled multistage amplifier; internal structure of an operational amplifier, ideal op-amp, non-idealities in an op-amp (Output offset voltage, input bias current, input offset current, slew rate, gain bandwidth product), Frequency Response of the amplifier.\nModule 5 Linear applications of op-amp: Idealized analysis of op-amp circuits. Inverting a n d non-inverting amplifier, differential amplifier, +instrumentation amplifier, integrator, active filter, P, PI and PID controllers and lead/lag compensator using an op-amp, voltage regulator, Feedback amplifiers and Oscillators design (Wein bridge and phase shift). Analog to Digital Conversion.\nModule 6 Nonlinear applications of op-amp: Hysteretic Comparator, Zero Crossing Detector, Square-wave and triangular-wave generators. Precision rectifier, peak detector. Monoshot."
+				},
+				{
+					"code": "PCC-EEE07",
+					"name": "Analog Electronics Laboratory",
+					"type": "Theory",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Hands-on experiments related to the course contents of PCC-EEE06"
+				},
+				{
+					"code": "PCC-EEE08",
+					"name": "Electrical Machines - II",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"➔ A. E. Fitzgerald and C. Kingsley, \"Electric Machinery”, McGraw Hill Education,",
+						"2013.",
+						"➔ M. G. Say, “Performance and design of AC machines”, CBS Publishers, 2002.",
+						"➔ P. S. Bimbhra, “Electrical Machinery”, Khanna Publishers, 2011.",
+						"➔ I. J. Nagrath and D. P. Kothari, “Electric Machines”, McGraw Hill Education,",
+						"2010.",
+						"➔ A. S. Langsdorf, “Alternating current machines”, McGraw Hill Education, 1984.",
+						"➔ P. C. Sen, “Principles of Electric Machines and Power Electronics”, John Wiley",
+						"& Sons, 2007."
+					],
+					"content": "Detailed contents:\nModule 1 Fundamentals of AC machine windings: Physical arrangement of windings in stator and cylindrical rotor; slots for windings; single-turn coil - active portion and overhang; full-pitch coils, concentrated winding, distributed winding, winding axis, 3D visualization of the above winding types, Air-gap MMF distribution with fixed current through winding-concentrated and distributed, Sinusoidally distributed winding, winding distribution factor\nModule 2 Pulsating and revolving magnetic fields: Constant magnetic field, pulsating magnetic field - alternating current in windings with spatial displacement, Magnetic field produced by a single winding - fixed current and alternating current Pulsating fields produced by spatially displaced windings, Windings spatially shifted by 90 degrees, Addition of pulsating magnetic fields, Three windings spatially shifted by 120 degrees (carrying three-phase balanced currents), revolving magnetic field.\nModule 3 Induction Machines: Construction, Types (squirrel cage and slip-ring), Torque Slip Characteristics, Starting and Maximum Torque. Equivalent circuit. Phasor 3 Diagram, Losses and Efficiency. Effect of parameter variation on torque speed characteristics (variation of rotor and stator resistances, stator voltage, frequency). Methods of starting, braking and speed control for induction motors. Generator operation. Self-excitation. Doubly-Fed Induction Machines.\nModule 4 Single-phase induction motors: Constructional features, double revolving field theory, equivalent circuit, determination of parameters. Split-phase starting methods and applications\nModule 5 Synchronous machines: Constructional features, cylindrical rotor synchronous machine - generated EMF, equivalent circuit and phasor diagram, armature reaction, synchronous impedance, voltage regulation. Operating characteristics of synchronous machines, V-curves. Salient pole machine - two reaction theory, analysis of phasor diagram, power angle characteristics. Parallel operation of alternators - synchronization and load division."
+				},
+				{
+					"code": "PCC-EEE09",
+					"name": "Electrical Machines Laboratory - II",
+					"type": "Theory",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Hands-on experiments related to the course contents of PCC-EEE08 4"
+				},
+				{
+					"code": "PCC-EEE10",
+					"name": "Microprocessors",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": "Detailed contents:\nModule 1 Fundamentals of Microprocessors: Fundamentals of Microprocessor Architecture. 8-bitMicroprocessor and Microcontroller architecture, Comparison of 8-bit microcontrollers, 16-bit and 32-bit microcontrollers. Definition of embedded system and its characteristics, Role of microcontrollers in embedded Systems. Overview of the 8051 family.\nModule 2 The 8051 Architecture: Internal Block Diagram, CPU, ALU, address, data and control bus, Working registers, SFRs, Clock and RESET circuits, Stack and Stack Pointer, Program Counter, I/O ports, Memory Structures, Data and Program Memory, Timing diagrams and Execution Cycles.\nModule 3 Instruction Set and Programming: Addressing modes: Introduction, Instruction syntax, Data types, Subroutines Immediate addressing, Register addressing, Direct addressing, Indirect addressing, Relative addressing, Indexed addressing, Bit inherent addressing, bit direct addressing. 8051 Instruction set, Instruction timings. Data transfer instructions, Arithmetic instructions, Logical instructions, Branch instructions, Subroutine instructions, Bit manipulation instruction. Assembly language programs, C language programs. Assemblers and compilers. Programming and debugging tools.\nModule 4 Memory and I/O Interfacing: Memory and I/O expansion buses, control signals, memory wait states. Interfacing of peripheral devices such as General Purpose I/O, ADC, DAC, timers, counters, memory devices.\nModule 5 External Communication Interface: Synchronous and Asynchronous Communication. RS232, SPI, I2C. Introduction and interfacing to protocols like Blue-tooth and Zig-bee.\nModule 6 5 Applications: LED, LCD and keyboard interfacing. Stepper motor interfacing, DC Motor interfacing, sensor interfacing. Text / References: ➔ M . A.Mazidi, J. G. Mazidi and R. D. McKinlay, “The 8051 Microcontroller and Embedded Systems: Using Assembly and C”,Pearson Education, 2007. ➔ K. J. Ayala, “8051 Microcontroller”, Delmar Cengage Learning,2004. ➔ R. Kamal, “Embedded System”, McGraw Hill Education,2009. ➔ R. S. Gaonkar, “, Microprocessor Architecture: Programming and Applications with the 8085”, Penram International Publishing, 1996 ➔ D.A. Patterson and J.H. Hennessy, \"Computer Organization and Design: The Hardware/Software interface”, Morgan Kaufman Publishers, 2013. ➔ D. V. Hall, “Microprocessors & Interfacing”, McGraw Hill Higher Education,\n1991."
+				},
+				{
+					"code": "PCC-EEE11",
+					"name": "Digital Electronics and Microprocessor",
+					"type": "Theory",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Hands-on experiments related to the course contents of PCC-EEE02 & PCC-EEE10"
+				},
+				{
+					"code": "PCC-EEE12",
+					"name": "Signals and Systems",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 2,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"➔ A. V. Oppenheim, A. S. Willsky and S. H. Nawab, “Signals and systems”,",
+						"Prentice Hall India, 1997.",
+						"➔ J. G. Proakis and D. G. Manolakis, “Digital Signal Processing: Principles,",
+						"Algorithms, and Applications”, Pearson, 2006.",
+						"➔ H. P. Hsu, “Signals and systems”, Schaum’s series, McGraw Hill Education,",
+						"2010.",
+						"➔ S. Haykin and B. V. Veen, “Signals and Systems”, John Wiley and Sons, 2007.",
+						"➔ A. V. Oppenheim and R. W. Schafer, “Discrete-Time Signal Processing”, Prentice",
+						"Hall, 2009.",
+						"➔ M. J. Robert “Fundamentals of Signals and Systems”, McGraw Hill Education,",
+						"2007.",
+						"➔ B. P. Lathi, “Linear Systems and Signals”, Oxford University Press, 2009",
+						"7"
+					],
+					"content": "Detailed contents:\nModule 1 Introduction to Signals and Systems: Signals and systems as seen in everyday life, and in various branches of engineering and science. Signal properties: periodicity, absolute integrability, determinism and stochastic character. Some special signals of importance: the unit step, the unit impulse, the sinusoid, the complex exponential, some special time-limited signals; continuous and discrete time signals, continuous and discrete amplitude signals. System properties: linearity: 6 additivity and homogeneity, shift-invariance, causality, stability, realizability. Examples.\nModule 2 Behavior of continuous and discrete-time LTI systems: Impulse response and step response, convolution, input-output behavior with aperiodic convergent inputs, cascade interconnections. Characterization of causality and stability of LTI systems. System representation through differential equations and difference equations. State Space Representation of systems. State-Space Analysis, Multi-input, multi-output representation. State Transition Matrix and its Role. Periodic inputs to an LTI system, the notion of a frequency response and its relation to the impulse response.\nModule 3 Fourier, Laplace and z- Transforms: Fourier series representation of periodic signals, Waveform Symmetries, Calculation of Fourier Coefficients. Fourier Transform, convolution/multiplication and their effect in the frequency domain, magnitude and phase response, Fourier domain duality. The Discrete-Time Fourier Transform (DTFT) and the Discrete Fourier Transform (DFT). Parseval's Theorem. Review of the Laplace Transform for continuous time signals and systems, system functions, poles and zeros of system functions and signals, Laplace domain analysis, solution to differential equations and system behavior. The z-Transform for discrete time signals and systems, system functions, poles and zeros of systems and sequences, z-domain analysis.\nModule 4 Sampling and Reconstruction: The Sampling Theorem and its implications. Spectra of sampled signals. Reconstruction: ideal interpolator, zero-order hold, first-order hold. Aliasing and its effects. Relation between continuous and discrete time systems. Introduction to the applications of signal and system theory: modulation for communication, filtering, feedback control systems."
+				},
+				{
+					"code": "BSC 401",
+					"name": "Mathematics - III(Probability and",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"Publications, 2010.",
+						"➔ B.S. Grewal, “Higher Engineering Mathematics'', Khanna Publishers, 2000.",
+						"➔ T. Veerarajan, “Engineering Mathematics'', Tata McGraw-Hill, New Delhi, 2010"
+					],
+					"content": "Detailed contents:\nModule 1 Basic Probability: Probability spaces, conditional probability, independence; Discrete random variables, Independent random variables, the multinomial distribution, Poisson approximation to the binomial distribution, infinite sequences of Bernoulli trials, sums of independent random variables; Expectation of Discrete Random Variables, Moments, Variance of a sum, Correlation coefficient, Chebyshev's Inequality.\nModule 2 Continuous Probability Distributions: Continuous random variables and their properties, distribution functions and densities, normal, exponential and gamma densities.\nModule 3 Bivariate Distributions: Bivariate distributions and their properties, distribution of sums and quotients, conditional densities, Bayes' rule.\nModule 4 Basic Statistics: Measures of Central tendency: Moments, skewness and Kurtosis - Probability distributions: Binomial, Poisson and Normal - evaluation of statistical parameters for these three distributions, Correlation and regression – Rank correlation.\nModule 5 8 Applied Statistics: Curve fitting by the method of least squares- fitting of straight lines, second degree parabolas and more general curves. Test of significance: Large sample test for single proportion, difference of proportions, single mean, difference of means, and difference of standard deviations.\nModule 6 Small samples: Test for single mean, difference of means and correlation coefficients, test for ratio of variances - Chi-square test for goodness of fit and independence of attributes. Text / References: ➔ E. Kreyszig, “Advanced Engineering Mathematics”, John Wiley & Sons, 2006. ➔ P. G. Hoel, S. C. Port and C. J. Stone, “Introduction to Probability Theory”, Universal Book Stall, 2003. ➔ S. Ross, “A First Course in Probability”, Pearson Education India, 2002. ➔ W. Feller, “An Introduction to Probability Theory and its Applications”, Vol. 1, Wiley, 1968."
+				},
+				{
+					"code": "-",
+					"name": "Biology - I",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 2,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [],
+					"content": "Detailed contents:\nModule 1 Introduction: Purpose: To convey that Biology is as important a scientific discipline as Mathematics, Physics and Chemistry. Bring out the fundamental differences between science and engineering by drawing a comparison between eye and camera, Bird flying and aircraft. Mention the most exciting aspect of biology as an independent scientific discipline. Why do we need to study biology? Discuss how biological observations of the 18th Century lead to major discoveries. Examples from Brownian motion and the origin of thermodynamics by referring to the original observation of Robert Brown and Julius Mayor. These examples will highlight the fundamental importance of observations in any scientific inquiry.\nModule 2 Classification: Purpose: To convey that classification per se is not what biology is all about. The underlying criterion, such as morphological, biochemical or ecological, can be highlighted. Hierarchy of life forms at phenomenological level. A 9 common thread weaves this hierarchy Classification. Discuss classification based on (a) cellularity- Unicellular or multicellular (b) ultrastructure prokaryotes or eukaryotes. (c) energy and Carbon utilization -Autotrophs, heterotrophs, lithotrophs (d) Ammonia excretion – ammonotelic, uricotelic, ureotelic (e) Habitat- aquatic or terrestrial (e) Molecular taxonomy- three major kingdoms of life. A given organism can come under different categories based on classification. Model organisms for the study of biology come from different groups. E.coli, S.cerevisiae, D. Melanogaster, C. elegance, A. Thaliana, M. musculus\nModule 3 Genetics: Purpose: To convey that “Genetics is to biology what Newton’s laws are to Physical Sciences''. Mendel’s laws, Concept of segregation and independent assortment. Concept of allele. Gene mapping, Gene interaction, Epistasis. Meiosis and Mitosis are taught as a part of genetics. Emphasis to be given not to the mechanics of cell division nor the phases but how genetic material passed from parent to offspring. Concepts of recessiveness and dominance. Concept of mapping of phenotype to genes. Discuss about the single gene disorders in humans. Discuss the concept of complementation using human genetics.\nModule 4 Biomolecules: Purpose: To convey that all forms of life has the same building blocks and yet the manifestations are as diverse as one can imagine. Molecules of life. In this context discuss monomeric units and polymeric structures. Discuss about sugars, starch and cellulose. Amino acids and proteins. Nucleotides and DNA/RNA. Two carbon units and lipids.\nModule 5 Enzymes: Purpose: To convey that without catalysis life would not have existed on earth. Enzymology: How to monitor enzyme catalysed reactions. How does an enzyme catalyse reactions? Enzyme classification. Mechanism of enzyme action. Discuss at least two examples. Enzyme kinetics and kinetic parameters. Why should we know these parameters to understand biology? RNA catalysis.\nModule 6 Information Transfer: Purpose: The molecular basis of coding and decoding genetic information is universal. Molecular basis of information transfer. DNA as a genetic material. Hierarchy of DNA structure from single stranded to double helix to nucleosomes. Concept of genetic code. Universality and degeneracy of genetic code. Define genes in terms of complementation and recombination.\nModule 7 10 Macromolecular analysis: Purpose: To analyse biological processes at the reductionistic level. Proteins- structure and function. Hierarchy in protein structure. Primary secondary, tertiary and quaternary structure. Proteins as enzymes, transporters, receptors and structural elements.\nModule 8 Metabolism: Purpose: The fundamental principles of energy transactions are the same in the physical and biological world. Thermodynamics as applied to biological systems. Exothermic and endothermic versus endergonic and exergonic reactions. Concept of Keq and its relation to standard free energy. Spontaneity. ATP as an energy currency. This should include the breakdown of glucose to CO2 + H2O (Glycolysis and Krebs cycle) and synthesis of glucose from CO2 and H2O (Photosynthesis). Energy yielding and energy consuming reactions. Concept of Energy charge.\nModule 9 Microbiology: Concept of single celled organisms. Concept of species and strains. Identification and classification of microorganisms. Microscopy. Ecological aspects of single celled organisms. Sterilization and media compositions. Growth kinetics. Text / References: ➔ N. A. Campbell, J. B. Reece, L. Urry, M. L. Cain and S. A. Wasserman, “Biology: A global approach”, Pearson Education Ltd, 2014. ➔ E. E. Conn, P. K. Stumpf, G. Bruening and R. H. Doi, “Outlines of Biochemistry”, John Wiley and Sons, 2009. ➔ D. L. Nelson and M. M. Cox, “Principles of Biochemistry”, W.H. Freeman and Company, 2012. ➔ G. S. Stent and R. Calendar, “Molecular Genetics”, Freeman and company, 1978. ➔ L. M. Prescott, J. P. Harley and C. A. Klein, “Microbiology”, McGraw Hill Higher Education, 2005."
+				},
+				{
+					"code": "-",
+					"name": "HSMC Elective Courses",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": ""
+				},
+				{
+					"code": "-",
+					"name": "Environmental Science",
+					"type": "Theory",
+					"credits": 0,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": ""
+				},
+				{
+					"code": "-",
+					"name": "Capstone Design Project",
+					"type": "Theory",
+					"credits": 0,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": ""
+				},
+				{
+					"code": "-",
+					"name": "NCC / NSS / other Clubs & Society",
+					"type": "Theory",
+					"credits": 0,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": ""
+				}
+			]
+		},
+		"5": {
+			"subjects": [
+				{
+					"code": "PCC-EEE19",
+					"name": "Analog & Digital Communication System",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Detailed contents:\nModule 1 Basic blocks of Communication System: Analog Modulation - Principles of Amplitude Modulation, DSBSC, SSB-SC and VSB-SC. AM transmitters and receivers\nModule 2 Angle Modulation - Frequency and Phase Modulation. Transmission Bandwidth of FM signals, Methods of generation and detection. FM Transmitters and Receivers.\nModule 3 1 Sampling theorem - Pulse Modulation Techniques - PAM, PWM and PPM concepts - PCM system – Data transmission using analog carriers (ASK, FSK, BPSK, QPSK).\nModule 4 Error control coding techniques – Linear block codes- Encoder and decoder. Cyclic codes – Encoder, Syndrome Calculator. Convolution codes\nModule 5 Modern Communication Systems – Microwave communication systems - Optical communication system - Satellite communication system - Mobile communication system. Text / References: ➔ Simon Haykins, ‘Communication Systems’, John Wiley, 3rd Edition, 1995. ➔ D.Roddy & J.Coolen, ‘Electronic Communications’, Prentice Hall of India, 4th Edition, 1999. ➔ Kennedy G, ‘Electronic Communication System’, McGraw Hill, 1987."
+				},
+				{
+					"code": "-",
+					"name": "Capstone Design Project",
+					"type": "Theory",
+					"credits": 0,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": ""
+				},
+				{
+					"code": "MC 501",
+					"name": "Constitution of India/ Essence of Indian",
+					"type": "Theory",
+					"credits": 0,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": "features and fundamental principles non-credit course) The Constitution of India is the supreme law of India. Parliament of India cannot make any law which violates the Fundamental Rights enumerated under the Part III of the Constitution. The Parliament of India has been empowered to amend the Constitution under Article 368, however, it cannot use this power to change the “basic structure” of the constitution, which has been ruled and explained by the Supreme Court of India in its historical judgments. The Constitution of India reflects the idea of “Constitutionalism” – a modern and progressive concept 2 historically developed by the thinkers of “liberalism” – an ideology which has been recognized as one of the most popular political ideologies and result of historical struggles against arbitrary use of sovereign power by state. The historic revolutions in France, England, America and particularly the European Renaissance and Reformation movement have resulted in progressive legal reforms in the form of “constitutionalism” in many countries. The Constitution of India was made by borrowing models and principles from many countries including the United Kingdom and America. The Constitution of India is not only a legal document but it also reflects social, political and economic perspectives of the Indian Society. It reflects India’s legacy of “diversity”. It has been said that the Indian constitution reflects ideals of its freedom movement, however, few critics have argued that it does not truly incorporate our own ancient legal heritage and cultural values. No law can be “static” and therefore the Constitution of India has also been amended more than one hundred times. These amendments reflect political, social and economic developments since the year 1950. The Indian judiciary and particularly the Supreme Court of India has played an historic role as the guardian of people. It has been protecting not only basic ideals of the Constitution but also strengthened the same through progressive interpretations of the text of the Constitution. The judicial activism of the Supreme Court of India and its historic contributions has been recognized throughout the world and it gradually made it “as one of the strongest courts in the world”. Course content: ➔ Meaning of the constitution law and constitutionalism ➔ Historical perspective of the Constitution of India ➔ Salient features and characteristics of the Constitution of India ➔ Scheme of the fundamental rights ➔ The scheme of the Fundamental Duties and its legal status ➔ The Directive Principles of State Policy – Its importance and implementation ➔ Federal structure and distribution of legislative and financial powers between the Union and the States ➔ Parliamentary Form of Government in India – The constitution powers and status of the President of India ➔ Amendment of the Constitutional Powers and Procedure ➔ The historical perspectives of the constitutional amendments in India ➔ Emergency Provisions: National Emergency, President Rule, Financial Emergency ➔ Local Self Government – Constitutional Scheme in India ➔ Scheme of the Fundamental Right to Equality ➔ Scheme of the Fundamental Right to certain Freedom under Article 19 ➔ Scope of the Right to Life and Personal Liberty under Article 21."
+				},
+				{
+					"code": "PCC-EEE15",
+					"name": "Control Systems",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [
+						"➔ M. Gopal, “Control Systems: Principles and Design”, McGraw Hill Education,",
+						"1997.",
+						"➔ B. C. Kuo, “Automatic Control System”, Prentice Hall, 1995.",
+						"➔ K.Ogata, “Modern Control Engineering”, PrenticeHall, 1991.",
+						"➔ I. J. Nagrath and M. Gopal, “Control Systems Engineering”, New Age",
+						"International, 2009"
+					],
+					"content": "Detailed contents:\nModule 1 Introduction to control problem: Industrial Control examples. Mathematical models of physical systems. Control hardware and their models. Transfer function models of linear time-invariant systems. Feedback Control: Open-Loop and Closed-loop systems. Benefits of Feedback. Block diagram algebra.\nModule 2 Time Response Analysis: Standard test signals. Time response of first and second order systems for standard test inputs. Application of initial and final value theorem. Design specifications for second-order systems based on the time-response. Concept of Stability. Routh-Hurwitz Criteria. Relative Stability analysis. Root-Locus technique. Construction of Root-loci.\nModule 3 5 Frequency-response analysis: Relationship between time and frequency response, Polar plots, Bode plots. Nyquist stability criterion. Relative stability using Nyquist criterion – gain and phase margin. Closed-loop frequency response.\nModule 4 Introduction to Controller Design: Stability, steady-state accuracy, transient accuracy, disturbance rejection, insensitivity and robustness of control systems. Root-loci method of feedback controller design. Design specifications in frequency-domain. Frequency-domain methods of design. Application of Proportional, Integral and Derivative Controllers, Lead and Lag compensation in designs. Analog and Digital implementation of controllers.\nModule 5 State variable Analysis: Concepts of state variables. State space model. Diagonalization of State Matrix. Solution of state equations. Eigenvalues and Stability Analysis. Concept of controllability and observability. Pole-placement by state feedback. Discrete-time systems. Difference Equations. State-space models of linear discrete-time systems. Stability of linear discrete-time systems.\nModule 6 Introduction to Optimal Control and Nonlinear Control: Performance Indices. Regulator problem, Tracking Problem. Nonlinear system–Basic concepts and analysis."
+				},
+				{
+					"code": "-",
+					"name": "MOOCs / SWAYAM / NPTEL Courses - 2",
+					"type": "Theory",
+					"credits": 2,
+					"summary": {
+						"lecture": 2,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": ""
+				},
+				{
+					"code": "PCC-EEE17",
+					"name": "Power Electronics",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [
+						"➔ M. H. Rashid, “Power electronics: circuits, devices, and applications”,",
+						"Pearson Education India, 2009.",
+						"➔ N. Mohan and T. M. Undeland, “Power Electronics: Converters, Applications and",
+						"Design”, John Wiley & Sons, 2007.",
+						"➔ R. W. Erickson and D. Maksimovic, “Fundamentals of Power Electronics”,",
+						"Springer Science & Business Media, 2007.",
+						"➔ L. Umanand, “Power Electronics: Essentials and Applications”, Wiley India,",
+						"2009."
+					],
+					"content": "Detailed contents:\nModule 1 Power Switching devices: Diode, Thyristor, MOSFET, IGBT: I-V Characteristics; Firing circuit for thyristor; Voltage and current commutation of a thyristor; Gate drive circuits for MOSFET and IGBT.\nModule 2 Thyristor rectifiers: Single-phase half-wave and full-wave rectifiers, Single-phase full-bridge thyristor rectifier with R- load and highly inductive load; Three-phase full-bridge thyristor rectifier with R-load and highly inductive load; Input current wave shape and power factor.\nModule 3 DC-DC buck converter: Elementary chopper with an active switch and diode, concepts of duty ratio and average voltage, power circuit of a buck converter, analysis and waveforms at steady state, duty ratio control of output voltage.\nModule 4 DC-DC boost converter: Power circuit of a boost converter, analysis and waveforms at steady state, relation between duty ratio and average output voltage.\nModule 5 Single-phase voltage source inverter: Power circuit of single-phase voltage source inverter, switch states and instantaneous output voltage, square wave operation of the inverter, concept of average voltage over a switching cycle, bipolar sinusoidal modulation and unipolar sinusoidal modulation, modulation index and output voltage\nModule 6 Three-phase voltage source inverter: Power circuit of a three-phase voltage source inverter, switch states, instantaneous output voltages, average output voltages over a sub-cycle, three-phase sinusoidal modulation\nModule 7 A.C. to A.C. Converter: [14] Classification, principle of operation of step up and step down cyclo-converter, single phase to single phase cyclo-converter with resistive and inductive load, three phase to single phase cyclo-converter, half wave 4 and full wave, cosine wave crossing technique. three phase to three phase cyclo-converter. output voltage equation of cyclo-converter."
+				},
+				{
+					"code": "PCC-EEE13",
+					"name": "Power Systems - I (Apparatus and",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [
+						"➔ J. Grainger and W. D. Stevenson, “Power SystemAnalysis”, McGraw Hill",
+						"Education, 1994.",
+						"➔ O. I. Elgerd, “Electric Energy Systems Theory”, McGraw Hill Education, 1995.",
+						"➔ A. R. Bergen and V. Vittal, “Power SystemAnalysis”, Pearson Education Inc.,",
+						"1999.",
+						"➔ D. P. Kothari and I. J. Nagrath, “Modern Power System Analysis”, McGraw Hill",
+						"Education, 2003.",
+						"➔ B. M. Weedy, B. J. Cory, N. Jenkins, J. Ekanayake and G. Strbac, “Electric",
+						"Power Systems”, Wiley, 2012."
+					],
+					"content": "Detailed contents:\nModule 1 Basic Concepts: Evolution of Power Systems and Present-Day Scenario. Structure of a power system: Bulk Power Grids and Micro-grids. Generation: Conventional and Renewable Energy Sources. Distributed Energy Resources. Energy Storage. Transmission and Distribution Systems: Line diagrams, transmission and distribution voltage levels and topologies (meshed and radial systems). Synchronous Grids and Asynchronous (DC) interconnections. Review of Three-phase systems. Analysis of simple three phase circuits. Power Transfer in AC circuits and Reactive Power.\nModule 2 Power System Components: Overhead Transmission Lines and Cables: Electrical and Magnetic Fields around conductors, Corona. Parameters of lines and cables. Capacitance and Inductance calculations for simple configurations. Travelling-wave Equations. Sinusoidal Steady state representation of Lines: Short, medium and long lines. Power Transfer, Voltage profile and Reactive Power. Characteristics of transmission lines. Surge Impedance Loading. Series and Shunt Compensation of transmission lines. Transformers: Three-phase connections and Phase-shifts. Three-winding transformers, autotransformers, Neutral Grounding transformers. Tap-Changing in transformers. Transformer Parameters. Single phase equivalent of three-phase transformers. Synchronous Machines: Steady-state performance characteristics. Operation when connected to an infinite bus. Real and Reactive Power Capability Curve of generators. Typical waveform under balanced terminal short circuit conditions – steady state, transient and subtransient equivalent circuits. Loads: Types, Voltage and Frequency Dependence of Loads. Per-unit System and per-unit calculations.\nModule 3 Overvoltages and Insulation Requirements: Generation of Overvoltages: Lightning and Switching Surges. Protection against Over-voltages, Insulation Coordination. Propagation of Surges. Voltages produced by traveling surges. Bewley Diagrams.\nModule 4 Fault Analysis and Protection Systems: Method of Symmetrical Components (positive, negative and zero sequences). Balanced and Unbalanced Faults. Representation of generators, lines and transformers in sequence networks. 7 Computation of Fault Currents. Neutral Grounding. Switchgear: Types of Circuit Breakers. Attributes of Protection schemes, Back-up Protection. Protection schemes (Over-current, directional, distance protection, differential protection) and their application.\nModule 5 Introduction to DC Transmission & Renewable Energy Systems: DC Transmission Systems: Line-Commutated Converters (LCC) and Voltage Source Converters (VSC). LCC and VSC based dc link, Real Power Flow control in a dc link. Comparison of ac and dc transmission. Solar PV systems: I-V and P-V characteristics of PV panels, power electronic interface of PV to the grid. Wind Energy Systems: Power curve of wind turbine. Fixed and variable speed turbines. Permanent Magnetic Synchronous Generators and Induction Generators. Power Electronics interfaces of wind generators to the grid."
+				},
+				{
+					"code": "-",
+					"name": "Professional Elective Laboratory - 1",
+					"type": "Theory",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": ""
+				},
+				{
+					"code": "-",
+					"name": "Summer Entrepreneurship - II",
+					"type": "Theory",
+					"credits": 6,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 12
+					},
+					"references": [],
+					"content": ""
+				},
+				{
+					"code": null,
+					"name": "PCC-EEE14 Power Systems - I Lab",
+					"type": "Theory",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Hands-on experiments related to the course contents of PCC-EEE13. Visits to power system installations (generation stations, EHV substations etc.) are suggested. Exposure to fault analysis and Electro- magnetic transient program (EMTP) and Numerical Relays are suggested. **** 8"
+				}
+			]
+		}
+	}
+}

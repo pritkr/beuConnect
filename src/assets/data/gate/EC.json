@@ -1,0 +1,37 @@
+{
+  "code": "EC",
+  "sections": [
+    {
+      "title": "Section 1: Engineering Mathematics",
+      "content": "Linear Algebra: Vector space, basis, linear dependence and independence, matrix algebra,\neigen values and eigen vectors, rank, solution of linear equations - existence and\nuniqueness.\nCalculus: Mean value theorems, theorems of integral calculus, evaluation of definite and\nimproper integrals, partial derivatives, maxima and minima, multiple integrals, line, surface\nand volume integrals, Taylor series.\nDifferential Equations: First order equations (linear and nonlinear), higher order linear\ndifferential equations, Cauchy's and Euler's equations, methods of solution using variation\nof parameters, complementary function and particular integral, partial differential\nequations, variable separable method, initial and boundary value problems.\nVector Analysis: Vectors in plane and space, vector operations, gradient, divergence and\ncurl, Gauss's, Green's and Stokes’ theorems.\nComplex Analysis: Analytic functions, Cauchy’s integral theorem, Cauchy’s integral\nformula, sequences, series, convergence tests, Taylor and Laurent series, residue theorem.\nProbability and Statistics: Mean, median, mode, standard deviation, combinatorial\nprobability, probability distributions, binomial distribution, Poisson distribution,\nexponential distribution, normal distribution, joint and conditional probability."
+    },
+    {
+      "title": "Section 2: Networks, Signals and Systems",
+      "content": "Circuit Analysis: Node and mesh analysis, superposition, Thevenin's theorem, Norton’s\ntheorem, reciprocity. Sinusoidal steady state analysis: phasors, complex power, maximum\npower transfer. Time and frequency domain analysis of linear circuits: RL, RC and RLC\ncircuits, solution of network equations using Laplace transform.\nLinear 2-port network parameters, wye-delta transformation.\nContinuous-time Signals: Fourier series and Fourier transform, sampling theorem\nand applications.\nDiscrete-time Signals: DTFT, DFT, z-transform, discrete-time processing of continuous-time\nsignals. LTI systems: definition and properties, causality, stability, impulse response,\nconvolution, poles and zeroes, frequency response, group delay, phase delay."
+    },
+    {
+      "title": "Section 3: Electronic Devices",
+      "content": "Energy bands in intrinsic and extrinsic semiconductors, equilibrium carrier concentration,\ndirect and indirect band-gap semiconductors.\nCarrier Transport: Diffusion current, drift current, mobility and resistivity, generation and\nrecombination of carriers, Poisson and continuity equations.\nP-N junction, Zener diode, BJT, MOS capacitor, MOSFET, LED, photo diode and solar cell."
+    },
+    {
+      "title": "Section 4: Analog Circuits",
+      "content": "Diode Circuits: Clipping, clamping and rectifiers.\n\nBJT and MOSFET Amplifiers: Biasing, AC coupling, small signal analysis, frequency\nresponse. Current mirrors and differential amplifiers.\nOp-amp Circuits: Amplifiers, summers, differentiators, integrators, active filters, Schmitt\ntriggers and oscillators."
+    },
+    {
+      "title": "Section 5: Digital Circuits",
+      "content": "Number Representations: Binary, integer and floating-point- numbers. Combinatorial\ncircuits: Boolean algebra, minimization of functions using Boolean identities and Karnaugh\nmap, logic gates and their static CMOS implementations, arithmetic circuits, code\nconverters, multiplexers, decoders.\nSequential Circuits: Latches and flip-flops, counters, shift-registers, finite state\nmachines, propagation delay, setup and hold time, critical path delay.\nData Converters: Sample and hold circuits, ADCs and DACs.\nSemiconductor Memories: ROM, SRAM, DRAM.\nComputer Organization: Machine instructions and addressing modes, ALU, data-path\nand control unit, instruction pipelining."
+    },
+    {
+      "title": "Section 6: Control Systems",
+      "content": "Basic control system components; Feedback principle; Transfer function; Block\ndiagram representation; Signal flow graph; Transient and steady-state analysis of LTI\nsystems; Frequency response; Routh-Hurwitz and Nyquist stability criteria; Bode and root-\nlocus plots; Lag, lead and lag-lead compensation; State variable model and solution of\nstate equation of LTI systems."
+    },
+    {
+      "title": "Section 7: Communications",
+      "content": "Random Processes: Auto correlation and power spectral density, properties of white noise,\nfiltering of random signals through LTI systems.\nAnalog Communications: Amplitude modulation and demodulation, angle modulation\nand demodulation, spectra of AM and FM, super heterodyne receivers.\nInformation Theory: Entropy, mutual information and channel capacity theorem.\nDigital Communications: PCM, DPCM, digital modulation schemes (ASK, PSK, FSK,\nQAM), bandwidth, inter-symbol interference, MAP, ML detection, matched filter receiver,\nSNR and BER. Fundamentals of error correction, Hamming codes, CRC."
+    },
+    {
+      "title": "Section 8: Electromagnetics",
+      "content": "Maxwell's Equations: Differential and integral forms and their interpretation, boundary\nconditions, wave equation, Poynting vector.\nPlane Waves and Properties: Reflection and refraction, polarization, phase and group\nvelocity, propagation through various media, skin depth.\nTransmission Lines: Equations, characteristic impedance, impedance matching,\nimpedance transformation, S-parameters, Smith chart. Rectangular and circular\nwaveguides, light propagation in optical fibers, dipole and monopole antennas, linear\nantenna arrays"
+    }
+  ]
+}

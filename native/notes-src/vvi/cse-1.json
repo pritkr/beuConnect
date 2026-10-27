@@ -1,0 +1,186 @@
+{
+  "branch": "cse",
+  "sem": 1,
+  "subjects": [
+    {
+      "code": "100102",
+      "name": "Engineering Mathematics–I",
+      "vvi": [
+        {
+          "topic": "Rolle's theorem and Lagrange's mean value theorem",
+          "note": "Rolle: if f is continuous on [a,b], differentiable on (a,b) and f(a) = f(b), some c has f'(c) = 0. Lagrange: some c has f'(c) = (f(b) − f(a))/(b − a). State the three conditions before proving, and use the theorem to bound a function or locate a root.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Taylor and Maclaurin series expansions",
+          "note": "f(x) = Σ f⁽ⁿ⁾(a)(x−a)ⁿ/n!; Maclaurin is the case a = 0. Memorise eˣ, sin x, cos x, log(1+x) and (1+x)ⁿ, then derive an unfamiliar expansion from one of them. State the remainder if the question asks for the error.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Rank of a matrix and consistency of linear equations",
+          "note": "Reduce to row-echelon form; rank is the number of non-zero rows. For AX = B compare rank(A) with rank([A|B]): equal to the number of unknowns gives a unique solution, equal but smaller gives infinitely many, and rank(A) < rank([A|B]) means inconsistent. Also compute rank from the largest non-zero minor.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Eigenvalues and eigenvectors of a matrix",
+          "note": "Solve |A − λI| = 0 for eigenvalues, then (A − λI)X = 0 for eigenvectors. The sum of eigenvalues equals the trace and their product equals the determinant. For a symmetric matrix, eigenvectors of distinct eigenvalues are orthogonal.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Partial derivatives and Euler's theorem on homogeneous functions",
+          "note": "For a homogeneous function of degree n, x·∂u/∂x + y·∂u/∂y = n·u. Check homogeneity by replacing x with tx and y with ty: u(tx,ty) = tⁿu(x,y). Chain rule for composite functions is the other standard question.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Beta and Gamma functions",
+          "note": "Γ(n) = (n−1)! for a positive integer, Γ(1/2) = √π, and B(m,n) = Γ(m)Γ(n)/Γ(m+n). Use the relation to evaluate definite integrals that match the Beta form ∫₀¹ x^(m−1)(1−x)^(n−1) dx.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "100111",
+      "name": "Programming for Problem Solving",
+      "vvi": [
+        {
+          "topic": "Data types, operators and type conversion in C",
+          "note": "int, float, double, char and their sizes; % for integers gives the remainder and / truncates integer division. Implicit promotion goes to the wider type; cast explicitly with (float). Know operator precedence: *, /, % before +, −, and = last.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Control flow: if-else, switch and loops",
+          "note": "switch works on integer or char constants and needs break to avoid fall-through. for is used when the count is known, while when it is not, do-while when the body must run at least once. Every loop needs an exit condition that the body actually changes.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Arrays and strings in C",
+          "note": "An array is a contiguous block, indexed from 0; passing it to a function passes a pointer, so the size must be passed too. A C string is a char array ending in '\\0'; use strlen, strcpy, strcat and strcmp from string.h. A bubble sort or matrix addition trace is the usual program.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Functions, call by value and recursion",
+          "note": "C is call by value only: the callee gets copies, so a function that must change a variable takes its address. A recursive function needs a base case and a step that moves toward it; write the factorial and Fibonacci traces with stack frames.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Pointers and pointer arithmetic",
+          "note": "A pointer stores an address; * dereferences and & takes an address. p + 1 advances by sizeof(*p), not one byte. Arrays decay to pointers, so a[i] equals *(a + i). Use pointers for out-parameters and dynamic memory (malloc/free).",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Structures, unions and typedef",
+          "note": "A structure holds members of different types; a union overlays them in one block sized by the largest member. Access with . or ->, typedef names the type, and an array of structures stores records. Structure padding means sizeof(struct) may exceed the sum of members.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "100110",
+      "name": "Engineering Physics",
+      "vvi": [
+        {
+          "topic": "Interference, thin films and Newton's rings",
+          "note": "Superposition of coherent waves gives maxima when the path difference is nλ and minima at (2n−1)λ/2. In reflected light a thin film adds λ/2 for the air-film boundary, so the condition flips. Newton's rings have radii proportional to √n, with a dark centre in reflected light.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Diffraction and the diffraction grating",
+          "note": "Fraunhofer diffraction at a single slit has minima at a sin θ = nλ; a grating has principal maxima at d sin θ = nλ, with d the grating spacing. Resolving power of a grating is nN. Distinguish interference (few sources) from diffraction (continuous wavefront) when the question asks.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Laser: population inversion, pumping and properties",
+          "note": "Three ingredients: a gain medium with population inversion, a pump to create it, and an optical resonator for feedback. Emission is stimulated, so the output is coherent, monochromatic, directional and intense. Einstein's A and B coefficients relate spontaneous and stimulated emission.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Optical fibre: numerical aperture and attenuation",
+          "note": "Light is guided by total internal reflection when the core index exceeds the cladding index. NA = √(n₁² − n₂²) and the acceptance angle is sin⁻¹(NA). Attenuation is 10 log(Pin/Pout)/L dB/km; dispersion limits bandwidth.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "100106",
+      "name": "Basic Electrical Engineering",
+      "vvi": [
+        {
+          "topic": "KVL, KCL and mesh or nodal analysis",
+          "note": "KCL: the sum of currents at a node is zero; KVL: the sum of voltages around a loop is zero. Mesh analysis writes KVL for each independent loop, nodal analysis writes KCL at each independent node. Pick one and solve the linear system; state the assumed current directions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Thevenin's and Norton's theorems",
+          "note": "Thevenin replaces a linear network by Vth in series with Rth; Norton by In in parallel with Rn, where Vth = In·Rn and Rth = Rn. Find Vth as the open-circuit voltage, In as the short-circuit current, and Rth by killing the sources and looking in. Maximum power transfer needs RL = Rth.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Single-phase AC circuits and power factor",
+          "note": "XL = 2πfL and XC = 1/(2πfC); impedance Z = R + j(XL − XC). At resonance XL = XC, Z is purely resistive and the power factor is unity. Real power P = VI cos φ, reactive Q = VI sin φ, apparent S = VI; draw the phasor diagram.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Transformers: EMF equation, losses and efficiency",
+          "note": "E = 4.44 f N Φm, so the turns ratio sets the voltage ratio. Core loss (hysteresis and eddy current) is constant with load; copper loss varies as I²R. Efficiency = output/(output + core + copper), maximum when copper loss equals core loss. An ideal transformer has no losses and no leakage.",
+          "marks": 7,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "100113",
+      "name": "IT Workshop",
+      "vvi": [
+        {
+          "topic": "PC hardware: the parts of a computer",
+          "note": "A PC is a motherboard carrying the CPU, RAM, chipset and expansion slots, with storage, a switched-mode power supply and a case whose front-panel headers connect power and reset. Ports to name: USB, HDMI, RJ-45 and audio jacks. The POST runs at power-on and reports a fault by beep code or on-screen message before the bootloader loads the operating system.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Installing an operating system and partitioning a disk",
+          "note": "Boot from the installation media, choose the disk and partition it: primary partitions hold the system, an extended partition holds logical drives, and the bootable primary must be marked active on an MBR disk. Format each partition with a file system such as NTFS, ext4 or FAT32 and set the boot order in firmware. Install drivers and updates after the first boot.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Word processing and spreadsheet formulas",
+          "note": "A word processor separates paragraph formats from character formats, and a report needs heading styles, page numbers, a table of contents and numbered captions. A spreadsheet addresses each cell by column and row; a formula begins with = and uses relative, absolute or mixed references, which decide what changes when it is copied. Know SUM, AVERAGE, IF, COUNT and VLOOKUP.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Internet, DNS and email",
+          "note": "An IP address identifies a host, DNS resolves a name to that address, and HTTP or HTTPS carries the request and response. An email has a header with From, To, Cc and Subject, a body and attachments, sent over SMTP and read over IMAP or POP3. Narrow a search with operators such as quotes for an exact phrase or site: for one domain.",
+          "marks": 2,
+          "confidence": "high"
+        },
+        {
+          "topic": "LaTeX for technical reports",
+          "note": "A LaTeX file has a preamble that declares the document class and packages, then a body between the document environment markers. Sectioning commands number themselves, an equation environment numbers a display, and citations resolve from a bibliography file. Compile twice so cross-references and the table of contents settle.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    }
+  ]
+}

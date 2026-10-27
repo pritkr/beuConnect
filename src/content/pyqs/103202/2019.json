@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2019",
+    "subject": "MATHEMATICS—II (Linear Algebra, Transform Calculus and Numerical Method)",
+    "subject_slug": "mathematics-ii-linear-algebra-transform-calculus-and-numerical-method",
+    "subject_code": "103202",
+    "year": 2019,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "<p>If \\( A \\) is a 3-rowed square matrix such that \\( |A|=2 \\), then \\( |\\text{adj}\\{\\text{adj}(\\text{adj } A^2)\\}| \\) is equal to</p>",
+          "options": [
+            "\\( 2^4 \\)",
+            "\\( 2^8 \\)",
+            "\\( 2^{16} \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "<p>If 3, -2 are the eigenvalues of a non-singular matrix \\( A \\) and \\( |A|=4 \\), then eigenvalues of \\( \\text{adj } A \\) are</p>",
+          "options": [
+            "\\( \\frac{3}{4}, -\\frac{1}{2} \\)",
+            "\\( \\frac{4}{3}, -2 \\)",
+            "\\( 12, -8 \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "<p>Let \\( A \\) be a skew-symmetric matrix of order \\( n \\), then</p>",
+          "options": [
+            "\\( |A|=0 \\), if \\( n \\) is even",
+            "\\( |A|=0 \\), if \\( n \\) is odd",
+            "\\( |A|=0 \\) for all \\( n \\in \\mathbb{N} \\)",
+            "\\( |A| \\neq 0 \\), always"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "<p>If \\( A \\) is non-zero column matrix of the type \\( n \\times 1 \\) and \\( B \\) is non-zero row matrix of the type \\( 1 \\times n \\), then \\( \\rho(AB) \\) is</p>",
+          "options": [
+            "0",
+            "1",
+            "\\( n \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "<p>In regula-falsi method, the first approximation is given by</p>",
+          "options": [
+            "\\( x_1 = \\frac{af(b) - bf(a)}{f(b) - f(a)} \\)",
+            "\\( x_1 = \\frac{bf(b) - af(a)}{f(b) - f(a)} \\)",
+            "\\( x_1 = \\frac{bf(a) + af(b)}{f(a) - f(b)} \\)",
+            "\\( x_1 = \\frac{af(a) - bf(b)}{f(a) - f(b)} \\)"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "<p>While evaluating the definite integral by trapezoidal rule, the accuracy can be increased by taking</p>",
+          "options": [
+            "large number of sub-intervals",
+            "even number of sub-intervals",
+            "\\( h = 4 \\)",
+            "a multiple of 3"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "<p>Various types of Runge-Kutta methods are classified according to their</p>",
+          "options": [
+            "degree",
+            "order",
+            "rank",
+            "Both (i) and (ii)"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "<p>The value of \\( L\\left\\{ \\frac{\\cos 10t}{t} \\right\\} \\) is</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "Does not exist"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "<p>Laplace transform of unit step function is</p>",
+          "options": [
+            "\\( \\frac{e^{-as}}{s} \\)",
+            "\\( \\frac{e^{as}}{s} \\)",
+            "\\( \\frac{e^{-as}}{s+1} \\)",
+            "\\( \\frac{e^{as}}{s+1} \\)"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "<p>Which function has Laplace transform even it is not piecewise continuous in the range?</p>",
+          "options": [
+            "\\( \\frac{1}{\\sqrt{t}} \\)",
+            "\\( \\frac{1}{\\sqrt{t^2}} \\)",
+            "\\( \\frac{1}{\\sqrt{t^3}} \\)",
+            "All of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "2.",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>Investigate for what value of \\( \\lambda \\) and \\( \\mu \\) do the system of equations \\( x+y+z=6 \\), \\( x+2y+3z=10 \\) and \\( x+2y+\\lambda z=\\mu \\) have (i) no solution, (ii) unique solution and (iii) infinite number of solution.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>Find the eigenvalues and eigenvectors of the matrix</p>\n<p>\\( A = \\begin{bmatrix} -2 & 2 & -3 \\\\ 2 & 1 & -6 \\\\ -1 & -2 & 0 \\end{bmatrix} \\)</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "3.",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>Verify Cayley-Hamilton theorem for the matrix</p>\n<p>\\( A = \\begin{bmatrix} 1 & 2 & 0 \\\\ -1 & 1 & 2 \\\\ 1 & 2 & 1 \\end{bmatrix} \\)</p>\n<p>Also obtain (i) \\( A^{-1} \\), (ii) eigenvalues of \\( A \\) and \\( A^2 \\), and (iii) spectral radius of \\( A \\).</p>",
+          "total_marks": 8
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>Diagonalize the matrix</p>\n<p>\\( A = \\begin{bmatrix} 2 & 0 & 4 \\\\ 0 & 6 & 0 \\\\ 4 & 0 & 2 \\end{bmatrix} \\)</p>\n<p>by means of an orthogonal transformation.</p>",
+          "total_marks": 6
+        }
+      ]
+    },
+    {
+      "section_title": "4.",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>Find a real root of the equation \\( x \\log_{10} x = 1.2 \\) by using regula-falsi method correct to four significant digits.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Show that the following two sequences both have convergence of the second order with the same limit \\( \\sqrt{a} \\):</p>\n<p>\\( x_{n+1} = \\frac{1}{2} x_n \\left( 1 + \\frac{a}{x_n^2} \\right) \\) and \\( x_{n+1} = \\frac{1}{2} x_n \\left( 3 - \\frac{x_n^2}{a} \\right) \\)</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "5.",
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>Derive Newton's forward interpolation formula.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Find the value of \\( \\cos 51^\\circ 43' \\) by Gauss's backward interpolation formula. Given that</p>\n<table border=\"1\">\n<tr><td>x</td><td>50°</td><td>51°</td><td>52°</td><td>53°</td><td>54°</td></tr>\n<tr><td>cos x</td><td>0.6428</td><td>0.6293</td><td>0.6157</td><td>0.6018</td><td>0.5878</td></tr>\n</table>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "6.",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>Solve the differential equation \\( \\frac{dy}{dx} = y - x^2 \\) by Milne's method and compute \\( y \\) at \\( x = 0.80 \\). Given that</p>\n<table border=\"1\">\n<tr><td>x</td><td>0.0</td><td>0.2</td><td>0.4</td><td>0.6</td></tr>\n<tr><td>y</td><td>1</td><td>1.12186</td><td>1.46820</td><td>1.73790</td></tr>\n</table>",
+          "total_marks": 8
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>Using Adams-Moulton-Bashforth method, find \\( y(1.4) \\). Given \\( \\frac{dy}{dx} = x^2(1+y) \\), \\( y(1)=1 \\), \\( y(1.1)=1.233 \\), \\( y(1.2)=1.548 \\), \\( y(1.3)=1.979 \\).</p>",
+          "total_marks": 6
+        }
+      ]
+    },
+    {
+      "section_title": "7.",
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>Solve \\( u_{xx} = u_t \\) in \\( 0 < x < 2 \\), \\( t > 0 \\), \\( u(0, t) = u(2, t) = 0 \\), \\( t > 0 \\) and \\( u(x, 0) = \\sin(\\pi x / 2) \\), \\( 0 \\le x \\le 2 \\) using \\( \\Delta x = 0.5 \\), \\( \\Delta t = 0.25 \\) for one time step by Crank-Nicolson implicit finite difference method.</p>",
+          "total_marks": 10
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>Write an implicit method for solving the one-dimensional wave equation \\( u_{tt} = c^2 u_{xx} \\), \\( 0 \\le x \\le l \\), \\( t > 0 \\).</p>",
+          "total_marks": 4
+        }
+      ]
+    },
+    {
+      "section_title": "8.",
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "<p>Evaluate \\( \\int_0^\\infty \\{ \\cos t \\cdot \\delta(t - \\pi/4) \\} dt \\) by using Laplace transform.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "<p>Find the Fourier transform of the function \\( f(t) = e^{-a|t|} \\), \\( -\\infty < t < \\infty \\), \\( a > 0 \\).</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "9.",
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>Find the inverse Laplace transform of \\( \\tan^{-1} \\left( \\frac{2}{s^2} \\right) \\).</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>Solve the given partial differential equation by Laplace transform : \\( x \\frac{\\partial u}{\\partial t} + \\frac{\\partial u}{\\partial x} = xt \\), if \\( u(x, 0) = 0 \\), \\( u(0, t) = t \\).</p>",
+          "total_marks": 8
+        }
+      ]
+    }
+  ]
+}

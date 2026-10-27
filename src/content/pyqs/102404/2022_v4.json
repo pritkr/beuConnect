@@ -1,0 +1,244 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2022",
+    "subject": "INSTRUMENTATION AND CONTROL",
+    "subject_slug": "instrumentation-and-control",
+    "subject_code": "102404",
+    "year": 2022,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following causes a controlled variable to change?</p>",
+          "options": [
+            "Disturbance",
+            "Change in set point",
+            "Variation in load demand",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>What is the resolution of a DAC with a maximum voltage of 15 volts and five input lines?</p>",
+          "options": [
+            "0.4687",
+            "0.4838",
+            "0.2343",
+            "0.2419"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The derivative function gives the actuator ___________.</p>",
+          "options": [
+            "boost action",
+            "braking action",
+            "Both (i) and (ii)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>A square wave that is 20 volts at its On state and 0 volt at its Off state will produce an\n                        average DC\n                        voltage of ___________ when duty cycle is 75%.</p>",
+          "options": [
+            "15 V",
+            "10 V",
+            "7.5 V",
+            "5 V"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The resistance of an RTD is:</p>",
+          "options": [
+            "directly proportional to the temperature",
+            "inversely proportional to the temperature",
+            "directly proportional to the square of temperature",
+            "inversely proportional to the square of temperature"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following valves has the greatest flow capacity of all control valves?</p>",
+          "options": [
+            "Single-seated",
+            "Three-way",
+            "Butterfly",
+            "Ball"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A unity feedback system has open-loop transfer function as \\( G(s) = \\frac{16}{s(s+16)} \\).\n                        The\n                        natural frequency of the system is:</p>",
+          "options": [
+            "16",
+            "8",
+            "2",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following represents the application of inductive transducers?</p>",
+          "options": [
+            "Displacement measurement",
+            "Thickness measurement",
+            "Both displacement and thickness measurements",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following can act as a comparator?</p>",
+          "options": [
+            "Op-amp with negative feedback",
+            "Op-amp with positive feedback",
+            "Op-amp without feedback",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Transfer function represents the input-output relationship of a system, with initial conditions\n                        as:\n                    </p>",
+          "options": [
+            "zero",
+            "positive",
+            "negative",
+            "All of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define the following: (i) Transducer (ii) Resolution (iii) Linearity (iv) Accuracy (v)\n                        Repeatability\n                        (vi) Calibration (vii) Backlash</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Discuss in detail about the classification and elimination of error.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Differentiate among piezoelectric, inductive and capacitance-type transducers.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What are pyrometers? Explain with the help of neat sketch.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the working of electrical resistance strain gauge. Explain how the resistance change of a\n                        strain gauge is measured with the help of Wheatstone bridge. Also, explain the methods of lead\n                        wire\n                        compensation and temperature compensation in case of strain gauge.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the five basic laws of thermocouple behaviour and how these laws are useful in designing\n                        thermocouple for temperature measurement.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Consider a system with controller \\( G_c \\), reference input \\( R \\), and disturbance input\n                        \\( D\n                        \\) acting on the plant \\( \\frac{1}{s(s+2)} \\). If \\( G_c \\) is a proportional controller,\n                        \\(\n                        G_c = K_p \\), what value of \\( K_p \\) will cause the steady-state error for a unit ramp\n                        reference\n                        input to be 0.1?</p>\n<p>(a) If \\( G_c \\) is a proportional controller,\n                        \\(\n                        G_c = K_p \\), what value of \\( K_p \\) will cause the steady-state error for a unit ramp\n                        reference\n                        input to be 0.1?</p>\n<p>(b) If zero steady-state error for a unit ramp reference input is required, what form should the\n                        controller \\( G_c \\) take?</p>\n<p>(c) For a unit-step disturbance input, what form of controller \\( G_c \\) should be chosen to\n                        make\n                        the\n                        steady-state error zero?</p>\n<p>(d) Assume that the reference input is a unit step, the disturbance input is zero and\n                        proportional\n                        controller being used. What value (or values) of \\( K_p \\) will yield an underdamped system\n                        with a\n                        settling time of 4 seconds?</p>\n<p>(e) Considering the same case as in part (d), what effect does increasing \\( K_p \\) have on the\n                        damping\n                        ratio?</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/108.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>With the help of a suitable example, explain the difference between open-loop control and\n                        closed-loop\n                        control.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>For a given mechanical translational system with masses \\( M_1, M_2 \\), springs \\( K_1, K_2\n                        \\),\n                        and damper \\( B \\), find out the transfer function \\( \\frac{X(s)}{F(s)} \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/109.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the operations of the following: (i) Inverting op-amp (ii) Summing op-amp (iii)\n                        Differentiating op-amp (iv) Integrating op-amp.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>What are the important requirements of a signal conditioner and how are they met?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>For the open-loop transfer function \\( G(s) = \\frac{400(s+1)(s+10)}{s^3(s+100)(s+1000)} \\),\n                        sketch\n                        the Bode magnitude and phase diagrams. Sketch the diagrams for each term and then also sketch\n                        the\n                        total diagrams. Show the slopes of each section and of the total diagram.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any four of the following:",
+      "total_marks": 14,
+      "questions": []
+    }
+  ]
+}

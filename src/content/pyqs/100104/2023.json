@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 1st Semester Examination, 2023",
+    "subject": "Programming for Problem Solving",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100104",
+    "year": 2023,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "<p>What is the output of the following code?</p>\n<pre><code>int x = 10;\nx++;\nprintf(\"%d\", x);</code></pre>",
+          "options": [
+            "Error",
+            "10",
+            "11",
+            "9"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "<p>Which function is used to dynamically allocate memory in C?</p>",
+          "options": [
+            "malloc()",
+            "calloc()",
+            "realloc()",
+            "all of the above"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "<p>What is the output of the following code?</p>\n<pre><code>#include &lt;stdio.h&gt;\nint main() {\n  char *p = 0;\n  *p = 'a';\n  printf(\"%c\", *p);\n  return 0;\n}</code></pre>",
+          "options": [
+            "It will print 'a'",
+            "It will print 0",
+            "Compile time error",
+            "Runtime error"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "<p>What are the elements present in the array of the following C code?</p>\n<pre><code>int array[6] = { 5 };</code></pre>",
+          "options": [
+            "5, 5, 5, 5, 5, 5",
+            "5, 0, 0, 0, 0, 0",
+            "6, 6, 6, 6, 6, 6",
+            "(garbage), (garbage), (garbage), (garbage), (garbage), 5"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "<p>What will be the output of the following C code?</p>\n<pre><code>void main() {\n  int i = 0;\n  while (i &lt; 10) {\n    i++;\n    printf(\"hi\\n\");\n    while (i &lt; 8) {\n      i++;\n      printf(\"hello\\n\");\n    }\n  }\n}</code></pre>",
+          "options": [
+            "hi is printed 8 times, hello 7 times and then hi 2 times",
+            "hi is printed once, hello 7 times",
+            "hi is printed once, hello 7 times and then hi 2 times",
+            "None of the above."
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "<p>What does the following declaration mean?</p>\n<pre><code>int (*ptr) [10];</code></pre>",
+          "options": [
+            "ptr is array of pointers to 10 integers.",
+            "ptr is a pointer to an array of 10 integers.",
+            "ptr is an array of 10 integers.",
+            "ptr is a pointer to array of 10 characters."
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "<p>C is ______ type of programming language?</p>",
+          "options": [
+            "Object Oriented",
+            "Procedural",
+            "Bit level language",
+            "Functional"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "<p>Choose the right C statement.</p>",
+          "options": [
+            "int my_age = 10;",
+            "int my.age = 10;",
+            "my age = 10;",
+            "All are correct"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "<p>Consider the following integer 2D array, which is stored in memory with the base address 1400. What would be the address of the element 14? [Assume that an integer value takes 4 bytes of memory space.]</p>\n<pre><code>int a[3][5] = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}};</code></pre>",
+          "options": [
+            "1440",
+            "1444",
+            "1448",
+            "1452"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "<p>Consider the following declaration of the variables:</p>\n<pre><code>int x, A[5][6], *p = &amp;A[0][0];</code></pre>\n<p>Which of the following is/are the correct expression(s) to access A[3][5] and assign it to x?</p>",
+          "options": [
+            "x = *(p + 23);",
+            "x = *(p + 28);",
+            "x = *(*(A + 5) + 3);",
+            "x = *(*(A + 3) + 5);"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "2.",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>Explain the difference between auto and static type storage variables with suitable example codes.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>Differentiate between structures and unions in C. Write a C program to detect whether the computer is little endian or big endian using unions.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "3.",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>Write an efficient C program to search if the integer 24 is present in the given sorted array or not. If it is present, print the index where it is found.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>Explain the insertion sort algorithm and its steps using an example. Consider the array: [5, 2, 4, 6, 1, 3].</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "4.",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>Describe the concept of pointers in C programming language. Explain how pointers work and discuss their importance in programming, particularly in memory management and efficient data manipulation.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Write a C program to copy contents of one file to another. While doing so replace all lowercase characters to their equivalent uppercase characters.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "5.",
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>Write a C Program to find the Euclidean distance between two points P(x, y) and Q(a, b) using structure representation of points P and Q.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Differentiate between call-by-value and call-by-reference with suitable examples.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "6.",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>Define arrays in C and explain their declaration and usage. Write a C program to reverse the content of an integer array without using auxiliary array.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>Define implicit and explicit type casting in C. Provide code examples illustrating when each type of casting occurs and their potential side effects.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "7.",
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>Explain the concept of nested loops. Describe how the break and continue statements alter the flow of control within C loops.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>Explain the concept of algorithmic complexity and its significance in computer science. Using examples, illustrate how different algorithms exhibit various orders of complexity, such as constant time (O(1)), linear time (O(n)), logarithmic time (O(log n)), quadratic time (O(n^2)), and exponential time (O(2^n)).</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "8.",
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "<p>The first 6 numbers of the Fibonacci series are: 0 1 1 2 3 5. Write a C program using recursion to find and print the Fibonacci series for first n terms.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "<p>Write a C program using recursion to find factorial of a given number n.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "9.",
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>Write a C program for the following:</p>\n<ol type=\"i\">\n  <li>Reverse a string without using strrev().</li>\n  <li>Concatenate two strings without using strcat().</li>\n</ol>",
+          "total_marks": 7
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>Write a C program to find result matrix after multiplying two given matrices using 2-D arrays. Check the multiplication criteria also while deriving the logic.</p>",
+          "total_marks": 7
+        }
+      ]
+    }
+  ]
+}

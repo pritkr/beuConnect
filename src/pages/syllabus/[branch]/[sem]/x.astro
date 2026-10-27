@@ -1,0 +1,115 @@
+---
+export const prerender = true;
+import Layout from "../../../../layouts/Layout.astro";
+import branchConfig from "../../../../assets/data/config.json";
+import Header from "../../../../components/header.astro";
+import Footer from "../../../../components/footer.astro";
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const branch of branchConfig.branches) {
+    for (let sem = 1; sem <= 8; sem++) {
+      paths.push({ params: { branch: branch.code, sem: String(sem) } });
+    }
+  }
+  return paths;
+}
+
+const { branch, sem } = Astro.params;
+const branchInfo = branchConfig.branches.find(b => b.code === branch);
+if (!branchInfo) throw new Error(`Unknown branch ${branch}`);
+
+const syllabus = await import(`../../../../assets/data/branches/${branchInfo.file}.json`);
+const data = syllabus.default;
+const semData = data && data.semesters ? data.semesters[sem] : undefined;
+---
+
+<Layout title={`${branchInfo.name} — Semester ${sem}`}>
+    <Header />
+  <h1><a href="../">←{branchInfo.name}</a></h1>
+  <h2>Semester {sem}</h2>
+
+  {semData && semData.subjects && semData.subjects.length ? (
+    <section>
+      {(() => {
+        const nonPracticals = semData.subjects.filter((s: any) => (s.type || '').toLowerCase() !== 'practical');
+        const practicals = semData.subjects.filter((s: any) => (s.type || '').toLowerCase() === 'practical');
+        return (
+          <>
+            {nonPracticals.length ? <h3>Theory</h3> : null}
+            {nonPracticals.map((sub: any) => (
+              <details>
+                <summary>
+                  <strong>{sub.name}</strong>
+                  {sub.code ? ` (${sub.code})` : ''}
+                  {` - ${sub.credits} Credits`}
+                </summary>
+                {sub.content ? (
+                  (() => {
+                    const ltp = (sub.summary && typeof sub.summary === 'object')
+                      ? [
+                          sub.summary.lecture != null ? `${sub.summary.lecture}L` : null,
+                          sub.summary.tutorial != null ? `${sub.summary.tutorial}T` : null,
+                          sub.summary.practical != null ? `${sub.summary.practical}P` : null,
+                        ].filter(Boolean).join(' + ')
+                      : null;
+                    return (
+                      <p style="white-space: pre-wrap;">{ltp ? `${ltp}\n` : ''}{sub.content}</p>
+                    );
+                  })()
+                ) : null}
+                {Array.isArray(sub.references) && sub.references.length ? (
+                  <div>
+                    <p>References:</p>
+                    <div>
+                      {sub.references.map((ref: any) => (
+                        <div>{ref}</div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+              </details>
+            ))}
+            {practicals.length ? <h3>Practical</h3> : null}
+            {practicals.map((sub: any) => (
+              <details>
+                <summary>
+                  <strong>{sub.name}</strong>
+                  {sub.code ? ` (${sub.code})` : ''}
+                  {` - ${sub.credits} Credits`}
+                </summary>
+                {sub.content ? (
+                  (() => {
+                    const ltp = (sub.summary && typeof sub.summary === 'object')
+                      ? [
+                          sub.summary.lecture != null ? `${sub.summary.lecture}L` : null,
+                          sub.summary.tutorial != null ? `${sub.summary.tutorial}T` : null,
+                          sub.summary.practical != null ? `${sub.summary.practical}P` : null,
+                        ].filter(Boolean).join(' + ')
+                      : null;
+                    return (
+                      <p style="white-space: pre-wrap;">{ltp ? `${ltp}\n` : ''}{sub.content}</p>
+                    );
+                  })()
+                ) : null}
+                {Array.isArray(sub.references) && sub.references.length ? (
+                  <div>
+                    <p>References:</p>
+                    <div>
+                      {sub.references.map((ref: any) => (
+                        <div>{ref}</div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+              </details>
+            ))}
+          </>
+        );
+      })()}
+    </section>
+  ) : (
+    <p><em>Data not available for this semester yet.</em></p>
+  )}
+  <Footer />
+</Layout>

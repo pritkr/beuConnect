@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination-2023",
+    "subject": "Design of Steel Structure",
+    "subject_slug": "design-of-steel-structure",
+    "subject_code": "101603",
+    "year": 2023,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "The dead load includes",
+          "options": [
+            "Self wt of the structure",
+            "All superimposed loads",
+            "wt of stationary equipment",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "The effective throat thickness in case of incomplete penetration butt held is taken as",
+          "options": [
+            "\\( 7/8^{th} \\) of the thickness of the thicker part joined",
+            "\\( 7/8^{th} \\) of the thickness of the thinner part joined",
+            "\\( 5/7^{th} \\) of the thickness of the thicker part joined",
+            "\\( 5/7^{th} \\) of the thickness of the thinner part joined"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "The effective length of fillet weld should be less than",
+          "options": [
+            "the size of weld",
+            "two times the size of weld",
+            "three times the size of weld",
+            "four times the size of weld"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "The practical safety factor for the material of bolts is",
+          "options": [
+            "1.00",
+            "1.10",
+            "1.15",
+            "1.25"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "Which of the following is not a compression member?",
+          "options": [
+            "tie",
+            "strut",
+            "rafter",
+            "boom"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "What is the maximum effective slenderness ratio for a tension member in which reversal occurs",
+          "options": [
+            "180",
+            "200",
+            "280",
+            "300"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Lacing shall be designed to resist a total transverse shear equal to of axial force",
+          "options": [
+            "5%",
+            "1%",
+            "4.3%",
+            "2.5%"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "An ideal section for compression",
+          "options": [
+            "one having different moment of inertia about any axis through its centre of gravity",
+            "one having same moment of inertia about any axis through its centre of gravity",
+            "one having larger length",
+            "one made up of costly material"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "Proof stess for minimum bolt tension is",
+          "options": [
+            "\\( 0.7f_{yb} \\)",
+            "\\( 0.5f_{yb} \\)",
+            "\\( 0.7f_{ub} \\)",
+            "\\( 0.5f_{ub} \\)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "The flange is classified as plastic if outstand element of compression flange of rolled section\n                        is\n                        than",
+          "options": [
+            "\\( 8.4 \\varepsilon \\)",
+            "\\( 9.4 \\varepsilon \\)",
+            "\\( 10.5 \\varepsilon \\)",
+            "\\( 15.7 \\varepsilon \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Design a lap joint between the two plates each of width 120mm, if the thickness of one plate is\n                        16 mm\n                        and the other is 12 mm. The joint has to transfer a design load of 160 kN. The plates are of\n                        Fe410\n                        grade. Use bearing type bolt."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "List the 8 loading combination to be considered when considering only DL., LL. and EL."
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "What are the factors that influence wind pressure coefficient?"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Write short note on: (i) Plastic Section (ii) Compact Section (iii) Semi-Compact Section"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Design a slab base for a column ISHB 350 @ 710.2N/m subjected to the factored axial compressive\n                        load\n                        of 120kN. Load is transferred to the base plate by direct bearing of Column flanges take \\( f_u\n                        =\n                        410 MPa \\), \\( f_y = 250 MPa \\)."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Calculate the moment carrying capacity of a laterally Unrestrained ISMB 400 member of length 3 m."
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Differentiate between local and lateral buckling of beam.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "Design a built-up laced column with four angles to support an axial load of 900kN. The column is\n                        12 m\n                        long and both the ends are held in position and restrained against rotation. Assume Fe 410 grade\n                        steel."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "A tie bar 100 mm x 16 mm is welded to another plate. It is subject to factored pull of 300 kN.\n                        Find\n                        the minimum overlap required if 8 mm site fillet welds are used. Assume any missing data.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Why is lacing provided in the columns?",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "A tie member of truss consists of double angle section each 80 mm x 80 mm x 8 mm welded on the\n                        opposite side of a 12 mm thick gusset plate. Design a fillet weld for making connection in the\n                        workshop. The factored tensile force in the member is 300 kN.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any four of the following:-",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Prying force</li>\n<li>Failure modes of bolted joint</li>\n<li>Lateral tensional buckling</li>\n<li>Intermediate stiffer</li>\n<li>Parameter affecting behaviour of beam column</li>\n<li>Rolled steel section with suitable diagram</li>\n</ul>",
+          "options": [
+            "Prying force",
+            "Failure modes of bolted joint",
+            "Lateral tensional buckling",
+            "Intermediate stiffer",
+            "Parameter affecting behaviour of beam column",
+            "Rolled steel section with suitable diagram"
+          ]
+        }
+      ]
+    }
+  ]
+}

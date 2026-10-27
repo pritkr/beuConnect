@@ -1,0 +1,300 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2020",
+    "subject": "HEAT TRANSFER",
+    "subject_slug": "heat-transfer",
+    "subject_code": "102502",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Students should be allowed to use the heat transfer charts."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following is the case of heat transfer by radiation?</p>",
+          "options": [
+            "Blast furnace",
+            "Heating of building",
+            "Cooling of parts in furnace",
+            "Heat received by a person from fireplace",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>On a heat transfer surface, fins are provided to</p>",
+          "options": [
+            "increase temperature gradient so as to enhance heat transfer",
+            "increase turbulence in flow for enhancing heat transfer",
+            "increase surface area to promote the rate of heat transfer",
+            "decrease the pressure drop of the fluid"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Consider two walls, A and B, with the same surface areas and the same temp. drops across their\n                        thickness. The ratio of K is \\( K_A/K_B = 4 \\) and the ratio of \\( L_A/L_B = 2 \\). The ratio\n                        of\n                        heat\n                        transfer rates through the walls \\( Q_A/Q_B \\) is</p>",
+          "options": [
+            "0.5",
+            "1",
+            "2",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The thermal resistance of a hollow cylinder is represented as</p>",
+          "options": [
+            "\\( \\frac{2\\pi k}{\\ln(r_2/r_1)} \\)",
+            "\\( \\frac{r_2 - r_1}{4\\pi r_2 r_1 k} \\)",
+            "\\( \\frac{\\ln(r_2/r_1)}{2\\pi k L} \\)",
+            "\\( \\frac{\\ln(r_2/r_1)}{2\\pi r_2 r_1 k L} \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The Biot number can be thought of as the ratio of</p>",
+          "options": [
+            "the conduction to convection thermal resistance",
+            "the convection to conduction thermal resistance",
+            "the thermal energy storage capacity to conduction resistance",
+            "the thermal energy storage capacity to convection resistance"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The free convection heat transfer is significantly affected by</p>",
+          "options": [
+            "Reynolds number",
+            "Grashof number",
+            "Prandtl number",
+            "Stanton number"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In a counterflow heat exchange, cold fluid enters at \\( 30^\\circ C \\) and leaves at \\(\n                        50^\\circ C\n                        \\),\n                        whereas the hot fluid enters at \\( 150^\\circ C \\) and leaves at \\( 130^\\circ C \\). The\n                        mean\n                        temperature difference for this case is</p>",
+          "options": [
+            "\\( 20^\\circ C \\)",
+            "\\( 80^\\circ C \\)",
+            "\\( 100^\\circ C \\)",
+            "indeterminate"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>What is the basic equation of radiation from which all other equations of radiation can be\n                        derived?\n                    </p>",
+          "options": [
+            "Stefan-Boltzmann equation",
+            "Planck's equation",
+            "Wien's equation",
+            "Rayleigh-Jeans formula"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The hydrodynamic and thermal boundary layers are identical at Prandtl number equal to</p>",
+          "options": [
+            "0.5",
+            "1",
+            "10",
+            "50"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The normal automobile radiator is a heat exchanger of the type</p>",
+          "options": [
+            "direct contact",
+            "parallel flow",
+            "counterflow",
+            "cross-flow"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What are the different modes of heat transfer? How does heat conduction differ from heat\n                        convection?\n                    </p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>State the Fourier's law of heat conduction.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>A plane wall is a composite of two materials, A and B. The wall material A has uniform heat\n                        generation \\( q_g = 1.5 \\times 10^6 \\text{ W/m}^3 \\), \\( k_A = 75 \\text{ W/mK} \\) and\n                        thickness\n                        \\(\n                        L_A = 50 \\text{ mm} \\). The wall material B has no heat generation with \\( k_B = 150 \\text{\n                        W/mK} \\)\n                        and thickness \\( L_B = 20 \\text{ mm} \\). The inner surface of material A is well-insulated,\n                        while\n                        the outer surface of material B is cooled by a water stream with \\( T_\\infty = 30^\\circ C \\)\n                        and\n                        \\(\n                        h = 1000 \\text{ W/m}^2\\text{K} \\). Determine the temperature of the insulated surface and the\n                        temperature of the cooled surface.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Adding insulation on a cylindrical surface will always decrease heat transfer rate. True or\n                        False.\n                        Explain.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>In a cylindrical fuel element for a gas-cooled nuclear reactor, the generation rate of thermal\n                        energy\n                        within the fuel element due to fission can be approximated by the relation \\( q(r) = q_0\n                        \\left[\n                        1 -\n                        \\left(\\frac{r}{a}\\right)^2 \\right] \\text{W/m}^3 \\) where a is the radius of the fuel\n                        element and\n                        \\(\n                        q_0 \\) is constant. The boundary surface \\( r = a \\) is maintained at a uniform temperature\n                        \\(\n                        T_0\n                        \\).<br/>(i) Assuming one-dimensional, steady-state heat flow, develop a relation for the\n                        temperature\n                        drop from the centerline to the surface of the fuel element.<br/>(ii) For a radius of \\( a = 30\n                        \\text{ mm} \\), the thermal conductivity \\( k = 10 \\text{ W/(m}^\\circ\\text{C)} \\) and \\(\n                        q_0 = 2\n                        \\times 10^7 \\text{ W/m}^3 \\), calculate the temperature drop from the centerline to the\n                        surface.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is boundary condition? Mention the different types of boundary conditions.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A thin fin of length L has its two ends fixed to two parallel walls at temperatures \\( T_1 \\)\n                        and\n                        \\(\n                        T_2 \\), the temperature of the environment being \\( T_\\infty \\). Show that the expression\n                        for\n                        one-dimensional temperature distribution along the length of the fin can be represented as: \\(\n                        \\theta = \\theta_1 \\frac{\\sinh m(L-x)}{\\sinh mL} + \\theta_2 \\frac{\\sinh mx}{\\sinh mL}\n                        \\)</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/110.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What are the inherent dimensionless parameters for forced convection?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>In the fully developed region of flow in a circular tube, will the velocity profile change in the\n                        flow direction? How about the temperature profile?</p>"
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>Consider the velocity and temperature profiles for a fluid flow in a tube with diameter of 50 mm\n                        can\n                        be expressed as \\( u(r) = 0.05 \\left[ 1 - \\left(\\frac{r}{R}\\right)^2 \\right] \\) and \\(\n                        T(r) =\n                        400 +\n                        80 \\left(\\frac{r}{R}\\right)^2 - 30 \\left(\\frac{r}{R}\\right)^3 \\) with units in m/s and K,\n                        respectively. Determine the average velocity and the mean temperature from the given velocity\n                        and\n                        temperature profiles.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is the physical significance of Biot number (Bi)? Represent diagrammatically the effect of\n                        Bi on\n                        steady-state temperature distribution in a plane wall with surface convection.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A long cylinder of radius 150 mm and at an initial uniform temperature of 530 °C is suddenly\n                        exposed\n                        to an environment at 30 °C. The convection heat transfer coefficient between the surface of the\n                        cylinder and the environment is \\( 380 \\text{ W/m}^2\\text{K} \\). The thermal conductivity\n                        and\n                        thermal diffusivity of the cylinder material are \\( 200 \\text{ W/mK} \\) and \\( 8.5 \\times\n                        10^{-5}\n                        \\text{ m}^2\\text{/s} \\) respectively. Determine (i) the temperature at a radius of 120 mm and\n                        (ii)\n                        the heat transferred per meter length of the cylinder 265 seconds after the cylinder is exposed\n                        to\n                        the environment (use Heisler charts).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What do you mean by fully developed boundary flow? Explain with suitable diagram.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Derive the 2-D differential form of conservation of energy equation for the laminar,\n                        incompressible\n                        flow over a flat plate with constant fluid properties.</p>"
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>Physically, what does the Grashof number represent?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What is fouling factor? Explain its effect in heat exchanger design.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Define heat exchanger effectiveness.</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>Derive for parallel flow heat exchanger \\( \\epsilon = \\frac{1 - \\exp[-NTU(1+C)]}{1+C} \\)\n                        where,\n                        \\( C\n                        = \\frac{C_{min}}{C_{max}} \\), NTU = Number of transfer units.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>State the Fick's law of diffusion.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Determine the view factor of the cylindrical surface with respect to the base, when \\( L = 2r\n                        \\).\n                        Consider \\( F_{12} = 0.16 \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/111.jpg\"/>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Two infinite parallel plates are maintained at temperatures \\( T_1 \\) and \\( T_2 \\) with \\(\n                        T_1 &gt;\n                        T_2\n                        \\). To reduce the rate of radiation heat transfer between the plates, they are separated by a\n                        thin\n                        radiation shield which has different emissivities on opposite surfaces. One surface has an\n                        emissivity of \\( \\epsilon_s \\) and the other surface of \\( 2\\epsilon_s \\) where \\(\n                        \\epsilon_s &lt; 0.5 \\). Determine the orientation of the shield, i.e., whether the surface of \\(\n                            \\epsilon_s \\) or the surface of emissivity \\( 2\\epsilon_s \\) would be facing towards\n                            the plate at temperature \\( T_1 \\), for the larger value of the shield temperature \\( T_s\n                            \\).</p>"
+        }
+      ]
+    }
+  ]
+}

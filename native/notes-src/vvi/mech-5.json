@@ -1,0 +1,174 @@
+{
+  "branch": "mech",
+  "sem": 5,
+  "subjects": [
+    {
+      "code": "PCC-ME 301",
+      "name": "Heat Transfer",
+      "vvi": [
+        {
+          "topic": "Conduction: Fourier's law, composite walls and fins",
+          "note": "Fourier's law gives q = −kA dT/dx, and in a composite wall the resistances L/kA add in series like electrical resistances. A fin increases the surface area, with efficiency tanh(mL)/mL for a rectangular fin of parameter m = √(hP/kA). The overall heat transfer coefficient combines the convective and conductive resistances, U = 1/ΣR.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Convection and the dimensionless groups",
+          "note": "Newton's law of cooling is q = hA(Ts − T∞), and h is found from a correlation rather than from first principles. Reynolds, Prandtl, Nusselt and Grashof numbers describe the flow, and the Dittus-Boelter equation gives Nu = 0.023Re^0.8Pr^n for turbulent pipe flow. Natural convection correlations use the Rayleigh number instead of the Reynolds number.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Transient conduction and the lumped capacitance model",
+          "note": "The lumped model assumes a uniform body temperature and is valid when the Biot number hL/k is below about 0.1. The temperature then decays exponentially with time constant ρVc/hA. Above that limit a spatial temperature gradient exists and the one-term approximation with the Biot number and Fourier number is used.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Boiling and condensation",
+          "note": "The boiling curve has the nucleate, transition and film regimes, and the critical heat flux marks the jump to film boiling, which is why a boiler is designed well below it. Dropwise condensation has a much higher coefficient than filmwise, but it is hard to maintain. The Nusselt theory for a vertical plate gives the laminar film condensation coefficient.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Heat exchangers: LMTD and NTU methods",
+          "note": "Q = U A ΔTlm with the logarithmic mean temperature difference corrected by a factor F for a multipass arrangement. The NTU method uses effectiveness ε = Q/Qmax and NTU = UA/Cmin, which suits a problem where the outlet temperatures are unknown. Counterflow has the highest effectiveness for the same area, and a parallel-flow exchanger cannot exceed 50%.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Radiation: Stefan-Boltzmann law, emissivity and view factor",
+          "note": "A black body emits Eb = σT⁴, and a grey body emits εσT⁴ with ε its emissivity. The net exchange between two surfaces needs the view factor F12, with F11 + F12 = 1 for an enclosure, and the reciprocity relation A1F12 = A2F21. Radiation dominates at high temperature because the heat flow varies as T⁴.",
+          "marks": 8,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "PCC-ME 302",
+      "name": "Fluid Machinery",
+      "vvi": [
+        {
+          "topic": "Impact of a jet on stationary and moving vanes",
+          "note": "The force on a flat plate normal to a jet is ρAV², and on a curved vane it is ρAV²(1 + cos θ) for a deflection θ. For a moving vane the relative velocity replaces the absolute velocity, and the work done per second is the force times the vane speed. The efficiency of a series of moving vanes peaks when the vane speed is half the jet speed.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Pelton wheel",
+          "note": "A Pelton wheel is an impulse turbine: a high-head jet strikes split buckets and the pressure stays atmospheric. The bucket speed is about half the jet speed, and the hydraulic efficiency is 2(1 + k cos θ)(1 − u/V)u/V, with k the bucket friction factor. It suits heads above about 200 m, and the number of jets sets the specific speed.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Francis and Kaplan turbines",
+          "note": "A Francis turbine is a mixed-flow reaction turbine: water enters radially and leaves axially, and the pressure falls through the runner. A Kaplan turbine is axial flow with adjustable blades, suited to low head and large discharge. Draft tube recovery, cavitation and the specific speed decide which type is used.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Centrifugal pump: head, efficiency and characteristic",
+          "note": "The theoretical head is (u2Vw2 − u1Vw1)/g, and the manometric efficiency is the actual head over the theoretical head. The characteristic curve falls as discharge rises, and the operating point is where it meets the system curve. Cavitation is avoided by keeping the net positive suction head available above the required value.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Reciprocating pump and cavitation",
+          "note": "A reciprocating pump is positive displacement, with discharge Q = A L N/60 for a single acting pump, doubled for double acting. The acceleration head in the suction pipe limits the speed, and an air vessel smooths the flow. Cavitation occurs when the local pressure falls below the vapour pressure, giving noise, erosion and a loss of head.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Specific speed and model similarity",
+          "note": "Specific speed Ns = N√P/H^(5/4) for a turbine and N√Q/H^(3/4) for a pump, and it fixes the type of runner: Pelton for low, Francis for medium, Kaplan for high. Geometrically similar machines have the same specific speed, and the affinity laws scale discharge with N, head with N² and power with N³. A model test predicts the prototype from these laws.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC-ME 303",
+      "name": "Manufacturing Processes",
+      "vvi": [
+        {
+          "topic": "Sand casting: mould, gating and risering",
+          "note": "A sand mould is made from a pattern in a flask, with a cope, drag, sprue, runner, ingate and riser, and the sand needs green strength, permeability and refractoriness. The sprue is tapered so that the metal does not separate, and the gating ratio sets the filling pattern. A riser feeds shrinkage and must freeze after the casting, which is why it is placed at the hottest section.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Welding processes: arc, TIG, MIG and resistance",
+          "note": "Shielded metal arc welding uses a flux-coated electrode, TIG uses a non-consumable tungsten electrode with a separate filler and an inert gas shield, and MIG uses a continuous wire that is also the electrode. Resistance welding passes a large current through the joint and forges it, used for sheet metal. Each process is chosen by thickness, material and production rate.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Forming: rolling, forging, extrusion and drawing",
+          "note": "Rolling passes the stock between rolls, forging shapes it by compressive blows, extrusion pushes it through a die, and drawing pulls it through a die to reduce the section. Hot working reduces the force and refines the grain, while cold working gives a better surface and work hardening. The roll gap, the friction hill and the neutral point decide whether the bite is possible.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Sheet metal operations",
+          "note": "Blanking cuts the part out, piercing cuts a hole in it, and bending forms it about a line with a bend allowance that depends on the neutral axis. Deep drawing pulls a cup from a blank, and the limiting draw ratio sets how many stages are needed. Clearance between punch and die decides the edge quality and the cutting force.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Machining: turning, milling, drilling and tool wear",
+          "note": "Cutting speed is πDN/1000, feed is mm per revolution, and the depth of cut sets the chip thickness, with the material removal rate the product of all three. A single-point tool has rake, clearance, cutting-edge and nose-radius angles, and the chip is continuous, discontinuous or built-up. Taylor's tool life equation VTⁿ = C relates speed to life, and flank wear is the criterion.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Unconventional machining processes",
+          "note": "EDM removes metal by spark erosion in a dielectric, so it works on any conductor regardless of hardness. ECM dissolves the workpiece anodically in an electrolyte, and USM abrades with an abrasive slurry. Laser and abrasive-jet cutting need no tool at all, and each process is chosen for a feature that conventional machining cannot reach.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC-ME 304",
+      "name": "Kinematics of Machine",
+      "vvi": [
+        {
+          "topic": "Links, pairs and the degree of freedom",
+          "note": "A link is a rigid body, and a pair is the connection between two links: lower pairs have surface contact and one degree of freedom, higher pairs have point or line contact and two. Kutzbach's criterion gives F = 3(n − 1) − 2j − h for a planar mechanism. A redundant link or an extra degree of freedom must be counted before quoting the mobility.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Four-bar chain and its inversions",
+          "note": "A four-bar has four turning pairs and one degree of freedom; Grashof's condition s + l ≤ p + q decides whether a crank can rotate fully. Fixing each link in turn gives the inversions: crank-rocker, double-crank and double-rocker, and the slider-crank is the limiting case with one sliding pair. The beam engine, coupling rod and Watt indicator are the standard inversions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Velocity analysis by instantaneous centres and relative velocity",
+          "note": "The instantaneous centre of two links is the point where their relative velocity is zero, and Kennedy's theorem places three centres of three links on a straight line. The velocity of a point is ω times its distance from the centre. The relative velocity method draws the velocity polygon, which also gives the direction of each velocity.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Acceleration analysis and the Coriolis component",
+          "note": "The acceleration polygon adds the radial term ω²r towards the centre and the tangential term αr perpendicular to it. When a slider moves along a rotating link, the Coriolis acceleration 2ωV appears, perpendicular to the sliding direction. State the direction of each component in the polygon before closing it.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Cams and followers",
+          "note": "A cam converts rotation into a prescribed follower motion, described by the displacement diagram and the base circle. Uniform velocity gives infinite acceleration at the ends, simple harmonic and cycloidal motions smooth it, and the pressure angle must stay small to avoid jamming. The follower may be a knife edge, roller or flat face, and a spring keeps contact.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Gears: involute profile, interference and gear trains",
+          "note": "The involute tooth profile keeps a constant velocity ratio because the common tangent rolls on the base circle, and the pressure angle is usually 20°. Interference occurs when the addendum cuts the non-involute part of the mating tooth, removed by undercutting or a larger pressure angle. A simple gear train has fixed axes, a compound train adds ratios, and an epicyclic train needs the tabular method.",
+          "marks": 8,
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

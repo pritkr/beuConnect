@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2019",
+    "subject": "OBJECT ORIENTED PROGRAMMING",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051401",
+    "year": 2019,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct option (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "The compiler identifies a virtual function to be pure",
+              "options": [
+                "by the presence of the keyword pure",
+                "by its location in the program",
+                "if it is equated to 0",
+                "None of the above"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "For a method to be an interface between the outside world and a class, it must be declared",
+              "options": [
+                "private",
+                "protected",
+                "public",
+                "external"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "C++ encourages structuring a software as a collection of components that are",
+              "options": [
+                "highly cohesive and loosely coupled",
+                "not highly cohesive but loosely coupled",
+                "highly cohesive and tightly coupled",
+                "not highly cohesive but tightly coupled"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "The fields in a structure and class of a C program and C++ program respectively are by default",
+              "options": [
+                "public, protected",
+                "protected, public",
+                "private, private",
+                "public, private"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Overloading is otherwise called as",
+              "options": [
+                "virtual polymorphism",
+                "transient polymorphism",
+                "pseudo-polymorphism",
+                "ad-hoc polymorphism"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "A constructor is called whenever",
+              "options": [
+                "an object is declared",
+                "an object is used",
+                "a class is declared",
+                "a class is used"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "class Dog : public X, public Y is an example of",
+              "options": [
+                "multiple inheritance",
+                "repeated inheritance",
+                "linear inheritance",
+                "None of the above"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "When a class serves as base class for many derived classes, the situation is called",
+              "options": [
+                "polymorphism",
+                "hierarchical inheritance",
+                "hybrid inheritance",
+                "multipath inheritance"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "The use of the break statement in a switch statement is",
+              "options": [
+                "optional",
+                "compulsory",
+                "not allowed. It gives an error message",
+                "to check an error"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Write a C++ program and class, with access specifiers, called 'student' having the following :",
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Data members :\nname (char type),\nmarks 1, marks 2, marks 3 (integer type)",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "text": "Functions :\ncalc_total();\ndisp();",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "text": "The program asks the user to enter name and marks. Then calc_total() calculates the total marks and disp() displays name and total marks on screen in different lines.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Explain encapsulation with the help of an example. How it facilitates data abstraction?",
+          "id": "3",
+          "marks": null
+        },
+        {
+          "text": "Create a Message class with a constructor that takes a single string with a default value. Create a private member string, and in the constructor simply assign the argument string to your internal string. Create two overloaded member functions called print(): one that takes no arguments and simply prints the message stored in the object, and one that takes a string argument, which it prints in addition to the internal message. Does it make sense to use this approach instead of the one used for the constructor?",
+          "id": "4",
+          "marks": null
+        },
+        {
+          "text": "Write a small program to show the difference between calling a virtual function inside a normal member function and calling a virtual function inside a constructor. The program should show that the two calls produce different results.",
+          "id": "5",
+          "marks": null
+        },
+        {
+          "text": "With an example for generating Fibonacci series, explain how a function is invoked using pointers.",
+          "id": "6",
+          "marks": null
+        },
+        {
+          "text": "Assume that there is a class Derv that is derived from a base class Base. Write the declarator for a derived-class constructor that takes one argument and passes this argument along to the constructor in the base class.",
+          "id": "7",
+          "marks": null
+        },
+        {
+          "text": "Write short notes on the following :",
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Overloading",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Overriding",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "C++ STL",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Constructor",
+              "id": "9_sub",
+              "marks": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

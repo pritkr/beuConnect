@@ -1,0 +1,29 @@
+{
+  "code": "AE",
+  "sections": [
+    {
+      "title": "Section 1: Engineering Mathematics",
+      "content": "Core Topics:\nLinear Algebra: Vector algebra, Matrix algebra, systems of linear equations, rank of a matrix,\neigen values and eigen vectors.\nCalculus: Functions of single variable, limits, continuity and differentiability, mean value\ntheorem, chain rule, partial derivatives, maxima and minima, gradient, divergence and curl,\ndirectional derivatives. Integration, Line, surface and volume integrals. Theorems of Stokes,\nGauss and Green.\nDifferential Equations: First order linear and nonlinear differential equations, higher order linear\nODEs with constant coefficients. Partial differential equations and separation of variables\nmethods.\nSpecial Topics: Fourier Series, Laplace Transforms, Numerical methods for linear and nonlinear\nalgebraic equations, Numerical integration and differentiation. Complex analysis. Probability\nand statistics."
+    },
+    {
+      "title": "Section 2: Flight Mechanics",
+      "content": "Core Topics:\nBasics\nAtmosphere: Properties, standard atmosphere. Classification of aircraft. Airplane (fixed wing\naircraft) configuration and various parts. Pressure altitude; equivalent, calibrated, indicated air\nspeeds; Primary flight instruments: Altimeter, ASI, VSI, Turn-bank indicator. Angle of attack,\nsideslip; Roll, pitch & yaw controls. Aerodynamic forces and moments.\nAirplane performance: Drag polar; take-off and landing; steady climb and descent; absolute and\nservice ceiling; range and endurance, load factor, turning flight, V-n diagram. Winds: head, tail\nand cross winds.\nStatic stability: Stability and control derivatives; longitudinal stick fixed and free stability;\nhorizontal tail position and size; directional stability, vertical tail position and size; lateral\nstability. Wing dihedral, sweep & position; hinge moments, stick forces.\nSpecial Topics: Dynamic stability: Euler angles; Equations of motion; Decoupling of longitudinal\nand lateral-directional dynamics; longitudinal modes; lateral-directional modes."
+    },
+    {
+      "title": "Section 3: Space Dynamics",
+      "content": "Core Topics:\nCentral force motion, determination of trajectory and orbital period in simple cases. Kepler’s\nlaws; escape velocity.\nSpecial Topics: None"
+    },
+    {
+      "title": "Section 4: Aerodynamics",
+      "content": "Core Topics:\nBasic Fluid Mechanics: Conservation laws: Mass, momentum and energy (Integral and\ndifferential form); Dimensional analysis and dynamic similarity;\nPotential flow theory: sources, sinks, doublets, line vortex and their superposition. Elementary\nideas of viscous flows including boundary layers.\nAirfoils and wings: Airfoil nomenclature; Aerodynamic coefficients: lift, drag and moment; Kutta-\nJoukoswki theorem; Thin airfoil theory, Kutta condition, starting vortex; Finite wing theory:\nInduced drag, Prandtl lifting line theory; Critical and drag divergence Mach number.\nCompressible Flows: Basic concepts of compressibility, One-dimensional compressible flows,\nIsentropic flows, Fanno flow, Rayleigh flow; Normal and oblique shocks, Prandtl-Meyer flow;\nFlow through nozzles and diffusers.\nSpecial Topics: Wind Tunnel Testing: Measurement and visualization techniques. Shock -\nboundary layer interaction."
+    },
+    {
+      "title": "Section 5: Structures",
+      "content": "Core Topics:\nStrength of Materials: Stress and strain: Three-dimensional transformations, Mohr’s circle,\nprincipal stresses, Three-dimensional Hooke's law, Plane stress and strain. Failure theories:\nMaximum stress, Tresca von Mises. Strain energy. Castigliano’s principles. Statically\ndeterminate and indeterminate trusses and beams. Elastic flexural buckling of columns.\nFlight vehicle structures: Characteristics of aircraft structures and materials. Torsion, bending\nand shear of thin-walled sections. Loads on aircraft.\nStructural Dynamics: Free and forced vibrations of undamped and damped SDOF systems. Free\nvibrations of undamped 2-DOF systems.\nSpecial Topics: Vibration of beams. Theory of elasticity: Equilibrium and compatibility equations,\nAiry’s stress function."
+    },
+    {
+      "title": "Section 6: Propulsion",
+      "content": "Core Topics:\nBasics: Thermodynamics, boundary layers, heat transfer, combustion and thermo chemistry.\nAerothermodynamics of aircraft engines: Thrust, efficiency, range. Brayton cycle.\nEngine performance: Ramjet, turbojet, turbofan, turboprop and turboshaft engines. After\nburners.\nTurbomachinery: Axial compressors: Angular momentum, work and compression, characteristic\nperformance of a single axial compressor stage, efficiency of the compressor and degree of\nreaction, multi-staging.\nCentrifugal compressor: Stage dynamics, inducer, impeller and diffuser.\nAxial turbines: Stage performance.\nRockets: Thrust equation and specific impulse, rocket performance. Multi-staging. Chemical\nrockets. Performance of solid and liquid propellant rockets.\n\nSpecial Topics: Aerothermodynamics of non-rotating propulsion components such as intakes,\ncombustor and nozzle. Turbine blade cooling. Compressor-turbine matching, Surge and stall."
+    }
+  ]
+}

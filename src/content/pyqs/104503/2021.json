@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "Linear Control System",
+    "subject_slug": "linear-control-system",
+    "subject_code": "104503",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any seven of the following:",
+          "marks": null,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "What is servomechanism and where is it used?",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(b)",
+              "text": "Write necessary and sufficient conditions for Routh stability criterion.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(c)",
+              "text": "Define gain crossover frequency and phase crossover frequency using Bode plot.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(d)",
+              "text": "Find transfer function of a series $R$-$L$ circuit.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(e)",
+              "text": "Define minimum phase, non-minimum phase and all-pass transfer functions.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(f)",
+              "text": "Write the advantages of lag compensator and explain.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(g)",
+              "text": "Define angle criterion and magnitude criterion.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(h)",
+              "text": "Define root locus and write the advantages of root locus.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(i)",
+              "text": "Define gain margin and phase margin using polar plot.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(j)",
+              "text": "Define gain crossover frequency and phase crossover frequency using polar plot.",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "Obtain the overall transfer function of the following block diagram using block diagram reduction:",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "Obtain the overall transfer function of the following signal flow graph using Mason's gain formula:",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "Using generalized error series, calculate the steady-state error of a unity feedback system having\n$$G(s) = \\frac{12}{s(s+5)}$$\nfor the following excitations :\n(i) $r(t) = 3$\n(ii) $r(t) = 2t + 2$\n(iii) $r(t) = t^2 / 2 + 3$\n(iv) $r(t) = 1 + 5t + t^2 / 2$",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "For a given unity feedback control system with forward path transfer function\n$$G(s) = \\frac{140}{s(s+15.73)}$$\n(i) determine damping ratio when a unit step input is applied and (ii) determine damping ratio, percentage peak overshoot and settling time if a PI controller with $K_P = 1, K_I = 40$ introduced in the forward path.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "A feedback system has open-loop transfer function\n$$G(s)H(s) = \\frac{Ke^{-s}}{s(s^2 + 2s + 1)}$$\nUsing Routh criterion, determine the maximum value of $K$ for the closed-loop system to be stable.",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "The open-loop transfer function of a unity feedback control system is given by\n$$G(s) = \\frac{K(s + 5)}{s^3 + \\beta s^2 + 8s + 1}$$\nDetermine the value of $K$ and $\\beta$ such that the system oscillates at a frequency $\\omega = 4$ rad/sec if it has poles at $s = \\pm j\\omega$ and no poles to the right half of s plane.",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "For a unity feedback system with open-loop transfer function\n$$G(s) = \\frac{K}{s(s + 4)(s^2 + 8s + 24)}$$\nsketch root locus. At what value of $K$ system becomes unstable? At this point of instability, determine the frequency of oscillation of the system.",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "Design a lead compensator such that the closed-loop system satisfies the following specifications :\nStatic velocity error constant $= 14\\text{ s}^{-1}$\nPhase margin $= 60^\\circ$\nGain margin $\\ge 10$ dB.",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "Find $K$ and $a$ for a feedback system with forward path transfer function\n$$G(s) = \\frac{K}{s(s+a)}$$\nso that resonant peak is $1.5$ and resonant frequency is $15$ rad/s. Also determine the settling time and bandwidth of the system.",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "Sketch the Bode plot for the system\n$$G(s)H(s) = \\frac{Ke^{0.1s}}{s(s+1)(1 + 0.1s)}$$\nDetermine the system gain $K$ for the gain crossover frequency to be 2 rad/s. What is the phase margin for this value of $K$?",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "For $G(s)H(s) = \\frac{10(1 + 0.5s)}{s^2(0.1s + 1)(0.03s + 1)}$, draw the Nyquist plot and comment on the stability.",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "Sketch the Nyquist plot for a system having\n$$G(s)H(s) = \\frac{10(s+5)}{s(s-2)}$$\nIn addition, comment on the closed-loop stability.",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "Express the transfer function\n$$\\frac{Y(s)}{R(s)} = \\frac{4s^2 + 5s + 9}{s^3 + 3s^2 + 12s + 15}$$\nin (i) controllable canonical form and (ii) observable canonical form. Further comment on the controllability and observability.",
+              "marks": 7,
+              "id": "8_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "A regulator system has a plant\n$$\\frac{Y(s)}{U(s)} = \\frac{40}{(s+1)(s+4)(s+7)}$$\nDefine state variable as $x_1 = y, x_2 = \\dot{x}_1, x_3 = \\dot{x}_2$. By use of the state-feedback control $u = -Kx$, it is desired to place the closed-loop poles at $s = -3 \\pm 2\\sqrt{3}j$ and $s = -12$. Determine the necessary state-feedback gain matrix $K$.",
+              "marks": 7,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "Consider the state-space model of an LTI system with matrices\n$$A = \\begin{bmatrix} -4 & 0 & 0 \\\\ 0 & -5 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix}, B = \\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix}$$\nFind the state transition matrix and comment on the controllability.",
+              "marks": 7,
+              "id": "9_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "Consider the LTI system\n$$\\dot{x} = \\begin{bmatrix} 0 & 1 \\\\ -9 & -4 \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} + \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} u$$\nFind the non-homogeneous solution if $x_1(0) = 3, x_2(0) = 0$ and $u$ is a unit step function.",
+              "marks": 7,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

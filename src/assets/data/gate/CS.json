@@ -1,0 +1,45 @@
+{
+  "code": "CS",
+  "sections": [
+    {
+      "title": "Section 1: Engineering Mathematics",
+      "content": "Discrete Mathematics: Propositional and first order logic. Sets, relations, functions, partial orders and\nlattices. Monoids, Groups. Graphs: connectivity, matching, colouring. Combinatorics: counting,\nrecurrence relations, generating functions.\nLinear Algebra: Matrices, determinants, system of linear equations, eigenvalues and eigenvectors, LU\ndecomposition.\nCalculus: Limits, continuity and differentiability, Maxima and minima, Mean value theorem,\nIntegration.\nProbability and Statistics: Random variables, Uniform, normal, exponential, Poisson and binomial\ndistributions. Mean, median, mode and standard deviation. Conditional probability and Bayes theorem."
+    },
+    {
+      "title": "Section 2: Digital Logic",
+      "content": "Boolean algebra. Combinational and sequential circuits. Minimization. Number representations and\ncomputer arithmetic (fixed and floating point)."
+    },
+    {
+      "title": "Section 3: Computer Organization and Architecture",
+      "content": "Machine instructions and addressing modes. ALU, data‐path and control unit. Instruction pipelining,\npipeline hazards. Memory hierarchy: cache, main memory and secondary storage; I/O interface\n(interrupt and DMA mode)."
+    },
+    {
+      "title": "Section 4: Programming and Data Structures",
+      "content": "Programming in C. Recursion. Arrays, stacks, queues, linked lists, trees, binary search trees, binary\nheaps, graphs."
+    },
+    {
+      "title": "Section 5: Algorithms",
+      "content": "Searching, sorting, hashing. Asymptotic worst case time and space complexity. Algorithm design\ntechniques: greedy, dynamic programming and divide‐and‐conquer. Graph traversals, minimum\nspanning trees, shortest paths."
+    },
+    {
+      "title": "Section 6: Theory of Computation",
+      "content": "Regular expressions and finite automata. Context-free grammars and push-down automata. Regular and\ncontext-free languages, pumping lemma. Turing machines and undecidability."
+    },
+    {
+      "title": "Section 7: Compiler Design",
+      "content": "Lexical analysis, parsing, syntax-directed translation. Runtime environments. Intermediate code\ngeneration. Local optimization, Data flow analyses: constant propagation, liveness analysis, common\nsub expression elimination."
+    },
+    {
+      "title": "Section 8: Operating System",
+      "content": "System calls, processes, threads, inter‐process communication, concurrency and synchronization.\nDeadlock. CPU and I/O scheduling. Memory management and virtual memory. File systems."
+    },
+    {
+      "title": "Section 9: Databases",
+      "content": "ER‐model. Relational model: relational algebra, tuple calculus, SQL. Integrity constraints, normal\nforms. File organization, indexing (e.g., B and B+ trees). Transactions and concurrency control."
+    },
+    {
+      "title": "Section 10: Computer Networks",
+      "content": "Concept of layering: OSI and TCP/IP Protocol Stacks; Basics of packet, circuit and virtual circuit-\nswitching; Data link layer: framing, error detection, Medium Access Control, Ethernet bridging;\nRouting protocols: shortest path, flooding, distance vector and link state routing; Fragmentation and IP\naddressing, IPv4, CIDR notation, Basics of IP support protocols (ARP, DHCP, ICMP), Network\nAddress Translation (NAT); Transport layer: flow control and congestion control, UDP, TCP, sockets;\nApplication layer protocols: DNS, SMTP, HTTP, FTP, Email."
+    }
+  ]
+}

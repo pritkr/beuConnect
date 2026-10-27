@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2017",
+    "subject": "Computer Architecture",
+    "subject_slug": "computer-architecture",
+    "subject_code": "051402",
+    "year": 2017,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer the following questions (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Write the range of decimal integer can be represented by n-bit 2's complement representation.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Justify the statement \"Stack computer consists of an operation code only with no address field\".\n                    </p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>What do you mean by Arithmetic shift left operation?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>What do you mean by locality of reference?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>What are the properties of an ideal instruction set computer.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Define the term hardware polling.</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>What do you mean by data hazards in pipelining?</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Explain indirect address mode, and how the effective address in calculated in this case.</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Explain the use of subroutine with the help of suitable example.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Why is read and write control lines in a DMA controller bidirectional? Under what condition and\n                        for\n                        what purpose are they used as inputs?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the concept of virtual memory with the help of diagram. Explain how virtual address in\n                        mapped\n                        to actual physical address.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is meant by Addressing Mode? Explain at least five different Addressing Modes with an\n                        example.\n                    </p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What are the different conflicts that will arise in pipeline (elaborate)? How do you remove the\n                        conflicts?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain Von Neumann Architecture. What are its drawbacks?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is a page fault? What does a page fault signify? Explain the different page replacement\n                        algorithms which determine the page to be removed in case of full memory.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Why does I/O interrupt make more efficient use of the CPU? Explain the sequence of operations\n                        that\n                        take place in an interrupt driven I/O transfer.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>How many ROM chips are required to produce a memory capacity of 4096 bytes? How many address\n                        lines\n                        are required to access the 4096 bytes? How many of these addresses will be common to all these\n                        chips?</p>"
+        }
+      ]
+    }
+  ]
+}

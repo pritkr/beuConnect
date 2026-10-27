@@ -1,0 +1,312 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2018",
+    "subject": "Network Theory",
+    "subject_slug": "network-theory",
+    "subject_code": "031505",
+    "year": 2018,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven) :",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "A network has 15 nodes and 12 independent loops. The number of branches in the network is",
+              "options": [
+                "(i) 25",
+                "(ii) 26",
+                "(iii) 27",
+                "(iv) 28"
+              ],
+              "answer": "(ii)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "The transfer function of a low-pass R-C network is",
+              "options": [
+                "(i) $(RCs)(1 + RCs)$",
+                "(ii) $\\frac{1}{1 + RCs}$",
+                "(iii) $\\frac{RCs}{1 + RCs}$",
+                "(iv) $\\frac{s}{1 + RCs}$"
+              ],
+              "answer": "(ii)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "A two-port network is symmetrical, if",
+              "options": [
+                "(i) $z_{11}z_{22} - z_{12}z_{21} = 1$",
+                "(ii) $AD - BC = 1$",
+                "(iii) $h_{11}h_{22} - h_{12}h_{21} = 1$",
+                "(iv) $y_{11}y_{22} - y_{12}y_{21} = 1$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "In an m-derived low-pass filter, the value of m is",
+              "options": [
+                "(i) $\\sqrt{1 - (\\frac{f_{\\infty}}{f_c})^2}$",
+                "(ii) $\\sqrt{1 - (\\frac{f_c}{f_{\\infty}})^2}$",
+                "(iii) $\\sqrt{1 + (\\frac{f_{\\infty}}{f_c})^2}$",
+                "(iv) $\\sqrt{1 + (\\frac{f_c}{f_{\\infty}})^2}$"
+              ],
+              "answer": "(ii)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "The number of roots of $s^3 + 5s^2 + 7s + 3 = 0$ in the left half of s-plane is",
+              "options": [
+                "(i) zero",
+                "(ii) one",
+                "(iii) two",
+                "(iv) three"
+              ],
+              "answer": "(iv)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "A $\\pi$-section filter network consists of a series arm inductor of 20 mH and two shunt arm capacitors of 0.16 $\\mu$F. The cut-off frequency is",
+              "options": [
+                "(i) 2.5 kHz",
+                "(ii) 4.3 kHz",
+                "(iii) 1.5 kHz",
+                "(iv) 3.98 kHz"
+              ],
+              "answer": "(iv)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "A two-port network is define by the following pair of equations: $I_1 = 2V_1 + V_2$, $I_2 = V_1 + V_2$. Its impedance parameters ($z_{11}, z_{12}, z_{21}, z_{22}$) are",
+              "options": [
+                "(i) 2, 1, 1, 1",
+                "(ii) 1, -1, -1, 2",
+                "(iii) 1, 1, 1, 2",
+                "(iv) 2, -1, -1, 1"
+              ],
+              "answer": "(ii)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "The Laplace transform of $\\frac{1 - e^{-t}}{t}$ is",
+              "options": [
+                "(i) $\\log[\\frac{s}{s + 1}]$",
+                "(ii) $\\log[\\frac{1}{s(s + 1)}]$",
+                "(iii) $\\log[\\frac{s + 1}{s}]$",
+                "(iv) $\\log[s(s + 1)]$"
+              ],
+              "answer": "(iii)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "Which of the following is the representation of $y$-parameters in terms of $z$-parameters?",
+              "options": [
+                "(i) $\\begin{bmatrix} \\frac{z_{22}}{\\Delta z} & \\frac{-z_{12}}{\\Delta z} \\\\ \\frac{-z_{21}}{\\Delta z} & \\frac{z_{11}}{\\Delta z} \\end{bmatrix}$",
+                "(ii) $\\begin{bmatrix} \\frac{z_{11}}{z_{21}} & \\frac{\\Delta z}{z_{21}} \\\\ \\frac{1}{z_{21}} & \\frac{z_{22}}{z_{21}} \\end{bmatrix}$",
+                "(iii) $\\begin{bmatrix} 1 & \\frac{-z_{12}}{z_{11}} \\\\ \\frac{z_{21}}{z_{11}} & \\frac{\\Delta z}{z_{11}} \\end{bmatrix}$",
+                "(iv) $\\begin{bmatrix} \\frac{z_{11}}{\\Delta z} & \\frac{1}{z_{12}} \\\\ \\frac{1}{z_{12}} & \\frac{z_{22}}{z_{21}} \\end{bmatrix}$"
+              ],
+              "answer": "(i)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "As the poles of a network shift away from the x-axis, the response",
+              "options": [
+                "(i) remains constant",
+                "(ii) becomes less oscillating",
+                "(iii) becomes more oscillating",
+                "(iv) None of the above"
+              ],
+              "answer": "(iii)",
+              "id": "1_sub",
+              "marks": null
+            }
+          ],
+          "id": "1",
+          "marks": null
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Derive the $z$-parameters in terms of ABCD parameters.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Obtain the open circuit $z$-parameters of the network shown in Fig. 1 :",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "id": "2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "For the network shown in Fig. 2, draw the graph, write the tie-set schedule and hence obtain the equilibrium on loop basis. Calculate the values of branch currents and branch voltages :",
+          "id": "3",
+          "marks": null
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "The switch in the network in Fig. 3 is closed at $t = 0$. Determine the voltage across the capacitor: Use Laplace transform :",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "In the network of Fig. 4, the switch is closed at $t = 0$, with the network previously unenergized. Determine currents $i_1(t)$ and $i_2(t)$. (Use Laplace transform) :",
+              "id": "4_sub",
+              "marks": null
+            }
+          ],
+          "id": "4",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Derive the expression for characteristic impedance of a $\\pi$-network. Also, express in terms of open-circuit impedance ($Z_{oc}$) and short-circuit impedance ($Z_{sc}$).",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Design a band-pass constant $k$ filter with cut-off frequencies of 3 kHz and 7.5 kHz and nominal characteristic impedance of 900 $\\Omega$. Draw a T-section configuration.",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "id": "5",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Write the necessary conditions for transfer functions (restrictions on pole and zero).",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Compute $V_2/V_1$ and $I_2/I_1$, i.e., voltage transfer function and current transfer function respectively for the network shown in Fig. 5 :",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "id": "6",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Determine the Foster forms of realization of the R-C impedance function (Foster forms I and II) $Z(s) = \\frac{(s + 1)(s + 4)}{s(s + 2)(s + 5)}$.",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Synthesize the network, if $Z(s) = \\frac{s^5 + 5s^3 + 4s}{s^4 + 3s^2 + 1}$ as Cauer-I form.",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "id": "7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Determine $y$-parameters for the network shown in Fig. 6 :",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Find the step response of the voltage across the capacitor in the network as shown in Fig. 7 :",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "id": "8",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Write brief notes on any three of the following :",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Fundamental circuit matrix and fundamental cut-set matrix (with example)",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Time domain behaviour from pole-zero plot",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Classification of filters with characteristics of each",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Inverse hybrid parameters",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "id": "9",
+          "marks": null
+        }
+      ]
+    }
+  ]
+}

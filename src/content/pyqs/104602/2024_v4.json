@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Examination, 2024",
+    "subject": "Digital Communication",
+    "subject_slug": "digital-communication",
+    "subject_code": "104602",
+    "year": 2024,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The sampling theorem is essential to avoid which problem?</p>",
+          "options": [
+            "Crosstalk",
+            "Quantization error",
+            "Attenuation",
+            "Aliasing"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>In Time Division Multiplexing (TDM), multiple signals share:</p>",
+          "options": [
+            "Power slots",
+            "Code slots",
+            "Time slots",
+            "Frequency slots"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which modulation technique is most commonly used in CDMA?</p>",
+          "options": [
+            "QAM",
+            "PSK",
+            "ASK",
+            "FSK"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>In Quadrature Amplitude Modulation (QAM), the information is carried by:</p>",
+          "options": [
+            "Frequency and phase",
+            "Amplitude and phase",
+            "Amplitude only",
+            "Phase only"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What does the signal-to-quantization noise ratio (SQNR) measure?</p>",
+          "options": [
+            "Bandwidth efficiency",
+            "Power efficiency",
+            "Distortion in quantized signals",
+            "Signal attenuation"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which line coding technique uses zero crossing for binary '1' and '0'?</p>",
+          "options": [
+            "AMI",
+            "Manchester coding",
+            "RZ",
+            "NRZ"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following is true for Adaptive Delta Modulation (ADM)?</p>",
+          "options": [
+            "It uses fixed bandwidth",
+            "It increases quantization noise",
+            "It reduces slope overload",
+            "It has fixed step size"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A matched filter maximizes which of the following?</p>",
+          "options": [
+            "Transmission speed",
+            "Signal-to-noise ratio",
+            "Noise",
+            "Signal power"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Inter-symbol interference (ISI) primarily occurs due to:</p>",
+          "options": [
+            "High bit rate",
+            "Low signal-to-noise ratio",
+            "Over-sampling",
+            "Improper filtering"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Amplitude Shift Keying (ASK) modulates which signal characteristic?</p>",
+          "options": [
+            "Pulse width",
+            "Frequency",
+            "Phase",
+            "Amplitude"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>State and prove the sampling theorem. Why is it important in digital communication systems?</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain the working principle of Differential Phase Shift Keying (DPSK) and how it differs from\n                        standard PSK. </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>A signal is encoded using 8-bit PCM. Calculate the data rate if the signal is sampled at 8 kHz.\n                        What\n                        will be the data rate for 16-bit PCM at the same sampling rate?</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Derive the expression for the probability of error in a matched filter receiver.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Discuss the concept of a baseband signal receiver and the factors affecting the probability of\n                        error\n                        in digital communication systems.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the process of quantization in a digital communication system. Differentiate between\n                        uniform\n                        and non-uniform quantization. </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A QPSK system transmits at a data rate of 2 Mbps. If the noise power spectral density is \\( 0.5\n                        \\mu\n                        W/Hz \\) and the signal power is 1 mW, calculate the bit error rate (BER) of the system.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Discuss the principles of Code Division Multiple Access (CDMA) and how it differs from TDM and\n                        FDM.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive the Nyquist criterion for zero ISI. Explain how this criterion ensures distortion-free\n                        transmission.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Describe the block diagram of a digital communication system and function of each block. </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is aliasing? Explain the causes of aliasing and how it can be avoided in digital\n                        communication\n                        systems.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Discuss the various types of line coding techniques used in digital communication. Compare\n                        unipolar,\n                        polar, and bipolar schemes.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Explain Amplitude Shift Keying (ASK), Frequency Shift Keying (FSK), and Phase Shift Keying (PSK)\n                        with\n                        waveform examples. </p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is Minimum Shift Keying (MSK)? Explain its advantages over FSK and other digital modulation\n                        techniques.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>(a) Orthogonal Frequency Division Multiple Access (OFDMA).</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>(b) Matched filter.</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>(c) Coherent reception &amp; Non-Coherent reception.</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>(d) Advantages of Digital communication system over Analog communication systems.</p>"
+        }
+      ]
+    }
+  ]
+}

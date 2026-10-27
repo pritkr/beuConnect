@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2016",
+    "subject": "Dynamics of Machinery",
+    "subject_slug": "dynamics-of-machinery",
+    "subject_code": "021513",
+    "year": 2016,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are Nine questions in this paper.",
+    "Attempt five questions in all.",
+    "Question No. 1 is Compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The cam follower used in air-craft engine is a _______ follower:</p>",
+          "options": [
+            "Roller",
+            "flat-faced",
+            "spherical faced",
+            "knife-edge"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The size of the cam depends on:</p>",
+          "options": [
+            "Pitch circle",
+            "prime circle",
+            "base circle",
+            "pitch curve"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The maximum fluctuation of energy in a flywheel is equal to:</p>",
+          "options": [
+            "\\( I\\omega(\\omega_1-\\omega_2) \\)",
+            "\\( I\\omega^2 K_{CS} \\)",
+            "\\( \\Delta E = E \\times C_s \\)",
+            "All"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>For complete dynamic balance, at least....... mass/masses are necessary:</p>",
+          "options": [
+            "One",
+            "Two",
+            "Three",
+            "Four"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The Primary unbalanced force is maximum, when the angle of crank with the line of stroke is:</p>",
+          "options": [
+            "\\( 45^{\\circ} \\)",
+            "\\( 90^{\\circ} \\)",
+            "\\( 135^{\\circ} \\)",
+            "\\( 180^{\\circ} \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The gyroscopic acceleration is give by:</p>",
+          "options": [
+            "\\( \\delta\\omega/\\delta t \\)",
+            "\\( \\omega \\delta\\theta/\\delta t \\)",
+            "\\( r\\delta\\theta/\\delta t \\)",
+            "\\( r\\delta\\omega/\\delta t \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In free vibration, the acceleration vector leads the displacement vector by:</p>",
+          "options": [
+            "\\( \\pi \\)",
+            "\\( \\pi/2 \\)",
+            "\\( \\pi/3 \\)",
+            "\\( 2\\pi/3 \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The frequency of damped vibration is always...... the natural frequency.</p>",
+          "options": [
+            "equal to",
+            "more than",
+            "less than",
+            "double"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A torsional vibratory system having two rotors connected by a shaft has:</p>",
+          "options": [
+            "One node",
+            "Two node",
+            "Three node",
+            "No node"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The axis of spin, the axis of precession and the axis of gyroscopic torque are in:</p>",
+          "options": [
+            "Two parallel planes",
+            "Two perpendicular planes",
+            "Three perpendicular planes",
+            "Three parallel Planes"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Draw the profile of a cam operating a roller reciprocating follower and with the following data:\n                        Minimum radius of cam = 25 mm. Lift = 30 mm. Roller diameter 15 mm. The cam lifts the follower\n                        for\n                        \\( 120^{\\circ} \\) with SHM followed by a dwell period of \\( 30^{\\circ} \\). Then the\n                        follower\n                        lowers down during \\( 150^{\\circ} \\) of the cam rotation with uniform acceleration and\n                        deceleration followed by a dwell period. If the cam rotates at a uniform velocity of 150 rpm,\n                        calculate the maximum velocity and acceleration of the follower during the descent period.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Derive the expression for maximum and minimum accelerations for a tangent cam with roller\n                        follower,\n                        assuming roller follower is in direct contact with the circular flank.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Find a relation for the coefficient of fluctuation speed in terms of maximum fluctuation of\n                        energy\n                        and the kinetic energy of the flywheel at mean speed.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>The turning moment diagram for a spark ignition engine is drawn to a vertical scale of 1 mm = 500\n                        N.m\n                        and a horizontal scale of 1 mm = \\( 3^{\\circ} \\). The turning moment diagram repeats itself\n                        every\n                        half revolution of the crankshaft. The areas above and below the mean torque line are 260, -580,\n                        80,\n                        -380, 870, and -250 \\( mm^2 \\). The rotating parts have a mass of 55 kg and radius of gyration\n                        of\n                        2.1 m. If the engine speed is 1600 rpm, determine the coefficient of fluctuation of speed.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the gyroscopic effect on four-wheeled vehicles. What is the effect of gyroscopic couple\n                        on\n                        the stability of a four wheeler while negotiating a curve?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>In a vertical double-acting steam engine, the connecting rod is 4.5 times the crank. The weights\n                        of\n                        the reciprocating part are 120 kg and the stroke of the piston is 440 mm. The engine runs at 250\n                        rpm. If the net load on the piston due to steam pressure is 25 kN when the crank has turned\n                        through\n                        an angle of \\( 120^{\\circ} \\) from the top dead centre, determine the following: (a) Thrust\n                        in\n                        the\n                        connecting rod. (b) Pressure on the slide bars. (c) Tangential force on the crank pin. (d)\n                        Thrust on\n                        the bearings. (e) Turning moment on the crankshaft.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A rotor is completely balanced when masses of 2 kg are added temporarily in planes A and D each\n                        at\n                        200 mm radius as shown in figure. The balanced mass in the plane A is along the X-axis whereas\n                        in\n                        the plane D it is at \\( 120^{\\circ} \\) counter-clockwise. It is desired that the actual\n                        balancing\n                        is to be done by adding permanent masses in plane B and C, each at 120 mm radius. Determine the\n                        magnitude and directions of the masses B and C. </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/201.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Derive from the first principles, a relation for displacement of mass from equilibrium position\n                        of a\n                        damped vibrating system with harmonic forcing. Also find graphically the amplitude for the given\n                        system.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>The following data relate to a shaft held in long bearings: Length of shaft = 1.2 m, Diameter of\n                        shaft = 14 mm, Mass of a rotor at midpoint = 16 kg, Eccentricity of mass = 0.4 mm, Modulus of\n                        elasticity of shaft material = \\( 200 GN/m^2 \\), Permissible stress in shaft material = \\( 70\n                        MN/m^2 \\). Determine the critical speed of the shaft and the range of speed over which it is\n                        unsafe\n                        to run shaft. Assume the shaft to be massless.</p>"
+        }
+      ]
+    }
+  ]
+}

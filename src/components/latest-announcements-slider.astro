@@ -1,0 +1,76 @@
+---
+import type { AnnouncementPost } from "../data/announcements";
+
+const posts: AnnouncementPost[] = Astro.props.posts ?? [];
+const base = import.meta.env.BASE_URL;
+---
+
+<section class="latest-strip" aria-label="Latest announcements">
+	<div class="latest-viewport">
+		<div id="latestUpdatesTrack" class="latest-track">
+			<div class="latest-group">
+				{posts.map((post) => (
+					<a href={`${base}announcements/${post.slug}/`} class="latest-title">
+						{post.title}
+					</a>
+				))}
+			</div>
+			<div class="latest-group" aria-hidden="true">
+				{posts.map((post) => (
+					<a href={`${base}announcements/${post.slug}/`} class="latest-title">
+						{post.title}
+					</a>
+				))}
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.latest-strip {
+		margin: 0.35rem 0 1.35rem;
+		padding: 0.2rem 0;
+	}
+
+	.latest-viewport {
+		overflow: hidden;
+	}
+
+	.latest-track {
+		display: flex;
+		width: max-content;
+		animation: floatNews 16s linear infinite;
+		will-change: transform;
+	}
+
+	.latest-group {
+		display: flex;
+		gap: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
+	.latest-title {
+		white-space: nowrap;
+		font-size: 0.82rem;
+		color: var(--text-secondary);
+		text-decoration: none;
+		padding: 0.2rem 0.55rem;
+		border: 1px solid var(--border-subtle);
+		border-radius: 999px;
+		background: rgba(30, 41, 59, 0.35);
+	}
+
+	.latest-title:hover {
+		color: var(--text-primary);
+		border-color: var(--border-accent);
+	}
+
+	@keyframes floatNews {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(calc(-50% - 0.75rem));
+		}
+	}
+</style>

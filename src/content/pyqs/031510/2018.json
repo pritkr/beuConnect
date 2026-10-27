@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2018",
+    "subject": "SIGNALS AND SYSTEMS",
+    "subject_slug": "signals-and-systems",
+    "subject_code": "031510",
+    "year": 2018,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are EIGHT questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven questions of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Show $\\delta(at) = \\frac{1}{|a|} \\delta(t)$ where $\\delta(t)$ is an impulse function.",
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "Prove that $u(n) = \\sum_{k=-\\infty}^n \\delta(k)$",
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "text": "Draw the time waveform of the signal $x(t) = u(t-3) - u(t-6)$",
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "text": "Determine the fundamental period of the signal $x(t) = j e^{j10t}$.",
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "If $E_x$ is the energy of the signal $x(t)$, determine the energy of the signal $x(at-b)$ in terms of $E_x$.",
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "If $x_1(t)$ and $x_2(t)$ are odd and even signals respectively, determine whether the signal $x_1(t) x_2(t)$ would be even or odd signal.",
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "Determine whether the system described by $y(t) = x(2t)$ is causal.",
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "text": "A system is described by the input-output relationship $y(n) = \\text{Re}[x(n)]$. Determine whether the corresponding system is linear, where $\\text{Re}[x(n)]$ represents the real part of $x(n)$.",
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "Determine whether the system described by $y(t) = \\frac{d}{dt} u(t)$ is stable or not.",
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "Sketch the time waveform of the signal $x(t) = \\frac{d}{dt} [u(t-4) - u(t-7)]$",
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Determine convolution of a rectangular signal $x(t)$ with itself. $x(t)$ is described as\n$x(t) = \\begin{cases} A & -T < t < T \\\\ 0 & \\text{otherwise} \\end{cases}$\nDraw the sketch of the convolved signal.",
+          "marks": 8
+        },
+        {
+          "id": "2b",
+          "text": "Prove that $x(t) * u(t) = \\int_{-\\infty}^t x(\\tau) d\\tau$",
+          "marks": 3
+        },
+        {
+          "id": "2c",
+          "text": "Prove that $u(t) * u(t) = r(t)$.",
+          "marks": 3
+        },
+        {
+          "id": "3a",
+          "text": "Determine the overall impulse response of the system shown in the figure below :\n[Diagram: Cascade connection of two systems with impulse responses $h_1(n)$ and $h_2(n)$]\nwhere $h_1(n) = \\delta(n) - a\\delta(n-1)$ and $h_2(n) = (1/2)^n u(n)$.",
+          "marks": 5
+        },
+        {
+          "id": "3b",
+          "text": "Evaluate the unit step response of the LTI system represented by $h(n) = \\delta(n) - \\delta(n-2)$",
+          "marks": 5
+        },
+        {
+          "id": "3c",
+          "text": "The impulse response of a system is given by $h(n) = (1/2)^n u(n+2)$. Determine whether this system is causal.",
+          "marks": 4
+        },
+        {
+          "id": "4a",
+          "text": "From the given Fourier series $x(t) = \\sum_{k=-\\infty}^\\infty a_k e^{j k \\omega_0 t}$ derive the relation to determine the Fourier series coefficients $a_k$. Given $x(t)$ is periodic with period $T$.",
+          "marks": 4
+        },
+        {
+          "id": "4b",
+          "text": "Determine the Fourier series coefficients of the following :\n$x(t) = 1 + \\sin \\omega_0 t + 2\\cos \\omega_0 t + \\cos(2\\omega_0 t + \\pi/4)$",
+          "marks": 4
+        },
+        {
+          "id": "4c",
+          "text": "Prove the following properties of the Fourier series :",
+          "marks": 6,
+          "sub_questions": [
+            {
+              "id": "4ci",
+              "text": "Time shifting",
+              "marks": 2
+            },
+            {
+              "id": "4cii",
+              "text": "Time reversal",
+              "marks": 2
+            },
+            {
+              "id": "4ciii",
+              "text": "Multiplication",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "id": "5a",
+          "text": "Determine the Fourier transform of the following signals :",
+          "marks": 6,
+          "sub_questions": [
+            {
+              "id": "5ai",
+              "text": "$x(t) = e^{-2|t-1|}$",
+              "marks": 3
+            },
+            {
+              "id": "5aii",
+              "text": "$x(t) = (e^{-at} \\cos \\omega_0 t) u(t)$, $a > 0$",
+              "marks": 3
+            }
+          ]
+        },
+        {
+          "id": "5b",
+          "text": "Determine the inverse Fourier transform of $X(j\\omega) = 2\\pi \\delta(\\omega) + \\pi \\delta(\\omega - 4\\pi) + \\pi \\delta(\\omega + 4\\pi)$",
+          "marks": 4
+        },
+        {
+          "id": "5c",
+          "text": "Prove that the Fourier transform of a real and even signal is real and even.",
+          "marks": 4
+        },
+        {
+          "id": "6a",
+          "text": "Given that $x(n)$ has Fourier transform $X(e^{j\\omega})$. Using Fourier transform properties or otherwise, determine the Fourier transform of the following signals :",
+          "marks": 9,
+          "sub_questions": [
+            {
+              "id": "6ai",
+              "text": "$x_1(n) = x(1-n) + x(-1-n)$",
+              "marks": 3
+            },
+            {
+              "id": "6aii",
+              "text": "$x_2(n) = \\frac{x^*(-n) + x(n)}{2}$",
+              "marks": 3
+            },
+            {
+              "id": "6aiii",
+              "text": "$x_3(n) = (n-1)^2 x(n)$",
+              "marks": 3
+            }
+          ]
+        },
+        {
+          "id": "6b",
+          "text": "Prove the following properties of discrete-time Fourier transform :",
+          "marks": 5,
+          "sub_questions": [
+            {
+              "id": "6bi",
+              "text": "Conjugation",
+              "marks": 1
+            },
+            {
+              "id": "6bii",
+              "text": "Differentiation in frequency",
+              "marks": 2
+            },
+            {
+              "id": "6biii",
+              "text": "Convolution",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "id": "7a",
+          "text": "If the input to an LTI system is $x(t) = e^{-3t} u(t)$ then the output is $y(t) = [e^{-t} - e^{-2t}] u(t)$. Determine the system function of this system. Comment on the stability of the system.",
+          "marks": 6
+        },
+        {
+          "id": "7b",
+          "text": "Given $X(s) = \\frac{s+2}{s^2 + 7s + 12}$ determine the signal $x(t)$ when",
+          "marks": 8,
+          "sub_questions": [
+            {
+              "id": "7bi",
+              "text": "ROC $\\text{Re}(s) > -4$",
+              "marks": 2
+            },
+            {
+              "id": "7bii",
+              "text": "ROC $\\text{Re}(s) < -3$",
+              "marks": 3
+            },
+            {
+              "id": "7biii",
+              "text": "ROC $-4 < \\text{Re}(s) < -3$",
+              "marks": 3
+            }
+          ]
+        },
+        {
+          "id": "8a",
+          "text": "Determine the z-transform of the following signals. Sketch their pole-zero plot and indicate the region of convergence :",
+          "marks": 6,
+          "sub_questions": [
+            {
+              "id": "8ai",
+              "text": "$x_1(n) = (1/2)^{n+1} u(n+3)$",
+              "marks": 3
+            },
+            {
+              "id": "8aii",
+              "text": "$x_2(n) = 2^n u(-n) + (1/4)^n u(n-1)$",
+              "marks": 3
+            }
+          ]
+        },
+        {
+          "id": "8b",
+          "text": "Consider an even sequence $x(n)$ with rational z-transform $X(z)$. From the definition of z-transform, show that $X(z) = X(1/z)$.",
+          "marks": 4
+        },
+        {
+          "id": "8c",
+          "text": "Determine the system function for the causal LTI system with difference equation $y(n) - \\frac{3}{2}y(n-1) + \\frac{1}{2}y(n-2) = x(n-1)$ and also determine its impulse response.",
+          "marks": 4
+        }
+      ]
+    }
+  ]
+}

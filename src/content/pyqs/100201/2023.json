@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 2nd Semester Exam., 2023",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100201",
+    "year": 2023,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven question of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "If 20, 30 and 50 ohms are connected in delta connection, then what are its equivalent values (in ohms) in star connections?",
+              "options": [
+                "6, 10, 10",
+                "6, 10, 5",
+                "15, 15, 10",
+                "6, 15, 15"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "The time constant of RC circuit is ?",
+              "options": [
+                "1/RC",
+                "R/C",
+                "1/(RC)\u00b2",
+                "RC"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "The maximum power will be transferred from a voltage source to load when",
+              "options": [
+                "the source impedance is half of the load impedance",
+                "the source impedance is equal to the load impedance",
+                "the source impedance is twice that of the load impedance",
+                "the source impedance and load impedance both must be zero."
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "Draw the V-I characteristics of ideal and practical current source and voltage source.",
+              "type": "theory"
+            },
+            {
+              "id": "1e",
+              "text": "Define form factor and peak factor.",
+              "type": "theory"
+            },
+            {
+              "id": "1f",
+              "text": "Write the statement of KVL and KCL.",
+              "type": "theory"
+            },
+            {
+              "id": "1g",
+              "text": "How do hysteresis and eddy current loss depend on frequency?",
+              "type": "theory"
+            },
+            {
+              "id": "1h",
+              "text": "Explain generation of rotating magnetic field in electrical machine.",
+              "type": "theory"
+            },
+            {
+              "id": "1i",
+              "text": "Differentiate among neutral, grounding and earthing.",
+              "type": "theory"
+            },
+            {
+              "id": "1j",
+              "text": "Relate flux, reluctance and permeability.",
+              "type": "theory"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "numerical",
+              "text": "Explain maximum power transfer theorem. Find the value of $R_L$ at which maximum power is transferred to the load in the following circuit. Also find the maximum power transferred. [Diagram: A DC circuit with an 18V source in series with a 15\u03a9 resistor on the left. This is connected to a network with a top branch containing a 4\u03a9 resistor, followed by a 5\u03a9 resistor. A vertical branch with a 10\u03a9 resistor is connected between the 4\u03a9 and 5\u03a9 resistors. The far-right branch has the load resistor $R_L$. A bottom branch has an 8\u03a9 resistor.]",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "theory",
+              "text": "Explain and discuss the difference between ideal and practical voltage and current source. Also explain unilateral and bilateral elements with suitable examples.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "numerical",
+              "text": "Compute the current in the 8\u03a9 resistor as shown in figure using Superposition Theorem. [Diagram: A DC circuit with a 20V voltage source on the left, a 4\u03a9 resistor in the top left branch, an 8\u03a9 resistor in the central vertical branch, a 4\u03a9 resistor in the top right branch, and a 30V voltage source in the right vertical branch.]",
+              "marks": 4
+            },
+            {
+              "id": "3b",
+              "type": "theory",
+              "text": "State and explain Thevenin's Theorem.",
+              "marks": 5
+            },
+            {
+              "id": "3c",
+              "type": "numerical",
+              "text": "Using Thevenin's equivalent circuit, find the current through 6 ohm resistor. [Diagram: A DC circuit with an 8V source on the left, a 4\u03a9 resistor in the top left branch, a 10\u03a9 resistor in the middle vertical branch, a 6\u03a9 resistor in the top right branch, and an 8V source in the right vertical branch.]",
+              "marks": 5
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "numerical",
+              "text": "A series R-L-C circuit having a resistance of $50 \\Omega$, an inductance of $500 \\text{ mH}$ and a capacitance of $400 \\mu\\text{F}$, is energized from a $50 \\text{ Hz}$, $230 \\text{ V}$, AC supply. Find the\u2014 (i) resonant frequency of the circuit; (ii) peak current drawn by the circuit at $50 \\text{ Hz}$; (iii) peak current drawn by the circuit at resonant frequency.",
+              "marks": 6
+            },
+            {
+              "id": "4b",
+              "type": "numerical",
+              "text": "A coil of power factor 0.8 is connected in series with a $110 \\mu\\text{F}$ capacitor. The supply frequency is $50 \\text{ Hz}$. The potential drop across the coil is found to be equal to the potential drop across the capacitor. Calculate the resistance and inductance of the coil.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "theory",
+              "text": "Compare electric and magnetic circuits, clearly stating similarities and dissimilarities between them. State five applications of magnetic circuit in engineering field.",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "type": "theory",
+              "text": "Derive the relationship between line voltage and phase voltage, line current and phase current for a 3-phase delta-connected system.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "What is eddy-current loss? What are the undesirable effects of eddy currents? How can they be minimized? Mention some applications of eddy-currents.",
+              "marks": 6
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "An iron ring of cross-sectional area $5 \\text{ cm}^2$ is wound with a wire of 120 turns and has a cut of $3 \\text{ mm}$. Calculate the magnetizing current required to produce a flux of $0.3 \\text{ mWb}$, if mean length of magnetic path is $25 \\text{ cm}$ and relative permeability of iron is 650.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "theory",
+              "text": "Define voltage regulation of a transformer and derive conditions for (i) zero regulation and (ii) maximum regulation. Also draw the curve of variation of voltage regulation with power factor.",
+              "marks": 6
+            },
+            {
+              "id": "7b",
+              "type": "numerical",
+              "text": "Derive an expression for the induced e.m.f of a transformer. A $3000/200 \\text{ V}$, $50 \\text{ Hz}$, single-phase transformer is built on a core having an effective cross-sectional area of $150 \\text{ cm}^2$ and has 80 turns in the low-voltage winding. Calculate\u2014 (i) the value of the maximum flux density in the core; (ii) the number of turns in the high-voltage winding.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "type": "theory",
+          "text": "Describe with neat sketches the construction of a 3-phase induction motor. Explain the principle of operation of a 3-phase induction motor. What is meant by slip in an induction motor?",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Components of LT switch gear.",
+              "type": "theory"
+            },
+            {
+              "id": "9b",
+              "text": "Necessity and Types of Earthing.",
+              "type": "theory"
+            },
+            {
+              "id": "9c",
+              "text": "Working of MCB & ELCB.",
+              "type": "theory"
+            },
+            {
+              "id": "9d",
+              "text": "Speed control of DC motor.",
+              "type": "theory"
+            }
+          ],
+          "text": "Write short notes on any two of the following :",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

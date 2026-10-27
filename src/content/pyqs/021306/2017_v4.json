@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2017",
+    "subject": "Strength of Material",
+    "subject_slug": "strength-of-material",
+    "subject_code": "021306",
+    "year": 2017,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The ratio of lateral strain to linear strain is known as</p>",
+          "options": [
+            "modulus of elasticity",
+            "modulus of rigidity",
+            "Poisson's ratio",
+            "elastic limit"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The temperature strain in a bar is ___ proportional to the change in temperature.</p>",
+          "options": [
+            "directly",
+            "indirectly",
+            "Either (i) or (ii)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Moment of inertia of a semi-circle about its XX-axis is given by</p>",
+          "options": [
+            "\\( 0.22r^3 \\)",
+            "\\( 0.11r^4 \\)",
+            "\\( 0.14r^4 \\)",
+            "\\( 0.2r^4 \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The strength of the beam mainly depends on</p>",
+          "options": [
+            "bending moment",
+            "c.g. of the section",
+            "section modulus",
+            "its weight"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>A cantilever beam AB of length \\( l \\) has moment \\( M \\) applied at free end. The deflection\n                        at the free end B is given as</p>",
+          "options": [
+            "\\( M^2l/EI \\)",
+            "\\( Ml^2/2EI \\)",
+            "\\( Ml/2EI \\)",
+            "\\( Ml^3/2EI \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A beam of length \\( 6 \\text{ m} \\) carries a point load \\( 120 \\text{ kN} \\) at its centre.\n                        The beam is fixed at both ends. The fixing moment at the ends is</p>",
+          "options": [
+            "\\( 40 \\text{ kNm} \\)",
+            "\\( 90 \\text{ kNm} \\)",
+            "\\( 120 \\text{ kNm} \\)",
+            "\\( 150 \\text{ kNm} \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following are usually considered as thin cylinders?</p>",
+          "options": [
+            "Boilers",
+            "Tanks",
+            "Water pipes",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Thin cylinders are frequently required to operate under pressure up to</p>",
+          "options": [
+            "\\( 5 \\text{ MN/m}^2 \\)",
+            "\\( 15 \\text{ MN/m}^2 \\)",
+            "\\( 30 \\text{ MN/m}^2 \\)",
+            "\\( 250 \\text{ MN/m}^2 \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In thick cylinders, the radial stress in the wall thickness</p>",
+          "options": [
+            "is zero",
+            "is negligibly small",
+            "varies from the inner surface to the outer surface",
+            "Any of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The stress due to suddenly applied load is ___ times that of gradually applied load.</p>",
+          "options": [
+            "two",
+            "three",
+            "four",
+            "five"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>A steel bar is \\( 900 \\text{ mm} \\) long, its two ends are \\( 40 \\text{ mm} \\) and \\( 30\n                        \\text{ mm} \\) in diameter and the length of each rod is \\( 200 \\text{ mm} \\). The middle\n                        portion of the bar is \\( 15 \\text{ mm} \\) in diameter and \\( 500 \\text{ mm} \\) long. If\n                        the bar is subjected to an axial tensile load of \\( 15 \\text{ kN} \\), find its total\n                        extension, assuming \\( E = 200 \\text{ GN/m}^2 \\).</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>The following data relate to a bar subjected to a tensile test: Diameter of bar \\( = 30 \\text{\n                        mm} \\), Tensile load \\( = 54 \\text{ kN} \\), Gauge length \\( = 300 \\text{ mm} \\),\n                        Extension of the bar \\( = 0.112 \\text{ mm} \\), Change in diameter \\( = 0.00366 \\text{ mm}\n                        \\). Calculate the Poisson's ratio and the values of three moduli.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Two mutually perpendicular planes of an element of material are subjected to direct stresses of\n                        \\( 10.5 \\text{ MN/m}^2 \\) (tensile) and \\( 3.5 \\text{ MN/m}^2 \\) (compressive) and shear\n                        stress of \\( 7 \\text{ MN/m}^2 \\). Using both analytical and graphical methods, find- <br/>\n                        (a) the magnitude and direction of principal stresses;<br/>\n                        (b) the magnitude of the normal and shear stresses on a plane on which the shear stress is\n                        maximum.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>With the help of suitable assumptions, deduce torsion equation for a hollow circular shaft.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A hollow circular shaft \\( 20 \\text{ mm} \\) thick transmits \\( 294 \\text{ kW} \\) at \\( 200\n                        \\text{ r.p.m.} \\) Determine the diameters of the shaft if the shear strain due to torsion is\n                        not to exceed \\( 8.6 \\times 10^{-4} \\). Assume modulus of rigidity as \\( 80 \\text{ GN/m}^2\n                        \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>The following figure shows a loaded beam: (a) Sketch the shear force and bending moment diagrams\n                        giving the important numerical values.</p>\n<p>(b) Calculate the maximum bending moment and the point at which it occurs.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/43.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A cantilever of length \\( l \\) carries uniformly distributed load of \\( W \\) per unit run for\n                        a distance \\( \\frac{3l}{4} \\) from the fixed end. Find the slope and deflection at the free\n                        end.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A cantilever of length \\( l \\) carries a point load \\( W \\) at the end. If the moment of\n                        inertia of the section increases uniformly from \\( I \\) at the free end to \\( 2I \\) at the\n                        fixed end, calculate the deflection at the free end.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Calculate the change in dimensions of a thin cylindrical shell due to an internal pressure. Also\n                        calculate the change in length and diameter of the cylindrical shell.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A cylindrical shell \\( 3 \\text{ m} \\) long which is closed at the ends has an internal\n                        diameter of \\( 1 \\text{ m} \\) and a wall thickness of \\( 15 \\text{ mm} \\). Calculate the\n                        circumferential and longitudinal stresses induced and also change in dimensions of the shell if\n                        it is subjected to an internal pressure of \\( 1.5 \\text{ MN/m}^2 \\). Take \\( E = 200 \\text{\n                        GN/m}^2 \\) and \\( 1/m = 0.3 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss and derive Lame's theory for thick shells.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Calculate the thickness of metal necessary for a cylindrical shell of internal diameter \\( 160\n                        \\text{ mm} \\) to withstand a pressure of \\( 25 \\text{ MN/m}^2 \\), if maximum permissible\n                        tensile stress is \\( 125 \\text{ MN/m}^2 \\).</p>"
+        }
+      ]
+    }
+  ]
+}

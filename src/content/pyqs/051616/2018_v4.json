@@ -1,0 +1,340 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech. 6th Semester Examination, 2018",
+    "subject": "Compiler Design",
+    "subject_slug": "compiler-design",
+    "subject_code": "051616",
+    "year": 2018,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer for any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>What is the number of tokens in the following C statement? printf(\"I=%d and I=%x\",I and I)\n                    </p>",
+          "options": [
+            "3",
+            "26",
+            "10",
+            "21"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Consider the following two statements: P: Every regular grammar is LL(1). Q: Every regular set\n                        has LR(1) grammar. Which of the following is true?</p>",
+          "options": [
+            "Both P and Q are true",
+            "P is true and Q is false",
+            "P is false and Q is true",
+            "Both P and Q are false"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>What is the similarity between LR, LALR and SLR?</p>",
+          "options": [
+            "Use of same algorithm, but different parsing table",
+            "Same parsing table, but different algorithm",
+            "Their parsing tables and algorithms are similar but use top-down approach",
+            "Both parsing tables and algorithms are different"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Consider the following grammar: \\( S \\rightarrow aSbS | bSaS | \\epsilon \\). How many\n                        different parse trees are possible for string ababab?</p>",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>A shift reduce parser carries out the actions specified within braces immediately after reducing\n                        with the corresponding rule of grammar: \\( S \\rightarrow xxW \\) {PRINT \"1\"}, \\( S\n                        \\rightarrow y \\) {print \"2\"}, \\( S \\rightarrow Sz \\) {print \"3\"}. What is the translation\n                        of xxxxyzz using the syntax directed translation scheme described by the above rules?</p>",
+          "options": [
+            "23131",
+            "11233",
+            "11231",
+            "33211"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The most powerful parser is</p>",
+          "options": [
+            "SLR",
+            "LALR",
+            "Canonical LR",
+            "Operator-precedence"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In some programming languages, an identifier is permitted to be a letter followed by any number\n                        of letters or digits. If L and D denote the sets of letters and digits respectively, which of\n                        the following expressions defines an identifier?</p>",
+          "options": [
+            "\\( (L \\cup D)^* \\)",
+            "\\( L(L \\cup D)^* \\)",
+            "\\( (L.D)^* \\)",
+            "\\( L.(L.D)^* \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>In operator precedence parsing, precedence relations are defined</p>",
+          "options": [
+            "for all pairs of non-terminals",
+            "for all pairs of terminals",
+            "to delimit the handle",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A bottom-up parser generates</p>",
+          "options": [
+            "right-most derivation",
+            "right-most derivation in reverse",
+            "left-most derivation",
+            "left-most derivation in reverse"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>A grammar that produces more than one parse tree for some sentence is called</p>",
+          "options": [
+            "ambiguous",
+            "unambiguous",
+            "regular",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What do you understand by left recursion and left factoring? How are these eliminated? Explain\n                        with the help of suitable example.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What do you understand by bootstrapping? Explain with the help of suitable example.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>How can addressing modes be used for reducing the memory access time?</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What are activation records? Explain its purpose in compilers.</p>"
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>What are the optimization techniques applied on procedures calls? Explain with an example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Given the Syntax-Directed Definition below with the synthesized attribute val. Draw the annotated\n                        parse tree for the expression \\( (3+4)*(5+6) \\):<br/>\n                        \\( L \\rightarrow E \\) ; \\( L.val = E.val \\)<br/>\n                        \\( E \\rightarrow T \\) ; \\( E.val = T.val \\)<br/>\n                        \\( E \\rightarrow E_1+T \\) ; \\( E.val = E_1.val+T.val \\)<br/>\n                        \\( T \\rightarrow F \\) ; \\( T.val = F.val \\)<br/>\n                        \\( T \\rightarrow T_1*F \\) ; \\( T.val = T_1.val*F.val \\)<br/>\n                        \\( F \\rightarrow (E) \\) ; \\( F.val = E.val \\)<br/>\n                        \\( F \\rightarrow digit \\) ; \\( F.val = digit.lexval \\)\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Construct a Syntax-Directed Translation scheme that translates arithmetic expressions from infix\n                        into postfix notation. Your solution should include the context-free grammar, the semantic\n                        attributes for each of the grammar symbols, and semantic rules. Show the application of your\n                        scheme to the input \"3*4+5*2\".</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What is the advantage of using machine independent intermediate representation during translation\n                        process?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain, with example, what three address codes are. Give some common three address statements.\n                    </p>"
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>Find the three address codes of the following program. There are four bytes per word:<br/>\n                        Sum = 0<br/>\n                        For(i = 1; i &lt;= 20; i++)<br/>\n                            Sum = Sum + a[i] + b[i];\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Find the CNF (Chomsky Normal Form) for the following CFG:<br/>\n                        \\( S \\rightarrow ABA \\)<br/>\n                        \\( A \\rightarrow aA | \\epsilon \\)<br/>\n                        \\( B \\rightarrow bB | \\epsilon \\)\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Eliminate null productions from the following CFG:<br/>\n                        \\( S \\rightarrow Xa \\)<br/>\n                        \\( X \\rightarrow aX | bX | \\epsilon \\)\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q6_3",
+          "type": "theory",
+          "text": "<p>Convert the following grammar to GNF :<br/>\n                        \\( A_1 \\rightarrow A_2A_3 \\)<br/>\n                        \\( A_2 \\rightarrow A_3A_1 | b \\)<br/>\n                        \\( A_3 \\rightarrow A_1A_2 | a \\)\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What are the advantages of LALR parsing over SLR and CLR methods?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Write the algorithm to compute FIRST and FOLLOW for a given grammar.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>What is shift-reduce conflict?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What are intermediate codes in compilers? Why is it needed in compiler design? Discuss different\n                        types of intermediate codes generated by intermediate code generation phase.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What is parsing? What is the difference between Top-down parsing, Bottom-up parsing and\n                        Predictive parsing?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Explain the working of each phase of compiler in detail with an example.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

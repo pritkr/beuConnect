@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2016",
+    "subject": "Analog Electronics",
+    "subject_slug": "analog-electronics",
+    "subject_code": "041504",
+    "year": 2016,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer the following questions (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Current mirror circuit is used to",
+              "marks": 2,
+              "options": [
+                "establish constant current",
+                "establish constant voltage",
+                "increase output current",
+                "decrease input current"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "Output of a common-collector amplifier is taken from",
+              "marks": 2,
+              "options": [
+                "emitter",
+                "base",
+                "collector",
+                "none of the above"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "Early effect in BJT refers to",
+              "marks": 2,
+              "options": [
+                "avalanche breakdown",
+                "thermal runaway",
+                "base-width modulation",
+                "Zener breakdown"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "Slew rate of an ideal op-amp is",
+              "marks": 2,
+              "options": [
+                "infinite",
+                "zero",
+                "1",
+                "0.5"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "RC phase-shift oscillators are suitable for",
+              "marks": 2,
+              "options": [
+                "audio frequencies",
+                "radio frequencies",
+                "microwave frequencies",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "Feedback factor $\\beta$ of an amplifier is",
+              "marks": 2,
+              "options": [
+                "always greater than 1",
+                "less than or equal to 1",
+                "always zero",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "Negative feedback in an amplifier decreases",
+              "marks": 2,
+              "options": [
+                "stability",
+                "input impedance",
+                "voltage gain",
+                "bandwidth"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "The value of modulation index $m_f$ in FM is",
+              "marks": 2,
+              "options": [
+                "$m_f = 0$",
+                "$m_f > 1$",
+                "$m_f < 1$",
+                "Both (ii) and (iii)"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "Which stage follows the mixer in a typical superheterodyne receiver?",
+              "marks": 2,
+              "options": [
+                "IF amplifier",
+                "Audio amplifier",
+                "Demodulator",
+                "Local oscillator"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "Monostable multivibrator is also called",
+              "marks": 2,
+              "options": [
+                "bistable multivibrator",
+                "astable multivibrator",
+                "free-running multivibrator",
+                "one-shot multivibrator"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Derive an expression for small-signal voltage gain $A_v$, input resistance $R_i$ and output resistance $R_o$ of an emitter-follower amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "Discuss the necessity of cascading of amplifiers. Explain the meaning of half-power frequency.",
+          "marks": 7
+        },
+        {
+          "id": "3",
+          "text": "Draw the small-signal model of FET and find expressions for $g_m$ and voltage gain.",
+          "marks": 14
+        },
+        {
+          "id": "4a",
+          "text": "Explain how bias stabilization is achieved in a BJT by the use of self-bias circuit.",
+          "marks": 7
+        },
+        {
+          "id": "4b",
+          "text": "Write short notes on Darlington-pair amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "5",
+          "text": "Derive an expression for close-loop gain of a non-inverting amplifier. Also design a practical differentiator circuit to differentiate a $1\\text{ kHz}$ sinusoidal signal of amplitude $2\\text{ V}$.",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "text": "What is 555 timer? Explain in brief. Write four practical applications of 555 timer. Also draw a circuit diagram of monostable multivibrator using 555 timer.",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "text": "What is modulation? Why is it required? Give some differences between FM and AM.",
+          "marks": 14
+        },
+        {
+          "id": "8a",
+          "text": "Derive an expression for the effect of negative feedback on input impedance of an amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "8b",
+          "text": "Derive the fundamental requirement of an oscillator system. Explain.",
+          "marks": 7
+        },
+        {
+          "id": "9",
+          "text": "Write short notes on any two of the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Current mirror"
+            },
+            {
+              "id": "9b",
+              "text": "Wideband amplifiers"
+            },
+            {
+              "id": "9c",
+              "text": "Tuned amplifiers"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

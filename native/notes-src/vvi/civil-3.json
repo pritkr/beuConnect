@@ -1,0 +1,216 @@
+{
+  "branch": "civil",
+  "sem": 3,
+  "subjects": [
+    {
+      "code": "101301",
+      "name": "Solid Mechanics",
+      "vvi": [
+        {
+          "topic": "Stress, strain and the elastic constants",
+          "note": "σ = P/A and ε = δL/L, with Hooke's law σ = Eε in the proportional range. The constants are linked by E = 2G(1 + ν) = 3K(1 − 2ν), so two of them define an isotropic material. A stepped or composite bar carries the same load at different stresses, and compatibility of deformation closes the equation.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Shear force and bending moment diagrams",
+          "note": "The shear force at a section is the algebraic sum of the transverse forces on one side, and the bending moment is the sum of their moments. The slope of the bending moment diagram equals the shear, so the maximum moment occurs where the shear crosses zero. A point load gives a shear jump and a moment kink, a uniformly distributed load gives a linear shear and a parabolic moment, and a couple gives a moment jump.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Bending and shear stress in beams",
+          "note": "The flexure formula σ/y = M/I = E/R gives the bending stress, and the section modulus Z = I/ymax sizes the section. Shear stress is τ = VQ/(Ib), which is 1.5 V/A at the neutral axis of a rectangle and zero at the extreme fibre. A flanged section carries most of the shear in its web.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Torsion of circular shafts",
+          "note": "τ/r = T/J = Gθ/L for a circular shaft, with J = πd⁴/32 for a solid shaft and π(D⁴ − d⁴)/32 for a hollow one. Power transmitted is P = 2πNT/60. A hollow shaft is more efficient per unit mass because the material sits where the stress is highest.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Deflection of beams",
+          "note": "Integrate EI y'' = M twice and apply the boundary conditions, or use Macaulay's brackets to keep one equation across the whole beam. The standard results are δ = WL³/48EI at the centre of a simply supported beam with a central point load and 5WL⁴/384EI for a uniformly distributed load. Deflection, not strength, often decides the depth of a beam.",
+          "marks": 7,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Principal stresses and Mohr's circle",
+          "note": "σ1,2 = (σx + σy)/2 ± √[((σx − σy)/2)² + τxy²], and tan 2θ = 2τxy/(σx − σy) locates the principal planes. The maximum shear stress is the radius of the circle, (σ1 − σ2)/2. Plot the two face states on the circle and remember that angles on the circle are double the physical angles.",
+          "marks": 7,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "101302",
+      "name": "Engineering Mathematics-III (PDE, Prob/stat)",
+      "vvi": [
+        {
+          "topic": "Formation and solution of first-order PDE",
+          "note": "Form the PDE by eliminating the arbitrary constants or the arbitrary function from the given relation. For Pp + Qq = R, Lagrange's auxiliary equations dx/P = dy/Q = dz/R give two independent integrals u = a and v = b, and the solution is φ(u,v) = 0. A non-linear first-order equation outside the standard forms is solved by Charpit's method.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Linear PDE with constant coefficients",
+          "note": "For f(D,D')z = F(x,y), the complementary function comes from the auxiliary equation with distinct, repeated or complex roots, and the particular integral depends on the form of F. The inverse operator is applied term by term, and the case where a factor vanishes needs the rule of multiplying by x. Write the complementary function first, then the particular integral, then apply the boundary conditions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Heat, wave and Laplace equations by separation of variables",
+          "note": "Put u = X(x)T(t), separate the variables, and use the boundary conditions to fix the eigenvalues; the Fourier series then fits the initial condition. The heat equation ut = α²uxx decays in time, the wave equation utt = c²uxx carries two travelling waves, and Laplace's equation describes the steady state. State every boundary and initial condition before separating.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Bayes' theorem and total probability",
+          "note": "P(A|B) = P(B|A)P(A)/P(B), and the denominator is expanded by the total probability rule over a partition of the sample space. Draw the tree diagram and check that the posterior probabilities sum to one. Independence is P(A∩B) = P(A)P(B), which is not the same as mutual exclusivity.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Random variables and standard distributions",
+          "note": "A random variable maps outcomes to numbers, with the pmf or pdf giving probabilities and the cdf its sum or integral; E(X) = Σxp and Var(X) = E(X²) − [E(X)]². The binomial applies to a fixed number of independent trials with constant p, the Poisson to rare events with mean and variance both λ, and the normal is standardised by z = (x − μ)/σ.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Correlation, regression and curve fitting",
+          "note": "The correlation coefficient r = cov(X,Y)/(σxσy) lies between −1 and 1 and measures linear association only. The regression line of y on x is y − ȳ = r(σy/σx)(x − x̄), and both regression lines pass through the means. The method of least squares fits y = a + bx by solving the two normal equations.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "101304",
+      "name": "Surveying and Geomatics",
+      "vvi": [
+        {
+          "topic": "Chain surveying and ranging",
+          "note": "Chain surveying fixes points by linear measurement only, so it suits small, open, level areas; a base line is measured and offsets are set out at right angles with an optical square. Ranging fixes intermediate points on a long line, directly or reciprocally. Errors come from a wrong chain length, sag, temperature and misalignment.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Compass surveying and traversing",
+          "note": "A prismatic compass reads the whole-circle bearing clockwise from magnetic north, while a surveyor's compass reads a reduced bearing from north or south. Local attraction is detected by the difference between the fore and back bearings, which should be 180°. The closing error of a traverse is adjusted by the Bowditch rule in proportion to the side lengths.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Levelling and contouring",
+          "note": "In the height of instrument method HI = RL + BS and a new RL = HI − IS or FS; the rise-and-fall method compares consecutive staff readings instead. Curvature and refraction corrections are applied to long sights, and the collimation error is found by the two-peg test. Contours never cross, are close together on a steep slope, and follow the water line in a valley.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Theodolite and tacheometry",
+          "note": "A theodolite measures horizontal and vertical angles, and the face-left and face-right readings should differ by 180°, which is the adjustment check. With an anallactic telescope the tacheometric distance is D = 100S and the vertical component V = 50S sin 2θ. A closed traverse is checked by the sum of the included angles.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Setting out a simple circular curve",
+          "note": "For a simple circular curve the tangent length is R tan(Δ/2), the curve length is RΔ with Δ in radians, and the external distance is R(sec(Δ/2) − 1). Set out by offsets from the long chord, by successive tangential angles, or by Rankine's deflection angle. The chainage of each tangent point comes from the apex chainage minus the tangent length.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Total station, GPS and remote sensing",
+          "note": "A total station combines an electronic theodolite, an electronic distance meter and a data logger, so it gives coordinates directly after a resection or a back sight. GPS fixes a position from satellite ranges, and differential GPS improves the accuracy to centimetres. Remote sensing classifies the ground from reflectance in the visible, infrared and microwave bands.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "101305",
+      "name": "Fluid Mechanics",
+      "vvi": [
+        {
+          "topic": "Fluid properties and pressure measurement",
+          "note": "Density, specific weight, viscosity and surface tension define the fluid, and Newton's law of viscosity τ = μ du/dy holds for a Newtonian fluid. Viscosity falls with temperature for a liquid and rises for a gas. A manometer balances pressure by a hydrostatic column, p = p0 + ρgh, and absolute pressure is gauge pressure plus atmospheric.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Hydrostatic forces and buoyancy",
+          "note": "The force on a submerged plane is F = ρgAȳ, acting at the centre of pressure, which lies below the centroid by I/(Aȳ). Archimedes' principle equates the buoyant force to the weight of displaced fluid, and stability needs the metacentre above the centre of gravity. A curved surface is resolved into horizontal and vertical components.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Continuity, Euler and Bernoulli equations",
+          "note": "Continuity gives A1V1 = A2V2 for an incompressible flow. Bernoulli's equation p/ρg + V²/2g + z = constant holds along a streamline for steady, inviscid, incompressible flow, and the real-fluid form adds the head loss. A venturi meter, orifice meter and pitot tube are all applications with a discharge or velocity coefficient.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Momentum equation and forces on pipe bends",
+          "note": "ΣF = ρQ(V2 − V1) gives the force on a bend or a vane, with the pressure forces at the two sections added. The force on the fluid is opposite to the force on the fitting, which is why an anchor must resist it. For a jet striking a moving vane the relative velocity replaces the absolute velocity, and a 180° bend needs the largest anchor.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Flow through pipes: major and minor losses",
+          "note": "Darcy-Weisbach gives hf = fLV²/(2gD), with f read from the Moody chart against the Reynolds number and relative roughness. Minor losses are Σk V²/2g at an entry, bend, valve or exit. In laminar flow f = 64/Re so the head loss varies as V, while in turbulent flow f is nearly constant so the loss varies as V².",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Laminar and turbulent flow, Reynolds number",
+          "note": "Re = ρVD/μ classifies the flow: below 2000 is laminar, above 4000 is turbulent, and between is transitional. In laminar pipe flow the velocity profile is parabolic, the maximum is twice the average, and the friction factor depends only on Re. Turbulent flow has a flatter, logarithmic profile and an eddy viscosity that dominates the molecular one.",
+          "marks": 5,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "101306",
+      "name": "Materials, Testing & Evaluation",
+      "vvi": [
+        {
+          "topic": "Cement: composition, types and tests",
+          "note": "Ordinary Portland cement is clinker ground with gypsum, and the Bogue compounds C3S, C2S, C3A and C4AF set the strength gain and the heat of hydration. Initial setting must be at least 30 minutes and final setting not more than 600 minutes by the Vicat apparatus. Soundness by Le Chatelier and fineness by Blaine are the other mandatory tests, and the IS grades 33, 43 and 53 denote the 28-day compressive strength.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Aggregates, grading and the fineness modulus",
+          "note": "Sieve analysis gives the grading and the fineness modulus, and a well-graded aggregate leaves the least void content. Flakiness and elongation indices limit the undesirable shapes, and the Los Angeles abrasion test measures hardness and toughness. Bulking of sand must be allowed for when batching by volume.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Concrete workability and the water-cement ratio",
+          "note": "Workability is measured by slump, compaction factor or Vee-Bee time, and the slump test is unsuitable for very dry or very wet mixes. Abram's law states that strength falls as the water-cement ratio rises, so mix design fixes the ratio from the target strength and then the water content from the required workability. Curing keeps the hydration going and prevents plastic shrinkage.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Compressive strength and acceptance criteria",
+          "note": "Cubes are tested at 7 and 28 days, and the 7-day strength is typically about two-thirds of the 28-day value. The target mean strength adds 1.65 times the standard deviation to the characteristic strength, which allows 5% of results to fall below it. Acceptance is judged on the mean of four consecutive results, not on a single cube.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Bricks, timber and reinforcing steel",
+          "note": "A first-class brick is well burnt, sharp-edged, gives a clear ring and absorbs less than 20% of its weight in water. Timber strength varies with species, moisture content and grain direction, and defects such as knots and shakes reduce it. Mild steel is ductile and weldable, while HYSD bars have a higher yield strength, named Fe415 or Fe500 by that yield value.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Non-destructive testing of concrete",
+          "note": "The rebound hammer measures surface hardness and returns an index that must be correlated with cube strength, not read as a strength. Ultrasonic pulse velocity measures the travel time through the concrete, and a lower velocity means voids, cracks or poorer quality. A combined rebound and pulse velocity result is more reliable than either test alone.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    }
+  ]
+}

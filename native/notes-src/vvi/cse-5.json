@@ -1,0 +1,186 @@
+{
+  "branch": "cse",
+  "sem": 5,
+  "subjects": [
+    {
+      "code": "105501",
+      "name": "Artificial Intelligence",
+      "vvi": [
+        {
+          "topic": "Agents, environments and PEAS",
+          "note": "A rational agent picks the action expected to maximise its performance measure. Describe the task with PEAS (Performance, Environment, Actuators, Sensors), then classify the environment: fully/partially observable, deterministic/stochastic, episodic/sequential, static/dynamic, discrete/continuous.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Uninformed search: BFS, DFS, UCS, DLS and IDDFS",
+          "note": "BFS is complete and optimal for unit costs, O(b^d) time and space; DFS is O(bm) space but not optimal; uniform-cost search expands the lowest path cost; iterative deepening combines DFS's memory with BFS's shallow completeness. State completeness, optimality, time and space for each.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "A* search and admissible heuristics",
+          "note": "A* expands the node with the lowest f(n) = g(n) + h(n). It is optimal when h is admissible (never overestimates) and, for graph search, consistent (h(n) ≤ cost(n,n') + h(n')). A* is complete on finite graphs with positive step costs.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Minimax and alpha-beta pruning",
+          "note": "Minimax assumes an optimal opponent and backs values up the game tree: MAX takes the maximum, MIN the minimum. Alpha-beta keeps the best MAX value so far (α) and best MIN value (β), pruning a branch when α ≥ β; it returns the same value as minimax but prunes exponentially more on good move ordering.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Knowledge representation: propositional versus first-order logic",
+          "note": "Propositional logic has facts with no structure; first-order logic adds objects, predicates, functions and quantifiers ∀ and ∃. Unification makes two atomic sentences identical by binding variables, and resolution with refutation proves a query by deriving the empty clause.",
+          "marks": 7,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Expert systems and their components",
+          "note": "An expert system separates the knowledge base (facts and rules) from the inference engine (forward chaining from data, backward chaining from a goal) and explains its reasoning through a user interface. MYCIN is the standard medical example; the advantage is captured expertise, the limit is brittle rule maintenance.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "105502",
+      "name": "Database Management Systems",
+      "vvi": [
+        {
+          "topic": "ER model: entities, relationships, cardinality and participation",
+          "note": "Draw entities as rectangles, relationships as diamonds, attributes as ellipses and underline the key. Mark 1:1, 1:N or M:N on each edge; a total (double-line) participation means every entity must take part. Convert an M:N relationship into its own table with both primary keys.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Normalisation: 1NF, 2NF, 3NF and BCNF",
+          "note": "1NF removes repeating groups; 2NF removes partial dependency on part of a composite key; 3NF removes transitive dependency on a non-key attribute; BCNF requires every determinant to be a candidate key. Decompose step by step and name the dependency each step removes.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "SQL joins, GROUP BY and HAVING",
+          "note": "INNER JOIN keeps matching rows, LEFT/RIGHT keep unmatched rows from one side with NULLs, FULL keeps both. WHERE filters rows before grouping, HAVING filters groups after; aggregate with COUNT, SUM, AVG, MIN, MAX. Be ready to write the query, not just describe it.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "ACID properties and transaction states",
+          "note": "Atomicity (all or nothing), Consistency (constraints hold), Isolation (concurrent transactions do not see partial work) and Durability (committed work survives a crash). States: active, partially committed, committed, failed, aborted. Explain each property with the bank-transfer example.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Concurrency control: two-phase locking and deadlock",
+          "note": "2PL has a growing phase (acquire locks) and a shrinking phase (release), which guarantees conflict serialisability but can deadlock. Strict 2PL holds all exclusive locks until commit. Deadlock is handled by prevention, avoidance, detection (wait-for graph) or timeout.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "B+ tree indexing",
+          "note": "Internal nodes hold only keys and pointers; leaves hold keys with record pointers and are linked for range scans. All leaves are at the same depth, so search, insert and delete are O(log n) with high fan-out. Drawing an order-3 tree after inserts is the usual question.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Views, triggers and stored procedures",
+          "note": "A view is a stored query, used for security and simplification; a materialised view stores its result and must be refreshed. A trigger fires on INSERT/UPDATE/DELETE to enforce a rule; a stored procedure is called explicitly and can take parameters.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "105503",
+      "name": "Formal Language & Automata Theory",
+      "vvi": [
+        {
+          "topic": "DFA versus NFA, and subset construction",
+          "note": "A DFA has exactly one transition per symbol and state; an NFA may have several, including ε-moves. Every NFA has an equivalent DFA via subset construction, whose states are sets of NFA states; the DFA may have up to 2ⁿ states. Both accept exactly the regular languages.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Regular expressions to NFA (Thompson's construction)",
+          "note": "Build an NFA for each symbol, then combine with ε-transitions: concatenation chains them, union adds a new start with ε to both, and Kleene star loops back with ε. The result has one start and one accepting state; convert to a DFA only if the question asks.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "DFA minimisation",
+          "note": "Remove unreachable states, then partition the rest into final and non-final groups and refine while two states in a group go to different groups on some symbol. The quotient automaton is the unique minimal DFA. Show the refinement table, not just the final diagram.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Context-free grammars, derivations and ambiguity",
+          "note": "A CFG is (V, Σ, P, S); a leftmost derivation expands the leftmost variable each step, and the parse tree records the same derivation. A grammar is ambiguous if one string has two distinct parse trees; S → S + S | S * S | id is the standard example. Simplify by removing ε, unit and useless productions.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Pushdown automata and acceptance",
+          "note": "A PDA is an NFA plus a stack, so it recognises exactly the context-free languages. Acceptance is by final state or by empty stack, and the two models are equivalent. For aⁿbⁿ, push a on each a and pop on each b.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Turing machines and the Church-Turing thesis",
+          "note": "A TM has a finite control, a tape that is infinite in one direction and a head that reads, writes and moves L or R. It accepts recursively enumerable languages and halts on recursive ones. The halting problem is undecidable, proved by diagonalisation.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Pumping lemma for regular and context-free languages",
+          "note": "For a regular L there is a pumping length p such that every string of length ≥ p splits as xyz with |xy| ≤ p, |y| ≥ 1 and xyⁱz ∈ L for all i ≥ 0. For CFLs the split is uvwxy with |vwx| ≤ p and uvⁱwxⁱy ∈ L. Use it to prove a language is not regular/CFL by choosing the string and reaching a contradiction.",
+          "marks": 8,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "105504",
+      "name": "Software Engineering",
+      "vvi": [
+        {
+          "topic": "SDLC models: waterfall, spiral, prototype and agile",
+          "note": "Waterfall is sequential with fixed requirements and late feedback; the spiral model iterates through risk analysis and is suited to large, risky projects; prototyping clarifies unclear requirements; agile delivers small increments with continuous feedback. Compare them on cost, risk, change tolerance and delivery time.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Requirements engineering and the SRS",
+          "note": "Elicitation (interviews, questionnaires, observation), analysis, specification and validation. An SRS states functional requirements, non-functional requirements and constraints, and must be complete, consistent, unambiguous, verifiable and traceable. List the sections, then give one example requirement of each kind.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Cohesion and coupling",
+          "note": "Cohesion is how strongly one module's parts belong together — aim for functional cohesion and avoid coincidental. Coupling is how much modules depend on each other — aim for data coupling and avoid content coupling. High cohesion with low coupling is the design goal; give one example of each level.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Testing levels and black-box versus white-box",
+          "note": "Unit → integration → system → acceptance. Black-box tests behaviour from the specification (equivalence partitioning, boundary value analysis); white-box tests the code path (statement, branch, path coverage). Regression testing proves a change broke nothing.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "COCOMO model",
+          "note": "Effort = a × (KLOC)^b person-months, with different a and b for organic, semi-detached and embedded projects; duration = c × effort^d. Basic COCOMO uses size alone, intermediate adds cost drivers. State the project category before plugging numbers in.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "DFDs, data dictionary and structure charts",
+          "note": "A context diagram shows the system as one process with external entities; level-1 explodes it into processes, data flows, data stores and external entities. Every flow must appear in the data dictionary. A structure chart shows module calls, not data movement over time.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    }
+  ]
+}

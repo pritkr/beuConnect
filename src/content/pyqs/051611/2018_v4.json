@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2018",
+    "subject": "FORMAL LANGUAGES AND AUTOMATA THEORY",
+    "subject_slug": "formal-languages-and-automata-theory",
+    "subject_code": "051611",
+    "year": 2018,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer for any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Regular expressions are closed under</p>",
+          "options": [
+            "union",
+            "intersection",
+            "Kleene star",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Extended transition function is</p>",
+          "options": [
+            "\\( Q \\times \\Sigma^* \\rightarrow Q \\)",
+            "\\( Q \\times \\Sigma^* \\rightarrow \\Sigma \\)",
+            "\\( Q \\times \\Sigma \\rightarrow Q \\)",
+            "\\( Q \\times \\Sigma \\rightarrow \\Sigma \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>From the options given below, the pair having different expressive powers is</p>",
+          "options": [
+            "deterministic pushdown automata (DPDA) and non-deterministic pushdown automata (NPDA)",
+            "deterministic finite automata (DFA) and non-deterministic finite automata (NFA)",
+            "single-tape turing machine and multi-tape turing machine",
+            "deterministic single-tape turing machine and non-deterministic single-tape turing machine"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>For the language \\( \\{a^p \\mid p \\text{ is a prime}\\} \\), the statement which holds true is\n                    </p>",
+          "options": [
+            "it is not regular but context-free",
+            "it is regular but not context-free",
+            "it is neither regular nor context-free, but accepted by a turing machine",
+            "it is not accepted by turing machine"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which one of the following statements is true?</p>",
+          "options": [
+            "The intersection of two context-free languages is context-free.",
+            "A context-free language can always be accepted by a deterministic push-down automaton.",
+            "The union of two context-free languages is context-free.",
+            "The complement of a context-free language is context-free."
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A class of language that is closed under</p>",
+          "options": [
+            "union and complementation has to be closed under intersection",
+            "intersection and complement has to be closed under union",
+            "union and intersection has to be closed under complementation",
+            "Both (i) and (ii)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>CFG can be recognized by</p>",
+          "options": [
+            "a push-down automaton",
+            "a 2-way linear bounded automaton",
+            "Both (i) and (ii)",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A given grammar is called ambiguous, if</p>",
+          "options": [
+            "two or more productions have the same non-terminal on the left-hand side",
+            "a derivation tree has more than one associated sentence",
+            "there is a sentence with more than one derivation tree corresponding to it",
+            "brackets are not present in the grammar"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The output of the Mealy machine depends</p>",
+          "options": [
+            "only on present state",
+            "only on current input symbol",
+            "both on present state and current input symbol",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The logic of pumping lemma is a good example of</p>",
+          "options": [
+            "pigeon-hole principle",
+            "divide-and-conquer technique",
+            "recursion",
+            "iteration"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>For each of the following languages, construct a DFA that accepts the language. In all cases, the\n                        alphabet is {0, 1}:<br/>\n                        (i) {w : the length of w is divisible by three}<br/>\n                        (ii) {w : 110 is not a substring of w}<br/>\n                        (iii) {w : w contains at least five 1's}<br/>\n                        (iv) {w : w contains the substring 1011}<br/>\n                        (v) {w : w contains at least two 1's and at most two 0's}</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>State and proof pumping lemma for regular languages.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Using pumping lemma, show that the language \\( A = \\{ww \\mid w \\in \\{0, 1\\}^*\\} \\) is not\n                        regular.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Let A be a non-empty regular language. Prove that there exists an NFA that accepts A and that has\n                        exactly one accept state.</p>"
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>Convert each of the following regular expressions to an NFA: (i) \\( (0 \\cup 1) 1^* 000 (0\n                        \\cup\n                        1)^* \\) (ii) \\( (((10)^*(001) \\cup 10))^* \\) (iii) \\( (baa + abb)^* \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>(a) Prove the following two properties: (i) Regular sets are closed over the intersection\n                        operation.\n                        (ii) Regular sets are closed over the union operation.<br/>\n                        (b) Represent the language that contains strings over \\( \\Sigma = \\{0, 1\\} \\) and has even\n                        number of\n                        0's.<br/>\n                        (c) Convert the following DFA to a regular expression: </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/114.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>(a) Construct context-free grammars that generate the following languages. In all cases \\(\n                        \\Sigma\n                        =\n                        \\{a, b\\} \\): (i) \\( a^*b \\) (ii) \\( (ab)^* \\)<br/>\n                        (b) Construct a CFG for the set of non-negative odd integers.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Let A and B be context-free languages over the same alphabet \\( \\Sigma \\).<br/>\n                        (i) Prove that the union \\( A \\cup B \\) of A and B is also context-free.<br/>\n                        (ii) Prove that the concatenation AB of A and B is also context-free.<br/>\n                        (iii) Prove that the star \\( A^* \\) of A is also context-free.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Determine a CFG without unit production equivalent to the CFG given below: \\( S \\rightarrow a\n                        \\mid Xb\n                        \\mid aYa \\mid b \\mid aa \\), \\( X \\rightarrow Y \\), \\( Y \\rightarrow b \\mid X \\)</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>(a) Find the CNF (Chomsky Normal Form) for the following CFG: \\( S \\rightarrow ABA \\), \\( A\n                        \\rightarrow aA \\mid \\epsilon \\), \\( B \\rightarrow bB \\mid \\epsilon \\)<br/>\n                        (b) Eliminate null productions from the following CFG: \\( S \\rightarrow Xa \\), \\( X\n                        \\rightarrow\n                        aX\n                        \\mid bX \\mid \\epsilon \\)<br/>\n                        (c) Convert the following grammar to GNF: \\( A_1 \\rightarrow A_2 A_3 \\), \\( A_2 \\rightarrow\n                        A_3\n                        A_1\n                        \\mid b \\), \\( A_3 \\rightarrow A_1 A_2 \\mid a \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Construct npda that accepts the following languages on \\( \\Sigma = \\{a, b, c\\} \\):<br/>\n                        (i) \\( L = \\{a^n b^{2n} : n \\ge 0\\} \\)<br/>\n                        (ii) \\( L = \\{wcw^R : w \\in \\{a,b\\}^*\\} \\)<br/>\n                        (iii) \\( L = \\{w : n_a(w) = 2n_b(w)\\} \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Design a PDA that accepts the language \\( L = \\{a^n b^m a^n : m, n &gt; 0\\} \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>(a) Design a Turing machine that recognizes strings containing equal number of 0's and 1's.<br/>\n                        (b) Let \\( L_1 \\) be recursive and \\( L_2 \\) recursively enumerable. Show that \\( L_2 - L_1\n                        \\)\n                        is\n                        necessarily recursively enumerable.<br/>\n                        (c) Define P, NP, NPH and NPC problems with example.</p>"
+        }
+      ]
+    }
+  ]
+}

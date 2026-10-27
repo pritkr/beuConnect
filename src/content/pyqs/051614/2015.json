@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2015",
+    "subject": "SOFTWARE ENGINEERING",
+    "subject_slug": "software-engineering",
+    "subject_code": "051614",
+    "year": 2015,
+    "semester": 6,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct option (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "If every requirement stated in the SRS has only one interpretation, SRS is said to be",
+              "options": [
+                "correct",
+                "unambiguous",
+                "consistent",
+                "verifiable"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "A fault simulation testing technique is",
+              "options": [
+                "mutation testing",
+                "stress testing",
+                "black-box testing",
+                "white-box testing"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "Modules X and Y operate on the same input and output data, then the cohesion is",
+              "options": [
+                "sequential",
+                "communicational",
+                "procedural",
+                "logical"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "If the objects focus on the problem domain, then we are concerned with",
+              "options": [
+                "object-oriented analysis",
+                "object-oriented design",
+                "object-oriented analysis & design",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "SRS is also known as specification of",
+              "options": [
+                "white-box testing",
+                "stress testing",
+                "integrated testing",
+                "black-box testing"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "The model in which the requirements are implemented by category is",
+              "options": [
+                "evolutionary development model",
+                "waterfall model",
+                "prototyping model",
+                "iterative waterfall model"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "SRD stands for",
+              "options": [
+                "Software Requirements Definition",
+                "Structured Requirements Definition",
+                "Software Requirements Diagram",
+                "Structured Requirements Diagram"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "A COCOMO model is",
+              "options": [
+                "common cost estimation model",
+                "constructive cost estimation model",
+                "complete cost estimation model",
+                "comprehensive cost estimation model"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "The worst type of coupling is",
+              "options": [
+                "data coupling",
+                "control coupling",
+                "stamp coupling",
+                "content coupling"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "One of the fault base testing techniques is",
+              "options": [
+                "unit testing",
+                "beta testing",
+                "stress testing",
+                "mutation testing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "2a",
+              "text": "What is principle aim of software engineering discipline? What does the discipline of software engineering discuss?",
+              "marks": null
+            },
+            {
+              "id": "2b",
+              "text": "Describe the various steps in software development life cycle. What are end product of each step?",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "3a",
+              "text": "What is prototype model? Under what circumstances is it beneficial to construct a prototype? Does the construction of prototype always increase the overall cost of software development?",
+              "marks": null
+            },
+            {
+              "id": "3b",
+              "text": "List five desirable characteristics of good SRS document. Discuss the relative advantages of formal and informal requirement specifications.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "4a",
+              "text": "What is structured analysis? Briefly review the tools used. How does it differ from traditional approach?",
+              "marks": null
+            },
+            {
+              "id": "4b",
+              "text": "Describe the major software quality assurance activity and indicate their importance.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "5a",
+              "text": "What are drivers and stub modules in context of integration and unit testing of software product? Why are stubs and driver modules required?",
+              "marks": null
+            },
+            {
+              "id": "5b",
+              "text": "What is difference between coding standard and coding guidelines? Write down important coding standard and guidelines that you would recommend.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "6a",
+              "text": "What are different types of maintenance that a software product might need? Why is much maintenance required?",
+              "marks": null
+            },
+            {
+              "id": "6b",
+              "text": "Discuss typical software risk. What techniques can we use to control each risk? Is it possible to prioritize the risk? Explain.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "7a",
+              "text": "What is software project estimation? Write in brief about COCOMO estimation models.",
+              "marks": null
+            },
+            {
+              "id": "7b",
+              "text": "Discuss the need of software quality assurance. Also give the importance of FTR.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "8a",
+              "text": "Compare between ISO and SEI-CMM for software.",
+              "marks": null
+            },
+            {
+              "id": "8b",
+              "text": "Write a note on CASE tools. Also state the benefits of CASE tools for software engineering.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Explain equivalence class partitioning and boundary-value analysis.",
+              "marks": null
+            },
+            {
+              "id": "9b",
+              "text": "What is software maintenance? Explain software re-engineering.",
+              "marks": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

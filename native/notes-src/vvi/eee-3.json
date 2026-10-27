@@ -1,0 +1,216 @@
+{
+  "branch": "eee",
+  "sem": 3,
+  "subjects": [
+    {
+      "code": "110301",
+      "name": "Electrical Circuit Analysis",
+      "vvi": [
+        {
+          "topic": "Mesh and nodal analysis",
+          "note": "Mesh analysis writes KVL around each independent loop in terms of mesh currents, and nodal analysis writes KCL at each independent node in terms of node voltages. Choose the method that gives fewer equations; a supernode is needed when a voltage source sits between two non-reference nodes. State the assumed current directions before writing the matrix.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Network theorems: Thevenin, Norton, superposition and maximum power",
+          "note": "Thevenin replaces a linear network by Vth in series with Rth and Norton by In in parallel with Rn, with Vth = InRn. Rth is the resistance seen looking into the terminals with independent sources killed. Superposition needs a linear circuit, and maximum power transfer needs RL = Rth, giving Vth²/4Rth in the load.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Transient response of first and second order circuits",
+          "note": "A first-order circuit follows the steady value plus (initial − steady)e^(−t/τ), with τ = RC or L/R, and capacitor voltage and inductor current are continuous. A series RLC is classified by ζ = (R/2)√(C/L) as overdamped, critically damped or underdamped, with natural frequency 1/√(LC). Find the initial conditions at t = 0⁻ first, because that is where most marks are lost.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Resonance and the Q factor",
+          "note": "At series resonance XL = XC, impedance is R and current is maximum; f₀ = 1/(2π√(LC)), Q = ω₀L/R and bandwidth = f₀/Q. A parallel tank presents a high impedance at resonance with a circulating current Q times the line current. The half-power points are at f₀ ± bandwidth/2 and the power factor is unity at resonance.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Three-phase balanced circuits and power measurement",
+          "note": "In star, line voltage is √3 times phase voltage and line current equals phase current; in delta, line current is √3 times phase current and the voltages are equal. Total balanced power is P = √3 VL IL cos φ, and two wattmeters give tan φ = √3(W1 − W2)/(W1 + W2). A balanced delta load converts to an equivalent star of one-third the impedance.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Coupled circuits and mutual inductance",
+          "note": "M = k√(L1L2), where k lies between 0 for no coupling and 1 for perfect coupling. The dot convention decides whether the mutually induced voltage adds to or opposes the self-induced voltage. Series aiding gives Leq = L1 + L2 + 2M and series opposing gives L1 + L2 − 2M; an iron-core transformer has k close to 1.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "110302",
+      "name": "Digital Electronics",
+      "vvi": [
+        {
+          "topic": "Boolean algebra and De Morgan's theorems",
+          "note": "De Morgan: (A·B)' = A' + B' and (A+B)' = A'·B'. Use the laws to reduce an expression to SOP (sum of minterms) or POS (product of maxterms), then say which form a NAND-only or NOR-only circuit needs.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "K-map simplification, including don't-care conditions",
+          "note": "Group 1, 2, 4, 8 adjacent cells in powers of two, wrapping across edges. A don't-care may be grouped if it makes a group larger, and left out otherwise; the answer must cover every 1 at least once and use the fewest groups.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Half adder, full adder and parallel adder",
+          "note": "Half adder: Sum = A⊕B, Carry = A·B. Full adder adds Cin, so Sum = A⊕B⊕Cin and Cout = AB + Cin(A⊕B); cascade n full adders for an n-bit ripple-carry adder. Subtraction is addition with the subtrahend in 2's complement.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Multiplexer, demultiplexer and decoder",
+          "note": "A 2ⁿ-to-1 MUX selects one of 2ⁿ inputs using n select lines; a decoder is the inverse, turning an n-bit code into one active output of 2ⁿ. Both implement arbitrary Boolean functions directly from a truth table.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Flip-flops: SR, JK, D, T and race-around",
+          "note": "A flip-flop stores one bit, edge-triggered in practice. JK with J = K = 1 toggles, which causes race-around in a level-triggered JK; a master-slave or edge-triggered construction removes it. Write the characteristic table and excitation table for each type.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Synchronous and asynchronous counters, mod-N design",
+          "note": "A ripple counter clocks each stage from the previous output, so delays add; a synchronous counter clocks all stages together. For mod-N, count to N and reset: use a NAND of the states that reach N to clear the flip-flops, and state the number of flip-flops as ⌈log₂N⌉.",
+          "marks": 8,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "110303",
+      "name": "Engineering Mathematics-III (PDE, Prob/stat)",
+      "vvi": [
+        {
+          "topic": "Formation and solution of first-order PDE",
+          "note": "Form the PDE by eliminating the arbitrary constants or the arbitrary function from the given relation. For Pp + Qq = R, Lagrange's auxiliary equations dx/P = dy/Q = dz/R give two independent integrals u = a and v = b, and the solution is φ(u,v) = 0. A non-linear first-order equation outside the standard forms is solved by Charpit's method.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Linear PDE with constant coefficients",
+          "note": "For f(D,D')z = F(x,y), the complementary function comes from the auxiliary equation with distinct, repeated or complex roots, and the particular integral depends on the form of F. The inverse operator is applied term by term, and the case where a factor vanishes needs the rule of multiplying by x. Write the complementary function first, then the particular integral, then apply the boundary conditions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Heat, wave and Laplace equations by separation of variables",
+          "note": "Put u = X(x)T(t), separate the variables, and use the boundary conditions to fix the eigenvalues; the Fourier series then fits the initial condition. The heat equation ut = α²uxx decays in time, the wave equation utt = c²uxx carries two travelling waves, and Laplace's equation describes the steady state. State every boundary and initial condition before separating.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Bayes' theorem and total probability",
+          "note": "P(A|B) = P(B|A)P(A)/P(B), and the denominator is expanded by the total probability rule over a partition of the sample space. Draw the tree diagram and check that the posterior probabilities sum to one. Independence is P(A∩B) = P(A)P(B), which is not the same as mutual exclusivity.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Random variables and standard distributions",
+          "note": "A random variable maps outcomes to numbers, with the pmf or pdf giving probabilities and the cdf its sum or integral; E(X) = Σxp and Var(X) = E(X²) − [E(X)]². The binomial applies to a fixed number of independent trials with constant p, the Poisson to rare events with mean and variance both λ, and the normal is standardised by z = (x − μ)/σ.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Correlation, regression and curve fitting",
+          "note": "The correlation coefficient r = cov(X,Y)/(σxσy) lies between −1 and 1 and measures linear association only. The regression line of y on x is y − ȳ = r(σy/σx)(x − x̄), and both regression lines pass through the means. The method of least squares fits y = a + bx by solving the two normal equations.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "110304",
+      "name": "Electromagnetic Field Theory",
+      "vvi": [
+        {
+          "topic": "Vector calculus: gradient, divergence and curl",
+          "note": "The gradient of a scalar field points along the steepest increase, divergence of a vector field is the net outflow per unit volume, and curl is the circulation per unit area. The divergence theorem turns a closed-surface flux into a volume integral, and Stokes' theorem turns a line integral into a surface integral. Write the del operator in Cartesian, cylindrical and spherical coordinates before starting a problem.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Coulomb's law, Gauss's law and potential",
+          "note": "The force between two point charges is q1q2/(4πε0R²) along the joining line, and the field of a point charge falls as 1/R². Gauss's law equates the closed-surface flux to the enclosed charge over ε0, and symmetry of a line, sheet, sphere or coaxial cable is what makes it usable. The potential V is a scalar with E = −∇V, so superposition is easier with potential.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Biot-Savart law and Ampere's law",
+          "note": "The Biot-Savart element gives dB = μ0I dl × âR/(4πR²); an infinite wire has field μ0I/(2πr) and a loop has μ0I/(2R) at its centre. Ampere's law gives the field of a coaxial cable and a solenoid from symmetry, and force per unit length between parallel wires is μ0I1I2/(2πd). A displacement current term is needed once the fields vary with time.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Maxwell's equations",
+          "note": "Faraday's law ∇×E = −∂B/∂t, the Ampere-Maxwell law ∇×H = J + ∂D/∂t, Gauss's law for electricity ∇·D = ρ and for magnetism ∇·B = 0. The displacement current term is what allows a wave to propagate through empty space. Quote the integral form for a flux or circulation question and the differential form for local behaviour.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Boundary conditions and the Poynting theorem",
+          "note": "At an interface the tangential components of E and H are continuous unless a surface current flows, and the normal components of D and B jump by the surface charge and are continuous respectively. The Poynting vector S = E × H gives the power flow per unit area, and its closed-surface integral is the power leaving the volume. A perfect conductor has no internal field, so the incident wave is reflected.",
+          "marks": 7,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Uniform plane waves, skin depth and polarisation",
+          "note": "In a lossless medium E, H and the direction of propagation are mutually perpendicular, with H = E/η and intrinsic impedance η = √(μ/ε), which is 377 Ω in free space. The phase velocity is 1/√(με). In a good conductor the wave decays with skin depth δ = √(2/(ωμσ)), and the polarisation is linear, circular or elliptical according to the phase difference between the two components.",
+          "marks": 8,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "110305",
+      "name": "Signals and Systems",
+      "vvi": [
+        {
+          "topic": "LTI systems and convolution",
+          "note": "An LTI system is completely described by its impulse response h(t), and the output is the convolution of the input with h. Convolution in time becomes multiplication in the transform domain, which is why transform methods are used for long signals. Causality needs h(t) = 0 for t < 0, and BIBO stability needs the integral of |h| to be finite.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Fourier series and its properties",
+          "note": "A periodic signal is a sum of harmonics whose coefficients come from the analysis integral, in trigonometric or complex exponential form. An even signal has only cosine terms, an odd signal only sine terms, and half-wave symmetry removes the even harmonics. Parseval's relation equates average power to the sum of the squared coefficient magnitudes.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Fourier transform and its properties",
+          "note": "X(jω) is the integral of x(t)e^(−jωt) and exists for finite-energy signals, giving the continuous spectrum. Time shift adds a phase ramp, frequency shift modulates, differentiation multiplies by jω, and convolution becomes a product. An impulse has a flat spectrum, while a constant has a single impulse at zero frequency.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Laplace transform, ROC and stability",
+          "note": "The Laplace transform generalises the Fourier transform, and the region of convergence makes the transform unique. A causal signal has a right-sided ROC, and stability requires the jω axis inside the ROC, which for a causal system means every pole in the left half plane. The initial and final value theorems apply only where the limits exist.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Z-transform and discrete-time systems",
+          "note": "X(z) is the sum of x[n]z^(−n), with the ROC an annulus; a right-sided sequence is causal and a left-sided one is anti-causal. A shift by k multiplies the transform by z^(−k). A discrete LTI system is stable when all poles lie inside the unit circle, and its frequency response is X(z) evaluated on that circle.",
+          "marks": 7,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Sampling theorem and aliasing",
+          "note": "A signal band-limited to fm must be sampled above the Nyquist rate 2fm to be reconstructible; below it, frequencies above fs/2 fold back as aliases. An anti-aliasing low-pass filter therefore precedes the sampler. Reconstruction uses an ideal low-pass filter with cut-off fs/2, and the zero-order hold is the practical version.",
+          "marks": 8,
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

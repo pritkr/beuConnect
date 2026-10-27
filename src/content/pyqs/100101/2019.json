@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 1st Semester Exam., 2019 (New Course)",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100101",
+    "year": 2019,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are EIGHT questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven short answer-type questions :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Define active and passive element."
+            },
+            {
+              "id": "1b",
+              "text": "State and explain Norton theorem."
+            },
+            {
+              "id": "1c",
+              "text": "A half-cycle average voltage of $12 \\text{ V}$ is equal to what r.m.s. voltage?"
+            },
+            {
+              "id": "1d",
+              "text": "What are the phase voltage and phase current of three-phase delta-connected system?"
+            },
+            {
+              "id": "1e",
+              "text": "Draw equivalent circuit of a DC motor. [Diagram: Equivalent circuit of a DC motor.]"
+            },
+            {
+              "id": "1f",
+              "text": "What is resonance?"
+            },
+            {
+              "id": "1g",
+              "text": "Relate flux, reluctance and permeability."
+            },
+            {
+              "id": "1h",
+              "text": "Define power factor."
+            },
+            {
+              "id": "1i",
+              "text": "Write the application of Ohm's law."
+            },
+            {
+              "id": "1j",
+              "text": "Describe important characteristic of an inductor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "Define Q-factor. What is the $Q$ (quality factor) of a series circuit that resonates at $6 \\text{ kHz}$, has equal reactance of $4 \\text{ k}\\Omega$ each and a resistor value of $50 \\Omega$?",
+              "marks": 6
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "A series R-L-C circuit containing a resistance of $10 \\Omega$, an inductance of $0.45 \\text{ H}$ and a capacitor of $400 \\mu\\text{F}$ is connected in series across a $120 \\text{ V}$, $50 \\text{ Hz}$ supply. Calculate the total circuit impedance, the circuit current, power factor and draw the voltage phasor diagram.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "numerical",
+              "text": "Find the resistor value $R_1$ in the Fig. 1 shown below : [Diagram: Fig. 1. A circuit with a 10A current source on the left, 5A current source on the right. $V_1=100\\text{V}$ and $V_2=40\\text{V}$ sources. Resistors $14\\Omega$, $R_2$, $R_1$, and $2\\Omega$ in a bridge/ladder configuration.]",
+              "marks": 6
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "In a balance 3-phase $400 \\text{ V}$ circuit, $I_L = 115.4 \\text{ A}$. When power is measured by two-wattmeter method, one meter reads $40 \\text{ kW}$ and other zero. What is the power factor of load? If unity power factor and line current are same, what would be the reading of each wattmeter?",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "What are the two general types of transformer? Why is the low-voltage winding placed near the core? What will be the output of transformer if it is operated on DC supply?",
+              "marks": 6
+            },
+            {
+              "id": "4b",
+              "type": "theory",
+              "text": "Describe the operation of a single-phase transformer, explaining clearly the function of different parts. Why are the cores laminated?",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "type": "theory",
+          "text": "Draw and explain the B-H curves for air and a magnetic material. What are different types of magnetic losses? How can they be minimized?",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "type": "theory",
+          "text": "What is circuit? What is the difference between fuse and circuit breaker? Explain the objective of earthing.",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "type": "numerical",
+          "text": "Write Thevenin theorem statement. Determine the equivalent Thevenin's circuit between terminals a and b in the circuit shown in Fig. 2 below. Resistances are in ohms : [Diagram: Fig. 2. A bridge circuit with a 50V source on the left. Resistors 10\u03a9 and 15\u03a9 in the upper branches, 6\u03a9 and 8\u03a9 in the lower branches. Terminal 'a' is between 10\u03a9 and 6\u03a9. Terminal 'b' is between 15\u03a9 and 8\u03a9. A 5\u03a9 resistor is connected between a and b.]",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "type": "theory",
+          "text": "Describe with neat sketches the construction of a 3-phase induction motor. Explain the principle of operation of a 3-phase induction motor. What is meant by slip in an induction motor?",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Special Exam., 2020",
+    "subject": "SIGNALS AND SYSTEMS",
+    "subject_slug": "signals-and-systems",
+    "subject_code": "EC-102 (104305)",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer the following as directed (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>If the Z-transform of \\( x(n) \\) is \\( X(z) \\) then show that \\(\n                        Z[x_{1}(n)*x_{2}(n)]=X_{1}(z)X_{2}(z) \\)</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>If the impulse response for a system is given by \\( h(n)=a^{n}u(n) \\), then what is the\n                        condition for the system to be BIBO stable?</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>A voltage having the laplace transform \\( \\frac{4s^{2}+3s+2}{7s^{2}+6s+5} \\) is applied across\n                        a 2H inductor. What is the current in inductor at \\( t \\to \\infty \\) assuming zero initial\n                        condition?</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Differentiate between Kronecker delta function and Direc delta function.</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>The step response of an LTI system when the impulse response \\( h(n) \\) is unit step \\( u(n)\n                        \\) is _________.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Find the Laplace transform \\( f(t)=e^{3t}\\cos(2t)u(t) \\) where symbols have their usual\n                        meanings.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>An LTI system is described as \\(\n                        0.5\\frac{d^{2}y(t)}{dt^{2}}+2.5\\frac{dy(t)}{dt}+2y(t)=\\delta(t) \\). Find the final value of\n                        the output response where \\( y(t) \\) is output and \\( x(t) \\) is input.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>The period of a sequence \\( x(n)=\\cos(\\frac{2\\pi n}{3}) \\) is _________.</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The final value of step response of a causal LTI system with \\( H(s)=\\frac{s+1}{s+4} \\) is</p>",
+          "options": [
+            "0.5",
+            "0.25",
+            "1",
+            "10"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Consider two functions \\( f(t)=h(t)h(3-t) \\) and \\( g(t)=h(t)-h(t-3) \\). Are these two\n                        functions identical? Show that \\( L[f(t)]=L[g(t)] \\) where L is the Laplace operator.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Let a system is described by the differential equation as \\( \\ddot{y}+3\\dot{y}+2y=e^{-t} \\);\n                        with initial condition \\( y(0)=\\dot{y}(0)=0 \\). Compute the solution of the equation.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Let \\( f(t) \\) is a periodic function with periodicity T for \\( t\\ge0 \\), then show that \\(\n                        L[f(t)]=\\frac{L[f_{T}(t)]}{1-e^{-sT}} \\), \\( s&gt;0 \\)</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>Find the Laplace transform of Fig. 1.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/61.jpg\"/>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>State why ROC does not include any pole. Find the Z-transform of \\(\n                        x(n)=\\begin{cases}(0.5)^{n}u(n),&amp;n&gt;0\\\\ (0.25)^{-n},&amp;n &lt; 0\\end{cases} \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Find the inverse Z-transform of \\( X(z)=\\frac{1-\\frac{1}{4}z^{-1}}{1-\\frac{1}{9}z^{-1}} \\)\n                        where ROC: \\( |z|&gt;\\frac{1}{3} \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>Show that \\( Z[nx(n)]=-z\\frac{dX(z)}{dz} \\) where \\( X(z)\\leftrightarrow x[n] \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Briefly explain the causality of a system.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Find whether the signal \\( x[n]=\\sin(\\frac{3\\pi}{4}n)+\\sin(\\frac{\\pi}{3}n) \\) is periodic\n                        or aperiodic. If periodic, then what is the periodicity of x[n]?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>Write down the Dirichlet condition.</p>"
+        },
+        {
+          "id": "q4_4",
+          "type": "theory",
+          "text": "<p>Find the Fourier transform of \\( x(t)=e^{-|t|}u(t) \\), and hence draw the magnitude and phase\n                        spectrums.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Compute the Fourier transform of signal shown in Fig. 2: \\(\n                        R_{x}(\\tau)=\\begin{cases}\\frac{N}{2},&amp;-B\\le\\tau\\le B\\\\ 0,&amp;elsewhere\\end{cases} \\)</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/62.jpg\"/>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Find the convolution of the following discrete sequences: \\( x(n)=\\frac{1}{3}u(n) \\) and \\(\n                        h(n)=\\frac{1}{5}u(n) \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>State why the realization of an ideal low-pass filter is not possible, with proper justification.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A system is defined as \\( y(n)=x(n^{2}) \\). Check whether the system is linear or non-linear,\n                        time-varying or time-invariant, causal or non-causal, and memoryless or memory type.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>State Parseval's theorem.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_3",
+          "type": "theory",
+          "text": "<p>Sketch the signal \\( x(t)=-2u(t-1) \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        },
+        {
+          "id": "q6_4",
+          "type": "theory",
+          "text": "<p>Compute the Nyquist sampling rate for the signal \\( g(t)=10\\cos(50\\pi)\\cos^{2}(150\\pi t) \\)\n                    </p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Show that \\( u(n)=\\sum_{k=-\\infty}^{n}\\delta(n) \\) where symbols have their usual meanings.\n                    </p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>What is unit doublet? Prove that \\(\n                        \\int_{-\\infty}^{\\infty}x(t)\\delta^{k}(t)dt=(-1)^{k}\\frac{d^{k}x(t)}{dt^{k}}|_{t=0} \\)\n                        where \\( x^{k} \\) is k-th derivative of function \\( x(t) \\) and \\( \\delta(t) \\) is Dirac\n                        delta function.</p>"
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>A system is described by its input-output relationship as \\( y[n]=\\sum_{k=-\\infty}^{n}x[n-k]\n                        \\). Is the system memoryless, stable, causal, time-invariant and linear?</p>"
+        },
+        {
+          "id": "q7_4",
+          "type": "theory",
+          "text": "<p>Find the fundamental period of signal \\( x[n]=e^{j7.351\\pi n} \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Let \\( x[n] \\) be an arbitrary function with even and odd part as \\( x_{e}[n] \\) and \\(\n                        x_{o}[n] \\) respectively. Show that \\(\n                        \\sum_{n=-\\infty}^{\\infty}x^{2}[n]=\\sum_{n=-\\infty}^{\\infty}x_{e}^{2}[n]+\\sum_{n=-\\infty}^{\\infty}x_{o}^{2}[n]\n                        \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Perform the convolution operation between \\( x[n]=\\\\{0,0,0,0,(2),-3,1,0,0\\\\} \\) and \\(\n                        h[n]=\\\\{0,0,0,1,(2),2,0,0,0\\\\} \\) using graphical method.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>Calculate the Fourier transform of \\( x[n]=u[n] \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any four of the following:",
+      "total_marks": 14,
+      "questions": []
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2017",
+    "subject": "Artificial Intelligence",
+    "subject_slug": "artificial-intelligence",
+    "subject_code": "051717",
+    "year": 2017,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any seven questions :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is the difference between Greedy best-first search and $A^*$ search?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is meant by tautology in propositional logic?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "c",
+              "text": "Define Horn clause.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "d",
+              "text": "What do you mean by completeness of search?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "e",
+              "text": "What is expert system?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "f",
+              "text": "What do you mean by contradiction and contingency?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "g",
+              "text": "What do you mean by consistency of a heuristic?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "h",
+              "text": "When does BFS give optimal solution?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "i",
+              "text": "Justify the following statement : \"Uniform-Cost search is a special case of $A^*$ search.\"",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "j",
+              "text": "Define alpha-cut-off of a game tree.",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Given two jugs with no measuring marker, a 4-gallon jug and a 3-gallon jug. There is a pump to fill the jugs with water. How do you get exactly 2 gallons of water in the 4-gallon jug? Give the state space graph for the problem. Describe the production rules and provide a possible solution with the help of a state space graph.\nb) Explain hill climbing algorithm. Explain plateau, ridge, and local maxima.",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Given two jugs with no measuring marker, a 4-gallon jug and a 3-gallon jug. There is a pump to fill the jugs with water. How do you get exactly 2 gallons of water in the 4-gallon jug? Give the state space graph for the problem. Describe the production rules and provide a possible solution with the help of a state space graph.",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain hill climbing algorithm. Explain plateau, ridge, and local maxima.",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Consider the following tree corresponding to a two-player game (with MAX starting at the top), where the numbers below the leaf nodes represent the heuristic evaluations of for those nodes :\n[Tree Diagram]\nUse the (3-ply) mini-max procedure to determine the best move for MAX at node A. Also show the (backed-up) value of each node in the tree.\nb) Determine which nodes will be pruned (cut-off) when using alpha-beta pruning. Assume depth-first evaluation from left-to-right. Show your work.",
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Consider the following tree corresponding to a two-player game (with MAX starting at the top), where the numbers below the leaf nodes represent the heuristic evaluations of for those nodes : [Tree Diagram] Use the (3-ply) mini-max procedure to determine the best move for MAX at node A. Also show the (backed-up) value of each node in the tree.",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "number": "b",
+              "text": "Determine which nodes will be pruned (cut-off) when using alpha-beta pruning. Assume depth-first evaluation from left-to-right. Show your work.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Write a program in PROLOG as well as in LISP to find out the GCD of n numbers.\nb) Consider the following sentences :\nJohn likes all kinds of food. Apples are food. Chicken is food. Anything anyone eats and is not killed by is food. Bill eats peanuts and is still alive. Anyone who is killed by anything is not alive. Sue eats everything Bill eats.\nProve that 'John likes peanuts' using resolution.",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Write a program in PROLOG as well as in LISP to find out the GCD of n numbers.",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "Consider the following sentences :\nJohn likes all kinds of food. Apples are food. Chicken is food. Anything anyone eats and is not killed by is food. Bill eats peanuts and is still alive. Anyone who is killed by anything is not alive. Sue eats everything Bill eats.\nProve that 'John likes peanuts' using resolution.",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ]
+        },
+        {
+          "text": "Suppose that you need to find a path between $S$ and $G$ in the state space defined by the following non-directed graph. The number attached to each edge is the cost of traversing the edge (in either direction). Suppose that we are given a heuristic function $h$ defined according to the following table :\n[Graph Diagram]\n[Heuristic Table: State: S A C D F G H; h: 10 5 4 3 4 0 2]\na) Show the search trees generated for this problem using $A^*$ search algorithm.\nb) Is this heuristic admissible? Why?",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Show the search trees generated for this problem using $A^*$ search algorithm.",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "number": "b",
+              "text": "Is this heuristic admissible? Why?",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) What do you mean by partitioned semantic nets? Explain inferential knowledge representation.\nb) What is forward chaining? Explain with an example.",
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What do you mean by partitioned semantic nets? Explain inferential knowledge representation.",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is forward chaining? Explain with an example.",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Consider the following Bayesian network containing three Boolean random variables :\n[Bayesian Network Diagram]\nCompute the following quantities :\n(i) $P(\\sim B, C | A)$\n(ii) $P(A | \\sim B, C)$\nb) Explain knowledge acquisition techniques.",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Consider the following Bayesian network containing three Boolean random variables : [Bayesian Network Diagram] Compute the following quantities : (i) $P(\\sim B, C | A)$ (ii) $P(A | \\sim B, C)$ ",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain knowledge acquisition techniques.",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Discuss the benefits of a production system. What is Dempster-Shafer theory?\nb) What is fuzzy set? What is the difference between fuzzy set and crisp set? Explain different fuzzy set operations using examples.",
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Discuss the benefits of a production system. What is Dempster-Shafer theory?",
+              "marks": 7,
+              "id": "8_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is fuzzy set? What is the difference between fuzzy set and crisp set? Explain different fuzzy set operations using examples.",
+              "marks": 7,
+              "id": "8_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Explain the basic component of an expert system.\nb) Write the characteristic features of expert system.",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the basic component of an expert system.",
+              "marks": 7,
+              "id": "9_sub"
+            },
+            {
+              "number": "b",
+              "text": "Write the characteristic features of expert system.",
+              "marks": 7,
+              "id": "9_sub"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

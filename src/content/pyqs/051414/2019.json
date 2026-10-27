@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2019",
+    "subject": "SOFTWARE ENGINEERING",
+    "subject_slug": "software-engineering",
+    "subject_code": "051414",
+    "year": 2019,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer for any seven of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Which of the following activities of a generic process framework provides a feedback report?",
+              "options": [
+                "Communication",
+                "Planning",
+                "Modelling and construction",
+                "Deployment"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "Which one of the following is not an umbrella activity that complements the five process framework activities and help team manage and control progress, quality, change and risk?",
+              "options": [
+                "Reusability management",
+                "Risk management",
+                "Measurement",
+                "User reviews"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "Four types of change are encountered during the support phase. Which one of the following is not one that falls into such category?",
+              "options": [
+                "Translation",
+                "Correction",
+                "Adaptation",
+                "Prevention"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "Which one of the following is not a fundamental activity for software processes in software engineering?",
+              "options": [
+                "Software verification",
+                "Software validation",
+                "Software design and implementation",
+                "Software evolution"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "Which four framework activities are found in the extreme programming (XP)?",
+              "options": [
+                "Analysis, design, coding, testing",
+                "Planning, analysis, design, coding",
+                "Planning, design, coding, testing",
+                "Planning, analysis, coding, testing"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "Which of the following statements explains portability in non-functional requirements?",
+              "options": [
+                "It is a degree to which software running on one platform can easily be converted to run on another platform.",
+                "It cannot be enhanced by using languages, OS' and tools that are universally available and standardized.",
+                "The ability of the system to behave consistently in a user-acceptable manner when operating within the environment for which the system was intended.",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "The incorrect statement with respect to non-functional requirement (NFR) is",
+              "options": [
+                "product-oriented approach-focus on system (or software) quality",
+                "process-oriented approach-focus on how NFRs can be used in the design process",
+                "quantitative approach-find measurable scales for the functionality attributes",
+                "qualitative approach-study various relationship between quality goals"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "What are the four dimensions of dependability?",
+              "options": [
+                "Usability, reliability, security, flexibility",
+                "Availability, reliability, maintainability, security",
+                "Availability, reliability, security, safety",
+                "Security, safety, testability, usability"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "What kind of approach was introduced for elicitation and modelling to give a functional view of the system?",
+              "options": [
+                "Object-oriented design (by Booch)",
+                "Use cases (by Jacobson)",
+                "Fusion (by Coleman)",
+                "Object-modelling technique (by Rumbaugh)"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "________ and ________ are the two viewpoints discussed in controlled requirements expression (CORE).",
+              "options": [
+                "Functional, nonfunctional",
+                "User, developer",
+                "Known, unknown",
+                "All of the above"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "2a",
+              "text": "Explain software development life cycle. Discuss various activities during SDLC.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "text": "What are various myths about software?",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "3a",
+              "text": "What are the main objectives of software verification and validation? Briefly explain different V and V techniques.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "text": "Discuss the software metric that can be applied to the qualitative assessment of software quality and side effects that occur during maintenance phase.",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "text": "Admission to a professional course is subject to the following conditions :\nMarks in Mathematics $\\ge 60$\nMarks in Physics $\\ge 50$\nMarks in Chemistry $\\ge 40$\nMarks in all three courses $\\ge 200$\nIf aggregate marks of an eligible candidate are more than 225, he/she will be eligible for honours course, otherwise he/she will be eligible for pass course. The program reads the marks in the three courses and generates the following outputs : (i) Not eligible (ii) Eligible for pass course (iii) Eligible to honours course. Design test cases using decision table testing technique.",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "5a",
+              "text": "Write the taxonomy of architectural styles and give a brief description of each style.",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "text": "State and explain the generic tasks that are always performed in user interface design.",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "text": "Consider a large-scale project for which the manpower requirement is $K = 600$ PY and the development time is 3 years and 6 months.",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "6a",
+              "text": "Calculate the peak manning and peak time.",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "text": "What is the manpower cost after 1 year and 2 months?",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "text": "Write short notes on the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "7a",
+              "text": "Unified modelling language",
+              "marks": 5
+            },
+            {
+              "id": "7b",
+              "text": "Object-oriented analysis modelling",
+              "marks": 5
+            },
+            {
+              "id": "7c",
+              "text": "Object-oriented design concepts and methods",
+              "marks": 4
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "8a",
+              "text": "Why is software maintenance required? Briefly explain software maintenance process models.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "text": "What is software quality? What are three dimensions of software quality? Explain in brief.",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "List out various activities that are encompassed by system designed process under object-oriented design and explain each one briefly.",
+              "marks": 9
+            },
+            {
+              "id": "9b",
+              "text": "Explain the object modularization with example.",
+              "marks": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

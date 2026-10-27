@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech Examination, 2013",
+    "subject": "Object Oriented Programming",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051401",
+    "year": 2013,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven) :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following statements is correct?</p>",
+          "options": [
+            "A reference is stored on heap",
+            "A reference is stored on stack",
+            "A reference is stored in a queue",
+            "A reference is stored in a binary tree"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>How many parameters does a Default Constructor accept?</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Destructor has the same name as the constructor and it is preceded by</p>",
+          "options": [
+            "~",
+            "!",
+            "&amp;",
+            "?"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following types of class allows only one object of it to be created?</p>",
+          "options": [
+            "Virtual class",
+            "Abstract class",
+            "Singleton class",
+            "Friend class"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which of the following statements is correct?</p>",
+          "options": [
+            "Two functions having same number of argument, order and type of argument can be overloaded\n                            if\n                            both functions do not have any default argument",
+            "Overloaded function must have default arguments",
+            "Overloaded function must have default arguments starting from the left of argument list",
+            "A function can be overloaded more than once"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following statements is incorrect?</p>",
+          "options": [
+            "Default arguments can be provided for pointers to functions",
+            "A function can have all its arguments as default",
+            "Default argument cannot be provided for pointers to functions",
+            "A default argument cannot be redefined in later declaration"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following is not a type of constructor?</p>",
+          "options": [
+            "Copy constructor",
+            "Friend constructor",
+            "Default constructor",
+            "Parameterized constructor"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following access specifies is used in a class definition by default?</p>",
+          "options": [
+            "Protected",
+            "Public",
+            "Private",
+            "Friend"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following statements is correct with respect to the use of friend keyword inside a\n                        class?</p>",
+          "options": [
+            "A private data member can be declared as a friend",
+            "A class may be declared as a friend",
+            "An object may be declared as a friend",
+            "We can use friend keyword as a class name"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>How many types of polymorphisms are supported by C++?</p>",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define string. How does a string type differ from C type string?</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>WAP in C++ that reads a particular string and displays the frequency of each character in the\n                        string.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is ST? Describe with example.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>WAP in C++ using the function count() to how many elements in a container have a specified value.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain exception handling and their types.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>WAP in C++ to demonstrate the use of multiple Catch statements.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Describe streams.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Write about the following functions: put(); get(); width(); getline(); fill().</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Describe polymorphism with suitable examples.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>WAP in C++ using array of pointers to accept desired number of integers and display their sum.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is inheritance? Describe its types with examples.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Explain 'this' pointer. Differentiate between overloaded functions and function templates.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is a virtual function? WAP to demonstrate use of virtual functions.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain friend function along with example.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Describe type conversion with examples.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    }
+  ]
+}

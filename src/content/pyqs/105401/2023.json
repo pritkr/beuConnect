@@ -1,0 +1,282 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2023",
+    "subject": "Computer Organization and Architecture",
+    "subject_slug": "computer-organization-and-architecture",
+    "subject_code": "105401",
+    "year": 2023,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option of the following (any seven\n                    only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>A pipeline stage</p>",
+          "options": [
+            "Is sequential circuit",
+            "Is combination circuit",
+            "Consists of both sequential and combinational circuit",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>A direct mapped cache memory with n blocks is nothing but which of the following set associative\n                        cache memory originations</p>",
+          "options": [
+            "0-way set associative",
+            "1-way set associative",
+            "2-way set associative",
+            "n-way set associative"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The performance of a pipelined processor suffers if</p>",
+          "options": [
+            "The pipeline stages have different delays",
+            "Consecutive instruction are dependent on each other",
+            "The pipeline stages share hardware resources",
+            "All of these"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>A computer with cache access time of 100 ns, a main memory access time of 1000 ns, and a hit\n                        ratio of\n                        0.9 produces an average access time of</p>",
+          "options": [
+            "250 ns",
+            "200 ns",
+            "190 ns",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which of the following has no practical usage?</p>",
+          "options": [
+            "SISD",
+            "SIMD",
+            "MISD",
+            "MIMD"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A micro programmed control unit</p>",
+          "options": [
+            "Is faster than a hardwired control unit",
+            "Facilitates easy implementation of new instructions",
+            "Is useful when every small program is to be run",
+            "Usually refers to the control unit of the microprocessor"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In memory- mapped I/O...</p>",
+          "options": [
+            "The I/O devices and the memory share the same address space.",
+            "The I/O device have a separate address space",
+            "The memory and I/O device have an associated address space",
+            "A part of the memory is specifically set aside for the I/O operation"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>How many \\( 128 \\times 8 \\) bit RAMs are required to design \\( 32k \\times 32 \\) bit RAM?\n                    </p>",
+          "options": [
+            "512",
+            "128",
+            "1024",
+            "32"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The stalling of the processor due to the unavailability of the instruction is</p>",
+          "options": [
+            "Control hazard",
+            "Structural hazard",
+            "Input hazard",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The addressing mode, where you directly specify the operand value is called as</p>",
+          "options": [
+            "Immediate",
+            "Direct",
+            "Definite",
+            "Relative"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What are the hazards in pipeline architecture? Explain its types with suitable example.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What is addressing mode? Why do computers use addressing mode techniques? Explain two modes with\n                        example, which do not use address fields.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>A 4-way set associative cache memory unit with a capacity of 16 KB is built using a block size of\n                        8\n                        words. The word length is 32 bits. The size of the physical address space is 4GB. Find the\n                        number of\n                        bits for TAG, SET, and WORD fields in the address generated by CPU.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>How is the virtual address mapped into physical address? What are the different methods of\n                        writing\n                        into cache?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What are the different types of instruction formats?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Discuss the different mapping techniques used in cache memories and their relative merits and\n                        demerits.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Design a 4-bit carry-look ahead adder and explain its operation with an example.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Consider a direct mapped cache with 8 cache blocks (numbered 0-7). If the memory block requests\n                        are\n                        in the following order 3, 5, 2, 8, 0, 63, 9, 16, 20, 17, 25, 18, 30, 24, 2, 63, 5, 82, 17, 24.\n                        What\n                        would be the status of cache blocks (block numbers residing in cache) at the end of the\n                        sequence.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is DMA? Describe how DMA is used to transfer data from peripherals.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Differentiate between hardwired and micro programmed control unit. Explain each component of\n                        hardwired control unit organization.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What do you mean by asynchronous data transfer? Explain strobe control and hand shaking\n                        mechanism.\n                    </p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Show the systematic multiplication process of \\( (20) \\times (-19) \\) using Booth's algorithm.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>The stage delays in a four stages pipeline are 800, 500, 400 and 300 picoseconds. The first stage\n                        (with delay 800 picoseconds) is replaced with a functionally equivalent design involving two\n                        stages\n                        with respective delays 600 and 350 picoseconds. What would be the throughput increases (in\n                        percentage) of the pipeline?</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain IEEE standard for floating point representation with example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Paging",
+            "Memory interleaving",
+            "Privileged and non-privileged instructions",
+            "Locality of reference"
+          ]
+        }
+      ]
+    }
+  ]
+}

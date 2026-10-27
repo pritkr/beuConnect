@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 1st Semester Examination, 2023",
+    "subject": "Physics (Mechanics & Mechanics of Solid)",
+    "subject_slug": "physics-mechanics-mechanics-of-solid",
+    "subject_code": "101101",
+    "year": 2023,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Symbols used (if any) have their usual meanings"
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The moment of inertia of an arbitrarily shaped rigid body is a</p>",
+          "options": [
+            "Scalar",
+            "Vector",
+            "Tensor",
+            "Dimensionless number"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The curl of a gradient is</p>",
+          "options": [
+            "Zero",
+            "Non-zero",
+            "Undefined",
+            "Infinite"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>In a lightly damped oscillator the frequency</p>",
+          "options": [
+            "Depends on the square of amplitude",
+            "Does not depend on the amplitude",
+            "Depends on the damping constant",
+            "Does not depend on the damping"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>As opposed to a standing bicycle a moving bicycle does not fall easily because</p>",
+          "options": [
+            "The cyclist keeps moving slightly left and right to maintain the C.G in the plane of the\n                            bicycle",
+            "The cycle is balanced by air resistance",
+            "The angular momentum in the wheels stabilizes the cycle",
+            "The cyclist leans forward to lower the CG"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The Foucault pendulum undergoes precession because of</p>",
+          "options": [
+            "Gravitational force of the earth",
+            "Coriolis force on the earth",
+            "Magnetic field of the earth",
+            "The orbiting of the moon around the earth"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following is NOT Kepler's law</p>",
+          "options": [
+            "Each planet moves in an ellipse with the Sun at one focus *",
+            "Planet's period of revolution \\( T \\) is related to the major axis of the ellipse \\( A\n                            \\) by \\( T^2 = kA^3 \\)",
+            "Planet's period of revolution \\( T \\) is related to the major axis of the ellipse \\( A\n                            \\) by \\( T^3 = kA^2 \\)",
+            "The radius vector from the Sun to the planet sweeps equal areas in equal times"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following is not true for conservative force</p>",
+          "options": [
+            "Curl of the force is zero",
+            "Gravitational force is conservative in nature",
+            "Work done is independent of the path",
+            "Curl of the force is non zero"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The Newton's law gives the relationship between force, mass and</p>",
+          "options": [
+            "Time",
+            "Velocity",
+            "Acceleration",
+            "Impulse"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Velocity or energy resonance in the forced oscillator take place when</p>\n\n<p>Where \\( \\omega \\) is frequency of force, \\( \\omega_0 \\) is natural frequency of the\n                        oscillator and \\( 2b = \\frac{B}{m} \\) is damping coefficient</p>",
+          "options": [
+            "\\( \\omega = \\sqrt{\\omega_0^2 - 2b^2} \\)",
+            "\\( \\omega = \\omega_0 \\)",
+            "\\( \\omega = 2b \\)",
+            "\\( \\omega = 2\\omega_0 \\)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>A spinning top is an example of</p>",
+          "options": [
+            "Two dimensional rigid body motion",
+            "Linear motion",
+            "Three dimensional rigid body motion",
+            "One dimensional rigid body motion"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 5,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>State the definition of scalar and vector quantities. Explain how they transform under rotation.\n                    </p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Under an anti-clockwise rotation by an angle \\( \\theta \\) of a 2d Cartesian coordinate system\n                        find out the transformation rules for the components of an arbitrary vector \\( \\vec{A} \\).\n                        Show that the scalar product \\( \\vec{A} \\cdot \\vec{B} \\) is invariant under rotation of the\n                        coordinate system.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 5,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Define inertial and non-inertial frames. Explain the meaning of fictitious force</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Derive an expression for acceleration in a rotating frame and obtain the centripetal and Coriolis\n                        terms in the acceleration. Explain briefly how the Coriolis forces are useful in explaining the\n                        weather system</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Write short technical notes on:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Satellite manoeuvre",
+            "Foucault pendulum"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all parts :",
+      "total_marks": 5,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Show that the conservative force acting on a particle is always perpendicular to the\n                        equipotential surface.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Prove that the work done by a force which is the gradient of a potential (\\( \\vec{F} = -\\nabla\n                        U \\)) is path independent.</p>"
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>The potential function is given as \\( U = -2x - z^2 \\). Find the work done by the resulting\n                        force in moving a particle from the origin to a point (2,2,2) along a straight line.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain overdamped, underdamped and critically damped harmonic motion.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Write an equation for a forced harmonic oscillator and obtain the conditions of resonance.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Derive the moment of inertia tensor of a rigid body and explain the concept of principal axes.\n                    </p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A uniform solid disc of mass \\( M \\) and radius \\( R \\) having moment of inertia \\( MR^2/2\n                        \\) about an axis passing through its centre has initial uniform angular velocity. A constant\n                        friction force of magnitude \\( f \\) is then applied on the rim in tangential direction so that\n                        the disc finally comes to a stop in time \\( T \\). Find the magnitude of the friction force.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Derive the conditions for elliptic, hyperbolic and parabolic orbits in central force motion.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Show that the total angular momentum of a solid body can be written as the sum of the angular\n                        momentum of the centre of mass and the angular momentum about the centre of mass</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Derive Euler's equations for the rotational motion of a rigid body and explain its importance.\n                    </p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Prove that the angular momentum is conserved in a central force motion and that the orbit of the\n                        particle is always planar.</p>"
+        }
+      ]
+    }
+  ]
+}

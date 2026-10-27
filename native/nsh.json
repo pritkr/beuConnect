@@ -1,0 +1,125 @@
+{
+  "name": "BEUConnect",
+  "id": "org.beuconnect.app",
+  "version": "1.1.0",
+  "build": 2,
+  "icon": "icon.png",
+  "statusBar": { "foreground": "auto" },
+  "capabilities": {
+    "statusBar": true,
+    "clipboard": true,
+    "openUrl": { "schemes": ["https", "http", "tel", "mailto"] },
+    "network": {
+      "hosts": [
+        "beu.prit.eu.org",
+        "beu-bih.ac.in",
+        "rptbalyjcevtxoxyvzli.supabase.co",
+        "api.github.com"
+      ]
+    },
+    "webview": {
+      "hosts": [
+        "beu.prit.eu.org",
+        "beu-bih.ac.in",
+        "www.beu-bih.ac.in",
+        "challenges.cloudflare.com",
+        "beu.ac.in",
+        "www.beu.ac.in",
+        "www.google.com",
+        "www.gstatic.com",
+        "recaptcha.google.com",
+        "docs.google.com",
+        "docs.googleusercontent.com",
+        "ssl.gstatic.com"
+      ]
+    }
+  },
+  "theme": {
+    "cssVars": {
+      "theme": {
+        "radius": "1.25rem",
+        "font-sans": "System"
+      },
+      "light": {
+        "background": "#FBF8F4",
+        "foreground": "#17130F",
+        "card": "#FFFFFF",
+        "card-foreground": "#17130F",
+        "popover": "#FFFFFF",
+        "popover-foreground": "#17130F",
+        "primary": "#E4572E",
+        "primary-foreground": "#241008",
+        "primary-ink": "#B0401D",
+        "secondary": "#F1E9DF",
+        "secondary-foreground": "#3A3129",
+        "muted": "#F3ECE3",
+        "muted-foreground": "#6A5E4F",
+        "accent": "#0E6B5C",
+        "accent-foreground": "#F1FFFB",
+        "accent-ink": "#0E6B5C",
+        "destructive": "#C0392B",
+        "destructive-foreground": "#FFF5F3",
+        "border": "#E9DFD3",
+        "border-strong": "#8B7A66",
+        "input": "#EFE7DC",
+        "ring": "#E4572E",
+        "chart-1": "#E4572E",
+        "chart-2": "#0E6B5C",
+        "chart-3": "#B26A00",
+        "chart-4": "#6C5CE7",
+        "chart-5": "#B23A48",
+        "sidebar": "#F6F0E8",
+        "sidebar-foreground": "#17130F",
+        "sidebar-primary": "#E4572E",
+        "sidebar-primary-foreground": "#241008",
+        "sidebar-accent": "#F1E9DF",
+        "sidebar-accent-foreground": "#3A3129",
+        "sidebar-border": "#E9DFD3",
+        "sidebar-ring": "#E4572E"
+      },
+      "dark": {
+        "background": "#0E0C0A",
+        "foreground": "#F6F1EA",
+        "card": "#1A1714",
+        "card-foreground": "#F6F1EA",
+        "popover": "#1A1714",
+        "popover-foreground": "#F6F1EA",
+        "primary": "#FF7A4D",
+        "primary-foreground": "#241008",
+        "primary-ink": "#FF7A4D",
+        "secondary": "#241F1A",
+        "secondary-foreground": "#EDE3D6",
+        "muted": "#221D18",
+        "muted-foreground": "#B2A493",
+        "accent": "#123B34",
+        "accent-foreground": "#8FF0DC",
+        "accent-ink": "#6FE3C9",
+        "destructive": "#FF6B5B",
+        "destructive-foreground": "#2A0B07",
+        "border": "#2E2822",
+        "border-strong": "#7E7164",
+        "input": "#2A2420",
+        "ring": "#FF7A4D",
+        "chart-1": "#FF7A4D",
+        "chart-2": "#4FD8BA",
+        "chart-3": "#F3B75B",
+        "chart-4": "#9A8CFF",
+        "chart-5": "#FF8A9B",
+        "sidebar": "#151210",
+        "sidebar-foreground": "#F6F1EA",
+        "sidebar-primary": "#FF7A4D",
+        "sidebar-primary-foreground": "#241008",
+        "sidebar-accent": "#241F1A",
+        "sidebar-accent-foreground": "#EDE3D6",
+        "sidebar-border": "#2E2822",
+        "sidebar-ring": "#FF7A4D"
+      }
+    }
+  },
+  "tailwind": {
+    "radius": {
+      "card": 20,
+      "hero": 28
+    }
+  }
+}

@@ -1,0 +1,1092 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import collegesData from "../data/colleges.json";
+import configData from "../assets/data/config.json";
+import "simple-datatables/dist/style.css";
+
+export const prerender = true;
+
+const currentYY = Number.parseInt(String(new Date().getFullYear()).slice(-2), 10);
+const maxSession = Math.max(currentYY, 25);
+const sessions: Array<{ code: string; label: string }> = [];
+for (let year = 19; year <= maxSession; year++) {
+	const startYear = 2000 + year;
+	sessions.push({
+		code: String(year),
+		label: `${startYear}-${startYear + 4}`,
+	});
+}
+
+const semesters = Array.from({ length: 8 }, (_, i) => ({
+	value: String(i + 1),
+	label: String(i + 1),
+}));
+---
+
+<Layout title="BEU Result Table | BEUConnect" description="View and scan complete semester result tables for Bihar Engineering University (BEU) colleges. Compare performance across batches, semesters, and colleges." wide={true}>
+	<Header />
+
+	<section class="table-shell">
+		<header class="table-header">
+			<h1 style="view-transition-name:restab">Result Table</h1>
+			<p>Compact merit table with quick scanning, all-college mode, and click-to-sort columns.</p>
+		</header>
+
+		<div class="glass-card controls-card">
+			<form
+				id="resultForm"
+				data-colleges={JSON.stringify(collegesData.map((college) => ({ code: college.CollegeCode, name: college.Name })))}
+			>
+				<div class="control-grid">
+					<div>
+						<label for="session">Batch</label>
+						<select id="session" name="session" required>
+							{sessions.map((session) => <option value={session.code} selected={session.code === "25"}>{session.label}</option>)}
+						</select>
+					</div>
+
+					<div>
+						<label for="branch">Branch</label>
+						<select id="branch" name="branch" required>
+							{configData.branches.map((branch) => <option value={branch.code}>{branch.name}</option>)}
+						</select>
+					</div>
+
+					<div>
+						<label for="semester">Sem</label>
+						<select id="semester" name="semester" required>
+							{semesters.map((sem) => <option value={sem.value}>{sem.label}</option>)}
+						</select>
+					</div>
+
+					<div>
+						<label for="college">College</label>
+						<select id="college" name="college" required>
+							{collegesData.map((college) => <option value={college.CollegeCode}>{college.Name}</option>)}
+						</select>
+					</div>
+
+					<div class="control-checkbox">
+						<label>
+							<input type="checkbox" id="allColleges" name="allColleges" />
+							All Colleges
+						</label>
+					</div>
+				</div>
+			</form>
+
+			<div class="action-row">
+				<button id="copyTableLink" type="button">Copy Share Link</button>
+			</div>
+		</div>
+
+		<div id="loading" class="status loading" style="display:none;">Loading result data...</div>
+		<div id="error" class="status error" style="display:none;"></div>
+
+		<div id="toppers" class="topper-grid" style="display:none;"></div>
+
+		<div id="results" style="display:none;">
+			<table id="resultsTable">
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Reg No</th>
+						<th>Name</th>
+						<th>SGPA</th>
+						<th>Cur. CGPA</th>
+					</tr>
+				</thead>
+				<tbody id="resultsBody"></tbody>
+			</table>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<script>
+	import { DataTable } from "simple-datatables";
+	import { 
+		parseCSV, parseScore, isLateralRegNo, normalizeRows, 
+		sortRowsByCgpa, assignCgpaRanks, assignCollegeRanks 
+	} from "../lib/result-table/engine";
+	import type { NormalizedStudent } from "../lib/result-table/engine";
+	const baseUrl = import.meta.env.BASE_URL;
+	const formElement = document.getElementById("resultForm") as HTMLFormElement;
+	const colleges = JSON.parse(formElement.dataset.colleges || "[]") as Array<{ code: string; name: string }>;
+
+
+
+	type FileDescriptor = {
+		filename: string;
+		collegeCode: string;
+		collegeName: string;
+		merged?: boolean;
+	};
+
+	const sessionSelect = document.getElementById("session") as HTMLSelectElement;
+	const branchSelect = document.getElementById("branch") as HTMLSelectElement;
+	const semesterSelect = document.getElementById("semester") as HTMLSelectElement;
+	const allCollegesCheck = document.getElementById("allColleges") as HTMLInputElement;
+	const collegeSelect = document.getElementById("college") as HTMLSelectElement;
+	const copyTableLinkBtn = document.getElementById("copyTableLink") as HTMLButtonElement;
+	const loading = document.getElementById("loading") as HTMLDivElement;
+	const error = document.getElementById("error") as HTMLDivElement;
+	const results = document.getElementById("results") as HTMLDivElement;
+	const toppers = document.getElementById("toppers") as HTMLDivElement;
+
+	let dataTable: DataTable | null = null;
+
+	const branchCodeMap: Record<string, string[]> = {
+		cse: ["105"],
+		ece: ["104"],
+		ee: ["103"],
+		mech: ["102"],
+		civil: ["101"],
+		eee: ["110", "161"],
+	};
+
+	const collegeNameMap = new Map(colleges.map((college) => [college.code, college.name]));
+
+	function destroyDataTable() {
+		if (!dataTable) return;
+		try {
+			dataTable.destroy();
+		} catch (destroyError) {
+			console.warn("DataTable destroy warning", destroyError);
+		}
+		dataTable = null;
+	}
+
+		function buildFilename(session: string, college: string, branchCode: string, semester: string): string {
+		return `students_${session}_${college}_${branchCode}_sem${semester}.csv`;
+	}
+
+	function buildMergedFilename(session: string, branchCode: string, semester: string): string {
+		return `students_${session}_all_${branchCode}_sem${semester}.csv`;
+	}
+
+	function getSelectedColleges() {
+		if (allCollegesCheck.checked) return colleges;
+		const collegeCode = collegeSelect.value;
+		return [{ code: collegeCode, name: collegeNameMap.get(collegeCode) || collegeCode }];
+	}
+
+	function syncAllColleges() {
+		collegeSelect.disabled = allCollegesCheck.checked;
+		collegeSelect.setAttribute("aria-disabled", String(allCollegesCheck.checked));
+	}
+
+	async function fetchCsvRows(
+		filename: string,
+		missingMode: "empty" | "null" = "empty",
+	): Promise<Array<Record<string, string>> | null> {
+		const configuredBase = (baseUrl || "/").endsWith("/") ? (baseUrl || "/") : `${baseUrl}/`;
+		const activeBase = window.location.pathname.startsWith(configuredBase) ? configuredBase : "/";
+		const csvUrl = new URL(`${activeBase}data/${filename}`, window.location.origin).toString();
+		const response = await fetch(csvUrl, { cache: "no-cache" });
+		if (response.status === 404) return missingMode === "null" ? null : [];
+		if (!response.ok) throw new Error(`Failed to load ${filename}: ${response.status}`);
+		const csvText = await response.text();
+		if (!csvText.trim()) return [];
+		return parseCSV(csvText);
+	}
+
+	function buildPerCollegeDescriptors(
+		session: string,
+		semester: string,
+		branchCodes: string[],
+		selectedColleges: Array<{ code: string; name: string }>,
+	): FileDescriptor[] {
+		return selectedColleges.flatMap((college) =>
+			branchCodes.map((branchCode) => ({
+				filename: buildFilename(session, college.code, branchCode, semester),
+				collegeCode: college.code,
+				collegeName: college.name,
+			})),
+		);
+	}
+
+	function buildMergedDescriptors(session: string, semester: string, branchCodes: string[]): FileDescriptor[] {
+		return branchCodes.map((branchCode) => ({
+			filename: buildMergedFilename(session, branchCode, semester),
+			collegeCode: "all",
+			collegeName: "All Colleges",
+			merged: true,
+		}));
+	}
+
+	async function loadDescriptorRows(primaryDescriptors: FileDescriptor[], fallbackDescriptors: FileDescriptor[] = []) {
+		const results: Array<FileDescriptor & { rows: Array<Record<string, string>> }> = [];
+		
+		const primaryPromises = primaryDescriptors.map(async (primary) => {
+			const rows = await fetchCsvRows(primary.filename, primary.merged ? "null" : "empty");
+			return { primary, rows };
+		});
+		
+		const primaryResults = await Promise.all(primaryPromises);
+		
+		for (const { primary, rows } of primaryResults) {
+			if (rows !== null) {
+				results.push({ ...primary, rows });
+			} else {
+				// Fetch fallbacks for this specific missing merged branch code
+				const branchCodeMatch = primary.filename.match(/_all_([^_]+)_sem/);
+				if (branchCodeMatch && fallbackDescriptors.length > 0) {
+					const failedBranchCode = branchCodeMatch[1];
+					const relevantFallbacks = fallbackDescriptors.filter(d => d.filename.includes(`_${failedBranchCode}_`));
+					const fallbackRows = await Promise.all(
+						relevantFallbacks.map(async (descriptor) => ({
+							...descriptor,
+							rows: (await fetchCsvRows(descriptor.filename, "empty")) || [],
+						}))
+					);
+					results.push(...fallbackRows);
+				}
+			}
+		}
+		return results;
+	}
+
+	function updateUrl() {
+		const url = new URL(window.location.href);
+		url.searchParams.set("session", sessionSelect.value);
+		url.searchParams.set("branch", branchSelect.value);
+		url.searchParams.set("semester", semesterSelect.value);
+		url.searchParams.set("college", collegeSelect.value);
+		if (allCollegesCheck.checked) url.searchParams.set("all", "true");
+		else url.searchParams.delete("all");
+		window.history.replaceState({}, "", url);
+	}
+
+	async function initFromUrl() {
+		const params = new URLSearchParams(window.location.search);
+
+		const setValue = (select: HTMLSelectElement, preferred: string, fallback: string) => {
+			const hasPreferred = Array.from(select.options).some((option) => option.value === preferred);
+			select.value = hasPreferred ? preferred : fallback;
+		};
+
+		let defaultSession = params.get("session") || "25";
+		let defaultBranch = params.get("branch") || "cse";
+		let defaultSemester = params.get("semester") || "1";
+		let defaultCollege = params.get("college") || "157";
+
+		try {
+			// Smart Defaults from Profile
+			const { getProfile } = await import("../utils/profileManager");
+			const profile = getProfile();
+			
+			if (profile) {
+				if (!params.has("session") && profile.batchYear) {
+					defaultSession = String(profile.batchYear).slice(-2);
+				}
+				if (!params.has("branch") && profile.branchPath) {
+					defaultBranch = profile.branchPath;
+				}
+				if (!params.has("semester") && profile.batchYear) {
+					if (profile.batchYear === 2025) defaultSemester = "1";
+					else if (profile.batchYear === 2024) defaultSemester = "2";
+					else if (profile.batchYear === 2023) defaultSemester = "4";
+					else if (profile.batchYear === 2022) defaultSemester = "7";
+					else if (profile.batchYear <= 2021) defaultSemester = "8";
+					else defaultSemester = String(profile.currentSem);
+				}
+				if (!params.has("college") && profile.collegeCode) {
+					defaultCollege = profile.collegeCode;
+				}
+			}
+		} catch (e) {
+			console.error("Error loading smart defaults for result table", e);
+		}
+
+		setValue(sessionSelect, defaultSession, "25");
+		setValue(branchSelect, defaultBranch, "cse");
+		setValue(semesterSelect, defaultSemester, "1");
+		
+		// Robustly set college, fallback to 157 (GEC Sheikhpura) if college code has no data
+		setValue(collegeSelect, defaultCollege, "157");
+		
+		allCollegesCheck.checked = params.get("all") === "true" || params.get("scope") === "all";
+		syncAllColleges();
+	}
+
+	function showStatus(state: "loading" | "error" | "ready", message = "") {
+		error.style.display = state === "error" ? "block" : "none";
+		loading.style.display = state === "loading" ? "block" : "none";
+		if (state === "error") error.textContent = message;
+		if (state !== "ready") {
+			results.style.display = "none";
+			toppers.style.display = "none";
+		}
+	}
+
+	function renderToppers(rows: NormalizedStudent[]) {
+		const showCollegeName = allCollegesCheck.checked;
+		toppers.innerHTML = "";
+		const topRows = rows.filter((row) => row.Rank !== null).slice(0, 3);
+		if (topRows.length === 0) {
+			toppers.style.display = "none";
+			return;
+		}
+
+		const labels = ["1st", "2nd", "3rd"];
+		const icons = [
+			`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16l-1-7-4 2.8L12 8l-3 6.8L5 12z"></path></svg>`,
+			`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.2 4.8L19 10l-4.8 2.2L12 17l-2.2-4.8L5 10l4.8-2.2z"></path></svg>`,
+			`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l7 14H5z"></path></svg>`,
+		];
+		for (const [index, row] of topRows.entries()) {
+			const card = document.createElement("article");
+			card.className = `glass-card topper-card topper-rank-${index + 1}`;
+			card.innerHTML = `
+				<div class="topper-head">
+					<span class="topper-marker topper-marker-${index + 1}" aria-hidden="true">${icons[index]}</span>
+					<p class="topper-rank">${labels[index]}</p>
+				</div>
+				<div class="topper-main">
+					<h3>${row.Name}</h3>
+					<p class="topper-reg">${row.RegNo}</p>
+				</div>
+				<div class="topper-meta">
+					<p class="topper-score">CG ${row.CGPAText}</p>
+					<p class="topper-reg">SG ${row.SGPAText}</p>
+					${showCollegeName ? `<p class="topper-college">${row.CollegeName}</p>` : ""}
+				</div>
+			`;
+			toppers.appendChild(card);
+		}
+
+		toppers.style.display = "grid";
+	}
+
+	function resetResultsTable(showCollegeColumn: boolean) {
+		const collegeRankHead = showCollegeColumn ? "<th>Clg Rank</th>" : "";
+		const collegeHead = showCollegeColumn ? "<th>College</th>" : "";
+		const tableClass = showCollegeColumn ? "table-all-colleges" : "table-single-college";
+		results.innerHTML = `
+			<table id="resultsTable" class="${tableClass}">
+				<thead>
+					<tr>
+						<th>Rank</th>
+						${collegeRankHead}
+						${collegeHead}
+						<th>Reg No</th>
+						<th>Name</th>
+						<th>SGPA</th>
+						<th>Cur. CGPA</th>
+					</tr>
+				</thead>
+				<tbody id="resultsBody"></tbody>
+			</table>
+		`;
+	}
+
+	function renderTable(rows: NormalizedStudent[], showCollegeColumn: boolean) {
+		resetResultsTable(showCollegeColumn);
+		const tbody = document.getElementById("resultsBody") as HTMLTableSectionElement | null;
+		if (!tbody) return;
+		
+		const semValue = semesterSelect.value;
+		// ⚡ Bolt Optimization: Build HTML string in memory and batch update
+		// ~50% faster than iteratively calling createElement and appendChild for thousands of rows
+		const htmlParts = new Array(rows.length);
+
+		for (let i = 0; i < rows.length; i++) {
+			const row = rows[i];
+			const isLeRow = isLateralRegNo(row.RegNo);
+			const resultUrl = `${baseUrl}result?sem=${semValue}&reg=${encodeURIComponent(row.RegNo)}${isLeRow ? "&le=true" : ""}`;
+			
+			const rankText = row.Rank === null ? "-" : row.Rank;
+			let rowHtml = `<tr><td data-label="Rank">${rankText}</td>`;
+			
+			if (showCollegeColumn) {
+				const colRankText = row.CollegeRank === null ? "-" : row.CollegeRank;
+				rowHtml += `<td data-label="College Rank">${colRankText}</td><td class="college-cell" data-label="College">${row.CollegeName}</td>`;
+			}
+			
+			rowHtml += `
+				<td data-label="Reg No"><a href="${resultUrl}" target="_blank" rel="noopener">${row.RegNo}</a></td>
+				<td data-label="Name"><span class="name-cell">${row.Name}</span></td>
+				<td data-label="SGPA"><span class="metric-pill">${row.SGPAText}</span></td>
+				<td data-label="Cur. CGPA"><span class="metric-pill metric-pill-strong">${row.CGPAText}</span></td>
+			</tr>`;
+			
+			htmlParts[i] = rowHtml;
+		}
+		
+		tbody.innerHTML = htmlParts.join("");
+	}
+
+	function initDataTable() {
+		const table = document.getElementById("resultsTable") as HTMLTableElement;
+		destroyDataTable();
+		dataTable = new DataTable(table, {
+			searchable: true,
+			sortable: true,
+			perPage: 200,
+			perPageSelect: [50, 100, 200, 500],
+		});
+	}
+
+	function adjustSemesterForSession() {
+		const session = sessionSelect.value;
+		const semester = semesterSelect.value;
+		
+		if (session === "25") {
+			// 2k25 batch currently only has semester 1 results
+			semesterSelect.value = "1";
+		} else if (session === "24") {
+			// 2k24 batch has semester 1 & 2 results, default to 2 if currently invalid
+			if (semester !== "1" && semester !== "2") {
+				semesterSelect.value = "2";
+			}
+		} else if (session === "23") {
+			// 2k23 batch has semesters 1 to 4 results, default to 4 if currently invalid
+			if (!["1", "2", "3", "4"].includes(semester)) {
+				semesterSelect.value = "4";
+			}
+		} else if (session === "22") {
+			// 2k22 batch has semesters 1 to 7 results, default to 6 if currently invalid (since we don't have sem 7 rank data yet)
+			if (!["1", "2", "3", "4", "5", "6", "7"].includes(semester)) {
+				semesterSelect.value = "6";
+			}
+		}
+	}
+
+	async function loadResults() {
+		adjustSemesterForSession();
+		updateUrl();
+		syncAllColleges();
+		showStatus("loading");
+		destroyDataTable();
+
+		const session = sessionSelect.value;
+		const branch = branchSelect.value;
+		const semester = semesterSelect.value;
+		const selectedColleges = getSelectedColleges();
+		const showCollegeColumn = allCollegesCheck.checked;
+
+		if (!session || !branch || !semester || selectedColleges.length === 0) {
+			showStatus("error", "Missing required filters.");
+			return;
+		}
+
+		const branchCodes = branchCodeMap[branch] || [branch];
+		const regularDescriptors = buildPerCollegeDescriptors(session, semester, branchCodes, selectedColleges);
+		const mergedDescriptors = showCollegeColumn ? buildMergedDescriptors(session, semester, branchCodes) : [];
+
+		try {
+			const rowSets = await loadDescriptorRows(
+				mergedDescriptors.length > 0 ? mergedDescriptors : regularDescriptors,
+				regularDescriptors,
+			);
+			const mergedRows = rowSets.flatMap((entry) => normalizeRows(entry.rows, entry.collegeCode, entry.collegeName));
+			if (mergedRows.length === 0) {
+				throw new Error(`No records found for selected filters. Checked: ${regularDescriptors.map((entry) => entry.filename).join(", ")}`);
+			}
+
+			const dedupedRows = Array.from(new Map(mergedRows.map((row) => [row.RegNo, row])).values());
+			const sortedRows = sortRowsByCgpa(dedupedRows);
+			assignCgpaRanks(sortedRows);
+			assignCollegeRanks(sortedRows);
+
+			renderToppers(sortedRows);
+			renderTable(sortedRows, showCollegeColumn);
+			results.style.display = "block";
+			showStatus("ready");
+			initDataTable();
+		} catch (loadError) {
+			const message = loadError instanceof Error ? loadError.message : "Failed to load results.";
+			showStatus("error", message);
+			console.error(loadError);
+		}
+	}
+
+	copyTableLinkBtn.addEventListener("click", async () => {
+		updateUrl();
+		try {
+			await navigator.clipboard.writeText(window.location.href);
+			copyTableLinkBtn.textContent = "Link Copied";
+			setTimeout(() => {
+				copyTableLinkBtn.textContent = "Copy Share Link";
+			}, 1200);
+		} catch {
+			copyTableLinkBtn.textContent = "Copy Blocked";
+			setTimeout(() => {
+				copyTableLinkBtn.textContent = "Copy Share Link";
+			}, 1200);
+		}
+	});
+
+	[sessionSelect, branchSelect, semesterSelect, allCollegesCheck, collegeSelect].forEach((input) => {
+		input.addEventListener("change", loadResults);
+	});
+
+	async function boot() {
+		await initFromUrl();
+		loadResults();
+	}
+	boot();
+</script>
+
+<style>
+	.table-shell {
+		max-width: 1460px;
+		margin: 0 auto;
+		padding-inline: 0.45rem;
+		display: grid;
+		gap: 0.5rem;
+	}
+
+	.table-header {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+	}
+
+	.table-header h1 {
+		margin: 0;
+		font-size: clamp(1.25rem, 1.8vw, 1.8rem);
+		line-height: 1;
+	}
+
+	.table-header p {
+		margin: 0;
+		max-width: 58ch;
+		font-size: 0.78rem;
+		color: #cbd5e1;
+	}
+
+	.controls-card {
+		padding: 0.45rem 0.55rem;
+		display: grid;
+		gap: 0.35rem;
+		border: 1px solid rgba(148, 163, 184, 0.18);
+		background: linear-gradient(180deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.92));
+		backdrop-filter: blur(10px);
+	}
+
+	.control-grid {
+		display: grid;
+		grid-template-columns: 1.1fr 1.2fr 0.6fr 2fr auto;
+		gap: 0.35rem;
+		align-items: end;
+	}
+
+	.control-grid label {
+		font-weight: 600;
+		font-size: 0.62rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: #94a3b8;
+		margin-bottom: 0.12rem;
+		display: inline-block;
+	}
+
+	.control-grid select,
+	.control-grid input {
+		margin-bottom: 0;
+		height: 2rem;
+		font-size: 0.8rem;
+		padding: 0.24rem 0.45rem;
+	}
+
+	.control-checkbox {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	.control-checkbox label {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		margin: 0;
+		padding: 0.42rem 0.55rem;
+		min-height: 2rem;
+		border: 1px solid rgba(148, 163, 184, 0.22);
+		border-radius: 10px;
+		background: rgba(15, 23, 42, 0.42);
+		font-size: 0.72rem;
+		color: #e2e8f0;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.action-row {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.action-row button {
+		margin: 0;
+		padding: 0.32rem 0.6rem;
+		font-size: 0.68rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.status {
+		padding: 0.38rem 0.6rem;
+		border-radius: 10px;
+		font-weight: 600;
+		font-size: 0.74rem;
+	}
+
+	.status.loading {
+		background: rgba(56, 189, 248, 0.14);
+		color: #d8f3ff;
+	}
+
+	.status.error {
+		background: rgba(239, 68, 68, 0.14);
+		color: #fee2e2;
+	}
+
+	.topper-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.35rem;
+	}
+
+	:global(.topper-card) {
+		padding: 0.32rem 0.42rem;
+		border: 1px solid rgba(148, 163, 184, 0.2);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.45rem;
+		min-width: 0;
+	}
+
+	:global(.topper-head) {
+		display: flex;
+		align-items: center;
+		gap: 0.18rem;
+		min-width: max-content;
+	}
+
+	:global(.topper-marker) {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 0.24rem;
+		height: 0.24rem;
+		flex: 0 0 auto;
+	}
+
+	:global(.topper-marker svg) {
+		width: 100%;
+		height: 100%;
+		display: block;
+		fill: currentColor;
+	}
+
+	:global(.topper-marker-1) {
+		color: #fbbf24;
+	}
+
+	:global(.topper-marker-2) {
+		color: #cbd5e1;
+	}
+
+	:global(.topper-marker-3) {
+		color: #fb923c;
+	}
+
+	:global(.topper-rank) {
+		margin: 0;
+		font-weight: 800;
+		font-size: 0.49rem;
+		line-height: 1;
+		color: #dbeafe;
+		text-transform: uppercase;
+		letter-spacing: 0.09em;
+	}
+
+	:global(.topper-main) {
+		min-width: 0;
+		flex: 1;
+	}
+
+	:global(.topper-card h3) {
+		margin: 0;
+		font-size: 0.66rem;
+		line-height: 1.2;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	:global(.topper-meta) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 0.02rem;
+		min-width: max-content;
+	}
+
+	:global(.topper-reg),
+	:global(.topper-score) {
+		margin: 0;
+		font-size: 0.53rem;
+		color: #cbd5e1;
+		white-space: nowrap;
+	}
+
+	:global(.topper-college) {
+		margin: 0;
+		font-size: 0.53rem;
+		color: #94a3b8;
+		max-width: 18ch;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	:global(.topper-rank-1) {
+		border-color: rgba(251, 191, 36, 0.45);
+		background: linear-gradient(180deg, rgba(251, 191, 36, 0.2), rgba(30, 41, 59, 0.45));
+	}
+
+	:global(.topper-rank-2) {
+		border-color: rgba(148, 163, 184, 0.45);
+		background: linear-gradient(180deg, rgba(148, 163, 184, 0.18), rgba(30, 41, 59, 0.45));
+	}
+
+	:global(.topper-rank-3) {
+		border-color: rgba(251, 146, 60, 0.45);
+		background: linear-gradient(180deg, rgba(251, 146, 60, 0.16), rgba(30, 41, 59, 0.45));
+	}
+
+	#results {
+		border: 1px solid rgba(148, 163, 184, 0.16);
+		border-radius: 12px;
+		padding: 0.18rem;
+		background: rgba(15, 23, 42, 0.66);
+		overflow: auto;
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		border: 0;
+		background: transparent;
+		font-variant-numeric: tabular-nums;
+	}
+
+	th,
+	td {
+		padding: 0.24rem 0.34rem;
+		text-align: left;
+		border-bottom: 1px solid rgba(148, 163, 184, 0.11);
+		font-size: 0.72rem;
+		line-height: 1.15;
+		vertical-align: middle;
+	}
+
+	th {
+		background: rgba(30, 41, 59, 0.92);
+		color: #e2e8f0;
+		font-size: 0.58rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		white-space: nowrap;
+	}
+
+	tbody tr:nth-child(even) {
+		background: rgba(148, 163, 184, 0.04);
+	}
+
+	tr:hover {
+		background: rgba(59, 130, 246, 0.09);
+	}
+
+	td a {
+		font-weight: 600;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: 0.67rem;
+		letter-spacing: 0.02em;
+	}
+
+	.name-cell {
+		display: inline-block;
+		max-width: 28ch;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.college-cell {
+		max-width: 18ch;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.metric-pill {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 3.45rem;
+		padding: 0.08rem 0.28rem;
+		border-radius: 999px;
+		background: rgba(30, 41, 59, 0.88);
+		border: 1px solid rgba(148, 163, 184, 0.2);
+	}
+
+	.metric-pill-strong {
+		background: rgba(15, 23, 42, 0.96);
+		border-color: rgba(96, 165, 250, 0.24);
+		color: #dbeafe;
+	}
+
+	#resultsTable :is(th, td):nth-child(1) {
+		width: 3.1rem;
+		text-align: center;
+	}
+
+	.table-single-college :is(th, td):nth-child(2) {
+		width: 7.2rem;
+	}
+
+	.table-all-colleges :is(th, td):nth-child(2) {
+		width: 3.8rem;
+		text-align: center;
+	}
+
+	.table-all-colleges :is(th, td):nth-child(3) {
+		min-width: 12rem;
+	}
+
+	.table-all-colleges :is(th, td):nth-child(4) {
+		width: 7.2rem;
+	}
+
+	.table-single-college :is(th, td):nth-child(4),
+	.table-single-college :is(th, td):nth-child(5),
+	.table-all-colleges :is(th, td):nth-child(6),
+	.table-all-colleges :is(th, td):nth-child(7) {
+		width: 5rem;
+		text-align: center;
+	}
+
+	:global(.datatable-wrapper) :global(.datatable-top),
+	:global(.datatable-wrapper) :global(.datatable-bottom) {
+		padding: 0.08rem 0.12rem;
+	}
+
+	:global(.datatable-wrapper) :global(.datatable-top) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.4rem;
+		flex-wrap: wrap;
+	}
+
+	:global(.datatable-wrapper) :global(.datatable-dropdown) {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		white-space: nowrap;
+		flex: 0 0 auto;
+		font-size: 0.7rem !important;
+	}
+
+	:global(.datatable-wrapper) :global(.datatable-dropdown label) {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		white-space: nowrap;
+		margin: 0;
+		flex-wrap: nowrap;
+		font-size: 0.7rem !important;
+		line-height: 1 !important;
+	}
+
+	:global(.datatable-wrapper) :global(.datatable-dropdown select) {
+		width: auto;
+		min-width: 4.8rem;
+		flex: 0 0 auto;
+		margin: 0;
+	}
+
+	:global(.datatable-wrapper) :global(.datatable-search) {
+		margin-left: auto;
+	}
+
+	:global(.datatable-wrapper) :global(.datatable-info),
+	:global(.datatable-wrapper) :global(.datatable-selector),
+	:global(.datatable-wrapper) :global(.datatable-input) {
+		font-size: 0.66rem;
+	}
+
+	:global(.datatable-wrapper) :global(.datatable-selector),
+	:global(.datatable-wrapper) :global(.datatable-input) {
+		min-height: 1.8rem;
+		padding: 0.18rem 0.35rem;
+	}
+
+	:global(.datatable-pagination a),
+	:global(.datatable-pagination button) {
+		padding: 0.14rem 0.32rem;
+		font-size: 0.66rem;
+	}
+
+	@media (max-width: 960px) {
+		.control-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.topper-grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			overflow-x: auto;
+		}
+
+		:global(.topper-card) {
+			min-width: 15rem;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.table-header {
+			align-items: flex-start;
+		}
+
+		.table-shell {
+			padding-inline: 0.35rem;
+		}
+
+		.control-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.action-row {
+			justify-content: stretch;
+		}
+
+		.action-row button {
+			width: 100%;
+		}
+
+		.topper-grid {
+			grid-template-columns: 1fr;
+			overflow: visible;
+		}
+
+		:global(.topper-card) {
+			min-width: 0;
+		}
+
+		#results {
+			padding: 0;
+			border: 0;
+			background: transparent;
+			overflow-x: auto;
+			box-shadow: none;
+		}
+
+		#results table {
+			min-width: 600px; /* Force horizontal scroll on mobile instead of stacked layout */
+		}
+
+		/* Removed the stacked table overrides below so it stays a real table */
+		#results thead {
+			display: table-header-group;
+		}
+
+		#results tbody {
+			display: table-row-group;
+			gap: 0;
+		}
+
+		#results tr {
+			display: table-row;
+			border: none;
+			border-radius: 0;
+			padding: 0;
+			background: transparent;
+			box-shadow: none;
+		}
+
+		#results td, #results th {
+			display: table-cell;
+		}
+
+		#results tbody tr:nth-child(even) {
+			background: rgba(148, 163, 184, 0.04);
+		}
+
+		#results td {
+			align-items: center;
+			justify-content: flex-start;
+			gap: 0;
+			padding: 0.24rem 0.34rem;
+			border-bottom: 1px solid rgba(148, 163, 184, 0.11);
+			text-align: left;
+		}
+
+		#results td::before {
+			content: none;
+		}
+
+		#results td > * {
+			margin-left: 0;
+		}
+
+		.name-cell,
+		.college-cell {
+			max-width: 20ch;
+			white-space: nowrap;
+			text-align: left;
+		}
+
+		.metric-pill {
+			min-width: 3.2rem;
+		}
+
+		:global(.datatable-wrapper) :global(.datatable-top),
+		:global(.datatable-wrapper) :global(.datatable-bottom) {
+			display: grid;
+			gap: 0.35rem;
+			padding: 0.2rem 0;
+		}
+
+		:global(.datatable-wrapper) :global(.datatable-dropdown),
+		:global(.datatable-wrapper) :global(.datatable-search) {
+			width: 100%;
+		}
+
+		:global(.datatable-wrapper) :global(.datatable-selector),
+		:global(.datatable-wrapper) :global(.datatable-input) {
+			width: 100%;
+			min-height: 2rem;
+		}
+
+		:global(.datatable-wrapper) :global(.datatable-pagination) {
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+	}
+
+	@media (max-width: 420px) {
+		.controls-card {
+			padding: 0.4rem;
+		}
+
+		.table-shell {
+			padding-inline: 0.28rem;
+		}
+
+		.name-cell,
+		.college-cell {
+			max-width: 16ch;
+		}
+	}
+</style>

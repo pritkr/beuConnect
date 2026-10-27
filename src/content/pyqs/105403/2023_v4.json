@@ -1,0 +1,299 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2023",
+    "subject": "Operating Systems",
+    "subject_slug": "operating-systems",
+    "subject_code": "105403",
+    "year": 2023,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven question of the following:",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>A computer system has 9 tape drives, with \\( n \\) processes competing for them. Each process\n                        may\n                        need\n                        3 tape drives. The maximum value of \\( n \\) for which the system is guaranteed to be deadlock\n                        free\n                        is</p>",
+          "options": [
+            "9",
+            "7",
+            "8",
+            "6"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following page replacement algorithms suffers from Belady's anomaly?</p>",
+          "options": [
+            "Optimal replacement",
+            "LRU",
+            "FIFO",
+            "Both (a) and (c)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Scheduling a process from ready Queue to CPU is done by</p>",
+          "options": [
+            "Short term scheduler",
+            "Middle term scheduler",
+            "Long term scheduler",
+            "Dispatcher"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The time to move the disk arm to the desired cylinder in hard disk is known as</p>",
+          "options": [
+            "rotational latency",
+            "seek time",
+            "positional time",
+            "disk time"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Compaction is used to solve the problem of</p>",
+          "options": [
+            "external fragmentation",
+            "internal fragmentation",
+            "both (a) and (c)",
+            "None of these"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>__________ is a technique of improving the priority of process waiting in queue for CPU\n                        allocation.\n                    </p>",
+          "options": [
+            "Starvation",
+            "Ageing",
+            "Revocation",
+            "Relocation"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The CPU utilization is low when the system is</p>",
+          "options": [
+            "timesharing",
+            "thrashing",
+            "multiprocessing",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>When a process waits indefinitely for some resources which are being used by other processes, it\n                        is\n                        called</p>",
+          "options": [
+            "Starvation",
+            "Demand Paging",
+            "Segmentation",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Fork is used to</p>",
+          "options": [
+            "dispatch a task",
+            "create a new job",
+            "create a new process",
+            "increase the priority of a task"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which one of the following is the deadlock avoidance algorithm?</p>",
+          "options": [
+            "Banker's algorithm",
+            "Round-robin algorithm",
+            "Elevator algorithm",
+            "Karn's algorithm"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the concept of a process. With the help of a state transition diagram, discuss the\n                        various\n                        process states.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Describe the differences among short term, medium-term, and long-term scheduling.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What are the various allocation policies in variable partition multiprogramming? Explain the\n                        differences between internal and external fragmentations.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What do you understand by address binding? Explain the various address binding schemes.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What are the differences between user-level threads and kernel-level threads? Under what\n                        circumstances is one type better than the other?</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What resources are used when a thread is created? How do they differ from those used when a\n                        process\n                        is created?</p>"
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>Describe the actions taken by a kernel to context switch between kernel-level threads.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What do you understand by deadlock? Discuss the methods to avoid deadlock.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>State and explain the necessary and sufficient conditions for a deadlock.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Consider the following process with the given table:</p>\n<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\" style=\"margin-top: 10px; border-collapse: collapse;\">\n<tbody><tr>\n<th>Process</th>\n<th>Arrival Time</th>\n<th>Burst Time</th>\n</tr>\n<tr>\n<td>P1</td>\n<td>0.0</td>\n<td>7</td>\n</tr>\n<tr>\n<td>P2</td>\n<td>2.0</td>\n<td>4</td>\n</tr>\n<tr>\n<td>P3</td>\n<td>4.0</td>\n<td>1</td>\n</tr>\n<tr>\n<td>P4</td>\n<td>5.0</td>\n<td>4</td>\n</tr>\n</tbody></table>\n<p style=\"margin-top: 10px;\">Considering non-preemptive and preemptive SJF algorithm, find out\n                        average\n                        waiting time and average turnaround time in both cases.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What do you mean by critical section problem? Discuss Peterson's solution for critical section\n                        problem.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Consider the following page reference string :<br/>7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 1, 2, 0,\n                        1,\n                        7, 0, 1<br/>How many page faults would occur for the following replacement algorithms? Assuming 3\n                        frames are available. Also assume that initially none of pages in main memory.<br/>(i) Optimal\n                        replacement<br/>(ii) FIFO replacement</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Suppose a disk drive has 300 cylinders, numbered 0 to 299. The current head position of the disk\n                        is\n                        at 90. The queue of pending requests, in FIFO order is 36, 79, 15, 120, 199, 270, 89, 170.\n                        Calculate\n                        the average cylinder movements for Shortest-Seek Time First (SSTF) algorithm. Mention the\n                        disadvantages of SSTF.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Compare and contrast between linked and indexed disk allocation strategies.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>I-node</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Segmentation</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Thrashing</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Process Control Block</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

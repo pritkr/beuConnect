@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2016",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "041401",
+    "year": 2016,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct alternatives for any seven of the following :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The width of depletion layer of a P-N junction diode is\n(i) independent of applied voltage\n(ii) increased with applied reverse bias voltage\n(iii) increased with applied forward bias voltage\n(iv) increased with doping",
+              "id": "1a"
+            },
+            {
+              "text": "A diffusion current flows through a P-N junction just after its formation due to\n(i) minority carriers\n(ii) majority carriers\n(iii) forward bias\n(iv) reverse bias",
+              "id": "1b"
+            },
+            {
+              "text": "A half-wave rectifier is equivalent to a\n(i) clipping circuit\n(ii) clamper circuit\n(iii) clamper circuit with negative bias\n(iv) clamper circuit with positive bias",
+              "id": "1c"
+            },
+            {
+              "text": "In an LC filter, the ripple factor\n(i) increases with load current\n(ii) increases with load resistance\n(iii) remains constant with load resistance\n(iv) decreases with load current",
+              "id": "1d"
+            },
+            {
+              "text": "If collector-base junction is reverse biased and the emitter-base junction is forward biased, the transistor operates at\n(i) saturation region\n(ii) cut-off region\n(iii) active region\n(iv) All of the above",
+              "id": "1e"
+            },
+            {
+              "text": "If the Q point of a transistor lies at ________, the positive part of input signal is clipped at output.\n(i) near saturation point\n(ii) near cut-off point\n(iii) middle of active region\n(iv) anywhere of the load line",
+              "id": "1f"
+            },
+            {
+              "text": "The input impedance of a JFET is in the range of\n(i) above $1\\text{ M}\\Omega$\n(ii) $200\\text{ k}\\Omega$\n(iii) $2\\text{ k}\\Omega$\n(iv) $200\\text{ }\\Omega$",
+              "id": "1g"
+            },
+            {
+              "text": "The threshold voltage of an enhancement NMOS transistor is\n(i) less than zero volt\n(ii) equal to zero volt\n(iii) greater than zero volt\n(iv) None of the above",
+              "id": "1h"
+            },
+            {
+              "text": "Which topology of feedback amplifier has very high input and output impedances?\n(i) Voltage series feedback\n(ii) Voltage shunt feedback\n(iii) Current series feedback\n(iv) Current shunt feedback",
+              "id": "1i"
+            },
+            {
+              "text": "An ideal OP-AMP has\n(i) infinite input impedance\n(ii) zero output impedance\n(iii) infinite voltage gain\n(iv) All of the above",
+              "id": "1j"
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "text": "Draw the energy-band diagram of an open-circuited P-N junction diode and derive the expression for contact difference potential across this open-circuited P-N junction diode.",
+              "id": "2a",
+              "marks": 9
+            },
+            {
+              "text": "At the room temperature of $300\\text{ K}$, the resistivities of the N-type region and P-type region of a germanium P-N junction are $6.5\\text{ ohm-cm}$ and $4.5\\text{ ohm-cm}$ respectively. Determine the contact potential and potential energy barrier at $300\\text{ K}$. Assume— $n_i = 2.5 \\times 10^{13}\\text{ /cm}^3$, $\\mu_n = 2000\\text{ cm}^2\\text{ /Vs}$, $\\mu_p = 900\\text{ cm}^2\\text{ /Vs}$.",
+              "id": "2b",
+              "marks": 5
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "text": "Explain how the process of avalanche breakdown occurs in P-N junction. How is it different from Zener breakdown?",
+              "id": "3a",
+              "marks": 7
+            },
+            {
+              "text": "Draw the circuit of a Zener diode shunt-regulated power supply. In this regulated power supply, required output voltage across load resistance $R_L$ is $10\\text{ V}$ with load current $I_L = 50\\text{ mA}$. Input d.c. voltage varies from $20\\text{ V}$ to $30\\text{ V}$. Determine the maximum and minimum Zener currents. [Consider $P_z(\\text{max}) = 1000\\text{ mW}$]",
+              "id": "3b",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "text": "What is transformer utilization factor? Derive the transformer utilization factor of a half-wave rectifier circuit. Discuss the difference between the half-wave and full-wave rectifier circuits.",
+              "id": "4a",
+              "marks": 9
+            },
+            {
+              "text": "The turn ratio of the transformer used in single-phase full-wave rectifier circuit is $20:1$. The primary of transformer is connected to $230\\text{ V}$ and $50\\text{ Hz}$ a.c. supply. Determine the peak inverse voltage of each diode and output frequency. Assume all diodes are ideal.",
+              "id": "4b",
+              "marks": 5
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "text": "Draw the circuit diagram of an N-P-N junction transistor CE configuration and describe the static input and output characteristics. Also define active, saturation and cut-off regions and saturation resistance in CE configuration.",
+              "id": "5a",
+              "marks": 6
+            },
+            {
+              "text": "Derive the relation between $\\alpha$ and $\\beta$ of a BJT.",
+              "id": "5b",
+              "marks": 4
+            },
+            {
+              "text": "A BJT has a base current $I_B = 150\\text{ }\\mu\\text{A}$, $I_{CO} = 10\\text{ }\\mu\\text{A}$ and $\\alpha = 0.98$. Calculate the collector current and emitter current.",
+              "id": "5c",
+              "marks": 4
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "text": "What do you mean by biasing? Why is it required? Define stability factors for biasing. What are the factors on which stability of biasing depends?",
+              "id": "6a",
+              "marks": 8
+            },
+            {
+              "text": "The voltage divider bias circuit of N-P-N transistor is shown in figure below. Calculate the values of $R_1$ and $R_C$ when collector current is $1\\text{ mA}$ and collector to emitter voltage is $2.6\\text{ V}$. Assume $V_{BE} = 0.65\\text{ V}$ and $\\beta = 100$.\n[Diagram: Voltage divider bias with $V_{CC}=6\\text{V}, R_1, R_2=10\\text{k}\\Omega, R_C, R_E=350\\text{ }\\Omega$]",
+              "id": "6b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "text": "Discuss the construction and working principle of an N-channel enhancement-type MOSFET with diagrams and draw the device characteristics.",
+              "id": "7a",
+              "marks": 8
+            },
+            {
+              "text": "In an N-channel JFET, $I_{DSS} = 12\\text{ mA}$ and $V_P = -8\\text{ V}$ and $g_{mo} = 4000\\text{ }\\mu\\text{s}$. Determine the drain current and transconductance at $V_{GS} = -5\\text{ V}$.",
+              "id": "7b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "text": "Draw the circuit diagram of a differentiator using OP-AMP and explain its operation. If a square-wave voltage signal is applied at the input of a differentiator, then draw its out in same timescale of input signal.",
+              "id": "8a",
+              "marks": 9
+            },
+            {
+              "text": "Draw the circuit diagram of an inverting summing amplifier using OP-AMP and determine the output voltage.",
+              "id": "8b",
+              "marks": 5
+            }
+          ]
+        },
+        {
+          "text": "Write short notes on the following:",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "text": "Light-emitting diode",
+              "id": "9a",
+              "marks": 7
+            },
+            {
+              "text": "Silicon-controlled rectifier",
+              "id": "9b",
+              "marks": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

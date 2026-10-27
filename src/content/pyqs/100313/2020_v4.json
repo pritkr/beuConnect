@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020",
+    "subject": "Object-Oriented Programming using C++",
+    "subject_slug": "object-oriented-programming-using-c",
+    "subject_code": "100313",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven parts:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Write the name of the function in C++ used for opening a file for input only.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>What is the purpose of using a derived class?</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Is there any difference between public protection and private protection?</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>How does abstract class differ from interface?</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>What is the role of catch block in the exception handling?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Is it possible to return more than one value from a function? Explain with a small example.</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>What are the mutator functions? Give an example.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Discuss the role of default constructor when an object of a class is created.</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Write a small code which illustrates the concept of multiple inheritance.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Differentiate between compile-time polymorphism and run-time polymorphism.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Write a language program in C++ which accepts the user's first and last name and print them in\n                        reverse order with a space between them.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Create the equivalent of a four-function calculator. The program should ask the user to enter a\n                        number, an operator and another number. (Use floating point.) It should then carry out the\n                        specified\n                        arithmetical operation: adding, subtracting, multiplying or dividing the two numbers. Use a\n                        switch\n                        statement to select the operation. Finally, display the result. When it finishes the\n                        calculation,\n                        the program should ask whether the user wants to do another calculation. The response can be 'y'\n                        or\n                        'n'.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Use a single-subscripted array to solve the following problem: Read in 20 numbers, each of which\n                        is\n                        between 10 and 100, inclusive. As each number is read, print it only if it is not a duplicate of\n                        a\n                        number already read. Provide for the 'worst case' in which all 20 numbers are different. Use the\n                        smallest possible array to solve this problem.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Write a program in C++ to read text file and display count of character in file.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is the main advantage of passing arguments by reference? When do we need to use default\n                        arguments in a function?</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What do you mean by dynamic binding? How is it useful in OOP?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What is constructor? Write a program in C++ to find the area of the circle using constructor.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Define a class to represent a bank account. Include the following members:<br/>\n                        Data members: 1. Name of the depositor 2. Account number 3. Type of account 4. Balance amount in\n                        the\n                        account<br/>\n                        Member functions: 1. To assign initial values 2. To deposit an amount 3. To withdraw an amount\n                        after\n                        checking the balance 4. To display name and balance.<br/>\n                        Write a main program which handles 10 customers.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What do you mean by dynamic initialization of objects? Why do we need to do this? How is dynamic\n                        initialization of objects achieved?</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Write a C++ program to define a class string and use overloaded == operator to compare two\n                        strings.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Some programmers prefer not to use protected access because it breaks the encapsulation of the\n                        base\n                        class. Discuss the relative merits of using protected access vs. insisting on using private\n                        access\n                        in base classes.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Write a C++ program to demonstrate example of hierarchical inheritance to get square and cube of\n                        a\n                        number.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>We knew that a private member of a base class is not inheritable. Is it anyway possible for the\n                        objects of a derived class to access the private members of the base class? If yes, how?</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Write a program that uses a function template called max to determine the largest of three\n                        arguments.\n                        Test the program using integer, character and floating-point number pairs.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Describe the relationship between class templates and inheritance. Why is it appropriate to call\n                        a\n                        class template a parameterized type?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Write a program that demonstrates how certain exception types are not allowed to be thrown.</p>"
+        }
+      ]
+    }
+  ]
+}

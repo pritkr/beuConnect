@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. Examination 2019",
+    "subject": "Structural Analysis",
+    "subject_slug": "structural-analysis",
+    "subject_code": "structural-analysis",
+    "year": 2019,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right‑hand margin.",
+    "There are EIGHT questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Principle of superposition is applicable when</p>",
+          "options": [
+            "the action of applied forces will be affected by small deformations of the structure",
+            "material obeys Hooke's law",
+            "deflections are linear functions of applied forces",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The Castigliano's second theorem can be used to compute deflections</p>",
+          "options": [
+            "in statically determinate structures only",
+            "for any type of structure",
+            "for beams and frames only",
+            "at the point under the load only."
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>When a load crosses a through‑type Pratt truss in the direction left to right, the nature of\n                        force in\n                        any diagonal member in the left half of the span would</p>",
+          "options": [
+            "change from compression to tension",
+            "always be compression",
+            "always be tension",
+            "change from tension to compression"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>For a three‑hinged arch, if one of the supports settles down vertically, then the horizontal\n                        thrust\n                    </p>",
+          "options": [
+            "is decreased",
+            "remains unchanged",
+            "becomes zero",
+            "is increased"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>A number of forces acting at a point will be in equilibrium, if</p>",
+          "options": [
+            "sum of resolved parts in any two perpendicular directions are both zero",
+            "their total sum is zero",
+            "two resolved parts in two directions are at right angles",
+            "All of them are inclined equally"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A beam is said to be of uniform strength, if</p>",
+          "options": [
+            "BM is same throughout the beam",
+            "bending stress is same throughout the beam",
+            "deflection is same throughout the beam",
+            "shear stress is same throughout the beam"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A load 'W' is moving from left to right supported on simply supported beam of span 'L'. The\n                        maximum\n                        bending moment at 0·4 L from the left support is</p>",
+          "options": [
+            "·16 WL",
+            "·24 WL",
+            "·20 WL",
+            "·25 WL"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The deformation of a spring produced by a unit load is called</p>",
+          "options": [
+            "stiffness",
+            "flexibility",
+            "influence coefficient",
+            "unit strain"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>For stable structures, one of the important properties of flexibility and stiffness matrices is\n                        that\n                        the elements on the main diagonal<br/>1. of a stiffness matrix must be positive<br/>2. of a\n                        stiffness\n                        matrix must be negative<br/>3. of a flexibility matrix must be positive<br/>4. of a flexibility\n                        matrix\n                        must be negative<br/>The correct answer is</p>",
+          "options": [
+            "1 and 3",
+            "2 and 3",
+            "1 and 4",
+            "2 and 4"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>If kinematic indeterminacy is more than the static indeterminacy, then the method used for\n                        solving\n                        the structures is</p>",
+          "options": [
+            "force",
+            "displacement",
+            "Both (i) and (ii)",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Describe the differences between static and kinematic indeterminacy. Also determine static and\n                        kinematic indeterminacy of structures shown in Fig. 1. What is kinematic indeterminacy if axial\n                        deformations are negligible?</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/29.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Draw the influence line for the bar forces in members \\(U_{1}U_{2}\\), \\(L_{1}L_{2}\\) and\n                        \\(U_{1}L_{2}\\) of the truss as shown in Fig. 2. The length of each panel is \\(5\n                        \\mathrm{~m}\\)\n                        and height of truss is 4.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/25.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Four wheel loads \\(20 \\mathrm{kN}\\), \\(80 \\mathrm{kN}\\), \\(60 \\mathrm{kN}\\) and \\(100\n                        \\mathrm{kN}\\) spaced at \\(2 \\mathrm{~m}\\), \\(3 \\mathrm{~m}\\) and \\(4 \\mathrm{~m}\\),\n                        respectively roll on girder of span \\(10 \\mathrm{~m}\\) from left to right with the \\(100\n                        \\mathrm{kN}\\) load leading. Find the maximum and absolute maximum bending moment that can\n                        occur at\n                        a section \\(4 \\mathrm{~m}\\) from the left support. Also determine the maximum positive and\n                        negative shear forces at that section.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Determine the reaction at the support and maximum positive and negative bending moment developed\n                        in\n                        the three hinged circular segment arch. The arch is subject to a concentrated load W at the\n                        distance\n                        \\(3 \\mathrm{a}\\) from left support. The span is of \\(12 \\mathrm{a}\\) and rise at crown is\n                        \\(2\n                        \\mathrm{a}\\).</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What is the difference between real work done and virtual work done? Also derive the expression\n                        for\n                        strain energy due bending of beams.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Find vertical deflection, horizontal deflection and slope at end A of the frame member ABCDE\n                        shown in\n                        Fig. 3. Take \\(E = 200 \\mathrm{kN} / \\mathrm{mm}^2\\), \\(I_{AC} = 6 \\times 10^7\n                        \\mathrm{~mm}^4\\) and \\(I_{CE} = 7 \\times 10^7 \\mathrm{~mm}^4\\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/26.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A suspension cable is suspended from two piers \\(200 \\mathrm{m}\\) centre‑to‑centre, one\n                        support\n                        being \\(5 \\mathrm{m}\\) above the other. The cable carries a u.d.l. of \\(15 \\mathrm{N} /\n                        \\mathrm{m}\\) and has its lower point \\(10 \\mathrm{m}\\) below the lower support. The ends of\n                        the\n                        cable are attached the saddled on rollers at top of piers. The back stays are inclined at\n                        \\(60^{\\circ}\\) to the vertical. Determine— (i) the maximum tension in the cable; (ii) tension\n                        in\n                        the back stays.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A three‑hinged parabolic arch is subjected to u.d.l. of \\(20 \\mathrm{kN} / \\mathrm{m}\\)\n                        throughout its length. Find bending moment, radial shear, normal thrust at a distance \\(20\n                        \\mathrm{m}\\) from left support, if the arch has a span of \\(100 \\mathrm{m}\\) and rise of\n                        \\(25\n                        \\mathrm{m}\\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A three‑hinged parabolic arch of span \\(18 \\mathrm{m}\\) has its left support at depth \\(5\n                        \\mathrm{m}\\) and right support at depth \\(12 \\mathrm{m}\\) below the crown hinge. The arch\n                        carries a point load of \\(45 \\mathrm{kN}\\) at a distance of \\(4 \\mathrm{m}\\) from left\n                        side of\n                        crown hinge and point load of \\(90 \\mathrm{kN}\\) at a distance of \\(8 \\mathrm{m}\\) from\n                        right\n                        side of the crown hinge. Find the reaction at the supports and the bending moment under the\n                        loads.\n                    </p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A beam AB of length \\(10 \\mathrm{m}\\) simply supported at the ends carries a point load \\(100\n                        \\mathrm{kN}\\) at '4' distance from the left and '6' distance from right end. Find the\n                        deflection\n                        under the load by conjugate method and draw the shear force and bending moment diagram.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Show that the flexibility and stiffness matrix are inversely proportional to each other. Generate\n                        the\n                        stiffness matrix coefficient of structure shown in Fig. 4. EI is constant throughout the span.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/27.jpg\"/>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Determine the flexibility matrix of the structure shown in Fig. 5. The base width and height of\n                        the\n                        plane frame is \\(L\\). \\(EI\\) is constant through the structure.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/28.jpg\"/>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2022",
+    "subject": "Formal language & automata theory",
+    "subject_slug": "formal-language-automata-theory",
+    "subject_code": "105503",
+    "year": 2022,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The language \\( \\\\{a^m b^n c^{m+n} / m, n \\ge 1\\\\} \\) is</p>",
+          "options": [
+            "regular",
+            "context-free but not regular",
+            "Context-sensitive but not context free",
+            "type-0 but not context sensitive"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following pairs have DIFFERENT expressive powers?</p>",
+          "options": [
+            "Deterministic finite automata (DFA) and non-deterministic finite automata (NDFA)",
+            "Deterministic push-down automata (DPDA) and non-deterministic push-down automata (NDPDA)",
+            "Deterministic single-tape Turing machine and non-deterministic single-tape Turing machine",
+            "Single-tape Turing machine and multi-tape Turing machine"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The logic of pumping lemma is a good example of</p>",
+          "options": [
+            "pigeon-hole principle",
+            "divide-and-conquer technique",
+            "recursion",
+            "iteration"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>If \\( L_1 \\) and \\( L_2 \\) are context free languages, \\( L_1 - L_2 \\) is</p>",
+          "options": [
+            "always context-free.",
+            "sometimes",
+            "never",
+            "None of these"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>_____ is the acyclic graphical representation of a grammer.</p>",
+          "options": [
+            "Binary tree",
+            "Octtree",
+            "Parse tree",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following pairs of regular expressions are equivalent?</p>",
+          "options": [
+            "\\( x^* \\) and \\( x^*x \\)",
+            "\\( 1(01) \\) and \\( (10)^*1 \\)",
+            "\\( x(xx)^* \\) and \\( (xx)^*x \\)",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The maximum number of states of a DFA converted from an NFA with \\( n \\) states is</p>",
+          "options": [
+            "\\( n \\)",
+            "\\( n^2 \\)",
+            "\\( 2^n \\)",
+            "None of these"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Definition of a language L with alphabet {a} is given as \\( L = \\\\{a^{nk} / k &gt; 0 \\\\}, \\) and n\n                        is\n                        a\n                        positive integer constant. What is the minimum number of states needed in a DFA to recognize L?\n                    </p>",
+          "options": [
+            "\\( k + 1 \\)",
+            "\\( n + 1 \\)",
+            "\\( 2n + 1 \\)",
+            "\\( 2k + 1 \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A _____ is context free grammar with atmost one non-terminal in the right handside of the\n                        production.\n                    </p>",
+          "options": [
+            "linear grammar",
+            "linear bounded grammar",
+            "regular grammar",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Let N be an NFA with \\( n \\) states and let M be the minimized DFA with \\( m \\) states\n                        recognizing\n                        the same language. Which of the following is necessarily true?</p>",
+          "options": [
+            "\\( m \\le 2^n \\)",
+            "\\( n \\le m \\)",
+            "M has one accept state",
+            "\\( m = 2^n \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Tabulate Chomsky hierarchy of grammars with an example for each.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Construct the regular grammar accepting the following language: \\( L = \\\\{w \\in \\\\{a,b\\\\}^* / w\n                        \\text{\n                        is a string over } \\\\{a, b\\\\} \\text{ such that the number of b's is } 3 \\mod 4\\\\} \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Minimize the DFA. </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/112.jpg\"/>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Define recursively enumerable languages. Let \\( L_1 \\) be recursive and \\( L_2 \\) recursively\n                        enumerable. Show that \\( L_2 - L_1 \\) is necessarily recursively enumerable.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Begin with the grammar: \\( S \\rightarrow ASB/\\epsilon \\), \\( A \\rightarrow aAS/a \\), \\( B\n                        \\rightarrow\n                        SbS/A/bb \\)<br/>\n                        (i) Eliminate \\( \\epsilon \\)-productions.<br/>\n                        (ii) Eliminate unit productions in the resulting grammar.<br/>\n                        (iii) Eliminate any useless symbol in the resulting grammar.<br/>\n                        (iv) Put the resulting grammar into CNF.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Design a pushdown automata to accept the following language by empty stack: \\( \\\\{0^n 1^n / n\n                        \\ge\n                        1\\\\}\n                        \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Define deterministic pushdown automata. Explain with an example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Prove using pumping lemma for regular languages that the language \\( \\\\{0^n / n \\text{ is a\n                        perfect\n                        square}\\\\} \\) is not regular.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Convert the following DFA to regular expression using the state elimination technique.</p>\n<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\" style=\"margin-top:10px; border-collapse: collapse;\">\n<tbody><tr>\n<th>State / input</th>\n<th>0</th>\n<th>1</th>\n</tr>\n<tr>\n<td>\u2192 *p</td>\n<td>s</td>\n<td>p</td>\n</tr>\n<tr>\n<td>q</td>\n<td>p</td>\n<td>s</td>\n</tr>\n<tr>\n<td>r</td>\n<td>r</td>\n<td>q</td>\n</tr>\n<tr>\n<td>s</td>\n<td>q</td>\n<td>r</td>\n</tr>\n</tbody></table>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Convert the following NFA to DFA and informally describe the language it accepts.</p>\n<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\" style=\"margin-top:10px; border-collapse: collapse;\">\n<tbody><tr>\n<th>State / input</th>\n<th>0</th>\n<th>1</th>\n</tr>\n<tr>\n<td>p</td>\n<td>{p, q}</td>\n<td>{p}</td>\n</tr>\n<tr>\n<td>q</td>\n<td>{r, s}</td>\n<td>{t}</td>\n</tr>\n<tr>\n<td>r</td>\n<td>{p, r}</td>\n<td>{t}</td>\n</tr>\n<tr>\n<td>s</td>\n<td>\u2205</td>\n<td>\u2205</td>\n</tr>\n<tr>\n<td>*t</td>\n<td>\u2205</td>\n<td>\u2205</td>\n</tr>\n</tbody></table>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>When a CFG is called ambiguous? Show that \\( S \\rightarrow aS / aSbS / \\epsilon \\) is\n                        ambiguous.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Define Turing machine. Design a Turing machine M to recognize the language \\( \\\\{1^n 2^n 3^n / n\n                        \\ge\n                        1\\\\} \\).</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Construct DFA equivalent to the regular expression: \\( (0+1)^*(00+11)(0+1)^* \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": []
+    }
+  ]
+}

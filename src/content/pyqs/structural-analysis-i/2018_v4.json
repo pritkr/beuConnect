@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. Examination 2018",
+    "subject": "Structural Analysis—I",
+    "subject_slug": "structural-analysis-i",
+    "subject_code": "structural-analysis-i",
+    "year": 2018,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right‑hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven) :",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In case of conjugate beam the internal hinged is converted into which support?</p>",
+          "options": [
+            "Fixed",
+            "Hinged",
+            "Free",
+            "Roller"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The ordinates of influence line diagram for bending moment always have dimension of</p>",
+          "options": [
+            "force",
+            "force \\(\\times\\) length",
+            "length",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A three‑hinged parabolic arch of span 20 and rise 5 carries UDL of intensity 15 kN/m over whole\n                        span,\n                        the value of bending moment at a section 5 m from left end is</p>",
+          "options": [
+            "\\(\\frac{wL^2}{8h}\\)",
+            "\\(\\frac{wL^2}{4}\\)",
+            "\\(\\frac{wL^2}{8}\\)",
+            "zero"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Flexibility matrix method is based on the</p>",
+          "options": [
+            "static indeterminacy",
+            "kinematic indeterminacy",
+            "Both (i) and (ii)",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>In a simply supported beam, a load \\(20 \\mathrm{kN}\\) is placed at \\(A\\) which is at a\n                        distance\n                        of \\(6 \\mathrm{m}\\) from the left caused the deflection at \\(B\\) of \\(10 \\mathrm{mm}\\).\n                        When\n                        the load is \\(10 \\mathrm{kN}\\) at \\(B\\) which is same distance from the right end, then\n                        find\n                        the deflection at point \\(A\\).</p>",
+          "options": [
+            "\\(10 \\mathrm{mm}\\)",
+            "\\(5 \\mathrm{mm}\\)",
+            "\\(2 \\cdot 5 \\mathrm{mm}\\)",
+            "\\(1 \\mathrm{mm}\\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The Castigliano's theorem is applicable for the structures</p>",
+          "options": [
+            "determinate",
+            "indeterminate",
+            "Both (i) and (ii)",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The degree of kinematic indeterminacy of a pin‑jointed space frame is given by</p>",
+          "options": [
+            "2j- r",
+            "3j- r",
+            "6j- r",
+            "j- 6r"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The rate of change of bending moment in any structure is equal to the</p>",
+          "options": [
+            "bending moment",
+            "stress",
+            "weight",
+            "shear force"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A cantilever beam of span \\(L\\) carries point load of intensity \\(W \\mathrm{kN}\\) at the\n                        free\n                        end and another beam which is simply supported at both ends of length \\(L\\) carries point load\n                        \\(W \\mathrm{kN}\\) at the center. What is the ratio of maximum deflection of cantilever beam\n                        to\n                        simply supported beam?</p>",
+          "options": [
+            "16",
+            "8",
+            "6",
+            "24"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The strain energy stored in the member due to bending per unit volume is given by</p>",
+          "options": [
+            "\\(\\frac{f^2}{2E}\\)",
+            "\\(\\frac{f^2}{4E}\\)",
+            "\\(\\frac{f^2}{6E}\\)",
+            "\\(\\frac{f^2}{3E}\\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Describe the differences between determine and indeterminate structures. Also determine static\n                        and\n                        kinematic indeterminacy of structures shown in Fig. 1.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/35.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>A three‑hinged parabolic arch ACB of span \\(30\\mathrm{m}\\) has its left support at depth\n                        \\(4\\mathrm{m}\\) and right support at depth \\(16\\mathrm{m}\\) below the crown hinge C. The\n                        arch\n                        carries a point load of \\(60\\mathrm{kN}\\) at a distance of \\(5\\mathrm{m}\\) from left side\n                        of C\n                        and point load of \\(120\\mathrm{kN}\\) at a distance of \\(10\\mathrm{m}\\) from right side of\n                        C.\n                        Find the reaction at the supports and the bending moment under the loads.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Three wheel loads \\(60\\mathrm{kN}\\), \\(40\\mathrm{kN}\\) and \\(50\\mathrm{kN}\\) spaced at\n                        \\(2\\mathrm{m}\\) and \\(2\\mathrm{m}\\) respectively roll on girder of span\n                        \\(20\\mathrm{m}\\)\n                        from left to right with the \\(60\\mathrm{kN}\\) load leading. Find maximum and absolute maximum\n                        bending moment that can occur at a section \\(6\\mathrm{m}\\) from the left support. Also\n                        determine\n                        maximum positive and negative shear force at that section.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Find out horizontal and vertical deflections of point A of circular structure shown in Fig. 2, EI\n                        is\n                        constant :</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/33.jpg\"/>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Derive and describe the Maxwell law of reciprocal deflection theorem and also its generalized\n                        form.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A beam AB of length \\(L\\) simply supported at the ends carries a point load \\(W\\) at a\n                        distance\n                        from the left end and b distance from right end. Find the deflection under the load and the\n                        maximum\n                        deflection.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A three‑hinged parabolic arch ACB of span \\(30\\mathrm{m}\\) has its left support at depth\n                        \\(4\\mathrm{m}\\) and right support at depth \\(16\\mathrm{m}\\) below the crown hinge C. The\n                        arch\n                        carries a point load of \\(60\\mathrm{kN}\\) at a distance of \\(5\\mathrm{m}\\) from left side\n                        of C\n                        and point load of \\(120\\mathrm{kN}\\) at a distance of \\(10\\mathrm{m}\\) from right side of\n                        C.\n                        Find the reaction at the supports and the bending moment under the loads.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Find the forces in each member by method of tension coefficient of the Fig. 3 :\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/34.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A cable is supported between two points \\(40 \\mathrm{m}\\) horizontal apart. The left support\n                        is\n                        \\(5 \\mathrm{m}\\) above the right support. The cable carries a load of \\(6 \\mathrm{kN /\n                        m}\\) on\n                        the horizontal span. The lowest point of cable is \\(5 \\mathrm{m}\\) below the left support.\n                        Find\n                        the maximum tension in the cable.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Draw the influence line diagram of the structure as shown in Fig. 4 for reaction at \\(A\\),\n                        reaction\n                        at \\(B\\), shear force and bending moment at section \\(E\\). Also find the\n                        ordinates of influence line diagrams.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/30.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Find vertical deflection, horizontal deflection and slope at end \\(A\\) of the frame member ABCD\n                        shown in Fig. 5. Take \\(E = 210 \\mathrm{kN / mm^2}\\), \\(I_{AC} = 4 \\times\n                        10^7 \\mathrm{mm^4}\\) and \\(I_{CD} = 8 \\times 10^7 \\mathrm{mm^4}\\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/32.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What is the difference between flexibility matrix and stiffness matrix? Discuss in detail.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Determine the stiffness matrix of the structure shown in Fig. 6 :</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/31.jpg\"/>"
+        }
+      ]
+    }
+  ]
+}

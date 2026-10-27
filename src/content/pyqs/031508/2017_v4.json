@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2017",
+    "subject": "POWER SYSTEM-II",
+    "subject_slug": "power-system-ii",
+    "subject_code": "031508",
+    "year": 2017,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Assume appropriately where data is missing."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following power stations is mainly used to cover peak load on the system?</p>",
+          "options": [
+            "Coal-based thermal plant",
+            "Nuclear plant",
+            "Gas-based thermal plant",
+            "Pumped storage hydropower plant"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>For the hydroelectric power plants</p>",
+          "options": [
+            "operating cost is high and initial cost is high",
+            "operating cost is low and initial cost is high",
+            "operating cost is low and initial cost is low",
+            "operating cost is high and initial cost is low"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>On what factor, the fixed charge is dependent in a two-part tariff?</p>",
+          "options": [
+            "Energy consumed",
+            "Peak load demand",
+            "Maximum demand",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Fault calculations using computer are usually done by</p>",
+          "options": [
+            "\\( Y_{bus} \\) method",
+            "\\( Z_{bus} \\) method",
+            "All of the above",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the value of zero sequence current?</p>",
+          "options": [
+            "Three times the current in neutral wire",
+            "\\( 1/3 \\) time the current in neutral wire",
+            "\\( \\sqrt{3} \\) times the current in neutral wire",
+            "Equal to the current in neutral wire"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The following sequence currents were recorded in a power system under a fault condition: \\(\n                        I_{\\text{positive}} = j1.753 \\text{ p.u.} \\), \\( I_{\\text{negative}} = -j0.6 \\text{ p.u.}\n                        \\),\n                        \\( I_{\\text{zero}} = -j1.153 \\text{ p.u.} \\) The fault is</p>",
+          "options": [
+            "line to ground",
+            "three-phase",
+            "line to line to ground",
+            "line to line"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>If all the sequence voltages at the fault point in a power system are equal, then the fault is a\n                    </p>",
+          "options": [
+            "line to line to ground fault",
+            "three-phase fault",
+            "double-line fault",
+            "single-line to ground fault"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following networks gets affected by the method of neutral grounding?</p>",
+          "options": [
+            "Zero sequence network",
+            "Positive sequence network",
+            "Negative sequence network",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>For 800 MJ stored energy in the rotor at synchronous speed, what is the inertia constant (H) for\n                        a\n                        50-Hz, 4-pole turbo-generator rated 100 MVA, 11 kV?</p>",
+          "options": [
+            "2 MJ/MVA",
+            "4 MJ/MVA",
+            "6 MJ/MVA",
+            "8 MJ/MVA"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following cannot be determined from equal area criterion?</p>",
+          "options": [
+            "Critical clearing angle",
+            "Critical clearing time",
+            "Transient stability limit",
+            "Both (i) and (ii)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all three questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What are the factors to be considered for selection of site for a thermal power station?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Draw the schematic layout of a typical coal fired power station.</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>Explain the role of economizer and superheater in a thermal power plant.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all three questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Define load factor and diversity factor. What is the impact of diversity factor?</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>An electric supply undertaking has to cater to a demand of two consumers A and B, each having a\n                        maximum demand of 5 kW. Variation of loads for these consumers are given below : <br/> Consumer\n                        A:\n                        midnight to 7 AM: 200W; 6 PM to 7 PM: 1500W; 7 PM to 9 PM: 5000W; 9 PM to midnight: 800W. <br/>\n                        Consumer B: midnight to 6 AM: 400W; 6 AM to 12 Noon: 1600W; 12 Noon to 2 PM: 5000W; 2 PM to 7\n                        PM:\n                        600W; 7 PM to 11 PM: 3600W; 11 PM to midnight: 600W.</p>\n<p>Draw the separate load curve for each consumer and the system load curve. Find the maximum demand\n                        on\n                        the system. Also, calculate the load factor and the diversity factor.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What are different types of reactance of an unloaded synchronous machine under short-circuit\n                        condition? Discuss them briefly using approximate circuit model.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A rated generator synchronous 500 kVA, 440 V, 0.1 p.u. subtransient reactance is supplying a\n                        passive\n                        load of 400 kW at 0.8 lagging power factor. Calculate the initial symmetrical r.m.s. current for\n                        a\n                        three-phase fault at generator terminal.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all three questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Define positive, negative and zero-sequence components.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Write the equation to transform phase voltage into sequence voltage.</p>"
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>The voltages across a three-phase unbalanced load are \\( V_a = 200 V \\), \\( V_b = 200\\angle\n                        -90^{\\circ} V \\), \\( V_c = 600\\angle 140^{\\circ} V \\) respectively. Determine the sequence\n                        component of voltages. Phase sequence is abc.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Calculate the sequence component of three-phase star-connected balanced supply voltages.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Derive the sequence component of a transmission line having \\( X_s \\) (self-reactance of each\n                        line)\n                        and \\( X_m \\) (mutual reactance of any line pair). The series resistance of the line may be\n                        ignored.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>For a three-phase unloaded alternator with neutral grounded through impedance \\( Z_n \\) and\n                        fault\n                        impedance \\( Z_f \\), draw the phase and sequence network for an L-L fault. Also derive the\n                        expression for the sequence component of the current in a three-phase unloaded alternator for\n                        L-L\n                        fault.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A 20 MVA, 33 kV, three-phase alternator is subjected to different types of short-circuit tests.\n                        The\n                        fault currents were: three-phase fault current - 300 A; line to line fault current - 400 A;\n                        single-line to ground fault current - 600 A. The alternator is solidly grounded. Find the per\n                        unit\n                        value of three-sequence reactance of the alternator. Neglect resistance.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for the maximum power transfer between two nodes. Show that this power is\n                        maximum when \\( X = \\sqrt{3}R \\), where X and R are reactance and resistance of the system\n                        respectively.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>A motor is receiving 30% of the power that it is capable of receiving from an infinite bus. If\n                        the\n                        load on the motor is doubled, calculate the maximum value of \\( \\delta \\) during the swing of\n                        the\n                        rotor around the equilibrium position.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>(a) Transient stability</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>(b) Equal area criterion</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>(c) Hydrothermal scheduling</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+---
+export const prerender = true;
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header.astro";
+import Footer from "../../components/footer.astro";
+import { sortedAnnouncementPosts } from "../../data/announcements";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Announcements | BEUConnect" description="Latest BEUConnect announcements and blog updates.">
+  <Header />
+
+  <section class="announcement-page">
+    <h1>Announcements</h1>
+    <p>Post product updates, exam alerts, roadmap notes, and short blogs here.</p>
+
+    <div class="post-grid">
+      {sortedAnnouncementPosts.map((post) => (
+        <article class="post-card glass-card">
+          <p class="post-meta">{post.publishedAt} • {post.author}</p>
+          <h2>
+            <a href={`${base}announcements/${post.slug}/`}>{post.title}</a>
+          </h2>
+          <p>{post.excerpt}</p>
+          <div class="post-tags">
+            {post.tags.map((tag) => (
+              <span>#{tag}</span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .announcement-page {
+    padding: 1.6rem 0 0.5rem;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.9rem;
+  }
+
+  .post-card {
+    padding: 1rem;
+  }
+
+  .post-card h2 {
+    margin: 0.2rem 0 0.55rem;
+    font-size: 1.05rem;
+  }
+
+  .post-meta {
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--accent-cyan);
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .post-tags span {
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+  }
+</style>

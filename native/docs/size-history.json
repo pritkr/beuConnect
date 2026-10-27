@@ -1,0 +1,49 @@
+{
+  "note": "One entry per recorded run, oldest first. Written by scripts/size-report.sh --record; see docs/SIZE.md.",
+  "runs": [
+    {
+      "at": "2026-10-25T21:52:23Z",
+      "abi": "arm64-v8a",
+      "apkBytes": 9675514,
+      "payloadBytes": 9667771,
+      "unpackedBytes": 21943727,
+      "entries": 11,
+      "bundle": {
+        "entry": "assets/nsh/bundle.nshc",
+        "bytecodeBytes": 1789244,
+        "compressedBytes": 371664
+      },
+      "source": {
+        "jsBytes": 1404555,
+        "bytecodeBytes": 2551278
+      },
+      "budgets": {
+        "apk": 10000000,
+        "bundle": 2200000
+      },
+      "pass": true
+    },
+    {
+      "at": "2026-10-27T17:12:38Z",
+      "abi": "arm64-v8a",
+      "apkBytes": 11977806,
+      "payloadBytes": 11968001,
+      "unpackedBytes": 27351631,
+      "entries": 15,
+      "bundle": {
+        "entry": "assets/nsh/bundle.nshc",
+        "bytecodeBytes": 2230394,
+        "compressedBytes": 681307
+      },
+      "source": {
+        "jsBytes": null,
+        "bytecodeBytes": null
+      },
+      "budgets": {
+        "apk": 12000000,
+        "bundle": 2200000
+      },
+      "pass": false
+    }
+  ]
+}

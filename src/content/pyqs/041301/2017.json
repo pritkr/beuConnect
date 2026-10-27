@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Examination, 2017",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "041301",
+    "year": 2017,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer the following questions (any seven) :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "State the most important SCR parameters for high-current devices.",
+              "id": "1a",
+              "marks": 2
+            },
+            {
+              "text": "State Fermi energy level ($E_F$) of an intrinsic semiconductor.",
+              "id": "1b",
+              "marks": 2
+            },
+            {
+              "text": "Define base width modulation.",
+              "id": "1c",
+              "marks": 2
+            },
+            {
+              "text": "Differentiate between drift current and diffusion current.",
+              "id": "1d",
+              "marks": 2
+            },
+            {
+              "text": "Define avalanche multiplication.",
+              "id": "1e",
+              "marks": 2
+            },
+            {
+              "text": "Define peak point current of a UJT.",
+              "id": "1f",
+              "marks": 2
+            },
+            {
+              "text": "State the definition of threshold voltage of a MOSFET.",
+              "id": "1g",
+              "marks": 2
+            },
+            {
+              "text": "Define CMRR of an op-amp.",
+              "id": "1h",
+              "marks": 2
+            },
+            {
+              "text": "State the applications of photodiode.",
+              "id": "1i",
+              "marks": 2
+            },
+            {
+              "text": "Why are PIV of bridge and centre-tapped full-wave rectifier not same?",
+              "id": "1j",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "text": "Accurately analyze the collector-to-base bias circuit is shown in figure 1 to determine the $I_B, I_C$ and $V_{CE}$, when\n(i) $\\beta = 50$;\n(ii) $\\beta = 200$.\nAssume $V_{BE} = 0.7\\text{ V}$.\n[Diagram Fig. 1: Voltage divider bias circuit with $V_{CC}=18\\text{V}, R_{B1}=33\\text{ k}\\Omega, R_{B2}=12\\text{ k}\\Omega, R_C=1.2\\text{ k}\\Omega, R_E=1\\text{ k}\\Omega$]",
+              "id": "2a",
+              "marks": 8
+            },
+            {
+              "text": "With the help of a neat diagram, explain the input and output characteristics of common-collector (CC) configuration.",
+              "id": "2b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "text": "With the help of band and bond models, explain both N-type and P-type extrinsic silicons.",
+              "id": "3a",
+              "marks": 8
+            },
+            {
+              "text": "A silicon p-n diode has a doping of $N_D = 8 \\times 10^{15} \\text{ cm}^{-3}$ and $N_A = 2 \\times 10^{16} \\text{ cm}^{-3}$ (for Si: $n_i = 1.5 \\times 10^{10} \\text{ cm}^{-3}, \\epsilon_r = 11.9$).\n(i) Determine the depletion width in the n-region.\n(ii) Determine the built-in potential at $300\\text{ K}$.\n(iii) Calculate the depletion width when it biased to $0.5\\text{ V}$.",
+              "id": "3b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "What do you mean by rectification? Explain the working of a half-wave rectifier circuit with resistive load. With sinusoidal input, derive the expressions for the following :",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "text": "Average output voltage and current",
+              "id": "4a",
+              "marks": 4
+            },
+            {
+              "text": "RMS load current and voltage",
+              "id": "4b",
+              "marks": 4
+            },
+            {
+              "text": "Form factor and ripple factor",
+              "id": "4c",
+              "marks": 4
+            },
+            {
+              "text": "Efficiency",
+              "id": "4d",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "text": "Draw the circuit of a UJT relaxation oscillator with provision for frequency adjustment and spike waveform. Show all waveforms, and explain the circuit operation.",
+              "id": "5a",
+              "marks": 8
+            },
+            {
+              "text": "Draw the circuit diagram to show how an SCR can be triggered by the application of a pulse to gate terminal. Sketch the circuit waveforms and explain its operation.",
+              "id": "5b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "text": "Explain the construction and characteristics of n-channel JFET.",
+              "id": "6a",
+              "marks": 8
+            },
+            {
+              "text": "The FET circuit is shown in figure 2 has $R_1 = 3.5\\text{ M}\\Omega, R_2 = 1.5\\text{ M}\\Omega, R_s = 2\\text{ k}\\Omega, R_L = 20\\text{ k}\\Omega, r_d = 40\\text{ k}\\Omega$ and $g_m = 2.5\\text{ mA/V}$. Find its input impedance and output impedance and voltage gain.\n[Diagram Fig. 2: JFET amplifier with voltage divider bias ($R_1, R_2$), source resistor ($R_S$), and load ($R_L$)]",
+              "id": "6b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "text": "Given $I_E = 2.5\\text{ mA}, h_{fe} = 140, h_{oe} = 20\\text{ }\\mu\\text{s}$ and $h_{ob} = 0.5\\text{ }\\mu\\text{s}$, determine\n(i) the common-emitter hybrid equivalent circuit;\n(ii) the common-base $r_e$-model.",
+              "id": "7a",
+              "marks": 8
+            },
+            {
+              "text": "Compare the advantages and disadvantages of biasing schemes in BJT.",
+              "id": "7b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "text": "Draw the circuit diagram of a practical voltage series feedback amplifier and derive the expressions for input resistance, output resistance, voltage gain and current gain.",
+              "id": "8a",
+              "marks": 8
+            },
+            {
+              "text": "Explain the operation and characteristics of photodiode.",
+              "id": "8b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "text": "Explain the summing and differential amplifiers using op-amp with derivation of output voltage.",
+              "id": "9a",
+              "marks": 8
+            },
+            {
+              "text": "Calculate the output voltages $V_2$ and $V_3$ in the circuit of the following figure 3 :\n[Diagram Fig. 3: Two-stage op-amp circuit. First stage is non-inverting ($R_f=20\\text{k}\\Omega, R_1=10\\text{k}\\Omega$), second stage is inverting ($R_{f2}=200\\text{k}\\Omega, R_{i2}=200\\text{k}\\Omega$)]",
+              "id": "9b",
+              "marks": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

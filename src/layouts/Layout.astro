@@ -1,0 +1,345 @@
+---
+import "@picocss/pico/css/pico.min.css";
+import FeedbackWidget from "../components/FeedbackWidget.astro";
+import InstallBanner from "../components/InstallBanner.astro";
+import {
+	getDefaultStructuredData,
+	OG_IMAGE_HEIGHT,
+	OG_IMAGE_WIDTH,
+	resolveMetaDescription,
+	resolveMetaTitle,
+	resolveOgImagePath,
+	resolveOgPage,
+} from "../utils/og";
+
+export interface Props {
+	title?: string;
+	description?: string;
+	wide?: boolean;
+	structuredData?: any;
+	image?: string;
+}
+
+const pathname = Astro.url.pathname;
+const title = resolveMetaTitle(Astro.props.title);
+const description = resolveMetaDescription(pathname, Astro.props.description);
+const wide = Astro.props.wide ?? false;
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+const serviceWorkerUrl = publicAsset("swwe.js");
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogPage = resolveOgPage(pathname);
+const ogImage = Astro.props.image
+	? new URL(Astro.props.image, Astro.site)
+	: new URL(publicAsset(resolveOgImagePath(pathname)), Astro.site);
+const structuredData =
+	Astro.props.structuredData ?? getDefaultStructuredData(canonicalURL.toString());
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+		<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+		<link rel="canonical" href={canonicalURL} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href={publicAsset("Vector.svg")}
+		/>
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="BEUConnect" />
+		<meta property="og:locale" content="en_IN" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:secure_url" content={ogImage} />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content={OG_IMAGE_WIDTH} />
+		<meta property="og:image:height" content={OG_IMAGE_HEIGHT} />
+		<meta property="og:image:alt" content={ogPage.imageAlt} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content={ogPage.imageAlt} />
+
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#0f172a" />
+		<link
+			rel="icon"
+			href={publicAsset("favicon.ico")}
+			sizes="48x48"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href={publicAsset("apple-touch-icon-180x180.png")}
+		/>
+		<meta name="description" content={description} />
+		<link
+			rel="manifest"
+			href={publicAsset("manifest.webmanifest")}
+		/>
+		<title>{title}</title>
+		{structuredData && (
+			<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+		)}
+		<script>
+			// Check user profile for smart defaults early to avoid flash of content
+			if (typeof window !== "undefined" && localStorage.getItem("beu_profile")) {
+				document.documentElement.classList.add("is-logged-in");
+			}
+		</script>
+		<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "faa6b14277b843e1980fb1a2ac301419"}'></script><!-- End Cloudflare Web Analytics -->
+	</head>
+		<body>
+			<div class="app-shell">
+				<main class={`container ${wide ? 'wide' : ''}`}>
+					<slot />
+				</main>
+				<FeedbackWidget />
+				<InstallBanner />
+			</div>
+		<style is:global>
+			:root {
+				--bg-primary: #0f172a;
+				--bg-secondary: #1e293b;
+				--bg-card: rgba(30, 41, 59, 0.7);
+				--bg-glass: rgba(15, 23, 42, 0.75);
+				--accent-blue: #3b82f6;
+				--accent-cyan: #06b6d4;
+				--accent-purple: #8b5cf6;
+				--accent-gradient: linear-gradient(
+					135deg,
+					#3b82f6 0%,
+					#06b6d4 50%,
+					#8b5cf6 100%
+				);
+				--text-primary: #f1f5f9;
+				--text-secondary: #94a3b8;
+				--text-muted: #64748b;
+				--border-subtle: rgba(148, 163, 184, 0.12);
+				--border-accent: rgba(59, 130, 246, 0.3);
+				--shadow-glow: 0 0 20px rgba(59, 130, 246, 0.15);
+				--radius-lg: 16px;
+				--radius-md: 12px;
+				--radius-sm: 8px;
+				--transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				min-height: 100vh;
+				font-family: "Inter", -apple-system, BlinkMacSystemFont,
+					sans-serif;
+				background: var(--bg-primary);
+				color: var(--text-primary);
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				overflow-x: clip;
+			}
+
+			body {
+				background-color: var(--bg-primary);
+			}
+
+			body::before {
+				content: '';
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+				background-image: radial-gradient(
+						ellipse 80% 50% at 50% -20%,
+						rgba(59, 130, 246, 0.15),
+						transparent
+					),
+					radial-gradient(
+						ellipse 60% 40% at 80% 60%,
+						rgba(139, 92, 246, 0.08),
+						transparent
+					),
+					radial-gradient(
+						ellipse 50% 30% at 20% 80%,
+						rgba(6, 182, 212, 0.08),
+						transparent
+					);
+				pointer-events: none;
+				/* Force GPU hardware acceleration */
+				transform: translateZ(0);
+				will-change: transform;
+			}
+
+			.app-shell {
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+
+			main.container {
+				flex: 1;
+				max-width: 960px;
+				margin: 0 auto;
+				padding: 0 1rem 2rem;
+				width: 100%;
+			}
+
+			main.container.wide {
+				max-width: 1400px;
+			}
+
+			a {
+				color: var(--accent-blue);
+				text-decoration: none;
+				transition: color 0.3s ease;
+			}
+
+			a:hover {
+				color: var(--accent-cyan);
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				color: var(--text-primary);
+				font-weight: 700;
+				letter-spacing: -0.02em;
+			}
+
+			h1 {
+				font-size: 2rem;
+			}
+
+			p {
+				color: var(--text-secondary);
+				line-height: 1.7;
+			}
+
+			/* Glass card utility */
+			.glass-card {
+				background: var(--bg-card);
+				backdrop-filter: blur(8px);
+				-webkit-backdrop-filter: blur(8px);
+				border: 1px solid var(--border-subtle);
+				border-radius: var(--radius-lg);
+				transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+				transform: translateZ(0);
+				will-change: transform;
+			}
+
+			.glass-card:hover {
+				border-color: var(--border-accent);
+				box-shadow: var(--shadow-glow);
+				transform: translateY(-2px) translateZ(0);
+			}
+
+			/* Override Pico dark theme variables */
+			[data-theme="dark"] {
+				--pico-background-color: transparent;
+				--pico-color: var(--text-primary);
+				--pico-primary: var(--accent-blue);
+				--pico-primary-hover: var(--accent-cyan);
+				--pico-card-background-color: var(--bg-card);
+				--pico-card-border-color: var(--border-subtle);
+				--pico-muted-border-color: var(--border-subtle);
+				--pico-secondary: var(--text-secondary);
+			}
+
+			button,
+			[role="button"],
+			input[type="submit"] {
+				font-family: "Inter", sans-serif;
+				font-weight: 600;
+				border-radius: var(--radius-sm);
+				transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+				will-change: transform;
+			}
+			button:active,
+			[role="button"]:active,
+			input[type="submit"]:active {
+				transform: scale(0.96);
+			}
+
+			/* View transitions */
+			@view-transition {
+				navigation: auto;
+			}
+
+			/* Scrollbar */
+			::-webkit-scrollbar {
+				width: 6px;
+			}
+			::-webkit-scrollbar-track {
+				background: var(--bg-primary);
+			}
+			::-webkit-scrollbar-thumb {
+				background: var(--text-muted);
+				border-radius: 3px;
+			}
+
+			/* Lists */
+			ul,
+			ol {
+				padding-left: 1.25rem;
+			}
+
+			li {
+				color: var(--text-secondary);
+			}
+
+			li a {
+				font-weight: 500;
+			}
+			/* Hide personalized UI by default */
+			.personalized-dashboard {
+				display: none;
+			}
+			
+			/* Logged in state logic */
+			html.is-logged-in .generic-hero {
+				display: none;
+			}
+			html.is-logged-in .personalized-dashboard {
+				display: block;
+			}
+		</style>
+		<script define:vars={{ serviceWorkerUrl }}>
+			if ("serviceWorker" in navigator) {
+				navigator.serviceWorker
+					.register(serviceWorkerUrl)
+					.then((reg) => {
+						console.log("SW registered");
+					})
+					.catch((error) => {
+						console.log("SW registration failed: " + error);
+					});
+			}
+		</script>
+	</body>
+</html>

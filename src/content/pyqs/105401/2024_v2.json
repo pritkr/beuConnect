@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2024",
+    "subject": "Computer Organization & Architecture",
+    "subject_slug": "computer-organization-architecture",
+    "subject_code": "105401",
+    "year": 2024,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven question\n                    only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "What is the first step in the instruction execution cycle?",
+          "options": [
+            "Decode",
+            "Execute",
+            "Fetch",
+            "Store"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "What is the advantage of carry look-ahead adders over ripple carry adders?",
+          "options": [
+            "Simplicity in design",
+            "Increased latency",
+            "Reduced power consumption",
+            "Faster addition by reducing carry propagation delay"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "Which type of control unit is faster but more difficult to modify?",
+          "options": [
+            "Hardwired Control Unit",
+            "Microprogrammed Control Unit",
+            "Cache Control Unit",
+            "Memory Management Unit"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "Which of the following I/O transfer methods involves the CPU polling the device until data is\n                        ready?",
+          "options": [
+            "DMA",
+            "Interrupt-driven I/O",
+            "Program-controlled I/O",
+            "Asynchronous I/O"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "What does a branch prediction mechanism in a CPU help reduce?",
+          "options": [
+            "Data hazards",
+            "Structural hazards",
+            "Control hazards",
+            "Clock cycle delays"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "Which of the following is NOT a type of parallel processor architecture?",
+          "options": [
+            "SIMD",
+            "MIMD",
+            "SISO",
+            "Multi-core"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Which cache replacement algorithm removes the least recently used block?",
+          "options": [
+            "FIFO",
+            "LFU",
+            "LRU",
+            "Random Replacement"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "Which technique is used to handle data hazards in pipelining?",
+          "options": [
+            "Increasing memory size",
+            "Instruction scheduling",
+            "Parallel processing",
+            "Increasing clock speed"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "Which addressing mode directly specifies the operand within the instruction?",
+          "options": [
+            "Direct Addressing",
+            "Immediate Addressing",
+            "Indirect Addressing",
+            "Indexed Addressing"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "A computer with 32 bit wide data bus uses \\( 1K \\times 8 \\) static RAM memory chips. What is\n                        smallest memory that this computer have?",
+          "options": [
+            "32K",
+            "8K",
+            "16K",
+            "24K"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Describe the instruction execution cycle in a CPU. Explain some key features of the x86\n                        architecture."
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Explain different addressing modes in a CPU with an examples.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Explain the Addition and Subtraction Algorithm with the help of flowchart.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "What is a Carry-look ahead fast adder? Draw the circuit of an 8-bit carry-look ahead adder using\n                        4-bit carry look ahead adder."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Explain different cache replacement algorithms used in memory management."
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "What are the different types of Registers? With the diagram show how the basic computer register\n                        connected to a common Bus."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Illustrate what are the challenges associated with concurrent access to memory in parallel\n                        processing?"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Describe different cache coherence protocols used in parallel processors."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "A non-pipeline system takes 50ns to process a task. The same task can be processed in a\n                        six-segment\n                        pipeline with a clock cycle of 10ns. Determine the speedup ratio of the pipeline for 100 task."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "What are pipeline hazards? Explain different types of hazards in pipelining."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Explain Booth's algorithm for multiplication with the help of flowchart. Provide an example for\n                        its\n                        implementation."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Describe different types of Input/Output transfers. Explain how data transfer take place through\n                        DMA."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:-",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>RISC and CISC processor</li>\n<li>I/O device interfaces</li>\n<li>fixed and floating point representations</li>\n<li>Instruction Set Architecture</li>\n</ul>",
+          "options": [
+            "RISC and CISC processor",
+            "I/O device interfaces",
+            "fixed and floating point representations",
+            "Instruction Set Architecture"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 1st Semester Examination, 2016",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031101",
+    "year": 2016,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this Paper.",
+    "Attempt five questions in all.",
+    "Question No. 1 is Compulsory.",
+    "The marks are indicated in the right-hand margin."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "type": "theory",
+          "text": "Write short notes on the following terms (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Dependent and Independent sources"
+            },
+            {
+              "id": "1b",
+              "text": "Reactive components"
+            },
+            {
+              "id": "1c",
+              "text": "Phase and line currents"
+            },
+            {
+              "id": "1d",
+              "text": "Nodal analysis"
+            },
+            {
+              "id": "1e",
+              "text": "Energy storage elements"
+            },
+            {
+              "id": "1f",
+              "text": "Time constants"
+            },
+            {
+              "id": "1g",
+              "text": "Transient and steady state behaviour"
+            },
+            {
+              "id": "1h",
+              "text": "Acceptor and rejecter circuit"
+            },
+            {
+              "id": "1i",
+              "text": "Power factor"
+            },
+            {
+              "id": "1j",
+              "text": "Ideal internal impedance of a source"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "Establish the relationship between star connected elements with the delta connected elements.",
+              "marks": 6
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "Using Star-Delta transform, find the current drawn from 10 V source, when it is applied across the terminals A and B in Fig-2b. [Diagram: Fig. 2b. A bridge circuit with resistors 5 \u03a9, 6 \u03a9, 1.5 \u03a9, 3 \u03a9, and 1 \u03a9.]",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "Derive the expression of resonance frequency as well as both cut-off frequencies, for a series R-L-C circuit.",
+              "marks": 6
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "Derive the expression of resonant frequency for the circuit in Fig.3b and obtain the resonant frequency. Given that [$R_C = 10 \\Omega$, $R = 2 \\Omega$, $C = 10 \\mu F$, $L_C = 0.1 H$] [Diagram: Fig. 3b. AC source connected to two parallel branches. Left branch has resistor R and inductor Lc. Right branch has resistor Rc and capacitor C.]",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "Establish the relation between active, reactive and apparent power with a neat and cleanly labeled phasor diagram.",
+              "marks": 6
+            },
+            {
+              "id": "4b",
+              "type": "numerical",
+              "text": "On a power distribution system, three loads run in parallel. Find the net power status.\nLoad-A : 100 VA, 0.5 p.f. lagging\nLoad-B : 150 W, 0.8 p.f. leading\nLoad-C : 200 VA, 100 VAR lagging",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "type": "numerical",
+          "text": "Find Thevenin's equivalent for circuit shown in Fig. 5. [Diagram: Fig. 5. DC circuit with multiple sources and resistors. Sources: 9V (left), 2A (internal), 10V (internal), 3V (top), 5V (right). Resistors: 9\u03a9 (parallel to 9V), 3\u03a9 (series), 2\u03a9 (internal), 2\u03a9 (internal), 3\u03a9 (series). Terminals x, y on the right.]",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "With the help of a neat and cleanly labeled B-H curve, explain the magnetization and demagnetization in ferromagnetic materials.",
+              "marks": 6
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "Find the voltage drop across $R_L$ in Fig.6b. [Diagram: Fig. 6b. AC circuit with coupled inductors. Source 10\u22200\u00b0 V, inductor j2 \u03a9, inductor j1 \u03a9, coupling coefficient K = 0.5, capacitor -j3 \u03a9, load resistor RL = 5 \u03a9. Two loops marked.]",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "numerical",
+              "text": "In Fig. 7a, find 'v' and the magnitude and direction of the unknown currents in the branches $xn$, $yn$ and $zn$. [Diagram: Fig. 7a. Nodal circuit with nodes x, y, z connected to common node n. 10A current source at x, 2A current source at z, resistors 5 \u03a9 at x, 2 \u03a9 at y, 4 \u03a9 at z.]",
+              "marks": 6
+            },
+            {
+              "id": "7b",
+              "type": "numerical",
+              "text": "What is the power absorbed in resistors of Fig.7b? Assume $i_o = 1A$. Also find the current from 2 Volts source. [Diagram: Fig. 7b. DC circuit with 2V source on the left, resistors 1 \u03a9, 2 \u03a9, 5 \u03a9 in parallel with a current source on the right.]",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "type": "theory",
+          "text": "What do you mean by indicating type measuring instruments? Explain one current and one voltage measuring device, with help of neat and well nomenclature diagrams. What is the main difference between these devices and power measurement devices?",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "type": "theory",
+          "text": "State and prove any TWO of the following :\n(i) Thevenin's theorem\n(ii) Superposition theorem\n(iii) Maximum power transfer theorem for AC and DC circuits",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

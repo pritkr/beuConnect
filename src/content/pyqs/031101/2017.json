@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 1st Semester Exam., 2017",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031101",
+    "year": 2017,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "type": "theory",
+          "text": "Write short notes on any seven of the following terms :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Linear elements"
+            },
+            {
+              "id": "1b",
+              "text": "Magnetic coupling"
+            },
+            {
+              "id": "1c",
+              "text": "Ohm's law"
+            },
+            {
+              "id": "1d",
+              "text": "Node and mesh analysis"
+            },
+            {
+              "id": "1e",
+              "text": "Q-factor"
+            },
+            {
+              "id": "1f",
+              "text": "Bilateral elements"
+            },
+            {
+              "id": "1g",
+              "text": "Dependent sources"
+            },
+            {
+              "id": "1h",
+              "text": "Current and voltage measurement"
+            },
+            {
+              "id": "1i",
+              "text": "Peak factor of sine wave"
+            },
+            {
+              "id": "1j",
+              "text": "Behaviour of inductance in DC circuit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "numerical",
+              "text": "What is the magnitude of the current drained from the 10 volts source in Fig. 1? [Diagram: Fig. 1. DC circuit with a 2 A current source, a 6 V voltage source, a 10 V voltage source, and resistors 10 \u03a9, 5 \u03a9, 2 \u03a9, and a load R between terminals x and y.]",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "With reference to Fig. 2 below, determine the voltage appearing across terminals y-z, if a d.c. voltage of 100 volts is applied across x-y. [Diagram: Fig. 2. A resistor network with 100 V across x-y. Labeled resistors: 1 \u03a9, 2 \u03a9, 5 \u03a9, 10 \u03a9, and 50 \u03a9. Terminals x, y, z marked.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "numerical",
+              "text": "In the circuit given in Fig. 3, find the power loss in the $1 \\Omega$ resistor by Thevenin's theorem : [Diagram: Fig. 3. DC circuit with a 2 A current source, a 10 V voltage source, and resistors 10 \u03a9, 5 \u03a9, and 1 \u03a9. Terminals x and y are at the 1 \u03a9 resistor.]",
+              "marks": 6
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "Find Norton's equivalent to the right of a-b terminals in Fig. 4 : [Diagram: Fig. 4. DC circuit with a 3 V voltage source, a 1 A current source, and resistors 10 \u03a9 and 5 \u03a9. Terminals a and b are at the output.]",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "numerical",
+              "text": "Find $I$ in the circuit shown in Fig. 5 : [Diagram: Fig. 5. DC circuit with a 1 A current source, a 1 V voltage source, and resistors 1 \u03a9, 1 \u03a9, 2 \u03a9, and 3 \u03a9. Loop currents and I are marked.]",
+              "marks": 6
+            },
+            {
+              "id": "4b",
+              "type": "numerical",
+              "text": "Find $R$ to have maximum power transfer in the circuit of Fig. 6. Also obtain the amount of maximum power. [Diagram: Fig. 6. Identical to Fig. 1. DC circuit with a 2 A current source, a 6 V voltage source, a 10 V voltage source, and resistors 10 \u03a9, 5 \u03a9, 2 \u03a9, and a load R.]",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "numerical",
+              "text": "A $4 \\Omega$ resistor is connected to a 10 mH inductor across a 100 V, 50 Hz voltage source. Find the (i) impedance of the circuit, (ii) input current, (iii) drop across the resistor and inductor, (iv) power factor of the circuit, (v) real power consumed in the circuit and (vi) total power supplied.",
+              "marks": 6
+            },
+            {
+              "id": "5b",
+              "type": "numerical",
+              "text": "A series $R$-$L$-$C$ circuit has inductance of 10 mH and resistance of $2 \\Omega$. What is the value of capacitance that will produce resonance? Also find the current at resonance frequency and maximum instantaneous energy stored in the inductance at resonance. Assume the supply as 230 V, 10000 Hz sinusoidal.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "numerical",
+              "text": "A 3-phase balanced system supplies 110 volts to a delta-connected load whose phase impedances are equal to (3.54 + j3.54) $\\Omega$. Determine the line currents and draw the phasor diagram.",
+              "marks": 6
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "Three identical impedances ($R + jX_L$) are connected in the form of a star against a 415 V (line-line) 3-phase voltage source and drawing a total power of 1.8 kW. Obtain the resistive and reactive components of each phase impedance. Assume the line current to be 10 A.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "theory",
+              "text": "Where and how an ammeter or a voltmeter is connected in a circuit? Discuss two methods for current measurement and two methods for voltage measurement.",
+              "marks": 6
+            },
+            {
+              "id": "7b",
+              "type": "theory",
+              "text": "Discuss about a suitable AC power measurement device with neat diagram and clear nomenclature.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "type": "theory",
+          "text": "Derive the mathematical expression of total inductance in series-connected coupled coils\u2014\n(a) when flux of both the coils are mutually assisting;\n(b) when flux of both the coils are mutually opposing.",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "type": "numerical",
+          "text": "Find the total inductance of the three series-connected coupled coils for the circuit shown in Fig. 7 : [Diagram: Fig. 7. Three coupled coils L1, L2, L3 in series. Mutual inductances M12, M23, M13 are indicated by arrows.]\nGiven that $L_1 = 1 H$; $L_2 = 2 H$; $L_3 = 5 H$; $M_{12} = 0.5 H$; $M_{23} = 1 H$; $M_{13} = 1 H$.",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

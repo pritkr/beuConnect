@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Examination, 2024",
+    "subject": "Basic Electronics Engineering",
+    "subject_slug": "basic-electronics-engineering",
+    "subject_code": "100114",
+    "year": 2024,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer from the following (Any seven questions\n                    only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of these is used for amplification?</p>",
+          "options": [
+            "BJT in cutoff",
+            "BJT in saturation",
+            "BJT in active mode",
+            "BJT in reverse active mode"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which terminal in JFET controls the current?</p>",
+          "options": [
+            "Gate",
+            "Source",
+            "Drain",
+            "Substrate"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>BJT used as a switch operates in:</p>",
+          "options": [
+            "Active region",
+            "Reverse active",
+            "Cutoff and Saturation",
+            "Linear region"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>What is the built-in potential typically across a silicon p-n junction?</p>",
+          "options": [
+            "0.3 V",
+            "0.7 V",
+            "1.1 V",
+            "2.0 V"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the peak inverse voltage for a center-tap full-wave rectifier?</p>",
+          "options": [
+            "\\(V_m\\)",
+            "\\(V_m/2\\)",
+            "\\(2V_m\\)",
+            "\\(\\sqrt{2}V_m\\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Zener diode is mostly used in:</p>",
+          "options": [
+            "Amplification",
+            "Rectification",
+            "Voltage regulation",
+            "Oscillation"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In MOSFET, the gate terminal is:</p>",
+          "options": [
+            "Conductive",
+            "Directly connected to the source",
+            "Insulated from the channel",
+            "Connected to the drain"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The voltage gain of a voltage follower (buffer amplifier) is:</p>",
+          "options": [
+            "Zero",
+            "Infinity",
+            "Unity",
+            "Negative"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In 2's complement method, what is the 2's complement of binary number 0101?</p>",
+          "options": [
+            "1011",
+            "1101",
+            "1111",
+            "1010"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following is a universal gate?</p>",
+          "options": [
+            "AND",
+            "OR",
+            "NAND",
+            "NOT"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the construction and working of an Enhancement Type MOSFET and draw its characteristics.\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Define operating point. Explain the concept of load line analysis with suitable diagrams.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>With a neat diagram, explain the working of a Zener diode as a voltage regulator and draw its V-I\n                        characteristics.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Describe the three configurations of BJT (CE, CB, CC) and their applications.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Derive the Shockley equation for JFET and explain the parameters involved.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the difference between intrinsic and extrinsic semiconductors with suitable energy band\n                        diagrams.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Discuss the role of filter circuits in rectifier applications. Explain the capacitor filter with\n                        waveforms.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Determine the value of the current through the diode circuit given below. Assume \\( V_\\gamma =\n                        0.7\n                        \\, V \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/41d6843b-c1c8-4824-a856-ee84ba3406fb.jpg\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Convert \\((0.513)_{10}\\) to octal.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain how an Op-Amp integrator works and derive the output expression.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Discuss the mechanism of breakdown in a diode. Differentiate between Zener and Avalanche\n                        breakdown.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Find the output of the Op-amp. Assume Op-amp is ideal.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/efca626c-6f22-4918-a380-9023606fef57.jpg\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Explain the working of a Half Wave Rectifier and derive the expressions for average and RMS\n                        values of output voltage.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Implement an XOR gate using NAND gates.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 7,
+      "questions": []
+    }
+  ]
+}

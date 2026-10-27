@@ -1,0 +1,320 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2022",
+    "subject": "Mathematics-III (Differential Calculus)",
+    "subject_slug": "mathematics-iii-differential-calculus",
+    "subject_code": "100311",
+    "year": 2022,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\lim_{x \\to 0} \\left(\\frac{\\sin x}{x}\\right)^{1/x} \\) is</p>",
+          "options": [
+            "0",
+            "1",
+            "e",
+            "\\( 1/e \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The value of the integral \\( \\int_c \\{yz dx + (xz+1)dy + xy dz\\} \\) where C is any path from\n                        (1,\n                        0, 0) to (2, 1, 4) is</p>",
+          "options": [
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The maximum value of \\( \\sin x + \\cos x \\) is</p>",
+          "options": [
+            "1",
+            "2",
+            "\\( \\sqrt{2} \\)",
+            "0"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\nabla^2 [(1-x)(1-2x)] \\) is equal to</p>",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "6"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The degree of the differential equation \\( y\\frac{dx}{dy} - \\left(\\frac{dx}{dy}\\right)^2 -\n                        \\sin\n                        y \\left(\\frac{dx}{dy}\\right)^3 - \\cos x = 0 \\) is</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "Cannot be determined"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>If \\( f = \\tan^{-1}\\left(\\frac{y}{x}\\right) \\), then div (grad \\( f \\)) is equal to</p>",
+          "options": [
+            "1",
+            "-1",
+            "0",
+            "2"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>If \\( P_n \\) is the Legendre polynomial of first kind, then the value of \\( \\int_{-1}^1 x P_n\n                        P_n' dx \\) is</p>",
+          "options": [
+            "\\( \\frac{2}{(2n+1)} \\)",
+            "\\( \\frac{2n}{(2n+1)} \\)",
+            "\\( \\frac{2}{(2n+3)} \\)",
+            "\\( \\frac{2n}{(2n+3)} \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>If \\( J_n \\) is the Bessel's function of first kind, then the value of \\( J_{-1/2} \\) is</p>",
+          "options": [
+            "\\( \\sqrt{\\frac{2}{\\pi x}}\\left(\\frac{\\cos x}{x} - \\sin x\\right) \\)",
+            "\\( \\sqrt{\\frac{2}{\\pi x}}\\left(\\frac{\\sin x}{x} - \\cos x\\right) \\)",
+            "\\( \\sqrt{\\frac{2}{\\pi x}}\\sin x \\)",
+            "\\( \\sqrt{\\frac{2}{\\pi x}}\\cos x \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The solution of \\( p \\tan x + q \\tan y = \\tan z \\) is</p>",
+          "options": [
+            "\\( \\sin x / \\sin y = \\varphi(\\sin y/\\sin z) \\)",
+            "\\( \\sin x \\cdot \\sin y = \\varphi(\\sin y/\\sin z) \\)",
+            "\\( \\sin x / \\sin y = \\varphi(\\sin y, \\sin z) \\)",
+            "\\( \\sin x / \\sin y = \\varphi(\\sin y \\cdot \\sin z) \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The vector \\( \\vec{v} = e^x \\sin y \\hat{i} + e^x \\cos y \\hat{j} \\) is</p>",
+          "options": [
+            "Solenoidal",
+            "irrational",
+            "rotational",
+            "cannot be found"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Form the partial differential equation \\( (x-a)^2 + (y-b)^2 + z^2 = 1 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Solve \\( xp + yq = 3z \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Find the directional derivative of \\( \\phi = z^2yz + 4xz^2 \\) at the point (1, -2, 1) in the\n                        direction of the vector \\( 2\\hat{i} - \\hat{j} - 2\\hat{k} \\).</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Find a unit vector normal to the surface \\( x^3 + y^3 + 3xyz = 3 \\) at the point (1, 2, -1).\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Solve partial differential equation \\( \\frac{y^2 z}{x}p + xzq = y^2 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Show that the function \\( f(x,y) = \\begin{cases} \\frac{xy}{\\sqrt{x^2+y^2}}, &amp; (x,y) \\neq\n                        (0,0)\n                        \\\\ 0, &amp; (x,y) = (0,0) \\end{cases} \\) is continuous at origin.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>If \\( f = (x^2+y^2+z^2)^{-n} \\) then find div grad \\( f \\) and determine n, if div grad \\( f\n                        = 0\n                        \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Verify Green's theorem for \\( \\int_C \\{(xy+y^2)dx + x^2 dy\\} \\) Where C is bounded by \\(\n                        y=x\n                        \\), \\( y=x^2 \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Evaluate the integral by changing the order of integration \\( \\int_0^\\infty \\int_0^x x\n                        e^{-\\frac{x^2}{y}} dy dx \\).</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Solve the differential equation \\( (x^2+y^2+x)dx - (2x^2+2y^2-y)dy = 0 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Verify the stokes' theorem for \\( \\vec{A} = (y-z+2)\\hat{i} + (yz+4)\\hat{j} - xz\\hat{k} \\)\n                        Where\n                        S is the surface of the cube \\( x=0, y=0, z=0, x=2, y=2 \\) and \\( z=2 \\) above the xy-plane.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Prove that \\( 2nJ_n(x) = x(J_{n-1}(x) + J_{n+1}(x)) \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Prove that \\( \\sum_{n=0}^\\infty \\frac{x^{n+1}}{n+1} P_n(1) = \\frac{1}{2}\n                        \\log\\left(\\frac{1+x}{1-x}\\right) \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Using Green's theorem, evaluate \\( \\int_C [(y-\\sin x)dx + \\cos x dy] \\) where C is the plane\n                        triangle enclosed by the lines \\( y=0, x=\\frac{\\pi}{2} \\) and \\( y=\\frac{2x}{\\pi} \\).\n                    </p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Prove that div\\( (r^n \\vec{r}) = (n+3)r^n \\). Hence show that div \\(\n                        \\left(\\frac{\\vec{r}}{r^3}\\right) \\) is solenoidal.</p>"
+        }
+      ]
+    }
+  ]
+}

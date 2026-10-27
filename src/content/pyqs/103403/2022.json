@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2022",
+    "subject": "Mathematics 3 Probability And Statistics",
+    "subject_slug": "mathematics-3-probability-and-statistics",
+    "subject_code": "103403",
+    "year": 2022,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any seven of the following questions:",
+          "marks": null,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "Define mutually exclusive events.",
+              "id": "1a",
+              "marks": null
+            },
+            {
+              "text": "Prove that $P(\\bar{A}) = 1 - P(A)$, where $\\bar{A}$ is a complementary event of $A$.",
+              "id": "1b",
+              "marks": null
+            },
+            {
+              "text": "If $P(A) = p_1, P(B) = p_2$ and $P(A \\cap B) = p_3$ then find the value of $P(\\bar{A} \\cup \\bar{B})$ in terms of $p_1, p_2$ and $p_3$.",
+              "id": "1c",
+              "marks": null
+            },
+            {
+              "text": "An urn contains 6 white, 4 red and 9 black balls. If 3 balls are drawn at random, find the probability that one is of each colour.",
+              "id": "1d",
+              "marks": null
+            },
+            {
+              "text": "A random variable $X$ follows Binomial distribution with parameters $n=40$ and $p = \\frac{1}{4}$. Find the mean of $X$.",
+              "id": "1e",
+              "marks": null
+            },
+            {
+              "text": "Mean of 100 observations is 50 and standard deviation is 10. What will be the new mean and standard deviation, if each observation is multiplied by 3?",
+              "id": "1f",
+              "marks": null
+            },
+            {
+              "text": "Four cards are drawn at random from a pack of 52 cards. Find the probability that two are kings and two are queens.",
+              "id": "1g",
+              "marks": null
+            },
+            {
+              "text": "Two unbiased dice are thrown. Find the probability that the first dice shows 6.",
+              "id": "1h",
+              "marks": null
+            },
+            {
+              "text": "A random variable $X$ is such that $E[(X-1)^2] = 10$ and $E[(X-2)^2] = 6$. Find the variance of $X$.",
+              "id": "1i",
+              "marks": null
+            },
+            {
+              "text": "The moment-generating function of a continuous random variable $X$ be given as $M_X(t) = (1-t)^{-9} \\mid |t| < 1$. Then calculate its mean and variance.",
+              "id": "1j",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "marks": null,
+          "id": "2",
+          "sub_questions": [
+            {
+              "text": "If two dice are thrown, what is the probability that the sum is (i) greater than 8 and (ii) neither 7 nor 11?",
+              "id": "2a",
+              "marks": null
+            },
+            {
+              "text": "For events $A_1, A_2, A_3, A_4, A_5, \\dots, A_n$, assuming $P(\\bigcup_{i=1}^n A_i) \\le \\sum_{i=1}^n P(A_i)$ then prove that- (i) $P(\\bigcap_{i=1}^n A_i) \\ge \\sum_{i=1}^n P(A_i) - (n-1)$; (ii) $P(\\bigcap_{i=1}^n A_i) \\ge 1 - \\sum_{i=1}^n P(\\bar{A}_i)$.",
+              "id": "2b",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "A random variable $X$ has the density function $f(x) = \\begin{cases} cx^2, & 1 \\le x \\le 2 \\\\ cx, & 2 < x < 3 \\\\ 0, & \\text{otherwise} \\end{cases}$. Find- (i) the constant $c$; (ii) $P(1 < x < 2)$; (iii) $P(x \\ge 3)$; (iv) $P(x < 1)$; (v) $E(2X)$; (vi) $\\text{var}(X-3)$; (vii) $E(2X+4)$.",
+          "marks": null,
+          "id": "3"
+        },
+        {
+          "marks": null,
+          "id": "4",
+          "sub_questions": [
+            {
+              "text": "Find the probability that in tossing a fair coin 3 times there will appear (i) 3 heads, (ii) 2 tails and 1 head, (iii) at least 1 head and (iv) not more than 1 tail.",
+              "id": "4a",
+              "marks": null
+            },
+            {
+              "text": "Ten percent of the tools produced in a certain manufacturing process turn out to be defective. Find the probability that in a sample of 10 tools chosen at random exactly two will be defective, by using (i) the Binomial distribution and (ii) Poisson approximation to the Binomial distribution.",
+              "id": "4b",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "A random variable $X$ has mean 3 and variance 2. Use Chebyshev's inequality to obtain an upper bound for-",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "text": "$P(|X-3| \\ge 1)$;",
+              "id": "5a",
+              "marks": null
+            },
+            {
+              "text": "$P(|X-3| \\ge 2)$.",
+              "id": "5c",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "The mean lifetime of electric light bulbs produced by a company has in the past been 1120 hours with a standard deviation of 125 hours. A sample of 8 electric light bulbs recently chosen from a supply of newly produced bulbs showed a mean lifetime of 1070 hours. Test the hypothesis $\\mu = 1120$ hours against the alternative hypothesis $\\mu < 1120$ hours, using a significance level of-",
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "text": "0.05;",
+              "id": "6a",
+              "marks": null
+            },
+            {
+              "text": "0.01.",
+              "id": "6b",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "It has been found from experience that the mean breaking strength of a particular brand of thread is 275.6 grams with a standard deviation of 39.7 grams. Recently a sample of 36 pieces of thread showed a mean breaking strength of 253.2 grams. Can one conclude at a significance level of (a) 0.05 and (b) 0.01 that the thread has become inferior?",
+          "marks": 14,
+          "id": "7"
+        },
+        {
+          "text": "Find the coefficient of correlation and the lines of regression for the following values of $x$ and $y$:\n\n$x: 2 \\quad 6 \\quad 4 \\quad 7 \\quad 5$\n$y: 8 \\quad 8 \\quad 5 \\quad 6 \\quad 2$",
+          "marks": 14,
+          "id": "8"
+        },
+        {
+          "text": "Given the joint density function of the random variables $(X, Y)$ as $f(x, y) = \\begin{cases} \\frac{1}{2}xe^{-y}; & 0 < x < 2, y > 0 \\\\ 0; & \\text{elsewhere} \\end{cases}$. Find the probability density function of $X+Y$. Also find the mean and variance of $X$ and $Y$.",
+          "marks": 14,
+          "id": "9"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. Examination 2022",
+    "subject": "Structural Analysis",
+    "subject_slug": "structural-analysis",
+    "subject_code": "structural-analysis",
+    "year": 2022,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right‑hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Assume any data not given."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven) :",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Stiffness matrix method is known as</p>",
+          "options": [
+            "equilibrium method",
+            "force method",
+            "displacement method",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The degree of kinematic indeterminacy of a two‑bay, three‑storey portal frame fixed at the base\n                        is\n                    </p>",
+          "options": [
+            "6",
+            "15",
+            "18",
+            "27"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>If three members meet at a joint and the stiffness of the members are \\(k_{1} = 2EI\\), \\(k_{2}\n                        =\n                        EI\\), \\(k_{3} = 1.5EI\\), then the distribution factor for member 3 is</p>",
+          "options": [
+            "1/3",
+            "1/3-5",
+            "1/4-5",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>If the area of \\((M / EI)\\) diagram between points \\(A\\) and \\(B\\) is -ve, then angle from\n                        tangent \\(A\\) to tangent \\(B\\) will be measured</p>",
+          "options": [
+            "counterclockwise",
+            "clockwise",
+            "Can be, anything",
+            "Angle will be 0"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>For drawing ILD, what value of test load is assumed?</p>",
+          "options": [
+            "Arbitrary",
+            "1 unit",
+            "Depends upon structure",
+            "0"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>If all the reactions acting on a planar system are concurrent in nature, then the system is</p>",
+          "options": [
+            "Cannot say",
+            "essentially stable",
+            "essentially unstable",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>For stable structures, one of the important properties of stiffness matrix is that the elements\n                        on\n                        the main diagonal</p>",
+          "options": [
+            "must be positive",
+            "must be negative",
+            "may be positive or negative",
+            "Cannot say"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following is not the displacement method?</p>",
+          "options": [
+            "Moment distribution method",
+            "Equilibrium method",
+            "Column analogy method",
+            "Kani's method"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The principle of virtual work can be applied to elastic system by considering the virtual work of\n                    </p>",
+          "options": [
+            "internal forces only",
+            "external forces only",
+            "internal as well as external forces",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>If in ILD analysis peak force comes out to be \\(2\\mathrm{kN}\\), then what will be the peak\n                        force\n                        if loading is \\(2\\mathrm{kN}\\) ?</p>",
+          "options": [
+            "1 kN",
+            "2 kN",
+            "3 kN",
+            "4 kN"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain external and internal indeterminacy of structure. What is degree of freedom? Compute\n                        ordinates of influence line for moment at mid‑span of PC for the beam (Fig. 1) at 1 m interval\n                        (locations 1, 2, 3, 4, 5, 6) and draw influence line diagram. Assume moment of inertia to be\n                        constant throughout.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/20.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>State the assumption of the slope‑deflection equations. Analyse the frame as shown in Fig. 2 by\n                        slope\n                        deflection method and draw bending moment diagram. Assume El same for all the members.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/19.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain moment distribution method. What is meant by distribution factor?</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p> Analyse the continuous\n                        beam\n                        shown in Fig. 3 by moment distribution method and draw bending moment diagram. Assume El is\n                        constant\n                        throughout.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/21.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>State usefulness of three moment equations. Derive the support moments in the continuous beam\n                        shown\n                        in Fig. 4 by using three moment equations.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/22.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive moment area theorems. Determine the rotation at supports and deflection at mid‑span and\n                        under\n                        the loads in the simply supported beam as shown in Fig. 5.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/18.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain first theorem of Castigliano. Determine the vertical deflection at the free end and\n                        rotation\n                        at A in the overhanging beam as shown in Fig. 6 using Castigliano's theorem. Assume El constant.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/17.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Determine stiffness matrix and flexibility matrix of a beam and plane.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What do you mean by flexibility and stiffness of a structure? What is the relation between\n                        flexibility and stiffness? Analyse the continuous beam shown in Fig. 7 by stiffness matrix\n                        method.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/23.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>State Bernoulli's principle of virtual displacement. Explain cantilever method of analysis of\n                        structure. Analyse the frame (Fig. 8) by cantilever method. </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/24.jpg\"/>"
+        }
+      ]
+    }
+  ]
+}

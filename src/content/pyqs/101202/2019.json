@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2019",
+    "subject": "MATHEMATICS—II (Differential Equations)",
+    "subject_slug": "mathematics-ii-differential-equations",
+    "subject_code": "101202",
+    "year": 2019,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "<p>Determine the type of the following differential equation:</p>\n<p>\\( \\frac{d^2y}{dx^2} + \\sin(x+y) = \\sin x \\)</p>",
+          "options": [
+            "Linear, homogeneous",
+            "Non-linear, homogeneous",
+            "Linear, non-homogeneous",
+            "Non-linear, non-homogeneous"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "<p>The singular solution of \\( p = \\log |px - y| \\) is</p>",
+          "options": [
+            "\\( y = x(\\log x - 1) \\)",
+            "\\( y = x \\log x - 1 \\)",
+            "\\( y = \\log x - 1 \\)",
+            "\\( y = x \\log x \\)"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "<p>If \\( y = \\phi(x) \\) is a particular solution of \\( y'' + (\\sin x)y' + 2y = e^x \\) and \\( y = \\psi(x) \\) is a particular solution of \\( y'' + (\\sin x)y' + 2y = \\cos 2x \\), then particular solution of \\( y'' + (\\sin x)y' + 2y = e^x + 2 \\sin^2 x \\) is given by</p>",
+          "options": [
+            "\\( \\phi(x) - \\psi(x) + \\frac{1}{2} \\)",
+            "\\( \\phi(x) - \\psi(x) + \\frac{3}{2} \\)",
+            "\\( \\phi(x) - \\psi(x) + 1 \\)",
+            "\\( \\psi(x) - \\phi(x) + 1 \\)"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "<p>Let \\( D = \\frac{d}{dx} \\). Then the value of \\( [1 / (xD + 1)]x^{-1} \\) is</p>",
+          "options": [
+            "\\( \\log x \\)",
+            "\\( (\\log x) / x \\)",
+            "\\( (\\log x) / x^2 \\)",
+            "\\( (\\log x) / x^3 \\)"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "<p>If \\( P_n \\) is the Legendre polynomial of first kind, then the value of \\( \\int_{-1}^1 x P_n P_n' dx \\) is</p>",
+          "options": [
+            "\\( \\frac{2}{2n+1} \\)",
+            "\\( \\frac{2n}{2n+1} \\)",
+            "\\( 2 \\)",
+            "\\( \\frac{2n}{2n+3} \\)"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "<p>The partial differential equation \\( y^3 u_{xx} - (x^2 - 1) u_{yy} = 0 \\) is</p>",
+          "options": [
+            "parabolic in \\( \\{(x, y) : x < 0\\} \\)",
+            "hyperbolic in \\( \\{(x, y) : y > 0\\} \\)",
+            "elliptic in \\( \\{(x, y) : y > 0, x^2 + y^2 < 1\\} \\)",
+            "parabolic in \\( \\{(x, y) : x > 0\\} \\)"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "<p>If \\( u(x, t) \\) satisfies the partial differential equation \\( \\frac{\\partial^2u}{\\partial t^2} - 4 \\frac{\\partial^2u}{\\partial x^2} = 0 \\), then \\( u(x, t) \\) can be of the form</p>",
+          "options": [
+            "\\( u(x, t) = f(x - 2t) + g(x^2 + 2t) \\)",
+            "\\( u(x, t) = f(x^2 - 4t^2) + g(x^2 + 4t^2) \\)",
+            "\\( u(x, t) = f(2x - 4t) + g(x + 2t) \\)",
+            "\\( u(x, t) = f(2x - t) + g(2x + t) \\)"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "<p>If \\( J_n \\) is the Bessel's function of first kind, then the value of \\( J_{1/2} \\) is</p>",
+          "options": [
+            "\\( \\sqrt{\\frac{2}{\\pi x}} \\sin x \\)",
+            "\\( \\sqrt{\\frac{2}{\\pi x}} \\cos x \\)",
+            "\\( \\sqrt{\\frac{2}{\\pi x}} ( \\frac{\\cos x}{x} - \\sin x ) \\)",
+            "\\( \\sqrt{\\frac{2}{\\pi x}} ( \\frac{\\sin x}{x} - \\cos x ) \\)"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "<p>The region in which the following partial differential equation \\( x^2 \\frac{\\partial^2u}{\\partial x^2} + 2y \\frac{\\partial^2u}{\\partial y^2} - 3 \\frac{\\partial^2u}{\\partial x\\partial y} + 5u = 0 \\) acts as parabolic equation is</p>",
+          "options": [
+            "\\( x > (1/12)^{1/3} \\)",
+            "\\( x < (1/12)^{1/3} \\)",
+            "for all values of x",
+            "\\( x = (1/12)^{1/3} \\)"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "<p>\\( \\frac{d^2y}{dx^2} = 6x + 2 \\), \\( y(0)=0 \\), \\( y(1)=0 \\). The value of \\( \\frac{d^2y}{dx^2} \\) at \\( x = 1/2 \\) using the finite difference method and a step size of \\( h = 1/4 \\) can be approximated by</p>",
+          "options": [
+            "\\( y(0.5) - y(0) \\)",
+            "\\( 16 [y(0.75) - 2y(0.5) + y(0.25)] \\)",
+            "\\( 8 [y(0.75) - 2y(0.5) + y(0.25)] \\)",
+            "\\( y(1) - y(0) \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "2.",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>Solve \\( (xy^2 + e^{-1/x^3})dx - x^2ydy = 0 \\)</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>Solve \\( p^2 + 2py \\cot x = y^2 \\)</p>",
+          "total_marks": 8
+        }
+      ]
+    },
+    {
+      "section_title": "3.",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>Solve the following differential equation :</p>\n<p>\\( e^{3x}(p-1) + p^3 e^{2y} = 0 \\)</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>Use the method of variation of parameters to find the solution of the given differential equation :</p>\n<p>\\( y'' - 3y' + 2y = \\cos(e^{-x}) \\)</p>",
+          "total_marks": 8
+        }
+      ]
+    },
+    {
+      "section_title": "4.",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>Express \\( x^4 + 2x^3 + 2x^2 - x - 3 \\) in terms of Legendre's polynomials.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Prove that</p>\n<p>\\( 1 + \\sum_{n=1}^\\infty \\frac{1}{n+1} P_n(\\cos \\theta) = \\log(1 + \\csc(\\theta/2)) \\)</p>",
+          "total_marks": 8
+        }
+      ]
+    },
+    {
+      "section_title": "5.",
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>Solve the following differential equation :</p>\n<p>\\( (y+z)p + (z+x)q = x+y \\)</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Find the complete integral of \\( z^2 p^2 y + 6zpxy + 2zqx^2 + 4x^2y = 0 \\)</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "6.",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>Find the solution of following partial differential equation :</p>\n<p>\\( r - t = \\tan^3 x \\tan y - \\tan x \\tan^3 y \\)</p>",
+          "total_marks": 8
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>Solve: \\( (2D - 3D' + 7)^2 (D^2 + 3D') z = 0 \\)</p>",
+          "total_marks": 6
+        }
+      ]
+    },
+    {
+      "section_title": "7.",
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>Classify the partial differential equation :</p>\n<p>\\( \\frac{\\partial^2u}{\\partial x^2} + \\frac{\\partial^2u}{\\partial y^2} + x \\frac{\\partial^2u}{\\partial x\\partial y} + 2 \\frac{\\partial u}{\\partial x} + \\frac{\\partial u}{\\partial y} + 6u = 0 \\)</p>",
+          "total_marks": 4
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>Find the solution of Laplace's equation in cylindrical coordinates.</p>",
+          "total_marks": 10
+        }
+      ]
+    },
+    {
+      "section_title": "8.",
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>The points of trisection of a string are pulled aside through the same distance on opposite sides of the position of equilibrium and the string is released from rest. Derive an expression for the displacement of the string at subsequent time and show that the midpoint of the string always remains at rest.</p>",
+          "total_marks": 14
+        }
+      ]
+    },
+    {
+      "section_title": "9.",
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>Solve the initial value problem \\( yy' = x \\), \\( y(0)=1 \\), using the Euler method in \\( 0 \\le x \\le 0.8 \\), with \\( h=0.2 \\) and \\( h=0.1 \\). Compare the results with the exact solution at \\( x=0.8 \\). Extrapolate the result.</p>",
+          "total_marks": 10
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>Write the bound on the truncation error of the Taylor series method.</p>",
+          "total_marks": 4
+        }
+      ]
+    }
+  ]
+}

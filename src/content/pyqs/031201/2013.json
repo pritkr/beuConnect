@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech. 2nd Semester Exam., 2013",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031201",
+    "year": 2013,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "type": "mcq",
+          "text": "Choose the correct alternative (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "If $n$ resistances are connected in series and equivalent resistance is $R_{es}$, and if $R_k$ ($k = 1, 2, ..., n$) is the $k$th resistance, then the voltage across $R_k$ denoted by $V_k$ is",
+              "options": [
+                "$V_k = \\frac{R_{es}}{R_k} \\cdot V$",
+                "$V_k = \\frac{1}{V} \\cdot \\frac{R_{es}}{R_k}$",
+                "$V_k = \\frac{R_k}{R_{es}} \\cdot V$",
+                "$V_k = \\frac{1}{V} \\cdot \\frac{R_k}{R_{es}}$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "Three parallel resistive branches are connected across a d.c. supply. What will be the ratio of the branch currents $I_1 : I_2 : I_3$ if the branch resistances are in the ratio of $R_1 : R_2 : R_3$ is equal to $2 : 4 : 6$?",
+              "options": [
+                "$3 : 2 : 6$",
+                "$2 : 4 : 6$",
+                "$6 : 3 : 2$",
+                "$6 : 2 : 4$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "text": "In the analysis of the transistor circuit, usually which of the following theorems is used?",
+              "options": [
+                "Norton",
+                "Thevenin",
+                "Superposition",
+                "Reciprocity"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "text": "A coil having a resistance of $6 \\Omega$ and inductive reactance of $6.908 \\Omega$ is connected across a supply voltage of $V = 100 \\sin (314t)$. The expression for supply current will be",
+              "options": [
+                "$100 \\sin (314t - 49^\\circ)$",
+                "$100 \\cos (314t - 49^\\circ)$",
+                "$10.92 \\sin (314t - 49^\\circ)$",
+                "$10.92 (314t - 49^\\circ)$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "An a.c. source of 200 V r.m.s. supplies active power of 600 W and reactive power of 800 VAR. The r.m.s. current drawn from the source is",
+              "options": [
+                "10 A",
+                "5 A",
+                "3.75 A",
+                "2.5 A"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "For a series resonant circuit at low frequency, circuit impedance is ______ and at high frequency circuit impedance is ______.",
+              "options": [
+                "capacitive, inductive",
+                "inductive, capacitive",
+                "resistive, inductive",
+                "capacitive, resistive"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "The equivalent inductance measured between the terminals 1 and 2 for the circuit shown in the figure is [Diagram: Two coupled inductors L1 and L2 with mutual inductance M, connected in series aiding configuration (dots at same ends)]",
+              "options": [
+                "$L_1 + L_2 + M$",
+                "$L_1 + L_2 - M$",
+                "$L_1 + L_2 + 2M$",
+                "$L_1 + L_2 - 2M$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "text": "Three $\\Delta$-connected resistors absorb 60 kW when connected to a 3-$\\phi$ line. If the resistors are connected in star, the power absorbed is",
+              "options": [
+                "60 kW",
+                "20 kW",
+                "40 kW",
+                "180 kW"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "The hysteresis and eddy current losses of a 1-$\\phi$ transformer working on 200 V, 50 Hz supply are $P_h$ and $P_e$ respectively. The percentage decrease in these losses when operated at 160 V, 40 Hz supply are respectively",
+              "options": [
+                "32, 36",
+                "20, 36",
+                "25, 50",
+                "40, 80"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "PMMC instruments can be used for",
+              "options": [
+                "a.c. work only",
+                "d.c. work only",
+                "neither a.c. nor d.c. work",
+                "both a.c. and d.c. work"
+              ],
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "type": "numerical",
+          "text": "Find the current $I_x$ : [Diagram: DC circuit with 10Ix dependent voltage source, 5 ohm resistor (with Ix), 4A and 1A current sources, 5 ohm and 2 ohm resistors, and 10V source]",
+          "marks": 14
+        },
+        {
+          "id": "3",
+          "type": "numerical",
+          "text": "Find the value of $R_L$ for maximum power transfer and calculate the maximum power : [Diagram: Bridge circuit connected to 110V source, resistors 3 ohm, 6 ohm, 3 ohm, and load RL in the bridge arm]",
+          "marks": 14
+        },
+        {
+          "id": "4",
+          "type": "numerical",
+          "text": "Find the average value and r.m.s. value of the following waveform : [Diagram: Waveform consisting of a pulse from $\\pi/4$ to $\\pi$ and another from $5\\pi/4$ to $2\\pi$ with peak Vm]",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "type": "numerical",
+          "text": "A series R-L-C circuit has the parameters—$R = 10 \\Omega$, $L = 10$ mH, $C = 100 \\mu$F. Compute :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "5a",
+              "text": "Resonant frequency"
+            },
+            {
+              "id": "5b",
+              "text": "Quality factor"
+            },
+            {
+              "id": "5c",
+              "text": "Bandwidth"
+            },
+            {
+              "id": "5d",
+              "text": "Lower and upper cut-off frequencies"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "type": "numerical",
+          "text": "Three similar choke coils are connected in star to a 3-$\\phi$ supply. If the line current is 15 A, the total power consumed is 11 kW and the volt-ampere input is 15 KVA, find the line and phase voltages, the VAR input and reactance and resistance of each coil. If these coils are now connected in delta to the same supply, calculate phase and line currents, active and reactive powers.",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "type": "theory",
+          "text": "A moving-coil instrument gives full-scale deflection of 15 mA and has a resistance component in the order that the instrument may be used as (i) a 2 A ammeter and (ii) a 100 V voltmeter.",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "type": "numerical",
+          "text": "A wrought iron bar 30 cm long and 2 cm in diameter is bent into a circular shape as shown in the figure. It is then wound with 600 turns of wire : [Diagram: Circular core with 30 cm core length, N=500 (text says 600 turns, diagram says 500), 1 mm air gap, cross section area Ac = pi * 10^-4 m^2]\n\nCalculate the current required to produce a flux of 0.5 mWb in the magnetic circuit in the following cases :\n(a) No air gap\n(b) With an air gap of 1 mm; $\\mu_r$ (iron) = 1000\n(c) With an air gap of 1 mm\n\nAssume the following data for the magnetization of iron :\n$H$ (At/m): 2500, 3000, 3500, 4000\n$B$ (T): 1.55, 1.59, 1.6, 1.615",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "type": "theory",
+          "text": "Write short notes on any two of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Maximum power transfer theorem"
+            },
+            {
+              "id": "9b",
+              "text": "Star-delta conversion"
+            },
+            {
+              "id": "9c",
+              "text": "Eddy and Hystersis losses"
+            },
+            {
+              "id": "9d",
+              "text": "Insulation resistance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

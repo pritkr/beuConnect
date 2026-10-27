@@ -1,0 +1,270 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2021",
+    "subject": "MATHEMATICS—II (Differential Equations)",
+    "subject_slug": "mathematics-ii-differential-equations",
+    "subject_code": "101202",
+    "year": 2021,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Integrating factor of the differential equation \\( dy = (e^{x-y})(e^x - e^y) dx \\) is</p>",
+          "options": [
+            "\\( e^{e^x} \\)",
+            "\\( e \\)",
+            "\\( e^x \\)",
+            "\\( e^{2x} \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The particular integral (PI) of the differential equation \\( \\frac{d^2 y}{dx^2} + 4y = \\cos 2x\n                        \\) is</p>",
+          "options": [
+            "\\( \\frac{\\sin 2x}{2} \\)",
+            "\\( \\frac{x \\sin 2x}{2} \\)",
+            "\\( \\frac{x \\sin 2x}{4} \\)",
+            "\\( \\frac{x \\cos 2x}{2} \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The differential equation whose auxiliary equation has the roots 0, -1, -1 is</p>",
+          "options": [
+            "\\( \\frac{d^3 y}{dx^3} - 2\\frac{d^2 y}{dx^2} + \\frac{dy}{dx} = 0 \\)",
+            "\\( \\frac{d^3 y}{dx^3} + 2\\frac{d^2 y}{dx^2} + \\frac{dy}{dx} = 0 \\)",
+            "\\( \\frac{d^2 y}{dx^2} + 2\\frac{dy}{dx} + y = 0 \\)",
+            "\\( \\frac{d^3 y}{dx^3} + 2\\frac{d^2 y}{dx^2} + y = 0 \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>If \\( J_0(x) \\) and \\( J_1(x) \\) are Bessel functions, then \\( J_1'(x) \\) is given by</p>",
+          "options": [
+            "\\( -J_0(x) \\)",
+            "\\( J_0(x) - \\frac{1}{x} J_1(x) \\)",
+            "\\( J_0(x) + \\frac{1}{x} J_1(x) \\)",
+            "\\( J_0(x) \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The complete solution of the partial differential equation \\( p^2 + q^2 = 2 \\) is</p>",
+          "options": [
+            "\\( z = ax + \\sqrt{2 - a^2} y + c \\)",
+            "\\( z = ax - \\sqrt{2 - a^2} y + c \\)",
+            "Either (i) or (ii) true",
+            "(i) and (ii) both true"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The partial differential equation \\( 5 \\frac{\\partial^2 z}{\\partial x^2} - 5 \\left(\n                        \\frac{\\partial z}{\\partial x} \\right)^2 + 6 \\frac{\\partial^2 z}{\\partial y^2} x = xy \\)\n                        is classified as</p>",
+          "options": [
+            "parabolic",
+            "hyperbolic",
+            "elliptic",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The solution of the partial differential equation \\( x^3 \\frac{\\partial u}{\\partial x} + y^2\n                        \\frac{\\partial u}{\\partial y} = 0 \\) if \\( u(0, y) = 10 e^{5/y} \\) using method of\n                        separation of variable is</p>",
+          "options": [
+            "\\( 10 e^{5/2x^2} e^{5/y} \\)",
+            "\\( 10 e^{-5/2y^2} e^{5/x} \\)",
+            "\\( 10 e^{-5/2y^2} e^{-5/x} \\)",
+            "\\( 10 e^{-5/2x^2} e^{5/y} \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>If \\( f(z) = u(x, y) + iv(x, y) \\) is an analytic function, then \\( f'(z) = \\)</p>",
+          "options": [
+            "\\( \\frac{\\partial u}{\\partial x} - i \\frac{\\partial v}{\\partial x} \\)",
+            "\\( \\frac{\\partial u}{\\partial x} - i \\frac{\\partial u}{\\partial y} \\)",
+            "\\( \\frac{\\partial v}{\\partial y} - i \\frac{\\partial v}{\\partial x} \\)",
+            "\\( \\frac{\\partial u}{\\partial x} + i \\frac{\\partial u}{\\partial y} \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\int_C \\frac{3z^2 + 7z + 1}{z + 1} dz \\) where \\( C \\) is \\( |z| = 1 \\)\n                        is</p>",
+          "options": [
+            "2πi",
+            "0",
+            "πi",
+            "πi/2"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\Delta \\tan^{-1}x \\) is</p>",
+          "options": [
+            "\\( \\Delta \\tan^{-1} \\left( \\frac{h}{1 + hx + x^2} \\right) \\)",
+            "\\( \\Delta \\tan^{-1} \\left( \\frac{h + 2x}{1 + hx + x^2} \\right) \\)",
+            "\\( \\Delta \\tan^{-1} \\left( \\frac{h - 2x}{1 + hx + x^2} \\right) \\)",
+            "\\( \\Delta \\tan^{-1} \\left( \\frac{h + 2x}{1 - hx - x^2} \\right) \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Solve: \\( 2ydx + x(2\\log x - y)dy = 0 \\)</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Solve: \\( y - 2px = \\tan^{-1}(xy^2) \\)</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Use the method of variation of parameters to find the solution of the given differential equation\n                        \\( y'' - 2y' + y = e^x \\log x \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Find the series solution of the differential equation \\( (x^2 - 2x + 1) \\frac{d^2 y}{dx^2} +\n                        (4x - 4) \\frac{dy}{dx} \\) <br/>+ \\( (x^2 - 2x + 3)y = 0 \\) about the point \\( x = 1 \\).\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Prove: \\( \\int J_3(x) dx = c - J_2(x) - \\frac{2}{x} J_1(x) \\), where \\( c \\) is arbitrary\n                        constant.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Prove: \\( \\int_{-1}^{1} x^2 P_{n+1}(x) P_{n-1}(x) dx = \\frac{2n(n + 1)}{(2n - 1)(2n + 1)(2n +\n                        3)} \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Solve: \\( x^2(y - z) p + y^2(z - x) q = z^2(x - y) \\)</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Find the complete integral of \\( (p^2 + q^2)y = zq \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions:",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Prove that the general solution of the partial differential equation \\( (D - mD' - a)^2 z = 0\n                        \\) where \\( D = \\frac{\\partial}{\\partial x}, D' = \\frac{\\partial}{\\partial y} \\) is\n                        given as \\( z = e^{\\alpha x} f_1(y + mx) + xe^{\\alpha x} f_2(y + mx) \\)</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Find the general solution of the given partial differential equation \\( (D^3 D'^2 + D^3 D^2 -\n                        5D^2 D'^2 - 2D^3 D' \\) + <br/> \\( 6D^2 D')z = e^{x - y} \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the D'Alembert's solution of the wave equation \\( \\frac{\\partial^2 y}{\\partial t^2} =\n                        c^2 \\frac{\\partial^2 y}{\\partial x^2} \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Find the solution of the differential equation \\( \\frac{\\partial u}{\\partial t} = k\n                        \\frac{\\partial^2 u}{\\partial x^2} \\) subject to conditions—</p>\n<p>(i) \\( u \\) is not infinite at \\( t \\to \\infty \\)</p>\n<p>(ii) \\( \\frac{\\partial u}{\\partial x} = 0 \\) for \\( x = 0 \\) and \\( x = \\ell \\)</p>\n<p>(iii) \\( u = \\ell x - x^2 \\) for \\( t = 0 \\) between \\( x = 0 \\) and \\( x = \\ell \\).\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Describe the Runge-Kutta method of fourth order for the solution of initial value problem. Given\n                        the initial value problem \\( y' = 1 + y^2 \\), \\( y(0) = 0 \\). Find \\( y(0.6) \\) by using\n                        Runge-Kutta method of fourth order by taking \\( h = 0.2 \\).</p>"
+        }
+      ]
+    }
+  ]
+}

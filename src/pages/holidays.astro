@@ -1,0 +1,88 @@
+---
+export const prerender = true;
+import Header from "../components/header.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import Holiday2025Img from "../assets/holidays2025.png";
+import Holiday2026Img from "../assets/holidays2026.png";
+
+const base = import.meta.env.BASE_URL;
+const calendarUrl = base + "holidays-calendar";
+// No app deep link, store listing or APK URL is published anywhere in the repo
+// (native/nsh.json only grants outgoing schemes; native/docs keep release APKs
+// local), so the app action goes to the site's install surface — the PWA
+// start_url in public/manifest.webmanifest — which is a live page, not a 404.
+const appUrl = base;
+---
+
+<Layout title="Holidays 2026">
+	<Header />
+	<h1 class="sr-only">BEU Holidays 2026</h1>
+
+	<a class="sheet" href={Holiday2026Img.src} target="_blank" rel="noopener">
+		<img
+			src={Holiday2026Img.src}
+			alt="Official BEU holiday calendar for 2026"
+			class="holidcls"
+			width={Holiday2026Img.width}
+			height={Holiday2026Img.height}
+			loading="lazy"
+			decoding="async"
+		/>
+	</a>
+
+	<nav class="actions">
+		<a class="app-cta" href={appUrl} role="button">Open in the BEUConnect app</a>
+		<a href={calendarUrl}>Interactive 2026 calendar →</a>
+	</nav>
+
+	<p class="past">
+		<a href={Holiday2025Img.src} target="_blank" rel="noopener">2025 sheet</a>
+	</p>
+
+	<Footer />
+	<style>
+		.sr-only {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+
+		.sheet {
+			display: block;
+		}
+
+		.holidcls {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+
+		.actions {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 0.75rem;
+			margin: 1rem 0 0;
+		}
+
+		.actions a[role="button"] {
+			margin: 0;
+		}
+
+		.past {
+			margin: 2.5rem 0 0;
+			font-size: 0.85rem;
+		}
+
+		@media (display-mode: standalone) {
+			.app-cta {
+				display: none;
+			}
+		}
+	</style>
+</Layout>

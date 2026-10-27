@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "Data Structures and Algorithms",
+    "subject_slug": "data-structures-and-algorithms",
+    "subject_code": "100304",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (any seven) :",
+          "marks": null,
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "What is the worst case run-time complexity of binary search algorithm?",
+              "options": [
+                "(i) $O(n^2)$",
+                "(ii) $O(\\log n)$",
+                "(iii) $O(n^3)$",
+                "(iv) $O(n)$"
+              ]
+            },
+            {
+              "number": "b",
+              "text": "push() and pop() functions are found in",
+              "options": [
+                "(i) queues",
+                "(ii) list",
+                "(iii) stacks",
+                "(iv) trees"
+              ]
+            },
+            {
+              "number": "c",
+              "text": "Binary search tree has average case run-time complexity of $O(\\log n)$. What could be the worst case?",
+              "options": [
+                "(i) $O(n)$",
+                "(ii) $O(n^2)$",
+                "(iii) $O(n^3)$",
+                "(iv) None of the above"
+              ]
+            },
+            {
+              "number": "d",
+              "text": "What will be the running-time of Dijkstra's single-source shortest path algorithm, if the graph $G(V,E)$ is stored in the form of adjacency list and binary heap is used?",
+              "options": [
+                "(i) $O(|V|^2)$",
+                "(ii) $O(|V|\\log |V|)$",
+                "(iii) $O(|E|+|V|\\log |V|)$",
+                "(iv) None of the above"
+              ]
+            },
+            {
+              "number": "e",
+              "text": "Tower of Hanoi is a classic example of",
+              "options": [
+                "(i) divide and conquer",
+                "(ii) recursive approach",
+                "(iii) (ii) but not (i)",
+                "(iv) Both (i) and (ii)"
+              ]
+            },
+            {
+              "number": "f",
+              "text": "If locality is a concern, you can use \u2014\u2014\u2014 to traverse the graph.",
+              "options": [
+                "(i) breadth-first search",
+                "(ii) depth-first search",
+                "(iii) either BFS or DFS",
+                "(iv) None of the above"
+              ]
+            },
+            {
+              "number": "g",
+              "text": "Which data structure is used for balancing of symbols?",
+              "options": [
+                "(i) Queue",
+                "(ii) Stack",
+                "(iii) Tree",
+                "(iv) Graph"
+              ]
+            },
+            {
+              "number": "h",
+              "text": "Which data structure is most efficient to find the top 10 largest items out of 1 million items stored in file?",
+              "options": [
+                "(i) Min heap",
+                "(ii) Max heap",
+                "(iii) Binary search tree",
+                "(iv) AVL tree"
+              ]
+            },
+            {
+              "number": "i",
+              "text": "A data structure is required for storing a set of integers such that each of the following operations can be done in $(\\log n)$ time, where $n$ is the number of elements in the set :\n\u2022 Deletion of the smallest element\n\u2022 Insertion of an element if it is not already present in the set\nWhich of the following can be used?",
+              "options": [
+                "(i) A heap can be used but not a balanced binary search tree",
+                "(ii) A balanced binary search tree can be used but not a heap",
+                "(iii) Both balanced binary search tree and heap can be used",
+                "(iv) Neither balanced binary search tree nor heap can be used"
+              ]
+            },
+            {
+              "number": "j",
+              "text": "The most appropriate matching for the following pairs is\nX. Depth-first search  1. Heap\nY. Breadth-first search 2. Queue\nZ. Sorting              3. Stack",
+              "options": [
+                "(i) X-1, Y-2, Z-3",
+                "(ii) X-3, Y-1, Z-2",
+                "(iii) X-3, Y-2, Z-1",
+                "(iv) X-2, Y-3, Z-1"
+              ]
+            }
+          ],
+          "id": "1"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Josephus problem : A group of soldiers is surrounded by an overwhelming army. There is no hope of victory without reinforcements. There is only a single horse available for escape. The soldiers agree to a pact to determine which of them is to escape and summon help. They form a circle, and a number $n$ and one of their names are picked from a hat. Beginning with the soldier whose name is picked, they begin to count clockwise around the circle. When the count reaches $n$, that soldier is removed from the circle, and the count begins again with the next soldier. The eliminated soldier is no longer a part of the circle. The process continues until one soldier remains and takes the horse to summon help. Suppose $n=3$ and there are five soldiers who form a circle in the order A, B, C, D and E. Let the soldier to start with A, so C is eliminated first, then A gets eliminated second, then E at third, finally B gets eliminated. So D is the one who escapes with the horse. Write a function in C which displays the names of every soldier in the order of their elimination and finally the name of the soldier left, using circular linked list. New list should not be created.",
+              "marks": "7"
+            },
+            {
+              "number": "b",
+              "text": "Write a program in C to insert an element after an existing element in a doubly linked list.",
+              "marks": "7"
+            }
+          ],
+          "id": "2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Insert the following numbers, in the given sequence, in an empty AVL tree : 1, 26, 2, 25, 3, 24, 4, 23, 5. Display the tree after every insertion. Also state the minimum number of nodes which are required to construct AVL tree of height 7 (note that the root is at level 0).",
+              "marks": "8"
+            },
+            {
+              "number": "b",
+              "text": "Sort the following numbers in ascending order using heapsort. Show step-by-step analysis : 25, 57, 48, 37, 12, 92, 86, 33.",
+              "marks": "6"
+            }
+          ],
+          "id": "3",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Insert the following numbers, in the given sequence, in an empty B tree of order 5 and display the tree at every split : 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1. Now delete the following elements from the tree, in the given sequence, and display the tree at every merge.",
+          "marks": 14,
+          "id": "4"
+        },
+        {
+          "text": "Insert the following numbers, in the given sequence, in an empty B+ tree of order 3 and display the tree at every split : 10, 20, 30, 90, 80, 60, 70, 40, 50, 66, 16, 84, 21, 76. Now delete the following elements from the tree, in the given sequence, and display the tree at every merge.",
+          "marks": 14,
+          "id": "5"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Construct the Huffman tree for data given in the table below :\n| Alphabet | Frequency |\n| :--- | :--- |\n| R | 5 |\n| T | 6 |\n| Y | 2 |\n| C | 16 |\n| S | 3 |\n| L | 60 |\n| A | 8 |",
+              "marks": "8"
+            },
+            {
+              "number": "b",
+              "text": "Show at every step the contents of the hash table after inserting the keys in the order 23, 11, 4, 17, 84, 22, 33. The hash function is given as $h(key) = key \\% 11$. The hash table has a space for 11 keys only. Resolve collision using\u2014 (i) linear probing; (ii) quadratic probing.",
+              "marks": "6"
+            }
+          ],
+          "id": "6",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Differentiate between the following :",
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Abstract Data Type and Data Structure",
+              "marks": "4"
+            },
+            {
+              "number": "b",
+              "text": "Stack and Queue",
+              "marks": "5"
+            },
+            {
+              "number": "c",
+              "text": "Depth-first search and Breadth-first search",
+              "marks": "5"
+            }
+          ],
+          "id": "7",
+          "marks": null
+        },
+        {
+          "text": "Explain in detail the Kruskal's and Prim's algorithms for constructing minimum spanning tree. For the weighted undirected graph given below, construct the minimum cost spanning tree for the given graph using Kruskal's algorithm and Prim's algorithm when the starting vertex is R1 :",
+          "marks": 14,
+          "id": "8"
+        },
+        {
+          "text": "Define the following :",
+          "marks": null,
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Tree"
+            },
+            {
+              "number": "b",
+              "text": "Binary tree"
+            },
+            {
+              "number": "c",
+              "text": "Strict binary tree"
+            },
+            {
+              "number": "d",
+              "text": "Complete binary tree"
+            },
+            {
+              "number": "e",
+              "text": "Full binary tree"
+            },
+            {
+              "number": "f",
+              "text": "Min heap"
+            },
+            {
+              "number": "g",
+              "text": "Skew tree"
+            }
+          ],
+          "id": "9"
+        }
+      ]
+    }
+  ]
+}

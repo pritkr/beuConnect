@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2018",
+    "subject": "MATHEMATICS—II",
+    "subject_slug": "mathematics-2",
+    "subject_code": "211202",
+    "year": 2018,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven):",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The Fourier series of the periodic function $f(x) = x+x^2, -\\pi < x \\le \\pi$ at $x=\\pi$ converges to\n(i) $\\pi$\n(ii) $2\\pi$\n(iii) $\\pi^2$\n(iv) $\\pi + \\pi^2$",
+              "id": "1a",
+              "marks": 2
+            },
+            {
+              "text": "The radius of convergence of the series $\\sum_{n=0}^\\infty (3+4i)^n z^n$ is\n(i) 5\n(ii) 1/5\n(iii) 3+4i\n(iv) None of the above",
+              "id": "1b",
+              "marks": 2
+            },
+            {
+              "text": "The Laplace transform of $3 \\cosh(5t) - 4 \\sinh(5t)$ is\n(i) $\\frac{3s-20}{s^2-25}, s > 5$\n(ii) $\\frac{3s-20}{s^2-25}, s < 5$\n(iii) $\\frac{3s-20}{s^2+25}, s > 5$\n(iv) $\\frac{3s-20}{s^2+25}, s < 5$",
+              "id": "1c",
+              "marks": 2
+            },
+            {
+              "text": "If $\\delta(t)$ is the Dirac delta function, than $L(\\delta t)$ is\n(i) -1\n(ii) 0\n(iii) 1\n(iv) None of the above",
+              "id": "1d",
+              "marks": 2
+            },
+            {
+              "text": "If $L$ is the Laplace operator, then $L^{-1}(s^{-3/2})$ is\n(i) $\\sqrt{t/\\pi}$\n(ii) $\\sqrt{\\pi/t}$\n(iii) $2\\sqrt{t/\\pi}$\n(iv) $2\\sqrt{\\pi/t}$",
+              "id": "1e",
+              "marks": 2
+            },
+            {
+              "text": "If $\\phi(x,y,z) = 3x^2y - y^3z^2$, then $\\nabla \\phi$ at the point (1, 1, -2) is\n(i) $12\\hat{i} - 9\\hat{j} - 16\\hat{k}$\n(ii) $6\\hat{i} - 9\\hat{j} + 4\\hat{k}$\n(iii) $6\\hat{i} - 9\\hat{j} - 4\\hat{k}$\n(iv) $-12\\hat{i} - 9\\hat{j} + 16\\hat{k}$",
+              "id": "1f",
+              "marks": 2
+            },
+            {
+              "text": "If $a < b$, then $\\int_a^b |(x-a) + (x-b)| \\, dx$ is equal to\n(i) $\\frac{(b-a)^2}{2}$\n(ii) $\\frac{(b^2-a^2)}{2}$\n(iii) $\\frac{(a^3-b^3)}{2}$\n(iv) $(b-a)^2$",
+              "id": "1g",
+              "marks": 2
+            },
+            {
+              "text": "The value of $\\iint x^2 y^2 \\, dx \\, dy$ over the region $x^2+y^2 \\le 1$ is\n(i) $\\pi/6$\n(ii) $\\pi/12$\n(iii) $\\pi/24$\n(iv) $\\pi/48$",
+              "id": "1h",
+              "marks": 2
+            },
+            {
+              "text": "If $A(2) = 2\\hat{i} - \\hat{j} + 2\\hat{k}, A(3) = 4\\hat{i} - 2\\hat{j} + 3\\hat{k}$, then $\\int_2^3 A \\cdot \\frac{dA}{dt} \\, dt$ is\n(i) 5\n(ii) 10\n(iii) 15\n(iv) 20",
+              "id": "1i",
+              "marks": 2
+            },
+            {
+              "text": "If $\\vec{A}, \\vec{B}, \\vec{C}$ are three mutually perpendicular vectors, each of magnitude unity, then $|\\vec{A} + \\vec{B} + \\vec{C}|$ is equal to\n(i) $\\sqrt{3}$\n(ii) 3\n(iii) $\\sqrt{2}$\n(iv) 2",
+              "id": "1j",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "text": "Test the convergence of $1 + \\frac{3}{7}x + \\frac{3 \\cdot 6}{7 \\cdot 10}x^2 + \\frac{3 \\cdot 6 \\cdot 9}{7 \\cdot 10 \\cdot 13}x^3 + \\frac{3 \\cdot 6 \\cdot 9 \\cdot 12}{7 \\cdot 10 \\cdot 13 \\cdot 16}x^4 + \\dots$.",
+          "marks": 7,
+          "id": "2a"
+        },
+        {
+          "text": "Examine the convergence of the series of which the general term is $\\frac{2^2 4^2 6^2 \\dots (2n-2)^2}{3 \\cdot 4 \\cdot 5 \\dots (2n-1) \\cdot 2n} x^{2n}$.",
+          "marks": 7,
+          "id": "2b"
+        },
+        {
+          "text": "State and prove the convolution theorem for Laplace transform.",
+          "marks": 7,
+          "id": "3a"
+        },
+        {
+          "text": "Find $L^{-1} \\left[ \\frac{1}{(s^2+1)^2(s^2+4)} \\right]$ using the convolution theorem.",
+          "marks": 7,
+          "id": "3b"
+        },
+        {
+          "text": "Solve the differential equation $\\frac{d^2y}{dx^2} + 9y = \\cos 2t, y(0)=1, y(\\pi/2)=-1$ using Laplace transform.",
+          "marks": 7,
+          "id": "4a"
+        },
+        {
+          "text": "Evaluate the integral $\\int_0^\\infty \\frac{e^{-t} \\sin t}{t} \\, dt$ using Laplace transform.",
+          "marks": 7,
+          "id": "4b"
+        },
+        {
+          "text": "Expand in Fourier series $f(x) = \\begin{cases} -x, & -4 \\le x \\le 0 \\\\ x, & 0 \\le x \\le 4 \\end{cases}$ and hence deduce that $\\frac{\\pi^2}{8} = 1 + \\frac{1}{3^2} + \\frac{1}{5^2} + \\frac{1}{7^2} + \\dots$.",
+          "marks": 14,
+          "id": "5"
+        },
+        {
+          "text": "Evaluate by changing the order of integration $\\int_0^\\infty \\int_x^\\infty \\frac{e^{-y}}{y} \\, dy \\, dx$.",
+          "marks": 7,
+          "id": "6a"
+        },
+        {
+          "text": "Find the volume of the solid in the first octant bounded by the paraboloid $z = 36 - 4x^2 - 9y^2$.",
+          "marks": 7,
+          "id": "6b"
+        },
+        {
+          "text": "Find the mass of a plate in the form of a quadrant of an ellipse $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ whose density per unit area is given by $\\rho = kxy$.",
+          "marks": 7,
+          "id": "7a"
+        },
+        {
+          "text": "Evaluate the following integral by changing to polar coordinates: $\\int_0^1 \\int_0^{\\sqrt{2x-x^2}} (x^2+y^2) \\, dy \\, dx$.",
+          "marks": 7,
+          "id": "7b"
+        },
+        {
+          "text": "Use divergence theorem to evaluate $\\iint_S \\vec{A} \\cdot d\\vec{S}$, where $\\vec{A} = 4x\\hat{i} - 2y^2\\hat{j} + z^2\\hat{k}$ and $S$ is the surface, $x^2+y^2=4, z=0$ and $z=3$.",
+          "marks": 7,
+          "id": "8a"
+        },
+        {
+          "text": "Find the directional derivative of $\\phi(x,y,z) = x^2yz + 4xz^2$ at (1, -2, -1) in the direction $2\\hat{i} - \\hat{j} - 2\\hat{k}$.",
+          "marks": 7,
+          "id": "8b"
+        },
+        {
+          "text": "Evaluate $\\oint_C (x^2-2xy) \\, dx + (x^2y+3) \\, dy$ around the boundary of the region defined by $y^2=8x$ and $x=2$ using Green's theorem.",
+          "marks": 7,
+          "id": "9a"
+        },
+        {
+          "text": "Find (i) $\\vec{A} \\times (\\nabla \\phi)$ and (ii) $(\\nabla \\times \\vec{A}) \\times \\vec{B}$, where $\\vec{A} = x^2z\\hat{i} + yz^3\\hat{j} - 3xy\\hat{k}, \\vec{B} = 3x\\hat{i} + 4z\\hat{j} - xy\\hat{k}$ and $\\phi = xy^2z$.",
+          "marks": 7,
+          "id": "9b"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,837 @@
+---
+export const prerender = true;
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import 'vanilla-calendar-pro/styles/index.css';
+
+const base = import.meta.env.BASE_URL;
+const sheetUrl = base + "holidays";
+// Same action and same reason as /holidays: the repo publishes no app deep link
+// or download URL, so this points at the site's install surface.
+const appUrl = base;
+---
+
+<Layout title="BEU Holidays Calendar 2026">
+	<Header />
+
+	<section class="calendar-shell">
+		<header class="page-head">
+			<h1 style="view-transition-name:holi">BEU Holidays 2026</h1>
+		</header>
+
+		<nav class="holiday-links">
+			<a href={sheetUrl}>See the university's 2026 sheet</a>
+			<a class="app-cta" href={appUrl} role="button">Open in the BEUConnect app</a>
+		</nav>
+
+		<div class="year-progress-wrapper">
+			<div class="progress-info">
+				<span>Year Progress 2026</span>
+				<span id="progressPercent">0%</span>
+			</div>
+			<div class="progress-bar">
+				<div id="progressBarFill" class="progress-fill"></div>
+			</div>
+		</div>
+
+		<div class="toolbar sticky-toolbar">
+			<div class="search-box">
+				<input id="searchInput" type="search" placeholder="Search holidays (e.g. Holi, Diwali)..." />
+			</div>
+			<div class="toggles">
+				<label class="toggle-pill">
+					<input type="checkbox" id="teacherOnlyToggle" />
+					<span>Teachers Only</span>
+				</label>
+			</div>
+		</div>
+
+		<div class="legend-bar">
+			<div class="legend-item"><span class="dot festival"></span> Festival</div>
+			<div class="legend-item"><span class="dot national"></span> National</div>
+			<div class="legend-item"><span class="dot vacation"></span> Vacation</div>
+			<div class="legend-item"><span class="dot academic"></span> Academic</div>
+			<div class="legend-item"><span class="dot sunday"></span> Sunday</div>
+		</div>
+
+		<div class="calendar-wrapper">
+			<div id="calendar"></div>
+		</div>
+
+		<div id="selectedCard" class="selected-card">
+			<h3>Selected Holiday Details</h3>
+			<div id="selectedDayInfo" class="selected-day-info">
+				<p class="empty-state">Click a highlighted day on the calendar above to see full details.</p>
+			</div>
+		</div>
+
+		<div class="list-card">
+			<h3>Full Holiday Schedule</h3>
+			<div id="holidayListAll" class="holiday-list"></div>
+		</div>
+
+		<div class="notes">
+			<h3>Important Notice (2026)</h3>
+			<ul>
+				<li>Total Academic Holidays: <strong>59 days</strong> (including Sundays)</li>
+				<li>Net Working Holidays: <strong>52 days</strong> (excluding Sundays)</li>
+				<li>Summer Vacation: <strong>23 May - 21 June 2026</strong> (Teachers only)</li>
+				<li>Note: Items marked with <code>*</code> are subject to lunar sightings.</li>
+			</ul>
+		</div>
+	</section>
+
+	<script>
+		import { Calendar } from 'vanilla-calendar-pro';
+
+		type HolidayCategory = "festival" | "national" | "vacation" | "academic";
+		type HolidayEntry = {
+			id: number;
+			name: string;
+			start: string;
+			end?: string;
+			category: HolidayCategory;
+			moonBased?: boolean;
+			teacherOnly?: boolean;
+		};
+
+		const holidays2026: HolidayEntry[] = [
+			{ id: 1, name: "नव वर्ष", start: "2026-01-01", category: "festival" },
+			{ id: 2, name: "मकर संक्रांति", start: "2026-01-14", category: "festival" },
+			{ id: 3, name: "बसंत पंचमी", start: "2026-01-23", category: "festival" },
+			{ id: 4, name: "कर्पूरी ठाकुर जयंती", start: "2026-01-24", category: "national" },
+			{ id: 5, name: "गणतंत्र दिवस", start: "2026-01-26", category: "national" },
+			{ id: 6, name: "संत रविदास जयन्ती", start: "2026-02-01", category: "festival" },
+			{ id: 7, name: "शब-ए-बरात", start: "2026-02-04", category: "festival", moonBased: true },
+			{ id: 8, name: "महाशिवरात्रि", start: "2026-02-15", category: "festival" },
+			{ id: 9, name: "होलिकादहन / होली", start: "2026-03-02", end: "2026-03-04", category: "festival" },
+			{ id: 10, name: "ईद-उल-फितर (ईद)", start: "2026-03-21", category: "festival", moonBased: true },
+			{ id: 11, name: "बिहार दिवस", start: "2026-03-22", category: "national" },
+			{ id: 12, name: "सम्राट अशोक जयन्ती (अष्टमी)", start: "2026-03-26", category: "festival" },
+			{ id: 13, name: "राम नवमी", start: "2026-03-27", category: "festival" },
+			{ id: 14, name: "महावीर जयन्ती", start: "2026-03-31", category: "festival" },
+			{ id: 15, name: "गुड फ्राईडे", start: "2026-04-03", category: "festival" },
+			{ id: 16, name: "भीमराव अम्बेडकर जयन्ती", start: "2026-04-14", category: "national" },
+			{ id: 17, name: "वीर कुंवर सिंह जयन्ती", start: "2026-04-23", category: "national" },
+			{ id: 18, name: "जानकी नवमी", start: "2026-04-25", category: "festival" },
+			{ id: 19, name: "मई दिवस (श्रम दिवस) / बुद्ध पूर्णिमा", start: "2026-05-01", category: "national" },
+			{ id: 20, name: "ईद-उल-जोहा (बकरीद)", start: "2026-05-28", end: "2026-05-29", category: "festival", moonBased: true },
+			{ id: 21, name: "मुहर्रम", start: "2026-06-26", end: "2026-06-27", category: "festival", moonBased: true },
+			{ id: 22, name: "कबीर जयन्ती", start: "2026-06-29", category: "festival" },
+			{ id: 23, name: "चेहल्लुम", start: "2026-08-04", category: "festival" },
+			{ id: 24, name: "स्वतंत्रता दिवस", start: "2026-08-15", category: "national" },
+			{ id: 25, name: "अंतिम श्रावणी सोमवार", start: "2026-08-24", category: "festival" },
+			{ id: 26, name: "हज़रत मोहम्मद साहब का जन्म दिवस", start: "2026-08-26", category: "festival" },
+			{ id: 27, name: "रक्षाबंधन", start: "2026-08-28", category: "festival" },
+			{ id: 28, name: "श्री कृष्ण जन्माष्टमी", start: "2026-09-04", category: "festival" },
+			{ id: 29, name: "विश्वकर्मा पूजा", start: "2026-09-17", category: "festival" },
+			{ id: 30, name: "अनन्त चतुर्दशी", start: "2026-09-25", category: "festival" },
+			{ id: 31, name: "महात्मा गाँधी जयन्ती", start: "2026-10-02", category: "national" },
+			{ id: 32, name: "दुर्गा पूजा (कलश स्थापन) / जय प्रकाश नारायण जयन्ती", start: "2026-10-11", category: "festival" },
+			{ id: 33, name: "दुर्गा पूजा / श्रीकृष्ण सिंह जयन्ती", start: "2026-10-17", end: "2026-10-21", category: "vacation" },
+			{ id: 34, name: "दीपावली / चित्रगुप्त पूजा / भाई दूज / छठ पूजा", start: "2026-11-08", end: "2026-11-16", category: "vacation" },
+			{ id: 35, name: "गुरू नानक जयन्ती / कार्तिक पूर्णिमा", start: "2026-11-24", category: "festival" },
+			{ id: 36, name: "डॉ. राजेन्द्र प्रसाद जयन्ती", start: "2026-12-03", category: "national" },
+			{ id: 37, name: "क्रिसमस दिवस", start: "2026-12-25", category: "festival" },
+			{ id: 38, name: "शीतकालीन अवकाश", start: "2026-12-26", end: "2026-12-31", category: "vacation" },
+			{
+				id: 39,
+				name: "ग्रीष्मावकाश (केवल शिक्षकों के लिए)",
+				start: "2026-05-23",
+				end: "2026-06-21",
+				category: "vacation",
+				teacherOnly: true,
+			},
+		];
+
+		const holidayListAll = document.getElementById("holidayListAll") as HTMLDivElement;
+		const selectedDayInfo = document.getElementById("selectedDayInfo") as HTMLDivElement;
+		const searchInput = document.getElementById("searchInput") as HTMLInputElement;
+		const teacherOnlyToggle = document.getElementById("teacherOnlyToggle") as HTMLInputElement;
+
+		function formatDate(iso: string): string {
+			const [y, m, d] = iso.split("-").map(Number);
+			return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-IN", {
+				timeZone: "UTC",
+				day: "2-digit",
+				month: "short",
+				year: "numeric",
+			});
+		}
+
+		function categoryLabel(category: HolidayCategory): string {
+			if (category === "national") return "🏛️ National/State";
+			if (category === "festival") return "✨ Festival";
+			if (category === "vacation") return "🏖️ Vacation";
+			return "🎓 Academic";
+		}
+
+		function renderHolidayList(entries: HolidayEntry[]) {
+			const sorted = [...entries].sort((a, b) => a.start.localeCompare(b.start));
+			if (!sorted.length) {
+				holidayListAll.innerHTML = '<p class="empty-state">No holidays match your search.</p>';
+				return;
+			}
+
+			holidayListAll.innerHTML = sorted
+				.map((entry) => {
+					const rangeText = entry.end ? `${formatDate(entry.start)} - ${formatDate(entry.end)}` : formatDate(entry.start);
+					return `<article class="holiday-bar-item ${entry.category}">
+						<div class="category-strip"></div>
+						<div class="content">
+							<div class="info">
+								<p class="name">${entry.name}${entry.moonBased ? " *" : ""}</p>
+								<p class="range">${rangeText}</p>
+							</div>
+							<div class="meta">
+								<span class="badge-mini">${categoryLabel(entry.category)}</span>
+								${entry.teacherOnly ? '<span class="badge-mini teacher">👨‍🏫 Teachers</span>' : ""}
+							</div>
+						</div>
+					</article>`;
+				})
+				.join("");
+		}
+
+		function updateYearProgress() {
+			const start = new Date("2026-01-01").getTime();
+			const end = new Date("2026-12-31").getTime();
+			const now = Date.now();
+			const year2026Start = new Date("2026-01-01").getTime();
+			const year2026End = new Date("2026-12-31").getTime();
+
+			// If it's 2026, show actual progress. Otherwise show 0 or 100
+			let progress = 0;
+			const currentYear = new Date().getFullYear();
+			if (currentYear < 2026) progress = 0;
+			else if (currentYear > 2026) progress = 100;
+			else {
+				progress = Math.max(0, Math.min(100, ((now - year2026Start) / (year2026End - year2026Start)) * 100));
+			}
+
+			const barFill = document.getElementById("progressBarFill");
+			const percentText = document.getElementById("progressPercent");
+			if (barFill) barFill.style.width = `${progress}%`;
+			if (percentText) percentText.innerText = `${Math.round(progress)}%`;
+		}
+
+		function updateSelectedInfo(date: string) {
+			const visible = holidays2026.filter(h => {
+				const start = h.start;
+				const end = h.end || h.start;
+				return date >= start && date <= end;
+			});
+
+			if (!visible.length) {
+				selectedDayInfo.innerHTML = `<p class="empty-state">No holiday on ${formatDate(date)}.</p>`;
+				return;
+			}
+
+			selectedDayInfo.innerHTML = visible
+				.map((entry) => {
+					const rangeText = entry.end ? `${formatDate(entry.start)} - ${formatDate(entry.end)}` : formatDate(entry.start);
+					return `<article class="picked-item">
+						<div class="info">
+							<h4>${entry.name}${entry.moonBased ? " *" : ""}</h4>
+							<p>${rangeText}</p>
+						</div>
+						<div class="badges">
+							<span class="badge ${entry.category}">${categoryLabel(entry.category)}</span>
+							${entry.teacherOnly ? '<span class="badge teacher">👨‍🏫 Teachers Only</span>' : ""}
+						</div>
+					</article>`;
+				})
+				.join("");
+		}
+
+		let calendar: Calendar | null = null;
+		const initCalendar = () => {
+			updateYearProgress();
+			const calendarEl = document.querySelector('#calendar');
+			if (!calendarEl) return;
+
+			const query = searchInput.value.trim().toLowerCase();
+			const showTeacherOnly = teacherOnlyToggle.checked;
+
+			const popups: Record<string, any> = {};
+
+			holidays2026.forEach((h) => {
+				if (h.teacherOnly && !showTeacherOnly) return;
+				if (query && !h.name.toLowerCase().includes(query)) return;
+
+				const start = h.start;
+				const end = h.end || h.start;
+
+				const startDate = new Date(start);
+				const endDate = new Date(end);
+				for (
+					let d = new Date(startDate);
+					d <= endDate;
+					d.setDate(d.getDate() + 1)
+				) {
+					const iso = d.toISOString().split("T")[0];
+					if (!popups[iso]) {
+						popups[iso] = {
+							modifier: `holiday-mark ${h.category}`,
+							html: "",
+						};
+					} else if (!popups[iso].modifier.includes(h.category)) {
+						popups[iso].modifier += ` ${h.category}`;
+					}
+					popups[iso].html += `<div class="popup-item">${h.name}</div>`;
+				}
+			});
+
+			if (calendar) {
+				try {
+					calendar.destroy();
+				} catch (e) {
+					console.error("Error destroying calendar:", e);
+				}
+			}
+
+			try {
+				calendar = new Calendar(calendarEl as HTMLElement, {
+					type: "multiple",
+					displayMonthsCount: 12,
+					selectedYear: 2026,
+					selectedMonth: 0,
+					locale: "en",
+					selectionDatesMode: "single",
+					selectionMonthsMode: false,
+					selectionYearsMode: false,
+					selectedTheme: "dark",
+					selectedWeekends: [0], // Only Sundays
+					popups: popups,
+					onClickDate(self) {
+						if (self.selectedDates && self.selectedDates[0]) {
+							updateSelectedInfo(self.selectedDates[0]);
+						}
+					},
+				});
+				calendar.init();
+			} catch (e: any) {
+				console.error("Error initializing calendar:", e);
+			}
+
+			renderHolidayList(
+				holidays2026.filter((h) => {
+					if (h.teacherOnly && !showTeacherOnly) return false;
+					if (query && !h.name.toLowerCase().includes(query))
+						return false;
+					return true;
+				}),
+			);
+		};
+
+		searchInput.addEventListener("input", initCalendar);
+		teacherOnlyToggle.addEventListener("change", initCalendar);
+
+		// For Astro view transitions and initial load
+		document.addEventListener("astro:page-load", initCalendar);
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", initCalendar);
+		} else {
+			initCalendar();
+		}
+	</script>
+
+	<style is:global>
+		/* Override Layout container to allow full width for calendar */
+		main.container {
+			max-width: 1200px !important;
+			width: 100%;
+			margin: 0 auto;
+			padding: 0 1rem 3rem !important;
+		}
+
+		:root {
+			--calendar-bg: var(--bg-primary);
+			--card-bg: var(--bg-card);
+			--accent-primary: var(--accent-blue);
+			--accent-secondary: var(--accent-purple);
+			--text-main: var(--text-primary);
+			--text-muted: var(--text-secondary);
+			--holiday-festival: #f43f5e;
+			--holiday-national: #10b981;
+			--holiday-vacation: #f59e0b;
+			--holiday-academic: #3b82f6;
+			--sunday-red: #f43f5e;
+			--border-glass: var(--border-subtle);
+		}
+
+		.calendar-shell {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+			width: 100%;
+			margin-top: 0.5rem;
+		}
+
+		.holiday-links {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 0.75rem;
+		}
+
+		.holiday-links a[role="button"] {
+			margin: 0;
+		}
+
+		@media (display-mode: standalone) {
+			.app-cta {
+				display: none;
+			}
+		}
+
+		.year-progress-wrapper {
+			padding: 0.75rem 1.25rem;
+			background: rgba(15, 23, 42, 0.4);
+			border: 1px solid var(--border-glass);
+			border-radius: 12px;
+			margin-bottom: 0.5rem;
+		}
+
+		.progress-info {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 0.5rem;
+			font-size: 0.9rem;
+			font-weight: 700;
+			color: var(--text-muted);
+		}
+
+		.progress-bar {
+			width: 100%;
+			height: 8px;
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 4px;
+			overflow: hidden;
+		}
+
+		.progress-fill {
+			height: 100%;
+			background: var(--accent-gradient);
+			width: 0%;
+			transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+		}
+
+		.sticky-toolbar {
+			position: sticky;
+			top: 0.5rem;
+			z-index: 100;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem;
+			padding: 0.75rem 1rem;
+			justify-content: space-between;
+			align-items: center;
+			background: rgba(30, 41, 59, 0.85);
+			backdrop-filter: blur(20px);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 16px;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+		}
+
+		.toolbar input[type="search"] {
+			background: rgba(15, 23, 42, 0.8);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			color: #fff;
+			padding: 0.5rem 1rem;
+			font-size: 0.85rem;
+			border-radius: 8px;
+			width: 100%;
+			min-width: 250px;
+			transition: transform 0.3s;
+			margin-bottom: 0;
+		}
+
+		.toggle-pill {
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
+			background: rgba(255, 255, 255, 0.05);
+			padding: 0.35rem 0.75rem;
+			border-radius: 50px;
+			border: 1px solid var(--border-glass);
+			font-size: 0.75rem;
+			font-weight: 600;
+			cursor: pointer;
+			margin-bottom: 0;
+		}
+
+		.legend-bar {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			justify-content: center;
+			padding: 0.5rem;
+			background: rgba(15, 23, 42, 0.3);
+			border-radius: 8px;
+			margin-bottom: 0.5rem;
+		}
+
+		.legend-item {
+			display: flex;
+			align-items: center;
+			gap: 0.35rem;
+			font-size: 0.75rem;
+			font-weight: 700;
+			color: var(--text-muted);
+		}
+
+		.dot {
+			width: 10px;
+			height: 10px;
+			border-radius: 3px;
+		}
+
+		.dot.festival {
+			background: var(--holiday-festival);
+		}
+		.dot.national {
+			background: var(--holiday-national);
+		}
+		.dot.vacation {
+			background: var(--holiday-vacation);
+		}
+		.dot.academic {
+			background: var(--holiday-academic);
+		}
+		.dot.sunday {
+			border: 1px solid var(--sunday-red);
+		}
+
+		.calendar-wrapper {
+			width: 100%;
+			overflow-x: auto;
+			padding-bottom: 2rem;
+			scrollbar-width: none; /* Hide scrollbar Firefox */
+		}
+		.calendar-wrapper::-webkit-scrollbar {
+			display: none;
+		} /* Hide scrollbar Chrome/Safari */
+
+		/* Horizontal Bar Style for List */
+		.holiday-bar-item {
+			display: flex;
+			overflow: hidden;
+			background: rgba(30, 41, 59, 0.4);
+			border: 1px solid var(--border-glass);
+			border-radius: 12px;
+			margin-bottom: 0.75rem;
+			transition: transform 0.3s ease;
+		}
+
+		.holiday-bar-item:hover {
+			transform: scale(1.01) translateX(5px);
+			border-color: var(--accent-primary);
+			background: rgba(255, 255, 255, 0.05);
+		}
+
+		.category-strip {
+			width: 6px;
+			flex-shrink: 0;
+		}
+
+		.festival .category-strip {
+			background: var(--holiday-festival);
+		}
+		.national .category-strip {
+			background: var(--holiday-national);
+		}
+		.vacation .category-strip {
+			background: var(--holiday-vacation);
+		}
+		.academic .category-strip {
+			background: var(--holiday-academic);
+		}
+
+		.holiday-bar-item .content {
+			flex: 1;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0.6rem 1rem;
+			gap: 0.75rem;
+		}
+
+		.holiday-bar-item .name {
+			font-size: 0.95rem;
+			font-weight: 700;
+			color: #fff;
+			margin: 0;
+		}
+
+		.holiday-bar-item .range {
+			font-size: 0.75rem;
+			font-weight: 600;
+			color: var(--text-muted);
+			margin: 0;
+			margin-top: 0.1rem;
+		}
+
+		.holiday-bar-item .meta {
+			display: flex;
+			gap: 0.5rem;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
+
+		@media (max-width: 768px) {
+			.holiday-bar-item .content {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 0.75rem;
+			}
+			.holiday-bar-item .meta {
+				justify-content: flex-start;
+			}
+			.sticky-toolbar {
+				top: 0.5rem;
+				padding: 1rem;
+			}
+		}
+
+		/* Re-styled Selected Card */
+		.selected-card {
+			grid-column: 1 / -1;
+			background: var(--bg-card);
+			border: 1px solid var(--border-accent);
+			padding: 1rem 1.5rem;
+			border-radius: 16px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+			border-left: 6px solid var(--accent-blue);
+		}
+		
+		.selected-card h3 {
+			font-size: 1rem;
+			margin-bottom: 0.5rem;
+		}
+
+		/* Vanilla Calendar Overrides */
+		#calendar {
+			width: 100%;
+			border: none;
+			background: transparent;
+		}
+
+		.vc-controls {
+			display: none !important;
+		}
+
+		.vc-container {
+			background: transparent !important;
+			border: none !important;
+			width: 100% !important;
+		}
+
+		.vc-months {
+			display: grid !important;
+			grid-template-columns: repeat(4, 1fr) !important;
+			gap: 0.5rem !important;
+			width: 100% !important;
+			min-width: 800px; /* Force scroll on smaller screens */
+		}
+
+		@media (max-width: 1200px) {
+			.vc-months {
+				grid-template-columns: repeat(3, 1fr) !important;
+				min-width: 600px;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.vc-months {
+				grid-template-columns: repeat(2, 1fr) !important;
+				min-width: 400px;
+			}
+		}
+		
+		@media (max-width: 480px) {
+			.vc-months {
+				grid-template-columns: 1fr !important;
+				min-width: 280px;
+			}
+		}
+
+		.vc-month {
+			background: var(--bg-card) !important;
+			backdrop-filter: blur(8px) !important;
+			border: 1px solid var(--border-subtle) !important;
+			border-radius: 8px !important;
+			padding: 0.5rem !important;
+			height: auto !important;
+		}
+
+		.vc-header {
+			margin-bottom: 0.25rem !important;
+			padding: 0 !important;
+		}
+
+		.vc-header__content {
+			color: var(--accent-blue) !important;
+			font-weight: 800 !important;
+			text-transform: uppercase !important;
+			letter-spacing: 0.02em !important;
+			font-size: 0.8rem !important;
+		}
+
+		.vc-week__day {
+			color: var(--accent-purple) !important;
+			font-weight: 700 !important;
+			font-size: 0.65rem !important;
+			padding: 0.2rem 0 !important;
+		}
+
+		.vc-day {
+			font-weight: 600 !important;
+			font-size: 0.7rem !important;
+			border-radius: 6px !important;
+			transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease !important;
+			min-height: 24px !important;
+		}
+
+		/* Sunday-only weekend highlighting */
+		.vc-day[data-vc-date-weekend] {
+			color: #f43f5e !important;
+			background: rgba(244, 63, 94, 0.05) !important;
+		}
+
+		/* No weekend styling for Saturdays */
+		.vc-day:not([data-vc-date-weekend]) {
+			color: var(--text-main);
+		}
+
+		/* Categorical Highlighting for holidays */
+		.vc-date__btn.holiday-mark {
+			border: 1px solid rgba(255, 255, 255, 0.1) !important;
+			border-radius: 8px !important;
+			width: 100% !important;
+			height: 100% !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+		}
+
+		.vc-date__btn.festival {
+			background: rgba(244, 63, 94, 0.25) !important;
+			border-color: rgba(244, 63, 94, 0.4) !important;
+			color: #fff !important;
+		}
+
+		.vc-date__btn.national {
+			background: rgba(16, 185, 129, 0.25) !important;
+			border-color: rgba(16, 185, 129, 0.4) !important;
+			color: #fff !important;
+		}
+
+		.vc-date__btn.vacation {
+			background: rgba(245, 158, 11, 0.25) !important;
+			border-color: rgba(245, 158, 11, 0.4) !important;
+			color: #fff !important;
+		}
+
+		.vc-date__btn.academic {
+			background: rgba(59, 130, 246, 0.25) !important;
+			border-color: rgba(59, 130, 246, 0.4) !important;
+			color: #fff !important;
+		}
+
+		/* Hover and selection adjustments */
+		.vc-day:hover .vc-date__btn.holiday-mark {
+			background: rgba(255, 255, 255, 0.1) !important;
+		}
+
+		.vc-day_selected .vc-date__btn {
+			background: #fff !important;
+			color: var(--bg-primary) !important;
+			box-shadow: 0 0 15px #fff !important;
+			border-color: #fff !important;
+		}
+
+		.badge-mini {
+			font-size: 0.6rem;
+			font-weight: 700;
+			color: var(--text-muted);
+			background: rgba(255, 255, 255, 0.05);
+			padding: 0.15rem 0.4rem;
+			border-radius: 4px;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.2rem;
+		}
+
+		.badge-mini.teacher {
+			background: rgba(139, 92, 246, 0.2);
+			color: #8b5cf6;
+		}
+
+		/* Highlight Today */
+		.vc-day_today .vc-date__btn, .vc-day_today .vc-day__btn {
+			border: 2px solid var(--accent-cyan) !important;
+			background: rgba(6, 182, 212, 0.2) !important;
+			color: #fff !important;
+			font-weight: 900 !important;
+			box-shadow: 0 0 10px rgba(6, 182, 212, 0.5) !important;
+			transform: scale(1.1);
+			z-index: 10;
+		}
+
+		.list-card {
+			grid-column: 1 / -1;
+			padding: 1.5rem;
+			background: var(--card-bg);
+			border-radius: 16px;
+			border: 1px solid var(--border-glass);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+		}
+		
+		.list-card h3 {
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.holiday-list {
+			margin-top: 1rem;
+		}
+
+		.notes {
+			grid-column: 1 / -1;
+			padding: 1.5rem;
+			background: rgba(244, 63, 94, 0.05);
+			border: 1px solid rgba(244, 63, 94, 0.2);
+			border-radius: 16px;
+		}
+
+		.notes h3 {
+			color: #f43f5e;
+			font-size: 1.1rem;
+			margin-bottom: 0.5rem;
+		}
+		.notes ul {
+			list-style: none;
+			padding: 0;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 0.5rem;
+			font-size: 0.85rem;
+		}
+		.notes li {
+			color: var(--text-muted);
+			position: relative;
+			padding-left: 1.5rem;
+		}
+		.notes li::before {
+			content: "•";
+			position: absolute;
+			left: 0;
+			color: #f43f5e;
+			font-weight: bold;
+		}
+	</style>
+
+	<Footer />
+</Layout>

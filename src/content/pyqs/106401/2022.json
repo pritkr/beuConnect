@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2022 (New Course)",
+    "subject": "Computer Organization and Architecture",
+    "subject_slug": "computer-organization-and-architecture",
+    "subject_code": "105401/106401",
+    "year": 2022,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven) :",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The 8-bit encoding format used to store data in a computer is</p>",
+          "options": [
+            "ASCII",
+            "EBCDIC",
+            "ANCI",
+            "USCII"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The bus used to connect the monitor to the CPU is</p>",
+          "options": [
+            "PCI bus",
+            "SCSI bus",
+            "memory bus",
+            "ram bus"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The alternate way of writing the instruction, ADD #5, R1 is</p>",
+          "options": [
+            "ADD [5],[R1];",
+            "ADDI 5,R1;",
+            "ADDIME 5, [R1];",
+            "There is no other way"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The instruction fetch phase ends with</p>",
+          "options": [
+            "placing the data from the address in MAR into MDR",
+            "placing the address of the data into MAR",
+            "completing the execution of the data and placing its storage address into MAR",
+            "decoding the data in MDR and placing it in IR"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>For converting a virtual address into the physical address, the programs are divided into</p>",
+          "options": [
+            "pages",
+            "frames",
+            "segments",
+            "blocks"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The transfer of large chunks of data with the involvement of the processor is done by</p>",
+          "options": [
+            "DMA controller",
+            "arbitrator",
+            "user system programs",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The computer architecture aimed at reducing the time of execution of instructions is</p>",
+          "options": [
+            "CISC",
+            "RISC",
+            "ISA",
+            "ANNA"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which table handle stores the addresses of the interrupt handling sub-routines?</p>",
+          "options": [
+            "Interrupt-vector table",
+            "Vector table",
+            "Symbol link table",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The situation wherein the data of operands are not available is called</p>",
+          "options": [
+            "data hazard",
+            "stock",
+            "deadlock",
+            "structural hazard"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The DMA controller has ___ registers.</p>",
+          "options": [
+            "4",
+            "2",
+            "3",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>List and briefly define the main structural components of a computer.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Discuss the design and logic of a microprogram sequence.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Consider a hypothetical 32-bit microprocessor having 32-bit instructions composed of two fields\n                        the\n                        first contains the opcode and the remainder the immediate operand or an operand address.<br/>What\n                        is\n                        the maximum directly addressable memory capacity (in bytes)?</p>\n<p>Discuss the impact on the system speed if the microprocessor bus has (i) a 32-bit local address\n                        bus\n                        and a 16-bit local data bus, or (ii) a 16-bit local address bus and a 16-bit local data bus.</p>\n<p>How many bits are needed for the program counter and the instruction register?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A set-associative cache has a block size of four 16-bit words and a set size of 2. The cache can\n                        accommodate a total of 4096 words. The main memory size that is cacheable is 64K 32 bits. Design\n                        the\n                        cache structure and show how the processor's addresses are interpreted.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain two techniques for enhancing the performance of computers with multiple execution\n                        pipelines.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Calculate (72530-13250) using ten's complement arithmetic. Assume rules similar to those for\n                        two's\n                        complement arithmetic.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>List and briefly explain five important instruction set design issues.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>The x86 architecture includes an instruction called decimal adjust after addition (DAA). DAA\n                        performs\n                        the following sequence of instructions :<br/>\n                        if((AL AND OFH)&gt;9) OR \\( (AF=1) \\) then \\( AL \\leftarrow AL+6 \\); AF 1; else AF 0;\n                        endif;<br/>\n                        if (AL&gt; 9FH) OR \\( (CF=1) \\) then \\( AL \\leftarrow AL+60H \\); CF-1; else CF 0; endif.<br/>\n                        \"H\" indicates hexadecimal. AL is an 8-bit register that holds the result of addition of two\n                        unsigned\n                        8-bit integers. AF is a flag set if there is a carry from bit 3 to bit 4 in the result of an\n                        addition. CF is a flag set if there is a carry from bit 7 to bit 8. Explain the function\n                        performed\n                        by the DAA instruction.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A non-pipelined processor has a clock rate of 2.5 GHz and an average CPI (cycles per instruction)\n                        of\n                        4. An upgrade to the processor introduces a five-stage pipeline. However, due to internal\n                        pipeline\n                        delays, such as latch delay, the clock rate of the new processor has to be reduced to 2\n                        GHz.<br/>1. What\n                        is the speedup achieved for a typical program?<br/>2. What is the MIPS rate for each processor?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Briefly explain the two basic approaches used to minimize register-memory operations on RISC\n                        machines.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>A computer has 16 registers, an ALU with 32 operations, and a shifter with 8 operations, all\n                        connected to a common bus system. (i) Formulate a control word for micro-operation. (ii) Show\n                        the\n                        bits of the control word that specify the micro-operation \\( R4 \\leftarrow R5+R6 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Let a be the percentage of a program code that can be executed simultaneously by n processors in\n                        a\n                        computer system. Assume that the remaining code must be executed sequentially by a single\n                        processor.\n                        Each processor has an execution rate of x MIPS.<br/>Derive an expression for the effective MIPS\n                        rate\n                        when using the system for exclusive execution of this program, in terms of n, a and x.</p>\n<p>If \\( n=16 \\) and \\( x=4 \\) MIPS, determine the value of that will yield a system performance\n                        of\n                        40 MIPS.</p>"
+        }
+      ]
+    }
+  ]
+}

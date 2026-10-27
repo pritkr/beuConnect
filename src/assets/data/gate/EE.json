@@ -1,0 +1,45 @@
+{
+  "code": "EE",
+  "sections": [
+    {
+      "title": "Section 1: Engineering Mathematics",
+      "content": "Linear Algebra: Matrix Algebra, Systems of linear equations, Eigen values, Eigen vectors.\nCalculus: Mean value theorems, Theorems of integral calculus, Evaluation of definite and\nimproper integrals, Partial Derivatives, Maxima and minima, Multiple integrals, Fourier\nseries, Vector identities, Directional derivatives, Line integral, Surface integral, Volume\nintegral, Stokes’s theorem, Gauss’s theorem, Divergence theorem, Green’s theorem.\nDifferential Equations: First order equations (linear and nonlinear), Higher order linear\ndifferential equations with constant coefficients, Method of variation of parameters,\nCauchy’s equation, Euler’s equation, Initial and boundary value problems, Partial\nDifferential Equations, Method of separation of variables.\nComplex Variables: Analytic functions, Cauchy’s integral theorem, Cauchy’s integral formula,\nTaylor series, Laurent series, Residue theorem, Solution integrals.\nProbability and Statistics: Sampling theorems, Conditional probability, Mean, Median,\nMode, Standard Deviation, Random variables, Discrete and Continuous distributions,\nPoisson distribution, Normal distribution, Binomial distribution, Correlation analysis,\nRegression analysis."
+    },
+    {
+      "title": "Section 2: Electric circuits",
+      "content": "Network Elements: Ideal voltage and current sources, dependent sources, R, L, C, M\nelements; Network solution methods: KCL, KVL, Node and Mesh analysis; Network\nTheorems: Thevenin’s, Norton’s, Superposition and Maximum Power Transfer theorem;\nTransient response of DC and AC networks, sinusoidal steady-state analysis, resonance,\ntwo port networks, balanced three phase circuits, star-delta transformation, complex power\nand power factor in AC circuits."
+    },
+    {
+      "title": "Section 3: Electromagnetic Fields",
+      "content": "Coulomb's Law, Electric Field Intensity, Electric Flux Density, Gauss's Law, Divergence,\nElectric field and potential due to point, line, plane and spherical charge distributions, Effect\nof dielectric medium, Capacitance of simple configurations, Biot‐Savart’s law, Ampere’s\nlaw, Curl, Faraday’s law, Lorentz force, Inductance, Magnetomotive force, Reluctance,\nMagnetic circuits, Self and Mutual inductance of simple configurations."
+    },
+    {
+      "title": "Section 4: Signals and Systems",
+      "content": "Representation of continuous and discrete time signals, shifting and scaling properties,\nlinear time invariant and causal systems, Fourier series representation of continuous and\ndiscrete time periodic signals, sampling theorem, Applications of Fourier Transform for\ncontinuous and discrete time signals, Laplace Transform and Z transform. R.M.S. value,\naverage value calculation for any general periodic waveform."
+    },
+    {
+      "title": "Section 5: Electrical Machines",
+      "content": "Single phase transformer: equivalent circuit, phasor diagram, open circuit and short\ncircuit tests, regulation and efficiency; Three-phase transformers: connections, vector\n\ngroups, parallel operation; Auto-transformer, Electromechanical energy conversion\nprinciples; DC machines: separately excited, series and shunt, motoring and generating\nmode of operation and their characteristics, speed control of dc motors; Three-phase\ninduction machines: principle of operation, types, performance, torque-speed\ncharacteristics, no-load and blocked-rotor tests, equivalent circuit, starting and speed\ncontrol; Operating principle of single-phase induction motors; Synchronous machines:\ncylindrical and salient pole machines, performance and characteristics, regulation and parallel\noperation of generators, starting of synchronous motors; Types of losses and efficiency\ncalculations of electric machines."
+    },
+    {
+      "title": "Section 6: Power Systems",
+      "content": "Basic concepts of electrical power generation, AC and DC transmission concepts, Models and\nperformance of transmission lines and cables, Economic Load Dispatch (with and\nwithout considering transmission losses), Series and shunt compensation, Electric field\ndistribution and insulators, Distribution systems, Per‐unit quantities, Bus admittance\nmatrix, Gauss- Seidel and Newton-Raphson load flow methods, Voltage and Frequency control,\nPower factor correction, Symmetrical components, Symmetrical and unsymmetrical\nfault analysis, Principles of over‐current, differential, directional and distance protection;\nCircuit breakers, System stability concepts, Equal area criterion."
+    },
+    {
+      "title": "Section 7: Control Systems",
+      "content": "Mathematical modelling and representation of systems, Feedback principle, transfer function,\nBlock diagrams and Signal flow graphs, Transient and Steady‐state analysis of linear\ntime invariant systems, Stability analysis using Routh-Hurwitz and Nyquist criteria, Bode plots,\nRoot loci, Lag, Lead and Lead‐Lag compensators; P, PI and PID controllers; State space\nmodel, Solution of state equations of LTI systems."
+    },
+    {
+      "title": "Section 8: Electrical and Electronic Measurements",
+      "content": "Bridges and Potentiometers, Measurement of voltage, current, power, energy and power\nfactor; Instrument transformers, Digital voltmeters and multi-meters, Phase, Time and\nFrequency measurement; Oscilloscopes, Error analysis."
+    },
+    {
+      "title": "Section 9: Analog and Digital Electronics",
+      "content": "Simple diode circuits: clipping, clamping, rectifiers; Amplifiers: biasing, equivalent circuit\nand frequency response; oscillators and feedback amplifiers; operational amplifiers:\ncharacteristics and applications; single stage active filters, Active Filters: Sallen Key,\nButterwoth, VCOs and timers, combinatorial and sequential logic circuits, multiplexers,\ndemultiplexers, Schmitt triggers, sample and hold circuits, A/D and D/A converters."
+    },
+    {
+      "title": "Section 10: Power Electronics",
+      "content": "Static V-I characteristics and firing/gating circuits for Thyristor, MOSFET, IGBT; DC to DC\nconversion: Buck, Boost and Buck-Boost Converters; Single and three-phase configuration of\nuncontrolled rectifiers; Voltage and Current commutated Thyristor based converters;\nBidirectional ac to dc voltage source converters; Magnitude and Phase of line current\nharmonics for uncontrolled and thyristor based converters; Power factor and Distortion Factor\nof AC to DC converters; Single-phase and three-phase voltage and current source\ninverters, sinusoidal pulse width modulation."
+    }
+  ]
+}

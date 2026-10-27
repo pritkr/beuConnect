@@ -1,0 +1,327 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Examination, 2024 (Old)",
+    "subject": "Programming for Problem Solving",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100104",
+    "year": 2024,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option for the following questions (Answer any\n                    seven only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "Where is a program stored and executed?",
+          "options": [
+            "Hard Disk",
+            "Main Memory (RAM)",
+            "Cache",
+            "ROM"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "What is the output of a compiler?",
+          "options": [
+            "Source code",
+            "Flowchart",
+            "Executable code",
+            "Algorithm"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "Which storage class has the default value of a variable as zero?",
+          "options": [
+            "auto",
+            "extern",
+            "static",
+            "register"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "What is the result of 5% 2 in C?",
+          "options": [
+            "2.5",
+            "1",
+            "2",
+            "0"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "What type of array is used to store string?",
+          "options": [
+            "int",
+            "float",
+            "char",
+            "double"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "Binary search works only on:",
+          "options": [
+            "Unsorted list",
+            "Doubly linked list",
+            "Sorted list",
+            "Any list"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Which operator is used to access members of a structure using a pointer?",
+          "options": [
+            ".",
+            "->",
+            "*",
+            "&"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "What is the output of \\( *(\\&x) \\) in C?",
+          "options": [
+            "Address of x",
+            "Error",
+            "Value of x",
+            "Nothing"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "Which function is used to open a file in C?",
+          "options": [
+            "fopen()",
+            "file()",
+            "openfile()",
+            "fcreate()"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "Which of the following problems can be solved using recursion?",
+          "options": [
+            "Fibonacci",
+            "GCD",
+            "Factorial",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Draw a flowchart to find the largest of three numbers.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Explain different storage classes in C.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "What is type casting in programming? Differentiate between implicit and explicit type conversion\n                        with examples."
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Explain operator precedence and associativity with examples.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Write the differences between if, if-else, and switch statements with examples.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Explain the concept of pointer to pointer with a code example. What is a self-referential\n                        structure?"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "How are arrays declared and initialized in C? What is bound checking? Why is it important in\n                        array programming?",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Explain the different modes of opening a file in C. Give examples."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "Write a program to perform linear search in an array.",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Describe the bubble sort algorithm and write its implementation in C.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "What is the difference between call by value and call by reference? Explain with examples.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "What is the scope of a variable? Explain local and global scope with examples."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "What is recursion? Write a recursive function to compute the nth Fibonacci number.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "What is the difference between structure and union? Explain with an example.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write Short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "Self-Referential Structure"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "Compiler and Linker"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "Syntax and logical errors"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "Bitwise Operator"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2013",
+    "subject": "OPERATING SYSTEMS",
+    "subject_slug": "operating-systems",
+    "subject_code": "061503",
+    "year": 2013,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct option (any seven) :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "<p>An operating system is a type of —— software.</p>",
+          "options": [
+            "application",
+            "system",
+            "utility",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "<p>A process is</p>",
+          "options": [
+            "a program in high-level language kept on disk",
+            "contents of main memory",
+            "a program in execution",
+            "a job in secondary memory"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "<p>An operating system having rigid time requirements is known as</p>",
+          "options": [
+            "batch processing system",
+            "multiprogramming system",
+            "real-time system",
+            "multitasking system"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "<p>—— is a technique of improving the priority of process waiting in queue for CPU allocation.</p>",
+          "options": [
+            "Starvation",
+            "Ageing",
+            "Revocation",
+            "Relocation"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "<p>Kernel mode of operation is also called</p>",
+          "options": [
+            "supervisor mode",
+            "privileged mode",
+            "Both",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "<p>Interval between the time of submission and completion of the job is called</p>",
+          "options": [
+            "waiting time",
+            "turnaround time",
+            "throughput",
+            "response time"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "<p>A software generated interrupt is called</p>",
+          "options": [
+            "trap",
+            "software interrupt",
+            "soft interrupt",
+            "hard interrupt"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "<p>In which of the following page replacement policies Belady's anomaly occurs?</p>",
+          "options": [
+            "FIFO",
+            "LRU",
+            "LFU",
+            "NRU"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "<p>LRU page replacement algorithm stands for</p>",
+          "options": [
+            "Last Recently Used algorithm",
+            "Least Recently Used algorithm",
+            "Latest Recently Used algorithm",
+            "Lowest Recently Used algorithm"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "<p>Memory management scheme having no external fragmentation is called</p>",
+          "options": [
+            "paging",
+            "segmentation",
+            "Both",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>Explain the duties of operating system.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>How is a process different from a program? Explain the importance and need for process control block.</p>",
+          "total_marks": 8
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>Explain the use of resource allocation graph.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>What is thread? Explain the benefits of using thread.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>What do you understand by deadlock? Discuss the methods to avoid deadlock.</p>",
+          "total_marks": 8
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>What is thrashing? How can it be controlled?</p>",
+          "total_marks": 6
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5",
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>Explain the various address binding schemes.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Explain the segmentation technique with the help of a diagram.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>Explain the following terms :<br/>(i) Turnaround time<br/>(ii) Waiting time<br/>(iii) Response time<br/>(iv) Throughput</p>",
+          "total_marks": 4
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>Consider the following page replacement string :<br/>0, 7, 1, 2, 0, 3, 7, 4, 2, 3, 0, 3, 2, 1, 0, 7, 1, 7, 0, 1<br/>Find the number of page faults using the following algorithms for a memory of 4 frames :<br/>(i) FIFO algorithm<br/>(ii) Optimal algorithm</p>",
+          "total_marks": 10
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7",
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>Explain the use of TLB in paging hardware and its benefits.</p>",
+          "total_marks": 8
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>Explain the role of different types of scheduler.</p>",
+          "total_marks": 6
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8",
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "<p>What is Belady's anomaly? Explain the steps for page replacement.</p>",
+          "total_marks": 8
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "<p>Explain the options for allocation of frames among various processes.</p>",
+          "total_marks": 6
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9",
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>Explain the working of LOOK and C-LOOK scheduling algorithms.</p>",
+          "total_marks": 8
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>Explain Dining-Philosophers problem.</p>",
+          "total_marks": 6
+        }
+      ]
+    }
+  ]
+}

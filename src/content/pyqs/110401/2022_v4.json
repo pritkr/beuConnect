@@ -1,0 +1,208 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2022",
+    "subject": "Analog Electronic Circuits",
+    "subject_slug": "analog-electronic-circuits",
+    "subject_code": "110401",
+    "year": 2022,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Attempt any seven from the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>What is avalanche multiplication?</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Compare CE, CC and CB for current gain, voltage gain, input and output impedance.</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Junction transistor is an active device. Justify.</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Write the equation of a diode and draw its VI characteristics.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>What is early effect in bipolar junction transistors?</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Draw an npn transistor in CB configuration and draw its input characteristics.</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>BJT has higher driving capability as compared to MOSFET. Justify.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>For an ideal negative feedback configuration, there is a virtual short circuit between the input\n                        terminals. Why?</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Draw a circuit which can be used as limiter or clamper or both.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Write brief notes on: (i) Avalanche breakdown (ii) Zener breakdown</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>The saturation currents of the diodes are 1 \\( \\mu A \\) and 2 \\( \\mu A \\). The breakdown\n                        voltages of the diodes are the same and are equal to 100 V: (i) Calculate the current and\n                        voltage for each diode if V = 90 V and V = 110 V (ii) Repeat part (i) if each diode is shunted\n                        by 10 M\\( \\Omega \\) resistor.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/252.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>With reference to rectifying circuits, explain- (i) ripple factor (\\( \\gamma \\)); (ii)\n                        transformer utility factor (TUF); (iii) peak inverse voltage (PIV); (iv) rectifier efficiency\n                        (\\( \\eta \\)).</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>For HW rectifier and capacitor filter- (i) draw the circuit diagram; (ii) draw the waveforms;\n                        (iii) give a brief explanation of the functioning of the circuit.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Draw Ebers Moll model for pnp transistor and show that transistor action is not possible by\n                        connecting two diodes back to back.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>For the transistor shown below, \\( \\alpha = 0.98 \\) and \\( V_{BB} = 0.7 \\), find \\( R_1 \\)\n                        for an emitter current \\( I_E = -2 mA \\). Neglect \\( I_{CO} \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/251.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Given the following measurements made at \\( I_C = 5 mA \\), \\( V_{CE} = 10 V \\) and at room\n                        temperature \\( h_{fe} = 100 \\), \\( h_{ie} = 600 \\Omega \\), \\( A_{ie} = 10 \\) at 10 MHz,\n                        \\( C_C = 3 pF \\). Find \\( f_T \\), \\( f_\\alpha \\), \\( r_{b'e} \\) and \\( r_{bb'} \\) for\n                        the transistor.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>A silicon transistor with \\( \\beta = h_{FE} = 100 \\), \\( V_{BE}(sat) = 0.8V \\), \\(\n                        V_{CE}(sat) = 0.2 V \\) is used in the circuit shown. Find the minimum value of \\( R_C \\) for\n                        which transistor remains in saturation.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/253.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Compare the performance of MOSFET and BJT.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain the construction of p-channel MOSFET. Draw and explain both depletion and enhancement\n                        mode MOSFET.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Calculate \\( v_0 \\) and the op-amp's output current as shown in the circuit and if \\( E_i \\)\n                        equals (i) +5 V and (ii) -2 V. For each situation, state if the op-amp sources or sinks current.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/250.jpg\"/>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>(i) Design an inverting amplifier with a gain of -5 and an input resistance of 10 k\\( \\Omega\n                        \\). (ii) Design a non-inverting amplifier with a gain of 5.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>The circuit shown is required to supply on average voltage of 120 V. Determine the r.m.s. value\n                        of secondary voltage, average current delivered to the load, peak current through each diode and\n                        PIV of diodes.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/249.jpg\"/>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain different amplifiers with suitable example.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Precision comparator</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Zero crossing detector with hysteresis</p>"
+        }
+      ]
+    }
+  ]
+}

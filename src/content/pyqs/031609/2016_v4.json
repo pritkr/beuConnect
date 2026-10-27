@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2016",
+    "subject": "POWER ELECTRONICS",
+    "subject_slug": "power-electronics",
+    "subject_code": "031609",
+    "year": 2016,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>A single-phase one pulse diode rectifier is feeding an RL load with freewheeling diode across the\n                        load. For conduction angle \\( \\beta \\), the main diode and freewheeling diode would,\n                        respectively, conduct for</p>",
+          "options": [
+            "\\( \\pi, \\pi-\\beta \\)",
+            "\\( \\pi, \\beta-\\pi \\)",
+            "\\( \\beta, \\pi \\)",
+            "\\( \\beta-\\pi, \\pi \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>When a thyristor is forward biased, the number of blocked p-n junctions is</p>",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>During forward blocking state, a thyristor is associated with</p>",
+          "options": [
+            "large current, low voltage",
+            "low current, large voltage",
+            "medium current, large voltage",
+            "low current, medium voltage"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>When a UJT is used for triggering an SCR, the wave shape of the voltage obtained from UJT circuit\n                        is\n                        a</p>",
+          "options": [
+            "sine wave",
+            "sawtooth wave",
+            "trapezoidal wave",
+            "square wave"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>In a commutation circuit employed to turn off an SCR, satisfactory turn-off is obtained when</p>",
+          "options": [
+            "circuit turn-off time = device turn-off time",
+            "circuit turn-off time &gt; device turn-off time",
+            "circuit time constant &gt; device turn-off time",
+            "circuit time constant &lt; device turn-off time"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A step-up chopper has \\( V_s \\) as the source voltage and \\( \\alpha \\) as the duty cycle.\n                        The\n                        output voltage for this chopper is given by</p>",
+          "options": [
+            "\\( V_s(1+\\alpha) \\)",
+            "\\( V_s/(1-\\alpha) \\)",
+            "\\( V_s(1-\\alpha) \\)",
+            "\\( V_s/(1+\\alpha) \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In an inverter with fundamental output frequency of 50 Hz, if third harmonic is eliminated, then\n                        the\n                        frequencies of other components in the output voltage wave, in Hz, would be</p>",
+          "options": [
+            "250, 350, 450, high frequencies",
+            "50, 250, 350, 450",
+            "50, 250, 350, 550",
+            "50, 100, 200, 250"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A cycloconverter is a frequency converter from<br/>\n                        1. higher to lower frequency with one-stage conversion<br/>\n                        2. higher to lower frequency with two-stage conversion<br/>\n                        3. lower to higher frequency with one-stage conversion<br/>\n                        4. AC at one frequency to DC and then DC to AC at different frequencies<br/>\n                        From these, the correct statement(s) is/are</p>",
+          "options": [
+            "2, 4",
+            "1 only",
+            "2, 3",
+            "1, 3"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>If, for a single-phase half-bridge inverter, the amplitude of output voltage is \\( V_s \\) and\n                        the\n                        output power is P, then their corresponding values for a single-phase full-bridge inverter are\n                    </p>",
+          "options": [
+            "\\( V_s \\), P",
+            "\\( 2V_s \\), P",
+            "\\( 2V_s \\), 2P",
+            "\\( 2V_s \\), 4P"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>In DC choppers, the waveforms for input and output voltages are respectively</p>",
+          "options": [
+            "discontinuous, continuous",
+            "both continuous",
+            "both discontinuous",
+            "continuous, discontinuous"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Briefly discuss the V-I characteristic of SCR.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain the turn-on and turn-off characteristics of SCR with neat waveforms.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the operation of three-phase half-wave controlled converter for a firing angle less than\n                        \\(\n                        30^{\\circ} \\) and feeding R load. Also derive the expression for its average output voltage.\n                    </p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>The specification sheet for an SCR gives maximum rms on-state current as 35 A. If this SCR is\n                        used in\n                        a resistive circuit, compute average on-state current rating for half sine wave current for\n                        conduction angle of \\( 180^{\\circ} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the effect of source inductance in the operation of single-phase fully controlled\n                        converter.\n                    </p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>With neat circuit diagram and waveform, explain the working principle of single-phase AC voltage\n                        controller with R-L load.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the principle of operation of three-phase inverter with \\( 180^{\\circ} \\) conduction\n                        mode\n                        with necessary waveforms and circuit.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>A step-up chopper has input voltage of 220 V and output voltage of 660 V. If the conducting time\n                        of\n                        thyristor-chopper is 100 \\( \\mu\\text{s} \\), compute the pulse width of output voltage. In\n                        case\n                        output-voltage pulse width is halved for constant frequency operation, find the average value of\n                        new\n                        output voltage.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain the two-transistor analogy of a thyristor.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Discuss the various mechanisms that can be used to trigger thyristors.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Discuss the operation of step-up chopper and prove that its output voltage is greater than input\n                        voltage.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Snubber circuit for an SCR should primarily consist of capacitor only. But, in actual practice, a\n                        resistor is used in series with capacitor. Discuss.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>With neat circuit diagram and waveform, explain the operating principle of 1-\\(\\phi\\) to\n                        1-\\(\\phi\\) step down mid-point type cycloconverter, with continuous load current. Assume the\n                        loads to be R and L in series.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>A single-phase half-wave AC voltage controller feeds a load of \\( R=20~\\Omega \\) with an input\n                        voltage of 230 V, 50 Hz. Firing angle of thyristor is \\( 45^{\\circ} \\). Determine: (i) rms\n                        value\n                        of output voltage; (ii) average input current.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Briefly discuss the different types of PWM schemes available for voltage control in an inverter.\n                    </p>"
+        }
+      ]
+    }
+  ]
+}

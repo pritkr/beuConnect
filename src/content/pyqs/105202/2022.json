@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2022",
+    "subject": "MATHEMATICS—II (Probability and Statistics)",
+    "subject_slug": "mathematics-ii-probability-and-statistics",
+    "subject_code": "105202",
+    "year": 2022,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct option of the following (any seven) :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "<p>Given \\( P(A) = 0.35, P(B) = 0.63 \\) and \\( P(A \\cap B) = 0.32 \\). Find \\( P(B|A) \\).</p>",
+          "options": [
+            "32/63",
+            "32/35",
+            "7/20",
+            "It cannot be determined from the information given"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "<p>For which of the following experiments is the binomial distribution an appropriate model of the experiment's probability distribution?</p>",
+          "options": [
+            "Toss a six-sided fair die 30 times and record the up face of the die",
+            "Toss a six-sided fair die 100 times and record the number of times the up face of the die shows five dots",
+            "Count the number of cars entering a car wash in a 30-minute period",
+            "Randomly draw 30 cards, successively without replacement, from a well-shuffled deck of 52 playing cards, and observe whether the card is a diamond"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "<p>Consider the normal random variable X with mean \\( \\mu = 200 \\) and standard deviation \\( \\sigma = 25 \\). Which of the following statements is always true?</p>",
+          "options": [
+            "\\( P(X < 200) \\) is less than \\( P(X > 200) \\)",
+            "\\( P(X < 200) \\) is greater than \\( P(X > 200) \\)",
+            "\\( P(X = 200) \\) equals 0",
+            "\\( P(X = 200) \\) equals 0.5"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "<p>The moment-generating function of a continuous random variable X be given as \\( M_X(t) = (1-t)^{-9}, |t| < 1 \\). Then its mean and variance is</p>",
+          "options": [
+            "(9, 1/9)",
+            "(9, 9)",
+            "(3, 3)",
+            "(1/9, 1/9)"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "<p>Which one of the following statements is always true?</p>",
+          "options": [
+            "The greater the value of the correlation coefficient, the stronger is the relationship.",
+            "A strong positive correlation between two variables means one of the variables causes the effect of the other variable.",
+            "If two variables are independent, their correlation does not exist.",
+            "Pearson product-moment correlation coefficients numerically quantify only linear relationships."
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "<p>The variance of first n natural number is</p>",
+          "options": [
+            "\\( \\frac{n^2 + 1}{12} \\)",
+            "\\( \\frac{(n + 1)^2}{12} \\)",
+            "\\( \\frac{n^2 - 1}{12} \\)",
+            "\\( \\frac{2n^2 - 1}{8} \\)"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "<p>Kurtosis in frequency distribution is adjudged around</p>",
+          "options": [
+            "second quartile",
+            "arithmetic mean",
+            "quadratic mean",
+            "mode"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "<p>Which one of the following statements is always true?</p>",
+          "options": [
+            "If \\( H_0 \\) contains \\( \\neq \\), the hypothesis test is two-tailed.",
+            "If \\( H_a \\) contains >, the hypothesis test is left-tailed.",
+            "If \\( H_a \\) contains \\( \\neq \\), the hypothesis test is two-tailed.",
+            "If \\( H_0 \\) contains \\( \\le \\), the hypothesis test is left-tailed."
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "<p>Which of the following symbols is commonly used for the population variance?</p>",
+          "options": [
+            "\\( \\sigma \\)",
+            "\\( \\sigma^2 \\)",
+            "s",
+            "\\( s^2 \\)"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "<p>Use of the chi-square statistics requires that each of the expected cell counts is</p>",
+          "options": [
+            "at least 10",
+            "not more than 10",
+            "at least 5",
+            "not more than 5"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "2.",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>The manufacturing department of a company hires technicians who are college graduates as well as technicians who are not college graduates. Under their diversity program, the manager of any given department is careful to hire both male and female technicians. The data in table given below show a classification of all technicians in a selected department by qualification and gender. Suppose that the manager promotes one of the technicians to a supervisory position. If the promoted technician is a woman, then what is the probability that she is a non-graduate?</p>\n<p>Classification of technicians by qualification and gender</p>\n<table>\n  <tr><td></td><td>Graduates</td><td>non-graduates</td><td>Total</td></tr>\n  <tr><td>Male</td><td>20</td><td>36</td><td>56</td></tr>\n  <tr><td>Female</td><td>15</td><td>29</td><td>44</td></tr>\n  <tr><td>Total</td><td>35</td><td>65</td><td>100</td></tr>\n</table>",
+          "total_marks": 8
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>A random variable X has the following probability function (represented here as CDF) :</p>\n<table>\n  <tr><td>Values of X, x</td><td>-3</td><td>-1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>5</td><td>8</td></tr>\n  <tr><td>p(x)</td><td>0.10</td><td>0.30</td><td>0.45</td><td>0.50</td><td>0.75</td><td>0.90</td><td>0.95</td><td>1.00</td></tr>\n</table>\n<p>(i) Find mean and variance of random variable X.</p>\n<p>(ii) Find \\( P(X = -3 | X < 0) \\) and \\( P(X \\ge 3 | X > 0) \\).</p>",
+          "total_marks": 6
+        }
+      ]
+    },
+    {
+      "section_title": "3.",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>An irregular six-faced die is thrown and the expectation that 10 throws it will give five even numbers is twice the expectation that it will give four even numbers. How many times in 10000 sets of 10 throws each you would expect it to give no even number?</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>If a sample size n is taken from a lot of N items containing 10% defectives, show by using the Chebyshev's inequality that the probability exceeds 0.99 that the number of defectives in the sample differs from n/10 by not more than \\( 3\\sqrt{n} \\sqrt{(N-n)/(N-1)} \\).</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "4.",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>Find the mean of normal distribution.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Suppose that the lapse of time between two successive accidents in a paper mill is exponentially distributed with a mean of 15 days. Find the probability that the time between two successive accidents at that mill is more than 20 days.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "5.",
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Three coins are tossed. Let X denote the number of heads on the first two coins, Y denote the number of tails on the last two and Z denote the number of heads on the last two.</p>\n<p>(a) Find the joint distribution of (i) X and Y, (ii) X and Z.</p>\n<p>(b) Find the conditional distribution of Y given X = 1.</p>\n<p>(c) Find \\( E(Z | X = 1) \\).</p>\n<p>(d) Find \\( \\rho_{X, Y} \\) and \\( \\rho_{X, Z} \\).</p>\n<p>(e) Give a joint distribution that is not the joint distribution of X and Z in part (a) and yet has the same marginals as \\( f(x, z) \\) has in part (a).</p>",
+          "total_marks": 14
+        }
+      ]
+    },
+    {
+      "section_title": "6.",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>Find the first four moments (i) about the origin and (ii) about the mean for a random variable X having density function</p>\n<p>\\( f(x) = \\begin{cases} 4x(9 - x^2)/81, & 0 \\le x \\le 3 \\\\ 0, & \\text{otherwise} \\end{cases} \\)</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>The number of defective parts produced per shift can be modeled using a random variable that has the Poisson distribution. Assume that, on average, three defective parts per shift are produced.</p>\n<p>(i) What is the probability that exactly four defective parts are produced in a given shift?</p>\n<p>(ii) What is the probability that more than seven defective parts are produced in the next two shifts?</p>",
+          "total_marks": 8
+        }
+      ]
+    },
+    {
+      "section_title": "7.",
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>A manufacturer knows from experience that the diameters of 0.250 in. precision-made pins he produces have a normal distribution with mean 0.25000 in. and standard deviation 0.00025 in. What percentages of the pins have diameters between 0.24951 in. and 0.25049 in? This question is equivalent to find the probability that the diameter, say X, of a pin taken at random from the production lies between 0.24951 in. and 0.25049 in.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>Fit a straight line to the following data :</p>\n<table>\n  <tr><td>X</td><td>1</td><td>2</td><td>3</td><td>4</td><td>6</td><td>7</td></tr>\n  <tr><td>Y</td><td>2.4</td><td>3</td><td>3.6</td><td>4</td><td>5</td><td>6</td></tr>\n</table>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "8.",
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "<p>The variables X and Y are connected by the equation \\( aX + bY + c = 0 \\). Show that the correlation between them is -1, if the signs of a and b are alike and +1, if the signs of a and b are different.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "<p>A random sample of 500 apples was taken from a large consignment and 60 were found to be bad. Obtain the 98% confidence limits for the percentage of bad apples in the consignment.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "9.",
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>The means of two single-large samples of 1000 and 2000 members are 67.5 inches and 68.0 inches respectively. Can the samples be regarded as drawn from the same population of standard deviation 2.5 inches? (Test at 5% level of significance.)</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>Describe the chi-squared test for testing a hypothesis that a normal population has a specified variance \\( \\sigma^2 \\).</p>",
+          "total_marks": 7
+        }
+      ]
+    }
+  ]
+}

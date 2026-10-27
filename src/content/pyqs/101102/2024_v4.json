@@ -1,0 +1,263 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 1st Semester Examination, 2024 (Old)",
+    "subject": "Mathematics - I (Calculus, Multivariable Calculus &\n                Linear Algebra)",
+    "subject_slug": "mathematics-i-calculus-multivariable-calculus-linear-algebra",
+    "subject_code": "101102",
+    "year": 2024,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer the following questions (Any seven only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Show that \\( f(x)=\\sin^{2}x \\) is continuous for every value of x.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Verify Rolle's Theorem for the function \\( f(x)=2+(x-1)^{2/3} \\) where \\( x\\in[0,2] \\).</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Test the convergence of the integral \\( \\int_{0}^{\\infty}\\frac{\\cos x}{1+x^{2}}dx \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 8
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Evaluate \\( \\Gamma(-\\frac{5}{2}) \\).</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Define Power series and Taylor's series.</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Find the smallest positive period of the function \\( \\sin(\\frac{n\\pi x}{L}) \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Are the following set of vectors \\( [1, -1, 1], [1, 1, -1], [0, 1, 0] \\) linearly independent\n                        or dependent?</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Define rank and nullity of a matrix.</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Find the spectral radius of the matrix \\( A=\\begin{bmatrix}0&amp;1\\\\ -1&amp;0\\end{bmatrix}\n                        \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Show that the determinant of an orthogonal matrix has the value +1 or -1.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Verify Lagrange's mean value theorem for \\( f(x)=(x-1)(x-2)(x-3) \\) in \\( [0,4] \\).</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Find the maxima and minima values of the function \\( f(x)=5x^{6}+18x^{5}+15x^{4}-10 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Find the evolute of the parabola \\( y^{2}=4ax \\).</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Evaluate the integral \\( \\int_{0}^{\\pi/2}\\sqrt{\\tan \\theta}d\\theta \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Find the radius of convergence of the series \\( \\sum_{m=0}^{\\infty}(m+1)m~x^{m} \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 8
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Expand the function \\( f(x)=2x^{3}+7x^{2}+x-6 \\) in powers of \\( (x-2) \\).</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Find the half range sine Fourier series of the periodic function \\( f(x)=\\pi-x, \\quad 0 &lt; x\n                        &lt;\n                        \\pi \\).</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Solve the system of equations by Cramer's rule:<br/>\n                        \\( -x_{1}+x_{2}+2x_{3}=2 \\)<br/>\n                        \\( 3x_{1}-x_{2}+x_{3}=6 \\)<br/>\n                        \\( -x_{1}+3x_{2}+4x_{3} =4 \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Find the inverse of the matrix \\( \\begin{bmatrix}3&amp;-1&amp;5\\\\ 2&amp;6&amp;4\\\\\n                        5&amp;5&amp;9\\end{bmatrix} \\)\n                        by Gauss-Jordan Elimination.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Can we say all vectors in \\( R^{3} \\) such that \\( 4v_{2}+v_{3}=k \\) form a vector space? If\n                        yes, determine the dimension and find a basis.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the nullity of the matrix \\( \\begin{bmatrix}4&amp;0&amp;2&amp;8\\\\\n                        5&amp;7&amp;3&amp;1\\\\ 0&amp;6&amp;9&amp;0\\end{bmatrix}\n                        \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Find a basis of eigenvectors of the matrix \\( A=\\begin{bmatrix}2&amp;1\\\\\n                        2&amp;1\\end{bmatrix} \\).\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Find the eigenvalues and eigenvectors of the matrix \\( A=\\begin{bmatrix}5&amp;4\\\\\n                        1&amp;2\\end{bmatrix} \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Diagonalize the matrix \\( A=\\begin{bmatrix}-2&amp;2&amp;-3\\\\ 2&amp;1&amp;-6\\\\\n                        -1&amp;-2&amp;0\\end{bmatrix} \\).\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Mean value theorem</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Beta Function</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Vector Space</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Gauss Elimination</p>"
+        }
+      ]
+    }
+  ]
+}

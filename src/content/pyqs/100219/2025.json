@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Examination, 2025",
+    "subject": "Introduction to Web Design",
+    "subject_slug": "introduction-to-web-design",
+    "subject_code": "100219",
+    "year": 2025,
+    "semester": 2,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which protocol is used for transferring web pages?</p>",
+          "options": [
+            "FTP",
+            "SMTP",
+            "HTTP",
+            "SNMP"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>HTML stands for</p>",
+          "options": [
+            "Hyper Text Making Language",
+            "High Text Markup Language",
+            "Hyper Text Markup Language",
+            "Hyperlinking Text Management Language"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which tag is used for creating hyperlinks?</p>",
+          "options": [
+            "&lt;link&gt;",
+            "&lt;a&gt;",
+            "&lt;href&gt;",
+            "&lt;hyper&gt;"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which tag is used to create a form?</p>",
+          "options": [
+            "&lt;form&gt;",
+            "&lt;input&gt;",
+            "&lt;textarea&gt;",
+            "&lt;fieldset&gt;"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which attribute is used to send form data to a server?</p>",
+          "options": [
+            "name",
+            "Value",
+            "action",
+            "Id"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Inline CSS is applied using</p>",
+          "options": [
+            "&lt;style&gt; tag in head",
+            "style attribute in HTML tag",
+            "External stylesheet",
+            "None"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>JavaScript runs on</p>",
+          "options": [
+            "Server",
+            "Client",
+            "Database",
+            "Compiler"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>To repeat code a fixed number of times, we use</p>",
+          "options": [
+            "If",
+            "switch",
+            "for loop",
+            "Break"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The default value of uninitialized variables in Java Script is</p>",
+          "options": [
+            "0",
+            "NULL",
+            "undefined",
+            "False"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>On click is an example of</p>",
+          "options": [
+            "Style property",
+            "JavaScript Method",
+            "Event handler",
+            "None"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define the Internet and the World Wide Web (WWW). Explain the fundamental difference between\n                        these two terms using a simple analogy.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What is a Website and a Homepage? Describe the role of a homepage in a typical website and give\n                        an example of the information it commonly contains?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the difference between Web Browser and Web Server?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What is a URL? Write a sample URL and label its three main parts (Protocol, Domain Name, and\n                        Path)?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is an HTML Element? Describe the structure of an HTML element with suitable examples.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Create an HTML webpage to display the following table showing Name, Age, and Country of three\n                        persons.</p>\n<table border=\"1\" cellpadding=\"5\" style=\"border-collapse: collapse; width: 100%;\">\n<tbody><tr>\n<th>Name</th>\n<th>Age</th>\n<th>Country</th>\n</tr>\n<tr>\n<td>Harry Depp</td>\n<td>28</td>\n<td>Britain</td>\n</tr>\n<tr>\n<td>John Smith</td>\n<td>35</td>\n<td>USA</td>\n</tr>\n<tr>\n<td>Ram Krishna</td>\n<td>19</td>\n<td>Nepal</td>\n</tr>\n</tbody></table>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Design an HTML webpage to show your semester subjects. Use a Nested List, where the main list\n                        contains semester numbers (Semester 1, Semester 2) and each semester contains the subjects\n                        offered in that semester.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Write the difference between HTML and XHTML?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Write a short note on: (i) Inline CSS (ii) Internal CSS</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain the use of &lt;div&gt; and &lt;span&gt; tags in CSS styling.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Write an HTML program using CSS to demonstrate various text and font properties such as\n                        font-family, font-size, font-style, font-weight, text-align, text-decoration, text-transform,\n                        and line-height.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Why do we need JavaScript in Web Development?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss arithmetic and logical Operators in JavaScript with program?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Write a JavaScript program to calculate the sum of the first 10 natural numbers using any looping\n                        structure.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What is Event Handling in JavaScript? Explain with a program?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Discuss Form Validation in JavaScript with example program?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

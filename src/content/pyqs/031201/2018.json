@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 2nd Semester Exam., 2018",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031201",
+    "year": 2018,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer of the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "A star-connected network which is equivalent to the delta network is shown in the figure given below. The $R_A$, $R_B$ and $R_C$ (in ohm) are respectively [Diagram: Star network with R1=3\u03a9, R2=6\u03a9, R3=9\u03a9 and equivalent Delta network with RA, RB, RC.]",
+              "options": [
+                "99 $\\Omega$, 33 $\\Omega$, 16.5 $\\Omega$",
+                "11 $\\Omega$, 16.5 $\\Omega$, 33 $\\Omega$",
+                "11 $\\Omega$, 33 $\\Omega$, 16.5 $\\Omega$",
+                "1 $\\Omega$, 3 $\\Omega$, 1.5 $\\Omega$"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1b",
+              "text": "Superposition theorem is not applicable for",
+              "options": [
+                "voltage calculation",
+                "bilateral elements",
+                "power calculation",
+                "passive elements"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1c",
+              "text": "Nodal analysis is based on",
+              "options": [
+                "KCL",
+                "KVL",
+                "Both (i) and (ii)",
+                "law of conservation of energy"
+              ],
+              "answer": "i"
+            },
+            {
+              "id": "1d",
+              "text": "The r.m.s. value of sine wave is 100 A. Its peak is",
+              "options": [
+                "70.7 A",
+                "141 A",
+                "150 A",
+                "282.8 A"
+              ],
+              "answer": "ii"
+            },
+            {
+              "id": "1e",
+              "text": "A voltage is represented by a sine wave and has a maximum value of 100 V. Its r.m.s. and average value are respectively",
+              "options": [
+                "70.7 V, 63.6 V",
+                "0.707 V, 0.637 V",
+                "70.7 V, 0.63 V",
+                "0.707 V, 63.6 V"
+              ],
+              "answer": "i"
+            },
+            {
+              "id": "1f",
+              "text": "An a.c. source of 200 V r.m.s. supplies active power of 600 W and reactive power of 800 VAR. The r.m.s. current drawn from the source is",
+              "options": [
+                "10 A",
+                "5 A",
+                "3.75 A",
+                "2.5 A"
+              ],
+              "answer": "ii"
+            },
+            {
+              "id": "1g",
+              "text": "The hysteresis and eddy current losses of a 1-$\\phi$ transformer working on 200 V, 50 Hz supply are $P_h$ and $P_e$ respectively. The percentage decrease in these losses when operated at 160 V, 40 Hz supply are respectively",
+              "options": [
+                "32, 36",
+                "20, 36",
+                "25, 50",
+                "40, 80"
+              ],
+              "answer": "ii"
+            },
+            {
+              "id": "1h",
+              "text": "The resistance between the terminals a-b, in the network shown in the figure given below, is [Diagram: A bridge-like resistor network with values 3\u03a9, 5\u03a9, 4\u03a9, 6\u03a9.]",
+              "options": [
+                "4.44 $\\Omega$",
+                "6.66 $\\Omega$",
+                "7.77 $\\Omega$",
+                "2.22 $\\Omega$"
+              ],
+              "answer": "i"
+            },
+            {
+              "id": "1i",
+              "text": "The average value of a sinusoidal waveform for complete cycle ($v_{av}$) is",
+              "options": [
+                "0.637 $V_m$",
+                "0.707 $V_m$",
+                "0",
+                "None of the above"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1j",
+              "text": "In a three-phase system, voltages differ in phase by",
+              "options": [
+                "30\u00b0",
+                "90\u00b0",
+                "60\u00b0",
+                "120\u00b0"
+              ],
+              "answer": "iv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "State and explain maximum power transfer theorem.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "Find the value of resistance $R_L$ in the figure given below for maximum power transfer and calculate maximum power : [Diagram: A DC circuit with a 5V source, 1A current source, and resistors 1\u03a9, 10\u03a9, 2\u03a9, 3\u03a9, 5\u03a9, RL.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "Define r.m.s. value and average value of sinusoidal waveform.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "An RLC series circuit with a resistance of $10 \\Omega$, a inductance of $0.2 \\text{ H}$ and a capacitance of $40 \\mu\\text{F}$ is supplied with a 100 V supply at variable frequency. Find the following with respect to the series resonant circuit: (i) Frequency of which resonance takes place (ii) Current (iii) Power (iv) Power factor (v) Voltage across RLC at that time (vi) Quality factor (vii) Half-power points",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "Define the following : (i) Peak factor (ii) Form factor",
+              "marks": 4
+            },
+            {
+              "id": "4b",
+              "type": "numerical",
+              "text": "The output voltage of an electronic device is given in the following figure : [Diagram: A periodic waveform with peak 15V.] Determine (i) the average value and (ii) the r.m.s. value of the voltage.",
+              "marks": 10
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "theory",
+              "text": "State and explain Thevenin's theorem.",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "type": "numerical",
+              "text": "Find the current through $10 \\Omega$ resistor in the following figure by Thevenin's theorem : [Diagram: A complex DC circuit with 15V and 10V sources and several resistors.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "type": "numerical",
+          "text": "In the circuit of figure given below, a 400 V, 50 Hz, 3-phase supply of phase sequence ABC is supplied to a delta-connected load consisting a $100 \\Omega$ resistor between lines A and B, a 378 mH inductor between lines B and C, and a 37.8 $\\mu$F capacitor between lines C and A. Determine phase and line currents. [Diagram: 3-phase delta-connected load with R, L, and C components.]",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "theory",
+              "text": "Explain B-H curve with neat diagram.",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "type": "numerical",
+              "text": "A coil of 200 turns is wound uniformly over a wooden rim having a mean circumference of 60 cm and uniform cross-sectional area of $5 \\text{ cm}^2$. If the current through the coil is 4 A, calculate (i) the magnetomotive force, (ii) the total flux and (iii) the flux density.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "What are the different types of moving-coil instrument? Explain any one in detail.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "theory",
+              "text": "What are the different types of controlling torque? Explain any one in detail.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "type": "theory",
+          "text": "Write short notes on any two of the following : (a) Star-delta conversion (b) Superposition theorem (c) Moving-iron instruments",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

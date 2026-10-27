@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2014",
+    "subject": "Mathematics II",
+    "subject_slug": "mathematics-2",
+    "subject_code": "211202",
+    "year": 2014,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct or best alternatives of the following (any seven):",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The series $1 - \\frac{1}{2^2} + \\frac{1}{3^2} - \\frac{1}{4^2} + \\cdots$ is\n(i) convergent\n(ii) divergent\n(iii) oscillatory\n(iv) None of the above",
+              "id": "1a",
+              "marks": null
+            },
+            {
+              "text": "The series whose nth term is $\\sqrt{n^3+1} - \\sqrt{n^3}$, is\n(i) convergent\n(ii) divergent\n(iii) oscillatory\n(iv) None of the above",
+              "id": "1b",
+              "marks": null
+            },
+            {
+              "text": "Which one of the following functions is not periodic?\n(i) $f(x) = \\cos 2x + \\cos 3x + \\cos 5x$\n(ii) $f(x) = e^{i8\\pi x}$\n(iii) $f(x) = e^{(-7x)} \\sin 10\\pi x$\n(iv) $f(x) = \\cos 2x \\cdot \\cos 4x$",
+              "id": "1c",
+              "marks": null
+            },
+            {
+              "text": "The period of a constant function is\n(i) defined\n(ii) defined under conditions\n(iii) not defined\n(iv) None of the above",
+              "id": "1d",
+              "marks": null
+            },
+            {
+              "text": "$\\int_0^\\infty \\frac{\\sin t}{t} \\, dt$ is equal to\n(i) $\\pi$\n(ii) $\\pi/2$\n(iii) $\\pi/4$\n(iv) $\\pi/3$",
+              "id": "1e",
+              "marks": null
+            },
+            {
+              "text": "Inverse Laplace transform of $\\frac{e^{-3s}}{(s-2)^4}$ is\n(i) $\\begin{cases} 1 & t < 3 \\\\ \\frac{1}{5} \\frac{(t-3)^3}{4} & t > 3 \\end{cases}$\n(ii) $\\begin{cases} 0 & t < 3 \\\\ \\frac{1}{6} \\frac{t^3}{6} e^{2t} & t > 3 \\end{cases}$\n(iii) $\\begin{cases} 0 & t < 3 \\\\ 0 & t > 3 \\end{cases}$\n(iv) $\\begin{cases} 0 & t < 3 \\\\ \\frac{1}{6} \\frac{(t-3)^3}{6} e^{2(t-3)} & t > 3 \\end{cases}$",
+              "id": "1f",
+              "marks": null
+            },
+            {
+              "text": "The area of region bounded by the curve $\\frac{y+8}{x} = x-2$ and the x-axis is\n(i) 54\n(ii) 36\n(iii) 18\n(iv) 12",
+              "id": "1g",
+              "marks": null
+            },
+            {
+              "text": "The value of $\\int_0^1 \\int_{y^2}^1 \\int_0^{1-x} x \\, dz \\, dx \\, dy$ is\n(i) $\\frac{4}{35}$\n(ii) $\\frac{3}{35}$\n(iii) $\\frac{8}{35}$\n(iv) $\\frac{6}{35}$",
+              "id": "1h",
+              "marks": null
+            },
+            {
+              "text": "$\\nabla \\times (\\nabla \\times \\vec{A})$, where $\\vec{A}$ is a vector, is equal to\n(i) $\\vec{A} \\times \\nabla \\times \\vec{A} - \\nabla^2 \\vec{A}$\n(ii) $\\nabla^2 \\vec{A} + \\nabla(\\nabla \\cdot \\vec{A})$\n(iii) $\\nabla^2 \\vec{A} + \\nabla \\times \\vec{A}$\n(iv) $\\nabla(\\nabla \\cdot \\vec{A}) - \\nabla^2 \\vec{A}$",
+              "id": "1i",
+              "marks": null
+            },
+            {
+              "text": "Stokes' theorem connects\n(i) a line integral and a surface line integral\n(ii) a surface integral and a volume integral\n(iii) a line integral and a volume integral\n(iv) gradient of a function and its surface integral",
+              "id": "1j",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Discuss the nature of convergency of an infinite geometric series.",
+          "marks": 7,
+          "id": "2a"
+        },
+        {
+          "text": "Test the convergence for the series $\\frac{x}{1 \\cdot 2} + \\frac{x^2}{3 \\cdot 4} + \\frac{x^3}{5 \\cdot 6} + \\frac{x^4}{7 \\cdot 8} + \\cdots$ to $\\infty$.",
+          "marks": 7,
+          "id": "2b"
+        },
+        {
+          "text": "Find the Laplace $(1 + \\cos 2t)$ for the first principle.",
+          "marks": 7,
+          "id": "3a"
+        },
+        {
+          "text": "Find the Laplace transform of $\\frac{(1 - \\cos t)}{t^2}$.",
+          "marks": 7,
+          "id": "3b"
+        },
+        {
+          "text": "Find the Laplace inverse of $\\frac{s^2}{(s^2+a^2)(s^2+b^2)}$.",
+          "marks": 7,
+          "id": "4a"
+        },
+        {
+          "text": "Find the Fourier series representing the function $f(x) = x, 0 < x < 2\\pi$ and sketch its graph from $x = -4\\pi$ to $x = 4\\pi$.",
+          "marks": 7,
+          "id": "4b"
+        },
+        {
+          "text": "Find the Fourier series of the function defined as $f(x) = \\begin{cases} x+\\pi & \\text{for } 0 \\le x \\le \\pi \\\\ -x-\\pi & \\text{for } -\\pi \\le x < 0 \\end{cases}$ and $f(x+2\\pi) = f(x)$.",
+          "marks": 7,
+          "id": "5a"
+        },
+        {
+          "text": "Expand $f(x) = e^x$ in a cosine series over $(0, 1)$.",
+          "marks": 7,
+          "id": "5b"
+        },
+        {
+          "text": "Evaluate: $\\int_0^\\infty \\int_x^\\infty \\frac{e^{-y}}{y} \\, dy \\, dx$.",
+          "marks": 7,
+          "id": "6a"
+        },
+        {
+          "text": "Evaluate $\\iint_R xy \\, dx \\, dy$, where $R$ is the quadrant of the circle $x^2+y^2=a^2$ and $x \\ge 0, y \\ge 0$.",
+          "marks": 7,
+          "id": "6b"
+        },
+        {
+          "text": "Find by double integration the area enclosed by the pair of curves $y = 2-x$ and $y^2 = 2(2-x)$.",
+          "marks": 7,
+          "id": "7a"
+        },
+        {
+          "text": "Compute $\\iiint \\frac{dx \\, dy \\, dz}{(x+y+z+1)^3}$ if the region of integration is bounded by the coordinates plane and plane $x+y+z=1$.",
+          "marks": 7,
+          "id": "7b"
+        },
+        {
+          "text": "A particle moves along a plane curve such that its linear velocity is perpendicular to the radius vector. Show that the path of the particle is a circle.",
+          "marks": 7,
+          "id": "8a"
+        },
+        {
+          "text": "Show that $\\nabla \\left( \\frac{\\vec{a} \\cdot \\vec{r}}{r^n} \\right) = \\frac{\\vec{a}}{r^n} - \\frac{n(\\vec{a} \\cdot \\vec{r})}{r^{n+2}} (\\vec{r})$ where $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}, r = |\\vec{r}|$, $\\vec{a}$ is a constant vector.",
+          "marks": 7,
+          "id": "8b"
+        },
+        {
+          "text": "If $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$, then prove that $\\text{div}(\\text{grad } r^n) = n(n+1)r^{n-2}$.",
+          "marks": 7,
+          "id": "9a"
+        },
+        {
+          "text": "Verify Green's theorem for $\\oint_C (2xy \\, dx - y^2 \\, dy)$, where $C$ is the boundary of the region bounded by the ellipse $3x^2 + 4y^2 = 12$.",
+          "marks": 7,
+          "id": "9b"
+        }
+      ]
+    }
+  ]
+}

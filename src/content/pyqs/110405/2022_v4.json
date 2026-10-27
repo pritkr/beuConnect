@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2022",
+    "subject": "Microprocessors",
+    "subject_slug": "microprocessors",
+    "subject_code": "110405",
+    "year": 2022,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option of the following (any seven) :",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Intel 8085 is a</p>",
+          "options": [
+            "microprocessor",
+            "microcontroller",
+            "Both (i) and (ii)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>On reset of 8051, stack pointer points to _______ address.</p>",
+          "options": [
+            "00H",
+            "05H",
+            "07H",
+            "0AH"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>When 8051 wakes up, then 0x00 is loaded to which register?</p>",
+          "options": [
+            "DPTR",
+            "SP",
+            "PC",
+            "PSW"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The register whose bits represent status flags is</p>",
+          "options": [
+            "DPTR",
+            "SP",
+            "PC",
+            "PSW"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>MOVC is used in _______ addressing mode.</p>",
+          "options": [
+            "direct",
+            "indirect",
+            "index",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Device pins XTAL1 and XTAL2 of 8051 are used for connections to</p>",
+          "options": [
+            "external oscillator",
+            "external power",
+            "external peripheral",
+            "external memory"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the 8051 variant architectures does not have ROM?</p>",
+          "options": [
+            "8051",
+            "8052",
+            "8031",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>SWAP instruction works on _______ register.</p>",
+          "options": [
+            "any",
+            "accumulator",
+            "general purpose",
+            "special function"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>8051 can handle _______ interrupt sources.</p>",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Name the architecture and the instruction set for microcontroller.</p>",
+          "options": [
+            "von-Neumann architecture with CISC instruction set",
+            "Harvard architecture with CISC instruction set",
+            "von-Neumann architecture with RISC instruction set",
+            "Harvard architecure with RISC instruction set"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all three questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Differentiate between Microprocessor and Microcontroller. Also list some of the popular\n                        microprocessors and microcontrollers.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What is word size of a processor? How is this related to ALU size, Memory size, Register size and\n                        Bus\n                        size? Explain.</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>Comment on the benefit of having separate program and data memory in the typical microcontroller\n                        architecture.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What make any system embedded? Give examples of application areas of embedded systems. Write\n                        three\n                        key characteristics of an embedded system.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Discuss about the role of micro-controllers in embedded systems in detail. Give a detailed note\n                        on\n                        the technologies other than microcontrollers used in embedded system design.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve all three questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>List addressing modes of 8051. By how many different ways we can access the program/code memory?\n                        Explain by using suitable example instructions.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Write secondary functions of Port P3 pins of 8051.</p>"
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>Differentiate among MOV, MOVC and MOVX instructions.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Comment on the ROM availability in different variant architectures of 8051. How to access an\n                        external\n                        ROM? Draw proper interfacing diagram.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>How is machine cycle related to clock frequency and the execution time of an instruction? Explain\n                        in\n                        detail.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Write 8051 assembly program to copy a block of 10 bytes from RAM location starting at 37h to RAM\n                        location starting at 59h.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain the role of timers in 8051. Also explain the registers used for timer operations.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Write a program to generate a delay of 10 milliseconds using timer.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>How can we use time delay generated in question no. 7(a) for making Diwali lighting with blinking\n                        period of 10 milliseconds? Use delay code as subroutine.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all three questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What is ADC and DAC? Explain DAC working with suitable diagram.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is interrupt? What is need of interrupts in the processor? List 8051 interrupts.</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>List the serial communication interface standards. Write a few lines on each.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve all three questions :",
+      "total_marks": 5,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Differentiate between Synchronous and Asynchronous communications.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>What are sensors and actuators? List different sensors and actuators used in embedded system\n                        design.\n                    </p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Discuss about the wireless protocols used in communication for embedded systems.</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2016",
+    "subject": "Computer Networks",
+    "subject_slug": "computer-networks",
+    "subject_code": "051513",
+    "year": 2016,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are Nine questions in this paper.",
+    "Attempt five questions in all.",
+    "Question No. 1 is Compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Attempt any seven questions:",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In the following pairs of OSI protocol layer/sub-layer and its functionality, the INCORRECT pair\n                        is:\n                    </p>",
+          "options": [
+            "(A) Network layer and Routing",
+            "(B) Data Link Layer and Bit synchronization",
+            "(C) Transport layer and End-to-end process communication",
+            "(D) Medium Access Control sub-layer and Channel sharing"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following is NOT true with respect to a transparent bridge and a router?</p>",
+          "options": [
+            "(A) Both bridge and router selectively forward data packets",
+            "(B) A bridge uses IP addresses while a router uses MAC addresses",
+            "(C) A bridge builds up its routing table by inspecting incoming packets",
+            "(D) A router can connect between a LAN and WAN"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which one of the following statements is FALSE?</p>",
+          "options": [
+            "(A) TCP guarantees a minimum communication rate",
+            "(B) TCP ensures in-order delivery",
+            "(C) TCP reacts to congestion by reducing sender window size",
+            "(D) TCP employs retransmission to compensate for packet loss"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which one of the following statements is FALSE?</p>",
+          "options": [
+            "(A) HTTP runs over TCP.",
+            "(B) HTTP describes the structure of web pages.",
+            "(C) HTTP allows information to be stored in a URL",
+            "(D) HTTP can be used to test the validity of a hypertext link."
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>In a sliding window ARQ scheme, the transmitter's window size is N and the receiver's window size\n                        is\n                        M. The minimum number of distinct sequence numbers required to ensure correct operation of the\n                        ARQ\n                        scheme is</p>",
+          "options": [
+            "(A) \\( \\min (M,N) \\)",
+            "(B) \\( \\max (M,N) \\)",
+            "(C) \\( M+N \\)",
+            "(D) \\( M \\cdot N \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which one of the following protocols is NOT used to resolve one form of address to another one?\n                    </p>",
+          "options": [
+            "(A) DNS",
+            "(B) ARP",
+            "(C) DHCP",
+            "(D) RARP"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Identify the correct sequence in which the following packets are transmitted on the network by a\n                        host\n                        when a browser requests a webpage from a remote server, assuming that the host has just been\n                        restarted.</p>",
+          "options": [
+            "(A) HTTP GET request, DNS query, TCP SYN",
+            "(B) DNS query, HTTP GET request, TCP SYN",
+            "(C) DNS query, TCP SYN, HTTP GET request",
+            "(D) TCP SYN, DNS query, HTTP GET request"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>How many bytes of data can be sent in 15 seconds over a serial link with baud rate of 9600 in\n                        asynchronous mode with odd parity and two stop bits in the frame?</p>",
+          "options": [
+            "(A) 10,000 bytes",
+            "(B) 12,000 bytes",
+            "(C) 15,000 bytes",
+            "(D) 27,000 bytes"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which one of the following is TRUE interior Gateway routing protocols - Routing Information\n                        protocol(RIP) and Open Shortest Path First (OSPF)?</p>",
+          "options": [
+            "(A) RIP uses distance vector routing and OSPF uses link state routing",
+            "(B) OSPF uses distance vector routing and RIP uses link state routing",
+            "(C) Both RIP and OSPF use link state routing",
+            "(D) Both RIP and OSPF use distance vector routing"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>In the slow start phase of the TCP congestion control algorithm, the size of the congestion\n                        window:\n                    </p>",
+          "options": [
+            "(A) does not increase",
+            "(B) increases linearly",
+            "(C) increases quadratically",
+            "(D) increases exponentially"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Suppose that the stop-and-wait protocol is used on a link with a bit rate of 64 kilobits per\n                        second\n                        and 20 milliseconds propagation delay. Assume that the transmission time for the acknowledgment\n                        and\n                        the processing time at nodes are negligible. What is the minimum frame size in bytes to achieve\n                        a\n                        link utilization of at least 50%.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Consider an instance of TCP's Additive Increase Multiplicative Decrease (AIMD) algorithm where\n                        the\n                        window size at the start of the slow start phase is 2 MSS and the threshold at the start of the\n                        first transmission is 8 MSS. Assume that a timeout occurs during the fifth transmission. Find\n                        the\n                        congestion window size at the end of the tenth transmission.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>The address of a class B host is to be split into subnets with a 6-bit subnet number: What is the\n                        maximum number of subnets and the maximum number of hosts in each subnet? What is the number of\n                        network allowed under Class B addresses?</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Assume that source S and destination D are connected through two intermediate routers labelled R.\n                        Determine how many times each packet has to visit the network layer and the data link layer\n                        during a\n                        transmission from S to D.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/223.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>In an IPv4 datagram, the M bit is 0, the value of HLEN is 10, the value of total length is 400\n                        and\n                        the fragment offset value is 300. Find the position of the datagram, the sequence numbers of the\n                        first and the last bytes of the payload respectively.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>An IP router with a Maximum Transmission Unit (MTU) of 1500 bytes has received an IP packet of\n                        size\n                        4404 bytes with an IP header of length 20 bytes. The values of the relevant fields in the header\n                        of\n                        the third IP fragment generated by the router for this packet are?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A serial transmission T1 uses 8 information bits, 2 start bits, 1 stop bit and 1 parity bit for\n                        each\n                        character. A synchronous transmission T2 uses 3 eight bit sync characters followed by 30 eight\n                        bit\n                        information characters. If the bit rate is 1200 bits/second in both cases, what are the transfer\n                        rates of T1 and T2?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Compare and contrast the Go-Back-N ARQ Protocol with Selective-Repeat ARQ.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What are the advantages of fiber optics over copper as a transmission medium? Is there any\n                        downside\n                        of using fiber optics over copper?</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A computer on a 6-Mbps network is regulated by a token bucket. The token bucket is filled at a\n                        rate\n                        of 1 Mbps. It is initially filled to capacity with 8 megabits. How long can the computer\n                        transmit at\n                        the full 6 Mbps?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>DNS uses UDP instead of TCP. If a DNS packet is lost, there is no automatic recovery. Does this\n                        cause\n                        a problem, and if so, how is it solved?</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain the responsibility of network and transport layers of OSI model with example.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions:",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What are the functions of a RIP message? List the RIP shortcomings and their corresponding fixes.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Describe the functions of the two FTP connections. What kinds of file types can FTP transfer?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Compare the TCP header and the UDP header. List the fields in the TCP header that are missing\n                        from\n                        UDP header. Give the reason for their absence.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>What is the difference between open-loop congestion control and closed-loop congestion control?\n                    </p>"
+        }
+      ]
+    }
+  ]
+}

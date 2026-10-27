@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2019",
+    "subject": "FORMAL LANGUAGES AND AUTOMATA THEORY",
+    "subject_slug": "formal-languages-and-automata-theory",
+    "subject_code": "051611",
+    "year": 2019,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer/Fill in the blank of any seven of the\n                    following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The word 'formal' in formal languages means</p>",
+          "options": [
+            "they are unnecessary, in reality",
+            "the symbols used have well-defined meaning",
+            "only the form of the string of symbols is significant",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following statements is true?</p>",
+          "options": [
+            "If a language is context-free, it can always be accepted by a deterministic push-down\n                            automaton.",
+            "The union of two context-free languages is context-free.",
+            "The intersection of two context-free languages is context-free.",
+            "The complement of a context-free language is context-free."
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following pairs of regular expressions are equivalent?</p>",
+          "options": [
+            "\\( x^* \\) and \\( x^*x \\)",
+            "\\( 1(01)^* \\) and \\( (10)^*1 \\)",
+            "\\( x(xx)^* \\) and \\( (xx)^*x \\)",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following pairs have DIFFERENT expressive powers?</p>",
+          "options": [
+            "Deterministic finite automata (DFA) and non-deterministic finite automata (NDFA)",
+            "Deterministic push-down automata (DPDA) and non-deterministic push-down automata (NDPDA)",
+            "Deterministic single-tape Turing machine and non-deterministic single-tape Turing machine",
+            "Single-tape Turing machine and multi-tape Turing machine"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Definition of a language L with alphabet {a} is given as \\( L = \\{a^{nk} \\mid k &gt; 0 \\text{\n                        and n\n                        is a\n                        positive integer constant}\\} \\). What is the minimum number of states needed in a DFA to\n                        recognize\n                        L?</p>",
+          "options": [
+            "\\( k + 1 \\)",
+            "\\( n + 1 \\)",
+            "\\( 2n + 1 \\)",
+            "\\( 2k + 1 \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Suppose a polynomial time algorithm is discovered that correctly computes the largest clique in a\n                        given graph. In this scenario, which one of the following represents the correct Venn diagram of\n                        the\n                        complexity classes P, NP and NP complete (NPC)?</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/113.jpg\"/>",
+          "options": [
+            "(A) P and NP are disjoint",
+            "(B) P and NP overlap, with NPC in intersection",
+            "(C) P = NP = NPC",
+            "(D) P != NP, NPC inside NP"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Let L1 be a recursive language. Let L2 and L3 be languages that are not recursively enumerable\n                        but\n                        recursive. Which of the following statements is not necessarily true?</p>",
+          "options": [
+            "L2-L1 is recursively enumerable.",
+            "L1-L3 is recursively enumerable.",
+            "L2 ∩ L1 is recursively enumerable.",
+            "L2 ∪ L1 is recursively enumerable."
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A PDM behaves like an FSM when the number of auxiliary memory it has, is</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Define Turing machine in brief.</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>A finite automaton with _____ is equivalent to push-down automata.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Consider the set of strings on {0, 1} defined by the requirements below. For each, construct an\n                        accepting dfa:<br/>\n                        (i) Every 00 is followed immediately by a 1. For example, the strings 101, 0010, 001001 are in\n                        the\n                        language, but 0001 and 00100 are not.<br/>\n                        (ii) All strings containing 00 but not 000.<br/>\n                        (iii) The leftmost symbol differs from the rightmost one.<br/>\n                        (iv) Every substring of four symbols has at most two 0's. For example, 001110 and 011001 are in\n                        the\n                        language, but 10010 is not since one of its substrings, 0010, contains three zeros.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Construct the regular grammar accepting the following language: \\( L = w \\in \\{a, b\\}^*\n                        \\mid w\n                        \\text{ is a string over } \\{a, b\\} \\) \\( \\text{ such that the number of b's is } 3 \\mod 4\n                        \\)\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Let \\( G = (V, T, S, P) \\) be a right-linear grammar. Prove that the language generated using\n                        the\n                        grammar G is a regular.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Construct a Moore machine equivalent to the Mealy machine M defined by the following Table 1\n                        state\n                        transitions:</p>\n<table border=\"1\" cellpadding=\"5\" cellspacing=\"0\" style=\"margin-top:10px; border-collapse: collapse;\">\n<tbody><tr>\n<th rowspan=\"2\">Present State</th>\n<th colspan=\"2\">a = 0</th>\n<th colspan=\"2\">a = 1</th>\n</tr>\n<tr>\n<th>Next State</th>\n<th>Output</th>\n<th>Next State</th>\n<th>Output</th>\n</tr>\n<tr>\n<td>\\( q_1 \\)</td>\n<td>\\( q_1 \\)</td>\n<td>1</td>\n<td>\\( q_2 \\)</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\\( q_2 \\)</td>\n<td>\\( q_4 \\)</td>\n<td>1</td>\n<td>\\( q_4 \\)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\\( q_3 \\)</td>\n<td>\\( q_2 \\)</td>\n<td>1</td>\n<td>\\( q_3 \\)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\\( q_4 \\)</td>\n<td>\\( q_3 \\)</td>\n<td>0</td>\n<td>\\( q_1 \\)</td>\n<td>1</td>\n</tr>\n</tbody></table>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Prove the following equation : \\( (1+00^*1) + (1+00^*1)(0+10^*1)^*(0+10^*1) \\) = \\(\n                        0^*1(0+10^*1)^*\n                        \\)\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Using the pumping lemma theorem, show that the following sets are not\n                        regular:</p>\n<p>\\( L = \\{a^n b^l a^k : k \\ge n+l\\} \\)</p>\n<p>\\( L = \\{w : n_a(w) = n_b(w)\\} \\)</p>\n<p>\\( L = \\{ww w^R : w \\in \\{a,b\\}^*\\} \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Convert the grammar into Chomsky normal form: \\( S \\rightarrow aB \\mid AB \\), \\( A\n                        \\rightarrow\n                        aab\n                        \\mid \\lambda \\), \\( B \\rightarrow bbA \\)</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Show that the family of unambiguous context-free languages is not closed under union.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Construct an npda corresponding to the grammar: \\( S \\rightarrow aABB \\mid aAA \\), \\( A\n                        \\rightarrow\n                        aBB \\mid a \\), \\( B \\rightarrow bBB \\mid A \\)</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Construct Turing machines that will accept the following languages on\n                        {a,\n                        b}:</p>\n<p>\\( L = \\{w : n_a(w) = n_b(w)\\} \\)</p>\n<p>\\( L = \\{wcw : w \\in \\{a,b\\}^*\\} \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Design a Turing machine with no more than three states that accepts the language \\( L(a(a+b)^*)\n                        \\).\n                        Assume that \\( \\Sigma = \\{a, b\\} \\). Is it possible to do this with a two-state machine?\n                    </p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Let G be an undirected graph. An Euler circuit of the graph is a simple cycle that includes all\n                        edges. The Euler Circuit Problem (EULER) is to decide if G has an Euler circuit. Show that EULER\n                        is\n                        not NP-complete.</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+---
+export const prerender = true;
+import Layout from "../../layouts/Layout.astro";
+import branchConfig from "../../assets/data/config.json";
+import Header from "../../components/header.astro";
+import Footer from "../../components/footer.astro";
+---
+
+<Layout title="BEU Syllabus | BEUConnect" description="Complete B.Tech syllabus for all branches under Bihar Engineering University (BEU). Detailed semester-wise breakdown for CSE, ECE, Civil, Mechanical, and EE.">
+    <Header />
+    <h1 style="view-transition-name:beusyl">BEU Syllabus</h1>
+    <p style="color: rgba(255, 255, 255, 0.85);">Select your branch to view all semesters.</p>
+    
+    <div id="smart-syl-box" style="display: none; padding: 1rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent-blue); border-radius: 12px; margin-bottom: 1.5rem;">
+        <span style="font-size: 0.8rem; font-weight: 700; color: #60a5fa; text-transform: uppercase;">Your Branch</span>
+        <h2 id="smart-syl-title" style="margin: 0.2rem 0 0.5rem; font-size: 1.4rem; color: #fff;">...</h2>
+        <a id="smart-syl-link" href="#" class="outline-btn" style="padding: 0.5rem 1rem; border-radius: 8px; border-color: rgba(96, 165, 250, 0.4); color: #93c5fd;">View Your Syllabus →</a>
+    </div>
+
+    <ul>
+    {
+        branchConfig.branches.map((branch) => (
+            <li style="margin-bottom: 0.5rem;">
+                <a
+                    href={`${import.meta.env.BASE_URL}syllabus/${branch.code}/`}
+                    style={`view-transition-name:${branch.code}; color: rgba(255, 255, 255, 0.9); font-weight: 500;`}
+                >
+                    {branch.name}
+                </a>
+            </li>
+        ))
+    }
+    </ul>
+    <Footer />
+</Layout>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async () => {
+        if (typeof window !== "undefined" && document.documentElement.classList.contains("is-logged-in")) {
+            try {
+                const { getProfile } = await import("../../utils/profileManager");
+                const profile = getProfile();
+                if (profile && profile.branchName && profile.branchPath) {
+                    const smartBox = document.getElementById("smart-syl-box");
+                    const smartTitle = document.getElementById("smart-syl-title");
+                    const smartLink = document.getElementById("smart-syl-link") as HTMLAnchorElement;
+
+                    if (smartBox && smartTitle && smartLink) {
+                        smartTitle.textContent = profile.branchName;
+                        const semPath = profile.currentSem ? `${profile.currentSem}/` : "";
+                        smartLink.href = `${import.meta.env.BASE_URL}syllabus/${profile.branchPath}/${semPath}`;
+                        smartBox.style.display = "block";
+                    }
+                }
+            } catch (e) {
+                console.error("Failed to load smart defaults for syllabus list", e);
+            }
+        }
+    });
+</script>

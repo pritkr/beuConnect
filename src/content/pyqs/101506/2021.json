@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2021",
+    "subject": "Mechanics of Materials",
+    "subject_slug": "mechanics-of-materials",
+    "subject_code": "101506",
+    "year": 2021,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The energy absorbed in a body, when it is strained within the elastic limits, is known as</p>",
+          "options": [
+            "strain energy",
+            "resilience",
+            "proof resilience",
+            "modulus of resilience"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The slenderness ratio is (L-length of column and k-least radius of gyration of cross-section\n                        about its axis)</p>",
+          "options": [
+            "\\( L/k \\)",
+            "\\( k/L \\)",
+            "\\( kL \\)",
+            "\\( L-k \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Graphical representation of which one of the following theories is an ellipse?</p>",
+          "options": [
+            "Maximum principal strain theory",
+            "Distortion energy theory",
+            "Maximum shear stress theory",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>A sudden increase or decrease in shear force diagram between any two points indicates that there\n                        is</p>",
+          "options": [
+            "no loading between the two points",
+            "point loads between the two points",
+            "uniformly distributed load between the two points",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The angle of twist can be written as</p>",
+          "options": [
+            "\\( TL/J \\)",
+            "\\( GJ/TL \\)",
+            "\\( TL/GJ \\)",
+            "\\( T/J \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The shear stress varies from centre to the surface of the shaft with</p>",
+          "options": [
+            "parabolically",
+            "linearly",
+            "quadratically",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The difference between number of unknown reaction components and the number of available\n                        equilibrium equations is</p>",
+          "options": [
+            "degree of displacement",
+            "degree of determinacy",
+            "degree of indeterminacy",
+            "degree of freedom"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Flexural rigidity is defined as</p>",
+          "options": [
+            "EI",
+            "GJ",
+            "KI",
+            "EA"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Principal stresses at a point are 120, -40 and 20 MPa. What is the maximum shear stress at the\n                        point?</p>",
+          "options": [
+            "50 MPa",
+            "70 MPa",
+            "80 MPa",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>In simply supported beam, deflection is maximum at</p>",
+          "options": [
+            "mid-span",
+            "supports",
+            "point of loading",
+            "throughout"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Stress state is given as \\( \\sigma_x=-29.5 \\text{ MPa} \\), \\( \\sigma_y=-29.5 \\text{ MPa}\n                        \\) and \\( \\tau_{xy}=27 \\text{ MPa} \\). Using Mohr's circle, determine (a) the principal\n                        stresses and (b) the maximum shear stresses and associated normal stresses. Show all results on\n                        sketches of properly oriented elements.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>A cantilever beam with a rectangular cross-section has a longitudinal hole drilled throughout its\n                        length is shown in Fig. 1. The beam supports a load \\( P=600 \\text{ N} \\). The cross-section\n                        is 25 mm wide and 50 mm high and the hole has a diameter of 10 mm. Find the bending stresses at\n                        the top of the beam, at the top of the hole and at the bottom of the beam.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/95.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A gas storage tank is fabricated by bolting together two half-cylindrical thin shells with two\n                        hemispherical shells at end. If the tank is designed to withstand a pressure of 3 MPa, determine\n                        the required minimum thickness of the cylindrical and hemispherical shells and the minimum\n                        required number of longitudinal bolts per meter length at each side of the cylindrical shell.\n                        The tank and the 25 mm diameter bolts are made from material having an allowable normal stress\n                        of 150 MPa and 250 MPa, respectively. The tank has an inner diameter of 4 m shown in Fig. 2.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/93.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A cylindrical spring consists of a rubber annulus bonded to a rigid ring and shaft. If the ring\n                        is held fixed and a torque T is applied to the shaft, derive the maximum shear stress in the\n                        rubber shown in Fig. 3.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/92.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive the equations of the elastic curve for the beam using the \\( x_1 \\) and \\( x_2 \\)\n                        coordinates. EI is constant shown in Fig. 4.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/91.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Derive Euler's buckling formula for a column with both end clamped and obtain the effective\n                        length as well. Draw the free body diagram with buckled configuration.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>The vertical force P acts on the bottom of the plate having a negligible weight. Determine the\n                        shortest distance d to the edge of the plate at which it can be applied so that it produces no\n                        compressive stresses on the plate at section a-a. The plate has a thickness of 10 mm and P acts\n                        along the center line of this thickness shown in Fig. 5.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/94.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Draw the shear and moment diagrams for the beam and determine the shear and moment throughout the\n                        beam as functions of y shown in Fig. 6.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/90.jpg\"/>"
+        }
+      ]
+    }
+  ]
+}

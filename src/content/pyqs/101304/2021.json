@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "Engineering Mechanics",
+    "subject_slug": "engineering-mechanics",
+    "subject_code": "101304",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct option (any seven):",
+          "marks": 14,
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "In the equation of virtual work, which force is neglected?",
+              "options": [
+                "Reaction of any smooth surface with which the body is in contact",
+                "Reaction of a rough surface of a body which rolls on it without slipping",
+                "Reaction at a point or an axis, fixed in space, around which a body is constrained to turn",
+                "All of the above"
+              ]
+            },
+            {
+              "number": "(b)",
+              "text": "The motion completed during one-time period is known as",
+              "options": [
+                "period of vibration",
+                "cycle",
+                "frequency",
+                "All of the above"
+              ]
+            },
+            {
+              "number": "(c)",
+              "text": "When there is a reduction in amplitude over every cycle of vibration, then the body is said to have",
+              "options": [
+                "free vibration",
+                "forced vibration",
+                "damped vibration",
+                "underdamped vibration"
+              ]
+            },
+            {
+              "number": "(d)",
+              "text": "For a simply supported beam, the moment at the support is always",
+              "options": [
+                "maximum",
+                "zero",
+                "minimum",
+                "Cannot be determined"
+              ]
+            },
+            {
+              "number": "(e)",
+              "text": "To design the trusses which of the following rules is followed?",
+              "options": [
+                "All the loads are applied by the use of cables",
+                "The loads are applied at the joints",
+                "All the loads are not applied at the joints",
+                "The loads are applied at both cable and joints"
+              ]
+            },
+            {
+              "number": "(f)",
+              "text": "Virtual work done is saved in the form of potential energy. It is best given by",
+              "options": [
+                "$\\delta U = F \\delta r \\cos \\theta$",
+                "$\\delta U = F \\delta r \\sin \\theta$",
+                "$\\delta U = F \\delta r \\cot \\theta$",
+                "$\\delta U = F \\delta r \\delta \\theta$"
+              ]
+            },
+            {
+              "number": "(g)",
+              "text": "The coefficient of friction depends upon",
+              "options": [
+                "nature of surfaces",
+                "area of contact",
+                "shape of the surfaces",
+                "All of the above"
+              ]
+            },
+            {
+              "number": "(h)",
+              "text": "The centre of gravity of an isosceles triangle with base ($p$) and sides ($q$) from its base is",
+              "options": [
+                "$[\\sqrt{4q^2 - p^2}]/6$",
+                "$(4p^2 - q^2)/6$",
+                "$(p^2 - q^2)/4$",
+                "$(p^2 + q^2)/4$"
+              ]
+            },
+            {
+              "number": "(i)",
+              "text": "For the conditions of the equilibrium of the body, i.e., the rigid body only the external forces define the equilibrium. And the support reactions only cancel out the rotation part of the body.",
+              "options": [
+                "The first part of the statement is false and other part is true",
+                "The first part of the statement is false and other part is false too",
+                "The first part of the statement is true and other part is false",
+                "The first part of the statement is true and other part is true too"
+              ]
+            },
+            {
+              "number": "(j)",
+              "text": "The moment of inertia of a solid cone of mass $m$ and base radius $r$ about its vertical axis is",
+              "options": [
+                "$3mr^2 / 5$",
+                "$3mr^2 / 10$",
+                "$2mr^2 / 5$",
+                "$4mr^2 / 5$"
+              ]
+            }
+          ],
+          "id": "1"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "Explain the following: Free body diagram; Static indeterminacy; System of forces.",
+              "marks": "6"
+            },
+            {
+              "number": "(b)",
+              "text": "Replace the two wrenches and the force, acting on the pipe assembly shown in Fig. 1, by an equivalent resultant force and couple moment at point $O$.",
+              "marks": "8"
+            }
+          ],
+          "id": "2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "The solid cylindrical rotor $B$ has a mass of $43\\text{ kg}$ and is mounted on its central axis $C-C$ as shown in Fig. 2. The frame $A$ rotates about the fixed vertical axis $O-O$ under the applied torque $M = 30\\text{ N-m}$. The rotor may be unlocked from the frame by withdrawing the locking pin $P$. Calculate the angular acceleration $\\alpha$ of the frame $A$ if the locking pin is (a) in place and (b) withdrawn. Neglect all friction and the mass of the frame.",
+          "marks": 14,
+          "id": "3"
+        },
+        {
+          "text": "What is space truss? Determine the force in each member of the truss shown in Fig. 3 and state if the members are in tension or compression.",
+          "marks": 14,
+          "id": "4"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "What is a wedge? Explain the condition of wedge self-locking.",
+              "marks": "6"
+            },
+            {
+              "number": "(b)",
+              "text": "Blocks $A$ and $B$ have mass of $3\\text{ kg}$ and $9\\text{ kg}$ respectively, and are connected to the weightless links shown in Fig. 4. Determine the largest vertical force $P$ that can be applied at the pin $C$ without causing any movement. The coefficient of static friction between the blocks and the contacting surfaces is $\\mu_s = 0.3$.",
+              "marks": "8"
+            }
+          ],
+          "id": "5",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Determine the centroid and moment of inertia about both $x$ and $y$ axis for the beam's cross-section shown in Fig. 5.",
+          "marks": 14,
+          "id": "6"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "What are stable, unstable and neutral equilibrium? Explain the relation of each term with total potential energy.",
+              "marks": "6"
+            },
+            {
+              "number": "(b)",
+              "text": "If the box in Fig. 6 has a mass of $10\\text{ kg}$, determine the couple moment $M$ needed to maintain equilibrium when $\\theta = 60^\\circ$. Neglect the mass of the member.",
+              "marks": "8"
+            }
+          ],
+          "id": "7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "A $1200\\text{ kg}$ car enters an $8\\%$ downhill grade at a speed of $100\\text{ km/h}$. The driver applies her brakes to bring the car to a speed of $25\\text{ km/h}$ in a distance of $0.5\\text{ km}$ measured along the road. Calculate the energy loss $Q$ dissipated from the brakes in the form of heat. Neglect any friction losses from other causes such as air resistance.",
+              "marks": "6"
+            },
+            {
+              "number": "(b)",
+              "text": "The $2\\text{ kg}$ collar is released from rest at $A$ and slides down the inclined fixed rod in the vertical plane as shown in Fig. 7. The coefficient of friction is $0.4$. Calculate (i) the velocity $v$ of the collar as it strikes the spring and (ii) the maximum deflection $x$ of the spring.",
+              "marks": "8"
+            }
+          ],
+          "id": "8",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "Derive the expression of natural frequency for free torsional vibration.",
+              "marks": "6"
+            },
+            {
+              "number": "(b)",
+              "text": "Calculate the natural circular frequency $\\omega_n$ of the system shown in Fig. 8. The mass and friction of pulleys are negligible.",
+              "marks": "8"
+            }
+          ],
+          "id": "9",
+          "marks": null,
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

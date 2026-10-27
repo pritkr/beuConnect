@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2022",
+    "subject": "Operating Systems",
+    "subject_slug": "operating-systems",
+    "subject_code": "105403",
+    "year": 2022,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer/Choose the correct answer of the following (any\n                    seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>What is the difference between a multiprocessor and a multicore system?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>What is multiprogramming?</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Define jacketing.</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>What operations can be performed on a semaphore?</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>What is the difference between a page and a frame?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>In contiguous memory allocation</p>",
+          "options": [
+            "each process is contained in a single contiguous section of memory",
+            "all processes are contained in a single contiguous section of memory",
+            "the memory space is contiguous",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>If the size of logical address space is 2 to the power of \\( m \\), and a page size is 2 to the\n                        power\n                        of \\( n \\) addressing units, then the high order ___ bits of a logical address designate the\n                        page\n                        number, and the ___ low order bits designate the page offset.</p>",
+          "options": [
+            "\\( m, n \\)",
+            "\\( n, m \\)",
+            "\\( m-n, m \\)",
+            "\\( m-n, n \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>If the wait for graph contains a cycle, then</p>",
+          "options": [
+            "a deadlock does not exist",
+            "a deadlock exists",
+            "the system is in a safe state",
+            "either deadlock exists or system is in a safe state"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>When the event for which a thread is blocked occurs?</p>",
+          "options": [
+            "Thread moves to the ready queue",
+            "Thread remains blocked",
+            "Thread completes",
+            "A new thread is provided"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>An I/O port typically consists of four registers status, control, ___ and ___ registers.</p>",
+          "options": [
+            "system in, system out",
+            "data in, data out",
+            "flow in, flow out",
+            "input, output"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What is the purpose of interrupts? What are the differences between a trap and an interrupt? Can\n                        traps be generated intentionally by a user program? If so, for what purpose?</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Answer the following with full justifications:<br/>Does swapping improve or degrade the efficiency\n                        of\n                        system utilization? <br/>Can swapping be used in a multiprogramming system?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Including the initial parent process, how many processes are created by the program shown\n                        below?<br/>#include&lt;stdio.h&gt;<br/>#include&lt;unistd.h&gt;<br/>int main()<br/>{<br/>/* fork a\n                        child\n                        process */<br/>fork();<br/>/* fork another child process */<br/>fork();<br/>/* and fork another\n                        */<br/>fork();<br/>return 0;<br/>}</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Describe the differences among short-term, medium-term, and long-term scheduling.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>An airline reservation system, using a centralized database service, user requests concurrently.\n                        Is\n                        it preferable to use threads rather than processes in this system? Give reasons for your answer.\n                    </p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Consider a system running ten I/O-bound tasks and one CPU-bound task. Assume that the I/O-bound\n                        tasks\n                        issue an I/O operation once for every millisecond of CPU computing and that each I/O operation\n                        takes\n                        10 milliseconds to complete. Also assume that the context-switching overhead is 0.1 millisecond\n                        and\n                        that all processes are long-running tasks. Describe the CPU utilization for a round-robin\n                        scheduler\n                        when-<br/>(i) the time quantum is 1 millisecond;<br/>(ii) the time quantum is 10 milliseconds.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Clearly justify why deadlocks cannot arise in a bounded buffer producers-consumers system.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Consider a system consisting of four resources of the same type that are shared by three\n                        processes,\n                        each of which needs at most two resources. Show that the system is deadlock-free.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Five batch jobs, A through E, arrive at a computer center at essentially the same time. They have\n                        an\n                        estimated running time of 15, 9, 3, 6 and 12 minutes, respectively. Their (externally defined)\n                        priorities are 6, 3, 1, 4 and 2, respectively, with a lower value corresponding to a higher\n                        priority. For each of the following scheduling algorithms, determine the waiting time for each\n                        process and the average waiting for all jobs. Ignore process switching overhead. Explain how you\n                        arrived at your answers. In the last three cases, assume that only one job at a time runs until\n                        it\n                        finishes and that all jobs are completely processor bound:<br/>(a) Priority scheduling<br/>(b)\n                        FCFS\n                        (run in order 15, 9, 3, 6 and 12)<br/>(c) Shortest job first</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A bridge on a busy highway is damaged by a flood. One-way traffic is to be instituted on the\n                        bridge\n                        by permitting vehicles traveling in opposite directions to use the bridge alternately. The\n                        following\n                        rules are formulated for use of the bridge:<br/>(a) At any time, the bridge is used by vehicle(s)\n                        traveling in one direction only.<br/>(b) If vehicles are waiting to cross the bridge at both\n                        ends,\n                        only one vehicle from one end is allowed to cross the bridge before a vehicle from the other end\n                        starts crossing the bridge.<br/>(c) If no vehicles are waiting at one end, then any numbers of\n                        vehicles from the other end are permitted to cross the bridge.<br/>Develop a concurrent system to\n                        implement these rules.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Consider a simple paging system with the following parameters:<br/>• \\( 232 \\) bytes of\n                        physical\n                        memory<br/>• Page size of \\( 210 \\) bytes<br/>• \\( 216 \\) pages of logical address\n                        space<br/>(i)\n                        How many bits are in a logical address?<br/>(ii) How many bytes are in a frame?<br/>(iii) How many\n                        bits in the physical address specify the frame?<br/>(iv) How many entries are in the page table?\n                    </p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Given five memory partitions of 100 KB, 500 KB, 200 KB, 300 KB and 600 KB (in order). How would\n                        the\n                        first-fit, best-fit, and worst-fit algorithms place processes of 212 KB, 417 KB, 112 KB and 426\n                        KB\n                        (in order)? Which algorithm makes the most efficient use of memory?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Consider a demand paging system with a paging disk that has an average access and transfer time\n                        of 20\n                        milliseconds. Addresses are translated through a page table in main memory, with an access time\n                        of 1\n                        microsecond. Thus, each memory reference through the page table takes two accesses. To improve\n                        this\n                        time, we have added an associative memory that reduces access time to one memory reference if\n                        the\n                        page-table entry is in the associative memory. Assume that 80 percent of the accesses are in the\n                        associative memory and that of those remaining 10 percent (or 2 percent of the total) cause page\n                        faults. What is the effective memory access time?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>The open file table is used to maintain information about files that are currently open. Should\n                        the\n                        operating system maintain a separate table for each user or just maintain one table that\n                        contains\n                        references to files that are currently being accessed by all users? If the same file is being\n                        accessed by two different programs or users, should there be separate entries in the open-file\n                        table?</p>"
+        }
+      ]
+    }
+  ]
+}

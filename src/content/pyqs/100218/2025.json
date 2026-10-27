@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Examination, 2025",
+    "subject": "Python Programming",
+    "subject_slug": "python-programming",
+    "subject_code": "100218",
+    "year": 2025,
+    "semester": 2,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option / answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following is a valid variable name in Python?</p>",
+          "options": [
+            "2value",
+            "value2",
+            "value-2",
+            "value 2"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which symbol is used for comments in Python?</p>",
+          "options": [
+            "//",
+            "/* */",
+            "#",
+            "&lt;!-- --&gt;"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which function is used to take input from the user?</p>",
+          "options": [
+            "scanf()",
+            "gets()",
+            "read()",
+            "input()"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following will create an empty dictionary?</p>",
+          "options": [
+            "dict()",
+            "{}",
+            "[]",
+            "set()"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the correct syntax to define a function in Python?</p>",
+          "options": [
+            "function fun():",
+            "def fun():",
+            "def fun[]:",
+            "define fun():"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>\"Hello\"[1] gives:</p>",
+          "options": [
+            "H",
+            "e",
+            "l",
+            "o"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which method is used to find length of a string?</p>",
+          "options": [
+            "length()",
+            "size()",
+            "count()",
+            "len()"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Lists in Python are</p>",
+          "options": [
+            "Mutable",
+            "Immutable",
+            "Constant",
+            "None"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which method removes the last element from a list?</p>",
+          "options": [
+            "remove()",
+            "pop()",
+            "clear()",
+            "delete()"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following is used to open a file in Python?</p>",
+          "options": [
+            "file()",
+            "open()",
+            "read()",
+            "fopen()"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain Identifiers, Keywords, Statements, and Expressions in Python.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explore the working of while and for loop with examples.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain Assignment and Relational operators in python with program?</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What is type conversion? Explain with example?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain elseif ladder in python programming with suitable example.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Write a Python program to count how many numbers in a given list are even and how many are odd.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the scope and lifetime of variables with examples. Also demonstrate how the global\n                        keyword is used to modify global variables inside a function.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Write a function factors (N) that returns a list of all positive divisors of N (N&gt;=1).<br/>\n                        For example:<br/>\n                        factors (6) returns [1,2,3,6]<br/>\n                        factors (1) returns [1]<br/>\n                        factors (13) returns [1,13]</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain concatenation, comparison, and length operation. Support your explanation with suitable\n                        example programs.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain commonly used string methods such as upper(), lower(), strip(), find(), replace(),\n                        split(), join(), etc. Write example code demonstrating at least five string methods.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain operations such as concatenation, repetition, membership, and length in list with\n                        program?</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain indexing and slicing in lists with examples. Discuss: Positive and negative indexing,\n                        Accessing single elements, Slicing formats: list[start:end], list[start:end:step].</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What are nested loops? Write a program to print the following pattern using nested for loops:</p>\n<p style=\"font-family: monospace;\">\n                        *<br/>\n                        * *<br/>\n                        * * *<br/>\n                        * * * *<br/>\n</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain commonly used methods like add(), update(), remove(), discard(), union() in set with\n                        program?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>How to perform read operation in text file explain with example?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Write a Python function to count the frequency of each character in a given a string and return\n                        the output in a dictionary. Example: char_frequency (\"HELLO\") returns {'H': 1, 'E': 1, 'L': 2,\n                        'O': 1}.</p>"
+        }
+      ]
+    }
+  ]
+}

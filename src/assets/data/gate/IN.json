@@ -1,0 +1,45 @@
+{
+  "code": "IN",
+  "sections": [
+    {
+      "title": "Section 1: Engineering Mathematics",
+      "content": "Linear Algebra: Matrix algebra, systems of linear equations, consistency and rank,\nEigenvalue and Eigenvectors.\nCalculus: Mean value theorems, theorems of integral calculus, partial derivatives, maxima\nand minima, multiple integrals, Fourier series, vector identities, line, surface and volume\nintegrals, Stokes, Gauss and Green’s theorems.\nDifferential Equations: First order equation (linear and nonlinear), second order linear\ndifferential equations with constant coefficients, method of variation of parameters,\nCauchy’s and Euler’s equations, initial and boundary value problems, solution of partial\ndifferential equations: variable separable method.\nAnalysis of Complex Variables: Analytic functions, Cauchy’s integral theorem and integral\nformula, Taylor’s and Laurent’s series, residue theorem, solution of integrals.\nProbability and Statistics: Sampling theorems, conditional probability, mean, median,\nmode, standard deviation and variance; random variables: discrete and continuous\ndistributions: normal, Poisson and binomial distributions.\nNumerical Methods: Matrix inversion, solutions of non-linear algebraic equations, iterative\nmethods for solving differential equations, numerical integration, regression and correlation\nanalysis."
+    },
+    {
+      "title": "Section 2: Electricity and Magnetism",
+      "content": "Coulomb's Law, Electric Field Intensity, Electric Flux Density, Gauss's Law, Divergence,\nElectric field and potential due to point, line, plane and spherical charge distributions, Effect\nof dielectric medium, Capacitance of simple configurations, Biot‐Savart’s law, Ampere’s\nlaw, Curl, Faraday’s law, Lorentz force, Inductance, Magnetomotive force, Reluctance,\nMagnetic circuits, Self and Mutual inductance of simple configurations."
+    },
+    {
+      "title": "Section 3: Electrical Circuits and Machines",
+      "content": "Voltage and Current Sources: Independent, dependent, ideal and practical; v-i relationships\nof resistor, inductor, mutual inductance and capacitor; transient analysis of RLC circuits\nwith dc excitation.\nKirchoff’s laws, mesh and nodal analysis, superposition, Thevenin, Norton, maximum power\ntransfer and reciprocity theorems.\nPeak-, average- and rms values of AC quantities; apparent-, active- and reactive powers;\nphasor analysis, impedance and admittance; series and parallel resonance, locus\ndiagrams, realization of basic filters with R, L and C elements. transient analysis of RLC\ncircuits with ac excitation.\nOne-port and two-port networks, driving point impedance and admittance, open-, and short\ncircuit parameters.\nSingle Phase Transformer: Equivalent circuit, phasor diagram, open circuit and short\ncircuit tests, regulation and efficiency; Three phase induction motors: principle of operation,\ntypes, performance, torque-speed characteristics, no-load and blocked rotor tests,\n\nequivalent circuit, starting and speed control; Types of losses and efficiency\ncalculations of electric machines."
+    },
+    {
+      "title": "Section 4: Signals and Systems",
+      "content": "Periodic, aperiodic and impulse signals; Laplace, Fourier and z-transforms; transfer\nfunction, frequency response of first and second order linear time invariant systems,\nimpulse response of systems; convolution, correlation. Discrete time system: impulse\nresponse, frequency response, pulse transfer function; DFT and FFT; basics of IIR and FIR\nfilters."
+    },
+    {
+      "title": "Section 5: Control Systems",
+      "content": "Feedback principles, signal flow graphs, transient response, steady-state-errors, Bode\nplot, phase and gain margins, Routh and Nyquist criteria, root loci, design of lead, lag and lead-\nlag compensators, state-space representation of systems; time-delay systems;\nmechanical, hydraulic and pneumatic system components, synchro pair, servo and stepper\nmotors, servo valves; on-off, P, PI, PID, cascade, feed forward, and ratio controllers, tuning of\nPID controllers and sizing of control valves."
+    },
+    {
+      "title": "Section 6: Analog Electronics",
+      "content": "Characteristics and applications of diode, Zener diode, BJT and MOSFET; small signal\nanalysis of transistor circuits, feedback amplifiers. Characteristics of ideal and practical\noperational amplifiers; applications of opamps: adder, subtractor, integrator, differentiator,\ndifference amplifier, instrumentation amplifier, precision rectifier, active filters, oscillators,\nsignal generators, voltage controlled oscillators and phase locked loop, sources and effects\nof noise and interference in electronic circuits."
+    },
+    {
+      "title": "Section 7: Digital Electronics",
+      "content": "Combinational logic circuits, minimization of Boolean functions. IC families: TTL and CMOS.\nArithmetic circuits, comparators, Schmitt trigger, multi-vibrators, sequential circuits,\nflipflops, shift registers, timers and counters; sample-and-hold circuit, multiplexer, analog-\nto-digital (successive approximation, integrating, flash and sigma-delta) and digital-to-\nanalog converters (weighted R, R-2R ladder and current steering logic). Characteristics of\nADC and DAC (resolution, quantization, significant bits, conversion/settling time); basics of\nnumber systems, Embedded Systems: Microprocessor and microcontroller applications,\nmemory and input-output interfacing; basics of data acquisition systems, basics of\ndistributed control systems (DCS) and programmable logic controllers (PLC)."
+    },
+    {
+      "title": "Section 8: Measurements",
+      "content": "SI units, standards (R, L, C, voltage, current and frequency), systematic and random errors\nin measurement, expression of uncertainty - accuracy and precision, propagation of errors,\nlinear and weighted regression. Bridges: Wheatstone, Kelvin, Megohm, Maxwell, Anderson,\nSchering and Wien for measurement of R, L, C and frequency, Q-meter. Measurement of\nvoltage, current and power in single and three phase circuits; ac and dc current probes; true\nrms meters, voltage and current scaling, instrument transformers, timer/counter, time,\nphase and frequency measurements, digital voltmeter, digital multimeter; oscilloscope,\nshielding and grounding."
+    },
+    {
+      "title": "Section 9: Sensors and Industrial Instrumentation",
+      "content": "Resistive-, capacitive-, inductive-, piezoelectric-, Hall effect sensors and associated signal\n\nconditioning circuits; transducers for industrial instrumentation: displacement (linear and\nangular), velocity, acceleration, force, torque, vibration, shock, pressure (including low\npressure), flow (variable head, variable area, electromagnetic, ultrasonic, turbine and open\nchannel flow meters) temperature (thermocouple, bolometer, RTD (3/4 wire), thermistor,\npyrometer and semiconductor); liquid level, pH, conductivity and viscosity measurement.\n4- 20 mA two-wire transmitter."
+    },
+    {
+      "title": "Section 10: Communication and Optical Instrumentation",
+      "content": "Amplitude- and frequency modulation and demodulation; Shannon's sampling theorem,\npulse code modulation; frequency and time division multiplexing, amplitude-, phase-,\nfrequency-, quadrature amplitude, pulse shift keying for digital modulation; optical sources\nand detectors: LED, laser, photo-diode, light dependent resistor, square law detectors and\ntheir characteristics; interferometer: applications in metrology; basics of fiber optic sensing.\nUV-VIS Spectrophotometers, Mass spectrometer."
+    }
+  ]
+}

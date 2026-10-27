@@ -1,0 +1,258 @@
+{
+  "branch": "ece",
+  "sem": 5,
+  "subjects": [
+    {
+      "code": "EC109",
+      "name": "Digital Signal Processing",
+      "vvi": [
+        {
+          "topic": "Sampling, aliasing and reconstruction",
+          "note": "A signal band-limited to fm must be sampled above 2fm, and below that rate the frequencies above fs/2 fold back as aliases. An anti-aliasing low-pass filter therefore precedes the sampler. Reconstruction uses an ideal low-pass filter with cut-off fs/2, and a zero-order hold gives the staircase that a practical DAC smooths.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "DFT and its properties",
+          "note": "X[k] = Σx[n]e^(−j2πkn/N) samples the DTFT at N equally spaced frequencies, and the inverse is the same sum with a positive exponent and 1/N. Circular convolution replaces linear convolution, so zero padding is needed to avoid wraparound. Symmetry, periodicity, shift and Parseval are the properties to quote.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Radix-2 FFT",
+          "note": "The FFT removes the repeated twiddle factors of the DFT, reducing N² complex multiplications to (N/2)log2N. Decimation-in-time splits the sequence into even and odd samples, decimation-in-frequency splits the output, and both need N a power of two. Draw the butterfly and count the stages as log2N.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "IIR filter design by impulse invariance and bilinear transformation",
+          "note": "Impulse invariance maps each analog pole to z = e^(sT) and preserves the impulse response, but aliases the frequency response. The bilinear transform substitutes s = (2/T)(z − 1)/(z + 1), which avoids aliasing but warps the frequency axis, so the analog cut-off is pre-warped. Both start from a Butterworth or Chebyshev analog prototype.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "FIR filter design by windowing",
+          "note": "Truncating the ideal impulse response with a window gives a linear-phase FIR, at the cost of a wider transition band and ripple. Rectangular, Hamming, Hanning, Blackman and Kaiser windows trade main-lobe width against side-lobe level. The filter order follows from the transition width and the chosen window.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Realisation structures for digital filters",
+          "note": "Direct form I uses separate delay lines for input and output, and direct form II shares one delay line of the maximum order. Cascade connects second-order sections, and parallel adds them, which reduces coefficient sensitivity. An FIR has only a feedforward path, so its direct form is a tapped delay line.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "EC110",
+      "name": "Microprocessors And Microcontrollers",
+      "vvi": [
+        {
+          "topic": "8085 architecture and pin diagram",
+          "note": "The 8085 has an 8-bit ALU, six general registers paired as BC, DE and HL, a 16-bit program counter and stack pointer, and a multiplexed AD0–AD7 bus that carries the low address byte and the data byte in different clock phases. ALE latches the low address. The accumulator, flag register and timing states T1–T4 complete the block diagram.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "8085 addressing modes and instruction set",
+          "note": "Immediate, direct, register, register-indirect and implied are the five addressing modes. Instructions are grouped as data transfer, arithmetic, logical, branch and machine control, and each takes one to three bytes. Write a short program with a loop counter, because a trace of a delay or a block move is the usual question.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "8051 architecture",
+          "note": "The 8051 has an 8-bit CPU, 4 KB of internal ROM, 128 bytes of RAM split into register banks and a bit-addressable area, four parallel ports, two timers and one serial port. It uses a Harvard architecture, so program and data memory are separate, and the PSEN and EA pins select external program memory. The special function registers are memory mapped.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Memory and I/O interfacing",
+          "note": "Address decoding selects a chip from the high address lines, and the low lines choose the location inside it. Memory-mapped I/O uses the same instructions as memory, while peripheral-mapped I/O needs IN and OUT. The 8085 needs latches for the multiplexed bus, and a buffer for the data bus.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Interrupts of the 8085 and 8051",
+          "note": "The 8085 has five hardware interrupts: TRAP, RST 7.5, 6.5, 5.5 and INTR, with TRAP non-maskable and the highest priority. The 8051 has five sources, two external and three internal, each with its own vector and enable bit, and the priorities are set in the IP register. An interrupt saves the program counter on the stack and jumps to the vector.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Timers, serial port and data conversion interfacing",
+          "note": "An 8051 timer counts machine cycles in mode 1 and reloads in mode 2, so the count for a delay is the required time divided by the machine-cycle period. The serial port works in modes 0 to 3, with mode 1 the 8-bit UART at a baud rate set by timer 1. The 0808 ADC and 0832 DAC are interfaced through a port with a start and end-of-conversion handshake.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "EC111",
+      "name": "Linear Control Systems",
+      "vvi": [
+        {
+          "topic": "Transfer function, block diagram reduction and Mason's gain formula",
+          "note": "The transfer function is the Laplace ratio of output to input with zero initial conditions, and it exists only for a linear time-invariant system. Block diagram reduction combines series, parallel and feedback blocks and shifts take-off points. Mason's gain formula T = ΣPkΔk/Δ uses forward paths and loops, and is faster on a signal flow graph.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Time response and steady-state error",
+          "note": "A first-order system has time constant τ and reaches 63.2% of its final value in τ; a second-order system is described by ζ and ωn, with peak overshoot e^(−ζπ/√(1−ζ²)) and settling time about 4/(ζωn). The steady-state error depends on the system type and the input: step, ramp or parabolic. Compute the error constant before quoting the error.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Routh-Hurwitz stability criterion",
+          "note": "Build the Routh array from the characteristic polynomial; the number of sign changes in the first column equals the number of right-half-plane poles. A zero in the first column is replaced by a small ε, and an all-zero row is handled with the auxiliary equation from the row above. State the number of unstable poles, not just stable or unstable.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Root locus",
+          "note": "The root locus plots the closed-loop poles as K varies from 0 to infinity; it starts at the open-loop poles and ends at the zeros. The rules cover the number of branches, symmetry about the real axis, the asymptotes and their centroid, the breakaway point and the angle of departure. A point on the locus satisfies the angle condition, and its gain comes from the magnitude condition.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Bode and Nyquist plots, gain and phase margin",
+          "note": "A Bode plot draws magnitude in dB and phase against log frequency, with the corner frequency of a first-order factor at 1/T. Gain margin is the dB needed to reach 0 dB at the phase crossover, and phase margin is the phase shortfall at the gain crossover. A Nyquist plot encircle the −1 point for instability, and the number of encirclements is read with the principle of the argument.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "State-space model, controllability and observability",
+          "note": "The state model is x' = Ax + Bu and y = Cx + Du, with the transfer function C(sI − A)⁻¹B + D. Controllability is tested by the rank of the matrix [B AB A²B …], and observability by [C; CA; CA²; …]. A system can be stable in state space while a pole-zero cancellation hides an unstable mode.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "EC112",
+      "name": "Linear Integrated Circuits and Applications",
+      "vvi": [
+        {
+          "topic": "Op-amp parameters and the ideal model",
+          "note": "An ideal op-amp has infinite open-loop gain, infinite input impedance, zero output impedance and infinite bandwidth, with zero offset and zero bias current. The real 741 has a gain of about 10⁵, input impedance of 2 MΩ and a slew rate of 0.5 V/µs. CMRR, PSRR, offset voltage and slew rate are the parameters quoted with their definitions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Linear applications: inverting, non-inverting and instrumentation amplifier",
+          "note": "With negative feedback the virtual short V+ = V− holds, so the inverting amplifier has gain −Rf/Rin and the non-inverting amplifier 1 + Rf/R1. A voltage follower is the non-inverting case with unity gain and a very high input resistance. A three-op-amp instrumentation amplifier buffers both inputs and sets the gain with one resistor.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Active filters and the precision rectifier",
+          "note": "A first-order active low-pass filter is an RC network in the feedback of an op-amp, with cut-off 1/(2πRC) and a roll-off of 20 dB per decade. A second-order Sallen-Key section gives 40 dB per decade, and Butterworth, Chebyshev and Bessel differ in the passband and phase response. A precision rectifier puts the diode inside the feedback loop, so the 0.7 V drop no longer limits small signals.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Oscillators and multivibrators",
+          "note": "The Wien bridge oscillator uses a lead-lag network with f₀ = 1/(2πRC) and needs a gain of 3 for the loop to sustain. The 555 timer works as an astable multivibrator with frequency 1.44/((R1 + 2R2)C) and duty cycle set by the resistance ratio, and as a monostable with pulse width 1.1RC. A comparator with hysteresis is the Schmitt trigger.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Voltage regulators",
+          "note": "The 78xx and 79xx series are fixed three-terminal regulators for positive and negative output, needing only input and output capacitors. The LM317 is adjustable with Vout = 1.25(1 + R2/R1). A linear regulator burns the difference between input and output as heat, so a switching regulator is used when that difference is large.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "DAC, ADC and the phase-locked loop",
+          "note": "A DAC converts a binary word to a weighted current, with the R-2R ladder the practical network; resolution is Vref/2ⁿ. A successive-approximation ADC compares against a DAC bit by bit, and a flash ADC uses 2ⁿ − 1 comparators for the fastest conversion. A PLL locks a VCO to an input frequency with a phase detector and a loop filter, giving frequency multiplication.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "EC113",
+      "name": "Probability Theory and Stochastic Processes",
+      "vvi": [
+        {
+          "topic": "Probability, conditional probability and Bayes' theorem",
+          "note": "For a sample space of equally likely outcomes P(A) is the favourable count over the total, and P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Conditional probability is P(A|B) = P(A ∩ B)/P(B), and Bayes' theorem inverts it with the total probability rule in the denominator. Independence is P(A ∩ B) = P(A)P(B).",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Random variables, expectation and variance",
+          "note": "The cdf F(x) = P(X ≤ x) is non-decreasing from 0 to 1, and the pdf is its derivative for a continuous variable. E(X) is the first moment, E(X²) the second, and Var(X) = E(X²) − [E(X)]². The moment generating function M(t) = E(e^(tX)) generates the moments and identifies the distribution.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Standard distributions and transformations",
+          "note": "Binomial for a fixed number of trials with constant p, Poisson for rare events with mean and variance λ, exponential for waiting time with mean 1/λ, and Gaussian with mean μ and variance σ². A linear transformation of a Gaussian stays Gaussian, and a function of a random variable is handled by the Jacobian of the inverse transformation. State the mean and variance with the distribution.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Random processes, stationarity and autocorrelation",
+          "note": "A random process is an ensemble of time functions, and its statistics come from the ensemble or from time averages. Wide-sense stationary means the mean is constant and the autocorrelation depends only on the time difference τ. Ergodicity allows the time average to replace the ensemble average, which is what a measurement actually does.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Power spectral density and the Wiener-Khinchin relation",
+          "note": "The power spectral density is the Fourier transform of the autocorrelation function, and its integral over all frequencies is the average power. For white noise the autocorrelation is a delta and the PSD is flat at N0/2. A signal through an LTI system has its PSD multiplied by |H(f)|².",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Noise through an LTI system and SNR",
+          "note": "White noise of PSD N0/2 through a filter of bandwidth B gives output noise power N0B, so a narrower filter improves the signal-to-noise ratio. The output autocorrelation is the input autocorrelation convolved with the filter autocorrelation. Noise figure is the dB ratio of input SNR to output SNR.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "ES114",
+      "name": "Computer Networks And Security",
+      "vvi": [
+        {
+          "topic": "OSI and TCP/IP reference models",
+          "note": "The OSI model has seven layers: physical, data link, network, transport, session, presentation and application. TCP/IP collapses them to four: network access, internet, transport and application. Each layer adds its own header, and the data unit changes from frame to packet to segment as it moves up.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Framing, error detection and CRC",
+          "note": "Framing splits the bit stream with a flag and bit or byte stuffing, and character count or clock-based framing are the alternatives. A parity bit detects one error, a checksum detects bursts weakly, and the cyclic redundancy check divides the data by a generator polynomial and appends the remainder. CRC detects all single-bit errors and all bursts shorter than the polynomial degree.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "MAC protocols, Ethernet and CSMA/CD",
+          "note": "Slotted ALOHA reaches 36.8% efficiency, pure ALOHA 18.4%, and CSMA/CD listens before transmitting and backs off after a collision. Ethernet uses 48-bit MAC addresses, a minimum frame of 64 bytes so the collision is detected before transmission ends, and exponential backoff. A switch forwards by learning source addresses, unlike a hub that repeats every bit.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "IP addressing, subnetting and routing",
+          "note": "An IPv4 address is 32 bits split into network and host parts by the prefix, and the subnet mask gives the number of hosts as 2^h − 2. Classless inter-domain routing allows any prefix length, summarising routes into one entry. A router forwards by longest-prefix match from its table, built by a distance-vector or link-state protocol.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "TCP versus UDP, flow and congestion control",
+          "note": "TCP is connection-oriented, reliable, ordered and byte-stream, with a three-way handshake, sequence numbers and acknowledgements; UDP is connectionless with no guarantees and only 8 bytes of header. TCP flow control uses a receive window, and congestion control uses slow start, congestion avoidance and multiplicative decrease. UDP suits real-time traffic where a retransmission would arrive too late.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Application protocols and network security",
+          "note": "DNS resolves names to addresses, HTTP is a request-response protocol over TCP, and SMTP, FTP and DHCP cover mail, file transfer and address assignment. Symmetric ciphers such as AES are fast but need a shared key, and public-key cryptography such as RSA solves the key distribution problem and signs for authentication. A firewall filters by address and port, and a digital certificate binds a public key to an identity.",
+          "marks": 7,
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

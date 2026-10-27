@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2017",
+    "subject": "Data Structures",
+    "subject_slug": "data-structures",
+    "subject_code": "051403",
+    "year": 2017,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "How many number of interchanges are required to sort 5, 1, 6 in ascending order using Bubble sort?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What is the postfix form of the expression $(A + B) * (C * D - E) * F / G$?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "c",
+              "text": "How many leaf nodes are present in a full binary tree with $2n+1$ nodes?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "d",
+              "text": "A linear list of elements in which deletion can be done from one end (front) and insertion can take place only at the other end (rear) is known as .............",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "e",
+              "text": "What is LIFO?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "f",
+              "text": "What are the minimum number of multiplications and additions required to evaluate the given polynomial $P=4x^3+3x^2-15x+45$?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "g",
+              "text": "Which of the following sorting methods would be most suitable for sorting a list which is almost sorted?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "h",
+              "text": "What values are automatically assigned to those array elements which are not explicitly initialized?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "i",
+              "text": "What is the time complexity of Merge sort and Heap sort algorithms?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "j",
+              "text": "What is complete binary Tree?",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What is Binary Search Tree (BST)? Make a BST for the following sequence of numbers.\n45, 36, 76, 23, 89, 115, 98, 39, 41, 56, 69, 48\nTraverse the tree in Preorder, Inorder and Postorder.",
+              "marks": 14,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "What is an algorithm? What are the characteristics of a good algorithm?",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What is a sparse matrix? How is it stored in the memory of a computer?",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Describe about the doubly linked list with an example. Write the advantages of linked list over array.",
+              "marks": 6,
+              "id": "4_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Show the various passes of bubble sort on an unsorted list 11, 15, 2, 13, 6",
+              "marks": 8,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Define a stack. Describe ways to implement stack.",
+              "marks": 9,
+              "id": "5_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Differentiate between system defined data types and abstract data types with suitable examples.",
+              "marks": 5,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Describe insertion sort with a proper algorithm. What is the complexity of insertion sort in worst case?",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Write an algorithm to insert a node in the beginning of the linked list.",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "For the given Binary Search Tree, perform the following sequence of operations:\n(A) Delete 44\n(B) Delete 75\n(C) Delete 25",
+              "marks": 9,
+              "id": "7_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Write down the applications of stack and queue data structures.",
+              "marks": 5,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Construct a binary tree whose nodes on inorder and preorder are given as follows:\nInorder: 10, 15, 17, 18, 20, 25, 30, 35, 38, 40, 50\nPreorder: 20, 15, 10, 18, 17, 30, 25, 40, 35, 38, 50",
+              "marks": 8,
+              "id": "8_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What do you mean by hashing? Explain any three popular hash functions.",
+              "marks": 6,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Write short notes on following (any two):",
+              "subparts": [
+                {
+                  "letter": "a",
+                  "text": "Sparse matrix"
+                },
+                {
+                  "letter": "b",
+                  "text": "AVL tree"
+                },
+                {
+                  "letter": "c",
+                  "text": "Binary tree traversals"
+                }
+              ],
+              "marks": 14,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

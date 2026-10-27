@@ -1,0 +1,76 @@
+/**
+ * BEU college codes, copied from the site's `src/data/colleges.json` so the
+ * app can name a college from a registration number or a result row without
+ * a network round trip.
+ */
+
+export const COLLEGE_NAMES: Record<string, string> = {
+  "102": "Vidya Vihar Institute of Technology, Purnea",
+  "103": "Netaji Subhas Institute of Technology, Bihta",
+  "106": "Sityog Institute of Technology, Aurangabad",
+  "107": "MIT Muzaffarpur",
+  "108": "Bhagalpur College of Engineering, Bhagalpur",
+  "109": "Nalanda College of Engineering, Chandi",
+  "110": "Gaya College of Engineering, Gaya",
+  "111": "Darbhanga College of Engineering, Darbhanga",
+  "113": "Motihari College of Engineering, Motihari",
+  "117": "LNJP Institute of Technology, Chapra",
+  "118": "Buddha Institute of Technology, Gaya",
+  "119": "Adwaita Mission Institute of Technology, Banka",
+  "122": "Exalt College of Engineering & Technology, Vaishali",
+  "123": "Siwan Engineering & Technical Institute, Siwan",
+  "124": "Sershah Engineering College, Sasaram",
+  "125": "RRSDCE Begusarai",
+  "126": "Bakhtiyarpur College of Engineering, Patna",
+  "127": "Sitamarhi Institute of Technology, Sitamarhi",
+  "128": "B. P. Mandal College of Engineering, Madhepura",
+  "129": "Katihar Engineering College, Katihar",
+  "130": "Supaul College of Engineering, Supaul",
+  "131": "Purnea College of Engineering, Purnea",
+  "132": "Saharsa College of Engineering, Saharsa",
+  "133": "Government Engineering College, Jamui",
+  "134": "Government Engineering College, Banka",
+  "135": "Government Engineering College, Vaishali",
+  "136": "Mother’s Institute of Technology, Bihta",
+  "139": "R.P. Sharma Institute of Technology, Patna",
+  "140": "Maulana Azad College of Engineering & Technology, Patna",
+  "141": "Government Engineering College, Nawada",
+  "142": "Government Engineering College, Kishanganj",
+  "144": "Government Engineering College, Munger",
+  "145": "Government Engineering College, Sheohar",
+  "146": "Government Engineering College, West Champaran",
+  "147": "Government Engineering College, Aurangabad",
+  "148": "Government Engineering College, Kaimur",
+  "149": "Government Engineering College, Gopalganj",
+  "150": "Government Engineering College, Madhubani",
+  "151": "Government Engineering College, Siwan",
+  "152": "Government Engineering College, Jehanabad",
+  "153": "Government Engineering College, Arwal",
+  "154": "Government Engineering College, Khagaria",
+  "155": "Government Engineering College, Buxar",
+  "156": "Government Engineering College, Bhojpur",
+  "157": "Government Engineering College, Sheikhpura",
+  "158": "Government Engineering College, Lakhisarai",
+  "159": "Government Engineering College, Samastipur",
+  "165": "Shri Phanishwar Nath Renu Engineering College, Araria",
+  "166": "Millia Kishanganj College of Engineering & Technology, Kishanganj",
+  "167": "Millia Institute of Technology, Purnia",
+  "169": "CIPET: Institute of Petrochemicals Technology, Bihta",
+  "170": "Dr. Ashok Gagan College, Bihta",
+};
+
+/** The official name of a college code, or the code itself when unknown. */
+export function collegeName(code: string): string {
+  return COLLEGE_NAMES[code] ?? (code ? `College ${code}` : "");
+}
+
+/** A short form for dense rows: "GEC Sheikhpura", "MIT Muzaffarpur". */
+export function shortCollegeName(code: string): string {
+  const full = COLLEGE_NAMES[code];
+  if (!full) return code ? `College ${code}` : "";
+  return full
+    .replace(/^Government Engineering College,\s*/i, "GEC ")
+    .replace(/^Government College of Engineering,?\s*/i, "GCE ")
+    .replace(/\s*\(.*\)$/, "")
+    .trim();
+}

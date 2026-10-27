@@ -1,0 +1,1169 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+---
+
+<Layout title="Attendance Tracker - BEUConnect">
+    <Header />
+    <main class="attendance-container">
+        <header class="page-header">
+            <h1 class="glitch-text">Attendance<br/>Tracker</h1>
+            <p class="subtitle">Log your classes. Know exactly how many you can safely bunk.</p>
+        </header>
+
+        <section class="overview-section">
+            <div class="glass-card total-stats">
+                <div class="stat-circle">
+                    <svg class="progress-ring" width="80" height="80">
+                        <circle class="ring-bg" cx="40" cy="40" r="36"></circle>
+                        <circle class="ring-progress" id="totalProgressRing" cx="40" cy="40" r="36"></circle>
+                    </svg>
+                    <div class="stat-value">
+                        <span id="totalPercentage">0</span>%
+                    </div>
+                </div>
+                <div class="stat-info">
+                    <h2>Total Attendance</h2>
+                    <p id="totalClassesInfo">0 / 0 Classes Attended</p>
+                    <p class="status-msg" id="overallStatusMsg">Add subjects to start tracking.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls-section">
+            <form id="addSubjectForm" class="glass-card add-subject-form">
+                <input type="text" id="subjectName" placeholder="✨ Subject Name (e.g. Physics)" required autofocus />
+                <button type="submit" class="btn-primary">+</button>
+            </form>
+
+            <div class="glass-card settings-card">
+                <div class="settings-body">
+                    <div class="setting-item">
+                        <label for="targetPercentage">Target %</label>
+                        <select id="targetPercentage">
+                            <option value="60">60%</option>
+                            <option value="65">65%</option>
+                            <option value="70">70%</option>
+                            <option value="75" selected>75%</option>
+                            <option value="80">80%</option>
+                            <option value="85">85%</option>
+                            <option value="90">90%</option>
+                            <option value="95">95%</option>
+                            <option value="100">100%</option>
+                        </select>
+                    </div>
+                    <div class="setting-actions">
+                        <button id="exportBtn" class="btn-ghost" title="Export JSON">⬇️</button>
+                        <label class="btn-ghost file-upload-label" title="Import JSON">
+                            ⬆️
+                            <input type="file" id="importFile" accept=".json" class="hidden-file-input" />
+                        </label>
+                        <button id="resetBtn" class="btn-danger" title="Reset All">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="subjects-grid" id="subjectsContainer">
+            <!-- Subjects will be injected here via JS -->
+        </section>
+    </main>
+
+    <!-- Modal System -->
+    <div id="editModal" class="attendance-container-modal-overlay hidden">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h2>Edit Subject</h2>
+                <button class="modal-close" id="closeEditModal">&times;</button>
+            </div>
+            <form id="editSubjectForm">
+                <input type="hidden" id="editSubjectId" />
+                <div class="form-group">
+                    <label for="editSubjectName">Subject Name</label>
+                    <input type="text" id="editSubjectName" required />
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editAttended">Attended</label>
+                        <input type="number" id="editAttended" min="0" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="editTotal">Total</label>
+                        <input type="number" id="editTotal" min="0" required />
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="cancelEditBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="attendance-container-toast-container"></div>
+
+    <Footer />
+</Layout>
+
+<script>
+    import { AttendanceState } from '../lib/attendance/tracker';
+    import type { AttendanceAction, Subject } from '../lib/attendance/tracker';
+
+    class AttendanceTrackerUI {
+        private state: AttendanceState;
+        private readonly STORAGE_KEY = 'beuconnect_attendance_v2';
+        private readonly LEGACY_KEY = 'beuconnect_attendance';
+        private readonly SETTINGS_KEY = 'beuconnect_attendance_settings';
+
+        constructor() {
+            this.state = new AttendanceState();
+            this.loadData();
+            this.initEventListeners();
+            this.render();
+        }
+
+        private loadData() {
+            const settingsData = localStorage.getItem(this.SETTINGS_KEY);
+            if (settingsData) {
+                try {
+                    this.state.settings = { ...this.state.settings, ...JSON.parse(settingsData) };
+                } catch (e) {
+                    console.error("Failed to parse settings", e);
+                }
+            }
+
+            const data = localStorage.getItem(this.STORAGE_KEY);
+            if (data) {
+                try {
+                    const parsedSubjects = JSON.parse(data);
+                    this.state.subjects = parsedSubjects.map((s: any) => ({
+                        ...s,
+                        history: s.history || []
+                    }));
+                } catch (e) {
+                    console.error("Failed to parse V2 attendance data", e);
+                    this.state.subjects = [];
+                }
+            } else {
+                const legacyData = localStorage.getItem(this.LEGACY_KEY);
+                if (legacyData) {
+                    try {
+                        const legacySubjects = JSON.parse(legacyData);
+                        this.state.subjects = legacySubjects.map((s: any) => ({
+                            id: s.id,
+                            name: s.name,
+                            attended: s.attended || 0,
+                            total: s.total || 0,
+                            history: []
+                        }));
+                        this.saveData();
+                        console.log("Migrated legacy attendance data.");
+                    } catch (e) {
+                        console.error("Failed to migrate legacy data", e);
+                    }
+                }
+            }
+        }
+
+        private saveData() {
+            localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.state.subjects));
+        }
+
+        private saveSettings() {
+            localStorage.setItem(this.SETTINGS_KEY, JSON.stringify(this.state.settings));
+        }
+
+        private showToast(message: string, type: 'success' | 'error' | 'info' = 'info') {
+            const toastContainer = document.getElementById('toastContainer');
+            if (!toastContainer) return;
+
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            const content = document.createElement('div');
+            content.className = 'toast-content';
+            content.textContent = message;
+            const toastCloseBtn = document.createElement('button');
+            toastCloseBtn.className = 'toast-close';
+            toastCloseBtn.innerHTML = '&times;';
+
+            toast.appendChild(content);
+            toast.appendChild(toastCloseBtn);
+            toastContainer.appendChild(toast);
+
+            void toast.offsetWidth;
+            toast.classList.add('show');
+
+            const removeToast = () => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (toast.parentElement) toast.parentElement.removeChild(toast);
+                }, 300);
+            };
+
+            toastCloseBtn.addEventListener('click', removeToast);
+            setTimeout(removeToast, 3000);
+        }
+
+        private openEditModal(subject: Subject) {
+            const modal = document.getElementById('editModal');
+            if (!modal) return;
+
+            (document.getElementById('editSubjectId') as HTMLInputElement).value = subject.id;
+            (document.getElementById('editSubjectName') as HTMLInputElement).value = subject.name;
+            (document.getElementById('editAttended') as HTMLInputElement).value = subject.attended.toString();
+            (document.getElementById('editTotal') as HTMLInputElement).value = subject.total.toString();
+
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.add('visible'), 10);
+        }
+
+        private closeEditModal() {
+            const modal = document.getElementById('editModal');
+            if (!modal) return;
+            modal.classList.remove('visible');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        private handleExport() {
+            const data = {
+                version: 2,
+                settings: this.state.settings,
+                subjects: this.state.subjects
+            };
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `beuconnect_attendance_${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            this.showToast('Data exported successfully!', 'success');
+        }
+
+        private handleImport(e: Event) {
+            const input = e.target as HTMLInputElement;
+            if (!input.files || input.files.length === 0) return;
+
+            const file = input.files[0];
+            const reader = new FileReader();
+
+            reader.onload = (event) => {
+                try {
+                    const result = event.target?.result as string;
+                    const data = JSON.parse(result);
+
+                    if (data.version === 2 && data.subjects) {
+                        this.state.settings = data.settings || { targetPercentage: 75 };
+                        this.state.subjects = data.subjects;
+                        this.saveData();
+                        this.saveSettings();
+                        this.render();
+                        this.showToast('Data imported successfully!', 'success');
+                    } else if (Array.isArray(data)) {
+                        this.state.subjects = data.map((s: any) => ({
+                            id: s.id,
+                            name: s.name,
+                            attended: s.attended || 0,
+                            total: s.total || 0,
+                            history: []
+                        }));
+                        this.saveData();
+                        this.render();
+                        this.showToast('Legacy data imported!', 'success');
+                    } else {
+                        throw new Error("Invalid format");
+                    }
+                } catch (err) {
+                    console.error(err);
+                    this.showToast('Failed to import data. Invalid file format.', 'error');
+                }
+                input.value = '';
+            };
+
+            reader.readAsText(file);
+        }
+
+        private initEventListeners() {
+            const targetInput = document.getElementById('targetPercentage') as HTMLSelectElement;
+            if (targetInput) {
+                targetInput.value = this.state.settings.targetPercentage.toString();
+                targetInput.addEventListener('change', (e) => {
+                    let val = parseInt((e.target as HTMLSelectElement).value, 10);
+                    if (isNaN(val) || val < 60) val = 75;
+                    if (val > 100) val = 100;
+                    this.state.settings.targetPercentage = val;
+                    this.saveSettings();
+                    this.render();
+                    this.showToast(`Target set to ${val}%`, 'success');
+                });
+            }
+
+            document.getElementById('exportBtn')?.addEventListener('click', () => this.handleExport());
+            document.getElementById('importFile')?.addEventListener('change', (e) => this.handleImport(e));
+
+            const editForm = document.getElementById('editSubjectForm');
+            editForm?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const id = (document.getElementById('editSubjectId') as HTMLInputElement).value;
+                const name = (document.getElementById('editSubjectName') as HTMLInputElement).value.trim();
+                const attended = parseInt((document.getElementById('editAttended') as HTMLInputElement).value, 10);
+                const total = parseInt((document.getElementById('editTotal') as HTMLInputElement).value, 10);
+
+                if (name && !isNaN(attended) && !isNaN(total)) {
+                    this.state.manualUpdateSubject(id, name, attended, total);
+                    this.saveData();
+                    this.render();
+                    this.showToast('Subject updated successfully', 'success');
+                    this.closeEditModal();
+                }
+            });
+
+            document.getElementById('closeEditModal')?.addEventListener('click', () => this.closeEditModal());
+            document.getElementById('cancelEditBtn')?.addEventListener('click', () => this.closeEditModal());
+            document.getElementById('editModal')?.addEventListener('click', (e) => {
+                if (e.target === document.getElementById('editModal')) this.closeEditModal();
+            });
+
+            const editAttended = document.getElementById('editAttended') as HTMLInputElement;
+            const editTotal = document.getElementById('editTotal') as HTMLInputElement;
+
+            editAttended?.addEventListener('input', () => {
+                if (parseInt(editAttended.value) > parseInt(editTotal.value)) {
+                    editTotal.value = editAttended.value;
+                }
+            });
+
+            editTotal?.addEventListener('input', () => {
+                if (parseInt(editAttended.value) > parseInt(editTotal.value)) {
+                    editAttended.value = editTotal.value;
+                }
+            });
+
+            const form = document.getElementById('addSubjectForm');
+            form?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const input = document.getElementById('subjectName') as HTMLInputElement;
+                const name = input.value.trim();
+                if (name) {
+                    this.state.addSubject(Date.now().toString(), name);
+                    this.saveData();
+                    this.render();
+                    this.showToast(`Added ${name}`, 'success');
+                    input.value = '';
+                }
+            });
+
+            const resetBtn = document.getElementById('resetBtn');
+            resetBtn?.addEventListener('click', () => {
+                if (confirm('Are you sure you want to completely reset all your attendance data? This cannot be undone.')) {
+                    this.state.subjects = [];
+                    this.saveData();
+                    this.render();
+                    this.showToast('All data has been reset.', 'success');
+                }
+            });
+
+            const container = document.getElementById('subjectsContainer');
+            container?.addEventListener('click', (e) => {
+                const target = e.target as HTMLElement;
+                const card = target.closest('.subject-card') as HTMLElement;
+                if (!card) return;
+
+                const id = card.dataset.id;
+                if (!id) return;
+
+                if (target.classList.contains('btn-present') || target.closest('.btn-present')) {
+                    if (this.state.updateAttendance(id, 'present')) {
+                        const sub = this.state.subjects.find(s => s.id === id);
+                        this.showToast(`Marked Present for ${sub?.name}`, 'success');
+                        this.saveData();
+                        this.render();
+                    }
+                } else if (target.classList.contains('btn-absent') || target.closest('.btn-absent')) {
+                    if (this.state.updateAttendance(id, 'absent')) {
+                        const sub = this.state.subjects.find(s => s.id === id);
+                        this.showToast(`Marked Absent for ${sub?.name}`, 'info');
+                        this.saveData();
+                        this.render();
+                    }
+                } else if (target.classList.contains('btn-undo') || target.closest('.btn-undo')) {
+                    if (this.state.undoAction(id)) {
+                        this.showToast('Action undone');
+                        this.saveData();
+                        this.render();
+                    } else {
+                        this.showToast('Nothing to undo', 'error');
+                    }
+                } else if (target.classList.contains('btn-delete')) {
+                    if (confirm('Delete this subject?')) {
+                        this.state.deleteSubject(id);
+                        this.showToast('Subject deleted');
+                        this.saveData();
+                        this.render();
+                    }
+                } else if (target.classList.contains('stat-fraction') || target.classList.contains('btn-edit')) {
+                     const subject = this.state.subjects.find((s: Subject) => s.id === id);
+                     if (subject) this.openEditModal(subject);
+                }
+            });
+        }
+
+        private render() {
+            let totalAttended = 0;
+            let totalClasses = 0;
+
+            this.state.subjects.forEach((s: Subject) => {
+                totalAttended += s.attended;
+                totalClasses += s.total;
+            });
+
+            const overall = this.state.calculateStatus(totalAttended, totalClasses);
+
+            const totalPercentEl = document.getElementById('totalPercentage');
+            if (totalPercentEl) totalPercentEl.textContent = overall.percent.toString();
+
+            const totalInfoEl = document.getElementById('totalClassesInfo');
+            if (totalInfoEl) totalInfoEl.textContent = `${totalAttended} / ${totalClasses} Classes Attended`;
+
+            const statusMsgEl = document.getElementById('overallStatusMsg');
+            if (statusMsgEl) {
+                statusMsgEl.textContent = totalClasses === 0 ? "Add subjects to start tracking." : overall.msg;
+                statusMsgEl.className = `status-msg status-${overall.type}`;
+            }
+
+            const ring = document.getElementById('totalProgressRing') as unknown as SVGCircleElement;
+            if (ring) {
+                const radius = ring.r.baseVal.value;
+                const circumference = radius * 2 * Math.PI;
+                const offset = circumference - (overall.percent / 100) * circumference;
+                ring.style.strokeDashoffset = offset.toString();
+                ring.style.stroke = overall.percent >= this.state.settings.targetPercentage ? '#10b981' : (totalClasses > 0 ? '#ef4444' : 'var(--accent-blue)');
+            }
+
+            const container = document.getElementById('subjectsContainer');
+            if (!container) return;
+
+            container.innerHTML = '';
+
+            if (this.state.subjects.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>No subjects added yet. Add one above!</p></div>';
+                return;
+            }
+
+            this.state.subjects.forEach((sub: Subject) => {
+                const status = this.state.calculateStatus(sub.attended, sub.total);
+                const card = document.createElement('div');
+                card.className = 'glass-card subject-card';
+                card.dataset.id = sub.id;
+
+                const hasHistory = sub.history && sub.history.length > 0;
+
+                card.innerHTML = `
+                    <div class="subject-header">
+                        <h3 class="subject-title"></h3>
+                        <div class="subject-header-actions">
+                            <button class="icon-btn btn-edit" title="Edit Subject">✎</button>
+                            <button class="icon-btn btn-delete" title="Delete Subject">✕</button>
+                        </div>
+                    </div>
+
+                    <div class="subject-stats">
+                        <div class="stat-main">
+                            <span class="stat-percent ${status.type === 'safe' ? 'text-safe' : 'text-danger'}">${status.percent}%</span>
+                            <span class="stat-fraction clickable" title="Click to edit manual attendance">${sub.attended} / ${sub.total}</span>
+                        </div>
+                        <p class="subject-msg status-${status.type}">${status.msg}</p>
+                    </div>
+
+                    <div class="subject-actions">
+                        <button class="action-btn btn-present">✅ Present</button>
+                        <button class="action-btn btn-absent">❌ Absent</button>
+                        <button class="action-btn btn-undo" ${!hasHistory ? 'disabled' : ''} title="Undo last action">↺</button>
+                    </div>
+                `;
+
+                const titleEl = card.querySelector('.subject-title');
+                if (titleEl) {
+                    titleEl.textContent = sub.name;
+                }
+
+                container.appendChild(card);
+            });
+        }
+    }
+
+    document.addEventListener('astro:page-load', () => {
+        if (document.querySelector('.attendance-container')) {
+            new AttendanceTrackerUI();
+        }
+    });
+
+    if (document.querySelector('.attendance-container') && !window.hasOwnProperty('attendanceTrackerInitialized')) {
+        (window as any).attendanceTrackerInitialized = true;
+        new AttendanceTrackerUI();
+    }
+
+</script>
+
+<style is:global>
+    /* Scope global styles securely using attribute or exact parent class prefixing to avoid framework bleed */
+
+    .attendance-container {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 1rem;
+        min-height: 80vh;
+    }
+
+    .attendance-container .page-header {
+        text-align: center;
+        margin-bottom: 0.75rem; /* Reduced from 1.25rem */
+    }
+
+    .attendance-container .glitch-text {
+        font-size: clamp(1.6rem, 4vw, 2.2rem); /* Slightly smaller header */
+        font-weight: 900;
+        margin: 0;
+        line-height: 1.1;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .attendance-container .subtitle {
+        color: var(--text-secondary);
+        margin-top: 0.25rem; /* Tighter */
+        font-size: 0.85rem; /* Smaller subtitle */
+    }
+
+    .attendance-container .glass-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 0.75rem; /* Reduced from 1rem */
+        backdrop-filter: blur(12px);
+    }
+
+    /* Overview Section */
+    .attendance-container .overview-section {
+        margin-bottom: 1rem;
+    }
+
+    .attendance-container .total-stats {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem; /* Reduced from 1rem */
+        padding: 0.75rem; /* Reduced from 1rem */
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .attendance-container .stat-circle {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .attendance-container .progress-ring {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(-90deg);
+        width: 80px;
+        height: 80px;
+    }
+
+    .attendance-container .ring-bg {
+        fill: transparent;
+        stroke: rgba(148, 163, 184, 0.1);
+        stroke-width: 5;
+        cx: 40;
+        cy: 40;
+        r: 36;
+    }
+
+    .attendance-container .ring-progress {
+        fill: transparent;
+        stroke: var(--accent-blue);
+        stroke-width: 5;
+        cx: 40;
+        cy: 40;
+        r: 36;
+        stroke-dasharray: 226.19; /* 2 * PI * 36 */
+        stroke-dashoffset: 226.19;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 0.5s ease-out, stroke 0.3s ease;
+    }
+
+    .attendance-container .stat-value {
+        font-size: 1.25rem;
+        font-weight: 900;
+        color: white;
+        z-index: 1;
+    }
+
+    .attendance-container .stat-info h2 {
+        margin: 0 0 0.15rem 0;
+        font-size: 1.15rem;
+        color: white;
+    }
+
+    .attendance-container .stat-info p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+
+    .attendance-container .status-msg {
+        margin-top: 0.15rem !important;
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+
+    .attendance-container .status-safe { color: #10b981; }
+    .attendance-container .status-danger { color: #ef4444; }
+
+    /* Controls */
+    .attendance-container .controls-section {
+        display: flex;
+        gap: 0.5rem; /* Tighter gap */
+        margin-bottom: 0.75rem; /* Reduced from 1rem */
+        flex-wrap: nowrap; /* Prevent wrap so input takes full width */
+        flex-direction: column;
+    }
+
+    .attendance-container .add-subject-form {
+        display: flex;
+        gap: 0.5rem;
+        padding: 0.4rem; /* Tighter padding around input */
+        align-items: stretch;
+        background: rgba(59, 130, 246, 0.08);
+        border: 1px solid rgba(59, 130, 246, 0.4);
+        border-radius: 12px;
+    }
+
+    .attendance-container .add-subject-form input {
+        flex: 1 1 auto;
+        min-width: 0;
+        width: 100%;
+        background: var(--bg-primary);
+        border: 2px solid rgba(59, 130, 246, 0.5); /* Make default border pop more */
+        border-radius: 8px; /* Slightly squarer than outer container */
+        padding: 0.6rem 1rem;
+        color: white;
+        font-size: 1rem;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); /* Inset shadow for depth */
+        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        margin: 0;
+    }
+
+    .attendance-container .add-subject-form input:focus {
+        outline: none;
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4), inset 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .attendance-container .add-subject-form button {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-size: 1.25rem; /* Larger plus sign */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1; /* Keep it centered */
+    }
+
+    .attendance-container .btn-primary, .attendance-container .btn-secondary {
+        padding: 0.6rem 1rem;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    .attendance-container .btn-primary {
+        background: var(--accent-gradient);
+        color: white;
+        border-radius: 8px; /* Match form button radius */
+    }
+
+    .attendance-container .btn-primary:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+
+    .attendance-container .btn-secondary {
+        background: rgba(239, 68, 68, 0.1);
+        color: #ef4444;
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        border-radius: 8px;
+    }
+
+    .attendance-container .btn-secondary:hover {
+        background: rgba(239, 68, 68, 0.2);
+    }
+
+    /* Subjects Grid */
+    .attendance-container .subjects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 0.75rem; /* Reduced gap between subject cards */
+    }
+
+    .attendance-container .empty-state {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 1.5rem; /* Reduced padding from 2.5rem */
+        color: var(--text-muted);
+        font-weight: 600;
+        background: rgba(15, 23, 42, 0.3);
+        border-radius: 12px;
+        border: 1px dashed var(--border-subtle);
+    }
+
+    /* Subject Card Enhancements */
+    .attendance-container .subject-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem; /* Reduced margin */
+    }
+
+    .attendance-container .subject-title {
+        margin: 0;
+        font-size: 1.15rem;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .attendance-container .icon-btn {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .attendance-container .icon-btn:hover {
+        color: #ef4444;
+    }
+
+    .attendance-container .subject-stats {
+        margin-bottom: 0.75rem; /* Reduced from 1rem */
+        text-align: center;
+    }
+
+    .attendance-container .stat-main {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 0.15rem; /* Reduced from 0.25rem */
+    }
+
+    .attendance-container .stat-percent {
+        font-size: 1.75rem; /* Reduced from 2rem */
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    .attendance-container .stat-fraction {
+        color: var(--text-secondary);
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .attendance-container .text-safe { color: #10b981; }
+    .attendance-container .text-danger { color: #ef4444; }
+
+    .attendance-container .subject-msg {
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .attendance-container .subject-actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .attendance-container .action-btn {
+        flex: 1;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s;
+        font-size: 0.85rem;
+    }
+
+    .attendance-container .btn-present {
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
+    }
+
+    .attendance-container .btn-present:hover {
+        background: rgba(16, 185, 129, 0.25);
+    }
+
+    .attendance-container .btn-absent {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4444;
+    }
+
+    .attendance-container .btn-absent:hover {
+        background: rgba(239, 68, 68, 0.25);
+    }
+
+    .attendance-container .subject-header-actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .attendance-container .stat-fraction.clickable {
+        cursor: pointer;
+        transition: color 0.2s;
+        text-decoration: underline;
+        text-decoration-color: transparent;
+    }
+
+    .attendance-container .stat-fraction.clickable:hover {
+        color: var(--text-primary);
+        text-decoration-color: var(--text-muted);
+    }
+
+    .attendance-container .btn-undo {
+        background: rgba(148, 163, 184, 0.15);
+        color: var(--text-muted);
+        flex: 0 0 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+    }
+
+    .attendance-container .btn-undo:hover:not(:disabled) {
+        background: rgba(148, 163, 184, 0.3);
+        color: white;
+    }
+
+    .attendance-container .btn-undo:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+
+    /* Modal Styles */
+    .attendance-container-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .attendance-container-modal-overlay.hidden {
+        display: none;
+    }
+
+    .attendance-container-modal-overlay.visible {
+        opacity: 1;
+    }
+
+    .attendance-container-modal-overlay .modal-content {
+        width: 100%;
+        max-width: 400px;
+        margin: 1rem;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
+
+    .attendance-container-modal-overlay.visible .modal-content {
+        transform: translateY(0);
+    }
+
+    .attendance-container-modal-overlay .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .attendance-container-modal-overlay .modal-header h2 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+
+    .attendance-container-modal-overlay .modal-close {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        font-size: 1.5rem;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .attendance-container-modal-overlay .modal-close:hover {
+        color: white;
+    }
+
+    .attendance-container-modal-overlay .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .attendance-container-modal-overlay .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .attendance-container-modal-overlay .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        font-weight: 600;
+    }
+
+    .attendance-container-modal-overlay .form-group input {
+        width: 100%;
+        background: rgba(15, 23, 42, 0.4);
+        border: 1px solid var(--border-subtle);
+        border-radius: 8px;
+        padding: 0.75rem;
+        color: white;
+        font-size: 1rem;
+    }
+
+    .attendance-container-modal-overlay .form-group input:focus {
+        outline: none;
+        border-color: var(--accent-blue);
+    }
+
+    .attendance-container-modal-overlay .modal-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    /* Toast System */
+    .attendance-container-toast-container {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 2000;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .attendance-container-toast-container .toast {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        transform: translateX(120%);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .attendance-container-toast-container .toast.show {
+        transform: translateX(0);
+    }
+
+    .attendance-container-toast-container .toast-success { border-left: 4px solid #10b981; }
+    .attendance-container-toast-container .toast-error { border-left: 4px solid #ef4444; }
+    .attendance-container-toast-container .toast-info { border-left: 4px solid var(--accent-blue); }
+
+    .attendance-container-toast-container .toast-content {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .attendance-container-toast-container .toast-close {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 0;
+        line-height: 1;
+    }
+
+    .attendance-container-toast-container .toast-close:hover {
+        color: white;
+    }
+
+    /* Settings Styles */
+    .attendance-container .settings-card {
+        flex: 1;
+        min-width: 250px; /* Reduced from 300 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Changed from space-between */
+        padding: 0.75rem 1rem; /* Added explicit smaller padding to override glass-card */
+    }
+
+    .attendance-container .settings-header h3 {
+        display: none; /* Hide the header entirely to save space */
+    }
+
+    .attendance-container .settings-body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem; /* Reduced gap */
+        flex-wrap: wrap;
+    }
+
+    .attendance-container .setting-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .attendance-container .setting-item label {
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+
+    .attendance-container .setting-item select {
+        width: auto; /* Let it size to content */
+        min-width: 60px;
+        background: rgba(15, 23, 42, 0.4);
+        border: 1px solid var(--border-subtle);
+        border-radius: 8px;
+        padding: 0.3rem; /* Reduced padding */
+        color: white;
+        text-align: center;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 0.85rem;
+    }
+
+    .attendance-container .setting-actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .attendance-container .btn-ghost {
+        background: transparent;
+        border: 1px dashed var(--border-subtle);
+        color: var(--text-secondary);
+        padding: 0.3rem 0.5rem; /* Tighter padding */
+        border-radius: 8px;
+        font-size: 0.85rem; /* Keep emojis legible */
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .attendance-container .btn-ghost:hover {
+        background: rgba(148, 163, 184, 0.1);
+        color: white;
+        border-color: var(--text-muted);
+    }
+
+    .attendance-container .btn-danger {
+        background: rgba(239, 68, 68, 0.1);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        color: #ef4444;
+        padding: 0.3rem 0.6rem; /* Tighter padding */
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    .attendance-container .btn-danger:hover {
+        background: rgba(239, 68, 68, 0.2);
+    }
+
+    .attendance-container .file-upload-label {
+        display: inline-block;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .attendance-container .hidden-file-input {
+        display: none;
+    }
+
+    @media (max-width: 600px) {
+        .attendance-container {
+            padding: 0.5rem;
+        }
+        .attendance-container .page-header {
+            margin-bottom: 0.5rem; /* Tighter header on mobile */
+        }
+        .attendance-container .add-subject-form {
+            flex-direction: row; /* KEEP horizontal on mobile */
+            gap: 0.5rem;
+            padding: 0.4rem; /* tighter padding on mobile too */
+            border-radius: 12px;
+        }
+        .attendance-container .add-subject-form input {
+            width: 100%;
+            min-width: 0;
+            padding: 0.5rem; /* even tighter on mobile */
+            font-size: 0.95rem; /* slightly smaller text */
+        }
+        .attendance-container .add-subject-form button {
+            width: auto;
+            white-space: nowrap;
+            padding: 0.5rem 1rem; /* Slightly wider padding for touch target */
+            font-size: 1.25rem; /* Keep the plus sign large */
+        }
+        .attendance-container .controls-section {
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem; /* tighter on mobile */
+        }
+        .attendance-container .settings-body {
+            gap: 0.4rem; /* tighter on mobile */
+        }
+        .attendance-container .btn-ghost, 
+        .attendance-container .btn-danger {
+            padding: 0.3rem 0.4rem; /* tighter buttons on mobile */
+        }
+        .attendance-container-toast-container {
+            bottom: 1rem;
+            right: 1rem;
+            left: 1rem;
+        }
+        .attendance-container-toast-container .toast {
+            width: 100%;
+        }
+    }
+</style>

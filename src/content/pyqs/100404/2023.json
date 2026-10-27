@@ -1,0 +1,240 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2023",
+    "subject": "Discrete Mathematics",
+    "subject_slug": "discrete-mathematics",
+    "subject_code": "100404",
+    "year": 2023,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Write the answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Let A be the set odd positive integers less than 10. Then cardinality of A, |A| is</p>",
+          "options": [
+            "5",
+            "9",
+            "6",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>If m is the number of objects (pigeons) and n is the number of boxes (pigeonholes), then the\n                        function is both one-to-one and onto if</p>",
+          "options": [
+            "\\( m &lt; n \\)",
+            "\\( m = n \\)",
+            "\\( m &gt; n \\)",
+            "none of these"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>If \\( A \\times B = B \\times A \\), (Where A and B are general matrices) then</p>",
+          "options": [
+            "\\( A = \\phi \\)",
+            "\\( A = B' \\)",
+            "\\( B = A \\)",
+            "\\( A' = B \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>A partial ordered relation is transitive, reflexive and</p>",
+          "options": [
+            "Anti symmetric",
+            "bi symmetric",
+            "anti reflexive",
+            "asymmetric"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>If B is a Boolean Algebra, then which of the following is true</p>",
+          "options": [
+            "B is a finite but complemented lattice",
+            "B is a finite, complemented and distributive lattice",
+            "B is a finite, Distributive but not complemented lattice",
+            "B is not distributive lattice"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>\\( P \\rightarrow q \\) is logically equivalent to</p>",
+          "options": [
+            "\\( -q \\rightarrow p \\)",
+            "\\( -P \\rightarrow q \\)",
+            "\\( -P \\wedge q \\)",
+            "\\( -p \\vee q \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>If \\( f(x) = \\cos x \\) and \\( g(x) = x^3 \\) then \\( (f \\circ g)(x) \\) is</p>",
+          "options": [
+            "\\( (\\cos x)^3 \\)",
+            "\\( \\cos 3x \\)",
+            "\\( x^{(\\cos x)^3} \\)",
+            "\\( \\cos(x^3) \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The number of distinguishable permutations of the letters in the word BANANA are</p>",
+          "options": [
+            "60",
+            "36",
+            "20",
+            "10"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following pair is not congruent modulo 7?</p>",
+          "options": [
+            "10, 24",
+            "25, 56",
+            "-31, -15",
+            "-64, -15"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Let \\( N=\\{1,2,3,........\\} \\) be ordered by divisibility, which of the following subset is\n                        totally ordered</p>",
+          "options": [
+            "(2, 6, 24)",
+            "(3, 5, 15)",
+            "(2, 9, 16)",
+            "(4, 15, 30)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Let \\( A = B = \\{x | -1 \\le x \\le 1\\} \\) for each of the following functions state where it\n                        is injective, surjective or bijective: i) \\( g(x) = \\sin \\pi x \\) ii) \\( b(x) =\n                        \\frac{2x}{3} \\)</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Let \\( f(x) = x+2 \\), \\( g(x) = x-2 \\), \\( h(x) = 3x \\) find (i) \\( f \\circ g \\) (ii)\n                        \\( f \\circ g \\circ h \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Find the power set of each of these sets: i) \\( \\{a,b\\} \\) ii) \\( \\{\\phi, \\{\\phi\\}\\}\n                        \\)</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Use Cantor's diagonal argument to prove that set F of all functions \\( f: (0,1) \\rightarrow R\n                        \\) has larger Cardinality than |R|.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Determine if the sets are countable or uncountable: a.) the set A of all function \\( g: Z_{+}\n                        \\rightarrow Z_{+} \\) b.) The set B of all functions \\( f: Z_{+} \\rightarrow \\{0,1\\} \\)\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Prove the following by using the principle of mathematical induction for all \\( n \\in N \\):\n                        \\( 1^3 + 2^3 + 3^3 + \\dots + n^3 = \\left(\\frac{n(n+1)}{2}\\right)^2 \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>State and prove Division algorithm theorem well-ordering principle.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Check the validity of the following argument all integers are rational numbers. Some integers are\n                        powers of 5. Therefore, some rational numbers are powers of 5.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A grocery store employee is stocking apples. Each apple is a different color. There are 10 apples\n                        left in the box and the employee pulls out 2 of them at random. What is the probability that the\n                        employee pulls out one pink apple and yellow apple?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Let \\( \\Psi: G \\rightarrow H \\) be a homomorphism of groups. Show that if \\( a \\in G \\)\n                        has order n, then \\( \\Psi(a) \\in H \\) has order dividing n.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Consider the given graph. (a) Does a Hamiltonian path exist? If so describe it. If not say why\n                        not.</p>\n<p>(b) Does an Eulerian path exist? If so describe it. If not say why not.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/260.png\"/>"
+        }
+      ]
+    }
+  ]
+}

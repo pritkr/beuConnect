@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 4th Semester Exam., 2015",
+    "subject": "BASIC ELECTRONICS",
+    "subject_slug": "basic-electronics",
+    "subject_code": "041401",
+    "year": 2015,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "(i) The marks are indicated in the right-hand margin.",
+    "(ii) There are NINE questions in this paper.",
+    "(iii) Attempt FIVE questions in all.",
+    "(iv) Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct option of any seven of the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "The mobility of an electron in a conductor is expressed in terms of",
+              "options": [
+                "$\\text{cm}^2/\\text{V-s}$",
+                "$\\text{cm}/\\text{V-s}$",
+                "$\\text{cm}^2/\\text{V}$",
+                "$\\text{cm}^2/\\text{s}$"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "Current flow in a semiconductor depends on the phenomenon of",
+              "options": [
+                "drift",
+                "diffusion",
+                "recombination",
+                "All of the above"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "A certain amount of --- still flows when diode is under reverse biased condition.",
+              "options": [
+                "reverse bias current",
+                "reverse saturation current",
+                "reverse diode current",
+                "diode off current"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "Bridge rectifiers are preferred because",
+              "options": [
+                "they require small transformer",
+                "they have less PIV",
+                "they need small transformer and also have less PIV",
+                "they have low ripple factor"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "Transistor is",
+              "options": [
+                "current-controlled current device",
+                "current-controlled voltage device",
+                "voltage-controlled current device",
+                "voltage-controlled voltage device"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "In a JFET, drain current is maximum when $V_{GS}$ is",
+              "options": [
+                "zero",
+                "negative",
+                "positive",
+                "equal to $V_P$"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "Input impedance of FET is",
+              "options": [
+                "low",
+                "high",
+                "medium",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "Which of the following will not decrease as a result of introduction of feedback?",
+              "options": [
+                "Instability",
+                "Bandwidth",
+                "Overall gain",
+                "Distortion"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "In a common-emitter amplifier, the unbypassed emitter resistance provides",
+              "options": [
+                "voltage shunt feedback",
+                "current series feedback",
+                "positive voltage feedback",
+                "positive current feedback"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "LEDs are fabricated from",
+              "options": [
+                "silicon",
+                "germanium",
+                "silicon or germanium",
+                "gallium arsenide"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "2a",
+              "text": "What is the concentration of holes in Si crystals having donor concentration of $1.4 \\times 10^{24} / \\text{ m}^3$, when the intrinsic carrier concentration is $1.4 \\times 10^{18} / \\text{ m}^3$? Find the ratio of electrons to holes concentration.",
+              "marks": 6
+            },
+            {
+              "id": "2b",
+              "text": "Draw the V-I characteristic of Si and Ge diode on the same axis and explain.",
+              "marks": 8
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "3a",
+              "text": "Explain the working of centre-tapped full-wave rectifier.",
+              "marks": 6
+            },
+            {
+              "id": "3b",
+              "text": "For the circuit of Fig. 1, determine the range of $R_L$ and $I_L$ that will result in $V_{R_L}$ being maintained at $10\\text{ V}$.",
+              "marks": 8
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "4a",
+              "text": "Derive the relation between $\\alpha$ and $\\beta$ of BJT.",
+              "marks": 5
+            },
+            {
+              "id": "4b",
+              "text": "Describe the working of NPN transistor and explain the input and output characteristics of common-emitter amplifier.",
+              "marks": 9
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "5a",
+              "text": "Find $I_C$ and $V_{CE}$ for the circuit shown in Fig. 2 for the BJT whose $\\beta = 80$.",
+              "marks": 6
+            },
+            {
+              "id": "5b",
+              "text": "Draw and explain potential divider biasing circuit.",
+              "marks": 8
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "6a",
+              "text": "List the advantages and disadvantages of FET over BJT.",
+              "marks": 5
+            },
+            {
+              "id": "6b",
+              "text": "Explain the working of JFET along with its transfer and output characteristics.",
+              "marks": 9
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "7a",
+              "text": "What are the advantages of negative feedback in amplifiers? Explain them.",
+              "marks": 6
+            },
+            {
+              "id": "7b",
+              "text": "Draw the circuit diagram of voltage series feedback amplifier and derive the expression for input and output impedances.",
+              "marks": 8
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "8a",
+              "text": "Name six important parameters of an operational amplifier. What are their ideal values and practical values?",
+              "marks": 6
+            },
+            {
+              "id": "8b",
+              "text": "Describe the working of OPAMP as an integrator and an inverter.",
+              "marks": 8
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "text": "Write notes on the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "SCR",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "text": "LED",
+              "marks": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

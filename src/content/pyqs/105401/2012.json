@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2012",
+    "subject": "SOFTWARE ENGINEERING",
+    "subject_slug": "software-engineering",
+    "subject_code": "105401",
+    "year": 2012,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-side margin.",
+    "There are TEN questions in this paper.",
+    "Attempt any FIVE questions."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Explain the following models with a neat diagram : (i) Incremental model, (ii) SEI-CMM",
+              "marks": 5
+            },
+            {
+              "id": "1b",
+              "text": "Define S/W risk. List four important S/W risks and their mitigation SMPS.",
+              "marks": 5
+            },
+            {
+              "id": "1c",
+              "text": "\"Top-down and bottom-up estimation approaches are not mutually exclusive.\" Explain.",
+              "marks": 4
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "2a",
+              "text": "Give differences for the following : (i) Program vs. S/W, (ii) S/W design vs. S/W architecture, (iii) Data abstraction vs. procedure abstraction, (iv) Debugging vs. testing",
+              "marks": 6
+            },
+            {
+              "id": "2b",
+              "text": "Explain how S/W project is different from other projects.",
+              "marks": 4
+            },
+            {
+              "id": "2c",
+              "text": "Explain the importance of UML diagrams.",
+              "marks": 4
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "3a",
+              "text": "What do you mean by requirements engineering? Explain briefly the steps of requirements engineering.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "text": "Explain the following : (i) Quality of design and quality conformance, (ii) Coupling and cohesion, (iii) Collaboration diagram",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "4a",
+              "text": "Assume that a program will experience 300 failures in infinite time. It has now experienced 100. The initial failure intensity was 20 failures/CPU hr. Determine- (i) current failure intensity; (ii) failures experienced and failure intensity after 20 CPU hrs of execution.",
+              "marks": 5
+            },
+            {
+              "id": "4b",
+              "text": "Describe the principle of Albrecht's FPA.",
+              "marks": 5
+            },
+            {
+              "id": "4c",
+              "text": "Explain the basic COCOMO model.",
+              "marks": 4
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "5a",
+              "text": "Consider a project with the following functional units :\n10 low external inputs, 12 high external outputs, 15 low internal logical files, 20 high external interface files, 12 average external enquiries and a value of complexity adjustment factor 1.2\nCalculate unadjusted and adjusted function point counts.",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "text": "Explain the following : (i) S/W inspections, (ii) $\\alpha$ and $\\beta$ testing, (iii) Smoke testing",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "6a",
+              "text": "Waterfall model, linear sequential classical life cycle model and traditional software life cycle model of software engineering are not accurate of software development activities. Explain. What is the limitation of waterfall model?",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "text": "What do you mean by software crisis? What is its reason?",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "7a",
+              "text": "What do you mean by SRS? What are its characteristics? What are its components? What are the needs of SRS?",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "text": "Differentiate between functional requirement and nonfunctional requirement.",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "8a",
+              "text": "Write short notes on : (i) Fault avoidance and fault tolerance, (ii) Exception handling, (iii) Statistical testing",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "text": "What do you mean by software reliability? How do we measure software reliability?",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Explain the need for software maintenance. Explain the maintenance tools and technique in detail. Also explain the maintenance side effect.",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "text": "Why are formal specifications of module desirable? What are the limitations of current formal methods and how do they not come into common use?",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "10",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "10a",
+              "text": "What are the factors that influence software quality? Explain them in detail.",
+              "marks": 5
+            },
+            {
+              "id": "10b",
+              "text": "What are different types of CASE tools available in software engineering?",
+              "marks": 5
+            },
+            {
+              "id": "10c",
+              "text": "What is software reuse? Explain various aspects of software reuse.",
+              "marks": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

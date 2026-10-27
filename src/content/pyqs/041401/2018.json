@@ -1,0 +1,276 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 4th Semester Examination, 2018",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "041401",
+    "year": 2018,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer of the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "When checking a diode, low resistance readings both ways indicate the diode is",
+              "type": "mcq",
+              "options": [
+                "open",
+                "satisfactory",
+                "faulty",
+                "not the problem"
+              ]
+            },
+            {
+              "id": "b",
+              "text": "Which of the following is the correct relationship between $I_B$ and $I_E$?",
+              "type": "mcq",
+              "options": [
+                "$I_B = \\beta I_E$",
+                "$I_B = I_E$",
+                "$I_B = (\\beta + 1) I_E$",
+                "$I_E = (\\beta + 1) I_B$"
+              ]
+            },
+            {
+              "id": "c",
+              "text": "If a $169.7 \\text{ V}$ half-wave peak has an average voltage of $54 \\text{ V}$, what is the average of two full-wave peaks?",
+              "type": "mcq",
+              "options": [
+                "$119.9 \\text{ V}$",
+                "$108.0 \\text{ V}$",
+                "$115.7 \\text{ V}$",
+                "$339.4 \\text{ V}$"
+              ]
+            },
+            {
+              "id": "d",
+              "text": "The Q-point on a load line may be used to determine",
+              "type": "mcq",
+              "options": [
+                "$V_C$",
+                "$V_{CC}$",
+                "$V_B$",
+                "$I_C$"
+              ]
+            },
+            {
+              "id": "e",
+              "text": "For the BJT to operate in the active (linear) region, the base-emitter junction must be ________-biased and the base-collector junction must be ________-biased.",
+              "type": "mcq",
+              "options": [
+                "forward, forward",
+                "forward, reverse",
+                "reverse, reverse",
+                "reverse, forward"
+              ]
+            },
+            {
+              "id": "f",
+              "text": "What is the level of drain current $I_D$ for gate-to-source voltages $V_{GS}$ less than (more negative than) the pinch-off level?",
+              "type": "mcq",
+              "options": [
+                "Zero ampere",
+                "$I_{DSS}$",
+                "Negative value",
+                "Undefined"
+              ]
+            },
+            {
+              "id": "g",
+              "text": "How much times reverse saturation current will increase, if temperature increases $15^\\circ\\text{C}$?",
+              "type": "mcq",
+              "options": [
+                "2.52",
+                "4.62",
+                "4.12",
+                "2.82"
+              ]
+            },
+            {
+              "id": "h",
+              "text": "The total discharge time for the capacitor in a clamper having $C = 0.01 \\text{ \\mu F}$ and $R = 500 \\text{ k\\Omega}$ is",
+              "type": "mcq",
+              "options": [
+                "$5 \\text{ ms}$",
+                "$25 \\text{ ms}$",
+                "$2.5 \\text{ ms}$",
+                "$50 \\text{ ms}$"
+              ]
+            },
+            {
+              "id": "i",
+              "text": "How many op-amps are required to implement the equation $V_0 = V_1$?",
+              "type": "mcq",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "1"
+              ]
+            },
+            {
+              "id": "j",
+              "text": "A non-inverting closed-loop op-amp circuit generally has a gain factor",
+              "type": "mcq",
+              "options": [
+                "less than one",
+                "greater than one",
+                "of zero",
+                "equal to one"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Differentiate between an ideal and a practical voltage source. Give their graphical representations and convert $10 \\text{ V}$ voltage source with its series resistance of $2 \\text{ \\Omega}$ into its equivalent current source.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Explain the working of a shunt capacitor filter and derive an approximate expression for ripple factor in half-wave rectifier with shunt capacitor filter.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Compare the differences between JFET and MOSFET and also prove that the transconductance $g_m$ of a JFET is given by $g_m = \\frac{2}{|V_p|} \\sqrt{I_{DS} I_{DSS}}$",
+              "marks": 9
+            },
+            {
+              "id": "b",
+              "text": "Explain the UJT as a relaxation oscillator.",
+              "marks": 5
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Explain Zener and avalanche breakdown in semiconductors.",
+              "marks": 6
+            },
+            {
+              "id": "b",
+              "text": "Define $\\alpha$ and $\\beta$ of a transistor. Also derive the relationship between them.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Sketch the output characteristics for N-channel JFET with gate-source shorted (i.e., $V_{GS} = 0$). How are ohmic, pinch off and breakdown regions created?",
+              "marks": 8
+            },
+            {
+              "id": "b",
+              "text": "Explain the basic structure and working of a P-channel JFET.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Compare the characteristics of CB, CE and CC configurations of a transistor. Draw the circuit of a common-collector transistor configuration and explain its operation. Also derive the relation between $\\gamma$ and $\\alpha$ current amplification factors.",
+              "marks": 8
+            },
+            {
+              "id": "b",
+              "text": "A collector to base circuit has $V_{CB} = 24 \\text{ V}, R_B = 180 \\text{ k\\Omega}, R_C = 3.3 \\text{ k\\Omega}$ and $V_{CE} = 10 \\text{ V}$. Calculate $h_{FE}$ and determine $V_{CE}$ when a new transistor is replaced having $h_{FE} = 120$.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "An inverting op-amp has $R_f = 100 \\text{ k\\Omega}$ and $R_1 = 2 \\text{ k\\Omega}$. Find the voltage gain of the amplifier. Also find the amplifier input resistance, input current and the output voltage if the input voltage is $0.1 \\text{ V}$. Assume op-amp to be ideal.",
+              "marks": 8
+            },
+            {
+              "id": "b",
+              "text": "Explain the working of an op-amp as an integrator circuit.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Explain a voltage-shunt feedback amplifier with suitable example.",
+              "marks": 8
+            },
+            {
+              "id": "b",
+              "text": "In a transistor circuit, load resistance is $5 \\text{ k\\Omega}$ and quiescent current is $1.2 \\text{ mA}$. Determine the operating point when the battery voltage $V_{CC} = 12 \\text{ V}$. How will the Q-point change when the load resistance is changed from $5 \\text{ k\\Omega}$ to $7.5 \\text{ k\\Omega}$?",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Describe the structure, symbol and operation of SCR with the help of suitable diagrams.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "In an N-type semiconductor, the Fermi level lies $0.3 \\text{ eV}$ below the conduction band at $27^\\circ\\text{C}$. If the temperature is increased to $55^\\circ\\text{C}$, find the new position of the Fermi level.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

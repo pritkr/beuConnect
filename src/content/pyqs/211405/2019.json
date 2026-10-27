@@ -1,0 +1,289 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2019",
+    "subject": "Discrete Mathematical Structure and Graph Theory",
+    "subject_slug": "discrete-mathematical-structure-and-graph-theory",
+    "subject_code": "211405",
+    "year": 2019,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The statement \\( p \\rightarrow q \\) is logically equivalent to</p>",
+          "options": [
+            "\\( p \\vee q \\)",
+            "\\( p \\vee \\sim q \\)",
+            "\\( \\sim p \\vee q \\)",
+            "\\( p \\rightarrow q \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The contrapositive of the conditional statement \\( p \\rightarrow q \\) is</p>",
+          "options": [
+            "\\( q \\rightarrow p \\)",
+            "\\( \\sim p \\rightarrow \\sim q \\)",
+            "\\( p \\leftrightarrow q \\)",
+            "\\( \\sim q \\rightarrow \\sim p \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>If A and B are two nonempty sets having n elements in common, then \\( A \\times B \\) and \\( B\n                        \\times A \\) will have how many elements in common?</p>",
+          "options": [
+            "\\( 2^n \\)",
+            "\\( n^2 \\)",
+            "\\( n^4 \\)",
+            "\\( 2n \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>If a set A have n elements, then how many relations will be there on set A?</p>",
+          "options": [
+            "\\( n^2 \\)",
+            "\\( 2^{n^2} \\)",
+            "\\( 2^n \\)",
+            "\\( 2n \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>If \\( P(\\phi) \\) represents the power set of \\( \\phi \\), then \\( n(P(P(P(\\phi)))) \\)\n                        equal\n                        to</p>",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The number of edges in a bipartite graph with n vertices is at most</p>",
+          "options": [
+            "\\( \\frac{n^2}{2} \\)",
+            "\\( \\frac{n^2}{4} \\)",
+            "\\( n^2 \\)",
+            "\\( 2n \\)"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>If \\( (S, *) \\) is a monoid, where \\( S = \\{1, 2, 3, 6\\} \\) is defined by \\( a * b =\n                        \\text{lcm}(a, b) \\), and where \\( a, b \\in S \\), then the identity element is</p>",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "6"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The total number of subgroups of a group G of prime order is</p>",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>For the poset \\( \\{3, 5, 9, 15, 24, 45\\} \\); divisor of the glb of \\( \\{3, 5\\} \\) is</p>",
+          "options": [
+            "3",
+            "5",
+            "15",
+            "45"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The number of pendant vertices of a full-binary tree is</p>",
+          "options": [
+            "\\( \\frac{n+1}{2} \\)",
+            "\\( \\frac{n-1}{2} \\)",
+            "\\( \\frac{2n+1}{2} \\)",
+            "\\( \\frac{2n-1}{2} \\)"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Using truth table, show that-<br/>\n                        (i) \\( ((p \\rightarrow (q \\rightarrow r))) \\rightarrow ((p \\rightarrow q) \\rightarrow (p\n                        \\rightarrow r)) \\) is a tautology.<br/>\n                        (ii) \\( \\sim(q \\rightarrow r) \\wedge r \\wedge (p \\rightarrow q) \\) is a contradiction.\n                    </p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Obtain the principal disjunctive normal form (PDNF) and principal conjunctive normal form (PCNF)\n                        of\n                        the statement \\( (p \\rightarrow (q \\wedge r)) \\wedge (\\sim p \\rightarrow (\\sim q \\wedge\n                        \\sim r)) \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>For any sets A and B, prove that<br/>\n                        (i) \\( (A \\cup B)' = A' \\cap B' \\);<br/>\n                        (ii) \\( (A \\cap B)' = A' \\cup B' \\).</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>If two sets A and B have n elements in common, then show that the sets \\( A \\times B \\) and\n                        \\( B\n                        \\times A \\) will have \\( 2^n \\) elements in common.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>If R is the relation on the set of positive integers, such that \\( (a, b) \\in R \\) if and only\n                        if\n                        \\( a^2 + b \\) is even, prove that R is an equivalence relation.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Define partition of a set. If the relation R on the set of integers Z is defined by \\( a R b \\)\n                        iff\n                        \\( a \\cong b \\pmod 4 \\), find the partition induced by R.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>If R and S be relations on \\( A = \\{1, 2, 3\\} \\) represented by the matrices \\( M_R =\n                        \\begin{bmatrix} 1 &amp; 0 &amp; 1 \\\\ 0 &amp; 1 &amp; 0 \\\\ 0 &amp; 0 &amp; 0 \\end{bmatrix} \\) and \\( M_S =\n                        \\begin{bmatrix} 0 &amp; 1 &amp; 1 \\\\ 1 &amp; 1 &amp; 0 \\\\ 0 &amp; 0 &amp; 1 \\end{bmatrix} \\).<br/>\n                        Find the matrices that represent (i) \\( R \\cup S \\), (ii) \\( R \\cap S \\), (iii) \\( R\n                        \\circ S\n                        \\), (iv) \\( R - S \\), (v) \\( R' \\), (vi) \\( R \\circ R \\) and (vii) \\( R \\oplus S \\).\n                    </p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Draw the Hasse diagram representing the partial ordering \\( \\{(A,B) : A \\subseteq B\\} \\) on\n                        the\n                        power set \\( P(S) \\) where \\( S = \\{a,b,c\\} \\). Find the maximal, minimal, greatest and\n                        least\n                        elements of the poset.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Define characteristic function of a set. If A and B are any two subsets of universal set U, then\n                        show\n                        that:<br/>\n                        \\( f_{A \\cup B}(x) = f_A(x) + f_B(x) - f_{A \\cap B}(x) \\), for all \\( x \\in U \\)</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>If functions \\( f, g, h: Z \\rightarrow Z \\) are defined as \\( f(x) = x-1 \\), \\( g(x) = 3x\n                        \\)\n                        and \\( h(x) = \\begin{cases} 0, &amp; \\text{if x is even} \\\\ 1, &amp; \\text{if x is odd}\n                        \\end{cases}\n                        \\)<br/>\n                        Verify that \\( f \\circ (g \\circ h) = (f \\circ g) \\circ h \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Show that every group of order 3 is cyclic.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Prove that the necessary and sufficient condition for a non-empty set H of a group (G, *) to be a\n                        subgroup is \\( a, b \\in H \\Rightarrow a * b^{-1} \\in H \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Show that the order of a subgroup of a finite group is a divisor of the order of the group.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Prove that the set S of all real numbers of the form \\( a + b\\sqrt{2} \\) where a, b are\n                        integers\n                        is an integral domain with respect to usual addition and multiplication.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Define adjacency matrix and incidence matrix of graph G. Draw the graph represented by the\n                        adjacency\n                        matrix<br/>\n                        \\( \\begin{bmatrix} 0 &amp; 1 &amp; 1 &amp; 1 \\\\ 1 &amp; 0 &amp; 1 &amp; 0 \\\\ 1 &amp; 1 &amp; 0 &amp; 0 \\\\ 1 &amp; 0 &amp; 0 &amp; 0\n                        \\end{bmatrix} \\)</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Show that a tree with n vertices has \\( (n-1) \\) edges.</p>"
+        }
+      ]
+    }
+  ]
+}

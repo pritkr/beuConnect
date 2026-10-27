@@ -1,0 +1,244 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 2nd Semester Examination, 2017",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031201",
+    "year": 2017,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this Paper.",
+    "Attempt Five questions in all.",
+    "Question No. 1 is Compulsory.",
+    "The marks are indicated in the right-hand margin."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer (any seven).",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1i",
+              "text": "Correct form of ohm's law is",
+              "options": [
+                "$I = VR$",
+                "$V \\propto I$",
+                "$V = IR$",
+                "Both (a) and (c)"
+              ],
+              "answer": "c"
+            },
+            {
+              "id": "1ii",
+              "text": "While finding Thevenin's equivalent a circuit between two terminals $V_{th}$ is equal to",
+              "options": [
+                "Short-Circuit terminal voltage",
+                "open-Circuit terminal voltage",
+                "net voltage available in the terminals",
+                "emf of the battery nearest to the terminals"
+              ],
+              "answer": "b"
+            },
+            {
+              "id": "1iii",
+              "text": "A 3-phase load is balanced if all the three phase have the same",
+              "options": [
+                "impedance",
+                "power factor",
+                "impedance and power factor",
+                "None of the above"
+              ],
+              "answer": "c"
+            },
+            {
+              "id": "1iv",
+              "text": "Which of the following theorems is applicable for both linear and non-linear circuit?",
+              "options": [
+                "Superposition theorem",
+                "Thevenin's theorem",
+                "Norton's theorem",
+                "None of the above"
+              ],
+              "answer": "d"
+            },
+            {
+              "id": "1v",
+              "text": "The magnetic field required to reduce the residual magnetization to zero is called",
+              "options": [
+                "Retentivity",
+                "Coercivity",
+                "Hysteresis",
+                "Saturation magnetization"
+              ],
+              "answer": "b"
+            },
+            {
+              "id": "1vi",
+              "text": "A Certain waveform has a form factor of 1.2 and a peak of 1.5. If the maximum value is 100, find the r.m.s. value and the average value",
+              "options": [
+                "66.6, 55.5",
+                "44.4, 22.2",
+                "66.6, 22.2",
+                "44.4, 55.5"
+              ],
+              "answer": "a"
+            },
+            {
+              "id": "1vii",
+              "text": "Three delta-connected resistors absorb 60 kW when connected to a 3-phase line. If the resistors are connected in star, the power absorbed is",
+              "options": [
+                "60 kW",
+                "20 kW",
+                "40 kW",
+                "180 kW"
+              ],
+              "answer": "b"
+            },
+            {
+              "id": "1viii",
+              "text": "PMMC instruments can be used for",
+              "options": [
+                "a.c work only",
+                "d.c work only",
+                "neither a.c nor d.c. work",
+                "both a.c and d.c work"
+              ],
+              "answer": "b"
+            },
+            {
+              "id": "1ix",
+              "text": "The equivalent inductance measured between the terminal 1 and 2 for the circuit shown in the figure is",
+              "options": [
+                "$L_1 + L_2 + M$",
+                "$L_1 + L_2 - M$",
+                "$L_1 + L_2 + 2M$",
+                "$L_1 + L_2 - 2M$"
+              ],
+              "answer": "d"
+            },
+            {
+              "id": "1x",
+              "text": "The lack of which force causes the points to oscillate?",
+              "options": [
+                "Controlling force",
+                "deflecting force",
+                "Damping force",
+                "None of the above"
+              ],
+              "answer": "c"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "What do you mean by active and passive elements? Explain Kirchhoff's law.",
+              "marks": 6
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "Find an equivalent resistance between A and B in the network of figure. [Diagram: A complex resistor network with resistors of values 10\u03a9, 20\u03a9, 5\u03a9, 25\u03a9, 5\u03a9, 30\u03a9, 15\u03a9, 2\u03a9.]",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "State and explain Norton's theorem.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "Find the current through the $8 \\Omega$ resistor? By Thevenin's Theorem. [Diagram: DC circuit with 250V source and resistors 5\u03a9, 10\u03a9, 2\u03a9, 8\u03a9.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "type": "numerical",
+          "text": "Three coils each having a resistance of $20 \\Omega$ and reactance's of $15 \\Omega$ are connected in (a) star and (b) delta, across a three-phase, 400 V, 50 Hz supply. Calculate in each case, the readings on two watt meters connected to measure the power input.",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "type": "theory",
+          "text": "Explain in brief different types of controlling torque in an indicating instruments.",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "Define the following: (i) Waveform (ii) Rms value (iii) Average value (iv) Phase Voltage (v) Phase Current (vi) Line Voltage (vii) Line Current",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "A balanced delta-connected load of impedance $(8-j6)$ ohms per phase is connected to a three-phase, 230V, 50 Hz Supply. Calculate (a) Power factor (b) Line current and (c) reactive power.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "type": "numerical",
+          "text": "A magnetic core, in the form of a closed ring, has a mean length of 20 cm and a cross-section of 1 cm$^2$. The relative permeability of iron is 2400. What direct current will be needed in a coil of 2000 turns uniformly wound round the ring to create a flux of 0.2 m Wb in the iron?",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "Define quality factor. How will you correlate bandwidth, resonant frequency and quality factor.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "numerical",
+              "text": "A steel ring has its mean diameter of 35 cm and a cross-sectional area of 24 cm$^2$. There is an air gap of length 12 mm. The effective cross-sectional area of the air gap is extenders to 12 cm$^2$ by using short pole pieces of negligible reluctance. Determine the current necessary in 300 turns of wire wound on the ring to produce a flux density of 0.25 Wb/m$^2$ in the gap. The relative permeability of steel is 700.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "type": "theory",
+          "text": "Write short notes on any two of the following: (a) Thevenin's theorem (b) Deflecting Torque (c) Eddy and hysteresis losses.",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

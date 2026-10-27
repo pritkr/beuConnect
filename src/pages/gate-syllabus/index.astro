@@ -1,0 +1,29 @@
+---
+export const prerender = true;
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header.astro";
+import Footer from "../../components/footer.astro";
+import papers from "../../assets/data/gate-papers.json";
+---
+
+<Layout title="GATE Syllabus">
+    <Header />
+    <h1 style="view-transition-name:gatesyl">GATE Syllabus</h1>
+
+    <ul>
+        {
+            papers.map((p) => (
+                <li>
+                    <a
+                        href={`/gate-syllabus/${p.code}/`}
+                        style={`view-transition-name:${p.code}`}
+                    >
+                        {p.code} - {p.name}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+
+    <Footer />
+</Layout>

@@ -1,0 +1,174 @@
+{
+  "branch": "ee",
+  "sem": 5,
+  "subjects": [
+    {
+      "code": "PCC-EEE13",
+      "name": "Power Systems - I",
+      "vvi": [
+        {
+          "topic": "Per-unit system and the single-line diagram",
+          "note": "Convert every quantity to a common base by Zpu = Zactual/Zbase, with Zbase = kV²/MVA, and change the base by the square of the voltage ratio. The single-line diagram shows the generators, transformers, lines and loads with one conductor, and the per-unit impedances are written on it. The per-unit method removes the turns ratio and keeps numbers near unity across voltage levels.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Inductance and capacitance of transmission lines",
+          "note": "The inductance of a single conductor is 0.2 ln(D/r) mH/km, and bundling reduces it by using a geometric mean radius. Capacitance comes from the charge on the conductors and the potential between them, and transposition balances the phases so that the average inductance and capacitance can be used. A bundled conductor raises the capacitance and lowers the inductive reactance, which improves the surge impedance loading.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Performance of short, medium and long lines",
+          "note": "A short line is a series impedance with the receiving-end voltage found from Vs = Vr + IZ, with regulation and efficiency as the two answers. A medium line uses the nominal π or nominal T model with the shunt admittance split, and a long line uses the distributed ABCD parameters with hyperbolic functions. Regulation is positive for a lagging load and can be negative for a leading load because of the Ferranti effect.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Corona, insulators and string efficiency",
+          "note": "Corona is the ionisation of air at the conductor surface, beginning at the critical disruptive voltage and producing loss, radio interference and ozone. A suspension string has the disc nearest the conductor at the highest voltage, so string efficiency is the string voltage over the number of discs times the disc voltage. A guard ring or a larger disc near the line raises the efficiency.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Sag, tension and supports",
+          "note": "A conductor between level supports takes a catenary, approximated by a parabola for a small sag: sag = wl²/8T, with w the weight per unit length, l the span and T the tension. The sag increases with span, ice and wind loading, and must clear the ground at the maximum temperature. An equal-level support problem uses the same formula with the tension at the lowest point.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Cables and distribution systems",
+          "note": "An underground cable has core, insulation, metallic sheath and armouring, and its capacitance is much larger than an overhead line because the conductors are close. Grading by capacitance or inter-sheath raises the working voltage of a single-core cable. A radial distributor has one supply point, while a ring main can be fed from either end, and voltage drop is computed from the load currents and the section impedances.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC-EEE15",
+      "name": "Control Systems",
+      "vvi": [
+        {
+          "topic": "Transfer function, block diagram reduction and Mason's gain formula",
+          "note": "The transfer function is the Laplace ratio of output to input with zero initial conditions, and it exists only for a linear time-invariant system. Block diagram reduction combines series, parallel and feedback blocks and shifts take-off points. Mason's gain formula T = ΣPkΔk/Δ uses forward paths and loops, and is faster on a signal flow graph.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Time response and steady-state error",
+          "note": "A first-order system has time constant τ and reaches 63.2% of its final value in τ; a second-order system is described by ζ and ωn, with peak overshoot e^(−ζπ/√(1−ζ²)) and settling time about 4/(ζωn). The steady-state error depends on the system type and the input: step, ramp or parabolic. Compute the error constant before quoting the error.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Routh-Hurwitz stability criterion",
+          "note": "Build the Routh array from the characteristic polynomial; the number of sign changes in the first column equals the number of right-half-plane poles. A zero in the first column is replaced by a small ε, and an all-zero row is handled with the auxiliary equation from the row above. State the number of unstable poles, not just stable or unstable.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Root locus",
+          "note": "The root locus plots the closed-loop poles as K varies from 0 to infinity; it starts at the open-loop poles and ends at the zeros. The rules cover the number of branches, symmetry about the real axis, the asymptotes and their centroid, the breakaway point and the angle of departure. A point on the locus satisfies the angle condition, and its gain comes from the magnitude condition.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Bode and Nyquist plots, gain and phase margin",
+          "note": "A Bode plot draws magnitude in dB and phase against log frequency, with the corner frequency of a first-order factor at 1/T. Gain margin is the dB needed to reach 0 dB at the phase crossover, and phase margin is the phase shortfall at the gain crossover. A Nyquist plot encircle the −1 point for instability, and the number of encirclements is read with the principle of the argument.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "State-space model, controllability and observability",
+          "note": "The state model is x' = Ax + Bu and y = Cx + Du, with the transfer function C(sI − A)⁻¹B + D. Controllability is tested by the rank of the matrix [B AB A²B …], and observability by [C; CA; CA²; …]. A system can be stable in state space while a pole-zero cancellation hides an unstable mode.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC-EEE17",
+      "name": "Power Electronics",
+      "vvi": [
+        {
+          "topic": "SCR: construction, characteristics and commutation",
+          "note": "A thyristor is a four-layer PNPN device triggered by a gate pulse; once latched it stays on until the anode current falls below the holding current. Forward breakover, reverse breakdown and the gate characteristic are the three curves to draw, and latching current is higher than holding current. Natural commutation uses the supply zero crossing, while forced commutation uses an LC circuit or a reverse voltage.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Controlled rectifiers",
+          "note": "A single-phase half-wave controlled rectifier gives Vdc = (Vm/π)(1 + cos α) for a resistive load, and a full-wave controlled rectifier gives (2Vm/π)cos α, becoming negative for α above 90° with an inductive load. Firing angle control sets the output, and the commutation overlap reduces it at high current. A three-phase bridge is the industrial case, with six pulses per cycle.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "DC-DC choppers",
+          "note": "A step-down chopper gives Vo = D·Vs with D the duty cycle, a step-up chopper gives Vo = Vs/(1 − D), and a buck-boost inverts the polarity. The inductor current is continuous or discontinuous, which changes the output equation, and the ripple depends on the switching frequency and inductance. A chopper is a switch plus a diode plus an energy-storage element.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Inverters and PWM",
+          "note": "A single-phase bridge inverter produces a square wave, and a three-phase bridge switches six devices in sequence. Pulse-width modulation varies the pulse widths sinusoidally so that the fundamental is controlled and the harmonics are pushed to high frequency. The modulation index sets the output voltage, and the frequency ratio sets the harmonic order.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "AC voltage controllers and cycloconverters",
+          "note": "An AC voltage controller uses two thyristors in anti-parallel and phase control, so the rms output falls as the firing angle increases; it is used for lamp dimming, fan speed and soft starting. A cycloconverter synthesises a low-frequency AC from a higher-frequency supply by switching sections of the input wave. The output contains sub-harmonics, which limits the frequency range.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Applications: HVDC, drives and UPS",
+          "note": "HVDC transmission uses a line-commutated converter at each end, and it wins over AC for long distances and for asynchronous interconnection because there is no reactive charging current. A DC drive controls armature voltage below base speed and field flux above it. A UPS is an inverter with a battery, and an SMPS is a chopper with a transformer for isolation.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "PCC-EEE19",
+      "name": "Analog & Digital Communication System",
+      "vvi": [
+        {
+          "topic": "Amplitude modulation: spectrum, power and efficiency",
+          "note": "An AM wave is (Ac + m(t))cos ωct, giving a carrier and two sidebands at fc ± fm; the bandwidth is twice the highest modulating frequency. Total power is Pc(1 + m²/2), and the maximum efficiency at m = 1 is 33.3% because the carrier carries no information. Suppressing the carrier or one sideband saves power and bandwidth.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "FM and PM: deviation, bandwidth and noise",
+          "note": "In FM the instantaneous frequency deviates by Δf = kf·m(t), and the modulation index is β = Δf/fm. Carson's rule gives the bandwidth as 2(Δf + fm), and the number of significant sidebands follows from the Bessel functions. FM trades bandwidth for a better signal-to-noise ratio, which AM cannot do.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Sampling, quantisation and PCM",
+          "note": "Sampling above the Nyquist rate 2fm avoids aliasing, and quantisation rounds each sample to one of L levels, producing an error whose power is Δ²/12 for a uniform quantiser. PCM encodes the level in n bits with a bit rate n·fs, and the signal-to-quantisation-noise ratio improves by about 6 dB per extra bit. Companding gives small signals more levels.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Digital modulation: ASK, FSK, PSK and QPSK",
+          "note": "ASK switches the carrier amplitude, FSK switches between two frequencies, and PSK switches the phase; all three have the same bit error rate for the same energy per bit in coherent detection. QPSK carries two bits per symbol with four phases, so it halves the bandwidth for the same bit rate. The constellation diagram shows the decision regions and the minimum distance.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Noise, SNR and the figure of merit",
+          "note": "Thermal noise power is kTB, and the noise figure is the dB ratio of input to output signal-to-noise ratio. For AM the figure of merit is m²/(2 + m²), while for FM it improves with β, which is why FM is used for high-quality audio. The threshold effect makes FM unusable below a certain carrier-to-noise ratio.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Multiplexing and error control",
+          "note": "FDM assigns each channel a different band, and TDM gives each channel a time slot; PCM-TDM is the digital case and needs synchronisation. A parity check detects a single error, a block code corrects a known number, and a convolutional code works on a continuous stream with a Viterbi decoder. The Hamming distance sets the detection and correction capability.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    }
+  ]
+}

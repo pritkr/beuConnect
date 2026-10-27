@@ -1,0 +1,310 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 1st Semester Examination, 2023",
+    "subject": "Mathematics-1 (Calculus and Linear Algebra)",
+    "subject_slug": "mathematics-1-calculus-and-linear-algebra",
+    "subject_code": "105102",
+    "year": 2023,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Symbols used (if any) have their usual meanings."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\int_0^1 x^3 (1 - x^2)^{5/2} dx \\) is</p>",
+          "options": [
+            "\\( \\frac{\\pi}{2} \\)",
+            "\\( \\frac{2}{63} \\)",
+            "1",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The area \\( \\iint_R \\sin(x + y) \\, dxdy \\) over R \\( \\{(x, y); 0 \\leq x \\leq\n                        \\frac{\\pi}{2}, 0 \\leq x \\leq \\frac{\\pi}{2}\\} \\)</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "-1"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The matrix \\( \\begin{bmatrix} 0 &amp; 0 &amp; 1 \\\\ 0 &amp; 1 &amp; 0 \\\\ 1 &amp; 0 &amp; 0\n                        \\end{bmatrix} \\) is</p>",
+          "options": [
+            "Invertible but not orthogonal",
+            "Invertible and orthogonal",
+            "Neither invertible nor orthogonal",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The sequence \\( \\{a_n\\} \\), where \\( a_n = \\sqrt[n]{n} \\) is</p>",
+          "options": [
+            "Is not convergent.",
+            "Convergent and \\( \\lim_{n \\to \\infty} a_n = 0 \\)",
+            "Convergent and \\( \\lim_{n \\to \\infty} a_n = 1 \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Let \\( f(x) = \\cos(x^2), X \\in R \\) then</p>",
+          "options": [
+            "\\( f \\) is uniformly continuous",
+            "\\( f \\) is continuous, but not uniformly continuous",
+            "\\( f \\) continuous but unbounded",
+            "\\( f \\) is Lipschitz continuous"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>\\( \\lim_{(x,y) \\to (1,2)} \\frac{x^2 + y}{x+y^2} \\)</p>",
+          "options": [
+            "Does not exists",
+            "Exists and the value is 2",
+            "Exists and the value is 3",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>\\( A = 2i + \\alpha j + k, B = i + 3j - 8k \\). Then \\( A \\) and \\( B \\) are orthogonal if\n                    </p>",
+          "options": [
+            "\\( \\alpha = -2 \\)",
+            "\\( \\alpha = 2 \\)",
+            "\\( \\alpha = -1 \\)",
+            "\\( \\alpha = 1 \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Let \\( x + 2y + z = 0, 3x + 4y + z = 0, x - z = 0 \\) be a system of equations. Then</p>",
+          "options": [
+            "It is inconsistent",
+            "It has only the trivial solution \\( x = 0, y = 0, z = 0 \\)",
+            "Determinant of the matrix of coefficient is zero",
+            "None of these"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The value at which the Rolle's theorem is applicable for \\( f(x) = \\cos \\frac{x}{2} \\) in \\(\n                        |\\pi, 3\\pi| \\) is</p>",
+          "options": [
+            "\\( \\frac{5\\pi}{2} \\)",
+            "\\( \\frac{3\\pi}{2} \\)",
+            "\\( 2\\pi \\)",
+            "none of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The rank of the matrix \\( \\begin{bmatrix} 1 &amp; 2 &amp; 3 \\\\ 2 &amp; 4 &amp; 7 \\\\ 3 &amp;\n                        6 &amp; 10\n                        \\end{bmatrix} \\) is</p>",
+          "options": [
+            "3",
+            "2",
+            "1",
+            "none of these"
+          ],
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Show that: \\( \\int_{0}^{\\frac{\\pi}{2}} \\log(\\tan x + \\cot x) \\, dx = \\pi \\log 2 \\)</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Find the following limit: \\( \\lim_{n \\to \\infty} \\left[ t \\ln \\left( 1 + \\frac{3}{t}\n                        \\right) \\right] \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Test the convergence of \\( x^2 + \\frac{2^2}{3.4} x^4 + \\frac{2^2 4^2}{3.4,5.6,7.8} x^8 +\n                        \\cdots \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Examine the convergence of the series of which the general term is \\( \\sum_{n=1}^{\\infty}\n                        \\frac{1}{n(n+1)} \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 8
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Prove that \\( \\log (1+x) = \\frac{x}{1+\\theta x} \\), where \\( 0 &lt; \\theta &lt; 1 \\).\n                        Hence\n                        deduce, \\( \\frac{x}{1+x} &lt; \\log(1+x) &lt; x \\)</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>It is given the Rolle's theorem holds the function \\( f(x) = x^3 + bx^2 + cx, 1 \\leq x \\leq 2\n                        \\) at the point \\( x = 4/3 \\). Find the value of \\( b \\) and \\( c \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Evaluate \\( \\int_{0}^{\\pi/2} \\frac{1}{a\\cos^2 x + b\\sin^2 x} \\, dx \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Discuss the convergence of the sequence whose \\( n \\)-th term is \\( a_n = \\frac{(-1)^n}{n} +\n                        1 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 8
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Show that the equation of the evolute of the curve \\( x^{2/3} + y^{2/3} = a^{2/3} \\) is \\(\n                        (x+y)^{2/3} + (x-y)^{2/3} = 2a^{2/3} \\).</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Find the areas of the regions that lies inside the circle \\( r = a \\cos \\theta \\) and outside\n                        the cardioid \\( r = a(1 - \\cos \\theta) \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the solution of the following system of equations:<br/>\n                        \\( x_1 + 2x_2 + 2x_3 = 2 \\)<br/>\n                        \\( x_1 + 8x_3 + 5x_4 = -6 \\)<br/>\n                        \\( x_1 + x_2 + 5x_3 + 5x_4 = 3 \\)<br/>\n                        Also find the basis and dimension of the solution space.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Verify Cayley-Hamilton theorem for the matrix \\( A = \\begin{bmatrix} 2 &amp; 4 \\\\ 2 &amp; 5\n                        \\end{bmatrix} \\) and find its inverse. Also express \\( A^5 - 4A^4 - 7A^3 + 11A^2 - A - 10I\n                        \\) as a linear polynomial in \\( A \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Expand \\( \\sin x \\) in Taylor's series about \\( x = \\frac{\\pi}{2} \\).</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>By using Beta function evaluate \\( \\int_{0}^{1} x^4 (1-\\sqrt{x})^5 \\, dx \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Develop the Fourier series on \\( -\\pi &lt; x &lt; \\pi \\) to represent the function defined\n                        as:<br/>\n                        \\( f(x) = \\begin{cases} 0, &amp; -\\pi &lt; x &lt; 0 \\\\ \\pi, &amp; 0 &lt; x &lt; \\pi\n                        \\end{cases} \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>(i) Evaluate div \\( \\vec{F} \\) and Curl \\( \\vec{F} \\), where \\( \\vec{F} = \\text{grad}\n                        (x^2 + y^2 + z^2) e^{-\\sqrt{x^2 + y^2 + z^2}} \\).<br/>\n                        (ii) Let \\( \\vec{F} = (-4x - 3y + az) i + (bx + 3y + 5z) j \\) <br/>\n                        + (\\(4x + cy + 3z) k \\). Find the values of \\( a \\), \\( b \\) and \\( c \\) such that \\( F\n                        \\) is irrotational.</p>"
+        }
+      ]
+    }
+  ]
+}

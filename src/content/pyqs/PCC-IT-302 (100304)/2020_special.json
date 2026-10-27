@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Special Exam., 2020",
+    "subject": "Data Structures and Algorithms",
+    "subject_slug": "data-structures-and-algorithms",
+    "subject_code": "PCC-IT-302 (100304)",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>If the number of records to be sorted is small, then ______ sorting can be efficient.</p>",
+          "options": [
+            "merge",
+            "heap",
+            "selection",
+            "bubble"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following is not a limitation of binary search algorithm?</p>",
+          "options": [
+            "Must be a sorted array",
+            "Requirement of sorted array is expensive when a lot of insertions and deletions are needed",
+            "There must be a mechanism to access middle element directly",
+            "Binary search algorithm is not efficient when the data elements are more than 1500"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The complexity of the merge sort is</p>",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(\\log n) \\)",
+            "\\( O(n^2) \\)",
+            "\\( O(n\\log n) \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following is a hash function?</p>",
+          "options": [
+            "A function has allocated memory to keys",
+            "A function that computes the location of the key in the array",
+            "A function that creates an array",
+            "A function that computes the location of the values in the array"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>In simple hashing, what is the search complexity?</p>",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(\\log n) \\)",
+            "\\( O(n\\log n) \\)",
+            "\\( O(1) \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>In simple chaining, what data structure is appropriate?</p>",
+          "options": [
+            "Singly linked list",
+            "Doubly linked list",
+            "Circular linked list",
+            "Binary tree"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which is not true about insertion sort?</p>",
+          "options": [
+            "Exhibits the worst case performance when the initial array is sorted in reverse order",
+            "Worst case and average case performance is \\( O(n^2) \\)",
+            "Can be compared to the way a card player arranges his card from a card deck",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the below mentioned sorting algorithms is not stable?</p>",
+          "options": [
+            "Selection sort",
+            "Bubble sort",
+            "Merge sort",
+            "Insertion sort"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A pivot element to partition unsorted list is used in</p>",
+          "options": [
+            "merge sort",
+            "bubble sort",
+            "selection sort",
+            "insertion sort"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which one of the following is divide and conquer approach?</p>",
+          "options": [
+            "Insertion sort",
+            "Merge sort",
+            "Shell sort",
+            "Heapsort"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Write down breadth-first traversal and depth-first traversal of given graph taking 1 as source\n                        vertex.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/187.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Construct a B-tree with minimum degree t as 3 and a sequence of integers 10, 20, 30, 40, 50, 60,\n                        70,\n                        80 and 90 in an initially empty B-tree. Show each step.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Write a function to perform merge sort on array of element mentioned. Also write recurrence\n                        relation\n                        for time complexity of algorithm.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What is AVL tree? Describe deletion operation in AVL tree with example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Apply bubble sort on given array of integers: 26, 45, 13, 23, 12, 7, 38, 42. Show the content of\n                        array after every pass.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Write the algorithm to count leaf node in binary tree and check whether the tree is balanced or\n                        not.\n                    </p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What is hash table? How can we use this structure to find all anagrams in a dictionary?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Write a function that inserts a given element in a binary search tree. If the element is already\n                        present, throw an exception 'duplicate value'.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Linear and non-linear data structures</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>How to implement stack using queue</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Heapsort</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>C++ STL</p>"
+        }
+      ]
+    }
+  ]
+}

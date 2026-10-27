@@ -1,0 +1,303 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020 (New Course)",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "104301",
+    "year": 2020,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct option of the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "type": "theory",
+              "text": "Which of the following expressions represents the correct formula for the density of electrons occupying the donor level?",
+              "options": [
+                "$n_d = N_d - N_d^+$",
+                "$n_d = N_d - N_d^-$",
+                "$n_d = N_d + N_d^+$",
+                "$n_d = N_d + N_d^-$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "type": "theory",
+              "text": "What is the ripple factor of a half-wave rectifier?",
+              "options": [
+                "0.31",
+                "0.48",
+                "0.707",
+                "1.21"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "type": "theory",
+              "text": "Which of the following is true about the resistance of a Zener diode?",
+              "options": [
+                "It has an incremental resistance",
+                "It has dynamic resistance",
+                "The value of the resistance is the inverse of the slope of the i-v characteristics of the Zener diode",
+                "All of the above"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "type": "theory",
+              "text": "Which of the following is true in construction of a transistor?",
+              "options": [
+                "The collector dissipates lesser power",
+                "The emitter supplies minority carriers",
+                "The collector is made physically larger than the emitter region",
+                "The collector collects minority charge carriers"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "type": "theory",
+              "text": "Consider the following statements : A clamper circuit\n1. adds or subtracts a d.c. voltage to a waveform\n2. does not change the waveform\n3. amplifies the waveform\nWhich are correct?",
+              "options": [
+                "1, 2",
+                "1, 3",
+                "1, 2, 3",
+                "2, 3",
+                "None of the above"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "type": "theory",
+              "text": "For what kind of amplifications can the active region of the common-emitter configuration be used?",
+              "options": [
+                "Voltage",
+                "Current",
+                "Power",
+                "All of the above"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "type": "theory",
+              "text": "How does the FET operate before the pinch-off region with small value of drain-to-source voltage in accordance to the control of drain-to-source resistance by the bias voltage?",
+              "options": [
+                "As a voltage controlled resistor",
+                "As a voltage dependent resistor",
+                "As a voltage variable resistor",
+                "All of the above"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "type": "theory",
+              "text": "A junction FET can operate in",
+              "options": [
+                "depletion mode only",
+                "enhancement mode only",
+                "depletion and enhancement modes",
+                "neither depletion nor enhancement mode"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "type": "theory",
+              "text": "Which of the following is not a property of an ideal operational amplifier?",
+              "options": [
+                "Zero input impedance",
+                "Infinite bandwidth",
+                "Infinite open-loop gain",
+                "Zero common-mode gain or conversely infinite common mode-rejection"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "type": "theory",
+              "text": "Which among the following is the major responsible reason for the cause of 'slew rate'?",
+              "options": [
+                "Current limiting",
+                "Saturation of internal stages due to application of high frequency and amplitude signal",
+                "Both (i) and (ii)",
+                "None of the above"
+              ],
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "Draw potential energy diagrams for a forward as well as a reverse-biased p-n junction and explain the flow of currents in both the cases.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "The p-silicon has resistivity of $100 \\Omega \\text{ cm}$. The other parameters for silicon are : Intrinsic carrier density, $n_i = 10^{10} \\text{ cm}^{-3}$, Hole mobility, $\\mu_p = 500 \\text{ cm}^2 / \\text{v.s}$ and Electron mobility, $\\mu_n = 1200 \\text{ cm}^2 / \\text{v.s}$. Calculate the number of electrons for every 5000 million holes in the semiconductor.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "numerical",
+              "text": "Determine $v_o$ and the required PIV rating of each diode for the configuration of the following figure : [Diagram: Bridge rectifier circuit with input sine wave (peak 100V), ideal diodes, and load resistor $R_L = 2.2 k\\Omega$]. In addition, determine the maximum current through each diode.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "The circuit shown below uses a 9V Zener diode. If the load resistance $R_L$ is equal to $1.5 k\\Omega$ and the d.c. source equals 24V, find the maximum value of resistor R required to maintain a constant voltage of 9V across the load. [Diagram: Zener diode circuit with source $V_s=24V$, series resistor R, and parallel combination of Zener $V_Z=9V$ and load $R_L=1.5k\\Omega$.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "Draw the cross-sectional view of an n-p-n transistor and explain its operation in active region of operation. What are the different current components of the transistor? How can one use a transistor as amplifier?",
+              "marks": 7
+            },
+            {
+              "id": "4b",
+              "type": "theory",
+              "text": "Define $\\alpha_{dc}$ and $\\beta_{dc}$. Derive the relationship between $\\alpha_{dc}$ and $\\beta_{dc}$. If the base current in a transistor is $30 \\mu A$, when the emitter current is $7.2 mA$, what are the values of $\\alpha_{dc}$ and $\\beta_{dc}$? Also, calculate the collector current.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "theory",
+              "text": "Draw and explain the input and output characteristics of CB configuration. Where can we use the CB configuration in a transistor circuit? Explain with proper justification.",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "type": "theory",
+              "text": "Design a collector to base bias circuit shown in the figure below for the specified conditions : $V_{CC} = 15V, V_{CE} = 5V, I_C = 5mA, \\beta = 150$. [Diagram: Collector-to-base bias circuit configuration.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "Draw the structure of JFET and discuss its working. What is pinch-off voltage? How to get its value experimentally?",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "For the voltage-divider configuration of the figure shown below, determine : (i) $I_{DQ}$ and $V_{GSQ}$, (ii) $V_D$ and $V_S$. [Diagram: JFET voltage divider bias circuit. $V_{DD}=24V, R_1=10 M\\Omega, R_2=6.8 M\\Omega, R_D=2.2 k\\Omega, R_S=0.75 k\\Omega$. JFET parameters: $V_{GS(Th)}=-3V, I_{D(on)}=5mA, V_{GS(on)}=-6V$.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "theory",
+              "text": "Define an ideal operational amplifier. Draw the approximate block diagram of an OPAMP giving various stages of the amplifier.",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "type": "numerical",
+              "text": "Find the output voltage of the following OPAMP circuit : [Diagram: Inverting OPAMP circuit with non-inverting terminal grounded through 2k, inverting terminal connected to 12V via 2k, and feedback resistor 10k.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "Draw the gain-frequency response of an RC coupled amplifier. Discuss fall in gain at very low and at very high frequencies.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "numerical",
+              "text": "Common emitter (CE) amplifier shown in the figure has voltage gain of 150 when $R_E=0$. Stability is brought through negative feedback by adding resistor $R_E$. Calculate the value of resistor $R_E$ using feedback concepts so that final voltage gain ($= A_{FB}$) is equal to 100. [Diagram: CE amplifier circuit with voltage divider bias $R_1=100k, R_2=100k, R_C=5k, V_{CC}=+15V$ and unbypassed emitter resistor $R_E$.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "Explain the construction and working principle of a photo diode (PD).",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "theory",
+              "text": "Explain the construction and working principle of an SCR. Write the applications utilizing SCR.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

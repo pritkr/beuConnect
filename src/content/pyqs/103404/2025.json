@@ -1,0 +1,289 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2024",
+    "subject": "Signals and Systems",
+    "subject_slug": "signals-and-systems",
+    "subject_code": "103404",
+    "year": 2025,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option / answer the following (Any seven questions only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "If \\( X(f) \\) is the Fourier transform of \\( x(t) \\), then what is the Fourier transform of \\( x(2t) \\)?",
+          "options": [
+            "\\( X(f/2) \\)",
+            "\\( 0.5X(f/2) \\)",
+            "\\( 2X(2f) \\)",
+            "\\( X(f) \\)"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "Which of the following statements is true?",
+          "options": [
+            "Discrete-time signals are always periodic",
+            "Continuous-time signals cannot be periodic",
+            "Discrete-time signals can be periodic or aperiodic",
+            "Continuous-time signals are always aperiodic"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "Find the fundamental period of \\( x(t) = \\sin(5\\pi t) + \\cos(7\\pi t) \\).",
+          "options": [
+            "0.2 sec",
+            "0.4 sec",
+            "0.8 sec",
+            "1.0 sec"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "If a system's impulse response \\( h(t) = \\delta(t) - \\delta(t-1) \\), the system is:",
+          "options": [
+            "Causal",
+            "Anti-causal",
+            "Non-causal",
+            "Time-invariant"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "Which system property ensures that the output depends only on past and present inputs?",
+          "options": [
+            "Linearity",
+            "Causality",
+            "Stability",
+            "Time-invariance"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "Which of the following is an example of a deterministic signal?",
+          "options": [
+            "White noise",
+            "Sinusoidal signal",
+            "Random signal",
+            "Gaussian noise"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "The impulse response of an LTI system is given by \\( h(t) = e^{-2t}u(t) \\). Find the system response to an input \\( x(t) = e^{-t}u(t) \\).",
+          "options": [
+            "\\( e^{-t} - e^{-2t} \\)",
+            "\\( \\frac{e^{-t} - e^{-2t}}{2} \\)",
+            "\\( e^{-t} - e^{-2t} \\)",
+            "\\( e^{-3t} \\)"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "The step response of an LTI system is obtained by:",
+          "options": [
+            "Taking the derivative of the impulse response",
+            "Integrating the impulse response",
+            "Taking the Fourier transform of the impulse response",
+            "Adding two impulse responses"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "The Laplace transform of \\( e^{-at}u(t) \\) is:",
+          "options": [
+            "\\( \\frac{1}{s+a} \\)",
+            "\\( \\frac{1}{s-a} \\)",
+            "\\( \\frac{s}{s+a} \\)",
+            "\\( \\frac{s}{s-a} \\)"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "If a signal contains frequency components up to 5 kHz, what should be the minimum sampling rate?",
+          "options": [
+            "2.5 kHz",
+            "5 kHz",
+            "10 kHz",
+            "20 kHz"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "Find the inverse Laplace transform of: \\( F(s) = \\frac{s(s+2)}{(s+1)(s+3)(s+5)} \\)",
+          "total_marks": 7
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "Given a system with a difference equation \\( y[n] - 0.5y[n-1] = x[n] \\), determine its stability.",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "Find the state space model of the system represented by the differential equation: \\( \\frac{d^3y}{dt^3} + 8\\frac{d^2y}{dt^2} + 9\\frac{dy}{dt} = 3x(t) \\).",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "A system is described by the equation: \\( y(t) = 3x(t) + 2 \\). Check whether the system is linear or not.",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "Compute the poles and zeros of \\( F(s) = \\frac{s+1}{s^3 + 7s^2 + 10s + 18} \\).",
+          "total_marks": 7
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "Consider a system defined by \\( y(t) = tx(t) \\). Determine whether it is linear and shift-invariant.",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "Compute the output \\( y[n] \\) of an LTI system with impulse response \\( h[n] = \\{1, 2, 1\\} \\) and input \\( x[n] = \\{2, 1, 3\\} \\) using convolution.",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "Compute the energy and power of the signal \\( x(t) = e^{-t}u(t) \\).",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "Find the Fourier transform of \\( x(t) = e^{-2|t|} \\).",
+          "total_marks": 7
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "Find the Laplace Transform of \\( x(t) = e^{-t}u(t) \\) and determine its region of convergence.",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "Given \\( x(t) = \\sin(10t) + \\cos(15t) \\), determine whether it is periodic and find the fundamental period.",
+          "total_marks": 7
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "Compute the z-transform of \\( x[n] = -b^n u[-n-1] \\).",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "Find the step response of a system with impulse response \\( h(t) = e^{-3t}u(t) \\).",
+          "total_marks": 7
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "Determine the even and odd components of the signal \\( x(t) = t^2 + 3t + 2 \\).",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "Discuss the properties of a system with respect to linearity, causality, and stability."
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "Define Fourier series and explain its importance in signal representation."
+        },
+        {
+          "id": "q9_c",
+          "type": "theory",
+          "text": "State and explain the Sampling Theorem and its significance."
+        },
+        {
+          "id": "q9_d",
+          "type": "theory",
+          "text": "State and explain Parseval's Theorem with its application."
+        }
+      ]
+    }
+  ]
+}

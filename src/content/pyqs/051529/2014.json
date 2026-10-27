@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2014",
+    "subject": "INTRODUCTION TO JAVA PROGRAMMING LANGUAGE",
+    "subject_slug": "introduction-to-java-programming-language",
+    "subject_code": "051529",
+    "year": 2014,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any seven questions :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Which of the following functions is performed by a constructor?",
+              "options": [
+                "Construct a new class",
+                "Construct a new object",
+                "Construct a new function",
+                "Initialize objects"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Which of the following factors supports the statement that reusability is a desirable feature of a language?",
+              "options": [
+                "It decreases the testing time",
+                "It lowers the maintenance cost",
+                "It reduces the compilation time",
+                "Both (i) and (ii)"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Which will legally declare, construct and initialize an array?",
+              "options": [
+                "int [ ] myList = {\"1\", \"2\", \"3\"};",
+                "int [ ] myList = {5, 8, 2};",
+                "int myList [ ] [ ] = {4, 9, 7, 0};",
+                "int myList [ ] = {4, 3, 7};"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "What is the numerical range of a char?",
+              "options": [
+                "-128 to 127",
+                "-(2^{15}) to (2^{15}) - 1",
+                "0 to 32767",
+                "0 to 65535"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Public class Test {} \nWhat is the prototype of the default constructor?",
+              "options": [
+                "Test()",
+                "Test(void)",
+                "public Test()",
+                "public Test(void)"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "Which of the following provides a reuse mechanism?",
+              "options": [
+                "Abstraction",
+                "Inheritance",
+                "Dynamic binding",
+                "Encapsulation"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "Which is not a valid comment style in Java?",
+              "options": [
+                "/* comment */",
+                "/* comment",
+                "/** comment */",
+                "// comment"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "What is the correct signature of the main method?",
+              "options": [
+                "public static void main (String[] args)",
+                "static public void main (String[] args)",
+                "public void main (String[] args)",
+                "Both (i) and (ii)"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "Which of the following statements is correct?",
+              "options": [
+                "Class is an instance of object",
+                "Object is an instance of class",
+                "Class is an instance of data type",
+                "Object is an instance of data type"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "Which keyword is used to inherit class?",
+              "options": [
+                "Inherit",
+                "Extends",
+                "Inheritance",
+                "Extend"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the main features of object-oriented programming language.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "List the eight basic data types used in Java. Give examples.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Discuss the Java error handling mechanism. What is the difference between runtime (unchecked) exceptions and checked exceptions? What is the implication of catching all the exceptions with the type 'Exception'?",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain abstract class with a program. What is the Java virtual machine?",
+              "id": "3_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is an applet?",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Write a Java program for applet to reverse a user inputted string.",
+              "id": "4_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is the main difference between pass-by-reference and pass-by-value?",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What are access modifiers? Explain each of the access modifiers in Java.",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is AWT? What are the different AWT components in Java?",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Write a program in Java to create and close a frame.",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is the major difference between an interface and a class?",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Write a program to multiply two matrices A and B. (Assume A and B are two-dimensional matrices.)",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain interface in a package.",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Create an applet which contains a Jpopup-Menu with the following items : New, Open, Cut, Copy, Paste. Display an appropriate message while clicking the respective menu items and print the output to the console.",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain deadlock in threads with the help of a program.",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Write a program in Java to multiply two 2-dimensional matrices inputted from user.",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

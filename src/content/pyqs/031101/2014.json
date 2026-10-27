@@ -1,0 +1,347 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech. 1st Semester Exam., 2014",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031101",
+    "year": 2014,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "type": "mcq",
+          "text": "Choose the correct option (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "The voltage $V$ in the figure given below is [Diagram: 10V voltage source in series with a 3 ohm resistor, and a 5A current source in parallel with the combination]",
+              "options": [
+                "10 V",
+                "15 V",
+                "5 V",
+                "None of the above"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "The 'nodal analysis' method is based on",
+              "options": [
+                "KVL and Ohm's law",
+                "KCL and Ohm's law",
+                "KCL and KVL",
+                "KCL, KVL and Ohm's law"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "text": "If each branch of a delta circuit has resistance $\\sqrt{3}R$, then each branch of the equivalent star circuit has resistance",
+              "options": [
+                "$R/\\sqrt{3}$",
+                "$3R$",
+                "$3\\sqrt{3}R$",
+                "$R/3$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "text": "In the network shown in the figure given below, the effective resistance faced by the voltage source is [Diagram: Voltage source V connected to a parallel combination of a 4 ohm resistor and a dependent current source of value i/4, where i is the source current]",
+              "options": [
+                "4 $\\Omega$",
+                "3 $\\Omega$",
+                "2 $\\Omega$",
+                "1 $\\Omega$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "The power in a series R-L-C circuit will be half of that at resonance when the magnitude of the current is equal to",
+              "options": [
+                "$V/2R$",
+                "$V/\\sqrt{3}R$",
+                "$V/\\sqrt{2}R$",
+                "$\\sqrt{2}V/R$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "The equivalent inductance measured between the terminals 1 and 2 for the circuit shown in the figure below is [Diagram: Two coupled inductors L1 and L2 with mutual inductance M, series connected with same dot polarity]",
+              "options": [
+                "$L_1 + L_2 + M$",
+                "$L_1 + L_2 - M$",
+                "$L_1 + L_2 + 2M$",
+                "$L_1 + L_2 - 2M$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "The value of current $I_0$ for the circuit given below is [Diagram: AC circuit with 3\u22200\u00b0 A source, j8 ohm inductor, and -j2 ohm capacitor. I_0 is current through capacitor branch]",
+              "options": [
+                "4\u22200\u00b0 A",
+                "2.4\u2220-90\u00b0 A",
+                "0.6\u22200\u00b0 A",
+                "-1 A"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "text": "Three identical resistances connected in star, carry a line current of 12 A. If the same resistances are connected in delta across the same supply, the line current will be",
+              "options": [
+                "12 A",
+                "4 A",
+                "8 A",
+                "36 A"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "In two-wattmeter method of measurement, if one of the wattmeters reads zero, the power factor will be",
+              "options": [
+                "zero",
+                "unity",
+                "0.5",
+                "0.866"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "The moving coil instrument has resistance of 3 $\\Omega$ and reads 150 mA. The resistance needed to enable it to be used as voltmeter and reading up to 15 V is",
+              "options": [
+                "100 $\\Omega$",
+                "95 $\\Omega$",
+                "99 $\\Omega$",
+                "97 $\\Omega$"
+              ],
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "What do you mean by linear and non-linear elements? Explain Kirchhoff's law.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "sub_questions": [
+                {
+                  "id": "2bi",
+                  "type": "numerical",
+                  "text": "Find the voltage at Node 2 : [Diagram: Circuit with 15V source, 50 ohm and 100 ohm resistors, and a 10I dependent voltage source where I is current through 50 ohm resistor]",
+                  "marks": 4
+                },
+                {
+                  "id": "2bii",
+                  "type": "numerical",
+                  "text": "Transform into equivalent delta network : [Diagram: T-network with R1=10 ohm, R2=20 ohm, R3=40 ohm]",
+                  "marks": 3
+                }
+              ],
+              "text": "..."
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "sub_questions": [
+                {
+                  "id": "3ai",
+                  "type": "theory",
+                  "text": "State and explain superposition theorem. Can it be applied to power calculation?",
+                  "marks": 4
+                },
+                {
+                  "id": "3aii",
+                  "type": "numerical",
+                  "text": "Find the current in 1 $\\Omega$ resistor : [Diagram: DC bridge circuit with 4V source, resistors 2 ohm, 3 ohm, 1 ohm, and a 3A current source, with another 1A source in parallel with the 2 ohm, 3 ohm bridge top]",
+                  "marks": 3
+                }
+              ],
+              "text": "..."
+            },
+            {
+              "id": "3b",
+              "sub_questions": [
+                {
+                  "id": "3bi",
+                  "type": "theory",
+                  "text": "State and explain Thevenin's theorem. How does it simplify a circuit?",
+                  "marks": 3
+                },
+                {
+                  "id": "3bii",
+                  "type": "numerical",
+                  "text": "Find the current through 3 $\\Omega$ resistor : [Diagram: Wheatstone bridge type circuit with 50V supply and resistors 4 ohm, 5 ohm, 3 ohm, 2 ohm, 1 ohm, 8 ohm]",
+                  "marks": 4
+                }
+              ],
+              "text": "..."
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "Define the following :\n(i) RMS value\n(ii) Average value\n(iii) Peak factor\n(iv) Form factor of sinusoidal wave",
+              "marks": 7
+            },
+            {
+              "id": "4b",
+              "type": "numerical",
+              "text": "Find average value and RMS value of the waveform shown below : [Diagram: Periodic rectified sinusoidal pulses with peaks Vm at 0 to pi and 2pi to 3pi]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "sub_questions": [
+                {
+                  "id": "5ai",
+                  "type": "numerical",
+                  "text": "A voltage $V(t) = 177 \\sin (314t + 10^\\circ)$ is applied to a circuit. It causes a steady current to flow, which is described by $i(t) = 14.14 \\sin (314t - 20^\\circ)$. Determine the power factor and average power delivered to the circuit.",
+                  "marks": 4
+                },
+                {
+                  "id": "5aii",
+                  "type": "numerical",
+                  "text": "Determine current through $3 + j4 \\Omega$ impedance : [Diagram: AC circuit with 50\u222090\u00b0 V and 50\u22200\u00b0 V sources, resistors 5 ohm, 3 ohm, and inductors j5 ohm, j4 ohm]",
+                  "marks": 3
+                }
+              ],
+              "text": "..."
+            },
+            {
+              "id": "5b",
+              "type": "numerical",
+              "text": "Determine the $Z_L$ (load) required to be connected in the network for maximum power transfer. Determine the maximum power drawn : [Diagram: AC network with 4\u22200\u00b0 A source, j1 ohm inductor, 2 ohm resistor, 4 ohm resistor and Z_L]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "When is a three-phase system said to be balanced? Define the following :\n(i) Phase voltage\n(ii) Phase sequence\n(iii) Phase current\n(iv) Line voltage and line current",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "Three coils, each having resistance and inductance of 8 $\\Omega$ and 0.02 H respectively, are connected in star across a 3-phase, 230 V, 50 Hz supply. Find line current, power factor, power reactive volt-ampere and total volt-ampere.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "theory",
+              "text": "Write any four applications of magnetic circuit.",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "type": "theory",
+              "text": "Derive an expression for the energy stored in the magnetic field in terms of energy stored per unit volume.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "Describe the basic operation of PMMC (permanent magnet moving coil) instrument. Develop the torque equation for PMMC instrument and show that its scale is linear.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "numerical",
+              "text": "A PMMC instrument with FSD (full-scale division) of 100 $\\mu$A and a coil resistance of 1 k$\\Omega$ is to be converted into a voltmeter. Determine the required multiplier resistance if the voltmeter is to measure 50 V at full scale : [Diagram: Voltmeter circuit with multiplier resistance Rs and coil resistance Rm]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "type": "theory",
+          "text": "Write short notes on any two of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Norton's theorem"
+            },
+            {
+              "id": "9b",
+              "text": "Phasor diagram"
+            },
+            {
+              "id": "9c",
+              "text": "Active and passive elements"
+            },
+            {
+              "id": "9d",
+              "text": "Eddy current and hysteresis losses"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

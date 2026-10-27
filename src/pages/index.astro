@@ -1,0 +1,29 @@
+---
+export const prerender = true;
+import Header from "../components/header.astro";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import Hero from "../components/hero.astro";
+import Announcements from "../components/announcements.astro";
+import { latestAnnouncementPosts } from "../data/announcements";
+const importantApi = `${import.meta.env.BASE_URL}api/notices/important?limit=8`;
+const latestPost = latestAnnouncementPosts(1)[0];
+
+const announcements = [
+	latestPost
+		? {
+				text: latestPost.title,
+				link: `announcements/${latestPost.slug}/`,
+				isRecent: true,
+			}
+		: { text: "Latest announcement", link: "announcements/", isRecent: false },
+];
+---
+
+<Layout title="BEUConnect - Syllabus, Results & PYQs" description="Your ultimate hub for Bihar Engineering University (BEU). Access B.Tech syllabus, check semester results, download PYQs, and view merit lists all in one place.">
+	<Header />
+	<Announcements announcements={announcements} importantApi={importantApi} />
+	<Hero />
+
+	<Footer />
+</Layout>

@@ -1,0 +1,321 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2018",
+    "subject": "OPERATING SYSTEMS",
+    "subject_slug": "operating-systems",
+    "subject_code": "061503",
+    "year": 2018,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct option (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "In which type of operating system, the response time is very crucial?",
+              "options": [
+                "Unix operating system",
+                "Real-time operating system",
+                "Network operating system",
+                "Batch operating system"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "A process is",
+              "options": [
+                "a program in high-level language kept on disk",
+                "a contents of main memory",
+                "a program in execution",
+                "a job in secondary memory"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "The strategy of temporarily suspending a process that is logically runnable is called",
+              "options": [
+                "preemptive scheduling",
+                "non-preemptive scheduling",
+                "shortest job first",
+                "first come, first serve"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "To avoid the race condition, the number of processes that may be simultaneously inside their critical section is",
+              "options": [
+                "8",
+                "1",
+                "2",
+                "4"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Fork is used to",
+              "options": [
+                "dispatch a task",
+                "create a new job",
+                "create a new process",
+                "increase the priority of a task"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "The principle of locality of reference justifies the use of",
+              "options": [
+                "secondary memory",
+                "critical section",
+                "virtual memory",
+                "cache memory"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "The memory allocation scheme subject to \"external\" fragmentation is",
+              "options": [
+                "segmentation",
+                "swapping",
+                "pure demand paging",
+                "multiple continuous fixed partition"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "The piece of code that only one thread should execute at a time is called",
+              "options": [
+                "mutual exclusion",
+                "critical section",
+                "synchronization",
+                "None of the above"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "Which memory allocation policy allocates the largest hole to the process?",
+              "options": [
+                "Best fit",
+                "Worst fit",
+                "First fit",
+                "None of the above"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "When there is enough memory to fit a process in memory, but the space is not continuous, then which of the following is required?",
+              "options": [
+                "Internal fragmentation",
+                "Virtual fragmentation",
+                "External fragmentation",
+                "None of the above"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is an operating system? Enumerate the basic functions of the operating system and explain each in brief.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What is meant by process control block? Explain the different fields of PCB with the help of a diagram. Discuss the concept Context Switch by giving an example.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the following scheduling algorithms with the help of an example:\n(i) SJF\n(ii) Round robin",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Differentiate between preemptive scheduling and non-preemptive scheduling.",
+              "id": "3_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is meant by deadlock? Explain with example. Elaborate upon the conditions necessary for a deadlock situation to arise.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Discuss the various mechanisms for deadlock recovery.",
+              "id": "4_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Illustrate the concept of demand paging with the help of a diagram.",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What are the various memory allocation schemes?",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Consider the following reference string:\n7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1\nCalculate the number of page faults that would occur for the following page replacement algorithms with frame size of 4:\n(i) FIFO\n(ii) LRU",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain the concept of semaphores with the help of an example.",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Discuss the performance criteria of CPU scheduling.",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Compare and contrast between linked and indexed disk allocation strategies.",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Illustrate with examples the following disk scheduling algorithms:\n(i) SSTF\n(ii) C-Look",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain the memory hierarchy of the operating system.",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Write short notes on the following :",
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Segmentation",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Real-time systems",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Critical section",
+              "id": "9_sub",
+              "marks": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

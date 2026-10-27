@@ -1,0 +1,42 @@
+{
+  "name": "beuconnectaw",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "cf dev",
+    "generate:og": "bun run scripts/generate-og-images.ts",
+    "build": "bun run generate:og && cf build",
+    "preview": "cf dev",
+    "astro": "astro",
+    "deploy": "bun run generate:og && cf deploy",
+    "cf-typegen": "cf workers types",
+    "check": "bun check",
+    "typecheck": "bun check",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "15.0.0-beta.1",
+    "@astrojs/compiler-rs": "^0.5.2",
+    "@astrojs/sitemap": "^3.7.4",
+    "@picocss/pico": "^2.1.1",
+    "@tanstack/virtual-core": "^3.19.8",
+    "astro": "7.4.2",
+    "astro-og-canvas": "^0.13.2",
+    "cheerio": "^1.2.0",
+    "marked": "^18.1.2",
+    "marked-katex-extension": "^5.1.13",
+    "simple-datatables": "^10.3.0",
+    "vanilla-calendar-pro": "^3.4.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.3",
+    "@cloudflare/vite-plugin": "2.0.0-beta.sha-52b0dc0e9",
+    "@types/node": "^26.6.5",
+    "cf": "^1.0.0-beta.23",
+    "lightningcss": "1.33.0",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.153.0"
+  }
+}

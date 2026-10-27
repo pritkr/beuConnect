@@ -1,0 +1,57 @@
+{
+    "name": "BEUConnect",
+    "short_name": "BEUConnect",
+    "description": "All BEU things - syllabus, results and tables - one place.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0b5cff",
+    "lang": "en",
+    "scope": "/",
+    "orientation": "any",
+    "shortcuts": [
+        {
+            "name": "Syllabus",
+            "url": "/syllabus"
+        },
+        {
+            "name": "Result",
+            "url": "/result",
+            "description": "Open a chat with another user and send a message to them."
+        },
+        {
+            "name": "Result Table",
+            "url": "/result-table/"
+        },
+        {
+            "name": "List of Students",
+            "url": "/listofstudents/"
+        }
+    ],
+    "display_override": [
+        "window-controls-overlay"
+    ],
+    "icons": [
+        {
+            "src": "/pwa-64x64.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "/pwa-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/pwa-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/maskable-icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

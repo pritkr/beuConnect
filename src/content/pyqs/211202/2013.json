@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2013",
+    "subject": "Mathematics II",
+    "subject_slug": "mathematics-2",
+    "subject_code": "211202",
+    "year": 2013,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Select the correct or best alternatives of any seven of the following:",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The series $1 + \\frac{1}{\\sqrt{2}} + \\frac{1}{\\sqrt{3}} + \\frac{1}{\\sqrt{4}} + \\cdots$ is\n(i) convergent but not absolutely convergent\n(ii) oscillatory\n(iii) divergent\n(iv) absolutely convergent",
+              "id": "1a",
+              "marks": null
+            },
+            {
+              "text": "In a series of positive terms $\\sum u_n$, if $\\lim_{n \\to \\infty} u_n \\neq 0$, then series $\\sum u_n$ is\n(i) convergent\n(ii) divergent\n(iii) not convergent\n(iv) oscillatory",
+              "id": "1b",
+              "marks": null
+            },
+            {
+              "text": "The Fourier series of a real periodic function has only\n(P) cosine terms if it is even\n(Q) sine terms if it is even\n(R) cosine terms if it is odd\n(S) sine terms if it is odd\nWhich of the above statements are correct?\n(i) P and S\n(ii) P and R\n(iii) Q and S\n(iv) Q and R",
+              "id": "1c",
+              "marks": null
+            },
+            {
+              "text": "Fourier expansion of an even function $f(x)$ in $(-\\pi, \\pi)$ has only\n(i) cosine terms\n(ii) sine terms\n(iii) sine and cosine terms\n(iv) None of the above",
+              "id": "1d",
+              "marks": null
+            },
+            {
+              "text": "If $f(t) = 2e^{\\log t}$, then $F(s)$ is\n(i) $\\frac{2}{s^2}$\n(ii) $\\frac{1}{s^2}$\n(iii) $\\frac{2}{s}$\n(iv) $\\frac{2}{s^3}$",
+              "id": "1e",
+              "marks": null
+            },
+            {
+              "text": "The inverse Laplace transform of the function $\\frac{s+5}{(s+3)(s+1)}$ is\n(i) $2e^{-t} - e^{-3t}$\n(ii) $2e^{-t} + e^{-3t}$\n(iii) $e^{-t} - 2e^{-3t}$\n(iv) $e^{-t} + e^{-3t}$",
+              "id": "1f",
+              "marks": null
+            },
+            {
+              "text": "The length of the curve $y = \\frac{(x^2+2)^{3/2}}{3}$ from $x=0$ to $x=3$ is\n(i) 10\n(ii) 12\n(iii) $3\\pi$\n(iv) $6\\pi$",
+              "id": "1g",
+              "marks": null
+            },
+            {
+              "text": "The value of the integral $\\int_0^\\infty \\int_0^\\infty e^{-x^2(1+y^2)}x \\, dx \\, dy$ is\n(i) $\\frac{\\pi}{2}$\n(ii) $\\frac{\\pi}{3}$\n(iii) $\\frac{\\pi}{4}$\n(iv) $\\frac{\\pi}{6}$",
+              "id": "1h",
+              "marks": null
+            },
+            {
+              "text": "The divergence of the vector $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$ is\n(i) $\\hat{i} + \\hat{j} + \\hat{k}$\n(ii) 3\n(iii) 0\n(iv) 1",
+              "id": "1i",
+              "marks": null
+            },
+            {
+              "text": "The Gauss divergence theorem relates certain\n(i) surface integrals to volume integrals\n(ii) surface integrals to line integrals\n(iii) vector quantities to other vector quantities\n(iv) line integrals to volume integrals",
+              "id": "1j",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Prove that the series $\\frac{1}{1^P} + \\frac{1}{2^P} + \\frac{1}{3^P} + \\cdots \\infty$ is convergent if $p > 1$ and divergent if $p \\le 1$.",
+          "marks": 7,
+          "id": "2a"
+        },
+        {
+          "text": "Test the series for convergence $\\frac{1}{2}x + x^2 + \\frac{9}{8}x^3 + x^4 + \\frac{25}{32}x^5 + \\cdots \\infty$.",
+          "marks": 7,
+          "id": "2b"
+        },
+        {
+          "text": "Find the Laplace transform by definition of function $f(t) = \\begin{cases} \\cos t & 0 < t < \\pi \\\\ \\sin t & t > \\pi \\end{cases}$.",
+          "marks": 7,
+          "id": "3a"
+        },
+        {
+          "text": "If $J_0(t) = \\sum_{r=0}^\\infty \\frac{(-1)^r}{(r!)^2} \\left(\\frac{t}{2}\\right)^{2r}$, then prove that $L\\{J_0(t)\\} = \\frac{1}{\\sqrt{1+s^2}}$.",
+          "marks": 7,
+          "id": "3b"
+        },
+        {
+          "text": "Find the inverse Laplace transform of $\\frac{s+4}{s(s-1)(s^2+4)}$.",
+          "marks": 7,
+          "id": "4a"
+        },
+        {
+          "text": "Find the Fourier series of $f(x) = x^2$ in the interval $(0, 2\\pi)$ and hence deduce that $\\frac{\\pi^2}{12} = \\frac{1}{1^2} - \\frac{1}{2^2} + \\frac{1}{3^2} - \\frac{1}{4^2} + \\cdots \\infty$.",
+          "marks": 7,
+          "id": "4b"
+        },
+        {
+          "text": "Find the Fourier series expansion of the periodic function of period $2\\pi$ defined as $f(x) = \\begin{cases} x, & \\text{if } -\\frac{\\pi}{2} < x < \\frac{\\pi}{2} \\\\ \\pi - x, & \\text{if } \\frac{\\pi}{2} < x < \\frac{3\\pi}{2} \\end{cases}$.",
+          "marks": 7,
+          "id": "5a"
+        },
+        {
+          "text": "Find the Fourier half-range even expansion of the function $f(x) = -\\left(\\frac{x}{l}\\right) + 1, 0 \\le x \\le l$.",
+          "marks": 7,
+          "id": "5b"
+        },
+        {
+          "text": "Show that $\\int_0^1 dx \\int_0^1 \\frac{x-y}{(x+y)^3} \\, dy \\neq \\int_0^1 dy \\int_0^1 \\frac{x-y}{(x+y)^3} \\, dx$.",
+          "marks": 7,
+          "id": "6a"
+        },
+        {
+          "text": "Evaluate $\\iint e^{ax+by} \\, dx \\, dy$ over the triangle bounded by $x=0, y=0, ax+by=1$.",
+          "marks": 7,
+          "id": "6b"
+        },
+        {
+          "text": "Find the volume by double integration of the torus generated by revolving the circle $x^2 + y^2 = 4$ about the line $x=3$.",
+          "marks": 7,
+          "id": "7a"
+        },
+        {
+          "text": "Evaluate $\\iiint_R (x-2y+z) \\, dx \\, dy \\, dz$ where $R: 0 \\le x \\le 1, 0 \\le y \\le x^2, 0 \\le z \\le x+y$.",
+          "marks": 7,
+          "id": "7b"
+        },
+        {
+          "text": "Find the magnitude of tangential components of acceleration at any time $t$ of a particle where position at any time $t$ is given by $x = \\cos t + t\\sin t, y = \\sin t - t\\cos t$.",
+          "marks": 7,
+          "id": "8a"
+        },
+        {
+          "text": "If $f(x, y) = \\log_e \\sqrt{x^2+y^2}$ and $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$, then prove that $\\text{grad } f = \\frac{\\vec{r} - (\\hat{k} \\cdot \\vec{r})\\hat{k}}{[\\vec{r} - (\\hat{k} \\cdot \\vec{r})\\hat{k}] \\cdot [\\vec{r} - (\\hat{k} \\cdot \\vec{r})\\hat{k}]}$.",
+          "marks": 7,
+          "id": "8b"
+        },
+        {
+          "text": "If $\\vec{A} = \\nabla(xy+yz+zx)$, then find $\\text{div } \\vec{A}$ and $\\text{curl } \\vec{A}$.",
+          "marks": 7,
+          "id": "9a"
+        },
+        {
+          "text": "Evaluate $\\iint_S (x^2\\hat{i} + y^2\\hat{j} + z^2\\hat{k}) \\cdot \\hat{n} \\, dS$ using Gauss divergence theorem, where $S$ is the surface of the ellipsoid $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} + \\frac{z^2}{c^2} = 1$.",
+          "marks": 7,
+          "id": "9b"
+        }
+      ]
+    }
+  ]
+}

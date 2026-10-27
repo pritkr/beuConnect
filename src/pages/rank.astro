@@ -1,0 +1,334 @@
+---
+export const prerender = false;
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+
+const regParam = Astro.url.searchParams.get("reg")?.trim();
+let errorMsg = "";
+let studentData = null;
+
+let batch = "";
+let branch = "";
+let targetSem = "";
+
+let branchRank = 0;
+let totalBranchStudents = 0;
+let overallRank = 0;
+let totalStudents = 0;
+
+let cseCode = "";
+
+if (regParam) {
+	const numericReg = regParam.replace(/\D/g, "");
+	if (numericReg.length >= 8) {
+		batch = numericReg.substring(0, 2);
+		branch = numericReg.substring(2, 5);
+		
+		if (batch === "25") targetSem = "1";
+		else if (batch === "24") targetSem = "2";
+		else if (batch === "23") targetSem = "4";
+		else if (batch === "22") targetSem = "6";
+		else if (batch === "21") targetSem = "8";
+		else errorMsg = "we don't have your data";
+
+		if (targetSem) {
+			const baseUrl = Astro.url.origin;
+			const branchesToFetch = ["101", "102", "103", "104", "105", "106", "110", "161"];
+			
+			const allStudents = [];
+			
+			await Promise.all(branchesToFetch.map(async (b) => {
+				try {
+					const res = await fetch(`${baseUrl}/data/students_${batch}_all_${b}_sem${targetSem}.csv`);
+					if (res.ok) {
+						const text = await res.text();
+						const lines = text.split(/\r?\n/).filter(line => line.trim() !== "");
+						for (let i = 1; i < lines.length; i++) {
+							let cur = "";
+							let inQuotes = false;
+							const row = [];
+							const line = lines[i];
+							for (let j = 0; j < line.length; j++) {
+								const char = line[j];
+								if (inQuotes) {
+									if (char === '"') {
+										if (j + 1 < line.length && line[j+1] === '"') {
+											cur += '"';
+											j++;
+										} else inQuotes = false;
+									} else cur += char;
+								} else {
+									if (char === '"') inQuotes = true;
+									else if (char === ',') { row.push(cur); cur = ""; }
+									else cur += char;
+								}
+							}
+							row.push(cur);
+							
+							if (row.length >= 5) {
+								const cgpaText = row[4];
+								const sgpaText = row[3];
+								
+								const cgpa = cgpaText && cgpaText !== "N/A" && cgpaText !== "NULL" ? parseFloat(cgpaText) : null;
+								const sgpa = sgpaText && sgpaText !== "N/A" && sgpaText !== "NULL" ? parseFloat(sgpaText) : null;
+
+								if (!isNaN(cgpa)) {
+									allStudents.push({
+										reg: row[1],
+										name: row[2],
+										sgpa: isNaN(sgpa) ? null : sgpa,
+										cgpa: isNaN(cgpa) ? null : cgpa,
+										branch: b,
+										collegeCode: row[5],
+										collegeName: row[6]
+									});
+								}
+							}
+						}
+					}
+				} catch (e) {
+					// Ignore missing branches
+				}
+			}));
+			
+
+			if (allStudents.length === 0) {
+				errorMsg = "we don't have your data";
+			} else {
+				// Remove duplicates based on reg number
+				const uniqueMap = new Map();
+				allStudents.forEach(s => {
+					if (!uniqueMap.has(s.reg)) {
+						uniqueMap.set(s.reg, s);
+					}
+				});
+				const uniqueStudents = Array.from(uniqueMap.values());
+				
+				// Sort by CGPA desc, then SGPA desc, then RegNo (to match result-table exactly)
+				uniqueStudents.sort((a, b) => {
+					if (a.cgpa === null && b.cgpa === null) return a.reg.localeCompare(b.reg);
+					if (a.cgpa === null) return 1;
+					if (b.cgpa === null) return -1;
+					if (b.cgpa !== a.cgpa) return b.cgpa - a.cgpa;
+					
+					if (a.sgpa === null && b.sgpa === null) return a.reg.localeCompare(b.reg);
+					if (a.sgpa === null) return 1;
+					if (b.sgpa === null) return -1;
+					if (b.sgpa !== a.sgpa) return b.sgpa - a.sgpa;
+					
+					return a.reg.localeCompare(b.reg);
+				});
+				
+				// Assign ranks
+				let currentOverallRank = 0;
+				let overallRankableCount = 0;
+				let previousOverallCgpa = null;
+				for (let i = 0; i < uniqueStudents.length; i++) {
+					overallRankableCount++;
+					if (previousOverallCgpa === null || Math.abs(uniqueStudents[i].cgpa - previousOverallCgpa) > 1e-9) {
+						currentOverallRank = overallRankableCount;
+						previousOverallCgpa = uniqueStudents[i].cgpa;
+					}
+					uniqueStudents[i].overallRank = currentOverallRank;
+				}
+				
+				// Filter branch students and assign branch ranks
+				const branchStudents = uniqueStudents.filter(s => s.branch === branch);
+				let currentBranchRank = 0;
+				let branchRankableCount = 0;
+				let previousBranchCgpa = null;
+				for (let i = 0; i < branchStudents.length; i++) {
+					branchRankableCount++;
+					if (previousBranchCgpa === null || Math.abs(branchStudents[i].cgpa - previousBranchCgpa) > 1e-9) {
+						currentBranchRank = branchRankableCount;
+						previousBranchCgpa = branchStudents[i].cgpa;
+					}
+					branchStudents[i].branchRank = currentBranchRank;
+				}
+				
+				const userStudent = uniqueStudents.find(s => s.reg.replace(/\D/g, "") === numericReg);
+				if (!userStudent) {
+					errorMsg = "we don't have your data";
+				} else {
+					studentData = userStudent;
+					overallRank = userStudent.overallRank;
+					totalStudents = uniqueStudents.length;
+					branchRank = userStudent.branchRank;
+					totalBranchStudents = branchStudents.length;
+					
+					// Map branch code to result-table format
+					if (branch === "105") cseCode = "cse";
+					else if (branch === "104") cseCode = "ece";
+					else if (branch === "103") cseCode = "ee";
+					else if (branch === "102") cseCode = "mech";
+					else if (branch === "101") cseCode = "civil";
+					else if (branch === "110" || branch === "161") cseCode = "eee";
+					else cseCode = "cse"; // fallback
+				}
+			}
+		}
+	} else {
+		errorMsg = "Invalid Registration Number";
+	}
+}
+---
+
+<Layout title="BEU Rank Checker | BEUConnect" description="Find your overall state rank among all Bihar Engineering University (BEU) students. Analyze performance based on CGPA and college data.">
+	<Header />
+
+	<section class="rank-dashboard">
+		<header class="text-center dashboard-header">
+			<h1 class="gradient-text">BEU Rank Checker</h1>
+			<p>Discover your standing among thousands of students across Bihar Engineering University.</p>
+		</header>
+
+		{!studentData && (
+			<div class="glass-card" style="padding: 2rem; max-width: 500px; margin: 0 auto;">
+				<form method="GET" action="">
+					<label for="reg">Registration Number</label>
+					<input type="text" id="reg" name="reg" placeholder="e.g. 23105157001" required value={regParam || ""} />
+					<button type="submit" class="primary" style="width: 100%; border-radius: 50px; margin-top: 1rem;">Check Rank</button>
+				</form>
+				
+				{errorMsg && (
+					<div style="margin-top: 1.5rem; padding: 1rem; background: var(--pico-del-color); color: white; border-radius: 8px; text-align: center;">
+						<strong>{errorMsg}</strong>
+					</div>
+				)}
+			</div>
+		)}
+
+		{studentData && (
+			<div class="result-container glass-card">
+				<div class="student-header text-center">
+					<div class="avatar-placeholder">🏅</div>
+					<h2>{studentData.name}</h2>
+					<p class="reg-number">{studentData.reg}</p>
+					<p class="college-name">{studentData.collegeCode} - {studentData.collegeName}</p>
+				</div>
+				
+				<div class="stats-grid">
+					<div class="stat-box">
+						<span class="stat-label">University Rank (Overall)</span>
+						<span class="stat-value gradient-text">#{overallRank}</span>
+						<span class="stat-sub">out of {totalStudents}</span>
+					</div>
+					<div class="stat-box">
+						<span class="stat-label">Branch Rank</span>
+						<span class="stat-value gradient-text">#{branchRank}</span>
+						<span class="stat-sub">out of {totalBranchStudents}</span>
+					</div>
+					<div class="stat-box">
+						<span class="stat-label">CGPA</span>
+						<span class="stat-value">{studentData.cgpa.toFixed(2)}</span>
+					</div>
+					<div class="stat-box">
+						<span class="stat-label">Sem {targetSem} SGPA</span>
+						<span class="stat-value">{studentData.sgpa.toFixed(2)}</span>
+					</div>
+				</div>
+				
+				<div class="action-links">
+					<a href={`${import.meta.env.BASE_URL}result-table?session=${batch}&branch=${cseCode}&semester=${targetSem}&college=${studentData.collegeCode}`} role="button" class="outline">View Result Table</a>
+					<a href={`${import.meta.env.BASE_URL}result?reg=${studentData.reg}&sem=${targetSem}`} role="button" class="primary">View Full Result</a>
+				</div>
+			</div>
+		)}
+	</section>
+
+	<style>
+		.rank-dashboard {
+			max-width: 800px;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+		.gradient-text {
+			background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			font-weight: 800;
+			display: inline-block;
+		}
+		.result-container {
+			padding: 2.5rem;
+		}
+		.avatar-placeholder {
+			font-size: 3.5rem;
+			margin-bottom: 0.5rem;
+		}
+		.student-header h2 {
+			margin-bottom: 0.2rem;
+			font-weight: 700;
+		}
+		.reg-number {
+			color: var(--pico-muted-color);
+			font-weight: 600;
+			margin-bottom: 0.2rem;
+		}
+		.college-name {
+			font-size: 0.9rem;
+			color: var(--pico-muted-color);
+			margin-bottom: 2rem;
+		}
+		.stats-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5rem;
+			margin-bottom: 2.5rem;
+		}
+		.stat-box {
+			background: var(--pico-card-background-color);
+			border: 1px solid var(--pico-muted-border-color);
+			border-radius: 12px;
+			padding: 1.5rem;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.stat-label {
+			font-size: 0.85rem;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: var(--pico-muted-color);
+			margin-bottom: 0.5rem;
+		}
+		.stat-value {
+			font-size: 2.5rem;
+			font-weight: 800;
+			line-height: 1.2;
+		}
+		.stat-sub {
+			font-size: 0.85rem;
+			color: var(--pico-muted-color);
+			margin-top: 0.2rem;
+		}
+		.action-links {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+		}
+		.action-links a {
+			border-radius: 50px;
+			padding: 0.75rem 2rem;
+			font-weight: 600;
+		}
+		@media (max-width: 600px) {
+			.stats-grid {
+				grid-template-columns: 1fr;
+			}
+			.action-links {
+				flex-direction: column;
+			}
+			.action-links a {
+				width: 100%;
+			}
+		}
+	</style>
+
+	<Footer />
+</Layout>

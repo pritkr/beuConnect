@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Exam., 2021 (New Course)",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100101",
+    "year": 2021,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct alternative (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In an AC series R-L-C circuit, the voltage across R and L is 20 V, voltage across L and C is 9 V\n                        and voltage across R-L-C is 15 V. What is the voltage across C?</p>",
+          "options": [
+            "21 V",
+            "16 V",
+            "12 V",
+            "7 V"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The salient type of alternator is used in which of the following power stations?</p>",
+          "options": [
+            "Steam power plants",
+            "Nuclear power plants",
+            "Hydropower plants",
+            "Diesel power plants"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A single-phase AC voltage source has 200 V r.m.s. and is connected to a system which consumes an\n                        active power of 300 W. What is the reactive power consumed by the system, if 2.5 A r.m.s.\n                        current\n                        is drawn?</p>",
+          "options": [
+            "100 VAR",
+            "200 VAR",
+            "300 VAR",
+            "400 VAR"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The maximum power will be transferred from a voltage source to a load when</p>",
+          "options": [
+            "the source impedance is half of the load impedance",
+            "the source impedance is equal to the load impedance",
+            "the source impedance is twice that of the load impedance",
+            "the source impedance and load impedance both must be zero"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The condition for maximum efficiency in a transformer is</p>",
+          "options": [
+            "the core losses should be equal to friction and windage losses",
+            "the copper losses equal to mechanical losses",
+            "the core losses equal to copper losses",
+            "the copper losses should be equal to half of the core losses"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The unit of magnetic flux density is</p>",
+          "options": [
+            "Wb",
+            "\\(\\mathrm{Wb/m^2}\\)",
+            "\\(\\mathrm{A/m^2}\\)",
+            "AT"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The supply frequency of a transformer is increased, the rating of the transformer would have been\n                    </p>",
+          "options": [
+            "decreased",
+            "not changed",
+            "increased",
+            "equal to maximum kVA rating"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A series circuit contains a resistance of \\(4\\,\\Omega\\) and inductance of 0.5H and a variable\n                        capacitor across a 100V, 50Hz supply. What would be the voltage across an inductor?</p>",
+          "options": [
+            "4568V",
+            "3925V",
+            "1250V",
+            "580V"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In an induction motor, if the air gap increased</p>",
+          "options": [
+            "its speed will reduce",
+            "its efficiency will improve",
+            "its power factor will reduce",
+            "its maximum torque will reduce"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The pole of DC machine is laminated to</p>",
+          "options": [
+            "reduce pulsation loss",
+            "reduce armature reaction",
+            "dissipate more heat",
+            "reduce iron weight"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>A coil wire when connected to a DC supply of 100V takes a current of 10A. When it connected to an\n                        AC supply of 100V at a frequency of 50Hz, the current is 5A. Explain the difference and\n                        calculate the coefficient of self-inductance of the coil.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>The current in a circuit is given by \\((4.5+j12)\\,\\mathrm{A}\\) when the applied voltage is\n                        \\((100+j150)\\,\\mathrm{V}\\). Determine (i) the complex expression for the impedance stating\n                        whether it is inductive or capacitive, (ii) the power and (iii) the phase angle between the\n                        current and voltage.</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>What is meant by the Q-factor of a series coil and what is the significance?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>If a coil of unknown resistance and reactance is connected in series with a 100 V, 50 Hz supply,\n                        the current locus diagram is found to have a diameter of 5 A and when the value of series\n                        resistor is 15 Ω, the power dissipated is maximum. Calculate the reactance and resistance of the\n                        coil and the value of maximum power in the circuit and the maximum current.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Three similar coils, each of resistance 20 Ω and inductance 0.5 H are connected in (i) star and\n                        (ii) delta to a 3-φ, 50 Hz, 400 V supply. Calculate the line current and the total power\n                        consumed.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>The admittance of a circuit is 0.03 - j0.04 mho. Find the values of the resistance and inductive\n                        reactance of the circuit, if they are joined (i) in series and (ii) in parallel.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Describe the properties of zinc chloride and mercury battery cell types.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Describe the properties of fuse and its limitations.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>What are various factors to be considered for the calculations of energy consumption?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>When a transformer is connected to a 1000 V, 50 Hz supply, the core loss is 1000 W of which 650\n                        is hysteresis and 350 is eddy current loss. If the applied voltage is raised to 2000 V and\n                        frequency to 100 Hz, what could be the new core losses?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain the star-delta connection of three-phase transformer by assuming step-down mode. Draw the\n                        phasor diagram of line and phase voltages.</p>"
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>The primary resistance of a transformer is 0.1 Ω and its leakage reactance is 0.8 Ω. When the\n                        applied voltage is 1000 V, the primary current is 50 A at a lagging power factor of 0.6. Find\n                        the primary induced e.m.f.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive the e.m.f. equation of a DC generator.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A 6 pole, 40 Hz, three-phase induction motor running on full-load with 4% slip develops a torque\n                        of 149.3 N·m at its shaft. The friction and windage losses are 200 W and the stator core and\n                        copper losses are 1620 W. Calculate— (i) the total output power; (ii) the rotor copper losses;\n                        (iii) the efficiency at full load.</p>"
+        },
+        {
+          "id": "q6_3",
+          "type": "theory",
+          "text": "<p>Explain the speed control of separately excited DC motor above and below its rated speed.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve all parts :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is the necessity of damper winding in an alternator? Describe the constructional details of\n                        the damper winding.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Is it possible for the rotor to run at synchronous speed? Explain your answer.</p>"
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>Compare the lap winding and wave winding of a DC motor.</p>"
+        },
+        {
+          "id": "q7_4",
+          "type": "theory",
+          "text": "<p>Derive an expression for the torque developed by DC motor.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all parts :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>An iron ring, cross-sectional area of 5 \\(\\mathrm{cm^2}\\) and mean length of 100 cm, has an\n                        air gap of 2 mm cut in it. Three separate coils having 100, 200 and 300 turns are wound on the\n                        ring and carry currents of 1 A, 2.5 A and 3 A, respectively such that they produce additive\n                        fluxes in the ring. Relative permeability of the ring material is 1000. Calculate the flux in\n                        the air gap.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain the nature and direction of force between two parallel current-carrying conductors.</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>A conductor of length 10 cm carrying 5 A is placed in a uniform magnetic field of flux density\n                        1.25 tesla. Find the force acting on the conductor, if it is placed (i) along the lines of\n                        magnetic flux and (ii) perpendicular to the lines of flux.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>A resistance of 10 Ω is connected in series with the two resistances each of 15 Ω arranged in\n                        parallel. What resistance must be shunted across this parallel combination so that the total\n                        current taken will be 1.5 A from 20 V applied?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>State and explain the procedure of Thevenin's theorem and Norton's theorem.</p>"
+        }
+      ]
+    }
+  ]
+}

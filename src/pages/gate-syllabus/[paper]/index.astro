@@ -1,0 +1,53 @@
+---
+export const prerender = true;
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/header.astro";
+import Footer from "../../../components/footer.astro";
+import papersList from "../../../assets/data/gate-papers.json";
+
+export async function getStaticPaths() {
+	const papers = (await import("../../../assets/data/gate-papers.json"))
+		.default;
+	return papers.map((p) => ({ params: { paper: p.code } }));
+}
+
+const { paper } = Astro.params;
+const paperInfo = papersList.find(p => p.code === paper);
+const paperName = paperInfo ? paperInfo.name : "";
+const syllabus = await import(`../../../assets/data/gate/${paper}.json`).catch(
+    () => null,
+);
+const data = syllabus ? syllabus.default : null;
+---
+
+<Layout title={`GATE ${paper} Syllabus`}>
+    <Header />
+    <h1>
+        <a
+            href={import.meta.env.BASE_URL + "gate-syllabus/"}
+            style="view-transition-name:gatesyl">←GATE Syllabus</a
+        >
+    </h1>
+    <h2 style={`view-transition-name:${paper}`}>{paper} — {paperName} Syllabus</h2>
+
+    {
+        data ? (
+            <section>
+                {data.sections.map((sec) => (
+                    <details>
+                        <summary>
+                            <strong>{sec.title}</strong>
+                        </summary>
+                        <p style="white-space: pre-wrap;">{sec.content}</p>
+                    </details>
+                ))}
+            </section>
+        ) : (
+            <p>
+                <em>Syllabus not available.</em>
+            </p>
+        )
+    }
+
+    <Footer />
+</Layout>

@@ -1,0 +1,616 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import collegesData from "../data/colleges.json";
+import configData from "../assets/data/config.json";
+
+export const prerender = true;
+
+const csvFiles = import.meta.glob('/public/data/students_*.csv', { query: '?raw', import: 'default', eager: true });
+
+const branchCodeMap: Record<string, string> = {
+	cse: "105",
+	ece: "104",
+	ee: "103",
+	mech: "102",
+	civil: "101",
+	eee: "110",
+};
+
+const branchNames: Record<string, string> = {
+	cse: "COMPUTER SCIENCE & ENGINEERING",
+	ece: "ELECTRONICS & COMMUNICATION ENGINEERING",
+	ee: "ELECTRICAL ENGINEERING",
+	mech: "MECHANICAL ENGINEERING",
+	civil: "CIVIL ENGINEERING",
+	eee: "ELECTRICAL & ELECTRONICS ENGINEERING",
+};
+
+interface Student {
+	regNo: string;
+	name: string;
+	sgpa: number;
+	cgpa: number;
+	branch: string;
+	college: string;
+	rank: number;
+}
+
+interface BranchData {
+	name: string;
+	students: Student[];
+}
+
+interface BatchData {
+	label: string;
+	semester: number;
+	branches: BranchData[];
+	stats: {
+		totalStudents: number;
+		highestCgpa: number;
+		branchCount: number;
+	};
+}
+
+function parseCSV(text: string): Record<string, string>[] {
+	const lines = text.trim().split('\n');
+	if (lines.length < 2) return [];
+	
+	const headers = lines[0].split(',').map(h => h.trim());
+	return lines.slice(1).map(line => {
+		const values = line.split(',');
+		const obj: any = {};
+		headers.forEach((h, i) => {
+			obj[h] = values[i] ? values[i].trim() : '';
+		});
+		return obj;
+	});
+}
+
+function getCollegeName(code: string): string {
+	const college = collegesData.find((c) => c.CollegeCode === code);
+	return college ? college.Name : code;
+}
+
+function findAvailableSemester(batch: string): number {
+	const branchCodes = Object.values(branchCodeMap);
+
+	for (let sem = 8; sem >= 1; sem--) {
+		let hasData = false;
+		for (const college of collegesData) {
+			for (const branchCode of branchCodes) {
+				const filename = `/public/data/students_${batch}_${college.CollegeCode}_${branchCode}_sem${sem}.csv`;
+				if (csvFiles[filename]) {
+					hasData = true;
+					break;
+				}
+			}
+			if (hasData) break;
+		}
+		if (hasData) return sem;
+	}
+	return 1;
+}
+
+function loadBatchData(batch: string, semester: number): Student[] {
+	const students: Student[] = [];
+
+	for (const [branch, branchCode] of Object.entries(branchCodeMap)) {
+		const filename = `/public/data/students_${batch}_all_${branchCode}_sem${semester}.csv`;
+		const content = csvFiles[filename] as string;
+		if (content) {
+			const rows = parseCSV(content);
+			for (const row of rows) {
+				if (row.RegNo && row.Name) {
+					students.push({
+						regNo: row.RegNo,
+						name: row.Name.toUpperCase(),
+						sgpa: parseFloat(row.SGPA) || 0,
+						cgpa: parseFloat(row["Cur. CGPA"] || row.CGPA || "0") || 0,
+						branch: branch.toUpperCase(),
+						college: row.CollegeName || getCollegeName(row.CollegeCode || ""),
+						rank: 0,
+					});
+				}
+			}
+		}
+	}
+
+	// Sort by CGPA descending
+	students.sort((a, b) => b.cgpa - a.cgpa);
+
+	// Assign ranks
+	let currentRank = 0;
+	let prevCgpa = -1;
+	students.forEach((s) => {
+		if (s.cgpa !== prevCgpa) {
+			currentRank++;
+			prevCgpa = s.cgpa;
+		}
+		s.rank = currentRank;
+	});
+
+	return students;
+}
+
+function buildBatchData(batch: string, label: string, semester: number, students: Student[]): BatchData {
+	// Group by branch
+	const branchMap = new Map<string, Student[]>();
+	for (const student of students) {
+		const existing = branchMap.get(student.branch) || [];
+		existing.push(student);
+		branchMap.set(student.branch, existing);
+	}
+
+	// Sort branches in order
+	const branchOrder = ["CSE", "ECE", "EEE", "EE", "MECH", "CIVIL"];
+	const branches: BranchData[] = [];
+
+	branchOrder.forEach((br) => {
+		const branchStudents = branchMap.get(br) || [];
+		branches.push({
+			name: branchNames[br.toLowerCase()] || br,
+			students: branchStudents.slice(0, 10),
+		});
+	});
+
+	branchMap.forEach((students, br) => {
+		if (!branchOrder.includes(br)) {
+			branches.push({
+				name: br,
+				students: students.slice(0, 10),
+			});
+		}
+	});
+
+	const highestCgpa = students.length > 0 ? students[0].cgpa : 0;
+
+	return {
+		label,
+		semester,
+		branches: branches.filter((b) => b.students.length > 0),
+		stats: {
+			totalStudents: students.length,
+			highestCgpa,
+			branchCount: branches.filter((b) => b.students.length > 0).length,
+		},
+	};
+}
+
+function processBatch(batch: string, label: string): BatchData {
+	const semester = findAvailableSemester(batch);
+	const students = loadBatchData(batch, semester);
+	return buildBatchData(batch, label, semester, students);
+}
+
+// Load data for all batches - specify semester per batch
+const batches: BatchData[] = [];
+
+function getBatchWithSemester(batch: string, label: string, forcedSemester?: number): BatchData {
+	if (forcedSemester !== undefined) {
+		const students = loadBatchData(batch, forcedSemester);
+		return buildBatchData(batch, label, forcedSemester, students);
+	}
+	return processBatch(batch, label);
+}
+
+batches.push(getBatchWithSemester("25", "2025-29", 1));
+batches.push(getBatchWithSemester("24", "2024-28", 2));
+batches.push(getBatchWithSemester("23", "2023-27", 4));
+batches.push(getBatchWithSemester("22", "2022-26", 6));
+batches.push(getBatchWithSemester("21", "2021-25", 8));
+
+const defaultBatch = batches[0];
+---
+
+<Layout title="BEU Merit List 2024 | BEUConnect" description="Check the official college-wise merit list for Bihar Engineering University (BEU). Compare top performers across all state engineering colleges.">
+	<Header />
+
+	<section class="merit-hero">
+		<div class="hero-bg">
+			<div class="orb orb-1"></div>
+			<div class="orb orb-2"></div>
+			<div class="orb orb-3"></div>
+		</div>
+		<div class="hero-content">
+			<div class="badge">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+				<span>UNOFFICIAL MERIT LIST</span>
+			</div>
+			<h1 class="gradient-text">Excellence in Engineering</h1>
+			<p class="subtitle">Bihar Engineering University</p>
+			
+			<div class="batch-selector">
+				{batches.map((batch, idx) => (
+					<button class="batch-btn" data-batch={idx}>{batch.label}</button>
+				))}
+			</div>
+			
+			<p class="hero-desc">Celebrating the top performers across all engineering branches</p>
+		</div>
+	</section>
+
+	<section class="merit-body">
+		<div id="batch-data" data-batches={JSON.stringify(batches)}></div>
+
+		<div class="stats-row">
+			<div class="stat-card">
+				<div class="stat-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+				</div>
+				<div class="stat-content">
+					<span class="stat-value" id="totalToppers">{defaultBatch.stats.totalStudents}</span>
+					<span class="stat-label">Top Performers</span>
+				</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg>
+				</div>
+				<div class="stat-content">
+					<span class="stat-value" id="highestCgpa">{defaultBatch.stats.highestCgpa.toFixed(2)}</span>
+					<span class="stat-label">Highest CGPA</span>
+				</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"/></svg>
+				</div>
+				<div class="stat-content">
+					<span class="stat-value" id="branchCount">{defaultBatch.stats.branchCount}</span>
+					<span class="stat-label">Branches</span>
+				</div>
+			</div>
+		</div>
+
+		<div id="results" class="results-container">
+			{defaultBatch.branches.map((branch) => (
+				<div class="branch-section">
+					<div class="branch-header">
+						<h2>{branch.name}</h2>
+						<span class="branch-count">{branch.students.length} Students</span>
+					</div>
+					<div class="table-wrap">
+						<table class="merit-table">
+							<thead>
+								<tr>
+									<th>Rank</th>
+									<th>Name</th>
+									<th>CGPA</th>
+									<th>SGPA</th>
+									<th>College</th>
+								</tr>
+							</thead>
+							<tbody>
+								{branch.students.map((student) => (
+									<tr class="student-row">
+										<td>
+											<span class={`rank-badge rank-${student.rank <= 3 ? student.rank : "other"}`}>
+												{student.rank}
+											</span>
+										</td>
+										<td class="name">{student.name}</td>
+										<td class="cgpa">{student.cgpa.toFixed(2)}</td>
+										<td class="sgpa">{student.sgpa.toFixed(2)}</td>
+										<td class="college">{student.college}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<script>
+	const batchBtns = document.querySelectorAll('.batch-btn') as NodeListOf<HTMLButtonElement>;
+	const dataEl = document.getElementById('batch-data') as HTMLElement;
+	const batches = JSON.parse(dataEl.dataset.batches || '[]');
+
+	const totalToppers = document.getElementById('totalToppers') as HTMLElement;
+	const highestCgpa = document.getElementById('highestCgpa') as HTMLElement;
+	const branchCount = document.getElementById('branchCount') as HTMLElement;
+	const results = document.getElementById('results') as HTMLElement;
+
+	function renderBatch(idx: number) {
+		const batch = batches[idx];
+		if (!batch) return;
+
+		totalToppers.textContent = String(batch.stats.totalStudents);
+		highestCgpa.textContent = batch.stats.highestCgpa.toFixed(2);
+		branchCount.textContent = String(batch.stats.branchCount);
+
+		let html = '';
+		for (const branch of batch.branches) {
+			html += `
+				<div class="branch-section">
+					<div class="branch-header">
+						<h2>${branch.name}</h2>
+						<span class="branch-count">${branch.students.length} Students</span>
+					</div>
+					<div class="table-wrap">
+						<table class="merit-table">
+							<thead>
+								<tr><th>Rank</th><th>Name</th><th>CGPA</th><th>SGPA</th><th>College</th></tr>
+							</thead>
+							<tbody>
+								${branch.students.map(s => `
+									<tr class="student-row">
+										<td><span class="rank-badge rank-${s.rank <= 3 ? s.rank : 'other'}">${s.rank}</span></td>
+										<td class="name">${s.name}</td>
+										<td class="cgpa">${s.cgpa.toFixed(2)}</td>
+										<td class="sgpa">${s.sgpa.toFixed(2)}</td>
+										<td class="college">${s.college}</td>
+									</tr>
+								`).join('')}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			`;
+		}
+		results.innerHTML = html;
+	}
+
+	batchBtns.forEach((btn, idx) => {
+		btn.addEventListener('click', () => {
+			batchBtns.forEach(b => b.classList.remove('active'));
+			btn.classList.add('active');
+			renderBatch(idx);
+		});
+	});
+
+	// Set initial active state
+	(batchBtns[0] as HTMLElement)?.classList.add('active');
+
+	// Smart Defaults
+	document.addEventListener("DOMContentLoaded", async () => {
+		if (typeof window !== "undefined" && document.documentElement.classList.contains("is-logged-in")) {
+			try {
+				const { getProfile } = await import("../utils/profileManager");
+				const profile = getProfile();
+				if (!profile || !profile.batchYear) return;
+				
+				const batchStr = String(profile.batchYear).slice(-2);
+				
+				// Find matching batch button
+				const targetBtnIndex = Array.from(batchBtns).findIndex(btn => btn.textContent?.includes(batchStr));
+				if (targetBtnIndex !== -1) {
+					batchBtns.forEach(b => b.classList.remove('active'));
+					batchBtns[targetBtnIndex].classList.add('active');
+					renderBatch(targetBtnIndex);
+					
+					// Auto-scroll to their branch if possible
+					setTimeout(() => {
+						if (!profile.branchName) return;
+						const branchHeaders = document.querySelectorAll('.branch-header h2');
+						const targetHeader = Array.from(branchHeaders).find(h => 
+							h.textContent?.toUpperCase().includes(profile.branchName.toUpperCase()) || 
+							(profile.branchName === "CSE" && h.textContent?.toUpperCase().includes("COMPUTER SCIENCE"))
+						);
+						if (targetHeader) {
+							targetHeader.scrollIntoView({ behavior: 'smooth', block: 'center' });
+							// Highlight it briefly
+							if (targetHeader.parentElement?.parentElement) {
+								targetHeader.parentElement.parentElement.style.transition = "box-shadow 0.5s";
+								targetHeader.parentElement.parentElement.style.boxShadow = "0 0 20px rgba(59, 130, 246, 0.4)";
+								setTimeout(() => {
+									if (targetHeader.parentElement?.parentElement) {
+										targetHeader.parentElement.parentElement.style.boxShadow = "none";
+									}
+								}, 2000);
+							}
+						}
+					}, 300);
+				}
+			} catch (e) {
+				console.error("Smart defaults failed on merit list", e);
+			}
+		}
+	});
+</script>
+
+<style>
+	.merit-hero {
+		position: relative;
+		padding: 4rem 1rem 3rem;
+		text-align: center;
+		overflow: hidden;
+		background: linear-gradient(180deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.7) 100%);
+	}
+
+	.hero-bg {
+		position: absolute;
+		inset: 0;
+		overflow: hidden;
+		pointer-events: none;
+	}
+
+	.orb {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(80px);
+		opacity: 0.4;
+		animation: float 20s ease-in-out infinite;
+	}
+
+	.orb-1 { width: 400px; height: 400px; background: #3b82f6; top: -100px; left: -100px; }
+	.orb-2 { width: 300px; height: 300px; background: #8b5cf6; top: 50%; right: -50px; animation-delay: -5s; }
+	.orb-3 { width: 250px; height: 250px; background: #06b6d4; bottom: -50px; left: 30%; animation-delay: -10s; }
+
+	@keyframes float {
+		0%, 100% { transform: translate(0, 0); }
+		50% { transform: translate(30px, -30px); }
+	}
+
+	.hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+	.badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: rgba(59, 130, 246, 0.15);
+		border: 1px solid rgba(59, 130, 246, 0.3);
+		color: #60a5fa;
+		padding: 0.5rem 1rem;
+		border-radius: 50px;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		margin-bottom: 1rem;
+	}
+
+	.gradient-text {
+		font-size: clamp(2rem, 6vw, 3.5rem);
+		font-weight: 900;
+		background: linear-gradient(135deg, #60a5fa, #a78bfa, #34d399);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		margin: 0;
+		line-height: 1.1;
+	}
+
+	.subtitle { color: #94a3b8; font-size: 1.25rem; margin: 0.5rem 0 1.5rem; }
+
+	.batch-selector {
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.batch-btn {
+		padding: 0.6rem 1.25rem;
+		border: 1px solid rgba(148, 163, 184, 0.2);
+		background: rgba(30, 41, 59, 0.5);
+		color: #94a3b8;
+		border-radius: 8px;
+		font-size: 0.875rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: transform 0.2s;
+	}
+
+	.batch-btn:hover { border-color: #60a5fa; color: #60a5fa; }
+	.batch-btn.active { background: #3b82f6; border-color: #3b82f6; color: white; }
+
+	.hero-desc { color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; }
+
+	.merit-body {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 1.5rem 1rem 3rem;
+	}
+
+	.stats-row {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.stat-card {
+		background: rgba(30, 41, 59, 0.5);
+		border: 1px solid rgba(148, 163, 184, 0.1);
+		border-radius: 16px;
+		padding: 1.25rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.stat-icon {
+		width: 48px; height: 48px;
+		background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+		border-radius: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+
+	.stat-content { display: flex; flex-direction: column; }
+	.stat-value { font-size: 1.75rem; font-weight: 900; color: #e2e8f0; }
+	.stat-label { font-size: 0.7rem; color: #64748b; letter-spacing: 0.05em; }
+
+	.branch-section { margin-bottom: 2rem; }
+
+	.branch-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+	}
+
+	.branch-header h2 {
+		font-size: 1.1rem;
+		font-weight: 700;
+		color: #e2e8f0;
+		margin: 0;
+	}
+
+	.branch-count {
+		font-size: 0.8rem;
+		color: #64748b;
+		background: rgba(30, 41, 59, 0.5);
+		padding: 0.3rem 0.75rem;
+		border-radius: 20px;
+	}
+
+	.table-wrap { overflow-x: auto; }
+
+	.merit-table {
+		width: 100%;
+		border-collapse: collapse;
+		background: rgba(30, 41, 59, 0.3);
+		border-radius: 16px;
+		overflow: hidden;
+	}
+
+	.merit-table th {
+		background: rgba(30, 41, 59, 0.8);
+		padding: 1rem;
+		text-align: left;
+		font-size: 0.7rem;
+		font-weight: 700;
+		color: #64748b;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	.merit-table td {
+		padding: 1rem;
+		border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+		font-size: 0.9rem;
+	}
+
+	.merit-table tr:hover td { background: rgba(59, 130, 246, 0.05); }
+
+	.rank-badge {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px; height: 28px;
+		border-radius: 8px;
+		font-weight: 800;
+		font-size: 0.8rem;
+	}
+
+	.rank-1 { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #000; }
+	.rank-2 { background: linear-gradient(135deg, #94a3b8, #cbd5e1); color: #000; }
+	.rank-3 { background: linear-gradient(135deg, #b45309, #d97706); color: #fff; }
+	.rank-other { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+
+	.name { font-weight: 600; color: #e2e8f0; }
+	.cgpa { font-weight: 700; color: #34d399; font-family: monospace; }
+	.sgpa { color: #94a3b8; font-family: monospace; }
+	.college { color: #64748b; font-size: 0.85rem; }
+</style>

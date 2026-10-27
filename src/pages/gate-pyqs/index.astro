@@ -1,0 +1,145 @@
+---
+export const prerender = true;
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header.astro";
+import Footer from "../../components/footer.astro";
+import pyqData from "../../data/gate-pyqs.json";
+import {
+  gatePyqSubjectOrder,
+  getGatePyqSubjectName,
+} from "../../data/gate-pyq-subjects";
+
+const base = import.meta.env.BASE_URL;
+const orderIndex = new Map(gatePyqSubjectOrder.map((code, idx) => [code, idx]));
+
+const subjects = Object.entries(pyqData)
+  .map(([code, papers]) => ({
+    code,
+    name: getGatePyqSubjectName(code),
+    paperCount: papers.length,
+  }))
+  .sort((a, b) => {
+    const ai = orderIndex.get(a.code);
+    const bi = orderIndex.get(b.code);
+    if (ai !== undefined && bi !== undefined) return ai - bi;
+    if (ai !== undefined) return -1;
+    if (bi !== undefined) return 1;
+    return a.code.localeCompare(b.code);
+  });
+---
+
+<Layout
+  title="GATE Previous Year Questions | BEU Connect"
+  description="Access all subject-wise GATE previous year question papers in one place."
+>
+  <Header />
+  <main class="container">
+    <section class="header-section">
+      <h1 class="gradient-text">GATE PYQs</h1>
+      <p class="subtitle">
+        All subjects from your `public/GATEPYQs/` folders are now live.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="GATE subjects">
+      {subjects.map((subject) => (
+        <a href={`${base}gate-pyqs/${subject.code}`} class="subject-card">
+          <span class="subject-code">{subject.code}</span>
+          <h2>{subject.name}</h2>
+          <p>{subject.paperCount} papers</p>
+        </a>
+      ))}
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    padding: 2rem 1rem;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .gradient-text {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    margin: 0.5rem auto 0;
+    max-width: 680px;
+    color: var(--text-secondary);
+  }
+
+  .grid {
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 720px) {
+    .grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1080px) {
+    .grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .subject-card {
+    border: 1px solid var(--border-subtle);
+    background: linear-gradient(165deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.95));
+    border-radius: 14px;
+    padding: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    min-height: 148px;
+  }
+
+  .subject-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .subject-code {
+    width: fit-content;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    color: #8cc7ff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .subject-card h2 {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.35;
+    color: var(--text-primary);
+  }
+
+  .subject-card p {
+    margin: auto 0 0;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+</style>

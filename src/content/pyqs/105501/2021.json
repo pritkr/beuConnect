@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "Artificial Intelligence",
+    "subject_slug": "artificial-intelligence",
+    "subject_code": "105501",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of any seven of the following :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Parts-of-speech tagging determines\n(i) part-of-speech for each word dynamically as per meaning of the sentence\n(ii) part-of-speech for each word dynamically as per sentence structure\n(iii) all part-of-speech for a specific word given as input\n(iv) All of the above",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "b",
+              "text": "Programming a robot by physically moving it through the trajectory you want it to follow be called\n(i) contact sensing control\n(ii) continuous-path control\n(iii) robot vision control\n(iv) pick-and-place control",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "c",
+              "text": "A production rule consists of\n(i) a set of rules\n(ii) a sequence of steps\n(iii) set of rules and sequence of steps\n(iv) arbitrary representation to problem",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "d",
+              "text": "What is not represented by using propositional logic?\n(i) Objects\n(ii) Relations\n(iii) Both objects and relations\n(iv) None of the above",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "e",
+              "text": "Which is not a property of representation of knowledge?\n(i) Representational verification\n(ii) Representational adequacy\n(iii) Inferential adequacy\n(iv) Inferential efficiency",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "f",
+              "text": "Lifted inference rules require finding substitutions that make different logical expressions looks identical.\n(i) Existential instantiation\n(ii) Universal instantiation\n(iii) Unification\n(iv) Modus ponens",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "g",
+              "text": "Autonomous question/answering systems are\n(i) expert systems\n(ii) rule-based expert systems\n(iii) decision tree-based systems\n(iv) All of the above",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "h",
+              "text": "What are semantic networks?\n(i) A way of representing knowledge\n(ii) Data structure\n(iii) Data type\n(iv) None of the above",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "i",
+              "text": "There exists two ways to infer using semantic networks.\n(i) Intersection search\n(ii) Inheritance search\n(iii) True\n(iv) False",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "j",
+              "text": "Which is used for utility functions in game playing algorithm?\n(i) Linear polynomial\n(ii) Weighted polynomial\n(iii) Polynomial\n(iv) Linear weighted polynomial",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Discuss the role of reasoning in AI. How is predicate logic used in AI to represent knowledge?\nb) Describe augmented grammar used in natural language processing.",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Discuss the role of reasoning in AI. How is predicate logic used in AI to represent knowledge?",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "Describe augmented grammar used in natural language processing.",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Explain with examples 'decision trees' and also explain Bayesian networks with example.\nb) What do you understand by the term 'uncertainty' in AI? How is uncertainty managed in artificial intelligence? Briefly discuss the structures used to manage knowledge uncertainty.",
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain with examples 'decision trees' and also explain Bayesian networks with example.",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "number": "b",
+              "text": "What do you understand by the term 'uncertainty' in AI? How is uncertainty managed in artificial intelligence? Briefly discuss the structures used to manage knowledge uncertainty.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) What do you mean by learning? Explain briefly learning methods. Discuss the advantages and disadvantages of rule-based system.\nb) Is regression a supervised learning? Justify your answer. Compare regression with classification with example.",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What do you mean by learning? Explain briefly learning methods. Discuss the advantages and disadvantages of rule-based system.",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "Is regression a supervised learning? Justify your answer. Compare regression with classification with example.",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Draw the semantic network of sentence 'John gave lecture to his students'.\nb) What is first-order predicate logic (FOPL)? Represent the following facts in FOPL :\n\"Anyone passing his AI paper and getting an opportunity to work on live project is Happy. But anyone who studies sincerely or is Lucky can pass all his exams. Ramu did not study but he is Lucky. Anyone who is Lucky gets a live project to work.\"",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Draw the semantic network of sentence 'John gave lecture to his students'.",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is first-order predicate logic (FOPL)? Represent the following facts in FOPL : \"Anyone passing his AI paper and getting an opportunity to work on live project is Happy. But anyone who studies sincerely or is Lucky can pass all his exams. Ramu did not study but he is Lucky. Anyone who is Lucky gets a live project to work.\"",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Explain the importance of an expert system. What are the various knowledge representative techniques used in expert system?\nb) What is fuzzy logic? Explain union and intersection operations on fuzzy set. \"Food is cheap.\" Represent this statement into fuzzy logic.",
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the importance of an expert system. What are the various knowledge representative techniques used in expert system?",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is fuzzy logic? Explain union and intersection operations on fuzzy set. \"Food is cheap.\" Represent this statement into fuzzy logic.",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ]
+        },
+        {
+          "text": "Describe the following with suitable example :\na) Logistic regression\nb) Backpropagation algorithm",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Logistic regression",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "Backpropagation algorithm",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Express the following statements in propositional logic :\n(i) Cancer will not be cured unless its cause is determined and a new drug for cancer is found.\n(ii) If the humidity is high, it will rain either today or tomorrow.\n(iii) It requires courage and skills to climb a mountain.\nb) Represent the following sentence as a conceptual graph :\n\"Cow has four legs and eats grass.\"",
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Express the following statements in propositional logic : (i) Cancer will not be cured unless its cause is determined and a new drug for cancer is found. (ii) If the humidity is high, it will rain either today or tomorrow. (iii) It requires courage and skills to climb a mountain.",
+              "marks": 7,
+              "id": "8_sub"
+            },
+            {
+              "number": "b",
+              "text": "Represent the following sentence as a conceptual graph : \"Cow has four legs and eats grass.\"",
+              "marks": 7,
+              "id": "8_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) What is the Turing test? If the machine passes the Turing test, does it mean that the system is intelligent? What are the associated problems with Turing test? What are required improvement/advances to overcome these problems?\nb) What do you mean by learning? Explain briefly learning methods. Discuss the advantages and disadvantages of rule-based system.",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is the Turing test? If the machine passes the Turing test, does it mean that the system is intelligent? What are the associated problems with Turing test? What are required improvement/advances to overcome these problems?",
+              "marks": 7,
+              "id": "9_sub"
+            },
+            {
+              "number": "b",
+              "text": "What do you mean by learning? Explain briefly learning methods. Discuss the advantages and disadvantages of rule-based system.",
+              "marks": 7,
+              "id": "9_sub"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

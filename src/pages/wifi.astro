@@ -1,0 +1,175 @@
+---
+export const prerender = true;
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+---
+
+<Layout title="WiFi Auto-Login Bookmarklet | BEUConnect">
+    <Header />
+
+    <section class="bookmarklet-section">
+        <header class="text-center">
+            <h1 class="gradient-text">GEC Sheikhpura WiFi Bookmarklet</h1>
+            <p>
+                Generate a 1-click login bookmarklet for the campus captive
+                portal.
+            </p>
+        </header>
+
+        <div class="glass-card generator-card">
+            <div class="input-grid">
+                <label>
+                    Registration Number
+                    <input
+                        type="text"
+                        id="bmReNo"
+                        placeholder="e.g. 21101157017"
+                    />
+                </label>
+                <label>
+                    College WiFi Password
+                    <input
+                        type="password"
+                        id="bmPass"
+                        placeholder="e.g. Password123"
+                    />
+                </label>
+            </div>
+
+            <button
+                id="generateBtn"
+                class="primary full-width"
+                style="margin-top: 1rem;">Generate Bookmarklet</button
+            >
+
+            <div id="resultArea" class="hidden">
+                <div class="instructions">
+                    <h3>Almost Done! 🎉</h3>
+                    <p>
+                        Drag the button below to your browser's bookmarks bar.
+                        Next time you're on the WiFi login page, just click it!
+                    </p>
+
+                    <div class="drag-zone">
+                        <a
+                            href="#"
+                            id="bookmarkletLink"
+                            class="pill-btn primary-glow drag-btn"
+                            onclick="return false;">GEC WiFi Login</a
+                        >
+                        <small>Drag me to your bookmarks bar ⬆️</small>
+                    </div>
+
+                    <details style="margin-top:1rem;">
+                        <summary>Or copy the raw code manually</summary>
+                        <code
+                            ><pre
+                                id="rawCode"
+                                style="white-space:pre-wrap; font-size: 0.8rem;">
+                            </pre>
+                        </code>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .bookmarklet-section {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .gradient-text {
+            background: linear-gradient(
+                135deg,
+                var(--pico-primary) 0%,
+                #ec4899 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            font-weight: 800;
+        }
+        .generator-card {
+            padding: 2rem;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .instructions {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px dashed rgba(128, 128, 128, 0.2);
+            text-align: center;
+        }
+        .drag-zone {
+            background: rgba(128, 128, 128, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .drag-btn {
+            text-decoration: none;
+            cursor: grab;
+            background-color: var(--pico-primary);
+            color: white;
+        }
+        .drag-btn:active {
+            cursor: grabbing;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("generateBtn");
+            const regInput = document.getElementById(
+                "bmReNo"
+            ) as HTMLInputElement;
+            const passInput = document.getElementById(
+                "bmPass"
+            ) as HTMLInputElement;
+            const resultArea = document.getElementById("resultArea");
+            const link = document.getElementById(
+                "bookmarkletLink"
+            ) as HTMLAnchorElement;
+            const rawCode = document.getElementById("rawCode");
+
+            if (btn && resultArea && link && rawCode) {
+                btn.addEventListener("click", () => {
+                    const username = regInput.value.trim();
+                    const password = passInput.value.trim();
+
+                    if (!username || !password) {
+                        alert(
+                            "Please fill in both Registration Number and Password."
+                        );
+                        return;
+                    }
+
+                    // Typical captive portal auto-login script
+                    const code = `javascript:(function(){
+                    var u=document.querySelector('input[name="username"]') || document.getElementById('user');
+                    var p=document.querySelector('input[name="password"]') || document.getElementById('pass');
+                    var b=document.querySelector('input[type="submit"]') || document.getElementById('loginBtn');
+                    if(u) u.value='${username.replace(/'/g, "\\'")}';
+                    if(p) p.value='${password.replace(/'/g, "\\'")}';
+                    if(b) b.click();
+                    else document.forms[0].submit();
+                })();`.replace(/\s+/g, " ");
+
+                    link.href = code;
+                    rawCode.textContent = code;
+                    resultArea.classList.remove("hidden");
+                });
+            }
+        });
+    </script>
+</Layout>

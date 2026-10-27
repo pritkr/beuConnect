@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2022",
+    "subject": "Network Theory",
+    "subject_slug": "network-theory",
+    "subject_code": "104304",
+    "year": 2022,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/answer of the following: (Answer any\n                    seven)",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>An ideal voltage source should have</p>",
+          "options": [
+            "Large value of e.m.f",
+            "Small value of e.m.f",
+            "Zero source resistance",
+            "Infinite source resistance"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>For every tree, there will be _______ number of cut-set matrices.</p>",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following expression is true in case of open circuit parameters?</p>",
+          "options": [
+            "\\( V_1 = Z_{11}V_1 + Z_{12}I_2 \\)",
+            "\\( V_1 = Z_{11}I_1 + Z_{12}V_2 \\)",
+            "\\( V_1 = Z_{11}I_1 + Z_{12}I_2 \\)",
+            "\\( V_2 = Z_{11}I_1 + Z_{12}I_2 \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>For a T shaped network, if the Short-circuit admittance parameters are \\( Y_{11}, Y_{12}, Y_{21}\n                        \\)\n                        and \\( Y_{22} \\) then \\( Y_{11} \\) in terms of Transmission parameters can be expressed as\n                    </p>",
+          "options": [
+            "\\( Y_{11} = \\frac{D}{B} \\)",
+            "\\( Y_{11} = \\frac{C-A}{B} \\)",
+            "\\( Y_{11} = \\frac{-1}{B} \\)",
+            "\\( Y_{11} = \\frac{A}{B} \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The cut-off frequency of the constant k-low pass filter is ?</p>",
+          "options": [
+            "\\( 1/\\sqrt{LC} \\)",
+            "\\( \\frac{1}{\\pi\\sqrt{LC}} \\)",
+            "\\( \\sqrt{LC} \\)",
+            "\\( \\pi\\sqrt{LC} \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which condition determines the causality of the LTI system in terms of its impulse response?</p>",
+          "options": [
+            "Only if the value of an impulse response is zero for all negative values of time",
+            "Only if the value of an impulse response is unity for all negative values of time",
+            "Only if the value of an impulse response is infinity for all negative values of time",
+            "Only if the value of an impulse response is negative for all negative values of time"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A graph with n vertices and n-1 edges that is not a tree, is</p>",
+          "options": [
+            "A circuit",
+            "Euler",
+            "Connected",
+            "Disconnected"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>If a network function has zeros only in the left-half of the s-plane, then it is said to be</p>",
+          "options": [
+            "A stable function",
+            "A non-minimum phase function",
+            "A minimum phase function",
+            "An all-pass function"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Define tree, twigs and links of a graph.</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>What do you mean by natural response and forced response of a network?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define the following terms: (i) Branch (ii) Node (iii) Tree (iv) Loop</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Define and state the properties of incidence matrix.</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>For the graph shown below, find the incidence and cut set matrices.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/82.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Discuss in brief the Z parameters, Y parameters, hybrid parameters and ABCD parameters.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Find the Z and Y parameters for the following circuit.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/81.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Check whether the following polynomial is Hurwitz or not: \\( s^4 + 7s^3 + 4s^2 + 18s + 6 \\)</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A driving point impedance is given by: \\( Z_{LC}(s) = \\frac{s(s^2+1)(s^2+6)}{(s^2+1)(s^2+5)}\n                        \\).\n                        Obtain the first form of Cauer network.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>If the bandstop filter shown in below figure is to reject a 200 Hz sinusoid while passing other\n                        frequency, Calculate the value of L and C, take \\( R = 150 \\Omega \\) and bandwidth as 100 Hz.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/80.jpg\"/>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain Low pass filter, high pass filter, band pass filter and band stop filter with proper\n                        diagram\n                        and derivation.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>The output \\( y(t) \\) of a linear time invariant system is related to its input \\( X(t) \\) by\n                        following equation: \\( y(t) = 0.5X(t-t_d+T) + X(t-t_d) + 0.5X(t-t_d-T) \\). What is s Filter\n                        transfer\n                        function \\( H(w) \\).</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>What is the system? What are the different types of system?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Obtain the first and second Foster forms of the below reactance function: \\( Z(s) =\n                        \\frac{s(s^2+9)}{(s^2+4)(s^2+16)} \\)</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Show all possible cut-sets of the below network graph.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/79.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Obtain the values of L and C for a prototype T and \\(\\pi\\) shape low pass filters with \\( R_0\n                        =\n                        500\n                        \\Omega \\) and cut off frequency \\( f_c = 2KHz \\).</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>A second-order band pass filter is to be constructed using RC components that will only allow a\n                        range\n                        of frequencies to pass above 1kHZ and below 30kHz. Assuming that both the resistors have values\n                        of\n                        10k\\(\\Omega\\), calculate the values of the two capacitors required.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Image impedance and its relation to open circuit and short circuit impedances.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Transient response of R L series circuit to impulse signal.</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Inverse hybrid parameter of a 2 port network.</p>"
+        }
+      ]
+    }
+  ]
+}

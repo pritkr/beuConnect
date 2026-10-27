@@ -1,0 +1,198 @@
+{
+  "branch": "mech",
+  "sem": 1,
+  "subjects": [
+    {
+      "code": "100101",
+      "name": "Engineering Chemistry",
+      "vvi": [
+        {
+          "topic": "Water hardness and its determination by EDTA",
+          "note": "Hardness is the soap-consuming calcium and magnesium content, reported as mg/L CaCO₃: temporary hardness is the bicarbonates, permanent hardness the sulphates and chlorides. EDTA titrates total hardness at pH 10 with Eriochrome Black T as indicator. Boiling removes only temporary hardness; lime-soda, zeolite and ion-exchange softening are the treatment methods.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Polymers: addition and condensation polymerisation",
+          "note": "Addition polymerisation opens double bonds and adds monomers with no by-product, as in polyethylene from ethene. Condensation joins two monomers with the loss of water or another small molecule, as in nylon-6,6 from adipic acid and hexamethylene diamine. Thermoplastics soften on heating, thermosets cross-link and cannot be remelted.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Corrosion and its prevention",
+          "note": "Corrosion is electrochemical: an anodic reaction dissolves metal while a cathodic reaction reduces oxygen or hydrogen, the metal acting as a short-circuited cell. Rusting of iron needs both oxygen and water, and contact with a more noble metal accelerates it. Prevention by alloying, protective coatings, cathodic protection with a sacrificial anode or impressed current, and inhibitors.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Fuels: calorific value and combustion",
+          "note": "Calorific value is the heat released per unit mass: gross value includes the latent heat of the water formed, net value does not, and LCV = HCV − 0.09 × 587 × H% for a fuel with H% hydrogen. A bomb calorimeter measures the gross value at constant volume. Proximate analysis reports moisture, volatile matter, ash and fixed carbon.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Lubricants: mechanism and properties",
+          "note": "A lubricant keeps a film between moving surfaces: thick-film or hydrodynamic lubrication when the film is thicker than the surface asperities, thin-film at low speed and high load, and extreme-pressure lubrication with additives that react at hot spots. Viscosity and viscosity index decide the film, while pour point and flash point decide the service range. Anti-oxidants, anti-wear and pour-point depressants are the usual additives.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "100102",
+      "name": "Engineering Mathematics–I",
+      "vvi": [
+        {
+          "topic": "Rolle's theorem and Lagrange's mean value theorem",
+          "note": "Rolle: if f is continuous on [a,b], differentiable on (a,b) and f(a) = f(b), some c has f'(c) = 0. Lagrange: some c has f'(c) = (f(b) − f(a))/(b − a). State the three conditions before proving, and use the theorem to bound a function or locate a root.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Taylor and Maclaurin series expansions",
+          "note": "f(x) = Σ f⁽ⁿ⁾(a)(x−a)ⁿ/n!; Maclaurin is the case a = 0. Memorise eˣ, sin x, cos x, log(1+x) and (1+x)ⁿ, then derive an unfamiliar expansion from one of them. State the remainder if the question asks for the error.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Rank of a matrix and consistency of linear equations",
+          "note": "Reduce to row-echelon form; rank is the number of non-zero rows. For AX = B compare rank(A) with rank([A|B]): equal to the number of unknowns gives a unique solution, equal but smaller gives infinitely many, and rank(A) < rank([A|B]) means inconsistent. Also compute rank from the largest non-zero minor.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Eigenvalues and eigenvectors of a matrix",
+          "note": "Solve |A − λI| = 0 for eigenvalues, then (A − λI)X = 0 for eigenvectors. The sum of eigenvalues equals the trace and their product equals the determinant. For a symmetric matrix, eigenvectors of distinct eigenvalues are orthogonal.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Partial derivatives and Euler's theorem on homogeneous functions",
+          "note": "For a homogeneous function of degree n, x·∂u/∂x + y·∂u/∂y = n·u. Check homogeneity by replacing x with tx and y with ty: u(tx,ty) = tⁿu(x,y). Chain rule for composite functions is the other standard question.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Beta and Gamma functions",
+          "note": "Γ(n) = (n−1)! for a positive integer, Γ(1/2) = √π, and B(m,n) = Γ(m)Γ(n)/Γ(m+n). Use the relation to evaluate definite integrals that match the Beta form ∫₀¹ x^(m−1)(1−x)^(n−1) dx.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "100103",
+      "name": "Communicative English",
+      "vvi": [
+        {
+          "topic": "Tenses and subject-verb agreement",
+          "note": "Use the present simple for habits and general truths, the present continuous for an action happening now, and the present perfect for a past action with a present result. The verb agrees with its subject: a singular subject takes -s in the present simple, and two subjects joined by and take a plural verb unless they name one idea. A phrase between subject and verb does not change the number.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Active and passive voice",
+          "note": "The passive is be plus the past participle, and the object of the active sentence becomes the subject. Use it when the doer is unknown or unimportant, as in the sample was heated to 80 °C; keep the active voice when the doer matters. Only transitive verbs can be made passive.",
+          "marks": 2,
+          "confidence": "high"
+        },
+        {
+          "topic": "Technical report writing",
+          "note": "A report carries a title page, abstract, introduction that states the problem, methodology, results, discussion, conclusion and references. Write the work done in the past tense and general truths in the present, and number figures and tables and refer to each in the text. The abstract must stand alone: aim, method and main result in under 200 words.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Formal letters and email",
+          "note": "A formal letter has the sender's address, date, receiver's address, subject, salutation, a body of short paragraphs, and a complimentary close with signature. Email keeps that order but puts the subject line first and stays shorter. State the purpose in the first sentence and the action required in the last.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Precis, comprehension and paragraph development",
+          "note": "A precis restates a passage in about one-third of its length and in your own words, keeping the central idea and dropping examples and repetition. A comprehension answer quotes the line that supports it instead of paraphrasing from memory. A paragraph develops one topic sentence with supporting sentences and a closing link to the next.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Group discussion and interview",
+          "note": "A group discussion is judged on content, communication and behaviour: enter with a point that adds to the last speaker, support it with a fact, and let others finish. In an interview answer in the situation, task, action, result shape and keep each answer under two minutes. Prepare two questions about the role to ask at the end.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "100104",
+      "name": "Engineering Graphics and Design",
+      "vvi": [
+        {
+          "topic": "Projection of points and lines",
+          "note": "First-angle projection puts the object between the observer and the plane, so the top view goes below the front view; third-angle puts the plane between, so the top view goes above. A point is fixed by its distance from HP and VP. The true length and inclinations of a line come from rotating it parallel to a plane or from the trapezoidal method.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Projection of solids",
+          "note": "Start with the solid resting on HP in its simple position, draw the top and front views, then tilt it about its axis and project the final view. A pyramid or cone on its base, a cylinder on its generator and a prism on an edge are the standard cases. Mark the axis inclination in the final front view, not the top view.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Sections of solids and development of surfaces",
+          "note": "A section plane cuts the solid, and the true shape of the cut is found by projecting perpendicular to the plane or by an auxiliary view. Development unrolls the surface: a cylinder gives a rectangle of width πD, a cone gives a sector whose radius is the slant height, and a prism gives one rectangle per face. Mark the section line and hatch the cut surface.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Isometric projection",
+          "note": "The isometric axes are 120° apart and all three are equally foreshortened, so true lengths are used along the axes with an isometric scale of 0.816. Draw the enclosing box first and then the inclined edges. A circle appears as an ellipse, drawn by the four-centre method.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Orthographic views from a pictorial view",
+          "note": "Choose the most informative face as the front view, then place the top view below it and the side view beside it in first-angle projection. Visible outlines are continuous thick lines, hidden edges are dashed and centre lines are chain lines. Every feature must appear in at least one view, and the three views must line up.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "CAD: coordinates, commands and layers",
+          "note": "Model space accepts absolute coordinates, relative coordinates with the @ prefix, and polar coordinates as distance and angle. LINE, CIRCLE, ARC, OFFSET, TRIM, FILLET and ARRAY build the geometry, and layers carry colour and line type. Dimensions come from the dimension command and the drawing is plotted from paper space at a chosen scale.",
+          "marks": 2,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "100106",
+      "name": "Basic Electrical Engineering",
+      "vvi": [
+        {
+          "topic": "KVL, KCL and mesh or nodal analysis",
+          "note": "KCL: the sum of currents at a node is zero; KVL: the sum of voltages around a loop is zero. Mesh analysis writes KVL for each independent loop, nodal analysis writes KCL at each independent node. Pick one and solve the linear system; state the assumed current directions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Thevenin's and Norton's theorems",
+          "note": "Thevenin replaces a linear network by Vth in series with Rth; Norton by In in parallel with Rn, where Vth = In·Rn and Rth = Rn. Find Vth as the open-circuit voltage, In as the short-circuit current, and Rth by killing the sources and looking in. Maximum power transfer needs RL = Rth.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Single-phase AC circuits and power factor",
+          "note": "XL = 2πfL and XC = 1/(2πfC); impedance Z = R + j(XL − XC). At resonance XL = XC, Z is purely resistive and the power factor is unity. Real power P = VI cos φ, reactive Q = VI sin φ, apparent S = VI; draw the phasor diagram.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Transformers: EMF equation, losses and efficiency",
+          "note": "E = 4.44 f N Φm, so the turns ratio sets the voltage ratio. Core loss (hysteresis and eddy current) is constant with load; copper loss varies as I²R. Efficiency = output/(output + core + copper), maximum when copper loss equals core loss. An ideal transformer has no losses and no leakage.",
+          "marks": 7,
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

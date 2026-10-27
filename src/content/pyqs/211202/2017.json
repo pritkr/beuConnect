@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Examination, 2017",
+    "subject": "Mathematics-II",
+    "subject_slug": "mathematics-2",
+    "subject_code": "211202",
+    "year": 2017,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this Paper.",
+    "Attempt Five questions in all.",
+    "Question No. 1 is Compulsory.",
+    "The marks are indicated in the right-hand margin."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any seven. Choose the correct alternative in each.",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The Series $\\sum_{n=1}^\\infty \\cos(1/n)$ is\n(a) Convergent\n(b) divergent\n(c) oscillatory\n(d) none of these",
+              "id": "1i",
+              "marks": 2
+            },
+            {
+              "text": "The series of positive terms $\\sum u_n$ if $\\lim_{n \\to \\infty} u_n \\neq 0$ then the series is\n(a) Convergent\n(b) divergent\n(c) not convergent\n(d) oscillatory",
+              "id": "1ii",
+              "marks": 2
+            },
+            {
+              "text": "Consider the function $F(S) = \\frac{5}{S(S^2 + 3S + 2)}$, where $F(S)$ is the Laplace transforms of the function $f(t)$. The initial value of $f(t)$ is equal to\n(a) 5\n(b) 5/2\n(c) 5/3\n(d) 0",
+              "id": "1iii",
+              "marks": 2
+            },
+            {
+              "text": "If $f(t) = 2e^{\\log t}$, the $F(S)$ is\n(a) $2/S^2$\n(b) $1/S^2$\n(c) $2/S$\n(d) $2/S^3$",
+              "id": "1iv",
+              "marks": 2
+            },
+            {
+              "text": "If $f(x) = -f(-x)$ and $f(x)$ satisfy the Dirichlet's conditions. Then $f(x)$ can be expanded in a Fourier Series containing\n(a) only sine terms\n(b) only cosine terms\n(c) cosine terms and a constant term\n(d) sine terms and a constant term",
+              "id": "1v",
+              "marks": 2
+            },
+            {
+              "text": "The Fourier series of an odd periodic function contains only\n(a) odd harmonics\n(b) even harmonics\n(c) cosine terms\n(d) Six terms",
+              "id": "1vi",
+              "marks": 2
+            },
+            {
+              "text": "The value of the integral $\\int_0^\\infty \\int_0^\\infty e^{-x^2(1+y^2)} x \\, dx \\, dy$ is\n(a) $\\pi/2$\n(b) $\\pi/3$\n(c) $\\pi/4$\n(d) $\\pi/6$",
+              "id": "1vii",
+              "marks": 2
+            },
+            {
+              "text": "A triangle ABC consists of vertex points A(0,0), B(1,0), C(0,1). The value of the integral $\\iint 2x \\, dx \\, dy$ over the triangle is\n(a) 1\n(b) 1/3\n(c) 1/8\n(d) 1/9",
+              "id": "1viii",
+              "marks": 2
+            },
+            {
+              "text": "The divergence of vector $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$ is\n(a) $\\hat{i} + \\hat{j} + \\hat{k}$\n(b) 3\n(c) 0\n(d) 1",
+              "id": "1ix",
+              "marks": 2
+            },
+            {
+              "text": "A velocity vector is given as $\\vec{V} = 5xy\\hat{i} + 2y^2\\hat{j} + 3yz^2\\hat{k}$. The divergence of this velocity vector at (1,1,1) is\n(a) 9\n(b) 10\n(c) 14\n(d) 15",
+              "id": "1x",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "text": "Test the convergence of the series $\\sum \\left( \\frac{\\sqrt{n^2+1}-n}{n^p} \\right)$.",
+          "marks": 7,
+          "id": "2a"
+        },
+        {
+          "text": "Test the convergence of the series $\\sum \\frac{4.7.10 \\dots (3n+1) x^n}{n!}$.",
+          "marks": 7,
+          "id": "2b"
+        },
+        {
+          "text": "Find the Laplace transforms of (i) $\\cos^2 t$ (ii) $\\sin^2 t$.",
+          "marks": 7,
+          "id": "3a"
+        },
+        {
+          "text": "Find the Laplace transforms of $\\frac{\\sinh t}{t}$.",
+          "marks": 7,
+          "id": "3b"
+        },
+        {
+          "text": "Find the Laplace transforms of $e^{-4t} \\cdot \\sin ht \\sin t$.",
+          "marks": 7,
+          "id": "4a"
+        },
+        {
+          "text": "Show That $\\int_0^\\infty \\left( \\frac{\\sin 2t + \\sin 3t}{t e^t} \\right) dt = \\frac{3\\pi}{4}$.",
+          "marks": 7,
+          "id": "4b"
+        },
+        {
+          "text": "Find the Fourier series of $f(x) = x^2$ in the interval $(0, 2\\pi)$ and hence deduce that $\\frac{\\pi^2}{12} = \\frac{1}{1^2} - \\frac{1}{2^2} + \\frac{1}{3^2} - \\frac{1}{4^2} + \\dots$.",
+          "marks": 7,
+          "id": "5a"
+        },
+        {
+          "text": "Find the Fourier series of $f(x) = (4-x^2)$ in the interval $(0, 2)$. Hence, deduce that $\\frac{1}{1^2} + \\frac{1}{2^2} + \\frac{1}{3^2} + \\frac{1}{4^2} + \\dots = \\frac{\\pi^2}{6}$.",
+          "marks": 7,
+          "id": "5b"
+        },
+        {
+          "text": "Find the Fourier series of $f(x) = |\\cos x|$ in the interval $(-\\pi, \\pi)$.",
+          "marks": 7,
+          "id": "6a"
+        },
+        {
+          "text": "Find the half-range sine series of $f(x) = x, 0 < x < 1$ and $f(x) = (2-x), 1 < x < 2$ and hence deduce that $\\frac{1}{1^2} + \\frac{1}{3^2} + \\frac{1}{5^2} + \\dots = \\frac{\\pi^2}{8}$.",
+          "marks": 7,
+          "id": "6b"
+        },
+        {
+          "text": "Using the transformation $x+y = u$ and $y=uv$, show that $\\int_0^1 \\int_0^{1-x} e^{y/(x+y)} \\, dy \\, dx = \\frac{1}{2}(e-1)$.",
+          "marks": 7,
+          "id": "7a"
+        },
+        {
+          "text": "Evaluate $\\iiint x^2 yz \\, dx \\, dy \\, dz$ over the region bounded by the planes $x=0, y=0, z=0$ and $x+y+z=1$.",
+          "marks": 7,
+          "id": "7b"
+        },
+        {
+          "text": "Find the volume bounded by the cylinders $x^2 + y^2 = 2ax$ and $z^2 = 2ax$.",
+          "marks": 7,
+          "id": "8a"
+        },
+        {
+          "text": "Evaluate $\\int_C \\vec{F} \\cdot d\\vec{r}$ where $\\vec{F} = (x^2+y^2)\\hat{i} - 2xy\\hat{j}$ and $C$ is the rectangle in the xy-plane bounded by $y=0, x=a, y=b, x=0$.",
+          "marks": 7,
+          "id": "8b"
+        },
+        {
+          "text": "Find the directional derivative of $\\phi = x^2 - y^2 + 2z^2$ at the point P(1,2,3) in the direction of the line PQ where Q is the point (5,0,4). In what direction it will be maximum and find the maximum value of it.",
+          "marks": 7,
+          "id": "9a"
+        },
+        {
+          "text": "Prove that $\\text{div}(\\text{grad } r^n) = n(n+1)r^{n-2}$, where $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$.",
+          "marks": 7,
+          "id": "9b"
+        }
+      ]
+    }
+  ]
+}

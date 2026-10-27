@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2022",
+    "subject": "Digital Signal Processing",
+    "subject_slug": "digital-signal-processing",
+    "subject_code": "100606",
+    "year": 2022,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer the following questions (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "List any two properties of discrete-time systems.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Write the relationship between DFT and $Z$-transform.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "What is the condition on ROC for a system to be causal and stable?",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Write the differences between one-sided and two-sided $Z$-transforms.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "How is Chebyshev approximation different from Butterworth approximation in terms of frequency response of an LPF?",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "If $X(k)$ is the $N$-point DFT of $x(n)$, then what is the DFT of $W_N^{nl} x(n)$?",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "What do you mean by transposed form structure?",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "Define the term twiddle factor.",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "What are the salient features of windowing technique?",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "Define the term cross-correlation and write its significance.",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Determine the solution of the difference equation $$y(n) = \\frac{5}{6}y(n-1) - \\frac{1}{6}y(n-2) + x(n)$$ when the forcing function is $x(n) = 2^n u(n)$.",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "A causal system is represented by $$y(n) + 0.25y(n-1) = x(n) + 0.5x(n-1)$$ Compute $H(z)$ and find the unit impulse response of the system in analytical form.",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain in detail how a band-limited signal can be reconstructed from its samples in time and frequency domains without any loss of signal information.",
+              "marks": 10,
+              "id": "3_sub"
+            },
+            {
+              "number": "b",
+              "text": "Determine the terms sampling theorem, Nyquist rate, Nyquist interval and aliasing.",
+              "marks": 4,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Determine all possible signals of $x(n)$ associated with the following $Z$-transforms :",
+              "subquestions": [
+                {
+                  "number": "i",
+                  "text": "$$X(z) = \\frac{1}{1 - 0.5z^{-1} + 0.25z^{-2}}$$"
+                },
+                {
+                  "number": "ii",
+                  "text": "$$X(z) = \\frac{5z^{-1}}{(1 - 2z^{-1})(1 - 3z^{-2})}$$"
+                }
+              ],
+              "marks": 12,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "Determine $Z$-transform and ROC of the finite-duration signal $$x(n) = \\{1, 0, 4, 5, 7, 0, 1\\}$$ (with the arrow pointing at the first 1)",
+              "marks": 2,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "State and prove time reversal property of DFT.",
+              "marks": 3,
+              "id": "5_sub"
+            },
+            {
+              "number": "b",
+              "text": "Find the circular convolution of the two sequences $x_1(n) = \\{1, 2, 3, 1\\}$ and $x_2(n) = \\{4, 3, 2, 2\\}$ using concentric circles method. Verify the results using DFT-IDFT method.",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "number": "c",
+              "text": "The 4-point DFT $x(n)$ (real sequence) is $X(k) = \\{1, j, 1, -j\\}$. Find the DFT of the following sequences :",
+              "subquestions": [
+                {
+                  "number": "i",
+                  "text": "$x_1(n) = x((n+1))_4$"
+                },
+                {
+                  "number": "ii",
+                  "text": "$x_2(n) = x((4-n))_4$"
+                }
+              ],
+              "marks": 4,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Realize the following system using direct form-I, direct form-II, cascade form and parallel form : $$y(n) = 0.75y(n-1) - 0.125y(n-2) + 6x(n) + 7x(n-1) + x(n-2)$$ ",
+              "marks": 12,
+              "id": "6_sub"
+            },
+            {
+              "number": "b",
+              "text": "Realize the FIR filter given by $h(n) = (0.5)^n [u(n) - u(n-4)]$ using direct form-I.",
+              "marks": 2,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Derive the expressions for order and cut-off frequency of a Butterworth filter.",
+              "marks": 5,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "Determine the system function $H(z)$ of a Chebyshev filter type-I to meet the following specifications : \\n - Passband ripple $\\le 3$ dB \\n - Stopband attenuation $\\ge 20$ dB \\n - Passband edge of $0.3\\pi$ rad/sample \\n - Stopband edge of $0.6\\pi$ rad/sample \\n Use bilinear transformation method and assume $T = 1$sec.",
+              "marks": 9,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What are the effects of finite register length in the implementation of digital filters?",
+              "marks": 4,
+              "id": "8_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain how the DFT and FFT are helpful in power spectral estimation.",
+              "marks": 4,
+              "id": "8_sub"
+            },
+            {
+              "number": "c",
+              "text": "What is the need for multirate signal processing? Explain the process of interpolation and decimation with suitable examples.",
+              "marks": 6,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Obtain the estimate of autocorrelation function and power spectral density for random signals.",
+              "marks": 4,
+              "id": "9_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain the concept of Wiener filtering. Derive weight expression for Wiener filter and also obtain the expression for minimum mean square error.",
+              "marks": 10,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

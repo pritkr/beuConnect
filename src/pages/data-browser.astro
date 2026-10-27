@@ -1,0 +1,273 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+// @ts-ignore - Importing DataBrowser script client-side
+import DataBrowserScript from "../components/DataBrowser/DataBrowser.ts?url";
+
+export const prerender = true;
+---
+
+<Layout title="BEU Student Data Browser | Fast & Private" description="Ultra-fast Mode A/B Student Data Browser. Instantly scan semesters, sort by grades, and drill down into 8-sem profiles." wide={true}>
+	<Header />
+
+	<section class="table-shell" id="data-browser-app">
+		<header class="table-header">
+			<h1 style="view-transition-name:restab">Student Data Browser</h1>
+			<p>High-performance wide-table viewer. Scan thousands of records instantly. Native sorting.</p>
+		</header>
+
+		<!-- Control Filter UI -->
+		<div class="glass-card controls-card">
+			<form id="dbFilterForm">
+				<div class="control-grid-inline">
+					<div class="filter-item">
+						<label for="dbBatch">Batch</label>
+						<select id="dbBatch" name="batch" disabled>
+							<option value="">Loading...</option>
+						</select>
+					</div>
+
+					<div class="filter-item">
+						<label for="dbBranch">Branch</label>
+						<select id="dbBranch" name="branch" disabled>
+							<option value="">Loading...</option>
+						</select>
+					</div>
+
+					<div class="filter-item">
+						<label for="dbSemester">Sem</label>
+						<select id="dbSemester" name="semester" disabled>
+							<option value="">Loading...</option>
+						</select>
+					</div>
+
+					<div class="filter-item">
+						<label for="dbCollege">College</label>
+						<select id="dbCollege" name="college" disabled>
+							<option value="">Loading...</option>
+						</select>
+					</div>
+
+					<div class="filter-item">
+						<label for="dbSortBy">Sort By</label>
+						<select id="dbSortBy" disabled>
+							<option value="SGPA">SGPA</option>
+							<option value="CGPA">CGPA</option>
+							<option value="Name">Name</option>
+							<option value="RegNo">RegNo</option>
+						</select>
+					</div>
+					
+					<div class="filter-item">
+						<label for="dbSortDir">Order</label>
+						<select id="dbSortDir" disabled>
+							<option value="desc">High to Low ↓</option>
+							<option value="asc">Low to High ↑</option>
+						</select>
+					</div>
+					
+					<div class="filter-item search-item">
+						<label for="dbSearch">Search Name / RegNo</label>
+						<input type="search" id="dbSearch" placeholder="Type to filter instantly..." />
+					</div>
+
+					<div class="filter-item btn-item">
+						<!-- Invisible label to align the button correctly with the inputs -->
+						<label aria-hidden="true">&nbsp;</label>
+						<button type="button" id="dbExportBtn" class="outline" disabled>📥 Export</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!-- UI State Overlays -->
+		<div id="dbLoading" class="status loading" style="display:flex;">
+			<div aria-busy="true">Fetching Manifest & Dictionary...</div>
+		</div>
+		
+		<div id="dbError" class="status error" style="display:none; color: var(--pico-del-color);"></div>
+
+		<!-- Mode A: The Virtualized Table (no glass-card, no max-height, scrolls to bottom) -->
+		<div id="dbTableContainer" class="table-container" style="display:none; overflow-x: auto; border: 1px solid var(--pico-table-border-color); position: relative;">
+			<table id="dbTable" style="margin: 0; table-layout: fixed; width: max-content; z-index: 1;">
+				<!-- Table Header Rendered by Vanilla JS dynamically -->
+				<thead id="dbThead" style="position: sticky; top: 0; z-index: 10; background: var(--pico-background-color);">
+				</thead>
+				<tbody id="dbTbody" style="position: relative;">
+					<!-- Virtualized rows injected here -->
+				</tbody>
+			</table>
+			<!-- Scroll state padding for virtualizer shifted inside to define bounds -->
+			<div id="dbVirtualPadding" style="display:none; width: 1px; pointer-events: none;"></div>
+		</div>
+
+		<!-- Mode B: The Student Profile Drill-Down -->
+		<div id="dbProfileContainer" class="profile-container glass-card" style="display:none; margin-top: 1rem; position: relative;">
+			<button class="outline" id="dbCloseProfileBtn" style="position: absolute; right: 1rem; top: 1rem; padding: 0.2rem 1rem;">✕ Close</button>
+			<div class="profile-header">
+				<h2 id="pfName" style="margin-bottom: 0.2rem;">Student Name</h2>
+				<p id="pfReg" style="color: var(--pico-muted-color);">Registration No</p>
+			</div>
+			
+			<div class="grid profile-stats" style="margin-top: 1rem;">
+				<div>
+					<small>Current CGPA</small>
+					<h3 id="pfCgpa">--</h3>
+				</div>
+				<div>
+					<small>Current Rank</small>
+					<h3 id="pfRank">--</h3>
+				</div>
+				<div>
+					<small>SGPA History</small>
+					<div id="pfSparkline" class="sparkline-box">
+						<!-- Mini CSS bars generated here -->
+					</div>
+				</div>
+			</div>
+
+			<details id="pfHistoryDetails" style="margin-top: 2rem;">
+				<summary><strong>View 8-Semester Detailed History</strong></summary>
+				<div id="pfHistoryLoading" style="display:none;" aria-busy="true">Loading historical profile...</div>
+				<div id="pfHistoryError" style="display:none; color: var(--pico-del-color);"></div>
+				<div id="pfHistoryContent">
+					<!-- Nested accordions per semester injected here -->
+				</div>
+			</details>
+		</div>
+
+	</section>
+
+	<Footer />
+</Layout>
+
+<style>
+	/* EXTREME COMPACT MODE OVERRIDES FOR DATA BROWSER */
+	:root {
+		--pico-spacing: 0.25rem;
+		--pico-typography-spacing-vertical: 0.25rem;
+		--pico-form-element-spacing-vertical: 0.25rem;
+		--pico-form-element-spacing-horizontal: 0.5rem;
+	}
+
+	.table-shell {
+		max-width: 100% !important;
+		padding: 0.5rem !important;
+		margin: 0 !important;
+	}
+
+	.table-header h1 {
+		font-size: 1.25rem;
+		margin-bottom: 0;
+	}
+
+	.table-header p {
+		font-size: 0.8rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.controls-card {
+		padding: 0.5rem !important;
+		margin-bottom: 0.5rem !important;
+	}
+
+	/* Micro Filters 1-Line Grid */
+	.control-grid-inline {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		align-items: flex-end; /* All labels top, inputs bottom */
+	}
+	
+	.filter-item {
+		flex: 1 1 auto;
+		min-width: 70px; /* Compress dropdowns as much as possible */
+		margin-bottom: 0 !important;
+	}
+
+	.search-item {
+		flex: 3 1 auto;
+		min-width: 130px; /* Search box can have a bit more space */
+	}
+
+	.btn-item {
+		flex: 0 1 auto; 
+	}
+
+	.control-grid-inline label {
+		font-size: 0.65rem;
+		text-transform: uppercase;
+		margin-bottom: 0.1rem;
+		display: block;
+		white-space: nowrap;
+	}
+	.control-grid-inline select,
+	.control-grid-inline input,
+	.control-grid-inline button {
+		font-size: 0.75rem;
+		height: 26px; /* Insanely short inputs */
+		padding: 0 0.4rem;
+		border-radius: 4px;
+		margin-bottom: 0 !important;
+	}
+
+	/* Ultra Compact Virtual Table - scrolls naturally in main view */
+	.table-container {
+		will-change: scroll-position;
+		transform: translateZ(0); /* Hardware accel */
+		border-radius: 4px;
+		width: 100%;
+	}
+
+	#dbTable {
+		font-size: 0.75rem; /* Tiny readable text */
+		line-height: 1.1;
+	}
+
+	#dbTable th, #dbTable td {
+		padding: 0.25rem 0.4rem; /* Minimal padding */
+		height: 28px; /* Force rows to be extremely tight */
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	#dbTable th {
+		cursor: pointer;
+		user-select: none;
+		font-weight: 600;
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+	}
+
+	#dbTable th:hover {
+		background: var(--pico-form-element-background-color) !important;
+	}
+
+	/* Sticky constraint for first two columns (RegNo, Name) */
+	#dbThead th.sticky-col,
+	#dbTbody td.sticky-col {
+		position: sticky;
+		left: 0;
+		background: var(--pico-background-color);
+		z-index: 2;
+		border-right: 1px solid var(--pico-table-border-color);
+	}
+	
+	#dbThead th.sticky-col {
+		z-index: 11; /* Above standard sticky header */
+	}
+	
+	/* Semantic Grade Colors */
+	:global(.grade-row-o) td { border-left: 2px solid #10b981; }
+	:global(.grade-row-f) td { border-left: 2px solid #ef4444; }
+	:global(.grade-row-borderline) td { border-left: 2px solid #f59e0b; }
+</style>
+
+<script type="module">
+	// Load the orchestrator explicitly as a module
+	import { initDataBrowser } from "/src/components/DataBrowser/DataBrowser.ts";
+	document.addEventListener('DOMContentLoaded', initDataBrowser);
+</script>

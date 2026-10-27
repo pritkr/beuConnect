@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2019 (New Course)",
+    "subject": "Data Structures and Algorithms",
+    "subject_slug": "data-structures-and-algorithms",
+    "subject_code": "100304",
+    "year": 2019,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of any seven of the following\n                    questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following points is/are true about linked list data structure when it is compared\n                        with\n                        array?</p>",
+          "options": [
+            "Arrays have better cache locality that can make them better in terms of performance.",
+            "It is easy to insert and delete elements in linked list.",
+            "The size of array has to be pre-decided, linked lists can change their size any time.",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>What is the functionality of the following code?<br/>\n                        \\( public\\ void\\ function(Node\\ node)\\ \\{ \\)<br/>\n                        \\( \\quad if(size==0)\\ head=node; \\)<br/>\n                        \\( \\quad else\\ \\{ \\)<br/>\n                        \\( \\quad \\quad Node\\ temp,\\ cur; \\)<br/>\n                        \\( \\quad \\quad for(cur=head; (temp=cur.getNext())! \\) \\(=null; cur=temp); \\)<br/>\n                        \\( \\quad \\quad cur.setNext(node); \\)<br/>\n                        \\( \\quad \\} \\)<br/>\n                        \\( \\quad size++; \\)<br/>\n                        \\( \\} \\)</p>",
+          "options": [
+            "Inserting a node at the beginning of the list",
+            "Deleting a node at the beginning of the list",
+            "Inserting a node at the end of the list",
+            "Deleting a node at the end of the list"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>What is the space complexity for deleting a linked list?</p>",
+          "options": [
+            "\\( O(1) \\)",
+            "\\( O(n) \\)",
+            "Either \\( O(1) \\) or \\( O(n) \\)",
+            "\\( O(\\log n) \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The situation when in a linked list START=NULL is</p>",
+          "options": [
+            "underflow",
+            "overflow",
+            "housefull",
+            "saturated"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What would be the asymptotic time complexity to add a node at the end of singly linked list, if\n                        the\n                        pointer is initially pointing to the head of the list?</p>",
+          "options": [
+            "\\( O(1) \\)",
+            "\\( O(n) \\)",
+            "\\( \\Theta(n) \\)",
+            "\\( \\Theta(1) \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What kind of linked list is best to answer question like \"What is the item at position n\"?</p>",
+          "options": [
+            "Singly linked list",
+            "Doubly linked list",
+            "Circular linked list",
+            "Array implementation of linked list"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A variation of linked list is circular linked list, in which the last node in the list points to\n                        first node of the list. One problem with this type of list is</p>",
+          "options": [
+            "it wastes memory space since the pointer head already points to the first node and thus the\n                            list\n                            node does not need to point to the first node",
+            "it is not possible to add a node at the end of the list",
+            "it is difficult to traverse the list as the pointer of the last node is now not NULL",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Each node in a linked list must contain at least</p>",
+          "options": [
+            "three fields",
+            "two fields",
+            "four fields",
+            "five fields"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A linear list in which the last node points to the first node is</p>",
+          "options": [
+            "singly linked list",
+            "circular linked list",
+            "doubly linked list",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>In a linked list, insertion can be done at</p>",
+          "options": [
+            "beginning",
+            "end",
+            "middle",
+            "All of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What is a Hash Table, and what is the average case and worst-case time for each of its\n                        operations?\n                        How can we use this structure to find all anagrams in a dictionary?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Describe insertion in max heap tree with example from the following list of numbers: 33, 42, 67,\n                        23,\n                        44, 49, 74</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Sort the given values using quicksort and write time complexity of algorithm: 65, 70, 75, 80, 85,\n                        60,\n                        55, 50, 45</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Insert the following sequence of elements into an AVL tree, starting with an empty tree: 10, 20,\n                        15,\n                        25, 30, 16, 18, 19</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Delete 30 in the AVL tree that you got.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Write algorithm for quicksort and mention time and space complexity in each case.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Define collision in hashing. What are the different methodologies to resolve collision? Explain\n                        briefly.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Construct binary search tree and write pre- and post-order traversals of this tree: 8, 3, 1, 10,\n                        6,\n                        14, 4, 7, 13, 22, 5</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Write algorithm to count leaf node in binary tree and check whether tree is balanced or not.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Write a recursive and iterative version of insertion sort algorithm and mention time complexity.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>BFS</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>DFS</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Binary search tree</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Balance factor</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 7th Semester Exam., 2019",
+    "subject": "POWER ELECTRONICS",
+    "subject_slug": "power-electronics",
+    "subject_code": "031709",
+    "year": 2019,
+    "semester": 7,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct option of the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "A single-phase fully controlled thyristor bridge AC-DC converter is operating at a firing angle of $25^\\circ$ and an overlap angle of $10^\\circ$ with constant DC output current 20 A. The fundamental power factor at input AC mains is",
+              "options": [
+                "0.827",
+                "0.866",
+                "0.78",
+                "0.9"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "A UJT used for triggering an SCR has the supply voltage of $V_{bb} = 30\\text{ V}$. The intrinsic standoff ratio is 0.82. The bias voltage required to conduct the UJT is",
+              "options": [
+                "30 V",
+                "$\\ge 20.32\\text{ V}$",
+                "36.5 V",
+                "$\\ge 25.1\\text{ V}$"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "The average on state current for an SCR is 30 A for a resistive load. If an inductance of 7 mH is included in the load, then average on state current would be",
+              "options": [
+                "30 A",
+                "15 A",
+                "less than 30 A",
+                "more than 30 A"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "Analysis of voltage waveform of a single-phase bridge converter shows that it contains $x$% of 6th harmonic. The 6th harmonic content of the voltage waveform of a 3-phase bridge converter would be",
+              "options": [
+                "less that $x$% due to an increase in the number of pulses",
+                "equal to $x$%, the same as that of single-phase converter",
+                "greater than $x$% due to changes in the input and output voltages of the converter",
+                "difficult to predict as the analysis of converters is not governed by any generalized theory"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "A thyristor is triggered by a pulse train of 5 kHz. The duty ratio is 0.4. If the allowable average power is 100 W, then the maximum allowable gate drive power is",
+              "options": [
+                "40 W",
+                "250 W",
+                "350 W",
+                "150 W"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "An SCR has an anode supply voltage of 200 V r.m.s., 50 Hz applied through a 100 ohm resistor and fired at an angle of $60^\\circ$. Assume no voltage drop, the output r.m.s. voltage is",
+              "options": [
+                "282.78 V",
+                "126.78 V",
+                "79.78 V",
+                "50.78 V"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "In a 3-phase half-wave diode rectifier, if $V_m$ is the maximum value of per phase voltage, then each diode is subjected to peak inverse voltage of",
+              "options": [
+                "$V_m$",
+                "$2 V_m$",
+                "$3 V_m$",
+                "$\\sqrt{3} V_m$"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "A half-controlled single-phase bridge rectifier is supplying an R-L load. It is operated at a firing angle $\\alpha$ and the load current is continuous. The fraction of cycle that the freewheeling diode conduct is",
+              "options": [
+                "$\\frac{\\alpha}{2\\pi}$",
+                "$\\frac{\\alpha}{\\pi}$",
+                "$1 - \\frac{\\alpha}{\\pi}$",
+                "50%"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "A half-wave rectifier circuit with a capacitive filter is connected to 200 volts, 50 Hz AC line. The output voltage across the capacitor should be approximately",
+              "options": [
+                "280 V",
+                "300 V",
+                "180 V",
+                "80 V"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "A 3-phase bridge rectifier charges a 240 V battery. The rectifier is given a 3-phase, 230 V supply. The current limiting resistance in series with the battery is of $8\\Omega$. The average value of battery charging current is",
+              "options": [
+                "8.82 A",
+                "12.56 A",
+                "9.69 A",
+                "6.54 A"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "Explain the fully-controlled rectifier with R-L load with neat conduction waveforms.",
+          "marks": 14
+        },
+        {
+          "id": "3a",
+          "text": "Draw the V-I characteristics of SCR and explain various modes of operation.",
+          "marks": 7
+        },
+        {
+          "id": "3b",
+          "text": "Discuss about power MOSFET and its characteristics.",
+          "marks": 7
+        },
+        {
+          "id": "4",
+          "text": "If the half-wave controlled rectifier has a purely resistive load of $R$ and the delay angle is $60^\\circ$, determine the-",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "4a",
+              "text": "rectification efficiency;",
+              "marks": null
+            },
+            {
+              "id": "4b",
+              "text": "form factor;",
+              "marks": null
+            },
+            {
+              "id": "4c",
+              "text": "ripple factor;",
+              "marks": null
+            },
+            {
+              "id": "4d",
+              "text": "transformer utilization factor;",
+              "marks": null
+            },
+            {
+              "id": "4e",
+              "text": "peak inverse voltage for SCR $T_1$.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "5a",
+          "text": "Draw and explain the equivalent circuit and V-I characteristics of the UJT in detail.",
+          "marks": 7
+        },
+        {
+          "id": "5b",
+          "text": "Compare the R firing circuit and R-C firing circuit.",
+          "marks": 7
+        },
+        {
+          "id": "6a",
+          "text": "For a single-phase quasi square wave inverter having resistive load, derive an expression for (i) r.m.s. output voltage, (ii) r.m.s. output current and (iii) load power.",
+          "marks": 7
+        },
+        {
+          "id": "6b",
+          "text": "A 3-phase bridge inverter is operated from 200 V DC supply in $180^\\circ$ mode. Determine (i) r.m.s. output voltage, (ii) r.m.s. value of fundamental component of line voltage.",
+          "marks": 7
+        },
+        {
+          "id": "7a",
+          "text": "A DC chopper circuit connected to a 100 V DC source supplies an inductive load having 40 mH in series with a resistance of $5\\Omega$. A freewheeling diode is placed across the load. The load current varies between the limits of 10 A and 12 A. Determine the time ratio of the chopper.",
+          "marks": 7
+        },
+        {
+          "id": "7b",
+          "text": "Describe the principle of operation of step-down chopper or buck converter.",
+          "marks": 7
+        },
+        {
+          "id": "8",
+          "text": "Explain the time ratio control and current limit control of DC choppers.",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "text": "Explain the bidirectional AC voltage controller with R-load.",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

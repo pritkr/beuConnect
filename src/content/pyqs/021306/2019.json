@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2019 (Old Course)",
+    "subject": "Strength of Material",
+    "subject_slug": "strength-of-material",
+    "subject_code": "021306",
+    "year": 2019,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>A material with identical properties in all directions is known as</p>",
+          "options": [
+            "homogeneous",
+            "isotropic",
+            "elastic",
+            "divided"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Hooke's law is valid up to the</p>",
+          "options": [
+            "elastic limit",
+            "yield point",
+            "limit of proportionality",
+            "ultimate point"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The ratio of lateral strain to linear strain is known as</p>",
+          "options": [
+            "modulus of rigidity",
+            "elastic limit",
+            "Poisson's ratio",
+            "modulus of elasticity"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The variation of shear stress in a circular shaft subjected to torsion is</p>",
+          "options": [
+            "linear",
+            "parabolic",
+            "hyperbolic",
+            "uniform"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The variation of shear force due to a uniformly distributed load is by</p>",
+          "options": [
+            "cubic law",
+            "parabolic law",
+            "linear law",
+            "uniform law"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The maximum bending moment in a simply supported beam carrying a point load at mid span is</p>",
+          "options": [
+            "\\( Wl/2 \\)",
+            "\\( Wl/4 \\)",
+            "\\( Wl/8 \\)",
+            "\\( Wl/6 \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In a Mohr's circle, the radius gives the value of the</p>",
+          "options": [
+            "minimum shear stress",
+            "maximum normal stress",
+            "minimum normal stress",
+            "maximum shear stress"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The shear stress on the principal plane is</p>",
+          "options": [
+            "\\( (\\sigma_x + \\sigma_y)/2 \\)",
+            "\\( (\\sigma_x - \\sigma_y)/2 \\)",
+            "\\( \\sigma_x + \\sigma_y \\)",
+            "zero"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In a thin cylinder, the ratio of hoop stress to longitudinal stress is</p>",
+          "options": [
+            "\\( 1/4 \\)",
+            "\\( 1/2 \\)",
+            "\\( 2 \\)",
+            "\\( 4 \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>In a thin cylinder, the hoop stress is given by</p>",
+          "options": [
+            "\\( pd/4t \\)",
+            "\\( pd/t \\)",
+            "\\( pd/2t \\)",
+            "\\( 2pd/t \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What do you understand by stress and strain? Explain the St. Venant's principles with neat and\n                        clean diagrams.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>A circular steel bar of various cross sections is subjected to a pull of \\( 800 \\text{ kN} \\)\n                        as shown in figure below. Determine the extension of the bar.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/40.jpg\"/>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>Explain Hooke's law for isotropic and elastic materials.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>A bar of \\( 24 \\text{ mm} \\) diameter and \\( 400 \\text{ mm} \\) length is acted upon by an\n                        axial load of \\( 38 \\text{ kN} \\). The elongation of the bar and the change in diameter are\n                        measured as \\( 0.165 \\text{ mm} \\) and \\( 0.0031 \\text{ mm} \\) respectively. Determine (i)\n                        the Poisson's ratio; (ii) the values of the three moduli.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Two parallel walls, \\( 8 \\text{ m} \\) apart, are to be stayed together by a steel rod of \\(\n                        30 \\text{ mm} \\) diameter with the help of washers and nuts at the ends. The steel rod is\n                        passed through the metal plates and is heated. When its temperature is raised to \\(\n                        90^{\\circ}\\text{C} \\), the nuts are tightened. Determine the pull in the bar when it is\n                        cooled to \\( 24^{\\circ}\\text{C} \\). (i) if the ends do not yield. (ii) the total yielding at\n                        the ends is \\( 2 \\text{ mm} \\). Take \\( E = 205 \\text{ GPa} \\) and coefficient of thermal\n                        expansion of steel \\( \\alpha_s = 11 \\times 10^{-6}/^{\\circ}\\text{C} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>When does a shaft undergo torsion? Derive an expression for the maximum torque transmitted by a\n                        circular solid shaft in torsion.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Two shafts of the same material and of the same lengths are subjected to the same torque. The\n                        first shaft is of a solid circular section and second is of hollow circular section whose\n                        internal diameter is \\( 2/3 \\) of the outside diameter. If the maximum shear stress developed\n                        in each shaft is also the same, compare the weights of the shaft.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>How many kinds of load a beam can be subjected to? Also explain with neat diagrams, how many\n                        kinds of support can be provided to beams.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>A \\( 10 \\text{ m} \\) long simply supported beam carries two-point loads of \\( 10 \\text{ kN}\n                        \\) and \\( 6 \\text{ kN} \\) at \\( 2 \\text{ m} \\) and \\( 9 \\text{ m} \\) respectively from\n                        the left end. It also has a uniformly distributed load of \\( 4 \\text{ kN/m} \\) run for the\n                        length between \\( 4 \\text{ m} \\) and \\( 7 \\text{ m} \\) from the left end. Draw shear force\n                        and bending moment diagrams.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is the governing differential equation used for finding the deflection of beams? Using the\n                        method of integration, derive an expression for the deflection of a cantilever beam subjected to\n                        a concentrated point load at the free end.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A simply supported beam of \\( 12 \\text{ m} \\) span carries a concentrated load of \\( 30\n                        \\text{ kN} \\) at a distance of \\( 9\\text{ m} \\) from the end A as shown in figure below.\n                        Determine the deflection at the load point and the slopes at the load point and at the two ends.\n                        Take \\( E = 205 \\text{ GPa} \\) and \\( I = 2 \\times 10^9 \\text{ mm}^4 \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/39.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A rectangular bar of cross-sectional area \\( 10000 \\text{ mm}^2 \\) is subjected to an axial\n                        load of \\( 20 \\text{ kN} \\). Determine the normal and shear stresses on a section which is\n                        inclined at an angle of \\( 30^{\\circ} \\) with normal cross-section of the bar.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A rectangular block is subjected to two perpendicular stresses of \\( 10 \\text{ MPa} \\) tension\n                        and \\( 10 \\text{ MPa} \\) compression. Determine the stresses on planes inclined at (i) \\(\n                        30^{\\circ} \\), (ii) \\( 45^{\\circ} \\) and (iii) \\( 60^{\\circ} \\) with the plane of\n                        compressive stress using the method of Mohr's circle.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A pipe of \\( 100 \\text{ mm} \\) external diameter and \\( 20 \\text{ mm} \\) thickness carries\n                        water at a pressure of \\( 20 \\text{ MPa} \\). Determine the maximum and minimum intensities of\n                        hoop stresses in the section of pipe. Also, plot the variation of hoop and radial stresses\n                        across the thickness of pipe.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Derive an expression for maximum shear stress of a thin cylinder.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What do you understand by strain energy? Define and derive Castigliano's first theorem.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>A tensile load of \\( 60 \\text{ kN} \\) is gradually applied to a circular bar of \\( 4 \\text{\n                        cm} \\) diameter and \\( 5 \\text{ m} \\) long. If the value of \\( E = 2.0 \\times 10^5 \\text{\n                        N/mm}^2 \\), determine- (i) stretch in the rod; (ii) stress in the rod; (iii) strain energy\n                        absorbed by the rod.</p>"
+        }
+      ]
+    }
+  ]
+}

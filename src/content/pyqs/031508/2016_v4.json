@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2016",
+    "subject": "Power System-II",
+    "subject_slug": "power-system-ii",
+    "subject_code": "031508",
+    "year": 2016,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are Nine questions in this paper.",
+    "Attempt five questions in all.",
+    "Question No. 1 is Compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Write short answers of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>What are superheater and reheater?</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>On what factors does the power output of hydro-plant depends?</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>What is load duration curve? What information does it provides?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Name some of the categories of heat losses in a thermal plant.</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Define critical clearing angle in equal area criterion?</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Why ash handling plant necessary in thermal power plant?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>What is two par tariff?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>What is hydrograph? What information does it provides?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>List the different methods to improve transient stability.</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Define the sequence impedances.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define the terms plant capacity factor and plant use factor and explain their importance in an\n                        electrical power system. Also explain the effect of the load factor on the cost of generation.\n                    </p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>The power station supplies the peak loads of 25 MW, 20 MW and 30 MW to three localities. The\n                        annual\n                        load factor is 0.60 pu and the diversity of the load at the station is 1.65 pu. Calculate: (a)\n                        The\n                        maximum demand on the station. (b) The installed capacity. (c) The energy supplied in a year.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Derive the sequence impedance of transmission lines.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>A set of unbalanced line currents in a three phase four wire system in as follows: \\( I_a = -j6\n                        A\n                        \\), \\( I_b = (-8+j5) A \\) and \\( I_c = 7 A \\). Determine the zero sequence, positive\n                        sequence\n                        and negative sequence components of the current.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Prove that a line-to-ground fault at the terminals for a synchronous generator with solidly\n                        grounded\n                        neutral is more severe than a three-phase fault.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A 100 MVA, 11 KV, three-phase synchronous generator was subjected to different type of faults.\n                        The\n                        faults currents are as follows: LG fault - 4200 A; LL fault - 2600 A; LLL fault - 2000 A. The\n                        generator neutral is solidly grounded. Find the per unit values of the three sequence reactances\n                        of\n                        the generator.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Distinguish between steady state and transient stability of a power system and also discuss the\n                        factors on which these depends.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>A 100 MVA, 2 pole, 60 Hz generator has a moment of inertia of \\( 50 \\times 10^3 \\text{ kg-m}^2\n                        \\). Determine the following: (a) The energy stored in the rotor at the rated speed (b) The\n                        angular\n                        Momentum M and (c) The inertia constant H.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A transmission line of reactance 0.1 H and resistance 5 ohms is suddenly short circuited at \\( t\n                        = 0\n                        \\) seconds at the bar end as shown in the figure [with an AC source \\( V=100 \\sin(100\\pi\n                        t+15^{\\circ}) \\)]. Write the expression for the short circuit current \\( i(t) \\) with a neat\n                        diagram. Find approximately the value of the first current maximum (maximum momentary current).\n                        Assume that the first current maximum occurs at the same time as the value of the first current\n                        maximum of the short circuit current.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/66.jpg\"/>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Three 60 MVA ac generators, each having 15% reactance are connected via three 36 MVA reactors\n                        each of\n                        10% reactance to a common busbar. The feeders are each connected to the junction of each\n                        alternator\n                        and is reactor. What must be the minimum rating of each feeder circuit breaker?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>(a) Cooling water tower efficiency</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>(b) Transient stability</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>(c) Equal area criterion</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q7_4",
+          "type": "theory",
+          "text": "<p>(d) Swing equation</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What are the advantages of pumped storage plants? Discuss how water hammer and negative pressure\n                        can\n                        be prevented in hydro electric plants.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Compare the essential requirements for the favourable site selection for hydroelectric plants and\n                        thermal power plants. Also discuss the limitations of each.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain the interconnection of sequence network for (i) Line-to-line fault. (ii) Double\n                        line-to-ground fault</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Explain the equal-area criterion for the stability of an alternator supplying infinite busbars\n                        via an\n                        inductive interconnector.</p>"
+        }
+      ]
+    }
+  ]
+}

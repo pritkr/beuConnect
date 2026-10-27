@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2016",
+    "subject": "Mathematics II",
+    "subject_slug": "mathematics-2",
+    "subject_code": "211202",
+    "year": 2016,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any seven of the following as directed:",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The series $\\frac{1}{1^P} + \\frac{1}{2^P} + \\frac{1}{3^P} + \\cdots$ converges, if\n(i) $p > 0$\n(ii) $p < 1$\n(iii) $p > 1$\n(iv) $p \\le 1$\n(Choose the correct option)",
+              "id": "1a",
+              "marks": null
+            },
+            {
+              "text": "The series $1 - \\frac{1}{\\sqrt{2}} + \\frac{1}{\\sqrt{3}} - \\frac{1}{\\sqrt{4}} + \\cdots$ is\n(i) oscillatory\n(ii) conditionally convergent\n(iii) divergent\n(iv) absolutely convergent\n(Choose the correct option)",
+              "id": "1b",
+              "marks": null
+            },
+            {
+              "text": "The period of $|\\sin t|$ is ______. (Fill in the blank)",
+              "id": "1c",
+              "marks": null
+            },
+            {
+              "text": "In the Fourier series expansion of $f(x) = |\\sin x|$ in $(-\\pi, \\pi)$, the value of $b_n = $ ______. (Fill in the blank)",
+              "id": "1d",
+              "marks": null
+            },
+            {
+              "text": "The function $f(x) = \\begin{cases} 1-x, & \\text{in } -\\pi < x < 0 \\\\ 1+x, & \\text{in } 0 < x < \\pi \\end{cases}$ is an odd function. (Write True or False)",
+              "id": "1e",
+              "marks": null
+            },
+            {
+              "text": "$\\int_0^2 \\int_0^x (x+y) \\, dy \\, dx = $ ______. (Fill in the blank)",
+              "id": "1f",
+              "marks": null
+            },
+            {
+              "text": "$\\int_0^{\\pi/2} \\int_0^{a \\sin \\theta} r \\, dr \\, d\\theta = $ ______. (Fill in the blank)",
+              "id": "1g",
+              "marks": null
+            },
+            {
+              "text": "On changing to polar coordinates $\\int_0^{2a} \\int_0^{\\sqrt{2ax-x^2}} dx \\, dy$ becomes ______. (Fill in the blank)",
+              "id": "1h",
+              "marks": null
+            },
+            {
+              "text": "If $\\nabla \\cdot \\vec{F} = 0$, then $\\vec{F}$ is called ______. (Fill in the blank)",
+              "id": "1i",
+              "marks": null
+            },
+            {
+              "text": "If $\\vec{A}$ is such that $\\nabla \\times \\vec{A} = 0$, then $\\vec{A}$ is called ______. (Fill in the blank)",
+              "id": "1j",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Discuss the convergence of the series $x + \\frac{2^2 \\cdot x^2}{L2} + \\frac{3^3 \\cdot x^3}{L3} + \\frac{4^4 \\cdot x^4}{L4} + \\frac{5^5 \\cdot x^5}{L5} + \\cdots \\infty$ ($x > 0$).",
+          "marks": 7,
+          "id": "2a"
+        },
+        {
+          "text": "Prove that the series $\\frac{\\sin x}{1^3} - \\frac{\\sin 2x}{2^3} + \\frac{\\sin 3x}{3^3} - \\cdots$ converges absolutely.",
+          "marks": 7,
+          "id": "2b"
+        },
+        {
+          "text": "Expand $f(x) = x \\sin x$ as a Fourier series in the interval $0 < x < 2\\pi$.",
+          "marks": 7,
+          "id": "3a"
+        },
+        {
+          "text": "Obtain Fourier expansion for the function $f(x) = \\begin{cases} \\pi+x, & \\text{if } -\\pi \\le x \\le 0 \\\\ \\pi-x, & \\text{if } 0 \\le x \\le \\pi \\end{cases}$ and $f(x+2\\pi) = f(x)$.",
+          "marks": 7,
+          "id": "3b"
+        },
+        {
+          "text": "Find half-range cosine series for the function $f(x) = x^2, 0 < x < 2$.",
+          "marks": 7,
+          "id": "4a"
+        },
+        {
+          "text": "Find the Laplace transform of $t e^{-t} \\sin 3t$.",
+          "marks": 7,
+          "id": "4b"
+        },
+        {
+          "text": "Find the value of $L \\left\\{ \\int_0^t \\frac{e^{-t} \\sin t}{t} \\, dt \\right\\}$.",
+          "marks": 7,
+          "id": "5a"
+        },
+        {
+          "text": "Find the inverse Laplace transform of $\\frac{s+2}{s^2(s+1)(s-2)}$.",
+          "marks": 7,
+          "id": "5b"
+        },
+        {
+          "text": "By changing the order of integration in $I = \\int_0^1 \\int_{x^2}^{2-x} xy \\, dy \\, dx$ evaluate the integral.",
+          "marks": 7,
+          "id": "6a"
+        },
+        {
+          "text": "Evaluate $\\iint r \\sin \\theta \\, dr \\, d\\theta$ over the cardioid $r = a(1 - \\cos \\theta)$ above the initial line.",
+          "marks": 7,
+          "id": "6b"
+        },
+        {
+          "text": "Evaluate $\\iint_R (x+y)^2 \\, dx \\, dy$ where $R$ is the parallelogram in the $xy$-plane with vertices $(1, 0), (3, 1), (2, 2), (0, 1)$ using the transformation $u = x+y$ and $v = x-2y$.",
+          "marks": 7,
+          "id": "7a"
+        },
+        {
+          "text": "Find by triple integration, the volume of the sphere $x^2 + y^2 + z^2 = a^2$.",
+          "marks": 7,
+          "id": "7b"
+        },
+        {
+          "text": "Show that $\\nabla^2(r^n) = n(n+1)r^{n-2}$.",
+          "marks": 7,
+          "id": "8a"
+        },
+        {
+          "text": "Find the work done in moving a particle in the force field $\\vec{F} = 3x^2\\hat{i} + (2xz-y)\\hat{j} + z\\hat{k}$ along the curve defined by $x^2 = 4y, 3x^3 = 8z$ from $x = 0$ to $x = 2$.",
+          "marks": 7,
+          "id": "8b"
+        },
+        {
+          "text": "Verify Stokes' theorem for $\\vec{F} = (x^2 + y^2)\\hat{i} - 2xy\\hat{j}$ taken around the rectangle bounded by the lines $x = \\pm a, y = 0$ and $y = b$.",
+          "marks": 7,
+          "id": "9a"
+        },
+        {
+          "text": "Evaluate $\\int_S \\vec{F} \\cdot dS$, where $\\vec{F} = 4x\\hat{i} - 2y^2\\hat{j} + z^2\\hat{k}$ and $S$ is the surface bounding the region $x^2 + y^2 = 4, z = 0$ and $z = 3$.",
+          "marks": 7,
+          "id": "9b"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Examination, 2023",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "104301",
+    "year": 2023,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer the following questions (any seven only):",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "type": "theory",
+              "text": "Define Doping.",
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "type": "theory",
+              "text": "What are the two types of extrinsic semiconductors?",
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "type": "theory",
+              "text": "Write any two differences between Zener breakdown and Avalanche breakdown.",
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "type": "theory",
+              "text": "What materials are used to construct an LED?",
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "type": "theory",
+              "text": "What is transistor? Give its circuit symbol.",
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "type": "theory",
+              "text": "Give the relation between $\\alpha$ and $\\beta$.",
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "type": "theory",
+              "text": "Why base made thin in BJT?",
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "type": "theory",
+              "text": "What are the applications of JFET?",
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "type": "theory",
+              "text": "What are the differences between JFET and MOSFET?",
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "type": "theory",
+              "text": "Write Shockley's equation.",
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "With a neat diagrams explain the working of a PN junction diode in forward bias and reverse bias and plot the V-I characteristics.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "theory",
+              "text": "Explain the switching characteristic of PN junction diode.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "Draw and Explain V-I characteristics of Zener diode.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "theory",
+              "text": "With neat diagram explain the construction and working of LED.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "With a neat sketch explain the operation of CLC (ie $\\pi$ section) and LC filter.",
+              "marks": 7
+            },
+            {
+              "id": "4b",
+              "type": "theory",
+              "text": "Describe the working principle of full wave rectifier with centre tapped transformer and derive the expressions for the ripple factor and efficiency.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "theory",
+              "text": "Explain the working of NPN and PNP transistor.",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "type": "theory",
+              "text": "Draw and explain the input and output characteristics of a transistor in CC configuration.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "Explain Zener Diode as a Voltage Regulator.",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "theory",
+              "text": "Explain the working of positive clamping circuit.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "type": "theory",
+          "text": "Explain the construction, working and operating characteristics of N-Channel JFET's with relevant diagrams.",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "type": "theory",
+          "text": "Describe the kind of operation that takes place in the enhancement mode MOSFET. How does this differ from depletion mode type?",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "text": "Write Short notes on any two of the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "Characteristics of an Ideal Operational Amplifier",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "theory",
+              "text": "Difference between Inverting and non inverting amplifier",
+              "marks": 7
+            },
+            {
+              "id": "9c",
+              "type": "theory",
+              "text": "Effects of negative feedback in amplifiers",
+              "marks": 7
+            },
+            {
+              "id": "9d",
+              "type": "theory",
+              "text": "Various topologies of feedback amplifier",
+              "marks": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2014",
+    "subject": "Engineering Mechanics",
+    "subject_slug": "engineering-mechanics",
+    "subject_code": "011101",
+    "year": 2014,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct option/Answer the following (any seven):",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The weight of a body is a\n(i) body force\n(ii) surface force\n(iii) line force\n(iv) reactive force",
+              "id": "1a",
+              "marks": null
+            },
+            {
+              "text": "Principle of transmissibility can be applied only when the body is treated as\n(i) a particle\n(ii) a rigid body\n(iii) deformable\n(iv) a continuum",
+              "id": "1b",
+              "marks": null
+            },
+            {
+              "text": "Why is force treated as a vector quantity?",
+              "id": "1c",
+              "marks": null
+            },
+            {
+              "text": "Varignon's theorem is applicable only when the forces are\n(i) coplanar\n(ii) concurrent\n(iii) non-concurrent\n(iv) parallel",
+              "id": "1d",
+              "marks": null
+            },
+            {
+              "text": "Which of the following system of forces cannot be reduced to a single force?\n(i) Non-concurrent forces in space\n(ii) Non-concurrent forces in plane\n(iii) Parallel forces in space\n(iv) Parallel forces in a plane",
+              "id": "1e",
+              "marks": null
+            },
+            {
+              "text": "A rigid body has --- degree(s) of freedom.\n(i) one\n(ii) two\n(iii) four\n(iv) six",
+              "id": "1f",
+              "marks": null
+            },
+            {
+              "text": "How many constrains a hinge support will provide?",
+              "id": "1g",
+              "marks": null
+            },
+            {
+              "text": "Coulomb's laws of friction can be applied to\n(i) fluid friction\n(ii) fluid-structure interaction\n(iii) dry friction between solid bodies\n(iv) lubricated surfaces",
+              "id": "1h",
+              "marks": null
+            },
+            {
+              "text": "Limiting friction and impending motion are related. Explain.",
+              "id": "1i",
+              "marks": null
+            },
+            {
+              "text": "Impulse momentum equation relates\n(i) force, velocity and displacement\n(ii) force, velocity and time\n(iii) force, displacement and time\n(iv) force and acceleration",
+              "id": "1j",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Find the resultant of the tension forces concurrent at $A$. The tensions along cables $AB$, $AC$ and $AD$ are $120\\text{ kN}$, $150\\text{ kN}$, $150\\text{ kN}$. [Diagram requires a point $A$ with three cables $AB$, $AC$, $AD$ and dimensions]",
+          "marks": 14,
+          "id": "2"
+        },
+        {
+          "text": "Calculate the moment of the $90\\text{ kN}$ force about $O$ for the condition $\\theta = 15^\\circ$. Also determine, the value of $\\theta$ for which the moment about $O$ is zero and maximum. [Diagram requires an L-shaped bar with force $F=90\\text{ kN}$ at point $A$ making angle $\\theta$]",
+          "marks": 14,
+          "id": "3"
+        },
+        {
+          "text": "Determine the forces in members $AB$, $AC$ and $AD$. Point $M$ is the centroid of triangle $BCD$. [Diagram requires a 3D truss structure with $4\\text{ kN}$ force at $A$]",
+          "marks": 14,
+          "id": "4"
+        },
+        {
+          "text": "Find the reaction at $A$ and $B$. [Diagram requires a beam $AB$ with various point loads and moments]",
+          "marks": 14,
+          "id": "5"
+        },
+        {
+          "text": "A smooth sphere of weight $50\\text{ N}$ and a smooth block of weight $150\\text{ N}$ are placed in a smooth trough as shown below. Determine the reaction forces at points $A$, $B$, and $C$. [Diagram requires sphere and block in a trough]",
+          "marks": 14,
+          "id": "6"
+        },
+        {
+          "text": "Determine the moment $M$ applied to the lower link through its shaft which is necessary to support the load $P$ in terms of $\\theta$. Neglect the weights of the parts. [Diagram requires a toggle mechanism with load $P$]",
+          "marks": 14,
+          "id": "7"
+        },
+        {
+          "text": "The slider block $C$ is moving $4\\text{ m/s}$ up the incline. Determine the angular velocities of links $AB$ and $BC$ and the velocity of point $B$ at the instant shown. [Diagram requires a linkage with slider on $45^\\circ$ incline]",
+          "marks": 14,
+          "id": "8"
+        },
+        {
+          "text": "A cylinder rolls without slipping. It has an angular velocity $\\omega = 0.3\\text{ rad/s}$ and an angular acceleration $\\dot{\\omega} = 0.014\\text{ rad/s}^2$. What are the angular velocity and angular acceleration of the member $AB$? [Diagram requires a rolling cylinder connected to link $AB$]",
+          "marks": 14,
+          "id": "9"
+        }
+      ]
+    }
+  ]
+}

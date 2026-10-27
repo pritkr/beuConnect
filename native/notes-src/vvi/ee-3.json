@@ -1,0 +1,216 @@
+{
+  "branch": "ee",
+  "sem": 3,
+  "subjects": [
+    {
+      "code": "103301",
+      "name": "Electrical Circuit Analysis",
+      "vvi": [
+        {
+          "topic": "Mesh and nodal analysis",
+          "note": "Mesh analysis writes KVL around each independent loop in terms of mesh currents, and nodal analysis writes KCL at each independent node in terms of node voltages. Choose the method that gives fewer equations; a supernode is needed when a voltage source sits between two non-reference nodes. State the assumed current directions before writing the matrix.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Network theorems: Thevenin, Norton, superposition and maximum power",
+          "note": "Thevenin replaces a linear network by Vth in series with Rth and Norton by In in parallel with Rn, with Vth = InRn. Rth is the resistance seen looking into the terminals with independent sources killed. Superposition needs a linear circuit, and maximum power transfer needs RL = Rth, giving Vth²/4Rth in the load.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Transient response of first and second order circuits",
+          "note": "A first-order circuit follows the steady value plus (initial − steady)e^(−t/τ), with τ = RC or L/R, and capacitor voltage and inductor current are continuous. A series RLC is classified by ζ = (R/2)√(C/L) as overdamped, critically damped or underdamped, with natural frequency 1/√(LC). Find the initial conditions at t = 0⁻ first, because that is where most marks are lost.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Resonance and the Q factor",
+          "note": "At series resonance XL = XC, impedance is R and current is maximum; f₀ = 1/(2π√(LC)), Q = ω₀L/R and bandwidth = f₀/Q. A parallel tank presents a high impedance at resonance with a circulating current Q times the line current. The half-power points are at f₀ ± bandwidth/2 and the power factor is unity at resonance.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Three-phase balanced circuits and power measurement",
+          "note": "In star, line voltage is √3 times phase voltage and line current equals phase current; in delta, line current is √3 times phase current and the voltages are equal. Total balanced power is P = √3 VL IL cos φ, and two wattmeters give tan φ = √3(W1 − W2)/(W1 + W2). A balanced delta load converts to an equivalent star of one-third the impedance.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Coupled circuits and mutual inductance",
+          "note": "M = k√(L1L2), where k lies between 0 for no coupling and 1 for perfect coupling. The dot convention decides whether the mutually induced voltage adds to or opposes the self-induced voltage. Series aiding gives Leq = L1 + L2 + 2M and series opposing gives L1 + L2 − 2M; an iron-core transformer has k close to 1.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "103302",
+      "name": "Analog Electronics",
+      "vvi": [
+        {
+          "topic": "Diode clippers, clampers and rectifiers",
+          "note": "A clipper removes part of the waveform above or below a reference level, and a clamper shifts the whole waveform by adding a DC level with a capacitor and diode. A half-wave rectifier has ripple factor 1.21 and efficiency 40.6%, a full-wave rectifier 0.482 and 81.2%. A capacitor filter reduces ripple to about I/(fC) for the full-wave case.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "BJT biasing and bias stability",
+          "note": "The Q-point must sit in the active region and stay there when β and temperature change. Fixed bias is simple but unstable, collector-to-base bias feeds back, and voltage-divider bias with an emitter resistor is the standard because the base voltage is set by the divider. The stability factor S = dIC/dICO should be small, and S = 1 + β for fixed bias.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Small-signal analysis of CE, CB and CC amplifiers",
+          "note": "Draw the hybrid model, replace the transistor, and compute Ai, Av, Ri and Ro from the h parameters. The CE gives high voltage and current gain with 180° phase inversion, the CB gives unity current gain and high voltage gain with good high-frequency response, and the CC (emitter follower) gives unity voltage gain and a high input resistance. The CC is used as a buffer between a high-impedance source and a low-impedance load.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "FET biasing and the small-signal model",
+          "note": "The transfer characteristic ID = IDSS(1 − VGS/VP)² sets the Q-point, and self-bias, voltage-divider bias and current-source bias are the standard arrangements. The small-signal model is a voltage-controlled current source gm·vgs with output resistance rd, where gm = 2IDSS/|VP| at a given bias. A FET has a very high input resistance but a lower transconductance than a BJT.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Feedback amplifier topologies and their effects",
+          "note": "Voltage-series, voltage-shunt, current-series and current-shunt are the four topologies, named for what is sampled at the output and what is mixed at the input. Negative feedback reduces gain by (1 + Aβ) and improves bandwidth and distortion, while raising or lowering the input and output resistances according to the mixing and sampling. Identify the topology before quoting which resistance changes.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Oscillators: RC phase shift, Wien bridge, Hartley and Colpitts",
+          "note": "An oscillator is an amplifier with positive feedback satisfying Aβ = 1 at 0° total phase shift. Three RC sections give 180° for the phase-shift oscillator, the Wien bridge uses a lead-lag network with f₀ = 1/(2πRC), and Hartley and Colpitts use a tapped LC tank with f₀ = 1/(2π√(LC)). The loop gain must be slightly above one for oscillation to start.",
+          "marks": 7,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "103303",
+      "name": "Electrical Machine-1",
+      "vvi": [
+        {
+          "topic": "Transformer EMF equation and equivalent circuit",
+          "note": "E = 4.44 f N Φm from the sinusoidal flux, so the voltage ratio equals the turns ratio. Refer the secondary to the primary by multiplying resistances and reactances by (N1/N2)², then draw the equivalent circuit with R0 and X0 across the supply. The no-load current has a magnetising component and a loss component.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "OC and SC tests, efficiency and regulation",
+          "note": "The open-circuit test at rated voltage on one side gives the core loss and the shunt branch; the short-circuit test at reduced voltage gives the copper loss and the series impedance. Efficiency is output/(output + core + copper) and peaks when copper loss equals core loss. Regulation is (Vno-load − Vfull-load)/Vfull-load at a given power factor, positive for a lagging load.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Three-phase transformer connections and parallel operation",
+          "note": "Star-star, delta-star, star-delta and delta-delta differ in the voltage ratio and in the path for the third harmonic; a delta winding traps the triplen harmonics. The clock notation gives the phase displacement between the primary and secondary line voltages. Parallel operation needs the same polarity, voltage ratio, phase sequence and percentage impedance, with equal ratios sharing load in proportion to rating.",
+          "marks": 7,
+          "confidence": "medium"
+        },
+        {
+          "topic": "DC generator: EMF equation, armature reaction and commutation",
+          "note": "Eg = PΦNZ/60A, where A = P for a lap winding and 2 for a wave winding, so a wave winding needs fewer poles for the same voltage. Armature reaction distorts and weakens the main field, corrected by interpoles and compensating windings. Commutation is the reversal of current in a coil, and a brush shift or interpole reduces the sparking.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "DC motor: torque, characteristics and speed control",
+          "note": "T = PΦIaZ/2πA, so torque is proportional to flux and armature current. Speed falls slightly with load in a shunt motor, falls sharply in a series motor, and the back EMF Eb = V − IaRa sets the speed. Control is by armature voltage (below base speed) or by field flux (above base speed); a series motor must never start unloaded.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "DC motor starters and losses",
+          "note": "At starting the back EMF is zero, so the armature current is limited only by Ra and would damage the commutator; a starter inserts external resistance and cuts it out in steps. Losses divide into copper loss (I²R), iron loss (hysteresis and eddy current) and mechanical loss, with the last two together called stray or rotational loss. The efficiency is the output over the input, and the condition for maximum efficiency is constant loss equal to variable loss.",
+          "marks": 5,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "103304",
+      "name": "Engineering Mathematics-III (PDE, Prob/stat)",
+      "vvi": [
+        {
+          "topic": "Formation and solution of first-order PDE",
+          "note": "Form the PDE by eliminating the arbitrary constants or the arbitrary function from the given relation. For Pp + Qq = R, Lagrange's auxiliary equations dx/P = dy/Q = dz/R give two independent integrals u = a and v = b, and the solution is φ(u,v) = 0. A non-linear first-order equation outside the standard forms is solved by Charpit's method.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Linear PDE with constant coefficients",
+          "note": "For f(D,D')z = F(x,y), the complementary function comes from the auxiliary equation with distinct, repeated or complex roots, and the particular integral depends on the form of F. The inverse operator is applied term by term, and the case where a factor vanishes needs the rule of multiplying by x. Write the complementary function first, then the particular integral, then apply the boundary conditions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Heat, wave and Laplace equations by separation of variables",
+          "note": "Put u = X(x)T(t), separate the variables, and use the boundary conditions to fix the eigenvalues; the Fourier series then fits the initial condition. The heat equation ut = α²uxx decays in time, the wave equation utt = c²uxx carries two travelling waves, and Laplace's equation describes the steady state. State every boundary and initial condition before separating.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Bayes' theorem and total probability",
+          "note": "P(A|B) = P(B|A)P(A)/P(B), and the denominator is expanded by the total probability rule over a partition of the sample space. Draw the tree diagram and check that the posterior probabilities sum to one. Independence is P(A∩B) = P(A)P(B), which is not the same as mutual exclusivity.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Random variables and standard distributions",
+          "note": "A random variable maps outcomes to numbers, with the pmf or pdf giving probabilities and the cdf its sum or integral; E(X) = Σxp and Var(X) = E(X²) − [E(X)]². The binomial applies to a fixed number of independent trials with constant p, the Poisson to rare events with mean and variance both λ, and the normal is standardised by z = (x − μ)/σ.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Correlation, regression and curve fitting",
+          "note": "The correlation coefficient r = cov(X,Y)/(σxσy) lies between −1 and 1 and measures linear association only. The regression line of y on x is y − ȳ = r(σy/σx)(x − x̄), and both regression lines pass through the means. The method of least squares fits y = a + bx by solving the two normal equations.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "103305",
+      "name": "Engineering Mechanics",
+      "vvi": [
+        {
+          "topic": "Equilibrium of a particle and Lami's theorem",
+          "note": "A particle is in equilibrium when the vector sum of the forces is zero, so ΣFx = 0 and ΣFy = 0. Lami's theorem covers three concurrent forces: each is proportional to the sine of the angle between the other two. Draw the free-body diagram before resolving, because a missing reaction is the usual lost mark.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Trusses: method of joints and method of sections",
+          "note": "A perfect truss has m = 2j − 3 members for j joints; fewer members make it a mechanism. The method of joints solves two unknowns per joint, while the method of sections cuts three members and takes moments to get one directly. A joint with two non-collinear members and no load carries zero-force members.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Friction on level and inclined planes",
+          "note": "At limiting equilibrium F = μN, and the angle of friction is tan⁻¹μ. On an incline the body just slides when tan θ = μ, and the effort to move it up is W sin θ + μW cos θ. The angle of repose equals the angle of friction, and a screw jack is the standard application.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Centroid, moment of inertia and the parallel-axis theorem",
+          "note": "The centroid satisfies x̄ = ΣAx/ΣA and ȳ = ΣAy/ΣA, with cut-out areas taken negative. Moment of inertia transfers by I = Ī + A d², so a rectangle has bd³/12 about its centroidal axis and bd³/3 about its base. Radius of gyration is k = √(I/A).",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Projectile motion and relative velocity",
+          "note": "Without air resistance the horizontal velocity is constant and the vertical acceleration is g, giving time of flight 2u sin θ/g, range u² sin 2θ/g and maximum height u² sin²θ/2g. Maximum range occurs at 45°. Relative velocity adds the velocity of the body to the negative of the frame's velocity, which is how a rain-and-man or two-boat problem is solved.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Kinetics: D'Alembert's principle and work-energy",
+          "note": "D'Alembert's principle adds an inertial force −ma to the applied forces so that a dynamics problem becomes a statics problem. The work-energy theorem equates the net work to the change in kinetic energy, and the principle of conservation of energy applies when only conservative forces act. Choose the method that avoids the acceleration, usually energy for a change in height or speed.",
+          "marks": 7,
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,309 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2022",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "104301",
+    "year": 2022,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer of the following (Any seven question only) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "type": "theory",
+              "text": "What is the ripple factor of a half-wave rectifier?",
+              "options": [
+                "0.31",
+                "0.48",
+                "0.707",
+                "1.21"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "type": "theory",
+              "text": "Which of the following is true in construction of a transistor?",
+              "options": [
+                "The collector dissipates lesser power",
+                "The emitter supplies minority carriers",
+                "The collector is made physically larger than the emitter region",
+                "The collector collects minority charge carries"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "type": "theory",
+              "text": "For what kind of amplifications can the active region of the common-emitter configuration be used?",
+              "options": [
+                "Voltage",
+                "Current",
+                "Power",
+                "All of the above"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "type": "theory",
+              "text": "The leakage current in a pn junction is of the order of",
+              "options": [
+                "A",
+                "mA",
+                "kA",
+                "$\\mu A$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "type": "theory",
+              "text": "A zener diode is always .......... connected.",
+              "options": [
+                "reverse",
+                "forward",
+                "either reverse or forward",
+                "none of the above"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "type": "theory",
+              "text": "The effective channel length of MOSFET in saturation decreases with increase in",
+              "options": [
+                "Gate voltage",
+                "Drain voltage",
+                "Source voltage",
+                "Body voltage"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "type": "numerical",
+              "text": "A BJT with $\\beta = 50$ has base to collector leakage current $I_{CBO}$ of $2.5 \\mu A$. If the transistor is connected in CE configuration, the collector current for $I_B = 0$ is.",
+              "options": [
+                "$0.05 \\mu A$",
+                "$0.1275 mA$",
+                "$0.157 mA$",
+                "$0.516 mA$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "type": "numerical",
+              "text": "The threshold voltage of an n-channel enhancement type MOSFET is 0.5 V. When the device is biased at a gate voltage of 3 V, pinch-off would occur at a drain voltage of :",
+              "options": [
+                "2V",
+                "2.5V",
+                "3V",
+                "1.5V"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "type": "theory",
+              "text": "In an op-amp, the input impedance is .......... and the output impedance is .......... .",
+              "options": [
+                "High, high",
+                "Low, low",
+                "High, low",
+                "Low, high"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "type": "theory",
+              "text": "A MOSFET can be operated with .......... .",
+              "options": [
+                "negative gate voltage only",
+                "positive gate voltage only",
+                "positive as well as negative gate voltage",
+                "None of the above"
+              ],
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "Draw the diagram & Explain the working of full-wave rectifier with filter.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "A half-wave rectifier is used to supply 50V d.c. to a resistive load of $800 \\Omega$. The diode has a resistance of $25 \\Omega$. Calculate the a.c. voltage required.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "Explain the working of current series feedback amplifier with the help of block diagram.",
+              "marks": 8
+            },
+            {
+              "id": "3b",
+              "type": "theory",
+              "text": "Explain about the distortions present in amplifier. List advantages of negative feedback.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "Draw V-I characteristics curves of JFET and mark various regions Explain how FET is voltage controlled device.",
+              "marks": 8
+            },
+            {
+              "id": "4b",
+              "type": "theory",
+              "text": "Draw the block diagram and explain the operation of sweep frequency generator.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "theory",
+              "text": "Draw the cross-sectional view of an n-p-n transistor and explain its operation in active region of operation. What are the different current components of the transistor? How can one use a transistor as amplifier?",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "type": "theory",
+              "text": "Define $\\alpha_{dc}$ and $\\beta_{dc}$. Derive the relationship between $\\alpha_{dc}$ and $\\beta_{dc}$. If the base current in a transistor is $30 \\mu A$, when the emitter current is $7.2 mA$, what are the values of $\\alpha_{dc}$ and $\\beta_{dc}$? Also, calculate the collector current.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "Draw and explain the input and output characteristics of CB configuration. Where can we use the CB configuration in a transistor circuit? Explain with proper justification.",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "theory",
+              "text": "Explain the construction and working principle of a photo diode.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "theory",
+              "text": "Explain the characteristics of an Ideal Op-Amp.",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "type": "theory",
+              "text": "Explain Op-amp as Differentiator and Integrator. Also draw the output Waveforms?",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "With a neat diagram explain the working of a PN junction diode in forward bias and reverse bias.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "numerical",
+              "text": "Consider a pn junction in equilibrium at room temperature (T=300 K) for which the doping concentrations are $N_A = 10^{18} / \\text{cm}^3$ and $N_D = 10^{16} / \\text{cm}^3$ and the cross-sectional area $A = 10^{-4} \\text{ cm}^2$. Calculate $p_p, n_{po}, n_n, p_{no}, V_o, W, X_n, X_p$, and $Q_j$. Use $n_i = 1.5 \\times 10^{10} / \\text{cm}^3$.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "text": "Explain the following (attempt any two) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "Voltage divider bias network",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "theory",
+              "text": "Clipper and Clamper",
+              "marks": 7
+            },
+            {
+              "id": "9c",
+              "type": "theory",
+              "text": "Drift and Diffusion current",
+              "marks": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

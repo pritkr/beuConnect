@@ -1,0 +1,846 @@
+---
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+import Layout from "../layouts/Layout.astro";
+import {
+	buildRowCells,
+	hasLabGroups,
+	istDayIndex,
+	primaryAndRest,
+	segmentsFor,
+} from "../lib/routine/layout";
+import { RoutineLookupError, resolveRoutineFromRegNo } from "../lib/routine/resolver";
+import type {
+	ResolvedStudentRoutine,
+	RoutineBlock,
+	RoutineDay,
+	RoutineLabGroup,
+	RoutineSlot,
+} from "../lib/routine/types";
+
+export const prerender = false;
+
+const WEEK = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+const reg = Astro.url.searchParams.get("reg")?.trim() || "";
+const groupParam = (Astro.url.searchParams.get("group") || "").trim().toUpperCase();
+const explicitGroup: RoutineLabGroup | null =
+	groupParam === "A" || groupParam === "B" ? groupParam : null;
+
+Astro.response.headers.set(
+	"Cache-Control",
+	"private, max-age=3600, stale-while-revalidate=86400",
+);
+
+let errorMessage = "";
+let errorCode: string | null = null;
+let routineResult: ResolvedStudentRoutine | null = null;
+
+if (reg) {
+	try {
+		routineResult = await resolveRoutineFromRegNo(
+			reg,
+			explicitGroup ? { labGroup: explicitGroup } : undefined,
+		);
+	} catch (error) {
+		if (error instanceof RoutineLookupError) {
+			errorMessage = error.message;
+			errorCode = error.code;
+		} else {
+			errorMessage = "Routine could not be loaded right now.";
+			errorCode = "unknown";
+		}
+	}
+}
+
+const routine = routineResult?.routine ?? null;
+const labGroup: RoutineLabGroup = routineResult?.labGroup ?? explicitGroup ?? "A";
+const slotById = new Map<number, RoutineSlot>(
+	(routine?.slots ?? []).map((slot) => [slot.id, slot]),
+);
+const segments = segmentsFor(routine?.recessAfterSlot ?? null, [...slotById.keys()]);
+const splitsClass = routine ? hasLabGroups(routine) : false;
+
+const headerCells: Array<{ kind: "slot"; slot: RoutineSlot } | { kind: "break" }> = [];
+for (const segment of segments) {
+	if (segment.kind === "break") {
+		headerCells.push({ kind: "break" });
+		continue;
+	}
+	for (let id = segment.from; id <= segment.to; id += 1) {
+		const slot = slotById.get(id);
+		if (slot) headerCells.push({ kind: "slot", slot });
+	}
+}
+
+type CellView =
+	| { kind: "empty"; span: number }
+	| { kind: "block"; span: number; primary: RoutineBlock; rest: RoutineBlock[] };
+
+function viewCells(day: RoutineDay, from: number, to: number): CellView[] {
+	const cells: CellView[] = [];
+	for (const cell of buildRowCells(day, from, to)) {
+		if (cell.kind === "empty") {
+			cells.push({ kind: "empty", span: cell.span });
+			continue;
+		}
+		const { primary, rest } = primaryAndRest(cell.blocks, labGroup);
+		if (!primary) {
+			cells.push({ kind: "empty", span: cell.span });
+			continue;
+		}
+		cells.push({ kind: "block", span: cell.span, primary, rest });
+	}
+	return cells;
+}
+
+const todayName = WEEK[istDayIndex()] ?? "";
+const rows = (routine?.days ?? []).map((day) => ({
+	name: day.day,
+	isToday: day.day.trim().toLowerCase() === todayName.toLowerCase(),
+	parts: segments.map((segment) =>
+		segment.kind === "break"
+			? { kind: "break" as const }
+			: { kind: "cells" as const, cells: viewCells(day, segment.from, segment.to) },
+	),
+}));
+
+const hasGrid =
+	Boolean(routine) && rows.length > 0 && headerCells.some((cell) => cell.kind === "slot");
+const student = hasGrid ? routineResult : null;
+
+const routineHref = (group: RoutineLabGroup): string => {
+	const base = import.meta.env.BASE_URL.replace(/\/+$/, "");
+	const who = routineResult?.regNo ?? reg;
+	return `${base}/routine?reg=${encodeURIComponent(who)}&group=${group}`;
+};
+
+const stateMessage =
+	errorMessage || (routineResult ? "Nothing is published for this routine yet." : "");
+
+const pageTitle = routineResult
+	? `${routineResult.branchName} Routine | BEUConnect`
+	: "Class Routine | BEUConnect";
+const description = routineResult
+	? `Compact class routine for ${routineResult.branchName}, semester ${routineResult.semester}, Government Engineering College Sheikhpura.`
+	: "Compact class routine for Government Engineering College Sheikhpura using your saved registration number.";
+---
+
+<Layout title={pageTitle} description={description} wide={true}>
+	<Header />
+
+	<section class="routine-shell">
+		{
+			student ? (
+				<>
+					<section class="glass-card routine-topbar">
+						<div class="title-row">
+							<h1>Routine</h1>
+							{student.routine.isStale && <span class="status-pill warn">Cached</span>}
+						</div>
+						<div class="meta-row">
+							<span class="meta-pill strong">{student.sourceBranchLabel}</span>
+							<span class="meta-pill">Sem {student.semester}</span>
+							<span class="meta-pill">{student.batchLabel}</span>
+							{student.routine.effectiveFrom && (
+								<span class="meta-pill">From {student.routine.effectiveFrom}</span>
+							)}
+							{student.routine.roomLabel && (
+								<span class="meta-pill">Room {student.routine.roomLabel}</span>
+							)}
+							{splitsClass && (
+								<div class="group-switch" role="group" aria-label="Lab group">
+									{(["A", "B"] as const).map((group) => (
+										<a
+											class:list={["group-choice", labGroup === group && "is-active"]}
+											href={routineHref(group)}
+											aria-current={labGroup === group ? "true" : undefined}
+											title={`Lab group ${group}`}
+										>
+											{group}
+										</a>
+									))}
+								</div>
+							)}
+						</div>
+					</section>
+
+					<section class="glass-card routine-table-card">
+						<div class="section-head">
+							<h2>Week</h2>
+							{student.routine.sourceUrl && (
+								<a
+									href={student.routine.sourceUrl}
+									target="_blank"
+									rel="noreferrer"
+									class="external-link"
+								>
+									Source
+								</a>
+							)}
+						</div>
+						<div class="table-wrap">
+							<table class="routine-table">
+								<thead>
+									<tr>
+										<th scope="col">Day</th>
+										{headerCells.map((cell) =>
+											cell.kind === "break" ? (
+												<th scope="col" class="recess-head">
+													Break
+												</th>
+											) : (
+												<th scope="col">
+													P{cell.slot.id}
+													<br />
+													<small>
+														{cell.slot.start}-{cell.slot.end}
+													</small>
+												</th>
+											),
+										)}
+									</tr>
+								</thead>
+								<tbody>
+									{rows.map((row) => (
+										<tr class:list={["routine-row", row.isToday && "is-today"]}>
+											<th scope="row">{row.name}</th>
+											{row.parts.map((part) =>
+												part.kind === "break" ? (
+													<td class="recess-cell" />
+												) : (
+													part.cells.map((cell) =>
+														cell.kind === "empty" ? (
+															<td colspan={cell.span} class="slot-empty">
+																-
+															</td>
+														) : (
+															<td colspan={cell.span} class="slot-block">
+																<div class="block-subject">{cell.primary.subject}</div>
+																{(cell.primary.type ||
+																	cell.primary.room ||
+																	cell.primary.durationLabel ||
+																	(splitsClass && cell.primary.group)) && (
+																	<div class="block-meta">
+																		{splitsClass && cell.primary.group && (
+																			<span class="group-badge">
+																				Group {cell.primary.group}
+																			</span>
+																		)}
+																		{cell.primary.type && (
+																			<span class="type-badge">{cell.primary.type}</span>
+																		)}
+																		{cell.primary.room && (
+																			<span>Room {cell.primary.room}</span>
+																		)}
+																		{cell.primary.durationLabel && (
+																			<span>{cell.primary.durationLabel}</span>
+																		)}
+																	</div>
+																)}
+																{cell.rest.map((entry) => (
+																	<div class="block-alt">
+																		{entry.group ? (
+																			<span class="alt-label">
+																				Group {entry.group}
+																			</span>
+																		) : (
+																			<span class="alt-label" aria-hidden="true">
+																				↔
+																			</span>
+																		)}
+																		<span class="alt-subject">{entry.subject}</span>
+																		{entry.room && <span>Room {entry.room}</span>}
+																	</div>
+																))}
+															</td>
+														),
+													)
+												),
+											)}
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+					{student.routine.papers.length > 0 && (
+						<section class="glass-card papers-card">
+							<div class="section-head">
+								<h2>Papers</h2>
+							</div>
+							<div class="paper-grid">
+								{student.routine.papers.map((paper) => (
+									<div class="paper-item">
+										<div class="paper-topline">
+											<span class="paper-abbr">{paper.abbr}</span>
+											<span class="paper-code">{paper.code}</span>
+											<div class="paper-hours">
+												<span>L:{paper.lectureHours}</span>
+												<span>T:{paper.tutorialHours}</span>
+												<span>P:{paper.practicalHours}</span>
+											</div>
+										</div>
+										<h3>{paper.name}</h3>
+										<p>{paper.faculty}</p>
+									</div>
+								))}
+							</div>
+						</section>
+					)}
+				</>
+			) : (
+				<section class:list={["glass-card state-card", errorCode ? "error" : "idle"]}>
+					<h1>Routine</h1>
+					<p id="routineStateMessage" data-error={errorCode ? "1" : undefined}>
+						{stateMessage || "Enter your registration number to see your class routine."}
+					</p>
+					<div id="saveInputContainer" class="routine-save">
+						<input
+							type="text"
+							id="routineRegInput"
+							placeholder="Registration no."
+							autocomplete="on"
+							inputmode="numeric"
+						/>
+						<button type="button" id="routineRegBtn">Save</button>
+					</div>
+				</section>
+			)
+		}
+	</section>
+
+	<Footer />
+</Layout>
+
+<script>
+	import { getProfile, parseRegNo, saveProfile } from "../utils/profileManager";
+
+	const GROUP_KEY = "beu_routine_group";
+	const params = new URLSearchParams(window.location.search);
+
+	const readSavedGroup = (): string | null => {
+		try {
+			const value = localStorage.getItem(GROUP_KEY);
+			return value === "A" || value === "B" ? value : null;
+		} catch {
+			return null;
+		}
+	};
+
+	// Landing with an explicit choice makes it the remembered one.
+	const groupParam = (params.get("group") || "").trim().toUpperCase();
+	if (groupParam === "A" || groupParam === "B") {
+		try {
+			localStorage.setItem(GROUP_KEY, groupParam);
+		} catch {
+			// Private mode: the choice still rides along in the URL.
+		}
+	}
+
+	const stateMessage = document.getElementById("routineStateMessage") as HTMLParagraphElement | null;
+	const saveInputContainer = document.getElementById("saveInputContainer") as HTMLDivElement | null;
+	const routineRegInput = document.getElementById("routineRegInput") as HTMLInputElement | null;
+	const routineRegBtn = document.getElementById("routineRegBtn") as HTMLButtonElement | null;
+
+	const profile = getProfile();
+
+	if (!params.has("reg")) {
+		if (profile?.regNo) {
+			const nextUrl = new URL(window.location.href);
+			nextUrl.searchParams.set("reg", profile.regNo);
+			if (!nextUrl.searchParams.has("group")) {
+				const savedGroup = readSavedGroup();
+				if (savedGroup) nextUrl.searchParams.set("group", savedGroup);
+			}
+			window.location.replace(nextUrl.toString());
+		} else {
+			if (stateMessage) {
+				stateMessage.textContent =
+					"Enter your registration number to see your class routine.";
+			}
+			if (saveInputContainer) {
+				saveInputContainer.style.display = "flex";
+			}
+		}
+	} else if (!profile?.regNo && saveInputContainer) {
+		// A shared routine should still offer to become the visitor's own.
+		if (stateMessage && stateMessage.dataset.error !== "1") {
+			stateMessage.textContent =
+				"Viewing a shared routine. Enter your registration number to save it.";
+		}
+		saveInputContainer.style.display = "flex";
+	}
+
+	const handleSave = async () => {
+		if (!routineRegInput) return;
+		const regNo = routineRegInput.value.trim();
+		if (regNo.length < 10) {
+			routineRegInput.style.animation = "shake 0.4s ease";
+			setTimeout(() => {
+				if (routineRegInput) routineRegInput.style.animation = "";
+			}, 400);
+			return;
+		}
+
+		const parsed = parseRegNo(regNo);
+		if (!parsed || !parsed.regNo) return;
+		saveProfile(parsed);
+
+		// Fire off background fetch to hydrate name if we can
+		let fetchSem = 1;
+		if (parsed.batchYear) {
+			if (parsed.batchYear === 2025) fetchSem = 1;
+			else if (parsed.batchYear === 2024) fetchSem = 2;
+			else if (parsed.batchYear === 2023) fetchSem = 4;
+			else if (parsed.batchYear === 2022) fetchSem = 7;
+			else if (parsed.batchYear <= 2021) fetchSem = 8;
+		}
+
+		const baseUrl = import.meta.env.BASE_URL;
+		fetch(`${baseUrl}api/result?reg=${encodeURIComponent(regNo)}&sem=${fetchSem}&format=json`)
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.status === 200 && data.data && data.data.name) {
+					saveProfile({
+						name: data.data.name,
+						lastSgpa:
+							data.data.sgpa && Array.isArray(data.data.sgpa)
+								? data.data.sgpa[fetchSem - 1]
+								: undefined,
+						lastCgpa: data.data.cgpa || undefined,
+					});
+				}
+			})
+			.catch((error) => console.log("Background hydrate failed", error));
+
+		const nextUrl = new URL(window.location.href);
+		nextUrl.searchParams.set("reg", parsed.regNo);
+		window.location.replace(nextUrl.toString());
+	};
+
+	if (routineRegBtn) {
+		routineRegBtn.addEventListener("click", handleSave);
+	}
+	if (routineRegInput) {
+		routineRegInput.addEventListener("keypress", (event) => {
+			if (event.key === "Enter") {
+				handleSave();
+			}
+		});
+	}
+</script>
+
+<style>
+	.routine-shell {
+		padding: 0.4rem 0 1rem;
+		display: grid;
+		gap: 0.5rem;
+	}
+
+	.routine-topbar,
+	.routine-table-card,
+	.papers-card,
+	.state-card {
+		padding: 0.65rem 0.75rem;
+	}
+
+	.title-row,
+	.meta-row {
+		display: flex;
+		align-items: center;
+		gap: 0.45rem;
+		flex-wrap: wrap;
+	}
+
+	.title-row {
+		justify-content: space-between;
+		margin-bottom: 0.4rem;
+	}
+
+	.title-row h1,
+	.state-card h1 {
+		margin: 0;
+		font-size: 1rem;
+		line-height: 1.1;
+	}
+
+	.meta-pill,
+	.status-pill,
+	.block-meta span {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.16rem 0.42rem;
+		border-radius: 999px;
+		background: rgba(148, 163, 184, 0.1);
+		border: 1px solid rgba(148, 163, 184, 0.12);
+		font-size: 0.69rem;
+		color: var(--text-secondary);
+		line-height: 1.2;
+	}
+
+	.meta-pill.strong {
+		background: rgba(59, 130, 246, 0.16);
+		border-color: rgba(59, 130, 246, 0.2);
+		color: var(--text-primary);
+		font-weight: 700;
+	}
+
+	.status-pill.warn {
+		background: rgba(245, 158, 11, 0.14);
+		border-color: rgba(245, 158, 11, 0.2);
+		color: #fbbf24;
+	}
+
+	.group-switch {
+		margin-left: auto;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.12rem;
+		padding: 0.12rem;
+		border-radius: 999px;
+		background: rgba(148, 163, 184, 0.1);
+		border: 1px solid var(--border-subtle);
+	}
+
+	.group-choice {
+		min-width: 1.5rem;
+		padding: 0.12rem 0.4rem;
+		border-radius: 999px;
+		font-size: 0.69rem;
+		font-weight: 700;
+		line-height: 1.2;
+		text-align: center;
+		color: var(--text-secondary);
+	}
+
+	.group-choice:hover {
+		color: var(--text-primary);
+	}
+
+	.group-choice.is-active {
+		background: rgba(59, 130, 246, 0.24);
+		color: var(--text-primary);
+	}
+
+	.table-wrap {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		padding-bottom: 0.1rem;
+	}
+
+	.routine-table {
+		width: 100%;
+		min-width: 700px;
+		border-collapse: separate;
+		border-spacing: 0;
+		margin: 0;
+		font-size: 0.76rem;
+	}
+
+	.routine-table th,
+	.routine-table td {
+		padding: 0.42rem;
+		text-align: left;
+		vertical-align: top;
+		border-right: 1px solid var(--border-subtle);
+		border-bottom: 1px solid var(--border-subtle);
+	}
+
+	.routine-table thead th {
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		background: rgba(15, 23, 42, 0.94);
+		font-size: 0.68rem;
+		line-height: 1.2;
+	}
+
+	.routine-table thead th small {
+		font-size: 0.62rem;
+		color: var(--text-muted);
+	}
+
+	.routine-table tbody th {
+		min-width: 2.8rem;
+		font-size: 0.7rem;
+		background: rgba(255, 255, 255, 0.03);
+	}
+
+	.routine-table tr > :first-child,
+	.routine-table thead tr:first-child > * {
+		border-left: 1px solid var(--border-subtle);
+		border-top: 1px solid var(--border-subtle);
+	}
+
+	.routine-row.is-today > th[scope="row"] {
+		background: rgba(59, 130, 246, 0.16);
+		box-shadow: inset 3px 0 0 var(--accent-blue);
+		color: var(--text-primary);
+	}
+
+	.routine-row.is-today > td {
+		border-bottom-color: rgba(59, 130, 246, 0.22);
+	}
+
+	.slot-block {
+		background: linear-gradient(145deg, rgba(59, 130, 246, 0.13), rgba(6, 182, 212, 0.06));
+	}
+
+	.slot-empty,
+	.recess-cell,
+	.recess-head {
+		text-align: center;
+		color: var(--text-muted);
+		background: rgba(148, 163, 184, 0.05);
+	}
+
+	.block-subject {
+		font-weight: 700;
+		line-height: 1.2;
+		color: var(--text-primary);
+	}
+
+	.block-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.2rem;
+		margin-top: 0.22rem;
+	}
+
+	.block-meta .type-badge {
+		background: rgba(59, 130, 246, 0.18);
+		border-color: rgba(59, 130, 246, 0.25);
+		color: var(--accent-blue);
+		font-weight: 700;
+	}
+
+	.block-meta .group-badge {
+		background: rgba(139, 92, 246, 0.18);
+		border-color: rgba(139, 92, 246, 0.28);
+		color: #c4b5fd;
+		font-weight: 700;
+	}
+
+	.block-alt {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.22rem;
+		margin-top: 0.28rem;
+		padding-top: 0.24rem;
+		border-top: 1px dashed rgba(148, 163, 184, 0.18);
+		font-size: 0.66rem;
+		line-height: 1.25;
+		color: var(--text-muted);
+	}
+
+	.alt-label {
+		color: var(--text-secondary);
+		font-weight: 600;
+	}
+
+	.alt-subject {
+		color: var(--text-secondary);
+	}
+
+	.section-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.6rem;
+		margin-bottom: 0.6rem;
+	}
+
+	.section-head h2 {
+		margin: 0;
+		font-size: 0.95rem;
+		line-height: 1.2;
+	}
+
+	.external-link {
+		font-size: 0.72rem;
+		color: var(--accent-cyan);
+		text-decoration: none;
+		padding: 0.18rem 0.45rem;
+		border-radius: 999px;
+		background: rgba(6, 182, 212, 0.1);
+		border: 1px solid rgba(6, 182, 212, 0.18);
+	}
+
+	.external-link:hover {
+		background: rgba(6, 182, 212, 0.18);
+	}
+
+	.paper-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 0.55rem;
+	}
+
+	.paper-item {
+		padding: 0.55rem 0.6rem;
+		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.025);
+		border: 1px solid var(--border-subtle);
+	}
+
+	.paper-topline {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.4rem;
+		margin-bottom: 0.35rem;
+	}
+
+	.paper-abbr {
+		font-weight: 800;
+		font-size: 0.82rem;
+		color: var(--text-primary);
+	}
+
+	.paper-code {
+		font-size: 0.72rem;
+		color: var(--text-muted);
+	}
+
+	.paper-item h3 {
+		margin: 0;
+		font-size: 0.82rem;
+		line-height: 1.25;
+	}
+
+	.paper-item p {
+		margin: 0.18rem 0 0;
+		font-size: 0.72rem;
+		color: var(--text-secondary);
+	}
+
+	.paper-hours {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	.paper-hours span {
+		font-size: 0.62rem;
+		padding: 0.12rem 0.3rem;
+		border-radius: 999px;
+		background: rgba(148, 163, 184, 0.08);
+		color: var(--text-muted);
+	}
+
+	.state-card p {
+		margin: 0.35rem 0 0;
+		font-size: 0.88rem;
+		color: var(--text-secondary);
+	}
+
+	.state-card.error {
+		border-left: 3px solid #ef4444;
+	}
+
+	.state-card.idle {
+		border-left: 3px solid var(--accent-blue);
+	}
+
+	.routine-save {
+		display: none;
+		align-items: center;
+		gap: 0.4rem;
+		width: 100%;
+		max-width: 420px;
+		margin-top: 0.7rem;
+		padding: 0.28rem;
+		border-radius: 50px;
+		border: 1px solid var(--border-accent);
+		background: rgba(255, 255, 255, 0.02);
+	}
+
+	.routine-save input {
+		flex: 1;
+		min-width: 0;
+		margin: 0;
+		padding: 0.4rem 0.4rem 0.4rem 1rem;
+		border: none;
+		background: transparent;
+		box-shadow: none;
+		outline: none;
+		font-size: 0.85rem;
+		color: var(--text-primary);
+	}
+
+	.routine-save button {
+		margin: 0;
+		padding: 0.45rem 1.2rem;
+		border: none;
+		border-radius: 40px;
+		background: var(--accent-gradient);
+		color: white;
+		font-size: 0.8rem;
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	@media (max-width: 640px) {
+		.routine-shell {
+			padding-top: 0.2rem;
+		}
+
+		.routine-topbar,
+		.routine-table-card,
+		.papers-card,
+		.state-card {
+			padding: 0.55rem 0.6rem;
+		}
+
+		.title-row h1,
+		.state-card h1 {
+			font-size: 0.92rem;
+		}
+
+		.meta-row {
+			gap: 0.32rem;
+		}
+
+		.group-switch {
+			margin-left: 0;
+		}
+
+		.meta-pill,
+		.status-pill,
+		.block-meta span {
+			padding: 0.14rem 0.36rem;
+			font-size: 0.63rem;
+		}
+
+		.routine-table {
+			min-width: 640px;
+			font-size: 0.68rem;
+		}
+
+		.routine-table th,
+		.routine-table td {
+			padding: 0.34rem;
+		}
+
+		.routine-table thead th {
+			font-size: 0.62rem;
+		}
+
+		.routine-table thead th small {
+			font-size: 0.56rem;
+		}
+
+		.block-subject {
+			font-size: 0.67rem;
+		}
+	}
+
+	@keyframes shake {
+		0%, 100% { transform: translateX(0); }
+		25% { transform: translateX(-5px); }
+		50% { transform: translateX(5px); }
+		75% { transform: translateX(-5px); }
+	}
+</style>

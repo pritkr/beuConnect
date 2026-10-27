@@ -1,0 +1,284 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2016",
+    "subject": "Discrete Mathematical Structures",
+    "subject_slug": "discrete-mathematical-structures",
+    "subject_code": "211405",
+    "year": 2016,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose and write the correct option (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Let f and g be the functions defined by \\( f(x) = 2x+3 \\) and \\( g(x) = 3x-2 \\) then\n                        composition\n                        of f and g is</p>",
+          "options": [
+            "\\( 6x+6 \\)",
+            "\\( 5x+5 \\)",
+            "\\( 6x+7 \\)",
+            "\\( 7x+5 \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Among 200 people, 150 either swim or jog or both. If 85 swim and 60 swim and jog, how many jog?\n                    </p>",
+          "options": [
+            "125",
+            "225",
+            "85",
+            "25"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A graph in which all nodes are of equal degree is known as graph.</p>",
+          "options": [
+            "complete",
+            "multi-",
+            "non-regular",
+            "regular"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The minimum number of spanning trees in a connected graph with n nodes is</p>",
+          "options": [
+            "\\( n-1 \\)",
+            "\\( n/2 \\)",
+            "2",
+            "1"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>If a set contains exactly m distinct elements where m denotes some non-negative integer, then the\n                        set\n                        is</p>",
+          "options": [
+            "finite",
+            "infinite",
+            "None of the above",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>In an unweighted, undirected-connected graph, the shortest path from a node S to every other node\n                        is\n                        computed most efficiently, in terms of time complexity, by</p>",
+          "options": [
+            "Dijkstra's algorithm starting from S",
+            "Warshall's algorithm",
+            "performing a DFS starting from S",
+            "performing a BFS starting from S"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The negation of 'Today is Friday' is</p>",
+          "options": [
+            "Today is Saturday",
+            "Today is not Friday",
+            "Today is Thursday",
+            "Today is Sunday"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Whether the relation R on the set of all integers is reflexive, symmetric, anti-symmetric, or\n                        transitive, where \\( (x, y) \\in R \\) if and only if \\( xy \\ge 1 \\)?</p>",
+          "options": [
+            "Anti-symmetric",
+            "Transitive",
+            "Symmetric",
+            "Both symmetric and transitive"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>If \\( p = \\text{'It is raining'} \\) and \\( q = \\text{'She will go to college'} \\), 'It is\n                        raining and she will not go to college' will be denoted by</p>",
+          "options": [
+            "\\( p \\rightarrow \\sim q \\)",
+            "\\( p \\wedge q \\)",
+            "\\( \\sim p \\wedge q \\)",
+            "\\( \\sim(p \\wedge q) \\)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>If \\( x &gt; 0 \\) and \\( x^2 &lt; 0 \\), then \\( x \\ge 10 \\).</p>",
+          "options": [
+            "True",
+            "False",
+            "Both (i) and (ii)",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define the following terms and give an example for each:<br/>\n                        Reflexive relation, irreflexive relation, antisymmetric relation, partition set</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Prove that, if \\( S = \\{s_1, s_2, \\cdots, s_k\\} \\) be a set, then \\( P(S) \\) has \\( 2^k\n                        \\)\n                        elements.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Define 'group', 'order of a group', and 'Abelian group'. Prove that every subgroup of a cyclic\n                        group\n                        is cyclic.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 10,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Define the following with example:<br/>\n                        Ring, homomorphism, cyclic group, coset</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Determine whether f is one-one or onto for the following cases:<br/>\n                        (i) Let \\( A = B = \\{1, 2, 3, 4\\} \\) and \\( f = \\{(1, 1), (2, 3), (4, 2)\\}\n                        \\)<br/>\n                        (ii) Let \\( A = \\{a, b, c\\} \\), \\( B = \\{1, 2, 3, 4\\} \\) and \\( f = \\{(a, 1), (b, 1),\n                        (c,\n                        4)\\} \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Suppose H and K are normal subgroups of G with \\( H \\cap K = \\{1\\} \\). Show that \\( xy = yx\n                        \\)\n                        for all \\( x \\in H \\) and \\( y \\in K \\). Let \\( I \\in R \\) be an ideal.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>The radical \\( \\sqrt{I} = \\{r \\in R | rn \\in I, n \\in\n                        N\\}\n                        \\). Show that \\( \\sqrt{I} \\) is an ideal.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>State and prove De Morgan's laws of set theory.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>In a survey of 260 college students, the following data were obtained: 64 had taken a mathematics\n                        course, 94 had taken a computer science course, 58 had taken a business course, 28 had taken\n                        both a\n                        mathematics and a business course, 26 had taken both a mathematics and a computer science\n                        course, 22\n                        had taken both a computer science and a business course, and 14 had taken all three types of\n                        courses.<br/>\n                        (i) How many of these students had taken none of the three courses?<br/>\n                        (ii) How many had taken only a computer science course? </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 10,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Prove that for any non-empty binary tree T, if \\( n_0 \\) is the number of leaves and \\( n_2\n                        \\) be\n                        the number of nodes having degree two, then \\( n_0 = n_2 + 1 \\).</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Derive total number of nodes of a binary tree having depth n.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all questions :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What is graph? Differentiate between directed and undirected graph.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>How many different ways can you represent a graph? Explain each of the representations by\n                        examples.\n                        What is complete graph?</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>Prove that the sum of degrees of all vertices in a graph is always even.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Consider the graph given below:<br/>\n                        (a) Find the adjacency list and BFS traversal of the above graph. </p>\n<p>Prove that the maximum number of edges possible in a simple graph of n nodes is \\( n(n-1)/2 \\).\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/203.jpg\"/>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Special Exam., 2020",
+    "subject": "Dynamics of Machinery",
+    "subject_slug": "dynamics-of-machinery",
+    "subject_code": "021513",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following statements is correct about the balancing of mechanical system?</p>",
+          "options": [
+            "If it is under static balance, then there will be dynamic balance also",
+            "If it is under dynamic balance, then there will be static balance also",
+            "Both static as well as dynamic balance have to be achieved separately",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Secondary forces in reciprocating mass on engine frame are</p>",
+          "options": [
+            "of same frequency as of primary forces",
+            "twice the frequency as of primary forces",
+            "four times the frequency as of primary forces",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which motion of follower is best for high speed cams?</p>",
+          "options": [
+            "SHM follower motion",
+            "Uniform acceleration and retardation of follower motion",
+            "Cycloidal motion follower",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>What is meant by jump phenomenon in cam and follower system?</p>",
+          "options": [
+            "Follower loses contact with cam surface when cam rotates beyond particular speed due to\n                            inertia\n                            forces",
+            "Follower loses contact with cam surface when follower rotates beyond particular speed due to\n                            gravitational force",
+            "Follower loses contact with cam surface when cam rotates beyond particular speed due to\n                            gravitational forces",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>With usual notations for different parameters involved, the maximum fluctuations of energy for a\n                        flywheel is given by</p>",
+          "options": [
+            "\\( 2ECs \\)",
+            "\\( ECs/2 \\)",
+            "\\( 2ECs^2 \\)",
+            "\\( 2E^2Cs \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What is meant by pitching of ship?</p>",
+          "options": [
+            "Up and down motion of bow and starboard along transverse axis",
+            "Up and down motion of bow and stern along longitudinal axis",
+            "Up and down motion of port and stern along transverse axis",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>What is the effect of reactive gyroscopic couple when an aeroplane takes a right turn and\n                        propeller\n                        rotates in anticlockwise direction?</p>",
+          "options": [
+            "The nose and tail of the aeroplane are in horizontal plane",
+            "The nose of the aeroplane is dipped and tail is raised",
+            "The nose of the aeroplane is raised and tail is dipped",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>What is meant by critical damping coefficient?</p>",
+          "options": [
+            "Frequency of damped free vibrations is less than zero",
+            "The motion is aperiodic in nature",
+            "Both (i) and (ii)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The factor which affects the critical speed of a shaft is</p>",
+          "options": [
+            "the diameter of the disc",
+            "the span of the shaft",
+            "the eccentricity",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The ratio of the maximum displacement of the forced vibration to the deflection due to the static\n                        force, is known as</p>",
+          "options": [
+            "magnification factor",
+            "damping coefficient",
+            "logarithmic decrement",
+            "damping factor"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Discuss the balancing of a single rotating mass when the plane of the disturbing mass lies in\n                        between\n                        the planes of the two balancing masses. </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Discuss the balancing of a single rotating mass when the plane of the disturbing mass lies on one\n                        end\n                        of the planes of the balancing masses.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Draw the cam profile for following conditions: Follower type = roller follower, offset to the\n                        right\n                        of cam axis by 18 mm; lift = 35 mm; base circle radius = 50 mm; roller radius = 14 mm; outstroke\n                        with SHM in 0.05 sec; dwell for 0.0125 sec; return stroke with UARM, during 0.125 sec; dwell for\n                        the\n                        remaining period. During return stroke, acceleration is \\( 3/5 \\) times the retardation.\n                        Determine\n                        maximum velocity and acceleration during outstroke and return stroke if the cam rotates at 240\n                        r.p.m.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Draw the displacement, velocity and acceleration diagrams for a follower when it moves with\n                        uniform\n                        acceleration and retardation. Derive the expression for velocity and acceleration during\n                        outstroke\n                        and return stroke of the follower.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>During forward stroke of the piston of the double acting steam engine, the turning moment has the\n                        maximum value of 2000 N-m when the crank makes an angle of \\( 80^{\\circ} \\) with the inner\n                        dead\n                        centre. During the backward stroke, the maximum turning moment is 1500 N-m when the crank makes\n                        an\n                        angle of \\( 80^{\\circ} \\) with the outer dead centre. The turning moment diagram for the\n                        engine\n                        may be assumed for simplicity to be represented by two triangles. If the crank makes 100 r.p.m.\n                        and\n                        the radius of gyration of the flywheel is 1.75 m, find the coefficient of fluctuation of energy\n                        and\n                        the mass of the flywheel to keep the speed within \\( \\pm 0.75\\% \\) of the mean speed. Also\n                        determine the crank angle at which the speed has its minimum and maximum values.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A turbine rotor of a ship has a mass of 3500 kg and rotates at a speed of 2000 r.p.m. The rotor\n                        has a\n                        radius of gyration of 0.5 m and rotates in clockwise direction when viewed from the stern (rear)\n                        end. Determine the magnitude of gyroscopic couple and its direction for the following\n                        conditions:\n                        <br/>\n                        (a) When the ship runs at a speed of 12 knots and steers to the left in a curve of 70 m radius.\n                        <br/>\n                        (b) When the ship pitches \\( 6^{\\circ} \\) above and \\( 6^{\\circ} \\) below the horizontal\n                        position and the bow (front) end is lowered. The pitching motion is simple harmonic with\n                        periodic\n                        time 30 sec. <br/>\n                        (c) When the ship rolls and at a certain instant, it has an angular velocity of 0.05 rad/s\n                        clockwise\n                        when viewed from the stern. Also find the maximum angular acceleration during pitching.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>It is said that to balance a single revolving mass, two masses revolving in different planes are\n                        necessary. Explain why.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A two cylinder locomotive has the following specifications: Reciprocating mass per cylinder = 306\n                        kg,\n                        Crank radius = 300 mm, Angle between cranks = \\( 90^{\\circ} \\), Driving wheels diameter =\n                        1800\n                        mm,\n                        Distance between cylinder centres = 650 mm, Distance between driving wheel planes = 1550 mm.\n                        Determine (i) the fraction of reciprocating masses to be balanced, if the hammer blow is not to\n                        exceed 46 kN at 96.5 km/hr and (ii) the variation in tractive force.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Define logarithmic decrement. Derive an expression for logarithmic decrement.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>A machine mounted on springs and fitted with a dashpot has a mass of 60 kg. There are three\n                        springs,\n                        each of stiffness 12 N/mm. The amplitude of vibrations reduced from 45 mm to 8 mm in two\n                        complete\n                        oscillations. Assuming that the damping force varies as the velocity, determine (i) the damping\n                        coefficient, (ii) the ratio of frequencies of damped and undamped vibrations and (iii) the\n                        periodic\n                        time of damped vibrations.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Find the natural frequency of vibration of the system shown in the figure below. [The system\n                        consists\n                        of a mass m attached to a light rod of length L pivoted at point O. A spring of stiffness K is\n                        attached horizontally at a distance 'a' from the pivot O.] </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/199.jpg\"/>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Define the terms vibration isolation and transmissibility. Explain with the help of\n                        transmissibility\n                        vs. frequency curves at various damping ratios.</p>"
+        }
+      ]
+    }
+  ]
+}

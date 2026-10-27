@@ -1,0 +1,244 @@
+---
+type AnnouncementItem = {
+	text: string;
+	link: string;
+	isRecent?: boolean;
+};
+
+const announcements: AnnouncementItem[] = Astro.props.announcements ?? [];
+const importantApi: string | undefined = Astro.props.importantApi;
+const baseUrl = import.meta.env.BASE_URL;
+const pinnedAnnouncements = announcements.slice(0, 1);
+const resolveLink = (link: string) =>
+	link.startsWith("http://") || link.startsWith("https://")
+		? link
+		: `${baseUrl}${link.replace(/^\/+/, "")}`;
+---
+
+<div class="announcement-bar">
+    <div class="marquee">
+        <div id="announcementMarquee" class="marquee-content">
+            {pinnedAnnouncements.map((a) => (
+                <a href={resolveLink(a.link)} class="announcement-item">
+                    <span class="dot"></span>
+                    {a.text}
+                    {a.isRecent && <span class="new-pill" aria-label="Very recent notice">NEW</span>}
+                </a>
+            ))}
+        </div>
+    </div>
+</div>
+
+<script define:vars={{ importantApi, baseUrl, pinnedAnnouncements }}>
+	const marquee = document.getElementById("announcementMarquee");
+	const api = importantApi;
+	const CACHE_KEY = "beu_home_important_notices_v1";
+	const CACHE_TTL_MS = 2 * 60 * 1000;
+	const REFRESH_MS = 60 * 1000;
+
+	if (marquee && api) {
+		const now = Date.now();
+
+		const normalizeLink = (link) => {
+			if (!link) return `${baseUrl}notice-board`;
+			if (link.startsWith("http://") || link.startsWith("https://")) return link;
+			const trimmed = link.replace(/^\/+/, "");
+			if (trimmed.startsWith("backend/")) return `https://beu-bih.ac.in/${trimmed}`;
+			if (trimmed.includes(".pdf")) return `https://beu-bih.ac.in/backend/${trimmed}`;
+			return `https://beu-bih.ac.in/${trimmed}`;
+		};
+
+		const isRecent = (dateInput) => {
+			if (!dateInput) return false;
+			const date = new Date(dateInput).getTime();
+			if (Number.isNaN(date)) return false;
+			return now - date <= 3 * 60 * 60 * 1000;
+		};
+
+		const buildHtml = (items) => {
+			const noticeRows = Array.isArray(items)
+				? items.slice(0, 4).map((item) => ({
+						text: String(item.board || item.title || "").trim(),
+						link: normalizeLink(item.link),
+						newTag: isRecent(item.createdAt || item.updatedAt || item.noticedate),
+					}))
+				: [];
+			const appRows = Array.isArray(pinnedAnnouncements)
+				? pinnedAnnouncements.slice(0, 1).map((item) => ({
+						text: String(item.text || "").trim(),
+						link:
+							item.link &&
+							(item.link.startsWith("http://") || item.link.startsWith("https://"))
+								? item.link
+								: `${baseUrl}${String(item.link || "").replace(/^\/+/, "")}`,
+						newTag: Boolean(item.isRecent),
+						targetBlank: false,
+					}))
+				: [];
+			const rows = [...appRows, ...noticeRows.map((r) => ({ ...r, targetBlank: true }))];
+			const cleanRows = rows.filter((item) => item.text.length > 2);
+			if (!cleanRows.length) return;
+			const pair = [...cleanRows, ...cleanRows];
+			marquee.innerHTML = pair
+				.map(
+					(item) => `
+						<a href="${item.link}" class="announcement-item"${item.targetBlank ? ' target="_blank" rel="noopener"' : ""}>
+							<span class="dot"></span>
+							${item.text}
+							${item.newTag ? '<span class="new-pill">NEW</span>' : ""}
+						</a>`,
+				)
+				.join("");
+		};
+
+		const buildFallback = () => {
+			const rows = Array.isArray(pinnedAnnouncements)
+				? pinnedAnnouncements.slice(0, 1).map((item) => ({
+						text: String(item.text || "").trim(),
+						link:
+							item.link &&
+							(item.link.startsWith("http://") || item.link.startsWith("https://"))
+								? item.link
+								: `${baseUrl}${String(item.link || "").replace(/^\/+/, "")}`,
+						newTag: Boolean(item.isRecent),
+					}))
+				: [];
+			if (!rows.length) return;
+			const pair = [...rows, ...rows];
+			marquee.innerHTML = pair
+				.map(
+					(item) => `
+						<a href="${item.link}" class="announcement-item">
+							<span class="dot"></span>
+							${item.text}
+							${item.newTag ? '<span class="new-pill">NEW</span>' : ""}
+						</a>`,
+				)
+				.join("");
+		};
+
+		const readCache = () => {
+			try {
+				const raw = localStorage.getItem(CACHE_KEY);
+				if (!raw) return null;
+				const parsed = JSON.parse(raw);
+				if (!parsed?.ts || !Array.isArray(parsed?.items)) return null;
+				if (Date.now() - parsed.ts > CACHE_TTL_MS) return null;
+				return parsed.items;
+			} catch {
+				return null;
+			}
+		};
+
+		const writeCache = (items) => {
+			try {
+				localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items }));
+			} catch {}
+		};
+
+		const refresh = async () => {
+			try {
+				const response = await fetch(api, { cache: "no-store" });
+				if (!response.ok) return;
+				const data = await response.json();
+				const items = Array.isArray(data?.items)
+					? data.items
+					: Array.isArray(data)
+						? data
+						: Array.isArray(data?.data)
+							? data.data
+							: [];
+				buildHtml(items);
+				writeCache(items);
+			} catch {}
+		};
+
+		const cached = readCache();
+		if (cached) {
+			buildHtml(cached);
+			setTimeout(refresh, 200);
+		} else {
+			buildFallback();
+			refresh();
+		}
+		setInterval(refresh, REFRESH_MS);
+	}
+</script>
+
+<style>
+    .announcement-bar {
+        background: rgba(59, 130, 246, 0.05);
+        border-y: 1px solid var(--border-subtle);
+        overflow: hidden;
+        padding: 0.2rem 0;
+        margin-bottom: 0.4rem;
+        position: relative;
+    }
+
+    .marquee {
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+    }
+
+    .marquee-content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        min-width: max-content;
+        animation: scroll 28s linear infinite;
+        will-change: transform;
+    }
+
+    .announcement-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-decoration: none;
+        white-space: nowrap;
+        padding: 0.16rem 0.62rem;
+        border-radius: 999px;
+        border: 1px solid var(--border-subtle);
+        background: rgba(15, 23, 42, 0.5);
+        transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .announcement-item:hover {
+        color: var(--accent-blue);
+        border-color: var(--border-accent);
+    }
+
+    .dot {
+        width: 6px;
+        height: 6px;
+        background: var(--accent-blue);
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 8px var(--accent-blue);
+    }
+
+    .new-pill {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        border: 1px solid rgba(248, 113, 113, 0.5);
+        color: #fee2e2;
+        background: rgba(220, 38, 38, 0.25);
+        border-radius: 999px;
+        padding: 0.08rem 0.32rem;
+        line-height: 1.2;
+    }
+
+    @keyframes scroll {
+        from { transform: translate3d(0, 0, 0); }
+        to { transform: translate3d(-50%, 0, 0); }
+    }
+
+    .announcement-bar:hover .marquee-content {
+        animation-play-state: paused;
+    }
+</style>

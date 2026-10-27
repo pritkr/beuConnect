@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Exam-2022",
+    "subject": "Programming for Problem Solving",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100104",
+    "year": 2022,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>What does the following declaration mean?<br/>int *ptr [5];</p>",
+          "options": [
+            "ptr is an array of pointers to 5 integers",
+            "ptr is an array of 5 integers",
+            "ptr is a pointer to an array of 5 integers",
+            "ptr is a pointer to array"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The function malloc() is declared in which header file.</p>",
+          "options": [
+            "stdio.h",
+            "stdlib.h",
+            "conio.h",
+            "iostream.h"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>What is the output of:<br/>\n                        #include&lt;stdio.h&gt;<br/>\n                        int main()<br/>\n                        {<br/>\n                          char ch = 'Z';<br/>\n                          printf(\"%d\n\", ch);<br/>\n                          return 0;<br/>\n                        }</p>",
+          "options": [
+            "65",
+            "90",
+            "97",
+            "122"
+          ],
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>How is an array initialized in C language?</p>",
+          "options": [
+            "int a[3] = {1, 2, 3};",
+            "int a = {1, 2, 3};",
+            "int a [ ] = new int[3];",
+            "int a(3) = {1, 2, 3};"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the return type of the fopen() function in C?</p>",
+          "options": [
+            "Pointer to a FILE object.",
+            "Pointer to an integer.",
+            "An integer.",
+            "None of the above."
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What will be the output of the following C Code?<br/>\n                        #include&lt;stdio.h&gt;<br/>\n                        int main()<br/>\n                        {<br/>\n                          int x=4, y, z;<br/>\n                          y=--x;<br/>\n                          z=x--;<br/>\n                          printf(\"%d%d%d\", x, y, z);<br/>\n                        }</p>",
+          "options": [
+            "3 2 3",
+            "2 2 3",
+            "3 2 2",
+            "2 3 3"
+          ],
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The keyword used to transfer control from a function back to the calling function is.</p>",
+          "options": [
+            "switch",
+            "return",
+            "continue",
+            "go to"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>What is the output of:<br/>\n                        #include &lt;stdio.h&gt;<br/>\n                        int main( )<br/>\n                        {<br/>\n                          float a = 5, b = 2;<br/>\n                          int c,d;<br/>\n                          c = a/b;<br/>\n                          d = c/2;<br/>\n                          printf(\"%d\", d);<br/>\n                          return 0;<br/>\n                        }</p>",
+          "options": [
+            "1",
+            "0",
+            "1.5",
+            "1.25"
+          ],
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In C, if you pass an array as an argument to a function, what actually gets passed?</p>",
+          "options": [
+            "First element of the array",
+            "Value of elements of the array",
+            "Base address of the array",
+            "Address of the last element of array"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>How is the \\(3^{rd}\\) element in an array accessed based on pointer notation?</p>",
+          "options": [
+            "*a+3",
+            "*(a+3)",
+            "*(*a+3)",
+            "&amp;(a+3)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain entry controlled loop and exit controlled loop with flow charts and examples.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Write a C program to reverse a given multi-digit number.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain break and continue keywords with suitable examples in context of managing loops.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What is storage classes in C. Write features (storage, default value, scope, life) of variables\n                        defined under each storage class.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Write a C function for Bubble sort. Analyse the time complexity of Bubble sort for each standard\n                        cases.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Differentiate between formal argument and actual argument with an example.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What is recursion? Write a recursive C program to generate \\(n^{th}\\) term of the Fibonacci\n                        series.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>How string is declared and initialized? Explain any four predefined string manipulation functions\n                        with examples.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Write a C program to find result matrix after multiplying two given matrices using 2-D arrays.\n                    </p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Write a program to copy contents of one file to another. While doing so replace all lowercase\n                        characters to their equivalent uppercase characters.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Write the difference between structure and union. Compare them with the help of an example.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Write a program to copy the contents of one array into another in reverse order.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Differentiate between call-by-value and call-by-reference with suitable examples.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Discuss conditional operator? Write a C program to find largest of three numbers using\n                        conditional operator?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Write a C program that converts a string like \"124\" to an integer 124.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Write a C program using the nesting of loops to print the following pattern:<br/>\n                              1<br/>\n                            2  3<br/>\n                          4  5  6<br/>\n                        7  8  9  10</p>"
+        }
+      ]
+    }
+  ]
+}

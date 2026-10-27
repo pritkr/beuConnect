@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech. 1st Semester Exam., 2015",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031101",
+    "year": 2015,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "type": "theory",
+          "text": "Write short answers of the following questions (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Give reasons for your choice of mesh current method and node voltage method of circuit analysis."
+            },
+            {
+              "id": "1b",
+              "text": "Differentiate between emf and terminal voltage in a circuit."
+            },
+            {
+              "id": "1c",
+              "text": "Write notes on dependent and independent sources."
+            },
+            {
+              "id": "1d",
+              "text": "What happens to the power factor of a circuit when the frequency of the supply is varied above and below the resonant frequency?"
+            },
+            {
+              "id": "1e",
+              "text": "Define the term inductive/capacitive reactance."
+            },
+            {
+              "id": "1f",
+              "text": "Define average value of a sinusoidal voltage."
+            },
+            {
+              "id": "1g",
+              "text": "Write the mathematical expression for three balanced voltage sources. When one of the voltages has the peak value at an instant, what are the corresponding values of the other two voltages?"
+            },
+            {
+              "id": "1h",
+              "text": "What do you mean by eddy current?"
+            },
+            {
+              "id": "1i",
+              "text": "What are the effects used in producing deflecting torque in an analog instrument?"
+            },
+            {
+              "id": "1j",
+              "text": "Define reluctance and mmf."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "State and prove Thevenin's theorem.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "Using nodal techniques, determine $I_1$ in the circuit shown below : [Diagram: DC circuit with 5A current source, 10 ohm resistor, 15 ohm resistor, 4I1 dependent voltage source, 5 ohm resistor, 4A current source. I1 is current through 5 ohm resistor]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "numerical",
+              "text": "In the circuit shown below, find the current $I_1$ using the principle of superposition. [Diagram: DC circuit with 6V source, 6 ohm, 1.5 ohm, 3 ohm, 2 ohm resistors, 4A current source. I1 is current through 1.5 ohm resistor]",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "theory",
+              "text": "State and prove maximum power transfer theorem.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "numerical",
+              "text": "A constant current of 5 A flows for 0.04 second, and to complete the cycle, a constant current of 2 A flows in the opposite direction for 0.06 second. Sketch the waveform of the current over one cycle and calculate (i) the mean value of the current; (ii) the r.m.s. value of the current.",
+              "marks": 7
+            },
+            {
+              "id": "4b",
+              "type": "numerical",
+              "text": "A coil having a resistance of 4 $\\Omega$ and an inductance of 1 H is connected in parallel with a circuit comprising a similar coil in series with a capacitor C and a non-inductive resistor R. Calculate the values of C and R so that the currents in either branch of the arrangement are equal but differ in phase by 90\u00b0. Frequency 50 Hz.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "numerical",
+              "text": "An iron-cored coil takes 4 A at a power factor of 0.5 when connected to a 200 V, 50 Hz supply. When the iron core is removed and the voltage is reduced to 40 V the current rises to 5 A at a power factor of 0.8. Find the iron loss in the core and the inductance in each case.",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "type": "theory",
+              "text": "Explain briefly the phenomenon of electrical resonance in a.c. circuits.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "numerical",
+              "text": "A balanced three-phase, delta-connected load of 160 kW takes a leading current of 100 A with a line voltage of 1100 V, 50 Hz. Find the circuit constants of the load per phase.",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "theory",
+              "text": "Explain power factor measurement by means of two wattmeters in a three-phase a.c. circuit.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "numerical",
+              "text": "The combined inductance of the two coils connected in series is 0.60 H and 0.40 H, depending on the relative directions of currents in the coils. If one of the coils, when isolated, has a self-inductance of 0.15 H, then find (i) the mutual inductance, and (ii) the coefficient of coupling K.",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "type": "numerical",
+              "text": "In the magnetic circuit shown in figure given below, the coil $F_2$ is supplying 500 AT in the direction indicated. Find the AT (in magnitude and direction) that the coil $F_1$ must provide to produce a flux of 4 mWb in the air-gap in the central limb from A to B. The relative permeability of the core is 4500. [Diagram: Magnetic circuit with central limb and air gap. Air gap 1mm. Core cross section 30 cm^2. Distances 15cm, 40cm. Coils F1 and F2 on outer limbs]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "Explain deflecting, controlling and damping torque.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "numerical",
+              "text": "A PMMC instrument has a coil of dimensions 15 mm $\\times$ 12 mm. The flux density in the air gap is $1.8 \\times 10^{-3}$ Wb/m$^2$ and the spring constant is $0.14 \\times 10^{-6}$ Nm/rad. Determine the number of turns required to produce an angular deflection of 90 degrees when a current of 5 mA is flowing through the coil.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "type": "theory",
+          "text": "Write short notes on any two of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Norton's theorem"
+            },
+            {
+              "id": "9b",
+              "text": "Electrical resonance"
+            },
+            {
+              "id": "9c",
+              "text": "Maximum power transfer theorem in a.c. circuit"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

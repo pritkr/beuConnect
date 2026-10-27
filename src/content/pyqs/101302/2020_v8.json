@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020 (New Course)",
+    "subject": "BASIC ELECTRONICS",
+    "subject_slug": "basic-electronics",
+    "subject_code": "101302",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Fill in the blanks/Answer any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>In CB configuration, output characteristics may be shown by plot of ______</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>The carriers enter the channel region through the ______ terminal and leave the channel through\n                        the ______ terminal in JFET.</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Mention the advantages of Wien bridge oscillator.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>What is reverse leakage current in CE configuration?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>How is amplifier different from the oscillator?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Name the breakdown mechanism in the lightly doped P-N junction diode under reverse biased\n                        condition.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Draw the V-I characteristics of photodiode.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>What is transconductance with reference to JFET?</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>What is the effect of removing bypass capacitor across the emitter resistor in case of CE\n                        amplifier?</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>What is meant by phase reversal?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Find the DC voltage, ripple factor and efficiency for the half-wave rectifier given in the\n                        circuit below: What should be PIV of the diode used? If bridge rectifier is used for same power\n                        supply, what will be the value of DC voltage and PIV of diode?</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/233.jpg\"/>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Calculate the range of \\( I_L \\) and \\( R_L \\) so that \\( V_{RL} \\) being maintained at 10\n                        V and also calculate the value of maximum voltage rating in the circuit given below :</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/235.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Draw the waveform of output \\( v_0 \\) and explain the operation of circuit given below: (Refer\n                        to question paper for circuit diagram)</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/234.jpg\"/>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Discuss the application of SCR as a power control with the help of circuit diagram.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>For the network given below, determine the following parameters using the approximate equivalent\n                        model. Voltage gain \\( A_v \\), current gain \\( A_i \\), input impedance \\( Z_i' \\) and \\(\n                        Z_i \\):</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/232.jpg\"/>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Calculate the value of \\( R_1 \\) in the biasing circuit in the figure given below so that the\n                        Q-point is fixed at \\( I_C = 8 \\text{ mA} \\) and \\( V_{CE} = 3\\text{V} \\):</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/231.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Given a deletion-type MOSFET. In the positive \\( v_{GS} \\) region, does the drain current\n                        increase at a significantly higher rate than for negative value? Does the \\( I_D \\) curve\n                        become more and more vertical with increasing positive values of \\( v_{GS} \\)?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Draw V-I characteristic curves of JFET and mark various regions. Explain how FET is\n                        voltage-controlled device.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain the working of single-stage common emitter amplifier with the help of circuit diagram.\n                        Draw and explain the DC load-line analysis of this amplifier.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A single-stage amplifier has voltage gain of 10 and bandwidth of 1 MHz. Three such stages are\n                        cascaded and negative feedback of 10% is applied to the cascade stage. Find out the overall\n                        voltage gain and bandwidth of cascade stage with feedback.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the operation of Colpitts oscillator with the help of circuit diagram.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Draw the block diagram and explain the operation of sweep frequency generator.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss with the help of circuit diagram, the purpose of providing negative feedback and positive\n                        feedback.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Draw the circuit diagram of voltage-shunt feedback amplifier and derive the expression of\n                        closed-loop voltage gain using op-amp.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain the operation performed by the circuit given below and derive the expression of output\n                        voltage \\( v_0 \\):</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/230.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Op-amp can be used to add the DC voltage (addition operation). Draw the circuit and explain the\n                        operation of adder using op-amp in non-inverting mode.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

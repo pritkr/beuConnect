@@ -1,0 +1,312 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2017",
+    "subject": "Network Theory",
+    "subject_slug": "network-theory",
+    "subject_code": "031505",
+    "year": 2017,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven) :",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "In the circuit of Fig. 1 shown below, the voltage $V(t)$ is",
+              "options": [
+                "(i) $e^{at} - e^{bt}$",
+                "(ii) $e^{at} + e^{bt}$",
+                "(iii) $ae^{at} - be^{bt}$",
+                "(iv) $ae^{at} + be^{bt}$"
+              ],
+              "answer": "(iv)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "When a unit-impulse voltage is applied to an inductor of 1 H, the energy supplied by the source is",
+              "options": [
+                "(i) $\\infty$",
+                "(ii) 1 J",
+                "(iii) $\\frac{1}{2}$ J",
+                "(iv) 0"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "The graph of an electrical network has $n$ nodes and $b$ branches. The number of links with respect to the choice of a tree is given by",
+              "options": [
+                "(i) $b - n + 1$",
+                "(ii) $b + n$",
+                "(iii) $n - b + 1$",
+                "(iv) $n - 2b - 1$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "A system is represented by the transfer function $\\frac{10}{(s + 1)(s + 2)}$. The DC gain of this system is",
+              "options": [
+                "(i) 1",
+                "(ii) 2",
+                "(iii) 5",
+                "(iv) 10"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "For a two-port network to be reciprocal, then",
+              "options": [
+                "(i) $z_{11} = z_{22}$",
+                "(ii) $y_{21} = y_{12}$",
+                "(iii) $h_{21} = +h_{12}$",
+                "(iv) $AD - BC = 0$"
+              ],
+              "answer": "(ii)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "The passband of a typical filter network with $z_1$ and $z_2$ as the series and shunt-arm impedances is characterized by",
+              "options": [
+                "(i) $-1 < \\frac{z_1}{4z_2} < 0$",
+                "(ii) $-1 < \\frac{z_1}{4z_2} < 1$",
+                "(iii) $0 < \\frac{z_1}{4z_2} < 1$",
+                "(iv) None of the above"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "If $F_1(s)$ and $F_2(s)$ are two positive real functions, then the function which is always positive real, is",
+              "options": [
+                "(i) $F_1(s) F_2(s)$",
+                "(ii) $\\frac{F_1(s)}{F_2(s)}$",
+                "(iii) $\\frac{F_1(s) F_2(s)}{F_1(s) + F_2(s)}$",
+                "(iv) $F_1(s) - F_2(s)$"
+              ],
+              "answer": "(ii)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "Each of the two series elements of a T-section low-pass filter consists of an inductor of 60 mH having negligible resistance and a shunt element having a capacitance of 0.2 $\\mu$F. The nominal impedance is",
+              "options": [
+                "(i) 547.72 k$\\Omega$",
+                "(ii) 54.72 k$\\Omega$",
+                "(iii) 547.72 $\\Omega$",
+                "(iv) 5.477 $\\Omega$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "For a two-port symmetrical bilateral network, if $A = 3$ and $B = 1$, the value of the parameter $C$ will be",
+              "options": [
+                "(i) 4",
+                "(ii) 6",
+                "(iii) 16",
+                "(iv) 8"
+              ],
+              "answer": "(iv)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "The Laplace transform of a unit-ramp function starting at $t = a$ is",
+              "options": [
+                "(i) $\\frac{1}{(s + a)^2}$",
+                "(ii) $\\frac{e^{-as}}{(s + a)^2}$",
+                "(iii) $\\frac{e^{-as}}{s^2}$",
+                "(iv) $\\frac{a}{s^2}$"
+              ],
+              "answer": "(iii)",
+              "id": "1_sub",
+              "marks": null
+            }
+          ],
+          "id": "1",
+          "marks": null
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Derive $ABCD$ parameters in terms of $y$-parameters.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Determine the $y$-parameters for the two-port shown in Fig. 2 below:",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "id": "2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "For the network shown in Fig. 3 below, draw network graph, selecting 2, 4, 5 as tree branches. Obtain loop incidence matrix and loop equations:",
+          "id": "3",
+          "marks": null
+        },
+        {
+          "text": "In the network shown in Fig. 4 below, the switch is closed at $t = 0$. Find the currents $i_1(t)$ and $i_2(t)$ when initial current through the inductor is zero and initial voltage on the capacitor is 4 V:",
+          "id": "4",
+          "marks": null
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "For the network shown in Fig. 5 below, find $G_{21} = V_2/V_1$:",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Define driving-point functions. Write down driving-point functions for a two-port network.",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "id": "5",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Derive the following expressions for a constant $k$ high-pass filter:",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Nominal impedance",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Cut-off frequency",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Attenuation constant",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Phase constant",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Characteristic impedance",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "Design of filter",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "id": "6",
+          "marks": null
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Realize the foster form of the following impedance function: $Z(s) = \\frac{s(s^2 + 4)}{2(s^2 + 1)(s^2 + 9)}$",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Realize the Cauer-II form of the following impedance function: $Z(s) = \\frac{8(s^2 + 1)(s^2 + 3)}{s(s^2 + 2)(s^2 + 4)}$",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "id": "7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Find the short-circuit and open-circuit impedances of the network shown in Fig. 6 below and hence obtain its $\\pi$ equivalent:",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "In the circuit of Fig. 7 below, switch $S$ is closed and steady-state conditions reached. Now at time $t = 0$, switch $S$ is opened. Obtain the expression for the current through the inductor:",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "id": "8",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Write brief notes about the following:",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Incidence matrix",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Loop matrix or circuit matrix",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Transfer functions in two-port network",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "id": "9",
+          "marks": null
+        }
+      ]
+    }
+  ]
+}

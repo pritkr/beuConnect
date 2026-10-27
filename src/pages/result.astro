@@ -1,0 +1,685 @@
+---
+export const prerender = true;
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+---
+
+<Layout title="BEU Result | BEUConnect" description="Check your Bihar Engineering University (BEU) semester results instantly. Fast, reliable, and easy-to-use result checker for all B.Tech students.">
+	<Header />
+
+	<section class="result-shell">
+		<header class="result-head">
+			<h1 style="view-transition-name:beures">BEU Result</h1>
+		</header>
+
+		<div class="glass-card controls-card">
+			<div class="reg-row">
+				<button id="dec" type="button" aria-label="Previous registration">-</button>
+				<input id="reg" placeholder="Enter Registration No." inputmode="numeric" autofocus />
+				<button id="inc" type="button" aria-label="Next registration">+</button>
+				<button id="printBtn" type="button">Print</button>
+				<button id="saveBtn" type="button">Save</button>
+			</div>
+
+			<div class="view-row" role="group" aria-label="Result view mode">
+				<button type="button" class="view-btn active" data-view="official">
+					Official View
+				</button>
+				<button type="button" class="view-btn" data-view="modern">
+					Modern View
+				</button>
+			</div>
+
+			<div class="sem-row">
+				{
+					Array.from({ length: 8 }, (_, i) => (
+						<button type="button" class="sem-btn" data-sem={String(i + 1)}>
+							SEM {i + 1}
+						</button>
+					))
+				}
+			</div>
+		</div>
+
+		<p id="status" class="status muted">Enter registration number to load result.</p>
+
+		<div id="savePrompt" class="glass-card" style="display: none; align-items: center; justify-content: space-between; padding: 0.6rem 0.8rem; margin-top: 0.5rem; border-left: 3px solid var(--accent-purple); background: rgba(139, 92, 246, 0.1); border-radius: 8px;">
+			<div>
+				<h3 style="margin: 0; font-size: 0.85rem; font-weight: 700; color: var(--text-primary);">Save Profile?</h3>
+				<p style="margin: 0; font-size: 0.65rem; color: var(--text-muted);">Personalize your dashboard with this registration number.</p>
+			</div>
+			<button id="confirmSaveBtn" class="outline-btn" style="margin: 0; padding: 0.35rem 0.8rem; font-size: 0.75rem; border-radius: 50px;">Save Me</button>
+		</div>
+
+		<div class="frame-wrap" style="margin-top: 0.5rem;">
+			<iframe id="resultBox" title="BEU result output"></iframe>
+		</div>
+	</section>
+
+	<script>
+		import { parseRegNo, saveProfile, getProfile } from "../utils/profileManager";
+		const baseUrl = import.meta.env.BASE_URL;
+		const regInput = document.getElementById("reg") as HTMLInputElement;
+		const decBtn = document.getElementById("dec") as HTMLButtonElement;
+		const incBtn = document.getElementById("inc") as HTMLButtonElement;
+		const printBtn = document.getElementById("printBtn") as HTMLButtonElement;
+		const saveBtn = document.getElementById("saveBtn") as HTMLButtonElement;
+		const savePrompt = document.getElementById("savePrompt") as HTMLDivElement;
+		const confirmSaveBtn = document.getElementById("confirmSaveBtn") as HTMLButtonElement;
+		const frame = document.getElementById("resultBox") as HTMLIFrameElement;
+		const statusEl = document.getElementById("status") as HTMLParagraphElement;
+
+		let selectedSem = 1;
+		let timeoutTimer: ReturnType<typeof setTimeout> | null = null;
+		let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+		let selectedView: "official" | "modern" = "official";
+
+		const MIN_REG_LENGTH = 8;
+
+		function inferLateralFromReg(reg: string): boolean {
+			const numeric = reg.replace(/\D/g, "");
+			if (numeric.length < 3) return false;
+			const serialCode = Number.parseInt(numeric.slice(-3), 10);
+			return Number.isFinite(serialCode) && serialCode >= 900;
+		}
+
+		function setStatus(type: "muted" | "loading" | "ok" | "error", text: string) {
+			statusEl.className = `status ${type}`;
+			statusEl.textContent = text;
+		}
+
+		function resizeResultFrame() {
+			const doc = frame.contentDocument;
+			if (!doc) return;
+			const bodyH = doc.body?.scrollHeight ?? 0;
+			const htmlH = doc.documentElement?.scrollHeight ?? 0;
+			const raw = Math.max(bodyH, htmlH);
+			if (!raw) return;
+			const target = Math.max(780, Math.min(raw + 24, 2600));
+			frame.style.height = `${target}px`;
+		}
+
+		function updateUrl() {
+			const reg = regInput.value.trim();
+			const url = new URL(window.location.href);
+			if (reg.length >= MIN_REG_LENGTH) {
+				url.searchParams.set("reg", reg);
+			} else {
+				url.searchParams.delete("reg");
+			}
+			url.searchParams.set("sem", String(selectedSem));
+			if (selectedView === "modern") {
+				url.searchParams.set("view", "modern");
+			} else {
+				url.searchParams.delete("view");
+			}
+			window.history.replaceState({}, "", url);
+		}
+
+		function activateSemesterButton() {
+			document.querySelectorAll<HTMLButtonElement>(".sem-btn").forEach((btn) => {
+				const isActive = Number.parseInt(btn.dataset.sem || "0", 10) === selectedSem;
+				btn.classList.toggle("active", isActive);
+			});
+		}
+
+		function activateViewButtons() {
+			document.querySelectorAll<HTMLButtonElement>(".view-btn").forEach((btn) => {
+				const isActive = (btn.dataset.view || "official") === selectedView;
+				btn.classList.toggle("active", isActive);
+			});
+		}
+
+		async function loadResult() {
+			const reg = regInput.value.trim();
+			updateUrl();
+
+			if (timeoutTimer) {
+				clearTimeout(timeoutTimer);
+				timeoutTimer = null;
+			}
+
+			savePrompt.style.display = "none"; // Hide prompt when searching new
+			if (reg.length < MIN_REG_LENGTH) {
+				frame.removeAttribute("src");
+				setStatus("muted", "Enter registration number to load result.");
+				return;
+			}
+
+			// We do NOT auto-save profile here anymore if anonymous. 
+			// We only allow save via the prompt after it loads.
+			try {
+				const profile = getProfile();
+				if (profile && profile.regNo === reg) {
+					// they are already logged in as this person, so keep them logged in
+					document.documentElement.classList.add("is-logged-in");
+				}
+			} catch (e) {
+				console.error("Failed checking profile", e);
+			}
+
+			const isLe = inferLateralFromReg(reg);
+			setStatus(
+				"loading",
+				isLe
+					? "LE auto-detected (9xx serial). Fetching using adjusted batch year..."
+					: `Loading semester ${selectedSem} result (${selectedView} view)...`,
+			);
+
+			frame.src = `${baseUrl}api/result?reg=${encodeURIComponent(reg)}&sem=${selectedSem}&view=${selectedView}`;
+			timeoutTimer = setTimeout(() => {
+				setStatus("error", "Result request timed out. BEU server may be slow or down.");
+			}, 22000);
+		}
+
+		function initFromUrl() {
+			const params = new URLSearchParams(window.location.search);
+			let regParam = params.get("reg");
+			let hasUrlSem = params.has("sem");
+
+			try {
+				const profile = getProfile();
+				
+				// Smart Default: If no reg in URL, load from local profile
+				if (!regParam && profile && profile.regNo) {
+					regParam = profile.regNo;
+				}
+				
+				// Smart Default: Pre-select LAST DECLARED semester (not current sem)
+				if (!hasUrlSem && profile && profile.batchYear) {
+					if (profile.batchYear === 2025) selectedSem = 1;
+					else if (profile.batchYear === 2024) selectedSem = 2;
+					else if (profile.batchYear === 2023) selectedSem = 4;
+					else if (profile.batchYear === 2022) selectedSem = 7;
+					else if (profile.batchYear <= 2021) selectedSem = 8;
+					else selectedSem = Math.max(1, (profile.currentSem || 2) - 1);
+					hasUrlSem = true; // Pretend we had it so we don't overwrite below
+				}
+			} catch (e) {
+				console.error(e);
+			}
+
+			regInput.value = regParam || "";
+			
+			if (hasUrlSem || params.has("sem")) {
+				selectedSem = Number.parseInt(params.get("sem") || String(selectedSem), 10) || 1;
+			}
+			
+			selectedView = params.get("view") === "modern" ? "modern" : "official";
+			activateSemesterButton();
+			activateViewButtons();
+			if (regInput.value.trim().length >= MIN_REG_LENGTH) {
+				loadResult();
+			}
+		}
+
+		regInput.addEventListener("input", () => {
+			updateUrl();
+			if (debounceTimer) {
+				clearTimeout(debounceTimer);
+			}
+			if (regInput.value.trim().length >= MIN_REG_LENGTH) {
+				debounceTimer = setTimeout(loadResult, 300);
+			}
+		});
+
+		regInput.addEventListener("keydown", (event) => {
+			if (event.key === "Enter") {
+				event.preventDefault();
+				loadResult();
+			}
+		});
+
+		document.querySelectorAll<HTMLButtonElement>(".sem-btn").forEach((btn) => {
+			btn.addEventListener("click", () => {
+				selectedSem = Number.parseInt(btn.dataset.sem || "1", 10);
+				activateSemesterButton();
+				loadResult();
+			});
+		});
+
+		document.querySelectorAll<HTMLButtonElement>(".view-btn").forEach((btn) => {
+			btn.addEventListener("click", () => {
+				selectedView = btn.dataset.view === "modern" ? "modern" : "official";
+				activateViewButtons();
+				loadResult();
+			});
+		});
+
+		decBtn.addEventListener("click", () => {
+			const numeric = Number.parseInt(regInput.value.replace(/\D/g, "") || "0", 10);
+			regInput.value = String(Math.max(0, numeric - 1));
+			loadResult();
+		});
+
+		incBtn.addEventListener("click", () => {
+			const numeric = Number.parseInt(regInput.value.replace(/\D/g, "") || "0", 10);
+			regInput.value = String(numeric + 1);
+			loadResult();
+		});
+
+		frame.addEventListener("load", async () => {
+			if (timeoutTimer) {
+				clearTimeout(timeoutTimer);
+				timeoutTimer = null;
+			}
+			resizeResultFrame();
+
+			const doc = frame.contentDocument;
+			const errorCard = doc?.querySelector(".error-card");
+			if (errorCard) {
+				const message =
+					errorCard.textContent?.replace(/\s+/g, " ").trim() ||
+					"Result could not be loaded.";
+				setStatus("error", message);
+				return;
+			}
+			const viewLabel = selectedView === "official" ? "Official" : "Modern";
+			let extractedName = "";
+			let extractedSgpa = "";
+			let extractedCgpa = "";
+			let shouldPromptToSave = false;
+			
+			// Scrape SGPA & Name to make dashboard smarter!
+			try {
+				const profile = getProfile();
+				
+				// Extract data robustly supporting BOTH Modern and Official views
+				
+				// 1. Try Official View IDs first (Fastest and most reliable if official)
+				const offName = doc?.getElementById("ContentPlaceHolder1_DataList1_StudentNameLabel_0")?.textContent?.trim();
+				const offSgpa = doc?.getElementById("ContentPlaceHolder1_DataList5_GROSSTHEORYTOTALLabel_0")?.textContent?.trim();
+				const offCgpa = doc?.getElementById("ContentPlaceHolder1_GridView3_CurCgpaLabel_0")?.textContent?.trim();
+
+				if (offName) extractedName = offName;
+				if (offSgpa) extractedSgpa = offSgpa;
+				if (offCgpa) extractedCgpa = offCgpa;
+
+				// 2. Fallback to Modern View selectors if empty
+				if (!extractedName) {
+					const modernChips = Array.from(doc?.querySelectorAll(".modern-chip") || []);
+					const nameChip = modernChips.find(chip => chip.textContent?.includes("Student Name:"));
+					if (nameChip) {
+						extractedName = nameChip.textContent?.replace("Student Name:", "").trim() || "";
+					}
+				}
+
+				if (!extractedSgpa || !extractedCgpa) {
+					const kpiCards = Array.from(doc?.querySelectorAll(".modern-kpi-card") || []);
+					if (!extractedSgpa) {
+						const sgpaCard = kpiCards.find(card => card.textContent?.includes("SGPA"));
+						if (sgpaCard) extractedSgpa = sgpaCard.querySelector("strong")?.textContent?.trim() || "";
+					}
+					if (!extractedCgpa) {
+						const cgpaCard = kpiCards.find(card => card.textContent?.includes("CGPA"));
+						if (cgpaCard) extractedCgpa = cgpaCard.querySelector("strong")?.textContent?.trim() || "";
+					}
+				}
+
+				// If they are checking their OWN saved result, silent update the SGPA/CGPA
+				if (profile && profile.regNo === regInput.value.trim()) {
+					const updates: any = { regNo: regInput.value.trim() };
+					if (extractedName) updates.name = extractedName;
+					
+					// Issue #12 Fix: Only update SGPA/CGPA if viewing the latest or newer semester
+					const lastSavedSem = profile.lastSemChecked || 0;
+					if (selectedSem >= lastSavedSem) {
+						if (extractedSgpa) updates.lastSgpa = extractedSgpa;
+						if (extractedCgpa) updates.lastCgpa = extractedCgpa;
+						updates.lastSemChecked = selectedSem;
+					}
+					
+					if (Object.keys(updates).length > 1) {
+						saveProfile(updates);
+					}
+				} 
+				// If they are checking a completely new/different result, show the Save Prompt
+				else if (extractedName || extractedSgpa) {
+					shouldPromptToSave = true;
+				}
+
+			} catch (e) {
+				console.error("Silent scrape error:", e);
+			}
+
+			setStatus("ok", `${viewLabel} result loaded.`);
+
+			if (shouldPromptToSave) {
+				savePrompt.style.display = "flex";
+				savePrompt.style.animation = "fadeInUp 0.3s ease";
+				confirmSaveBtn.onclick = async () => {
+					try {
+						const { parseRegNo, saveProfile } = await import("../utils/profileManager");
+						const parsed = parseRegNo(regInput.value.trim());
+						if (parsed.regNo) {
+							// Determine if they are saving an old semester
+							const expectedLatestSem = parsed.currentSem || 1;
+							const isLatestSem = selectedSem >= expectedLatestSem - 1; // Tolerance for results not out yet
+							
+							saveProfile({
+								...parsed,
+								name: extractedName || undefined,
+								lastSgpa: isLatestSem ? (extractedSgpa || undefined) : undefined,
+								lastCgpa: isLatestSem ? (extractedCgpa || undefined) : undefined,
+								lastSemChecked: isLatestSem ? selectedSem : undefined
+							});
+							
+							document.documentElement.classList.add("is-logged-in");
+							savePrompt.style.display = "none";
+							setStatus("ok", `Profile saved! Welcome, ${extractedName || "Student"}.`);
+
+							// If they viewed an old semester, fetch the latest one in the background to hydrate dashboard correctly
+							if (!isLatestSem) {
+								fetch(`${baseUrl}api/result?reg=${encodeURIComponent(parsed.regNo)}&sem=${expectedLatestSem}&format=json`)
+									.then(res => res.json())
+									.then(data => {
+										if (data.status === 200 && data.data) {
+											saveProfile({
+												lastSgpa: data.data.sgpa && Array.isArray(data.data.sgpa) ? data.data.sgpa[expectedLatestSem - 1] : undefined,
+												lastCgpa: data.data.cgpa || undefined,
+												lastSemChecked: expectedLatestSem
+											});
+										}
+									}).catch(e => console.log("Background hydrate failed", e));
+							}
+						}
+					} catch(e) {
+						console.error("Failed to save from prompt", e);
+					}
+				};
+			}
+		});
+
+		frame.addEventListener("error", () => {
+			if (timeoutTimer) {
+				clearTimeout(timeoutTimer);
+				timeoutTimer = null;
+			}
+			setStatus("error", "Failed to load result.");
+		});
+
+		printBtn.addEventListener("click", () => {
+			const win = frame.contentWindow;
+			const html = frame.contentDocument?.documentElement?.outerHTML || "";
+			if (!win || !html.trim()) {
+				setStatus("error", "No result loaded yet.");
+				return;
+			}
+			win.focus();
+			win.print();
+		});
+
+		saveBtn.addEventListener("click", () => {
+			const html = frame.contentDocument?.documentElement?.outerHTML || "";
+			if (!html.trim()) {
+				setStatus("error", "No result loaded yet.");
+				return;
+			}
+			const reg = regInput.value.trim() || "unknown";
+			const blob = new Blob([html], { type: "text/html" });
+			const a = document.createElement("a");
+			a.href = URL.createObjectURL(blob);
+			a.download = `BEU_Result_${reg}_Sem${selectedSem}.html`;
+			a.click();
+			URL.revokeObjectURL(a.href);
+		});
+
+		initFromUrl();
+	</script>
+
+	<style>
+		.result-shell {
+			max-width: 1060px;
+			margin: 0 auto;
+			display: grid;
+			gap: 0.35rem;
+		}
+
+		.result-head h1 {
+			margin-bottom: 0;
+			font-size: 1.15rem;
+		}
+
+		.controls-card {
+			padding: 0.35rem 0.45rem;
+			display: grid;
+			gap: 0.25rem;
+		}
+
+		.reg-row {
+			display: grid;
+			grid-template-columns: auto 1fr auto auto auto;
+			gap: 0.25rem;
+			align-items: center;
+		}
+
+		.reg-row input {
+			margin: 0;
+			text-align: center;
+			font-size: 0.8rem;
+			padding: 0.25rem;
+			min-height: auto;
+		}
+
+		.reg-row button,
+		.sem-btn,
+		.view-btn {
+			margin: 0;
+			padding: 0.25rem 0.4rem;
+			font-size: 0.7rem;
+			min-height: auto;
+		}
+
+		.view-row {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.15rem;
+			padding: 0.15rem;
+			border: 1px solid var(--border-subtle);
+			border-radius: 6px;
+			background: rgba(15, 23, 42, 0.35);
+		}
+
+		.view-btn {
+			padding: 0.2rem 0.35rem;
+			border-radius: 4px;
+			font-size: 0.65rem;
+			font-weight: 600;
+		}
+
+		.view-btn:hover {
+			border-color: rgba(148, 163, 184, 0.25);
+			color: var(--text-primary);
+		}
+
+		.view-btn.active {
+			background: rgba(148, 163, 184, 0.2);
+			border-color: rgba(148, 163, 184, 0.28);
+			color: var(--text-primary);
+			box-shadow: none;
+		}
+
+		.sem-row {
+			display: grid;
+			grid-template-columns: repeat(8, minmax(0, 1fr));
+			gap: 0.15rem;
+		}
+
+		.sem-btn {
+			padding: 0.2rem 0.1rem;
+			font-size: 0.6rem;
+			border-radius: 4px;
+		}
+
+		.status {
+			margin: 0;
+			padding: 0.2rem 0.4rem;
+			border-radius: 4px;
+			font-size: 0.65rem;
+			font-weight: 600;
+		}
+
+		.result-head h1 {
+			margin-bottom: 0;
+			font-size: 1.25rem;
+		}
+
+		.controls-card {
+			padding: 0.4rem 0.5rem;
+			display: grid;
+			gap: 0.35rem;
+		}
+
+		.reg-row {
+			display: grid;
+			grid-template-columns: auto 1fr auto auto auto;
+			gap: 0.25rem;
+			align-items: center;
+		}
+
+		.reg-row input {
+			margin: 0;
+			text-align: center;
+			font-size: 0.85rem;
+			padding: 0.35rem;
+			min-height: auto;
+		}
+
+		.reg-row button,
+		.sem-btn,
+		.view-btn {
+			margin: 0;
+			padding: 0.3rem 0.5rem;
+			font-size: 0.75rem;
+			min-height: auto;
+		}
+
+		.view-row {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.25rem;
+			padding: 0.15rem;
+			border: 1px solid var(--border-subtle);
+			border-radius: 6px;
+			background: rgba(15, 23, 42, 0.35);
+		}
+
+		.view-btn {
+			padding: 0.25rem 0.4rem;
+			border-radius: 4px;
+			border-color: transparent;
+			background: transparent;
+			background-image: none;
+			color: var(--text-secondary);
+			font-size: 0.7rem;
+			font-weight: 600;
+		}
+
+		.view-btn:hover {
+			border-color: rgba(148, 163, 184, 0.25);
+			color: var(--text-primary);
+		}
+
+		.view-btn.active {
+			background: rgba(148, 163, 184, 0.2);
+			border-color: rgba(148, 163, 184, 0.28);
+			color: var(--text-primary);
+			box-shadow: none;
+		}
+
+		.sem-row {
+			display: grid;
+			grid-template-columns: repeat(8, minmax(0, 1fr));
+			gap: 0.25rem;
+		}
+
+		.sem-btn {
+			padding: 0.3rem 0.1rem;
+			font-size: 0.65rem;
+			border-radius: 4px;
+		}
+
+		.sem-btn.active {
+			background: linear-gradient(135deg, #2563eb, #0ea5e9);
+			border-color: transparent;
+			color: #fff;
+		}
+
+		.status {
+			margin: 0;
+			padding: 0.3rem 0.5rem;
+			border-radius: 6px;
+			font-size: 0.7rem;
+			font-weight: 600;
+		}
+
+		.status.muted {
+			background: rgba(71, 85, 105, 0.25);
+			color: #cbd5e1;
+		}
+
+		.status.loading {
+			background: rgba(59, 130, 246, 0.2);
+			color: #dbeafe;
+		}
+
+		.status.ok {
+			background: rgba(16, 185, 129, 0.2);
+			color: #d1fae5;
+		}
+
+		.status.error {
+			background: rgba(239, 68, 68, 0.2);
+			color: #fee2e2;
+		}
+
+		.frame-wrap {
+			border: 1px solid var(--border-subtle);
+			border-radius: 8px;
+			background: #fff;
+			overflow: hidden;
+		}
+
+		#resultBox {
+			display: block;
+			width: 100%;
+			height: min(90vh, 1300px);
+			border: 0;
+			background: #fff;
+		}
+
+		@media (max-width: 900px) {
+			.reg-row {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.reg-row input {
+				grid-column: span 2;
+			}
+
+			.sem-row {
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+			}
+		}
+
+		@media (max-width: 560px) {
+			.reg-row {
+				grid-template-columns: 1fr 1fr;
+				gap: 0.25rem;
+			}
+
+			.sem-row {
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+				gap: 0.25rem;
+			}
+		}
+
+		@keyframes fadeInUp {
+			from { opacity: 0; transform: translateY(10px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+	</style>
+
+	<Footer />
+</Layout>

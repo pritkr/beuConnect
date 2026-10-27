@@ -1,0 +1,291 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 3rd Semester Examination, 2023",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "101302",
+    "year": 2023,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer of the following (Any seven question only) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "type": "theory",
+              "text": "The average value of the full-wave rectified sine wave with period $\\pi$ and a peak value of $V_m$ is",
+              "options": [
+                "$0.707 V_m$",
+                "$0.5 V_m$",
+                "$0.637 V_m$",
+                "$0.318 V_m$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "type": "theory",
+              "text": "The most commonly used transistor configuration for use as a switching device is",
+              "options": [
+                "Common-base configuration",
+                "Common-collector configuration",
+                "Collector-emitter shorted configuration",
+                "Common-emitter configuration"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "type": "theory",
+              "text": "The Gunn diode is made of",
+              "options": [
+                "Silicon",
+                "Germanium",
+                "Gallium Arsenide",
+                "Selenium"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "type": "numerical",
+              "text": "If for a silicon N-P-N transistor, the base - to - emitter voltage is 0.7V and the collector - to - base voltage is 0.2V, then the transistor is operating in the",
+              "options": [
+                "Active region",
+                "Saturation region",
+                "Reverse active region",
+                "Cut-off region"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "type": "theory",
+              "text": "What current does $I = Aq(\\frac{D_p}{L_p}p_n + \\frac{D_n}{L_n}n_p)$ represent in pn junction diode?",
+              "options": [
+                "Forward current",
+                "Diffusion current",
+                "Drift current",
+                "Reverse saturation current"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "type": "theory",
+              "text": "For normal operation of a transistor,",
+              "options": [
+                "Forward bias the emitter diode and reverse bias the collector diode",
+                "Forward bias the emitter diode as well as the collector diode",
+                "Reverse bias the emitter diode as well as the collector diode",
+                "Reverse bias the emitter diode and forward bias the collector diode"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "type": "theory",
+              "text": "Transistor is in saturation when",
+              "options": [
+                "$I_B = I_C$",
+                "$I_B > \\frac{I_C}{\\beta_{dc}}$",
+                "$I_B = 0$",
+                "$I_B < \\frac{I_C}{\\beta_{dc}}$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "type": "numerical",
+              "text": "If a differential amplifier has a gain of 20,000 and CMRR = 80 dB, its common mode gain is",
+              "options": [
+                "2",
+                "1",
+                "1/2",
+                "0"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "type": "theory",
+              "text": "An operational amplifier possesses",
+              "options": [
+                "Very large input resistance and very large output resistance",
+                "Very large input resistance and very small output resistance",
+                "Very small input resistance and very small output resistance",
+                "Very small input resistance and very large output resistance"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "type": "theory",
+              "text": "If the input ($V_{in}$) to the circuit is a sine wave, the output will be : [Diagram: A diode circuit taking input $V_{in}$]",
+              "options": [
+                "Half-wave rectified sine wave",
+                "Full-wave rectified sine wave",
+                "Triangular wave",
+                "Square wave"
+              ],
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "With a neat circuit diagram and waveform, explain the working of bridge rectifier.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "theory",
+              "text": "Explain Zener diode as voltage regular with no load.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "Explain the operation of enhancement MOSFET.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "theory",
+              "text": "Draw the DC load line for transistor and identify Q point.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "With a neat circuit diagram, explain the working of wein bridge oscillator using op-Amp.",
+              "marks": 7
+            },
+            {
+              "id": "4b",
+              "type": "theory",
+              "text": "Explain common base input characteristic of BJT.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "numerical",
+              "text": "An amplifier with open loop voltage gain $A_v = 1000 \\pm 100$ is available. It is required to have amplifier whose gain varies by not more than $\\pm 0.2\\%$. Find (i) Reverse transmission factor $\\beta$ of the feedback network, (ii) Gain with feedback.",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "type": "theory",
+              "text": "Define, four basic ways of connection the feedback signal. Such as voltage-series feedback, voltage-shunt feedback, current-series feedback, current-shunt feedback.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "Explain the differences between BJT & FET.",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "Calculate the output voltage $V_o$ of the circuit shown in figure. The input voltages are $V_1 = 2.5V$ and $V_2 = 1V$. [Diagram: Summing/difference op-amp circuit with $V_1$ to 1k, $V_2$ to 3.3k, non-inverting terminal to 1.5k, and feedback resistor 2.2k.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "type": "theory",
+          "text": "Draw and explain pin configuration of 741 OP-Amp.",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "type": "theory",
+          "text": "What is an SCR? Explain its working with switching characteristics.",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "text": "Write short notes on any two of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "Differential amplifier",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "theory",
+              "text": "Explain positive half wave rectifier with input and output waveforms",
+              "marks": 7
+            },
+            {
+              "id": "9c",
+              "type": "theory",
+              "text": "Define OP-Amp parameter Gain, CMRR, Slew rate, Input Resistance.",
+              "marks": 7
+            },
+            {
+              "id": "9d",
+              "type": "theory",
+              "text": "Explain inverting amplifier.",
+              "marks": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

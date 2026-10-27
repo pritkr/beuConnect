@@ -1,0 +1,38 @@
+# build output
+dist/
+
+# cf build output (Build Output Specification)
+.cloudflare/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# cf / wrangler local state
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
+
+# native app build output (regenerate with ./scripts/package-android.sh)
+native/.nsh/
+native/dist/
+native/node_modules/

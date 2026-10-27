@@ -1,0 +1,213 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 7th Semester Exam., 2020",
+    "subject": "POWER ELECTRONICS",
+    "subject_slug": "power-electronics",
+    "subject_code": "031709",
+    "year": 2020,
+    "semester": 7,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct alternative from any seven of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "If the peak value of an applied voltage in a full-wave rectifier is $V_m$, the peak inverse voltage of diode is",
+              "options": [
+                "$V_m$",
+                "$2V_m$",
+                "$\\sqrt{2}V_m$",
+                "$2\\sqrt{2}V_m$"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "If a 50 Hz a.c. signal is fed to a rectifier, the ripple frequency of output voltage waveform for full bridge rectifier is",
+              "options": [
+                "25 Hz",
+                "50 Hz",
+                "100 Hz",
+                "150 Hz"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "Which of the following devices should be used as a switch in a low-power switched-mode power supply?",
+              "options": [
+                "GTO",
+                "MOSFET",
+                "TRIAC",
+                "THYRISTOR"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "A single-phase full bridge diode rectifier delivers a load current of 10 A, which is ripple free. Average and RMS values of diode currents respectively are",
+              "options": [
+                "10 A, 7.07 A",
+                "5 A, 10 A",
+                "5 A, 7.07 A",
+                "7.07 A, 5 A"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "A 3-phase half-wave diode rectifier feeds a load of $R = 100\\Omega$. For an input supply of 400 V, 50 Hz, the power delivered to the load is",
+              "options": [
+                "753.73 W",
+                "974.23 W",
+                "376.98 W",
+                "487.26 W"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "A step-up chopper has $V_s$ as the source voltage and $\\alpha$ as the duty cycle. The output voltage of this chopper is given by",
+              "options": [
+                "$V_s(1 + \\alpha)$",
+                "$V_s / (1 + \\alpha)$",
+                "$V_s(1 - \\alpha)$",
+                "$V_s / (1 - \\alpha)$"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "A chopper circuit is fed with an input voltage of $20\\text{ V}_{dc}$, delivers a load power of 16 W. For a chopper efficiency of 0.8, the input current is",
+              "options": [
+                "0.64 A",
+                "0.8 A",
+                "1 A",
+                "1.25 A"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "In single pulse modulation of PWM inverters, third harmonic can be eliminated if pulse width is equal to",
+              "options": [
+                "$30^\\circ$",
+                "$60^\\circ$",
+                "$120^\\circ$",
+                "$150^\\circ$"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "A single-phase a.c. voltage controller has input voltage of 240 V, 50 Hz and a load of $R = 6\\Omega$. For 3 cycles on and 2 cycles off, the load would consume a power of",
+              "options": [
+                "2880 W",
+                "5760 W",
+                "3456 W",
+                "11520 W"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "A 3-phase to 1-phase conversion device employs a 6-pulse bridge cycloconverter. For an input voltage of 200 V per phase, the fundamental RMS value of output voltage is",
+              "options": [
+                "$600 / \\pi \\text{ V}$",
+                "$300\\sqrt{3} / \\pi \\text{ V}$",
+                "$300 / \\pi \\text{ V}$",
+                "$600\\sqrt{3} / \\pi \\text{ V}$"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2a",
+          "text": "Derive the relation for average output voltage, RMS output voltage and voltage ripple factor of 1-phase full-wave uncontrolled bridge rectifier.",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "A 1-phase full-wave bridge rectifier circuit fed from a $220\\text{ V, 50 Hz}$ supply. It consists of four diodes, a load resistance $20\\Omega$ and a very large inductance so that the load current is constant. Determine the (i) average output voltage, (ii) average output current, (iii) average value of diode current, (iv) RMS value of diode current, (v) RMS value of input current, (vi) d.c. output power and (vii) input power factor.",
+          "marks": 7
+        },
+        {
+          "id": "3a",
+          "text": "Compare at least 8 performance parameters of 1-phase and 3-phase uncontrolled rectifiers.",
+          "marks": 8
+        },
+        {
+          "id": "3b",
+          "text": "A 1-phase $230\\text{ V, 1 kW}$ heater is connected across 1-phase $230\\text{ V, 50 Hz}$ supply through a diode. Calculate the power delivered to the heater element. Find the (i) peak, average and RMS values of diode current and (ii) input power factor.",
+          "marks": 6
+        },
+        {
+          "id": "4a",
+          "text": "A d.c.-d.c. converter is connected to a $150\\text{ V d.c.}$ source with an inductive load $R = 10\\Omega$ and $L = 10\\text{ mH}$. A freewheeling diode is also connected across load. Assume the load current varies from 10 A to 15 A. Find the time ratio of d.c.-d.c. converter.",
+          "marks": 7
+        },
+        {
+          "id": "4b",
+          "text": "Explain the operation of class A chopper with neat waveforms.",
+          "marks": 7
+        },
+        {
+          "id": "5a",
+          "text": "A single-phase half bridge inverter connected to $230\\text{ V d.c.}$ source feeds a resistive load of $10\\Omega$. Determine the following :\n(i) Fundamental RMS output voltage and total output power\n(ii) Average and peak current through each thyristor\n(iii) Input power factor and distortion factor\n(iv) Total harmonic distortion and harmonic factor for lowest order harmonic",
+          "marks": 8
+        },
+        {
+          "id": "5b",
+          "text": "Explain a.c. voltage control and series inverter control in single-phase inverters.",
+          "marks": 6
+        },
+        {
+          "id": "6a",
+          "text": "Write the applications of current source inverters. What is the condition to get sinusoidal output wave of the current source inverter?",
+          "marks": 8
+        },
+        {
+          "id": "6b",
+          "text": "A single-phase bridge inverter fed from $230\\text{ V d.c.}$ is connected to load $R = 10\\Omega$ and $L = 0.03\\text{ H}$. Determine the power delivered to load in case the inverter is operating at 50 Hz with-\n(i) square-wave output;\n(ii) quasi-square-wave output with an on period of 0.5 of a cycle;\n(iii) two symmetrically spaced pulses per half cycle with an on period of 0.5 of a cycle.",
+          "marks": 6
+        },
+        {
+          "id": "7a",
+          "text": "A single-phase voltage controller has input voltage of 230 V, 50 Hz and a load of $R = 15\\Omega$. For 6 cycles on and 4 cycles off, determine the-\n(i) RMS output voltage;\n(ii) input power factor;\n(iii) average and RMS thyristor currents.",
+          "marks": 6
+        },
+        {
+          "id": "7b",
+          "text": "Draw the phasor diagram of a highly inductive series R-L-C circuit when excited with a sinusoidal voltage source.",
+          "marks": 8
+        },
+        {
+          "id": "8a",
+          "text": "A single-phase to single-phase mid-point cycloconverter is delivering power to a resistive load $R = 20\\Omega$. The supply transformer has turns ratio of 1:1:1. The frequency ratio is $f_o / f_s = 1/5$. The firing angle delays for all the four SCRs are the same. Sketch the variations of the following waveforms for $\\alpha = 0^\\circ$ and $\\alpha = 30^\\circ$ :\n(i) Supply voltage\n(ii) Output current\n(iii) Supply current",
+          "marks": 6
+        },
+        {
+          "id": "8b",
+          "text": "Explain the operating principle of 1-phase to 1-phase step-up cycloconverter with the help of mid-point and bridge-type configurations. Illustrate your answer with appropriate circuit and waveforms. The conduction of various thyristors must also be indicated on the waveforms.",
+          "marks": 8
+        },
+        {
+          "id": "9a",
+          "text": "Discuss two-transistor analogy of a thyristor. Derive an expression for the anode current and discuss therefrom the turn on mechanisms of a thyristor.",
+          "marks": 7
+        },
+        {
+          "id": "9b",
+          "text": "Explain the UJT as relaxation oscillator.",
+          "marks": 7
+        }
+      ]
+    }
+  ]
+}

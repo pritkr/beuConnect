@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 4th Semester Examination, 2017",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "041401",
+    "year": 2017,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this Paper. All questions carry equal marks.",
+    "Attempt Five questions in all.",
+    "Question No. 1 is Compulsory.",
+    "The marks are indicated in the right-hand margin."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct alternatives for any seven of the following;",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "A",
+              "text": "The junction capacitance of a linearly graded junction varies with the applied reverse voltage (V) as",
+              "type": "mcq",
+              "options": [
+                "V",
+                "$V^{-1/3}$",
+                "$V^{-1/2}$",
+                "$V^{-1/4}$"
+              ]
+            },
+            {
+              "id": "B",
+              "text": "Reverse saturation current in a silicon PN junction diode is doubled for every",
+              "type": "mcq",
+              "options": [
+                "$10^\\circ\\text{C}$ increase in temperature",
+                "$5^\\circ\\text{C}$ increase in temperature",
+                "$2^\\circ\\text{C}$ increase in temperature",
+                "$1^\\circ\\text{C}$ increase in temperature"
+              ]
+            },
+            {
+              "id": "C",
+              "text": "A rectifier is used to",
+              "type": "mcq",
+              "options": [
+                "convert ac to dc",
+                "convert dc to ac",
+                "convert high voltage to low voltage",
+                "convert low voltage to high voltage"
+              ]
+            },
+            {
+              "id": "D",
+              "text": "Polarity of dc output voltage of a half wave rectifier can be reversed by reversing",
+              "type": "mcq",
+              "options": [
+                "transformer primary",
+                "the diode",
+                "transformer secondary",
+                "none of these"
+              ]
+            },
+            {
+              "id": "E",
+              "text": "When a transistor operates in active region, it behaves as",
+              "type": "mcq",
+              "options": [
+                "a closed switch",
+                "an open switch",
+                "an amplifier",
+                "none of these"
+              ]
+            },
+            {
+              "id": "F",
+              "text": "If the Q-point of a transistor lies at ________, the negative part of input signal is clipped at output.",
+              "type": "mcq",
+              "options": [
+                "near saturation point",
+                "near cut-off point",
+                "middle of active region",
+                "anywhere of the load line"
+              ]
+            },
+            {
+              "id": "G",
+              "text": "Trans-conductance of JFET is measured in",
+              "type": "mcq",
+              "options": [
+                "mhos or siemens",
+                "ohms",
+                "volts",
+                "amperes"
+              ]
+            },
+            {
+              "id": "H",
+              "text": "The threshold voltage of an enhancement pMOS transistor is",
+              "type": "mcq",
+              "options": [
+                "less than zero volt",
+                "equal to zero volt",
+                "greater than zero volt",
+                "none of these"
+              ]
+            },
+            {
+              "id": "I",
+              "text": "In a common-emitter amplifier, the unbiased emitter resistance provides",
+              "type": "mcq",
+              "options": [
+                "voltage-series feedback",
+                "voltage-shunt feedback",
+                "current-series feedback",
+                "current-shunt feedback"
+              ]
+            },
+            {
+              "id": "J",
+              "text": "An ideal OP-AMP has",
+              "type": "mcq",
+              "options": [
+                "infinite voltage gain",
+                "zero output impedance",
+                "infinite signal bandwidth",
+                "all of these"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "What is a forward biased and reverse biased diode? How is the width of the space charge region and barrier height affected in forward biased and reversed diode?",
+              "marks": 8
+            },
+            {
+              "id": "b",
+              "text": "What is the relation between current and voltage in a PN junction diode? Explain each term involved in that relation. The reverse saturation current of a silicon PN junction diode is $10 \\text{ \\mu A}$ at the temperature $300 \\text{ K}$. Determine the forward bias voltage to be applied across the PN junction to obtain a current of about $100 \\text{ mA}$.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Explain depletion layer capacitance and diffusion capacitance of a PN junction diode in detail. How do these capacitances vary with respect to applied bias voltage across a silicon PN-junction diode?",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "A silicon has a doping density of acceptors $N_A = 4 \\times 10^{18} / \\text{ cm}^3$ in the P-type region and a doping density of donors $N_D = 3 \\times 10^{15} / \\text{ cm}^3$ in the N-type region. Assume $n_i = 2.5 \\times 10^{10} / \\text{ cm}^3$ at room temperature of $300 \\text{ K}$ and the dielectric constant of silicon as $11.7$. Determine the built in potential and the total space charge (depletion layer) width at $300 \\text{ K}$.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "What is ripple factor? Why ripple factor is so important in power supply? Derive the expression of ripple factor of a full wave rectifier using centre-tap transformer.",
+              "marks": 8
+            },
+            {
+              "id": "b",
+              "text": "A single phase full wave rectifier circuit consists of four diodes, a $250 \\text{ \\Omega}$ load resistance and it is fed from a $15\\text{V}, 50 \\text{ Hz}$ ac power supply. The forward resistance of each diode is $25 \\text{ \\Omega}$. Determine the dc output voltage, dc load current and efficiency.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "What is a bipolar junction transistor (BJT)? Why are these transistors called bipolar devices? What are the different configuration of BJT?",
+              "marks": 6
+            },
+            {
+              "id": "b",
+              "text": "Derive the relation between $\\alpha$ and $\\beta$ of a BJT.",
+              "marks": 4
+            },
+            {
+              "id": "c",
+              "text": "The collector current of a transistor is $100 \\text{ mA}$ and is $\\beta$ is $75$. Calculate the value of base current and emitter current.",
+              "marks": 4
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "What are the different types of biasing? Derive the expression for stability factor of self bias circuit.",
+              "marks": 8
+            },
+            {
+              "id": "b",
+              "text": "A voltage divider bias circuit of a BJT is shown in Fig.-1 below. Determine the emitter current and collector-to-emitter voltage. Calculate the collector potential Vc. Assume $V_{BE} = 0.65$ and $\\beta = 75$.\n\n[Diagram: Figure-1 - Voltage divider bias circuit of N-P-N transistor. $V_{CC}=18\\text{V}, R_1=10\\text{k}\\Omega, R_2=9.5\\text{k}\\Omega, R_C=1.5\\Omega, R_E=4.5\\text{k}\\Omega, V_{BE}=0.65, \\beta=75$]",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Discuss the construction and working principle of a P-channel enhancement type MOSFET with diagrams and draw the device characteristics.",
+              "marks": 8
+            },
+            {
+              "id": "b",
+              "text": "In an N-channel JFET, $I_{DSS}=12 \\text{ mA}, V_p=-6 \\text{ V}$. Find the minimum value of $V_{DS}$ for pinch off operation. Determine the value of drain current at $V_{GS}=-3 \\text{V}$.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Draw the circuit diagram of an integrator using opamp and explain its operation. If a square wave voltage signal is applied at the input of an integrator then draw its out in same time scale of input signal.",
+              "marks": 9
+            },
+            {
+              "id": "b",
+              "text": "Draw the circuit diagram of a non-inverting summing amplifier using opamp and determine the output voltage.",
+              "marks": 5
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "i",
+              "text": "Photo diode",
+              "marks": 7
+            },
+            {
+              "id": "ii",
+              "text": "Unijunction Transistor",
+              "marks": 7
+            }
+          ],
+          "text": "Write short notes on the following:"
+        }
+      ]
+    }
+  ]
+}

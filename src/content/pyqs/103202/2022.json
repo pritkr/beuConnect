@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2022",
+    "subject": "MATHEMATICS—II (Linear Algebra, Transform Calculus and Numerical Methods)",
+    "subject_slug": "mathematics-ii-linear-algebra-transform-calculus-and-numerical-methods",
+    "subject_code": "103202",
+    "year": 2022,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct option of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "<p>The inverse of a symmetric matrix is</p>",
+          "options": [
+            "symmetric",
+            "skew-symmetric",
+            "diagonal matrix",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "<p>If A is a matrix such that there exists a square sub-matrix of order r and every square sub-matrix of order r + 1 or more is singular, then</p>",
+          "options": [
+            "rank of A = r + 1",
+            "rank of A = r",
+            "rank of A > r",
+            "rank of A > r + 1"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "<p>Let a, b, c be positive real numbers, then the following system of equations in x, y and z</p>\n<p>\\( \\frac{x^2}{a^2} + \\frac{y^2}{b^2} - \\frac{z^2}{c^2} = 1, \\frac{x^2}{a^2} - \\frac{y^2}{b^2} + \\frac{z^2}{c^2} = 1, -\\frac{x^2}{a^2} + \\frac{y^2}{b^2} + \\frac{z^2}{c^2} = 1 \\)</p>\n<p>has</p>",
+          "options": [
+            "no solution",
+            "unique solution",
+            "infinitely many solutions",
+            "finitely many solutions"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "<p>If \\( f(x) = 0 \\) is an algebraic equation, then Newton-Raphson method is given by \\( x_{n+1} = x_n - \\frac{f(x_n)}{?} \\)</p>",
+          "options": [
+            "\\( f(x_{n-1}) \\)",
+            "\\( f'(x_{n-1}) \\)",
+            "\\( f'(x_n) \\)",
+            "\\( f''(x_n) \\)"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "<p>Gauss forward interpolation formula involves</p>",
+          "options": [
+            "even differences above the central line and odd differences on the central line",
+            "even differences below the central line and odd differences on the central line",
+            "odd differences below the central line and even differences on the central line",
+            "odd differences above the central line and even differences on the central line"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "<p>How many prior value(s) is/are required to predict the next value in Adams-Bashforth-Moulton method?</p>",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "<p>What is/are the order(s) of the predictor and corrector in Milne's predictor-corrector method?</p>",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "<p>A sufficient condition for convergence for the system of equations \\( Au = d \\) obtained, when we apply finite difference methods for Laplace's or Poisson equation is</p>",
+          "options": [
+            "the coefficient matrix A of the system of equations is diagonally dominant",
+            "the coefficient matrix A of the system of equations is non-singular",
+            "the coefficient matrix A of the system of equations is singular",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "<p>\\( L(\\sqrt{t}) = \\)</p>",
+          "options": [
+            "\\( \\frac{\\Gamma(3/2)}{s^{3/2}} \\)",
+            "\\( \\frac{\\Gamma(1/2)}{s^{1/2}} \\)",
+            "\\( \\frac{\\Gamma(1/2)}{s^{3/2}} \\)",
+            "\\( \\frac{\\Gamma(3/2)}{s^{1/2}} \\)"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "<p>\\( L^{-1}(e^{-as} F(s)) = \\)</p>",
+          "options": [
+            "\\( f(t)u(t) \\)",
+            "\\( f(t-a)u(t) \\)",
+            "\\( f(t-a)u(t-a) \\)",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "2.",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>Reduce the matrix to normal form and find its rank.</p>\n<p>\\( A = \\begin{bmatrix} 2 & 3 & 4 & 5 \\\\ 3 & 4 & 5 & 6 \\\\ 4 & 5 & 6 & 7 \\\\ 5 & 6 & 7 & 8 \\end{bmatrix} \\)</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>For what values of k, the equation \\( x + y + z = 1, 2x + y + 4z = k, 4x + y + 10z = k^2 \\) has a solution?</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "3.",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>Verify Cayley-Hamilton theorem for the matrix</p>\n<p>\\( A = \\begin{bmatrix} 2 & 1 & 1 \\\\ 0 & 1 & 0 \\\\ 1 & 1 & 2 \\end{bmatrix} \\)</p>\n<p>Hence prove that</p>\n<p>\\( A^8 - 5A^7 + 7A^6 - 3A^5 + A^4 - 5A^3 + 8A^2 - 2A + I = \\begin{bmatrix} 8 & 5 & 5 \\\\ 0 & 3 & 0 \\\\ 5 & 5 & 8 \\end{bmatrix} \\)</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>Find a matrix P which transforms the matrix \\( A = \\begin{bmatrix} 1 & 0 & -1 \\\\ 1 & 2 & 1 \\\\ 2 & 2 & 3 \\end{bmatrix} \\) to diagonal form. Hence find \\( A^4 \\).</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "4.",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>Find the smallest positive root of \\( x^4 - x = 10 \\) by using the Newton-Raphson method, correct to three decimal places.</p>",
+          "total_marks": 8
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Evaluate \\( \\Delta^2 \\left( \\frac{5x + 12}{x^2 + 5x + 6} \\right) \\); the interval of differencing being unity.</p>",
+          "total_marks": 6
+        }
+      ]
+    },
+    {
+      "section_title": "5.",
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>Derive the Newton's forward difference formula using the operator relations.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Using the trapezoidal rule, evaluate the integral \\( I = \\int_0^1 \\frac{dx}{x^2 + 6x + 10} \\), with 2 and 4 sub-intervals. Compare with the exact solution. Comment on the magnitudes of the errors obtained.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "6.",
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Using the Adams-Bashforth predictor-corrector equations, evaluate \\( y(1.4) \\), if y satisfies \\( \\frac{dy}{dx} + \\frac{y}{x} = \\frac{1}{x^2} \\) and \\( y(1) = 1, y(1.1) = 0.996, y(1.2) = 0.986, y(1.3) = 0.972 \\).</p>",
+          "total_marks": 14
+        }
+      ]
+    },
+    {
+      "section_title": "7.",
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Solve the equation \\( u_{xx} = u_t \\) subject to \\( u(x, 0) = 0, u(0, t) = 0 \\) and \\( u(l, t) = t \\), for two time steps by Crank-Nicolson method.</p>",
+          "total_marks": 14
+        }
+      ]
+    },
+    {
+      "section_title": "8.",
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "<p>Find the inverse Laplace transform of \\( \\frac{s}{(s^2 + a^2)^3} \\) with the help of convolution theorem.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "<p>Find the values of the integral \\( \\int_0^\\infty e^{-3t} \\frac{\\sin^2 t}{t} dt \\) with the help of Laplace transform.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "9. Find the solution of following differential equations by using Laplace transform :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>\\( t \\frac{d^2y}{dt^2} + (1 - 2t) \\frac{dy}{dt} - 2y = 0 \\), when \\( y(0) = 1, y'(0) = 2 \\)</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>\\( \\frac{\\partial^2 y}{\\partial t^2} = 9 \\frac{\\partial^2 y}{\\partial x^2} \\), where \\( y(0, t) = 0, y(2, t) = 0 \\) and \\( y(x, 0) = 20 \\sin 2\\pi x - 10 \\sin 5\\pi x \\)</p>",
+          "total_marks": 7
+        }
+      ]
+    }
+  ]
+}

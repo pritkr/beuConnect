@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 3rd Semester Exam., 2019 (New Course)",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "101302",
+    "year": 2019,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven of the following questions :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Clipper and clamper are the applications of ________."
+            },
+            {
+              "id": "b",
+              "text": "Give one application of Zener diode."
+            },
+            {
+              "id": "c",
+              "text": "SCR is bistable device. (State True or False)"
+            },
+            {
+              "id": "d",
+              "text": "Which of the transistor currents is always the largest?"
+            },
+            {
+              "id": "e",
+              "text": "Sketch the common-base BJT transistor configuration (for n-p-n and p-n-p)."
+            },
+            {
+              "id": "f",
+              "text": "Why is coupling capacitor used in common-emitter amplifier?"
+            },
+            {
+              "id": "g",
+              "text": "Which BJT amplifier configuration has unity voltage gain?"
+            },
+            {
+              "id": "h",
+              "text": "Which BJT amplifier configuration has unity current gain?"
+            },
+            {
+              "id": "i",
+              "text": "Define conversion efficiency."
+            },
+            {
+              "id": "j",
+              "text": "What is the highest efficiency of class A direct coupled amplifier?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "For the series connected diode configuration as given below in the figure, determine $V_D, V_R$ and $I_D$ :\n\n[Diagram: Series circuit with 8V source, Si diode (marked $+V_D-$), and resistor $R$ (marked $+V_R-$).]",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Draw the diagram and explain the working of a full-wave rectifier with filter.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Explain the working and applications of photodiode.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Explain the construction, operation and characteristics of SCR.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Explain the working of common-collector amplifier as a voltage buffer.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Compute and explain common-emitter amplifier operating point and load line.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Compare between depletion type MOSFET and enhancement type MOSFET.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Explain the working of common-base amplifier as a current buffer.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Explain about the distortions present in amplifier. List the advantages of negative feedback.",
+              "marks": 6
+            },
+            {
+              "id": "b",
+              "text": "Explain the working of current series feedback amplifier with the help of block diagram.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Describe the working of Wien bridge oscillator circuit.",
+              "marks": 8
+            },
+            {
+              "id": "b",
+              "text": "Design the R-C elements of a Wien bridge oscillator, when it operates at $f_0 = 10 \\text{ kHz}$.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Explain the working of a non-sinusoidal type of oscillator with the help of its circuit diagram.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Write and explain two applications of differential amplifier with the help of circuit diagrams.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "a",
+              "text": "Write the properties of ideal operational amplifier.",
+              "marks": 7
+            },
+            {
+              "id": "b",
+              "text": "Draw the pin configuration of 741 op-amp IC and explain its working.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

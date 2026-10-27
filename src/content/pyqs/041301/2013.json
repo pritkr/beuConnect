@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2013",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "041301",
+    "year": 2013,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct alternative of the following (any seven):",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "When a step-input is given to an op-amp integrator, the output will be\n(i) a ramp\n(ii) a sinusoidal wave\n(iii) a rectangular wave\n(iv) a triangular wave with d.c. bias",
+              "id": "1a"
+            },
+            {
+              "text": "In a JFET, at pinch-off voltage applied on the gate\n(i) the drain current becomes almost zero\n(ii) the drain current begins to decrease\n(iii) the drain current is almost at saturation value\n(iv) the drain to source voltage is close to zero volt",
+              "id": "1b"
+            },
+            {
+              "text": "The value of ripple factor of a half-wave rectifier without filter is approximately\n(i) 1.2\n(ii) 0.2\n(iii) 2.2\n(iv) 2.0",
+              "id": "1c"
+            },
+            {
+              "text": "In the voltage regulator shown in Fig. 1, if the current through the load decreases\n[Diagram: Zener voltage regulator with series resistor R1, Zener diode D, and load resistor RL]\n(i) the current through R1 will increase\n(ii) the current through R1 will decrease\n(iii) Zener diode current will increase\n(iv) Zener diode current will decrease",
+              "id": "1d"
+            },
+            {
+              "text": "The lowest output impedance is obtained in case of BJT amplifiers for\n(i) CB configuration\n(ii) CE configuration\n(iii) CC configuration\n(iv) CE with $R_E$ configuration",
+              "id": "1e"
+            },
+            {
+              "text": "What is the peak current through the resistor in the circuit shown in Fig. 2 assuming the diode to be ideal?\n[Diagram: AC source 12sin(omega t) in series with 1k ohm resistor, a diode, and a 4V battery opposing the source]\n(i) 4 mA\n(ii) 8 mA\n(iii) 12 mA\n(iv) 16 mA",
+              "id": "1j"
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "text": "Explain how the process of avalanche breakdown occurs in a P-N junction diode. How is it different from Zener breakdown?",
+              "id": "2a",
+              "marks": null
+            },
+            {
+              "text": "A silicon diode has a saturation current of $5\\text{ }\\mu\\text{A}$ at room temperature of $300\\text{ K}$. Determine its value at $400\\text{ K}$.",
+              "id": "2b",
+              "marks": 14
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "text": "For the circuit shown in Fig. 3 below:\n[Diagram: Zener regulator with $R_s=20\\text{ }\\Omega, V_z=18\\text{ V}, R_L=200\\text{ }\\Omega$. Input $V_{in}$ can vary from $20\\text{ V}$ to $30\\text{ V}$]\nFind—\n(i) the minimum and maximum currents in Zener diode;\n(ii) the minimum and maximum power dissipated in the diode.",
+              "id": "3a",
+              "marks": null
+            },
+            {
+              "text": "Draw the voltage doubler circuit. Sketch input and output waveforms and explain the circuit operation.",
+              "id": "3b",
+              "marks": 14
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "text": "A simple full-wave bridge rectifier circuit has an input voltage of $240\\text{ V}$ a.c. r.m.s. Assume the diodes to be ideal. Find the output d.c. current, d.c. voltage, r.m.s. values of output currents and voltages. Assume load resistance to be $10\\text{ k}\\Omega$.",
+              "id": "4a",
+              "marks": null
+            },
+            {
+              "text": "Explain $\\alpha$ and $\\beta$ factors of transistors. Derive the expressions for them and state their meanings.",
+              "id": "4b",
+              "marks": 14
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "text": "In a self-biased CE amplifier, $R_C = 5\\text{ k}\\Omega, R_2 = 9\\text{ k}\\Omega, R_1 = 81\\text{ k}\\Omega, \\beta = 50$ and $R_E = 810\\text{ }\\Omega$. Compute the stability factor.",
+              "id": "5a",
+              "marks": null
+            },
+            {
+              "text": "What is operating point? Explain its physical significance with proper example.",
+              "id": "5b",
+              "marks": 14
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "text": "State the advantages of FET over BJT.",
+              "id": "6a",
+              "marks": null
+            },
+            {
+              "text": "Derive an expression for the gain of negative voltage feedback amplifier.",
+              "id": "6b",
+              "marks": 14
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "text": "What is clamping circuit? With neat diagram, explain different types of clampers.",
+              "id": "7a",
+              "marks": null
+            },
+            {
+              "text": "Sketch $V_{out}$ for the network shown in Fig. 4 below.\n[Diagram: Input square wave $\\pm 20\\text{V}$ applied to circuit with capacitor C, ideal diode D with $5\\text{V}$ bias, and resistor R]",
+              "id": "7b",
+              "marks": 14
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "text": "Compute the voltage gain and power gain of the amplifier circuit shown in Fig. 5 below:\n[Diagram: Op-amp amplifier with $1\\text{ M}\\Omega$ feedback resistor and $1\\text{ M}\\Omega$ input resistor]",
+              "id": "8a",
+              "marks": null
+            },
+            {
+              "text": "Explain the turn-off mechanism of SCR.",
+              "id": "8b",
+              "marks": 14
+            }
+          ]
+        },
+        {
+          "text": "Write short notes on the following:",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "text": "UJT",
+              "id": "9a"
+            },
+            {
+              "text": "Pi filter",
+              "id": "9b"
+            },
+            {
+              "text": "Light-emitting diode (LED)",
+              "id": "9c"
+            },
+            {
+              "text": "Integrator",
+              "id": "9d"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

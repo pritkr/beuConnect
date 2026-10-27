@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2019",
+    "subject": "Digital Electronics",
+    "subject_slug": "digital-electronics",
+    "subject_code": "041402",
+    "year": 2019,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "compulsory": true,
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "type": "multiple_choice",
+              "text": "Choose the correct answer from the following (any seven):",
+              "marks": 14,
+              "subparts": [
+                {
+                  "label": "a",
+                  "question": "Binary number $110011011001$ is equal to decimal number",
+                  "options": [
+                    "(i) 3289",
+                    "(ii) 2289",
+                    "(iii) 1289",
+                    "(iv) 289"
+                  ]
+                },
+                {
+                  "label": "b",
+                  "question": "If number of information bits is 11, the number of parity bits in hamming code is",
+                  "options": [
+                    "(i) 5",
+                    "(ii) 4",
+                    "(iii) 3",
+                    "(iv) 2"
+                  ]
+                },
+                {
+                  "label": "c",
+                  "question": "The problem of logic race occurs in",
+                  "options": [
+                    "(i) SOP function",
+                    "(ii) POS function",
+                    "(iii) hybrid function",
+                    "(iv) SOP and POS function"
+                  ]
+                },
+                {
+                  "label": "d",
+                  "question": "As compared to TTL, ECL has",
+                  "options": [
+                    "(i) lower power dissipation",
+                    "(ii) lower propagation delay",
+                    "(iii) higher propagation delay",
+                    "(iv) higher noise margin"
+                  ]
+                },
+                {
+                  "label": "e",
+                  "question": "When two 4-bit parallel adders are cascaded, we get",
+                  "options": [
+                    "(i) 4-bit parallel adder",
+                    "(ii) 8-bit parallel adder",
+                    "(iii) 16-bit parallel adder",
+                    "(iv) None of the above"
+                  ]
+                },
+                {
+                  "label": "f",
+                  "question": "To implement the expression of $\\bar{A}BCD + A\\bar{B}CD + AB\\bar{C}D$ it takes one OR gate and",
+                  "options": [
+                    "(i) one AND gate",
+                    "(ii) three AND gates",
+                    "(iii) three AND gates and four inverters",
+                    "(iv) three AND gates and three inverters"
+                  ]
+                },
+                {
+                  "label": "g",
+                  "question": "A binary ladder network D/A converter requires",
+                  "options": [
+                    "(i) resistor of one value only",
+                    "(ii) resistors of many different values",
+                    "(iii) resistor of two different values",
+                    "(iv) None of the above"
+                  ]
+                },
+                {
+                  "label": "h",
+                  "question": "In a clocked NAND latch race condition occurs when",
+                  "options": [
+                    "(i) R and S are high and CLK is low",
+                    "(ii) R and CLK are high and S is low",
+                    "(iii) R, S, CLK are high",
+                    "(iv) R, S, CLK are low"
+                  ]
+                },
+                {
+                  "label": "i",
+                  "question": "In a 4-bit ripple counter clock pulse is applied to",
+                  "options": [
+                    "(i) clock input of first FF",
+                    "(ii) clock input of second FF",
+                    "(iii) clock input of all FF",
+                    "(iv) clock input of last FF"
+                  ]
+                },
+                {
+                  "label": "j",
+                  "question": "A bistable multivibrator acts as a",
+                  "options": [
+                    "(i) logic switch",
+                    "(ii) flip-flop",
+                    "(iii) square wave form generator",
+                    "(iv) None of the above"
+                  ]
+                }
+              ],
+              "id": "1_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "total_marks": 14,
+          "id": "2",
+          "marks": null,
+          "sub_questions": [],
+          "text": "Answer the following:"
+        },
+        {
+          "total_marks": 14,
+          "id": "3",
+          "marks": null,
+          "sub_questions": [],
+          "text": "Answer the following:"
+        },
+        {
+          "total_marks": 14,
+          "id": "4",
+          "marks": null,
+          "sub_questions": [],
+          "text": "Answer the following:"
+        },
+        {
+          "total_marks": 14,
+          "id": "5",
+          "marks": null,
+          "sub_questions": [],
+          "text": "Answer the following:"
+        },
+        {
+          "total_marks": 14,
+          "id": "6",
+          "marks": null,
+          "sub_questions": [],
+          "text": "Answer the following:"
+        },
+        {
+          "total_marks": 14,
+          "id": "7",
+          "marks": null,
+          "sub_questions": [],
+          "text": "Answer the following:"
+        },
+        {
+          "total_marks": 14,
+          "id": "8",
+          "marks": null,
+          "sub_questions": [],
+          "text": "Answer the following:"
+        },
+        {
+          "total_marks": 14,
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Write short notes on any two of the following:",
+              "marks": 14,
+              "subparts": [
+                {
+                  "label": "a",
+                  "question": "Static and dynamic RAM"
+                },
+                {
+                  "label": "b",
+                  "question": "Synchronous and Asynchronous counters"
+                },
+                {
+                  "label": "c",
+                  "question": "Magnitude comparators"
+                },
+                {
+                  "label": "d",
+                  "question": "Number system"
+                }
+              ],
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

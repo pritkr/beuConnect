@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2013",
+    "subject": "Object Oriented Programming",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051301",
+    "year": 2013,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any seven questions :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "What do you understand by object-oriented programming? How is it different from procedural programming?",
+              "id": "1(a)",
+              "marks": null
+            },
+            {
+              "text": "What are keywords and identifiers? Explain with examples.",
+              "id": "1(b)",
+              "marks": null
+            },
+            {
+              "text": "Distinguish between (i) object and classes, and (ii) inheritance and polymorphism.",
+              "id": "1(c)",
+              "marks": null
+            },
+            {
+              "text": "Why do we need the preprocessor directive `#include<iostream>`?",
+              "id": "1(d)",
+              "marks": null
+            },
+            {
+              "text": "What are objects? How are they created?",
+              "id": "1(e)",
+              "marks": null
+            },
+            {
+              "text": "What is type conversion? Give example.",
+              "id": "1(f)",
+              "marks": null
+            },
+            {
+              "text": "Can we have more than one constructor in a class? If yes, explain the need for such a situation.",
+              "id": "1(g)",
+              "marks": null
+            },
+            {
+              "text": "What are enumeration types? Explain with examples.",
+              "id": "1(h)",
+              "marks": null
+            },
+            {
+              "text": "What are advantages of function prototypes in C++?",
+              "id": "1(i)",
+              "marks": null
+            },
+            {
+              "text": "When will you make a function inline? Why?",
+              "id": "1(j)",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What is function overloading? Illustrate function overloading through addition function which adds two integer numbers and two float numbers.",
+              "marks": 7,
+              "id": "2(a)"
+            },
+            {
+              "text": "Explain break statement and continue statement with example.",
+              "marks": 7,
+              "id": "2(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What is a constructor? Explain different types of constructor.",
+              "marks": 7,
+              "id": "3(a)"
+            },
+            {
+              "text": "What are benefits of using functions? Write a C++ function to swap the contents of two variables $a$ and $b$, using different parameter passing mechanisms.",
+              "marks": 7,
+              "id": "3(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What is virtual function? Explain with suitable example.",
+              "marks": 7,
+              "id": "4(a)"
+            },
+            {
+              "text": "With illustration, explain function overloading.",
+              "marks": 7,
+              "id": "4(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What are different types of polymorphism achieved in OOP? What are pure virtual functions?",
+              "marks": 7,
+              "id": "5(a)"
+            },
+            {
+              "text": "What is operator overloading? Give an example of operator overloading, using friend class.",
+              "marks": 7,
+              "id": "5(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain how base class member functions can be involved in a derived class if the derived class also has a member function with the same name.",
+              "marks": 7,
+              "id": "6(a)"
+            },
+            {
+              "text": "What is a Destructor? Write a class, using C++ without destructor and explain.",
+              "marks": 7,
+              "id": "6(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What are implicit pointer and static class member? Explain with examples.",
+              "marks": 7,
+              "id": "7(a)"
+            },
+            {
+              "text": "What is inheritance? Bring out the concept of various types of inheritance and importance of derived class with examples.",
+              "marks": 7,
+              "id": "7(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What is Exceptional Handling? How are exceptions handled in C++?",
+              "marks": 7,
+              "id": "8(a)"
+            },
+            {
+              "text": "What are Class Templates? Explain with examples.",
+              "marks": 7,
+              "id": "8(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What do you understand by void pointers? Write a program to show the use of void pointers.",
+              "marks": 7,
+              "id": "9(a)"
+            },
+            {
+              "text": "Explain the uses of try, throw and catch keywords, used for exceptional handling.",
+              "marks": 7,
+              "id": "9(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

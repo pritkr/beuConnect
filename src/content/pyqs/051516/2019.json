@@ -1,0 +1,306 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech. 5th Semester Examination, 2019",
+    "subject": "Compiler Design",
+    "subject_slug": "compiler-design",
+    "subject_code": "051516",
+    "year": 2019,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>When is the type checking usually done?</p>",
+          "options": [
+            "During syntax directed translation",
+            "During lexical analysis",
+            "During code optimization",
+            "During syntax analysis"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which one of the following statements is true?</p>",
+          "options": [
+            "Canonical LR parser is more powerful than LALR parser.",
+            "SLR parser is more powerful than LALR.",
+            "LALR parser is more powerful than canonical LR parser.",
+            "SLR parser, canonical LR parser and LALR parser all have the same power."
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>In a compiler, _____ checks every character of the source text.</p>",
+          "options": [
+            "the lexical analyzer",
+            "the syntax analyzer",
+            "the code generator",
+            "the code optimizer"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>For a grammar G, shift reduce (S-R) conflicts are present in LALR(1) parser, if and only if</p>",
+          "options": [
+            "the LR(1) parser for G has S-R conflicts",
+            "the LR(0) parser for G has S-R conflicts",
+            "the SLR(1) parser for G has S-R conflicts",
+            "the SLR(0) parser for G has S-R conflicts"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>In an absolute loading scheme, which loader function is accomplished by programmer?</p>",
+          "options": [
+            "Allocation",
+            "Linking",
+            "Reallocation",
+            "Both (i) and (ii)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>_____ is a top-down parser.</p>",
+          "options": [
+            "Operator precedence parser",
+            "An LALR (k) parser",
+            "An LR (k) parser",
+            "Recursive descent parser"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The languages that need heap allocation in the runtime environment are those that</p>",
+          "options": [
+            "use global variables",
+            "use dynamic scoping",
+            "support recursion",
+            "allow dynamic data structure"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>In compilers, generation of intermediate code based on an abstract machine model is useful\n                        because</p>",
+          "options": [
+            "syntax-directed translations can be written for intermediate code generation",
+            "to generate code for real machines directly from high-level language program is not possible",
+            "portability of the front end of the compiler is enhanced",
+            "implementation of lexical and syntax analyses is easier"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>To convert an arbitrary CFG to an LL(1) grammar</p>",
+          "options": [
+            "factor the grammar alone",
+            "remove left recursion alone",
+            "remove left recursion and factor the grammar",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The method which merges the bodies of two loops is</p>",
+          "options": [
+            "loop rolling",
+            "loop jamming",
+            "constant folding",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What is an activation record? Explain how they are used to access various local and global\n                        variables.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What is bottom-up parsing? Discuss shift reduce parsing technique in brief. What is a handle?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is left recursion? Eliminate the left recursion from the following grammar:<br/>\n                        \\( E \\rightarrow E+T | T \\)<br/>\n                        \\( T \\rightarrow T*F | F \\)<br/>\n                        \\( F \\rightarrow (E) | id \\)\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What is the use of a symbol table? How are the identifiers stored in the symbol table?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is the pass of a compiler? Explain how the single- and multi-pass compilers work.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain architecture and algorithm for the non-recursive predictive parser.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Check whether the following grammar is CLR or not:<br/>\n                        \\( S \\rightarrow Aa | bBa | Ba | bAc \\)<br/>\n                        \\( A \\rightarrow c \\)<br/>\n                        \\( B \\rightarrow d \\)\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>What is the syntax directed translation and why are they important?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain different phases of compiler.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain how type checking and error reporting are performed\n                        in compiler.\n                        Draw syntax tree and DAG for the statement:<br/>\n                        \\( a=(a*b+c)\\wedge(b+c)*b+c \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain various targets for code optimization with examples.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>How are CPU registers allocated while creating machine code?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Check whether the following grammar is LL(1) grammar or not:<br/>\n                        \\( S \\rightarrow iEtSA | a \\)<br/>\n                        \\( A \\rightarrow eS | \\epsilon \\)<br/>\n                        \\( E \\rightarrow b \\)\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Design the FIRST SET and FOLLOW SET for the grammar.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Differentiate between S-attribute SDT and L-attribute SDT with suitable examples.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "mcq",
+          "text": "<p>Explain any two of the following:</p>",
+          "options": [
+            "Lexical phase error",
+            "Code generation using dynamic programming",
+            "Syntax tree"
+          ]
+        }
+      ]
+    }
+  ]
+}

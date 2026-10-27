@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 7th Semester Exam., 2017",
+    "subject": "POWER ELECTRONICS",
+    "subject_slug": "power-electronics",
+    "subject_code": "031709",
+    "year": 2017,
+    "semester": 7,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct option (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "In the SCR structure, the gate terminal is located",
+              "options": [
+                "near the anode terminal",
+                "near the cathode terminal",
+                "in between the anode and cathode terminal",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "The latching current is ________ the holding current.",
+              "options": [
+                "lower than",
+                "higher than",
+                "same as",
+                "negative of"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "When a diode is connected in series with an AC source and R load, the conduction time per cycle is",
+              "options": [
+                "0",
+                "$2\\pi$",
+                "$\\pi$",
+                "$\\pi/2$"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "In a single-phase half-wave circuit with RL load and a freewheeling diode, the freewheeling period is",
+              "options": [
+                "0 to $\\pi$",
+                "$\\alpha$ to $\\pi + \\alpha$",
+                "$\\pi$ to $2\\pi + \\alpha$",
+                "$\\pi/2$ to $2\\pi - \\alpha$"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "A three-phase three-pulse M-3 type controlled converter has firing angle for one of the SCRs set as $15^\\circ$. This SCR would start conducting at",
+              "options": [
+                "$0^\\circ$",
+                "$15^\\circ$",
+                "$30^\\circ$",
+                "$45^\\circ$"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "Find the output voltage for a step-up chopper when it is operated at a duty cycle of 50% and $V_s = 240\\text{V}$.",
+              "options": [
+                "$240\\text{ V}$",
+                "$480\\text{ V}$",
+                "$560\\text{ V}$",
+                "$120\\text{ V}$"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "In the $180^\\circ$ mode VSI, ________ devices conduct at a time.",
+              "options": [
+                "5",
+                "2",
+                "3",
+                "4"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "In AC voltage controllers, the",
+              "options": [
+                "variable AC with fixed frequency is obtained",
+                "variable AC with variable frequency is obtained",
+                "variable DC with fixed frequency is obtained",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "The single-phase bridge-type cyclo-converter uses ________ number of SCRs.",
+              "options": [
+                "4",
+                "8",
+                "6",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "A single full converter alone can give a",
+              "options": [
+                "four-quadrant operation",
+                "three-quadrant operation",
+                "two-quadrant operation",
+                "None of the above"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2a",
+          "text": "Describe the different modes of operation of a thyristor with the help of its static V-I characteristic.",
+          "marks": 8
+        },
+        {
+          "id": "2b",
+          "text": "With the help of a neat diagram, explain the two-transistor analogy of an SCR.",
+          "marks": 6
+        },
+        {
+          "id": "3a",
+          "text": "Explain the working of an oscillator employing an UJT. Derive expression for the frequency of triggering.",
+          "marks": 7
+        },
+        {
+          "id": "3b",
+          "text": "A relaxation oscillator using a UJT is to be designed for triggering an SCR. The UJT has the following data :\n$\\eta = 0.72$, $I_P = 0.6\\text{ mA}$, $V_P = 18\\text{V}$, $V_V = 1\\text{V}$, $I_V = 2.5\\text{ mA}$, $R_{BB} = 5\\text{ k}\\Omega$\nNormal leakage current with emitter open $= 4.2\\text{ mA}$. The firing frequency is $2\\text{ kHz}$. For $C = 0.04\\mu\\text{F}$, compute the values of $R, R_1$ and $R_2$.",
+          "marks": 7
+        },
+        {
+          "id": "4a",
+          "text": "A single-phase half-wave controlled converter is operated from a $120\\text{V, 50 Hz}$ supply. Load resistance $R = 10\\Omega$. If the average output voltage is 25% of the maximum possible average output voltage, determine- (i) firing angle; (ii) r.m.s. and average output currents; (iii) average and r.m.s. SCR currents.",
+          "marks": 6
+        },
+        {
+          "id": "4b",
+          "text": "Explain the operation of single-phase half-controlled bridge converter (symmetrical configuration) with resistive load along with suitable waveforms. Also derive the expressions for average load voltage, average load current and RMS load voltage.",
+          "marks": 8
+        },
+        {
+          "id": "5",
+          "text": "A three-phase fully controlled converter is connected to a resistive load. Show that the average output voltage is given by :\n$E_{dc} = \\frac{3\\sqrt{3}}{2\\pi} E_m \\cos\\alpha$, for $0 < \\alpha < \\frac{\\pi}{6}$ and\n$E_{dc} = \\frac{3}{2\\pi} E_m [1 + \\cos(\\alpha + \\frac{\\pi}{6})]$, for $\\frac{\\pi}{6} < \\alpha < \\frac{5\\pi}{6}$",
+          "marks": 14
+        },
+        {
+          "id": "6a",
+          "text": "With the help of neat circuit diagram and associated waveforms, explain the operation of single-phase half-bridge voltage-source inverter with resistive load.",
+          "marks": 6
+        },
+        {
+          "id": "6b",
+          "text": "The single-phase half-bridge inverter has a resistive load of $10\\Omega$ and the center-tap DC input voltage is $96\\text{V}$. Compute- (i) RMS value of the output voltage; (ii) fundamental component of the output voltage waveform; (iii) first five harmonics of the output voltage waveform; (iv) RMS power consumed by the load.",
+          "marks": 8
+        },
+        {
+          "id": "7a",
+          "text": "Draw the schematic of step-down and step-up choppers and derive an expression for output voltage in terms of duty cycle for a step-up and step-down choppers.",
+          "marks": 8
+        },
+        {
+          "id": "7b",
+          "text": "Draw the schematic of class E chopper and explain the working of the same.",
+          "marks": 6
+        },
+        {
+          "id": "8",
+          "text": "Describe the basic principle of working of a single-phase to single-phase cycloconverter for both continuous and discontinuous conductions for a bridge-type cycloconverter. Mark the condition of various thyristors also.",
+          "marks": 14
+        },
+        {
+          "id": "9a",
+          "text": "For a single-phase full-wave a.c. voltage controller feeding a resistive load, draw the waveforms of source voltage, gating signals, output voltage, source and output currents and voltage across SCRs. Describe its working with reference to the waveforms drawn.",
+          "marks": 10
+        },
+        {
+          "id": "9b",
+          "text": "A single-phase full-wave a.c. voltage controller feeds power to a resistive load of $4\\Omega$ from $230\\text{V, 50 Hz}$ source. Determine the peak values of average and RMS thyristor currents for any firing angle $\\alpha$.",
+          "marks": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Examination, 2025 (Old Course)",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100201",
+    "year": 2025,
+    "semester": 2,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/answer the following (Any seven questions\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The function of an MCB is to protect against</p>",
+          "options": [
+            "Overcurrent",
+            "Overvoltage",
+            "Earth faults",
+            "Lightning"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The EMF induced in a transformer, if \\( f=50~Hz \\), \\( N=1000 \\) turns, \\( \\varphi_m=0.001\n                        \\) Wb.</p>",
+          "options": [
+            "44.4 V",
+            "22.2 V",
+            "55.5 V",
+            "2.22 V"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The short-circuit test is conducted to determine</p>",
+          "options": [
+            "Efficiency",
+            "Voltage ratio",
+            "Copper losses",
+            "Regulation"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The torque of a DC motor is directly proportional to</p>",
+          "options": [
+            "Speed",
+            "Armature current",
+            "Armature voltage squared",
+            "Resistance"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>If an RL circuit has \\( R=10~\\Omega \\), \\( L=5~H \\) and is connected to 20V DC, the final\n                        current after a long time is</p>",
+          "options": [
+            "0 A",
+            "2 A",
+            "4 A",
+            "5 A"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The synchronous speed for a 4-pole, 50 Hz motor is</p>",
+          "options": [
+            "1500 rpm",
+            "3000 rpm",
+            "750 rpm",
+            "1000 rpm"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>If a delta network has each branch of \\( 9~\\Omega \\), the equivalent star resistance is</p>",
+          "options": [
+            "\\( 3~\\Omega \\)",
+            "\\( 4.5~\\Omega \\)",
+            "\\( 6~\\Omega \\)",
+            "\\( 9~\\Omega \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A purely inductive circuit has</p>",
+          "options": [
+            "Current and voltage in phase",
+            "Current lagging voltage by \\( 90^{\\circ} \\)",
+            "Current leading voltage by \\( 90^{\\circ} \\)",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following is an active element</p>",
+          "options": [
+            "Resistor",
+            "Voltage source",
+            "Inductor",
+            "Capacitor"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The power factor of a pure capacitor is</p>",
+          "options": [
+            "0",
+            "Leading",
+            "1",
+            "Lagging"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Describe the plate earthing and pipe earthing methods in detail. Compare their advantages and\n                        disadvantages.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>In the circuit given below, the maximum power delivered to the load\n                        (\\( R_L \\)) is.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/041a1786-1c25-4335-964e-e55b2785a87e.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Compare DC motors, induction motors, and synchronous machines in terms of torque, speed control,\n                        and applications.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Explain the criteria for selecting the size of wires and cables for electrical installations.\n                        Discuss the effects of overloading and voltage drop.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A 3-phase induction motor has a full-load slip of 4%. If the supply frequency is 50 Hz, find the\n                        rotor speed and rotor frequency at full load.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What is an Earth Leakage Circuit Breaker (ELCB)? Explain its working principle and importance in\n                        protecting human life and equipment.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>The switch is closed at \\( t=0 \\) find the voltage across the capacitor \\( V_c \\) at \\(\n                        t=7ms \\)</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/2a9f2aa2-ac02-42ae-851d-eb0b397b1218.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Derive an expression for the energy stored in a magnetic field.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive the torque equation of a DC motor and explain the torque-speed characteristic.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A 250-V shunt motor giving 14.92 kW at 1000 r.p.m. takes an armature current of 75 A. The\n                        armature resistance is 0.25 ohms, and the load torque remains constant. If the flux is reduced\n                        by 20 percent of its normal value before the speed changes, find the instantaneous value of the\n                        armature current and the torque. Determine the final value of the armature current and speed.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/687472e4-9793-4246-accc-0f29da932208.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the equivalent resistance between terminals A and B.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/54da1e88-a070-4a16-8322-f8cf5181416e.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Derive the EMF equation of a single-phase transformer.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Define voltage regulation and derive its expression.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What are hysteresis and eddy current losses? Discuss their effects on magnetic materials.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Power triangle</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Auto-Transformer</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Thevenin's Theorem</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Explain why the rating of the transformer is in KVA but not in KW.</p>"
+        }
+      ]
+    }
+  ]
+}

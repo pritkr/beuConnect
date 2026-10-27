@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2022 (New Course)",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100201",
+    "year": 2022,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Short answer-type questions (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>State and explain Kirchhoff's laws with an example.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Which winding (LV or HV) should be kept open while conducting OC test? Justify your answer.</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Assume that the given transformer has the following name plate ratings: 40 kVA, 440 V/11 kV, 50\n                        Hz. What do these numbers imply?</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>What is a commutator in d.c. machine?</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>What is meant by linear network? Explain \\(R\\), \\(L\\) and \\(C\\) as linear elements.</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Differentiate among real, reactive and apparent powers.</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Calculate maximum value and r.m.s. value of \\(v = 10 \\sin \\omega t - 17.3 \\cos \\omega t\\).\n                    </p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>A 250 V bulb passes a current of 0.3 A. Calculate the power in the lamp.</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Define unilateral and bilateral elements.</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Give some applications of three-phase induction motor.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>An a.c. current varying sinusoidal with frequency 50 Hz has r.m.s. value 20 A. Write equation for\n                        instantaneous value and find this value 0.0125 seconds after passing through maximum value.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Calculate the resistance between A and B from the figure given below:</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/e86e2e56-0d79-4ae2-8c9b-27cc72a349ba.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the r.m.s. value. Solve the \\(V_{\\text{rms}}\\) value of given waveform in the figure.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/5c19a81b-a773-4974-bee4-03b662b1ed80.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Two coils, connected in series-adding fashion, have a total inductance of 250 mH. When connected\n                        in a series-opposing configuration, the coils have a total inductance of 150 mH. If the\n                        inductance of one coil (\\(L_1\\)) is three times the other, then find \\(L_1, L_2\\) and M.\n                        What is the coupling coefficient?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the principle of transformer action.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A series circuit consists of a resistance of \\(4\\,\\Omega\\), an inductance of 500 mH and a\n                        variable capacitance connected across a 100 V, 50 Hz supply. Calculate the capacitance requires\n                        for producing a series resonance condition, and the voltages generated across both the inductor\n                        and the capacitor at the point of resonance.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Define parallel resonance. Calculate at resonance the resultant current and quality factor in\n                        terms of the parameters of a circuit.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain the advantages of rotating field-type alternator.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A 3-phase, 6-pole, star-connected alternator revolves at 1000 r.p.m. The stator has 90 slots and\n                        8 conductors per slot. The flux per pole is 0.05 Wb. Calculate the voltage generated, if \\(K_w\n                        = 0.96\\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the principle of operation of d.c. motor.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A balanced star-connected load of \\((8+j6)\\,\\Omega\\) per phase is connected to a balanced\n                        3-phase, 400 V supply. Find the line current, power factor, power and total volt-amperes.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A 6-pole alternator runs at 1000 r.p.m., and supplies power to a 4-pole, 3-phase induction motor.\n                        The frequency of rotor of induction motor is 2 Hz. Determine the slip and speed of the motor.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Two coils, X of 12000 turns and Y of 15000 turns, lie in parallel planes so that 45% of the flux\n                        produced by coil X links coil Y. A current of 5 A in X produces 0.05 Wb while the same current\n                        in Y produces 0.075 Wb. Calculate (a) the mutual inductance, (b) the coupling coefficient and\n                        (c) the percentage of flux produced by coil Y and linking with coil X.</p>"
+        }
+      ]
+    }
+  ]
+}

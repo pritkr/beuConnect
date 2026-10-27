@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Semester Exam-2012",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031201",
+    "year": 2012,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The figures in the margin indicate full marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "<p>An electric current is the</p>",
+          "options": [
+            "random movement of electrons in a conductor",
+            "movement of free electrons predominately in one direction",
+            "pressure difference between two poles",
+            "power that causes drift of electrons"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "<p>Correct form of Ohm's law is</p>",
+          "options": [
+            "\\(I = VR\\)",
+            "\\(V \\propto I\\)",
+            "\\(V = IR\\)",
+            "Both (ii) and (iii)"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "<p>Resistance of a wire always increases, if</p>",
+          "options": [
+            "temperature is reduced",
+            "temperature is increased",
+            "number of free electrons available become less",
+            "number of free electrons available become more"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "<p>A \\(200\\text{ W, } 230\\text{ V}\\) lamp is connected across \\(115\\text{ V}\\) supply. The lamp will draw power</p>",
+          "options": [
+            "slightly more than 50 W",
+            "slightly less than 50 W",
+            "exactly 100 W",
+            "exactly 50 W"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "<p>Superposition theorem is not applicable for</p>",
+          "options": [
+            "voltage calculations",
+            "bilateral elements",
+            "power calculations",
+            "passive elements"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "<p>Maxwell's loop current method of solving electrical networks</p>",
+          "options": [
+            "uses branch currents",
+            "utilizes Kirchhoff's voltage law",
+            "is confirmed to single-loop circuits",
+            "is a network reduction method"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "<p>While Thevenizing a circuit between two terminals, \\(V_{TH}\\) is equal to</p>",
+          "options": [
+            "short-circuit terminal voltage",
+            "open-circuit terminal voltage",
+            "net voltage available in the circuit",
+            "e.m.f. of the battery nearest to the terminals"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "<p>The unit of flux density is</p>",
+          "options": [
+            "tesla",
+            "\\(A/mm^2\\)",
+            "\\(N/m^2\\)",
+            "Wb/m"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "<p>The magnetic field required to reduce the residual magnetization to zero is called</p>",
+          "options": [
+            "retentivity",
+            "coercivity",
+            "hysteresis",
+            "saturation magnetization"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "<p>The r.m.s. value of a sine wave is \\(100\\text{ A}\\). Its peak value is</p>",
+          "options": [
+            "70.7 A",
+            "141.4 A",
+            "150 A",
+            "282.8 A"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Detailed Questions",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>Use the node voltage method to determine voltage \\(V\\) in the circuit shown in Fig. 1. Also find the current delivered by the controlled source.</p><div class='diagram-placeholder'>[Diagram: Fig. 1. Node voltage circuit with \\(28\\text{ A}\\) source, resistors (\\(28\\,\\Omega, 5\\,\\Omega, 14\\,\\Omega, 20\\,\\Omega, 10\\,\\Omega\\)), and a \\(28 I_1\\) dependent voltage source.]</div>",
+          "total_marks": 7
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>Use the loop current method to find the current \\(I\\) in the circuit shown in Fig. 2.</p><div class='diagram-placeholder'>[Diagram: Fig. 2. Loop current circuit with \\(2\\text{ A}\\) current source and \\(8\\text{ V}\\) voltage source. Resistors (\\(1\\,\\Omega, 1\\,\\Omega, 4\\,\\Omega, 4\\,\\Omega\\)).]</div>",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>Use superposition theorem to find the current in different branches of the circuit shown in Fig. 3.</p><div class='diagram-placeholder'>[Diagram: Fig. 3. Superposition circuit with three \\(10\\text{ V}\\) sources and resistors (\\(3\\,\\Omega, 8\\,\\Omega, 6\\,\\Omega, 12\\,\\Omega\\)).]</div>",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>Use Thevenin's theorem to find the current through the \\(40\\,\\Omega\\) resistance in the circuit shown in Fig. 4.</p><div class='diagram-placeholder'>[Diagram: Fig. 4. Thevenin circuit with \\(25\\text{ V, } 10\\text{ V}\\) sources and resistors (\\(50\\,\\Omega, 20\\,\\Omega, 10\\,\\Omega, 40\\,\\Omega, 30\\,\\Omega\\)).]</div>",
+          "total_marks": 7
+        },
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>Define the following:</p><ol><li>Form factor</li><li>Peak factor</li><li>Power factor</li><li>Resonance</li></ol>",
+          "total_marks": 8
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Determine the r.m.s. and average values of the waveform shown in Fig. 5.</p><div class='diagram-placeholder'>[Diagram: Fig. 5. Triangle waveform with peak voltage \\(V_m\\) and period \\(T\\).]</div>",
+          "total_marks": 6
+        },
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>State and explain maximum power theorem.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Use maximum power transfer theorem to determine \\(R\\) so that maximum power is transferred to it (see Fig. 6). Determine the value of this power.</p><div class='diagram-placeholder'>[Diagram: Fig. 6. Max power transfer circuit with \\(30\\text{ A}\\) source, \\(4\\text{ V}\\) source, and resistors (\\(2\\,\\Omega, 20\\,\\Omega, 4\\,\\Omega, R\\)).]</div>",
+          "total_marks": 8
+        },
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>A balanced delta-connected load of impedance \\((16+j12)\\,\\Omega\\) per phase is connected to a 3-phase, \\(400\\text{ V}\\) supply. Determine the phase current, line current, power factor, power, reactive power and total VA. Also draw the phase diagram.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>Explain the following:</p><ol><li>Balanced and unbalanced systems</li><li>Phase sequence</li></ol>",
+          "total_marks": 7
+        },
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>Define apparent, active and reactive power. Derive their formulas. Discuss their significance in a.c. systems.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>A coil has a resistance to reactance ratio of \\(170\\) at \\(10^6\\text{ Hz}\\). Its inductance is \\(250\\text{ microH}\\). A variable capacitor is connected in parallel with the coil. Find the value of \\(C\\) so that resonant frequency is \\(10^6\\text{ Hz}\\). Also find impedance at resonance.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "<p>An iron ring has a mean circumference of \\(75\\text{ cm}\\) and a cross-sectional area of \\(5\\text{ cm}^2\\). Its magnetizing coil has \\(140\\) turns. Use the following data to find the exciting current for a flux of \\(6.3 \\times 10^{-4}\\text{ Wb}\\). Also find \\(\\mu_r\\):</p><table><thead><tr><th>B (tesla)</th><th>0.9</th><th>1.1</th><th>1.2</th><th>1.3</th></tr></thead><tbody><tr><td>H (A/m)</td><td>260</td><td>450</td><td>600</td><td>820</td></tr></tbody></table>",
+          "total_marks": 8
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "<p>Define reluctance and explain its significance. Which has higher reluctance—an air gap or an iron path? Why? Prove that \\(B = \\mu H\\).</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>How can the insulation resistance of a cable be measured? Explain the method used.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>It is desired to convert a moving-coil meter having a full-scale deflection of \\(2\\text{ mA}\\) and resistance \\(20\\,\\Omega\\) into a voltmeter of \\(100\\text{ V}\\) range. Find the value of series resistance.</p>",
+          "total_marks": 7
+        }
+      ]
+    }
+  ]
+}

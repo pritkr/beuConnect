@@ -1,0 +1,314 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 3rd Semester Examination, 2023",
+    "subject": "Signals and Systems",
+    "subject_slug": "signals-and-systems",
+    "subject_code": "104305",
+    "year": 2023,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven questions\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The minimum sampling rate to avoid aliasing for \\( x(t) = 5 \\cos(400\\pi t) \\) is:</p>",
+          "options": [
+            "100 Hz",
+            "400 Hz",
+            "800 Hz",
+            "300 Hz"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following system is memory less?</p>",
+          "options": [
+            "\\( h(t) = 0 \\) for \\( t \\neq 0 \\)",
+            "\\( h(t) = x(t-1) \\)",
+            "\\( h(t) = 0 \\) for \\( t = 0 \\)",
+            "\\( h(t) = kx(t+2) \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The ROC of \\( x(t) = e^{-2t}u(t) + e^{-3t}u(t) \\) is:</p>",
+          "options": [
+            "\\( \\sigma &gt; 2 \\)",
+            "\\( \\sigma &gt; 3 \\)",
+            "\\( \\sigma &gt; -3 \\)",
+            "\\( \\sigma &gt; -2 \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Time period of: \\( x(t) = 3 \\cos(20t+5) + \\sin(8t-3) \\) is:</p>",
+          "options": [
+            "\\( \\pi/10 \\) sec",
+            "\\( \\pi/20 \\) sec",
+            "\\( 2\\pi/5 \\) sec",
+            "\\( 2\\pi/15 \\) sec"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The power of the signal: \\( x(t) = \\cos(t) \\) is:</p>",
+          "options": [
+            "1/2",
+            "1",
+            "2",
+            "4"
+          ],
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The Fourier transform exponential signal \\( f(t) = e^{-at}u(t), a &gt; 0 \\) is:</p>",
+          "options": [
+            "\\( \\frac{1}{-a+j\\omega t} \\)",
+            "\\( \\frac{1}{a-j\\omega t} \\)",
+            "\\( \\frac{1}{a+j\\omega t} \\)",
+            "\\( \\frac{1}{-a-j\\omega t} \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>\\( x(5t) \\) is:</p>",
+          "options": [
+            "Compressed signal",
+            "Expanded signal",
+            "Time shifted signal",
+            "Amplitude scaled signal by factor 1/5"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which one of the following is an example of a bounded signal?</p>",
+          "options": [
+            "\\( e^t \\cos(\\omega t) \\)",
+            "\\( e^{-t} \\cos(\\omega t) \\)",
+            "\\( e^t \\cos(-\\omega t) \\)",
+            "\\( e^t \\sin(\\omega t) \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The simplified valve of \\( X(n) = \\sum_{n=-5}^{5} \\sin(2n)\\delta(n+7) \\) is:</p>",
+          "options": [
+            "0",
+            "-sin 10",
+            "sin 10",
+            "1"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>If \\( X(S) = \\frac{4S+1}{S^2+6S+3} \\), then initial value of \\( x(0) \\) will be:</p>",
+          "options": [
+            "1/3",
+            "1/4",
+            "4",
+            "3"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Find the inverse Z-transform of \\( X(Z) = \\frac{1}{1+3Z^{-1}+2Z^{-2}} \\), \\( ROC: |Z| &gt; 2\n                        \\).\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>For the system \\( y(t) = 12x(t) + 7 \\), check whether the system is (i) time\n                        variant/time-invariant\n                        (ii) causal/non-causal (iii) linear/non-linear.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Find the even and odd components of the sequence \\( X(n) = 5\\delta(n+4) + 4\\delta(n+3) +\n                        3\\delta(n+2) + \\delta(n+1) \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Determine the power of the signal \\( x(t) = e^{j\\alpha t}\\cos(\\omega_o t) \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Find the Fourier transform of \\( x(t) = \\frac{1}{a^2+t^2} \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Find the time response of LTI system with impulse response \\( h(t) = 2u(t) - 2u(t-3) \\) &amp; input\n                        is\n                        \\( x(t) = 8u(t) - 8u(t-5) \\).</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Sketch the signal \\( x(-4t-3) \\) as shown in figure.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/58.jpg\"/>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Find the convolution of the following sequence \\( x(n) = 2\\delta(n+1) - \\delta(n) +\n                        \\delta(n-1) +\n                        3\\delta(n-2) \\) and \\( h(n) = 3\\delta(n-1) + 4\\delta(n-2) + 2\\delta(n-3) \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Compute the DFT of \\( x(n) = \\{0, 1, 2, 4\\} \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Compute the output of the following signals whose impulse response and input are given by \\(\n                        h(t) =\n                        e^{-at}u(t) \\); \\( x(t) = e^{at}u(-t), a&gt;0 \\) respectively.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the Laplace Transform of signal in the figure.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/2.jpg\"/>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Calculate the fundamental period of \\( x(t) = 1 +\n                        \\sin(\\frac{2\\pi}{3}t)\\cos(\\frac{4\\pi}{5}t)\n                        \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Determine the Nyquist sampling rate and Nyquist sampling intervals for the signal \\( x(t) =\n                        \\text{sinc}(100\\pi t)\\text{sinc}(200\\pi t) \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Compute the state transition matrix \\( \\Phi(t) \\) for the system represented by state\n                        equation:\n                        \\( \\begin{bmatrix} \\dot{x}_1 \\\\ \\dot{x}_2 \\end{bmatrix} = \\begin{bmatrix} 0 &amp; 1 \\\\ -2\n                        &amp; 0\n                        \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Comparison between CTFT &amp; DTFT",
+            "Aliasing and its effect",
+            "Zero-order hold circuit.",
+            "Energy &amp; Power signal."
+          ]
+        }
+      ]
+    }
+  ]
+}

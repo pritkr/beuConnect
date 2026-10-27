@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2023",
+    "subject": "Engineering Mechanics",
+    "subject_slug": "engineering-mechanics",
+    "subject_code": "101304",
+    "year": 2023,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (any seven question only):",
+          "marks": null,
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "Two forces $P$ and $Q$ are acting at an angle $\\alpha$. The resultant force $R$ acts at an angle of $\\theta$ with force $P$, then the value of $\\theta$ will be",
+              "options": [
+                "(i) $\\tan^{-1} \\left( \\frac{Q \\cos \\alpha}{P + Q \\cos \\alpha} \\right)$",
+                "(ii) $\\tan^{-1} \\left( \\frac{Q \\sin \\alpha}{P + Q \\cos \\alpha} \\right)$",
+                "(iii) $\\tan^{-1} \\left( \\frac{Q \\cos \\alpha}{P + Q \\sin \\alpha} \\right)$",
+                "(iv) $\\tan^{-1} \\left( \\frac{Q \\sin \\alpha}{P + Q \\sin \\alpha} \\right)$"
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "Three forces $P$, $Q$ and $R$ are acting concurrently. The included angles are $\\alpha$, $\\beta$ and $\\gamma$. According to Lami's theorem",
+              "options": [
+                "(i) $\\frac{P}{\\sin \\alpha} = \\frac{Q}{\\sin \\beta} = \\frac{R}{\\sin \\gamma}$",
+                "(ii) $\\frac{P}{\\cos \\alpha} = \\frac{Q}{\\cos \\beta} = \\frac{R}{\\cos \\gamma}$",
+                "(iii) $\\frac{P}{\\tan \\alpha} = \\frac{Q}{\\tan \\beta} = \\frac{R}{\\tan \\gamma}$",
+                "(iv) $\\frac{\\cos \\alpha}{P} = \\frac{\\cos \\beta}{Q} = \\frac{\\cos \\gamma}{R}$"
+              ]
+            },
+            {
+              "part": "(c)",
+              "text": "If the algebraic sum of all the forces acting on a body is zero, then the body may be in equilibrium provided the forces are",
+              "options": [
+                "(i) parallel",
+                "(ii) like parallel",
+                "(iii) unlike parallel",
+                "(iv) concurrent"
+              ]
+            },
+            {
+              "part": "(d)",
+              "text": "Varignon's theorem is related to",
+              "options": [
+                "(i) Principle of moments",
+                "(ii) Principle of momentum",
+                "(iii) Principle of force",
+                "(iv) Principle of inertia"
+              ]
+            },
+            {
+              "part": "(e)",
+              "text": "The coefficient of friction is the ratio of ________ to ________.",
+              "options": [
+                "(i) the normal reaction to the limiting force of friction",
+                "(ii) The weight of the body to limiting force of friction",
+                "(iii) the limiting force of friction to the normal reaction",
+                "(iv) the weight of the body to the normal reaction"
+              ]
+            },
+            {
+              "part": "(f)",
+              "text": "Moment of inertia of a body does not depend on",
+              "options": [
+                "(i) Axis of rotation of the body",
+                "(ii) Mass of the body",
+                "(iii) Angular velocity of the body",
+                "(iv) distribution of mass in the body"
+              ]
+            },
+            {
+              "part": "(g)",
+              "text": "The moment of inertia of a rectangular section of base ($b$), height ($h$) about CG will be:",
+              "options": [
+                "(i) $\\frac{hb^3}{12}$",
+                "(ii) $\\frac{bh^3}{12}$",
+                "(iii) $\\frac{hb^3}{3}$",
+                "(iv) $\\frac{bh^3}{3}$"
+              ]
+            },
+            {
+              "part": "(h)",
+              "text": "The condition for a truss to be perfect is where $m$ = number of members and $J$ = number of joints",
+              "options": [
+                "(i) $m = 2j - 3$",
+                "(ii) $m > 2j - 3$",
+                "(iii) $m < 2j - 3$",
+                "(iv) $m \\ge 2j - 3$"
+              ]
+            },
+            {
+              "part": "(i)",
+              "text": "The linear velocity of a body rotating at $\\omega$ rad/s along a circular path of radius $r$ is",
+              "options": [
+                "(i) $\\omega \\cdot r$",
+                "(ii) $\\omega / r$",
+                "(iii) $\\omega \\cdot 2r$",
+                "(iv) $\\omega / r$"
+              ]
+            },
+            {
+              "part": "(j)",
+              "text": "The units of energy in SI units",
+              "options": [
+                "(i) Joule",
+                "(ii) Watt",
+                "(iii) Joule/sec.",
+                "(iv) Watt/sec"
+              ]
+            }
+          ],
+          "id": "Q.1"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "State and prove parallelogram law of forces.",
+              "marks": [
+                4
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "A horizontal line $PQRS$ is $12\\text{ m}$ long, where $PQ=QR=RS=4\\text{ m}$, the forces are acting at $P, Q, R$ and $S$ as shown in figure 1. Find the magnitude, direction and position of the resultant force.\n\n![Fig. (1)](diagram_placeholder_1)",
+              "marks": [
+                10
+              ]
+            }
+          ],
+          "id": "Q.2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "What is moment of a couple? Why it is called free Vector?",
+              "marks": [
+                4
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "A system of force and couple acting on a simply supported beam as shown in figure 2. Find the reaction force acting at its support $A$ and $E$.\n\n![Fig. (2)](diagram_placeholder_2)",
+              "marks": [
+                10
+              ]
+            }
+          ],
+          "id": "Q.3",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "Explain the conditions of Equilibrium.",
+              "marks": [
+                4
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "Two cylinders $P$ and $Q$ rest in a channel as shown in figure 3. The cylinder $P$ has diameter of $100\\text{ mm}$ and weighs $200\\text{ N}$, where as the cylinder $Q$ has diameter of $180\\text{ mm}$ and weighs $500\\text{ N}$. Determine the pressure at all the contact points.\n\n![Fig. (3)](diagram_placeholder_3)",
+              "marks": [
+                10
+              ]
+            }
+          ],
+          "id": "Q.4",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "State the laws of friction. Explain the term angle of friction.",
+              "marks": [
+                6
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "Two blocks $A$ and $B$ of weights $1\\text{ kN}$ and $2\\text{ kN}$ respectively are in equilibrium position as shown in figure 4.\n\n![Fig. (4)](diagram_placeholder_4)\n\nIf the coefficient of friction between the two blocks as well as the block $B$ and the floor is $0.3$, find the force $P$ required to move the block $B$.",
+              "marks": [
+                8
+              ]
+            }
+          ],
+          "id": "Q.5",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "Explain the principle of Virtual work.",
+              "marks": [
+                4
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "Find the reaction and forces in the members of the truss shown in figure 5.\n\n![Fig. (5)](diagram_placeholder_5)",
+              "marks": [
+                10
+              ]
+            }
+          ],
+          "id": "Q.6",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "The equation of motion of a particle moving in a straight line is given by $S = 18t + 3t^2 - 2t^3$, where ($s$) is in metres and ($t$) in seconds. Find (1) Velocity and acceleration at start, (2) time, when the particle reaches its maximum velocity, and (3) maximum velocity of the particle.",
+              "marks": [
+                7
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "The motion of a particle is given by $a = t^3 - 3t^2 + 5$, where ($a$) is the acceleration in $m/s^2$ and ($t$) is the time in seconds. The velocity of the particle at $t=1$ second is $6.25\\text{ m/sec}$ and the displacement is $8.8$ metres. Calculate the displacement and velocity at $t=2$ seconds.",
+              "marks": [
+                7
+              ]
+            }
+          ],
+          "id": "Q.7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "The equation for angular displacement of a particle, moving in a circular path (radius $200\\text{ m}$) is given by $\\theta = 18t + 3t^2 - 2t^3$, where $\\theta$ is the angular displacement at the end of $t$ sec. Find (i) angular velocity and acceleration at the start, (ii) time, when the particle reaches its maximum angular velocity, and (iii) maximum angular velocity of the particle.",
+              "marks": [
+                6
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "An I-section shown in figure 6. Find the moment of inertia of the section about the horizontal axis passing through the centre of gravity of the section.\n\n![Fig. (6)](diagram_placeholder_6)",
+              "marks": [
+                8
+              ]
+            }
+          ],
+          "id": "Q.8",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "A collar $B$ having mass $100\\text{ g}$ moves along a frictionless curved rod in a vertical plane. A light rubber band connects $B$ to fixed point $A$. The rubber band is $250\\text{ mm}$ in length when unstretched. A force of $30\\text{ N}$ is required to extend the band $50\\text{ mm}$. The collar is released from rest. what distance must $d$ be so that the downward normal force on the rod at $C$ is $20\\text{ N}$?\n\n![Diagram for Q.9(a)](diagram_placeholder_7)",
+              "marks": [
+                10
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "Define Linear momentum and linear Impulse of a particle of mass $m$ acted upon by a force $F$.",
+              "marks": [
+                4
+              ]
+            }
+          ],
+          "id": "Q.9",
+          "marks": null,
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

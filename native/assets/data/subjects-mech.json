@@ -1,0 +1,4661 @@
+{
+ "dataset": "subjects",
+ "branch": "mech",
+ "branchName": "Mechanical Engineering",
+ "generatedAt": "2026-10-25T21:55:30Z",
+ "source": "src/assets/data/branches/mech.json",
+ "subjects": [
+  {
+   "id": "mech-s1-100101",
+   "semester": 1,
+   "code": "100101",
+   "name": "Engineering Chemistry",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100101-u1",
+     "number": 1,
+     "title": "Atomic and Molecular Structure",
+     "topics": [
+      {
+       "id": "mech-s1-100101-u1-t1",
+       "title": "Electromagnetic radiations, Dual nature of electron and Heisenberg uncertainty Principle",
+       "text": "Electromagnetic radiations, Dual nature of electron and Heisenberg uncertainty Principle. Photoelectric effect, Planck's theory. Principles for the combination of atomic orbitals to form a molecular diagram of molecular orbitals. Bent's rule, VSEPR theory (typical example) co- ordination numbers and geometries. Isomerism in transition metal compounds. Metal Carbonyls; Synthesis and Structure."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100101-u2",
+     "number": 2,
+     "title": "Spectroscopy",
+     "topics": [
+      {
+       "id": "mech-s1-100101-u2-t1",
+       "title": "Principle of rotational and vibrational spectroscopy",
+       "text": "Principle of rotational and vibrational spectroscopy, selection rule for application in diatomic molecules, elementary idea of electronic spectroscopy, UV-VIS spectroscopy with related to rules and its applications. Basic Principle of nuclear Magnetic resonance spectroscopy with applications."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100101-u3",
+     "number": 3,
+     "title": "Electrochemistry and Fuels",
+     "topics": [
+      {
+       "id": "mech-s1-100101-u3-t1",
+       "title": "Nernst equation",
+       "text": "Nernst equation, EMF and electrochemical cell, the introduction of corrosion, corrosion mechanism, types of corrosion, water line corrosion, stress corrosion, pitting corrosion, Lead acid storage cell, leclanche cell. Calorific value of fuels, proximate and ultimate analysis of coals, fuel cells, Bio fuels."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100101-u4",
+     "number": 4,
+     "title": "Water Chemistry",
+     "topics": [
+      {
+       "id": "mech-s1-100101-u4-t1",
+       "title": "Hardness of water, estimation of water hardness by EDTA and Alkalinity method",
+       "text": "Hardness of water, estimation of water hardness by EDTA and Alkalinity method. Removal of the hardness of water- soda lime process, zeolite process, Ion exchange process, Boiler problem, sludge, and scale formation, priming and foaming, Boiler corrosion, and Caustic embrittlement."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100101-u5",
+     "number": 5,
+     "title": "Polymer and Plastics",
+     "topics": [
+      {
+       "id": "mech-s1-100101-u5-t1",
+       "title": "Polymerization techniques",
+       "text": "Polymerization techniques (free radical, ionic, and co-ordination mechanism)Preparation properties, and technical application of phenol-formaldehyde resins, elastomers, synthetic rubbers (Buna-S, Buna-N, neoprene). Inorganic polymers, Silicones, adhesives, epoxy resins. the structural difference between thermoplastic and thermosetting Plastics, the Importance of commercially important thermoplastics and thermosets; Poly ethylene, Polyvinyl chloride, Polystyrene."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100101-u6",
+     "number": 6,
+     "title": "Organic Reactions and Synthesis of A Drug Molecule",
+     "topics": [
+      {
+       "id": "mech-s1-100101-u6-t1",
+       "title": "Introduction to intermediate and reaction involving Substitution",
+       "text": "Introduction to intermediate and reaction involving Substitution, addition, elimination, oxidation-reduction. Diels Elder cyclization and epoxide ring opening reactions, synthesis of commonly used drug molecules like aspirin."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s1-100102",
+   "semester": 1,
+   "code": "100102",
+   "name": "Engineering Mathematics–I",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100102-u1",
+     "number": 1,
+     "title": "Linear Algebra-I",
+     "topics": [
+      {
+       "id": "mech-s1-100102-u1-t1",
+       "title": "Elementary Row operations, Gauss -Jordan Method for finding the inverse of Matrix, Complex Matrix",
+       "text": "Hermitian , Skew Hermitian and Unitary Matrix, Vector space, Sub Spaces, Linear dependence and Independences of Vectors, Linear Span, Basis, Dimension, Extension of basis of subspace, The rank of a matrix, Row and column space, Solvability of system of linear equations."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100102-u2",
+     "number": 2,
+     "title": "Linear Algebra-II",
+     "topics": [
+      {
+       "id": "mech-s1-100102-u2-t1",
+       "title": "Linear Transformations",
+       "text": "Linear Transformations, Kernel and Range of linear transformation, Matrix Representation of a linear transformation, Rank-Nullity Theorem, Eigen Value and Eigen Vectors, Properties of Eigen vectors, Eigen Bases, Orthogonal Transformation, Similarity Transformation, Matrix Diagonalization, Cayley- Hamilton Theorem."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100102-u3",
+     "number": 3,
+     "title": "Calculus for single variable",
+     "topics": [
+      {
+       "id": "mech-s1-100102-u3-t1",
+       "title": "Inderminate form",
+       "text": "Inderminate form, L’Hospital Rule, Rolle’s Theorem, Mean Value Theorem, Expansion of function (single variable), Taylor and Maclaurin Series, Riemann Integration, Riemann Sum, Improper Integrals, Beta and Gamma function and their properties."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100102-u4",
+     "number": 4,
+     "title": "Multivariable Calculus (Differentiation",
+     "topics": [
+      {
+       "id": "mech-s1-100102-u4-t1",
+       "title": "Function with two or more variable",
+       "text": "Function with two or more variable, Limit, continuity and Partial differentiation, Total Differentiation Taylor’s series and Maclaurin’s series for function with two variable, Jacobian, Maxima and Minima, Method of Lagrange’s multiplier."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100102-u5",
+     "number": 5,
+     "title": "Multivariable Calculus (Integration",
+     "topics": [
+      {
+       "id": "mech-s1-100102-u5-t1",
+       "title": "Double Integral",
+       "text": "Double Integral, change of order of integration, Triple integral, Change of Variable in a Double and Triple Integrals, Change to polar coordinate, Change to cylindrical coordinate, Change to spherical polar coordinate, Application to area and volume using double and triple integral"
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100102-u6",
+     "number": 6,
+     "title": "Vector Calculus",
+     "topics": [
+      {
+       "id": "mech-s1-100102-u6-t1",
+       "title": "Scalar and vector fields",
+       "text": "Scalar and vector fields, Gradient, Directional derivative, Divergence, Curl and their properties, Line integral, Green’s theorem in plane (without proof), Surface integral, Stoke’s theorem (without proof), Volume Integral, Gauss-Divergence’ theorem (without proof)."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s1-100103",
+   "semester": 1,
+   "code": "100103",
+   "name": "Communicative English",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100103-u1",
+     "number": 1,
+     "title": "Vocabulary Building",
+     "topics": [
+      {
+       "id": "mech-s1-100103-u1-t1",
+       "title": "Nature of Word Formation",
+       "text": "Nature of Word Formation; Root Word and Morpheme; Prefix and Suffix; Foreign Expressions in English; Synonym and Antonym; Homophone and Homograph; Abbreviation and Acronym."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100103-u2",
+     "number": 2,
+     "title": "Basic Writing Skills",
+     "topics": [
+      {
+       "id": "mech-s1-100103-u2-t1",
+       "title": "Parts of Speech",
+       "text": "Types of Words; Structures of Sentence; Kind of Sentence; Phrase and Clause; Punctuation Marks; Capitalization; Tenses: Present, Past and Future; Voices: Active and Passive; Formation of Questions using Primary Auxiliaries, Modals and Wh-Words."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100103-u3",
+     "number": 3,
+     "title": "Common Errors in English",
+     "topics": [
+      {
+       "id": "mech-s1-100103-u3-t1",
+       "title": "Common Errors in English",
+       "text": "Articles; Prepositions; Modifiers; Subject-Verb Agreement; Noun-Pronoun agreement; Redundancies; Cliches; Spelling Error."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100103-u4",
+     "number": 4,
+     "title": "Principles of Appropriate Writi",
+     "topics": [
+      {
+       "id": "mech-s1-100103-u4-t1",
+       "title": "Defining",
+       "text": "Describing, Classifying and Exemplifying; Introduction, Body, and Conclusion; References, Quotations and Illustrations; Organizing the Paragraphs in a Document; 7Cs of the Professional Writing: Clear, Concise, Concrete, Correct, Coherent, Complete and Courteous."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100103-u5",
+     "number": 5,
+     "title": "Practices of Formal Writing",
+     "topics": [
+      {
+       "id": "mech-s1-100103-u5-t1",
+       "title": "Formal Letter",
+       "text": "Cover-Letter and Application; Resume Writing; Report Writing; Minutes of Meeting; Memorandum; Notice; Essay Writing: Personal and Impersonal; Email Writing Etiquettes; Article Writing; Writing for Current Social Media."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100103-u6",
+     "number": 6,
+     "title": "Comprehension of Written English",
+     "topics": [
+      {
+       "id": "mech-s1-100103-u6-t1",
+       "title": "Of Studies (Essay) by Sir Francis Bacon",
+       "text": "Of Studies (Essay) by Sir Francis Bacon; The Sun Rising (Poem) by John Donne; The Last Leaf (Story) by O Henry; Unseen/Untaught Passage."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s1-100109p",
+   "semester": 1,
+   "code": "100109P",
+   "name": "Sports/Yoga/NCC/NSS",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100109p-u1",
+     "number": 1,
+     "title": "Course Objectives",
+     "topics": [
+      {
+       "id": "mech-s1-100109p-u1-t1",
+       "title": "Course Objectives: (a) Encouraging creativity and innovation: The course could aim to foster a…",
+       "text": "Course Objectives: (a) Encouraging creativity and innovation: The course could aim to foster a culture of creativity and innovation among engineering students. It could provide opportunities for students to generate and develop new ideas, think critically, and come up with innovative solutions to real-worldproblems. This objective could be achieved through brainstorming sessions, design thinking exercises, and hands-on projects. (b) Enhancing problem-solving skills: The course could focus on enhancing the problem- solving skills of engineering students. It could provide training on various problem-solving techniques, such as root cause analysis, critical thinking, and decision-making. Students may learn how to identify and analyse complex problems, develop feasible solutions, and implement them effectively. (c) Developing project management skills: The course could aim to develop project management skills among engineering students. It could cover topics such as project planning, scheduling, budgeting, and risk management. Students may learn how to manage resources, communicate effectively, and work collaboratively in a project-based environment. (d) Promoting interdisciplinary collaboration: The course could encourage interdisciplinary collaboration among engineering students. It could provide opportunities for students from different engineering disciplines to work together on innovative projects. This could foster cross-disciplinary learning, encourage diverse perspectives, and promote teamwork and collaboration skills. (e) Facilitating practical application of engineering concepts: The course could focus on the practical application of engineering concepts and principles. It could provide students with opportunities to apply their theoretical knowledge to real-world projects, prototypes, or simulations. Students may learn how to translate engineering theories into practical solutions and develop hands-on experience in implementing innovative projects. Pre-requisite: Nil Course Outcome:"
+      },
+      {
+       "id": "mech-s1-100109p-u1-t2",
+       "title": "Developed innovative projects",
+       "text": "Students may have successfully developed innovative projects that demonstrate their creativity, problem-solving skills, and technical competence. These projects could be prototypes, models, simulations, or practical solutions to real-world problems, showcasing their ability to apply engineering concepts in a creative and innovative manner."
+      },
+      {
+       "id": "mech-s1-100109p-u1-t3",
+       "title": "Improved critical thinking and problem-solving skills",
+       "text": "Students may have honed their critical thinking and problem-solving skills through various course activities, such as brainstorming, design thinking, and project development. They may have learned to analyse complex problems, identify viable solutions, and make informed decisions based on technical, economic, and social considerations."
+      },
+      {
+       "id": "mech-s1-100109p-u1-t4",
+       "title": "Enhanced project management and teamwork skills",
+       "text": "Students may have gained practical experience in managing projects, including planning, scheduling, budgeting, and risk management. They may have learned how to work effectively in a team, collaborate with diverse team members, and communicate project progress and results professionally."
+      },
+      {
+       "id": "mech-s1-100109p-u1-t5",
+       "title": "Increased interdisciplinary knowledge and collaboration",
+       "text": "Students may have gained exposure to interdisciplinary concepts and collaborated with peers from different engineering disciplines. They may have learned to appreciate diverse perspectives, leverage interdisciplinary knowledge, and work collaboratively to develop innovative solutions that integrate multiple domains of engineering."
+      },
+      {
+       "id": "mech-s1-100109p-u1-t6",
+       "title": "Cultivated a mindset of innovation and entrepreneurship",
+       "text": "Students may have developed a mindset of innovation and entrepreneurship, recognizing the importance of creativity, adaptability, and continuous improvement in engineering practice. They may have learned to identify opportunities, think critically, and take risks to develop and implement innovative projects with commercial or societal potential. List of Reports: Any topics related to innovative project."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s1-100104",
+   "semester": 1,
+   "code": "100104",
+   "name": "Engineering Graphics and Design",
+   "type": "Theory",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100104-u1",
+     "number": 1,
+     "title": "Introduction to Engineering Drawing",
+     "topics": [
+      {
+       "id": "mech-s1-100104-u1-t1",
+       "title": "Principles of Engineering Graphics and Their Significance",
+       "text": "Principles of Engineering Graphics and Their Significance, Usage of Drawing Instruments, Lettering, Conic Sections including the Rectangular Hyperbola (General Method Only); Cycloid, Epicycloid, Hypocycloid and Involute; Scales Plain, Diagonal and Vernier Scales"
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100104-u2",
+     "number": 2,
+     "title": "Orthographic Projections",
+     "topics": [
+      {
+       "id": "mech-s1-100104-u2-t1",
+       "title": "Principles of Orthographic Projections",
+       "text": "Principles of Orthographic Projections - Conventions -Projections of Points and Lines Inclined to Both Planes; Projections of Planes Inclined Planes Auxiliary Planes."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100104-u3",
+     "number": 3,
+     "title": "Projections of Regular Solids",
+     "topics": [
+      {
+       "id": "mech-s1-100104-u3-t1",
+       "title": "Types of Solids, Projects of Solids (Prism, pyramids, cone, and cylinder",
+       "text": "Inclined to Both the Planes- Auxiliary Views; Draw Simple Annotation, Dimensioning and Scale."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100104-u4",
+     "number": 4,
+     "title": "Sections and Sectional Views of Right Angular Solids",
+     "topics": [
+      {
+       "id": "mech-s1-100104-u4-t1",
+       "title": "Section of Solids",
+       "text": "Section of Solids (Prism, Cylinder, Pyramid, Cone), Auxiliary Views; Development of Surfaces Of Right Regular Solids- Prism, Pyramid, Cylinder And Cone; Draw The Sectional Orthographic Views of Geometrical Solids, Objects From Industry And Dwellings (Foundation To Slab Only)."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100104-u5",
+     "number": 5,
+     "title": "Isometric Projections",
+     "topics": [
+      {
+       "id": "mech-s1-100104-u5-t1",
+       "title": "Isometric Views",
+       "text": "Isometric Views, Compound Solids; Principles of Isometric Projection Isometric Scale, Conventions; Isometric Views of Lines, Planes, Simple and Conversion of Isometric Views toOrthographic Views And Vice-Versa, Conventions."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100104-u6",
+     "number": 6,
+     "title": "Overview of Computer Graphics",
+     "topics": [
+      {
+       "id": "mech-s1-100104-u6-t1",
+       "title": "Listing the Computer Technologies that Impact on Graphical Communication, Demonstrating Knowledge…",
+       "text": "Listing the Computer Technologies that Impact on Graphical Communication, Demonstrating Knowledge of the Theory of CAD Software [Such As: The Menu System, Toolbars (Standard, Object Properties, Draw, Modify And Dimension), Drawing Area (Background, Crosshairs, Coordinate System), Dialog Boxes And Windows, Shortcut Menus (Button Bars), The Command Line (Where Applicable), The Status Bar, Different Methods of Zoom as Used in CAD, Select and Erase Objects.; Isometric Views of Lines, Planes, Simple And Compound Solids."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 1,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s1-100106",
+   "semester": 1,
+   "code": "100106",
+   "name": "Basic Electrical Engineering",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100106-u1",
+     "number": 1,
+     "title": "DC Circuit Analysis and Network Theorems",
+     "topics": [
+      {
+       "id": "mech-s1-100106-u1-t1",
+       "title": "DC Circuit Analysis and Network Theorems",
+       "text": "Concepts of Network, Active and Passive elements, voltage and current sources, concept of linearity and linear network, unilateral and bilateral elements. R L and C as linear elements. Source Transformation. Kirchhoff’s Law, loop and nodal methods of analysis; star – delta transformation; Network Theorems: Superposition Theorem, Thevenin’s Theorem, Norton’s Theorem, Maximum Power Transfer Theorem. (Simple Numerical Problems)"
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100106-u2",
+     "number": 2,
+     "title": "Magnetic Circuit",
+     "topics": [
+      {
+       "id": "mech-s1-100106-u2-t1",
+       "title": "Magnetic Circuit",
+       "text": "Magnetic circuit concepts, analogy between Electric & Magnetic circuits, Magnetic circuits with DC and AC excitation, Magnetic leakage. B-H curve, Hysteresis and Eddy Current losses, Magnetic circuit calculations."
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100106-u3",
+     "number": 3,
+     "title": "Steady State Analysis of Single-Phase AC Circuits",
+     "topics": [
+      {
+       "id": "mech-s1-100106-u3-t1",
+       "title": "Steady State Analysis of Single-Phase AC Circuits",
+       "text": "Sinusoidal, Square and Triangular waveforms–average and effective values, form and peak factors, concept of phasors, phasor representation of sinusoidally varying voltage and current. Analysis of series, parallel, and series – parallel RLC Circuits: Apparent, Active & Reactive Powers, Power factor, causes and problems of low power factor, power factor improvement. Resonance in Series and Parallel Circuits. (Simple Numerical Problems)"
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100106-u4",
+     "number": 4,
+     "title": "Three Phase AC Circuits",
+     "topics": [
+      {
+       "id": "mech-s1-100106-u4-t1",
+       "title": "Three Phase AC Circuits",
+       "text": "Three Phase System – its necessity and advantages, meaning of phase sequence and star and delta connections, balanced supply and balanced load, line and phase voltage/ current relations, three phase power and its measurement. (Simple Numerical Problems)"
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100106-u5",
+     "number": 5,
+     "title": "Introduction to DC Machines",
+     "topics": [
+      {
+       "id": "mech-s1-100106-u5-t1",
+       "title": "Introduction to DC Machines",
+       "text": "Principal, Operation, Construction, and types of DC machines, e.m.f. equation of generator and torque equation of motor. Single Phase Transformer: Principle of Operation, Construction, e.m.f. equation, losses in transformer, efficiency. Three Phase Induction Motor:Principal, Operation, and Construction (Simple Numerical Problems)"
+      }
+     ]
+    },
+    {
+     "id": "mech-s1-100106-u6",
+     "number": 6,
+     "title": "Soldering",
+     "topics": [
+      {
+       "id": "mech-s1-100106-u6-t1",
+       "title": "Soldering",
+       "text": "Soldering- Soldering and desoldering techniques, breadboard wiring, general-purpose PCB soldering/wiring. Wiring-Types of residential and commercial wiring systems, general rules and guidelines for installation, loadcalculation and sizing of wire, rating of main switch, distribution board."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s1-100101p",
+   "semester": 1,
+   "code": "100101P",
+   "name": "Engineering Chemistry Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100101p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s1-100101p-u1-t1",
+       "title": "To estimate hardness of water by alkalinity method",
+       "text": "To estimate hardness of water by alkalinity method"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t2",
+       "title": "To estimate hardness of water by EDTA method",
+       "text": "To estimate hardness of water by EDTA method"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t3",
+       "title": "To remove hardness of water by ion exchange method",
+       "text": "To remove hardness of water by ion exchange method"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t4",
+       "title": "Determination of pH of a given acid solution using a standard sodium hydroxide solution",
+       "text": "Determination of pH of a given acid solution using a standard sodium hydroxide solution"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t5",
+       "title": "Determination of surface tension and viscosity",
+       "text": "Determination of surface tension and viscosity"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t6",
+       "title": "Chemical analysis of salt (Acid radical and basic radical",
+       "text": "Chemical analysis of salt (Acid radical and basic radical)"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t7",
+       "title": "Adsorption of acetic acid by charcoal",
+       "text": "Adsorption of acetic acid by charcoal"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t8",
+       "title": "Test of adulteration of fat butter, sugar, turmeric powder, chilli powder and pepper",
+       "text": "Test of adulteration of fat butter, sugar, turmeric powder, chilli powder and pepper"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t9",
+       "title": "Saponification/ acid value of an oil",
+       "text": "Saponification/ acid value of an oil"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t10",
+       "title": "Identification of organic substances and their functional groups",
+       "text": "Identification of organic substances and their functional groups"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t11",
+       "title": "Potentiometric determination of redox potentials and emf",
+       "text": "Potentiometric determination of redox potentials and emf"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t12",
+       "title": "Synthesis of drug/ polymer like ASPRIN/ Urea- formaldehyde resin",
+       "text": "Synthesis of drug/ polymer like ASPRIN/ Urea- formaldehyde resin"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t13",
+       "title": "Thin layer chromatography",
+       "text": "Thin layer chromatography"
+      },
+      {
+       "id": "mech-s1-100101p-u1-t14",
+       "title": "Analysis of flue gas by orsat apparatus",
+       "text": "Analysis of flue gas by orsat apparatus"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 14
+  },
+  {
+   "id": "mech-s1-100103p",
+   "semester": 1,
+   "code": "100103P",
+   "name": "Communicative English Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100103p-u1",
+     "number": 1,
+     "title": "Perform any 10 Experiments Introduction",
+     "topics": [
+      {
+       "id": "mech-s1-100103p-u1-t1",
+       "title": "Perform any 10 Experiments Introduction: Language Lab of English includes Listening Comprehension…",
+       "text": "Perform any 10 Experiments Introduction: Language Lab of English includes Listening Comprehension, Reading Comprehension, Speaking Skills: Phonetics, International Phonetic Alphabet Symbols (IPAS), Sounds: Vowels and Consonants, Pronunciation, Intonation, Stress and Rhythm, Just A Minute Technique (JAM), Communication: Verbal and Non-Verbal; Ethical Usage of Artificial Intelligence, Self-Introduction: Social, Academic and Professional; Interview: Brainstorming Vocabulary Activities."
+      },
+      {
+       "id": "mech-s1-100103p-u1-t2",
+       "title": "Listening Comprehension and Speed (Software",
+       "text": "Listening Comprehension and Speed (Software)"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t3",
+       "title": "Reading Comprehension and Speed (Software",
+       "text": "Reading Comprehension and Speed (Software)"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t4",
+       "title": "Pronunciation",
+       "text": "Learning and Test (Software)"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t5",
+       "title": "Self-Introduction",
+       "text": "Social, Academic and Professional"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t6",
+       "title": "English Typing",
+       "text": "Microsoft Word Document (MS Word), and Microsoft Power Point Presentation (PPT)"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t7",
+       "title": "Oral Presentation",
+       "text": "Oral Presentation"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t8",
+       "title": "Interview",
+       "text": "Online and Offline"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t9",
+       "title": "Just A Minute Technique (JAM) and Extempore",
+       "text": "Just A Minute Technique (JAM) and Extempore"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t10",
+       "title": "Debate",
+       "text": "Debate"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t11",
+       "title": "Group Discussion",
+       "text": "Group Discussion"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t12",
+       "title": "Activities",
+       "text": "Role Play, Peer Activities, and Group Activities"
+      },
+      {
+       "id": "mech-s1-100103p-u1-t13",
+       "title": "Anchoring and Addressing",
+       "text": "an Assembly, a Meeting, a Seminar, a Party"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 13
+  },
+  {
+   "id": "mech-s1-100104p",
+   "semester": 1,
+   "code": "100104P",
+   "name": "Engineering Graphics and Design Lab",
+   "type": "Practical",
+   "credits": 2,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100104p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s1-100104p-u1-t1",
+       "title": "Which includes dimensioning methods",
+       "text": "(Which includes dimensioning methods, different types of line, construction of different polygon, divide the line and angle in parts, use of stencil)"
+      },
+      {
+       "id": "mech-s1-100104p-u1-t2",
+       "title": "Construction of Plane, Diagonal & Vernier Scales",
+       "text": "Construction of Plane, Diagonal & Vernier Scales."
+      },
+      {
+       "id": "mech-s1-100104p-u1-t3",
+       "title": "Construction of Ellipses, Parabolas, and Hyperbolas using the general method",
+       "text": "Construction of Ellipses, Parabolas, and Hyperbolas using the general method."
+      },
+      {
+       "id": "mech-s1-100104p-u1-t4",
+       "title": "Construction of cycloid, epicycloid, hypocycloid, and involute of a circle",
+       "text": "Construction of cycloid, epicycloid, hypocycloid, and involute of a circle."
+      },
+      {
+       "id": "mech-s1-100104p-u1-t5",
+       "title": "Projection of Points and Lines inclined to both planes",
+       "text": "Projection of Points and Lines inclined to both planes."
+      },
+      {
+       "id": "mech-s1-100104p-u1-t6",
+       "title": "Projections of Planes (e.g., rectangular, triangular) in inclined positions",
+       "text": "Projections of Planes (e.g., rectangular, triangular) in inclined positions."
+      },
+      {
+       "id": "mech-s1-100104p-u1-t7",
+       "title": "Projection of Solids (prisms,pyramids, cones, and cylinders",
+       "text": "Projection of Solids (prisms,pyramids, cones, and cylinders)"
+      },
+      {
+       "id": "mech-s1-100104p-u1-t8",
+       "title": "Drawing of Sections of Prisms, Cylinders, Pyramids, and Cones",
+       "text": "Drawing of Sections of Prisms, Cylinders, Pyramids, and Cones."
+      },
+      {
+       "id": "mech-s1-100104p-u1-t9",
+       "title": "Development of Surfaces for prisms, pyramids, cylinders, and cones",
+       "text": "Development of Surfaces for prisms, pyramids, cylinders, and cones."
+      },
+      {
+       "id": "mech-s1-100104p-u1-t10",
+       "title": "Construction of Isometric views of lines, planes, and simple solids",
+       "text": "Construction of Isometric views of lines, planes, and simple solids."
+      },
+      {
+       "id": "mech-s1-100104p-u1-t11",
+       "title": "Introduction to CAD Software",
+       "text": "Introduction to CAD Software."
+      },
+      {
+       "id": "mech-s1-100104p-u1-t12",
+       "title": "Use of CAD software to draw basic geometric shapes, apply dimensions, and modify objects",
+       "text": "Use of CAD software to draw basic geometric shapes, apply dimensions, and modify objects."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 4
+   },
+   "unitCount": 1,
+   "topicCount": 12
+  },
+  {
+   "id": "mech-s1-100106p",
+   "semester": 1,
+   "code": "100106P",
+   "name": "Basic Electrical Engineering Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s1-100106p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s1-100106p-u1-t1",
+       "title": "Verification of Kirchhoff’s laws",
+       "text": "Verification of Kirchhoff’s laws."
+      },
+      {
+       "id": "mech-s1-100106p-u1-t2",
+       "title": "Verification of Superposition Theorem",
+       "text": "Verification of Superposition Theorem."
+      },
+      {
+       "id": "mech-s1-100106p-u1-t3",
+       "title": "Verification of Thevenin’s Theorem",
+       "text": "Verification of Thevenin’s Theorem."
+      },
+      {
+       "id": "mech-s1-100106p-u1-t4",
+       "title": "Verification of Norton’s Theorem",
+       "text": "Verification of Norton’s Theorem."
+      },
+      {
+       "id": "mech-s1-100106p-u1-t5",
+       "title": "Verification of Maximum Power Transfer Theorem",
+       "text": "Verification of Maximum Power Transfer Theorem."
+      },
+      {
+       "id": "mech-s1-100106p-u1-t6",
+       "title": "Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor",
+       "text": "Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor."
+      },
+      {
+       "id": "mech-s1-100106p-u1-t7",
+       "title": "Star to Delta and Delta to Star conversion of the three circuit",
+       "text": "Star to Delta and Delta to Star conversion of the three circuit."
+      },
+      {
+       "id": "mech-s1-100106p-u1-t8",
+       "title": "Determination of Efficiency by load test of a 1 – Ø Transformer",
+       "text": "Determination of Efficiency by load test of a 1 – Ø Transformer."
+      },
+      {
+       "id": "mech-s1-100106p-u1-t9",
+       "title": "To study the typical BHK house wiring",
+       "text": "To study the typical BHK house wiring"
+      },
+      {
+       "id": "mech-s1-100106p-u1-t10",
+       "title": "Study of safety precautions while working on electrical installations and necessity of earthing",
+       "text": "Study of safety precautions while working on electrical installations and necessity of earthing"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 10
+  },
+  {
+   "id": "mech-s2-100201",
+   "semester": 2,
+   "code": "100201",
+   "name": "Engineering Physics",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s2-100201-u1",
+     "number": 1,
+     "title": "Unit 1",
+     "topics": [
+      {
+       "id": "mech-s2-100201-u1-t1",
+       "title": "Frame of Reference",
+       "text": "Non-Inertial frame of reference, rotating coordinate system, centripetal and Coriolis acceleration and its application in weather system.",
+       "hours": 2
+      },
+      {
+       "id": "mech-s2-100201-u1-t2",
+       "title": "Oscillations",
+       "text": "Harmonic Oscillator, Damped Harmonic motion – overdamped, critically Damped and lightly damped oscillators, Force Oscillators and Resonance.",
+       "hours": 3
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100201-u2",
+     "number": 2,
+     "title": "Unit 2",
+     "topics": [
+      {
+       "id": "mech-s2-100201-u2-t1",
+       "title": "Optics",
+       "text": "Huygens’s Principle, Superposition of Waves and interference of Light by wave front- splitting and amplitude-splitting; Young’s double slit experiment, Michelson interferometer, Fraunhofer diffraction from single slit and circular aperture, Diffraction Grating and their resolving power",
+       "hours": 4
+      },
+      {
+       "id": "mech-s2-100201-u2-t2",
+       "title": "LASER",
+       "text": "Einstein’s theory of matter-radiations interaction, Einstein’s Coefficients (A and B), Amplification by population inversion, Different types of lasers – Gas Laser, Helium-Neon Laser, Solid State Laser (Ruby, Neodymium), Semiconductor Laser.",
+       "hours": 4
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100201-u3",
+     "number": 3,
+     "title": "Unit 3",
+     "topics": [
+      {
+       "id": "mech-s2-100201-u3-t1",
+       "title": "Quantum Mechanics",
+       "text": "Compton Effect, Photoelectric Effect, Wave Particle duality, de Broglie’s hypothesis, Heisenberg’s Uncertainty Principle, Wave function and wave packets, phase and group velocities, Schrodinger’s Wave Equation, Normalization, Expectation values, Eigenvalues and Eigenfunction.",
+       "hours": 5
+      },
+      {
+       "id": "mech-s2-100201-u3-t2",
+       "title": "Applications in One dimensions",
+       "text": "Application of Schrodinger Wave Equation for particle in one dimensional box – its wavefunction and eigenvalue of energy and momentum.",
+       "hours": 2
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100201-u4",
+     "number": 4,
+     "title": "Unit 4",
+     "topics": [
+      {
+       "id": "mech-s2-100201-u4-t1",
+       "title": "Vector Calculus",
+       "text": "Gradient, Divergence and Curl, Line, Surface and Volume integrals, Gauss’s Divergence theorem and Stokes’ theorem in Cartesian Coordinate.",
+       "hours": 2
+      },
+      {
+       "id": "mech-s2-100201-u4-t2",
+       "title": "Electrostatics",
+       "text": "Gauss’s Law and its applications, Divergence and Curl of Electrostatic fields, Electrostatic Potential, Boundary Conditions, Poisson’s and Laplace’s equations, Dielectrics, Polarization, Bound Charges, Electric displacement, Boundary Conditions in dielectrics.",
+       "hours": 4
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100201-u5",
+     "number": 5,
+     "title": "Unit 5",
+     "topics": [
+      {
+       "id": "mech-s2-100201-u5-t1",
+       "title": "Magnetostatics",
+       "text": "Lorentz force, Biot-Savart and Ampere’s circuital laws and their applications, Divergence and Curl of Magneto static fields, Magnetic vector potential, Force and torque on a magnetic dipole, Magnetic Materials, Magnetization, Bound currents, Boundary conditions.",
+       "hours": 4
+      },
+      {
+       "id": "mech-s2-100201-u5-t2",
+       "title": "Electrodynamics and Electromagnetic Waves",
+       "text": "Ohm’s law, Motional EMF, Faraday’s Law, Lenz’s law, Self and mutual inductance, Energy stored in magnetic field, Maxwell’s equations in vacuum and nonconducting medium, Continuity Equation, Poynting Theorem, Wave Equations: plain electromagnetic wave in vacuum and their transverse nature and Polarization.",
+       "hours": 4
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100201-u6",
+     "number": 6,
+     "title": "Unit 6",
+     "topics": [
+      {
+       "id": "mech-s2-100201-u6-t1",
+       "title": "Introduction to Solids and Semi-Conductors",
+       "text": "Free electron theory of metal, fermi level, Bloch’s theorem for particle in a periodic Potential, Kroning-Penney model and origin of energy band.",
+       "hours": 3
+      },
+      {
+       "id": "mech-s2-100201-u6-t2",
+       "title": "Electronic Materials",
+       "text": "Metals, semiconductors and insulators, intrinsic and extrinsic semiconductors,Carrier transport, diffusion and drift, P-N junction.",
+       "hours": 3
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 12
+  },
+  {
+   "id": "mech-s2-100202",
+   "semester": 2,
+   "code": "100202",
+   "name": "Engineering Mathematics– II",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s2-100202-u1",
+     "number": 1,
+     "title": "Complex Analysis – I",
+     "topics": [
+      {
+       "id": "mech-s2-100202-u1-t1",
+       "title": "Functions of complex variable",
+       "text": "Functions of complex variable, limit, Continuity, Differentiability, Analytic function, Cauchy-Riemann Equations in Cartesian and polar form, harmonic function and harmonic conjugate."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100202-u2",
+     "number": 2,
+     "title": "Complex Analysis – II",
+     "topics": [
+      {
+       "id": "mech-s2-100202-u2-t1",
+       "title": "Line Integral",
+       "text": "Line Integral, contour integrals, Cauchy theorem, Cauchy’s Integral formula(without proof), Taylors series, zero of analytic functions, singularities, Laurent’s series, residue, Cauchy residue theorem(without Proof) and its applications."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100202-u3",
+     "number": 3,
+     "title": "Ordinary Differential Equations",
+     "topics": [
+      {
+       "id": "mech-s2-100202-u3-t1",
+       "title": "Linear differential equations of nth Order with constant coefficients",
+       "text": "Linear differential equations of nth Order with constant coefficients, solution of Homogeneous and Non-Homogeneous Equations, Equations with variable coefficients, Cauchy- Euler Equations, Method of Variation of Parameters."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100202-u4",
+     "number": 4,
+     "title": "Sequence and Series",
+     "topics": [
+      {
+       "id": "mech-s2-100202-u4-t1",
+       "title": "Introduction of Sequence and Series, Nature of series Tests of convergence of Series",
+       "text": "Comparison test, D’Alembert ratio test, Cauchy’s Root test, Raabe’s test, Logarithmic test, Cauchy’s condensation test."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100202-u5",
+     "number": 5,
+     "title": "Laplace Transform",
+     "topics": [
+      {
+       "id": "mech-s2-100202-u5-t1",
+       "title": "Laplace Transform",
+       "text": "Laplace Transform, Existence theorem, properties of Laplace Transform, Laplace Transform of Periodic functions, Inverse Laplace Transform, convolution theorem. Application of Laplace Transform to solve Ordinary differential equations."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100202-u6",
+     "number": 6,
+     "title": "Fourier Series",
+     "topics": [
+      {
+       "id": "mech-s2-100202-u6-t1",
+       "title": "Fourier Series",
+       "text": "Fourier Series, Fourier Series for odd and even functions, Half range sine and cosine series, Parseval’s theorem."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s2-100203",
+   "semester": 2,
+   "code": "100203",
+   "name": "Programming for Problem Solving",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s2-100203-u1",
+     "number": 1,
+     "title": "Introduction to Programming",
+     "topics": [
+      {
+       "id": "mech-s2-100203-u1-t1",
+       "title": "Introduction to components of a computer system (disks, memory, processor, where a program is…",
+       "text": "Introduction to components of a computer system (disks, memory, processor, where a program is stored and executed, operating system, compilers etc.). Idea of Algorithm: steps to solve logical and numerical problems. Representation of Algorithm: Flowchart/ Pseudo code with examples. From algorithms to programs; source code, variables (with data types) variables and memory locations, Syntax and Logical Errors in compilation, object and executable code."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100203-u2",
+     "number": 2,
+     "title": "Operators, Conditional Branching and Loops",
+     "topics": [
+      {
+       "id": "mech-s2-100203-u2-t1",
+       "title": "Arithmetic expressions/arithmetic operators",
+       "text": "Arithmetic expressions/arithmetic operators, relational operators, logical operators, bitwise operators and precedence. Writing and evaluation of conditionals and consequent branching, Iteration and loops."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100203-u3",
+     "number": 3,
+     "title": "Arrays and String",
+     "topics": [
+      {
+       "id": "mech-s2-100203-u3-t1",
+       "title": "Array declaration & initialization, bound checking arrays (1-d, 2-d), character arrays and strings",
+       "text": "Array declaration & initialization, bound checking arrays (1-d, 2-d), character arrays and strings."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100203-u4",
+     "number": 4,
+     "title": "Function, Recursion and Pointers",
+     "topics": [
+      {
+       "id": "mech-s2-100203-u4-t1",
+       "title": "Functions (including using built in libraries), Parameter passing in functions, call by value…",
+       "text": "Functions (including using built in libraries), Parameter passing in functions, call by value, passing arrays to functions: Recursion, as a different way of solving problems. Example programs, such as Finding Factorial, Fibonacci series, Ackerman function etc. Idea of pointers, Defining pointers, Use of Pointers in self- referential structures, idea of call by reference."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100203-u5",
+     "number": 5,
+     "title": "User defined Data Types and File handling",
+     "topics": [
+      {
+       "id": "mech-s2-100203-u5-t1",
+       "title": "Structure",
+       "text": "Structure- defining, declaring, initializing; accessing structure members, processing of structure, array of structures, structures within structure, structure and function, type definition; Union— definition, declaration, accessing union members, initializing union. Introduction, file declaration, opening and closing a file, working with text and binary files, I/O operations on file, error handling, random access to files"
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100203-u6",
+     "number": 6,
+     "title": "Basic Algorithms",
+     "topics": [
+      {
+       "id": "mech-s2-100203-u6-t1",
+       "title": "Basic Algorithms",
+       "text": "Searching, Basic Sorting Algorithms (Bubble, Insertion and Selection), Finding roots of equations, notion of order of complexity through example programs (no formal definition required)"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s2-100206",
+   "semester": 2,
+   "code": "100206",
+   "name": "Workshop Practices",
+   "type": "Theory",
+   "credits": 2,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s2-100206-u1",
+     "number": 1,
+     "title": "Sheet Metal Working",
+     "topics": [
+      {
+       "id": "mech-s2-100206-u1-t1",
+       "title": "Sheet material",
+       "text": "GI sheets, aluminium, tin plate, copper, brass etc; Tools: steel rule, vernier callipers, micrometer, sheet metal gauge, scriber, divider, punches, chisels, hammers, snips, pliers, stakes etc.; operations: scribing, bending, shearing, punching etc; Product development: hexagonal box with cap, funnel etc."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100206-u2",
+     "number": 2,
+     "title": "Joining",
+     "topics": [
+      {
+       "id": "mech-s2-100206-u2-t1",
+       "title": "Classifications of joining processes",
+       "text": "Classifications of joining processes; Brazing, Soldering, and Mechanical Joints, Arc welding, Gas welding etc."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100206-u3",
+     "number": 3,
+     "title": "Pattern Making and Foundry Practice",
+     "topics": [
+      {
+       "id": "mech-s2-100206-u3-t1",
+       "title": "Pattern material",
+       "text": "wood, cast iron, brass, aluminium, waxes etc.; Types of patterns: split, single piece, match plate etc; Tools: cope, drag, core, core prints, shovel, riddle, rammer, trowel, slick, lifter, sprue pin, bellow, mallet, vent rod, furnace etc. Moulding sands: green sand, dry sand, loam sand, facing sand etc., Sand casting: Sand preparation, mould making, melting, pouring, and cleaning"
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100206-u4",
+     "number": 4,
+     "title": "Fitting Shop",
+     "topics": [
+      {
+       "id": "mech-s2-100206-u4-t1",
+       "title": "Introduction to Fitting; Fitting Tools",
+       "text": "Files and their classification, Holding Tools, Cutting Tools, Measuring and Marking Tools, Thread Making Tools, Various Fitting Power Tools; Methods Of Filing: Cross Filling and Draw Filing, Other associated operations Marking. Sawing and Chipping; Safety and Precautions in Fitting Shop."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100206-u5",
+     "number": 5,
+     "title": "Carpentry Shop",
+     "topics": [
+      {
+       "id": "mech-s2-100206-u5-t1",
+       "title": "Introduction to Carpentry Shop; Types of Wood; Seasoning of Wood",
+       "text": "Ty[es of Seasoning Methods; Defects in wood; Structure of Wood; Car[entry Tools; Measuring Tools, Marking Tools, Cutting Tools, Planning Tools, Drilling and Boring Tools, Holding Tools, Striking Tools, Auxiliary tools and materials used in Carpentry; Wood working Processes; Carpentry joints; wood Working Machines: Wood Working Lathe, Circular Saw, Thickness Planer, Band sawSafety and precautions in Carpentry Shop."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100206-u6",
+     "number": 6,
+     "title": "Smithy Shop",
+     "topics": [
+      {
+       "id": "mech-s2-100206-u6-t1",
+       "title": "Introduction to Smithy Sho; Forging Tools and Equipment; Forging Operations",
+       "text": "Drawing, Upsetting, Swaging, Punching, Drifting, Fullering, Bending; Hot Working Processes: Rolling, Drop Forging, Press Forging, Hot Extrusion, Hot Drawing, Cold Working Process, Safety and Precautions in Smithy Shop."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 2,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s2-100204",
+   "semester": 2,
+   "code": "100204",
+   "name": "Elements of Mechanical Engineering",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s2-100204-u1",
+     "number": 1,
+     "title": "Energy Resources",
+     "topics": [
+      {
+       "id": "mech-s2-100204-u1-t1",
+       "title": "Energy Resources",
+       "text": "Renewable or non-conventional sources of energy, their origin and various forms-solar, wind. Biogas and biomass energy, their merits & demerits, major applications-brief description Non-renewable or non-renewable or conventional sources of energy: the fossil fuel. Coal, petroleum and natural gas."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100204-u2",
+     "number": 2,
+     "title": "Review of Basic Concepts Of Thermodynamics",
+     "topics": [
+      {
+       "id": "mech-s2-100204-u2-t1",
+       "title": "Review of Basic Concepts Of Thermodynamics",
+       "text": "Thermodynamics system, properties, state, processes and cycles. Heat, work and internal energy."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100204-u3",
+     "number": 3,
+     "title": "Steam Generators",
+     "topics": [
+      {
+       "id": "mech-s2-100204-u3-t1",
+       "title": "Steam Generators",
+       "text": "Types of boilers, water-tube and fire-tube boilers-their merits and demerits, boiler mountings and accessories-simple description."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100204-u4",
+     "number": 4,
+     "title": "Basic Concept of Refrigeration And Air Conditioning",
+     "topics": [
+      {
+       "id": "mech-s2-100204-u4-t1",
+       "title": "Basic Concept of Refrigeration And Air Conditioning",
+       "text": "Principles of working or vapour compression, vapour absorption and air refrigeration; principles of air conditioning systems."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100204-u5",
+     "number": 5,
+     "title": "Prime Movers",
+     "topics": [
+      {
+       "id": "mech-s2-100204-u5-t1",
+       "title": "Prime Movers",
+       "text": "Simple steam turbine, gas-turbine, IC engines (SI and CI), their brief description and principles of working. Power Plant: principles of working of thermal, hydel and nuclear power plants, work output and efficiency."
+      }
+     ]
+    },
+    {
+     "id": "mech-s2-100204-u6",
+     "number": 6,
+     "title": "Engineering Materials and Their Properties",
+     "topics": [
+      {
+       "id": "mech-s2-100204-u6-t1",
+       "title": "Engineering Materials and Their Properties",
+       "text": "Ferrous and non-ferrous metals: Mechanical properties e.g. strength, hardness, resilience etc. Heat Treatment of Steel: Annealing, tempering, quenching, case-hardening etc."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s2-100201p",
+   "semester": 2,
+   "code": "100201P",
+   "name": "Engineering Physics Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s2-100201p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s2-100201p-u1-t1",
+       "title": "Determination of the capacitance and permittivity of the given material",
+       "text": "Determination of the capacitance and permittivity of the given material."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t2",
+       "title": "Determination of e/m of electron",
+       "text": "Determination of e/m of electron."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t3",
+       "title": "Determination of Planck’s constant and Photoelectric Work Function using Photoelectric cell",
+       "text": "Determination of Planck’s constant and Photoelectric Work Function using Photoelectric cell."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t4",
+       "title": "Verification of inverse square law using photocell",
+       "text": "Verification of inverse square law using photocell."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t5",
+       "title": "Determination of Wavelength of (He-Ne) LASER using Diffraction Grating Method",
+       "text": "Determination of Wavelength of (He-Ne) LASER using Diffraction Grating Method."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t6",
+       "title": "Calculation of Energy Band Gap of a semiconductor",
+       "text": "Calculation of Energy Band Gap of a semiconductor."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t7",
+       "title": "Determination of Dielectric constant using resonance method",
+       "text": "Determination of Dielectric constant using resonance method."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t8",
+       "title": "Determination of Wavelength of Sodium light by measuring the diameter of the Newton’s Ring",
+       "text": "Determination of Wavelength of Sodium light by measuring the diameter of the Newton’s Ring."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t9",
+       "title": "Determination of curvature of convex surface of a lens by Newton’s ring",
+       "text": "Determination of curvature of convex surface of a lens by Newton’s ring."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t10",
+       "title": "Verification of existence of Bohr’s Energy level with Frank-Hertz apparatus",
+       "text": "Verification of existence of Bohr’s Energy level with Frank-Hertz apparatus."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t11",
+       "title": "Course content",
+       "text": "Determination of the Earth’s horizontal magnetic field intensity and magnetic Moment of a magnet by employing magnetometer."
+      },
+      {
+       "id": "mech-s2-100201p-u1-t12",
+       "title": "Verification of Faraday’s Law and Lenz’s Law of Electromagnetic Induction",
+       "text": "Verification of Faraday’s Law and Lenz’s Law of Electromagnetic Induction."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 12
+  },
+  {
+   "id": "mech-s2-100203p",
+   "semester": 2,
+   "code": "100203P",
+   "name": "Programming for Problem Solving Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s2-100203p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s2-100203p-u1-t1",
+       "title": "Tutorial 1",
+       "text": "Problem solving using computers: Lab1: Familiarization with programming environment"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t2",
+       "title": "Tutorial 2",
+       "text": "Variable types and type conversions: Lab 2: Simple computational problems using arithmetic expressions"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t3",
+       "title": "Tutorial 3",
+       "text": "Branching and logical expressions: Lab 3: Problems involving if-then-else structures"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t4",
+       "title": "Tutorial 4",
+       "text": "Loops, while and for loops: Lab 4: Iterative problems e.g., sum of series"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t5",
+       "title": "Tutorial 5",
+       "text": "1D Arrays: searching, sorting: Lab 5: 1D Array manipulation"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t6",
+       "title": "Tutorial 6",
+       "text": "2D arrays and Strings Lab 6: Matrix problems, String operations"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t7",
+       "title": "Tutorial 7",
+       "text": "Functions, call by value: Lab 7: Simple functions"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t8",
+       "title": "Tutorial 8 &9",
+       "text": "Numerical methods (Root finding, numerical differentiation, numerical integration): Lab 8 and 9: Programming for solving Numerical methods problems"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t9",
+       "title": "Tutorial 10",
+       "text": "Recursion, structure of recursive calls Lab 10: Recursive functions"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t10",
+       "title": "Tutorial 11",
+       "text": "Pointers, structures and dynamic memory allocation Lab 11: Pointers and structures"
+      },
+      {
+       "id": "mech-s2-100203p-u1-t11",
+       "title": "Tutorial 12",
+       "text": "File handling: Lab 12: File operations"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 11
+  },
+  {
+   "id": "mech-s2-100206p",
+   "semester": 2,
+   "code": "100206P",
+   "name": "Workshop Practices Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s2-100206p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s2-100206p-u1-t1",
+       "title": "Learn and apply of different fitting tools –like work holding",
+       "text": "Learn and apply of different fitting tools –like work holding, marking, measuring, cutting, finishing and miscellaneous. Student will also prepare the report with sketch, specifications and applications of fitting tools demonstrated."
+      },
+      {
+       "id": "mech-s2-100206p-u1-t2",
+       "title": "Prepare one simple and another male-female type fitting jobs as per given drawings- 2 jobs",
+       "text": "Prepare one simple and another male-female type fitting jobs as per given drawings- 2 jobs"
+      },
+      {
+       "id": "mech-s2-100206p-u1-t3",
+       "title": "Learn and apply of different tin smithy tools",
+       "text": "Learn and apply of different tin smithy tools. Student will also prepare the report with sketch, specifications and applications of tin smithy tools demonstrated."
+      },
+      {
+       "id": "mech-s2-100206p-u1-t4",
+       "title": "Learn and apply of welding equipments and making minimum one model",
+       "text": "Learn and apply of welding equipments and making minimum one model."
+      },
+      {
+       "id": "mech-s2-100206p-u1-t5",
+       "title": "Learn and apply of foundry tools and making minimum one model",
+       "text": "Learn and apply of foundry tools and making minimum one model."
+      },
+      {
+       "id": "mech-s2-100206p-u1-t6",
+       "title": "Learn and apply of carpentry tools and making minimum one model",
+       "text": "Learn and apply of carpentry tools and making minimum one model."
+      },
+      {
+       "id": "mech-s2-100206p-u1-t7",
+       "title": "Learn and apply of Sheet Metal tools and making minimum one model",
+       "text": "Learn and apply of Sheet Metal tools and making minimum one model."
+      },
+      {
+       "id": "mech-s2-100206p-u1-t8",
+       "title": "Learn and apply of Lathe Tools & operations for making a job",
+       "text": "Learn and apply of Lathe Tools & operations for making a job."
+      },
+      {
+       "id": "mech-s2-100206p-u1-t9",
+       "title": "Learn and apply the application of measuring tools",
+       "text": "Learn and apply the application of measuring tools."
+      },
+      {
+       "id": "mech-s2-100206p-u1-t10",
+       "title": "Learn and apply any casting process for making a model",
+       "text": "Learn and apply any casting process for making a model"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 10
+  },
+  {
+   "id": "mech-s2-100204p",
+   "semester": 2,
+   "code": "100204P",
+   "name": "Elements of Mechanical Engineering Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s2-100204p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s2-100204p-u1-t1",
+       "title": "Demonstrate & study of steam boilers and its mounting & accessories",
+       "text": "Demonstrate & study of steam boilers and its mounting & accessories."
+      },
+      {
+       "id": "mech-s2-100204p-u1-t2",
+       "title": "Demonstrate & study the working of SI internal combustion Engines &its components",
+       "text": "Demonstrate & study the working of SI internal combustion Engines &its components."
+      },
+      {
+       "id": "mech-s2-100204p-u1-t3",
+       "title": "To learn the mechanical properties of engineering materials",
+       "text": "To learn the mechanical properties of engineering materials."
+      },
+      {
+       "id": "mech-s2-100204p-u1-t4",
+       "title": "To learn the working of steam power plant",
+       "text": "To learn the working of steam power plant."
+      },
+      {
+       "id": "mech-s2-100204p-u1-t5",
+       "title": "To learnt the working of vapour compression refrigeration system",
+       "text": "To learnt the working of vapour compression refrigeration system."
+      },
+      {
+       "id": "mech-s2-100204p-u1-t6",
+       "title": "To learn the working of impulse steam turbines",
+       "text": "To learn the working of impulse steam turbines."
+      },
+      {
+       "id": "mech-s2-100204p-u1-t7",
+       "title": "To study the working of gas turbines",
+       "text": "To study the working of gas turbines."
+      },
+      {
+       "id": "mech-s2-100204p-u1-t8",
+       "title": "To learn the working of reaction steam turbines",
+       "text": "To learn the working of reaction steam turbines"
+      },
+      {
+       "id": "mech-s2-100204p-u1-t9",
+       "title": "To learnt the working of vapour absorption refrigeration system",
+       "text": "To learnt the working of vapour absorption refrigeration system."
+      },
+      {
+       "id": "mech-s2-100204p-u1-t10",
+       "title": "Demonstrate & study the working of CI internal combustion Engines &its components",
+       "text": "Demonstrate & study the working of CI internal combustion Engines &its components."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 10
+  },
+  {
+   "id": "mech-s3-102301",
+   "semester": 3,
+   "code": "102301",
+   "name": "Engineering Mechanics",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102301-u1",
+     "number": 1,
+     "title": "Fundamentals of Mechanics",
+     "topics": [
+      {
+       "id": "mech-s3-102301-u1-t1",
+       "title": "Overview of engineering mechanics",
+       "text": "Overview of engineering mechanics. Vector and scalar quantities. Units of physical quantities. Dimensions of physical quantities. Units and Dimensions. Dimensional analysis."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102301-u2",
+     "number": 2,
+     "title": "Force Systems and Equilibrium",
+     "topics": [
+      {
+       "id": "mech-s3-102301-u2-t1",
+       "title": "Force Systems Basic Concepts, Particle Equilibrium in 2-D & 3-D, Rigid Body Equilibrium, System of Forces",
+       "text": "oplanar Concurrent Forces, Components in Space, Resultant and Moment of Forces and its Application, Couples and Resultant of Force System, Free Body Diagrams, Equations of Equilibrium of Coplanar Systems and Spatial Systems."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102301-u3",
+     "number": 3,
+     "title": "Friction and Structural Analysis",
+     "topics": [
+      {
+       "id": "mech-s3-102301-u3-t1",
+       "title": "Types of Friction",
+       "text": "Limiting, Static, and Dynamic, Laws of Friction, Motion of Bodies and Wedge Friction, Equilibrium in Three Dimensions, Method of Sections and Method of Joints, Tension and Compression in Members, Simple Trusses, Zero Force Members, Beams, Types of Beams, Frames and Machines."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102301-u4",
+     "number": 4,
+     "title": "Centroid, Centre of Gravity, and Moment of Inertia",
+     "topics": [
+      {
+       "id": "mech-s3-102301-u4-t1",
+       "title": "Centroid of Simple Figures from First Principle, Centroid of Composite Sections, Centre of Gravity…",
+       "text": "Centroid of Simple Figures from First Principle, Centroid of Composite Sections, Centre of Gravity and Its Implications, Area Moment of Inertia: Definition and Theorems Moment of Inertia of Plane Sections, Standard Sections, and Composite Sections, Mass Moment Inertia of Circular Plate, Cylinder, Cone, Sphere, Hook."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102301-u5",
+     "number": 5,
+     "title": "Virtual Work, Energy Method, and Particle Dynamics",
+     "topics": [
+      {
+       "id": "mech-s3-102301-u5-t1",
+       "title": "Virtual Displacements and Principle of Virtual Work, Degrees of Freedom and Active Force Diagram…",
+       "text": "Virtual Displacements and Principle of Virtual Work, Degrees of Freedom and Active Force Diagram, Conservative Forces and Potential Energy, Energy Equation for Equilibrium, Applications of Energy Method for Equilibrium, Stability of Equilibrium, Review of Particle Dynamics: Rectilinear and Plane Curvilinear Motion, Relative and Constrained Motion, Newton‟s 2nd Law Work-Kinetic Energy, Power, Potential Energy Impulse-Momentum and Impact."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102301-u6",
+     "number": 6,
+     "title": "Kinetics of Rigid Bodies",
+     "topics": [
+      {
+       "id": "mech-s3-102301-u6-t1",
+       "title": "Kinetics of Rigid Bodies",
+       "text": "Introduction to Kinetics of Rigid Bodies Basic Terms and General Principles in Dynamics Types of Motion and Instantaneous Centre of Rotation in Plane Motion Simple Problems D‟Alembert‟s Principle and Its Applications in Plane Motion and Connected Bodies Work-Energy Principle and Its Application in Plane Motion of Connected Bodies Kinetics of Rigid Body Rotation."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s3-102302",
+   "semester": 3,
+   "code": "102302",
+   "name": "Material Science and Engineering",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102302-u1",
+     "number": 1,
+     "title": "Classification and Structure of Materials",
+     "topics": [
+      {
+       "id": "mech-s3-102302-u1-t1",
+       "title": "Classification and Structure of Materials",
+       "text": "Classification of materials: metals, ceramics, polymers and composites. Nature of bonding in materials: metallic, ionic, covalent and mixed bonding; structure of materials: fundamentals of crystallography, symmetry operations, crystal systems, Bravais lattices, unit cells, primitive cells, crystallographic planes and directions; structures of metals, ceramics, polymers, amorphous materials and glasses. Defects in crystalline materials: 0-D, 1-D and 2-D defects; vacancies, interstitials, solid solutions in metals and ceramics, Frenkel and Schottky defects; dislocations; grain boundaries, twins, stacking faults; surfaces and interfaces."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102302-u2",
+     "number": 2,
+     "title": "Thermodynamics, Kinetics and Phase Transformations",
+     "topics": [
+      {
+       "id": "mech-s3-102302-u2-t1",
+       "title": "Thermodynamics, Kinetics and Phase Transformations",
+       "text": "Extensive and intensive thermodynamic properties, laws of thermodynamics, phase equilibria, phase rule, phase diagrams (unary and binary), basic electrochemistry. Reaction kinetics, fundamentals of diffusion, Fick‟s laws, their solutions and applications.Solidification of pure metals and alloys, nucleation and growth, diffusional solid-state phase transformations (precipitation and eutectoid), martensitic transformation."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102302-u3",
+     "number": 3,
+     "title": "Properties and Applications of Materials Mechanical properties",
+     "topics": [
+      {
+       "id": "mech-s3-102302-u3-t1",
+       "title": "Properties and Applications of Materials Mechanical properties",
+       "text": "Mechanical properties of metals, ceramics, polymers and composites at room temperature; stress-strain response (elastic, anelastic and plastic deformation). Electronic properties: free electron theory, Fermi energy, density of states, elements of band theory, semiconductors, Hall effect, dielectric modeling, piezo- and ferro-electric modeling. Magnetic properties: Origin of magnetism in materials, para-, dia-, ferro- and ferrimagnetism. Thermal properties: Specific heat, heat conduction, thermal diffusivity, thermal expansion, and thermoelectricity. Optical properties: Refractive index, absorption and transmission of electromagnetic radiation. Examples of materials exhibiting above properties, and their typical/common applications."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102302-u4",
+     "number": 4,
+     "title": "Characterization and Measurements of Properties",
+     "topics": [
+      {
+       "id": "mech-s3-102302-u4-t1",
+       "title": "Characterization and Measurements of Properties",
+       "text": "X-ray diffraction; spectroscopic techniques such as UV-Vis, IR, Fluorescence and Raman; optical microscopy, electron microscopy, composition analysis in electron microscopes.Tensile test, hardness measurement.Electrical conductivity, carrier mobility and concentrations. Thermal analysis techniques: thermogravimetry and calorimetry."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102302-u5",
+     "number": 5,
+     "title": "Processing of Materials",
+     "topics": [
+      {
+       "id": "mech-s3-102302-u5-t1",
+       "title": "Processing of Materials",
+       "text": "Heat treatment of ferrous and aluminium alloys; preparation of ceramic powders, sintering; thinfilm deposition: evaporation and sputtering techniques, and chemical vapour deposition, thin film growth phenomena."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102302-u6",
+     "number": 6,
+     "title": "Nanostructured Materials",
+     "topics": [
+      {
+       "id": "mech-s3-102302-u6-t1",
+       "title": "Nanostructured Materials",
+       "text": "Top down and bottom up synthesis, Classification of nanomaterials, optical, thermal, magnetic and electronic properties of nanomaterials, Metallic and Carbon nanostructures, Applications of nanomaterials."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s3-102303",
+   "semester": 3,
+   "code": "102303",
+   "name": "Engineering Mathematics-III (PDE, Prob/stat)",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102303-u1",
+     "number": 1,
+     "title": "Definition of Partial Differential Equations",
+     "topics": [
+      {
+       "id": "mech-s3-102303-u1-t1",
+       "title": "Definition of Partial Differential Equations",
+       "text": "Definition of Partial Differential Equations, First order partial differential equations, solutions of first order linear PDEs; Solution to homogenous and non-homogenous linear partial differential equations of second order by complimentary function and particular integral method..."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102303-u2",
+     "number": 2,
+     "title": "Second-order linear equations and their classification",
+     "topics": [
+      {
+       "id": "mech-s3-102303-u2-t1",
+       "title": "Second-order linear equations and their classification",
+       "text": "Second-order linear equations and their classification, Initial and boundary conditions, D‟Alembert‟s solution of the wave equation; Duhamel‟s principle for one dimensional wave equation. Heat diffusion and vibration problems, Separation of variables method to simple problems in Cartesian coordinates. The Laplacian in plane, cylindrical and spherical polar coordinates, solutions with Bessel functions and Legendre functions. One dimensional diffusion equation and its solution by separation of variables"
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102303-u3",
+     "number": 3,
+     "title": "Probability spaces",
+     "topics": [
+      {
+       "id": "mech-s3-102303-u3-t1",
+       "title": "Probability spaces",
+       "text": "Probability spaces, conditional probability, independence; Discrete random variables, Independent random variables, the multinomial distribution, Poisson approximation to the binomial distribution, infinite sequences of Bernoulli trials, sums of independent random variables; Expectation of Discrete Random Variables, Moments, Variance of a sum, Correlation coefficient, Chebyshev‟s Inequality."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102303-u4",
+     "number": 4,
+     "title": "Continuous random variables and their properties",
+     "topics": [
+      {
+       "id": "mech-s3-102303-u4-t1",
+       "title": "Continuous random variables and their properties",
+       "text": "Continuous random variables and their properties, distribution functions and densities, normal, exponential and gamma densities.Bivariate distributions and their properties, distribution of sums and quotients, conditional densities, Bayes‟ rule."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102303-u5",
+     "number": 5,
+     "title": "Basic Statistics, Measures of Central tendency",
+     "topics": [
+      {
+       "id": "mech-s3-102303-u5-t1",
+       "title": "Basic Statistics, Measures of Central tendency",
+       "text": "Moments, skewness and Kurtosis – Probability distributions: Binomial, Poisson and Normal – evaluation of statistical parameters for these three distributions, Correlation and regression – Rank correlation. Curve fitting by the method of least squares- fitting of straight lines, second degree parabolas and more general curves."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102303-u6",
+     "number": 6,
+     "title": "Test of significance",
+     "topics": [
+      {
+       "id": "mech-s3-102303-u6-t1",
+       "title": "Test of significance",
+       "text": "Large sample test for single proportion, difference of proportions, Tests for single mean, difference of means, and difference of standard deviations. Test for ratio of variances – Chi- square test for goodness of fit and independence of attributes."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s3-102304",
+   "semester": 3,
+   "code": "102304",
+   "name": "Thermodynamics",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102304-u1",
+     "number": 1,
+     "title": "Fundamentals –System & Control volume",
+     "topics": [
+      {
+       "id": "mech-s3-102304-u1-t1",
+       "title": "Fundamentals –System & Control volume",
+       "text": "Fundamentals –System & Control volume; Property, State & Process; Exact & Inexact differentials; Work-Thermodynamic definition of work; examples; Displacement work; Path dependence of displacement work and illustrations for simple processes; electrical, magnetic, gravitational, spring and shaft work."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102304-u2",
+     "number": 2,
+     "title": "Unit 2",
+     "topics": [
+      {
+       "id": "mech-s3-102304-u2-t1",
+       "title": "Unit 2",
+       "text": "Temperature, Definition of thermal equilibrium and Zeroth law; Temperature scales; Various Thermometers- Definition of heat; examples of heat/work interaction in systems- First Law for Cyclic & Non-cyclic processes; Concept of total energy E; Demonstration that E is a property; Various modes of energy, Internal energy and Enthalpy."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102304-u3",
+     "number": 3,
+     "title": "Definition of Pure substance",
+     "topics": [
+      {
+       "id": "mech-s3-102304-u3-t1",
+       "title": "Definition of Pure substance",
+       "text": "Definition of Pure substance, Ideal Gases and ideal gas mixtures, Real gases and real gas mixtures, Compressibility charts- Properties of two phase systems – Const. temperature and Const. pressure heating of water; Definitions of saturated states; P-v-T surface; Use of steam tables; Saturation tables; Superheated tables; Identification of states & determination of properties, Mollier‟s chart."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102304-u4",
+     "number": 4,
+     "title": "First Law for Flow Processes",
+     "topics": [
+      {
+       "id": "mech-s3-102304-u4-t1",
+       "title": "First Law for Flow Processes",
+       "text": "First Law for Flow Processes – Derivation of general energy equation for a control volume; Steady state steady flow processes including throttling; Examples of steady flow devices; Unsteady processes; examples of steady and unsteady First law applications for system and control volume. Second law – Definitions of direct and reverse heat engines; Definitions of thermal efficiency and COP; Kelvin-Planck and Clausius statements; Definition of reversible process; Internal and external irreversibility; Carnot cycle; Absolute temperature scale."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102304-u5",
+     "number": 5,
+     "title": "Clausius inequality",
+     "topics": [
+      {
+       "id": "mech-s3-102304-u5-t1",
+       "title": "Clausius inequality",
+       "text": "Clausius inequality; Definition of entropy S ; Demonstration that entropy S is a property; Evaluation of Entropy for solids, liquids, ideal gases and ideal gas mixtures undergoing various processes; Determination of entropy from steam tables-Principle of increase of entropy; Illustration of processes in T-s coordinates; Definition of Isentropic efficiency for compressors, turbines and nozzles- Irreversibility and Availability, Availability function for systems and Control volumes undergoing different processes, Lost work. Second law analysis for a control volume.Exergy balance equation and Exergy analysis."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102304-u6",
+     "number": 6,
+     "title": "Properties of dry and wet air",
+     "topics": [
+      {
+       "id": "mech-s3-102304-u6-t1",
+       "title": "Properties of dry and wet air",
+       "text": "Properties of dry and wet air, use of psychometric chart, processes involving heating/cooling and humidification/dehumidification, dew point."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s3-102305",
+   "semester": 3,
+   "code": "102305",
+   "name": "Basic Electronics Engineering",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102305-u1",
+     "number": 1,
+     "title": "Semiconductor Devices and Applications",
+     "topics": [
+      {
+       "id": "mech-s3-102305-u1-t1",
+       "title": "Introduction to P-N Junction Diode and V-I characteristics",
+       "text": "Introduction to P-N Junction Diode and V-I characteristics, Half wave and Full-wave rectifiers, capacitor filter.Zener diode and its characteristics, Zener diode as voltage regulator. Regulated power supply IC based on 78XX and 79XX series, Introduction to BJT, its input-output and transfer characteristics, BJT as a single stage CE amplifier, frequency response and bandwidth."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102305-u2",
+     "number": 2,
+     "title": "Operational amplifier and its applications",
+     "topics": [
+      {
+       "id": "mech-s3-102305-u2-t1",
+       "title": "Introduction to operational amplifiers, Op-amp input modes and parameters, Op-amp in open loop…",
+       "text": "Introduction to operational amplifiers, Op-amp input modes and parameters, Op-amp in open loop configuration, op-amp with negative feedback, study of practical op-amp IC 741, inverting and non- inverting amplifier applications: summing and difference amplifier, unity gain buffer, comparator, integrator and differentiator."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102305-u3",
+     "number": 3,
+     "title": "Timing Circuits",
+     "topics": [
+      {
+       "id": "mech-s3-102305-u3-t1",
+       "title": "RC-timing circuits",
+       "text": "RC-timing circuits, IC 555 and its applications as table and mono-stable multi-vibrators, positive feedback."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102305-u4",
+     "number": 4,
+     "title": "Oscillators",
+     "topics": [
+      {
+       "id": "mech-s3-102305-u4-t1",
+       "title": "Barkhausen‟s criteria for oscillation, R-C phase shift and Wein bridge oscillator",
+       "text": "Barkhausen‟s criteria for oscillation, R-C phase shift and Wein bridge oscillator."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102305-u5",
+     "number": 5,
+     "title": "Digital Electronics Fundamentals",
+     "topics": [
+      {
+       "id": "mech-s3-102305-u5-t1",
+       "title": "Difference between analog and digital signals",
+       "text": "Difference between analog and digital signals, Boolean algebra, Basic and Universal Gates, Symbols, Truth tables, logic expressions, Logic simplification using Kmap, Logic Ics, half and full adder/subtractor, multiplexers, de-multiplexers, flip-flops, shift registers, counters, Block diagram of microprocessor/microcontroller and their applications."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102305-u6",
+     "number": 6,
+     "title": "Electronic Communication Systems",
+     "topics": [
+      {
+       "id": "mech-s3-102305-u6-t1",
+       "title": "The elements of communication system, IEEE frequency spectrum, Transmission media",
+       "text": "wired and wireless, need of modulation, AM and FM modulation schemes, Mobile communication systems: cellular concept and block diagram of GSM system."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s3-102306",
+   "semester": 3,
+   "code": "102306",
+   "name": "Universal Human Values",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102306-u1",
+     "number": 1,
+     "title": "Introduction to Value Education",
+     "topics": [
+      {
+       "id": "mech-s3-102306-u1-t1",
+       "title": "Introduction to Value Education",
+       "text": "Right Understanding, Relationship and Physical Facility (Holistic Development and the Role of Education), Understanding Value Education Sharing about Oneself, Self-exploration as the Process for Value Education, Continuous Happiness and Prosperity – the Basic Human Aspirations, Exploring Human Consciousness, Happiness and Prosperity – Current Scenario, Method to Fulfill the Basic Human Aspirations,"
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102306-u2",
+     "number": 2,
+     "title": "Harmony in the Human Being",
+     "topics": [
+      {
+       "id": "mech-s3-102306-u2-t1",
+       "title": "Harmony in the Human Being",
+       "text": "Understanding Human being as the Co-existence of the Self and the Body, Distinguishing between the Needs of the Self and the Body, The Body as an Instrument of the Self, Understanding Harmony in the Self, Harmony of the Self with the Body, Programme to ensure self-regulation and Health."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102306-u3",
+     "number": 3,
+     "title": "Harmony in the Family and Society",
+     "topics": [
+      {
+       "id": "mech-s3-102306-u3-t1",
+       "title": "Harmony in the Family and Society",
+       "text": "Harmony in the Family – the Basic Unit of Human Interaction, „Trust‟ – the Foundational Value in Relationship, „Respect‟ – as the Right Evaluation, Other Feelings, Justice in Human-to-Human Relationship, Understanding Harmony in the Society, Vision for the Universal Human Order."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102306-u4",
+     "number": 4,
+     "title": "Harmony in the Nature/Existence Understanding Harmony in the Nature",
+     "topics": [
+      {
+       "id": "mech-s3-102306-u4-t1",
+       "title": "Harmony in the Nature/Existence Understanding Harmony in the Nature",
+       "text": "Harmony in the Nature/Existence Understanding Harmony in the Nature, Interconnectedness, self-regulation and Mutual Fulfilment among the Four Orders of Nature, Realizing Existence as Co-existence at All Levels, The Holistic Perception of Harmony in Existence."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102306-u5",
+     "number": 5,
+     "title": "Implications of the Holistic Understanding",
+     "topics": [
+      {
+       "id": "mech-s3-102306-u5-t1",
+       "title": "Implications of the Holistic Understanding",
+       "text": "Implications of the Holistic Understanding – a Look at Professional Natural Acceptance of Human Values, Definitiveness of (Ethical) Human Conduct, A Basis for Humanistic Education, Humanistic Constitution and Universal Human Order, Competence in Professional Ethics, Holistic Technologies, Production Systems and Management Models-Typical Case Studies, Strategies for Transition towards Value-based Life and Profession ."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102306-u6",
+     "number": 6,
+     "title": "Competence in Professional Ethics",
+     "topics": [
+      {
+       "id": "mech-s3-102306-u6-t1",
+       "title": "Competence in Professional Ethics",
+       "text": "Competence in Professional Ethics, Holistic Technologies, Production Systems and Management Models-Typical Case Studies, Strategies for Transition towards Value-based Life and Profession."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s3-102307",
+   "semester": 3,
+   "code": "102307",
+   "name": "Indian Knowledge System",
+   "type": "Theory",
+   "credits": 0,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102307-u1",
+     "number": 1,
+     "title": "Introduction to Indian Knowledge Systems Overview of IKS",
+     "topics": [
+      {
+       "id": "mech-s3-102307-u1-t1",
+       "title": "Introduction to Indian Knowledge Systems Overview of IKS",
+       "text": "Introduction to Indian Knowledge Systems Overview of IKS, Organization of IKS , Conception and constitution of knowledge in indian tradition, The oral tradition, Models and Strategies of IKS."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102307-u2",
+     "number": 2,
+     "title": "Overview of IKS Domains The vedasas the basis of IKS, Overview of all the six vedāṅgas",
+     "topics": [
+      {
+       "id": "mech-s3-102307-u2-t1",
+       "title": "Overview of IKS Domains The vedasas the basis of IKS, Overview of all the six vedāṅgas",
+       "text": "Overview of IKS Domains The vedasas the basis of IKS, Overview of all the six vedāṅgas."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102307-u3",
+     "number": 3,
+     "title": "Unit 3",
+     "topics": [
+      {
+       "id": "mech-s3-102307-u3-t1",
+       "title": "Relevance in Current Technical Education System I Relevance of following IKS domains in present…",
+       "text": "Relevance in Current Technical Education System I Relevance of following IKS domains in present technical education system: Arthashastra (Indian economics and political systems), Ganitaand Jyamiti(indianmathematics, astronomy and geometry, Rasayana (indianchemical Sciences)."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102307-u4",
+     "number": 4,
+     "title": "Unit 4",
+     "topics": [
+      {
+       "id": "mech-s3-102307-u4-t1",
+       "title": "Unit 4",
+       "text": "Relevance in Current Technical Education System II Ayurveda (Indian Biological Sciences / Diet & Nutrition), JyotishVidya (observational astronomy and calendar systems), PrakritiVidya(indian system of terrestrial/ material sciences/ecology and atmospheric sciences)."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102307-u5",
+     "number": 5,
+     "title": "Unit 5",
+     "topics": [
+      {
+       "id": "mech-s3-102307-u5-t1",
+       "title": "Unit 5",
+       "text": "Relevance in Current Technical Education System III VastuVidya(indian system of aesthetics-iconography and built-environment /architecture), NyayaShastra(indian systems of social ethics, logic and law)."
+      }
+     ]
+    },
+    {
+     "id": "mech-s3-102307-u6",
+     "number": 6,
+     "title": "Shilpa andNatyaShastra",
+     "topics": [
+      {
+       "id": "mech-s3-102307-u6-t1",
+       "title": "Shilpa andNatyaShastra",
+       "text": "performing and fine arts), Sankhyaand Yoga Darshna(indian psychology, yoga and consciousness studies), Vrikshayurveda(plant science/sustainable agriculture/food preservation methods)."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s3-102301p",
+   "semester": 3,
+   "code": "102301P",
+   "name": "Engineering Mechanics Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102301p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s3-102301p-u1-t1",
+       "title": "Practical based on mechanical advantage of different machines",
+       "text": "Practical based on mechanical advantage of different machines."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t2",
+       "title": "Verification of triangle law & parallelogram law of forces",
+       "text": "Verification of triangle law & parallelogram law of forces."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t3",
+       "title": "Verification of polygon law of forces",
+       "text": "Verification of polygon law of forces."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t4",
+       "title": "Determination of moment of inertia of a flywheel",
+       "text": "Determination of moment of inertia of a flywheel."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t5",
+       "title": "Crank Lever apparatus",
+       "text": "Crank Lever apparatus."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t6",
+       "title": "Verification of support reactions of a simply supported beam",
+       "text": "Verification of support reactions of a simply supported beam."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t7",
+       "title": "Verification of condition of equilibrium of a system of forces",
+       "text": "Verification of condition of equilibrium of a system of forces."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t8",
+       "title": "Verification of axial forces in the members of a truss",
+       "text": "Verification of axial forces in the members of a truss."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t9",
+       "title": "Verification of equilibrium of three dimensional forces",
+       "text": "Verification of equilibrium of three dimensional forces."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t10",
+       "title": "Determination of coefficient of friction between two surfaces",
+       "text": "Determination of coefficient of friction between two surfaces."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t11",
+       "title": "Verification of centroid of different laminae",
+       "text": "Verification of centroid of different laminae."
+      },
+      {
+       "id": "mech-s3-102301p-u1-t12",
+       "title": "Verification of Newton‟s laws of motion",
+       "text": "Verification of Newton‟s laws of motion."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 12
+  },
+  {
+   "id": "mech-s3-102305p",
+   "semester": 3,
+   "code": "102305P",
+   "name": "Basic Electronic Engineering Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102305p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s3-102305p-u1-t1",
+       "title": "Measurement of different signal parameters using oscilloscope",
+       "text": "Measurement of different signal parameters using oscilloscope."
+      },
+      {
+       "id": "mech-s3-102305p-u1-t2",
+       "title": "Lissajous pattern",
+       "text": "Lissajous pattern."
+      },
+      {
+       "id": "mech-s3-102305p-u1-t3",
+       "title": "V-I characteristics of ordinary p-n junction diode",
+       "text": "V-I characteristics of ordinary p-n junction diode."
+      },
+      {
+       "id": "mech-s3-102305p-u1-t4",
+       "title": "Full wave rectifier –with and without filter",
+       "text": "Full wave rectifier –with and without filter."
+      },
+      {
+       "id": "mech-s3-102305p-u1-t5",
+       "title": "Zener diode as a voltage regulator",
+       "text": "Zener diode as a voltage regulator."
+      },
+      {
+       "id": "mech-s3-102305p-u1-t6",
+       "title": "Input and output characteristics of BJT",
+       "text": "Input and output characteristics of BJT."
+      },
+      {
+       "id": "mech-s3-102305p-u1-t7",
+       "title": "Input and output characteristics of FET",
+       "text": "Input and output characteristics of FET."
+      },
+      {
+       "id": "mech-s3-102305p-u1-t8",
+       "title": "Op-amp based inverting and non-inverting amplifier",
+       "text": "Op-amp based inverting and non-inverting amplifier."
+      },
+      {
+       "id": "mech-s3-102305p-u1-t9",
+       "title": "Op-Amp based differentiator and integrator",
+       "text": "Op-Amp based differentiator and integrator."
+      },
+      {
+       "id": "mech-s3-102305p-u1-t10",
+       "title": "Op-Amp based adder and subtractor",
+       "text": "Op-Amp based adder and subtractor."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 10
+  },
+  {
+   "id": "mech-s3-102308",
+   "semester": 3,
+   "code": "102308",
+   "name": "Internship – I",
+   "type": "Practical",
+   "credits": 2,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s3-102308-u1",
+     "number": 1,
+     "title": "Internship I Guidelines",
+     "topics": [
+      {
+       "id": "mech-s3-102308-u1-t1",
+       "title": "Internship I Guidelines",
+       "text": "Internship I is of a minimum duration of two weeks which can be completed in an Industry/Institute in consultation with concerned Engineering College/Institute. After completion of Internship a detailed report of the Internship mentioning the training undertaken along with certificate should be submitted. ."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 1,
+   "topicCount": 1
+  },
+  {
+   "id": "mech-s4-pccme203",
+   "semester": 4,
+   "code": "PCC-ME 203",
+   "name": "Fluid Mechanics",
+   "type": "Theory",
+   "credits": 4.5,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s4-pccme203-u1",
+     "number": 1,
+     "title": "Definition of fluid",
+     "topics": [
+      {
+       "id": "mech-s4-pccme203-u1-t1",
+       "title": "Definition of fluid",
+       "text": "Definition of fluid, Units and dimensions, Newton’s law of viscosity, Properties of fluids, mass, density, specific volume, specific gravity, viscosity, surface tension and capillarity, vapor pressure, compressibility and bulk modulus. 1 Hydrostatics; fluid force on plane and curved surfaces, manometers, buoyancy, uniformly accelerated motion"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme203-u2",
+     "number": 2,
+     "title": "Kinematics of fluid flow",
+     "topics": [
+      {
+       "id": "mech-s4-pccme203-u2-t1",
+       "title": "Generalized continuity equation, Irrotational motion and solution to Laplace equation",
+       "text": "Generalized continuity equation, Irrotational motion and solution to Laplace equation. Concept of stream lines, Equipotential Lines, Flow Nets"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme203-u3",
+     "number": 3,
+     "title": "Dynamics of fluid flow",
+     "topics": [
+      {
+       "id": "mech-s4-pccme203-u3-t1",
+       "title": "Control volume and control surface",
+       "text": "Control volume and control surface, application of continuity equation and momentum equation, Bernoulli’s equation and its applications"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme203-u4",
+     "number": 4,
+     "title": "Concept of boundary layer",
+     "topics": [
+      {
+       "id": "mech-s4-pccme203-u4-t1",
+       "title": "Concept of boundary layer",
+       "text": "Concept of boundary layer, boundary layer thickness, Displacement thickness, momentum thickness, energy thickness"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme203-u5",
+     "number": 5,
+     "title": "Laminar viscous flow through circular conduits",
+     "topics": [
+      {
+       "id": "mech-s4-pccme203-u5-t1",
+       "title": "Laminar viscous flow through circular conduits",
+       "text": "Laminar viscous flow through circular conduits, Couette and Poiseuille flow, Turbulent flow through pipes, Darcy Weisbach equation, friction factor for smooth and rough pipes, Moody’s diagram"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme203-u6",
+     "number": 6,
+     "title": "Need for dimensional analysis",
+     "topics": [
+      {
+       "id": "mech-s4-pccme203-u6-t1",
+       "title": "Need for dimensional analysis",
+       "text": "Need for dimensional analysis, methods of dimensional analysis, Similitude and types of similitude, Dimensionless parameters, application of dimensionless parameters Model analysis"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme203-u7",
+     "number": 7,
+     "title": "Forces on immersed bodies, concepts of separation, drag force, circulation and lift force",
+     "topics": [
+      {
+       "id": "mech-s4-pccme203-u7-t1",
+       "title": "Forces on immersed bodies, concepts of separation, drag force, circulation and lift force",
+       "text": ""
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 3
+   },
+   "unitCount": 7,
+   "topicCount": 7
+  },
+  {
+   "id": "mech-s4-pccme204",
+   "semester": 4,
+   "code": "PCC-ME 204",
+   "name": "Applied Thermodynamics",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s4-pccme204-u1",
+     "number": 1,
+     "title": "Introduction to solid, liquid and gaseous fuels",
+     "topics": [
+      {
+       "id": "mech-s4-pccme204-u1-t1",
+       "title": "Stoichiometry, exhaust gas analysis",
+       "text": "Stoichiometry, exhaust gas analysis- First law analysis of combustion reactions. Heat calculations using enthalpy tables. Adiabatic flame temperature. Chemical equilibrium and equilibrium composition calculations using free energy"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme204-u2",
+     "number": 2,
+     "title": "Thermodynamic cycles, Gas power cycles",
+     "topics": [
+      {
+       "id": "mech-s4-pccme204-u2-t1",
+       "title": "Air standard Otto, Diesel and Dual Cycles",
+       "text": "Air standard Otto, Diesel and Dual Cycles. Air standard Brayton cycle, effect of reheat, regeneration and intercooling. Combined gas and vapor power cycles. Vapor compression refrigeration cycles and comparison with Carnot cycle, refrigerants and their properties"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme204-u3",
+     "number": 3,
+     "title": "Vapor power cycles",
+     "topics": [
+      {
+       "id": "mech-s4-pccme204-u3-t1",
+       "title": "Basic Rankine cycle",
+       "text": "Basic Rankine cycle, Rankine cycle with superheat, reheat and regeneration, exergy analysis. Super- critical and ultra-super-critical Rankine cycle"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme204-u4",
+     "number": 4,
+     "title": "Basics of compressible flow",
+     "topics": [
+      {
+       "id": "mech-s4-pccme204-u4-t1",
+       "title": "Basics of compressible flow",
+       "text": "Basics of compressible flow. Stagnation properties, Isentropic flow of a perfect gas through a nozzle, choked flow, subsonic and supersonic flows- normal shocks- use of ideal gas tables for isentropic flow and normal shock flow- Flow of steam and refrigerant through nozzle, super saturation - compressible flow in diffusers, efficiency of nozzle and diffuser"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme204-u5",
+     "number": 5,
+     "title": "Analysis of steam turbines, velocity and pressure compounding of steam turbines",
+     "topics": [
+      {
+       "id": "mech-s4-pccme204-u5-t1",
+       "title": "Analysis of steam turbines, velocity and pressure compounding of steam turbines",
+       "text": ""
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme204-u6",
+     "number": 6,
+     "title": "Reciprocating compressors",
+     "topics": [
+      {
+       "id": "mech-s4-pccme204-u6-t1",
+       "title": "Reciprocating compressors",
+       "text": "Reciprocating compressors, staging of reciprocating compressors, optimal stage pressure ratio, effect of intercooling, minimum work for multistage reciprocating compressors"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s4-pccme205",
+   "semester": 4,
+   "code": "PCC-ME 205",
+   "name": "Strength of Materials",
+   "type": "Theory",
+   "credits": 4.5,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s4-pccme205-u1",
+     "number": 1,
+     "title": "Deformation in solids",
+     "topics": [
+      {
+       "id": "mech-s4-pccme205-u1-t1",
+       "title": "Hooke’s law, stress and strain",
+       "text": "Hooke’s law, stress and strain- tension, compression and shear stresses-elastic constants and their relations- volumetric, linear and shear strains- principal stresses and principal planes- Mohr’s circle, theories of failure"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme205-u2",
+     "number": 2,
+     "title": "Beams and types transverse loading on beams",
+     "topics": [
+      {
+       "id": "mech-s4-pccme205-u2-t1",
+       "title": "shear force and bend moment diagrams",
+       "text": "shear force and bend moment diagrams- Types of beam supports, simply supported and overhanging beams, cantilevers. Theory of bending of beams, bending stress distribution and neutral axis, shear stress distribution, point and distributed loads"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme205-u3",
+     "number": 3,
+     "title": "5 Moment of inertia about an axis and polar moment of inertia",
+     "topics": [
+      {
+       "id": "mech-s4-pccme205-u3-t1",
+       "title": "5 Moment of inertia about an axis and polar moment of inertia",
+       "text": "5 Moment of inertia about an axis and polar moment of inertia, deflection of a beam using double integration method, computation of slopes and deflection in beams, Maxwell’s reciprocal Theorems"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme205-u4",
+     "number": 4,
+     "title": "Unit 4",
+     "topics": [
+      {
+       "id": "mech-s4-pccme205-u4-t1",
+       "title": "Unit 4",
+       "text": "Torsion, stresses and deformation in circular and hollow shafts, stepped shafts, deflection of shafts fixed at both ends, stresses and deflection of helical springs"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme205-u5",
+     "number": 5,
+     "title": "Axial and hoop stresses in cylinders subjected to internal pressure",
+     "topics": [
+      {
+       "id": "mech-s4-pccme205-u5-t1",
+       "title": "Axial and hoop stresses in cylinders subjected to internal pressure",
+       "text": "Axial and hoop stresses in cylinders subjected to internal pressure, deformation of thick and thin cylinders, deformation in spherical shells subjected to internal pressure"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 3
+   },
+   "unitCount": 5,
+   "topicCount": 5
+  },
+  {
+   "id": "mech-s4-pccme206",
+   "semester": 4,
+   "code": "PCC-ME 206",
+   "name": "Engineering Materials",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s4-pccme206-u1",
+     "number": 1,
+     "title": "Crystal Structure",
+     "topics": [
+      {
+       "id": "mech-s4-pccme206-u1-t1",
+       "title": "Unit cells, Metallic crystal structures, Ceramics. Imperfection in solids",
+       "text": "Point, line, interfacial and volume defects; dislocation strengthening mechanisms and slip systems, critically resolved shear stress"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme206-u2",
+     "number": 2,
+     "title": "Alloys, substitutional and interstitial solid solutions",
+     "topics": [
+      {
+       "id": "mech-s4-pccme206-u2-t1",
+       "title": "Phase diagrams",
+       "text": "Interpretation of binary phase diagrams and microstructure development; eutectic, peritectic, peritectoid and monotectic reactions. Iron-carbide phase diagram and microstructural aspects of ledeburite, austenite, ferrite and cementite, cast iron"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme206-u3",
+     "number": 3,
+     "title": "Mechanical Property measurement",
+     "topics": [
+      {
+       "id": "mech-s4-pccme206-u3-t1",
+       "title": "Tensile, compression and torsion tests; Young’s modulus, relations between true and engineering…",
+       "text": "Tensile, compression and torsion tests; Young’s modulus, relations between true and engineering stress-strain curves, generalized Hooke’s law, yielding and yield strength, ductility, resilience, toughness and elastic recovery; Hardness: Rockwell, Brinell and Vickers and their relation to strength, Introduction to non-destructive testing (NDT)"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme206-u4",
+     "number": 4,
+     "title": "Heat treatment of Steel",
+     "topics": [
+      {
+       "id": "mech-s4-pccme206-u4-t1",
+       "title": "Heat treatment of Steel",
+       "text": "Annealing, tempering, normalising and spheroidising, isothermal transformation diagrams for Fe-C alloys and microstructure development. Continuous cooling curves, T-T-T diagram and interpretation of final microstructures 7 and properties- austempering, martempering, case hardening, carburizing, nitriding, cyaniding, carbo-nitriding, flame and induction hardening, vacuum and plasma hardening"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme206-u5",
+     "number": 5,
+     "title": "Alloying of steel, properties of stainless steel and tool steels, maraging steels",
+     "topics": [
+      {
+       "id": "mech-s4-pccme206-u5-t1",
+       "title": "Alloying of steel, properties of stainless steel and tool steels, maraging steels",
+       "text": "Alloying of steel, properties of stainless steel and tool steels, maraging steels- cast irons; grey, white, malleable and spheroidal cast irons- copper and copper alloys; brass, bronze and cupro-nickel; Aluminium and Al-Cu – Mg alloys- Nickel based superalloys and Titanium alloys"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 5,
+   "topicCount": 5
+  },
+  {
+   "id": "mech-s4-pccme207",
+   "semester": 4,
+   "code": "PCC-ME 207",
+   "name": "Instrumentation & Control",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s4-pccme207-u1",
+     "number": 1,
+     "title": "Measurement systems and performance",
+     "topics": [
+      {
+       "id": "mech-s4-pccme207-u1-t1",
+       "title": "configuration of a measuring system",
+       "text": "configuration of a measuring system, Methods for correction for interfering and modifying inputs– accuracy, range, 8 resolution, error sources, precision, error sensitivity etc.Classification of errors and statistical analysis of experimental data"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme207-u2",
+     "number": 2,
+     "title": "Instrumentation system elements",
+     "topics": [
+      {
+       "id": "mech-s4-pccme207-u2-t1",
+       "title": "sensors for common engineering measurements",
+       "text": "sensors for common engineering measurements. Transducers based on variable resistance, variable induction, variable capacitance and piezo-electric effects, Displacement transducer"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme207-u3",
+     "number": 3,
+     "title": "Signal processing and conditioning; correction elements- actuators",
+     "topics": [
+      {
+       "id": "mech-s4-pccme207-u3-t1",
+       "title": "pneumatic, hydraulic, electric",
+       "text": "pneumatic, hydraulic, electric"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme207-u4",
+     "number": 4,
+     "title": "Control systems",
+     "topics": [
+      {
+       "id": "mech-s4-pccme207-u4-t1",
+       "title": "basic elements, open/closed loop, design of block diagram; control method",
+       "text": "basic elements, open/closed loop, design of block diagram; control method – P, PI, PID, when to choose what, tuning of controllers"
+      }
+     ]
+    },
+    {
+     "id": "mech-s4-pccme207-u5",
+     "number": 5,
+     "title": "System models",
+     "topics": [
+      {
+       "id": "mech-s4-pccme207-u5-t1",
+       "title": "System models",
+       "text": "System models, transfer function and system response, frequency response; Nyquist diagrams and their use. Practical group based project utilizing above concepts"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 5,
+   "topicCount": 5
+  },
+  {
+   "id": "mech-s4-i6",
+   "semester": 4,
+   "code": "-",
+   "name": "Environmental Science",
+   "type": "Theory",
+   "credits": 0,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "none",
+   "units": [],
+   "ltp": {
+    "lecture": 2,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "stub": true,
+   "unitCount": 0,
+   "topicCount": 0
+  },
+  {
+   "id": "mech-s5-pccme301",
+   "semester": 5,
+   "code": "PCC-ME 301",
+   "name": "Heat Transfer",
+   "type": "Theory",
+   "credits": 4.5,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s5-pccme301-u1",
+     "number": 0,
+     "title": "Course overview",
+     "topics": [
+      {
+       "id": "mech-s5-pccme301-u1-t1",
+       "title": "practical problems using empirical correlations",
+       "text": "practical problems using empirical correlations. ➔ The course will also briefly cover boiling and condensation heat transfer, and the analysis and design of heat exchangers."
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme301-u2",
+     "number": 1,
+     "title": "Introduction to three modes of heat transfer, Derivation of heat balance equation",
+     "topics": [
+      {
+       "id": "mech-s5-pccme301-u2-t1",
+       "title": "Introduction to three modes of heat transfer, Derivation of heat balance equation",
+       "text": "Introduction to three modes of heat transfer, Derivation of heat balance equation- Steady one dimensional solution for conduction heat transfer in Cartesian, 1 cylindrical and spherical geometry, concept of conduction and film resistances, critical insulation thickness, lumped system approximation and Biot number, heat transfer through pin fins- Two dimensional conduction solutions for both steady and unsteady heat transfer-approximate solution to unsteady conduction heat transfer by the use of Heissler charts"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme301-u3",
+     "number": 2,
+     "title": "Heat convection, basic equations, boundary layers",
+     "topics": [
+      {
+       "id": "mech-s5-pccme301-u3-t1",
+       "title": "Forced convection, external and internal flows",
+       "text": "Forced convection, external and internal flows- Natural convective heat transfer- Dimensionless parameters for forced and free convection heat transfer-Correlations for forced and free convection- Approximate solutions to laminar boundary layer equations (momentum and energy) for both internal and external flow- Estimating heat transfer rates in laminar and turbulent flow situations using appropriate correlations for free and forced convection"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme301-u4",
+     "number": 3,
+     "title": "Interaction of radiation with materials",
+     "topics": [
+      {
+       "id": "mech-s5-pccme301-u4-t1",
+       "title": "Interaction of radiation with materials",
+       "text": "Interaction of radiation with materials, definitions of radiative properties, Stefan Boltzmann’s law, black and gray body radiation, Calculation of radiation heat transfer between surfaces using radiative properties, view factors and the radiosity method"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme301-u5",
+     "number": 4,
+     "title": "Types of heat exchangers, Analysis and design of heat exchangers using bothLMTD and ε-NTU methods",
+     "topics": [
+      {
+       "id": "mech-s5-pccme301-u5-t1",
+       "title": "Types of heat exchangers, Analysis and design of heat exchangers using bothLMTD and ε-NTU methods",
+       "text": ""
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme301-u6",
+     "number": 5,
+     "title": "Boiling and Condensation heat transfer, Pool boiling curve",
+     "topics": [
+      {
+       "id": "mech-s5-pccme301-u6-t1",
+       "title": "Boiling and Condensation heat transfer, Pool boiling curve",
+       "text": ""
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme301-u7",
+     "number": 6,
+     "title": "Introduction mass transfer, Similarity between heat and mass transfer",
+     "topics": [
+      {
+       "id": "mech-s5-pccme301-u7-t1",
+       "title": "Introduction mass transfer, Similarity between heat and mass transfer",
+       "text": ""
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 3
+   },
+   "unitCount": 7,
+   "topicCount": 7
+  },
+  {
+   "id": "mech-s5-pccme302",
+   "semester": 5,
+   "code": "PCC-ME 302",
+   "name": "Fluid Machinery",
+   "type": "Theory",
+   "credits": 4.5,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s5-pccme302-u1",
+     "number": 1,
+     "title": "Introduction",
+     "topics": [
+      {
+       "id": "mech-s5-pccme302-u1-t1",
+       "title": "Classification of fluid machinery",
+       "text": "Classification of fluid machinery"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme302-u2",
+     "number": 2,
+     "title": "3 Dynamic action of fluid jet",
+     "topics": [
+      {
+       "id": "mech-s5-pccme302-u2-t1",
+       "title": "Impact of fluid jet on fixed and moving flat places",
+       "text": "Impact of fluid jet on fixed and moving flat places, impact of jet on fixed and moving curved vanes, flow over radial vanes, jet propulsions"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme302-u3",
+     "number": 3,
+     "title": "Euler’s fundamental equation, degree of reaction",
+     "topics": [
+      {
+       "id": "mech-s5-pccme302-u3-t1",
+       "title": "Euler’s fundamental equation, degree of reaction",
+       "text": ""
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme302-u4",
+     "number": 4,
+     "title": "Hydraulic turbines",
+     "topics": [
+      {
+       "id": "mech-s5-pccme302-u4-t1",
+       "title": "Hydraulic turbines",
+       "text": "Hydraulic turbines, introduction, classification, impulse turbine, construction details, velocity triangles, power and efficiency calculations, reaction turbines; construction details, working principle, velocity triangles, power and efficiency calculations, draft tube, cavitation, Governing"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme302-u5",
+     "number": 5,
+     "title": "Principle of similarity in fluid machinery",
+     "topics": [
+      {
+       "id": "mech-s5-pccme302-u5-t1",
+       "title": "Principle of similarity in fluid machinery",
+       "text": "Principle of similarity in fluid machinery; unit and specific quantities, testing models and selection of hydraulic turbines"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme302-u6",
+     "number": 6,
+     "title": "Positive displacement pumps",
+     "topics": [
+      {
+       "id": "mech-s5-pccme302-u6-t1",
+       "title": "Reciprocating pump",
+       "text": "Reciprocating pump; working principle, classification, slip, indicator diagram, effect of friction and acceleration, theory of air vessel, performance characteristics gas gear oil pump and screw pump"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme302-u7",
+     "number": 7,
+     "title": "Rotodynamic pumps",
+     "topics": [
+      {
+       "id": "mech-s5-pccme302-u7-t1",
+       "title": "Introduction",
+       "text": "Introduction, classification, centrifugal pump; main components, working principle velocity triangle, effect of shape of blade specific speed, heats, power and efficiency, calculations minimum steering speed, multi stage pumps, performance characteristic, comparison with reciprocating pump"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 3
+   },
+   "unitCount": 7,
+   "topicCount": 7
+  },
+  {
+   "id": "mech-s5-pccme303",
+   "semester": 5,
+   "code": "PCC-ME 303",
+   "name": "Manufacturing Processes",
+   "type": "Theory",
+   "credits": 4.5,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s5-pccme303-u1",
+     "number": 1,
+     "title": "Conventional Manufacturing processes",
+     "topics": [
+      {
+       "id": "mech-s5-pccme303-u1-t1",
+       "title": "Casting and Moulding",
+       "text": "Metal casting processes and equipment, Heat transfer and solidification, shrinkage, riser design, casting defects and residual stresses"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme303-u2",
+     "number": 2,
+     "title": "Introduction to bulk and sheet metal forming",
+     "topics": [
+      {
+       "id": "mech-s5-pccme303-u2-t1",
+       "title": "Introduction to bulk and sheet metal forming",
+       "text": "Introduction to bulk and sheet metal forming, plastic deformation and yield criteria; fundamentals of hot and cold working processes; load estimation for bulk forming (forging, rolling, extrusion, drawing) and sheet forming (shearing, deep drawing, bending) principles of powder metallurgy. 5"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme303-u3",
+     "number": 3,
+     "title": "Metal cutting",
+     "topics": [
+      {
+       "id": "mech-s5-pccme303-u3-t1",
+       "title": "Single and multi-point cutting; Orthogonal cutting, various force components",
+       "text": "Chip formation, Tool wear and tool life, Surface finish and integrity, Machinability, Cutting tool materials, Cutting fluids, Coating; Turning, Drilling, Milling and finishing processes, Introduction to CNC machining"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme303-u4",
+     "number": 4,
+     "title": "Joining/fastening processes",
+     "topics": [
+      {
+       "id": "mech-s5-pccme303-u4-t1",
+       "title": "Physics of welding, brazing and soldering; design considerations in welding, Solid and liquid…",
+       "text": "Physics of welding, brazing and soldering; design considerations in welding, Solid and liquid state joining processes; Adhesive bonding. Additive manufacturing: Rapid prototyping and rapid tooling"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme303-u5",
+     "number": 5,
+     "title": "Machine Tools",
+     "topics": [
+      {
+       "id": "mech-s5-pccme303-u5-t1",
+       "title": "➔ Lathe",
+       "text": "Principle, types, operations, turret/capstan, semi/automatic, Tool layout. ➔ Shaper, slotted, planer, operation, drive. ➔ Milling, Milling cutter, up & down milling, dividing head indexing, Max chip thickness, power required. ➔ Drilling and boring, reaming tools, Geometry of twist drill, Grinding, Grinding wheel, Abrasive, cutting action, grinding wheel specification, Grinding wheel wear, alterations, wear, fracture wear, dressing and trimming. Max chip thickness and guest criteria, Flat and cylindrical grinding, Centerless grinding, Super finishing, Honing lapping, Pol"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 3
+   },
+   "unitCount": 5,
+   "topicCount": 5
+  },
+  {
+   "id": "mech-s5-pccme304",
+   "semester": 5,
+   "code": "PCC-ME 304",
+   "name": "Kinematics of Machine",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s5-pccme304-u1",
+     "number": 1,
+     "title": "Introduction",
+     "topics": [
+      {
+       "id": "mech-s5-pccme304-u1-t1",
+       "title": "Classification of mechanisms",
+       "text": "Basic kinematic concepts and Definitions-Degree of freedom, mobility-Grashof’s law, Kinematic inversions of four bar chain and slider crank chains"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme304-u2",
+     "number": 2,
+     "title": "7 Kinematic analysis of plane mechanism",
+     "topics": [
+      {
+       "id": "mech-s5-pccme304-u2-t1",
+       "title": "Displacement",
+       "text": "Displacement, velocity and acceleration analysis of simple mechanisms, graphical velocity analysis using instantaneous centers, kinematic analysis of simple mechanisms- slider crank mechanism dynamics- Coriolis component of Acceleration"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme304-u3",
+     "number": 3,
+     "title": "Friction devices",
+     "topics": [
+      {
+       "id": "mech-s5-pccme304-u3-t1",
+       "title": "Belt drive, Clutch, Shoe brakes, Band and block brakes",
+       "text": "Belt drive, Clutch, Shoe brakes, Band and block brakes"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme304-u4",
+     "number": 4,
+     "title": "Gear",
+     "topics": [
+      {
+       "id": "mech-s5-pccme304-u4-t1",
+       "title": "gear terminology, Involute and Cycloidal gear profiles, gear parameters, fundamental law of…",
+       "text": "gear terminology, Involute and Cycloidal gear profiles, gear parameters, fundamental law of gearing and conjugate action, spur gear contact ratio and interference/undercutting. Gear Train: Analysis of simple, compound, reverted and epicyclic gear trains with problems"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme304-u5",
+     "number": 5,
+     "title": "Balancing of rotating masses",
+     "topics": [
+      {
+       "id": "mech-s5-pccme304-u5-t1",
+       "title": "Balancing of rotating masses in the same plane by a single revolving mass",
+       "text": "Balancing of rotating masses in the same plane by a single revolving mass. Balancing of several rotating masses in the same plane. Balancing of several rotating masses in different planes by two revolving masses in suitable planes"
+      }
+     ]
+    },
+    {
+     "id": "mech-s5-pccme304-u6",
+     "number": 6,
+     "title": "Governors",
+     "topics": [
+      {
+       "id": "mech-s5-pccme304-u6-t1",
+       "title": "Governors",
+       "text": "Watt, Porter, Proel & Hartnell Governors, Effect of friction, controlling force, governor effort and power, sensitivity and isochronics"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s5-i5",
+   "semester": 5,
+   "code": "-",
+   "name": "Constitution of India / Essence of Indian",
+   "type": "Theory",
+   "credits": 0,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "none",
+   "units": [],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "stub": true,
+   "unitCount": 0,
+   "topicCount": 0
+  },
+  {
+   "id": "mech-s5-i6",
+   "semester": 5,
+   "code": "-",
+   "name": "Summer Entrepreneurship-II",
+   "type": "Theory",
+   "credits": 6,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "none",
+   "units": [],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 12
+   },
+   "stub": true,
+   "unitCount": 0,
+   "topicCount": 0
+  },
+  {
+   "id": "mech-s5-i7",
+   "semester": 5,
+   "code": "-",
+   "name": "Open Elective- I (MOOCs / SWAYAM / NPTEL",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "none",
+   "units": [],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "stub": true,
+   "unitCount": 0,
+   "topicCount": 0
+  },
+  {
+   "id": "mech-s5-i8",
+   "semester": 5,
+   "code": "-",
+   "name": "Graduate Employability Skills and",
+   "type": "Theory",
+   "credits": 0,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "none",
+   "units": [],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "stub": true,
+   "unitCount": 0,
+   "topicCount": 0
+  },
+  {
+   "id": "mech-s6-102601",
+   "semester": 6,
+   "code": "102601",
+   "name": "Design of Machine Elements",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102601-u1",
+     "number": 1,
+     "title": "Introduction to design",
+     "topics": [
+      {
+       "id": "mech-s6-102601-u1-t1",
+       "title": "Introduction to design",
+       "text": "Steps in design process, design factors, practical considerations in design, selection of materials, strength of mechanical elements, impact load, shock load, fatigue loading, effects of surface, size, temperature and stress concentration, consideration of creep and thermal stress in design."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102601-u2",
+     "number": 2,
+     "title": "Design of shafts",
+     "topics": [
+      {
+       "id": "mech-s6-102601-u2-t1",
+       "title": "Design of shafts",
+       "text": "stresses in shafts, design of static loads, combined stresses, reversed bending and steady loads, design of shafts based on deflection and strength, critical speed of shafts. Analysis and design of sliding and rolling contact bearings."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102601-u3",
+     "number": 3,
+     "title": "Riveted joint",
+     "topics": [
+      {
+       "id": "mech-s6-102601-u3-t1",
+       "title": "Riveted joint",
+       "text": "Stresses in riveted joint, design of riveted joints with central and eccentric loads, boiler and tank joints, structural joints. Bolt Joints: Stresses in bolt joint, design of bolt joints with central and eccentric loads. Welded joints: types of welded joints, stresses, design of welded joints subjected to axial, torsional and bending loads, welds subjected to fluctuating loads."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102601-u4",
+     "number": 4,
+     "title": "Design of Clutches",
+     "topics": [
+      {
+       "id": "mech-s6-102601-u4-t1",
+       "title": "Design of Clutches",
+       "text": "Friction clutches, uniform wear and uniform pressure assumptions, centrifugal clutches. Brakes: Design of internal expansion elements, assumptions, design of external contraction elements, band type brakes."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102601-u5",
+     "number": 5,
+     "title": "Design of transmission elements",
+     "topics": [
+      {
+       "id": "mech-s6-102601-u5-t1",
+       "title": "Design of transmission elements",
+       "text": "spur, helical, bevel and worm gears."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102601-u6",
+     "number": 6,
+     "title": "Springs",
+     "topics": [
+      {
+       "id": "mech-s6-102601-u6-t1",
+       "title": "Springs",
+       "text": "stresses in helical springs, deflection of helical compression and tension springs, springs subjected to fatigue loading, concentric and helical torsion spring, critical frequency of springs, leaf springs, and design of automotive leaf springs."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102602",
+   "semester": 6,
+   "code": "102602",
+   "name": "Dynamics of Machinery",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102602-u1",
+     "number": 1,
+     "title": "Force analysis of mechanism",
+     "topics": [
+      {
+       "id": "mech-s6-102602-u1-t1",
+       "title": "Force analysis of mechanism",
+       "text": "Dynamics of plane motion of a rigid body, dynamically equivalent two mass system, correction torque, forced in mechanism and machines."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102602-u2",
+     "number": 2,
+     "title": "Turning moment diagram",
+     "topics": [
+      {
+       "id": "mech-s6-102602-u2-t1",
+       "title": "Turning moment diagram",
+       "text": "Fluctuations of crankshaft speed and energy in a direct acting engine mechanism, flywheels."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102602-u3",
+     "number": 3,
+     "title": "Cams",
+     "topics": [
+      {
+       "id": "mech-s6-102602-u3-t1",
+       "title": "Cams",
+       "text": "Classification of cams and followers, types of follower and retardation, cam profile and generation of concentric and offset radial cam profiles by graphical method. Cams with specified contours tangent cam with roller follower, circular arc cam with flat follower."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102602-u4",
+     "number": 4,
+     "title": "Analysis of gyroscopic motion",
+     "topics": [
+      {
+       "id": "mech-s6-102602-u4-t1",
+       "title": "Analysis of gyroscopic motion",
+       "text": "Principle of gyroscope, gyroscopic couple and gyroscopic reaction couple, Gyroscopic effects on the movement of ships, aeroplanes, two wheeled and four wheeled vehicles, gyrostabilizers."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102602-u5",
+     "number": 5,
+     "title": "Effects of inertia of reciprocating masses on engine frame",
+     "topics": [
+      {
+       "id": "mech-s6-102602-u5-t1",
+       "title": "Effects of inertia of reciprocating masses on engine frame",
+       "text": "Unbalanced primary and secondary forces and couples, balancing of primary and secondary forces, partial balancing of locomotives, balancing of multicylinder in line and radial engines, direct and reverse cranks methods for balancing of radial engines."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102602-u6",
+     "number": 6,
+     "title": "Mechanical vibrations",
+     "topics": [
+      {
+       "id": "mech-s6-102602-u6-t1",
+       "title": "Mechanical vibrations",
+       "text": "Basic concepts degree of freedom, types of damping and viscous damping; natural free, damped free and damped forced vibrations of a single degree of freedom spring mass system, reciprocating and rotating unbalance, vibration isolation and transmissibility, whirling of shaft, elementary treatment of two degree of freedom systems torsional vibrations of single rotor and two rotor systems, transverse vibration of simply supported beam energy method, Rayleigh’s and Dankerley method."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102603",
+   "semester": 6,
+   "code": "102603",
+   "name": "Manufacturing Technology",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102603-u1",
+     "number": 1,
+     "title": "Tooling for conventional and non-conventional machining processes",
+     "topics": [
+      {
+       "id": "mech-s6-102603-u1-t1",
+       "title": "Tooling for conventional and non-conventional machining processes",
+       "text": "Mould and die design,"
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102603-u2",
+     "number": 2,
+     "title": "Press tools, Cutting tools; Holding tools",
+     "topics": [
+      {
+       "id": "mech-s6-102603-u2-t1",
+       "title": "Press tools, Cutting tools; Holding tools",
+       "text": "Jigs and fixtures, principles, applications and design; press tools –configuration, design of die and punch; principles of forging die design."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102603-u3",
+     "number": 3,
+     "title": "Metrology",
+     "topics": [
+      {
+       "id": "mech-s6-102603-u3-t1",
+       "title": "Metrology",
+       "text": "Dimensions, forms and surface measurements, Limits, fits and tolerances; linear and angular measurements; comparators; gauge design; interferometry."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102603-u4",
+     "number": 4,
+     "title": "Metrology in tool wear and part quality including surface integrity",
+     "topics": [
+      {
+       "id": "mech-s6-102603-u4-t1",
+       "title": "Metrology in tool wear and part quality including surface integrity",
+       "text": "Metrology in tool wear and part quality including surface integrity, alignment and testing methods; tolerance analysis in manufacturing and assembly. Process metrology for emerging machining processes such as microscale machining, Inspection and workpiece quality."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102603-u5",
+     "number": 5,
+     "title": "Assembly practices",
+     "topics": [
+      {
+       "id": "mech-s6-102603-u5-t1",
+       "title": "Assembly practices",
+       "text": "Manufacturing and assembly, process planning, selective assembly, Material handling and devices."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102603-u6",
+     "number": 6,
+     "title": "Unconventional Machining Processes",
+     "topics": [
+      {
+       "id": "mech-s6-102603-u6-t1",
+       "title": "Unconventional Machining Processes",
+       "text": "Abrasive Jet Machining, Water Jet Machining, Abrasive Water Jet Machining, Ultrasonic Machining, principles and process parameters. Electrical Discharge Machining, principle and processes parameters, MRR, surface finish, tool wear, Dielectric, power and control circuits, wire EDM; Electro-chemical machining (ECM), etchant & maskant, process parameters, MRR and surface finish. Laser Beam Machining (LBM), Plasma Arc Machining (PAM) and Electron Beam Machining."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102605",
+   "semester": 6,
+   "code": "102605",
+   "name": "Automation in Manufacturing",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102605-u1",
+     "number": 1,
+     "title": "Introduction",
+     "topics": [
+      {
+       "id": "mech-s6-102605-u1-t1",
+       "title": "Introduction",
+       "text": "Why automation, Current trends, CAD, CAM, CIM, Rigid automation: Part handling, Machine tools."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102605-u2",
+     "number": 2,
+     "title": "Flexible automation",
+     "topics": [
+      {
+       "id": "mech-s6-102605-u2-t1",
+       "title": "Flexible automation",
+       "text": "Computer control of Machine tools and Machining centres, NC and NC part programming, CNC-Adaptive Control, Automated Material Handling. Assembly, Flexible fixturing."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102605-u3",
+     "number": 3,
+     "title": "Computer Aided Design",
+     "topics": [
+      {
+       "id": "mech-s6-102605-u3-t1",
+       "title": "Computer Aided Design",
+       "text": "Fundamentals of CAD-Hardware in CAD-Computer Graphics software and Data Base, Geometric modelling for downstream applications and analysis methods."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102605-u4",
+     "number": 4,
+     "title": "Computer Aided Manufacturing",
+     "topics": [
+      {
+       "id": "mech-s6-102605-u4-t1",
+       "title": "Computer Aided Manufacturing",
+       "text": "CNC Technology, PLC, Micro-controllers, CNC Adaptive control."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102605-u5",
+     "number": 5,
+     "title": "Low cost automation",
+     "topics": [
+      {
+       "id": "mech-s6-102605-u5-t1",
+       "title": "Low cost automation",
+       "text": "Mechanical & Electromechanical systems, Pneumatic and Hydraulics, Illustrative examples and case studies."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102605-u6",
+     "number": 6,
+     "title": "Introduction to Modeling and Simulation",
+     "topics": [
+      {
+       "id": "mech-s6-102605-u6-t1",
+       "title": "Introduction to Modeling and Simulation",
+       "text": "Product design, process route modelling, Optimization techniques, Case studies & Industrial applications."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102606",
+   "semester": 6,
+   "code": "102606",
+   "name": "Process Planning and Cost Estimation",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102606-u1",
+     "number": 1,
+     "title": "Introduction of Process Planning",
+     "topics": [
+      {
+       "id": "mech-s6-102606-u1-t1",
+       "title": "Introduction of Process Planning- methods of process planning, drawing interpretation",
+       "text": "Introduction of Process Planning- methods of process planning, drawing interpretation."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102606-u2",
+     "number": 2,
+     "title": "Material evaluation",
+     "topics": [
+      {
+       "id": "mech-s6-102606-u2-t1",
+       "title": "Material evaluation, steps in process selection, production equipment and tooling selection",
+       "text": "Material evaluation, steps in process selection, production equipment and tooling selection."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102606-u3",
+     "number": 3,
+     "title": "Process planning activities",
+     "topics": [
+      {
+       "id": "mech-s6-102606-u3-t1",
+       "title": "Process planning activities",
+       "text": "Process planning activities- process parameter calculation for various production processes, selection of jigs and fixtures, selection of quality assurance methods, documents for process planning, economics of process planning, case studies."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102606-u4",
+     "number": 4,
+     "title": "Introduction to cost estimation",
+     "topics": [
+      {
+       "id": "mech-s6-102606-u4-t1",
+       "title": "Introduction to cost estimation",
+       "text": "Introduction to cost estimation- importance of costing and estimation, method of costing, elements of cost estimation, types of estimates, estimating procedure, estimation of labor cost, material cost, allocation of overhead charges, calculation of depreciation cost."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102606-u5",
+     "number": 5,
+     "title": "Machining time estimation",
+     "topics": [
+      {
+       "id": "mech-s6-102606-u5-t1",
+       "title": "Machining time estimation",
+       "text": "Machining time estimation- importance of machine time calculation, machining time for different lathe operations, drilling and boring time calculation, Machining time calculation for Milling, Shaping. Planning and Grinding."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102606-u6",
+     "number": 6,
+     "title": "Production costs",
+     "topics": [
+      {
+       "id": "mech-s6-102606-u6-t1",
+       "title": "Production costs",
+       "text": "Production costs- different production processes for different jobs, estimation of forging cost, estimation of welding cost, estimation of foundry cost, estimation of machining cost."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102610",
+   "semester": 6,
+   "code": "102610",
+   "name": "Power Plant Engineering",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102610-u1",
+     "number": 1,
+     "title": "Power plants",
+     "topics": [
+      {
+       "id": "mech-s6-102610-u1-t1",
+       "title": "Power plants – types and classification based on energy sources",
+       "text": "Power plants – types and classification based on energy sources."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102610-u2",
+     "number": 2,
+     "title": "Basic Rankine cycle and its modifications",
+     "topics": [
+      {
+       "id": "mech-s6-102610-u2-t1",
+       "title": "Basic Rankine cycle and its modifications",
+       "text": "Basic Rankine cycle and its modifications; Layout of modern coal power plant; Super critical boilers, FBC boilers; Turbines, condensers, steam and heating rates; Subsystems of thermal power plants; Fuel and ash handling; Draught system; Feed water treatment; Binary cycles and cogeneration systems."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102610-u3",
+     "number": 3,
+     "title": "Brayton cycle analysis and optimization",
+     "topics": [
+      {
+       "id": "mech-s6-102610-u3-t1",
+       "title": "Brayton cycle analysis and optimization",
+       "text": "Brayton cycle analysis and optimization; Components of gas turbine power plants; Combined cycle power plants; Integrated Gasifier based Combined Cycle (IGCC) systems."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102610-u4",
+     "number": 4,
+     "title": "Basics of nuclear energy conversion",
+     "topics": [
+      {
+       "id": "mech-s6-102610-u4-t1",
+       "title": "Basics of nuclear energy conversion",
+       "text": "Basics of nuclear energy conversion; Layout and subsystems of nuclear power plants; Boiling Water Reactor (BWR); Pressurized Water Reactor (PWR); CANDU Reactor; Pressurized Heavy Water Reactor (PHWR); Fast Breeder Reactors (FBR); Gas cooled and liquid metal cooled reactors; Safety measures for nuclear power plants."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102610-u5",
+     "number": 5,
+     "title": "Hydroelectric power plants",
+     "topics": [
+      {
+       "id": "mech-s6-102610-u5-t1",
+       "title": "Hydroelectric power plants",
+       "text": "Hydroelectric power plants, hydrological cycle, Rainfall & run-off measurement & plotting of various curves for estimating stream flow, site selection, classification, comparison with other types of power plant, typical layout and components, Principles of wind, tidal, solar photo-voltaic, solar thermal, geothermal, biogas and fuel cell power systems."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102610-u6",
+     "number": 6,
+     "title": "Economic and environmental issues",
+     "topics": [
+      {
+       "id": "mech-s6-102610-u6-t1",
+       "title": "Economic and environmental issues",
+       "text": "Economic and environmental issues; Power tariffs; Load distribution parameters; Load curve; Capital and operating cost of different power plants; Pollution control technologies including waste disposal options for coal and nuclear plants."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102608",
+   "semester": 6,
+   "code": "102608",
+   "name": "Microprocessors in Automation",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102608-u1",
+     "number": 1,
+     "title": "Number Systems, codes, digital electronics",
+     "topics": [
+      {
+       "id": "mech-s6-102608-u1-t1",
+       "title": "Number Systems, codes, digital electronics",
+       "text": "Logic Gates, combinational circuits design, Flip-flops, Sequential logic circuits design: Counters, Shift registers."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102608-u2",
+     "number": 2,
+     "title": "Introduction to 8085 Functional Block Diagram",
+     "topics": [
+      {
+       "id": "mech-s6-102608-u2-t1",
+       "title": "Introduction to 8085 Functional Block Diagram",
+       "text": "Introduction to 8085 Functional Block Diagram, Registers, ALU, Bus systems, Timing and control signals."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102608-u3",
+     "number": 3,
+     "title": "Machine cycles",
+     "topics": [
+      {
+       "id": "mech-s6-102608-u3-t1",
+       "title": "Machine cycles, instruction cycle and timing states, instruction timing diagrams, Memory interfacing",
+       "text": "Machine cycles, instruction cycle and timing states, instruction timing diagrams, Memory interfacing."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102608-u4",
+     "number": 4,
+     "title": "Assembly Language Programming",
+     "topics": [
+      {
+       "id": "mech-s6-102608-u4-t1",
+       "title": "Assembly Language Programming",
+       "text": "Addressing modfes, Instruction set, simple programs in 8085; Concept of Interrupt, Need for Interrupts, Interrupt stucture, Multiple Interrupt requests and their handling, Programmable interrupt controller; Interfacing pheripherals: Programmable peripheral interface (8255)."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102608-u5",
+     "number": 5,
+     "title": "Interfacing Analog to Digital Converter & Digital to Analog converter",
+     "topics": [
+      {
+       "id": "mech-s6-102608-u5-t1",
+       "title": "Interfacing Analog to Digital Converter & Digital to Analog converter, Multiplexed seven segments…",
+       "text": "Interfacing Analog to Digital Converter & Digital to Analog converter, Multiplexed seven segments LED display systems, Stepper Motor Control, Data Communication: Serial Data communication (8251), Programmable Timers (8253); 8086/8088 Microprocessor and its advanced features,"
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102608-u6",
+     "number": 6,
+     "title": "Introduction to Digital Control",
+     "topics": [
+      {
+       "id": "mech-s6-102608-u6-t1",
+       "title": "Introduction to Digital Control",
+       "text": "Sampling theorem, Signal conversion and Processing, Z- Transform, Digital Filters, Implementation of Digital Algorithm."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102607",
+   "semester": 6,
+   "code": "102607",
+   "name": "Mechatronics Systems",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102607-u1",
+     "number": 1,
+     "title": "Introduction",
+     "topics": [
+      {
+       "id": "mech-s6-102607-u1-t1",
+       "title": "Introduction",
+       "text": "Definition of Mechanical Systems, Philosophy and approach; Systems and Design: Mechatronics approach, Integrated Product Design, Modeling, Analysis and Simulation, Man- Machine Interface;"
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102607-u2",
+     "number": 2,
+     "title": "Sensors and transducers",
+     "topics": [
+      {
+       "id": "mech-s6-102607-u2-t1",
+       "title": "Sensors and transducers",
+       "text": "classification, Development in Trransducer technology, Opto- electronics Shaft encoders, CD Sensors, Vision System, etc."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102607-u3",
+     "number": 3,
+     "title": "Drives and Actuators",
+     "topics": [
+      {
+       "id": "mech-s6-102607-u3-t1",
+       "title": "Drives and Actuators",
+       "text": "Hydraulic and Pneumatic drives, Electrical Actuators such as servo motor nad Stepper motor, Drive Circuits, open nad closed loop control; Embedded Systems: Hardware Structure, Software Design nad Communication, Programmable Logic Devices, Automatic Control and Real Time Control Systems;"
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102607-u4",
+     "number": 4,
+     "title": "Smart materials",
+     "topics": [
+      {
+       "id": "mech-s6-102607-u4-t1",
+       "title": "Smart materials",
+       "text": "Shape Memory Alloy, Piezoelectric and Magnetostrictive Actuators: Materials, Statics and dynamic characteristics, illustrative examples for positioning, vibration isolation, etc."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102607-u5",
+     "number": 5,
+     "title": "Micromechatronic systems",
+     "topics": [
+      {
+       "id": "mech-s6-102607-u5-t1",
+       "title": "Micromechatronic systems",
+       "text": "Microsensors, Microactuators; Micro-fabrication techniques LIGA Process: Lithography, etching, Micro- joining etc."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102607-u6",
+     "number": 6,
+     "title": "Application examples",
+     "topics": [
+      {
+       "id": "mech-s6-102607-u6-t1",
+       "title": "Application examples",
+       "text": "Application examples; Case studies Examples of Mechatronic Systems from Robotics Manufacturing, Machine Diagnostics, Road vehicles and Medical Technology"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102609",
+   "semester": 6,
+   "code": "102609",
+   "name": "Composite Materials",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102609-u1",
+     "number": 1,
+     "title": "Definition and applications of composite materials",
+     "topics": [
+      {
+       "id": "mech-s6-102609-u1-t1",
+       "title": "Definition and applications of composite materials",
+       "text": "Definition and applications of composite materials, Fibers-glass, carbon, ceramic and aramid fibers; Matrices-polymer, graphite, ceramic and metal matrices; characteristics of fibers and matrices."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102609-u2",
+     "number": 2,
+     "title": "Lamina assumptions",
+     "topics": [
+      {
+       "id": "mech-s6-102609-u2-t1",
+       "title": "Lamina assumptions",
+       "text": "Lamina assumptions, macroscopic viewpoint, generalized Hookes law, reduction of homogenous orthotropic lamina, isotropic limit case, orthotropic stiffness matrix, commercial material properties, rule of mixtures, transformation matrix, transformed stiffness."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102609-u3",
+     "number": 3,
+     "title": "Manufacturing of composite materials",
+     "topics": [
+      {
+       "id": "mech-s6-102609-u3-t1",
+       "title": "Manufacturing of composite materials",
+       "text": "Manufacturing of composite materials, bag moulding, compression, pultrusion, filament welding, other manufacturing processes."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102609-u4",
+     "number": 4,
+     "title": "Basic assumptions of laminated anisotropic plates",
+     "topics": [
+      {
+       "id": "mech-s6-102609-u4-t1",
+       "title": "Basic assumptions of laminated anisotropic plates",
+       "text": "Basic assumptions of laminated anisotropic plates, symmetric laminates, angle ply plates, cross ply laminates, laminate structural moduli, evaluation of lamina properties, determination of lamina stresses, maximum stress and strain criterias, Von Mises yield criterion for isotropic materials."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102609-u5",
+     "number": 5,
+     "title": "Generalized Hill’s criterion for anisotropic materials",
+     "topics": [
+      {
+       "id": "mech-s6-102609-u5-t1",
+       "title": "Generalized Hill’s criterion for anisotropic materials",
+       "text": "Generalized Hill’s criterion for anisotropic materials, Tsai-Hill’s criterion for composites, prediction of laminate failure, thermal analysis of composite laminates."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102609-u6",
+     "number": 6,
+     "title": "Analysis of laminated plates-equilibrium equations of motion",
+     "topics": [
+      {
+       "id": "mech-s6-102609-u6-t1",
+       "title": "Analysis of laminated plates-equilibrium equations of motion",
+       "text": "Analysis of laminated plates-equilibrium equations of motion, energy formulation, static bending analysis, buckling analysis, free vibrations, natural frequencies."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102611",
+   "semester": 6,
+   "code": "102611",
+   "name": "Renewable Energy Systems (Open Elective I)",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102611-u1",
+     "number": 1,
+     "title": "Principles of Renewable Energy",
+     "topics": [
+      {
+       "id": "mech-s6-102611-u1-t1",
+       "title": "Principles of Renewable Energy",
+       "text": "Introduction, Energy and sustainable development, Fundamentals, Scientific Principles of renewable energy, Technicle implications, Social implications, Problems."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102611-u2",
+     "number": 2,
+     "title": "Solar radiation",
+     "topics": [
+      {
+       "id": "mech-s6-102611-u2-t1",
+       "title": "Solar radiation",
+       "text": "Introduction, Exatra- terrestrial solar radiation, Components of radiation, Geometry of collector and the solar beam, Effects of the Earth’s atmosphere Measurements of solar radiation, Estimation of solar radiation, Solar wate heating: Introduction, Calculation of heat balance: general remarks, Uncovered solar water heaters- progressive analysis, Improved solar water heaters, Prograssive analysis, Improved solar water heaters, Evacuated collectors, Buildings and other solar thermal applications. Air heaters, Crop driers, Space cooling, Water desalination, Solar ponds, Solar concentrators, Solar thermal electric power systems, Problems."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102611-u3",
+     "number": 3,
+     "title": "Photovoltaic generation",
+     "topics": [
+      {
+       "id": "mech-s6-102611-u3-t1",
+       "title": "Photovoltaic generation",
+       "text": "Introduction, The silicon p-n Junction, Photon absorption at the Junction, solar radiation absorption, Maximizing cell efficiency, Solar cell construction, Applications, Problems,"
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102611-u4",
+     "number": 4,
+     "title": "Hydro- power",
+     "topics": [
+      {
+       "id": "mech-s6-102611-u4-t1",
+       "title": "Hydro- power",
+       "text": "Introduction, Principles, Assessing the resource for small installations, An inpulse turbine Reaction trubines, Hydroelectric systems. the hydraulic ram pump, Problems."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102611-u5",
+     "number": 5,
+     "title": "Power from the wind",
+     "topics": [
+      {
+       "id": "mech-s6-102611-u5-t1",
+       "title": "Power from the wind",
+       "text": "Introduction, Turbine types and tems, Linear momentum and basic theory, Dynamics matching, Blade element theory, Contents Characteristics of the wind, Power extraction by a turbine, Electricity generations, Mechanical power, Problems."
+      }
+     ]
+    },
+    {
+     "id": "mech-s6-102611-u6",
+     "number": 6,
+     "title": "Biomass and Biofuels",
+     "topics": [
+      {
+       "id": "mech-s6-102611-u6-t1",
+       "title": "Biomass and Biofuels",
+       "text": "Introduction, Biofuel classification, Biomass production for energy faming, Direct combustion for heat, Pyrolysis (destructive distillation), Further thermochemical processes, Alcoholic fermentation, Anaerobic digestion for biogas, Wastes and residues, Vegetable oils and biodiesel, Problems."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102601p",
+   "semester": 6,
+   "code": "102601P",
+   "name": "Design of Machine Elements Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102601p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s6-102601p-u1-t1",
+       "title": "To study the design procedure of Knuckle & Cotter joint",
+       "text": "To study the design procedure of Knuckle & Cotter joint."
+      },
+      {
+       "id": "mech-s6-102601p-u1-t2",
+       "title": "Design of shafts subjected to torsion, bending moment and combined bending and torsion",
+       "text": "Design of shafts subjected to torsion, bending moment and combined bending and torsion."
+      },
+      {
+       "id": "mech-s6-102601p-u1-t3",
+       "title": "Design of flat and square key",
+       "text": "Design of flat and square key"
+      },
+      {
+       "id": "mech-s6-102601p-u1-t4",
+       "title": "Design and drawing of riveted joints",
+       "text": "Design and drawing of riveted joints"
+      },
+      {
+       "id": "mech-s6-102601p-u1-t5",
+       "title": "Design and drawing of screw jack",
+       "text": "Design and drawing of screw jack"
+      },
+      {
+       "id": "mech-s6-102601p-u1-t6",
+       "title": "Journal Bearing Test Rig",
+       "text": "Journal Bearing Test Rig."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 6
+  },
+  {
+   "id": "mech-s6-102602p",
+   "semester": 6,
+   "code": "102602P",
+   "name": "Dynamics of Machinery Lab",
+   "type": "Practical",
+   "credits": 1.5,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102602p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s6-102602p-u1-t1",
+       "title": "To study various types of Links, Pairs, Chain and Mechanism",
+       "text": "To study various types of Links, Pairs, Chain and Mechanism"
+      },
+      {
+       "id": "mech-s6-102602p-u1-t2",
+       "title": "To study inversion of Four Bar Mechanism",
+       "text": "To study inversion of Four Bar Mechanism"
+      },
+      {
+       "id": "mech-s6-102602p-u1-t3",
+       "title": "To study velocity diagram for Slider Crank Mechanism",
+       "text": "To study velocity diagram for Slider Crank Mechanism."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t4",
+       "title": "To study various kinds of belts drives",
+       "text": "To study various kinds of belts drives."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t5",
+       "title": "To study and find coefficient of friction between belt and pulley",
+       "text": "To study and find coefficient of friction between belt and pulley."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t6",
+       "title": "To study various types of Cam and Follower arrangement",
+       "text": "To study various types of Cam and Follower arrangement."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t7",
+       "title": "To plot follower displacement Vs cam rotation graph for various cam follower arrangement",
+       "text": "To plot follower displacement Vs cam rotation graph for various cam follower arrangement."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t8",
+       "title": "To study Different types of Gears",
+       "text": "To study Different types of Gears."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t9",
+       "title": "To study Different types of Gear Trains",
+       "text": "To study Different types of Gear Trains."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t10",
+       "title": "To Perform Experiment on Watt",
+       "text": "To Perform Experiment on Watt, Porter, Proell and Hartnell Governors and prepare Performance Characteristic Curves also analyze Stability & Sensitivity"
+      },
+      {
+       "id": "mech-s6-102602p-u1-t11",
+       "title": "To study gyroscopic effects through models",
+       "text": "To study gyroscopic effects through models."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t12",
+       "title": "To determine gyroscopic couple on Motorized Gyroscope",
+       "text": "To determine gyroscopic couple on Motorized Gyroscope."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t13",
+       "title": "To perform the experiment of Balancing of rotating parts and find the unbalanced couple and forces",
+       "text": "To perform the experiment of Balancing of rotating parts and find the unbalanced couple and forces."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t14",
+       "title": "To study Dynamically Equivalent System",
+       "text": "To study Dynamically Equivalent System."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t15",
+       "title": "Course content",
+       "text": "Determine the moment of inertial of connecting rod by compound pendulum method and trifler suspension pendulum."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t16",
+       "title": "To study the various types of dynamometers",
+       "text": "To study the various types of dynamometers."
+      },
+      {
+       "id": "mech-s6-102602p-u1-t17",
+       "title": "Course content",
+       "text": "To find out critical speed experimentally and to compare the Whirling Speed of a shaft with theoretical values."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 3
+   },
+   "unitCount": 1,
+   "topicCount": 17
+  },
+  {
+   "id": "mech-s6-102603p",
+   "semester": 6,
+   "code": "102603P",
+   "name": "Manufacturing Technology Lab",
+   "type": "Practical",
+   "credits": 1.5,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102603p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s6-102603p-u1-t1",
+       "title": "Measurement of angle using Sine Center / Sine bar / bevel protractor",
+       "text": "Measurement of angle using Sine Center / Sine bar / bevel protractor"
+      },
+      {
+       "id": "mech-s6-102603p-u1-t2",
+       "title": "Measurement of alignment using Autocollimator / Roller set",
+       "text": "Measurement of alignment using Autocollimator / Roller set"
+      },
+      {
+       "id": "mech-s6-102603p-u1-t3",
+       "title": "Measurement of cutting tool forces using a. Lathe tool Dynamometer b. Drill tool Dynamometer",
+       "text": "Measurement of cutting tool forces using a. Lathe tool Dynamometer b. Drill tool Dynamometer."
+      },
+      {
+       "id": "mech-s6-102603p-u1-t4",
+       "title": "Measurement of Screw Threads Parameters using Two wire or Three-wire method",
+       "text": "Measurement of Screw Threads Parameters using Two wire or Three-wire method."
+      },
+      {
+       "id": "mech-s6-102603p-u1-t5",
+       "title": "Measurements of Surface roughness, Using Tally Surf/Mechanical Comparator",
+       "text": "Measurements of Surface roughness, Using Tally Surf/Mechanical Comparator"
+      },
+      {
+       "id": "mech-s6-102603p-u1-t6",
+       "title": "Measurement of gear tooth profile using gear tooth Vernier/Gear tooth micrometer",
+       "text": "Measurement of gear tooth profile using gear tooth Vernier/Gear tooth micrometer"
+      },
+      {
+       "id": "mech-s6-102603p-u1-t7",
+       "title": "Calibration of Micrometer using slip gauges",
+       "text": "Calibration of Micrometer using slip gauges"
+      },
+      {
+       "id": "mech-s6-102603p-u1-t8",
+       "title": "Measurement using Optical Flats",
+       "text": "Measurement using Optical Flats."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 3
+   },
+   "unitCount": 1,
+   "topicCount": 8
+  },
+  {
+   "id": "mech-s6-102605p",
+   "semester": 6,
+   "code": "102605P",
+   "name": "Automation in Manufacturing Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/mech.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "mech-s6-102605p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "mech-s6-102605p-u1-t1",
+       "title": "Case study on automated system of any industry",
+       "text": "Case study on automated system of any industry."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t2",
+       "title": "Practice programming on manual part program",
+       "text": "Practice programming on manual part program."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t3",
+       "title": "Practice Programming on APT",
+       "text": "Practice Programming on APT."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t4",
+       "title": "Demonstration on robot",
+       "text": "Demonstration on robot."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t5",
+       "title": "Performance on robot",
+       "text": "Performance on robot."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t6",
+       "title": "Demonstration on CNC lathe",
+       "text": "Demonstration on CNC lathe."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t7",
+       "title": "Performance on CNC lathe",
+       "text": "Performance on CNC lathe."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t8",
+       "title": "Performance and simulation with CNC lathe software",
+       "text": "Performance and simulation with CNC lathe software."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t9",
+       "title": "Demonstration on CNC milling",
+       "text": "Demonstration on CNC milling."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t10",
+       "title": "Performance on CNC milling",
+       "text": "Performance on CNC milling."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t11",
+       "title": "Performance and simulation with CNC milling software",
+       "text": "Performance and simulation with CNC milling software."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t12",
+       "title": "Case study on Computer aided process planning",
+       "text": "Case study on Computer aided process planning."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t13",
+       "title": "Case study on part coding and group technology",
+       "text": "Case study on part coding and group technology."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t14",
+       "title": "Case study on Computer aided quality control",
+       "text": "Case study on Computer aided quality control."
+      },
+      {
+       "id": "mech-s6-102605p-u1-t15",
+       "title": "Case study on flexible manufacturing system",
+       "text": "Case study on flexible manufacturing system."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 15
+  }
+ ]
+}

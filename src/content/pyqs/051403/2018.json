@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2018",
+    "subject": "Data Structure",
+    "subject_slug": "data-structure",
+    "subject_code": "051403",
+    "year": 2018,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Define data structure.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What are average, best and worst case complexities?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "c",
+              "text": "Write formula to calculate address of elements in two-dimensional array.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "d",
+              "text": "What is deque? Explain with example.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "e",
+              "text": "Define tail recursion.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "f",
+              "text": "What is the need for linked representation of lists?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "g",
+              "text": "Give node structure for the term of polynomial having single variable.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "h",
+              "text": "What is the maximum number of nodes in a binary tree of depth $k$?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "i",
+              "text": "What is threaded binary tree?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "j",
+              "text": "What is worst case time complexity of quick sort?",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Formulate an algorithm to find the number of total nodes in a binary tree. What is the complexity of your algorithm?",
+              "marks": 14,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What is Tower of Hanoi problem? Draw the recursive tree diagram for the solution of Tower of Hanoi problem, where the number of disks is 4 and number of pegs is 3.",
+              "marks": 14,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain the following operations on a binary search tree with suitable algorithms:",
+              "subparts": [
+                {
+                  "letter": "a",
+                  "text": "Find a node"
+                },
+                {
+                  "letter": "b",
+                  "text": "Insert a node"
+                },
+                {
+                  "letter": "c",
+                  "text": "Delete a node"
+                }
+              ],
+              "marks": 14,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain the following operations with pseudo-code in a doubly circular linked list:",
+              "subparts": [
+                {
+                  "letter": "a",
+                  "text": "Insert an element"
+                },
+                {
+                  "letter": "b",
+                  "text": "Delete an element"
+                },
+                {
+                  "letter": "c",
+                  "text": "Reverse the list"
+                }
+              ],
+              "marks": 14,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "The odd-even transposition sort proceeds as follows :\nPass through the file several times. On the first pass, compare x[i] with x[i+1] for all odd i. On the second pass, compare x[i] with x[i+1] for all even i. Each time that x[i] > x[i+1], interchange the two. Continue altering in this fashion until the file is sorted.",
+              "subparts": [
+                {
+                  "letter": "a",
+                  "text": "What is the condition for the termination of the sort?"
+                },
+                {
+                  "letter": "b",
+                  "text": "Write a C function to implement the sort."
+                },
+                {
+                  "letter": "c",
+                  "text": "On the average, what is the efficiency of the sort?"
+                }
+              ],
+              "marks": 14,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Construct an inorder threaded binary tree (TBT) for the given tree. Illustrate its node structure. Also show the memory representation of a complete TBT for this :",
+              "marks": 14,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Define AVL tree. Construct an AVL tree for the following elements :\n3, 5, 11, 8, 4, 1, 12, 7, 2, 6, 10",
+              "marks": 14,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Prove the correctness of Kruskal's algorithm for minimum spanning tree. Draw minimum cost spanning tree for the graph given below and also find its cost :",
+              "marks": 14,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2020",
+    "subject": "POWER SYSTEMS-I",
+    "subject_slug": "power-systems-i",
+    "subject_code": "100507",
+    "year": 2020,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven of the following questions :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "What is the difference between bulk power grid and microgrid?",
+              "marks": null
+            },
+            {
+              "id": "1b",
+              "text": "What do you understand by synchronous grids and asynchronous (DC) interconnections?",
+              "marks": null
+            },
+            {
+              "id": "1c",
+              "text": "What is meant by series compensation of transmission lines? Give example for the same.",
+              "marks": null
+            },
+            {
+              "id": "1d",
+              "text": "What is corona in power system and how is it caused?",
+              "marks": null
+            },
+            {
+              "id": "1e",
+              "text": "Draw the Bewley diagram for overvoltage issue.",
+              "marks": null
+            },
+            {
+              "id": "1f",
+              "text": "Which type of fault would be severe among the line to ground fault or symmetrical fault, when the fault occurs near to the generator? Consider that the neutral for the generator is solidly grounded, also, $X_1 = X_2 \\ll X_0$.",
+              "marks": null
+            },
+            {
+              "id": "1g",
+              "text": "Consider that in a power system network, the frequency has been reduced significantly. What should be done in the generator to improve the frequency in the power system network?",
+              "marks": null
+            },
+            {
+              "id": "1h",
+              "text": "What is a back up protection and why is it required?",
+              "marks": null
+            },
+            {
+              "id": "1i",
+              "text": "Draw the I-V and P-V characteristics of PV panels.",
+              "marks": null
+            },
+            {
+              "id": "1j",
+              "text": "What is a differential protection?",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "A generator transformer unit is connected to a line through a circuit breaker. The unit ratings are :\nGenerator : 10 MVA, 6.6 kV, $X''_d = 0.1$ p.u., $X'_d = 0.2$ p.u. and $X_d = 0.8$ p.u.\nTransformer : 10 MVA, 6.9/33 kV, reactance $= 0.08$ p.u.\nThe system is operating at no load at a line voltage of 30 kV, when a three-phase fault occurs on the line just beyond the circuit breaker. Find-",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "2a",
+              "text": "the initial symmetrical r.m.s. current in the breaker;",
+              "marks": null
+            },
+            {
+              "id": "2b",
+              "text": "the maximum possible d.c. offset current in the breaker;",
+              "marks": null
+            },
+            {
+              "id": "2c",
+              "text": "the momentary current rating of the breaker;",
+              "marks": null
+            },
+            {
+              "id": "2d",
+              "text": "the current to be interrupted by the breaker and the interrupting kVA;",
+              "marks": null
+            },
+            {
+              "id": "2e",
+              "text": "the sustained short circuit current in the breaker.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "text": "A single-phase 50 Hz generator supplies an inductive load of 5 MW at a power factor of 0.866 lagging by means of an overhead transmission line 20 km long. The line resistance and inductance are 0.0195 ohm and 0.63 mH per km. The voltage at the receiving end is required to be kept constant at 10 kV.",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "3a",
+              "text": "Find the sending end voltage and voltage regulation of the line.",
+              "marks": null
+            },
+            {
+              "id": "3b",
+              "text": "Find the value of the capacitors to be placed in parallel with the load such that the regulation is reduced to 50% of that obtained in part (a).",
+              "marks": null
+            },
+            {
+              "id": "3c",
+              "text": "Compare the transmission efficiency in parts (a) and (b).",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "text": "Discuss in detail about the line commutated converters and voltage source converters for DC transmission systems. Also, discuss in detail about advantages and disadvantages of individual converters for DC transmission systems.",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "text": "Explain the working of (a) vacuum circuit breaker and (b) $SF_6$ circuit breaker.",
+          "marks": 14
+        },
+        {
+          "id": "6a",
+          "text": "The line currents in amperes in phases a, b and c respectively are $500 + j150, 100 - j500$ and $-300 + j500$ referred to the same reference vector. Find the symmetrical components of the currents.",
+          "marks": 7
+        },
+        {
+          "id": "6b",
+          "text": "What is a neutral grounding? Explain the methods of neutral grounding.",
+          "marks": 7
+        },
+        {
+          "id": "7",
+          "text": "Discuss in detail about the tap changing transformers. Explain how tap changing transformer is superior than other voltage control methods and also discuss the disadvantage of the tap changing transformer.",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "text": "Explain about the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "8a",
+              "text": "Sphere gap arrester",
+              "marks": null
+            },
+            {
+              "id": "8b",
+              "text": "Horn gap arrester",
+              "marks": null
+            },
+            {
+              "id": "8c",
+              "text": "Maximum discharge current",
+              "marks": null
+            },
+            {
+              "id": "8d",
+              "text": "Coefficient of earthing",
+              "marks": null
+            },
+            {
+              "id": "8e",
+              "text": "Ferranti surge absorber",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "text": "Discuss in detail about the steady state performance characteristics of a synchronous machine operation, when connected to infinite bus and also real and reactive power capability curve of the generators.",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

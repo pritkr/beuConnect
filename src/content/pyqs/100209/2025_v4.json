@@ -1,0 +1,311 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Examination, 2025",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "100209",
+    "year": 2025,
+    "semester": 2,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option / answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>When a pure semiconductor is heated, its resistance will</p>",
+          "options": [
+            "Goes up",
+            "Remains the same",
+            "Goes down",
+            "None"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The random motion of holes and free electrons due to thermal agitation is called</p>",
+          "options": [
+            "Diffusion",
+            "Ionisation",
+            "Pressure",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A zener diode is used as</p>",
+          "options": [
+            "An amplifier",
+            "A rectifier",
+            "A voltage regulator",
+            "A multivibrator"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The ripple factor of a half-wave rectifier is</p>",
+          "options": [
+            "2",
+            "0.48",
+            "1.21",
+            "None"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The number of depletion layers in a transistor is</p>",
+          "options": [
+            "Four",
+            "Two",
+            "Three",
+            "One"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>In a transistor, \\( I_{C}=100~mA \\) and \\( I_{E}=100.2~mA \\). The value of \\( \\beta \\) is\n                    </p>",
+          "options": [
+            "100",
+            "50",
+            "1",
+            "200"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A non inverting closed loop op-amp circuit generally has a gain factor</p>",
+          "options": [
+            "Less than one",
+            "Greater than one",
+            "Zero",
+            "Equal to one"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>If ground is applied to the (+) terminal of an inverting op-amp, the (-) terminal will</p>",
+          "options": [
+            "Not need an input resistor",
+            "Be virtual ground",
+            "Have high reverse current",
+            "Not invert the signal"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The binary code of (21.125) is</p>",
+          "options": [
+            "10101.001",
+            "10101.010",
+            "10100.001",
+            "10100.111"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following gate is a two-level logic gate</p>",
+          "options": [
+            "OR gate",
+            "EXCLUSIVE OR gate",
+            "NAND gate",
+            "NOT gate"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the working of p-n junction diode and draw its V-I Characteristics.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Draw a neat circuit diagram of bridge rectifier and explain its operation with output waveforms.\n                        Derive the average value of current and voltage.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain working principle of Depletion type MOSFET (n-channel). Draw &amp; Explain its\n                        characteristics.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Explain the working principle and characteristics of a full-wave rectifier. Derive the\n                        expressions for output voltage and ripple factor for a full-wave rectifier.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of Op-Amp and list all the ideal characteristics of op-amp.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the working of op-amp as an Integrator and derive its output equation.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Draw the circuit of NPN transistor in common base configuration and discuss its working. Draw\n                        input-output characteristic.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain the output and transfer characteristics of a JFET. How does the gate-source voltage \\(\n                        (V_{GS}) \\) affect the drain current \\( (I_D) \\)?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Convert the following:<br/>\n                        (i) \\( (53.625)_{10} \\) to \\( (?)_{2} \\)<br/>\n                        (ii) Find the base x if \\( (211)_{x}=(152)_{8} \\)<br/>\n                        (iii) Subtract using 1's complement: \\( (10111) - (110011) \\)<br/>\n                        (iv) Find the 1's and 2's compliment of \\( (010100)_2 \\)</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Discuss the working of basic logic gates: NAND, NOR, XOR. Derive the truth tables and Boolean\n                        expressions for each gate.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the concept of load line analysis in a BJT. Derive the expressions for the load line and\n                        operating point. Explain their significance in amplifier design.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain the difference between intrinsic and extrinsic semiconductors. How does the addition of\n                        impurities affect the electrical properties of semiconductors?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss the working principle of clipping circuits. What are the different types of clipping\n                        circuits?</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain the concepts of static and dynamic resistance in a diode. Derive expressions for both and\n                        discuss their significance in diode operation.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Solar cell</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Basic logic gates, their symbols and truth tables</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Clipping and Clamping circuits</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Transistor biasing techniques</p>"
+        }
+      ]
+    }
+  ]
+}

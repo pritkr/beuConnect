@@ -1,0 +1,508 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import { getNoticeBoard } from "../lib/beuNotices";
+
+export const prerender = false;
+
+Astro.response.headers.set("Cache-Control", "public, s-maxage=300, stale-while-revalidate=900");
+
+const boardItems = await getNoticeBoard({ limit: 200 });
+const now = Date.now();
+const notices = boardItems.map((item) => {
+	const ageHours = item.date
+		? Math.max(0, (now - new Date(item.date).getTime()) / 3_600_000)
+		: null;
+
+	return {
+		id: item.id,
+		title: item.title,
+		category: item.isImportant ? "Important" : "General",
+		date: item.date,
+		link: item.link,
+		source: "BEU Notice",
+		isImportant: item.isImportant,
+		isRecent: ageHours !== null && ageHours <= 3,
+		ageHours: ageHours === null ? null : Number(ageHours.toFixed(2)),
+	};
+});
+
+const sortedNotices = [...notices].sort(
+	(a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime(),
+);
+
+const SEMESTER_ORDINALS = ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"] as const;
+
+function detectCourse(title: string): string {
+	const text = title.toLowerCase();
+	if (/\bb\.?\s*tech\b/.test(text)) return "B.Tech";
+	if (/\bb\.?\s*arch\b/.test(text)) return "B.Arch";
+	if (/\bm\.?\s*tech\b/.test(text)) return "M.Tech";
+	return "Other";
+}
+
+function detectSemester(title: string): string {
+	const text = title.toLowerCase();
+	for (let i = 0; i < SEMESTER_ORDINALS.length; i += 1) {
+		const ord = SEMESTER_ORDINALS[i].toLowerCase();
+		const semNumber = i + 1;
+		const ordinalMatch = new RegExp(`\\b${ord}\\s*sem(?:ester)?\\b`);
+		const forwardMatch = new RegExp(`\\bsem(?:ester)?\\s*[-:]?\\s*${ord}\\b`);
+		const numericMatch = new RegExp(`\\bsem(?:ester)?\\s*[-:]?\\s*${semNumber}\\b`);
+		if (ordinalMatch.test(text) || forwardMatch.test(text) || numericMatch.test(text)) {
+			return SEMESTER_ORDINALS[i];
+		}
+	}
+	return "Other";
+}
+
+const noticeFilters = sortedNotices.map((notice) => ({
+	id: notice.id,
+	course: detectCourse(notice.title),
+	semester: detectSemester(notice.title),
+}));
+const filterById = new Map(noticeFilters.map((item) => [item.id, item]));
+const categories = ["All", ...new Set(sortedNotices.map((notice) => notice.category))];
+const courses = ["All", ...new Set(noticeFilters.map((item) => item.course))];
+const semesters = ["All", ...new Set(noticeFilters.map((item) => item.semester))];
+const tickerNotices = sortedNotices.slice(0, 8);
+const baseUrl = import.meta.env.BASE_URL;
+const resolveNoticeLink = (link: string) =>
+	link.startsWith("http") ? link : `${baseUrl}${link.replace(/^\/+/, "")}`;
+const formatAge = (ageHours: number | null) => {
+	if (ageHours === null) return null;
+	if (ageHours < 1) return `${Math.max(1, Math.round(ageHours * 60))}m ago`;
+	if (ageHours < 24) return `${Math.round(ageHours)}h ago`;
+	return `${Math.round(ageHours / 24)}d ago`;
+};
+---
+
+<Layout title="Announcements | BEUConnect">
+	<Header />
+
+	<section class="notices-shell">
+		<header class="notices-header">
+			<p class="eyebrow">Announcements</p>
+			<h1 style="view-transition-name:notice">Notice Board</h1>
+			<p class="subtitle">
+				Latest BEU and BEUConnect updates with quick filtering and flowing headline ticker.
+			</p>
+		</header>
+
+		<div class="ticker-shell" aria-label="Latest notice headlines">
+			{
+				tickerNotices.length ? (
+					<>
+						<div class="ticker-track ticker-track-a">
+							{
+								tickerNotices.map((notice) => (
+									<a href={resolveNoticeLink(notice.link)} target="_blank" rel="noopener" class="ticker-item">
+										<span class="ticker-tag">{notice.category}</span>
+										<span class="ticker-title">{notice.title}</span>
+										{notice.isRecent && <span class="new-chip">NEW</span>}
+									</a>
+								))
+							}
+						</div>
+						<div class="ticker-track ticker-track-b" aria-hidden="true">
+							{
+								tickerNotices.map((notice) => (
+									<a href={resolveNoticeLink(notice.link)} target="_blank" rel="noopener" class="ticker-item">
+										<span class="ticker-tag">{notice.category}</span>
+										<span class="ticker-title">{notice.title}</span>
+										{notice.isRecent && <span class="new-chip">NEW</span>}
+									</a>
+								))
+							}
+						</div>
+					</>
+				) : (
+					<p class="ticker-empty">No live notices available right now.</p>
+				)
+			}
+		</div>
+
+		<div class="filter-card glass-card">
+			<div class="filter-grid">
+				<div>
+					<label for="noticeSearch">Search Notice</label>
+					<input id="noticeSearch" type="search" placeholder="Search by keyword" />
+				</div>
+				<div>
+					<label for="noticeCategory">Category</label>
+					<select id="noticeCategory">
+						{categories.map((category) => <option value={category}>{category}</option>)}
+					</select>
+				</div>
+				<div>
+					<label for="noticeCourse">Course</label>
+					<select id="noticeCourse">
+						{courses.map((course) => <option value={course}>{course}</option>)}
+					</select>
+				</div>
+				<div>
+					<label for="noticeSemester">Semester</label>
+					<select id="noticeSemester">
+						{semesters.map((semester) => <option value={semester}>{semester}</option>)}
+					</select>
+				</div>
+			</div>
+			<p id="noticeCount" class="count-text"></p>
+		</div>
+
+		<div id="noticeGrid" class="notice-grid">
+			{
+				sortedNotices.map((notice) => {
+					const meta = filterById.get(notice.id);
+					return (
+					<article
+						class="notice-card glass-card"
+						data-title={notice.title.toLowerCase()}
+						data-category={notice.category}
+						data-course={meta?.course ?? "Other"}
+						data-semester={meta?.semester ?? "Other"}
+					>
+						<div class="notice-head">
+								<div class="badge-row">
+									<span class="badge">{notice.category}</span>
+									<span class="badge badge-meta">{meta?.course ?? "Other"}</span>
+									<span class="badge badge-meta">{meta?.semester ?? "Other"}</span>
+									{
+										notice.isImportant &&
+											notice.category.toLowerCase() !== "important" && (
+												<span class="important-chip">Important</span>
+											)
+									}
+									{notice.isRecent && <span class="new-chip">NEW</span>}
+								</div>
+							{
+								notice.date && (
+									<time datetime={notice.date}>
+										{new Date(notice.date).toLocaleDateString("en-GB", {
+											year: "numeric",
+											month: "short",
+											day: "numeric",
+										})}
+									</time>
+								)
+							}
+						</div>
+						<h2>{notice.title}</h2>
+						<p class="notice-source">
+							Source: {notice.source}
+							{formatAge(notice.ageHours) && <span class="notice-age"> • {formatAge(notice.ageHours)}</span>}
+						</p>
+						<a href={resolveNoticeLink(notice.link)} target="_blank" rel="noopener" class="notice-link">
+							Open Notice
+						</a>
+					</article>
+					);
+				})
+			}
+		</div>
+	</section>
+
+	<script>
+		const searchInput = document.getElementById("noticeSearch") as HTMLInputElement;
+		const categorySelect = document.getElementById("noticeCategory") as HTMLSelectElement;
+		const courseSelect = document.getElementById("noticeCourse") as HTMLSelectElement;
+		const semesterSelect = document.getElementById("noticeSemester") as HTMLSelectElement;
+		const noticeGrid = document.getElementById("noticeGrid") as HTMLDivElement;
+		const noticeCount = document.getElementById("noticeCount") as HTMLParagraphElement;
+		const noticeCards = Array.from(noticeGrid.querySelectorAll<HTMLElement>(".notice-card"));
+
+		function applyFilters() {
+			const search = searchInput.value.trim().toLowerCase();
+			const selectedCategory = categorySelect.value;
+			const selectedCourse = courseSelect.value;
+			const selectedSemester = semesterSelect.value;
+			let visibleCount = 0;
+
+			noticeCards.forEach((card) => {
+				const cardTitle = card.dataset.title || "";
+				const cardCategory = card.dataset.category || "";
+				const cardCourse = card.dataset.course || "";
+				const cardSemester = card.dataset.semester || "";
+				const categoryMatch = selectedCategory === "All" || cardCategory === selectedCategory;
+				const courseMatch = selectedCourse === "All" || cardCourse === selectedCourse;
+				const semesterMatch = selectedSemester === "All" || cardSemester === selectedSemester;
+				const titleMatch = !search || cardTitle.includes(search);
+				const isVisible = categoryMatch && courseMatch && semesterMatch && titleMatch;
+				card.style.display = isVisible ? "grid" : "none";
+				if (isVisible) visibleCount += 1;
+			});
+
+			noticeCount.textContent = `${visibleCount} notice${visibleCount === 1 ? "" : "s"} visible`;
+		}
+
+		searchInput.addEventListener("input", applyFilters);
+		categorySelect.addEventListener("change", applyFilters);
+		courseSelect.addEventListener("change", applyFilters);
+		semesterSelect.addEventListener("change", applyFilters);
+		applyFilters();
+	</script>
+
+	<style>
+		.notices-shell {
+			max-width: 1100px;
+			margin: 0 auto;
+			display: grid;
+			gap: 1rem;
+		}
+
+		.notices-header {
+			display: grid;
+			gap: 0.25rem;
+		}
+
+		.eyebrow {
+			text-transform: uppercase;
+			letter-spacing: 0.14em;
+			font-size: 0.74rem;
+			font-weight: 700;
+			color: #7dd3fc;
+			margin: 0;
+		}
+
+		.notices-header h1 {
+			margin: 0;
+			font-size: clamp(1.8rem, 4vw, 2.6rem);
+		}
+
+		.subtitle {
+			margin: 0;
+			max-width: 66ch;
+		}
+
+		.ticker-shell {
+			position: relative;
+			overflow: hidden;
+			border-radius: 14px;
+			border: 1px solid var(--border-subtle);
+			background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(3, 7, 18, 0.92));
+			padding: 0.45rem 0;
+			display: flex;
+			align-items: center;
+		}
+
+		.ticker-shell::before,
+		.ticker-shell::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			width: 42px;
+			height: 100%;
+			z-index: 2;
+		}
+
+		.ticker-shell::before {
+			left: 0;
+			background: linear-gradient(to right, rgba(15, 23, 42, 1), rgba(15, 23, 42, 0));
+		}
+
+		.ticker-shell::after {
+			right: 0;
+			background: linear-gradient(to left, rgba(15, 23, 42, 1), rgba(15, 23, 42, 0));
+		}
+
+		.ticker-track {
+			display: flex;
+			gap: 0.6rem;
+			min-width: max-content;
+			animation: marquee 36s linear infinite;
+			padding-inline: 0.6rem;
+		}
+
+		.ticker-track-b {
+			animation-delay: -18s;
+		}
+
+		.ticker-shell:hover .ticker-track {
+			animation-play-state: paused;
+		}
+
+		.ticker-item {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			padding: 0.4rem 0.7rem;
+			border-radius: 999px;
+			background: rgba(30, 41, 59, 0.85);
+			border: 1px solid rgba(148, 163, 184, 0.25);
+			white-space: nowrap;
+			text-decoration: none;
+			color: #e2e8f0;
+			font-size: 0.86rem;
+		}
+
+		.ticker-empty {
+			margin: 0;
+			padding: 0.4rem 0.85rem;
+			font-size: 0.85rem;
+			color: #cbd5e1;
+		}
+
+		.ticker-item:hover {
+			background: rgba(14, 165, 233, 0.2);
+			border-color: rgba(14, 165, 233, 0.45);
+			color: #f0f9ff;
+		}
+
+		.ticker-tag {
+			font-size: 0.7rem;
+			padding: 0.18rem 0.45rem;
+			border-radius: 999px;
+			background: rgba(56, 189, 248, 0.2);
+			color: #bae6fd;
+			font-weight: 700;
+		}
+
+		.filter-card {
+			padding: 0.9rem;
+			display: grid;
+			gap: 0.7rem;
+		}
+
+		.filter-grid {
+			display: grid;
+			grid-template-columns: 2fr 1fr 1fr 1fr;
+			gap: 0.7rem;
+		}
+
+		.count-text {
+			margin: 0;
+			font-size: 0.86rem;
+			color: #cbd5e1;
+		}
+
+		.notice-grid {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 0.85rem;
+		}
+
+		.notice-card {
+			display: grid;
+			gap: 0.55rem;
+			padding: 0.95rem;
+		}
+
+		.notice-head {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 0.5rem;
+		}
+
+		.badge-row {
+			display: flex;
+			align-items: center;
+			gap: 0.35rem;
+			flex-wrap: wrap;
+		}
+
+		.notice-head time {
+			font-size: 0.76rem;
+			color: #93a3b8;
+		}
+
+		.badge {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.2rem 0.5rem;
+			border-radius: 999px;
+			font-size: 0.7rem;
+			text-transform: uppercase;
+			letter-spacing: 0.04em;
+			font-weight: 700;
+			background: rgba(59, 130, 246, 0.2);
+			color: #dbeafe;
+		}
+
+		.badge-meta {
+			background: rgba(16, 185, 129, 0.18);
+			color: #bbf7d0;
+		}
+
+		.important-chip {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.2rem 0.5rem;
+			border-radius: 999px;
+			font-size: 0.68rem;
+			letter-spacing: 0.03em;
+			font-weight: 700;
+			background: rgba(251, 191, 36, 0.2);
+			color: #fef3c7;
+			border: 1px solid rgba(251, 191, 36, 0.45);
+		}
+
+		.new-chip {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.2rem 0.5rem;
+			border-radius: 999px;
+			font-size: 0.68rem;
+			letter-spacing: 0.05em;
+			font-weight: 800;
+			background: rgba(220, 38, 38, 0.24);
+			color: #fee2e2;
+			border: 1px solid rgba(248, 113, 113, 0.46);
+		}
+
+		.notice-card h2 {
+			font-size: 1rem;
+			line-height: 1.4;
+			margin: 0;
+		}
+
+		.notice-source {
+			margin: 0;
+			font-size: 0.82rem;
+			color: #cbd5e1;
+		}
+
+		.notice-age {
+			color: #93c5fd;
+			font-weight: 600;
+		}
+
+		.notice-link {
+			font-weight: 700;
+			font-size: 0.88rem;
+			color: #7dd3fc;
+		}
+
+		@keyframes marquee {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-100%);
+			}
+		}
+
+		@media (max-width: 980px) {
+			.notice-grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+		}
+
+		@media (max-width: 680px) {
+			.filter-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.notice-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.ticker-track {
+				animation-duration: 44s;
+			}
+		}
+	</style>
+
+	<Footer />
+</Layout>

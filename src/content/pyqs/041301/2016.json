@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Examination, 2016",
+    "subject": "Basic Electronics",
+    "subject_slug": "basic-electronics",
+    "subject_code": "041301",
+    "year": 2016,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this Paper.",
+    "Attempt Five questions in all.",
+    "Question No. 1 is Compulsory.",
+    "The marks are indicated in the right hand margin."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "Difference between BJT and MOSFET.",
+              "id": "1a",
+              "marks": 2
+            },
+            {
+              "text": "Define thermal run way.",
+              "id": "1b",
+              "marks": 2
+            },
+            {
+              "text": "Difference between depletion mode and enhancement mode MOSFET.",
+              "id": "1c",
+              "marks": 2
+            },
+            {
+              "text": "List the most important SCR parameters for low-current devices.",
+              "id": "1d",
+              "marks": 2
+            },
+            {
+              "text": "Emitter saturation voltage of UJT.",
+              "id": "1e",
+              "marks": 2
+            },
+            {
+              "text": "List the most important parameters of operational amplifier and their typical values.",
+              "id": "1f",
+              "marks": 2
+            },
+            {
+              "text": "Define the Pinch-off voltage JFET.",
+              "id": "1g",
+              "marks": 2
+            },
+            {
+              "text": "Define flat-band voltage.",
+              "id": "1h",
+              "marks": 2
+            },
+            {
+              "text": "State the applications of light emitting diode.",
+              "id": "1i",
+              "marks": 2
+            },
+            {
+              "text": "Why the BJT dimensions of Emitter, Base and Collector of are not same?",
+              "id": "1j",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "text": "Derive and explain an intrinsic carrier concentration ($n_i$) of a semiconductor.",
+              "id": "2a",
+              "marks": 6
+            },
+            {
+              "text": "Explain the operation and characteristics of light emitting diode.",
+              "id": "2b",
+              "marks": 8
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "text": "For the circuit shown in Figure 1, determine\n(i) d.c. output voltage\n(ii) rectification efficiency\n(iii) peak inverse voltage\n(iv) output frequency\n[Diagram: Center-tapped transformer with 10:1 ratio, 220V 50Hz input, bridge rectifier with four diodes, 250 ohm load resistor]",
+              "id": "3a",
+              "marks": 8
+            },
+            {
+              "text": "Explain the operation of $p^+-n$ silicon diode at equilibrium condition. Also derive the expression for the following :\n(i) Maximum electric field ($E_{max}$)\n(ii) Depletion width (W)\n(iii) Built-in potential ($V_{bi}$)",
+              "id": "3b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "text": "Accurately analyze the collector-to-base bias circuit is shown in Figure 2 to determine the $I_B, I_C$ and $V_{CE}$ when\n(i) $\\beta=50$ and\n(ii) $\\beta=200$ Assume $V_{BE} = 0.7\\text{ V}$.\n[Diagram: Collector-to-base bias circuit with $V_{CC}=18\\text{V}, R_C=2.2\\text{ k}\\Omega, R_B=270\\text{ k}\\Omega$]",
+              "id": "4a",
+              "marks": 8
+            },
+            {
+              "text": "Sketch typical BJT common-emitter input and output characteristics. Explain the shapes of the characteristics.",
+              "id": "4b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "text": "Draw the two biasing circuits for JFET and explain.",
+              "id": "5a",
+              "marks": 8
+            },
+            {
+              "text": "Derive the gain expression of an integrator and a differentiator using op-amp.",
+              "id": "5b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "text": "Explain the basic operation and characteristics of n-channel depletion type MOSFET.",
+              "id": "6a",
+              "marks": 8
+            },
+            {
+              "text": "Sketch a $180^\\circ$ phase control for an SCR. Draw the load waveform and explain the circuit operation.",
+              "id": "6b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "text": "Draw Sketches to show the basic construction and equivalent circuit of a unijunction transistor (UJT). Briefly explain the device operation.",
+              "id": "7a",
+              "marks": 8
+            },
+            {
+              "text": "Design a clamper to perform the function shown in the Figure 3 shown below.\n[Diagram: Input pulse $\\pm 20\\text{V}$, output pulse $30\\text{V}$ to $-10\\text{V}$, Design block with input $V_{in}$ and output $V_{out}$]",
+              "id": "7b",
+              "marks": 6
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "text": "Briefly explain the small signal model of JFET.",
+              "id": "8a",
+              "marks": 6
+            },
+            {
+              "text": "An integrator using op-amp has following component values. $R_i = 1\\text{ k}\\Omega, R_f = 100\\text{ k}\\Omega$ and $C_f = 0.1\\text{ }\\mu\\text{F}$. A $1\\text{ kHz}$ square wave applied to integrator. The amplifier uses $\\pm 15\\text{ V}$ supply and output saturates at $\\pm 14\\text{V}$ if input alternates between $\\pm 5\\text{ V}$ then.\n(i) Determine the maximum change in output\n(ii) Determine the maximum slew rate.",
+              "id": "8b",
+              "marks": 8
+            }
+          ]
+        },
+        {
+          "text": "Answer the following questions:",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "text": "Define the gate power dissipation and explain its importance in SCR.",
+              "id": "9a",
+              "marks": 7
+            },
+            {
+              "text": "Explain the operation of centre tapped full wave rectifier. And calculate the rms load current and voltage for a sinusoidal input.",
+              "id": "9b",
+              "marks": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

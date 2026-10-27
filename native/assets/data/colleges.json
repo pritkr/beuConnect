@@ -1,0 +1,5458 @@
+{
+ "dataset": "colleges",
+ "generatedAt": "2026-10-25T21:55:30Z",
+ "source": "src/data/colleges.json; src/lib/beuReg.ts; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv; https://beu.prit.eu.org/data/manifest/index.json",
+ "batches": [
+  "21",
+  "22",
+  "23",
+  "24",
+  "25"
+ ],
+ "branches": [
+  {
+   "code": "101",
+   "name": "Civil Engineering",
+   "slug": "civil",
+   "collegeCount": 49
+  },
+  {
+   "code": "102",
+   "name": "Mechanical Engineering",
+   "slug": "mech",
+   "collegeCount": 49
+  },
+  {
+   "code": "103",
+   "name": "Electrical Engineering",
+   "slug": "ee",
+   "collegeCount": 32
+  },
+  {
+   "code": "104",
+   "name": "Electronics & Communication Engineering",
+   "slug": "ece",
+   "collegeCount": 23
+  },
+  {
+   "code": "105",
+   "name": "Computer Science & Engineering",
+   "slug": "cse",
+   "collegeCount": 40
+  },
+  {
+   "code": "110",
+   "name": "Electrical & Electronics Engineering",
+   "slug": "eee",
+   "collegeCount": 15
+  },
+  {
+   "code": "161",
+   "name": "Electrical & Electronics Engineering (161)",
+   "slug": "eee",
+   "collegeCount": 1
+  }
+ ],
+ "colleges": [
+  {
+   "code": "102",
+   "name": "Vidya Vihar Institute of Technology, Purnea",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "vvitpurnea",
+   "link": "https://vvit.org/"
+  },
+  {
+   "code": "103",
+   "name": "Netaji Subhas Institute of Technology, Bihta",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "nsitbihta",
+   "link": "https://www.nsit.in/"
+  },
+  {
+   "code": "106",
+   "name": "Sityog Institute of Technology, Aurangabad",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "sityogaurangabad",
+   "link": "https://www.sityog.edu.in/"
+  },
+  {
+   "code": "107",
+   "name": "MIT Muzaffarpur",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "fullName": "Muzaffarpur Institute of Technology, Muzaffarpur",
+   "abbr": "mitmzfr",
+   "link": "https://www.mitmuzaffarpur.org/"
+  },
+  {
+   "code": "108",
+   "name": "Bhagalpur College of Engineering, Bhagalpur",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "abbr": "bcebhagalpur",
+   "link": "https://www.bcebhagalpur.ac.in/"
+  },
+  {
+   "code": "109",
+   "name": "Nalanda College of Engineering, Chandi",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "ncechandi",
+   "link": "https://ncechandi.ac.in/"
+  },
+  {
+   "code": "110",
+   "name": "Gaya College of Engineering, Gaya",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gcegaya",
+   "link": "https://www.gcegaya.ac.in/"
+  },
+  {
+   "code": "111",
+   "name": "Darbhanga College of Engineering, Darbhanga",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "dcedarbhanga",
+   "link": "https://www.dce-darbhanga.org/"
+  },
+  {
+   "code": "113",
+   "name": "Motihari College of Engineering, Motihari",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "mcemotihari",
+   "link": "https://www.mcemotihari.ac.in/"
+  },
+  {
+   "code": "117",
+   "name": "LNJP Institute of Technology, Chapra",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "fullName": "Lok Nayak Jai Prakash Institute of Technology, Chapra",
+   "abbr": "lnjpit",
+   "link": "https://www.lnjpitchapra.ac.in/"
+  },
+  {
+   "code": "118",
+   "name": "Buddha Institute of Technology, Gaya",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "23": [
+       4
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "bitgaya",
+   "link": "https://bodhgayabit.net/"
+  },
+  {
+   "code": "119",
+   "name": "Adwaita Mission Institute of Technology, Banka",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       6
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "amitbanka",
+   "link": "https://amitshivdham.org/"
+  },
+  {
+   "code": "122",
+   "name": "Exalt College of Engineering & Technology, Vaishali",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "22": [
+       5,
+       6
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "medium",
+     "source": "public/data/students_*.csv",
+     "batches": {
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "exaltvaishali",
+   "link": "https://exalteducation.in/"
+  },
+  {
+   "code": "123",
+   "name": "Siwan Engineering & Technical Institute, Siwan",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "scesiwan",
+   "link": "https://www.siwanengineeringcollege.in/"
+  },
+  {
+   "code": "124",
+   "name": "Sershah Engineering College, Sasaram",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "abbr": "scesasaram",
+   "link": "https://www.scesasaram.in/"
+  },
+  {
+   "code": "125",
+   "name": "RRSDCE Begusarai",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "fullName": "RRSDCE, Begusarai",
+   "abbr": "rrsdcebegusarai",
+   "link": "https://www.rrsdcebgs.ac.in/"
+  },
+  {
+   "code": "126",
+   "name": "Bakhtiyarpur College of Engineering, Patna",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "abbr": "bcepatna",
+   "link": "https://bcebakhtiyarpur.ac.in/"
+  },
+  {
+   "code": "127",
+   "name": "Sitamarhi Institute of Technology, Sitamarhi",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "sitsitamarhi",
+   "link": "https://www.sitsitamarhi.ac.in/"
+  },
+  {
+   "code": "128",
+   "name": "B. P. Mandal College of Engineering, Madhepura",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "abbr": "bpmce",
+   "link": "https://www.bpmcemadhepura.org/"
+  },
+  {
+   "code": "129",
+   "name": "Katihar Engineering College, Katihar",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "abbr": "keckatihar",
+   "link": "http://keck.ac.in/"
+  },
+  {
+   "code": "130",
+   "name": "Supaul College of Engineering, Supaul",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "scesupaul",
+   "link": "https://www.scesupaul.org/"
+  },
+  {
+   "code": "131",
+   "name": "Purnea College of Engineering, Purnea",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "pcepurnea",
+   "link": "https://www.pcepurnia.org/"
+  },
+  {
+   "code": "132",
+   "name": "Saharsa College of Engineering, Saharsa",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "scesaharsa",
+   "link": "https://www.scesaharsa.org/"
+  },
+  {
+   "code": "133",
+   "name": "Government Engineering College, Jamui",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "abbr": "gecjamui",
+   "link": "https://www.gecjamui.org/"
+  },
+  {
+   "code": "134",
+   "name": "Government Engineering College, Banka",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecbanka",
+   "link": "https://www.gecbanka.org/"
+  },
+  {
+   "code": "135",
+   "name": "Government Engineering College, Vaishali",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecvaishali",
+   "link": "https://www.gecvaishali.ac.in/"
+  },
+  {
+   "code": "136",
+   "name": "Mother’s Institute of Technology, Bihta",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "fullName": "Mothers Institute of Technology, Bihta",
+   "abbr": "mitbihta",
+   "link": "https://www.mitbihta.org/"
+  },
+  {
+   "code": "139",
+   "name": "R.P. Sharma Institute of Technology, Patna",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "rpsitpatna",
+   "link": "https://www.rpsit.org.in/"
+  },
+  {
+   "code": "140",
+   "name": "Maulana Azad College of Engineering & Technology, Patna",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "110",
+     "name": "Electrical & Electronics Engineering",
+     "slug": "eee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "macetpatna",
+   "link": "https://macet.ac.in/"
+  },
+  {
+   "code": "141",
+   "name": "Government Engineering College, Nawada",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecnawada",
+   "link": "https://www.gecnawada.org.in/"
+  },
+  {
+   "code": "142",
+   "name": "Government Engineering College, Kishanganj",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "geckishanganj",
+   "link": "https://www.geckishanganj.org/"
+  },
+  {
+   "code": "144",
+   "name": "Government Engineering College, Munger",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecmunger",
+   "link": "https://gecmunger.org/"
+  },
+  {
+   "code": "145",
+   "name": "Government Engineering College, Sheohar",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecsheohar",
+   "link": "https://www.gecsheohar.ac.in/"
+  },
+  {
+   "code": "146",
+   "name": "Government Engineering College, West Champaran",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecwc",
+   "link": "https://www.gecwc.ac.in/"
+  },
+  {
+   "code": "147",
+   "name": "Government Engineering College, Aurangabad",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecaurangabad",
+   "link": "https://www.gecaurangabad.ac.in/"
+  },
+  {
+   "code": "148",
+   "name": "Government Engineering College, Kaimur",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "geckaimur",
+   "link": "https://www.geckaimur.ac.in/"
+  },
+  {
+   "code": "149",
+   "name": "Government Engineering College, Gopalganj",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecgopalganj",
+   "link": "https://www.gecgopalganj.org/"
+  },
+  {
+   "code": "150",
+   "name": "Government Engineering College, Madhubani",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecmadhubani",
+   "link": "https://www.gecmadhubani.ac.in/"
+  },
+  {
+   "code": "151",
+   "name": "Government Engineering College, Siwan",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecsiwan",
+   "link": "https://www.gecsiwan.org/"
+  },
+  {
+   "code": "152",
+   "name": "Government Engineering College, Jehanabad",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecjehanabad",
+   "link": "https://www.gecjehanabad.ac.in/"
+  },
+  {
+   "code": "153",
+   "name": "Government Engineering College, Arwal",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecarwal",
+   "link": "https://www.gecarwal.ac.in/"
+  },
+  {
+   "code": "154",
+   "name": "Government Engineering College, Khagaria",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "geckhagaria",
+   "link": "https://www.geckhagaria.org.in/"
+  },
+  {
+   "code": "155",
+   "name": "Government Engineering College, Buxar",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecbuxar",
+   "link": "https://www.gecbuxar.ac.in/"
+  },
+  {
+   "code": "156",
+   "name": "Government Engineering College, Bhojpur",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecbhojpur",
+   "link": "https://www.gecbhojpur.org/"
+  },
+  {
+   "code": "157",
+   "name": "Government Engineering College, Sheikhpura",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8
+      ],
+      "22": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "23": [
+       1,
+       2,
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       1,
+       2,
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8
+      ],
+      "22": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "23": [
+       1,
+       2,
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8
+      ],
+      "22": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "23": [
+       1,
+       2,
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       1,
+       2,
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ],
+      "25": [
+       1
+      ]
+     }
+    },
+    {
+     "code": "161",
+     "name": "Electrical & Electronics Engineering (161)",
+     "slug": "eee",
+     "confidence": "medium",
+     "source": "public/data/students_*.csv",
+     "batches": {
+      "25": [
+       1
+      ]
+     }
+    }
+   ],
+   "abbr": "gecsheikhpura",
+   "link": "https://www.gecsheikhpura.org.in/"
+  },
+  {
+   "code": "158",
+   "name": "Government Engineering College, Lakhisarai",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecl",
+   "link": "https://www.geclakhisarai.ac.in/"
+  },
+  {
+   "code": "159",
+   "name": "Government Engineering College, Samastipur",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "gecsamastipur",
+   "link": "https://www.gecsamastipur.ac.in/"
+  },
+  {
+   "code": "165",
+   "name": "Shri Phanishwar Nath Renu Engineering College, Araria",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "103",
+     "name": "Electrical Engineering",
+     "slug": "ee",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "104",
+     "name": "Electronics & Communication Engineering",
+     "slug": "ece",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "21": [
+       8
+      ],
+      "22": [
+       5,
+       6
+      ],
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "spnrecararia",
+   "link": "https://spnrecararia.ac.in/"
+  },
+  {
+   "code": "166",
+   "name": "Millia Kishanganj College of Engineering & Technology, Kishanganj",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "fullName": "Millia Kishanganj College of Engineering and Technology, Kishanganj",
+   "abbr": "mkcetkishanganj",
+   "link": "http://milliakcet.org/"
+  },
+  {
+   "code": "167",
+   "name": "Millia Institute of Technology, Purnia",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "23": [
+       3,
+       4
+      ],
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "mitpurnia",
+   "link": "https://mitpurnia.org/"
+  },
+  {
+   "code": "169",
+   "name": "CIPET: Institute of Petrochemicals Technology, Bihta",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "102",
+     "name": "Mechanical Engineering",
+     "slug": "mech",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "fullName": "CIPET, Bihta",
+   "abbr": "cipetbihta",
+   "link": "https://www.cipet.gov.in/"
+  },
+  {
+   "code": "170",
+   "name": "Dr. Ashok Gagan College, Bihta",
+   "source": "src/data/colleges.json",
+   "branches": [
+    {
+     "code": "101",
+     "name": "Civil Engineering",
+     "slug": "civil",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "24": [
+       1,
+       2
+      ]
+     }
+    },
+    {
+     "code": "105",
+     "name": "Computer Science & Engineering",
+     "slug": "cse",
+     "confidence": "high",
+     "source": "https://beu.prit.eu.org/data/manifest/index.json; public/data/manifest/index.json; public/data/students_*.csv; public/data/wide_*.csv",
+     "batches": {
+      "24": [
+       1,
+       2
+      ]
+     }
+    }
+   ],
+   "abbr": "dagcbihta",
+   "link": "https://www.drashokgagancollege.com/"
+  }
+ ]
+}

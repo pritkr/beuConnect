@@ -1,0 +1,41 @@
+---
+export const prerender = true;
+import branchConfig from "../../../assets/data/config.json";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/header.astro";
+import Footer from "../../../components/footer.astro";
+
+export async function getStaticPaths() {
+	return branchConfig.branches.map((branch) => ({
+		params: { branch: branch.code },
+	}));
+}
+
+const { branch } = Astro.params;
+const branchInfo = branchConfig.branches.find((b) => b.code === branch);
+if (!branchInfo) throw new Error(`Unknown branch: ${branch}`);
+---
+
+<Layout title={`${branchInfo.name} Syllabus`}>
+    <Header />
+    <h1><a href="../" style="view-transition-name:beusyl">←BEU Syllabus</a></h1>
+    <h2 style={`view-transition-name:${branch}`}>{branchInfo.name}</h2>
+    <h2>Semesters</h2>
+
+    <ul>
+        {
+            Array.from({ length: 8 }, (_, i) => i + 1).map((sem) => (
+                <li>
+                    <a
+                        href={`${import.meta.env.BASE_URL}syllabus/${branch}/${sem}/`}
+                        style={`view-transition-name:sem${sem}`}
+                    >
+                        Semester {sem}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+
+    <Footer />
+</Layout>

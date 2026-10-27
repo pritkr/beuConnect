@@ -1,0 +1,346 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech. 1st Semester Exam., 2013",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031101",
+    "year": 2013,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "type": "mcq",
+          "text": "Choose the correct answer (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "A network contains linear resistors and ideal voltage sources. If the value of all the resistors are doubled, then the voltage across each resistor is",
+              "options": [
+                "halved",
+                "doubled",
+                "increased by four times",
+                "not changed"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "Which pair of circuits are equivalent? [Diagram: Four circuits (1) 20V voltage source in series with 5 ohm resistor, (2) 4A current source in parallel with 5 ohm resistor, (3) 4A current source in parallel with 5 ohm resistor, (4) 20V voltage source in parallel with 5 ohm resistor]",
+              "options": [
+                "(1) and (2)",
+                "(2) and (4)",
+                "(1) and (3)",
+                "(3) and (4)"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "text": "The Norton current at terminal a and b of the above circuit is [Diagram: 50V voltage source in series with 5 ohm resistor, connected to terminals a and b, with a 20 ohm resistor in parallel with terminals a and b]",
+              "options": [
+                "10 A",
+                "2.5 A",
+                "2 A",
+                "0 A"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "text": "The current $i(t)$ through a $10 \\Omega$ resistor in series with an inductance is given by",
+              "options": [
+                "$\\sqrt{41}$ A",
+                "$\\sqrt{35}$ A",
+                "5 A",
+                "11 A"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "The following circuit [Diagram: 10 ohm resistor in series with a parallel combination of 4H inductor and 1F capacitor, with another 1F capacitor in parallel with the whole LC combination] resonates at",
+              "options": [
+                "all frequency",
+                "0.5 rad/s",
+                "1 rad/s",
+                "None of the above"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "The value of the current $I_0$ in the following circuit [Diagram: 3\u22200\u00b0 A current source in parallel with j8 ohm inductor and -j2 ohm capacitor. I_0 is current through the capacitor line]",
+              "options": [
+                "4\u22200\u00b0 A",
+                "2.4\u2220-90\u00b0 A",
+                "0.6\u22200\u00b0 A",
+                "-1 A"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "Using nodal analysis, the value of $V_0$ in the following circuit [Diagram: Parallel combination of j6 ohm inductor, 4\u222090\u00b0 A current source, and -j3 ohm capacitor. V_0 is node voltage]",
+              "options": [
+                "-24 V",
+                "-8 V",
+                "8 V",
+                "24 V"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "text": "A 3-phase load is balanced if all the three phases have the same",
+              "options": [
+                "impedance",
+                "power factor",
+                "impedance and power factor",
+                "None of the above"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "Three delta-connected resistors absorb 60 kW when connected to a 3-phase line. If the resistors are connected in star, the power absorbed is",
+              "options": [
+                "60 kW",
+                "20 kW",
+                "40 kW",
+                "180 kW"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "The lack of which force causes the pointer to oscillate?",
+              "options": [
+                "Controlling force",
+                "Deflecting force",
+                "Damping force",
+                "None of the above"
+              ],
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "What do you mean by active and passive elements? Explain Kirchhoff's laws.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "Answer the following:",
+              "sub_questions": [
+                {
+                  "id": "2bi",
+                  "text": "Determine $V_0$ and $i$ in the circuit shown below : [Diagram: Circuit with 12V source, 4 ohm resistor, 2V_0 dependent source, and 6 ohm resistor where V_0 is across the 6 ohm resistor]",
+                  "marks": 4
+                },
+                {
+                  "id": "2bii",
+                  "text": "Find $V_0$ and $i_0$ in the circuit given below : [Diagram: Circuit with 6A source, 2 ohm resistor, i_0/4 dependent source, and 8 ohm resistor with V_0 across it]",
+                  "marks": 3
+                }
+              ]
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "sub_questions": [
+                {
+                  "id": "3ai",
+                  "type": "theory",
+                  "text": "State and explain the superposition theorem. Can superposition theorem be applied to power calculation?",
+                  "marks": 4
+                },
+                {
+                  "id": "3aii",
+                  "type": "numerical",
+                  "text": "Determine the current in the $10 \\Omega$ resistor : [Diagram: Bridge circuit with 10V source, resistors 1 ohm, 2 ohm, 10 ohm, 5 ohm and a 4A current source]",
+                  "marks": 3
+                }
+              ],
+              "text": "..."
+            },
+            {
+              "id": "3b",
+              "sub_questions": [
+                {
+                  "id": "3bi",
+                  "type": "theory",
+                  "text": "State and explain Thevenin's theorem. What is the importance of Thevenin's theorem in circuit analysis? Explain.",
+                  "marks": 3
+                },
+                {
+                  "id": "3bii",
+                  "type": "numerical",
+                  "text": "Find the Thevenin equivalent circuit shown in the figure, to the left of terminal a-b. Then find the current through $R_L = 6 \\Omega$ : [Diagram: Circuit with 32V source, 4 ohm, 12 ohm, 1 ohm resistors, 2A source and load RL]",
+                  "marks": 4
+                }
+              ],
+              "text": "..."
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "Define RMS value and average value of sinusoidal waveform.",
+              "marks": 7
+            },
+            {
+              "id": "4b",
+              "type": "numerical",
+              "text": "Find the average and RMS values of the waveform as shown in the figure : [Diagram: Half wave rectified sinusoidal waveform with peak Vm]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "sub_questions": [
+                {
+                  "id": "5ai",
+                  "type": "numerical",
+                  "text": "An alternating voltage of $80 + 60j$ V is applied to a circuit and the current flowing is $4 - j2$ A. Find (1) impedance, (2) power consumed and (3) power factor.",
+                  "marks": 4
+                },
+                {
+                  "id": "5aii",
+                  "type": "numerical",
+                  "text": "Determine voltage $V_{AB}$ for the network shown in the figure : [Diagram: Circuit with 50\u22200\u00b0 V source, 5 ohm resistor, j5 ohm inductor, -j2 ohm capacitor and 4\u22200\u00b0 A current source]",
+                  "marks": 3
+                }
+              ],
+              "text": "..."
+            },
+            {
+              "id": "5b",
+              "type": "numerical",
+              "text": "Find the value of load impedance $Z_L$ so that maximum power can be transferred to it in the network of the figure given below. Find maximum power : [Diagram: Network with 50\u222045\u00b0 V source, 3 ohm resistor, j10 ohm inductor and Z_L]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "What are the advantages of a three-phase system? Compare between star and delta connections.",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "Three equal impedances, each of $8 + j10 \\Omega$ are connected in star. This is further connected to a 440 V, 50 Hz, three-phase supply. Calculate the active and reactive powers, and line and phase currents.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "theory",
+              "text": "Compare between electric circuit and magnetic circuit.",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "type": "numerical",
+              "text": "The measured values of iron loss of a magnetic specimen of weight 13 kg are 17.2 W and 28.9 W at 40 Hz and 60 Hz respectively, at a constant peak flux density. Determine the value of hysteresis and eddy current losses in W/kg at 50 Hz for same value of flux density.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "List the three forces involved in moving system of PMMC (Permanent Magnet Moving Coil) instrument. Explain the function of each force. How is it typically produced?",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "numerical",
+              "text": "An ammeter (shown below) has a PMMC instrument with a coil resistance of $R_m = 99 \\Omega$ and FSD (Full Scale Division) current of 0.1 mA. Shunt resistance $R_s = 1 \\Omega$. Determine the total current passing through the ammeter at FSD : [Diagram: Ammeter circuit showing coil resistance and shunt resistance]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "type": "theory",
+          "text": "Write short notes on any two of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Star-delta conversion"
+            },
+            {
+              "id": "9b",
+              "text": "Resonance and Q-factor"
+            },
+            {
+              "id": "9c",
+              "text": "Linear and non-linear magnetic circuits"
+            },
+            {
+              "id": "9d",
+              "text": "Energy insulation resistance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

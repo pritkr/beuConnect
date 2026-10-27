@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 2nd Semester Exam., 2015",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031201",
+    "year": 2015,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The questions are of equal value.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "The passive element is",
+              "options": [
+                "voltage source",
+                "current source",
+                "inductor",
+                "transistor"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1b",
+              "text": "If a network contains $B$ branches and $N$ nodes, then the number of mesh current equations would be",
+              "options": [
+                "$B - (N - 1)$",
+                "$N - (B - 1)$",
+                "$B - (N + 1)$",
+                "$(B + N) - 1$"
+              ],
+              "answer": "i"
+            },
+            {
+              "id": "1c",
+              "text": "Three equal resistances of $3 \\Omega$ are connected in star. What is the resistance in one of the arms in an equivalent delta circuit?",
+              "options": [
+                "$10 \\Omega$",
+                "$3 \\Omega$",
+                "$9 \\Omega$",
+                "$27 \\Omega$"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1d",
+              "text": "One sine wave has a period of 2 ms, another has a period of 5 ms and other has a period of 10 ms. Which sine wave is changing at a faster rate?",
+              "options": [
+                "Sine wave with period of 2 ms",
+                "Sine wave with period of 5 ms",
+                "All are at the same rate",
+                "Sine wave with period of 10 ms"
+              ],
+              "answer": "i"
+            },
+            {
+              "id": "1e",
+              "text": "In a series $R$-$L$ circuit, $V_R = 2$ V and $V_L = 3$ V. What is the magnitude of the total voltage?",
+              "options": [
+                "2 V",
+                "3 V",
+                "5 V",
+                "3.61 V"
+              ],
+              "answer": "iv"
+            },
+            {
+              "id": "1f",
+              "text": "Apparent power is expressed in",
+              "options": [
+                "volt-ampere",
+                "watt",
+                "volt-ampere or watt",
+                "VAR"
+              ],
+              "answer": "i"
+            },
+            {
+              "id": "1g",
+              "text": "The maximum power transfer theorem can be applied",
+              "options": [
+                "only to d.c. circuits",
+                "only to a.c. circuits",
+                "to both d.c. and a.c. circuits",
+                "Neither of the two"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1h",
+              "text": "In a series $R$-$L$-$C$ circuit operating below the resonant frequency, the current",
+              "options": [
+                "$I$ leads $V_s$",
+                "$I$ lags behind $V_s$",
+                "$I$ is in phase with $V_s$",
+                "None of the above"
+              ],
+              "answer": "i"
+            },
+            {
+              "id": "1i",
+              "text": "Three-wattmeter method of power measurement can be used to measure power in",
+              "options": [
+                "balanced circuits",
+                "unbalanced circuits",
+                "both balanced and unbalanced circuits",
+                "None of the above"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1j",
+              "text": "Dot convention in coupled circuits is used",
+              "options": [
+                "to measure the mutual inductance",
+                "to determine the polarity of the mutually induced voltage in coils",
+                "to determine the polarity of the self-induced voltage in coils",
+                "None of the above"
+              ],
+              "answer": "ii"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "Explain the series $R$-$L$-$C$ circuit with the help of phasor diagram.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "Find the average and effective values of the sawtooth waveform shown in Fig. 1 below : [Diagram: Fig. 1. Sawtooth wave from 0 to Vm with period T. Periodic peaks at T, 2T, 3T.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "Define the apparent power and power factor.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "For the circuit shown in Fig. 2 below, determine the value of the impedances, if the source delivers a power of 200 W and there is a lagging power factor of 0.707. Also find the apparent power : [Diagram: Fig. 2. Series circuit with 0.5 ohm resistor and impedance Z. Source voltage v(t).]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "type": "numerical",
+          "text": "Write the mesh current equations in the circuit shown in Fig. 3 below and determine the currents : [Diagram: Fig. 3. Circuit with two meshes. Mesh 1 has a 5\u22200\u00b0 V source, a j4 \u03a9 inductor, and a 6 \u03a9 resistor shared with Mesh 2. Mesh 2 has the 6 \u03a9 resistor, a j3 \u03a9 inductor, and a 2 \u03a9 resistor. Mesh currents I1 and I2 are clockwise.]",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "type": "theory",
+          "text": "Derive the expression for bandwidth of series $R$-$L$-$C$ circuit and also explain its frequency limits.",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "type": "numerical",
+          "text": "A symmetrical three-phase, three-wire, 440 V supply is connected to a star-connected load as shown in Fig. 4 below. The impedances in each branch are $Z_R = (2 + j3) \\Omega$, $Z_Y = (1 - j2) \\Omega$ and $Z_B = (3 + j4) \\Omega$. Find its equivalent delta-connected load. The phase sequence is RYB : [Diagram: Fig. 4. Star connected load with phases R, Y, B. ZR = 2 + j3, ZY = 1 - j2, ZB = 3 + j4. Phase voltages are connected to common neutral.]",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "theory",
+              "text": "Explain the analogy between magnetic and electric circuits.",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "type": "numerical",
+              "text": "A coil of 100 turns is wound uniformly over a insulator ring with a mean circumference of 2 m and a uniform sectional area of 0.025 cm$^2$. If the coil is carrying a current of 2 A, calculate (i) the m.m.f. of the circuit, (ii) magnetic field intensity, (iii) flux density and (iv) the total flux.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "Define mutual inductance and coupling coefficient.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "numerical",
+              "text": "A composite magnetic circuit of varying cross-section is shown in Fig. 5 (a) below. The iron portion has the B-H characteristic of Fig. 5 (b). Given $N = 100$ turns, $l_1 = 4l_2 = 40$ cm, $A_1 = 2A_2 = 10$ cm$^2$, $l_g = 2$ mm, leakage flux, $\\phi_l = 0.01$ mWb. Calculate $I$ required to establish an air-gap flux density of 0.6 T : [Diagram: Fig. 5. (a) Magnetic circuit with two loops, air gap in central limb. Coil N is on the left limb. (b) B-H curve showing B in Tesla vs H in AT/m.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "In the extension of instrument range, explain the voltage multipliers.",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "numerical",
+              "text": "The coil of a moving coil instrument is wound with 100 turns. The coil is 20 mm wide and depth of the coil is 30 mm. The flux density in the air gap is 0.1 Wb/m$^2$. Calculate the deflecting torque when carrying a current of 10 mA. Calculate the deflection, if the control spring constant is $2 \\times 10^{-6}$ N-m/degree.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

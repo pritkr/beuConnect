@@ -1,0 +1,240 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2024",
+    "subject": "Semiconductor Physics and Devices",
+    "subject_slug": "semiconductor-physics-and-devices",
+    "subject_code": "104405",
+    "year": 2024,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/answer the following (Any seven question\n                    only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following best describes the energy band model of a semiconductor?</p>",
+          "options": [
+            "Electrons are localized within individual atoms",
+            "Electrons occupy energy bands separated by a band gap",
+            "Electrons are free to move without any restriction",
+            "All energy levels are completely filled"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>In an extrinsic semiconductor at equilibrium, the Fermi level \\(E_F\\) shifts towards:</p>",
+          "options": [
+            "The conduction band in p-type material",
+            "The conduction band in n-type material",
+            "The valence band in n-type material",
+            "The mid-gap energy level in doped semiconductors"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following phenomena describe the generation and recombination processes in\n                        semiconductors?</p>",
+          "options": [
+            "Band-to-band recombination",
+            "Impact ionization",
+            "Auger recombination",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>What is the primary cause of the built-in potential in a PN junction diode?</p>",
+          "options": [
+            "Applied external voltage across the junction",
+            "Diffusion of majority carriers",
+            "Recombination of electrons and holes",
+            "Ionization of donor and acceptor atoms"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which of the following mechanisms is responsible for junction breakdown in a Zener diode?</p>",
+          "options": [
+            "Avalanche multiplication",
+            "Thermal runaway",
+            "Tunneling of carriers across the junction",
+            "Both (i) and (iii)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>In which mode of operation does a Bipolar Junction Transistor (BJT) act as an amplifier?</p>",
+          "options": [
+            "Cutoff mode",
+            "Active mode",
+            "Saturation mode",
+            "Reverse-active mode"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>What is the expression for common-base current gain (\\(\\alpha\\)) of a BJT?</p>",
+          "options": [
+            "\\(\\alpha = I_C / I_B\\)",
+            "\\(\\alpha = I_E / I_C\\)",
+            "\\(\\alpha = I_C / I_E\\)",
+            "\\(\\alpha = I_B / I_C\\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>In a Junction Field-Effect Transistor (JFET), the drain current (\\(I_D\\)) in the saturation\n                        region\n                        is primarily controlled by:</p>",
+          "options": [
+            "The gate-to-source voltage (\\(V_{GS}\\))",
+            "The source current (\\(I_S\\))",
+            "The drain-to-source voltage (\\(V_{DS}\\))",
+            "The drain resistance"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following correctly describes the threshold voltage (\\(V_{th}\\)) of a MOSFET?</p>",
+          "options": [
+            "The voltage at which the drain current becomes zero",
+            "The voltage at which the device enters saturation",
+            "The minimum gate voltage required to form an inversion layer at the semiconductor-oxide\n                            interface",
+            "The voltage at which the oxide layer begins conducting current"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following devices is primarily used for triggering other semiconductor devices like\n                        SCRs?</p>",
+          "options": [
+            "TRIAC",
+            "UJT",
+            "DIAC",
+            "MOSFET"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the concept of the bonding model and energy band model in semiconductors.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain drift and diffusion current mechanisms in semiconductors. Derive the Einstein relation\n                        that\n                        connects diffusion coefficient and mobility.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Discuss the different types of recombination mechanisms and their significance in semiconductor\n                        devices.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Write and explain the continuity equation for charge carriers in semiconductors. Derive the\n                        minority carrier diffusion equation and discuss its importance in the operation of\n                        semiconductor devices.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the Ideal Diode Equation. Derive it quantitatively using the band model and boundary\n                        conditions, stating the assumptions made in the derivation.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the working principles and applications of special diodes such as the Zener diode, Tunnel\n                        diode, Varactor diode and Schottky diode. How do their characteristics differ from a\n                        conventional PN\n                        junction diode?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Discuss the two primary mechanisms of junction breakdown in a PN junction diode- Avalanche\n                        breakdown\n                        and Zener breakdown. Compare their occurrence conditions and characteristics.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Describe the impact of base width modulation (Early effect) on BJT operation. How does it affect\n                        the\n                        common-emitter current gain and output characteristics? Include relevant equations in your\n                        explanation.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the deviations from ideal MOS behaviour, including metal-semiconductor work function\n                        differences, fixed oxide charges, interface traps and threshold voltage shifts. How do these\n                        non-ideal effects influence MOSFET performance?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss the working principles and characteristics of different optoelectronic devices: PIN\n                        Photodiode, Avalanche Photodiode, Solar Cell and LED. Compare their applications.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain the working of a solid-state laser diode. How does it differ from an LED in terms of\n                        construction, working principle, and applications? Discuss its advantages in optical\n                        communication.\n                    </p>"
+        }
+      ]
+    }
+  ]
+}

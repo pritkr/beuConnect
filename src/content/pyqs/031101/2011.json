@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Exam-2011",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031101",
+    "year": 2011,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "Candidates are required to give their answers in their own word as far as practicable.",
+    "The questions are of equal value.",
+    "Answer any five questions."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "theory",
+          "text": "<p>State and explain Kirchhoff's laws. Also verify.</p>"
+        },
+        {
+          "id": "q1_b",
+          "type": "theory",
+          "text": "<p>For the circuit given below, find \\(V_s\\), if \\(i_c = 2e^t\\) amp.</p><div class='diagram-placeholder'>[Diagram: A DC circuit with a voltage source \\(V_s\\), a \\(1\\,\\Omega\\) resistor, a \\(5\\text{ H}\\) inductor, a \\(4\\,\\Omega\\) resistor, and a \\(2\\text{ F}\\) capacitor. The current \\(i_c\\) is marked through the capacitor branch.]</div>"
+        },
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>State and explain Superposition theorem.</p>"
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>Using node voltage method, determine the voltage \\(V_a\\) in the circuit shown below. Also find the current delivered by the controlled source.</p><div class='diagram-placeholder'>[Diagram: A circuit for node voltage analysis. Includes a \\(23\\text{ A}\\) current source, resistors of \\(28\\,\\Omega, 14\\,\\Omega, 10\\,\\Omega, 30\\,\\Omega, 10\\,\\Omega\\), and a voltage-controlled voltage source labeled \\(14 I_1\\).]</div>"
+        },
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>State and Explain Thevenin's theorem. How it is related to Norton's theorem.</p>"
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>Find the Thevenin's equivalent across terminal ab in the circuit shown below:</p><div class='diagram-placeholder'>[Diagram: A DC circuit for Thevenin's equivalent across terminals a-b. Includes a \\(5\\text{ A}\\) current source, a \\(5\\text{ V}\\) voltage source, and resistors of \\(5\\,\\Omega, 20\\,\\Omega, 10\\,\\Omega, 8\\,\\Omega, 1\\,\\Omega\\).]</div>"
+        },
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>Define the following related to AC:</p><ol><li>Period</li><li>Phase difference</li><li>Average value</li><li>RMS value</li><li>Form factor</li></ol>"
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Determine the form factor of the following waveform.</p><div class='diagram-placeholder'>[Diagram: A triangle waveform with peak voltage \\(V_m\\) and period \\(T\\). Vertices at \\((0,0), (T/2, V_m), (T, 0), (3T/2, V_m), (2T, 0)\\).]</div>"
+        },
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>Explain Two wattmeter method for measurement of power in a 3-\\(\\phi\\) circuit.</p>"
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Comment on the following:</p><ol><li>Under what condition will the two wattmeters read equal?</li><li>When will one of the wattmeters read negative?</li></ol>"
+        },
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>State and explain Ampere's circuital law.</p>"
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>Define self and mutual Inductance.</p>"
+        },
+        {
+          "id": "q6_c",
+          "type": "theory",
+          "text": "<p>An Iron ring of mean diameter \\(10\\text{ cm}\\) and a cross-sectional area of \\(2.5\\text{ cm}^2\\) has an air gap of \\(2\\text{ mm}\\) width. It is wound with \\(1500\\) turns of wire carrying a current of \\(0.15\\text{ Amp}\\). Assuming \\(\\mu_r = 800\\), determine the flux density in the air gap. Neglect leakage and fringing.</p>"
+        },
+        {
+          "id": "q7",
+          "type": "theory",
+          "text": "<p>The resistance and leakage reactance of a \\(10\\text{ kVA}, 50\\text{ Hz}, 2300/230\\text{ V}\\) distribution transformer are as:</p><ul><li>\\(r_1 = 4.2\\,\\Omega\\); \\(r_2 = 0.042\\,\\Omega\\)</li><li>\\(x_{l1} = 5.5\\,\\Omega\\); \\(x_{l2} = 0.55\\,\\Omega\\)</li></ul><p>Subscript 1 and 2 denotes H.V. and L.V. side respectively. Find:</p><ol><li>The total leakage impedance referred to H.V. side and L.V. side.</li><li>Consider the transformer to deliver the rated kVA at \\(0.8\\) p.f. (lag) to a load on L.V. side with \\(230\\text{ V}\\) across the load. Find the high tension terminal voltage.</li><li>Consider the core loss to be \\(70\\text{ W}\\), find the efficiency under the condition of part (ii).</li></ol>"
+        },
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "<p>Deduce the expression for voltage induced in the armature of DC machine.</p>"
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "<p>Classify different types of DC motors. Give their circuit diagram. Also draw speed-torque characteristics for these.</p>"
+        },
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>How rotating magnetic field is produced in the Induction motor.</p>"
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>Define slip and draw torque-speed characteristics of Induction Motor (IM).</p>"
+        },
+        {
+          "id": "q9_c",
+          "type": "theory",
+          "text": "<p>Why it is not possible to run the induction motor at synchronous speed?</p>"
+        },
+        {
+          "id": "q10",
+          "type": "theory",
+          "text": "<p>Write notes on any two of the following:</p><ol><li>Maximum power transfer theorem.</li><li>Auto transformer</li><li>Speed control of DC motor</li><li>Star-delta conversion</li></ol>"
+        }
+      ]
+    }
+  ]
+}

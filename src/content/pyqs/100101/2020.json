@@ -1,0 +1,282 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 2nd Semester Special Exam., 2020 (New Course)",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100101",
+    "year": 2020,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct alternative from any seven of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "The full-load copper loss and iron loss of a transformer are $6400 \\text{ W}$ and $5000 \\text{ W}$ respectively. The copper loss and iron loss at half load will be respectively:",
+              "options": [
+                "3200 W and 5000 W",
+                "3200 W and 2500 W",
+                "1600 W and 2500 W",
+                "1600 W and 5000 W"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "In a $100 \\text{ kVA } 1100/220 \\text{ V}, 50 \\text{ Hz } 1\\text{-}\\phi$ transformer with 2000 turns on the HV side, the open circuit test result gives $220 \\text{ V}, 91 \\text{ A}, 5 \\text{ kW}$ on LV side. The core-loss component of current is approximately:",
+              "options": [
+                "9.1 A",
+                "22.7 A",
+                "45 A",
+                "91 A"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "A 4-pole d.c. generator is running at $1500 \\text{ r.p.m.}$ at no load, the frequency of current in the armature winding is:",
+              "options": [
+                "150 Hz",
+                "50 Hz",
+                "0 Hz",
+                "25 Hz"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "What is the load at which maximum efficiency occurs in case of a $3 \\text{ kVA}$ transformer with iron loss of $20 \\text{ W}$ and full-load copper loss of $100 \\text{ W}$?",
+              "options": [
+                "6.70 kVA",
+                "1.54 kVA",
+                "1.34 kVA",
+                "1 kVA"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "In two-wattmeter method of power measurement, if both the wattmeters show positive and equal readings, then it can be concluded that the load:",
+              "options": [
+                "power factor is unity",
+                "power factor is zero",
+                "power factor is 0.5 leading",
+                "power factor is 0.5 lagging"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "Which among these is the least expensive protection for over current in low voltage system?",
+              "options": [
+                "Rewirable fuse",
+                "Isolator",
+                "Circuit breaker",
+                "Air breaker switch"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "A circuit breaker is:",
+              "options": [
+                "power factor correcting device",
+                "a device to neutralize the effect of transients",
+                "a waveform correcting device",
+                "a current interrupting device"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "Which three-phase connection is used to in a transformer to introduce a phase difference of $30^\\circ$ between its output and corresponding input line voltage?",
+              "options": [
+                "Star-Delta",
+                "Star-Star",
+                "Delta-Delta",
+                "Delta-Zigzag"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "Two transformers operating in parallel will share the load depending upon their:",
+              "options": [
+                "ratings",
+                "leakage reactance",
+                "efficiency",
+                "per unit impedance"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "A d.c. shunt generator is supplying a load of $1.8 \\text{ kW}$ at $200 \\text{ V}$. Its armature and filed resistances are $0.4 \\Omega$ and $200 \\Omega$ respectively. What is the generated e.m.f.?",
+              "options": [
+                "190 V",
+                "196 V",
+                "204 V",
+                "210 V"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "numerical",
+              "text": "Open and short circuit tests performed on a $500 \\text{ kVA}, 6600 \\text{ V}/2300 \\text{ V}, 50 \\text{ Hz}$ transformer yielded the following data : No-load loss = $3 \\text{ kW}$, Full-load short circuit loss = $4 \\text{ kW}$. Calculate the load at which the transformer efficiency would be maximum for a given power factor. Calculate the efficiency for a p.f. of $0.85$.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "theory",
+              "text": "Draw the neat and exact phasor diagram of the 1-$\\phi$ transformer on load condition.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "numerical",
+              "text": "A 3-$\\phi$, 4-pole $50 \\text{ Hz}$, star-connected induction motor running on full-load develops a useful torque of $300 \\text{ N-m}$. The rotor e.m.f. is completing 120 cycles per minute. If torque lost in friction is $50 \\text{ N-m}$, calculate\u2014 (i) slip; (ii) net output power; (iii) rotor copper losses/phase; (iv) rotor resistance per phase if rotor current is $60 \\text{ A}$ in running condition.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "theory",
+              "text": "Explain the characteristics (i) T vs. Ia, (ii) N vs. Ia and (iii) N vs. T of DC shunt motor.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "numerical",
+              "text": "A $250 \\text{ V}$ d.c. shunt motor has a shunt resistance of $200 \\Omega$ and an armature resistance of $0.3 \\Omega$. For a given load, motor runs at $1500 \\text{ r.p.m.}$ drawing a current of $22 \\text{ A}$ from the supply. If a resistance of $150 \\Omega$ is added in series with the field winding, find the new armature current and the speed. Assume load torque constant and magnetization curve to be linear.",
+              "marks": 8
+            },
+            {
+              "id": "4b",
+              "type": "theory",
+              "text": "Draw the speed torque characteristics of (i) DC series motor, (ii) DC shunt motor and (iii) DC differentially compound motor.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "sub_questions": [
+            {
+              "id": "5a",
+              "type": "numerical",
+              "text": "Find the current $I_2$ in the following circuit by applying Thevenin\u2019s theorem : [Diagram: A bridge circuit. Voltage source $4\\text{V}$ on left, $6\\text{V}$ on right. Resistors $5\\Omega$ (A-B), $10\\Omega$ (B-C), $12\\Omega$ (C-D), $15\\Omega$ (B-G), $8\\Omega$ (C-F). Terminals H, G, F, E on bottom wire. $I_1$ through $15\\Omega$, $I_2$ through $10\\Omega$, $I_3$ through $8\\Omega$.]",
+              "marks": 7
+            },
+            {
+              "id": "5b",
+              "type": "numerical",
+              "text": "Determine the resistance between the terminals A and B in the circuit below : [Diagram: A bridge circuit. Node A at top, node B at bottom. Resistors $6\\Omega, 4\\Omega$ in upper delta. $3\\Omega, 5\\Omega$ in middle branches. $5\\Omega, 4\\Omega$ in lower branches. $2\\Omega$ vertical resistor in the center.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "Explain the AC circuits containing only inductance and capacitance clearly with equations.",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "A three-phase balanced delta-connected load of $(4 + j8) \\Omega$ is connected across a $400 \\text{ V}$, 3-$\\phi$ balanced supply. Determine the phase currents, line currents and power drawn by the load. Assume the phase sequence to be RYB.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "sub_questions": [
+            {
+              "id": "7a",
+              "type": "theory",
+              "text": "Write the comparison between electric circuits and magnetic circuits.",
+              "marks": 6
+            },
+            {
+              "id": "7b",
+              "type": "theory",
+              "text": "What do you understand from the following terms? (i) Silicon steel (ii) Magnetostriction (iii) Statically induced e.m.f. (iv) Dynamically induced e.m.f.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "What do you understand by earthing? Explain a single-phase a.c. circuit connection with earthing.",
+              "marks": 8
+            },
+            {
+              "id": "8b",
+              "type": "theory",
+              "text": "Explain the procedure to improve the power factor in a.c. circuits.",
+              "marks": 6
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "What are the various DC motors available based on the excitation? Draw their equivalent circuit.",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "numerical",
+              "text": "A single-phase transformer with a ratio of $440 \\text{ V}/110 \\text{ V}$ takes a no-load current of $5 \\text{ A}$ at $0.2 \\text{ p.f.}$ lagging. If the secondary supplies a current of $120 \\text{ A}$ at a p.f. of $0.8$ lagging, estimate the current taken by the primary and draw the phasor diagram.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

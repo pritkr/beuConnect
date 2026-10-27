@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2015",
+    "subject": "Analog Electronics",
+    "subject_slug": "analog-electronics",
+    "subject_code": "041404",
+    "year": 2015,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer of the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "A transistor in common-emitter configuration has",
+              "marks": 2,
+              "options": [
+                "a high input resistance and a low output resistance",
+                "a low input resistance and a high output resistance",
+                "a low input resistance and a low output resistance",
+                "a high input resistance and a high output resistance"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "At room temperature, the value of thermal voltage $V_T$ is",
+              "marks": 2,
+              "options": [
+                "26 V",
+                "26 mV",
+                "2.6 mV",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "Early effect in BJT refers to",
+              "marks": 2,
+              "options": [
+                "avalanche breakdown",
+                "thermal runaway",
+                "base-width modulation",
+                "Zener breakdown"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "Output of a common-collector amplifier is taken from",
+              "marks": 2,
+              "options": [
+                "emitter",
+                "base",
+                "collector",
+                "none of the above"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "The coupling capacitors $C_C$ in an amplifier",
+              "marks": 2,
+              "options": [
+                "only affect the low-frequency response",
+                "only affect the high-frequency response",
+                "have no effect on frequency response",
+                "Both (i) and (ii)"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "Feedback factor $\\beta$ of an amplifier is",
+              "marks": 2,
+              "options": [
+                "always greater than 1",
+                "less than or equal to 1",
+                "always zero",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "Class-C amplifier is mostly used",
+              "marks": 2,
+              "options": [
+                "in tuned amplifier",
+                "in RC coupled amplifier",
+                "as audio amplifier",
+                "as high-voltage amplifier"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "A simple capacitor filter cannot be used for high-load current because",
+              "marks": 2,
+              "options": [
+                "the ripple increases with load",
+                "it uses a large capacitor",
+                "it is very costly",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "The voltage gain of an amplifier without feedback and with negative feedback respectively are 100 and 20. Determine the percentage of negative feedback ($\\beta$).",
+              "marks": 2,
+              "options": [
+                "0.04",
+                "0.05",
+                "0.4",
+                "0.8"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "RC phase-shift oscillators are suitable for",
+              "marks": 2,
+              "options": [
+                "audio frequencies",
+                "radio frequencies",
+                "microwave frequencies",
+                "None of the above"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Derive an expression for small-signal voltage gain $A_V$, input resistance $R_i$ and output resistance $R_o$ of an emitter-follower amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "Describe output characteristics of a common-base amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "3a",
+          "text": "What is difference between ideal and practical constant-voltage source and constant-current source? Explain.",
+          "marks": 7
+        },
+        {
+          "id": "3b",
+          "text": "Consider the circuit shown in the figure below: [Diagram: Circuit diagram of a BJT voltage-divider bias circuit with $+V_{CC} = 15\\text{ V}$, $R_1 = 100\\text{ k}\\Omega$, $R_2 = 50\\text{ k}\\Omega$, $R_C = 5\\text{ k}\\Omega$, $R_E = 3\\text{ k}\\Omega$. Transistor $\\beta = 100$.] Determine the coordinates of the operating point.",
+          "marks": 7
+        },
+        {
+          "id": "4a",
+          "text": "Derive expressions for lower and upper cutoff frequencies of an $RC$-coupled amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "4b",
+          "text": "Write short notes on Darlington-pair amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "5a",
+          "text": "Explain how bias stabilization is achieved in a BJT by the use of self-bias circuit.",
+          "marks": 7
+        },
+        {
+          "id": "5b",
+          "text": "Discuss the necessity of cascading of amplifiers. Explain the meaning of half-power frequency.",
+          "marks": 7
+        },
+        {
+          "id": "6a",
+          "text": "Explain the concept of negative feedback in amplifiers. What is the effect of negative feedback on the input and output impedances of a voltage series feedback amplifier?",
+          "marks": 7
+        },
+        {
+          "id": "6b",
+          "text": "Find the transfer function for an amplifier having low-frequency gain $A_L = \\frac{s \\cdot A_{mid}}{s + \\omega_L}$ and high-frequency gain $A_H = \\frac{A_{mid}}{1 + \\frac{s}{\\omega_H}}$. Find its output when a step input of $1 \\text{ V}$ is applied to it.",
+          "marks": 7
+        },
+        {
+          "id": "7a",
+          "text": "Explain the operation of a class-A power amplifier and calculate its efficiency.",
+          "marks": 7
+        },
+        {
+          "id": "7b",
+          "text": "Explain the working of $RC$ phase-shift oscillator using transistor. Also write the expression for frequency of oscillation.",
+          "marks": 7
+        },
+        {
+          "id": "8a",
+          "text": "State and explain Barkhausen's criterion for sustained oscillations.",
+          "marks": 7
+        },
+        {
+          "id": "8b",
+          "text": "With the help of suitable diagrams, explain the operation of Colpitts oscillator.",
+          "marks": 7
+        },
+        {
+          "id": "9",
+          "text": "Write short notes on any two of the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Early effect"
+            },
+            {
+              "id": "9b",
+              "text": "Crystal oscillator"
+            },
+            {
+              "id": "9c",
+              "text": "Wideband amplifiers"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

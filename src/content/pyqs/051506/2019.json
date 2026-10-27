@@ -1,0 +1,282 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2019",
+    "subject": "Design and Analysis of Algorithms",
+    "subject_slug": "design-and-analysis-of-algorithms",
+    "subject_code": "051506",
+    "year": 2019,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer from any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In the following C++ function, let \\( n \\ge m \\). What is the time complexity of the above\n                        function\n                        assuming \\( n &gt; m \\)?<br/>\n                        int gcd(int n, int m) { if(n%m==0) return m; if(n &lt; m) swap(n, m); while(m&gt;0) { n=n%m; swap(n,\n                            m); }\n                            return n; }</p>",
+          "options": [
+            "\\( \\Theta(\\log n) \\)",
+            "\\( \\Omega(n) \\)",
+            "\\( \\Theta(loglogn) \\)",
+            "\\( \\Theta(sqrt(n)) \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Time complexity of Kadane's Algorithm is</p>",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(n^2) \\)",
+            "\\( O(n \\log n) \\)",
+            "\\( O(n(\\log n)^2) \\)"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Consider an undirected random graph of eight vertices. The probability that there is an edge\n                        between\n                        a pair of vertices is 1/2. What is the expected number of unordered cycles of length three?</p>",
+          "options": [
+            "\\( 1/8 \\)",
+            "\\( 1 \\)",
+            "\\( 7 \\)",
+            "\\( 8 \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Any decision tree that sorts 'n' elements has height</p>",
+          "options": [
+            "\\( \\Omega(\\lg n) \\)",
+            "\\( \\Omega(n) \\)",
+            "\\( \\Omega(n \\lg n) \\)",
+            "\\( \\Omega(n^2) \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>An all-pairs shortest-paths problem is efficiently solved using</p>",
+          "options": [
+            "Dijkstra's algorithm",
+            "Bellman-Ford algorithm",
+            "Kruskal algorithm",
+            "Floyd-Warshall algorithm"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following is an advantage of adjacency list representation over adjacency matrix\n                        representation of a graph?</p>",
+          "options": [
+            "In adjacency list representation, space is saved for sparse graphs.",
+            "DFS and BFS can be done in \\( O(V+E) \\) time for adjacency list representation.",
+            "Adding a vertex in adjacency list representation is easier than adjacency matrix\n                            representation.",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following is true about Huffman Coding?</p>",
+          "options": [
+            "Huffman coding may become lossy in some cases.",
+            "Huffman codes may not be optimal lossless codes in some cases.",
+            "In Huffman coding, no code is prefix of any other code.",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which one of the following is an application of Queue Data Structure?</p>",
+          "options": [
+            "When a resource is shared among multiple consumers",
+            "When data is transferred asynchronously between two processes",
+            "Load balancing",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In linear search algorithm the worst case occurs when</p>",
+          "options": [
+            "the item is somewhere in the middle of the array",
+            "the item is not in the array at all",
+            "the item is the last element in the array",
+            "the item is the last element in the array or is not there at all"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The complexity of binary search algorithm is</p>",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(\\log n) \\)",
+            "\\( O(n^2) \\)",
+            "\\( O(n \\log n) \\)"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Discuss the steps in mathematical analysis for recursive algorithm. Do the same for finding the\n                        factorial of a number?</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What are the rules of manipulate Big-Oh expression? Write about the typical growth rates of\n                        algorithms.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What are the advantages of merge-sort over the quick-sort algorithm?</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What is the time complexity of the matrix multiplication and Strassen's algorithm?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Prove that if \\( f_1(n) = O(g_1(n)) \\) and \\( f_2(n) = O(g_2(n)) \\), then \\( f_1(n)+f_2(n) =\n                        O(g_1(n)+g_2(n)) \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What is the relationship among P, NP and NP complete problems? Show with the help of a diagram.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Compare the various programming paradigms such as divide-and-conquer, dynamic programming and\n                        greedy\n                        approach.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Consider the array A = {26, 17, 41, 14, 21, 30, 47, 10, 16, 19, 21, 28, 38, 7, 12, 14, 20, 35,\n                        39,\n                        3}. Create binary search tree with one more attributes its size of node. Retrieve 17th smallest\n                        element in the tree and rank the 12th element.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What do you mean by optimal solution in greedy approach? Define the properties and function of\n                        greedy\n                        approach. Consider a graph \\( G=(V,E) \\) and find the minimum spanning tree by Prim's\n                        algorithms.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/212.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Explain back-tracking, DFS and BFS with help of small example. Differentiate in between\n                        backtracking\n                        and dynamic programming. Apply the backtracking algorithm to solve the three-colouring problem\n                        for\n                        the graph using state space tree. Assume three colours red, green and blue.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/211.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Kruskal algorithms",
+            "Branch and bound technique",
+            "Amortized analysis",
+            "Divide-N-Conquer VS Dynamic Programming"
+          ]
+        }
+      ]
+    }
+  ]
+}

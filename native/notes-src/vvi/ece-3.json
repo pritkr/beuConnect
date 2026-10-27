@@ -1,0 +1,216 @@
+{
+  "branch": "ece",
+  "sem": 3,
+  "subjects": [
+    {
+      "code": "104301",
+      "name": "Electronic Devices and Circuit Theory",
+      "vvi": [
+        {
+          "topic": "PN junction diode: depletion region and V-I characteristic",
+          "note": "Recombination across the metallurgical junction leaves fixed ions and a barrier potential, about 0.7 V for silicon and 0.3 V for germanium. Forward bias narrows the depletion region and current rises exponentially as I = I₀(e^(V/ηV_T) − 1); reverse bias widens it and only leakage flows until breakdown. Barrier potential falls about 2 mV per °C rise, which is why the diode is also a temperature sensor.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Rectifiers, filters and ripple factor",
+          "note": "A half-wave rectifier conducts for one half cycle, with ripple factor 1.21 and efficiency 40.6%; a full-wave centre-tap or bridge conducts on both halves, with ripple factor 0.482 and efficiency 81.2%, and the bridge has a peak inverse voltage of Vm against 2Vm for the centre tap. A shunt capacitor filter reduces ripple to about I/(fC) for full wave. Draw the waveform and mark the conduction angle.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "BJT: regions of operation and biasing",
+          "note": "Forward-biased emitter junction and reverse-biased collector junction give the active region used for amplification; both forward is saturation and both reverse is cut-off, the two switching states. β = α/(1 − α) and IC = βIB + (1 + β)ICO, so the collector current is almost independent of VCE. Voltage-divider bias is preferred because it holds the Q-point when β varies.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Small-signal CE amplifier and hybrid parameters",
+          "note": "Replace the transistor by the hybrid model with hie, hfe, hre and hoe, then compute current gain, voltage gain, input and output resistance. Av = −hfe R_L'/hie, and the minus sign is the 180° phase inversion of the CE stage. Gain falls at high frequency because of the junction capacitances and the Miller effect.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "JFET and MOSFET characteristics",
+          "note": "A JFET is a voltage-controlled channel: the gate-source voltage widens the depletion region, and in saturation ID = IDSS(1 − VGS/VP)² until pinch-off at VGS = VP. A MOSFET uses an insulated gate, so the input resistance is extremely high; enhancement mode needs VGS above the threshold and depletion mode conducts at VGS = 0. The transfer characteristic and the output characteristic are the two curves to draw.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Feedback amplifiers and Barkhausen criterion",
+          "note": "Negative feedback reduces gain by the factor (1 + Aβ) and in return improves bandwidth, reduces distortion and sets the input and output resistances, depending on whether the feedback is series or shunt, voltage or current. An oscillator is an amplifier with positive feedback that satisfies Barkhausen's condition Aβ = 1 at a total phase shift of 0°. RC phase shift needs three sections for 180°, Wien bridge uses a lead-lag network, and Colpitts and Hartley use an LC tank.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "104302",
+      "name": "Object Oriented Programming",
+      "vvi": [
+        {
+          "topic": "Class, object, access specifiers and constructors",
+          "note": "A class binds data with the functions that operate on it; private members are reachable only through the class's own functions, public members form the interface, and protected members are visible to derived classes. A constructor has the class name, no return type, runs at creation and can be overloaded; a destructor runs at destruction and releases resources. An object is one instance with its own copy of the non-static data members.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Inheritance and its types",
+          "note": "Single, multiple, multilevel, hierarchical and hybrid are the class-level forms. A derived constructor runs the base constructor first, and the access specifier in the inheritance list caps the visibility of the inherited members. In diamond inheritance a virtual base class keeps a single copy of the common base.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Polymorphism: overloading and virtual functions",
+          "note": "Overloading is resolved at compile time from the argument list; a virtual function is resolved at run time from the object's actual type through the vtable. A pure virtual function makes the class abstract and cannot be instantiated. A base destructor must be virtual so that deleting through a base pointer runs the derived destructor.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Operator overloading",
+          "note": "Overload an operator by defining a function named operator followed by the symbol, either as a member, where the left operand is the object, or as a friend, where both operands are parameters. Arity and precedence cannot change, and =, [], () and -> must be members. Return by value for a new object and by reference for compound assignment.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Friend functions, static members and the this pointer",
+          "note": "A friend function is not a member but may read private members; friendship is granted rather than inherited, and it is not mutual. A static data member is shared by all objects and needs one definition outside the class, and a static member function has no this pointer. this points to the calling object and is used to chain calls or to tell a parameter from a member.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Templates and exception handling",
+          "note": "A function template is instantiated once per type used, and a class template parameterises the type of its members. Exceptions use try, throw and catch, the handler is selected by type, and catch(...) must come last. An exception that leaves a constructor must not leak, which is why resources are held by objects whose destructors run.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "104303",
+      "name": "Network Theory",
+      "vvi": [
+        {
+          "topic": "Node and mesh analysis, source transformation",
+          "note": "Mesh analysis writes KVL around each independent loop in terms of mesh currents; nodal analysis writes KCL at each independent node in terms of node voltages and is shorter when many elements meet at one node. A voltage source in series with a resistance converts to a current source in parallel with it, which often removes a node. Choose the method that gives fewer simultaneous equations and state the assumed directions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Network theorems: Thevenin, Norton, superposition and maximum power",
+          "note": "Thevenin gives Vth in series with Rth, Norton gives In in parallel with Rn, and Vth = InRn with Rth = Rn. Rth is the resistance seen looking into the terminals with independent sources killed. Superposition applies only to linear circuits, and maximum power transfer needs RL = Rth and gives Vth²/4Rth.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Transient response of RC, RL and RLC circuits",
+          "note": "A first-order circuit follows the steady value plus (initial − steady)e^(−t/τ), with τ = RC or L/R, and the capacitor voltage or inductor current cannot change instantaneously. A series RLC is overdamped, critically damped or underdamped according to ζ = (R/2)√(C/L), with ωn = 1/√(LC). Write the initial conditions from the circuit before t = 0, then solve.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Resonance in series and parallel circuits",
+          "note": "At series resonance XL = XC, the impedance is R and the current is maximum; f₀ = 1/(2π√(LC)), Q = ω₀L/R = 1/(ω₀CR) and bandwidth = f₀/Q. A parallel tank at resonance presents a high impedance with a circulating current Q times the supply current. The half-power frequencies sit at f₀ ± bandwidth/2.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Two-port network parameters",
+          "note": "Z, Y, ABCD and h parameters relate the port voltages and currents; ABCD suits cascaded sections because the matrices multiply in order. A network is reciprocal when z12 = z21 and symmetrical when z11 = z22. Convert between parameter sets with the standard identities instead of re-deriving from the circuit.",
+          "marks": 7,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Laplace transform method for transients",
+          "note": "Transform element by element: R stays R, L becomes sL with a source for the initial current, and C becomes 1/sC with a source for the initial voltage. Solve the algebraic network for V(s), then invert by partial fractions. The initial-value and final-value theorems check the two ends of the response.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "104304",
+      "name": "Signal & System",
+      "vvi": [
+        {
+          "topic": "LTI systems and convolution",
+          "note": "An LTI system is completely described by its impulse response h(t), and the output is the convolution of the input with h. Convolution in time becomes multiplication in the transform domain, which is why transform methods are used for long signals. Causality needs h(t) = 0 for t < 0, and BIBO stability needs the integral of |h| to be finite.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Fourier series and its properties",
+          "note": "A periodic signal is a sum of harmonics whose coefficients come from the analysis integral, in trigonometric or complex exponential form. An even signal has only cosine terms, an odd signal only sine terms, and half-wave symmetry removes the even harmonics. Parseval's relation equates average power to the sum of the squared coefficient magnitudes.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Fourier transform and its properties",
+          "note": "X(jω) is the integral of x(t)e^(−jωt) and exists for finite-energy signals, giving the continuous spectrum. Time shift adds a phase ramp, frequency shift modulates, differentiation multiplies by jω, and convolution becomes a product. An impulse has a flat spectrum, while a constant has a single impulse at zero frequency.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Laplace transform, ROC and stability",
+          "note": "The Laplace transform generalises the Fourier transform, and the region of convergence makes the transform unique. A causal signal has a right-sided ROC, and stability requires the jω axis inside the ROC, which for a causal system means every pole in the left half plane. The initial and final value theorems apply only where the limits exist.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Z-transform and discrete-time systems",
+          "note": "X(z) is the sum of x[n]z^(−n), with the ROC an annulus; a right-sided sequence is causal and a left-sided one is anti-causal. A shift by k multiplies the transform by z^(−k). A discrete LTI system is stable when all poles lie inside the unit circle, and its frequency response is X(z) evaluated on that circle.",
+          "marks": 7,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Sampling theorem and aliasing",
+          "note": "A signal band-limited to fm must be sampled above the Nyquist rate 2fm to be reconstructible; below it, frequencies above fs/2 fold back as aliases. An anti-aliasing low-pass filter therefore precedes the sampler. Reconstruction uses an ideal low-pass filter with cut-off fs/2, and the zero-order hold is the practical version.",
+          "marks": 8,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "104305",
+      "name": "Engineering Mathematics-III (PDE, Prob/stat)",
+      "vvi": [
+        {
+          "topic": "Formation and solution of first-order PDE",
+          "note": "Form the PDE by eliminating the arbitrary constants or the arbitrary function from the given relation. For Pp + Qq = R, Lagrange's auxiliary equations dx/P = dy/Q = dz/R give two independent integrals u = a and v = b, and the solution is φ(u,v) = 0. A non-linear first-order equation outside the standard forms is solved by Charpit's method.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Linear PDE with constant coefficients",
+          "note": "For f(D,D')z = F(x,y), the complementary function comes from the auxiliary equation with distinct, repeated or complex roots, and the particular integral depends on the form of F. The inverse operator is applied term by term, and the case where a factor vanishes needs the rule of multiplying by x. Write the complementary function first, then the particular integral, then apply the boundary conditions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Heat, wave and Laplace equations by separation of variables",
+          "note": "Put u = X(x)T(t), separate the variables, and use the boundary conditions to fix the eigenvalues; the Fourier series then fits the initial condition. The heat equation ut = α²uxx decays in time, the wave equation utt = c²uxx carries two travelling waves, and Laplace's equation describes the steady state. State every boundary and initial condition before separating.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Bayes' theorem and total probability",
+          "note": "P(A|B) = P(B|A)P(A)/P(B), and the denominator is expanded by the total probability rule over a partition of the sample space. Draw the tree diagram and check that the posterior probabilities sum to one. Independence is P(A∩B) = P(A)P(B), which is not the same as mutual exclusivity.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Random variables and standard distributions",
+          "note": "A random variable maps outcomes to numbers, with the pmf or pdf giving probabilities and the cdf its sum or integral; E(X) = Σxp and Var(X) = E(X²) − [E(X)]². The binomial applies to a fixed number of independent trials with constant p, the Poisson to rare events with mean and variance both λ, and the normal is standardised by z = (x − μ)/σ.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Correlation, regression and curve fitting",
+          "note": "The correlation coefficient r = cov(X,Y)/(σxσy) lies between −1 and 1 and measures linear association only. The regression line of y on x is y − ȳ = r(σy/σx)(x − x̄), and both regression lines pass through the means. The method of least squares fits y = a + bx by solving the two normal equations.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    }
+  ]
+}

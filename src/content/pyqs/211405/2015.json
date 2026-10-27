@@ -1,0 +1,263 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2015",
+    "subject": "Discrete Mathematical Structure and Graph Theory",
+    "subject_slug": "discrete-mathematical-structure-and-graph-theory",
+    "subject_code": "211405",
+    "year": 2015,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The set of all real numbers under the usual multiplication operation is not a group since</p>",
+          "options": [
+            "multiplication is not a binary operation",
+            "multiplication is not associative",
+            "identity element does not exist",
+            "zero has no inverse"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>If \\( R = \\{(1, 2), (2, 3), (3, 3)\\} \\) be a relation defined on \\( A = \\{1, 2, 3\\} \\),\n                        then\n                        \\( R \\circ R \\) is</p>",
+          "options": [
+            "R itself",
+            "\\( \\{(1, 2), (1, 3), (3, 3)\\} \\)",
+            "\\( \\{(1, 3), (2, 3), (3, 3)\\} \\)",
+            "\\( \\{(2, 1), (1, 3), (2, 3)\\} \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Pick out the correct statement(s):</p>",
+          "options": [
+            "The set of all \\( 2 \\times 2 \\) matrices with rational entries (with the usual operations\n                            of\n                            matrix addition and matrix multiplication) is a ring which has no nontrivial ideals.",
+            "Let \\( R = C[0,1] \\) be considered as a ring with the usual operations of pointwise\n                            addition\n                            and pointwise multiplication and let \\( I = \\{f : [0,1] \\rightarrow R | f(1/2) = 0\\}\n                            \\).\n                            Then I is a maximal ideal.",
+            "Let R be a commutative ring and let P be a prime ideal of R. Then R/P is an integral domain.",
+            "None of the above is correct"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Let f and g be the functions defined by \\( f(x) = 2x+3 \\) and \\( g(x) = 3x+2 \\). Then the\n                        composition of f and g is</p>",
+          "options": [
+            "\\( 6x+6 \\)",
+            "\\( 5x+5 \\)",
+            "\\( 6x+7 \\)",
+            "\\( 7x+5 \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Among 200 people, 150 either swim or jog or both. If 85 swim and 60 swim and jog, then how many\n                        people jog?</p>",
+          "options": [
+            "125",
+            "225",
+            "85",
+            "25"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>If a graph is a tree, then</p>",
+          "options": [
+            "it has 2 spanning trees",
+            "it has only 1 spanning tree",
+            "it has 4 spanning trees",
+            "it has 5 spanning trees"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The relation R on the set of all integers, where \\( (x, y) \\in R \\) if and only if \\( xy \\ge\n                        1\n                        \\) is</p>",
+          "options": [
+            "anti-symmetric",
+            "transitive",
+            "symmetric",
+            "both transitive and symmetric"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>How many functions are there from a set with three elements to a set with two elements?</p>",
+          "options": [
+            "6",
+            "8",
+            "12",
+            "7"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which one of the following is correct for any simple connected undirected graph with more than 2\n                        vertices?</p>",
+          "options": [
+            "No two vertices have the same degree",
+            "At least two vertices have the same degree",
+            "At least three vertices have the same degree",
+            "All vertices have the same degree"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>In an unweighted, undirected connected graph, the shortest path from a node S to every other node\n                        is\n                        computed most efficiently, in terms of time complexity, by</p>",
+          "options": [
+            "Dijkstra's algorithm starting from S",
+            "Warshall's algorithm",
+            "performing a DFS starting from S",
+            "performing a BFS starting from S"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define set. Let X be the universal set and \\( S \\subset X \\), \\( T \\subset X \\). Then prove\n                        that:<br/>\n                        (a) \\( (S \\cup T)^c = S^c \\cap T^c \\)<br/>\n                        (b) \\( (S \\cap T)^c = S^c \\cup T^c \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Define relations and function. What is equivalence relation?</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Let A be the set of all people in India. If \\( x, y \\in A \\), then let us say that \\( (x,y)\n                        \\in\n                        R \\) if x and y have the same surname (i.e., last name). Then prove that R is an equivalence\n                        relation.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Define group, Abelian group and groupoid. Also define composition of functions. Let \\( f: R\n                        \\rightarrow \\{x \\in R: x \\ge 0\\} \\) be given by \\( f(x) = x^4 + x^2 + 6 \\) and \\( g:\n                        \\{x\n                        \\in R: x \\ge 0\\} \\rightarrow R \\) be given by \\( g(x) = \\sqrt{x} - 4 \\). Then find \\(\n                        (g\n                        \\circ f)(x) \\) and \\( (f \\circ g)(x) \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Suppose H and K are normal subgroups of G with \\( H \\cap K = \\{1\\} \\). Show that \\( xy = yx\n                        \\)\n                        for all \\( x \\in H \\) and \\( y \\in K \\). Let \\( I \\in R \\) be an ideal.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>The radical \\( \\sqrt{I} = \\{r \\in R | rn \\in I, n \\in\n                        N\\}\n                        \\). Show that \\( \\sqrt{I} \\) is an ideal.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Define commutative ring. Consider the set X, its power set \\( P(X) = \\{A | A \\subset X\\} \\)\n                        is\n                        the set of all subsets of X. Show that the power set is a commutative ring under the following\n                        two\n                        operations \\( A + B = (A - B) \\cup (B - A) \\) where \\( \\cup \\) is set union and \\( - \\)\n                        is\n                        set difference, and \\( AB = A \\cap B \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Prove that (a) the maximum number of nodes N on level i of a binary tree is \\( 2^i \\), \\( i\n                        \\ge 0\n                        \\) and (b) the maximum number of nodes in a binary tree of height h is \\( 2^h - 1 \\), \\( h\n                        \\ge\n                        1 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Define Walks, Paths and Circuits related to a graph. Write down all possible (a) paths from \\(\n                        v_1\n                        \\) to \\( v_8 \\), (b) circuits of G and (c) trails of length three in G from \\( v_3 \\) to\n                        \\(\n                        v_5 \\) of the graph shown in the figure below. </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/204.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Show that if a and b are the only two odd degree vertices of a graph G, then a and b are\n                        connected in\n                        G. Prove that a connected graph G remains connected after removing an edge e from G if and only\n                        if e\n                        lie in some circuit in G.</p>"
+        }
+      ]
+    }
+  ]
+}

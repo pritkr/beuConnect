@@ -1,0 +1,342 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/footer.astro';
+import { getCanonicalPyqSubject } from '../../utils/pyqSubjects';
+
+const allPapers = await getCollection('pyqs');
+
+// Helper to determine Academic Year from semester or subject code
+function getAcademicYear(paper: any) {
+  const sem = paper.data.metadata.semester;
+  const code = paper.data.metadata.subject_code;
+  
+  if (sem) {
+    if (sem <= 2) return "First Year (Sem 1 & 2)";
+    if (sem <= 4) return "Second Year (Sem 3 & 4)";
+    if (sem <= 6) return "Third Year (Sem 5 & 6)";
+    return "Fourth Year (Sem 7 & 8)";
+  }
+  
+  // Fallback heuristic based on subject code (often 3rd digit is semester in older codes)
+  if (code && code.length >= 4) {
+    const semDigit = parseInt(code[2]);
+    if (!isNaN(semDigit) && semDigit > 0 && semDigit <= 8) {
+      if (semDigit <= 2) return "First Year (Sem 1 & 2)";
+      if (semDigit <= 4) return "Second Year (Sem 3 & 4)";
+      if (semDigit <= 6) return "Third Year (Sem 5 & 6)";
+      return "Fourth Year (Sem 7 & 8)";
+    }
+  }
+  
+  return "General / Unspecified";
+}
+
+// Group papers by canonical subject name and then by Academic Year
+const subjectGroups = allPapers.reduce((acc, paper) => {
+  const canonicalSubject = getCanonicalPyqSubject(paper.data.metadata);
+  const subjectCode = paper.data.metadata.subject_code;
+  const acYear = getAcademicYear(paper);
+  
+  if (!acc[acYear]) {
+    acc[acYear] = {};
+  }
+  
+  // Use slug as key to group by name
+  if (!acc[acYear][canonicalSubject.slug]) {
+    acc[acYear][canonicalSubject.slug] = {
+      name: canonicalSubject.name,
+      slug: canonicalSubject.slug,
+      codes: new Set(),
+      years: new Set(),
+      count: 0
+    };
+  }
+  acc[acYear][canonicalSubject.slug].codes.add(subjectCode);
+  acc[acYear][canonicalSubject.slug].years.add(paper.data.metadata.year);
+  acc[acYear][canonicalSubject.slug].count += 1;
+  return acc;
+}, {} as Record<string, any>);
+
+const academicYears = Object.keys(subjectGroups).sort();
+---
+
+<Layout title="PYQ Hub | BEUConnect" description="Access over 1,000 Previous Year Question (PYQ) papers for Bihar Engineering University (BEU). Filter by year, branch, and subject code." wide={true}>
+  <Header />
+  
+  <div class="pyq-hub">
+    <header class="hub-header">
+      <h1>Previous Year Questions</h1>
+      <p>Explore {allPapers.length} papers organized by Academic Year.</p>
+      
+      <div class="controls glass-card">
+        <div class="search-box">
+          <input type="text" id="subjectSearch" placeholder="Search subjects or codes (e.g. 100101)..." />
+        </div>
+        <div class="year-filters">
+          <button class="filter-btn active" data-year="all">All Years</button>
+          {academicYears.map(year => (
+            <button class="filter-btn" data-year={year}>{year.split(' ')[0]} Year</button>
+          ))}
+        </div>
+      </div>
+    </header>
+
+    <div class="academic-year-sections">
+      {academicYears.map(acYear => {
+        const subjects = Object.values(subjectGroups[acYear]).sort((a: any, b: any) => a.name.localeCompare(b.name));
+        
+        return (
+          <section class="ac-year-section" data-group={acYear}>
+            <h2 class="ac-year-title">{acYear}</h2>
+            <div class="subjects-grid">
+              {subjects.map((subject: any) => (
+                <a 
+                  href={`${import.meta.env.BASE_URL}pyqs/${subject.slug}`} 
+                  class="subject-card glass-card"
+                  data-name={subject.name.toLowerCase()}
+                  data-codes={Array.from(subject.codes).join(',')}
+                >
+                  <div class="subject-header">
+                    <div class="title-group">
+                      <h3>{subject.name}</h3>
+                      <div class="codes-list">
+                        {Array.from(subject.codes).map(code => (
+                          <span class="subject-code-badge">{code}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <span class="paper-count-badge">{subject.count} Papers</span>
+                  </div>
+                  <div class="year-tags">
+                    {Array.from(subject.years).sort((a:any, b:any) => b - a).slice(0, 4).map(y => (
+                      <span class="year-tag">{y}</span>
+                    ))}
+                    {subject.years.size > 4 && <span class="year-tag">+{subject.years.size - 4}</span>}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<script>
+  const searchInput = document.getElementById('subjectSearch') as HTMLInputElement;
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const subjectCards = document.querySelectorAll('.subject-card');
+  const sections = document.querySelectorAll('.ac-year-section');
+  
+  let currentFilter = 'all';
+  let searchTerm = '';
+
+  function filter() {
+    sections.forEach((section: any) => {
+      const groupName = section.dataset.group;
+      const cardsInSection = section.querySelectorAll('.subject-card');
+      let sectionHasVisible = false;
+      
+      cardsInSection.forEach((card: any) => {
+        const name = card.dataset.name;
+        const codes = card.dataset.codes;
+        
+        const matchesSearch = name.includes(searchTerm) || codes.includes(searchTerm);
+        const matchesGroup = currentFilter === 'all' || groupName === currentFilter;
+        
+        if (matchesSearch && matchesGroup) {
+          card.style.display = 'flex';
+          sectionHasVisible = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      section.style.display = sectionHasVisible ? 'block' : 'none';
+    });
+  }
+
+  searchInput?.addEventListener('input', (e: any) => {
+    searchTerm = e.target.value.toLowerCase();
+    filter();
+  });
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = (btn as HTMLElement).dataset.year || 'all';
+      filter();
+    });
+  });
+</script>
+
+<style>
+  .pyq-hub {
+    padding: 1rem 0;
+  }
+
+  .hub-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .hub-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hub-header p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .controls {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: var(--radius-md);
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 0.8rem;
+  }
+
+  .year-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.7rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+  }
+
+  .filter-btn.active {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: white;
+  }
+
+  .ac-year-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .ac-year-title {
+    font-size: 1rem;
+    color: var(--accent-cyan);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .subject-card {
+    padding: 0.6rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    height: 100%;
+    border-radius: var(--radius-sm);
+  }
+
+  .subject-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .title-group h3 {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .codes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+  }
+
+  .subject-code-badge {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-family: monospace;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.1rem 0.25rem;
+    border-radius: 3px;
+  }
+
+  .paper-count-badge {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-blue);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .year-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .year-tag {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 600px) {
+    .hub-header h1 { font-size: 1.5rem; }
+    .subjects-grid { grid-template-columns: 1fr; }
+  }
+</style>

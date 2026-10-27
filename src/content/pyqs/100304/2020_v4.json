@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020 (New Course)",
+    "subject": "Data Structures and Algorithms",
+    "subject_slug": "data-structures-and-algorithms",
+    "subject_code": "100304",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following is time complexity of the given code?<br/>\n                        \\( int\\ a=0; \\)<br/>\n                        \\( for(i=0; i&lt; N; i++) \\{ \\)<br/>\n                            \\( \\quad for(j=N; j&gt;i; j--) \\{ \\)<br/>\n                            \\( \\quad \\quad a = a + i + j; \\)<br/>\n                            \\( \\quad \\} \\)<br/>\n                            \\( \\} \\)</p>",
+          "options": [
+            "\\( O(N) \\)",
+            "\\( O(N * \\log(N)) \\)",
+            "\\( O(N * \\sqrt{N}) \\)",
+            "\\( O(N * N) \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following is time complexity of the given code?<br/>\n                        \\( int\\ i,\\ j,\\ k=0; \\)<br/>\n                        \\( for(i=n/2; i&lt;=n; i++) \\{ \\)<br/>\n                            \\( \\quad for(j=2; j&lt;=n; j=j*2) \\{ \\)<br/>\n                                \\( \\quad \\quad k = k + n/2; \\)<br/>\n                                \\( \\quad \\} \\)<br/>\n                                \\( \\} \\)</p>",
+          "options": [
+            "\\( O(N) \\)",
+            "\\( O(N * \\log(N)) \\)",
+            "\\( O(N * \\sqrt{N}) \\)",
+            "\\( O(N * N) \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following cases does not exist in complexity theory?</p>",
+          "options": [
+            "Best case",
+            "Worst case",
+            "Average case",
+            "Null case"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The operation of processing each element in the list is known as</p>",
+          "options": [
+            "sorting",
+            "merging",
+            "inserting",
+            "traversal"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Arrays are best data structures</p>",
+          "options": [
+            "for relatively permanent collections of data",
+            "for the size of the structure and the data in the structure are constantly changing",
+            "Both (i) and (ii)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Each array declaration needs not give, implicitly or explicitly the information about</p>",
+          "options": [
+            "the name of array",
+            "the data type of array",
+            "the first data from the set to be stored",
+            "the index set of the array"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In general, the binary search method needs not more than</p>",
+          "options": [
+            "\\( [\\log_2 n] - 1 \\)",
+            "\\( [\\log n] + 1 \\)",
+            "\\( [\\log_2 n] \\)",
+            "\\( [\\log_2 n] + 1 \\) comparisons."
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>State True or False:<br/>A. Binary search is used for searching in a sorted array.<br/>B. The time\n                        complexity of binary search is O(logn).</p>",
+          "options": [
+            "True, False",
+            "False, True",
+            "False, False",
+            "True, True"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following is non-linear data structure?</p>",
+          "options": [
+            "Stack",
+            "Linked list",
+            "String",
+            "Tree"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which is the correct output for the following sequence of operations? push(5), push(8), pop,\n                        push(2),\n                        push(5), pop, pop, pop, push(1), pop</p>",
+          "options": [
+            "85251",
+            "85521",
+            "82551",
+            "81255"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Analyse the time complexity of the given function and also write the recurrence relation of the\n                        function:<br/>\n                        \\( int\\ DoSomething(int\\ n) \\{ \\)<br/>\n                        \\( \\quad if(n&lt;=2)\\ return\\ 1; \\)<br/>\n                            \\( \\quad else\\ return\\ (DoSomething(floor(sqrt(n))) + n); \\)<br/>\n                            \\( \\} \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Consider the following postfix expression : 873-/6254+*+-<br/>The above expression is evaluated\n                        using\n                        stack. Show the content of stack after each step.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What are the different notations for comparing the time complexity of an algorithm? Explain each\n                        of\n                        them with neat figures.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the queue and circular queue with examples. Also, write the differences between the two.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Let a and b be positive integers. Suppose a function F is defined recursively as follows:<br/>\n                        \\( F(a,b) = \\begin{cases} 0 &amp; \\text{if } a &lt; b \\\\ F(a-b,b) + 1 &amp; \\text{if } b \\le a\n                            \\end{cases} \\)<br/>\n                            Find the values of the following: (a) \\( F(2,3) \\) (b) \\( F(14,3) \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Write the algorithm of prefix evaluation with example.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Write prefix notation of the following infix notation: \\( A+B*C+D \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What do you mean by ADT? Explain the ADT stack with test cases for both pop and push.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Hashing</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Circular linked list</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Adjacency list</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>AVL tree</p>"
+        }
+      ]
+    }
+  ]
+}

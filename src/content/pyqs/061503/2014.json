@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2014",
+    "subject": "OPERATING SYSTEMS",
+    "subject_slug": "operating-systems",
+    "subject_code": "061503",
+    "year": 2014,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Which of the following is a real-time system?",
+              "options": [
+                "On-line railway reservation system",
+                "Process control system",
+                "Aircraft control system",
+                "Payroll processing system"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "A process is a",
+              "options": [
+                "program in high-level language kept on disk",
+                "content of main memory",
+                "program in execution",
+                "job in secondary memory"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "The strategy of allowing processes that are logically runnable to be temporarily suspended is",
+              "options": [
+                "preemptive scheduling",
+                "non-preemptive scheduling",
+                "shortest job first",
+                "first come first served"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "_______ is a technique of improving the priority of process waiting in queue for CPU allocation.",
+              "options": [
+                "Starvation",
+                "Ageing",
+                "Revocation",
+                "Relocation"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Dijkstra's banker algorithm is an operating system to solve the problem of",
+              "options": [
+                "deadlock avoidance",
+                "deadlock recovery",
+                "mutual exclusion",
+                "context sustaining"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "Interval between the time of submission and first response to the job is called",
+              "options": [
+                "waiting time",
+                "turnaround time",
+                "throughput",
+                "response time"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "Virtual memory can be implemented with",
+              "options": [
+                "segmentation",
+                "paging",
+                "Both of the above",
+                "None of the above"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "In which of the following page replacement policies Balady's anomaly occurs?",
+              "options": [
+                "FIFO",
+                "LRU",
+                "LFU",
+                "NRU"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "Which of the following approaches does not require knowledge of the system state?",
+              "options": [
+                "Deadlock detection",
+                "Deadlock prevention",
+                "Deadlock avoidance",
+                "None of the above"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "Memory management scheme having no internal fragmentation is called",
+              "options": [
+                "paging",
+                "segmentation",
+                "Both of the above",
+                "None of the above"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the important properties of the following operating systems :\n(i) Real-time systems\n(ii) Time-sharing systems",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What is an interrupt? Describe the basic interrupt mechanism.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "How is a process different from a program? Explain the process state transition with the help of a diagram.",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What is a thread? Explain the benefits of using threads.",
+              "id": "3_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Justify the statement \"Operating System works like a resource manager\" with an example.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain the concept of implementing interprocess communication through shared memory mechanism using suitable example.",
+              "id": "4_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the concept of critical section with suitable example.",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain the importance of semaphores.",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the importance of resource allocation graph.",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain Banker's algorithm.",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Differentiate between a file and a directory. Justify for the need of file system.",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain the main features of general-graph directory structure.",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Differentiate between preemptive and non-preemptive scheduling.",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Consider the following memory references from a 460-word program :\n10, 11, 104, 170, 73, 309, 185, 245, 246, 434, 450, 364\n(i) Give the reference string assuming page size of 100 words.\n(ii) Find the number of page faults using the LRU algorithm for a memory of 3 frames.",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What do you understand by demand paging? Explain the steps in handling a page fault.",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "How is segmentation different from paging?",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

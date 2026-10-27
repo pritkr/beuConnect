@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2017",
+    "subject": "Network Theory",
+    "subject_slug": "network-theory",
+    "subject_code": "031605",
+    "year": 2017,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of any seven questions. $2 \\times 7 = 14$",
+          "sub_questions": [
+            {
+              "number": "i",
+              "text": "A dc voltage source is connected across a series R-L-C circuit. Under steady-State conditions the applied voltage drops entirely across the",
+              "options": [
+                "(a) R only",
+                "(b) L only",
+                "(c) C only",
+                "(d) R and L only"
+              ],
+              "answer": "(c)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "ii",
+              "text": "In terms of ABCD parameters, a two-port network is symmetrical if and only if",
+              "options": [
+                "(a) $A = B$",
+                "(b) $B = C$",
+                "(c) $C = D$",
+                "(d) $D = A$"
+              ],
+              "answer": "(d)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "iii",
+              "text": "Two two-port networks $\\alpha$ and $\\beta$ having ABCD parameters as $A_{\\alpha} = D_{\\alpha} = 4, A_{\\beta} = D_{\\beta} = 3, B_{\\alpha} = 5, C_{\\alpha} = 3$ and $B_{\\beta} = 4$ and $C_{\\beta} = 2$ are connected in cascade in order of $\\alpha, \\beta$. The equivalent 'A' parameter of the combination is",
+              "options": [
+                "(a) 17",
+                "(b) 22",
+                "(c) 24",
+                "(d) 31"
+              ],
+              "answer": "(b)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "iv",
+              "text": "The number of links for a network graph having 'n' nodes and 'b' branches is",
+              "options": [
+                "(a) $b - n + 1$",
+                "(b) $n - b + 1$",
+                "(c) $b + n - 1$",
+                "(d) $b - n$"
+              ],
+              "answer": "(a)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "v",
+              "text": "For a given network the reduced incidence matrix is given as $Ai = \\begin{bmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 \\\\ 1 & 0 & 0 & 1 & 0 & -1 & 1 \\\\ -1 & -1 & 1 & 0 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & -1 & 1 & 0 & 0 \\end{bmatrix}$ The parallel branches in the graph are",
+              "options": [
+                "(a) 1 and 2",
+                "(b) 2 and 3",
+                "(c) 6 and 7",
+                "(d) none of these"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "vi",
+              "text": "For a transfer function $H(s) = \\frac{P(s)}{Q(s)}$,",
+              "options": [
+                "(a) the degree of $P(s)$ is always greater than the degree of $Q(s)$",
+                "(b) the degree of $P(s)$ and $Q(s)$ are the same",
+                "(c) the degree of $P(s)$ is independent of the degree of $Q(s)$",
+                "(d) the maximum degree of $P(s)$ and $Q(s)$ differ at the most by one"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "vii",
+              "text": "The driving point impedance of the circuit shown in Fig. 1 is given by $Z(s) = \\frac{0.2s}{s^2 + 0.1s + 2}$ the component values are",
+              "options": [
+                "(a) $L = 5 \\text{ H}, R = 0.5 \\Omega, C = 0.1 \\text{ F}$",
+                "(b) $L = 0.1 \\text{ H}, R = 0.5 \\Omega, C = 5 \\text{ F}$",
+                "(c) $L = 5 \\text{ H}, R = 2 \\Omega, C = 0.1 \\text{ F}$",
+                "(d) $L = 0.1 \\text{ H}, R = 2 \\Omega, C = 5 \\text{ F}$"
+              ],
+              "answer": "(a)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "viii",
+              "text": "The first critical frequency nearest to the origin of the complex frequency plane for an R-L driving impedance function will be",
+              "options": [
+                "(a) a zero in the left-half plane",
+                "(b) a zero in the right-half plane",
+                "(c) a pole in the left-half plane",
+                "(d) either a pole or a zero in the left-half plane depending on the connection"
+              ],
+              "answer": "(a)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "ix",
+              "text": "A band stop filter",
+              "options": [
+                "(a) attenuates frequencies lying between two cut-off frequencies $f_1$ and $f_2$ and passes all other frequencies.",
+                "(b) attenuates all frequencies less than lower cut-off frequency.",
+                "(c) attenuates all frequencies above the cut-off frequency, $f_2$.",
+                "(d) passes frequencies between the two cut-off frequencies, $f_1$ and $f_2$."
+              ],
+              "answer": "(a)",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "x",
+              "text": "For a proto-type filter, the $Z_o$ value is",
+              "options": [
+                "(a) resistive in pass band",
+                "(b) inductive in pass band",
+                "(c) capacitive in pass band",
+                "(d) complex impedance in pass band"
+              ],
+              "answer": "(a)",
+              "id": "1_sub",
+              "marks": null
+            }
+          ],
+          "id": "1",
+          "marks": null
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Find the current $i_L(t)$ for $t > 0$ in the circuit shown in Fig. 2 using Laplace transform. (7 marks)",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Determine $i(t)$ and $v(t)$ for $t > 0$ for the circuit shown in Fig. 3. The switch is closed at $t = 0$. using Laplace transfer (7 marks)",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "id": "2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "For the circuit shown in Fig. 4, find poles, zeros and scale factor of the transfer impedance function, $Z_{12}(s) = V_2(s)/I_1(s)$. (14 marks)",
+          "id": "3",
+          "marks": null
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "For the circuit shown in Fig. 5 determine the hybrid parameters. (7 marks)",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Find $V_1$ and $V_2$ in the network shown in Fig. 6 if $y$-parameters are $Y_{11} = \\frac{3}{2}\\mho, Y_{22} = \\frac{5}{6}\\mho, Y_{12} = Y_{21} = -\\frac{1}{2}\\mho$. (7 marks)",
+              "id": "4_sub",
+              "marks": null
+            }
+          ],
+          "id": "4",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "For the network shown in Fig. 7, write the tie-set matrix and determine the loop currents and branch currents using network graph theory. (14 marks)",
+          "id": "5",
+          "marks": null
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Synthesize the impedance function $Z(s) = \\frac{(s^2 + 1)(s^2 + 3)}{s(s^2 + 2)}$ in second cauer form. (7 marks)",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Synthesize the impedance function $Z(s) = \\frac{(s + 1)(s + 5)}{(s + 3)(s + 7)}$ in first Foster form. (7 marks)",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "id": "6",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "For passive filter, derive the fundamental filter equation, with the help of this equation, derive the expressions for cut-off, frequency, attenuation constant and phase shift constant for constant-K low-pass filter. (14 marks)",
+          "id": "7",
+          "marks": null
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "In the circuit shown in Fig. 8, the switch is moved from a to b at $t = 0$. Using Laplace transform find $i(t)$ for $t > 0$, assuming that the switch was at position a for a long time. (7 marks)",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Derive the reciprocity condition for a two-port network in terms of h-parameters. (7 marks)",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "id": "8",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "A reduced incidence matrix of a network graph is given below. Draw the oriented graph. $Ai = \\begin{bmatrix} 1 & 1 & 0 & 0 & 0 & 0 & 1 \\\\ -1 & -1 & 1 & 0 & 0 & 0 & 0 \\\\ 0 & 0 & -1 & 1 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & -1 & -1 & -1 & 0 \\end{bmatrix}$ (7 marks)",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Check the positive realness of the function $F(s) = \\frac{s^2 + s + 6}{s^2 + s + 1}$. (7 marks)",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "id": "9",
+          "marks": null,
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2022",
+    "subject": "Data Structure & Algorithms",
+    "subject_slug": "data-structure-algorithms",
+    "subject_code": "100304",
+    "year": 2022,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In a stack, if a user tries to remove an element from empty stack it is called:</p>",
+          "options": [
+            "underflow",
+            "empty collection",
+            "garbage collection",
+            "overflow"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Consider the binary max-heap implemented using an array. Which one of the following array\n                        represents\n                        the heap:</p>",
+          "options": [
+            "25, 12, 16, 13, 10, 8, 14",
+            "25, 12, 16, 13, 10, 8, 14",
+            "25, 14, 16, 13, 10, 8, 12",
+            "25, 14, 12, 13, 10, 8, 16"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A hash function is defined as h(key) = key mod 7, with linear probing used to insert keys 44, 45,\n                        79,\n                        55, 91, 18, 63 into a table indexed from 0 to 6. What will be the location of key 18?</p>",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>If the number of values to be sorted is already partially sorted, then ______ sorting can be\n                        efficient.</p>",
+          "options": [
+            "merge",
+            "insertion",
+            "bubble",
+            "selection"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The time complexity of merge sort is:</p>",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(\\log n) \\)",
+            "\\( O(n\\log n) \\)",
+            "\\( O(n^2) \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>State true or false: A: Binary search is used for searching in a sorted array. B: The time\n                        complexity\n                        of binary search is \\( O(\\log n) \\).</p>",
+          "options": [
+            "True, False",
+            "False, True",
+            "False, False",
+            "True, True"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In a circular linked list organization, insertion of a record involves modification of:</p>",
+          "options": [
+            "One pointer",
+            "Two pointers",
+            "More than two pointers",
+            "No pointer"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Level order traversal of a rooted tree can be done by starting from the root and performing:</p>",
+          "options": [
+            "pre-order traversal",
+            "in-order traversal",
+            "depth first search",
+            "breadth first search"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>An Abstract Data Type (ADT) is:</p>",
+          "options": [
+            "same as an abstract class",
+            "a data type that cannot be instantiated",
+            "a data type for which only the operations defined on it can be used, but none else",
+            "all of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>How many distinct BSTs can be constructed with 3 distinct keys?</p>",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain different asymptotic notations (Big-O, \\( \\Omega \\), \\( \\Theta \\)) used for\n                        comparing\n                        the time complexity of an algorithm with neat figures.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>The run time of an algorithm is represented by the recurrence relation \\( T(n) = 2T(n/2) + n\n                        \\);\n                        \\( n \\ge 2 \\) and with boundary condition \\( T(1) = 0 \\). What is the time complexity (in\n                        terms\n                        of \\( \\Theta \\) notation).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Discuss pre-order, in-order and post-order traversal techniques of binary tree. Write a C\n                        function\n                        for non-recursive pre-order traversal.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>The pre-order traversal sequence of a Binary Search Tree (BST) is 30, 20, 10, 15, 25, 23, 39, 35,\n                        42.\n                        Write step by step process to derive the BST and find post-order traversal also.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Consider a circular queue of capacity n-elements implemented with an array. Write C functions for\n                        insertion and deletion operations.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Convert the given infix expression into postfix using stack: \\( A + B / C * (D + E) - F \\). For\n                        each input symbol clearly mention the action taken and status of the stack during conversion.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Write a C function to delete last node from a singly linked list.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Create a max-heap by inserting following keys in the given order. Show each insertion step with\n                        clear\n                        illustration: 25, 35, 18, 9, 46, 70, 48.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Write an algorithm for merge sort and discuss space and time complexity.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Define collision in hashing. Explain briefly different methodologies to resolve collision.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Write algorithm to count leaf nodes in binary tree. What is the complexity of your algorithm?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Compare BFS and DFS traversal techniques for graph. Write an algorithm to perform BFS using\n                        queue.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Differentiate between system defined data types and abstract data types with suitable examples.\n                    </p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is doubly linked list? What are its applications? Explain how a node can be added as last\n                        node\n                        using appropriate pseudo code.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>AVL Rotations</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Open Addressing &amp; Chaining</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>B-Tree</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Priority Queue</p>"
+        }
+      ]
+    }
+  ]
+}

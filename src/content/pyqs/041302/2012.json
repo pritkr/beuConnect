@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2012",
+    "subject": "Digital Electronics",
+    "subject_slug": "digital-electronics",
+    "subject_code": "041302",
+    "year": 2012,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven) :",
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "The decimal equivalent of binary number $1101.0011$ is",
+              "options": [
+                "(i) 12.1875",
+                "(ii) 13.1875",
+                "(iii) 11.1865",
+                "(iv) 13.1865"
+              ]
+            },
+            {
+              "number": "b",
+              "text": "A full adder can be made of",
+              "options": [
+                "(i) two half adders",
+                "(ii) two half adders and a NOR gate",
+                "(iii) two half adders and an OR gate",
+                "(iv) two half adders and an AND gate"
+              ]
+            },
+            {
+              "number": "c",
+              "text": "When two 16-input multiplexers drive a 2-input MUX, what is the result?",
+              "options": [
+                "(i) 2-input MUX",
+                "(ii) 4-input MUX",
+                "(iii) 16-input MUX",
+                "(iv) 32-input MUX"
+              ]
+            },
+            {
+              "number": "d",
+              "text": "The 'race-around' condition occurs when",
+              "options": [
+                "(i) $J = 0, K = 0$",
+                "(ii) $J = 0, K = 1$",
+                "(iii) $J = 1, K = 0$",
+                "(iv) $J = 1, K = 1$"
+              ]
+            },
+            {
+              "number": "e",
+              "text": "The maximum possible number of states in a ripple counter with 5 flip-flops is",
+              "options": [
+                "(i) 32",
+                "(ii) 15",
+                "(iii) 10",
+                "(iv) 5"
+              ]
+            },
+            {
+              "number": "f",
+              "text": "The digital circuit using two inverters shown in the figure will act as",
+              "options": [
+                "(i) a bistable multivibrator",
+                "(ii) an astable multivibrator",
+                "(iii) a monostable multivibrator",
+                "(iv) an oscillator"
+              ]
+            },
+            {
+              "number": "g",
+              "text": "The logic circuit which belongs to non-saturated logic is",
+              "options": [
+                "(i) ECL",
+                "(ii) TTL",
+                "(iii) CMOS",
+                "(iv) NMOS"
+              ]
+            },
+            {
+              "number": "h",
+              "text": "A 12-bit A/D converter has a range of 0-10 V. What is the approximate resolution of the converter?",
+              "options": [
+                "(i) 1 mV",
+                "(ii) 2.5 mV",
+                "(iii) 2.5 \u00b5V",
+                "(iv) 12 mV"
+              ]
+            },
+            {
+              "number": "i",
+              "text": "Which one of the following statements about RAM is not correct?",
+              "options": [
+                "(i) RAM stands for random access memory",
+                "(ii) It is also called read/write memory",
+                "(iii) When power supply is switched off, the information in RAM is usually lost",
+                "(iv) The binary contents are entered or stored in the RAM chip during the manufacturing"
+              ]
+            },
+            {
+              "number": "j",
+              "text": "The minimum number of flip-flop required to construct a mod-75 counter is",
+              "options": [
+                "(i) 5",
+                "(ii) 6",
+                "(iii) 7",
+                "(iv) 8"
+              ]
+            }
+          ],
+          "id": "1",
+          "marks": null
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Draw a full-adder circuit and explain its operation."
+            },
+            {
+              "number": "b",
+              "text": "Explain the general principle of counter-type A/D converter."
+            }
+          ],
+          "id": "2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "State and prove De Morgan's theorem. How is it helpful in minimizing a given Boolean expression?"
+            },
+            {
+              "number": "b",
+              "text": "Show that\n(i) $\\overline{A + B} + \\bar{A}B = \\bar{A}$\n(ii) $(A+B)(B+C)(C+A) = AB + BC + CA$\n(iii) $AB + \\bar{B}\\bar{C} + A\\bar{C} = AB + \\bar{B}\\bar{C}$"
+            },
+            {
+              "number": "c",
+              "text": "Simplify $B + A\\bar{B} + AB$."
+            }
+          ],
+          "id": "3",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "What is J-K flip-flop? How can problems associated with R-S flip-flop be eliminated with the help of J-K flip-flop?"
+            },
+            {
+              "number": "b",
+              "text": "Design a 3-bit synchronous counter using J-K flip-flops."
+            }
+          ],
+          "id": "4",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "How do you realise a parity bit checker?"
+            },
+            {
+              "number": "b",
+              "text": "Describe the operation of the parallel in serial out shift register with neat logic diagram."
+            }
+          ],
+          "id": "5",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Design a mod-8 up-down counter.",
+          "id": "6",
+          "marks": null
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Design a 100 kHz, 60% duty cycle square wave generator using 555 timer."
+            },
+            {
+              "number": "b",
+              "text": "A D/A converter has a full-scale analog output of 10 V and accepts six binary bits as inputs. Find the voltage corresponding to each analog step."
+            }
+          ],
+          "id": "7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "A digital system has four bits of a 4-bit word $ABCD$ as inputs. The output $Y$ is equal to 1 when any two adjacent bits are 1, or any three or all four bits are 1.",
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Draw the Karnaugh map for $Y$."
+            },
+            {
+              "number": "b",
+              "text": "Realise $Y$ using 2-input and 3-input NAND gates only."
+            }
+          ],
+          "id": "8",
+          "marks": null
+        },
+        {
+          "text": "Write short notes on the following :",
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "EEPROM"
+            },
+            {
+              "number": "b",
+              "text": "DTL logic"
+            },
+            {
+              "number": "c",
+              "text": "Race-around condition"
+            },
+            {
+              "number": "d",
+              "text": "Encoders"
+            }
+          ],
+          "id": "9",
+          "marks": null
+        }
+      ]
+    }
+  ]
+}

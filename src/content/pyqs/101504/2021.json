@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 5th Semester Examination, 2021",
+    "subject": "Hydraulic Engineering",
+    "subject_slug": "hydraulic-engineering",
+    "subject_code": "101504",
+    "year": 2021,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>For hydrodynamically rough boundary, the friction coefficient</p>",
+          "options": [
+            "is constant",
+            "varies inversely with Reynolds number",
+            "is function of Reynolds number and relative roughness",
+            "is dependent on relative roughness only"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Boundary layer separation is caused by</p>",
+          "options": [
+            "release of bubbles from the fluid when the pressure goes below the vapour pressure",
+            "an adverse pressure gradient",
+            "reduction of pressure gradient to zero",
+            "the boundary layer thickness reducing to zero value"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Conveyance of a channel section is directly proportional to</p>",
+          "options": [
+            "discharge",
+            "area of cross-section",
+            "bed-slope",
+            "Manning's coefficient"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Reynolds number may be defined as the ratio of</p>",
+          "options": [
+            "viscous forces to inertial forces",
+            "elastic forces to pressure forces",
+            "inertial forces to viscous forces",
+            "gravity forces to inertial forces"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Hydraulic jump is expected when slope of a channel</p>",
+          "options": [
+            "changes from mild to steep",
+            "changes from steep to steeper",
+            "changes from steep to mild",
+            "changes from mild to milder"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following pairs is not correctly matched?</p>",
+          "options": [
+            "Stability of floating body : Metacentre",
+            "Flownet : Streamline",
+            "Manning's equation : Channel flow",
+            "Froude number : Viscosity"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The nominal distance of a boundary layer is defined as the distance from the wall to a point</p>",
+          "options": [
+            "where the velocity is 99% less than the asymptotic limit",
+            "where the velocity ceases to be laminar",
+            "where the velocity is within 90% of the asymptotic limit",
+            "where the velocity is 99% of its asymptotic limit"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A rectangular channel has its width reduced from 60 m to 40 m at transition. If the depth of flow\n                        upstream of the contraction is 1.2 m, the change in the bottom elevation at the transition\n                        required\n                        to cause zero change in the water surface elevation is</p>",
+          "options": [
+            "0.60 m drop",
+            "0.60 m rise",
+            "0.30 m drop",
+            "0.30 m rise"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In a hydraulically efficient circular channel, the ratio of the hydraulic radius to the diameter\n                        of\n                        the channel is</p>",
+          "options": [
+            "1.0",
+            "0.5",
+            "0.25",
+            "0.125"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Bernoulli equation is applicable between any two points</p>",
+          "options": [
+            "in any rotational flow of an incompressible fluid",
+            "in any type of irrotational flow of a fluid",
+            "in steady rotational flow of an incompressible fluid",
+            "in steady irrotational flow of an incompressible fluid"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the characteristics of laminar and turbulent boundary layers.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>A smooth flat plate 1.5 m wide and 2 m long is subjected to flow of water along its length at a\n                        uniform velocity of \\( 2 \\, m/s \\). Find (i) the extent of the laminar boundary layer on the\n                        plate, (ii) the thickness of the boundary layer at the edge of the laminar boundary layer and at\n                        the\n                        trailing edge and (iii) the shear stress at the trailing edge. \\( (\\rho=998 \\, kg/m^3, \\nu=1\n                        \\times\n                        10^{-6} \\, m^2/s) \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the significance of channels of most efficient section.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>A most efficient trapezoidal section is required to give a maximum discharge of \\( 21.5 \\,\n                        m^3/s\n                        \\)\n                        of water. The slope of the channel bottom is 1 in 2500. Taking \\( C=70 \\, m^{1/2}/s \\) in\n                        Chezy's\n                        equation, determine the dimensions of the channel. Also determine the value of Manning's n,\n                        taking\n                        the value of velocity of flow as obtained for the channel by Chezy's equation.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Define and distinguish among stream line, path line and streak line.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>missing question.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Show that the gradually varied flow equation for flow in a rectangular channel of variable width\n                        B\n                        may be expressed as \\( \\frac{dy}{dx} = \\frac{S_0 - S_f + \\frac{Q^2 y}{gA^3}\n                        \\frac{dB}{dx}}{1 -\n                        \\frac{Q^2 B}{gA^3}} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What are the three stages of a CFD software?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Write down the governing equations of fluid flow, stating the assumptions in deriving the\n                        equation\n                        and then explain the significance of each term.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What are the different energies of a fluid? Explain each of them.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A 0.25 m diameter pipe carries oil of specific gravity 0.8 at the rate of 120 liters per second\n                        and\n                        the pressure at a point A is \\( 19.62 \\, kN/m^2 \\) (gage). If the point A is 3.5 m above the\n                        datum\n                        line, calculate the total energy at point A in meters of oil.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What do you understand by (i) steady and unsteady flow; (ii) uniform and non-uniform flow in the\n                        case\n                        of channels?</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>A rectangular channel which is laid on a bottom slope of 0.0064 is to carry \\( 20 \\, m^3/s \\)\n                        of\n                        water. Determine the width of the channel when the flow is in critical condition. Take Manning's\n                        \\(\n                        n=0.015 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>A hydraulic jump occurs in a 90° triangular channel. Derive an equation relating the two depths\n                        and\n                        the flow rate. If the depths before and after the jump in the above channel are 0.5 m and 1.0 m,\n                        determine the flow rate and obtain the Froude numbers before and after the jump.</p>"
+        }
+      ]
+    }
+  ]
+}

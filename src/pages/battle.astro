@@ -1,0 +1,614 @@
+---
+export const prerender = true;
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+---
+
+<Layout title="Result Battle ⚔️ | BEUConnect" description="Compare your BEU semester results head-to-head with your friends. Ultra-dense view.">
+  <Header />
+
+  <section class="battle-container">
+    <div class="battle-header text-center">
+        <h1 class="glitch-text" data-text="RESULT BATTLE">RESULT BATTLE</h1>
+    </div>
+
+    <div class="arena-wrapper">
+        <form id="battleForm" class="battle-setup glass-card">
+            <div class="setup-bar">
+                <input type="text" id="p1Reg" class="reg-input p1-input" placeholder="Player 1 Reg" required autocomplete="on" />
+                <span class="vs-text">VS</span>
+                <input type="text" id="p2Reg" class="reg-input p2-input" placeholder="Player 2 Reg" required autocomplete="on" />
+                
+                <div class="select-wrapper">
+                    <select id="battleSem" class="sem-select" required>
+                        {Array.from({ length: 8 }, (_, i) => (
+                            <option value={i + 1}>SEM {i + 1}</option>
+                        ))}
+                    </select>
+                </div>
+                
+                <button type="submit" class="start-btn" id="strikeBtn">⚔️ STRIKE</button>
+            </div>
+            <div class="status-msg" id="formStatusMsg"></div>
+        </form>
+
+        <div id="battleLoading" class="loading-state hidden">
+            <div class="loader-visual">⚔️</div>
+            <p class="loading-text">COMPARING MIGHT...</p>
+        </div>
+
+        <div id="battleResults" class="results-arena hidden">
+            <!-- Compact Verdict Banner -->
+            <div class="battle-verdict glass-card-strong">
+                <div class="verdict-info">
+                    <div class="crown" id="crownWrap">👑</div>
+                    <div class="v-text-block">
+                        <h2 id="winnerText" class="winner-text">TIE</h2>
+                        <div class="verdict-sub" id="verdictSub">Both challengers hold equal ground!</div>
+                    </div>
+                </div>
+                <button class="rematch-btn" id="newBattleBtn">🔄 NEW BATTLE</button>
+            </div>
+
+            <!-- Ultra-Dense Player Summary Cards -->
+            <div class="summary-cards">
+                <div class="player-card p1-card" id="p1Card">
+                    <div class="p-identity">
+                        <span class="badge p1-badge">P1</span>
+                        <span id="p1Name" class="p-name">--</span>
+                        <span id="p1RegDisplay" class="p-reg">--</span>
+                    </div>
+                    <div class="p-stats">
+                        <div class="stat-box"><span class="label">SGPA</span><strong class="val sgpa-val p1-color" id="p1Sgpa">0.00</strong></div>
+                        <div class="stat-box"><span class="label">CGPA</span><strong class="val cgpa-val" id="p1Cgpa">0.00</strong></div>
+                        <div class="stat-box"><span class="label">REMARK</span><strong class="val status-val" id="p1Status">--</strong></div>
+                    </div>
+                </div>
+
+                <div class="player-card p2-card" id="p2Card">
+                    <div class="p-identity">
+                        <span class="badge p2-badge">P2</span>
+                        <span id="p2Name" class="p-name">--</span>
+                        <span id="p2RegDisplay" class="p-reg">--</span>
+                    </div>
+                    <div class="p-stats">
+                        <div class="stat-box"><span class="label">SGPA</span><strong class="val sgpa-val p2-color" id="p2Sgpa">0.00</strong></div>
+                        <div class="stat-box"><span class="label">CGPA</span><strong class="val cgpa-val" id="p2Cgpa">0.00</strong></div>
+                        <div class="stat-box"><span class="label">REMARK</span><strong class="val status-val" id="p2Status">--</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-layout">
+                <!-- Overview Grid -->
+                <div class="overview-grid">
+                    <div class="overview-card glass-card">
+                        <div class="ov-header">OVERALL CGPA</div>
+                        <div class="ov-body">
+                            <span class="ov-val p1-color" id="ovP1Cgpa">0.00</span>
+                            <span class="ov-center">⚔️</span>
+                            <span class="ov-val p2-color" id="ovP2Cgpa">0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card glass-card">
+                        <div class="ov-header">TOTAL MARKS</div>
+                        <div class="ov-body">
+                            <span class="ov-val p1-color" id="ovP1Marks">0</span>
+                            <span class="ov-center">🎯</span>
+                            <span class="ov-val p2-color" id="ovP2Marks">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card glass-card">
+                        <div class="ov-header">REMARKS</div>
+                        <div class="ov-body">
+                            <span class="ov-badge" id="ovP1Status">--</span>
+                            <span class="ov-center">🛡️</span>
+                            <span class="ov-badge" id="ovP2Status">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subjects Table -->
+                <div class="table-scroll glass-card">
+                    <table class="battle-table">
+                        <thead>
+                            <tr>
+                                <th class="sub-col text-left">Subject</th>
+                                <th class="p1-header">Player 1</th>
+                                <th class="vs-header"></th>
+                                <th class="p2-header">Player 2</th>
+                            </tr>
+                        </thead>
+                        <tbody id="subjectComparisonBody">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+    const form = document.getElementById('battleForm') as HTMLFormElement;
+    const loading = document.getElementById('battleLoading') as HTMLDivElement;
+    const resultsArea = document.getElementById('battleResults') as HTMLDivElement;
+    const statusMsg = document.getElementById('formStatusMsg') as HTMLDivElement;
+    const baseUrl = import.meta.env.BASE_URL;
+
+    // Load saved regs
+    document.addEventListener('DOMContentLoaded', async () => {
+        const p1Input = document.getElementById('p1Reg') as HTMLInputElement;
+        const p2Input = document.getElementById('p2Reg') as HTMLInputElement;
+        const semInput = document.getElementById('battleSem') as HTMLSelectElement;
+        
+        let loadedP1 = false;
+        
+        // Smart Defaults from Profile (Player 1 is always YOU if logged in)
+        if (typeof window !== "undefined" && document.documentElement.classList.contains("is-logged-in")) {
+            try {
+                const { getProfile } = await import("../utils/profileManager");
+                const profile = getProfile();
+                if (profile && profile.regNo) {
+                    p1Input.value = profile.regNo;
+                    // Optional: make it read-only so they know it's their profile
+                    // p1Input.readOnly = true; 
+                    // p1Input.style.opacity = "0.8";
+                    loadedP1 = true;
+                    
+                    if (profile.batchYear) {
+                        let defaultSem = 1;
+                        if (profile.batchYear === 2024) defaultSem = 2;
+                        else if (profile.batchYear === 2023) defaultSem = 4;
+                        else if (profile.batchYear === 2022) defaultSem = 7;
+                        else if (profile.batchYear <= 2021) defaultSem = 8;
+                        else defaultSem = Math.max(1, (profile.currentSem || 2) - 1);
+                        
+                        semInput.value = String(defaultSem);
+                    } else if (profile.currentSem) {
+                        semInput.value = String(Math.max(1, profile.currentSem - 1));
+                    }
+                }
+            } catch (e) {
+                console.error("Smart defaults failed on battle page", e);
+            }
+        }
+
+        if (!loadedP1 && localStorage.getItem('battle_p1')) {
+            p1Input.value = localStorage.getItem('battle_p1') || '';
+        }
+        
+        if (localStorage.getItem('battle_p2')) {
+            p2Input.value = localStorage.getItem('battle_p2') || '';
+        }
+        if (localStorage.getItem('battle_sem') && !document.documentElement.classList.contains("is-logged-in")) {
+            semInput.value = localStorage.getItem('battle_sem') || '1';
+        } else if (!localStorage.getItem('battle_sem') && typeof window !== "undefined" && document.documentElement.classList.contains("is-logged-in")) {
+            // Wait for profile resolution if logged in
+        } else if (!semInput.value) {
+            semInput.value = '1';
+        }
+    });
+
+    type Subject = {
+        code: string;
+        name: string;
+        ese: string;
+        ia: string;
+        total: string;
+        grade: string;
+    };
+
+    type PlayerData = {
+        reg: string;
+        name: string;
+        sgpa: number;
+        cgpa: number;
+        status: string;
+        subjects: Subject[];
+        totalMarks: number;
+        error: string | null;
+    };
+
+    async function fetchResultData(reg: string, sem: string): Promise<PlayerData> {
+        try {
+            const url = `${baseUrl}api/result?reg=${encodeURIComponent(reg)}&sem=${sem}&format=json`;
+            const res = await fetch(url);
+            
+            let jsonData;
+            try {
+                jsonData = await res.json();
+            } catch(e) {
+                 return { reg, name: "", sgpa: 0, cgpa: 0, status: "", subjects: [], totalMarks: 0, error: "Invalid server response" };
+            }
+            
+            if (jsonData.status === 200 && jsonData.data) {
+                const data = jsonData.data;
+                const semIdx = parseInt(sem) - 1;
+                const sgpa = parseFloat(data.sgpa?.[semIdx] || "0");
+                const cgpa = parseFloat(data.cgpa || "0");
+                const status = (data.fail_any && data.fail_any !== "PASS" && data.fail_any !== "NA") ? "FAIL" : "PASS";
+                
+                let totalMarks = 0;
+                const allSubjects = [
+                    ...(data.theorySubjects || []),
+                    ...(data.practicalSubjects || [])
+                ].map((s: any) => {
+                    const total = parseInt(s.total) || 0;
+                    totalMarks += total;
+                    return {
+                        code: s.code || "",
+                        name: s.name || "Unknown",
+                        ese: s.ese || "0",
+                        ia: s.ia || "0",
+                        total: s.total || "0",
+                        grade: s.grade || "F"
+                    };
+                });
+
+                return { reg, name: data.name || "Unknown", sgpa, cgpa, status, subjects: allSubjects, totalMarks, error: null };
+            }
+
+            return { reg, name: "", sgpa: 0, cgpa: 0, status: "", subjects: [], totalMarks: 0, error: jsonData.message || "Not found" };
+        } catch(e: any) {
+            return { reg, name: "", sgpa: 0, cgpa: 0, status: "", subjects: [], totalMarks: 0, error: e.message || "Service unavailable" };
+        }
+    }
+
+    form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const p1Reg = (document.getElementById('p1Reg') as HTMLInputElement).value.trim();
+        const p2Reg = (document.getElementById('p2Reg') as HTMLInputElement).value.trim();
+        const sem = (document.getElementById('battleSem') as HTMLSelectElement).value;
+
+        localStorage.setItem('battle_p1', p1Reg);
+        localStorage.setItem('battle_p2', p2Reg);
+        localStorage.setItem('battle_sem', sem);
+
+        if(p1Reg === p2Reg) {
+            statusMsg.innerHTML = `<div style="color:var(--danger); padding:0.5rem; font-size:0.85rem;">A warrior cannot battle themselves.</div>`;
+            return;
+        }
+
+        form.classList.add('fade-out');
+        setTimeout(() => {
+            form.classList.add('hidden');
+            loading.classList.remove('hidden');
+        }, 200);
+
+        try {
+            const [r1, r2] = await Promise.all([
+                fetchResultData(p1Reg, sem),
+                fetchResultData(p2Reg, sem)
+            ]);
+
+            loading.classList.add('hidden');
+            resultsArea.classList.remove('hidden');
+
+            if(r1.error || r2.error) {
+                document.getElementById('crownWrap')!.style.display = 'none';
+                document.getElementById('winnerText')!.textContent = "VOID";
+                let errStr = "Results missing or servers busy.";
+                if(r1.error && !r2.error) errStr = `P1 error: ${r1.error}`;
+                if(r2.error && !r1.error) errStr = `P2 error: ${r2.error}`;
+                document.getElementById('verdictSub')!.textContent = errStr;
+                return;
+            }
+
+            renderResults(r1, r2);
+
+        } catch(error) {
+            loading.classList.add('hidden');
+            form.classList.remove('hidden');
+            form.classList.remove('fade-out');
+            statusMsg.innerHTML = `<div style="color:var(--danger); padding:0.5rem; font-size:0.85rem;">Network Error. Arena unreachable.</div>`;
+        }
+    });
+
+    document.getElementById('newBattleBtn')?.addEventListener('click', () => {
+        resultsArea.classList.add('hidden');
+        form.classList.remove('hidden');
+        form.classList.remove('fade-out');
+        statusMsg.innerHTML = '';
+        document.getElementById('crownWrap')!.style.display = 'block';
+        
+        document.getElementById('p1Card')!.className = 'player-card p1-card';
+        document.getElementById('p2Card')!.className = 'player-card p2-card';
+    });
+
+    function getGradeColor(grade: string) {
+        const g = grade.trim().toUpperCase();
+        if(['O', 'A+', 'A'].includes(g)) return 'color: #10b981;';
+        if(['B+', 'B', 'C'].includes(g)) return 'color: #f59e0b;';
+        if(['P'].includes(g)) return 'color: #3b82f6;';
+        return 'color: #ef4444;';
+    }
+
+    function renderResults(r1: PlayerData, r2: PlayerData) {
+        // Player 1 Summary
+        document.getElementById('p1Name')!.textContent = r1.name;
+        document.getElementById('p1RegDisplay')!.textContent = r1.reg;
+        document.getElementById('p1Sgpa')!.textContent = r1.sgpa.toFixed(2);
+        document.getElementById('p1Cgpa')!.textContent = r1.cgpa.toFixed(2);
+        const p1StatusEl = document.getElementById('p1Status')!;
+        p1StatusEl.textContent = r1.status;
+        p1StatusEl.className = `val status-val ${r1.status === 'PASS' ? 'status-pass' : 'status-fail'}`;
+
+        // Player 2 Summary
+        document.getElementById('p2Name')!.textContent = r2.name;
+        document.getElementById('p2RegDisplay')!.textContent = r2.reg;
+        document.getElementById('p2Sgpa')!.textContent = r2.sgpa.toFixed(2);
+        document.getElementById('p2Cgpa')!.textContent = r2.cgpa.toFixed(2);
+        const p2StatusEl = document.getElementById('p2Status')!;
+        p2StatusEl.textContent = r2.status;
+        p2StatusEl.className = `val status-val ${r2.status === 'PASS' ? 'status-pass' : 'status-fail'}`;
+
+        const verdict = document.getElementById('winnerText')!;
+        const verdictSub = document.getElementById('verdictSub')!;
+        const p1Card = document.getElementById('p1Card')!;
+        const p2Card = document.getElementById('p2Card')!;
+        
+        p1Card.classList.remove('winner');
+        p2Card.classList.remove('winner');
+
+        if(r1.sgpa > r2.sgpa) {
+            verdict.textContent = "P1 WINS!";
+            verdict.className = "winner-text p1-color";
+            verdictSub.textContent = `P1 dominates by +${(r1.sgpa - r2.sgpa).toFixed(2)} SGPA.`;
+            p1Card.classList.add('winner');
+        } else if(r2.sgpa > r1.sgpa) {
+            verdict.textContent = "P2 WINS!";
+            verdict.className = "winner-text p2-color";
+            verdictSub.textContent = `P2 dominates by +${(r2.sgpa - r1.sgpa).toFixed(2)} SGPA.`;
+            p2Card.classList.add('winner');
+        } else {
+            if(r1.totalMarks > r2.totalMarks) {
+                verdict.textContent = "P1 WINS!";
+                verdict.className = "winner-text p1-color";
+                verdictSub.textContent = `SGPA Tie! P1 wins by +${r1.totalMarks - r2.totalMarks} marks.`;
+                p1Card.classList.add('winner');
+            } else if(r2.totalMarks > r1.totalMarks) {
+                verdict.textContent = "P2 WINS!";
+                verdict.className = "winner-text p2-color";
+                verdictSub.textContent = `SGPA Tie! P2 wins by +${r2.totalMarks - r1.totalMarks} marks.`;
+                p2Card.classList.add('winner');
+            } else {
+                verdict.textContent = "DRAW!";
+                verdict.className = "winner-text draw-color";
+                verdictSub.textContent = "Perfect balance achieved.";
+            }
+        }
+
+        // Overview
+        document.getElementById('ovP1Cgpa')!.textContent = r1.cgpa.toFixed(2);
+        document.getElementById('ovP2Cgpa')!.textContent = r2.cgpa.toFixed(2);
+        document.getElementById('ovP1Marks')!.textContent = r1.totalMarks.toString();
+        document.getElementById('ovP2Marks')!.textContent = r2.totalMarks.toString();
+        
+        const ovP1Stat = document.getElementById('ovP1Status')!;
+        ovP1Stat.textContent = r1.status;
+        ovP1Stat.className = `ov-badge ${r1.status === 'PASS' ? 'pass-bg' : 'fail-bg'}`;
+
+        const ovP2Stat = document.getElementById('ovP2Status')!;
+        ovP2Stat.textContent = r2.status;
+        ovP2Stat.className = `ov-badge ${r2.status === 'PASS' ? 'pass-bg' : 'fail-bg'}`;
+
+        const tbody = document.getElementById('subjectComparisonBody')!;
+        tbody.innerHTML = '';
+
+        const subjectMap = new Map();
+        const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+        r1.subjects.forEach(s => {
+            const key = s.code ? s.code : normalize(s.name);
+            subjectMap.set(key, { s1: s, s2: null, name: s.name });
+        });
+
+        r2.subjects.forEach(s => {
+            const key = s.code ? s.code : normalize(s.name);
+            if(subjectMap.has(key)) subjectMap.get(key).s2 = s;
+            else subjectMap.set(key, { s1: null, s2: s, name: s.name });
+        });
+
+        const sortedSubjects = Array.from(subjectMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+
+        sortedSubjects.forEach(({s1, s2, name}) => {
+            const tr = document.createElement('tr');
+            const p1Total = parseInt(s1?.total || "0");
+            const p2Total = parseInt(s2?.total || "0");
+            
+            let wClass = '';
+            let p1Class = '';
+            let p2Class = '';
+
+            if (p1Total > p2Total) { wClass = 'p1-won'; p1Class = 'win'; p2Class = 'loss'; }
+            else if (p2Total > p1Total) { wClass = 'p2-won'; p2Class = 'win'; p1Class = 'loss'; }
+            else if (p1Total > 0) { wClass = 'tie'; p1Class = 'tie-val'; p2Class = 'tie-val'; }
+
+            const renderSubCell = (s: Subject | null, sideClass: string) => {
+                if(!s) return `<td class="sub-player empty"><span class="empty-dash">-</span></td>`;
+                return `
+                <td class="sub-player ${sideClass}">
+                    <div class="m-dense">
+                        <span class="m-tot ${sideClass}">${s.total}</span>
+                        <span class="m-grd" style="${getGradeColor(s.grade)}">${s.grade}</span>
+                    </div>
+                    <div class="m-brk">I:${s.ia} | E:${s.ese}</div>
+                </td>`;
+            };
+
+            tr.className = `sub-row ${wClass}`;
+            tr.innerHTML = `
+                <td class="sub-name-cell text-left">
+                    <div class="s-name">${name} ${s1?.code || s2?.code ? `<span class="s-code">${s1?.code || s2?.code}</span>` : ''}</div>
+                </td>
+                ${renderSubCell(s1, p1Class)}
+                <td class="sub-vs-cell"><div class="vs-ind ${wClass}"></div></td>
+                ${renderSubCell(s2, p2Class)}
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+</script>
+
+<style>
+    :root {
+        --p1-color: #f43f5e;
+        --p1-dim: rgba(244, 63, 94, 0.15);
+        --p2-color: #3b82f6;
+        --p2-dim: rgba(59, 130, 246, 0.15);
+        --tie-color: #eab308;
+    }
+
+    .p1-color { color: var(--p1-color); }
+    .p2-color { color: var(--p2-color); }
+    .draw-color { color: var(--tie-color); }
+
+    .battle-container { max-width: 1000px; margin: 0 auto; padding: 1rem 0.5rem; }
+    .battle-header { margin-bottom: 1.5rem; }
+    
+    .glitch-text { 
+        font-size: clamp(1.8rem, 5vw, 2.5rem); 
+        font-weight: 900; margin: 0; line-height: 1; 
+        background: linear-gradient(to right, #fff, #a5b4fc);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        letter-spacing: -1px;
+    }
+
+    .glass-card { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 12px; }
+    .glass-card-strong { background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; }
+
+    /* Compact Setup Bar */
+    .battle-setup { margin-bottom: 1.5rem; padding: 0.75rem; }
+    .setup-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; justify-content: center; }
+    
+    .reg-input { 
+        background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; 
+        padding: 0.6rem 0.8rem; font-size: 0.95rem; font-weight: 700; color: white; 
+        text-align: center; text-transform: uppercase; flex: 1; min-width: 140px; max-width: 200px;
+    }
+    .p1-input:focus { border-color: var(--p1-color); outline: none; box-shadow: 0 0 10px var(--p1-dim); }
+    .p2-input:focus { border-color: var(--p2-color); outline: none; box-shadow: 0 0 10px var(--p2-dim); }
+
+    .vs-text { font-weight: 900; font-size: 1rem; color: var(--text-muted); padding: 0 0.5rem; }
+
+    .select-wrapper { position: relative; flex: 0 1 120px; }
+    .sem-select { 
+        appearance: none; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; 
+        padding: 0.6rem 1.8rem 0.6rem 0.8rem; border-radius: 8px; width: 100%; font-size: 0.9rem; font-weight: 700; cursor: pointer;
+    }
+    .select-wrapper::after { content: "▼"; position: absolute; right: 0.8rem; top: 50%; transform: translateY(-50%); pointer-events: none; color: var(--text-muted); font-size: 0.6rem; }
+
+    .start-btn { 
+        background: linear-gradient(135deg, var(--accent-blue), #8b5cf6); color: white; border: none; 
+        padding: 0.6rem 1.5rem; border-radius: 8px; font-size: 0.95rem; font-weight: 800; cursor: pointer; white-space: nowrap;
+    }
+    .start-btn:hover { filter: brightness(1.1); }
+
+    .loading-state { text-align: center; padding: 4rem 0; }
+    .loader-visual { font-size: 3rem; animation: pulse 1s infinite alternate; }
+    .loading-text { font-size: 1.1rem; font-weight: 800; letter-spacing: 1px; margin-top: 1rem; color: var(--text-muted); }
+    @keyframes pulse { from { transform: scale(0.9); } to { transform: scale(1.1); } }
+
+    /* Verdict Banner */
+    .battle-verdict { padding: 1rem 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .verdict-info { display: flex; align-items: center; gap: 1rem; }
+    .crown { font-size: 2rem; animation: floatCrown 3s infinite ease-in-out; }
+    @keyframes floatCrown { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-5px) rotate(5deg); } }
+    .v-text-block { display: flex; flex-direction: column; }
+    .winner-text { font-size: 1.8rem; font-weight: 900; margin: 0; line-height: 1; }
+    .verdict-sub { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .rematch-btn { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; }
+    .rematch-btn:hover { background: rgba(255,255,255,0.2); }
+
+    /* Ultra-Dense Player Cards */
+    .summary-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    .player-card { background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 1rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .p1-card { border-left: 3px solid var(--p1-color); }
+    .p2-card { border-left: 3px solid var(--p2-color); }
+    
+    .p-identity { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .badge { font-size: 0.6rem; font-weight: 900; padding: 0.15rem 0.4rem; border-radius: 4px; }
+    .p1-badge { background: var(--p1-dim); color: var(--p1-color); }
+    .p2-badge { background: var(--p2-dim); color: var(--p2-color); }
+    .p-name { font-size: 1.05rem; font-weight: 800; line-height: 1.2; word-break: break-word; }
+    .p-reg { font-size: 0.75rem; color: var(--text-muted); font-family: monospace; margin-left: auto; }
+
+    .p-stats { display: flex; justify-content: space-between; background: rgba(0,0,0,0.2); border-radius: 8px; padding: 0.5rem; }
+    .stat-box { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .stat-box .label { font-size: 0.6rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.1rem; }
+    .stat-box .val { font-size: 1.1rem; font-weight: 900; }
+    .sgpa-val { font-size: 1.3rem !important; }
+    
+    .status-pass { color: #10b981; }
+    .status-fail { color: #ef4444; }
+
+    /* Layout combining Overview and Subjects */
+    .comparison-layout { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* Ultra-Dense Table */
+    .table-scroll { overflow-x: auto; border-radius: 12px; padding: 0; }
+    .battle-table { width: 100%; border-collapse: collapse; text-align: center; }
+    .battle-table th { padding: 0.75rem 0.5rem; font-size: 0.7rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .battle-table td { padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.02); vertical-align: middle; }
+    .text-left { text-align: left !important; }
+
+    .sub-name-cell { width: 40%; }
+    .s-name { font-weight: 700; font-size: 0.85rem; color: #e2e8f0; line-height: 1.2; display: flex; flex-direction: column; gap: 0.2rem; }
+    .s-code { font-size: 0.65rem; color: var(--text-muted); font-family: monospace; background: rgba(255,255,255,0.05); padding: 0.1rem 0.3rem; border-radius: 4px; align-self: flex-start; }
+    
+    .sub-player { width: 28%; }
+    .m-dense { display: flex; align-items: baseline; justify-content: center; gap: 0.4rem; }
+    .m-tot { font-size: 1.2rem; font-weight: 900; color: white; }
+    .m-grd { font-size: 0.7rem; font-weight: 800; }
+    .m-brk { font-size: 0.65rem; color: var(--text-muted); font-weight: 600; margin-top: 0.1rem; }
+    
+    .sub-player.win .m-tot { color: #10b981; }
+    .sub-player.loss .m-tot { color: var(--text-muted); opacity: 0.7; }
+    .sub-player.tie-val .m-tot { color: var(--tie-color); }
+    .empty-dash { color: var(--text-muted); font-size: 0.8rem; opacity: 0.5; }
+
+    .sub-vs-cell { width: 4%; padding: 0 !important; }
+    .vs-ind { width: 3px; height: 35px; background: rgba(255,255,255,0.05); margin: 0 auto; border-radius: 2px; }
+    .sub-row.p1-won .vs-ind { background: var(--p1-color); }
+    .sub-row.p2-won .vs-ind { background: var(--p2-color); }
+    .sub-row.tie .vs-ind { background: var(--tie-color); }
+
+    /* Overview Grid (Now seamlessly above the table) */
+    .overview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .overview-card { padding: 1.2rem 1rem; text-align: center; }
+    .ov-header { font-size: 0.7rem; font-weight: 800; color: var(--text-muted); margin-bottom: 0.8rem; letter-spacing: 1px; }
+    .ov-body { display: flex; justify-content: center; align-items: center; gap: 0.8rem; }
+    .ov-val { font-size: 1.5rem; font-weight: 900; }
+    .ov-center { font-size: 1rem; color: var(--text-muted); opacity: 0.5; }
+    .ov-badge { font-size: 0.8rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 6px; }
+    .pass-bg { background: rgba(16,185,129,0.15); color: #10b981; }
+    .fail-bg { background: rgba(239,68,68,0.15); color: #ef4444; }
+
+    .hidden { display: none !important; }
+    .fade-out { opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+
+    @media (max-width: 768px) {
+        .setup-bar { flex-direction: column; align-items: stretch; }
+        .vs-text { display: none; }
+        .reg-input { max-width: 100%; }
+        
+        .battle-verdict { flex-direction: column; text-align: center; justify-content: center; padding: 1.5rem 1rem; }
+        .rematch-btn { width: 100%; padding: 0.75rem; }
+        
+        .summary-cards { grid-template-columns: 1fr; }
+        .overview-grid { grid-template-columns: 1fr; }
+        
+        .sub-vs-cell, .battle-table th.vs-header { display: none; }
+        .sub-player { width: 30%; }
+        .s-name { font-size: 0.75rem; }
+        .m-tot { font-size: 1rem; }
+        .m-brk { font-size: 0.6rem; display: flex; flex-direction: column; gap: 0.1rem; }
+    }
+</style>

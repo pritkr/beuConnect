@@ -1,0 +1,299 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2020 (New Course)",
+    "subject": "Artificial Intelligence",
+    "subject_slug": "artificial-intelligence",
+    "subject_code": "105501",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Parts of speech tagging determines</p>",
+          "options": [
+            "parts of speech for each word dynamically as per meaning of the sentence",
+            "parts of speech for each word dynamically as per sentence structure",
+            "all parts of speech for a specific word given as input",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Many words have more than one meaning; we have to select the meaning which makes the most sense\n                        in context. This can be resolved by</p>",
+          "options": [
+            "fuzzy logic",
+            "shallow semantic analysis",
+            "word sense disambiguation",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Decision support programs are designed to help managers make</p>",
+          "options": [
+            "budget projections",
+            "visual presentations",
+            "business decisions",
+            "vacation schedules"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which is the best way to go for game playing problem?</p>",
+          "options": [
+            "Linear approach",
+            "Heuristic approach (some knowledges are stored)",
+            "Random approach",
+            "An optimal approach"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What are not represented by using propositional logic?</p>",
+          "options": [
+            "Objects",
+            "Relations",
+            "Both objects and relations",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A knowledge-based agent can combine general knowledge with current percepts to infer hidden\n                        aspects of the current state prior to selecting actions.</p>",
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Inference algorithm is completed only if</p>",
+          "options": [
+            "it can derive any sentence",
+            "it can derive any sentence that is an entailed version",
+            "it is truth preserving",
+            "it can derive any sentence that is an entailed version and it is truth preserving"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>What are the two basic types of inference?</p>",
+          "options": [
+            "Reduction to propositional logic, manipulate rules directly",
+            "Reduction to propositional logic, apply modus ponen",
+            "Apply modus ponen, manipulate rules directly",
+            "Convert every rule of horn clause, reduction to propositional logic"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>What are the main components of the expert systems?</p>",
+          "options": [
+            "Inference engine",
+            "Knowledge base",
+            "Both inference engine and knowledge base",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Graph used to represent semantic network is</p>",
+          "options": [
+            "undirected graph",
+            "directed graph",
+            "directed acyclic graph (DAG)",
+            "directed complete graph"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain with diagram the organization of a natural language understanding system.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Describe all the levels of language understanding in natural language processing system.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What are agents in AI? How do agents work to import intelligence to a system? Classify the\n                        different types of agents and briefly discuss their properties.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Draw the semantic network of the following sentence: Kavita gives a book to her friend.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What do you mean by learning? Explain briefly the learning methods. Discuss the advantages and\n                        disadvantages of rule-based system.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the human preferences in encoding uncertainty during parsing.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the procedure of knowledge acquisition with the help of a diagram.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>What is First Order Predicate Logic (FOPL)? Represent the following facts in FOPL: \"Anyone\n                        passing his AI paper and getting an opportunity to work on live project is Happy. But anyone who\n                        studies sincerely or is Lucky can pass all his exams. Ramu did not study but he is Lucky. Anyone\n                        who is Lucky gets a live project to work.\"</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Knowledge",
+            "Intelligence",
+            "Inheritance knowledge",
+            "Knowledge management"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Describe the following with suitable examples:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Logistic regression",
+            "Back propagation algorithm"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Differentiate between forward chaining and backward chaining. On what factors does the decision\n                        to choose forward or backward chaining depend?</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Consider the following sentences:<br/>\n                        • John likes all kinds of food.<br/>\n                        • Apples are food.<br/>\n                        • Chicken is food.<br/>\n                        • Anything anyone eats and isn't killed by it, is food.<br/>\n                        • Sue eats everything Bill eats.<br/><br/>\n                        (i) Translate the sentences into formulae in predicate logic. Prove that John likes peanuts\n                        using backward chaining.<br/>\n                        (ii) Convert the formulae of part (i) into clause form.<br/>\n                        (iii) Prove that John likes peanuts using resolution.<br/>\n                        (iv) Use resolution to answer the question, \"What food does Sue eat?\"</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What is the Turing test? If the machine passes the Turing test, does it mean that the system is\n                        intelligent? What are the associated problems with Turing test? What are required\n                        improvement/advances to overcome these problems?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>What is the goal of the support vector machine (SVM)? How to compute the margin?</p>"
+        }
+      ]
+    }
+  ]
+}

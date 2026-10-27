@@ -1,0 +1,66 @@
+{
+ "dataset": "grading",
+ "generatedAt": "2026-10-25T21:55:30Z",
+ "source": "src/lib/calculator/engine.ts",
+ "scale": [
+  {
+   "grade": "A+",
+   "points": 10,
+   "minPercent": 90
+  },
+  {
+   "grade": "A",
+   "points": 9,
+   "minPercent": 80
+  },
+  {
+   "grade": "B",
+   "points": 8,
+   "minPercent": 70
+  },
+  {
+   "grade": "C",
+   "points": 7,
+   "minPercent": 60
+  },
+  {
+   "grade": "D",
+   "points": 6,
+   "minPercent": 50
+  },
+  {
+   "grade": "P",
+   "points": 5,
+   "minPercent": 35
+  },
+  {
+   "grade": "F",
+   "points": 0
+  }
+ ],
+ "pass": {
+  "esePercent": 35,
+  "overallPercent": 35,
+  "eseMinByTotal": [
+   {
+    "total": 100,
+    "eseMin": 24.5
+   },
+   {
+    "total": 50,
+    "eseMin": 10.5
+   }
+  ]
+ },
+ "marks": {
+  "100": {
+   "ia": 30,
+   "ese": 70
+  },
+  "50": {
+   "ia": 20,
+   "ese": 30
+  }
+ },
+ "maxGpa": 10
+}

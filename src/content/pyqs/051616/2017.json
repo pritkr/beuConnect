@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech. 6th Semester Examination, 2017",
+    "subject": "Compiler Design",
+    "subject_slug": "compiler-design",
+    "subject_code": "051616",
+    "year": 2017,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this Paper.",
+    "Attempt Five questions in all.",
+    "Question No. 1 is Compulsory.",
+    "The marks are indicated in the right-hand margin."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>A grammar that produces more than one parse tree for some sentence is said to be</p>",
+          "options": [
+            "Ambiguous",
+            "context free",
+            "disambiguous",
+            "regular"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>What is not the phase of a compiler?</p>",
+          "options": [
+            "Syntax analyzer",
+            "code generator",
+            "code optimizer",
+            "code linker"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Given a grammar \\( G=(\\{E\\}, \\{id, +\\}, P, E) \\); where P is given by \\( E \\rightarrow\n                        E+E |\n                        id \\). Then FOLLOW(E) will contain</p>",
+          "options": [
+            "{ $ }",
+            "{ + }",
+            "{ $, + }",
+            "{ $, id, + }"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following expressions has no l-value?</p>",
+          "options": [
+            "a[i+1]",
+            "a",
+            "3",
+            "*a"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Consider the statement \"fi (x&gt;=10)\", where 'if' has been misspelled. The error is detected by the\n                        compiler in the phase</p>",
+          "options": [
+            "lexical analysis",
+            "syntax analysis",
+            "semantic analysis",
+            "syntactic analysis"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following is not a loop optimization?</p>",
+          "options": [
+            "Induction variable elimination",
+            "Loop unrolling",
+            "Loop jamming",
+            "Loop heading"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>If x is a terminal then FIRST(x) is</p>",
+          "options": [
+            "\\( \\epsilon \\)",
+            "{ x }",
+            "\\( x^* \\)",
+            "\\( xx^* \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Consider following grammar \\( S \\rightarrow cAd \\), \\( A \\rightarrow ab | a \\). For input\n                        string cad, how many times the recursive descent parser will backtrack?</p>",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The optional access link in the activation record is used for</p>",
+          "options": [
+            "Pointing to the activation record of the caller",
+            "Referring the non-local data held in other activation records",
+            "Temporary values, such as those arising in the evaluation of expressions",
+            "Pointing to the activation record of the calling procedure."
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Suppose two productions are there: \\( A \\rightarrow \\alpha \\) and \\( A \\rightarrow \\beta\n                        \\).\n                        The recursive descent parsing without backtracking requires:</p>",
+          "options": [
+            "first(\\( \\alpha \\)) and first(\\( \\beta \\)) must be in same set",
+            "first(\\( \\alpha \\)) and first(\\( \\beta \\)) to be disjoint",
+            "first(\\( \\alpha \\)) and first(\\( \\beta \\)) must be equal",
+            "Data insufficient"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Construct DFA for \\( (ab^* | ba^*) \\) and minimize the number of states of the above\n                        constructed DFA.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>A grammar is given below:<br/>\n                        \\( S \\rightarrow A \\)<br/>\n                        \\( A \\rightarrow aB | Ad \\)<br/>\n                        \\( B \\rightarrow bBC | f \\)<br/>\n                        \\( C \\rightarrow g \\)<br/>\n                        Find the FIRST and FOLLOW set.\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Construct a predictive parsing table for the grammar given above.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is a symbol table? Why is it needed in compiler design? Explain different components of a\n                        symbol table with an example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Consider the following program fragment:<br/>\n                        prod = 0;<br/>\n                        i = 1;<br/>\n                        do {<br/>\n                            prod = prod + a[i] * b[i];<br/>\n                            i = i + 1;<br/>\n                        } while (i &lt;= 20);<br/>\n                            Generate the three-address code for the above program fragment.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Determine the basic blocks for the computed three-address code.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is DAG? What is the use of DAG in compiler construction? Construct a DAG for the following\n                        statements:<br/>\n                        \\( Z = X - Y + X * Y \\)<br/>\n                        \\( U = V / W + X + V \\)\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain peephole optimization in detail.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Suppose a basic block is formed from the C assignment statements:<br/>\n                        \\( x = a + b + c + d + e + f; \\)<br/>\n                        \\( y = a + c + e; \\)<br/>\n                        (a) Give the three-address statements (only one addition per statement) for this block.<br/>\n                        (b) Use the associative and commutative laws to modify the block to use the fewest possible\n                        number of instructions, assuming both \\( x \\) and \\( y \\) are live on exit from the block.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Given the grammar \\( G = (S, \\{S, A, B\\}, \\{a, b, c, d\\}, P) \\) with set of productions \\(\n                        P\n                        \\) below compute;\n\n                    </p><p>a. LR(1) sets of items.</p>\n<p>b. Compute the corresponding parsing table for the corresponding shift-reduce parse engine.</p>\n<p>c. Show the actions of the parsing engine as well as the contents of the symbol and state stacks\n                        for\n                        the input string \\( w = \\text{\"bdac\"} \\).</p>\n<p>d. Is this grammar LALR(1)? Justify.</p>\n<br/>\n                    \\( S \\rightarrow Aa | bAc | Bc | bBa \\)<br/>\n                    \\( A \\rightarrow d \\)<br/>\n                    \\( B \\rightarrow d \\)<br/>\n                    Do not forget to augment the grammar with the production \\( S' \\rightarrow S \\).<p></p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short note on (any two) of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Syntax-directed definition and translation schemes",
+            "Handling Reserved Keywords",
+            "Bottom Up Parsing"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2019",
+    "subject": "MATHEMATICS—II (Probability and Statistics)",
+    "subject_slug": "mathematics-ii-probability-and-statistics",
+    "subject_code": "105202",
+    "year": 2019,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "The relevant data are given at the end of this question paper."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Answer any seven of the following questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "theory",
+          "text": "<p>If \\( A \\) and \\( B \\) are independent, then show that \\( \\bar{A} \\) and \\( B \\) are also independent.</p>"
+        },
+        {
+          "id": "q1_b",
+          "type": "theory",
+          "text": "<p>Let \\( A \\) and \\( B \\) are two possible outcomes of an experiment and suppose \\( P(A)=0.4 \\), \\( P(A \\cup B)=0.7 \\) and \\( P(B)=k \\).</p>\n<p>(i) For what choice of 'k' \\( A \\) and \\( B \\) are mutually exclusive?</p>\n<p>(ii) For what choice of 'k' \\( A \\) and \\( B \\) are independent?</p>"
+        },
+        {
+          "id": "q1_c",
+          "type": "theory",
+          "text": "<p>If \\( n \\) people are seated at a round table, what is the chance that two named individuals will be next to each other?</p>"
+        },
+        {
+          "id": "q1_d",
+          "type": "theory",
+          "text": "<p>A five figure number is formed by digits 0, 1, 2, 3, 4 (without repetition). Find the probability that the number formed is divisible by 4.</p>"
+        },
+        {
+          "id": "q1_e",
+          "type": "theory",
+          "text": "<p>A point is chosen at random out of four points in 3-dimensional space (1, 0, 0), (0, 1, 0), (0, 0, 1), (1, 1, 1). Let \\( E_i = i \\)-th coordinate is 1. Check if the events \\( E_1, E_2 \\) and \\( E_3 \\) are independent.</p>"
+        },
+        {
+          "id": "q1_f",
+          "type": "theory",
+          "text": "<p>The members of a consulting firm rent cars from three rental agencies; 60% from agency A, 30% from agency B and remaining from agency C. If 9% of the cars from agency A need a tune-up, 20% from B, and 6% of the cars from C need a tune-up, what is the probability that a rental car needs a tune-up, when it came from agency B?</p>"
+        },
+        {
+          "id": "q1_g",
+          "type": "theory",
+          "text": "<p>If \\( X \\) and \\( Y \\) are two independent random variables with \\( E(X)=\\alpha \\), \\( E(X^2)=\\beta \\) and \\( E(Y^k)=a_k \\), \\( k=1, 2, 3, 4 \\). Find \\( E(XY+Y^2)^2 \\).</p>"
+        },
+        {
+          "id": "q1_h",
+          "type": "theory",
+          "text": "<p>A discrete random variable \\( X \\) has probability mass function \\( f(x) = k \\left( \\frac{1}{2} \\right)^x \\), \\( x = 1, 2, 3, 4, \\dots \\). Find the value of \\( k \\).</p>"
+        },
+        {
+          "id": "q1_i",
+          "type": "theory",
+          "text": "<p>The incidence of occupational disease in an industry is such that workers have a 25% chance of suffering from it. What is the probability that out of 13 workers chosen at random, 5 or more will suffer from the disease?</p>"
+        },
+        {
+          "id": "q1_j",
+          "type": "theory",
+          "text": "<p>A random variable \\( X \\) follows the binomial distribution with \\( B(40, 1/4) \\). Use Chebyshev's inequality to find bound for \\( P(|X-10|>10) \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "2.",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>The following marks have been obtained by a class of students in Statistics (out of 100):</p>\n<p>Paper-I : 80, 45, 55, 56, 58, 60, 65, 68, 70, 75, 85</p>\n<p>Paper-II : 82, 56, 50, 48, 60, 62, 64, 65, 70, 74, 90</p>\n<p>Compute the coefficient of correlation for the above data.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>Fit a second degree parabola to the following data, \\( x \\) is the independent variable :</p>\n<table border=\"1\">\n<tr><td>x</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>\n<tr><td>y</td><td>2</td><td>6</td><td>7</td><td>8</td><td>10</td><td>11</td><td>11</td><td>10</td><td>9</td></tr>\n</table>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "3.",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>A language class has only three students A, B, C and they independently attend the classes. The probability of attendance of A, B and C on any given day is \\( 1/2, 2/3 \\) and \\( 3/4 \\) respectively. Find the probability that total number of attendance in two consecutive days is exactly 3.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>A bag contains \\( n \\) white and 2 black balls. Balls are drawn at random one by one without replacement until a black ball is drawn. If \\( K \\) white balls are drawn before first black ball, a man is to receive \\( K^2 \\). Find his expected gain.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "4.",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>The lines of regression for a bivariate population are \\( Y=X \\) and \\( 4X-Y=3 \\), and that the second moment of \\( X \\) about the origin is 2. Find (i) the correlation coefficient (r) and (ii) the standard deviation of \\( Y \\).</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Ball bearings of a given brand weighs 15 gram with a standard deviation of 0.5 gram. What is the probability that two lots of 1000 ball bearings each will differ in weight by more than 50 gram?</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "5. For any three events A, B and C, show that-",
+      "questions": [
+        {
+          "id": "q5_i",
+          "type": "theory",
+          "text": "<p>\\( P[ (A \\cup B) / C ] = P(A/C) + P(B/C) - P[ (A \\cap B) / C ] \\)</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_ii",
+          "type": "theory",
+          "text": "<p>\\( P[ (A \\cap \\bar{B}) / C ] = P(A/C) - P[ (A \\cap B) / C ] \\)</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "6. A continuous random variable X has probability function as \\( f(x) = \\begin{cases} 3x^2, & 0 < x < 1 \\\\ 0, & \\text{elsewhere} \\end{cases} \\)",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>Check whether this is a probability density function.</p>",
+          "total_marks": 2
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>Find the mean of \\( X \\).</p>",
+          "total_marks": 2
+        },
+        {
+          "id": "q6_c",
+          "type": "theory",
+          "text": "<p>Find the variance of \\( X \\).</p>",
+          "total_marks": 2
+        },
+        {
+          "id": "q6_d",
+          "type": "theory",
+          "text": "<p>Find \\( a \\) and \\( b \\) such that \\( P(X \\le a) = P(X > a) \\) and \\( P(X > b) = 0.05 \\).</p>",
+          "total_marks": 2
+        },
+        {
+          "id": "q6_e",
+          "type": "theory",
+          "text": "<p>Find \\( P(0.2 < X < 0.5) \\).</p>",
+          "total_marks": 2
+        },
+        {
+          "id": "q6_f",
+          "type": "theory",
+          "text": "<p>Find \\( P(X < 0.3) \\).</p>",
+          "total_marks": 2
+        },
+        {
+          "id": "q6_g",
+          "type": "theory",
+          "text": "<p>Find \\( P(X > 0.75 / X > 0.50) \\).</p>",
+          "total_marks": 2
+        }
+      ]
+    },
+    {
+      "section_title": "7. Let X and Y be continuous random variables having joint density function \\( f(x, y) = \\begin{cases} C(x^2 + y^2), & 0 < x < 1, 0 < y < 1 \\\\ 0, & \\text{elsewhere} \\end{cases} \\)",
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>Find \\( C \\);</p>",
+          "total_marks": 3.5
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>Find \\( P(X < 1/2, Y < 1/2) \\);</p>",
+          "total_marks": 3.5
+        },
+        {
+          "id": "q7_c",
+          "type": "theory",
+          "text": "<p>Find \\( P(1/4 < X < 3/4) \\);</p>",
+          "total_marks": 3.5
+        },
+        {
+          "id": "q7_d",
+          "type": "theory",
+          "text": "<p>Find \\( P(|X| > 1) \\).</p>",
+          "total_marks": 3.5
+        }
+      ]
+    },
+    {
+      "section_title": "8.",
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A random variable follows Gamma (\\( \\alpha, \\beta \\)) distribution with probability density function \\( f_X(x) = \\begin{cases} \\frac{1}{\\Gamma(\\alpha)\\beta^\\alpha} x^{\\alpha-1} e^{-x/\\beta}, & x \\ge 0 \\\\ 0, & \\text{elsewhere} \\end{cases} \\). If \\( X \\) and \\( Y \\) are independent gamma (\\( \\alpha_1, \\beta \\)) and gamma (\\( \\alpha_2, \\beta \\)), then find the probability density function \\( X+Y \\).</p>",
+          "total_marks": 14
+        }
+      ]
+    },
+    {
+      "section_title": "9.",
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>It has been found from experience that the mean breaking strength of a particular brand of thread is 275.6 gram with a standard deviation of 39.7 gram. Recently a sample of 36 pieces of thread showed a mean breaking strength of 253.2 gram. Can one conclude at a significance level (i) 0.05 and (ii) 0.01 level that the thread has become inferior?</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>On an elementary school examination in spelling, the mean grade of 32 boys was 72 with a standard deviation of 8, while the mean grade of 36 girls was 75 with a standard deviation of 6. Test the hypothesis at a (i) 0.05 and (ii) 0.01 level of significance that the girls are better in spelling than the boys.</p>",
+          "total_marks": 7
+        }
+      ]
+    }
+  ],
+  "appendix": {
+    "formula": "\\( f(t) = \\frac{1}{\\sqrt{2\\pi}} \\int_0^t e^{-x^2/2} dx \\)",
+    "data_table": [
+      { "t": 1.645, "f(t)": 0.45 },
+      { "t": 1.96, "f(t)": 0.475 },
+      { "t": 2.0, "f(t)": 0.4772 },
+      { "t": 2.23, "f(t)": 0.4871 },
+      { "t": 2.33, "f(t)": 0.4900 },
+      { "t": 2.50, "f(t)": 0.4938 },
+      { "t": 2.58, "f(t)": 0.4950 }
+    ]
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Examination, 2024",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100106",
+    "year": 2024,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In source transformation, a voltage source in series with a resistor can be converted into:</p>",
+          "options": [
+            "A current source in parallel with a capacitor",
+            "A current source in parallel with a resistor",
+            "A voltage source in parallel with a resistor",
+            "A current source in series with a resistor"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>According to Kirchhoff's Voltage Law (KVL), the sum of voltages around a closed loop is:</p>",
+          "options": [
+            "Equal to the largest voltage in the loop",
+            "Zero",
+            "Equal to the source voltage",
+            "Always negative"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following is a bilateral element?</p>",
+          "options": [
+            "Diode",
+            "Transistor",
+            "Resistor",
+            "Battery"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following quantities in a magnetic circuit is analogous to current in an electric\n                        circuit?</p>",
+          "options": [
+            "Magnetic reluctance",
+            "Magnetic flux",
+            "Magnetomotive force (MMF)",
+            "Permeability"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The power factor in an AC circuit is defined as the ratio of:</p>",
+          "options": [
+            "Active power to reactive power",
+            "Apparent power to active power",
+            "Active power to apparent power",
+            "Apparent power to reactive power"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which connection type has a neutral point?</p>",
+          "options": [
+            "Delta connection",
+            "Star connection",
+            "Both star and delta",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In a DC generator, the EMF is generated due to:</p>",
+          "options": [
+            "Stationary magnetic field",
+            "Stationary armature",
+            "Relative motion between magnetic field and conductor",
+            "High resistance in the circuit"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following losses occurs in a transformer?</p>",
+          "options": [
+            "Copper loss",
+            "Friction loss",
+            "Windage loss",
+            "Commutation loss"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In a series RLC circuit, resonance occurs when:</p>",
+          "options": [
+            "\\( X_L = X_C \\)",
+            "\\( X_L &gt; X_C \\)",
+            "\\( X_L = R \\)",
+            "\\( R = X_C \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The main function of a distribution board is to:</p>",
+          "options": [
+            "Measure electrical power",
+            "Connect transformers",
+            "Distribute electrical power to circuits",
+            "Store electrical energy"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain Thevenin's and Norton's Theorems. How can one be derived from the other? Support your\n                        answer with a circuit diagram and step-by-step solution.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>State and explain Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL) with an\n                        illustrative circuit and solve a simple numerical example.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Describe the process of source transformation and provide an example where a voltage source is\n                        transformed into a current source and vice versa.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Describe the concept of magnetic reluctance and derive the formula for reluctance in terms of\n                        length, area, and permeability.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the analogy between electric and magnetic circuits. Draw a table comparing the\n                        corresponding quantities.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Define and compare average value, RMS value, form factor, and peak factor for sinusoidal\n                        waveforms. Give appropriate expressions and examples.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain the concept of phasors. How are sinusoidally varying voltages and currents represented\n                        using phasors?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Describe the difference between star and delta connections. Provide diagrams and explain voltage\n                        and current relations for both.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Describe the construction and working of a single-phase transformer. Derive the EMF equation.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain the types of DC machines and differentiate between a DC motor and a DC generator.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Describe the different types of residential and commercial wiring systems with diagrams.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": []
+    }
+  ]
+}

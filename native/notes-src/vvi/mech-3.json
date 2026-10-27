@@ -1,0 +1,216 @@
+{
+  "branch": "mech",
+  "sem": 3,
+  "subjects": [
+    {
+      "code": "102301",
+      "name": "Engineering Mechanics",
+      "vvi": [
+        {
+          "topic": "Equilibrium of a particle and Lami's theorem",
+          "note": "A particle is in equilibrium when the vector sum of the forces is zero, so ΣFx = 0 and ΣFy = 0. Lami's theorem covers three concurrent forces: each is proportional to the sine of the angle between the other two. Draw the free-body diagram before resolving, because a missing reaction is the usual lost mark.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Trusses: method of joints and method of sections",
+          "note": "A perfect truss has m = 2j − 3 members for j joints; fewer members make it a mechanism. The method of joints solves two unknowns per joint, while the method of sections cuts three members and takes moments to get one directly. A joint with two non-collinear members and no load carries zero-force members.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Friction on level and inclined planes",
+          "note": "At limiting equilibrium F = μN, and the angle of friction is tan⁻¹μ. On an incline the body just slides when tan θ = μ, and the effort to move it up is W sin θ + μW cos θ. The angle of repose equals the angle of friction, and a screw jack is the standard application.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Centroid, moment of inertia and the parallel-axis theorem",
+          "note": "The centroid satisfies x̄ = ΣAx/ΣA and ȳ = ΣAy/ΣA, with cut-out areas taken negative. Moment of inertia transfers by I = Ī + A d², so a rectangle has bd³/12 about its centroidal axis and bd³/3 about its base. Radius of gyration is k = √(I/A).",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Projectile motion and relative velocity",
+          "note": "Without air resistance the horizontal velocity is constant and the vertical acceleration is g, giving time of flight 2u sin θ/g, range u² sin 2θ/g and maximum height u² sin²θ/2g. Maximum range occurs at 45°. Relative velocity adds the velocity of the body to the negative of the frame's velocity, which is how a rain-and-man or two-boat problem is solved.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Kinetics: D'Alembert's principle and work-energy",
+          "note": "D'Alembert's principle adds an inertial force −ma to the applied forces so that a dynamics problem becomes a statics problem. The work-energy theorem equates the net work to the change in kinetic energy, and the principle of conservation of energy applies when only conservative forces act. Choose the method that avoids the acceleration, usually energy for a change in height or speed.",
+          "marks": 7,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "102302",
+      "name": "Material Science and Engineering",
+      "vvi": [
+        {
+          "topic": "Crystal structure, unit cell and Miller indices",
+          "note": "BCC, FCC and HCP differ in atoms per cell (2, 4, 6), coordination number (8, 12, 12) and packing factor (0.68, 0.74, 0.74). Miller indices are the reciprocals of the intercepts, cleared of fractions. FCC and HCP contain close-packed planes, which is why they deform more easily than BCC at low temperature.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Mechanical properties and the tensile test",
+          "note": "The engineering stress-strain curve gives the proportional limit, the yield strength at 0.2% offset, the ultimate tensile strength and the percentage elongation. Toughness is the area under the curve up to fracture, and hardness by Brinell, Vickers or Rockwell correlates roughly with tensile strength. A brittle material fractures before necking, so it has little reduction in area.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Phase diagrams and the lever rule",
+          "note": "An isomorphous system has a lens-shaped two-phase region, while a eutectic system has one composition and temperature at which liquid solidifies to two solids. The lever rule gives the phase fractions from the tie line: fraction of solid is (C0 − CL)/(CS − CL). In steel the eutectoid reaction at 723 °C turns austenite into ferrite and cementite, which is pearlite.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Heat treatment of steel",
+          "note": "Annealing softens and relieves internal stress, normalising refines the grain, hardening heats above the critical temperature and quenches to form martensite, and tempering relieves the brittleness of that martensite. The TTT diagram fixes the cooling path, and the critical cooling rate decides whether martensite forms. Carburising and nitriding harden only the surface.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Ferrous and non-ferrous alloys",
+          "note": "Plain carbon steel is classified by carbon content, and alloy steels add chromium, nickel or molybdenum for hardenability and corrosion resistance. Cast iron comes as grey, white, malleable and nodular, with the shape of the graphite deciding the properties. Brass, bronze and duralumin are the non-ferrous examples to name with one application each.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Fatigue, creep and brittle fracture",
+          "note": "Fatigue fails a part under repeated stress below the yield strength, starting at a surface defect; the S-N curve gives the endurance limit, raised by a smooth fillet or shot peening. Creep is time-dependent deformation at high temperature, described by the primary, secondary and tertiary stages. Griffith's theory explains brittle fracture by the stress concentration at a crack tip.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "102303",
+      "name": "Engineering Mathematics-III (PDE, Prob/stat)",
+      "vvi": [
+        {
+          "topic": "Formation and solution of first-order PDE",
+          "note": "Form the PDE by eliminating the arbitrary constants or the arbitrary function from the given relation. For Pp + Qq = R, Lagrange's auxiliary equations dx/P = dy/Q = dz/R give two independent integrals u = a and v = b, and the solution is φ(u,v) = 0. A non-linear first-order equation outside the standard forms is solved by Charpit's method.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Linear PDE with constant coefficients",
+          "note": "For f(D,D')z = F(x,y), the complementary function comes from the auxiliary equation with distinct, repeated or complex roots, and the particular integral depends on the form of F. The inverse operator is applied term by term, and the case where a factor vanishes needs the rule of multiplying by x. Write the complementary function first, then the particular integral, then apply the boundary conditions.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Heat, wave and Laplace equations by separation of variables",
+          "note": "Put u = X(x)T(t), separate the variables, and use the boundary conditions to fix the eigenvalues; the Fourier series then fits the initial condition. The heat equation ut = α²uxx decays in time, the wave equation utt = c²uxx carries two travelling waves, and Laplace's equation describes the steady state. State every boundary and initial condition before separating.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Bayes' theorem and total probability",
+          "note": "P(A|B) = P(B|A)P(A)/P(B), and the denominator is expanded by the total probability rule over a partition of the sample space. Draw the tree diagram and check that the posterior probabilities sum to one. Independence is P(A∩B) = P(A)P(B), which is not the same as mutual exclusivity.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Random variables and standard distributions",
+          "note": "A random variable maps outcomes to numbers, with the pmf or pdf giving probabilities and the cdf its sum or integral; E(X) = Σxp and Var(X) = E(X²) − [E(X)]². The binomial applies to a fixed number of independent trials with constant p, the Poisson to rare events with mean and variance both λ, and the normal is standardised by z = (x − μ)/σ.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Correlation, regression and curve fitting",
+          "note": "The correlation coefficient r = cov(X,Y)/(σxσy) lies between −1 and 1 and measures linear association only. The regression line of y on x is y − ȳ = r(σy/σx)(x − x̄), and both regression lines pass through the means. The method of least squares fits y = a + bx by solving the two normal equations.",
+          "marks": 7,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "102304",
+      "name": "Thermodynamics",
+      "vvi": [
+        {
+          "topic": "First law for closed and open systems",
+          "note": "For a closed system Q − W = ΔU, with heat in and work out taken positive. For a steady-flow open system q − w = (h2 − h1) + (V2² − V1²)/2 + g(z2 − z1), because the flow work pv appears in the enthalpy h = u + pv. A nozzle, diffuser, turbine and compressor are all solved from this one equation with the right terms dropped.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Second law, entropy and the Carnot cycle",
+          "note": "The Kelvin-Planck statement forbids a cyclic device that converts heat entirely into work, and the Clausius statement forbids heat flow from cold to hot without work input. Entropy is defined by dS = δQrev/T, and the Clausius inequality states that the cyclic integral of δQ/T is at most zero. The Carnot efficiency 1 − T2/T1 is the maximum possible between two reservoirs.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Maxwell relations and thermodynamic relations",
+          "note": "The four Gibbs equations yield the Maxwell relations, which replace a difficult derivative with a measurable one. Combined with the cyclic relation they give cp − cv = T(∂v/∂T)p(∂p/∂T)v and the Joule-Thomson coefficient. These relations are how property tables are built from an equation of state.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Properties of steam and the use of tables",
+          "note": "Wet steam is fixed by the dryness fraction x, with v = vf + x(vg − vf) and h = hf + x·hfg. At the critical point the latent heat vanishes and the saturated liquid and vapour lines meet. A throttling calorimeter finds x from the steady-flow energy equation, since enthalpy is nearly constant across a throttle.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Air-standard cycles: Otto, Diesel, Brayton and Rankine",
+          "note": "The air-standard assumptions are a fixed mass of air, reversible adiabatic compression and expansion, and heat addition at constant volume or pressure. Otto efficiency is 1 − 1/r^(γ−1) and depends only on the compression ratio, the Diesel cycle adds the cut-off ratio, and the Brayton cycle uses the pressure ratio. The Rankine cycle is the practical steam cycle and is improved by reheating and regeneration.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Psychrometry and air-conditioning processes",
+          "note": "Dry-bulb, wet-bulb and dew-point temperatures fix the state of moist air, and relative humidity is the partial pressure of vapour over the saturation pressure at the same dry-bulb temperature. Specific humidity is 0.622 pv/(p − pv). The psychrometric chart reads all of these, and the bypass factor sizes a cooling coil.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "102305",
+      "name": "Basic Electronics Engineering",
+      "vvi": [
+        {
+          "topic": "Semiconductor diode and rectifiers",
+          "note": "A PN junction conducts when forward biased above the barrier potential, about 0.7 V for silicon, and blocks in reverse until breakdown. A half-wave rectifier gives ripple factor 1.21 and efficiency 40.6%, and a full-wave rectifier gives 0.482 and 81.2%. A capacitor filter reduces the ripple to about I/(fC) for full wave.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "BJT: working, configurations and biasing",
+          "note": "In the active region the emitter junction is forward biased and the collector junction reverse biased, so the emitter injects carriers that the thin base passes to the collector. CE gives voltage and current gain with phase inversion, CB gives unity current gain, and CC gives unity voltage gain and a high input resistance. Voltage-divider bias holds the Q-point against β variation, with IC = βIB.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "JFET and MOSFET",
+          "note": "A JFET controls the channel width by the reverse-biased gate, with ID = IDSS(1 − VGS/VP)² in saturation and pinch-off at VGS = VP. A MOSFET uses an oxide-insulated gate, so its input resistance is extremely high; enhancement mode needs VGS above the threshold and depletion mode conducts at zero gate voltage. FETs are voltage-controlled, BJTs are current-controlled.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Op-amp: ideal characteristics and applications",
+          "note": "An ideal op-amp has infinite open-loop gain, infinite input impedance, zero output impedance and infinite bandwidth. With negative feedback the virtual short gives V+ = V−, so the inverting amplifier has gain −Rf/Rin and the non-inverting amplifier 1 + Rf/R1. Summing, integrating and differentiating circuits follow from the same two rules.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Logic gates, Boolean algebra and K-map",
+          "note": "The basic gates are AND, OR and NOT, with NAND and NOR as universal gates from which any function is built. De Morgan's theorems convert between the AND and OR forms, and a K-map groups 1, 2, 4 or 8 adjacent cells to give the minimal SOP. A don't-care may be grouped when it enlarges a group.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Number systems and codes",
+          "note": "Binary, octal and hexadecimal convert by grouping bits, and 2's complement turns subtraction into addition while removing the double zero of 1's complement. BCD is not binary: 1001 is 9, and 1010 is invalid without correction. Gray code changes one bit per step and is used in encoders and Karnaugh maps.",
+          "marks": 5,
+          "confidence": "high"
+        }
+      ]
+    }
+  ]
+}

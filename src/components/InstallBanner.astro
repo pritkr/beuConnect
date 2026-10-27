@@ -1,0 +1,239 @@
+---
+// src/components/InstallBanner.astro
+---
+
+<div id="pwa-install-banner" class="hidden install-banner" aria-hidden="true">
+  <div class="banner-content">
+    <div class="banner-text">
+      <strong>Install BEU Connect</strong>
+      <p>Get faster access, offline results & PYQs.</p>
+    </div>
+    <div class="banner-actions">
+      <button id="pwa-install-btn" class="outline">Install</button>
+      <button id="pwa-close-btn" class="close-icon" aria-label="Close">✕</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for iOS Users -->
+<dialog id="ios-install-modal">
+  <article>
+    <header>
+      <button aria-label="Close" rel="prev" id="close-ios-modal"></button>
+      Install on iOS
+    </header>
+    <p>
+      To install BEU Connect on your iPhone: <br><br>
+      1. Tap the <strong>Share</strong> button <svg width="20" height="20" viewBox="0 0 50 50" style="vertical-align: middle; fill: currentColor;"><path d="M25 2L12 16h8v18h10V16h8L25 2zM10 38v8h30v-8h-30z"/></svg> at the bottom of Safari.<br>
+      2. Scroll down and tap <strong>"Add to Home Screen"</strong>.
+    </p>
+  </article>
+</dialog>
+
+<style>
+  /* Custom Sticky Bottom Banner CSS mapping nicely with Pico.css */
+  .install-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--pico-card-background-color);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    padding: 0.6rem 1rem;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-top: 1px solid var(--pico-muted-border-color);
+  }
+
+  .install-banner.visible {
+    transform: translateY(0);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 0.5rem;
+  }
+
+  .banner-text p {
+    margin-bottom: 0;
+    margin-top: 0.1rem;
+    font-size: 0.75rem;
+    color: var(--pico-muted-color, var(--text-muted));
+    line-height: 1.2;
+  }
+
+  .banner-text strong {
+    font-size: 0.95rem;
+    color: var(--pico-color, var(--text-primary));
+  }
+
+  .banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  #pwa-install-btn {
+    margin: 0;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+    width: auto;
+  }
+
+  .close-icon {
+    background: none;
+    border: none;
+    color: var(--pico-muted-color, var(--text-muted));
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.2rem;
+    width: auto;
+    box-shadow: none;
+  }
+  
+  .close-icon:hover,
+  .close-icon:focus {
+    background: none;
+    color: var(--pico-color, var(--text-primary));
+    box-shadow: none;
+  }
+
+  #ios-install-modal article {
+    max-width: 400px;
+  }
+</style>
+
+<script>
+  let deferredPrompt;
+  const installBanner = document.getElementById('pwa-install-banner');
+  const installBtn = document.getElementById('pwa-install-btn');
+  const closeBtn = document.getElementById('pwa-close-btn');
+  
+  const iosModal = document.getElementById('ios-install-modal');
+  const closeIosModal = document.getElementById('close-ios-modal');
+
+  // 1. Detect iOS
+  const isIos = () => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test(userAgent);
+  };
+
+  // 2. Check if already running as standalone (installed)
+  const isStandalone = () => {
+    return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  };
+
+  // 3. Check if user dismissed recently (7 days)
+  const shouldShowBanner = () => {
+    if (!installBanner) return false;
+    if (isStandalone()) return false;
+    const dismissedAt = localStorage.getItem('beu_pwa_dismissed');
+    if (!dismissedAt) return true;
+    
+    const daysSinceDismissed = (Date.now() - parseInt(dismissedAt)) / (1000 * 60 * 60 * 24);
+    return daysSinceDismissed > 7; // Show again after 7 days
+  };
+
+  // 4. Show the banner with a smooth slide up
+  const showBanner = () => {
+    if (shouldShowBanner() && installBanner) {
+      installBanner.classList.remove('hidden');
+      // Small delay to allow CSS transition to trigger after removing 'hidden'
+      setTimeout(() => {
+        installBanner.classList.add('visible');
+      }, 50);
+    }
+  };
+
+  // 5. Listen for the native prompt event (Android/Desktop)
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    
+    // Show our custom UI after a 3 second delay (so it doesn't block initial page load)
+    setTimeout(showBanner, 3000);
+  });
+
+  // Handle iOS specifically (since beforeinstallprompt doesn't fire on iOS)
+  if (isIos() && !isStandalone()) {
+    setTimeout(showBanner, 3000);
+  }
+
+  // 6. Handle Install Button Click
+  if (installBtn) {
+    installBtn.addEventListener('click', async () => {
+      if (isIos()) {
+        // Show iOS instruction modal
+        if (iosModal) iosModal.setAttribute('open', 'true');
+        if (installBanner) installBanner.classList.remove('visible');
+        return;
+      }
+
+      if (deferredPrompt) {
+        // Hide the install banner
+        if (installBanner) installBanner.classList.remove('visible');
+        
+        // Show the native install prompt
+        deferredPrompt.prompt();
+        
+        // Wait for the user to respond to the prompt
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+          // Clear the prompt variable
+          deferredPrompt = null;
+        } else {
+          console.log('User dismissed the install prompt');
+          // Save dismissal state
+          localStorage.setItem('beu_pwa_dismissed', Date.now().toString());
+        }
+      } else {
+        // Fallback if deferredPrompt is missing (e.g. desktop browsers without PWA flags enabled)
+        // Just hide the banner, user might already have it or it's not supported
+        if (installBanner) {
+          installBanner.classList.remove('visible');
+          setTimeout(() => installBanner.classList.add('hidden'), 400);
+        }
+      }
+    });
+  }
+
+  // 7. Handle Close Button Click
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      if (installBanner) {
+        installBanner.classList.remove('visible');
+        setTimeout(() => installBanner.classList.add('hidden'), 400); // Wait for transition
+      }
+      localStorage.setItem('beu_pwa_dismissed', Date.now().toString());
+    });
+  }
+
+  // Handle iOS modal close
+  if (closeIosModal) {
+    closeIosModal.addEventListener('click', () => {
+      if (iosModal) iosModal.removeAttribute('open');
+    });
+  }
+  
+  // Track successful installation to hide UI
+  window.addEventListener('appinstalled', () => {
+    if (installBanner) {
+      installBanner.classList.remove('visible');
+      installBanner.classList.add('hidden');
+    }
+    deferredPrompt = null;
+    console.log('PWA was installed');
+  });
+</script>

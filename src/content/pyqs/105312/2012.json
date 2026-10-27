@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2012",
+    "subject": "Database Management Systems",
+    "subject_slug": "database-management-systems",
+    "subject_code": "105312",
+    "year": 2012,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "a) Define the term 'data model'. Explain different types of data model.\nb) What is the goal of designing a database? Explain the overall database design and implementation process.",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Define the term 'data model'. Explain different types of data model.",
+              "marks": 7,
+              "id": "1_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is the goal of designing a database? Explain the overall database design and implementation process.",
+              "marks": 7,
+              "id": "1_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Explain, in brief, various constraints that can be placed on specialization and generalization.\nb) Explain aggregation with the help of a suitable example.",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain, in brief, various constraints that can be placed on specialization and generalization.",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain aggregation with the help of a suitable example.",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Explain not-null constraint. How does a not-null constraint enforce domain integrity?\nb) How are entity types and attributes mapped to relation schemas? Explain with the help of an example.",
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain not-null constraint. How does a not-null constraint enforce domain integrity?",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "number": "b",
+              "text": "How are entity types and attributes mapped to relation schemas? Explain with the help of an example.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) What is outer join operation? Explain how it differs from the inner join operation.\nb) Explain the division operation by giving an example.",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is outer join operation? Explain how it differs from the inner join operation.",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain the division operation by giving an example.",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) What is functional dependency? Give examples.\nb) Explain the inference rules for functional dependencies.",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is functional dependency? Give examples.",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain the inference rules for functional dependencies.",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) What is transitive dependency? Explain the normal form based on the concept of transitive dependency.\nb) Consider a relation $R(A, B, C, D, E)$ with the functional dependencies $AB \\rightarrow C, CD \\rightarrow E$ and $DE \\rightarrow B$. Is $AE$ a candidate key of this relation? If not, which is the candidate key? Explain.",
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is transitive dependency? Explain the normal form based on the concept of transitive dependency.",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "number": "b",
+              "text": "Consider a relation $R(A, B, C, D, E)$ with the functional dependencies $AB \\rightarrow C, CD \\rightarrow E$ and $DE \\rightarrow B$. Is $AE$ a candidate key of this relation? If not, which is the candidate key? Explain.",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ]
+        },
+        {
+          "text": "List the steps followed by heuristic query optimizer to transform an initial query tree into an optimal query tree. Give a suitable example in support of your answer.",
+          "marks": 14,
+          "id": "7"
+        },
+        {
+          "text": "What is a precedence graph? How can it be used to test the conflict serializability of a schedule?",
+          "marks": 14,
+          "id": "8"
+        },
+        {
+          "text": "Explain two-phase locking protocol with the help of an example. What are its disadvantages? How can these disadvantages be overcome?",
+          "marks": 14,
+          "id": "9"
+        },
+        {
+          "text": "What are log-based techniques? Explain deferred- and immediate-modification versions of the log-based recovery technique with the help of an example.",
+          "marks": 14,
+          "id": "10"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2017",
+    "subject": "SOFTWARE ENGINEERING",
+    "subject_slug": "software-engineering",
+    "subject_code": "051614",
+    "year": 2017,
+    "semester": 6,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Evolutionary life cycle model is ideally suited for development of very small software products typically requiring a few month of development effort. Mark either True of False. Justify your answer.",
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "An SRS document normally contains : (i) Functional requirements of the system, (ii) Module structure, (iii) Configuration management plan, (iv) Non-functional requirements of the system, (v) Constraints on the system.",
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "text": "A module is said to have logical cohesion, if",
+              "options": [
+                "it performs a set of tasks that relate to each other very loosely.",
+                "all the functions of the module are executed within the same time span.",
+                "all elements of the module perform similar operations, e.g. error handling, data input, data output etc.",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "What is the importance of constructing DFDs in the context of a good software design?",
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "Which diagrams in UML capture the behavioural view of the system?",
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "Differentiate between structured analysis and structured design.",
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "Consider the basic COCOMO model where E is the effort applied in person-months, D is the development time in chronological months, KLOC is the estimated number of delivered lines of code (in thousands) and $a_b, b_b, c_b, d_b$ have their usual meanings. The basic COCOMO equations are of the form :",
+              "options": [
+                "$E = a_b(KLOC)\\exp(b_b), D = C_b(E)\\exp(d_b)$",
+                "$D = a_b(KLOC)\\exp(b_b), E = c_b(D)\\exp(d_b)$",
+                "$E = a_b\\exp(b_b), D = c_b(KLOC)\\exp(d_b)$",
+                "$E = a_b\\exp(d_b), D = c_b(KLOC)\\exp(b_b)$"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "What is the primary purpose of risk management?",
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "Cohesiveness of the data and methods within a class is a sign of good OOD. Mark either True or False. Justify your answer.",
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "One of major criteria for obtaining ISO 9001 certification for a software development organization is to possess well-documented software production process. Mark either True or False. Justify your answer.",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "Discuss in detail the different phases of a classical waterfall model. What is the advantage of using prototype software development model instead of waterfall model?",
+          "marks": 14
+        },
+        {
+          "id": "3",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "3a",
+              "text": "What are the components of the standard structure for software requirements document? Explain in detail.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "text": "Distinguish between functional and non-functional requirements. Explain non-functional requirement types with the help of a block diagram.",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "4a",
+              "text": "Explain COCOMO model for estimation.",
+              "marks": 7
+            },
+            {
+              "id": "4b",
+              "text": "Briefly describe the activities of software configuration management.",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "text": "What is meant by ISO 9000 certification? Discuss about the shortcomings of ISO 9000 certification process? What are the salient features of ISO 9001 certification? Why is it important for a software development organization to obtain ISO 9001 certification.",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "text": "What is cyclomatic complexity? Explain in detail how cyclomatic complexity can be computed.",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "text": "Describe in detail Black box testing and white box testing. Illustrate the importance of testing boundary values with an example.",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "8a",
+              "text": "Elaborate on the challenges involved in risk management.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "text": "Explain the basic principles of software project scheduling.",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "What are CASE tools? Explain the role of CASE tools in software development process.",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "text": "What do you mean by the term software reverse engineering? Why is it required? Explain the different activities undertaken during reverse engineering.",
+              "marks": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

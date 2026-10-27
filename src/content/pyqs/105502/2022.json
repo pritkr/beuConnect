@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 5th Semester Examination, 2022",
+    "subject": "Database Management System",
+    "subject_slug": "database-management-system",
+    "subject_code": "105502",
+    "year": 2022,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Four DML commands are:</p>",
+          "options": [
+            "create, update, delete, select",
+            "insert, update, drop, select",
+            "create, alter, delete, select",
+            "insert, modify, delete, select"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>View is a:</p>",
+          "options": [
+            "temporary table",
+            "virtual table",
+            "dynamic table",
+            "permanent table"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The different levels of data abstraction are:</p>",
+          "options": [
+            "Physical level",
+            "Logical level",
+            "View level",
+            "all of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following is true?</p>",
+          "options": [
+            "a super-key is always a candidate key.",
+            "every 3NF schema is also a BCNF.",
+            "generalization is bottom-up approach.",
+            "none of these."
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the purpose of project operation:</p>",
+          "options": [
+            "It selects certain columns.",
+            "It selects certain rows.",
+            "It selects certain strings.",
+            "It selects certain integers."
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The weak entity set does not have sufficient attributes to form.</p>",
+          "options": [
+            "Primary key",
+            "Candidate key",
+            "Both (i) and (ii)",
+            "Super key"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which normal form is considered adequate for normal relational database design?</p>",
+          "options": [
+            "2 NF",
+            "5 NF",
+            "4 NF",
+            "3 NF"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following is not a super key in R(V, W, X, Y, Z) with primary key VY?</p>",
+          "options": [
+            "VXYZ",
+            "VWXZ",
+            "VWXY",
+            "VWXYZ"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Consider R (A, B, C, D, E) with following FDs:- \\( A \\rightarrow B \\), \\( A \\rightarrow C\n                        \\),\n                        \\(\n                        CD \\rightarrow E \\), \\( B \\rightarrow D \\), \\( E \\rightarrow A \\) which of the following\n                        FDs is\n                        not implied by above set?</p>",
+          "options": [
+            "\\( CD \\rightarrow AC \\)",
+            "\\( BD \\rightarrow CD \\)",
+            "\\( BC \\rightarrow CD \\)",
+            "\\( AC \\rightarrow BC \\)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following is a concurrency control protocol.</p>",
+          "options": [
+            "Strict 2-phase locking protocol",
+            "Timestamp based protocol",
+            "Graph based protocol",
+            "All of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What is attribute closure \\( X^+ \\) of a set of attributes X with respect to a set of FDs F?\n                        Give\n                        the algorithm for commuting \\( X^+ \\) for X.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Relation R (ABCDEFGH) contains only atomic values for all of its attributes. \\( F = \\{ CH\n                        \\rightarrow G, A \\rightarrow BC, B \\rightarrow CFH, E \\rightarrow A, F \\rightarrow EG \\}\n                        \\) is\n                        a\n                        set of functional dependencies (FDs) so that F is exactly the set of FDs that hold for R.<br/>\n                        (i) Find all the candidate keys the relation R have?<br/>\n                        (ii) Find the highest normal form with justification in which R exist?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Briefly explain the ACID properties of the transactions to ensure integrity of the data.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Consider the transactions T1, T2 and T3 and schedules S1 and S2 given below:<br/>\n                        T1: r1 (X); r1(Z); w1 (X); w1 (Z)<br/>\n                        T2: r2 (Y); r2 (Z); w2 (Z)<br/>\n                        T3: r3 (Y); r3 (X); w3 (Y)<br/>\n                        S1: r1 (X); r3(Y); r3(X); r2 (Y); r2(Z); w3(Y); w2 (Z); r1 (Z); w1(X); w1 (Z).<br/>\n                        S2: r1 (X); r3 (Y); r2(Y); r3(X); r1(Z); r2(Z); w3 (Y); w1 (X); w2(Z); w1 (Z).<br/>\n                        Determine which of the above schedules are conflict - serializable.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the reasons for the update, insertion and deletion anomalies.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>With example discuss candidate key, super key, primary key and foreign key.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What are the typical phases of query processing? With a sketch, discuss these phases in high\n                        level\n                        query processing.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>When is the decomposition of relation schema R into two relation schemes X and Y, said to be a\n                        loss-less-join decomposition? Why is this property so important? Explain with example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain the terms partial functional dependency' and 'transitive dependency'. Define 2NF and 3 NF\n                        in\n                        relation with these terms.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Discuss the concept of generalization, specialization and aggregation.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Consider the following employee database, primary keys are underlined.<br/>\n                        Employee (ename, street, city)<br/>\n                        Works (ename, cname, salary)<br/>\n                        Company (cname, city)<br/>\n                        Manages (cname, manager-name)<br/>\n                        Write SQL queries to:<br/>\n                        (i) Find the names of all the employees who work for XYZ.<br/>\n                        (ii) Find all employees who live in the same city as the company for which they work.<br/>\n                        (iii) Find all employees who live in the same cities and on the same streets as do their\n                        managers.<br/>\n                        (iv) Find all employees who earn more than the average salary of all employees of their company.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss the advantages and disadvantages of using DBMS as compared to a conventional file system.\n                    </p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is weak entity set? Explain with suitable example. How weak entities are represented as\n                        relational schemas.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "SQL Injection",
+            "Two-phase locking protocol",
+            "Object Oriented DBMS",
+            "Armstrong's Axioms"
+          ]
+        }
+      ]
+    }
+  ]
+}

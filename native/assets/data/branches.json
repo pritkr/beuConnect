@@ -1,0 +1,165 @@
+{
+ "dataset": "branches",
+ "generatedAt": "2026-10-25T21:55:30Z",
+ "source": "src/assets/data/config.json; src/pages/syllabus/[branch]/index.astro",
+ "branches": [
+  {
+   "code": "civil",
+   "name": "Civil Engineering",
+   "semesters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "syllabusSemesters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "subjectCount": 71,
+   "unitCount": 321,
+   "topicCount": 472,
+   "stubCount": 3,
+   "source": "src/assets/data/branches/civil.json"
+  },
+  {
+   "code": "cse",
+   "name": "Computer Science & Engineering",
+   "semesters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "syllabusSemesters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "subjectCount": 72,
+   "unitCount": 305,
+   "topicCount": 490,
+   "stubCount": 2,
+   "source": "src/assets/data/branches/cse.json"
+  },
+  {
+   "code": "ece",
+   "name": "Electronics & Communication Engineering",
+   "semesters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "syllabusSemesters": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "subjectCount": 42,
+   "unitCount": 177,
+   "topicCount": 312,
+   "stubCount": 0,
+   "source": "src/assets/data/branches/ece.json"
+  },
+  {
+   "code": "ee",
+   "name": "Electrical Engineering",
+   "semesters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "syllabusSemesters": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "subjectCount": 54,
+   "unitCount": 180,
+   "topicCount": 319,
+   "stubCount": 8,
+   "source": "src/assets/data/branches/ee.json"
+  },
+  {
+   "code": "eee",
+   "name": "Electrical & Electronics Engineering",
+   "semesters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "syllabusSemesters": [
+    1,
+    2,
+    3,
+    6
+   ],
+   "subjectCount": 47,
+   "unitCount": 191,
+   "topicCount": 343,
+   "stubCount": 1,
+   "source": "src/assets/data/branches/eee.json"
+  },
+  {
+   "code": "mech",
+   "name": "Mechanical Engineering",
+   "semesters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "syllabusSemesters": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "subjectCount": 57,
+   "unitCount": 231,
+   "topicCount": 388,
+   "stubCount": 5,
+   "source": "src/assets/data/branches/mech.json"
+  }
+ ]
+}

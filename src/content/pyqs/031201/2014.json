@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech. 2nd Semester Exam., 2014",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031201",
+    "year": 2014,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "type": "mcq",
+          "text": "Choose the correct answer (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "The r.m.s. value of the voltage $V(t) = 3 + 4\\cos(3t)$ is",
+              "options": [
+                "5 V",
+                "7 V",
+                "$(3 + 2\\sqrt{2})$ V",
+                "$\\sqrt{17}$ V"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "Under the condition of maximum power transfer, the efficiency is",
+              "options": [
+                "0%",
+                "25%",
+                "50%",
+                "100%"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "text": "A delta-connected network with the wye equivalent is shown in the figure below : [Diagram: Delta with 5 ohm, 30 ohm, 15 ohm. Star with R1, R2, R3]. The resistances $R_1$, $R_2$ and $R_3$ are respectively",
+              "options": [
+                "1.5 $\\Omega$, 3 $\\Omega$ and 9 $\\Omega$",
+                "3 $\\Omega$, 9 $\\Omega$ and 1.5 $\\Omega$",
+                "9 $\\Omega$, 3 $\\Omega$ and 1.5 $\\Omega$",
+                "3 $\\Omega$, 1.5 $\\Omega$ and 9 $\\Omega$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "text": "Thevenin's equivalent voltage $V_{Th}$ appearing between the terminals $A$ and $B$ of the network shown in the figure below is given by : [Diagram: AC circuit with 100\u22200\u00b0 V source, j2 ohm inductor, -j6 ohm capacitor, 3 ohm resistor, j4 ohm inductor]",
+              "options": [
+                "j16(3 - j4)",
+                "j16(3 + j4)",
+                "16(3 + j4)",
+                "16(3 - j4)"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "A 3-\\phi, 4-wire star-connected load takes line current of $5 \\angle 60^\\circ$ A, $5 \\angle -60^\\circ$ A, and $5 \\angle 0^\\circ$ A. The neutral current is given by",
+              "options": [
+                "0 A",
+                "5 A",
+                "10 A",
+                "15 A"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "In the measurement of power on balanced load by two-wattmeter method in a 3-\\phi circuit, readings of wattmeters are 3 kW and 1 kW respectively, the latter being obtained by reversing the connections of current coil. The power factor of the load is",
+              "options": [
+                "0.277",
+                "0.554",
+                "0.625",
+                "0.866"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "In a series R-L-C circuit at resonance, at half-power frequencies, power into the series circuit at the given voltage is",
+              "options": [
+                "one-fourth of maximum power possible",
+                "one-third of maximum power possible",
+                "one half of maximum power possible",
+                "three-fourth of maximum power possible"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "text": "A moving coil ammeter has a resistance of 0.1 $\\Omega$ including that of its leads. The meter reads up to 100 mA. The shunt resistance required to give full-scale range of 1 A is",
+              "options": [
+                "0.011 $\\Omega$",
+                "0.11 $\\Omega$",
+                "1.11 $\\Omega$",
+                "11.1 $\\Omega$"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "The pointer of an indicating instrument is made of",
+              "options": [
+                "silver",
+                "soft steel",
+                "aluminium",
+                "copper"
+              ],
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "If the transformer frequency is changed from 50 Hz to 60 Hz, the ratio of eddy-current loss at 50 Hz to 60 Hz at constant voltage is",
+              "options": [
+                "5/6",
+                "6/5",
+                "25/36",
+                "36/25"
+              ],
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "type": "numerical",
+          "text": "Find Norton's equivalent network and hence find the current in the $10 \\Omega$-resistor of the figure shown below : [Diagram: DC circuit with 3 ohm resistor, 2V source, 2 ohm resistor, 3 ohm resistor, dependent current source 2I1, 10 ohm resistor. I1 is current through 3 ohm resistor on the right]",
+          "marks": 14
+        },
+        {
+          "id": "3",
+          "type": "numerical",
+          "text": "Find the value of $R_L$ for maximum power transfer and calculate the maximum power of the figure shown below : [Diagram: DC circuit with current source I (no value?), 5 ohm resistor, 10 ohm resistor, 10A current source, RL, 2 ohm resistor, 10 ohm resistor, 30A current source]",
+          "marks": 14
+        },
+        {
+          "id": "4",
+          "type": "theory",
+          "text": "For either series or the parallel R-L-C circuit, evaluate the half-power frequencies $\\omega_1$ and $\\omega_2$ in terms of quality factor and resonant frequency $\\omega_0$.",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "type": "numerical",
+          "text": "Find average value and r.m.s. value of the following waveforms : [Diagram: Trapezoidal periodic waveform. 0 to pi/3 rises to Vm, pi/3 to 2pi/3 is flat at Vm, 2pi/3 to pi falls to 0. Repeat at 2pi]",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "numerical",
+              "text": "A 415-V, 50-Hz, 3-\\phi voltage is applied to three star-connected identical impedances. Each impedance consists of a resistance of 15 $\\Omega$, a capacitance of 177 $\\mu$F and an inductance of 0.1 henry in series. Find the (i) phase current, (ii) line current, (iii) power factor, (iv) active power, (v) reactive power and (vi) total VA. Draw a neat phasor diagram.",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "If the same impedances are connected in delta, find the (i) line current and (ii) power consumed.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "type": "numerical",
+          "text": "A moving coil instrument has a resistance of 10 $\\Omega$ and gives full-scale deflection when carrying a current of 50 mA. Show how it can be adapted to measure (a) voltage up to 750 V and (b) current up to 100 A.",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "numerical",
+              "text": "Two similar coupled coils have a coupling coefficient of 0.25. When these are connected in series cumulatively, the total inductance is 80 mH. Calculate (i) self-inductance of each coil, (ii) total inductance when the coils are connected differentially.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "numerical",
+              "text": "Calculate the total inductance when the coils are connected in parallel (with similar polarity ends joined together).",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "type": "theory",
+          "text": "Write short notes on any two of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Coupled circuits"
+            },
+            {
+              "id": "9b",
+              "text": "Resonance and Q-factor"
+            },
+            {
+              "id": "9c",
+              "text": "Power measurement by two-wattmeter method"
+            },
+            {
+              "id": "9d",
+              "text": "Thevenin's theorem and Norton's theorem"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

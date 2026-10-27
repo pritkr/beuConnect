@@ -1,0 +1,143 @@
+---
+import HomeIcon from "../assets/Vector.svg";
+
+const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
+
+const navLinks = [
+    { href: "syllabus", label: "Syllabus", vtName: "sylla" },
+    { href: "pyqs", label: "PYQs", vtName: "pyqs" },
+    { href: "result", label: "Result", vtName: "resu" },
+    { href: "routine", label: "Routine", vtName: "routi" },
+    { href: "result-table", label: "Table", vtName: "tabl" }
+];
+---
+
+<header class="site-header">
+    <nav class="nav-inner">
+        <a href={base} class="nav-logo" style="view-transition-name:hom">
+            <img src={HomeIcon.src} alt="BEUConnect" class="logo-icon" />
+        </a>
+        <ul class="nav-links">
+            {
+                navLinks.map((link) => (
+                    <li>
+                        <a
+                            href={`${base}${link.href}`}
+                            class:list={[
+                                "nav-link",
+                                { active: currentPath.includes(link.href) },
+                            ]}
+                            style={`view-transition-name:${link.vtName}`}
+                        >
+                            {link.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 0.65rem 1rem;
+        background: var(--bg-glass);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border-subtle);
+        transform: translateZ(0); /* Hardware accelerate sticky header */
+        will-change: transform;
+    }
+
+    .nav-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        min-width: 2.8rem;
+        min-height: 2.4rem;
+        padding: 0.3rem 0.45rem;
+        border-radius: 10px;
+        background: rgba(15, 23, 42, 0.85);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+    }
+
+    .nav-logo:hover {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+    }
+
+    .logo-icon {
+        height: 2rem;
+        width: 2rem;
+        min-width: 2rem;
+        display: block;
+        filter: brightness(1.45) saturate(1.15)
+            drop-shadow(0 0 8px rgba(59, 130, 246, 0.35));
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 0.25rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-link {
+        display: inline-block;
+        padding: 0.4rem 0.85rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.3s ease, background-color 0.3s ease;
+        position: relative;
+    }
+
+    .nav-link:hover {
+        color: var(--text-primary);
+        background: rgba(59, 130, 246, 0.1);
+    }
+
+    .nav-link.active {
+        color: var(--accent-blue);
+        background: rgba(59, 130, 246, 0.12);
+    }
+
+    .nav-link.active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 2px;
+        background: var(--accent-gradient);
+        border-radius: 1px;
+    }
+
+    @media (max-width: 600px) {
+        .nav-link {
+            padding: 0.35rem 0.55rem;
+            font-size: 0.8rem;
+        }
+        .nav-inner {
+            gap: 0.75rem;
+        }
+    }
+</style>

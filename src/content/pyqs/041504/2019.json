@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2019",
+    "subject": "ANALOG ELECTRONICS",
+    "subject_slug": "analog-electronics",
+    "subject_code": "041504",
+    "year": 2019,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven of the following questions briefly :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "The ear is not sensitive to which type of distortion in the amplifier?"
+            },
+            {
+              "id": "1b",
+              "text": "Write the condition for approximate model of BJT in CE configuration."
+            },
+            {
+              "id": "1c",
+              "text": "What is the phase difference between input and output currents in CE configuration?"
+            },
+            {
+              "id": "1d",
+              "text": "Why is the Bootstrap principle used in emitter follower circuit?"
+            },
+            {
+              "id": "1e",
+              "text": "What is Gain Bandwidth Product?"
+            },
+            {
+              "id": "1f",
+              "text": "Which of the BJT transistor currents is always the largest?"
+            },
+            {
+              "id": "1g",
+              "text": "What are the main purposes for which a CC amplifier may be used?"
+            },
+            {
+              "id": "1h",
+              "text": "What is the purpose of transformer coupling in transistor amplifier?"
+            },
+            {
+              "id": "1i",
+              "text": "Why is CB amplifier used as constant current source?"
+            },
+            {
+              "id": "1j",
+              "text": "Explain the Barkhausen criterion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Explain the phase distortion in amplifier and list the various causes for distortion.",
+          "marks": 6
+        },
+        {
+          "id": "2b",
+          "text": "Draw the approximate small-signal equivalent circuit at low frequency for common-base amplifier with load resistance $R_L$. Compute the output resistance in terms of h parameter.",
+          "marks": 8
+        },
+        {
+          "id": "3a",
+          "text": "The BJT is connected as a CE amplifier. Determine $Z_i, Z_o, A_I$ and $A_V$ using complete hybrid model.",
+          "marks": 7
+        },
+        {
+          "id": "3b",
+          "text": "For an emitter bias BJT circuit (capacitor is bypassed), determine $r_e, Z_i, Z_o$ and $A_V$. Given: $R_B = 470 \\text{ k}\\Omega, R_C = 2.2 \\text{ k}\\Omega, V_{CC} = 20 \\text{ V}, R_E = 0.56 \\text{ k}\\Omega, C_E = 10 \\text{ }\\mu\\text{F}, \\beta = 120, r_o = 40 \\text{ k}\\Omega, C_C = 10 \\text{ }\\mu\\text{F}$.",
+          "marks": 7
+        },
+        {
+          "id": "4a",
+          "text": "Draw the single stage RC coupled BJT amplifier and discuss the effect of (i) input capacitance $C_s$, (ii) emitter bypass capacitor $C_e$ and (iii) output capacitor $C_c$, on the frequency response.",
+          "marks": 8
+        },
+        {
+          "id": "4b",
+          "text": "Derive an expression for percentage tilt (P) in the output waveform for square symmetrical wave applied as input to an amplifier that behaves as high-pass circuit at low-frequency signal.",
+          "marks": 6
+        },
+        {
+          "id": "5a",
+          "text": "Derive the expressions for input and output resistances in case of emitter follower BJT amplifier using its hybrid model.",
+          "marks": 8
+        },
+        {
+          "id": "5b",
+          "text": "Derive the expressions for voltage gain in case of low-frequency common-drain FET amplifier and prove why voltage gain is less than unity.",
+          "marks": 6
+        },
+        {
+          "id": "6a",
+          "text": "Find the mean-square value $V_0^2$ of the output noise voltage for the circuit shown in the figure given below. The circuit represents a generator supplying Johnson noise to the RC combination. Prove that $\\frac{1}{2} C V_o^2 = \\frac{1}{2} kT$. [Diagram: Noise source $V_n$ with resistor $R$ and capacitor $C$.]",
+          "marks": 9
+        },
+        {
+          "id": "6b",
+          "text": "Compute overall lower 3-dB frequency for four interacting stages amplifier having individual stage lower 3-dB frequency, $f_1 = 40 \\text{ Hz}, f_2 = 100 \\text{ Hz}, f_3 = 50 \\text{ Hz}$ and $f_4 = 10 \\text{ Hz}$.",
+          "marks": 5
+        },
+        {
+          "id": "7a",
+          "text": "With a neat circuit diagram, explain the operation of a transformer coupled class A power amplifier.",
+          "marks": 6
+        },
+        {
+          "id": "7b",
+          "text": "Compute the expression for current gain using small-signal equivalent circuit at high frequency for common-drain FET amplifier with load resistance $R_L$.",
+          "marks": 8
+        },
+        {
+          "id": "8a",
+          "text": "Derive the relationship between $t_r$ and high 3-dB frequency $f_H$ in order to amplify the pulse without excessive distortion.",
+          "marks": 7
+        },
+        {
+          "id": "8b",
+          "text": "Derive the frequency and condition of oscillation for FET phase-shift oscillator.",
+          "marks": 7
+        },
+        {
+          "id": "9a",
+          "text": "Explain the working of a class B push pull amplifier. Prove that the maximum efficiency is 78.5%.",
+          "marks": 7
+        },
+        {
+          "id": "9b",
+          "text": "Derive the expressions for frequency and condition of oscillation in case of Wien bridge oscillator. Determine the maximum and minimum frequency of oscillations of a Wien bridge oscillator circuit having a resistor of $10 \\text{ k}\\Omega$ and a variable capacitor of $1 \\text{ nF}$ to $1000 \\text{ nF}$.",
+          "marks": 7
+        }
+      ]
+    }
+  ]
+}

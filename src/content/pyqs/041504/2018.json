@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2018",
+    "subject": "ANALOG ELECTRONICS",
+    "subject_slug": "analog-electronics",
+    "subject_code": "041504",
+    "year": 2018,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "For the BJT circuit (Fig. 1) shown below, assume that the $\\beta$ of the transistor is very large and $V_{BE} = 0.7 \\text{ V}$: [Diagram Fig. 1: BJT with $10 \\text{ k}\\Omega$ collector resistor, $1 \\text{ k}\\Omega$ emitter resistor, $10 \\text{V}$ collector supply, $2 \\text{V}$ base supply.] The mode of operation of the BJT is",
+              "options": [
+                "cut-off",
+                "saturation",
+                "normal active",
+                "reverse active"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "Assuming $V_{CE, Sat} = 0.2 \\text{ V}$ and $\\beta = 50$, the minimum base current ($I_B$) required to drive the transistor in the given figure (Fig. 2) to saturation is: [Diagram Fig. 2: BJT with $1 \\text{ k}\\Omega$ collector resistor, $3 \\text{V}$ collector supply.]",
+              "options": [
+                "$56 \\text{ } \\mu \\text{A}$",
+                "$140 \\text{ } \\mu \\text{A}$",
+                "$60 \\text{ mA}$",
+                "$3 \\text{ mA}$"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "In the transistor amplifier circuit shown in Fig. 3 the transistor has the following parameters: $\\beta_{DC} = 60$, $V_{BE} = 0.7 \\text{ V}$, $h_{ie} = \\infty$, $h_{fe} = \\alpha$. [Diagram Fig. 3: BJT with $1 \\text{ k}\\Omega$ collector resistor, $53 \\text{ k}\\Omega$ feedback resistor, $5.3 \\text{ k}\\Omega$ source resistor, $12 \\text{V}$ supply.] The capacitance $C_C$ can be assumed to be infinite. Under DC conditions, the collector to emitter voltage drop is",
+              "options": [
+                "$4.8 \\text{ V}$",
+                "$5.3 \\text{ V}$",
+                "$6 \\text{ V}$",
+                "$6.6 \\text{ V}$"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "In Fig. 3, if $\\beta_{DC}$ is increased by 10%, then collector to emitter voltage drop",
+              "options": [
+                "increases by less than or equal to 10%",
+                "decreases by less than or equal to 10%",
+                "increases by more than 10%",
+                "decreases by more than 10%"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "The small-signal gain of the amplifier $V_c/V_s$ is",
+              "options": [
+                "$-10$",
+                "$-5.3$",
+                "$5.3$",
+                "10"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "The value of $C$ required for sinusoidal oscillations of frequency $1 \\text{ kHz}$ in the circuit shown in Fig. 4 is: [Diagram Fig. 4: Op-amp oscillator with $1 \\text{ k}\\Omega$ and $2.1 \\text{ k}\\Omega$ resistors.]",
+              "options": [
+                "$\\frac{1}{2\\pi} \\mu \\text{F}$",
+                "$2\\pi \\mu \\text{F}$",
+                "$\\frac{1}{2\\pi\\sqrt{6}} \\mu \\text{F}$",
+                "$2\\pi\\sqrt{6} \\mu \\text{F}$"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "For the JFET circuit shown in Fig. 5: [Diagram Fig. 5: JFET with $R_D, R_S$, $2 \\text{ M}\\Omega$ gate resistor, $20 \\text{V}$ supply.] Given $r_d = 20 \\text{ k}\\Omega$, $I_{DSS} = 10 \\text{ mA}$, $V_P = -8 \\text{ V}$, $Z_i$ and $Z_o$ of the circuit are, respectively",
+              "options": [
+                "$2 \\text{ M}\\Omega$ and $2 \\text{ k}\\Omega$",
+                "$2 \\text{ M}\\Omega$ and $\\frac{20}{11} \\text{ k}\\Omega$",
+                "infinity and $2 \\text{ k}\\Omega$",
+                "infinity and $\\frac{20}{11} \\text{ k}\\Omega$"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "$I_D$ and $V_{DS}$ in Fig. 5 under DC conditions are, respectively",
+              "options": [
+                "$5.625 \\text{ mA}$ and $8.75 \\text{ V}$",
+                "$7.5 \\text{ mA}$ and $5 \\text{ V}$",
+                "$4.5 \\text{ mA}$ and $11 \\text{ V}$",
+                "$6.250 \\text{ mA}$ and $7.5 \\text{ V}$"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "In Fig. 5, transconductance in millisiemens (mS) and voltage gain of the amplifier are, respectively",
+              "options": [
+                "$1.875 \\text{ mS}$ and $3.41$",
+                "$1.875 \\text{ mS}$ and $-3.41$",
+                "$3.3 \\text{ mS}$ and $-6$",
+                "$3.3 \\text{ mS}$ and $6$"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "The cascade amplifier is a multistage configuration of",
+              "options": [
+                "CC-CB",
+                "CE-CB",
+                "CB-CC",
+                "CE-CC"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Explain class B transformer-coupled amplifier with circuit diagram.",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "A transformer-coupled class A amplifier supply... [text incomplete in original] / In a BJT-based RC phase-shift oscillator, $R = 200 \\text{ k}\\Omega$, $C = 200 \\text{ pF}$. Find the frequency of the BJT-based oscillator.",
+          "marks": 7
+        },
+        {
+          "id": "3",
+          "text": "It is required to design a tuned amplifier of the type shown in Fig. 6, having $f_o = 1 \\text{ MHz}$, 3 dB bandwidth $= 10 \\text{ kHz}$, centre frequency gain $= -10 \\text{ V/V}$. The FET available has at the bias point $g_m = 5 \\text{ mA/V}$ and $r_o = 10 \\text{ k}\\Omega$. The output capacitance is negligibly small. Determine $R_L, C_L$ and $L$. [Diagram Fig. 6: Tuned MOSFET amplifier.]",
+          "marks": 14
+        },
+        {
+          "id": "4",
+          "text": "Draw the small-signal equivalent circuit of common-emitter amplifier and derive the expression for (a) current gain, (b) input resistance and (c) voltage gain.",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "text": "Draw the hybrid-$\\pi$ model for a transistor in the CE configuration and discuss about each parameter.",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "text": "Explain the effect of an emitter bypass capacitor on low frequency response of a BJT-based basic amplifier.",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "text": "Explain the operation of common-base configuration of BJT and draw the input-output characteristics. Also explain the early effect.",
+          "marks": 14
+        },
+        {
+          "id": "8a",
+          "text": "Write short notes on Ideal voltage amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "8b",
+          "text": "Write short notes on Ideal transconductance amplifier.",
+          "marks": 7
+        }
+      ]
+    }
+  ]
+}

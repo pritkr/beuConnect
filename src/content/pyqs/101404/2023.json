@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 4th Semester Examination, 2023",
+    "subject": "Introduction to Fluid Mechanics",
+    "subject_slug": "introduction-to-fluid-mechanics",
+    "subject_code": "101404",
+    "year": 2023,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Surface tension is due to</p>",
+          "options": [
+            "viscous force",
+            "cohesion",
+            "adhesion",
+            "the difference between adhesive and cohesive forces"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>An oil of specific gravity 0.9 has viscosity of 0.28 stokes at \\( 38^{\\circ}C \\). What will be\n                        its\n                        viscosity in \\( Ns/m^2 \\)?</p>",
+          "options": [
+            "0.2520",
+            "0.0311",
+            "0.0252",
+            "0.0206"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which property of mercury is the main reason for its use in barometers?</p>",
+          "options": [
+            "High density",
+            "Negligible capillary effect",
+            "Very low vapour pressure",
+            "Low compressibility"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The centre of pressure for an inclined surface area</p>",
+          "options": [
+            "lies below the centroid of the surface",
+            "coincides with the centroid",
+            "lies above the centroid of the surface",
+            "none of these"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The buoyancy force is</p>",
+          "options": [
+            "Equal to volume of liquid displace",
+            "Force necessary to maintain equilibrium of a submerged body",
+            "The resultant force acting on a floating body",
+            "The resultant force on a body due to the fluid surrounding it"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The flow in pipe whose valve is being opened or closed gradually is an example of</p>",
+          "options": [
+            "steady flow",
+            "nonsteady flow",
+            "steady uniform flow",
+            "steady nonuniform flow"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which one of the following is measured by a rotameter?</p>",
+          "options": [
+            "Velocity of fluids",
+            "Discharge of fluids",
+            "Viscosity of fluids",
+            "Rotational speed of solid shafts"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>In flow through a pipe, the transition from laminar to turbulent flow does not depend on</p>",
+          "options": [
+            "density of fluid",
+            "length of pipe",
+            "diameter of pipe",
+            "velocity of the fluid"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The laminar flow is characterized by Reynolds number which is</p>",
+          "options": [
+            "equal to critical value",
+            "less than the critical value",
+            "more than the critical value",
+            "zero critical value"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Kinematic similarity between model and prototype is the similarity of</p>",
+          "options": [
+            "shape",
+            "discharge",
+            "stream",
+            "forces"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define the following fluid Properties: (i) Weight density (ii) Specific volume (iii) Specific\n                        gravity\n                        (iv) Viscosity.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Two large plane surfaces are 3.0 cm apart. The space between the surfaces is filled with\n                        glycerine.\n                        What force is required to drag a very thin plate of surface area \\( 1.0 \\, m^2 \\) between the\n                        two\n                        large plane surface at a speed of \\( 0.75 \\, m/sec \\) if the thin plate is at a distance of\n                        1.0 cm\n                        from one of the plane surfaces? Assume dynamic viscosity of glycerine as \\( 8.10 \\times\n                        10^{-1}\n                        \\,\n                        N-s/m^2 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for the meta-centric height of a floating body.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>A vertical sluice gate is used to cover an opening in a dam. The opening is 2 m wide and 1.2 m\n                        high.\n                        On the upstream of the gate, the liquid of sp.gr. 1.45, lies upto a height of 1.5 m above the\n                        top of\n                        the gate, whereas on the downstream side the water is available upto a height touching the top\n                        of\n                        the gate. Find the resultant force acting on the gate and position of centre of pressure. Find\n                        also\n                        the force acting horizontally at the top of the gate which is capable of opening it. Assume that\n                        the\n                        gate is hinged at the bottom.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Define and distinguish between streamline, path line and streak line.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A 40 cm diameter pipe, conveying water, branches into two pipes of diameters 30 cm and 20 cm\n                        respectively. If the average velocity in the 40 cm diameter pipe is \\( 3 \\, m/s \\). Find the\n                        discharge in this pipe. Also determine the velocity in 20 cm pipe if the average velocity in 30\n                        cm\n                        diameter pipe is \\( 2 \\, m/s \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Derive Bernoulli's equation for the flow of an incompressible frictionless fluid from\n                        consideration\n                        of momentum.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>In a 100 mm diameter horizontal pipe a venturimeter of 0.5 contraction ratio has been fixed. The\n                        head\n                        of water on the metre when there is no flow is 3 m (gauge). Find the rate of flow for which the\n                        throat pressure will be 2m of water absolute. The co-efficient of meter is 0.97. Take\n                        atmospheric\n                        pressure head = 10.3 m of water.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for loss of head due to friction in pipes.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A pipe, 100 mm in diameter, has a nozzle attached to it at the discharge end, the diameter of the\n                        nozzle is 50 mm. The rate of discharge of water through the nozzle is \\( 20 \\, litres/s \\)\n                        and\n                        the\n                        pressure at the base of the nozzle of \\( 5.886 \\, N/cm^2 \\). Calculate the co-efficient of\n                        discharge. Assume that the base of the nozzle and outlet of the nozzle are at the same\n                        elevation.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A smooth pipe of diameter 400 mm and length 800 m carries water at the rate of \\( 0.04 \\, m^3/s\n                        \\).\n                        Determine the head lost due to friction, wall shear stress, centre-line velocity and thickness\n                        of\n                        laminar sub-layer. Take the kinematic viscosity of water as 0.018 stokes.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Distinguish between: (i) Steady flow and un-steady flow (ii) Uniform and non-uniform flow (iii)\n                        Compressible and incompressible flow (iv) Rotational and irrotational flow.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain the significance of non-dimensional number: (i) Reynolds number (ii) Froude number (iii)\n                        Mach\n                        number (iv) Weber number.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>A wooden block (of specific gravity 0.70) of size \\( 150 \\times 15 \\times 30 \\) cm floats\n                        horizontally on the surface of sea water (specific weight \\( 1025 \\, kg/m^3 \\)). Calculate\n                        the\n                        volume of water displaced, depth of immersion and the position of centre of buoyancy. Also find\n                        the\n                        metacentric height of the block.</p>"
+        }
+      ]
+    }
+  ]
+}

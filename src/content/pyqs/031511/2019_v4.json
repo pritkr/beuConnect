@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2019",
+    "subject": "Microprocessors and its Applications",
+    "subject_slug": "microprocessors-and-its-applications",
+    "subject_code": "031511",
+    "year": 2019,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven of the following short answer-type\n                    questions:",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Write about the basic difference between microprocessor and microcontroller.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Draw and explain the memory and I/O read cycle of 8085.</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Define the following: (i) Nibble (ii) Word</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Explain the concept of memory segmentation in 8086 microprocessor.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Why are the lower byte addresses bus (A0-A7) and data bus (D0-D7) multiplexed?</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Write basic operations of microprocessor with block diagram.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Compare between Procedure and Macros in assembler directives of 8086.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Define compiler or interpreter in programming languages.</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>How many instructions can 8085 support?</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Write about the types of addressing modes in 8086.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Differentiate between the following:<br/>\n                        (i) Microprocessor and microcontroller<br/>\n                        (ii) Low and high level languages<br/>\n                        (iii) RISC processor and CISC processor<br/>\n                        (iv) Compiler and interpreter</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain minimum mode operation of 8086 microprocessor with block diagram.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain evolution of microprocessor with its different generations.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Explain the requirement of a program counter, stack pointer and status flags in the architecture\n                        of\n                        the 8085 microprocessor.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Define opcode and operand. Specify the opcode and the operand in the instruction MOV H,L.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Write a program to add two 16-bit numbers for 8085 \\( \\mu p \\).</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain ALE, HOLD, READY, S0, S1 SIGNALS for 8085 microprocessor.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain working of 8257 DMA controller with the help of a functional block diagram.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Write the instruction to display the contents of stack pointer register at output ports.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain the following:<br/>\n                        (i) 8259 programmable interrupt controller<br/>\n                        (ii) Development tools-Editor, Library builder, Linker, Emulator</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Design a system for 8085 such that it contains 4 KB of EPROM and 2 KB of RAM using two 2 KB of\n                        EPROM\n                        and two 1KB of RAM. Draw the complete interfacing diagram.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Draw the architecture of 8086 and explain its different units. What do you mean by pipelining?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of 8251 USART and explain each block. Also draw its interfacing with 8086.\n                    </p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Draw and explain block diagram and pin configuration of IC-8253.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain the concept of memory segmentation.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Explain assembler level programming and draw the flowchart of assembler level programming.</p>"
+        }
+      ]
+    }
+  ]
+}

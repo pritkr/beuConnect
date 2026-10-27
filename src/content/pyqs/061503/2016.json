@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2016",
+    "subject": "Operating System",
+    "subject_slug": "operating-system",
+    "subject_code": "061503",
+    "year": 2016,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer for any seven of the following :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "A",
+              "text": "A direct method of deadlock prevention is to prevent the occurrences of __________",
+              "options": [
+                "Mutual exclusion",
+                "Hold and wait",
+                "Circular waits",
+                "No pre-emption"
+              ],
+              "answer": "c",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "B",
+              "text": "__________ is the time required to move the disk arm to the required track.",
+              "options": [
+                "Seek time",
+                "Rotational delay",
+                "Latency time",
+                "Access time"
+              ],
+              "answer": "a",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "C",
+              "text": "A process stack does not contain:",
+              "options": [
+                "function parameters",
+                "local variables",
+                "return addresses",
+                "PID of child process"
+              ],
+              "answer": "d",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "D",
+              "text": "A set of processes is deadlock if",
+              "options": [
+                "each process is blocked and will remain so forever",
+                "each process is terminated",
+                "all processes are trying to kill each other",
+                "none of the mentioned"
+              ],
+              "answer": "a",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "E",
+              "text": "When high priority task is indirectly pre-empted by medium priority task effectively inverting the relative priority of the two tasks, the scenario is called?",
+              "options": [
+                "Priority inversion",
+                "Priority removal",
+                "Priority exchange",
+                "Priority modification"
+              ],
+              "answer": "a",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "F",
+              "text": "Which module gives control of the CPU to the process selected by the short-term scheduler?",
+              "options": [
+                "dispatcher",
+                "interrupt",
+                "scheduler",
+                "none of the mentioned"
+              ],
+              "answer": "a",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "G",
+              "text": "The circular wait condition can be prevented by:",
+              "options": [
+                "defining a linear ordering of resource types",
+                "using thread",
+                "using pipes",
+                "all of the mentioned"
+              ],
+              "answer": "a",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "H",
+              "text": "Run time mapping from virtual to physical address is done by:",
+              "options": [
+                "memory management unit",
+                "CPU",
+                "PCI",
+                "none of the mentioned"
+              ],
+              "answer": "a",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "I",
+              "text": "Which algorithm chooses the page that has not been used for the longest period of time whenever the page required to be replaced?",
+              "options": [
+                "First in first out algorithm",
+                "additional reference bit algorithm",
+                "least recently used algorithm",
+                "counting based page replacement algorithm"
+              ],
+              "answer": "c",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "J",
+              "text": "The heads of the magnetic disk are attached to a .... that moves all the heads as a unit.",
+              "options": [
+                "Spindle",
+                "disk arm",
+                "track",
+                "None of these"
+              ],
+              "answer": "b",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "If FIFO page replacement algorithm is used with 4 page frames and 8 pages, how many page faults will occur with reference string 0124720347 if four page frames are initially empty? Solve the same problem for LRU page replacement algorithm.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Define a process. Explain the process state transition with a neat diagram.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is PCB? Discuss its major fields.",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain IPC Problem-Readers & Writers Problem?",
+              "id": "3_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is deadlock? List the conditions that lead to deadlock. How deadlock can be prevented.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain the use of Banker's algorithm for multiple resources for deadlock avoidance with illustration.",
+              "id": "4_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain Linux kernel and its functions in brief.",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Define operating system. Explain the different views of operating system. Also explain types of operating system.",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is Semaphore? How can we achieve the synchronization using semaphore for producer-consumer problem?",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Establish the necessity for memory management. Explain the memory management with the use of Linked Lists.",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the classical thread model with its implementation strategies.",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Discuss the Peterson's solution for the race condition with algorithm.",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is RAID? Explain in brief.",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What is I-node? Explain in detail.",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the structure of a page table entry. If a machine has 48 bit virtual addresses and 32-bit physical addresses and pages are of 8 KB, how many entries are needed for the page table?",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Define and explain following terms :\n(i) Authentication\n(ii) Mutual Exclusion\n(iii) Monitor\n(iv) Segmentation.",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

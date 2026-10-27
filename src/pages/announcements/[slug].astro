@@ -1,0 +1,92 @@
+---
+export const prerender = true;
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header.astro";
+import Footer from "../../components/footer.astro";
+import { sortedAnnouncementPosts } from "../../data/announcements";
+import type { AnnouncementPost } from "../../data/announcements";
+
+export function getStaticPaths() {
+  return sortedAnnouncementPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+type Props = {
+  post: AnnouncementPost;
+};
+
+const { post } = Astro.props as Props;
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title={`${post.title} | BEUConnect`} description={post.excerpt}>
+  <Header />
+
+  <article class="post-page">
+    <p class="back-link">
+      <a href={`${base}announcements/`}>← Back to announcements</a>
+    </p>
+
+    <p class="post-meta">{post.publishedAt} • {post.author}</p>
+    <h1>{post.title}</h1>
+    <p class="post-excerpt">{post.excerpt}</p>
+
+    <section class="post-body">
+      {post.body.map((paragraph: string) => (
+        <p>{paragraph}</p>
+      ))}
+    </section>
+
+    <div class="post-tags">
+      {post.tags.map((tag: string) => (
+        <span>#{tag}</span>
+      ))}
+    </div>
+  </article>
+
+  <Footer />
+</Layout>
+
+<style>
+  .post-page {
+    max-width: 760px;
+    margin: 1.6rem auto 0;
+  }
+
+  .back-link {
+    margin-bottom: 0.5rem;
+  }
+
+  .post-meta {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--accent-cyan);
+  }
+
+  .post-excerpt {
+    border-left: 3px solid rgba(6, 182, 212, 0.45);
+    padding-left: 0.7rem;
+    color: #d1d5db;
+  }
+
+  .post-body p {
+    margin: 0 0 0.95rem;
+  }
+
+  .post-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 0.8rem;
+  }
+
+  .post-tags span {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    color: var(--text-secondary);
+  }
+</style>

@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 1st Semester Exam., 2018 (Old)",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031101",
+    "year": 2018,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Attempt any seven short answer-type questions:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Draw the V-I characteristics of ideal and practical current source and voltage source."
+            },
+            {
+              "id": "1b",
+              "text": "State the maximum power transfer theorem."
+            },
+            {
+              "id": "1c",
+              "text": "A sinusoidal voltage of 50 Hz has a maximum value of $200\\sqrt{2}$ volts. At what time measured from a positive maximum value will the instantaneous voltage be 141.4 volts?"
+            },
+            {
+              "id": "1d",
+              "text": "What are the advantages of three-phase system?"
+            },
+            {
+              "id": "1e",
+              "text": "In two-wattmeter method, what will be the power factor when both wattmeters show equal readings?"
+            },
+            {
+              "id": "1f",
+              "text": "Explain magnetic leakage and fringing."
+            },
+            {
+              "id": "1g",
+              "text": "How do the hysteresis and eddy current loss depend on frequency?"
+            },
+            {
+              "id": "1h",
+              "text": "Define form factor and peak factor."
+            },
+            {
+              "id": "1i",
+              "text": "Write the statement of KVL and KCL."
+            },
+            {
+              "id": "1j",
+              "text": "What is the meaning of phase sequence? How can it be changed?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "numerical",
+              "text": "A series $R-L-C$ circuit having a resistance of $50 \\Omega$, an inductance of $500 \\text{ mH}$ and a capacitance of $400 \\mu\\text{F}$, is energized from a $50 \\text{ Hz}$, $230 \\text{ V}$, AC supply. Find the\u2014 (i) resonant frequency of the circuit; (ii) peak current drawn by the circuit at $50 \\text{ Hz}$; (iii) peak current drawn by the circuit at resonant frequency.",
+              "marks": 6
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "A coil of p.f. 0.8 is connected in series with a $110 \\mu\\text{F}$ capacitor. The supply frequency is $50 \\text{ Hz}$. The potential drop across the coil is found to be equal to the potential drop across the capacitor. Calculate the resistance and inductance of the coil.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "Show that the average power demand, in purely inductive and purely capacitive AC circuit is zero.",
+              "marks": 6
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "In a 3-phase circuit, two wattmeters used to measure power indicate 1000 W and 500 W respectively. Find the power factor of the circuit\u2014 (i) when both wattmeter readings are positive; (ii) when the latter reading is obtained by reversing the current coil connections.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "sub_questions": [
+            {
+              "id": "4a",
+              "type": "theory",
+              "text": "Explain the various losses in a transformer. In which part these losses occur? How to minimize them? On which factors they depend?",
+              "marks": 6
+            },
+            {
+              "id": "4b",
+              "type": "theory",
+              "text": "Explain the construction and working of a single-phase dynamometer-type wattmeter.",
+              "marks": 8
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "type": "theory",
+          "text": "Compare electric and magnetic circuits, clearly stating similarities and dissimilarities between them. State five applications of magnetic circuit in engineering field.",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "type": "theory",
+          "text": "Derive the relationship between line voltage and phase voltage, line current and phase current for a 3-phase delta-connected system.",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "type": "numerical",
+          "text": "Determine current in 10 ohm resistance using Norton's theorem in the network as shown in the figure below : [Diagram: A multi-loop DC circuit with two voltage sources (15V and 30V) and resistors (8\u03a9, 6\u03a9, 4\u03a9, 10\u03a9).]",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "type": "numerical",
+          "text": "An iron ring of cross-sectional area $6 \\text{ cm}^2$ is wound with a wire of 100 turns and has a cut of $2 \\text{ mm}$. Calculate the magnetizing current required to produce a flux of $0.1 \\text{ mWb}$ if mean length of magnetic path is $30 \\text{ cm}$ and relative permeability of iron is 470.",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "Derive the expressions of equivalent star network resistances from the delta network comprising of $R_{12}$, $R_{23}$, $R_{31}$, where nodes are termed as 1, 2, 3 respectively.",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "theory",
+              "text": "Draw B-H curve with neat and labelled diagram. Explain its applicability in transformer.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

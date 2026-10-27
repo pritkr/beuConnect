@@ -1,0 +1,289 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B. Tech 4th Semester Examination, 2024",
+    "subject": "Discrete Mathematics",
+    "subject_slug": "discrete-mathematics",
+    "subject_code": "100404",
+    "year": 2024,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The function \\( f:R \\rightarrow R \\) defined by \\( f(x)=x^3+5 \\)</p>",
+          "options": [
+            "One-One but not onto",
+            "Onto but not One-One",
+            "Both One-One and Onto",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Consider the following relation R on a set \\( A=\\{1,2,3,4\\} \\): R = {(1,1), (1, 3), (3, 2),\n                        (2, 2), (3, 3), (3, 1), (2, 3), (1, 4), (4, 4)} Then</p>",
+          "options": [
+            "Reflexive",
+            "Symmetric",
+            "Transitive",
+            "Equivalence"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Out of the following which of these integers is not prime?</p>",
+          "options": [
+            "23",
+            "59",
+            "21",
+            "71"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The Greatest common divisor of 0 and 11</p>",
+          "options": [
+            "0",
+            "1",
+            "11",
+            "Does not exist"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Suppose G is a group with a binary operation * defined by \\( a*b=a+b+1 \\), for \\( a, b \\in G\n                        \\) then</p>",
+          "options": [
+            "Identity element = -1",
+            "Identity element = 1",
+            "Identity element = -2",
+            "Identity element = 2"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The field which contains at least _____ element/elements</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The set of integers with respect to addition is</p>",
+          "options": [
+            "Abelian group",
+            "Cyclic group",
+            "Both (i) and (ii)",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The total number of edges in a complete graph of n vertices is</p>",
+          "options": [
+            "\\( n \\)",
+            "\\( \\frac{n}{2} \\)",
+            "\\( n^2-1 \\)",
+            "\\( \\frac{n(n-1)}{2} \\)"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In any undirected graph, the sum of degrees of all vertices</p>",
+          "options": [
+            "must be even",
+            "is a twice the number of edges",
+            "must be odd",
+            "Both (i) and (ii)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>\\( (p \\rightarrow q) \\wedge (r \\rightarrow q) \\) is equivalent to</p>",
+          "options": [
+            "\\( (p \\vee r) \\rightarrow q \\)",
+            "\\( p \\vee (r \\rightarrow p) \\)",
+            "\\( p \\vee (r \\rightarrow q) \\)",
+            "\\( p \\rightarrow (q \\rightarrow r) \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Given \\( A=\\{1,2,3\\} \\), \\( B=\\{7,8\\} \\) and \\( R=\\{(1,7), (2, 7), (1, 8), (3, 8)\\}\n                        \\), find \\( R^{-1} \\) (inverse of R) and \\( R' \\) complement of R.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Consider \\( A=B=C=R \\) set of real numbers and let \\( f:A \\rightarrow B \\), \\( g: B\n                        \\rightarrow C \\) defined by \\( f(x)=x+9 \\) and \\( g(y)=y^2+3 \\) find the following\n                        composition functions: \\( (f \\circ g)(a) \\), \\( (g \\circ f)(a) \\), \\( (g \\circ f)(x)\n                        \\), \\( (f \\circ g)(-3) \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is the negation of each of the following propositions? (i) Today is Tuesday (ii) A cow is an\n                        animal (iii) No one wants to buy my house</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Determine the truth value of each of the following statements (i) \\( 4+3=7 \\) and \\( 6+2=8 \\)\n                        (ii) \\( 2+3=4 \\) and \\( 3+1=2 \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Show that the set of rational numbers Q forms an abelian group.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Define a ring, give an example of a commutative ring without zero divisors and a non-commutative\n                        ring with identity.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Describe the Fundamental Theorem of Arithmetic. Factorize the number '324' and represent it as a\n                        product of primes.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Use the Euclidean algorithm to find the greatest common divisor of each pair of integers, (i) 60,\n                        90 (ii) 414, 662</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Describe a graph model that can be used to represent all forms of electronic communication\n                        between two people in a single graph. What kind of graph is needed?</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain the complete graph and prove that \\( k_5 \\) (complete graph) is a nonplanar graph.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the congruence relation. Let \\( n \\) be a positive integer then: (i) If \\( a \\equiv b\n                        \\pmod{n} \\), then \\( b \\equiv a \\pmod{n} \\) (ii) If \\( a \\equiv b \\pmod{n} \\) and \\(\n                        b \\equiv c \\pmod{n} \\), then \\( a \\equiv c \\pmod{n} \\).</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Show that \\( p \\Leftrightarrow q \\equiv (p \\Rightarrow q) \\wedge (q \\Rightarrow p) \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Write short notes of the following: (i) Eulerian Graph (ii) Graph Coloring</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Write short notes of the following: (i) Chromatic number (ii) Perfect Graph</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What is the field? Show that \\( (Q, +, \\times) \\) is a field.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>If in a ring R with \\( (xy)^2=x^2y^2 \\) for all \\( x, y \\in R \\), then R is commutative.</p>"
+        }
+      ]
+    }
+  ]
+}

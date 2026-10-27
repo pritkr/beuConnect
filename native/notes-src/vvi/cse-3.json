@@ -1,0 +1,270 @@
+{
+  "branch": "cse",
+  "sem": 3,
+  "subjects": [
+    {
+      "code": "105301",
+      "name": "Digital Electronics",
+      "vvi": [
+        {
+          "topic": "Boolean algebra and De Morgan's theorems",
+          "note": "De Morgan: (A·B)' = A' + B' and (A+B)' = A'·B'. Use the laws to reduce an expression to SOP (sum of minterms) or POS (product of maxterms), then say which form a NAND-only or NOR-only circuit needs.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "K-map simplification, including don't-care conditions",
+          "note": "Group 1, 2, 4, 8 adjacent cells in powers of two, wrapping across edges. A don't-care may be grouped if it makes a group larger, and left out otherwise; the answer must cover every 1 at least once and use the fewest groups.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Half adder, full adder and parallel adder",
+          "note": "Half adder: Sum = A⊕B, Carry = A·B. Full adder adds Cin, so Sum = A⊕B⊕Cin and Cout = AB + Cin(A⊕B); cascade n full adders for an n-bit ripple-carry adder. Subtraction is addition with the subtrahend in 2's complement.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Multiplexer, demultiplexer and decoder",
+          "note": "A 2ⁿ-to-1 MUX selects one of 2ⁿ inputs using n select lines; a decoder is the inverse, turning an n-bit code into one active output of 2ⁿ. Both implement arbitrary Boolean functions directly from a truth table.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Flip-flops: SR, JK, D, T and race-around",
+          "note": "A flip-flop stores one bit, edge-triggered in practice. JK with J = K = 1 toggles, which causes race-around in a level-triggered JK; a master-slave or edge-triggered construction removes it. Write the characteristic table and excitation table for each type.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Synchronous and asynchronous counters, mod-N design",
+          "note": "A ripple counter clocks each stage from the previous output, so delays add; a synchronous counter clocks all stages together. For mod-N, count to N and reset: use a NAND of the states that reach N to clear the flip-flops, and state the number of flip-flops as ⌈log₂N⌉.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Shift registers and their types",
+          "note": "SISO, SIPO, PISO and PIPO move bits one position per clock. A universal shift register adds left/right/hold control; a ring counter recirculates one bit, and a Johnson counter recirculates the complement for 2n states.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "105302",
+      "name": "Data Structure & Algorithms",
+      "vvi": [
+        {
+          "topic": "Time complexity, Big-O and the growth of functions",
+          "note": "Big-O is an upper bound, Big-Omega a lower bound and Big-Theta a tight bound. Drop constants and lower-order terms: 3n² + 5n + 2 is Θ(n²). Always name the worst-case input, because that is the case BEU asks for.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Array versus linked list",
+          "note": "An array gives O(1) random access but O(n) insertion or deletion in the middle and a fixed size. A linked list inserts and deletes in O(1) given the node, but searches in O(n) and spends extra space on pointers.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Stack, and infix to postfix conversion",
+          "note": "A stack is LIFO with push and pop at one end. For infix to postfix, push operators on a stack by precedence, push '(' and pop down to it on ')', then evaluate the postfix with a value stack. Both passes are O(n).",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Circular queue and its full/empty conditions",
+          "note": "Advance with front = (front + 1) % N and rear = (rear + 1) % N. Empty when front == rear; with one slot reserved, full when (rear + 1) % N == front. This reuses the slots a linear array queue wastes.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Binary search tree: insert, delete and traversals",
+          "note": "Left subtree < node < right subtree, so inorder traversal is sorted. Search, insert and delete cost O(h). Delete a two-child node by copying its inorder successor (or predecessor) and deleting that node; a skewed tree degrades to O(n), which AVL and Red-Black trees fix.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Quicksort versus merge sort",
+          "note": "Quicksort is in-place and O(n log n) on average but O(n²) when the pivot is always the smallest or largest; merge sort is O(n log n) in every case, stable, but needs O(n) extra space. Quicksort's partition is the part examiners ask you to trace.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "BFS, DFS and their applications",
+          "note": "BFS uses a queue and finds shortest paths in an unweighted graph; DFS uses recursion or an explicit stack and detects cycles, gives topological order and finds connected components. Both are O(V + E) with an adjacency list.",
+          "marks": 7,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Hashing and collision resolution",
+          "note": "A hash function maps a key to a table index; collisions are handled by chaining or open addressing (linear probing, quadratic probing, double hashing). Average cost is O(1) and depends on the load factor α = n/m.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "105303",
+      "name": "Object Oriented Programming Using Java",
+      "vvi": [
+        {
+          "topic": "The four pillars of OOP",
+          "note": "Encapsulation hides state behind methods; inheritance reuses a parent's members; polymorphism lets one interface take many forms (overloading at compile time, overriding at run time); abstraction exposes what an object does, not how. Give one Java line for each, not just definitions.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Method overloading versus overriding",
+          "note": "Overloading: same name, different parameter list, resolved at compile time, any return type. Overriding: same signature in a subclass, resolved at run time through dynamic dispatch, must not narrow access, and cannot override final or static methods.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Inheritance types and the super keyword",
+          "note": "Java supports single, multilevel and hierarchical class inheritance; multiple inheritance of type comes through interfaces. super calls the parent constructor (first statement) or a hidden parent method; a subclass constructor always runs the parent constructor first.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Abstract class versus interface",
+          "note": "An abstract class may hold state and constructors and can mix concrete and abstract methods; a class extends only one. An interface is a pure contract with constants and (since Java 8) default and static methods, and a class may implement several.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Exception handling: try, catch, finally, throw, throws",
+          "note": "Checked exceptions (IOException) must be caught or declared; unchecked ones (NullPointerException, ArithmeticException) are programming errors. finally runs whether or not an exception was thrown; try-with-resources closes a resource without a finally block.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Threads: Thread versus Runnable and the thread lifecycle",
+          "note": "Extend Thread or implement Runnable (preferred, because Java allows only one superclass) and start it with start(), which calls run() on a new thread. States: new, runnable, blocked/waiting, timed waiting, terminated; synchronize shared state to avoid a race.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "String versus StringBuffer versus StringBuilder",
+          "note": "String is immutable, so concatenation in a loop creates garbage. StringBuffer is mutable and synchronized; StringBuilder is mutable and faster but not thread-safe. Use StringBuilder unless several threads share the buffer.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "The Java Collection framework",
+          "note": "List keeps insertion order and allows duplicates (ArrayList, LinkedList); Set rejects duplicates (HashSet, TreeSet); Map stores key-value pairs (HashMap, TreeMap). ArrayList searches in O(1) by index, while LinkedList inserts in O(1) at the ends.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "code": "105304",
+      "name": "Discrete Mathematics and Graph Theory",
+      "vvi": [
+        {
+          "topic": "Sets, power set and De Morgan's laws",
+          "note": "|P(A)| = 2^|A|. De Morgan: (A ∪ B)' = A' ∩ B' and (A ∩ B)' = A' ∪ B'. For a set proof, show both inclusions or use the membership table.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Relations and equivalence classes",
+          "note": "A relation on A is a subset of A × A. Reflexive, symmetric and transitive together make an equivalence relation; its equivalence classes partition A. A relation that is reflexive, antisymmetric and transitive is a partial order, drawn as a Hasse diagram.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Functions: injective, surjective, bijective and composition",
+          "note": "Injective means distinct inputs have distinct images; surjective means every codomain element is hit; bijective is both and therefore invertible. If |A| = |B| and f is injective, it is automatically bijective; (g∘f)(x) = g(f(x)).",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Propositional logic, tautology and logical equivalence",
+          "note": "Build a truth table with 2ⁿ rows and check the final column: all T is a tautology, all F a contradiction, otherwise a contingency. p → q is equivalent to ¬p ∨ q, and its contrapositive ¬q → ¬p, not its converse.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "Permutations and combinations with repetition",
+          "note": "Without repetition: nPr = n!/(n−r)!, nCr = n!/(r!(n−r)!). With repetition, arrangements = n^r and multisets = C(n+r−1, r). Words with repeated letters divide by the factorial of each repeat count.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "The pigeonhole principle",
+          "note": "If n items go into m containers and n > m, some container holds at least ⌈n/m⌉. State the pigeonholes and the pigeons explicitly: for 13 people, two share a birth month; for 5 points in a unit square, two lie within 1/√2.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "Euler and Hamiltonian paths",
+          "note": "An Euler circuit uses every edge once and exists iff every vertex has even degree and the graph is connected; an Euler path allows exactly two odd-degree vertices. Hamiltonian visits every vertex once — no simple degree test exists, so verify by construction or use Dirac's condition.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Spanning trees: Kruskal and Prim",
+          "note": "A spanning tree has n − 1 edges and no cycle. Kruskal sorts edges and adds the cheapest that joins two components (union-find); Prim grows one tree from a start vertex using the cheapest crossing edge. Both give an MST; state which is easier on a dense graph (Prim).",
+          "marks": 8,
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "code": "105305",
+      "name": "Operating Systems",
+      "vvi": [
+        {
+          "topic": "Process versus thread, PCB and process states",
+          "note": "A process owns an address space; a thread shares it and has only its own stack, registers and program counter, so context switching between threads is cheaper. The PCB holds PID, state, program counter, registers, scheduling information and memory limits. States: new, ready, running, waiting, terminated.",
+          "marks": 5,
+          "confidence": "high"
+        },
+        {
+          "topic": "CPU scheduling: FCFS, SJF, SRTF, priority and round robin",
+          "note": "Draw the Gantt chart, then compute waiting time = completion − arrival − burst, turnaround = completion − arrival, and their averages. SJF is optimal but needs future burst times; round robin with quantum q bounds response time; aging prevents starvation in priority scheduling.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Deadlock: four conditions and Banker's algorithm",
+          "note": "Mutual exclusion, hold and wait, no preemption and circular wait must all hold. Banker's algorithm pretends to grant each request, then runs the safety algorithm; a state is safe if some sequence of processes can finish with the available resources. Give the need matrix and the safe sequence.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Semaphores and the producer-consumer problem",
+          "note": "A semaphore is an integer with wait (P) and signal (V); binary semaphores are mutexes, counting semaphores guard N resources. Producer-consumer uses empty = N, full = 0 and mutex = 1; wait on the resource semaphore before the mutex to avoid deadlock. The bounded buffer is the standard trace question.",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Paging versus segmentation, and the TLB",
+          "note": "Paging splits physical memory into fixed frames and logical memory into pages, removing external fragmentation but leaving internal fragmentation; segmentation uses variable logical segments that match the program's structure. A TLB caches recent page-table entries; effective access time = hit ratio × (TLB + memory) + miss ratio × (TLB + 2 × memory).",
+          "marks": 7,
+          "confidence": "high"
+        },
+        {
+          "topic": "Page replacement: FIFO, LRU and Optimal",
+          "note": "FIFO evicts the oldest page and can suffer Belady's anomaly (more frames, more faults); LRU evicts the least recently used, which is good but needs hardware or a stack; Optimal evicts the page used farthest in the future and is the lower bound, not implementable. Trace the reference string frame by frame and count faults.",
+          "marks": 8,
+          "confidence": "high"
+        },
+        {
+          "topic": "Disk scheduling: FCFS, SSTF, SCAN and C-SCAN",
+          "note": "Compute total head movement from the request queue and the initial head position. SSTF picks the nearest request and can starve far ones; SCAN sweeps to one end and back (elevator); C-SCAN returns to the start without servicing on the way back, giving more uniform wait.",
+          "marks": 5,
+          "confidence": "medium"
+        },
+        {
+          "topic": "File allocation methods",
+          "note": "Contiguous allocation is fast but suffers external fragmentation and hard growth; linked allocation grows easily but has no random access; indexed allocation keeps an index block of pointers, giving random access with one extra read. FAT and inodes are the exam-ready examples.",
+          "marks": 5,
+          "confidence": "medium"
+        }
+      ]
+    }
+  ]
+}

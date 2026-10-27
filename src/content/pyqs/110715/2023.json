@@ -1,0 +1,280 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 7th Semester Examination, 2023",
+    "subject": "Computer Networks",
+    "subject_slug": "computer-networks",
+    "subject_code": "110715",
+    "year": 2023,
+    "semester": 7,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Flow control is the responsibility of?</p>",
+          "options": [
+            "Data Link Layer",
+            "Transport Layer",
+            "Both (a) and (b)",
+            "Application Layer"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which one of the following layers of abstraction is not present in the TCP/IP (Transmission\n                        Control\n                        Protocol/Internet Protocol) model but is included in the OSI model?</p>",
+          "options": [
+            "Network layer.",
+            "Transport layer.",
+            "Session layer.",
+            "Application layer."
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>How many bits are required to represent IPv4 address in any IPv4 header?</p>",
+          "options": [
+            "64 bits.",
+            "32 bits.",
+            "16 bits.",
+            "8 bits."
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which one of the following functionalities do TCP and UDP have in common?</p>",
+          "options": [
+            "In-order delivery.",
+            "Reliable transfer.",
+            "Checksum.",
+            "Connection establishment."
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What type of application would prefer UDP transport service?</p>",
+          "options": [
+            "Video conferencing.",
+            "World Wide Web (WWW).",
+            "Online chess game.",
+            "Email."
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which one of the following statements is true about Go-Back-N (GBN) protocol?</p>",
+          "options": [
+            "Sequence number in GBN needs to be at least twice as large as the window size.",
+            "GBN uses multiple timers.",
+            "GBN retransmits packets upon receiving duplicate acknowledgements.",
+            "GBN discards packets that are received out of order."
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which one of the following statements is true about Selective Repeat (SR) protocol?</p>",
+          "options": [
+            "SR receiver sends duplicate acknowledgement for all packets that are not expected.",
+            "SR uses multiple timers.",
+            "SR retransmits packets upon receiving duplicate acknowledgements.",
+            "SR uses cumulative acknowledgement."
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which one of the following statements is true about TCP's \"Slow Start\" algorithm?</p>",
+          "options": [
+            "TCP's congestion window size increases linearly.",
+            "TCP's congestion window size decreases linearly.",
+            "TCP's congestion window size increases exponentially.",
+            "TCP's congestion window size decreases exponentially."
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In which computer network topology, a single cable is used, through which all data propagates and\n                        to\n                        which all computers and networked nodes are connected?</p>",
+          "options": [
+            "Star.",
+            "Bus.",
+            "Ring.",
+            "Mesh."
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Bluetooth is the wireless technology for -</p>",
+          "options": [
+            "Personal area network.",
+            "Local area network.",
+            "Metropolitan area network.",
+            "Wide area network."
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 10,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>List, in order, the layers of the TCP/IP protocol stack, and briefly write the functions provided\n                        by\n                        each layer. Also give an example of a protocol or networking technology associated with each\n                        layer.\n                    </p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Draw the IPV4 Datagram Header Format and explain it.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What are the differences in the treatment of collisions in CSMA/CD (Carrier Sense Multiple\n                        Access,\n                        with Collision Detection) and CSMA/CA (Carrier Sense Multiple Access, with Collision Avoidance)?\n                    </p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Write down the sender-side steps and the receiver-side steps in Cyclic Redundancy Check (CRC)\n                        method,\n                        with examples.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve all three questions:",
+      "total_marks": 3,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain why Slotted ALOHA approach performs better than pure ALOHA approach?</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>In a Slotted ALOHA system, suppose there are 5 nodes, in which each node transmits a frame with\n                        probability \\( p \\). What is the probability that in a given time slot, one of the nodes\n                        successfully transmits a frame?</p>"
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>Consider a sender S and a receiver R that are connected on a network, where the one-way latency\n                        is\n                        250 milliseconds. The data rate of that network is 32000 bits per second, and size of each frame\n                        in\n                        that network is 1000 bits. Assume that S and R are using sliding windows with Selective Repeat.\n                        How\n                        large must the sliding window for S be in order to maximize the utilization?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Discuss Link-State routing protocol with an example.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain count-to-infinity problem associated with distance vector routing. Discuss the\n                        countermeasures taken in Split Horizon and Poison Reverse techniques.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>An ISP is granted the block 80.70.56.0/21. The ISP needs to allocate addresses for 2\n                        organizations\n                        each 500 addresses, 2 organizations each with 250 addresses and 3 organizations each with 50\n                        addresses. Design a subnet and find the range of addresses and unallocated addresses for each\n                        organization.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Compare any two the following: (i) TCP and UDP. (ii) Packet switching and Circuit switching (iii)\n                        Bit-stuffing and Byte-stuffing</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions:",
+      "total_marks": 9,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Consider a router receiving an IP packet of header size 20 Bytes (having no optional fields) and\n                        payload size of 4000 Bytes. Now the router must now transmit this packet across an Ethernet\n                        network,\n                        which has Maximum Transmission Unit (MTU) of 1500 Bytes. If the router attempts to send the\n                        maximum\n                        payload bits permissible in each attempt, how fragmentation is to be carried out to transmit the\n                        IP\n                        packet in the Ethernet network?</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>What are the differences between leaky bucket algorithm and token bucket algorithm?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions:",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Write down the handshaking steps required to setup a TCP connection between two applications\n                        running\n                        on two end-hosts A and B. Also, write down the purpose of each data unit of TCP that is sent and\n                        received for establishing TCP connection.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Write down the similarities and differences between Hyper-Text Transfer Protocol (HTTP) and File\n                        Transfer Protocol (FTP).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Hamming distance</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>DNS</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>DHCP</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Telnet</p>"
+        }
+      ]
+    }
+  ]
+}

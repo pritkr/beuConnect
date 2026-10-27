@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2018",
+    "subject": "Fluid Mechanics",
+    "subject_slug": "fluid-mechanics",
+    "subject_code": "011307",
+    "year": 2018,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Consider the following relationship between the shear stress and the rate of shear strain \\(\n                        \\tau =\n                        \\mu \\left(\\frac{du}{dy}\\right)^n \\). When the exponent n is greater than 1, the fluid is\n                        known\n                        as\n                    </p>",
+          "options": [
+            "Bingham plastic",
+            "Dilatant fluid",
+            "Newtonian fluid",
+            "Pseudoplastic fluid"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>What is the pressure difference between inside and outside of a droplet of water?</p>",
+          "options": [
+            "\\( \\frac{2\\sigma}{d} \\)",
+            "\\( \\frac{4\\sigma}{d} \\)",
+            "\\( \\frac{8\\sigma}{d} \\)",
+            "\\( \\frac{12\\sigma}{d} \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A floating body has centre of buoyancy at B, centre of gravity at G and metacentre at M. Then for\n                        stable equilibrium of the body</p>",
+          "options": [
+            "MG=0",
+            "M is below G",
+            "BG=0",
+            "M is above G"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>At the point of boundary layer separation</p>",
+          "options": [
+            "shear stress is maximum",
+            "shear stress is zero",
+            "velocity is negative",
+            "density variation is maximum"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>If x is the distance from the leading edge of a plate, then thickness of laminar boundary layer\n                        varies as</p>",
+          "options": [
+            "\\( \\frac{1}{x} \\)",
+            "\\( x^{4/5} \\)",
+            "\\( x^{1/2} \\)",
+            "\\( x^2 \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The velocity profile of a fully developed laminar flow in a straight circular pipe is given by\n                        the\n                        expression \\( u(r) = -\\frac{R^2}{4\\mu} \\left(\\frac{dp}{dx}\\right) \\left[1 -\n                        \\frac{r^2}{R^2}\\right]\n                        \\) where \\( \\frac{dp}{dx} \\) is constant and the symbols have their usual meanings. The\n                        average\n                        velocity of fluid in the pipe is</p>",
+          "options": [
+            "\\( -\\frac{R^2}{8\\mu}\\left(\\frac{dp}{dx}\\right) \\)",
+            "\\( -\\frac{R^2}{4\\mu}\\left(\\frac{dp}{dx}\\right) \\)",
+            "\\( -\\frac{R^2}{2\\mu}\\left(\\frac{dp}{dx}\\right) \\)",
+            "\\( -\\frac{R^2}{\\mu}\\left(\\frac{dp}{dx}\\right) \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A jet of water impinges with velocity v on a plate which is inclined at angle \\( \\alpha \\)\n                        with\n                        the\n                        direction of jet. The force exerted on the plate in a direction normal to flow is</p>",
+          "options": [
+            "\\( \\rho A v^2 \\sin^2 \\alpha \\)",
+            "\\( \\frac{1}{2} \\rho A v^2 \\sin 2\\alpha \\)",
+            "\\( \\rho A v \\sin \\alpha \\)",
+            "\\( \\frac{1}{2} \\rho A v \\sin 2\\alpha \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A vessel contains oil (density 0.8 \\( g/cm^3 \\)) over mercury (density 13.6 \\( g/cm^3 \\)). A\n                        homogeneous sphere floats with half its volume immersed in mercury and the other half is in oil.\n                        The\n                        density of the material of the sphere in \\( g/cm^3 \\) is</p>",
+          "options": [
+            "3.8",
+            "5.6",
+            "7.2",
+            "9.1"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Euler's dimensionless number relates</p>",
+          "options": [
+            "inertia and gravity force",
+            "viscous and inertia force",
+            "pressure and inertia force",
+            "buoyant and viscous force"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>What is the dimension of kinematic viscosity of a fluid?</p>",
+          "options": [
+            "\\( L T^{-2} \\)",
+            "\\( L^2 T^{-1} \\)",
+            "\\( M L^{-1} T^{-1} \\)",
+            "\\( M L^{-2} T^{-2} \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all questions :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>State the Newton's law of viscosity. Explain the effect of temperature on viscosity of water and\n                        that\n                        of air.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Define the terms surface tension and capillarity.</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>Calculate the dynamic viscosity of an oil, which is used for lubrication between a square plate\n                        of\n                        size \\( 0.8 \\, m \\times 0.8 \\) m and an inclined plane with angle of inclination \\(\n                        30^{\\circ}\n                        \\). The weight of the square plate is 300 N and its slides down the inclined plane with a\n                        uniform\n                        velocity of \\( 0.3 \\, m/s \\). The thickness of oil film is 1.5 mm.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all questions :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Differentiate between simple manometer and differential manometer.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>State the Pascal's law.</p>"
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>A U-tube differential manometer connects two pressure pipes A and B. Pipe A contains carbon\n                        tetrachloride having a specific gravity 1.594 under a pressure of 11.772 \\( N/cm^2 \\) and pipe\n                        B\n                        contains oil of sp. gr. 0.8 under a pressure of 11.772 \\( N/cm^2 \\). The pipe A lies 2.5 m\n                        above\n                        pipe B. Find the difference of pressure measured by mercury as fluid filling U-tube.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for the depth of centre of pressure from free surface of liquid of an\n                        inclined\n                        plane surface submerged in the liquid.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A solid cylinder of diameter 4.0 m has a height of 3 meters. Find the meta-centric height of the\n                        cylinder when it is floating in water with its axis vertical. The sp. gr. of the cylinder = 0.6.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Define the terms (i) streamline, (ii) unsteady flow and (iii) laminar and turbulent flow.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>What do you understand by flow nets?</p>"
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>The velocity vector in a fluid flow is given by \\( V = 4x^3i - 10x^2yj + 2tk \\). Find the\n                        velocity\n                        and acceleration of a fluid particle at (2, 1, 3) at a time \\( t = 1 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for Bernoulli's theorem from first principle and state the assumptions made\n                        for\n                        such a derivation.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>The water is flowing through a pipe having diameters 20 cm and 10 cm at inlet and outlet\n                        respectively. The rate of flow through pipe is 35 litres/s. The inlet is 6 m above datum and\n                        outlet\n                        is 4 m above datum. If the pressure at inlet is 39.24 \\( N/cm^2 \\), find the intensity of\n                        pressure\n                        at outlet.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Discuss the relative merits and demerits of venturi meter with respect to orifice meter.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Prove that the discharge through venturi meter by the relation \\( Q_{act} = C_d \\frac{a_1\n                        a_2}{\\sqrt{a_1^2 - a_2^2}} \\sqrt{2gh} \\) where, \\( a_1 \\) = area of pipe at inlet, \\( a_2\n                        \\) =\n                        area at throat.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all questions :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What do you understand by the terms 'major energy loss' and 'minor energy loss' in pipes?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>With the help of a suitable diagram, explain hydraulic gradient line and total energy line.</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>SAE 10 oil is flowing through a pipeline at a velocity of \\( 1.0 \\, m/s \\). The pipe is 45 m\n                        long\n                        and has a diameter of 150 mm. Find the head loss due to friction. [\\( \\rho = 869 \\, kg/m^3\n                        \\)\n                        and\n                        \\( \\mu = 0.0814 \\, kg/m-s \\)]</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Define Reynolds number. Water is flowing through a pipe of diameter 30 cm at a velocity of 4 m/s.\n                        Find the velocity of oil flowing in another pipe of diameter 10 cm, if the condition of dynamic\n                        similarity is satisfied between the two pipes. The viscosity of water and oil is given as 0.01\n                        poise\n                        and 0.025 poise. The sp. gr. of oil = 0.8.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Differentiate between streamline body and bluff body. With the help of a suitable diagram, show\n                        the\n                        different regimes of boundary layer separation for flow over a cylinder.</p>"
+        }
+      ]
+    }
+  ]
+}

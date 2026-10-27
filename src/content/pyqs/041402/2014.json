@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2014",
+    "subject": "Digital Electronics",
+    "subject_slug": "digital-electronics",
+    "subject_code": "041402",
+    "year": 2014,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct option from the following (any seven) :",
+          "marks": null,
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "A quantity having continuous wave is",
+              "options": [
+                "(i) a digital quantity",
+                "(ii) an analog quantity",
+                "(iii) a binary quantity",
+                "(iv) a natural quantity"
+              ]
+            },
+            {
+              "number": "b",
+              "text": "The sum of $11010+01111$ equals",
+              "options": [
+                "(i) 101001",
+                "(ii) 101010",
+                "(iii) 110101",
+                "(iv) 101000"
+              ]
+            },
+            {
+              "number": "c",
+              "text": "The output of a gate is low if and only if its input are HIGH. It is true for",
+              "options": [
+                "(i) AND",
+                "(ii) XNOR",
+                "(iii) NOR",
+                "(iv) NAND"
+              ]
+            },
+            {
+              "number": "d",
+              "text": "An example of a standard SOP expression is",
+              "options": [
+                "(i) $AB + ABC + ABD$",
+                "(ii) $ABC + ACD$",
+                "(iii) $AB + \\bar{A}B + AB$",
+                "(iv) $ABCD + \\bar{A}B + \\bar{A}$"
+              ]
+            },
+            {
+              "number": "e",
+              "text": "To implement the expression of $\\bar{A}B\\bar{C}D + A\\bar{B}CD + AB\\bar{C}\\bar{D}$, it takes one OR gate and",
+              "options": [
+                "(i) one AND gate",
+                "(ii) three AND gates",
+                "(iii) three AND gates and four inverters",
+                "(iv) three AND gates and three inverters"
+              ]
+            },
+            {
+              "number": "f",
+              "text": "The invalid state of an S-R latch occurs when",
+              "options": [
+                "(i) $S = 1, R = 0$",
+                "(ii) $S = 0, R = 1$",
+                "(iii) $S = 1, R = 1$",
+                "(iv) $S = 0, R = 0$"
+              ]
+            },
+            {
+              "number": "g",
+              "text": "The device used to convert a binary number to a 7-segment display format is",
+              "options": [
+                "(i) multiplexer",
+                "(ii) encoder",
+                "(iii) decoder",
+                "(iv) register"
+              ]
+            },
+            {
+              "number": "h",
+              "text": "An asynchronous counter differs from a synchronous counter in",
+              "options": [
+                "(i) the number of states in its sequence",
+                "(ii) the method of clocking",
+                "(iii) the type of flip-flop used",
+                "(iv) the value of the modulus"
+              ]
+            },
+            {
+              "number": "i",
+              "text": "A stage in a shift register consists of",
+              "options": [
+                "(i) a latch",
+                "(ii) a flip-flop",
+                "(iii) a byte of storage",
+                "(iv) four bits of storage"
+              ]
+            },
+            {
+              "number": "j",
+              "text": "A 32-bit data word consists of",
+              "options": [
+                "(i) 2 bytes",
+                "(ii) 4 nibbles",
+                "(iii) 4 bytes",
+                "(iv) 3 bits and 1 nibble"
+              ]
+            }
+          ],
+          "id": "1"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Make a K-map for the function $F = A\\bar{B} + AC + A\\bar{D} + AB + ABC$.",
+              "marks": "5"
+            },
+            {
+              "number": "b",
+              "text": "Express F, in standard SOP and POS form.",
+              "marks": "5"
+            },
+            {
+              "number": "c",
+              "text": "Minimize F and realize the minimal expression using NOR gate only.",
+              "marks": "4"
+            }
+          ],
+          "id": "2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Prove the following algebraically :\n(i) $(A+B)(A+\\bar{B}) = A$\n(ii) $(A+B)(A+\\bar{B})(\\bar{A}+B) = AB$",
+              "marks": "5"
+            },
+            {
+              "number": "b",
+              "text": "Convert decimal number 75 into Gray code.",
+              "marks": "4"
+            },
+            {
+              "number": "c",
+              "text": "Verify a two-level AND-OR gate is equivalent to NAND-NAND.",
+              "marks": "5"
+            }
+          ],
+          "id": "3",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Draw a circuit diagram of an RTL EX-OR gate. Explain its operation.",
+              "marks": "7"
+            },
+            {
+              "number": "b",
+              "text": "Draw a circuit diagram of DTL gate and explain it. What are fan-in and fan-out? How will you increase the fan-out of the gate?",
+              "marks": "7"
+            }
+          ],
+          "id": "4",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Design a full adder using only NAND gate.",
+              "marks": "7"
+            },
+            {
+              "number": "b",
+              "text": "Design a 8 to 1 line multiplexer using 4 to 1 line multiplexer.",
+              "marks": "7"
+            }
+          ],
+          "id": "5",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Differentiate between synchronous and asynchronous counter.",
+              "marks": "7"
+            },
+            {
+              "number": "b",
+              "text": "Design a 4-bit synchronous up counter.",
+              "marks": "7"
+            }
+          ],
+          "id": "6",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Explain the following flip-flops with their diagrams and truth tables :\n(i) SR F/F\n(ii) J-K F/F\n(iii) D F/F\n(iv) T F/F",
+              "marks": "7"
+            },
+            {
+              "number": "b",
+              "text": "Design D F/F from J-K F/F.",
+              "marks": "7"
+            }
+          ],
+          "id": "7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Explain the working principle of a successive approximation ADC with the help of circuit diagram.",
+              "marks": "7"
+            },
+            {
+              "number": "b",
+              "text": "Find the output voltage from a 5-bit ladder D/A converter which has a digital input of 11010. Assume $0 = 0 \\text{ V}$ and $1 = +10 \\text{ V}$.",
+              "marks": "7"
+            }
+          ],
+          "id": "8",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Write short notes on any two of the following :",
+          "marks": null,
+          "subQuestions": [
+            {
+              "number": "a",
+              "text": "Data transfer in a shift register"
+            },
+            {
+              "number": "b",
+              "text": "ROM"
+            },
+            {
+              "number": "c",
+              "text": "Astable multivibrator using 555"
+            },
+            {
+              "number": "d",
+              "text": "Digital comparator"
+            }
+          ],
+          "id": "9"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2016",
+    "subject": "Introduction to Java Programming language",
+    "subject_slug": "introduction-to-java-programming-language",
+    "subject_code": "051529",
+    "year": 2016,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this Paper.",
+    "Attempt five questions in all.",
+    "Question No. 1 is Compulsory.",
+    "The questions are of equal value."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven)",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>What is the output of this program?<br/>\n</p><pre style=\"font-size: 10px;\">class bitwise_operator {\n    public static void main (String args[]) {\n        int var1 = 42;\n        int var2 = ~var1;\n        System.out.print(var1 + \" \" + var2);\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "42 42",
+            "43 43",
+            "42 -43",
+            "42 -42"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of these have highest precedence?</p>",
+          "options": [
+            "()",
+            "++",
+            "*",
+            "&gt;&gt;"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>What is the output of this program?<br/>\n</p><pre style=\"font-size: 10px;\">class operators {\n    public static void main(String args[]) {\n        int var1 = 5;\n        int var2 = 6;\n        int var3;\n        var3 = ++var2 * var1 / var2 + var2;\n        System.out.print(var3);\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "10",
+            "11",
+            "12",
+            "56"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>What is the output of this program?<br/>\n</p><pre style=\"font-size: 10px;\">class output {\n    public static void main(String args[]) {\n        int x, y;\n        x = 10;\n        x++;\n        --x;\n        y = x++;\n        System.out.println(x + \" \" + y);\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "11 11",
+            "11 10",
+            "10 10",
+            "10 11"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the output of this program?<br/>\n</p><pre style=\"font-size: 10px;\">class conversion {\n    public static void main(String args[]) {\n        double a = 295.04;\n        int b = 300;\n        byte c = (byte) a;\n        byte d = (byte) b;\n        System.out.println(c + \" \" + d);\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "38 -43",
+            "39 44",
+            "295 300",
+            "295.04 300"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What is the default value of Boolean variable?</p>",
+          "options": [
+            "true",
+            "false",
+            "null",
+            "not defined"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>What is the output of this program?<br/>\n</p><pre style=\"font-size: 10px;\">class array_output {\n    public static void main(String args[]) {\n        char array_variable[] = new char[10];\n        for (int i=0; i&lt;10; ++i) {\n            array_variable[i] = '1';\n            System.out.print(array_variable[i] + \" \");\n            i++;\n        }\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "1 1 1 1 1",
+            "1 1 1 1 1 1 1 1 1 1",
+            "0 1 2 3 4",
+            "None of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>What is the output of this program?<br/>\n</p><pre style=\"font-size: 10px;\">class exception_handling {\n    public static void main(String args[]) {\n        try {\n            System.out.print(\"Hello\" + \" \" + 1/0);\n        } catch (ArithmeticException e) {\n            System.out.print(\"World\");\n        }\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "Hello",
+            "World",
+            "Hello world",
+            "Hello world (with Exception thrown)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>What is the output of this program?<br/>\n</p><pre style=\"font-size: 10px;\">class overload {\n    int y;\n    int x;\n    void add(int a) {\n        x = a + 1;\n    }\n    void add(int a, int b) {\n        x = a + 2;\n    }\n}\nclass overload_methods {\n    public static void main(String args[]) {\n        overload obj = new overload();\n        int a = 0;\n        obj.add(6, 7);\n        System.out.println(obj.x);\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "6",
+            "7",
+            "8",
+            "9"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>What is the output of this program?<br/>\n</p><pre style=\"font-size: 10px;\">class A {\n    public int i;\n    private int j;\n}\nclass B extends A {\n    void display() {\n        super.j = super.i + 1;\n        System.out.println(super.i + \" \" + super.j);\n    }\n}\nclass inheritance {\n    public static void main(String args[]) {\n        B obj = new B();\n        obj.i = 1;\n        obj.j = 2;\n        obj.display();\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "2 2",
+            "3 3",
+            "Runtime Error",
+            "Compilation Error"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What is the difference between the C, C++ and Java?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Write a program that reads an integer and check whether it is prime number or not.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What do you understand by polymorphism? Explain with examples.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What do you understand by precedence and Associativity? Explain with examples.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is a constructor? Give its properties. How do we declare/define it? Can they be overloaded?\n                        Explain types of constructors with example.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What is exception-handling? What are the statements used for it? Show an example.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Give the definition (1-2 Lines) and an example of the following: i. Thread Class, ii. AWT, iii.\n                        JDBC,\n                        iv. JVM.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Difference between the following with example: i. Break and continue, ii. Abstract class and\n                        interface.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is exception-handling? What are the statements used for it? Show an example.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>What is inheritance in java? Explain different types of inheritance.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Create an abstract class Discount Policy. It should have a single abstract method compute\n                        Discount\n                        that will return the discount for the purchase of a given number of a single item. The method\n                        has\n                        two parameters, count and itemCost.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Write a program to find largest and second largest element in an array.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Write a program to design a class account using the inheritance and static keyword that shows all\n                        function of bank (withdrawal, deposit).</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Write a program to create a thread that Implement the Runnable interface.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Write a program to create a Simple class to find out the Area and perimeter of rectangle and box\n                        using super and this keyword.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Write a program to find the factorial of a given number using Recursion.</p>"
+        }
+      ]
+    }
+  ]
+}

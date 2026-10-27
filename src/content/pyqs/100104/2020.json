@@ -1,0 +1,309 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Special Exam., 2020",
+    "subject": "PROGRAMMING FOR PROBLEM SOLVING",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100104",
+    "year": 2020,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct alternative (any seven) :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "<p>A variable name in C should be a/an</p>",
+          "options": [
+            "reserve word",
+            "keyword",
+            "identifier",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "<p>Why do we write (int*) before malloc?</p>\n<p><code>int *p = (int*) malloc(sizeof(int));</code></p>",
+          "options": [
+            "It is for the syntax correctness",
+            "It is for the type casting",
+            "It is to inform malloc() function about data-type expected",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "<p>Which header file is used for reading and writing to a file?</p>",
+          "options": [
+            "#include&lt;iostream.h&gt;",
+            "#include&lt;fstream.h&gt;",
+            "#include&lt;file.h&gt;",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "<p>Which of the following functions displays the keyboard character for pressed key?</p>",
+          "options": [
+            "getch()",
+            "getche()",
+            "Both (i) and (ii)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "<p>What does the following declaration mean?</p>\n<p><code>int (*ptr) [10];</code></p>",
+          "options": [
+            "ptr is array of pointers to 10 integers",
+            "ptr is a pointer to an array of 10 integers",
+            "ptr is an array of 10 integers",
+            "ptr is a pointer to array"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "<p>Automatic variables are initialized to</p>",
+          "options": [
+            "zero",
+            "junk value",
+            "None of the above",
+            "Both of the above"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "<p>Which of the following symbols is the type-specifier?</p>",
+          "options": [
+            "&amp;",
+            "*",
+            "#",
+            "%"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "<p>The &amp;&amp; and || operators</p>",
+          "options": [
+            "compare two numeric values",
+            "compare two numeric values short-hand operators",
+            "compare two Boolean values",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "<p>Identify the correct sequence of steps to run a program.</p>",
+          "options": [
+            "Link, load, code, compile and execute",
+            "Code, compile, link, execute and load",
+            "Code, compile, link, load and execute",
+            "Compile, code, link, load and execute"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "<p>An external variable is the one</p>",
+          "options": [
+            "which resides in the memory till the end of the program",
+            "which is globally accessible by all the functions",
+            "which is declared outside the body of the function",
+            "All of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "2.",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>Discuss about some methods or methodologies used for problem solving.</p>",
+          "total_marks": 5
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>How programming utilizes different components of computer system?</p>",
+          "total_marks": 5
+        },
+        {
+          "id": "q2_c",
+          "type": "theory",
+          "text": "<p>What is algorithm? Give an example algorithm for any problem.</p>",
+          "total_marks": 4
+        }
+      ]
+    },
+    {
+      "section_title": "3.",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>What is the difference between compilation and execution of a program?</p>",
+          "total_marks": 4
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>What is the effect of warning and syntax error on program execution? What we get as an output of compilation step?</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q3_c",
+          "type": "theory",
+          "text": "<p>What are variables? List the 'data types' which can be associated to a variable in C language.</p>",
+          "total_marks": 4
+        }
+      ]
+    },
+    {
+      "section_title": "4.",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>What is the role of 'header files' in C language? List any four with their usage.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Draw a flowchart to find the average of 10 numbers of an array.</p>",
+          "total_marks": 4
+        },
+        {
+          "id": "q4_c",
+          "type": "theory",
+          "text": "<p>Write the syntax for conditional operator in C. Also write the syntax for some conditional statements used in C.</p>",
+          "total_marks": 4
+        }
+      ]
+    },
+    {
+      "section_title": "5.",
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>List the looping constructs used in C. What are the roles of 'break' and 'continue' statements in loops? Show with examples.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Given a list of 11 numbers. Write a C program to find the median of that list.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "6.",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>What are functions? How are they useful? Comment on two categories in which various functions can be categorized.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>Write a C program to generate Fibonacci series using function.</p>",
+          "total_marks": 5
+        },
+        {
+          "id": "q6_c",
+          "type": "theory",
+          "text": "<p>List three different ways to read a string from the prompt.</p>",
+          "total_marks": 3
+        }
+      ]
+    },
+    {
+      "section_title": "7.",
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>What are the ways of parameter passing in functions? Explain each.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>Write a C program to find the largest number from an array using pointer.</p>",
+          "total_marks": 5
+        },
+        {
+          "id": "q7_c",
+          "type": "theory",
+          "text": "<p>What are the structures in C? How are they different from Union?</p>",
+          "total_marks": 3
+        }
+      ]
+    },
+    {
+      "section_title": "8.",
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "<p>What is dynamic memory allocation? How is this achieved in C? Explain.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "<p>Write a C program to copy the content of one file into other.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q8_c",
+          "type": "theory",
+          "text": "<p>How is merge sort different from other sorting algorithms?</p>",
+          "total_marks": 2
+        }
+      ]
+    },
+    {
+      "section_title": "9.",
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>Write a C program to create an array of structures named \"STUDENT\" with fields Name, Roll No, Address and Marks. Also add the code for inserting, deleting and printing any student record.</p>",
+          "total_marks": 10
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>What do you mean by command line argument? Give an example.</p>",
+          "total_marks": 4
+        }
+      ]
+    }
+  ]
+}

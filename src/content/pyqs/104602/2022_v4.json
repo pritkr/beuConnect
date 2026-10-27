@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2022",
+    "subject": "Digital Communication",
+    "subject_slug": "digital-communication",
+    "subject_code": "104602",
+    "year": 2022,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven of the following questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Describe the non-coherent detection of M-ary FSK signal.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>What are the differences between analog and digital modulation techniques?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Differentiate between wide sense stationary and strict sense stationary random processes.</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>How is source coding different from channel coding?</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>What is signal space?</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>What are baseband signalling and pass-band signalling?</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Discuss BPSK modulator.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>What is the difference between DPCM and DM?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>(a) Discuss differential pulse code modulation (DPCM) with the help of neat sketches of\n                        modulation\n                        and demodulation. </p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>(b) Binary data is transmitted over a telephone line with usable bandwidth of 2400 Hz using the\n                        FSK\n                        signalling scheme. The transmit frequencies are 2025 Hz and 2225 Hz, and the data rate is 300\n                        bits/sec. The average signal-to-noise power ratio at the output of the channel is 6 dB.\n                        Calculate\n                        \\( P_{e} \\) for the coherent and non-coherent demodulation schemes.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 10,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the basic principle of M-ary PSK signalling and M-ary FSK signalling for data\n                        transmission\n                        over bandpass channel. Determine the probability of error of a QPSK receiver in the presence of\n                        channel noise. Mention the advantages of QPSK signalling and MSK signalling.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Explain the importance of companding technique.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the role of equalizer in communication system.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Binary data is to be transmitted over a microwave channel at a rate of \\( \\beta(10^{6}) \\)\n                        bits/sec. Assuming the channel noise to be white Gaussian with a PSD \\( \\eta/2=10^{-14} \\)\n                        watt/Hz. Find the power and bandwidth requirements of 4-phase PSK and 16-tone FSK signalling\n                        schemes\n                        to maintain an error probability of \\( 10^{-4} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Compare the average power requirements of binary non-coherent ASK, coherent PSK, DPSK and\n                        non-coherent FSK signalling schemes operating at a data rate of 1000 bits/sec over a bandpass\n                        channel having a bandwidth of 3000 Hz, \\( \\eta/2=10^{-10} \\) watt/Hz and \\( P_{o}=10^{-5}\n                        \\).\n                    </p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Write the advantages and disadvantages of digital communication system.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>How are FSK modulation and demodulation done? Explain using block diagrams of modulation and\n                        demodulation.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A high frequency transmitter used in a binary communication system is peak power limited to 1 kW.\n                        The\n                        power loss in the channel is 60 dB and the noise power at the receiver input \\( (\\eta r_{b})\n                        \\) is\n                        \\( 10^{-4} \\) watt. Assuming maximum signalling rate and equiprobable message bits, find \\(\n                        P_{a}\n                        \\) for non-coherent ASK and coherent PSK signalling schemes.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 10,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A matched filter has the frequency response \\( H(f)=\\frac{1-e^{-j2\\pi f}}{j2\\pi f} \\)<br/>\n                        (i) Determine the impulse response \\( h(t) \\) corresponding to \\( H(f) \\).<br/>\n                        (ii) Determine the signal waveform to which the filter characteristic is matched.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain Inter Symbol Interference (ISI). Discuss its causes and techniques to reduce it.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Draw spectrum and calculate transmission bandwidth of a standard BPSK signal. Consider bit period\n                        equal to 0.1 msec and a carrier frequency of 100 kHz. Carrier is sinusoidal.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Two quadrature carriers \\( \\cos~2\\pi f_{c}t \\) and \\( \\sin 2\\pi f_{c}t \\) are used to\n                        transmit\n                        digital information through an AWGN channel at two different data rates, 10 kbps and 100 kbps.\n                        Determine the relative amplitudes of the signals for the two carriers so that \\(\n                        \\epsilon_{b}/N_{0}\n                        \\) for the two channels is identical.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>(a) Delta modulation</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>(b) Fading and its reduction in wireless digital communication</p>"
+        }
+      ]
+    }
+  ]
+}

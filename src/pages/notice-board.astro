@@ -1,0 +1,286 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
+import { getNoticeBoard } from "../lib/beuNotices";
+
+export const prerender = true;
+
+const boardNotices = await getNoticeBoard({ important: false, limit: 200 });
+const buildTime = new Date().toISOString();
+const importantApi = `${import.meta.env.BASE_URL}api/notices/important?limit=10`;
+const formatDate = (value: string | null) =>
+	value
+		? new Date(value).toLocaleDateString("en-GB", {
+				year: "numeric",
+				month: "short",
+				day: "numeric",
+			})
+		: "Date unavailable";
+---
+
+<Layout title="Notice Board | BEUConnect" description="Stay updated with the latest official notices, exam schedules, and circulars from Bihar Engineering University (BEU).">
+	<Header />
+
+	<section class="notice-board-shell">
+		<header class="notice-board-header">
+			<p class="eyebrow">BEU Notice Board</p>
+			<h1>Static Notice Board</h1>
+			<p class="subtitle">
+				Main board snapshot is static. Important slider updates fast on client-side with short cache.
+			</p>
+			<p class="stamp">Static snapshot: {new Date(buildTime).toLocaleString("en-IN")}</p>
+		</header>
+
+		<div class="slider-shell" aria-label="Important notices">
+			<div id="importantSliderTrack" class="slider-track">
+				<p class="slider-loading">Loading important notices...</p>
+			</div>
+		</div>
+
+		<div class="static-card glass-card">
+			<div class="row-head">
+				<h2>All Non-Important Notices</h2>
+				<p>{boardNotices.length} notices</p>
+			</div>
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Notice</th>
+							<th>Link</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							boardNotices.map((notice) => (
+								<tr>
+									<td>{formatDate(notice.date)}</td>
+									<td>{notice.title}</td>
+									<td>
+										<a href={notice.link} target="_blank" rel="noopener">
+											Open
+										</a>
+									</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<script is:inline define:vars={{ importantApi }}>
+		const CACHE_KEY = "beu_important_notice_slider_v1";
+		const CACHE_TTL_MS = 3 * 60 * 1000;
+		const REFRESH_MS = 60 * 1000;
+		const track = document.getElementById("importantSliderTrack");
+
+		function normalizeLink(link) {
+			if (!link) return "https://beu-bih.ac.in";
+			if (link.startsWith("http://") || link.startsWith("https://")) return link;
+			const trimmed = link.replace(/^\/+/, "");
+			if (trimmed.startsWith("backend/")) return `https://beu-bih.ac.in/${trimmed}`;
+			if (trimmed.includes(".pdf")) return `https://beu-bih.ac.in/backend/${trimmed}`;
+			return `https://beu-bih.ac.in/${trimmed}`;
+		}
+
+		function render(items) {
+			if (!track) return;
+			if (!items.length) {
+				track.innerHTML = '<p class="slider-loading">No important notices right now.</p>';
+				return;
+			}
+
+			const html = [...items, ...items]
+				.map(
+					(item) => `
+					<a class="slider-item" href="${normalizeLink(item.link)}" target="_blank" rel="noopener">
+						<span class="slider-badge">Important</span>
+						<span>${String(item.board || item.title || "").trim()}</span>
+					</a>`,
+				)
+				.join("");
+			track.innerHTML = html;
+		}
+
+		function readCache() {
+			try {
+				const raw = localStorage.getItem(CACHE_KEY);
+				if (!raw) return null;
+				const parsed = JSON.parse(raw);
+				if (!parsed?.ts || !Array.isArray(parsed?.items)) return null;
+				if (Date.now() - parsed.ts > CACHE_TTL_MS) return null;
+				return parsed.items;
+			} catch {
+				return null;
+			}
+		}
+
+		function writeCache(items) {
+			try {
+				localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), items }));
+			} catch {}
+		}
+
+		async function refreshImportant() {
+			try {
+				const response = await fetch(importantApi, { cache: "no-store" });
+				if (!response.ok) return;
+				const payload = await response.json();
+				const items = Array.isArray(payload?.items)
+					? payload.items
+					: Array.isArray(payload)
+						? payload
+						: Array.isArray(payload?.data)
+							? payload.data
+							: [];
+				render(items);
+				writeCache(items);
+			} catch {}
+		}
+
+		const cached = readCache();
+		if (cached) {
+			render(cached);
+			setTimeout(refreshImportant, 150);
+		} else {
+			refreshImportant();
+		}
+
+		setInterval(refreshImportant, REFRESH_MS);
+	</script>
+
+	<style>
+		.notice-board-shell {
+			max-width: 1100px;
+			margin: 0 auto;
+			display: grid;
+			gap: 1rem;
+		}
+
+		.notice-board-header {
+			display: grid;
+			gap: 0.25rem;
+		}
+
+		.eyebrow {
+			margin: 0;
+			text-transform: uppercase;
+			letter-spacing: 0.12em;
+			font-size: 0.74rem;
+			font-weight: 700;
+			color: #93c5fd;
+		}
+
+		.notice-board-header h1 {
+			margin: 0;
+		}
+
+		.subtitle,
+		.stamp {
+			margin: 0;
+		}
+
+		.stamp {
+			font-size: 0.8rem;
+			color: #94a3b8;
+		}
+
+		.slider-shell {
+			overflow: hidden;
+			border-radius: 14px;
+			border: 1px solid var(--border-subtle);
+			background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(3, 7, 18, 0.92));
+			padding: 0.45rem 0;
+		}
+
+		.slider-track {
+			display: flex;
+			gap: 0.6rem;
+			min-width: max-content;
+			animation: marquee 34s linear infinite;
+			padding-inline: 0.6rem;
+		}
+
+		.slider-shell:hover .slider-track {
+			animation-play-state: paused;
+		}
+
+		.slider-item {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.45rem;
+			padding: 0.4rem 0.7rem;
+			border-radius: 999px;
+			background: rgba(30, 41, 59, 0.85);
+			border: 1px solid rgba(148, 163, 184, 0.25);
+			white-space: nowrap;
+			color: #e2e8f0;
+			font-size: 0.86rem;
+		}
+
+		.slider-item:hover {
+			background: rgba(14, 165, 233, 0.2);
+			border-color: rgba(14, 165, 233, 0.45);
+			color: #f0f9ff;
+		}
+
+		.slider-badge {
+			font-size: 0.68rem;
+			padding: 0.16rem 0.42rem;
+			border-radius: 999px;
+			background: rgba(251, 191, 36, 0.24);
+			border: 1px solid rgba(251, 191, 36, 0.45);
+			color: #fef3c7;
+			font-weight: 700;
+		}
+
+		.slider-loading {
+			margin: 0;
+			padding: 0.4rem 0.7rem;
+			font-size: 0.85rem;
+			color: #cbd5e1;
+		}
+
+		.static-card {
+			padding: 0.95rem;
+			display: grid;
+			gap: 0.7rem;
+		}
+
+		.row-head {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 0.75rem;
+		}
+
+		.row-head h2,
+		.row-head p {
+			margin: 0;
+		}
+
+		.table-wrap {
+			overflow: auto;
+		}
+
+		table {
+			width: 100%;
+			font-size: 0.9rem;
+		}
+
+		@keyframes marquee {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-50%);
+			}
+		}
+	</style>
+
+	<Footer />
+</Layout>

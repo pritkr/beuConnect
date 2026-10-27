@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Semester Exam-2012",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031101",
+    "year": 2012,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "theory",
+          "text": "<p>What are the basic electrical elements? Write V-I relationship for each of them.</p>"
+        },
+        {
+          "id": "q1_b",
+          "type": "theory",
+          "text": "<p>State Ohm's law. What are its limitations?</p>"
+        },
+        {
+          "id": "q1_c",
+          "type": "theory",
+          "text": "<p>Explain different types of dependent sources.</p>"
+        },
+        {
+          "id": "q1_d",
+          "type": "theory",
+          "text": "<p>State the maximum power transfer theorem.</p>"
+        },
+        {
+          "id": "q1_e",
+          "type": "theory",
+          "text": "<p>Define RMS value, average value, form factor and peak factor.</p>"
+        },
+        {
+          "id": "q1_f",
+          "type": "theory",
+          "text": "<p>Write the properties of resonance of series R-L-C circuit.</p>"
+        },
+        {
+          "id": "q1_g",
+          "type": "theory",
+          "text": "<p>Define balanced load. Give the line and phase relationship for voltage and current in a star-connected three-phase circuit.</p>"
+        },
+        {
+          "id": "q1_h",
+          "type": "theory",
+          "text": "<p>What are the main losses that occur in ferromagnetic core materials? Also write the formula to calculate them.</p>"
+        },
+        {
+          "id": "q1_i",
+          "type": "theory",
+          "text": "<p>Why should ammeter always be connected in series with the circuit? Define sensitivity of voltmeter.</p>"
+        },
+        {
+          "id": "q1_j",
+          "type": "theory",
+          "text": "<p>Define quality factor. How will you correlate bandwidth, resonant frequency and quality factor?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Detailed Questions",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>State Thevenin's theorem and give the procedure for thevenizing a circuit. Mention its limitations.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>Determine the current in the \\(1\\,\\Omega\\) branch in the circuit shown in Fig. 1. Use mesh method.</p><div class='diagram-placeholder'>[Diagram: Fig. 1. Mesh analysis circuit with \\(12\\text{ V, } 24\\text{ V, } 10\\text{ V}\\) sources and resistors (\\(2\\,\\Omega, 2\\,\\Omega, 12\\,\\Omega, 1\\,\\Omega, 3\\,\\Omega, 4\\,\\Omega\\)).]</div>",
+          "total_marks": 8
+        },
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>Find \\(V_L\\) in the circuit of Fig. 2 using superposition theorem.</p><div class='diagram-placeholder'>[Diagram: Fig. 2. Superposition circuit with \\(2\\text{ V, } 5\\text{ A, } 5\\text{ A}\\) sources and resistors (\\(1\\,\\Omega, 2\\,\\Omega, 1\\,\\Omega, 1\\,\\Omega\\)).]</div>",
+          "total_marks": 6
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>Find the current through \\(1.6\\,\\Omega\\) resistor in the circuit of Fig. 3 using Norton's theorem.</p><div class='diagram-placeholder'>[Diagram: Fig. 3. Norton circuit with \\(10\\text{ A}\\) current source, \\(3i\\) dependent voltage source, and resistors (\\(1\\,\\Omega, 6\\,\\Omega, 1.6\\,\\Omega\\)).]</div>",
+          "total_marks": 8
+        },
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>The inductive reactance in series with \\(Z\\) in the circuit of Fig. 4 has a value of \\(25\\,\\Omega\\). If the voltage drop across \\(Z\\) is \\(179\\) volts, the power dissipated in the circuit is \\(320\\text{ W}\\). Find:</p><ol><li>The p.f. of the circuit.</li><li>The circuit resistance.</li><li>The inductive part of \\(Z\\).</li><li>The value of net reactive power drain.</li></ol><div class='diagram-placeholder'>[Diagram: Fig. 4. AC circuit with \\(100 \\angle 0^\\circ\\text{ V r.m.s.}\\) source, inductor \\(X_L\\), and load \\(Z\\).]</div>",
+          "total_marks": 8
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Show that the active power over a complete cycle is zero for a purely inductive circuit.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>Explain two wattmeters of power measurement. Mention different cases also.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Find the real power delivered by the source in Fig. 5.</p><div class='diagram-placeholder'>[Diagram: Fig. 5. AC circuit with \\(V=100 \\angle 0^\\circ\\) source, resistors (\\(10\\,\\Omega, 10\\,\\Omega\\)), and impedances (\\(-j10\\,\\Omega, j5\\,\\Omega\\)).]</div>",
+          "total_marks": 8
+        },
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>Two impedances \\(Z_1 = 5 \\angle -30^\\circ\\,\\Omega\\) and \\(Z_2 = 10 \\angle 45^\\circ\\,\\Omega\\) are connected in parallel. The combination draws \\((2+j4)\\text{ A}\\) current from a voltage source. Determine the voltage source and the complex power for each branch.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>A heater takes \\(10\\text{ A}\\) at \\(50\\text{ V}\\). Calculate the impedance of a choke of \\(5\\,\\Omega\\) resistance to be placed in series with it in order that it may work at \\(200\\text{ V, } 50\\text{ Hz}\\) supply. Find also the power factor of the circuit.</p>",
+          "total_marks": 8
+        },
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>A delta-connected load in Fig. 6 has the following impedances: \\(Z_{RY} = j10\\,\\Omega, Z_{YB} = 10 \\angle 0^\\circ\\,\\Omega, Z_{BR} = -j10\\,\\Omega\\). If the load be connected across a three-phase \\(100\\text{ V}\\) supply (balanced), obtain the line currents and also draw the phasor diagram.</p><div class='diagram-placeholder'>[Diagram: Fig. 6. Delta load diagram.]</div>",
+          "total_marks": 8
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>In an R-L-C series circuit the resistance, inductance and capacitance are \\(10\\,\\Omega, 100\\text{ mH}\\) and \\(10\\text{ microfarad}\\). Calculate \\(\\omega_0, \\omega_1\\) and \\(\\omega_2\\). Also find BW and selectivity.</p>",
+          "total_marks": 6
+        },
+        {
+          "id": "q8",
+          "type": "theory",
+          "text": "<p>A magnetic core, in the form of a closed ring has a mean length of \\(20\\text{ cm}\\) and a cross-section of \\(1\\text{ cm}^2\\). The relative permeability of iron is \\(2400\\). What direct current will be needed in a coil of \\(2000\\) turns uniformly wound round the ring to create a flux of \\(0.2\\text{ mWb}\\) in the iron? If an air gap of \\(1\\text{ mm}\\) is cut through the core perpendicular to the direction of this flux, what current will now be needed to maintain the same flux in this gap?</p>",
+          "total_marks": 14
+        },
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>What are the different moving-coil instruments? Explain any one in detail.</p>",
+          "total_marks": 8
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>Explain in brief different types of controlling torque in an indicating instrument.</p>",
+          "total_marks": 6
+        }
+      ]
+    }
+  ]
+}

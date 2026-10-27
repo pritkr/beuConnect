@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2015",
+    "subject": "Mathematics II",
+    "subject_slug": "mathematics-2",
+    "subject_code": "211202",
+    "year": 2015,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct or best alternatives (any seven):",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "In a series of positive terms $\\sum u_n$, if $\\lim_{n \\to \\infty} u_n \\neq 0$, then the series $\\sum u_n$ is\n(i) convergent\n(ii) divergent\n(iii) not convergent\n(iv) oscillatory",
+              "id": "1a",
+              "marks": null
+            },
+            {
+              "text": "The p-series $\\frac{1}{1^P} + \\frac{1}{2^P} + \\frac{1}{3^P} + \\cdots$ to $\\infty$ is divergent for\n(i) $p = 1$\n(ii) $p > 1$\n(iii) $p < 1$\n(iv) $p \\le 1$",
+              "id": "1b",
+              "marks": null
+            },
+            {
+              "text": "The series $a - a + a - a + \\cdots$ to $\\infty$ is\n(i) convergent\n(ii) divergent\n(iii) oscillatory\n(iv) None of the above",
+              "id": "1c",
+              "marks": null
+            },
+            {
+              "text": "The Laplace transform of a signal $y(t)$ is $Y(s) = \\frac{1}{s(s-1)}$, then its final value is\n(i) $-1$\n(ii) 0\n(iii) 1\n(iv) unbounded",
+              "id": "1d",
+              "marks": null
+            },
+            {
+              "text": "The Laplace transform of the function $f(t) = t$, starting at $t = a$, is\n(i) $\\frac{1}{(s+a)^2}$\n(ii) $\\frac{e^{-as}}{(s+a)^2}$\n(iii) $\\frac{e^{-as}}{s^2}$\n(iv) $\\frac{a}{s^2}$",
+              "id": "1e",
+              "marks": null
+            },
+            {
+              "text": "If from the function $f(t)$ one forms the function $\\psi(t) = f(t) + f(-t)$, then $\\psi(t)$ is\n(i) even\n(ii) odd\n(iii) neither even nor odd\n(iv) both even and odd",
+              "id": "1f",
+              "marks": null
+            },
+            {
+              "text": "The triple integral $\\iiint_T dx \\, dy \\, dz$ gives\n(i) volume of region T\n(ii) surface area of region T\n(iii) area of region T\n(iv) density of region T",
+              "id": "1g",
+              "marks": null
+            },
+            {
+              "text": "The double integral $\\int_0^{\\pi/2} \\int_0^{\\pi/2} \\sin(x+y) \\, dx \\, dy$ is\n(i) 0\n(ii) $\\pi$\n(iii) $\\pi/2$\n(iv) 2",
+              "id": "1h",
+              "marks": null
+            },
+            {
+              "text": "$\\nabla \\times (\\nabla \\times \\vec{A})$, where $\\vec{A}$ is a vector, is equal to\n(i) $\\vec{A} \\times \\nabla \\times \\vec{A} - \\nabla^2 \\vec{A}$\n(ii) $\\nabla^2 \\vec{A} + \\nabla(\\nabla \\cdot \\vec{A})$\n(iii) $\\nabla^2 \\vec{A} + \\nabla \\times \\vec{A}$\n(iv) $\\nabla(\\nabla \\cdot \\vec{A}) - \\nabla^2 \\vec{A}$",
+              "id": "1i",
+              "marks": null
+            },
+            {
+              "text": "If $(\\vec{A} \\times \\vec{B}) \\times \\vec{C} = \\vec{A} \\times (\\vec{B} \\times \\vec{C})$, then\n(i) $\\vec{A}, \\vec{B}$ are collinear\n(ii) $\\vec{A}, \\vec{B}$ are perpendicular\n(iii) $\\vec{A}, \\vec{C}$ are collinear\n(iv) $\\vec{A}, \\vec{C}$ are perpendicular",
+              "id": "1j",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Test for convergence the series whose nth term is $n^{\\log x}$.",
+          "marks": 7,
+          "id": "2a"
+        },
+        {
+          "text": "Test the series for convergence $1 + \\frac{3}{7}x + \\frac{3 \\cdot 6}{7 \\cdot 10}x^2 + \\frac{3 \\cdot 6 \\cdot 9}{7 \\cdot 10 \\cdot 13}x^3 + \\frac{3 \\cdot 6 \\cdot 9 \\cdot 12}{7 \\cdot 10 \\cdot 13 \\cdot 16}x^4 + \\cdots$ to $\\infty$.",
+          "marks": 7,
+          "id": "2b"
+        },
+        {
+          "text": "Define absolutely and conditionally convergent series. Show that the series $1 - \\frac{1}{2} + \\frac{1}{3} - \\frac{1}{4} + \\frac{1}{5} - \\frac{1}{6} + \\cdots$ to $\\infty$ is convergent but not absolutely convergent.",
+          "marks": 7,
+          "id": "3a"
+        },
+        {
+          "text": "Find the Fourier series expansion of the periodic function of period $2\\pi$, $f(x) = x^2, -\\pi \\le x \\le \\pi$. Hence find the sum of the series $\\frac{1}{1^2} - \\frac{1}{2^2} + \\frac{1}{3^2} - \\frac{1}{4^2} + \\cdots$.",
+          "marks": 7,
+          "id": "3b"
+        },
+        {
+          "text": "Find the Fourier series for $f(x)$, where $f(x) = \\begin{cases} -\\pi, & -\\pi < x < 0 \\\\ x, & 0 < x < \\pi \\end{cases}$. Hence deduce that $\\frac{1}{1^2} + \\frac{1}{3^2} + \\frac{1}{5^2} + \\cdots = \\frac{\\pi^2}{8}$.",
+          "marks": 7,
+          "id": "4a"
+        },
+        {
+          "text": "Find the Fourier half-range even expansion of the function $f(x) = -\\frac{x}{l} + 1, 0 \\le x \\le l$.",
+          "marks": 7,
+          "id": "4b"
+        },
+        {
+          "text": "Find the Laplace transform of (i) $t^2 \\cos at$; (ii) $e^{-4t} \\frac{\\sin 3t}{t}$.",
+          "marks": 7,
+          "id": "5a"
+        },
+        {
+          "text": "Find the Laplace transform of $\\frac{1 - \\cos t}{t^2}$.",
+          "marks": 7,
+          "id": "5b"
+        },
+        {
+          "text": "Show that $\\int_0^1 dx \\int_0^1 \\frac{x-y}{(x+y)^3} \\, dy \\neq \\int_0^1 dy \\int_0^1 \\frac{x-y}{(x+y)^3} \\, dx$.",
+          "marks": 7,
+          "id": "6a"
+        },
+        {
+          "text": "Evaluate $\\iint r^2 \\cos^2 \\theta \\, r \\, dr \\, d\\theta$ over the interior of the circle $r = 2a \\cos \\theta$.",
+          "marks": 7,
+          "id": "6b"
+        },
+        {
+          "text": "Evaluate the triple integral $\\int_1^e \\int_1^{\\log y} \\int_1^{e^x} \\log z \\, dz \\, dx \\, dy$.",
+          "marks": 7,
+          "id": "7a"
+        },
+        {
+          "text": "Find the length of the arc of the curve $y = e^x$ from the point $(0, 1)$ to $(1, e)$.",
+          "marks": 7,
+          "id": "7b"
+        },
+        {
+          "text": "Find the directional derivatives of $\\phi = xy^2 + yz^2$ at the point $(2, -1, 1)$ in the direction of the vector $\\vec{i} + 2\\vec{j} + 2\\vec{k}$.",
+          "marks": 7,
+          "id": "8a"
+        },
+        {
+          "text": "Find the magnitude of the velocity and acceleration of a particle which moves along the curve $x = 2 \\sin 3t, y = 2 \\cos 3t, z = 8t$ at any time $t > 0$. Find unit tangent vector to the curve.",
+          "marks": 7,
+          "id": "8b"
+        },
+        {
+          "text": "If $\\vec{r} = x\\hat{i} + y\\hat{j} + z\\hat{k}$, then prove that $\\text{div}(\\text{grad } r^n) = n(n+1)r^{n-2}$.",
+          "marks": 7,
+          "id": "9a"
+        },
+        {
+          "text": "Evaluate $\\int_C \\vec{F} \\cdot d\\vec{r}$, where $\\vec{F} = (x^2 + y^2)\\hat{i} - 2xy\\hat{j}$ and $C$ is the rectangle in the $xy$-plane bounded by $y=0, x=a, y=b, x=0$.",
+          "marks": 7,
+          "id": "9b"
+        }
+      ]
+    }
+  ]
+}

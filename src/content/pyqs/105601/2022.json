@@ -1,0 +1,290 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech. 6th Semester Examination, 2022",
+    "subject": "Compiler Design",
+    "subject_slug": "compiler-design",
+    "subject_code": "105601",
+    "year": 2022,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer for any seven of the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following derivations does a top-down parser use while parsing an input string? The\n                        input is assumed to be scanned in left to right order.</p>",
+          "options": [
+            "Leftmost derivation",
+            "Leftmost derivation traced out in reverse",
+            "Rightmost derivation",
+            "Rightmost derivation traced out in reverse"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>What is the maximum number of reduce moves that can be taken by a bottom-up parser for a grammar\n                        with no epsilon- and unit-production (i.e., of type \\( A \\rightarrow \\epsilon \\) and \\( A\n                        \\rightarrow a \\)) to parse a string with n tokens?</p>",
+          "options": [
+            "\\( n/2 \\)",
+            "\\( n-1 \\)",
+            "\\( 2n-1 \\)",
+            "\\( 2^n \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>In a bottom-up evaluation of a syntax directed definition, inherited attributes can</p>",
+          "options": [
+            "always be evaluated",
+            "be evaluated only if the definition is L-attributed",
+            "be evaluated only if the definition has synthesized attributes",
+            "never be evaluated"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Consider the grammar shown below : \\( S \\rightarrow CC \\), \\( C \\rightarrow cC | d \\). The\n                        grammar is</p>",
+          "options": [
+            "LL(1)",
+            "SLR(1) but not LL(1)",
+            "LALR(1) but not SLR(1)",
+            "LR(1) but not LALR(1)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The lexical analyzer takes _____ as input and produces a stream of _____ as output.</p>",
+          "options": [
+            "source program, tokens",
+            "token, source program",
+            "Either of the two",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>In a compiler, when is the keywords of a language are recognized?</p>",
+          "options": [
+            "During the lexical analysis of a program",
+            "During parsing of the program",
+            "During the code generation",
+            "During the data flow analysis"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>How many tokens are there in the following C statement?<br/>printf(\"j=%d, &amp; j=%x\", j, &amp; j)</p>",
+          "options": [
+            "4",
+            "5",
+            "10",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>How is the parsing precedence relation defined?</p>",
+          "options": [
+            "To delimit the handle",
+            "Only for a certain pair of terminal",
+            "None of the above",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Given the following expression grammar : \\( E \\rightarrow E*F | F+E | F \\), \\( F \\rightarrow\n                        F-F | id \\). Which of the following is true?</p>",
+          "options": [
+            "* has higher precedence than +",
+            "- has higher precedence than *",
+            "+ and - have same precedence",
+            "+ has higher precedence than *"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Shift reduce parsers are</p>",
+          "options": [
+            "top-down parser",
+            "bottom-up parser",
+            "may be top-down or bottom-up",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Write a lexical analyzer program to identify strings, sequences, comments, reserved words and\n                        identifiers.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain about the sources and criterions of code optimization as machine dependent and\n                        independent types.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Construct the non-recursive predictive parse table for the given grammar and check the acceptance\n                        of input string \"abfcg\":<br/>\n                        \\( S \\rightarrow A \\)<br/>\n                        \\( A \\rightarrow aB | Ad \\)<br/>\n                        \\( B \\rightarrow bBC | f \\)<br/>\n                        \\( C \\rightarrow cg \\)\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What is the relationship with lexical analyzer, regular expressions and transition diagram? Give\n                        an example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the type system in type checker. Write the syntax directed definition for type checker.\n                    </p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What is activation record? Explain its usage in stack allocation strategy. How is it different\n                        from heap allocation?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Draw and explain the runtime memory organization static storage allocation strategy with pros and\n                        cons.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Differentiate inherited and synthesized attributes with an example.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Define dataflow analysis. List out the procedures to analyze the data flow of structured\n                        programs.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Draw a block diagram of phases of a compiler and indicate the main functions of each phase.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is intermediate code? Translate the expression \\( (a+b)/(c+d)*(a+b/c)-d \\) into\n                        quadruples, triples and indirect triples.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain reducible and non-reducible flow graphs with an example each.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What is machine-dependent optimization? Explain how peephole techniques function in this.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain how type checking and error reporting are performed in compiler. Draw syntax tree and DAG\n                        for the statement: \\( a=(a*b+c)\\wedge(b+c)*b+c \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Explain the following with suitable example :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Function preserving optimization techniques",
+            "Reference counting garbage collectors",
+            "Elimination of loop invariant variable",
+            "Strength reduction"
+          ]
+        }
+      ]
+    }
+  ]
+}

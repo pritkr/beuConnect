@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Examination, 2022",
+    "subject": "Electrical Circuit Analysis",
+    "subject_slug": "electrical-circuit-analysis",
+    "subject_code": "100306",
+    "year": 2022,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>A 10 mH inductor carries a sinusoidal current of 1 A r.m.s at a frequency of 50 Hz. The average\n                        power\n                        dissipated by the inductor is</p>",
+          "options": [
+            "0 W",
+            "0.25 W",
+            "0.5 W",
+            "1.0 W"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Thevenin's equivalent circuit consists of</p>",
+          "options": [
+            "current source and series impedance",
+            "voltage source and series impedance",
+            "voltage source and shunt impedance",
+            "current source and shunt impedance"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>When the two quantities are in quadrature, the phase angle between them will be.</p>",
+          "options": [
+            "\\( 45^{\\circ} \\)",
+            "\\( 90^{\\circ} \\)",
+            "\\( 135^{\\circ} \\)",
+            "\\( 60^{\\circ} \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>A two-port network is symmetrical if</p>",
+          "options": [
+            "\\( Z_{11}Z_{22}-Z_{12}Z_{21}=1 \\)",
+            "\\( h_{11}h_{22}-h_{12}h_{21}=1 \\)",
+            "\\( AD-BC=1 \\)",
+            "\\( Y_{11}Y_{22}-Y_{12}Y_{21}=1 \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>A two element series circuit is connected across an AC source given by \\(\n                        e=200\\sqrt{2}\\sin(314t+20)V \\), the current is found to be \\( i=10\\sqrt{2}\\cos(314t-25)A\n                        \\).\n                        The parameters of the circuit are</p>",
+          "options": [
+            "\\( R=20\\Omega \\) and \\( C=160\\mu F \\)",
+            "\\( R=14.14\\Omega \\) and \\( C=225\\mu F \\)",
+            "\\( L=45mH \\) and \\( C=225\\mu F \\)",
+            "\\( L=45mH \\) and \\( C=160\\mu F \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Superposition theorem is not applicable to networks containing</p>",
+          "options": [
+            "nonlinear elements",
+            "dependent voltage source",
+            "dependent current source",
+            "transformers"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following is the Passive elements?</p>",
+          "options": [
+            "Ideal current source",
+            "Ideal voltage source",
+            "Capacitor",
+            "All of these"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>When a unit impulse voltage is applied to an inductor of 1 H, the energy supplied by the source\n                        is\n                    </p>",
+          "options": [
+            "2 J",
+            "1 J",
+            "1/2 J",
+            "1/4 J"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>There are no transients in pure resistance circuits because they</p>",
+          "options": [
+            "Offer high resistance",
+            "obey Ohm's law",
+            "have no stored energy",
+            "are linear circuits"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>When a number of two-port network is cascaded, then</p>",
+          "options": [
+            "Z-parameters are added up",
+            "Y-parameters are added up",
+            "h-parameters are multiplied",
+            "ABCD- parameters are multiplied"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Two mutually coupled identical coils are connected in series having self-inductance \\( L=4\n                        \\text{\n                        mH} \\) and mutual inductance \\( M=2 \\text{ mH} \\). <br/>What are the maximum and minimum\n                        possible\n                        values of equivalent inductances?</p>\n<p>Determine the coefficient of coupling between the coils.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Prove that the average power in an AC circuit is given by \\( W=VI\\cos\\phi \\), where symbols\n                        have\n                        their usual meanings.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>A voltage of \\( e(t)=150\\sin(1000t) \\) is applied across a series R-L-C circuit, where \\(\n                        R=40\\Omega \\), \\( L=0.13 \\text{ H} \\) and \\( C=10\\mu F \\). (i) Compute the r.m.s value\n                        of\n                        the steady-state current. (ii) Find the r.m.s voltage across the inductor. (iii) Find the r.m.s\n                        voltage across the capacitor. (iv) Determine the active and reactive power supplied by the\n                        source.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Find the Laplace transform of \\( f(t)=e^{-at}\\cos(\\omega t) \\), \\( a&gt;0 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Calculate the inverse Laplace transform of \\( F(s)=\\frac{1}{s(s^{2}-a^{2})} \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>In the series R-C circuit, the capacitor has an initial charge 2.5 mC. At \\( t=0 \\), the switch\n                        is\n                        closed and a constant voltage source \\( V=100 \\text{ V} \\) is applied. Use the Laplace\n                        transform\n                        method to find the current in the circuit after closing the switch.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Two impedances \\( Z_{1}=40\\angle 30^{\\circ} \\) and \\( Z_{2}=30\\angle 60^{\\circ} \\Omega\n                        \\)\n                        are connected in series across a single-phase 230 V, 50 Hz supply. Calculate the (i) Current\n                        drawn\n                        (ii) pf, and (iii) power consumed by the circuit.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>State and explain the Super Position Theorem and find out the step to be followed in super\n                        position\n                        theorem.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>State maximum power transfer theorem. Prove that efficiency of the circuit under maximum power\n                        transfer condition is 50%.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Draw the Thevenin equivalent circuit of the figure shown below and hence find the current through\n                        \\(\n                        R=2\\Omega \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/163.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the current in a series RL circuit having \\( R=2\\Omega \\) and \\( L=10H \\) while a d.c\n                        voltage of 100v is applied. What is the value of this current after 5 secs of switching on?</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A steady state condition is reached with 100v d.c source. At \\( t=0 \\), switch K is suddenly\n                        open.\n                        Find the expression of current through the inductor after \\( t=0.5 \\text{ sec} \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/162.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Define apparent power and Reactive power.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>The current in a circuit lag the voltage by \\( 30^{\\circ} \\) if the power be 400 w and the\n                        supply\n                        voltage be \\( v=100\\sin(377t+10^{\\circ}) \\) find complex power.</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>In an ac circuit \\( v=100\\sin(wt+30^{\\circ})V \\), \\( I=5\\sin(wt-30^{\\circ})A \\). find\n                        apparent power, real power and reactive power.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Reciprocity Theorem",
+            "Laplace Theorem",
+            "Two port network",
+            "Resonance"
+          ]
+        }
+      ]
+    }
+  ]
+}

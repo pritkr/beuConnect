@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2015",
+    "subject": "POWER ELECTRONICS",
+    "subject_slug": "power-electronics",
+    "subject_code": "031609",
+    "year": 2015,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "When an SCR is reverse biased",
+          "options": [
+            "two junctions are reverse biased and one junction is forward biased",
+            "all the three junctions are reverse biased",
+            "one junction is reverse biased and two junctions are forward biased",
+            "Any of the above depending on the magnitude of reverse bias"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "An R-C snubber circuit is used to protect a thyristor against",
+          "options": [
+            "false triggering",
+            "failure to turn on",
+            "switching transients",
+            "failure to commutate"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "A single-phase semiconverter is feeding a highly inductive load and has free-wheeling diode\n                        across\n                        the load. The waveshapes of output voltage and output current",
+          "options": [
+            "are similar",
+            "are not similar",
+            "may be similar or dissimilar",
+            "are similar only if firing angle is zero"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "A single-phase half-wave rectifier is feeding a resistive load. Input voltage \\( v = V_m \\sin\n                        \\omega t \\). The output d.c. voltage is \\( V_{dc} \\) and output r.m.s. voltage is \\(\n                        V_{r.m.s.}\n                        \\). If firing angle is \\( 180^{\\circ} \\), \\( V_{dc} \\) and \\( V_{r.m.s.} \\) respectively\n                        are",
+          "options": [
+            "0 and 0",
+            "\\( \\frac{V_m}{\\pi} \\) and \\( \\frac{V_m}{\\sqrt{2}} \\)",
+            "0 and \\( -V_m \\)",
+            "\\( -\\frac{V_m}{\\pi} \\) and \\( -\\frac{V_m}{2} \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "In a step-down chopper using pulse-width modulation \\( T_{on} = 3 \\times 10^{-3} \\text{ s} \\)\n                        and\n                        \\( T_{off} = 1 \\times 10^{-3} \\text{ s} \\). The chopping frequency is",
+          "options": [
+            "333.33",
+            "500",
+            "250",
+            "1000"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "In a three-phase full-wave regulator feeding a star-connected resistance load the input voltage\n                        is\n                        400 V line to line. The firing angle is \\( 160^{\\circ} \\). The line to line output voltage\n                        would\n                        be",
+          "options": [
+            "400 V",
+            "about 20 V",
+            "about 100 V",
+            "zero"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Assertion (A): An inverter does not require forced commutation. Reason (R): A series inverter is\n                        a\n                        forced commutation inverter.",
+          "options": [
+            "Both A and R are correct and R is correct explanation of A",
+            "Both A and R are correct but R is not correct explanation of A",
+            "A is correct but R is wrong",
+            "A is wrong but R is correct"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "A three-phase bridge inverter is fed by 400 V battery. The load is star-connected and has a\n                        resistance of \\( 10~\\Omega \\) per phase. The peak value of load current is",
+          "options": [
+            "8 A",
+            "20 A",
+            "10 A",
+            "5 A"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "The waveshape of output voltage of half-bridge inverter is",
+          "options": [
+            "sinusoidal",
+            "square",
+            "triangular",
+            "Either (i) or (ii)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "In dielectric heating, the thyristor circuits consist of",
+          "options": [
+            "rectifier-chopper combination",
+            "a.c. regulator",
+            "controlled rectifier",
+            "rectifier-inverter combination"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Discuss some of the advantages and disadvantages of power electronic converters."
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Define latching and holding currents as applicable to an SCR. Show these on the V-I\n                        characteristics."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Why are \\( dv/dt \\) and \\( di/dt \\) protections in case of thyristor important?"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "An SCR operating from a peak supply voltage of 400 V has the following specifications: Repetitive\n                        peak current \\( I_p = 200 \\text{ A} \\), \\( (di/dt)_{max} = 50 \\text{ A}/\\mu\\text{s} \\),\n                        \\(\n                        (dv/dt)_{max} = 200 \\text{ V}/\\mu\\text{s} \\). Choosing a factor of safety of 2 for \\( I_p\n                        \\),\n                        \\( (di/dt)_{max} \\) and \\( (dv/dt)_{max} \\), design a suitable snubber circuit. The minimum\n                        value of load resistance is 10 ohms."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Explain the principle of phase control with suitable diagram and waveform."
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Discuss in detail three-phase full converter with R-L-E load with suitable diagram and waveform.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "What is inverter? List a few industrial applications of inverter.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Discuss in detail three-phase 120 degree mode voltage source inverter."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "Describe the principle of d.c. chopper operation."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Derive an expression for its average d.c. output voltage."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Describe integral cycle control type a.c. voltage controller."
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Enumerate the merits and demerits of a.c. voltage controller."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Draw the basic integrated structure and the V-I characteristics of a TRIAC and briefly explain\n                        its\n                        principle of working."
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "Briefly explain the working of an oscillator employing a UJT. Derive the expressions for the\n                        frequency of triggering firing angle delay in terms of \\( \\eta \\), and the charging\n                        resistance\n                        values."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Uninterrupted power supply</li>\n<li>Regenerative braking control</li>\n<li>Speed control of three-phase induction motor</li>\n<li>HVDC transmission</li>\n</ul>",
+          "options": [
+            "Uninterrupted power supply",
+            "Regenerative braking control",
+            "Speed control of three-phase induction motor",
+            "HVDC transmission"
+          ]
+        }
+      ]
+    }
+  ]
+}

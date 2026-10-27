@@ -1,0 +1,427 @@
+---
+export const prerender = true;
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/header.astro';
+import Footer from '../../../components/footer.astro';
+import pyqData from '../../../data/gate-pyqs.json';
+import {
+  gatePyqSubjectOrder,
+  getGatePyqSubjectName,
+} from '../../../data/gate-pyq-subjects';
+
+export function getStaticPaths() {
+  const orderIndex = new Map(gatePyqSubjectOrder.map((code, idx) => [code, idx]));
+  const subjectCodes = Object.keys(pyqData).sort((a, b) => {
+    const ai = orderIndex.get(a);
+    const bi = orderIndex.get(b);
+    if (ai !== undefined && bi !== undefined) return ai - bi;
+    if (ai !== undefined) return -1;
+    if (bi !== undefined) return 1;
+    return a.localeCompare(b);
+  });
+
+  return subjectCodes.map((subjectCode) => ({
+    params: { branch: subjectCode },
+    props: {
+      branchName: getGatePyqSubjectName(subjectCode),
+      papers: pyqData[subjectCode as keyof typeof pyqData] || [],
+    },
+  }));
+}
+
+const { branchName, papers } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title={`${branchName} GATE PYQs | BEU Connect`} description={`Previous year question papers for ${branchName}`}>
+  <Header />
+  <div class="pyq-wrapper">
+    <!-- Sidebar / Selection Grid -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href={`${base}gate-pyqs`} class="back-link" aria-label="Back to branches">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </a>
+        <h1>{branchName}</h1>
+      </div>
+      
+      <div class="papers-grid">
+        {papers.map((paper: any) => (
+          <button 
+            class="paper-btn" 
+            data-pdf={`${base}${String(paper.path).replace(/^\/+/, "")}`}
+            data-title={`${paper.year} ${paper.set ? `(Set ${paper.set})` : ''}`}
+          >
+            {paper.year} {paper.set ? `(Set ${paper.set})` : ''}
+          </button>
+        ))}
+        {papers.length === 0 && (
+          <p class="no-data">No papers available yet.</p>
+        )}
+      </div>
+    </aside>
+
+    <!-- PDF Viewer Area -->
+    <main class="viewer-area" id="viewer-area">
+      <div class="viewer-header">
+        <button class="mobile-back-btn" id="mobile-back-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          Back to List
+        </button>
+        <h2 id="current-paper-title">Select a paper</h2>
+        <a id="download-btn" href="#" download class="download-btn" style="display: none;" aria-label="Download PDF">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        </a>
+      </div>
+      <div class="iframe-container">
+        <div class="placeholder" id="pdf-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <p>Select a year from the list to view the question paper.</p>
+        </div>
+        <iframe id="pdf-frame" src="" title="PDF Viewer" allowfullscreen></iframe>
+      </div>
+    </main>
+  </div>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.paper-btn');
+    const iframe = document.getElementById('pdf-frame') as HTMLIFrameElement;
+    const placeholder = document.getElementById('pdf-placeholder');
+    const sidebar = document.getElementById('sidebar');
+    const viewerArea = document.getElementById('viewer-area');
+    const mobileBackBtn = document.getElementById('mobile-back-btn');
+    const currentPaperTitle = document.getElementById('current-paper-title');
+    const downloadBtn = document.getElementById('download-btn') as HTMLAnchorElement;
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // Remove active class from all
+        buttons.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked
+        const target = e.currentTarget as HTMLButtonElement;
+        target.classList.add('active');
+
+        const pdfPath = target.getAttribute('data-pdf');
+        const title = target.getAttribute('data-title');
+
+        if (pdfPath) {
+          // Update iframe
+          iframe.src = pdfPath;
+          iframe.style.display = 'block';
+          if (placeholder) placeholder.style.display = 'none';
+          
+          // Update Header
+          if (currentPaperTitle) currentPaperTitle.textContent = title || 'Document';
+          if (downloadBtn) {
+            downloadBtn.href = pdfPath;
+            downloadBtn.style.display = 'flex';
+          }
+
+          // Mobile logic: hide sidebar, show viewer
+          if (window.innerWidth < 768) {
+            if (sidebar) sidebar.classList.add('mobile-hidden');
+            if (viewerArea) viewerArea.classList.add('mobile-visible');
+          }
+        }
+      });
+    });
+
+    if (mobileBackBtn) {
+      mobileBackBtn.addEventListener('click', () => {
+        if (sidebar) sidebar.classList.remove('mobile-hidden');
+        if (viewerArea) viewerArea.classList.remove('mobile-visible');
+        
+        // Optional: clear active state when going back on mobile
+        // buttons.forEach(b => b.classList.remove('active'));
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Base Layout */
+  .pyq-wrapper {
+    display: flex;
+    height: calc(100vh - 80px); /* Adjust based on your header height */
+    max-height: 100vh;
+    overflow: hidden;
+    background: var(--bg-color, #0f172a); /* Dark blue background */
+    border-top: 1px solid var(--border-color, #1e293b);
+  }
+
+  :root[data-theme="light"] .pyq-wrapper {
+      background: #f8fafc;
+      border-top-color: #e2e8f0;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: var(--card-bg, #0b1121);
+    border-right: 1px solid var(--border-color, #1e293b);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+  }
+
+  :root[data-theme="light"] .sidebar {
+      background: white;
+      border-right-color: #e2e8f0;
+  }
+
+  .sidebar-header {
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    background: inherit;
+    z-index: 10;
+    border-bottom: 1px solid var(--border-color, #1e293b);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  :root[data-theme="light"] .sidebar-header {
+      border-bottom-color: #e2e8f0;
+  }
+
+  .back-link {
+    color: var(--muted-color, #94a3b8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    transition: transform 0.2s;
+  }
+
+  :root[data-theme="light"] .back-link {
+      background: rgba(0,0,0,0.05);
+      color: #64748b;
+  }
+
+  .back-link:hover {
+    color: var(--text-color);
+    background: rgba(255,255,255,0.1);
+  }
+
+  :root[data-theme="light"] .back-link:hover {
+      background: rgba(0,0,0,0.1);
+      color: #0f172a;
+  }
+
+  .sidebar h1 {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 700;
+    color: var(--h1-color, #f8fafc);
+  }
+
+  :root[data-theme="light"] .sidebar h1 {
+      color: #0f172a;
+  }
+
+  /* Sidebar Buttons - Single Row */
+  .papers-grid {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-content: flex-start;
+  }
+
+  .paper-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-align: center;
+    flex: 0 1 auto;
+  }
+
+  :root[data-theme="light"] .paper-btn {
+      border-color: #cbd5e1;
+      color: #475569;
+  }
+
+  .paper-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  :root[data-theme="light"] .paper-btn:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      color: #0f172a;
+  }
+
+  .paper-btn.active {
+    background: rgba(59, 130, 246, 0.15); /* Tailwind blue-500 with opacity */
+    border-color: #3b82f6;
+    color: #60a5fa;
+  }
+
+  :root[data-theme="light"] .paper-btn.active {
+      background: #eff6ff;
+      border-color: #3b82f6;
+      color: #2563eb;
+  }
+
+  .no-data {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--muted-color);
+    padding: 2rem 0;
+  }
+
+  /* Viewer Area */
+  .viewer-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-color, #0f172a);
+    position: relative;
+  }
+
+  :root[data-theme="light"] .viewer-area {
+      background: #f8fafc;
+  }
+
+  .viewer-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color, #1e293b);
+    background: var(--card-bg, #0b1121);
+    min-height: 64px; /* Ensure consistent height */
+  }
+
+  :root[data-theme="light"] .viewer-header {
+      border-bottom-color: #e2e8f0;
+      background: white;
+  }
+
+  .viewer-header h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  .download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    transition: transform 0.2s;
+  }
+
+  .download-btn:hover {
+    background: rgba(59, 130, 246, 0.2);
+  }
+
+  .iframe-container {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none; /* Hidden until selected */
+  }
+
+  .placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-color, #64748b);
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .placeholder-icon {
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-back-btn {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--primary, #3b82f6);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 767px) {
+    .pyq-wrapper {
+      position: relative;
+      height: calc(100vh - 60px); /* Adjust for mobile header */
+    }
+
+    .sidebar {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+
+    .sidebar.mobile-hidden {
+      transform: translateX(-100%);
+    }
+
+    .viewer-area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .viewer-area.mobile-visible {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 10;
+    }
+
+    .mobile-back-btn {
+      display: flex;
+    }
+
+    .viewer-header h2 {
+      display: none; /* Hide title on mobile to save space, or adjust layout */
+    }
+  }
+</style>

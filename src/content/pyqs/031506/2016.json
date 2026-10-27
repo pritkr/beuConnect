@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2016",
+    "subject": "Electromagnetic Field Theory",
+    "subject_slug": "electromagnetic-field-theory",
+    "subject_code": "031506",
+    "year": 2016,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct alternatives for any seven of the following and explain :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "i",
+              "text": "The electric field on equipotential surface is :",
+              "options": [
+                "Unity",
+                "always parallel to the surface",
+                "always perpendicular to the surface",
+                "zero"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "ii",
+              "text": "Electric field in a region containing space charge can be found using :",
+              "options": [
+                "Laplace's equation",
+                "Poisson's equation",
+                "Coulomb's law",
+                "Helmholtz equation"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "iii",
+              "text": "Electrostatic field is :",
+              "options": [
+                "solenoidal",
+                "conservative",
+                "both solenoidal & conservative",
+                "sometimes solenoidal, sometimes conservative"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "iv",
+              "text": "One Weber is equal to :",
+              "options": [
+                "$10^6$ lines",
+                "$44 \\times 10^{-7}$ lines",
+                "$10^{12}$ lines",
+                "$10^8$ lines"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "v",
+              "text": "Two thin parallel wires carry currents along the same direction. The force experienced by one due to the other is :",
+              "options": [
+                "parallel to the lines",
+                "perpendicular to the lines and attractive",
+                "perpendicular to the lines & repulsive",
+                "zero"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "vi",
+              "text": "The magnetic field at any point on the axis of a current-carrying circular coil will be :",
+              "options": [
+                "perpendicular to the axis",
+                "parallel to the axis",
+                "at an angle $45^\\circ$ with axis",
+                "zero"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "vii",
+              "text": "To apply Gauss's law, the Gaussian surface should be chosen in such a way that field is :",
+              "options": [
+                "perpendicular",
+                "tangential",
+                "either perpendicular or tangential",
+                "parallel to the surface"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "viii",
+              "text": "Gradient of a scalar function results in a :",
+              "options": [
+                "vector function",
+                "scalar function",
+                "peak function",
+                "periodic function"
+              ],
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Derive an expression for electric field $E$ due to surface (sheet) charge uniformly distributed over an infinite plane having density $\\rho_s$ C/m\u00b2.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "letter": "b",
+              "text": "State and explain the following :\n(i) Stokes theorem\n(ii) Helmholtz's theorem",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "letter": "c",
+              "text": "Deduce boundary condition of electric field for Dielectric-Dielectric boundary.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "letter": "d",
+              "text": "Deduce an expression for magnetic field intensity $H$ due to an infinitely long current-carrying conductor carrying current $I$. Use Biot-Savart law.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Derive an expression for Lorentz force on a moving charge in an electromagnetic field.",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "letter": "b",
+              "text": "What are conduction and displacement currents?",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "letter": "c",
+              "text": "From the concept of displacement current derive an expression for modified Ampere's law.",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "letter": "d",
+              "text": "Write and explain differential and integral forms of Maxwell's equations.",
+              "id": "3_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "A plane polarized wave is travelling along Z-axis. Show graphically the variation of $E$ and $H$ with Z. Show that $E_y / H_x = 377\\ \\Omega$ for the wave.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "letter": "b",
+              "text": "Develop the analogy between the uniform plane EM waves and the transmission line.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "letter": "c",
+              "text": "A uniform transmission line has constants $R = 12\\text{ m}\\Omega$, $G = 0.8\\ \\mu\\ \\Omega^{-1}\\text{/m}$, $L = 1.3\\ \\mu\\text{ H/m}$ and $C = 0.7\\text{ nF/m}$. At $5\\text{ kHz}$, find\n(i) impedance\n(ii) dB attenuation in $2\\text{ km}$",
+              "id": "4_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Establish the relation $\\nabla \\times H = J + \\partial D / \\partial t$. The symbol used has usual meaning.",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "letter": "b",
+              "text": "What do you mean by linearly polarized plane E.M. waves in free space?",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "letter": "c",
+              "text": "What do you mean by depth of penetration in such medium? If the penetration depth is $1.35\\text{ m}$ at $50\\text{ Hz}$. what will this be at $10\\text{ kHz}$?",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Write down general procedure for solving Poisson's and Laplace's equation.",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "letter": "b",
+              "text": "Deduce an expression of energy density in electrostatic field.",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "letter": "c",
+              "text": "What is meant by the following?\n(i) Transformer and motional e.m.f.\n(ii) Electric potential and potential gradient",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Find curl $H$ at the origin, where $H = 2Y\\hat{i}_x - (x^2 + z^2)\\hat{i}_y + 3y\\hat{i}_z$.",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "letter": "b",
+              "text": "Show that\n(i) $\\nabla \\times (fG) = \\nabla f \\times G + f\\nabla \\times G$\n(ii) $\\nabla \\times (\\nabla \\times F) = \\nabla (\\nabla \\cdot F) - \\nabla^2 F$",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "letter": "c",
+              "text": "It is required to hold four equal point charges $+q$ each in equilibrium at the corners of a square. Find the point charge which will do this if placed at the centres of the square.",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "The magnetic field component of a plane wave in a lossless dielectric $\\mu_r = 1$ is $H = 30 \\sin (\\lambda \\pi \\times 10^8 t - 5x) \\hat{a}_z\\text{ mA/m}$. Find:\n(i) $\\epsilon_r$\n(ii) the wavelength and wave velocity\n(iii) the wave impedance\n(iv) the polarization of the wave\n(v) the corresponding electric field component",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "letter": "b",
+              "text": "Develop the analogy between the uniform plane EM waves and the electric transmission line.",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "What are skin effect and skin depth?",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "letter": "b",
+              "text": "Show that in case of semi-infinite solid conductor, the depth $d$ is given by $d = \\sqrt{\\frac{2}{\\omega \\mu \\sigma}}$ where $\\omega, \\mu$ & $\\sigma$ have their usual meaning.",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "letter": "c",
+              "text": "What is polarization of electro-magnetic wave?",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "letter": "d",
+              "text": "Explain the significance of poynting vector.",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

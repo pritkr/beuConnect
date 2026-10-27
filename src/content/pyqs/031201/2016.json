@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University",
+    "exam_title": "B.Tech 2nd Semester Exam., 2016",
+    "subject": "BASIC ELECTRICAL ENGINEERING",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "031201",
+    "year": 2016,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The questions are of equal value.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer from the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "The power dissipation in each of three parallel branches is 1 W. What is total power dissipation of the circuit?",
+              "options": [
+                "1 W",
+                "4 W",
+                "3 W",
+                "Zero"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1b",
+              "text": "The number of independent loops for a network with n nodes and b branches is",
+              "options": [
+                "$n - 1$",
+                "$b - n$",
+                "$b - n + 1$",
+                "independent of number of nodes"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1c",
+              "text": "Superposition theorem is valid only for",
+              "options": [
+                "linear circuit",
+                "non-linear circuit",
+                "Both (i) and (ii)",
+                "Neither of two"
+              ],
+              "answer": "i"
+            },
+            {
+              "id": "1d",
+              "text": "A sine-wave voltage is applied across inductor. When the frequency of voltage is increased, the current",
+              "options": [
+                "increases",
+                "decreases",
+                "remains same",
+                "becomes zero"
+              ],
+              "answer": "ii"
+            },
+            {
+              "id": "1e",
+              "text": "The frequency of applied voltage in series RLC circuit is increased, what happens to the inductive reactance?",
+              "options": [
+                "Decreases",
+                "Remains same",
+                "Increases",
+                "Becomes zero"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1f",
+              "text": "In a certain RC circuit, the true power is 2 W, and reactive power is 3.5 VAR. What is the apparent power?",
+              "options": [
+                "3.5 VA",
+                "2 VA",
+                "4.03 VA",
+                "3 VA"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1g",
+              "text": "In complex impedance circuit, the maximum power transfer occurs when the load impedance is equal to",
+              "options": [
+                "complex conjugate of source impedance",
+                "source impedance",
+                "source resistance",
+                "None of the above"
+              ],
+              "answer": "i"
+            },
+            {
+              "id": "1h",
+              "text": "In parallel resonance circuit, why does current lag behind the voltage at frequencies below resonance?",
+              "options": [
+                "Because the circuit is predominantly resistive",
+                "Because the circuit is predominantly inductive",
+                "Because the circuit is predominantly capacitive",
+                "None of the above"
+              ],
+              "answer": "ii"
+            },
+            {
+              "id": "1i",
+              "text": "In two wattmeter method of power measurement, when pf = 0.5",
+              "options": [
+                "the readings of two wattmeters are equal and positive",
+                "the readings of two wattmeters are equal and opposite",
+                "the total power is measured by only one wattmeter",
+                "None of the above"
+              ],
+              "answer": "iii"
+            },
+            {
+              "id": "1j",
+              "text": "Two coils connected in series have an equivalent inductance are connected in aiding. If the self-inductance of first coil is 1 H, self-inductance of second coil (Assume M = 0.5 H) is also 1 H, the equivalent inductance will be",
+              "options": [
+                "1 H",
+                "2 H",
+                "3 H",
+                "4 H"
+              ],
+              "answer": "iii"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section B",
+      "questions": [
+        {
+          "id": "2",
+          "sub_questions": [
+            {
+              "id": "2a",
+              "type": "theory",
+              "text": "Define : (i) average value; (ii) RMS value; (iii) peak factor.",
+              "marks": 7
+            },
+            {
+              "id": "2b",
+              "type": "numerical",
+              "text": "The circuit shown in figure below consists of $1 \\text{ k}\\Omega$ resistor in series with $50 \\text{ mH}$ coil, 10 V r.m.s., 10 kHz signal is applied. Find the impedance $Z$, current $I$, phase angle $\\theta$, voltage across resistance $V_R$, voltage across inductance $V_L$. [Diagram: R-L series circuit with R = 1 k\u03a9 and L = 50 mH. AC source 10 V, 10 kHz.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "sub_questions": [
+            {
+              "id": "3a",
+              "type": "theory",
+              "text": "Explain power triangle giving suitable phasor diagram.",
+              "marks": 7
+            },
+            {
+              "id": "3b",
+              "type": "numerical",
+              "text": "Two impedances $Z_1 = 10 \\angle -60^\\circ \\Omega$ and $Z_2 = 16 \\angle 70^\\circ \\Omega$ are in series and pass an effective current of 5 A. Determine the active power, reactive power, apparent power and power factor.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "type": "numerical",
+          "text": "For the circuit shown in figure below, determine Thevenin's equivalent between the output terminals AB. [Diagram: AC circuit. Source 50\u22200\u00b0 V. Network of impedances: 3 \u03a9, -j4 \u03a9, j5 \u03a9, -j4 \u03a9, 4 \u03a9, and j6 \u03a9. Terminals A and B are marked at the output.]",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "type": "theory",
+          "text": "Derive and explain the quality factor and its effect on bandwidth.",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "sub_questions": [
+            {
+              "id": "6a",
+              "type": "theory",
+              "text": "Define composite series circuit.",
+              "marks": 7
+            },
+            {
+              "id": "6b",
+              "type": "numerical",
+              "text": "Calculate the mmf required to produce a flux of 5 mWb across an air gap of 2.5 mm of length having an effective area of 100 cm$^2$ of a cast steel ring of mean iron path of 0.5 m and cross-sectional area of 150 cm$^2$. [Diagram: Circular core with an air gap. Winding on one side.]",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "type": "numerical",
+          "text": "A symmetrical 3-phase, 3-wire, 400 V, supply is connected to delta-connected load as shown in figure below. Impedances in each branch are $Z_{RY} = 10 \\angle 30^\\circ \\Omega$, $Z_{YB} = 10 \\angle -45^\\circ \\Omega$ and $Z_{BR} = 2.5 \\angle 60^\\circ \\Omega$. Find its equivalent star-connected load in sequence RYB. [Diagram: Delta load with impedances ZRY, ZYB, ZBR connected between phases R, Y, B. Source 400 V, 3-phase.]",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "sub_questions": [
+            {
+              "id": "8a",
+              "type": "theory",
+              "text": "Explain energy-meter.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "type": "numerical",
+              "text": "An energy meter is designed to make 100 rev/kWh of energy. It is connected to load carrying 20 A at 230 V at 0.8 pf for an hour. The energy meter actually makes 362 revolutions. Find percentage error.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "sub_questions": [
+            {
+              "id": "9a",
+              "type": "theory",
+              "text": "Explain moving-iron instruments.",
+              "marks": 7
+            },
+            {
+              "id": "9b",
+              "type": "numerical",
+              "text": "A 220 V/110 V, 60 Hz transformer has a total no-load loss of 800 W while drawing 3.5 A current at 220 V. The primary winding resistance is 0.54 $\\Omega$. From the manufacturer's core-loss data, hysteresis loss at 60 Hz was found to be 520 W. If the operating voltage and frequency are doubled, calculate the new core losses.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

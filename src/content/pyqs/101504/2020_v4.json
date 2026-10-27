@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 5th Semester Examination, 2020",
+    "subject": "Hydraulic Engineering",
+    "subject_slug": "hydraulic-engineering",
+    "subject_code": "101504",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In a hydraulic jump, occurring in a horizontal rectangular channel, the sequent depths are 0.25 m\n                        and\n                        1.25 m. The energy loss in this jump is</p>",
+          "options": [
+            "0.8 m",
+            "0.5 m",
+            "1.25 m",
+            "1.50 m"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>If the alternate depths for certain flow in a rectangular channel are 0.5 m and 3.0 m\n                        respectively,\n                        the critical depth for this channel is</p>",
+          "options": [
+            "1.087 m",
+            "1.333 m",
+            "1.500 m",
+            "3.500 m"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A streamline is a line</p>",
+          "options": [
+            "which is normal to the velocity vector at every point",
+            "which represents lines of constant velocity potential",
+            "which is normal to the lines of constant stream function",
+            "which is tangential to the velocity vector everywhere at a given instant"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>In a pipeline, the hydraulic grade line is above the pipe center line in the longitudinal section\n                        at\n                        point A and below the pipe center line at another point B. From this it can be inferred that</p>",
+          "options": [
+            "vacuum pressures prevail at B",
+            "vacuum pressures prevail at A",
+            "the flow is from A to B",
+            "the flow is from B to A"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>In a horizontal rectangular channel, a hydraulic jump with a sequent depth ratio of 5.0 is\n                        formed.\n                        This jump can be classified as</p>",
+          "options": [
+            "weak jump",
+            "oscillating jump",
+            "strong jump",
+            "steady jump"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The term alternate depths in open-channel flow is used to designate the depths</p>",
+          "options": [
+            "at the beginning and end of a hydraulic jump",
+            "having the same kinetic energy for a given discharge",
+            "having the same specific energy for a given discharge",
+            "at the beginning and end of a gradually varied flow profile"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>An 8 cm diameter pipe is to carry water at a Reynolds number of \\( 10^5 \\). The entrance length\n                        required for the establishment of turbulent flow is about</p>",
+          "options": [
+            "4.0 m",
+            "560 cm",
+            "10.0 m",
+            "8.7 m"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The drag on a very small sphere falling in a highly viscous liquid varies</p>",
+          "options": [
+            "inversely with the velocity",
+            "directly with the velocity",
+            "as the square root of the velocity",
+            "as the square of the velocity"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Flow has Froude number less than one</p>",
+          "options": [
+            "if normal depth is less than critical depth",
+            "if normal depth is more than critical depth",
+            "if normal depth is equal to critical depth",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Mach number is ratio of inertia forces to</p>",
+          "options": [
+            "pressure forces",
+            "elastic forces",
+            "surface tension forces",
+            "gravity forces"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Differentiate between structured and unstructured mesh.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain the features of TDMA method.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Find the ratio of skin friction drag on the front-half and rear-half portions of a flat plate\n                        kept in\n                        a uniform stream of zero incidence. Assume the boundary layer to be turbulent over the entire\n                        plate.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Find the ratio of skin friction drag on the front two-third and rear one-third of a flat plate\n                        kept\n                        in a uniform stream at zero incidence. Assume the boundary layer to be turbulent over the entire\n                        plate.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What do you understand by displacement thickness and momentum thickness?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>For the following velocity profiles in the boundary layer on a flat plate, calculate the\n                        displacement\n                        and momentum thickness in terms of the nominal boundary layer thickness \\( \\delta \\):<br/>\n                        (i) \\( u/U = \\eta \\)<br/>\n                        (ii) \\( u/U = 2\\eta - \\eta^2 \\)<br/>\n                        where \\( \\eta = y/\\delta \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A rectangular flume 2 m wide carries discharge at the rate of \\( 2 \\, m^3/s \\). The bed slope\n                        of\n                        the flume is 0.0004. At a certain section, the depth of flow is 1 m. Calculate the distance of\n                        the\n                        section downstream where the depth of flow is 0.9 m. Solve by single step method. Assume\n                        rugosity\n                        coefficient as 0.014. Is the slope of the channel mild or steep? How is this type of surface\n                        profile\n                        classified?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive Bernoulli's equation from Euler's equation of motion.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A pipe 300 m long has a slope of 1 in 100 and tapers from 1.2 m diameter at the high end to 0.6 m\n                        diameter at the low end. Quantity of water flowing is 5400 litres per minute. If the pressure at\n                        the\n                        high end is 68.67 kPa \\( (0.7 \\text{ kg(f)/cm}^2) \\), find the pressure at the low end.\n                        Neglect\n                        losses.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Define and distinguish between (i) steady and unsteady flow, (ii) uniform and non-uniform flow\n                        and\n                        (iii) rotational and irrotational flow.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>An incompressible fluid flows steadily through two pipes of diameter 0.15 m and 0.2 m which\n                        combine\n                        to discharge in a pipe of 0.3 diameter. If the average velocities in the 0.15 m and 0.2 m\n                        diameter\n                        pipes are \\( 2 \\, m/s \\) and \\( 3 \\, m/s \\) respectively, then find the average velocity\n                        in\n                        the\n                        0.3 m diameter pipe.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Show that for a trapezoidal channel of given area of flow, the condition of maximum flow requires\n                        that hydraulic mean depth is equal to one half the depth of flow.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>An irrigation channel of trapezoidal section, having side slopes 3 horizontal to 2 vertical, is\n                        to\n                        carry a flow of 10 cumec on a longitudinal slope of 1 in 5000. The channel is to be lined for\n                        which\n                        the value of friction coefficient in Manning's formula is \\( n=0.012 \\). Find the dimensions\n                        of\n                        the most economic section of the channel.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>The depth and velocity of flow in a rectangular channel are 1 m and \\( 1.5 \\, m/s \\)\n                        respectively.\n                        If the rate of inflow at the upstream end is suddenly doubled, what will be the height and\n                        absolute\n                        velocity of the resulting surge and the celerity of the wave?</p>"
+        }
+      ]
+    }
+  ]
+}

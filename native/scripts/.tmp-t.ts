@@ -1,0 +1,11 @@
+import { BRANCH_PACKS } from "../src/features/syllabus/data/packs.ts";
+import { parseSyllabus } from "../src/features/syllabus/parse.ts";
+const pack = JSON.parse(BRANCH_PACKS["ece"]);
+const subject = (pack.semesters["4"] as any[]).find((s) => s.code === "EC104");
+const content: string = subject.content;
+console.log("len", content.length, "newlines", content.split("\n").length);
+console.log("first line", JSON.stringify(content.split("\n")[0]));
+console.log("second line", JSON.stringify(content.split("\n")[1]?.slice(0, 60)));
+const RE = /^\s*(unit|module|part|section)\s*[-–:.]?\s*([ivxlcdm]+|\d+(?:\.\d+)?)\s*[.:–-]?\s*(.*)$/i;
+console.log("re2", RE.exec(content.split("\n")[1]));
+console.log("units", parseSyllabus(content).length);

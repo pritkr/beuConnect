@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech. 4th Semester Examination, 2014",
+    "subject": "POWER SYSTEM-I",
+    "subject_slug": "power-system-i",
+    "subject_code": "031404",
+    "year": 2014,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer on any seven from the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The electric power can be transmitted by</p>",
+          "options": [
+            "overhead system",
+            "underground system",
+            "either (i) or (ii)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>In a transmission system, the weight of copper used is proportional to</p>",
+          "options": [
+            "\\( E^2 \\)",
+            "\\( E \\)",
+            "\\( \\frac{1}{E^2} \\)",
+            "\\( \\frac{1}{E} \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>ACSR conductors have</p>",
+          "options": [
+            "all conductors made of aluminium",
+            "outer conductors made of aluminium",
+            "inner conductors made of aluminium",
+            "no conductors made of aluminium"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Stranded conductors usually have a central wire around which there are successive layers of 6,\n                        12,\n                        18, 24 wires. For n-layers, the total number of individual wires is</p>",
+          "options": [
+            "\\( 3n(n+1) \\)",
+            "\\( 2n(n+1) \\)",
+            "\\( 3n(n+1)+1 \\)",
+            "\\( 2n(n+1)+1 \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The inductance of two-wire power transmission line per km gets doubled when the</p>",
+          "options": [
+            "distance between the wires is doubled",
+            "distance between the wires is increased four-fold",
+            "distance between the wires is increased as square of the original distance",
+            "radius of the wire is doubled"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>120 km long transmission line is considered as a</p>",
+          "options": [
+            "short line",
+            "median line",
+            "long line",
+            "either (i) or (ii)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Percentage regulation of a transmission line is given by the expression</p>",
+          "options": [
+            "\\( \\frac{V_R - V_S}{V_R} \\times 100 \\)",
+            "\\( \\frac{V_R - V_S}{V_S} \\times 100 \\)",
+            "\\( \\frac{V_S - V_R}{V_R} \\times 100 \\)",
+            "\\( \\frac{V_S - V_R}{V_S} \\times 100 \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Sheaths are used in cables to</p>",
+          "options": [
+            "provide proper insulation",
+            "provide mechanical strength",
+            "prevent ingress of moisture",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The charging current drawn by the cable</p>",
+          "options": [
+            "lags behind the voltage by \\( 90^{\\circ} \\)",
+            "leads the voltage by \\( 90^{\\circ} \\)",
+            "leads the voltage by \\( 180^{\\circ} \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Transmission line constants are</p>",
+          "options": [
+            "resistance",
+            "inductance",
+            "capacitance",
+            "All of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Derive the Kelvin's law for most economical size of conductor.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>The cost per km for each of the copper conductor of a section a sq. cm for a transmission line is\n                        \\(\n                        Rs.(2800a + 1300) \\). The load factor of the load current is 80% and the load factor for the\n                        losses\n                        is 65%. The rate of interest and depreciation is 10% and the cost of energy is 5 paisa per kW-h.\n                        Find the most economical current density for the transmission line by the use of Kelvin's law.\n                        Given\n                        \\( \\rho = 1.78 \\times 10^{-8} \\Omega-m \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>The following data refers to a 50 Hz, 1-\\(\\phi\\) transmission line: Length = 20 km. Load\n                        delivered\n                        at receiving end 5 MW at 118. Resistance of each conductor = 0.02 \\( \\Omega/km \\). Inductance\n                        of\n                        conductor = 0.65 mH/km. The voltage at the receiving end is required to be kept at 10 kV. Find\n                        (a)\n                        sending end voltage and voltage regulation of the line; (b) the value of capacitors to be placed\n                        parallel with the load such that regulation is reduced to 50% of the obtained in (a). Compare\n                        the\n                        transmission efficiencies in parts (a) and (b).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Prove that the vol. gradient at surface of conductor in the cable will be minimum when \\(\n                        \\frac{R}{r} = e \\) where r is the radius of conductor and R is the inner radius of sheath.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Enumerate the different types of losses in a cable. Also, derive the expression for dielectric\n                        loss.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A single-core lead covered cable is to be designed for 66 kV to earth. Its conductor radius is\n                        0.5 cm\n                        and its three insulating materials A, B and C have relative permittivities 4, 2.5 and 4 with\n                        maximum\n                        permissible stresses of 50, 30 and 40 kV/cm respectively. Determine the minimum internal\n                        diameter of\n                        lead sheath. Discuss the arrangement of insulating materials.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive the expression for tension and sag in conductors if supports of equal height are used.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A transmission line conductor consists of hard drawn copper conductor 120 \\( mm^2 \\)\n                        cross-section,\n                        the conductor used is 37/2 mm having weight of 1118 kg/km and has a span of 200 meters. The\n                        supporting structures being level. The conductor has an ultimate tensile stress of 122 \\(\n                        kg/mm^2\n                        \\) and allowable tension is not to exceed 1/4th of ultimate strength. Find (a) sag in still\n                        air,\n                        (b) sag with wind pressure of 60 \\( kg/m^2 \\), (c) sag with the wind pressure in part b and an\n                        ice\n                        coating of 10 mm. Also, find the vertical sag under this condition. Assume density of ice as\n                        0.915\n                        gm/cc.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Determine the inductance of the double circuit line shown in figure below. The self GMD of the\n                        conductor is 0.0069 meter. </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/67.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Prove that the capacitance of a 3-\\(\\phi\\) unsymmetrically spaced transposed transmission line\n                        is given by \\(\n                        c =\n                        \\frac{2\\pi\\epsilon_0}{\\ln \\frac{\\sqrt[3]{abc}}{r}} \\) F/meter where a, b, c are the\n                        spacing\n                        between the conductors of different phases and r is radius of conductor.</p>"
+        }
+      ]
+    }
+  ]
+}
