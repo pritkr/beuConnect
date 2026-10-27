@@ -26,7 +26,7 @@ adb devices                       # your phone must be listed as "device"
 If the SDK pieces are missing:
 
 ```sh
-sdkmanager "platform-tools" "build-tools;35.0.1" "ndk;28.2.13676358"
+sdkmanager "platform-tools" "build-tools;36.1.0" "platforms;android-36" "ndk;28.2.13676358"
 ```
 
 Any NDK version works — the script takes the newest under `$ANDROID_HOME/ndk`.
@@ -68,7 +68,7 @@ build replaces everything around it:
 5. **Re-zip, align, sign.** `zip -9` deflates the library 24.70 → 11.06 MB;
    `resources.arsc` is added stored (`-0`) because Android mmaps it and targetSdk
    30+ expects it aligned; then `zipalign -f 4` and `apksigner sign` with the
-   debug key.
+   release key from `~/.config/beuconnect/signing.env`.
 
 The host manifest sets `android:extractNativeLibs="true"`, which is what permits
 step 5's deflate: Android extracts the library at install time instead of mmapping
@@ -138,7 +138,7 @@ Device checks after launch:
 |---|---|---|
 | `missing: …/toolchains/llvm/prebuilt/darwin-x86_64/bin/llvm-strip` | no NDK under `$ANDROID_HOME/ndk` | `sdkmanager "ndk;28.2.13676358"`, re-source `env.sh`, or set `ANDROID_NDK_HOME` |
 | `no lib/arm64-v8a in the runtime`, or `INSTALL_FAILED_NO_MATCHING_ABIS` on the device | the ABI you asked for is not in the prebuilt, or the APK's ABI does not match the device (arm64 APK on an x86_64 emulator) | list what exists: `unzip -l .nsh/out/raw/BEUConnect.apk \| grep lib/`, then build for a name in that list: `arm64-v8a` (phone), `x86_64` (Intel emulator) or `all` (universal check build) |
-| `INSTALL_FAILED_UPDATE_INCOMPATIBLE` | the installed app was signed with a different key (the debug keystore was regenerated) | `adb uninstall org.beuconnect.app`, then install; keep one keystore to avoid it |
+| `INSTALL_FAILED_UPDATE_INCOMPATIBLE` | the installed app was signed with a different key (the release key changed, or the old install is debug-signed) | `adb uninstall org.beuconnect.app`, then install; keep one keystore to avoid it |
 | "The portal did not load." on `results.portal` | a WebView host is missing from `nsh.json` | add it to `capabilities.webview.hosts` and rebuild |
 
 ### 4.1 The strip path says `darwin-x86_64` on an Apple Silicon Mac

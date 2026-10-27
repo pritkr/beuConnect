@@ -41,7 +41,7 @@ The checks are byte-level, not visual, so a CI run and a laptop run agree:
 Two fields, one place:
 
 ```json
-{ "version": "1.1.0", "build": 2 }
+{ "version": "1.2.0", "build": 3 }
 ```
 
 `nsh.json` is the input for `versionName` / `versionCode`. The app's own
@@ -55,7 +55,7 @@ the About screen read those, so `nsh.json` and `app-info.ts` are bumped together
 | `check.sh` red | a type error or a failing test | fix the tree; packaging a red tree is how a broken screen ships |
 | `size-report.sh` over budget | bundle growth (the runtime is fixed) | `docs/SIZE.md` has the arithmetic; trim embedded data before screens |
 | `apksigner` — no keystore | this machine has no release identity | restore `~/.config/beuconnect/` from the backup, or run `scripts/signing.sh` for a fork (new key = no upgrades) |
-| `zipalign` missing | no build-tools | `sdkmanager "build-tools;35.0.1"` |
+| `zipalign` missing | no build-tools | `sdkmanager "build-tools;36.1.0" "platforms;android-36"` |
 | install rejects the APK | `extractNativeLibs` not flipped | `package-android.sh` does it; check its log line `android:extractNativeLibs=true` |
 
 ## Publishing the GitHub release
@@ -84,7 +84,7 @@ a phone: **Settings → Check for updates** must say `Up to date` on the version
 just released, and **Share BEUConnect** must open WhatsApp with the link.
 
 ```sh
-adb install -r dist/BEUConnect-1.0.0-arm64-v8a.apk
+adb install -r dist/BEUConnect-1.1.0-arm64-v8a.apk
 ```
 
 First launch opens the one-step welcome: enter the registration number and the

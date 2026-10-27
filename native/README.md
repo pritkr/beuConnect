@@ -13,7 +13,7 @@ development host.
   page is read on the phone, and the result is saved natively — when neither
   works. A registration number is resolved to a name and CGPA for Home without
   ever solving a captcha.
-- The Android APK is **11.98 MB** (11,981,902 B) instead of the ~50 MB universal
+- The Android APK is **12.11 MB** (12,110,647 B) instead of the ~50 MB universal
   build, and installs the same way: `docs/ANDROID.md`.
 
 ## Three commands
@@ -66,7 +66,7 @@ native/
 ├── qa/                     route contract, mount sweep, unit tests
 ├── scripts/                check, package, size, shots, data extraction, identity check
 └── docs/                   this file's neighbours: ARCHITECTURE, SITE_PARITY, ANDROID,
-                            SIZE, SHOTS, A11Y_AUDIT, BUILD_SPEC
+                            SIZE, SHOTS, A11Y_AUDIT, BUILD_SPEC, PLAY_STORE
 ```
 
 ## Contributor rules
