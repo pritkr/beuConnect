@@ -136,6 +136,20 @@ const features = [
             All BEU things — syllabus, results, and tables — one place.
         </p>
 
+        <a
+            class="apk-btn"
+            href="https://github.com/pritkr/beuconnect/releases/latest/download/BEUConnect.apk"
+            aria-label="Download BEUConnect for Android — APK, 12 MB"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <path d="M5 21h14"></path>
+            </svg>
+            <span>Download for Android</span>
+            <span class="apk-btn-meta">APK · 12 MB</span>
+        </a>
+
         <!-- Onboarding Input Flow for New Users -->
         <div class="onboarding-input-group glass-card" style="width: 100%; max-width: 420px; margin: 1.5rem auto 1rem; padding: 0.4rem; border-radius: 50px; display: flex; gap: 0.5rem; align-items: center; border: 1px solid var(--border-accent);">
             <input type="text" id="heroRegInput" placeholder="Enter Reg No. to personalize..." autocomplete="on" inputmode="numeric" style="border: none; background: transparent; margin: 0; padding: 0.5rem 0.5rem 0.5rem 1rem; flex: 1; min-width: 0; font-size: 0.9rem; color: var(--text-primary); box-shadow: none; outline: none;" />
@@ -282,6 +296,54 @@ const features = [
         margin: 0;
         max-width: 400px;
         margin-inline: auto;
+    }
+
+    /* Android app */
+    .apk-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin: 1.1rem auto 0;
+        padding: 0.7rem 1.15rem;
+        background: var(--accent-gradient);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1;
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.28);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .apk-btn:hover {
+        transform: translateY(-2px);
+        color: #fff;
+        box-shadow: 0 10px 28px rgba(59, 130, 246, 0.38);
+    }
+
+    .apk-btn:active {
+        transform: translateY(0);
+    }
+
+    .apk-btn svg {
+        flex-shrink: 0;
+    }
+
+    .apk-btn-meta {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        opacity: 0.78;
+        padding-left: 0.55rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    @media (max-width: 380px) {
+        .apk-btn-meta {
+            display: none;
+        }
     }
 
     /* Feature grid */
