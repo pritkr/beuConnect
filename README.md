@@ -19,7 +19,14 @@ Android will ask you to allow installs from your browser or WhatsApp the first
 time. The link always serves the newest release, and the app itself checks for
 updates: **Settings → Check for updates**.
 
-Requirements: Android 8 or newer, arm64 phone.
+Or add the F-Droid repository and let the client handle updates:
+
+```
+https://pritkr.github.io/beuconnect-fdroid/repo
+```
+
+Requirements: Android 8 or newer, arm64 phone. Publishing and the repo signing
+key: [`native/docs/FDROID.md`](native/docs/FDROID.md).
 
 ## Build it
 
