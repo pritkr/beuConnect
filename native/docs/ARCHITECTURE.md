@@ -435,7 +435,8 @@ Hosts are allowlisted in `nsh.json`:
 
 - `capabilities.network.hosts`: `beu.prit.eu.org` (every fetch),
   `beu-bih.ac.in` (the portal host), `rptbalyjcevtxoxyvzli.supabase.co` (GECS
-  attendance).
+  attendance), `api.github.com` (the release check — one call per launch at
+  most, cached for six hours in `beu.cache.release.check`).
 - `capabilities.webview.hosts`: `beu.prit.eu.org`, `beu-bih.ac.in`,
   `www.beu-bih.ac.in`, `beu.ac.in`, `www.beu.ac.in` (portal and PDFs),
   `challenges.cloudflare.com` for the Turnstile widget the result page loads,

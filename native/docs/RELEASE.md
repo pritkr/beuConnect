@@ -13,9 +13,9 @@ nothing here needs its own logic:
 |---|---|---|
 | 1 | `scripts/check.sh test` | types, bundle and all tests pass on one lock (no two builds race) |
 | 2 | `scripts/package-android.sh` | arm64 only, `llvm-strip`, deflated runtime, `extractNativeLibs`, aligned, signed |
-| 3 | `scripts/size-report.sh --no-build --record` | the APK is under **10,000,000 B**, and the run is appended to `docs/size-history.json` |
+| 3 | `scripts/size-report.sh --no-build --record` | the APK is under **12,300,000 B**, and the run is appended to `docs/size-history.json` |
 | 4 | verify | `zipalign -c`, `apksigner verify`, `unzip -t`, badging, package + version |
-| 5 | ship | a copy at `dist/BEUConnect-<version>-arm64-v8a.apk` with its sha256 |
+| 5 | ship | a copy at `dist/BEUConnect-<version>-arm64-v8a.apk` with its sha256, then the GitHub release |
 
 `--skip-tests` skips step 1 for iteration; never for a release.
 
@@ -25,9 +25,11 @@ The checks are byte-level, not visual, so a CI run and a laptop run agree:
 
 - **zipalign `-c -p 4`** — every entry is 4-byte aligned; `resources.arsc` is
   page-aligned and stored, because Android mmaps it.
-- **apksigner verify** — the signature chain is valid for the debug keystore on
-  this machine (`~/.android/debug.keystore`, alias `androiddebugkey`). A store
-  release passes `--keystore` to `package-android.sh` instead.
+- **apksigner verify** — the signature chain is valid for the release keystore at
+  `~/.config/beuconnect/beuconnect-release.jks` (alias `beuconnect`), sourced
+  from `~/.config/beuconnect/signing.env`. Every published APK uses that key, so
+  one build can replace another. A fork that generates its own key ships to a
+  new install, never as an upgrade.
 - **`unzip -t`** — no truncated entry, which a killed build produces.
 - **badging** — the package is `org.beuconnect.app` and the version matches
   `nsh.json`.
@@ -42,9 +44,9 @@ Two fields, one place:
 { "version": "1.1.0", "build": 2 }
 ```
 
-`nsh.json` is the input for `versionName` / `versionCode`; nothing else in the
-app hard-codes a version except the More footer, which reads `v1.0.0` from the
-markup — update that line when you bump more than the patch.
+`nsh.json` is the input for `versionName` / `versionCode`. The app's own
+`APP_VERSION` / `APP_BUILD` live in `src/lib/app-info.ts`; the More footer and
+the About screen read those, so `nsh.json` and `app-info.ts` are bumped together.
 
 ## When a step fails
 
@@ -52,11 +54,34 @@ markup — update that line when you bump more than the patch.
 |---|---|---|
 | `check.sh` red | a type error or a failing test | fix the tree; packaging a red tree is how a broken screen ships |
 | `size-report.sh` over budget | bundle growth (the runtime is fixed) | `docs/SIZE.md` has the arithmetic; trim embedded data before screens |
-| `apksigner` — no keystore | fresh machine | `keytool -genkeypair -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android -dname "CN=Android Debug,O=Android,C=US" -validity 10000` |
+| `apksigner` — no keystore | this machine has no release identity | restore `~/.config/beuconnect/` from the backup, or run `scripts/signing.sh` for a fork (new key = no upgrades) |
 | `zipalign` missing | no build-tools | `sdkmanager "build-tools;35.0.1"` |
 | install rejects the APK | `extractNativeLibs` not flipped | `package-android.sh` does it; check its log line `android:extractNativeLibs=true` |
 
-## Installing
+## Publishing the GitHub release
+
+The public repository is `pritkr/beuconnect`; Releases is the store. The app's
+update check and the share link both hard-code the newest APK:
+
+```
+https://github.com/pritkr/beuconnect/releases/latest/download/BEUConnect.apk
+```
+
+That URL only works while **the asset is named exactly `BEUConnect.apk`** and
+the release is the newest non-draft, non-prerelease one. The working checkout's
+own `origin` is the private `beuconnectaw`, so name the public repo explicitly:
+
+```sh
+gh release create v1.1.0 .nsh/out/BEUConnect.apk#BEUConnect.apk \
+  -R pritkr/beuconnect --target main \
+  --title "BEUConnect 1.1.0" --notes-file notes.md
+```
+
+Release notes are install instructions first: the APK is sideloaded, Android
+asks for permission the first time, and a debug-signed install must be
+uninstalled once because the signatures differ. Then check the two consumers on
+a phone: **Settings → Check for updates** must say `Up to date` on the version
+just released, and **Share BEUConnect** must open WhatsApp with the link.
 
 ```sh
 adb install -r dist/BEUConnect-1.0.0-arm64-v8a.apk
