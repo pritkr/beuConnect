@@ -62,9 +62,14 @@ OUT="$ROOT/.nsh/out"
 WORK="$OUT/host"
 STAGE="$WORK/stage"
 
-for tool in "$AAPT2" "$D8" "$ZIPALIGN" "$APKSIGNER" "$STRIP" "$AAR" "$PLATFORM" "$KEYSTORE"; do
+for tool in "$AAPT2" "$D8" "$ZIPALIGN" "$APKSIGNER" "$STRIP" "$AAR" "$PLATFORM"; do
   [ -e "$tool" ] || { echo "missing: $tool" >&2; exit 1; }
 done
+# Only a signing build needs the key. `SIGN=0` stops at the aligned APK, and the
+# caller that signs (a repository, F-Droid for one) has no keystore here.
+if [ "${SIGN:-1}" != "0" ]; then
+  [ -e "$KEYSTORE" ] || { echo "missing: $KEYSTORE" >&2; exit 1; }
+fi
 
 echo "▸ bundling the app"
 rm -rf "$WORK"
