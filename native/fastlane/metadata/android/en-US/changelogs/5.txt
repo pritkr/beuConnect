@@ -1,0 +1,5 @@
+Same app as 1.1.2.
+
+The Android build no longer needs a keystore when it is asked to produce an
+unsigned APK, which is what a repository that signs builds itself (F-Droid)
+asks for. Nothing in the app changed.
