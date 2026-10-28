@@ -1,14 +1,14 @@
 # F-Droid
 
-BEUConnect ships through two F-Droid paths. One is live, the other is blocked on
-a dependency that is not built from source.
+BEUConnect ships through two F-Droid paths. One is live, the other waits on a
+merge request.
 
 | Path | Status | Where |
 |---|---|---|
 | Self-hosted repository | Live since 2026-10-28 | <https://pritkr.github.io/beuconnect-fdroid/repo> |
-| fdroiddata (main F-Droid repo) | Blocked, §5 | — |
+| fdroiddata (main F-Droid repo) | Merge request 54557, §5 | <https://gitlab.com/fdroid/fdroiddata/-/merge_requests/54557> |
 
-Package `org.beuconnect.app`, versionCode 2 / 1.1.0, APK signer SHA-256
+Package `org.beuconnect.app`, versionCode 5 / 1.1.3, APK signer SHA-256
 `7f6a14260ebc1fb7fd06cb34e5dcf49caa489674a268ff04bc72265596057076`.
 
 ## 1. The self-hosted repository
@@ -122,9 +122,15 @@ What the recipe still needs on top of that:
 | SDK platform 35 and build-tools 35 | `cargo xtask android` compiles the runtime's Java with `javac --release 17` against `platforms/android-35/android.jar`, and the app's own aapt2/javac pass needs a platform too. The image ships no platform, and its `d8` is 31.0.0, which predates Java 17 class files, so `prebuild:` installs `platforms;android-35` and `build-tools;35.0.0` with `sdkmanager`. |
 | Its own signing key | F-Droid signs what it builds. See §5.1. |
 
-`fdroid/fdroiddata/org.beuconnect.app.yml` is the recipe. It has not been
-accepted, and until it has, the self-hosted repository above is the only F-Droid
-channel.
+`fdroid/fdroiddata/org.beuconnect.app.yml` is the recipe, and it builds `v1.1.3`
+on F-Droid's build server: every job in merge request
+<https://gitlab.com/fdroid/fdroiddata/-/merge_requests/54557> passes, `fdroid
+build` included, which compiles the `nsh` CLI, `libnsh.so` and the runtime's
+Java classes from the srclib before it compiles the app. `v1.1.2` did not build
+there — its host script demanded a keystore in a `SIGN=0` build, which a server
+that signs nothing has no reason to carry, and 1.1.3 moves that check into the
+signing branch. Until the merge request is merged, the self-hosted repository
+above is the only F-Droid channel.
 
 ### 5.1 Two installs, two keys
 

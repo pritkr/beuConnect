@@ -5,20 +5,24 @@
 self-hosted repository — that one is `../metadata/org.beuconnect.app.yml`, and
 it only carries a version and a signing key.
 
-## What has to exist before the MR is opened
+## What the merge request needs
 
 | Thing | Where | State |
 |---|---|---|
-| A tag whose tree builds unsigned | `github.com/pritkr/beUConnect` → `v1.1.2` | needs `build-nsh-from-source.sh`, `SIGN=0` and no `bun` in the build path |
-| A green `fdroid build` | local, no build server needed | see below |
+| A tag whose tree builds unsigned | `github.com/pritkr/beUConnect` → `v1.1.3` | needs `build-nsh-from-source.sh`, `SIGN=0` and no JavaScript runtime in the build path |
+| A green `fdroid build` | the MR pipeline, ~25 minutes | green on `v1.1.3` |
 
-A recipe that has never built is rejected, so the MR waits on the second row.
+A recipe that has never built is rejected, and `v1.1.2` did not: its host script
+wanted a keystore in a `SIGN=0` build, which the server does not carry. 1.1.3
+moves that check into the signing branch.
 
 ## Running the recipe locally
 
 `fdroid build` without `--server` runs the same `sudo:`-less `build:` script that
 the build server runs, against the SDK on this machine, and writes the unsigned
-APK to `unsigned/`. That is enough to prove the recipe before it is proposed.
+APK to `unsigned/`. It proves the recipe without waiting for the pipeline, but it
+does not prove it on the server's image: the platform, build-tools and libclang
+that `prebuild:`/`sudo:` install are exactly what a local run hides.
 
 ```sh
 mkdir -p /tmp/fdroid-check && cd /tmp/fdroid-check

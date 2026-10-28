@@ -12,7 +12,6 @@ IssueTracker: https://github.com/pritkr/beUConnect/issues
 Changelog: https://github.com/pritkr/beUConnect/releases
 
 AutoName: BEUConnect
-Summary: Syllabus, PYQs, results, rank and attendance for BEU students
 Description: |
   BEUConnect is a student app for Bihar Engineering University (BEU). The
   syllabus, previous year papers, notes, notices and college rosters live on
@@ -40,15 +39,15 @@ RepoType: git
 Repo: https://github.com/pritkr/beUConnect.git
 
 Builds:
-  - versionName: 1.1.2
-    versionCode: 4
-    commit: 51c1674d91e4fc354f4f25ed5ec519d7105067ce
+  - versionName: 1.1.3
+    versionCode: 5
+    commit: 88834f4eb786836a1f41f50c787d59d1864808a4
     timeout: 10800
     subdir: native
     sudo:
       - apt-get update
       - apt-get install -y --no-install-recommends curl ca-certificates build-essential
-        pkg-config libssl-dev perl unzip zip default-jdk-headless
+        libclang-dev pkg-config libssl-dev perl unzip zip default-jdk-headless
       - mkdir -p /opt/rust
       - env RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo sh -c 'curl --proto
         "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
@@ -61,10 +60,13 @@ Builds:
       - nsh@v0.3.0
     prebuild: if [ -d /opt/rust/cargo ]; then export RUSTUP_HOME=/opt/rust/rustup
       CARGO_HOME=/opt/rust/cargo RUSTUP_TOOLCHAIN=1.99.1 PATH=/opt/rust/cargo/bin:$PATH;
-      fi; cd $$nsh$$ && cargo fetch --locked
+      fi; sdkmanager "platforms;android-35" "build-tools;35.0.0" > /dev/null; cd $$nsh$$
+      && cargo fetch --locked
     build:
       - if [ -d /opt/rust/cargo ]; then export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo
         RUSTUP_TOOLCHAIN=1.99.1 PATH=/opt/rust/cargo/bin:$PATH; fi
+      - L=$(find /usr/lib -maxdepth 3 -name 'libclang-*.so*' -print -quit)
+      - test -z "$L" || export LIBCLANG_PATH=$(dirname "$L")
       - export NSH_SRC=$$nsh$$
       - export SIGN=0
       - ./scripts/build-nsh-from-source.sh arm64-v8a
@@ -95,6 +97,19 @@ MaintainerNotes: |
   `[ -d /opt/rust/cargo ]`, because `fdroid build` skips `sudo:` off the build
   server and the same two commands have to work with the developer's own rustup.
 
+  `quickjs-jit-sys` generates its bindings with `bindgen` at build time, and
+  `bindgen` loads libclang, which a build server has no reason to carry: without
+  it the build dies with "Unable to find libclang". So `sudo:` installs
+  `libclang-dev` and `build:` points `LIBCLANG_PATH` at whichever `llvm-*`
+  directory apt chose, rather than naming a version that moves with Debian.
+
+  Both `nsh`'s Java runtime and the app's own aapt2/d8 pass compile against an
+  SDK platform, and the build server image ships none, so `prebuild` installs
+  `platforms;android-35` with `sdkmanager`. It installs `build-tools;35.0.0`
+  too: the image's own 31.0.0 `d8` predates Java 17 class files. Neither is a
+  binary in the APK — they are the compiler and its headers, the same way the
+  NDK is.
+
   * UPSTREAM: `native/scripts/build-nsh-from-source.sh` also runs on a
     developer's machine, which is how the recipe was tested; the only thing it
     needs is a checkout of the nsh tag.
@@ -104,5 +119,5 @@ MaintainerNotes: |
 AutoUpdateMode: Version
 UpdateCheckMode: Tags ^v[0-9.]+$
 UpdateCheckData: native/nsh.json|"build":\s*(\d+)||v([\d.]+)
-CurrentVersion: 1.1.2
-CurrentVersionCode: 4
+CurrentVersion: 1.1.3
+CurrentVersionCode: 5
