@@ -39,7 +39,11 @@ AAR="${NSH_AAR:-$HOME/.nsh/embed/android/nsh.aar}"
 # The version lives in exactly one place — `nsh.json` — and this reads it for
 # the APK's versionCode/versionName. Hard-coding it here once already meant a
 # 1.1.0 build reported itself as 1.0.0 to the in-app updater.
-read -r APP_VERSION APP_BUILD <<<"$(bun -e 'const j = require("./nsh.json"); console.log(`${j.version} ${j.build}`)')"
+#
+# `python3`, not `bun`: a build server that only has the Android SDK, a JDK and
+# a Rust toolchain (F-Droid's, for one) still has python3, and this is the only
+# line in the build that would otherwise need a JavaScript runtime.
+read -r APP_VERSION APP_BUILD <<<"$(python3 -c 'import json; j = json.load(open("nsh.json")); print(j["version"], j["build"])')"
 [ -n "${APP_VERSION:-}" ] && [ -n "${APP_BUILD:-}" ] || { echo "nsh.json has no version/build" >&2; exit 1; }
 
 # A shared APK must upgrade itself. Signed with the debug key, every new
@@ -134,7 +138,8 @@ else
 fi
 
 SIZE="$(wc -c < "$NAME" | tr -d ' ')"
-echo "✓ $NAME — $(echo "scale=1; $SIZE / 1000000" | bc) MB ($SIZE bytes)"
+# awk, not bc: a slim build image may not carry bc.
+echo "✓ $NAME — $(awk -v s="$SIZE" 'BEGIN { printf "%.1f", s / 1000000 }') MB ($SIZE bytes)"
 if [ "${SIGN:-1}" = "0" ]; then
   echo "  unsigned (SIGN=0)"
 else

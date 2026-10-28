@@ -1,5 +1,6 @@
 AntiFeatures:
-  - NonFreeNet
+  NonFreeNet:
+    en-US: Relies on beu-bih.ac.in for results.
 Categories:
   - Science & Education
 License: AGPL-3.0-or-later
@@ -39,28 +40,31 @@ RepoType: git
 Repo: https://github.com/pritkr/beUConnect.git
 
 Builds:
-  - versionName: 1.1.1
-    versionCode: 3
+  - versionName: 1.1.2
+    versionCode: 4
     commit: TAG_COMMIT
     timeout: 10800
     subdir: native
     sudo:
       - apt-get update
       - apt-get install -y --no-install-recommends curl ca-certificates build-essential
+        pkg-config libssl-dev perl unzip zip default-jdk-headless
       - mkdir -p /opt/rust
-      - env RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo sh -c 'curl --proto
-        "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
-        --default-toolchain 1.99.1 --no-modify-path'
+      - env RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo sh -c 'curl
+        --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile
+        minimal --default-toolchain 1.99.1 --no-modify-path'
+      - env RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo /opt/rust/cargo/bin/rustup
+        target add aarch64-linux-android
       - chmod -R a+rwX /opt/rust
     output: .nsh/out/BEUConnect.apk
     srclibs:
       - nsh@v0.3.0
-      - nsh-vendor@v0.3.0
+    prebuild:
+      - export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo RUSTUP_TOOLCHAIN=1.99.1
+        PATH=/opt/rust/cargo/bin:$PATH; cd $$nsh$$ && cargo fetch --locked
     build:
-      - export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo
+      - export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo RUSTUP_TOOLCHAIN=1.99.1
       - export PATH="/opt/rust/cargo/bin:$PATH"
-      - cp -r $$nsh-vendor$$/vendor $$nsh$$/vendor
-      - cat $$nsh-vendor$$/vendor.toml >> $$nsh$$/.cargo/config.toml
       - export NSH_SRC=$$nsh$$
       - export SIGN=0
       - ./scripts/build-nsh-from-source.sh arm64-v8a
@@ -83,20 +87,20 @@ MaintainerNotes: |
   release tarball; this recipe builds `nsh`, `libnsh.so` and the runtime's
   classes from the v0.3.0 tag instead, so no binary enters the build.
 
-  `nsh` has ~700 crate dependencies, more than the build server will fetch, so
-  they are vendored in the `nsh-vendor` srclib and wired in through
-  `.cargo/config.toml` by the first two `build:` lines. `srclibs/nsh-vendor.yml`
-  points at that repository, which records how it is regenerated when the nsh
-  tag moves.
+  `nsh` pins no toolchain of its own — its `rust-toolchain.toml` says `stable` —
+  so the recipe installs one version and exports `RUSTUP_TOOLCHAIN`; otherwise
+  rustup would download a second toolchain mid-build. The ~700 crates come from
+  crates.io in `prebuild`, into `CARGO_HOME` under `/opt/rust`, which is outside
+  the source tree, so they never reach the scanner.
 
   * UPSTREAM: `native/scripts/build-nsh-from-source.sh` also runs on a
-  developer's machine, which is how the recipe was tested; the only thing it
-  needs is a checkout of the nsh tag.
+    developer's machine, which is how the recipe was tested; the only thing it
+    needs is a checkout of the nsh tag.
 
   The Rust compile dominates the build time, so `timeout: 10800` is deliberate.
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags ^v[0-9.]+$
 UpdateCheckData: native/nsh.json|"build":\s*(\d+)||v([\d.]+)
-CurrentVersion: 1.1.1
-CurrentVersionCode: 3
+CurrentVersion: 1.1.2
+CurrentVersionCode: 4

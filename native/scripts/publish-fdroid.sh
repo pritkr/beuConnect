@@ -45,8 +45,11 @@ command -v "$FDROID_BIN" >/dev/null || fail "fdroidserver not on PATH — uv too
 [ -d "$FASTLANE/images" ] || fail "missing $FASTLANE/images"
 
 SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-$HOME/Library/Android/sdk}}"
+BUILD_TOOLS="$SDK/build-tools/$(ls -1 "$SDK/build-tools" | sort -V | tail -1)"
 APKSIGNER="$(command -v apksigner || true)"
-[ -n "$APKSIGNER" ] || APKSIGNER="$SDK/build-tools/$(ls -1 "$SDK/build-tools" | sort -V | tail -1)/apksigner"
+[ -n "$APKSIGNER" ] || APKSIGNER="$BUILD_TOOLS/apksigner"
+AAPT2="$(command -v aapt2 || true)"
+[ -n "$AAPT2" ] || AAPT2="$BUILD_TOOLS/aapt2"
 
 WORK="$(mktemp -d "${TMPDIR:-/tmp}/beuconnect-fdroid.XXXXXX")"
 trap 'rm -rf "$WORK"' EXIT
@@ -63,15 +66,20 @@ ALLOWED="$(awk -F': ' '/^AllowedAPKSigningKeys:/ { print tolower($2); exit }' "$
 [ -n "$SIGNER" ] || fail "apksigner could not read a signer from $APK"
 [ "$SIGNER" = "$ALLOWED" ] || fail "APK signer $SIGNER is not $ALLOWED"
 
+APPID="$("$AAPT2" dump badging "$APK" | awk -F"'" '/^package:/ { print $2; exit }')"
+VERSION_CODE="$("$AAPT2" dump badging "$APK" | awk -F"'" '/^package:/ { print $4; exit }')"
+[ "$APPID" = "org.beuconnect.app" ] || fail "APK package is ${APPID:-unknown}, not org.beuconnect.app"
+[ -n "$VERSION_CODE" ] || fail "aapt2 could not read a versionCode from $APK"
+
 step "assemble the fdroidserver directory"
-mkdir -p "$FD/metadata/org.beuconnect.app/en-US/phoneScreenshots"
+mkdir -p "$FD/repo" "$FD/metadata/org.beuconnect.app/en-US/phoneScreenshots"
 cp "$META" "$FD/metadata/org.beuconnect.app.yml"
 cp "$FASTLANE/images/icon.png" "$FASTLANE/images/featureGraphic.png" \
   "$FD/metadata/org.beuconnect.app/en-US/"
 cp "$FASTLANE"/images/phoneScreenshots/*.png \
   "$FD/metadata/org.beuconnect.app/en-US/phoneScreenshots/"
 cp "$FASTLANE/images/icon.png" "$FD/icon.png"
-cp "$APK" "$FD/BEUConnect.apk"
+cp "$APK" "$FD/repo/org.beuconnect.app_${VERSION_CODE}.apk"
 
 cat >"$FD/config.yml" <<EOF
 repo_url: https://pritkr.github.io/beuconnect-fdroid/repo
@@ -103,7 +111,16 @@ if ! cmp -s "$FD/icon.png" "$FD/repo/icons/icon.png"; then
     || { tail -30 "$WORK/update.log" >&2; fail "fdroid update (icon restore) failed"; }
 fi
 
-VERSIONS="$(python3 -c 'import json,sys; d=json.load(open(sys.argv[1])); print(" ".join(sorted(d["packages"]["org.beuconnect.app"]["versions"], key=int)))' "$FD/repo/index-v2.json")"
+# index-v2 keys `versions` by APK sha256, not by versionCode: read the code out
+# of each version's manifest.
+VERSIONS="$(python3 - "$FD/repo/index-v2.json" <<'PY'
+import json, sys
+index = json.load(open(sys.argv[1]))
+versions = index["packages"]["org.beuconnect.app"]["versions"]
+codes = {v["manifest"]["versionCode"] for v in versions.values()}
+print(" ".join(str(c) for c in sorted(codes)))
+PY
+)"
 
 step "write $OUT/repo"
 mkdir -p "$OUT"

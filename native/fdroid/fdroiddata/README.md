@@ -9,61 +9,46 @@ it only carries a version and a signing key.
 
 | Thing | Where | State |
 |---|---|---|
-| A tag whose tree builds unsigned | `github.com/pritkr/beUConnect` → `v1.1.1` | needs `build-nsh-from-source.sh` and `SIGN=0` in `build-android-host.sh` |
-| Vendored nsh crates | `github.com/pritkr/nsh-vendor` | not created yet, see below |
+| A tag whose tree builds unsigned | `github.com/pritkr/beUConnect` → `v1.1.2` | needs `build-nsh-from-source.sh`, `SIGN=0` and no `bun` in the build path |
 | A green `fdroid build` | local, no build server needed | see below |
 
-A recipe that has never built is rejected, so the MR waits on the third row.
+A recipe that has never built is rejected, so the MR waits on the second row.
 
 ## Running the recipe locally
 
-`fdroid build` without `--server` runs the same `build:` script that the build
-server runs, against the SDK on this machine. That is enough to prove the recipe
-before it is proposed.
+`fdroid build` without `--server` runs the same `sudo:`-less `build:` script that
+the build server runs, against the SDK on this machine, and writes the unsigned
+APK to `unsigned/`. That is enough to prove the recipe before it is proposed.
 
 ```sh
 mkdir -p /tmp/fdroid-check && cd /tmp/fdroid-check
-mkdir -p metadata srclibs
+mkdir -p metadata
 cp …/native/fdroid/fdroiddata/org.beuconnect.app.yml metadata/
-cp …/native/fdroid/fdroiddata/srclibs/nsh-vendor.yml srclibs/
 
 cat > config.yml <<'EOF'
-sdk_path: ~/Library/Android/sdk
+sdk_path: /Users/you/Library/Android/sdk
+ndk_paths:
+  28.2.13676358: /Users/you/Library/Android/sdk/ndk/28.2.13676358
 repo_url: https://example.invalid/fdroid/repo
 repo_name: localcheck
 EOF
 
-fdroid build org.beuconnect.app -l --verbose
+fdroid build -l --verbose org.beuconnect.app
 ```
 
-Point `srclibs/nsh-vendor.yml` at a local clone (`file:///…`) while the GitHub
-repository does not exist yet.
+The `ndk_paths` key must be the version string the recipe asks for — `fdroid`
+matches on it, and an empty match fails the build before anything compiles. On
+the build server that mapping comes from the server's own config.
 
-What it cannot check: the `sudo:` packages, and whether the platform and NDK the
-build server has match the ones here. `native/scripts/build-android-host.sh`
-picks the newest platform it finds rather than pinning `android-36`, so a build
-server that stops at 35 still builds.
+Point `srclibs/nsh.yml`… there is no srclib file for `nsh`: `srclibs: nsh@v0.3.0`
+uses fdroiddata's main repository, so a local run clones
+`https://github.com/longbridge/nsh` at that tag, which takes a few minutes.
 
-## Regenerating the vendored crates
-
-`nsh` pulls ~700 crates. The build server has no network, so they have to be in
-the tree before `cargo` runs. The recipe copies a `vendor/` directory and
-appends a `vendor.toml` into the nsh checkout's `.cargo/config.toml`.
-
-```sh
-git clone --depth 1 --branch v0.3.0 https://github.com/longbridge/nsh /tmp/nsh
-cd /tmp/nsh
-# Reads the local cargo cache once the tag has been built here at least once.
-cargo vendor --locked vendor > /tmp/nsh-vendor/vendor.toml
-```
-
-`vendor.toml` holds the `[source.crates-io] replace-with` stanza `cargo vendor`
-prints; nothing is hand-written. Commit both to `pritkr/nsh-vendor`, tag the
-commit with the **nsh** tag it belongs to (`v0.3.0`), and bump
-`srclibs: nsh-vendor@<tag>` only when the nsh tag moves.
-
-`vendor/` is around 300 MB. That is why it is a separate srclib and not a
-directory in the app repository.
+What it cannot check: the `sudo:` packages, the JDK the server carries, and
+whether its SDK has `platforms/android-36` (nsh compiles its Java runtime against
+it). `native/scripts/build-android-host.sh` picks the newest platform it finds
+rather than pinning one, so the APK side is tolerant; `cargo xtask android` is
+not.
 
 ## Opening the MR
 
@@ -74,11 +59,10 @@ git fetch upstream
 git checkout -b org.beuconnect.app upstream/master
 
 cp …/org.beuconnect.app.yml metadata/
-cp …/srclibs/nsh-vendor.yml srclibs/
 fdroid rewritemeta org.beuconnect.app
 fdroid lint org.beuconnect.app
 
-git add metadata/org.beuconnect.app.yml srclibs/nsh-vendor.yml
+git add metadata/org.beuconnect.app.yml
 git commit -m "New app: BEUConnect"
 git push origin org.beuconnect.app
 ```

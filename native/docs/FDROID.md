@@ -116,8 +116,8 @@ What the recipe still needs on top of that:
 
 | Piece | Why |
 |---|---|
-| Vendored crates | ~700 of them, and the build container has no network. `fdroid/fdroiddata/README.md` has the `cargo vendor` step. |
-| A Rust toolchain newer than Debian's | Debian trixie ships 1.85; `nsh` builds on 1.99. `sudo:` installs rustup. |
+| A pinned Rust toolchain | Debian trixie ships 1.85; `nsh` builds on 1.99. `sudo:` installs rustup to `/opt/rust` and the build exports `RUSTUP_TOOLCHAIN`, so the `stable` in nsh's `rust-toolchain.toml` does not trigger a second download. |
+| ~700 crates from crates.io | `prebuild:` runs `cargo fetch --locked` into `CARGO_HOME`, which is outside the source tree, so nothing it downloads reaches the scanner. |
 | Its own signing key | F-Droid signs what it builds. See §5.1. |
 
 `fdroid/fdroiddata/org.beuconnect.app.yml` is the recipe. It has not been
@@ -146,7 +146,7 @@ container, and both leave their version in the code they generate.
 | Path | What |
 |---|---|
 | `fdroid/metadata/org.beuconnect.app.yml` | app metadata for the self-hosted repo |
-| `fdroid/fdroiddata/` | the recipe and srclib for the main F-Droid repository (§5) |
+| `fdroid/fdroiddata/` | the recipe for the main F-Droid repository (§5) |
 | `fastlane/metadata/android/en-US/` | title, descriptions, changelogs, icon, feature graphic, screenshots |
 | `scripts/publish-fdroid.sh` | builds the signed repository index |
 | `scripts/build-nsh-from-source.sh` | `nsh`, `libnsh.so` and the runtime classes from the nsh tag, no tarball |

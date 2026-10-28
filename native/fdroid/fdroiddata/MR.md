@@ -13,7 +13,6 @@ offline planner/attendance tracker. Most screens read data bundled in the APK;
 only the results screen uses the network, against BEU's own portal.
 
 Metadata: `metadata/org.beuconnect.app.yml`
-Srclib: `srclibs/nsh-vendor.yml`
 
 **The build is unusual, and this is why.**
 
@@ -34,14 +33,14 @@ has a single `build:` script and no `gradle:`.
 
 **What the recipe needs that is not obvious**
 
-* `nsh-vendor` — `nsh` has ~700 crate dependencies and the build has no network,
-  so `srclibs/nsh-vendor` carries a `cargo vendor` tree plus the config stanza
-  that points cargo at it. It is a separate repository because it is ~300 MB.
-  It is regenerated with `cargo vendor --locked` and tagged with the nsh tag it
-  belongs to.
+* srclib `nsh@v0.3.0` — the runtime is built from the upstream tag, not taken
+  from the installer's tarball. `cargo fetch --locked` runs in `prebuild:`, so
+  the ~700 crates land in `CARGO_HOME` outside the source tree and never reach
+  the scanner.
 * rustup in `sudo:` — Debian's `rustc` is 1.85 and `nsh` wants the current
   stable. The toolchain is installed to `/opt/rust` so the unprivileged build
-  user can write its package cache.
+  user can write its package cache, and `RUSTUP_TOOLCHAIN` is exported so
+  rustup does not fetch a second, newer one mid-build.
 * `timeout: 10800` — the Rust compile dominates, roughly 25-40 minutes on a fast
   machine and longer in the VM. It is not cached between versions.
 * `AntiFeatures: NonFreeNet` — the results screen fetches from `beu-bih.ac.in`,
@@ -52,7 +51,7 @@ has a single `build:` script and no `gradle:`.
 
 The same `build:` script was run outside the build server, from a clean
 `v0.3.0` checkout with `~/.nsh` moved aside, and produced a working APK with
-`versionCode 3` whose signer and `versionName` match the metadata.
+`versionCode 4` whose signer and `versionName` match the metadata.
 
 The upstream repository is <https://github.com/pritkr/beUConnect>, licensed
 AGPL-3.0-or-later.
