@@ -44,7 +44,11 @@ Python via `uv`, JS via `bun`; no npm/node path.
 | Script | Does |
 |---|---|
 | `package-android.sh` | compiles, builds the custom host, slim arm64, align, sign |
+| `signing.sh` | the release identity, plus `--upload` for the Play upload key |
 | `build-android-host.sh` | the Android host with `PdfPage` and Ask AI |
+| `build-nsh-from-source.sh` | the same host built from an nsh checkout, no `~/.nsh` binaries |
+| `bundle-android.sh` | the Play AAB: `App.play.tsx`, proto resources, bundletool |
+| `store-assets.sh` | the Play listing images from `icon.png`, measured to spec |
 | `release.sh` | check → package → size gate → verify → `dist/` |
 | `size-report.sh` | APK/bundle budgets, byte breakdown, `--record` |
 | `shots.sh` | 20-screen macOS screenshot sweep |

@@ -1,0 +1,5 @@
+Same app as 1.1.0, built without the NativeShell release tarball.
+
+The Android host is now assembled from a from-source build of NativeShell
+(v0.3.0) instead of binaries dropped in ~/.nsh, so the build can run in a
+sandbox that has no prebuilt dependencies. Nothing in the app changed.

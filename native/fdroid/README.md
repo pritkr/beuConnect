@@ -15,5 +15,5 @@ Edit the listing copy in `fastlane/metadata/android/en-US/` — that is the sing
 source for the store text, and the publish script copies its graphics into the
 repository.
 
-This is **not** an fdroiddata submission. Official inclusion needs a
-from-source build; see `docs/FDROID.md` §5.
+This is **not** an fdroiddata submission. The recipe for the main F-Droid
+repository is in `fdroiddata/`, and `docs/FDROID.md` §5 explains what it needs.

@@ -84,38 +84,69 @@ client directly.
 Without F-Droid, the APK at `repo/org.beuconnect.app_2.apk` installs the same way
 as the GitHub release asset.
 
-## 5. Official F-Droid: what blocks it
+## 5. Official F-Droid: building without the nsh tarball
 
-fdroiddata builds every app inside a Debian container with no network, from a
+fdroiddata builds every app inside a Debian container that has no network, from a
 recipe in the metadata `Builds:` block, and may only use binary dependencies that
 come from a trusted build (Debian, Maven Central, and similar) or that the recipe
 builds itself.
 
-BEUConnect is a NativeShell app. Its Android host is produced from
-`~/.nsh/embed/android/nsh.aar` plus a prebuilt `nsh` CLI (`~/.nsh/bin/nsh`) that
-the app bundles into the APK. Those binaries come from the `nsh` release
-tarball, which is not a trusted binary source under that policy, and the app has
-no build without them.
+BEUConnect is a NativeShell app, and that is the whole difficulty. Its Android
+host is assembled from two artefacts of `longbridge/nsh` (Apache-2.0, tag
+`v0.3.0`): the `nsh` CLI that bundles `App.tsx` into `assets/nsh/`, and the
+Android runtime — `libnsh.so` plus `classes.jar` — that the rest of the APK is
+compiled against. The installer puts both in `~/.nsh`, as binaries from a release
+tarball, which is not a trusted binary source.
 
-Unblocking it means one of:
+Both have source, so `scripts/build-nsh-from-source.sh` builds them:
 
-1. **Build NativeShell inside the recipe.** `longbridge/nsh` (Apache-2.0, tag
-   `v0.3.0`) is a Rust workspace; the recipe would need a `cargo` stage with
-   vendored crates, producing `nsh` and `nsh.aar` before
-   `scripts/build-android-host.sh` runs. The bundler step of that build
-   (`scripts/bundle-android.sh`, Bun) also has to be reduced to something the
-   container can run offline.
-2. **Get `nsh` into Debian or a comparable trusted build** and pin it by hash.
-3. **Ship a non-NativeShell Android build** for F-Droid, which would be a second
-   app implementation and is not planned.
+```sh
+git clone --depth 1 --branch v0.3.0 https://github.com/longbridge/nsh ../nsh
+NSH_SRC=../nsh ./scripts/build-nsh-from-source.sh arm64-v8a
+```
 
-Until then, do not open the fdroiddata merge request: a recipe that cannot build
-is rejected, and the repository metadata here is for the self-hosted repo only.
+It runs `cargo build --release -p nsh-cli`, then `cargo xtask android --release`
+for `libnsh.so` and the runtime's Java classes, packs the same `nsh.aar` that
+`cargo xtask dist` would, and hands the result to `build-android-host.sh` through
+`PATH` and `NSH_AAR`. `SIGN=0` stops at the aligned APK, so the caller can put
+its own key on it. Nothing in that path is a prebuilt binary; the bundler is
+`rolldown` and `oxc`, both Rust, so no Bun or Node is involved either.
+
+What the recipe still needs on top of that:
+
+| Piece | Why |
+|---|---|
+| Vendored crates | ~700 of them, and the build container has no network. `fdroid/fdroiddata/README.md` has the `cargo vendor` step. |
+| A Rust toolchain newer than Debian's | Debian trixie ships 1.85; `nsh` builds on 1.99. `sudo:` installs rustup. |
+| Its own signing key | F-Droid signs what it builds. See §5.1. |
+
+`fdroid/fdroiddata/org.beuconnect.app.yml` is the recipe. It has not been
+accepted, and until it has, the self-hosted repository above is the only F-Droid
+channel.
+
+### 5.1 Two installs, two keys
+
+F-Droid builds and signs with F-Droid's key, so a device that installed
+BEUConnect from the GitHub release or the self-hosted repository cannot update
+into the F-Droid build, and vice versa: Android refuses an update signed by a
+different key. Adding both repositories to one client produces two unrelated
+entries, and switching between them is an uninstall and a reinstall, which takes
+the on-device planner and attendance data with it.
+
+The self-hosted repository exists so that there is a channel that upgrades in
+place. Turning on the official one does not replace it.
+
+`Binaries:` would avoid all of that by letting F-Droid publish the upstream-signed
+APK after verifying it against its own build, but the two builds are not
+reproducible: `rustc` and the NDK differ between a laptop and the build
+container, and both leave their version in the code they generate.
 
 ## 6. Files
 
 | Path | What |
 |---|---|
 | `fdroid/metadata/org.beuconnect.app.yml` | app metadata for the self-hosted repo |
+| `fdroid/fdroiddata/` | the recipe and srclib for the main F-Droid repository (§5) |
 | `fastlane/metadata/android/en-US/` | title, descriptions, changelogs, icon, feature graphic, screenshots |
 | `scripts/publish-fdroid.sh` | builds the signed repository index |
+| `scripts/build-nsh-from-source.sh` | `nsh`, `libnsh.so` and the runtime classes from the nsh tag, no tarball |

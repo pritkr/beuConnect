@@ -1,0 +1,102 @@
+AntiFeatures:
+  - NonFreeNet
+Categories:
+  - Science & Education
+License: AGPL-3.0-or-later
+AuthorName: Prit Kumar
+AuthorEmail: pritkumarrrr@gmail.com
+WebSite: https://beu.prit.eu.org
+SourceCode: https://github.com/pritkr/beUConnect
+IssueTracker: https://github.com/pritkr/beUConnect/issues
+Changelog: https://github.com/pritkr/beUConnect/releases
+
+AutoName: BEUConnect
+Summary: Syllabus, PYQs, results, rank and attendance for BEU students
+Description: |
+  BEUConnect is a student app for Bihar Engineering University (BEU). The
+  syllabus, previous year papers, notes, notices and college rosters live on
+  the device, so most of it works without a connection.
+
+  Features:
+
+  * Syllabus for BEU branches and semesters, with topics, GATE papers and a saved list.
+  * Previous year papers with PDFs and a paper finder.
+  * Results from BEU's result API, a saved copy, the published result tables, or BEU's own result page.
+  * University rank, merit list and a side-by-side result comparison.
+  * Attendance tracker, SGPA calculator and predictor, routine and holiday calendar.
+  * Notes, planner, notices and search across the bundled data.
+  * Published college and branch rosters and CGPA leaders.
+
+  A registration number is stored on the device and sent only to BEU's result
+  endpoints, to resolve a name and a result. There is no account, no
+  advertising and no analytics; feedback is sent only when you submit it.
+
+  The user interface is rendered by NativeShell, a from-source Apache-2.0 Rust
+  and Java runtime, built inside this recipe. There is no prebuilt binary in
+  the build.
+
+RepoType: git
+Repo: https://github.com/pritkr/beUConnect.git
+
+Builds:
+  - versionName: 1.1.1
+    versionCode: 3
+    commit: TAG_COMMIT
+    timeout: 10800
+    subdir: native
+    sudo:
+      - apt-get update
+      - apt-get install -y --no-install-recommends curl ca-certificates build-essential
+      - mkdir -p /opt/rust
+      - env RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo sh -c 'curl --proto
+        "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
+        --default-toolchain 1.99.1 --no-modify-path'
+      - chmod -R a+rwX /opt/rust
+    output: .nsh/out/BEUConnect.apk
+    srclibs:
+      - nsh@v0.3.0
+      - nsh-vendor@v0.3.0
+    build:
+      - export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo
+      - export PATH="/opt/rust/cargo/bin:$PATH"
+      - cp -r $$nsh-vendor$$/vendor $$nsh$$/vendor
+      - cat $$nsh-vendor$$/vendor.toml >> $$nsh$$/.cargo/config.toml
+      - export NSH_SRC=$$nsh$$
+      - export SIGN=0
+      - ./scripts/build-nsh-from-source.sh arm64-v8a
+    ndk: 28.2.13676358
+
+MaintainerNotes: |
+  Contact: the app's own issue tracker, or pritkumarrrr@gmail.com.
+
+  Every version is built from a tag of https://github.com/pritkr/beUConnect. The
+  Android host is `native/`, and it is not a Gradle project: `native/scripts/`
+  runs aapt2, javac, d8, zipalign and apksigner directly, so the recipe has no
+  `gradle:` and a single `build:` script.
+
+  `NonFreeNet` is for the results screen only: it fetches from BEU's own result
+  portal at beu-bih.ac.in, which is not free software and has no alternative
+  endpoint. Every other screen reads data bundled in the APK.
+
+  The interface is NativeShell (https://github.com/longbridge/nsh, Apache-2.0),
+  a Rust workspace with a small Java Android runtime. Upstream ships it as a
+  release tarball; this recipe builds `nsh`, `libnsh.so` and the runtime's
+  classes from the v0.3.0 tag instead, so no binary enters the build.
+
+  `nsh` has ~700 crate dependencies, more than the build server will fetch, so
+  they are vendored in the `nsh-vendor` srclib and wired in through
+  `.cargo/config.toml` by the first two `build:` lines. `srclibs/nsh-vendor.yml`
+  points at that repository, which records how it is regenerated when the nsh
+  tag moves.
+
+  * UPSTREAM: `native/scripts/build-nsh-from-source.sh` also runs on a
+  developer's machine, which is how the recipe was tested; the only thing it
+  needs is a checkout of the nsh tag.
+
+  The Rust compile dominates the build time, so `timeout: 10800` is deliberate.
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags ^v[0-9.]+$
+UpdateCheckData: native/nsh.json|"build":\s*(\d+)||v([\d.]+)
+CurrentVersion: 1.1.1
+CurrentVersionCode: 3

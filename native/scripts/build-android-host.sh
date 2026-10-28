@@ -19,11 +19,16 @@ ROOT="$(pwd)"
 ABI="${1:-arm64-v8a}"
 ENTRY="${ENTRY:-App.tsx}"
 SUFFIX="${SUFFIX:-}"
-SDK="${ANDROID_HOME:-$HOME/Library/Android/sdk}"
+SDK="${ANDROID_HOME:-${ANDROID_SDK:-$HOME/Library/Android/sdk}}"
 BUILD_TOOLS="$(find "$SDK/build-tools" -maxdepth 1 -mindepth 1 -type d | sort -V | tail -1)"
-NDK="${ANDROID_NDK_HOME:-$(find "$SDK/ndk" -maxdepth 1 -mindepth 1 -type d | sort -V | tail -1)}"
+NDK="${ANDROID_NDK_HOME:-${ANDROID_NDK:-$(find "$SDK/ndk" -maxdepth 1 -mindepth 1 -type d | sort -V | tail -1)}}"
 HOST_TAG="$(uname -s | tr '[:upper:]' '[:lower:]')-x86_64"
-PLATFORM="$SDK/platforms/android-35/android.jar"
+# The newest platform installed, not a pinned one: a build server and a laptop
+# rarely have the same set, and `android-35` is a fine target for a `minSdk 28`
+# app. The target SDK follows whichever platform is found.
+PLATFORM="$(find "$SDK/platforms" -maxdepth 1 -mindepth 1 -type d -name 'android-*' | sort -V | tail -1)"
+TARGET_SDK="${PLATFORM##*/android-}"
+PLATFORM="$PLATFORM/android.jar"
 AAPT2="$BUILD_TOOLS/aapt2"
 D8="$BUILD_TOOLS/d8"
 ZIPALIGN="$BUILD_TOOLS/zipalign"
@@ -69,7 +74,7 @@ echo "▸ compiling resources"
   -o "$WORK/base.apk" \
   -I "$PLATFORM" \
   --manifest android/AndroidManifest.xml \
-  --min-sdk-version 28 --target-sdk-version 35 \
+  --min-sdk-version 28 --target-sdk-version "$TARGET_SDK" \
   --version-code "$APP_BUILD" --version-name "$APP_VERSION" \
   -R "$WORK/res/resources.zip" \
   --auto-add-overlay
@@ -115,12 +120,24 @@ rm -f "$WORK/unsigned.apk" "$NAME"
   zip -q -0 -X "$WORK/unsigned.apk" resources.arsc
 )
 "$ZIPALIGN" -f -p 4 "$WORK/unsigned.apk" "$WORK/aligned.apk"
-"$APKSIGNER" sign \
-  --ks "$KEYSTORE" --ks-key-alias "$KEY_ALIAS" \
-  --ks-pass "pass:$KEY_PASS" --key-pass "pass:$KEY_PASS" \
-  --out "$NAME" "$WORK/aligned.apk"
 
-SIZE="$(stat -f%z "$NAME")"
+# `SIGN=0` stops at the aligned APK. A repository that signs builds itself —
+# F-Droid, for one — wants the APK unsigned and its own key on it, and an APK
+# that already carries a signature cannot be handed to `apksigner` twice.
+if [ "${SIGN:-1}" = "0" ]; then
+  cp "$WORK/aligned.apk" "$NAME"
+else
+  "$APKSIGNER" sign \
+    --ks "$KEYSTORE" --ks-key-alias "$KEY_ALIAS" \
+    --ks-pass "pass:$KEY_PASS" --key-pass "pass:$KEY_PASS" \
+    --out "$NAME" "$WORK/aligned.apk"
+fi
+
+SIZE="$(wc -c < "$NAME" | tr -d ' ')"
 echo "✓ $NAME — $(echo "scale=1; $SIZE / 1000000" | bc) MB ($SIZE bytes)"
-"$APKSIGNER" verify "$NAME" >/dev/null && echo "  signature ok"
+if [ "${SIGN:-1}" = "0" ]; then
+  echo "  unsigned (SIGN=0)"
+else
+  "$APKSIGNER" verify "$NAME" >/dev/null && echo "  signature ok"
+fi
 "$BUILD_TOOLS/aapt2" dump badging "$NAME" | grep -E "^package:|^native-code:|^sdkVersion:|^launchable-activity:" | sed 's/^/  /'
