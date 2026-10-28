@@ -137,9 +137,12 @@ The self-hosted repository exists so that there is a channel that upgrades in
 place. Turning on the official one does not replace it.
 
 `Binaries:` would avoid all of that by letting F-Droid publish the upstream-signed
-APK after verifying it against its own build, but the two builds are not
-reproducible: `rustc` and the NDK differ between a laptop and the build
-container, and both leave their version in the code they generate.
+APK after verifying it against its own build, but the two builds cannot be
+byte-identical: `libnsh.so` carries the absolute crate paths of whatever machine
+compiled it — 638 `/Users/…/.cargo/registry/…` strings in the arm64 build made
+here — and the F-Droid server's paths, `rustc` and NDK all differ. Reproducibility
+would need `-C remap-path-prefix` in the Rust build and a pinned NDK, and even
+then the two toolchains are not the same build.
 
 ## 6. Files
 

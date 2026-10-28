@@ -42,7 +42,7 @@ Repo: https://github.com/pritkr/beUConnect.git
 Builds:
   - versionName: 1.1.2
     versionCode: 4
-    commit: TAG_COMMIT
+    commit: 51c1674d91e4fc354f4f25ed5ec519d7105067ce
     timeout: 10800
     subdir: native
     sudo:
@@ -50,21 +50,21 @@ Builds:
       - apt-get install -y --no-install-recommends curl ca-certificates build-essential
         pkg-config libssl-dev perl unzip zip default-jdk-headless
       - mkdir -p /opt/rust
-      - env RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo sh -c 'curl
-        --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile
-        minimal --default-toolchain 1.99.1 --no-modify-path'
+      - env RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo sh -c 'curl --proto
+        "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
+        --default-toolchain 1.99.1 --no-modify-path'
       - env RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo /opt/rust/cargo/bin/rustup
         target add aarch64-linux-android
       - chmod -R a+rwX /opt/rust
     output: .nsh/out/BEUConnect.apk
     srclibs:
       - nsh@v0.3.0
-    prebuild:
-      - export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo RUSTUP_TOOLCHAIN=1.99.1
-        PATH=/opt/rust/cargo/bin:$PATH; cd $$nsh$$ && cargo fetch --locked
+    prebuild: if [ -d /opt/rust/cargo ]; then export RUSTUP_HOME=/opt/rust/rustup
+      CARGO_HOME=/opt/rust/cargo RUSTUP_TOOLCHAIN=1.99.1 PATH=/opt/rust/cargo/bin:$PATH;
+      fi; cd $$nsh$$ && cargo fetch --locked
     build:
-      - export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo RUSTUP_TOOLCHAIN=1.99.1
-      - export PATH="/opt/rust/cargo/bin:$PATH"
+      - if [ -d /opt/rust/cargo ]; then export RUSTUP_HOME=/opt/rust/rustup CARGO_HOME=/opt/rust/cargo
+        RUSTUP_TOOLCHAIN=1.99.1 PATH=/opt/rust/cargo/bin:$PATH; fi
       - export NSH_SRC=$$nsh$$
       - export SIGN=0
       - ./scripts/build-nsh-from-source.sh arm64-v8a
@@ -91,7 +91,9 @@ MaintainerNotes: |
   so the recipe installs one version and exports `RUSTUP_TOOLCHAIN`; otherwise
   rustup would download a second toolchain mid-build. The ~700 crates come from
   crates.io in `prebuild`, into `CARGO_HOME` under `/opt/rust`, which is outside
-  the source tree, so they never reach the scanner.
+  the source tree, so they never reach the scanner. That export is guarded by
+  `[ -d /opt/rust/cargo ]`, because `fdroid build` skips `sudo:` off the build
+  server and the same two commands have to work with the developer's own rustup.
 
   * UPSTREAM: `native/scripts/build-nsh-from-source.sh` also runs on a
     developer's machine, which is how the recipe was tested; the only thing it

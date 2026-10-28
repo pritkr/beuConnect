@@ -13,6 +13,7 @@ offline planner/attendance tracker. Most screens read data bundled in the APK;
 only the results screen uses the network, against BEU's own portal.
 
 Metadata: `metadata/org.beuconnect.app.yml`
+Srclib: `srclibs/nsh.yml`
 
 **The build is unusual, and this is why.**
 
@@ -24,8 +25,8 @@ build then uses `nsh` to bundle `App.tsx` and `nsh.aar` to compile the host.
 Rather than depend on that tarball, `native/scripts/build-nsh-from-source.sh`
 builds both from the `v0.3.0` tag: `cargo build -p nsh-cli`,
 `cargo xtask android --release` for `libnsh.so` and the runtime classes, and the
-same AAR `cargo xtask dist` would write. Everything it needs comes from the two
-srclibs, the SDK/NDK and the Rust toolchain; nothing is prebuilt.
+same AAR `cargo xtask dist` would write. Everything it needs comes from the nsh
+srclib, the SDK/NDK and the Rust toolchain; nothing is prebuilt.
 
 The app itself is not a Gradle project. `native/scripts/build-android-host.sh`
 runs aapt2, javac, d8, zipalign and apksigner directly, which is why the recipe
@@ -49,9 +50,12 @@ has a single `build:` script and no `gradle:`.
 
 **Testing**
 
-The same `build:` script was run outside the build server, from a clean
-`v0.3.0` checkout with `~/.nsh` moved aside, and produced a working APK with
-`versionCode 4` whose signer and `versionName` match the metadata.
+`fdroid build org.beuconnect.app` (fdroidserver 2.4.5, no build server) rebuilt
+it from the tag into `unsigned/org.beuconnect.app_4.apk`: 12,079,237 bytes,
+unsigned, `versionCode 4`, `versionName 1.1.2`, arm64-v8a. The source scan ran
+over the app tree and the whole nsh checkout and reported nothing. The same
+script produces the signed releases at
+<https://github.com/pritkr/beUConnect/releases>.
 
 The upstream repository is <https://github.com/pritkr/beUConnect>, licensed
 AGPL-3.0-or-later.
