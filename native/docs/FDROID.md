@@ -118,6 +118,8 @@ What the recipe still needs on top of that:
 |---|---|
 | A pinned Rust toolchain | Debian trixie ships 1.85; `nsh` builds on 1.99. `sudo:` installs rustup to `/opt/rust` and the build exports `RUSTUP_TOOLCHAIN`, so the `stable` in nsh's `rust-toolchain.toml` does not trigger a second download. |
 | ~700 crates from crates.io | `prebuild:` runs `cargo fetch --locked` into `CARGO_HOME`, which is outside the source tree, so nothing it downloads reaches the scanner. |
+| libclang | `quickjs-jit-sys` runs `bindgen` at build time, and `bindgen` loads `libclang`, which the build-server image does not carry. `sudo:` installs `libclang-dev` and `build:` exports `LIBCLANG_PATH`. |
+| SDK platform 35 and build-tools 35 | `cargo xtask android` compiles the runtime's Java with `javac --release 17` against `platforms/android-35/android.jar`, and the app's own aapt2/javac pass needs a platform too. The image ships no platform, and its `d8` is 31.0.0, which predates Java 17 class files, so `prebuild:` installs `platforms;android-35` and `build-tools;35.0.0` with `sdkmanager`. |
 | Its own signing key | F-Droid signs what it builds. See §5.1. |
 
 `fdroid/fdroiddata/org.beuconnect.app.yml` is the recipe. It has not been
@@ -137,12 +139,19 @@ The self-hosted repository exists so that there is a channel that upgrades in
 place. Turning on the official one does not replace it.
 
 `Binaries:` would avoid all of that by letting F-Droid publish the upstream-signed
-APK after verifying it against its own build, but the two builds cannot be
-byte-identical: `libnsh.so` carries the absolute crate paths of whatever machine
-compiled it — 638 `/Users/…/.cargo/registry/…` strings in the arm64 build made
-here — and the F-Droid server's paths, `rustc` and NDK all differ. Reproducibility
-would need `-C remap-path-prefix` in the Rust build and a pinned NDK, and even
-then the two toolchains are not the same build.
+APK after verifying it against its own build. That needs the build to be
+reproducible, and it is not — though only just. The APKs themselves agree: of 32
+entries, 31 are byte-identical (`AndroidManifest.xml`, `resources.arsc`,
+`classes.dex` and every asset); only `lib/arm64-v8a/libnsh.so` differs. The crate
+paths are not the reason either: `libnsh.so` carries 638 absolute
+`…/.cargo/registry/…` and build-directory strings, `--remap-path-prefix` (rustc)
+and `-ffile-prefix-map` (the QuickJS C files) remove all of them, and the binary
+still differs — from a build in another directory, and from a second build in the
+same one. 37 to 45 of 43,689 symbols move between builds, all `rquickjs`
+`___impl_*` instantiations alongside `lld`'s `__CortexA53843419_*` errata stubs,
+with a few hundred bytes of `.text` and `.eh_frame`. That is nondeterminism in
+nsh's own build (fat LTO, `codegen-units = 1`), not a flag this repository can
+set, so `Binaries:` stays out until nsh produces the same bytes twice.
 
 ## 6. Files
 
