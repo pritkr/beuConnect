@@ -46,9 +46,15 @@ Commands:
 |---|---|
 | Web (repo root) | `bun dev` · `bun run build` · `bun run deploy` · `bun check` · `bun test` |
 | Native (`native/`) | `nsh run App.tsx` · `./scripts/check.sh test` · `./scripts/package-android.sh` · `./scripts/release.sh` |
+| Publish | `./scripts/sync-public.sh` (dry run) · `./scripts/sync-public.sh --push` · `--tag` |
 
 Never call `nsh check` / `nsh test` directly: one `.nsh/` build cache is shared,
 so `./scripts/check.sh` serialises it with a lock.
+
+The public repository `pritkr/beuConnect` is a curated export, not a mirror:
+`scripts/sync-public.sh` publishes source only (the roster, scraped CSVs and
+build output stay private) and commits on top of `main`, so every sync is a
+fast-forward with a reviewable diff.
 
 Guardrails: `git status` before touching anything; never `git reset --hard`,
 `git clean -fd`, clone over the repo, or bulk-delete untracked artifacts. Bun

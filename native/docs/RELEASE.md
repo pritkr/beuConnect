@@ -60,6 +60,14 @@ the About screen read those, so `nsh.json` and `app-info.ts` are bumped together
 
 ## Publishing the GitHub release
 
+First sync the source, so the tag F-Droid builds from is the tree that was
+tested:
+
+```sh
+./scripts/sync-public.sh          # what would change
+./scripts/sync-public.sh --push   # commit and push to main
+```
+
 The public repository is `pritkr/beuconnect`; Releases is the store. The app's
 update check and the share link both hard-code the newest APK:
 
