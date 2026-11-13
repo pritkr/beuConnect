@@ -22,10 +22,13 @@ import { offlineRoutes } from "../offline";
 import { ProfileScreen } from "./profile-screen";
 import { branchShort, collegeShortLabel, isProfileComplete, useProfile } from "./profile";
 import { schemeLabel, useAppearance, useReminders } from "./prefs";
+import { dueCount, useDatedReminders } from "./dates";
 import { RemindersScreen } from "./reminders";
+import { NotificationsScreen } from "./notifications";
 import { StorageScreen } from "./storage";
-import { ScreenIntro, SettingsGroup, SettingsRow } from "./ui";
+import { SettingsGroup, SettingsRow } from "./ui";
 import { ShareAppRow, UpdateRow, UpdatePanel } from "./release-rows";
+import { isPlay } from "../../lib/channel";
 
 /* --------------------------------------------------------------------- hub */
 
@@ -53,7 +56,7 @@ function ProfileCard(props: { nav: Nav }) {
       role="button"
       accessibilityLabel="Open your profile"
     >
-      <View class="absolute -right-8 -top-10 h-36 w-36 rounded-full bg-primary/12" pointerEvents="none" />
+      <View class="absolute -right-8 -top-10 h-36 w-36 rounded-full bg-primary/12" style={{ pointerEvents: "none" }} />
       <View class="flex-row items-center gap-3">
         <View class="h-14 w-14 items-center justify-center rounded-2xl bg-primary/12">
           <Text class="text-[22px] font-bold text-primary">
@@ -61,7 +64,7 @@ function ProfileCard(props: { nav: Nav }) {
           </Text>
         </View>
         <View class="flex-1 gap-1">
-          <Text class="text-[18px] font-bold tracking-tight text-foreground" numberOfLines={1}>
+          <Text class="text-[18px] font-bold tracking-tight text-foreground" style={{ numberOfLines: 2 }}>
             {title()}
           </Text>
           <Muted>{hint()}</Muted>
@@ -82,8 +85,11 @@ function ProfileCard(props: { nav: Nav }) {
 function SettingsHome(props: { nav: Nav }) {
   const appearance = useAppearance();
   const reminders = useReminders();
+  const dated = useDatedReminders();
 
   const reminderValue = (): string => {
+    const due = dueCount(dated());
+    if (due > 0) return `${due} due today`;
     const current = reminders();
     if (!current.classes) return "Off";
     const count = current.times.length;
@@ -96,11 +102,6 @@ function SettingsHome(props: { nav: Nav }) {
   return (
     <Screen>
       <Body>
-        <ScreenIntro
-          label="BEUConnect"
-          title="Settings"
-        />
-
         <ProfileCard nav={props.nav} />
 
         <SectionHeader title="Personalise" />
@@ -115,6 +116,11 @@ function SettingsHome(props: { nav: Nav }) {
             hint={reminderHint()}
             value={reminderValue()}
             onPress={() => props.nav.push("settings.reminders")}
+          />
+          <SettingsRow
+            title="Notifications"
+            hint="Important notices and results"
+            onPress={() => props.nav.push("settings.notifications")}
             last
           />
         </SettingsGroup>
@@ -136,15 +142,11 @@ function SettingsHome(props: { nav: Nav }) {
           />
         </SettingsGroup>
 
-        <SectionHeader title="Pass it on" />
+        <SectionHeader title="Share" />
         <SettingsGroup>
-          <ShareAppRow />
+          <ShareAppRow last={isPlay()} />
           <UpdateRow last />
         </SettingsGroup>
-
-        <View class="items-center py-3">
-          <Text class="text-[12px] font-semibold text-muted-foreground">BEUConnect {APP_VERSION} · native</Text>
-        </View>
       </Body>
     </Screen>
   );
@@ -157,9 +159,16 @@ export const settingsRoutes: RouteDef[] = [
   { name: "settings.profile", title: () => "Profile", render: () => <ProfileScreen /> },
   { name: "settings.appearance", title: () => "Appearance", render: () => <AppearanceScreen /> },
   { name: "settings.reminders", title: () => "Reminders", render: (nav) => <RemindersScreen nav={nav} /> },
+  { name: "settings.notifications", title: () => "Notifications", render: () => <NotificationsScreen /> },
   { name: "settings.storage", title: () => "Storage", render: () => <StorageScreen /> },
   { name: "settings.about", title: () => "About", render: () => <AboutScreen /> },
   ...offlineRoutes,
+  // The bare names are the brief's address for these screens, and older links
+  // (like `tools`' `attendance`) use them; they render the same components.
+  { name: "profile", title: () => "Profile", render: () => <ProfileScreen /> },
+  { name: "appearance", title: () => "Appearance", render: () => <AppearanceScreen /> },
+  { name: "reminders", title: () => "Reminders", render: (nav) => <RemindersScreen nav={nav} /> },
+  { name: "about", title: () => "About", render: () => <AboutScreen /> },
 ];
 
 /** Other modules can read the profile without touching this screen. */

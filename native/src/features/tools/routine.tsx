@@ -39,6 +39,7 @@ import {
   Progress,
   Row,
   Screen,
+  Search,
   SectionHeader,
 } from "../../ui";
 import { IconButton, ModeChips } from "./kit";
@@ -102,6 +103,8 @@ const sample = signal(false);
 /** Monday-first day the week view is showing. */
 const selectedDay = signal(dayName());
 const editing = signal(false);
+/** The whole-week filter: a paper, a teacher, a room or a period type. */
+const query = signal("");
 
 /** The published sheet changes rarely; a day-old copy is still the right week. */
 const REFRESH_AFTER = 6 * 60 * 60 * 1000;
@@ -551,14 +554,28 @@ export function RoutineScreen() {
             </If>
 
             <If when={!editing()}>
+              {() => (
+                <Search
+                  value={query()}
+                  onChange={(value) => query.set(value)}
+                  placeholder="Paper, teacher or room"
+                />
+              )}
+            </If>
+
+            <If when={!editing() && query().trim().length > 0}>
+              <SearchHits data={data} />
+            </If>
+
+            <If when={!editing()}>
               {() => <SpotPanel spot={spot()} ahead={ahead()} />}
             </If>
 
-            <If when={view() === "today" && !editing()}>
+            <If when={view() === "today" && !editing() && query().trim().length === 0}>
               <TodayList data={data} ahead={ahead} />
             </If>
 
-            <If when={view() === "week" || editing()}>
+            <If when={(view() === "week" || editing()) && query().trim().length === 0}>
               <WeekGrid data={data} />
               <If when={editing()}>
                 <PeriodEditor data={data} day={selectedDay()} />
@@ -763,16 +780,16 @@ function ClassRow(props: {
         <Text class="text-[11px] tabular-nums text-muted-foreground">{props.item().end}</Text>
       </Col>
       <Col class="flex-1">
-        <Text class="text-[14px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+        <Text class="text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
           {props.item().subject}
         </Text>
-        <Text class="text-[11px] leading-4 text-muted-foreground" numberOfLines={1}>
+        <Text class="text-[11px] leading-4 text-muted-foreground" style={{ numberOfLines: 1 }}>
           {classMeta(props.item())}
         </Text>
         {() => {
           const other = (props.item().alternatives ?? [])[0];
           return other ? (
-            <Text class="text-[11px] leading-4 text-muted-foreground" numberOfLines={1}>
+            <Text class="text-[11px] leading-4 text-muted-foreground" style={{ numberOfLines: 1 }}>
               {`${other.group ? `Group ${other.group}: ` : ""}${other.subject}${other.room ? ` · Room ${other.room}` : ""}`}
             </Text>
           ) : null;
@@ -791,6 +808,83 @@ function ClassRow(props: {
           />
         );
       }}
+    </View>
+  );
+}
+
+/* --------------------------------------------------------------- search */
+
+interface RoutineHit {
+  day: string;
+  item: RoutineClass;
+}
+
+/**
+ * The week filtered by one string. Every word must match somewhere in the
+ * class — paper, teacher, room, type or day — so "maurya lab" narrows instead
+ * of widening. The other lab batch's paper is searchable too: a student looks
+ * for their own class, and the footnote names it.
+ */
+function searchWeek(data: ParsedRoutine | null, text: string): RoutineHit[] {
+  const words = text.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if (!data || words.length === 0) return [];
+
+  const matches = (fields: readonly (string | null | undefined)[]): boolean => {
+    const haystack = fields.filter(Boolean).join(" ").toLowerCase();
+    return words.every((word) => haystack.includes(word));
+  };
+
+  const hits: RoutineHit[] = [];
+  for (const day of data.days) {
+    for (const item of day.classes) {
+      const candidates = [item, ...(item.alternatives ?? [])];
+      const hit = candidates.some((entry) =>
+        matches([entry.subject, entry.room, item.teacher, item.type, day.day]),
+      );
+      if (hit) hits.push({ day: day.day, item });
+    }
+  }
+  return hits.sort(
+    (left, right) =>
+      weekIndex(left.day) - weekIndex(right.day) ||
+      clockMinutes(left.item.start) - clockMinutes(right.item.start),
+  );
+}
+
+function SearchHits(props: { data: () => ParsedRoutine | null }) {
+  const hits = (): RoutineHit[] => searchWeek(props.data(), query());
+
+  return (
+    <View class="gap-2">
+      <SectionHeader title={hits().length === 1 ? "1 class this week" : `${hits().length} classes this week`} />
+      <If when={hits().length === 0}>
+        <EmptyState title="No class matches" />
+      </If>
+      <View class="gap-2">
+        {() => (
+          <Each of={hits()} key={(hit: RoutineHit) => `${hit.day}-${hit.item.slot}`}>
+            {(hit) => (
+              <View class="flex-row items-center gap-2.5 rounded-[20px] border border-border bg-card px-3.5 py-3">
+                <Col class="min-w-[52px] shrink-0">
+                  <Text class="text-[14px] font-bold tabular-nums text-foreground">{hit().item.start || "--:--"}</Text>
+                  <Text class="text-[11px] text-muted-foreground">{hit().day.slice(0, 3)}</Text>
+                </Col>
+                <Col class="flex-1">
+                  <Text class="text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
+                    {hit().item.subject}
+                  </Text>
+                  <Text class="text-[11px] leading-4 text-muted-foreground" style={{ numberOfLines: 1 }}>
+                    {classMeta(hit().item)}
+                  </Text>
+                </Col>
+                <If when={hit().day === dayName()}>
+                  <Badge tone="ember">Today</Badge>
+                </If>
+              </View>
+            )}
+          </Each>
+        )}
+      </View>
     </View>
   );
 }
@@ -820,13 +914,13 @@ function WeekGrid(props: { data: () => ParsedRoutine | null }) {
     const label = item ? `${day.day} P${slot.index}, ${item.subject}` : `${day.day} P${slot.index}, free`;
     return (
       <View
-        class={`min-h-11 flex-1 items-center justify-center rounded-lg border px-0.5 ${surface()}`}
+        class={`min-h-11 flex-1 items-center justify-center rounded-lg border px-0.5 active:opacity-70 ${surface()}`}
         onPress={() => selectedDay.set(day.day)}
         role="button"
         accessibilityLabel={label}
         accessibilityState={{ selected: active() }}
       >
-        <Text class="text-[11px] font-bold tracking-tight text-foreground" numberOfLines={1}>
+        <Text class="text-[11px] font-bold tracking-tight text-foreground" style={{ numberOfLines: 1 }}>
           {code}
         </Text>
         {lab ? <View class="mt-0.5 h-1 w-1 rounded-full bg-primary" /> : null}
@@ -855,7 +949,7 @@ function WeekGrid(props: { data: () => ParsedRoutine | null }) {
             return (
               <Row class="items-stretch gap-1">
                 <View
-                  class={`w-[34px] items-center justify-center rounded-lg ${
+                  class={`w-[34px] items-center justify-center rounded-lg active:opacity-70 ${
                     active() ? "bg-foreground" : today() ? "bg-primary/10" : ""
                   }`}
                   onPress={() => selectedDay.set(day().day)}

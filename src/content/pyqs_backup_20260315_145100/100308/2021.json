@@ -1,0 +1,307 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "ELECTROMAGNETIC FIELD THEORY",
+    "subject_slug": "electromagnetic-field-theory",
+    "subject_code": "100308",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "The mathematical perception of the gradient is said to be",
+              "options": [
+                "tangent",
+                "chord",
+                "slope",
+                "arc"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The permeability of a dielectric material in air medium will be",
+              "options": [
+                "absolute permeability",
+                "relative permeability",
+                "product of absolute and relative permeability",
+                "unity"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The frequency in rad/sec of a wave with velocity of that of light and phase constant of 20 units (in GHz) is",
+              "options": [
+                "6",
+                "60",
+                "600",
+                "0.6"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "One end of a lossless transmission line having the characteristic impedance of 75 ohm and length of 1 cm is short circuited. At 3 GHz, the input impedance at the other end of the transmission line is",
+              "options": [
+                "0",
+                "resistive",
+                "capacitive",
+                "inductive"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "A transmission line is distortionless, if",
+              "options": [
+                "$RL = 1/GC$",
+                "$RL = GC$",
+                "$LG = RC$",
+                "$RG = LC$",
+                "capacitive"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "In the design of a single-mode step-index optical fiber close to upper cutoff, the single-mode operation is NOT preserved, if",
+              "options": [
+                "radius as well as operating wavelength are halved",
+                "radius as well as operating wavelength are doubled",
+                "radius is halved and operating wavelength is doubled",
+                "radius is doubled and operating wavelength is halved"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Which parameters cannot be computed from the Smith chart?",
+              "options": [
+                "Impedance",
+                "Admittance",
+                "Reflection coefficient and VSWR",
+                "Intrinsic impedance"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "In a microwave test bench, why is the microwave signal amplitude modulated at 1 kHz?",
+              "options": [
+                "To increase the sensitivity of measurement",
+                "To transmit the signal to a far-off place",
+                "To study amplitude modulation",
+                "Because crystal detector fails at microwave frequencies"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The number of modes in a waveguide having a V number of 10 is",
+              "options": [
+                "10",
+                "25",
+                "100",
+                "50"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The magnetization is defined by the ratio of",
+              "options": [
+                "magnetic moment to area",
+                "magnetic moment to volume",
+                "magnetic flux density to area",
+                "magnetic flux density to volume"
+              ],
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Attempt any two parts of the following :",
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "(i) What do you mean by transverse nature of EM wave? Explain mathematically.\n(ii) What are degenerative and dominant modes?",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Write Maxwell's equations in free space for time varying fields both in differential and integral forms.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "The energy density of an electromagnetic wave is proportional to the square of the amplitude of the electric (or magnetic) field. Prove it.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Attempt any two parts of the following :",
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Describe Poynting vector and Poynting theorem. What are their applications?",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Assuming that $B = \\mu H$, show that Maxwell's equations imply the following complex valued version of Poynting's theorem\n$\\nabla \\cdot (E \\times H^*) = -j\\omega \\mu H \\cdot H^* - E \\cdot J_{tot}^*$\nwhere $J_{tot} = J + j\\omega D$.",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Describe Kramers-Kronig dispersion relations.",
+              "id": "3_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Attempt any two parts of the following :",
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "(i) With the help of diagram, explain spherical coordinate system.\n(ii) Write boundary condition for electric and magnetic fields.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "A transmission is lossless and 25 m long. It is terminated with a load of $Z_L = 40 + j30 \\Omega$ at a frequency of 10 MHz. The inductance and capacitance of the line are $L = 300\\text{nH/m}$ and $C = 40\\text{pF/m}$. Find input impedance at the source and at the midpoint of the line.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "What is relation between conduction current density $J_c$ and displacement current density $J_d$?",
+              "id": "4_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Attempt any two parts of the following :",
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Compare circuit theory and field theory in detail.",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Discuss reflection of plane wave at the interface of conductor for oblique interface.",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Develop an expression for the potential difference at any point between spherical shells in terms of the applied potential employing Laplace's equation.",
+              "id": "5_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Attempt any two parts of the following :",
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "(i) Write about reflection by a perfect dielectric at normal incidence.\n(ii) Write about conductors and dielectrics in detail.",
+              "id": "6_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Attempt any two parts of the following :",
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Derive the expressions for magnetic field intensity due to toroidal coil and circular coil.",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Derive the expressions for energy stored and energy density in magnetic field.",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "(i) Derive the expressions for self-inductance of two-wire transmission line.\n(ii) Derive the expressions for force between two current-carrying conductors.",
+              "id": "8_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Attempt any two parts of the following :",
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "(i) Define and explain Biot-Savart law.\n(ii) Find $H$ at the centre of an equivalent triangular loop of side 4 m carrying current of 5A.",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Define uniform plane wave propagation. Discuss and derive its properties.",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Write short notes on the following :\n(i) Magnetic vector potential\n(ii) Helmholtz equations",
+              "id": "9_sub",
+              "marks": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

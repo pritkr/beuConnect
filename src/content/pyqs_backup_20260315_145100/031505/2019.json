@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2019",
+    "subject": "Network Theory",
+    "subject_slug": "network-theory",
+    "subject_code": "031505",
+    "year": 2019,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Write short notes on any seven of the following terms:",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "Laplace transform of $t \\sin t$",
+              "id": "1(a)",
+              "marks": null
+            },
+            {
+              "text": "Bandwidth",
+              "id": "1(b)",
+              "marks": null
+            },
+            {
+              "text": "Cut-off frequency",
+              "id": "1(c)",
+              "marks": null
+            },
+            {
+              "text": "Initial value theorem and final value theorem",
+              "id": "1(d)",
+              "marks": null
+            },
+            {
+              "text": "Transfer function",
+              "id": "1(e)",
+              "marks": null
+            },
+            {
+              "text": "ABCD parameter",
+              "id": "1(f)",
+              "marks": null
+            },
+            {
+              "text": "Driving point impedance",
+              "id": "1(g)",
+              "marks": null
+            },
+            {
+              "text": "Poles and Zeros of network function",
+              "id": "1(h)",
+              "marks": null
+            },
+            {
+              "text": "Twigs and links",
+              "id": "1(i)",
+              "marks": null
+            },
+            {
+              "text": "Planner and non-planner graphs",
+              "id": "1(j)",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "In a source-free $R\\text{-}L$ circuit at $t=0$, the current is $I_0$. Obtain the expression of inductor current and voltage at $t>0$. A $4\\text{ H}$ inductor with initial current $2\\text{ A}$ connected through a resistor $R = 8\\text{ }\\Omega$ at $t=0$. Find the current through inductor for $t>0$.",
+              "marks": 8,
+              "id": "2(a)"
+            },
+            {
+              "text": "Find the inverse transform of $\\frac{7s+5}{s^2+s}$.",
+              "marks": 6,
+              "id": "2(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Define $z$-parameter of two-port network. Write down the condition for reciprocity and symmetry.",
+              "marks": 7,
+              "id": "3(a)"
+            },
+            {
+              "text": "Obtain $z$-parameters for the network shown in the figure below:",
+              "marks": 7,
+              "has_diagram": true,
+              "id": "3(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Derive the expression for step response of $R\\text{-}L$ circuit with initial inductor current $I_0$. Plot its voltage response and current response.",
+              "marks": 6,
+              "id": "4(a)"
+            },
+            {
+              "text": "The switch in the figure given below has been closed for a long time. It opens at $t=0$. Find $i(t)$ for $t>0$:",
+              "marks": 8,
+              "has_diagram": true,
+              "id": "4(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Given the transfer function $H(s) = \\frac{V_o(s)}{V_i(s)} = \\frac{10}{s^2+3s+10}$. Realize the function using the circuit in the figure given below:",
+          "marks": 14,
+          "has_diagram": true,
+          "id": "5",
+          "sub_questions": [
+            {
+              "text": "Select $R=5\\text{ }\\Omega$, and find $L$ and $C$.",
+              "id": "5(a)",
+              "marks": null
+            },
+            {
+              "text": "Select $R=1\\text{ }\\Omega$, and find $L$ and $C$.",
+              "id": "5(b)",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Determine the hybrid parameters for the network in the figure given below:",
+          "marks": 14,
+          "has_diagram": true,
+          "id": "6"
+        },
+        {
+          "text": "Determine what type of filter is shown in the figure given below. Calculate the corner or cutoff frequency. Take $R=2\\text{ k}\\Omega$, $L=2\\text{ H}$ and $C=2\\text{ }\\mu\\text{F}$:",
+          "marks": 14,
+          "has_diagram": true,
+          "id": "7"
+        },
+        {
+          "text": "Fig. I and Fig. II given below show circuit diagram tree and co-tree respectively. Find (a) incidence matrix for the orientation shown, (b) $f$-cut set matrix and (c) $f$-loop matrix:",
+          "marks": 14,
+          "has_diagram": true,
+          "id": "8"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Write a technical note on Hurwitz polynomials.",
+              "marks": 6,
+              "id": "9(a)"
+            },
+            {
+              "text": "Test whether the following polynomials is Hurwitz:",
+              "marks": 8,
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "$s^4+s^3+5s^2+3s+4$"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "$s^5+2s^3+s$"
+                }
+              ],
+              "id": "9(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

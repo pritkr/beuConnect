@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2020",
+    "subject": "MICROPROCESSOR AND MICROCONTROLLER",
+    "subject_slug": "microprocessor-and-microcontroller",
+    "subject_code": "104505",
+    "year": 2020,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are EIGHT questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Differentiate between the following (any seven) :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Microcontroller and Microprocessor",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "High level language and Low level language",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "RISC Processor and CISC Processor",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "I/O-Mapped I/O and Memory-Mapped I/O",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Assembler and Cross-Assembler",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "CALL and JMP",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "STAX and LDAX",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "XTHL and PCHL",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "RIM and SIM",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Draw and explain the architecture of 8086. Describe the function of queue in 8086. How does the queue speed up processing?",
+              "marks": 6,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "Discuss the addressing technique used in 8086 and explain the various addressing modes of 8086.",
+              "marks": 8,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Draw the block diagram of 8254 PPI and explain the various modes in which 8254 can operate and write down the control word for each mode. Specify the conditions to start the timer of 8254 PPI.",
+          "marks": 14,
+          "id": "3"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Draw and explain the pin diagram of 8051 microcontroller and explain the memory mapping of 8051.",
+              "marks": 10,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain the interfacing of 16 K EPROM and 8 K RAM to 8051 microcontroller.",
+              "marks": 4,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Explain the different interrupts available in 8085 processor. What are the purpose of the instructions RIM and SIM? How is the status of pending interrupts checked? Assuming the microprocessor is completing an RST 7.5 interrupt request, check to see if RST 6.5 is pending. If it is pending, enable RST 6.5 without affecting any other interrupts; otherwise, return to the main program.",
+          "marks": 14,
+          "id": "5"
+        },
+        {
+          "text": "A set of ten packed BCD numbers is stored in the memory location. Write a program to add these numbers in BCD, if carry is generated save it in register B, and adjust it for BCD. Write a subroutine to unpack the stored BCD sum and store it in two consecutive memory locations.",
+          "marks": 14,
+          "id": "6"
+        },
+        {
+          "text": "Two sets of three readings each are stored in memory. Write a program and draw the flowchart to sort the readings in descending order, assuming that the two sets are separated by the word FFH.",
+          "marks": 14,
+          "id": "7"
+        },
+        {
+          "text": "Write a program to insert a string of four characters from the tenth location in the given array of 50 characters.",
+          "marks": 14,
+          "id": "8"
+        }
+      ]
+    }
+  ]
+}

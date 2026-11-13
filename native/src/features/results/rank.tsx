@@ -46,12 +46,12 @@ import {
   Subtitle,
 } from "../../ui";
 import type { RankScope } from "./components";
-import { Line, PositionCard, RowsSkeleton, ScopeChips, SemChips, StudentRowView, aheadOf } from "./components";
+import { Line, PositionCard, RowsSkeleton, ScopeChips, SemChips, StudentRowView, aheadOf, CgpaSpread } from "./components";
 import type { RankRow } from "./data";
-import { branchShort, digits, loadRoster, parseReg, semsFor } from "./data";
+import { branchShort, currentSemester, digits, loadRoster, parseReg, semsFor } from "./data";
 import { shortCollegeName } from "./colleges";
 import { cachedIdentity } from "./identity";
-import { missingSentence, rankLabel, students, tieSentence, tieSize, unrankedCount } from "./ranking";
+import { rankLabel, tieSentence, tieSize, unrankedCount, cgpaDistribution } from "./ranking";
 import type { Async, TableSelection } from "./shared";
 import {
   CopyButton,
@@ -63,6 +63,7 @@ import {
   isValidReg,
   normalizeSelection,
   rosterError,
+  suggestedSem,
 } from "./shared";
 
 /** A semester BEU has published for this batch + branch, or the closest it has. */
@@ -120,6 +121,12 @@ function standingFor(rows: RankRow[], numeric: string): Standing {
   return { rows, student, branchTotal, collegeTotal };
 }
 
+/** One clipboard line: a real place, or the honest reason there is none. */
+function rankLine(label: string, rank: number | null, tied: number, total: number): string {
+  if (rank === null) return total > 0 ? `${label}: not ranked (${total} ranked)` : `${label}: not ranked (no CGPA)`;
+  return `${label} ${rankLabel(rank, tied)} of ${total}`;
+}
+
 /** The clipboard-ready standing: the lines a student pastes into a chat. */
 function rankSummary(
   standing: Standing,
@@ -134,8 +141,8 @@ function rankSummary(
   return [
     `${name || "BEU student"} — ${branchShort(branch)} semester ${sem}`,
     `Reg ${student.reg}`,
-    `Branch rank ${rankLabel(student.rank, tiedBranch)} of ${standing.branchTotal}`,
-    `College rank ${rankLabel(student.collegeRank, tiedCollege)} of ${standing.collegeTotal}`,
+    rankLine("University rank", student.rank, tiedBranch, standing.branchTotal),
+    rankLine("College rank", student.collegeRank, tiedCollege, standing.collegeTotal),
     `SGPA ${student.sgpaText} · CGPA ${student.cgpaText}`,
     "beu.prit.eu.org",
   ].join("\n");
@@ -151,6 +158,9 @@ export function RankScreen(props: { nav: Nav }) {
   const batch = signal(routeInfo?.batch ?? "");
   const branch = signal(routeInfo?.branch ?? "");
   const sem = signal(publishedSem(routeSem, routeInfo?.batch ?? "", routeInfo?.branch ?? ""));
+  /* A route that names both the number and its semester is a deliberate table;
+     a semester on its own is a hint, and a typed number follows its own table. */
+  const semChosen = signal(isValidReg(routeReg) && routeSem >= 1 && routeSem <= 8);
   const editing = signal(!isValidReg(routeReg));
   const filters = signal(false);
   const formError = signal("");
@@ -173,6 +183,32 @@ export function RankScreen(props: { nav: Nav }) {
   const published = computed(() => semsFor(batch(), branch()).length > 0);
   const publishedSems = computed(() => semsFor(batch(), branch()));
 
+  /** The semesters the number being typed actually published, before Find. */
+  const draftSems = computed(() => {
+    const parsed = parseReg(reg());
+    return parsed ? semsFor(parsed.batch, parsed.branch) : publishedSems();
+  });
+
+  /** The batch and branch the field is pointing at, before Find is pressed. */
+  const draftTable = computed(() => {
+    const parsed = parseReg(reg());
+    return parsed ? `Batch 20${parsed.batch} · ${branchShort(parsed.branch)}` : "";
+  });
+
+  /** Whether the typed number's batch and branch have any roster at all. */
+  const draftCovered = computed(() => draftSems().length > 0);
+
+  /** The class the typed number is in today, 0 when there is no number. */
+  const classSem = computed(() => {
+    const parsed = parseReg(reg());
+    return parsed ? currentSemester(parsed.batch, parsed.lateral) : 0;
+  });
+
+  /** The typed class is ahead of the newest table BEU has published. */
+  const aheadOfTables = computed(
+    () => draftSems().length > 0 && classSem() > Math.max(...draftSems()),
+  );
+
   const start = (regValue: string, semValue: number) => {
     const value = cleanReg(regValue);
     if (!isValidReg(value)) {
@@ -182,7 +218,13 @@ export function RankScreen(props: { nav: Nav }) {
     const info = parseReg(value);
     const nextBatch = info?.batch ?? batch();
     const nextBranch = info?.branch ?? branch();
-    const nextSem = publishedSem(semValue, nextBatch, nextBranch);
+    /* The number implies its table: open the semester its batch is sitting in,
+       clamped to the newest roster BEU published for it. Semester 1 carries no
+       CGPA, so opening there would print "no rank" for everyone. A semester the
+       student picked by hand, or the route named, wins. */
+    const nextSem = semChosen()
+      ? publishedSem(semValue, nextBatch, nextBranch)
+      : publishedSem(suggestedSem(value), nextBatch, nextBranch);
     formError.set("");
     reg.set(value);
     batch.set(nextBatch);
@@ -229,24 +271,33 @@ export function RankScreen(props: { nav: Nav }) {
   });
 
   /* The field follows what is being typed; the loaded request owns the labels. */
-  const info = () => parseReg(request()?.reg ?? reg());
-  const draftInfo = () => parseReg(reg()) ?? info();
-  const draftBatch = () => draftInfo()?.batch ?? "";
-  const draftBranch = () => draftInfo()?.branch ?? "";
 
   /** A number typed for a branch that never published the chosen semester
      moves the chips to one that did, instead of a silent 404 later. */
   effect(() => {
-    const parsed = draftInfo();
+    const parsed = parseReg(reg());
     if (!parsed) return;
     const sems = semsFor(parsed.batch, parsed.branch);
     if (sems.length === 0) return;
-    if (sems.indexOf(sem()) < 0) sem.set(Math.max(...sems));
+    /* Follow the number: the class it is in, clamped to the newest table BEU
+       published for it. A semester picked by hand, or by the route, wins. */
+    const next = semChosen()
+      ? sems.indexOf(sem()) < 0
+        ? Math.max(...sems)
+        : sem()
+      : publishedSem(suggestedSem(reg()), parsed.batch, parsed.branch);
+    if (next !== sem()) sem.set(next);
   });
 
   const standing = computed(() => state().data);
   const student = computed(() => standing()?.student ?? null);
   const college = computed(() => shortCollegeName(student()?.collegeCode ?? ""));
+
+  /* A row with no college code has no college standing. Never leave the screen
+     stuck in a scope whose chip is not rendered, with no way back. */
+  effect(() => {
+    if (student() && student()?.collegeCode === "" && scope() === "college") scope.set("branch");
+  });
 
   /* BEU publishes roster names in capitals; an identity already saved on this
      phone has the name the student knows. Cache-only, so the screen stays
@@ -315,6 +366,9 @@ export function RankScreen(props: { nav: Nav }) {
 
   const tied = computed(() => (scope() === "college" ? tiedCollege() : tiedBranch()));
 
+  /** The CGPA spread of the table being ranked in — branch or college. */
+  const spread = computed(() => cgpaDistribution(order(), 10));
+
   /** Students in the roster BEU published without a CGPA: no rank for them. */
   const missing = computed(() => unrankedCount(standing()?.rows ?? []));
 
@@ -374,7 +428,7 @@ export function RankScreen(props: { nav: Nav }) {
     const row = value ? value.student : null;
     if (!value || !row) return "";
     if (row.cgpa === null) {
-      return "BEU published this student without a CGPA, so there is no rank. That is missing data, not a zero.";
+      return "No CGPA published, so no rank. That is missing data, not a zero.";
     }
     const place = scope() === "college" ? row.collegeRank : row.rank;
     if (place === null) return "This table has no CGPA for you in this scope, so there is no rank.";
@@ -416,6 +470,7 @@ export function RankScreen(props: { nav: Nav }) {
 
   /** Pick a published table: normalize first, then read it. */
   const applyFilter = (next: Partial<TableSelection>) => {
+    semChosen.set(true);
     const merged = normalizeSelection({
       batch: next.batch ?? batch(),
       branch: next.branch ?? branch(),
@@ -458,10 +513,17 @@ export function RankScreen(props: { nav: Nav }) {
               apply={applyFilter}
             />
             <Muted class="text-[11px] leading-4">
-              Rank is counted inside the table you pick. Your own batch and branch come from your registration number.
+              Rank is counted inside the table you pick.
             </Muted>
             <If when={offOwnTable()}>
-              <Btn variant="secondary" class="min-h-11" onPress={() => start(reg(), sem())}>
+              <Btn
+                variant="secondary"
+                class="min-h-11"
+                onPress={() => {
+                  semChosen.set(false);
+                  start(reg(), suggestedSem(reg()));
+                }}
+              >
                 Use my batch and branch
               </Btn>
             </If>
@@ -482,49 +544,66 @@ export function RankScreen(props: { nav: Nav }) {
 
             <View class="gap-1">
               <Row class="flex-wrap items-center justify-between gap-2">
-                <Label>{batch() ? `Batch 20${batch()} · ${branchShort(branch())}` : "From your number"}</Label>
+                <Label>{draftTable() || (batch() ? `Batch 20${batch()} · ${branchShort(branch())}` : "From your number")}</Label>
                 <Muted class="tabular-nums text-[11px]">{`Sem ${sem()}`}</Muted>
               </Row>
-              <Muted class="text-[11px] leading-4">Read from BEU's published roster, so it works offline.</Muted>
+              <Muted class="text-[11px] leading-4">
+                {aheadOfTables()
+                  ? `Your class is in semester ${classSem()}; BEU's newest published table is semester ${Math.max(...draftSems())}.`
+                  : "Read from BEU's published roster, so it works offline."}
+              </Muted>
             </View>
 
-            <Fresh
-              when={`sem:${reg()}:${batch()}:${branch()}:${sem()}`}
-              build={() => (
-                <SemChips
-                  value={sem()}
-                  available={publishedSems()}
-                  onChange={(next) => {
-                    sem.set(next);
-                    if (request() !== null) start(reg(), next);
-                  }}
-                />
-              )}
-            />
+            <If when={draftCovered() || !isValidReg(reg())}>
+              <Fresh
+                when={`sem:${reg()}:${batch()}:${branch()}:${sem()}:${draftCovered()}`}
+                build={() => (
+                  <SemChips
+                    value={sem()}
+                    available={draftSems()}
+                    onChange={(next) => {
+                      semChosen.set(true);
+                      sem.set(next);
+                      if (request() !== null) start(reg(), next);
+                    }}
+                  />
+                )}
+              />
+            </If>
+
+            <If when={isValidReg(reg()) && !draftCovered()}>
+              <Muted class="text-[11px] leading-4">
+                BEU has published no roster for this batch and branch yet.
+              </Muted>
+            </If>
 
             {formError() ? <Text class="text-[12px] font-medium text-destructive">{formError()}</Text> : null}
 
             <Fresh
-              when={`go:${state().status}:${sem()}:${published()}`}
+              when={`go:${state().status}:${sem()}:${published()}:${draftCovered()}`}
               build={() => (
                 <Btn
                   class="min-h-12"
-                  disabled={state().status === "loading"}
+                  disabled={state().status === "loading" || (isValidReg(reg()) && !draftCovered())}
                   onPress={() => start(reg(), sem())}
                   label="Find rank"
                 >
-                  {state().status === "loading" ? "Reading the table…" : `Find semester ${sem()} rank`}
+                  {state().status === "loading"
+                    ? "Reading the table…"
+                    : isValidReg(reg()) && !draftCovered()
+                      ? "No table to read"
+                      : `Find semester ${sem()} rank`}
                 </Btn>
               )}
             />
           </Card>
         </If>
 
-        <If when={!published() && isValidReg(reg())}>
+        <If when={!published() && isValidReg(reg()) && batch() !== ""}>
           <EmptyState
             icon="hash"
             title="No published table for this batch"
-            hint={`BEU has published no ${branchShort(branch())} roster for batch 20${batch()}. Rank needs a published table; nothing here is estimated.`}
+            hint={`No ${branchShort(branch())} roster for batch 20${batch()} yet. Nothing here is estimated.`}
             action="Pick a published table"
             onAction={() => filters.set(true)}
           />
@@ -569,17 +648,55 @@ export function RankScreen(props: { nav: Nav }) {
               const place = spot();
               const near = rivals();
               const share = scopeLabel();
+
+              /* A table BEU published without a CGPA (semester 1 is always
+                 SGPA-only) has nothing to rank: one clear panel, not six
+                 dashed stats. Offer the newest table that may carry one. */
+              if (value.branchTotal === 0) {
+                const newest = publishedSems().length > 0 ? Math.max(...publishedSems()) : 0;
+                return (
+                  <View class="gap-4">
+                    <Panel tone="plain" class="gap-3" testID="rank-no-cgpa">
+                      <Label>No CGPA in this table</Label>
+                      <Subtitle class="text-[13px] leading-5">
+                        {`BEU published ${branchShort(branch())} semester ${sem()} with SGPAs only. Rank is counted by CGPA, so there is nothing to count here — nothing is estimated.`}
+                      </Subtitle>
+                      <Row class="gap-3">
+                        <Btn class="flex-1" onPress={() => nav.push("results", { reg: row.reg, sem: sem() })}>
+                          Full result
+                        </Btn>
+                        {newest > sem() ? (
+                          <Btn variant="secondary" class="flex-1" onPress={() => applyFilter({ sem: newest })}>
+                            {`Open semester ${newest}`}
+                          </Btn>
+                        ) : null}
+                      </Row>
+                    </Panel>
+                    <Card class="gap-0">
+                      <Line label="Registration" value={row.reg} />
+                      <Line label="College" value={shortCollegeName(row.collegeCode)} />
+                      <Line label="Branch" value={branchShort(branch())} />
+                      <Line label="Batch" value={`20${batch()}`} />
+                      <Line label="SGPA" value={row.sgpaText} strong />
+                      <Line label="CGPA" value={row.cgpaText} strong />
+                    </Card>
+                  </View>
+                );
+              }
+
               return (
                 <View class="gap-4">
-                  <Fresh
-                    when={`scope:${scope()}:${row.collegeCode}`}
-                    build={() => (
-                      <ScopeChips value={scope()} onChange={scope.set} collegeLabel={college() || "My college"} />
-                    )}
-                  />
+                  {row.collegeCode ? (
+                    <Fresh
+                      when={`scope:${scope()}:${row.collegeCode}`}
+                      build={() => (
+                        <ScopeChips value={scope()} onChange={(next) => scope.set(next)} collegeLabel={college() || "My college"} />
+                      )}
+                    />
+                  ) : null}
 
                   <PositionCard
-                    label={`Rank in ${share} · Semester ${sem()}`}
+                    label={scope() === "college" ? `Rank in ${share} · Semester ${sem()}` : `University rank · Semester ${sem()}`}
                     name={studentName() || "Semester result"}
                     reg={row.reg}
                     collegeCode={row.collegeCode}
@@ -605,67 +722,73 @@ export function RankScreen(props: { nav: Nav }) {
                     <Stat
                       value={rankLabel(row.rank, tiedBranch())}
                       label="University rank"
-                      hint={`of ${value.branchTotal} ranked`}
+                      hint={
+                        row.rank !== null
+                          ? `of ${value.branchTotal} ranked`
+                          : value.branchTotal > 0
+                            ? "not in this order"
+                            : "no CGPA published"
+                      }
                     />
                     <Stat
                       value={rankLabel(row.collegeRank, tiedCollege())}
                       label="College rank"
-                      hint={`of ${value.collegeTotal} ranked`}
+                      hint={
+                        row.collegeRank !== null
+                          ? `of ${value.collegeTotal} ranked`
+                          : value.collegeTotal > 0
+                            ? "not in this order"
+                            : "no CGPA published"
+                      }
                     />
                   </Row>
 
-                  <Panel tone="plain" class="gap-1">
-                    <Label>What this is</Label>
-                    <Subtitle class="text-[12px] leading-5">
-                      {`BEU's published ${branchShort(branch())} roster for semester ${sem()}. University counts every college in it.`}
-                    </Subtitle>
-                    <Subtitle class="text-[12px] leading-5">
-                      {`Rank is CGPA order; a tie shares the place and the next rank skips it. ${students(value.branchTotal)} here have a CGPA.`}
-                    </Subtitle>
-                    <If when={missing() > 0}>
-                      <Muted class="text-[11px] leading-4">{missingSentence(missing())}</Muted>
-                    </If>
-                  </Panel>
-
-                  <Card class="gap-0 p-0">
-                    <View class="gap-0.5 px-4 pb-2 pt-3">
-                      <Label>Nearest rivals</Label>
-                      <Muted class="text-[11px] leading-4">
-                        {`Closest CGPA above and below you in ${share}.`}
-                      </Muted>
-                    </View>
-                    <Divider />
-                    {near.above ? (
-                      <StudentRowView
-                        row={scopedRow(near.above)}
-                        tied={tiedFor(near.above)}
-                        onPress={() => nav.push("results", { reg: near.above?.reg ?? "", sem: sem() })}
-                      />
-                    ) : (
-                      <Muted class="px-4 py-3">
-                        {row.cgpa === null ? "No CGPA on this row, so there is no place to compare." : "Nobody above — you are first."}
-                      </Muted>
-                    )}
-                    <Divider />
-                    <StudentRowView
-                      row={named(scopedRow(row))}
-                      tied={tied()}
-                      highlight
-                      onPress={() => nav.push("results", { reg: row.reg, sem: sem() })}
+                  <Card class="gap-3">
+                    <CgpaSpread
+                      bands={spread()}
+                      mine={row.cgpa}
+                      scopeLabel={scopeLabel()}
+                      unranked={missing()}
                     />
-                    <Divider />
-                    {near.below ? (
-                      <StudentRowView
-                        row={scopedRow(near.below)}
-                        tied={tiedFor(near.below)}
-                        onPress={() => nav.push("results", { reg: near.below?.reg ?? "", sem: sem() })}
-                      />
-                    ) : (
-                      <Muted class="px-4 py-3">
-                        {row.cgpa === null ? "No CGPA on this row, so there is no place to compare." : "Nobody below — you are last."}
-                      </Muted>
-                    )}
                   </Card>
+
+                  {row.cgpa !== null ? (
+                    <Card class="gap-0 p-0">
+                      <View class="gap-0.5 px-4 pb-2 pt-3">
+                        <Label>Nearest rivals</Label>
+                        <Muted class="text-[11px] leading-4">
+                          {`Closest CGPA above and below you in ${share}.`}
+                        </Muted>
+                      </View>
+                      <Divider />
+                      {near.above ? (
+                        <StudentRowView
+                          row={scopedRow(near.above)}
+                          tied={tiedFor(near.above)}
+                          onPress={() => nav.push("results", { reg: near.above?.reg ?? "", sem: sem() })}
+                        />
+                      ) : (
+                        <Muted class="px-4 py-3">Nobody above — you are first.</Muted>
+                      )}
+                      <Divider />
+                      <StudentRowView
+                        row={named(scopedRow(row))}
+                        tied={tied()}
+                        highlight
+                        onPress={() => nav.push("results", { reg: row.reg, sem: sem() })}
+                      />
+                      <Divider />
+                      {near.below ? (
+                        <StudentRowView
+                          row={scopedRow(near.below)}
+                          tied={tiedFor(near.below)}
+                          onPress={() => nav.push("results", { reg: near.below?.reg ?? "", sem: sem() })}
+                        />
+                      ) : (
+                        <Muted class="px-4 py-3">Nobody below — you are last.</Muted>
+                      )}
+                    </Card>
+                  ) : null}
 
                   <Card class="gap-0">
                     <Line label="Registration" value={row.reg} />
@@ -711,24 +834,6 @@ export function RankScreen(props: { nav: Nav }) {
           />
         </If>
 
-        <If when={state().status === "idle" && request() === null}>
-          <View class="gap-3">
-            <Panel tone="plain" class="gap-1">
-              <Label>What this is</Label>
-              <Subtitle class="text-[12px] leading-5">
-                BEU publishes one roster per batch, branch and semester. Your rank is your CGPA's place inside it.
-              </Subtitle>
-              <Subtitle class="text-[12px] leading-5">
-                University counts every college; college counts only yours.
-              </Subtitle>
-            </Panel>
-            <EmptyState
-              icon="hash"
-              title="Rank needs a number"
-              hint="Type your registration number above. The roster works offline."
-            />
-          </View>
-        </If>
       </Body>
     </Screen>
   );

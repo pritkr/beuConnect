@@ -1,0 +1,291 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2014",
+    "subject": "Formal Languages and Automata Theory",
+    "subject_slug": "formal-languages-and-automata-theory",
+    "subject_code": "051611",
+    "year": 2014,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct option of the following (any seven) :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The output of the Moore machine depends\n(i) only on present state\n(ii) only on current input symbol\n(iii) both on present state and current input symbol\n(iv) None of the above",
+              "id": "1a",
+              "marks": null
+            },
+            {
+              "text": "The logic of pumping lemma is a good example of\n(i) the pigeon-hole principle\n(ii) the divide and conquer technique\n(iii) recursion\n(iv) iteration",
+              "id": "1b",
+              "marks": null
+            },
+            {
+              "text": "Recursively enumerable languages are not closed under\n(i) union\n(ii) intersection\n(iii) complementation\n(iv) concatenation",
+              "id": "1c",
+              "marks": null
+            },
+            {
+              "text": "The language $L = \\{a^n b^n a^n, \\text{where } n = 1, 2, 3, \\dots\\}$ is a\n(i) regular language\n(ii) context-free language\n(iii) non-context-free language\n(iv) None of the above",
+              "id": "1d",
+              "marks": null
+            },
+            {
+              "text": "A language $L$ is denoted by a regular expression $L = (x)^* (x | yx^*)$. Which of the following is not a legal string within $L$?\n(i) $x$\n(ii) $xyxyx$\n(iii) $xyx$\n(iv) None of the above",
+              "id": "1e",
+              "marks": null
+            },
+            {
+              "text": "Context-free languages are not closed under\n(i) union\n(ii) intersection\n(iii) concatenation",
+              "id": "1f",
+              "marks": null
+            },
+            {
+              "text": "Recursive languages are\n(i) a proper superset of CFLs\n(ii) always recognizable\n(iii) also called type 0 languages\n(iv) recognizable by Turing machines",
+              "id": "1g",
+              "marks": null
+            },
+            {
+              "text": "Choose the incorrect statement :\n(i) Every subset of a countable set is countable\n(ii) The class of DPDA is not countable\n(iii) The class of TMs is countable\n(iv) The class of LBA is countable",
+              "id": "1h",
+              "marks": null
+            },
+            {
+              "text": "Which of the following statements is true?\n(i) The language $\\{a^n \\mid n \\text{ is prime}\\}$ is regular language\n(ii) The union of 2 recursive languages is recursive\n(iii) Recursive enumerable languages are closed under complementation\n(iv) Recursive languages are not closed under complementation",
+              "id": "1i",
+              "marks": null
+            },
+            {
+              "text": "In case of TM, by reading input $x$, TM\n(i) may go to halt-final state\n(ii) may go to halt-non-final state\n(iii) may go to infinite loop\n(iv) All of the above",
+              "id": "1j",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Obtain the regular expression for the following sets :",
+              "subparts": [
+                {
+                  "label": "i",
+                  "text": "Set of strings over $\\Sigma = \\{a, b\\}$ with at least one $a$ and at least one $b$."
+                },
+                {
+                  "label": "ii",
+                  "text": "Set of strings over $\\Sigma = \\{0, 1\\}$ of alternate 0's and 1's."
+                },
+                {
+                  "label": "iii",
+                  "text": "$L = \\{ a^{2n+1} \\mid n \\geq 0 \\}$."
+                },
+                {
+                  "label": "iv",
+                  "text": "Set of strings over $\\Sigma = \\{a, b, c\\}$ where all runs of $a$'s have lengths that are multiples of three."
+                },
+                {
+                  "label": "v",
+                  "text": "Set of all possible strings of length four over $\\Sigma = \\{0, 1\\}$."
+                }
+              ],
+              "marks": 10,
+              "id": "2a"
+            },
+            {
+              "text": "Differentiate between Moore and Mealy machines.",
+              "marks": 2,
+              "id": "2b"
+            },
+            {
+              "text": "Differentiate between NFA and DFA.",
+              "marks": 2,
+              "id": "2c"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Construct NFA equivalent to the following regular expression : $10 | (0 | 11)0^* 1$.",
+              "marks": 4,
+              "id": "3a"
+            },
+            {
+              "text": "Construct an NFA for the following set : Set of all strings over $\\Sigma = \\{0, 1\\}$ containing at least two 0's.",
+              "marks": 5,
+              "id": "3b"
+            },
+            {
+              "text": "Construct NFA for the set of strings over $\\Sigma = \\{0, 1\\}$ of alternate 0's and 1's.",
+              "marks": 5,
+              "id": "3c"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Construct a DFA for the regular expression $r = (ab | ba)^* aa(ab | ba)$.",
+              "marks": 7,
+              "id": "4a"
+            },
+            {
+              "text": "Find out the regular expression for the following FA : [Table required]",
+              "marks": 7,
+              "id": "4b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Construct a Moore machine equivalent to the following Mealy machine : [Table required]",
+              "marks": 5,
+              "id": "5a"
+            },
+            {
+              "text": "Prove the following two properties : (i) Regular sets are closed over the union operation (ii) Regular sets are closed over the intersection operation.",
+              "marks": 5,
+              "id": "5b"
+            },
+            {
+              "text": "Show with the help of pumping lemma that the following language is not regular : $L = \\{ a^p \\mid p \\text{ is prime number} \\}$.",
+              "marks": 4,
+              "id": "5c"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Give the CFG for the following languages :",
+              "subparts": [
+                {
+                  "label": "i",
+                  "text": "$L = \\{ a^n b^m a^n \\mid n \\geq 0, m \\geq 1 \\}$."
+                },
+                {
+                  "label": "ii",
+                  "text": "$\\Sigma = \\{a, b\\}$ with exactly twice as many $a$'s as $b$'s."
+                }
+              ],
+              "marks": 6,
+              "id": "6a"
+            },
+            {
+              "text": "Find a CFG for the following regular expression : $r = (baa | abb)^*$.",
+              "marks": 4,
+              "id": "6b"
+            },
+            {
+              "text": "Let $G$ be a context-free grammar, which is defined as $S \\rightarrow aSb | ab$. Find the CFL generated by $G$.",
+              "marks": 4,
+              "id": "6c"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Find a regular grammar for the following regular expression : $r = (abbb | ba)^* ab$.",
+              "marks": 4,
+              "id": "7a"
+            },
+            {
+              "text": "Determine a CFG without unit production equivalent to the CFG given below :\n$S \\rightarrow ABCD; A \\rightarrow a; B \\rightarrow C | b; C \\rightarrow D; D \\rightarrow c$.",
+              "marks": 3,
+              "id": "7b"
+            },
+            {
+              "text": "Find the CNF (Chomsky Normal Form) for the following CFG :\n$S \\rightarrow aAbB; A \\rightarrow Ab | b; B \\rightarrow Ba | a$.",
+              "marks": 3,
+              "id": "7c"
+            },
+            {
+              "text": "Eliminate the null productions from the following CFG :\n$S \\rightarrow ABA; A \\rightarrow aA | \\epsilon; B \\rightarrow bB | \\epsilon$.",
+              "marks": 4,
+              "id": "7d"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Prove that the CFL's are not closed under intersection.",
+              "marks": 3,
+              "id": "8a"
+            },
+            {
+              "text": "Design a PDA to accept the language $L = \\{ a^n b^{2n} \\mid n \\geq 1 \\}$ by empty stack.",
+              "marks": 4,
+              "id": "8b"
+            },
+            {
+              "text": "Design a PDA to accept the language $L = \\{ wcw^R \\mid w \\in \\{a, b\\}^+ \\}$ by empty stack.",
+              "marks": 4,
+              "id": "8c"
+            },
+            {
+              "text": "Prove using pumping lemma that the following language is not CFL : $L = \\{ a^i b^i c^i \\mid i \\geq 1 \\}$.",
+              "marks": 3,
+              "id": "8d"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Design a TM over $\\{a, b, c\\}$ to accept the language $L = \\{ ww^R \\mid w \\in \\{a, b\\}^+ \\}$.",
+              "marks": 7,
+              "id": "9a"
+            },
+            {
+              "text": "Design a Turing machine for the regular expression $011^*$.",
+              "marks": 7,
+              "id": "9b"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

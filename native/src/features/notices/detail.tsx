@@ -95,7 +95,7 @@ export function DetailScreen(props: { nav: Nav }) {
               <Panel tone={notice.link ? "amber" : "plain"} class="gap-3">
                 <Row class="flex-wrap items-center gap-1.5">
                   <Badge tone="amber">{attachment ? "PDF" : notice.link ? "LINK" : "NONE"}</Badge>
-                  <Text class="flex-1 text-[14px] font-semibold text-foreground" numberOfLines={1}>
+                  <Text class="flex-1 text-[14px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
                     {notice.link ? "Official attachment" : "No attachment"}
                   </Text>
                 </Row>
@@ -106,7 +106,7 @@ export function DetailScreen(props: { nav: Nav }) {
                       : "Not on the university's file server, so it opens in your browser."
                     : "The board lists no file for this notice."}
                 </Muted>
-                {notice.link ? <Text class="text-[12px] leading-4 text-primary-ink" numberOfLines={2}>{notice.link}</Text> : null}
+                {notice.link ? <Text class="text-[12px] leading-4 text-primary-ink" style={{ numberOfLines: 2 }}>{notice.link}</Text> : null}
                 {notice.link ? (
                   <Btn onPress={() => openAttachment(notice)}>
                     {attachment ? "Open in the viewer" : "Open in browser"}
@@ -149,7 +149,7 @@ function Fact(props: { label: string; value: string; mono?: boolean }) {
       {props.mono ? (
         <Mono class="flex-1 text-right" numberOfLines={1}>{props.value}</Mono>
       ) : (
-        <Text class="flex-1 text-right text-[13px] font-semibold text-foreground" numberOfLines={1}>{props.value}</Text>
+        <Text class="flex-1 text-right text-[13px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>{props.value}</Text>
       )}
     </Row>
   );

@@ -110,11 +110,11 @@ function Hero(props: { who: HomeProfile | null; whoIs: Identity | null }) {
           <Text class="text-[14px] font-bold text-primary-foreground">{initialOf(known())}</Text>
         </View>
       </Row>
-      <Text class="mt-1 text-[26px] font-bold leading-8 tracking-tight text-foreground" numberOfLines={2}>
+      <Text class="mt-1 text-[26px] font-bold leading-8 tracking-tight text-foreground" style={{ numberOfLines: 2 }}>
         {greetingLine(now.getHours(), known())}
       </Text>
       {course() ? (
-        <Text class="text-[13px] text-muted-foreground" numberOfLines={1}>
+        <Text class="text-[13px] text-muted-foreground" style={{ numberOfLines: 1 }}>
           {course()}
         </Text>
       ) : null}
@@ -274,7 +274,7 @@ function NextAction(props: { nav: Nav }) {
 
         return (
           <View
-            class={`gap-3 rounded-3xl border p-4 active:scale-[0.99] ${TONE[action.tone]}`}
+            class={`gap-3 rounded-3xl border p-4 active:scale-[0.99] transition-transform duration-150 ease-out motion-reduce:transition-none ${TONE[action.tone]}`}
             onPress={() => props.nav.push(action.route, action.params ?? {})}
             role="button"
             accessibilityLabel={`${action.eyebrow}: ${action.title}. ${action.cta}`}
@@ -288,11 +288,11 @@ function NextAction(props: { nav: Nav }) {
             </Row>
             <Row class="items-end justify-between gap-3">
               <View class="flex-1 gap-1">
-                <Text class="text-[19px] font-semibold leading-6 tracking-tight text-foreground" numberOfLines={2}>
+                <Text class="text-[19px] font-semibold leading-6 tracking-tight text-foreground" style={{ numberOfLines: 2 }}>
                   {action.title}
                 </Text>
                 {action.hint ? (
-                  <Text class="text-[12px] leading-4 tabular-nums text-muted-foreground" numberOfLines={2}>
+                  <Text class="text-[12px] leading-4 tabular-nums text-muted-foreground" style={{ numberOfLines: 2 }}>
                     {action.hint}
                   </Text>
                 ) : null}
@@ -310,8 +310,8 @@ function NextAction(props: { nav: Nav }) {
               <View class="gap-1.5 border-t border-border/70 pt-2.5">
                 {facts.map((fact) => (
                   <Row class="justify-between gap-3">
-                    <Text class="text-[11px] text-muted-foreground">{fact.label}</Text>
-                    <Text class="text-[11px] font-semibold tabular-nums text-foreground" numberOfLines={1}>
+                    <Text class="shrink-0 text-[11px] text-muted-foreground">{fact.label}</Text>
+                    <Text class="flex-1 text-right text-[11px] font-semibold tabular-nums text-foreground" style={{ numberOfLines: 1 }}>
                       {fact.value}
                     </Text>
                   </Row>

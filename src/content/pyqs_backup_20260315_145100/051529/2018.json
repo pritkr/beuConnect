@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2018",
+    "subject": "INTRODUCTION TO JAVA PROGRAMMING LANGUAGE",
+    "subject_slug": "introduction-to-java-programming-language",
+    "subject_code": "051529",
+    "year": 2018,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer/Fill in the blank/Choose the correct option (any\n                    seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Java is an example of ________ language.</p>",
+          "options": [
+            "compiled",
+            "interpreted",
+            "hybrid",
+            "script"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The mother tongue of a computer is:</p>",
+          "options": [
+            "assembly language",
+            "machine language",
+            "BASIC language",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>You have the following code in a file called Test.java:<br/>\n</p><pre style=\"font-size: 10px;\">class Base{\n    public static void main(String[] args){\n        System.out.println(\"Hello\");\n    }\n}\npublic class Test extends Base{}</pre>\n                    What will happen if you try to compile and run this?<p></p>",
+          "options": [
+            "It will fail to compile",
+            "Runtime error",
+            "Compiles and runs with no output",
+            "Compiles and runs printing \"Hello\""
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following are valid declarations? (Note: None of the literals used here contain the\n                        character O, they are all zeroes.)</p>",
+          "options": [
+            "int i = 0XCAFE;",
+            "boolean b = 0;",
+            "byte b = 128;",
+            "char c = 'A';"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the result of trying to compile and run this program?<br/>\n</p><pre style=\"font-size: 10px;\">public class Test{\n    public static void main(String[] args){\n        int[] a = {1};\n        Test t = new Test();\n        t.increment(a);\n        System.out.println(a[a.length-1]);\n    }\n    void increment(int[] i){\n        i[i.length - 1]++;\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "Compiler error",
+            "Compiles and runs printing out 2",
+            "Compiles and runs printing out 1",
+            "An ArrayIndexOutOfBoundsException at runtime"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Is this legal?<br/>\n</p><pre style=\"font-size: 10px;\">long longArr[];\nint intArr[] = {7, 8, 9};\nlongArr = intArr;</pre>\n<p></p>",
+          "options": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>What is the result of attempting to compile and run this?<br/>\n</p><pre style=\"font-size: 10px;\">interface A{\n    void aMethod();\n}\npublic class Test implements A{\n    void aMethod(){\n        System.out.println(\"hello\");\n    }\n    public static void main(String[] args){\n        Test t = new Test();\n        t.aMethod();\n    }\n}</pre>\n<p></p>",
+          "options": [
+            "The code will not compile",
+            "Runtime exception",
+            "Compiles and runs printing out \"hello\""
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>What are the class variables?</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Explain the following code sample:<br/><code>result = someCondition ? value1 : value2;</code></p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Character strings are represented by the class java.lang.String.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Why is Java called machine independent language? Explain the functionality of JVM.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What is the main difference between an application and applet?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What are the wrapper classes? Explain their uses.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What does a dynamic Billboard Applet do? What are the three main classes that the applet contain?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is the difference between process-based and thread-based multitasking? Give the two ways by\n                        which a thread can be created using Java.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What is RMI? What is the difference between Naming.bind and Naming.rebind methods? Write a short\n                        code\n                        to invoke a remote method using Java RMI.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Write an Applet (Use swings) to display the outputs:</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/107.jpg\"/>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/106.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What are the characteristics of JDBC? What are the various steps for using JDBC? Write a program\n                        to\n                        demonstrate these steps.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>What is the main purpose of a container component in swing?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Design a class named Fan to represent a fan. The class contains:<br/>\n                        • Three constants named SLOW, MEDIUM and FAST with values 1, 2 and 3 to denote the fan\n                        speed.<br/>\n                        • A private int data field named speed that specifies the speed of the fan (default SLOW).<br/>\n                        • A private boolean data field named on that specifies whether the fan is on (default\n                        false).<br/>\n                        • A private double data field named radius that specifies the radius of the fan (default 5).<br/>\n                        • A string data field named colour that specifies the colour of the fan (default blue).<br/>\n                        • The accessor and mutator methods for all four data fields.<br/>\n                        • A no-arg constructor that creates a default fan.<br/>\n                        • A method named toString() that returns a string description for the fan. If the fan is on, the\n                        method returns the fan speed, colour, and radius in one combined string. If the fan is not on,\n                        the\n                        method returns fan colour and radius along with the string \"fan is off\" in one combined\n                        string.<br/><br/>\n                        Implement the class. Write a test program that creates two Fan objects. Assign maximum speed,\n                        radius\n                        10, colour yellow, and turn it onto the first object. Assign medium speed, radius 5, colour\n                        blue,\n                        and turn it off to the second object. Display the objects by invoking their toString method.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Write a program in Java to demonstrate communication using TCP/IP i.e., using sockets. Write a\n                        separate code for a server and client program. The program should display the contents of the\n                        file\n                        specified in a server onto the client.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Interface",
+            "String builder class",
+            "Object passing",
+            "Types of JDBC drivers",
+            "Listener method",
+            "Java exceptions",
+            "Polymorphism"
+          ]
+        }
+      ]
+    }
+  ]
+}

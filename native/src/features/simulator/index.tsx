@@ -208,7 +208,7 @@ function SimulateScreen(props: { nav: Nav }) {
         </If>
 
         <If when={state().status === "ready"}>
-          <Text class="text-[13px] leading-5 text-muted-foreground" numberOfLines={1}>
+          <Text class="text-[13px] leading-5 text-muted-foreground" style={{ numberOfLines: 1 }}>
             {identityLine(state().data)}
           </Text>
 

@@ -1,0 +1,159 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2020 (New Course)",
+    "subject": "Microprocessor and Microcontroller",
+    "subject_slug": "microprocessor-and-microcontroller",
+    "subject_code": "1045",
+    "year": 2020,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are EIGHT questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Differentiate between the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Microcontroller and Microprocessor</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>High level language and Low level language</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>RISC Processor and CISC Processor</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>I/O-Mapped I/O and Memory-Mapped I/O</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Assembler and Cross-Assembler</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>CALL and JMP</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>STAX and LDAX</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>XTHL and PCHL</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>RIM and SIM</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Draw and explain the architecture of 8086. Describe the function of queue in 8086. How does the\n                        queue\n                        speed up processing?</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Discuss the addressing technique used in 8086 and explain the various addressing modes of 8086.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of 8254 PPI and explain the various modes in which 8254 can operate and\n                        write\n                        down the control word for each mode. Specify the conditions to start the timer of 8254 PPI.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Draw and explain the pin diagram of 8051 microcontroller and explain the memory mapping of 8051.\n                    </p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the interfacing of 16 K EPROM and 8 K RAM to 8051 microcontroller.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the different interrupts available in 8085 processor. What are the purpose of the\n                        instructions RIM and SIM? How is the status of pending interrupts checked? Assuming the\n                        microprocessor is completing an RST 7.5 interrupt request, check to see if RST 6.5 is pending.\n                        If it\n                        is pending, enable RST 6.5 without affecting any other interrupts; otherwise, return to the main\n                        program.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A set of ten packed BCD numbers is stored in the memory location. Write a program to add these\n                        numbers in BCD, if carry is generated save it in register B, and adjust it for BCD. Write a\n                        subroutine to unpack the stored BCD sum and store it in two consecutive memory locations.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Two sets of three readings each are stored in memory. Write a program and draw the flowchart to\n                        sort\n                        the readings in descending order, assuming that the two sets are separated by the word FFH.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Write a program to insert a string of four characters from the tenth location in the given array\n                        of\n                        50 characters.</p>"
+        }
+      ]
+    }
+  ]
+}

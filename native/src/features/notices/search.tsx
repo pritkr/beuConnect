@@ -9,7 +9,7 @@ import { Btn, Chip, EmptyState, Label, Muted, Panel, Row, Search, Screen, Title 
 import { announcements, loadAnnouncementBodies, notices } from "./api";
 import {
   annBusy, annFailure, buildSearchRows, busy, clearRecent, failure, hydrateRecent, once, plural, recent,
-  rememberSearch, rememberSoon, rowCell, syncAnnouncements, syncNotices, type ListRow,
+  rememberSearch, rememberSoon, rowCell, sectionIndices, syncAnnouncements, syncNotices, type ListRow,
 } from "./parts";
 
 export function SearchScreen(props: { nav: Nav }) {
@@ -35,6 +35,7 @@ export function SearchScreen(props: { nav: Nav }) {
           keyExtractor={(row: ListRow) => row.key}
           estimatedItemSize={96}
           contentClass="px-4 pb-8 gap-2"
+          stickyHeaderIndices={sectionIndices(rows())}
           header={() => (
             <View class="gap-3 pb-2 pt-4">
               <View class="gap-1">

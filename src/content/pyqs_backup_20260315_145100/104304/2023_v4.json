@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 3rd Semester Examination, 2023",
+    "subject": "Network Theory",
+    "subject_slug": "network-theory",
+    "subject_code": "104304",
+    "year": 2023,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>What is the value of the unit step function \\( u(t-T) \\) at any time \\( t \\le T \\)</p>",
+          "options": [
+            "1",
+            "0",
+            "infinite",
+            "none of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>An RC high-pass filter consists of a 820 ohm resistor. What is the value of C is to be taken so\n                        that\n                        \\( X_c \\) is ten times less than R at an input frequency of 12 kHz?</p>",
+          "options": [
+            "81 µF",
+            "161 µF",
+            "0.161 µF",
+            "220 µF"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The transient current in an RLC circuit is oscillating when</p>",
+          "options": [
+            "\\( R = 2\\sqrt{\\frac{L}{C}} \\)",
+            "\\( R = 0 \\)",
+            "\\( R &lt; 2\\sqrt{\\frac{L}{C}} \\)",
+            "\\( R &gt; 2\\sqrt{\\frac{L}{C}} \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>A cut set matrix gives relation between</p>",
+          "options": [
+            "Branch currents and link currents",
+            "Branch voltages and tree branch voltages",
+            "Branch voltages and link voltages",
+            "Branch currents and tree currents"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>A network consists 4 nodes, 6 branches. How many basic loop can be formed?</p>",
+          "options": [
+            "3",
+            "9",
+            "1",
+            "2"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>In a series RLC circuit if C is increased resonant frequency</p>",
+          "options": [
+            "Increases",
+            "Decreases",
+            "It remains the same",
+            "It is zero"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>What is the type of filter shown in the figure?</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/78.jpg\"/>",
+          "options": [
+            "Low pass filter",
+            "High pass filter",
+            "Band pass filter",
+            "All pass filter"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Comment on the periodicity of a constant signal?</p>",
+          "options": [
+            "It is periodic",
+            "It is not periodic",
+            "It is a mixture of period and aperiodic signal",
+            "It depends on the signal"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The branches which are not present in a tree is called</p>",
+          "options": [
+            "twigs",
+            "links",
+            "co-tree",
+            "tie-set"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>A system is linear if it satisfies</p>",
+          "options": [
+            "Principle of superposition",
+            "Principle of homogeneity",
+            "Both (i) &amp; (ii)",
+            "Only (i)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>A given LTI system has produced an impulse response as shown by \\( h(t) \\) given in figure\n                        below.\n                        Find the time response of this LTI system when an input signal \\( x(t) \\) as shown below is\n                        applied\n                        to this system.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/77.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is filter? Discuss the advantages of an active filter over a passive filter.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What is band-pass filter? Derive the gain \\( \\left| \\frac{V_o}{V_{in}} \\right| \\) of a first\n                        order\n                        Butterworth active band-pass filter.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain clearly with the help of suitable examples the following terms used in network analysis:\n                        <br/>a) Oriented graph <br/>b) Tree <br/>c) Cut Set <br/>d) Tie Set <br/>e) Incidence matrix and its\n                        properties.\n                    </p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>For a symmetrical two port network prove that \\( AD - BC = 1 \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Obtain the first form of the Foster Network for the driving point impedance of LC network given\n                        as:\n                        \\( Z(S) = \\frac{10(S^2+4)(S^2+16)}{S(S^2+9)} \\)</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>What is Cauer's form of circuit realization? Describe briefly.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Establish the \\( \\pi - T / Y - \\Delta \\) transformation relations. Convert the \\( \\pi /\n                        \\Delta \\)\n                        into an equivalent \\( T / Y \\) network given below.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/76.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>For the following circuit draw the oriented graph and obtain the Tie-set matrix.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/75.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>In the following circuit \\( V_s = 200\\sqrt{2}\\cos 500t \\), \\( R = 80 \\Omega \\), \\( L =\n                        160 \\)\n                        mH.<br/>(a) Determine the current drawn from \\( V_s \\) and power absorbed by the LR circuit.\n                    </p>\n<p>(b) A capacitor is then connected across the \\( V_s \\), so that the current now drawn from \\(\n                        V_s\n                        \\)\n                        is in phase with \\( V_s \\). Determine the value of the capacitor and the power drawn from \\(\n                        V_s\n                        \\).\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/74.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Active Band pass filter</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Causal &amp; non causal signals with examples</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Zero order hold circuit</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Aliasing and its effect</p>"
+        }
+      ]
+    }
+  ]
+}

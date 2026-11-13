@@ -1,19 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
 ---
 
 <Layout title="Attendance Tracker - BEUConnect">
-    <Header />
-    <main class="attendance-container">
-        <header class="page-header">
-            <h1 class="glitch-text">Attendance<br/>Tracker</h1>
-            <p class="subtitle">Log your classes. Know exactly how many you can safely bunk.</p>
+    <div class="attendance-container">
+        <header class="page-head">
+            <div>
+                <h1>Attendance</h1>
+                <p class="meta">Saved on this device</p>
+            </div>
         </header>
 
         <section class="overview-section">
-            <div class="glass-card total-stats">
+            <div class="total-stats">
                 <div class="stat-circle">
                     <svg class="progress-ring" width="80" height="80">
                         <circle class="ring-bg" cx="40" cy="40" r="36"></circle>
@@ -25,19 +24,19 @@ import Footer from "../components/footer.astro";
                 </div>
                 <div class="stat-info">
                     <h2>Total Attendance</h2>
-                    <p id="totalClassesInfo">0 / 0 Classes Attended</p>
-                    <p class="status-msg" id="overallStatusMsg">Add subjects to start tracking.</p>
+                    <p id="totalClassesInfo">0 / 0 classes attended</p>
+                    <p class="status-msg" id="overallStatusMsg"></p>
                 </div>
             </div>
         </section>
 
         <section class="controls-section">
-            <form id="addSubjectForm" class="glass-card add-subject-form">
-                <input type="text" id="subjectName" placeholder="✨ Subject Name (e.g. Physics)" required autofocus />
-                <button type="submit" class="btn-primary">+</button>
+            <form id="addSubjectForm" class="add-subject-form">
+                <input type="text" id="subjectName" placeholder="Subject name" required autofocus />
+                <button type="submit" class="btn-primary">Add</button>
             </form>
 
-            <div class="glass-card settings-card">
+            <div class="settings-card">
                 <div class="settings-body">
                     <div class="setting-item">
                         <label for="targetPercentage">Target %</label>
@@ -54,9 +53,9 @@ import Footer from "../components/footer.astro";
                         </select>
                     </div>
                     <div class="setting-actions">
-                        <button id="exportBtn" class="btn-ghost" title="Export JSON">⬇️</button>
+                        <button id="exportBtn" class="btn-ghost" title="Export JSON">Export</button>
                         <label class="btn-ghost file-upload-label" title="Import JSON">
-                            ⬆️
+                            Import
                             <input type="file" id="importFile" accept=".json" class="hidden-file-input" />
                         </label>
                         <button id="resetBtn" class="btn-danger" title="Reset All">Reset</button>
@@ -68,11 +67,11 @@ import Footer from "../components/footer.astro";
         <section class="subjects-grid" id="subjectsContainer">
             <!-- Subjects will be injected here via JS -->
         </section>
-    </main>
+    </div>
 
     <!-- Modal System -->
     <div id="editModal" class="attendance-container-modal-overlay hidden">
-        <div class="modal-content glass-card">
+        <div class="modal-content">
             <div class="modal-header">
                 <h2>Edit Subject</h2>
                 <button class="modal-close" id="closeEditModal">&times;</button>
@@ -104,7 +103,6 @@ import Footer from "../components/footer.astro";
     <!-- Toast Container -->
     <div id="toastContainer" class="attendance-container-toast-container"></div>
 
-    <Footer />
 </Layout>
 
 <script>
@@ -427,11 +425,11 @@ import Footer from "../components/footer.astro";
             if (totalPercentEl) totalPercentEl.textContent = overall.percent.toString();
 
             const totalInfoEl = document.getElementById('totalClassesInfo');
-            if (totalInfoEl) totalInfoEl.textContent = `${totalAttended} / ${totalClasses} Classes Attended`;
+            if (totalInfoEl) totalInfoEl.textContent = `${totalAttended} / ${totalClasses} classes attended`;
 
             const statusMsgEl = document.getElementById('overallStatusMsg');
             if (statusMsgEl) {
-                statusMsgEl.textContent = totalClasses === 0 ? "Add subjects to start tracking." : overall.msg;
+                statusMsgEl.textContent = totalClasses === 0 ? "" : overall.msg;
                 statusMsgEl.className = `status-msg status-${overall.type}`;
             }
 
@@ -441,7 +439,7 @@ import Footer from "../components/footer.astro";
                 const circumference = radius * 2 * Math.PI;
                 const offset = circumference - (overall.percent / 100) * circumference;
                 ring.style.strokeDashoffset = offset.toString();
-                ring.style.stroke = overall.percent >= this.state.settings.targetPercentage ? '#10b981' : (totalClasses > 0 ? '#ef4444' : 'var(--accent-blue)');
+                ring.style.stroke = overall.percent >= this.state.settings.targetPercentage ? 'var(--ok)' : (totalClasses > 0 ? 'var(--bad)' : 'var(--line-strong)');
             }
 
             const container = document.getElementById('subjectsContainer');
@@ -450,14 +448,14 @@ import Footer from "../components/footer.astro";
             container.innerHTML = '';
 
             if (this.state.subjects.length === 0) {
-                container.innerHTML = '<div class="empty-state"><p>No subjects added yet. Add one above!</p></div>';
+                container.innerHTML = '<div class="empty-state"><p>No subjects yet.</p></div>';
                 return;
             }
 
             this.state.subjects.forEach((sub: Subject) => {
                 const status = this.state.calculateStatus(sub.attended, sub.total);
                 const card = document.createElement('div');
-                card.className = 'glass-card subject-card';
+                card.className = 'subject-card';
                 card.dataset.id = sub.id;
 
                 const hasHistory = sub.history && sub.history.length > 0;
@@ -466,8 +464,8 @@ import Footer from "../components/footer.astro";
                     <div class="subject-header">
                         <h3 class="subject-title"></h3>
                         <div class="subject-header-actions">
-                            <button class="icon-btn btn-edit" title="Edit Subject">✎</button>
-                            <button class="icon-btn btn-delete" title="Delete Subject">✕</button>
+                            <button class="icon-btn btn-edit" type="button">Edit</button>
+                            <button class="icon-btn btn-delete" type="button">Remove</button>
                         </div>
                     </div>
 
@@ -480,9 +478,9 @@ import Footer from "../components/footer.astro";
                     </div>
 
                     <div class="subject-actions">
-                        <button class="action-btn btn-present">✅ Present</button>
-                        <button class="action-btn btn-absent">❌ Absent</button>
-                        <button class="action-btn btn-undo" ${!hasHistory ? 'disabled' : ''} title="Undo last action">↺</button>
+                        <button class="action-btn btn-present" type="button">Present</button>
+                        <button class="action-btn btn-absent" type="button">Absent</button>
+                        <button class="action-btn btn-undo" type="button" ${!hasHistory ? 'disabled' : ''}>Undo</button>
                     </div>
                 `;
 
@@ -510,378 +508,421 @@ import Footer from "../components/footer.astro";
 </script>
 
 <style is:global>
-    /* Scope global styles securely using attribute or exact parent class prefixing to avoid framework bleed */
-
     .attendance-container {
-        max-width: 850px;
+        max-width: 60rem;
         margin: 0 auto;
-        padding: 1rem;
-        min-height: 80vh;
+        padding-bottom: var(--s7);
     }
 
-    .attendance-container .page-header {
-        text-align: center;
-        margin-bottom: 0.75rem; /* Reduced from 1.25rem */
-    }
-
-    .attendance-container .glitch-text {
-        font-size: clamp(1.6rem, 4vw, 2.2rem); /* Slightly smaller header */
-        font-weight: 900;
-        margin: 0;
-        line-height: 1.1;
-        background: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .attendance-container .subtitle {
-        color: var(--text-secondary);
-        margin-top: 0.25rem; /* Tighter */
-        font-size: 0.85rem; /* Smaller subtitle */
-    }
-
-    .attendance-container .glass-card {
-        background: var(--bg-card);
-        border: 1px solid var(--border-subtle);
-        border-radius: 12px;
-        padding: 0.75rem; /* Reduced from 1rem */
-        backdrop-filter: blur(12px);
-    }
-
-    /* Overview Section */
     .attendance-container .overview-section {
-        margin-bottom: 1rem;
+        margin: var(--s5) 0 var(--s4);
     }
 
+    .attendance-container :is(.total-stats, .settings-card, .subject-card, .add-subject-form, .modal-content) {
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        background: var(--surface);
+    }
+
+    /* Overview */
     .attendance-container .total-stats {
         display: flex;
         align-items: center;
-        gap: 0.75rem; /* Reduced from 1rem */
-        padding: 0.75rem; /* Reduced from 1rem */
-        justify-content: center;
-        flex-wrap: wrap;
+        gap: var(--s4);
+        padding: var(--s4) var(--s5);
     }
 
     .attendance-container .stat-circle {
         position: relative;
-        width: 80px;
-        height: 80px;
+        flex: 0 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 5rem;
+        height: 5rem;
     }
 
     .attendance-container .progress-ring {
         position: absolute;
-        top: 0;
-        left: 0;
+        inset: 0;
+        width: 5rem;
+        height: 5rem;
         transform: rotate(-90deg);
-        width: 80px;
-        height: 80px;
     }
 
     .attendance-container .ring-bg {
         fill: transparent;
-        stroke: rgba(148, 163, 184, 0.1);
-        stroke-width: 5;
-        cx: 40;
-        cy: 40;
-        r: 36;
+        stroke: var(--line);
+        stroke-width: 4;
     }
 
     .attendance-container .ring-progress {
         fill: transparent;
-        stroke: var(--accent-blue);
-        stroke-width: 5;
-        cx: 40;
-        cy: 40;
-        r: 36;
-        stroke-dasharray: 226.19; /* 2 * PI * 36 */
+        stroke: var(--accent);
+        stroke-width: 4;
+        stroke-linecap: butt;
+        stroke-dasharray: 226.19;
         stroke-dashoffset: 226.19;
-        stroke-linecap: round;
-        transition: stroke-dashoffset 0.5s ease-out, stroke 0.3s ease;
     }
 
     .attendance-container .stat-value {
-        font-size: 1.25rem;
-        font-weight: 900;
-        color: white;
-        z-index: 1;
+        color: var(--paper);
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-variant-numeric: tabular-nums;
+        line-height: 1;
+    }
+
+    .attendance-container .stat-info {
+        min-width: 0;
     }
 
     .attendance-container .stat-info h2 {
-        margin: 0 0 0.15rem 0;
-        font-size: 1.15rem;
-        color: white;
+        margin: 0 0 var(--s1);
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        font-weight: 650;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--faint);
     }
 
     .attendance-container .stat-info p {
         margin: 0;
+        color: var(--muted);
         font-size: 0.85rem;
-        color: var(--text-secondary);
+        font-variant-numeric: tabular-nums;
     }
 
     .attendance-container .status-msg {
-        margin-top: 0.15rem !important;
-        font-weight: 700;
-        font-size: 0.9rem;
+        margin-top: var(--s1) !important;
+        color: var(--muted);
     }
 
-    .attendance-container .status-safe { color: #10b981; }
-    .attendance-container .status-danger { color: #ef4444; }
+    .attendance-container .status-safe,
+    .attendance-container .text-safe {
+        color: var(--ok);
+    }
+
+    .attendance-container .status-danger,
+    .attendance-container .text-danger {
+        color: var(--bad);
+    }
 
     /* Controls */
     .attendance-container .controls-section {
-        display: flex;
-        gap: 0.5rem; /* Tighter gap */
-        margin-bottom: 0.75rem; /* Reduced from 1rem */
-        flex-wrap: nowrap; /* Prevent wrap so input takes full width */
-        flex-direction: column;
+        display: grid;
+        gap: var(--s3);
+        margin-bottom: var(--s5);
     }
 
     .attendance-container .add-subject-form {
         display: flex;
-        gap: 0.5rem;
-        padding: 0.4rem; /* Tighter padding around input */
         align-items: stretch;
-        background: rgba(59, 130, 246, 0.08);
-        border: 1px solid rgba(59, 130, 246, 0.4);
-        border-radius: 12px;
+        gap: var(--s2);
+        padding: var(--s2);
     }
 
     .attendance-container .add-subject-form input {
         flex: 1 1 auto;
         min-width: 0;
         width: 100%;
-        background: var(--bg-primary);
-        border: 2px solid rgba(59, 130, 246, 0.5); /* Make default border pop more */
-        border-radius: 8px; /* Slightly squarer than outer container */
-        padding: 0.6rem 1rem;
-        color: white;
-        font-size: 1rem;
-        box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); /* Inset shadow for depth */
-        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
         margin: 0;
+        padding: 0.55rem 0.7rem;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--r);
+        background: var(--bg);
+        color: var(--paper);
+        font-size: 0.9rem;
     }
 
     .attendance-container .add-subject-form input:focus {
-        outline: none;
-        border-color: var(--accent-blue);
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4), inset 0 2px 4px rgba(0,0,0,0.1);
+        border-color: var(--accent);
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
     }
 
     .attendance-container .add-subject-form button {
         flex: 0 0 auto;
-        white-space: nowrap;
-        padding: 0.6rem 1rem;
-        border-radius: 8px;
-        font-size: 1.25rem; /* Larger plus sign */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1; /* Keep it centered */
+        margin: 0;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 
-    .attendance-container .btn-primary, .attendance-container .btn-secondary {
-        padding: 0.6rem 1rem;
-        font-weight: 700;
-        border: none;
-        cursor: pointer;
-        transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-        font-size: 0.95rem;
+    .attendance-container .btn-primary,
+    .attendance-container .btn-secondary,
+    .attendance-container .btn-ghost,
+    .attendance-container .btn-danger {
         margin: 0;
+        border-radius: var(--r);
+        font-size: 0.82rem;
+        font-weight: 550;
+        cursor: pointer;
     }
 
     .attendance-container .btn-primary {
-        background: var(--accent-gradient);
-        color: white;
-        border-radius: 8px; /* Match form button radius */
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: var(--accent-ink);
     }
 
     .attendance-container .btn-primary:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
+        background: var(--accent-hover);
+        border-color: var(--accent-hover);
     }
 
-    .attendance-container .btn-secondary {
-        background: rgba(239, 68, 68, 0.1);
-        color: #ef4444;
-        border: 1px solid rgba(239, 68, 68, 0.2);
-        border-radius: 8px;
+    .attendance-container .btn-secondary,
+    .attendance-container .btn-ghost {
+        border: 1px solid var(--line-strong);
+        background: transparent;
+        color: var(--muted);
     }
 
-    .attendance-container .btn-secondary:hover {
-        background: rgba(239, 68, 68, 0.2);
+    .attendance-container .btn-secondary:hover,
+    .attendance-container .btn-ghost:hover {
+        border-color: var(--muted);
+        color: var(--paper);
     }
 
-    /* Subjects Grid */
+    .attendance-container .btn-ghost {
+        padding: 0.3rem 0.55rem;
+    }
+
+    .attendance-container .btn-danger {
+        border: 1px solid var(--line-strong);
+        background: transparent;
+        color: var(--bad);
+        padding: 0.3rem 0.55rem;
+    }
+
+    .attendance-container .btn-danger:hover {
+        border-color: var(--bad);
+    }
+
+    .attendance-container .settings-card {
+        padding: var(--s3) var(--s4);
+    }
+
+    .attendance-container .settings-body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--s3);
+        flex-wrap: wrap;
+    }
+
+    .attendance-container .setting-item {
+        display: flex;
+        align-items: center;
+        gap: var(--s2);
+    }
+
+    .attendance-container .setting-item label {
+        margin: 0;
+        color: var(--faint);
+        font-size: 0.78rem;
+    }
+
+    .attendance-container .setting-item select {
+        width: auto;
+        min-width: 4.5rem;
+        margin: 0;
+        padding: 0.25rem 0.4rem;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--r);
+        background: var(--bg);
+        color: var(--paper);
+        font-size: 0.82rem;
+    }
+
+    .attendance-container .setting-actions {
+        display: flex;
+        gap: var(--s2);
+    }
+
+    .attendance-container .file-upload-label {
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .attendance-container .hidden-file-input {
+        display: none;
+    }
+
+    /* Subjects */
     .attendance-container .subjects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 0.75rem; /* Reduced gap between subject cards */
+        grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+        gap: var(--s3);
     }
 
     .attendance-container .empty-state {
         grid-column: 1 / -1;
+        margin: 0;
+        padding: var(--s5);
+        border: 1px dashed var(--line-strong);
+        border-radius: var(--r);
+        color: var(--faint);
+        font-size: 0.88rem;
         text-align: center;
-        padding: 1.5rem; /* Reduced padding from 2.5rem */
-        color: var(--text-muted);
-        font-weight: 600;
-        background: rgba(15, 23, 42, 0.3);
-        border-radius: 12px;
-        border: 1px dashed var(--border-subtle);
     }
 
-    /* Subject Card Enhancements */
+    .attendance-container .empty-state p {
+        margin: 0;
+    }
+
+    .attendance-container .subject-card {
+        padding: var(--s4);
+    }
+
     .attendance-container .subject-header {
         display: flex;
+        align-items: baseline;
         justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0.5rem; /* Reduced margin */
+        gap: var(--s3);
+        margin-bottom: var(--s3);
+        padding-bottom: var(--s2);
+        border-bottom: 1px solid var(--line);
     }
 
     .attendance-container .subject-title {
         margin: 0;
-        font-size: 1.15rem;
-        color: white;
-        white-space: nowrap;
         overflow: hidden;
+        color: var(--paper);
+        font-family: var(--font-sans);
+        font-size: 0.95rem;
+        font-weight: 600;
         text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .attendance-container .subject-header-actions {
+        display: flex;
+        flex: 0 0 auto;
+        gap: var(--s2);
     }
 
     .attendance-container .icon-btn {
+        margin: 0;
+        padding: 0;
+        border: 0;
         background: none;
-        border: none;
-        color: var(--text-muted);
+        color: var(--faint);
+        font-size: 0.75rem;
         cursor: pointer;
-        font-size: 1.1rem;
-        transition: color 0.2s;
     }
 
     .attendance-container .icon-btn:hover {
-        color: #ef4444;
+        color: var(--paper);
+    }
+
+    .attendance-container .btn-delete:hover {
+        color: var(--bad);
     }
 
     .attendance-container .subject-stats {
-        margin-bottom: 0.75rem; /* Reduced from 1rem */
-        text-align: center;
+        margin-bottom: var(--s3);
     }
 
     .attendance-container .stat-main {
         display: flex;
         align-items: baseline;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-bottom: 0.15rem; /* Reduced from 0.25rem */
+        gap: var(--s2);
     }
 
     .attendance-container .stat-percent {
-        font-size: 1.75rem; /* Reduced from 2rem */
-        font-weight: 900;
+        color: var(--paper);
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-variant-numeric: tabular-nums;
         line-height: 1;
     }
 
     .attendance-container .stat-fraction {
-        color: var(--text-secondary);
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
-    .attendance-container .text-safe { color: #10b981; }
-    .attendance-container .text-danger { color: #ef4444; }
-
-    .attendance-container .subject-msg {
-        margin: 0;
-        font-size: 0.8rem;
-        font-weight: 600;
-    }
-
-    .attendance-container .subject-actions {
-        display: flex;
-        gap: 0.5rem;
-    }
-
-    .attendance-container .action-btn {
-        flex: 1;
-        padding: 0.5rem;
-        border: none;
-        border-radius: 8px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: background 0.2s;
-        font-size: 0.85rem;
-    }
-
-    .attendance-container .btn-present {
-        background: rgba(16, 185, 129, 0.15);
-        color: #10b981;
-    }
-
-    .attendance-container .btn-present:hover {
-        background: rgba(16, 185, 129, 0.25);
-    }
-
-    .attendance-container .btn-absent {
-        background: rgba(239, 68, 68, 0.15);
-        color: #ef4444;
-    }
-
-    .attendance-container .btn-absent:hover {
-        background: rgba(239, 68, 68, 0.25);
-    }
-
-    .attendance-container .subject-header-actions {
-        display: flex;
-        gap: 0.5rem;
+        color: var(--faint);
+        font-size: 0.82rem;
+        font-variant-numeric: tabular-nums;
     }
 
     .attendance-container .stat-fraction.clickable {
         cursor: pointer;
-        transition: color 0.2s;
         text-decoration: underline;
         text-decoration-color: transparent;
+        text-underline-offset: 2px;
     }
 
     .attendance-container .stat-fraction.clickable:hover {
-        color: var(--text-primary);
-        text-decoration-color: var(--text-muted);
+        color: var(--paper);
+        text-decoration-color: var(--line-strong);
+    }
+
+    .attendance-container .subject-msg {
+        margin: var(--s1) 0 0;
+        color: var(--faint);
+        font-size: 0.78rem;
+    }
+
+    .attendance-container .subject-actions {
+        display: flex;
+        gap: var(--s2);
+    }
+
+    .attendance-container .action-btn {
+        flex: 1 1 0;
+        margin: 0;
+        padding: 0.4rem;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--r);
+        background: transparent;
+        font-size: 0.8rem;
+        font-weight: 550;
+        cursor: pointer;
+    }
+
+    .attendance-container .btn-present {
+        color: var(--ok);
+    }
+
+    .attendance-container .btn-present:hover {
+        border-color: var(--ok);
+    }
+
+    .attendance-container .btn-absent {
+        color: var(--bad);
+    }
+
+    .attendance-container .btn-absent:hover {
+        border-color: var(--bad);
     }
 
     .attendance-container .btn-undo {
-        background: rgba(148, 163, 184, 0.15);
-        color: var(--text-muted);
-        flex: 0 0 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.1rem;
+        flex: 0 0 2.4rem;
+        color: var(--faint);
     }
 
     .attendance-container .btn-undo:hover:not(:disabled) {
-        background: rgba(148, 163, 184, 0.3);
-        color: white;
+        border-color: var(--muted);
+        color: var(--paper);
     }
 
     .attendance-container .btn-undo:disabled {
-        opacity: 0.3;
+        opacity: 0.4;
         cursor: not-allowed;
     }
 
-    /* Modal Styles */
+    /* Edit dialog */
     .attendance-container-modal-overlay {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(4px);
+        inset: 0;
+        z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 1000;
+        background: var(--scrim);
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.15s ease;
     }
 
     .attendance-container-modal-overlay.hidden {
@@ -894,276 +935,162 @@ import Footer from "../components/footer.astro";
 
     .attendance-container-modal-overlay .modal-content {
         width: 100%;
-        max-width: 400px;
-        margin: 1rem;
-        transform: translateY(20px);
-        transition: transform 0.3s ease;
-    }
-
-    .attendance-container-modal-overlay.visible .modal-content {
-        transform: translateY(0);
+        max-width: 26rem;
+        margin: var(--s4);
+        padding: var(--s5);
+        background: var(--surface);
     }
 
     .attendance-container-modal-overlay .modal-header {
         display: flex;
+        align-items: baseline;
         justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: var(--s4);
     }
 
     .attendance-container-modal-overlay .modal-header h2 {
         margin: 0;
-        font-size: 1.25rem;
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        font-weight: 400;
     }
 
     .attendance-container-modal-overlay .modal-close {
+        margin: 0;
+        padding: 0;
+        border: 0;
         background: none;
-        border: none;
-        color: var(--text-muted);
-        font-size: 1.5rem;
-        cursor: pointer;
+        color: var(--faint);
+        font-size: 1.2rem;
         line-height: 1;
+        cursor: pointer;
     }
 
     .attendance-container-modal-overlay .modal-close:hover {
-        color: white;
+        color: var(--paper);
     }
 
     .attendance-container-modal-overlay .form-group {
-        margin-bottom: 1rem;
+        margin-bottom: var(--s3);
     }
 
     .attendance-container-modal-overlay .form-row {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--s3);
     }
 
     .attendance-container-modal-overlay .form-group label {
         display: block;
-        margin-bottom: 0.5rem;
-        font-size: 0.85rem;
-        color: var(--text-secondary);
-        font-weight: 600;
+        margin-bottom: var(--s1);
+        color: var(--faint);
+        font-size: 0.75rem;
     }
 
     .attendance-container-modal-overlay .form-group input {
         width: 100%;
-        background: rgba(15, 23, 42, 0.4);
-        border: 1px solid var(--border-subtle);
-        border-radius: 8px;
-        padding: 0.75rem;
-        color: white;
-        font-size: 1rem;
+        margin: 0;
+        padding: 0.5rem 0.6rem;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--r);
+        background: var(--bg);
+        color: var(--paper);
+        font-size: 0.9rem;
     }
 
     .attendance-container-modal-overlay .form-group input:focus {
-        outline: none;
-        border-color: var(--accent-blue);
+        border-color: var(--accent);
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
     }
 
     .attendance-container-modal-overlay .modal-actions {
         display: flex;
         justify-content: flex-end;
-        gap: 1rem;
-        margin-top: 2rem;
+        gap: var(--s2);
+        margin-top: var(--s4);
     }
 
-    /* Toast System */
+    /* Toasts */
     .attendance-container-toast-container {
         position: fixed;
-        bottom: 2rem;
-        right: 2rem;
+        right: var(--s4);
+        bottom: var(--s4);
         z-index: 2000;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: var(--s2);
     }
 
     .attendance-container-toast-container .toast {
-        background: var(--bg-card);
-        border: 1px solid var(--border-subtle);
-        border-radius: 12px;
-        padding: 1rem 1.25rem;
         display: flex;
         align-items: center;
-        gap: 1rem;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        gap: var(--s3);
+        padding: var(--s3) var(--s4);
+        border: 1px solid var(--line-strong);
+        border-left-width: 3px;
+        border-radius: var(--r);
+        background: var(--surface);
+        color: var(--paper);
         transform: translateX(120%);
-        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: transform 0.2s ease;
     }
 
     .attendance-container-toast-container .toast.show {
         transform: translateX(0);
     }
 
-    .attendance-container-toast-container .toast-success { border-left: 4px solid #10b981; }
-    .attendance-container-toast-container .toast-error { border-left: 4px solid #ef4444; }
-    .attendance-container-toast-container .toast-info { border-left: 4px solid var(--accent-blue); }
+    .attendance-container-toast-container .toast-success { border-left-color: var(--ok); }
+    .attendance-container-toast-container .toast-error { border-left-color: var(--bad); }
+    .attendance-container-toast-container .toast-info { border-left-color: var(--accent); }
 
     .attendance-container-toast-container .toast-content {
-        font-size: 0.9rem;
-        font-weight: 500;
+        font-size: 0.85rem;
     }
 
     .attendance-container-toast-container .toast-close {
-        background: none;
-        border: none;
-        color: var(--text-muted);
-        cursor: pointer;
-        font-size: 1.2rem;
+        margin: 0;
         padding: 0;
+        border: 0;
+        background: none;
+        color: var(--faint);
+        font-size: 1rem;
         line-height: 1;
+        cursor: pointer;
     }
 
     .attendance-container-toast-container .toast-close:hover {
-        color: white;
-    }
-
-    /* Settings Styles */
-    .attendance-container .settings-card {
-        flex: 1;
-        min-width: 250px; /* Reduced from 300 */
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Changed from space-between */
-        padding: 0.75rem 1rem; /* Added explicit smaller padding to override glass-card */
-    }
-
-    .attendance-container .settings-header h3 {
-        display: none; /* Hide the header entirely to save space */
-    }
-
-    .attendance-container .settings-body {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.5rem; /* Reduced gap */
-        flex-wrap: wrap;
-    }
-
-    .attendance-container .setting-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .attendance-container .setting-item label {
-        font-weight: 600;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-    }
-
-    .attendance-container .setting-item select {
-        width: auto; /* Let it size to content */
-        min-width: 60px;
-        background: rgba(15, 23, 42, 0.4);
-        border: 1px solid var(--border-subtle);
-        border-radius: 8px;
-        padding: 0.3rem; /* Reduced padding */
-        color: white;
-        text-align: center;
-        font-weight: 700;
-        cursor: pointer;
-        font-size: 0.85rem;
-    }
-
-    .attendance-container .setting-actions {
-        display: flex;
-        gap: 0.5rem;
-    }
-
-    .attendance-container .btn-ghost {
-        background: transparent;
-        border: 1px dashed var(--border-subtle);
-        color: var(--text-secondary);
-        padding: 0.3rem 0.5rem; /* Tighter padding */
-        border-radius: 8px;
-        font-size: 0.85rem; /* Keep emojis legible */
-        font-weight: 600;
-        cursor: pointer;
-        transition: transform 0.2s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .attendance-container .btn-ghost:hover {
-        background: rgba(148, 163, 184, 0.1);
-        color: white;
-        border-color: var(--text-muted);
-    }
-
-    .attendance-container .btn-danger {
-        background: rgba(239, 68, 68, 0.1);
-        border: 1px solid rgba(239, 68, 68, 0.2);
-        color: #ef4444;
-        padding: 0.3rem 0.6rem; /* Tighter padding */
-        border-radius: 8px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: transform 0.2s;
-    }
-
-    .attendance-container .btn-danger:hover {
-        background: rgba(239, 68, 68, 0.2);
-    }
-
-    .attendance-container .file-upload-label {
-        display: inline-block;
-        margin: 0;
-        cursor: pointer;
-    }
-
-    .attendance-container .hidden-file-input {
-        display: none;
+        color: var(--paper);
     }
 
     @media (max-width: 600px) {
-        .attendance-container {
-            padding: 0.5rem;
+        .attendance-container .total-stats {
+            padding: var(--s3);
         }
-        .attendance-container .page-header {
-            margin-bottom: 0.5rem; /* Tighter header on mobile */
-        }
-        .attendance-container .add-subject-form {
-            flex-direction: row; /* KEEP horizontal on mobile */
-            gap: 0.5rem;
-            padding: 0.4rem; /* tighter padding on mobile too */
-            border-radius: 12px;
-        }
-        .attendance-container .add-subject-form input {
-            width: 100%;
-            min-width: 0;
-            padding: 0.5rem; /* even tighter on mobile */
-            font-size: 0.95rem; /* slightly smaller text */
-        }
-        .attendance-container .add-subject-form button {
-            width: auto;
-            white-space: nowrap;
-            padding: 0.5rem 1rem; /* Slightly wider padding for touch target */
-            font-size: 1.25rem; /* Keep the plus sign large */
-        }
-        .attendance-container .controls-section {
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem; /* tighter on mobile */
-        }
+
         .attendance-container .settings-body {
-            gap: 0.4rem; /* tighter on mobile */
+            align-items: flex-start;
         }
-        .attendance-container .btn-ghost, 
-        .attendance-container .btn-danger {
-            padding: 0.3rem 0.4rem; /* tighter buttons on mobile */
-        }
-        .attendance-container-toast-container {
-            bottom: 1rem;
-            right: 1rem;
-            left: 1rem;
-        }
-        .attendance-container-toast-container .toast {
+
+        .attendance-container .setting-actions {
             width: 100%;
+        }
+
+        .attendance-container .setting-actions > * {
+            flex: 1 1 0;
+        }
+
+        .attendance-container-toast-container {
+            left: var(--s3);
+            right: var(--s3);
+            bottom: var(--s3);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .attendance-container-modal-overlay,
+        .attendance-container-toast-container .toast {
+            transition: none;
         }
     }
 </style>

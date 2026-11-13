@@ -16,8 +16,15 @@ the code wins — then fix the doc in the same change.
 | `ANDROID.md` | host, packaging, install, device debugging | the host or toolchain changes |
 | `SHOTS.md` | screenshot QA | the sweep or route set changes |
 | `A11Y_AUDIT.md` | contrast, touch, small screens | a finding is fixed or added |
+| `QA_RUBRIC.md` | the acceptance rubric: contract, states, evidence, hard gates | a gate, test or evidence file changes |
+| `ANDROID_TEST_PLAN.md` | the device matrix and the release cases | a device, API level or WebView surface changes |
+| `BLOCKERS.md` | ranked S0–S3 defects, evidence and fix location | a blocker is found, fixed or re-ranked |
 | `NOTES.md`, `STUDENTS_DATA.md`, `SYLLABUS_PARITY.md` | data pipelines and gaps | the pipeline or source changes |
 | `RELEASE.md` | the release sequence | a step changes |
+| `PLAY_STORE.md` | what Play requires, the AAB path, the store listing | a store requirement or upload step changes |
+| `DATA_SAFETY.md` | the Play Data safety form answers, mapped to code | the form, a data type, or a collection path changes |
+| `RESULT_CORPUS.md` | the consent-gated result corpus: schema, API, read path | the corpus ships or its schema/consent changes |
+| `DATA_BREADTH.md` | pack model and the data-coverage plan | a pack is added or the manifest changes |
 | `size-history.json` | append-only size runs | written by `size-report.sh --record`, never by hand |
 
 ## Rules

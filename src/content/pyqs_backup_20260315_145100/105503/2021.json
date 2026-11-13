@@ -1,0 +1,311 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2021",
+    "subject": "FORMAL LANGUAGES AND AUTOMATA THEORY",
+    "subject_slug": "formal-languages-and-automata-theory",
+    "subject_code": "105503",
+    "year": 2021,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following statements is/are False?</p>",
+          "options": [
+            "A. For every non-deterministic Turing machine, there exists an equivalent deterministic\n                            Turing\n                            machine.",
+            "B. Turing recognizable languages are closed under union and complementation.",
+            "C. Turing decidable languages are closed under intersection and complementation.",
+            "D. Turing recognizable languages are closed under union and intersection.",
+            "(i) A and D only (ii) A and C only (iii) B only (iv) C only"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Enumerator is a Turing machine with</p>",
+          "options": [
+            "an output printer",
+            "5 input tapes",
+            "a stack",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The language \\( \\{a^m b^n c^{m+n} \\mid m, n \\ge 1\\} \\) is</p>",
+          "options": [
+            "regular",
+            "context-free but not regular",
+            "context-sensitive but not context-free",
+            "type-0 but not context-sensitive"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The maximum number of states of a DFA converted from an NFA with \\( n \\) states is</p>",
+          "options": [
+            "\\( n \\)",
+            "\\( n^2 \\)",
+            "\\( 2^n \\)",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>If \\( L_1 \\) and \\( L_2 \\) are context-free languages, \\( L_1 - L_2 \\) is</p>",
+          "options": [
+            "always context-free.",
+            "sometimes context-free.",
+            "never context-free.",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following does not have left recursions?</p>",
+          "options": [
+            "Chomsky normal form",
+            "Greibach normal form",
+            "Backus-Naur form",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Let N be an NFA with \\( n \\) states and let M be the minimized DFA with \\( m \\) states\n                        recognizing\n                        the same language. Which of the following is necessarily true?</p>",
+          "options": [
+            "\\( m \\le 2^n \\)",
+            "\\( n \\le m \\)",
+            "M has one accept state",
+            "\\( m = 2^n \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>_____ is the acyclic graphical representation of a grammar.</p>",
+          "options": [
+            "Binary tree",
+            "Octtree",
+            "Parse tree",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A minimum state deterministic FA accepting the language \\( L = \\{w \\mid w \\in \\{0, 1\\}^*\\}\n                        \\)\n                        where\n                        number of 0's and 1's in w are divisible by 3 and 5 respectively, has</p>",
+          "options": [
+            "15 states",
+            "11 states",
+            "10 states",
+            "9 states"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The construction time for DFA from an equivalent NFA (\\( m \\) number of node) is</p>",
+          "options": [
+            "\\( O(m^2) \\)",
+            "\\( O(2^m) \\)",
+            "\\( O(m) \\)",
+            "\\( O(\\log m) \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Tabulate Chomsky hierarchy of grammar with an example for each.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Design a finite state machine abstract model for Parity checker.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Construct an NFA that will accept string of 0's, 1's and 2's beginning with a 0's followed by odd\n                        number of 1's and ending with any number of 2's.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Construct a push-down automata that accepts the following language: \\( L = \\{uawb : u \\text{\n                        and\n                        } w\n                        \\in (a,b)^* \\text{ and } |u| = |w|\\} \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Design a Turing machine (TM) to compute \\( n \\mod 2 \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Design a DFA corresponding to regular expression \\( 1^*(10)^* \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Consider the grammar: \\( S \\rightarrow AB \\mid BC \\), \\( A \\rightarrow BA \\mid a \\), \\(\n                        B\n                        \\rightarrow\n                        CC \\mid b \\), \\( C \\rightarrow AB \\mid a \\). Use the CYK algorithm to determine whether\n                        the\n                        given\n                        string \"baaba\" is in \\( L(G) \\) or not.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Suppose L is context free and R is regular, justify your answer with the help of example:<br/>\n                        (i) Is \\( L - R \\) necessarily context free?<br/>\n                        (ii) Is \\( R - L \\) necessarily context free?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Show that the language \\( L = \\{a^{n!} : n \\ge 0\\} \\) is not regular or not context-free\n                        language.\n                    </p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Let G be a context-free grammar in Chomsky normal form that contains \\( b \\) variable. Show\n                        that\n                        if G\n                        generates some string using a derivation with at least \\( 2^b \\) steps, then \\( L(G) \\) is\n                        infinite.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>State and prove pumping lemma for regular sets.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Show given grammar over alphabet {a, b}, verify whether it is ambiguous or unambiguous : \\( S\n                        \\rightarrow aSa \\mid bSb \\mid a \\mid b \\mid \\epsilon \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Show that the sum function \\( f(x, y) = x + y \\) is primitive recursive.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Construct a PDA that accepts the language \\( L = \\{a^{2n}bc \\mid n \\ge 0\\} \\) by final\n                        state and\n                        empty stack.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Post-correspondence problem",
+            "Chomsky normal form",
+            "Multistack Turing machine",
+            "Pumping lemma for CFL"
+          ]
+        }
+      ]
+    }
+  ]
+}

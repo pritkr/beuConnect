@@ -23,8 +23,9 @@ import { AskAi } from "../../ui/ask-ai";
 import { paperPrompt } from "../../lib/ask-ai";
 import type { Children } from "../../ui";
 import { SITE, relativeTime } from "../../lib/net";
+import { EVENTS, track } from "../../lib/analytics";
 import type { CatalogPaper, CatalogSubject } from "./catalog";
-import { paperLabel, shortBranchName } from "./catalog";
+import { paperLabel } from "./catalog";
 import type { ParsedOption, ParsedQuestion, ParsedSubQuestion } from "./paper-parse";
 import { absoluteImage } from "./paper-parse";
 import type { PdfPaper } from "./pdf-index";
@@ -36,9 +37,9 @@ import type { RecentPaper } from "./state";
 export function Hero(props: { children?: Children; class?: string }) {
   return (
     <View class={`overflow-hidden rounded-[28px] border border-border bg-card p-5 ${props.class ?? ""}`}>
-      <View class="absolute -right-10 -top-14 h-44 w-44 rounded-full bg-primary/15" pointerEvents="none" />
-      <View class="absolute -right-2 top-6 h-20 w-20 rounded-full bg-accent/15" pointerEvents="none" />
-      <View class="absolute -bottom-16 -left-10 h-40 w-40 rounded-full bg-chart-3/15" pointerEvents="none" />
+      <View class="absolute -right-10 -top-14 h-44 w-44 rounded-full bg-primary/15" style={{ pointerEvents: "none" }} />
+      <View class="absolute -right-2 top-6 h-20 w-20 rounded-full bg-accent/15" style={{ pointerEvents: "none" }} />
+      <View class="absolute -bottom-16 -left-10 h-40 w-40 rounded-full bg-chart-3/15" style={{ pointerEvents: "none" }} />
       {props.children}
     </View>
   );
@@ -53,7 +54,7 @@ export function Head(props: { label: string; title: string; hint?: string; child
   return (
     <View class="gap-1.5">
       <Label>{props.label}</Label>
-      <Text class="text-[24px] font-bold leading-8 tracking-tight text-foreground" numberOfLines={3}>
+      <Text class="text-[24px] font-bold leading-8 tracking-tight text-foreground" style={{ numberOfLines: 3 }}>
         {props.title}
       </Text>
       {props.hint ? (
@@ -96,24 +97,13 @@ export function JumpCard(props: {
   );
 }
 
-/**
- * Rebuilds `build()` whenever `when` changes. For the few places that hand a
- * value to a component that reads it once — a card header waiting on a fetch,
- * a row that has to show its open state.
- */
-export function Fresh(props: { when: string; build: () => JSX.Element }) {
-  return (
-    <Each of={[props.when]} key={(value) => value}>
-      {() => props.build()}
-    </Each>
-  );
-}
-
 /* ------------------------------------------------------------------ filters */
 
 export interface RailOption {
   key: string;
   label: string;
+  /** Leading glyph, for a rail that shows a direction or a state. */
+  icon?: IconName;
 }
 
 /**
@@ -136,15 +126,26 @@ export function ChipRail(props: {
           {props.note ? <Muted>{props.note}</Muted> : null}
         </Row>
       ) : null}
-      <Scroll horizontal class="flex-1" scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
+      {/* No `flex-1`: the rail sits in a column, where flex-grow would size the
+          viewport's *height* to zero and hide every chip. A horizontal scroll
+          takes its height from its content. */}
+      <Scroll horizontal class="min-h-11" scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
         <Each
-          of={[`${props.value}|${props.options.map((option) => option.key).join(",")}`]}
+          of={[
+            `${props.value}|${props.options
+              .map((option) => `${option.key}:${option.icon ?? ""}`)
+              .join(",")}`,
+          ]}
           key={(signature) => signature}
         >
           {() => (
             <View class="flex-row gap-2">
               {props.options.map((option) => (
-                <Chip active={props.value === option.key} onPress={() => props.onSelect(option.key)}>
+                <Chip
+                  active={props.value === option.key}
+                  icon={option.icon}
+                  onPress={() => props.onSelect(option.key)}
+                >
                   {option.label}
                 </Chip>
               ))}
@@ -202,7 +203,7 @@ export function InfoRow(props: {
 }) {
   return (
     <View
-      class="min-h-11 flex-row items-center gap-3 rounded-3xl border border-border bg-card p-3.5 active:scale-[0.99] active:bg-muted"
+      class="min-h-11 flex-row items-center gap-3 rounded-3xl border border-border bg-card p-3.5 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted"
       onPress={props.onPress}
       role="button"
       accessibilityLabel={props.label}
@@ -217,18 +218,18 @@ export function InfoRow(props: {
           class={`text-[16px] font-bold tabular-nums leading-5 ${
             props.tone === "mint" ? "text-accent" : "text-foreground"
           }`}
-          numberOfLines={1}
+          style={{ numberOfLines: 1 }}
         >
           {props.lead}
         </Text>
         {props.leadHint ? (
-          <Text class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground" numberOfLines={1}>
+          <Text class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground" style={{ numberOfLines: 1 }}>
             {props.leadHint}
           </Text>
         ) : null}
       </View>
       <View class="flex-1 gap-1">
-        <Text class="text-[15px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+        <Text class="text-[15px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
           {props.title}
         </Text>
         {props.subtitle ? <Muted numberOfLines={1}>{props.subtitle}</Muted> : null}
@@ -250,7 +251,7 @@ export function InfoRow(props: {
 export function RecentCard(props: { item: RecentPaper; onPress: () => void }) {
   return (
     <View
-      class="w-[210px] gap-2 rounded-3xl border border-border bg-card p-4 active:scale-[0.98] active:bg-muted"
+      class="w-[210px] gap-2 rounded-3xl border border-border bg-card p-4 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted"
       onPress={props.onPress}
       role="button"
       accessibilityLabel={`Open ${props.item.name}, ${props.item.label}`}
@@ -261,7 +262,7 @@ export function RecentCard(props: { item: RecentPaper; onPress: () => void }) {
         </Badge>
         <Muted>{relativeTime(props.item.at)}</Muted>
       </Row>
-      <Text class="text-[14px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+      <Text class="text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
         {props.item.name}
       </Text>
       <Muted numberOfLines={1}>{props.item.label || props.item.code || "Previous year"}</Muted>
@@ -310,18 +311,18 @@ export function PdfYearRow(props: { paper: PdfPaper; label: string; onPress: () 
       <View class="w-14 shrink-0 items-center justify-center gap-0.5 rounded-xl bg-accent/10 py-1.5">
         <Text
           class="text-[14px] font-bold tabular-nums leading-4 text-accent-ink"
-          numberOfLines={1}
+          style={{ numberOfLines: 1 }}
           adjustsFontSizeToFit
           minimumFontScale={0.7}
         >
           {props.paper.year}
         </Text>
-        <Text class="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground" numberOfLines={1}>
+        <Text class="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground" style={{ numberOfLines: 1 }}>
           PDF
         </Text>
       </View>
 
-      <Text class="flex-1 text-[13px] font-semibold leading-5 text-foreground" numberOfLines={1}>
+      <Text class="flex-1 text-[13px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 1 }}>
         {props.paper.subjectCode}
       </Text>
 
@@ -395,7 +396,7 @@ export function CopyButton(props: { text: string; label?: string; class?: string
  */
 function OptionLine(props: { option: ParsedOption; selectable: boolean }) {
   return (
-    <Text class="text-[13px] leading-6 text-foreground" selectable={props.selectable}>
+    <Text class="text-[13px] leading-6 text-foreground" style={{ userSelect: props.selectable ? "text" : "none" }}>
       {props.option.label ? `${props.option.label} ` : ""}
       {readableText(props.option.text)}
     </Text>
@@ -410,16 +411,16 @@ function SubQuestion(props: { sub: ParsedSubQuestion; selectable: boolean }) {
         {props.sub.label ? (
           <Text
             class="w-6 shrink-0 text-[12px] font-semibold tabular-nums leading-5 text-muted-foreground"
-            numberOfLines={1}
+            style={{ numberOfLines: 1 }}
           >
             {props.sub.label}
           </Text>
         ) : null}
-        <Text class="flex-1 text-[13px] leading-5 text-foreground" selectable={props.selectable}>
+        <Text class="flex-1 text-[13px] leading-5 text-foreground" style={{ userSelect: props.selectable ? "text" : "none" }}>
           {readableText(props.sub.text)}
         </Text>
         {props.sub.marks ? (
-          <Text class="shrink-0 text-[12px] font-semibold tabular-nums leading-5 text-foreground" numberOfLines={1}>
+          <Text class="shrink-0 text-[12px] font-semibold tabular-nums leading-5 text-foreground" style={{ numberOfLines: 1 }}>
             {`${props.sub.marks} m`}
           </Text>
         ) : null}
@@ -434,9 +435,8 @@ function SubQuestion(props: { sub: ParsedSubQuestion; selectable: boolean }) {
         {(src) => (
           <Image
             src={absoluteImage(SITE, src())}
-            resizeMode="contain"
             class="w-full rounded-xl border border-border bg-card"
-            style={{ height: 180 }}
+            style={{ objectFit: "contain", height: 180 }}
           />
         )}
       </Each>
@@ -467,7 +467,7 @@ export function QuestionCard(props: {
         <View class="w-9 shrink-0 items-end pt-0.5">
           <Text
             class="text-[12px] font-bold tabular-nums leading-5 text-primary-ink"
-            numberOfLines={1}
+            style={{ numberOfLines: 1 }}
             adjustsFontSizeToFit
             minimumFontScale={0.7}
           >
@@ -476,7 +476,7 @@ export function QuestionCard(props: {
         </View>
 
         <View class="flex-1 gap-2">
-          <Text class="text-[15px] leading-7 text-foreground" selectable={selectable}>
+          <Text class="text-[15px] leading-7 text-foreground" style={{ userSelect: selectable ? "text" : "none" }}>
             {readableText(props.question.text) || "The site published this question without its text."}
           </Text>
           <Each of={props.question.options} key="index">
@@ -489,10 +489,10 @@ export function QuestionCard(props: {
 
         {props.question.marks === null ? null : (
           <View class="w-9 shrink-0 items-end gap-0.5 pt-0.5">
-            <Text class="text-[13px] font-bold tabular-nums leading-5 text-foreground" numberOfLines={1}>
+            <Text class="text-[13px] font-bold tabular-nums leading-5 text-foreground" style={{ numberOfLines: 1 }}>
               {props.question.marks}
             </Text>
-            <Text class="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground" numberOfLines={1}>
+            <Text class="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground" style={{ numberOfLines: 1 }}>
               marks
             </Text>
           </View>
@@ -503,9 +503,8 @@ export function QuestionCard(props: {
         {(src) => (
           <Image
             src={absoluteImage(SITE, src())}
-            resizeMode="contain"
             class="w-full rounded-xl border border-border bg-card"
-            style={{ height: 220 }}
+            style={{ objectFit: "contain", height: 220 }}
           />
         )}
       </Each>
@@ -543,16 +542,16 @@ export function SectionTitle(props: { title: string; marks: number | null; index
         <Text
           class="flex-1 text-[15px] font-bold leading-6 tracking-tight text-foreground"
           role="header"
-          selectable
+          style={{ userSelect: "text" }}
         >
           {readableText(props.title) || `Section ${props.index + 1}`}
         </Text>
         {props.marks ? (
           <View class="w-9 shrink-0 items-end gap-0.5">
-            <Text class="text-[13px] font-bold tabular-nums leading-5 text-foreground" numberOfLines={1}>
+            <Text class="text-[13px] font-bold tabular-nums leading-5 text-foreground" style={{ numberOfLines: 1 }}>
               {props.marks}
             </Text>
-            <Text class="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground" numberOfLines={1}>
+            <Text class="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground" style={{ numberOfLines: 1 }}>
               marks
             </Text>
           </View>
@@ -567,6 +566,9 @@ export function SectionTitle(props: { title: string; marks: number | null; index
 
 /** Opens a paper from anywhere (recent cards, subject rows). */
 export function openPaper(nav: Nav, subject: CatalogSubject, paper: CatalogPaper): void {
+  // One place, every entrance: the subject, the year, and whether the student
+  // arrived through search or the shelf.
+  track(EVENTS.pyqPaperOpen, { subject: subject.name, year: paper.year, sem: subject.sem });
   nav.push("pyqs.paper", {
     slug: subject.slug,
     code: paper.code,
@@ -578,14 +580,4 @@ export function openPaper(nav: Nav, subject: CatalogSubject, paper: CatalogPaper
     branch: subject.branch,
     sem: subject.sem,
   });
-}
-
-/** The public page a paper was read from. */
-export function paperSource(slug: string): string {
-  return `${SITE}/pyqs/${slug}/`;
-}
-
-/** "CSE · Sem 3" — the one-line context most screens repeat. */
-export function courseHint(branch: string, sem: number): string {
-  return sem > 0 ? `${shortBranchName(branch)} · Sem ${sem}` : shortBranchName(branch);
 }

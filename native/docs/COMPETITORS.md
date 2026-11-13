@@ -422,7 +422,7 @@ Done when:
 
 ### 2. Give the students directory an entrance
 
-**Route** `students`, `.college`, `.branch`, `.student`, `.leads` — registered in
+**Route** `students`, `.colleges`, `.college`, `.branch`, `.student`, `.leads` — registered in
 `src/app/registry.tsx`, but **no screen links to it**. Add one entry to
 `src/app/more.tsx` under "Results & records" and one row on `home`.
 **Effort S · Impact H.**
@@ -430,9 +430,10 @@ Done when:
 Done when:
 - `more` carries `Students` ("Every BEU student, by college") and a tap lands on
   `students` in one push; the Home row is two taps from the greeting.
-- `students` lists batches, `students.college` lists branches with counts,
-  `students.branch` lists newest batch first, `students.student` hands off to
-  `results` and `results.rank`, `students.leads` shows top CGPA.
+- `students` lists batches, `students.colleges` lists every BEU college with the
+  register first and "No register" on the rest, `students.college` lists branches
+  with counts, `students.branch` lists newest batch first, `students.student`
+  hands off to `results` and `results.rank`, `students.leads` shows top CGPA.
 - Each route title names the college, branch or student — never "Students".
 - Every screen works with the network off (the register ships in
   `assets/data`).

@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Special Exam., 2020",
+    "subject": "Mathematics—I (Calculus and Linear Algebra)",
+    "subject_slug": "mathematics-i-calculus-and-linear-algebra",
+    "subject_code": "102102/105102",
+    "year": 2020,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven) :",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>If \\( Y = \\int_0^{\\infty} \\frac{x^a}{a^x} \\, dx, \\, a &gt; 1 \\), then the value of \\( Y\n                        \\)\n                        is</p>",
+          "options": [
+            "\\( \\frac{\\Gamma(a)}{[\\log_e a]^a} \\)",
+            "\\( \\frac{\\Gamma(a + 1)}{[\\log_e a]^a} \\)",
+            "\\( \\frac{\\Gamma(a + 1)}{[\\log_e a]^{a+1}} \\)",
+            "\\( \\frac{\\Gamma(a)}{[\\log_e a]^{a+1}} \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The area bounded by the axis of \\( x \\), and the curve and ordinates \\( y = \\cosh\n                        \\frac{x}{c} \\) from \\( x = 0 \\) to \\( x = a \\) is</p>",
+          "options": [
+            "\\( \\cosh \\frac{a}{c} \\)",
+            "\\( \\sinh \\frac{a}{c} \\)",
+            "\\( \\sinh \\frac{a}{c} \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Consider the following functions :<br/>\n                        1. \\( y = x \\sin \\frac{1}{x}, \\, x \\neq 0; \\, \\text{and } y = 0 \\, \\text{if } x = 0\n                        \\)<br/>\n                        2. \\( y = x^2 \\sin \\frac{1}{x}, \\, x \\neq 0; \\, \\text{and } y = 0 \\, \\text{if } x = 0\n                        \\)<br/>\n                        3. \\( y = x^2 \\cos \\frac{1}{x}, \\, x \\neq 0; \\, \\text{and } y = 0 \\, \\text{if } x = 0\n                        \\)<br/>\n                        4. \\( y = x \\cos \\frac{1}{x}, \\, x \\neq 0; \\, \\text{and } y = 0 \\, \\text{if } x = 0\n                        \\)<br/>\n                        The functions, differentiable at \\( x = 0 \\), are</p>",
+          "options": [
+            "1 and 2",
+            "2 and 3",
+            "3 and 4",
+            "1 and 4"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>For a positive term series \\( \\sum a_n \\), the ratio test states that</p>",
+          "options": [
+            "the series converges, if \\( \\lim_{n \\to \\infty} \\frac{a_{n+1}}{a_n} &gt; 1 \\)",
+            "the series converges, if \\( \\lim_{n \\to \\infty} \\frac{a_{n+1}}{a_n} &lt; 1 \\)",
+            "the series converges, if \\( \\lim_{n \\to \\infty} \\frac{a_{n+1}}{a_n} = 1 \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>If \\( \\lim_{x \\to \\infty} \\frac{\\sin 2x + a \\sin x}{x^3} = b \\) where \\( b \\) is\n                        finite, then the values of \\( a \\) and \\( b \\) respectively will be</p>",
+          "options": [
+            "(-2, -1)",
+            "(2, 1)",
+            "(-2, 1)",
+            "(2, -1)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The expansion of \\( \\tan x \\) in powers of \\( x \\) by Maclaurin's theorem is valid in the\n                        interval</p>",
+          "options": [
+            "\\( (-\\infty, \\infty) \\)",
+            "\\( \\left(-\\frac{3\\pi}{2}, \\frac{3\\pi}{2}\\right) \\)",
+            "\\( (-\\pi, \\pi) \\)",
+            "\\( \\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right) \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\lim_{(x, y) \\to (k, 0)} \\left(1 + \\frac{x}{y}\\right)^y \\) is</p>",
+          "options": [
+            "1",
+            "\\( e^{-k} \\)",
+            "\\( e^k \\)",
+            "Does not exist"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The gradient of the function \\( f(x, y, z) = \\sin(xyz) \\), at \\( (1, -1, \\pi) \\), is</p>",
+          "options": [
+            "\\( \\pi(i - j + k) \\)",
+            "\\( \\pi(i + j + k) \\)",
+            "\\( (i + j + k) \\)",
+            "\\( (\\pi i - \\pi j + k) \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>If det(A) = 7, where \\( A = \\begin{bmatrix} a &amp; b &amp; c \\\\ 1 &amp; 1 &amp; g \\\\ g\n                        &amp; \\omega &amp; 1\n                        \\end{bmatrix} \\), then det(2A)^{-1} is equal to</p>",
+          "options": [
+            "\\( \\frac{14}{49} \\)",
+            "\\( \\frac{1}{56} \\)",
+            "\\( \\frac{7}{2} \\)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>If \\( 3x + 2y + z = 0 \\), \\( x + 4y + z = 0 \\) and \\( 2x + y + 4z = 0 \\) be a system of\n                        equations, then</p>",
+          "options": [
+            "it is inconsistent",
+            "it has only the trivial solution (0, 0, 0)",
+            "it can be reduced to a single equation and so a solution does not exist",
+            "the determinant of the matrix of coefficients is zero"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Evaluate \\( \\int_{0}^{\\infty} \\log \\left( x + \\frac{1}{x} \\right) \\frac{dx}{1 + x^2} \\)\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Find the volume of the solid generated by rotating completely about the x-axis where the area\n                        enclosed between \\( y^2 = x^3 + 5x \\) and the line \\( x = 2 \\) and \\( x = 4 \\) about its\n                        major axis.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Find the maximum value of the function \\( f(x) = \\frac{x}{1 + x \\tan x} \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>It is given that Rolle's theorem holds for the function \\( f(x) = x^3 + bx^2 + cx \\), \\( 1\n                        \\leq x \\leq 2 \\) at the point \\( x = \\frac{4}{3} \\). Find the values of b and c.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Discuss the convergence of the sequence whose n-th term is \\( \\alpha_n = \\frac{(-1)^n}{n} + 1\n                        \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 8
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Test the convergence of the following series : \\( x^2 + \\frac{2^2 x^4}{3.4} + \\frac{2^2 4^2\n                        x^6}{3.4.5.6} + \\frac{2^2 4^2 6^2 x^8}{3.4.5.6.7.8} ... \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Find the Fourier series expansion of the function \\( f(x) = \\{x^2, -2 \\leq x \\leq 2\\} \\).\n                        Hence deduce that \\( \\frac{\\pi^2}{6} = \\frac{1}{1^2} + \\frac{1}{2^2} + \\frac{1}{3^2} +\n                        \\frac{1}{4^2} + ... \\)</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Find the Fourier cosine series and Fourier sine series of the following function in given\n                        interval : \\( f(x) = \\begin{cases} x, &amp; 0 &lt; x &lt; 2 \\\\ 2, &amp; 2 \\leq x &lt; 4\n                        \\end{cases} \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Discuss continuity of the following function at the point \\( (0, 0) \\) : \\( f(x, y) =\n                        \\begin{cases} \\frac{x^2 y^2}{\\left( x^3 + y^3 \\right)} , &amp; (x, y) \\neq (0, 0)\n                        \\\\ 0, &amp; (x, y) = (0, 0) \\end{cases} \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Find the maximum value of \\( xyz \\) under the constraints \\( x^2 + z^2 = 1 \\) and \\( y - x =\n                        0 \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 10,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the value of \\( \\lim_{x \\to {\\infty}} \\left( \\frac{x+4}{x+2} \\right)^{x+3} \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Find the equation of the tangent plane to the surface \\( x^2 - 3y^2 - z^2 = 2 \\), at the point\n                        \\( (3, 1, 2) \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Find the eigenvalues and eigenvectors of the following matrix : \\( \\begin{bmatrix} 6 &amp; -2\n                        &amp; 2\n                        \\\\ -2 &amp; 3 &amp; -1 \\\\ 2 &amp; -1 &amp; 3 \\end{bmatrix} \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Verify Cayley-Hamilton theorem for the matrix \\( \\begin{bmatrix} 0 &amp; 0 &amp; 1 \\\\ 3 &amp;\n                        1 &amp; 0 \\\\\n                        -2 &amp; 1 &amp; 4 \\end{bmatrix} \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Determine the range of the following linear transformation. Also find the rank of \\( T \\),\n                        where it exists. \\( T: V_2 \\to V_3 \\) defined by \\( T(x_1, x_2) = (x_1, x_1 + x_2, x_2) \\)\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

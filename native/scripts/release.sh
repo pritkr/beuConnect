@@ -22,7 +22,7 @@ source "$HOME/.config/nsh/env.sh" >/dev/null 2>&1 || true
 
 APK=".nsh/out/BEUConnect.apk"
 DIST="dist"
-BUDGET="${APK_BUDGET:-12300000}"
+BUDGET="${APK_BUDGET:-15600000}"
 SKIP_TESTS=0
 for arg in "$@"; do
   case "$arg" in

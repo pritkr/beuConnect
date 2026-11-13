@@ -36,7 +36,7 @@ import { studentsRoutes } from "../src/features/students";
 import { syllabusRoutes } from "../src/features/syllabus";
 import { toolsRoutes } from "../src/features/tools";
 import { PUSH_TARGETS } from "./push-targets";
-import { MORE_ENTRIES, TAB_ROUTES } from "./routes.contract";
+import { MORE_ENTRIES, ROUTE_CONTRACT, TAB_ROUTES } from "./routes.contract";
 
 /** Every feature module the registry merges, named as the area that owns it. */
 const FEATURES: { area: string; routes: RouteDef[] }[] = [
@@ -78,6 +78,16 @@ const PARAMS: { label: string; params: RouteParams }[] = [
     },
   },
 ];
+
+// `routes.contract.ts` is the guarded subset the app must ship. A name that has
+// not landed is a visible `todo` in the run, never a red suite: features are
+// built in parallel and QA reports the gap instead of blocking the gate. The
+// list is checked here so it cannot rot unread (it was exported and unused).
+for (const required of ROUTE_CONTRACT) {
+  if (!routeExists(required.name)) {
+    test.todo(`${required.name} — ${required.area} route is required by qa/routes.contract.ts`);
+  }
+}
 
 describe("route table", () => {
   test("no name is registered twice, and the merge loses nothing", () => {

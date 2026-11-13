@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2022 (New Course)",
+    "subject": "Design of Steel Structure",
+    "subject_slug": "design-of-steel-structure",
+    "subject_code": "101603",
+    "year": 2022,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Use of IS 800, IS 808 and Steel Tables is permitted.",
+    "Assume the necessary relevant data with justification, if required."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Splices for compression members are designed for</p>",
+          "options": [
+            "short column",
+            "intermediate column",
+            "long column",
+            "depending upon its thickness"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The slenderness ratio of compression members is limited to account for</p>",
+          "options": [
+            "the effect of accidental construction loads",
+            "They may be used as a walkway in braced roof truss system",
+            "vibrations",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Pitch in bolted connection shall not be more than ____ in tension member and ____ in compression\n                        member.</p>",
+          "options": [
+            "12t, 16t",
+            "20t, 16t",
+            "16t, 12t",
+            "16t, 20t"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>For same load, unsupported length and end conditions, a laced column as compared to battened\n                        column\n                    </p>",
+          "options": [
+            "is stronger",
+            "is weaker",
+            "is equally strong",
+            "Cannot be compared"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The best double-angle compression member section is</p>",
+          "options": [
+            "equal angles on same sides of gusset plate",
+            "equal angles on opposite sides of gusset plate",
+            "unequal angles with long legs back-to-back",
+            "unequal angles with short legs back-to-back"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The maximum gauge length in bolted connection is</p>",
+          "options": [
+            "100+4t, where t is thickness of thinner plate",
+            "100-4t, where t is thickness of thinner plate",
+            "4t, where t is thickness of thinner plate",
+            "100 mm"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The most suitable compression member section for a roof truss is</p>",
+          "options": [
+            "single angle",
+            "double angles placed as star",
+            "double angles placed back-to-back",
+            "tubes"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>An ideal section for compression member is</p>",
+          "options": [
+            "one having different moment of inertia about any axis through its centre of gravity",
+            "one having same moment of inertia about any axis through its centre of gravity",
+            "one having larger length",
+            "one made up of costly material"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The deflection of steel beams in buildings other than industrial building is limited to span\n                        divided\n                        by</p>",
+          "options": [
+            "180",
+            "250",
+            "300",
+            "325"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>In a bolted plate girder flange, the angle section used should be</p>",
+          "options": [
+            "equal angle",
+            "unequal angle with short leg horizontal",
+            "unequal angle with long leg horizontal",
+            "bulb angle"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>(i) Classify the plastic, compact and semi-compact sections. (ii) Consider a T-section of flange\n                        100\n                        mm x 10 mm and web 150 mm x 10 mm. Calculate shape factor, plastic moment and reserve of\n                        strength.\n                        Use Fe 410 grade of steel.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Design a double-cover plate butt joint using hexagonal head bolt ISO 4016-M 24 x 70-grade 5.6\n                        property class C to connect two flats of size 350 mm x 16 mm for the maximum efficiency. Assume\n                        plate material as E250.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>A water tank is made with 10 mm thick plates. The plates are jointed by a lap joint using 18 mm\n                        dia\n                        bolts of grade 4.6 property class C at a pitch of 60 mm. Find the efficiency of the joint.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>The tension member of a bridge truss consists of a channel ISMC 300. Design a fillet weld\n                        connection\n                        of the channel to a 10 mm gusset plate. The member has to transmit a factored force of 800 kN.\n                        The\n                        overlap is limited to 350 mm. Use field welding.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Differentiate between type-1 and type-2 bracket connections.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A beam ISMB 350@514 N/m has to transmit a factored end reaction of 200 kN to the flange of a\n                        column\n                        ISHB 250@536.6 N/m. Design a stiffened seat connection using shop welded fillet welds.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Discuss in detail the design procedure for built-up batten column.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>A column section ISHB 400@759.29 N/m is to be spliced. Design the splice plates and the\n                        connections\n                        using M20 bolts of product grade C and property class 4.6. Assume the column has machined ends.\n                        The\n                        factored design loads are the following: Axial load over the column = 525 kN, Shear force = 225\n                        kN,\n                        Bending moment = 75 kN-m.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A column of effective length is 9.3 m. It is subjected to an axial factored load of 1500 kN.\n                        Design\n                        the lacing system with site welded connections for two channels back-to-back.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Discuss in detail the stiffened and unstiffened seat connections.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A beam ISMB 400@604.3 N/m has to transmit a factored reaction of 160 kN to the flange of a framed\n                        column ISHB 200@392.4 N/m. Design a connection. Assume site welding.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A welded plate girder of 20 m span is subjected to the BM of 4000 kN-m and the SF of 800 kN (both\n                        are\n                        factored loads). The girder is laterally restrained. Use steel of grade Fe 410 and assume yield\n                        stress to be 250 MPa. Design the plate girder and check for bending strength.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Why is bracing system provided in the trusses? Why are sag rods required in roof trusses?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Design a channel section purlin using the available section of ISJC only for an industrial\n                        building\n                        to support a galvanized corrugated iron sheet roof for the following data: Span of truss = 10 m,\n                        Spacing of truss = 5 m, Spacing of purlins c/c = 1.5 m, Inclination of roof = \\( 30^{\\circ}\n                        \\),\n                        Wind pressure = \\( 2 kN/m^2 \\), Weight of galvanized sheet = \\( 150 N/m^2 \\).</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -246,7 +246,7 @@ export function PortalScreen(props: { nav: Nav }) {
           Back
         </Btn>
         <View class="flex-1 gap-0.5">
-          <Text class="text-[14px] font-semibold text-foreground" numberOfLines={1}>
+          <Text class="text-[14px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
             BEU result portal
           </Text>
           <Muted class="tabular-nums" numberOfLines={1}>

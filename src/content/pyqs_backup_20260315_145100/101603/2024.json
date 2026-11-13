@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Examination, 2024",
+    "subject": "Design of Steel Structures",
+    "subject_slug": "design-of-steel-structures",
+    "subject_code": "101603",
+    "year": 2024,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>High strength bolts are designed based on</p>",
+          "options": [
+            "Friction",
+            "Tension",
+            "Compression",
+            "Shear"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>A steel plate is 30cm wide and 10mm thick. If the diameter of the hole is 20mm, the net section\n                        area\n                        of the plate is</p>",
+          "options": [
+            "\\( 18cm^2 \\)",
+            "\\( 280cm^2 \\)",
+            "\\( 28cm^2 \\)",
+            "\\( 3242cm^2 \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The slenderness ratio in a tension member as per IS code where reversal of stress is due to loads\n                        other than wind or seismic should not exceed</p>",
+          "options": [
+            "350",
+            "180",
+            "100",
+            "60"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following is not a compression member?</p>",
+          "options": [
+            "Strut",
+            "Tie",
+            "Rafter",
+            "Boom"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The effective length of a battened column can be increased by</p>",
+          "options": [
+            "2%",
+            "10%",
+            "5%",
+            "15%"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>For the block shear failure of tension member, the failure occurs along a path through the\n                        connection\n                        involving</p>",
+          "options": [
+            "Tension on the two perpendicular planes",
+            "Shear on the two perpendicular planes",
+            "Tension and shear on the same plane",
+            "Tension on one plane and shear on another plane"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Critical bending moment capacity of a beam undergoing lateral torsional buckling</p>",
+          "options": [
+            "Does not depend on anything",
+            "Pure torsional resistance only",
+            "Warping torsional resistance only",
+            "Both torsional and warping resistance"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The load moment interaction diagrams are more or less similar to</p>",
+          "options": [
+            "Reinforced concrete column",
+            "Aluminum Columns",
+            "Prestressed Columns",
+            "Steel columns"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The pitch of spirals is limited to a range of</p>",
+          "options": [
+            "25-75 mm",
+            "40-45 mm",
+            "15-30 mm",
+            "10-30 mm"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following is not correct?</p>",
+          "options": [
+            "Angles and T section are strong in bending",
+            "Channels can be used only for light loads",
+            "I sections are most efficient and economical shapes",
+            "I section with cover plates are provided when large section modulus is required"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the key material properties of steel used in structural design and how they influence the\n                        behavior of steel structures.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Discuss how partial safety factors and load combinations are applied in the analysis and design\n                        of\n                        steel structures according to relevant codes and standards.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Design a lap joint between two plates as shown in figure 1 below to transmit a factored load of\n                        70 kN\n                        using M 16 bolts of grade 4.6 and grade 410 plates.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/189.jpg\"/>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Define effective throat thickness. Write down the types of weld joints.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Determine the design bending strength of ISLB 350 @ 406/m considering the beam to be laterally\n                        supported. The design shear force less than the design shear strength.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain web buckling and web crippling along with neat sketch.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A single unequal angle \\( 100 \\times 75 \\times 8 \\) is connected to a 12-mm thick gusset\n                        plate at\n                        the ends with six 18 mm-diameter bolts to transfer tension. Determine the design tensile\n                        strength of\n                        the angle if the yield and the ultimate stress of steel used are 250 MPa and 410 MPa: (i) if the\n                        gusset is connected to the 100-mm leg.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/188.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Design a lacing system for a 12-m long column to carry a factored axial load 1200kN. The column\n                        is\n                        restrained in position but not in direction at both ends. Assume that the channels are kept\n                        back-to-back.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Discuss in detail (i) Stiffened and unstiffened seat connections (ii) Type 1 and type 2 bracket\n                        connections.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>How do fillet welds differ from butt welds, and in what circumstances is a fillet weld typically\n                        preferred?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A simply supported beam of span 6 m supports a reinforced concrete slab. The compression flange\n                        of\n                        the beam is restrained due to its connection with the slab. The beam is subjected to a dead load\n                        of\n                        25 kN/m and an imposed load of 20 kN/m. Design the beam.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Design the base plate for the column of length 4m subjected to a factored moment of 45 kNm and a\n                        factored axial load of 500 kN. The column size is ISHB 250. The cube compressive strength of\n                        concrete in the foundation is \\( f_{ck} = 25 N/mm^2 \\). Use grade 410 steel.</p>"
+        }
+      ]
+    }
+  ]
+}

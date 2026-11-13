@@ -1,0 +1,309 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2017",
+    "subject": "Signals and System",
+    "subject_slug": "signals-and-system",
+    "subject_code": "031510",
+    "year": 2017,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Fill in the blanks of the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "The lengths of two discrete time sequences $x_1(n)$ and $x_2(n)$ are 5 and 7, respectively. The maximum length of a sequence $x_1(n) * x_2(n)$ is ______.",
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "For a signal $x(t)$, the Fourier transform is $X(f)$. Then the inverse Fourier transform of $X(3f+2)$ is ______.",
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "text": "Two discrete time systems with impulse responses $h_1[n] = \\delta[n-1]$ and $h_2[n] = \\delta[n-2]$ are connected in cascade. The overall impulse response of the cascaded system is ______.",
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "text": "For a periodic signal $v(t) = 30\\sin 100t + 10\\cos 300t + 6\\sin(500t + \\pi/4)$ the fundamental frequency in rad/s is ______.",
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "A discrete time system has impulse response $h[n] = 2^n u(n-4)$. Write 'Yes' if the system is stable or 'No' if the system is not stable. ______",
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "The impulse response of a system is $h(t) = t u(t)$. For an input of $u(t-2)$ the output is ______.",
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "The average power in the signal $s(t) = 10\\cos(20\\pi t - \\pi/2) + 6\\sin(15\\pi t)$ is ______.",
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "text": "$\\int_{-\\infty}^{\\infty} \\delta(t) dt = ______.",
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "The ROC of Laplace transform does not contain any ______.",
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "Z-transform is used for ______ time signal.",
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2",
+          "text": "Define the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "2a",
+              "text": "Stability",
+              "marks": 2
+            },
+            {
+              "id": "2b",
+              "text": "Causality",
+              "marks": 2
+            },
+            {
+              "id": "2c",
+              "text": "Random signal",
+              "marks": 2
+            },
+            {
+              "id": "2d",
+              "text": "Time-variant system",
+              "marks": 2
+            },
+            {
+              "id": "2e",
+              "text": "Linear system",
+              "marks": 2
+            },
+            {
+              "id": "2f",
+              "text": "Delta function",
+              "marks": 2
+            },
+            {
+              "id": "2g",
+              "text": "Memoryless system",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "id": "3a",
+          "text": "Consider the system $y[n] = 2 \\times x[n^2]$. Determine whether it is memoryless, causal, linear and time-invariant.",
+          "marks": 7
+        },
+        {
+          "id": "3b",
+          "text": "Determine the average power of the given signal $x(t)$. [Diagram: Periodic rectangular pulse signal with period $T=4$ and amplitude $A=2$ from $t=-1$ to $t=1$ in each cycle]",
+          "marks": 7
+        },
+        {
+          "id": "4",
+          "text": "A continuous time signal $x(t)$ is shown in the figure. Sketch the following signals :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "4a",
+              "text": "$x(3-t)$",
+              "marks": 2
+            },
+            {
+              "id": "4b",
+              "text": "$x(4t+1)$",
+              "marks": 2
+            },
+            {
+              "id": "4c",
+              "text": "$[x(t) + x(-t)] u(t)$",
+              "marks": 2
+            },
+            {
+              "id": "4d",
+              "text": "$[\\delta(t+1) + \\delta(t-1)] x(t)$",
+              "marks": 2
+            },
+            {
+              "id": "4e",
+              "text": "$x(t)x(t-5)$",
+              "marks": 2
+            },
+            {
+              "id": "4f",
+              "text": "$x(t)\\delta(t-3)$",
+              "marks": 2
+            },
+            {
+              "id": "4g",
+              "text": "$x(2t-5)$",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "id": "5a",
+          "text": "(i) Find the inverse Fourier transform of $X(\\omega) = \\frac{1}{2-\\omega^2 + j3\\omega}$\n(ii) Consider a causal LTI system with frequency response $H(j\\omega) = \\frac{1}{j\\omega + 3}$. For a particular input $x(t)$ this system is observed to produce the output $y(t) = e^{-3t} u(t) - e^{-4t} u(t)$. Determine $x(t)$.",
+          "marks": 7
+        },
+        {
+          "id": "5b",
+          "text": "Find the inverse z-transform of $X(z) = \\frac{z}{z(z-1)(z-2)^2}$ for $|z| > 2$.",
+          "marks": 7
+        },
+        {
+          "id": "6",
+          "text": "Find the Laplace transform and the associated ROC for each of the following signals :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "6a",
+              "text": "$x(t) = \\delta(t-t_0)$",
+              "marks": 2
+            },
+            {
+              "id": "6b",
+              "text": "$x(t) = u(t-t_0)$",
+              "marks": 2
+            },
+            {
+              "id": "6c",
+              "text": "$x(t) = e^{-2t} [u(t) - u(t-5)]$",
+              "marks": 2
+            },
+            {
+              "id": "6d",
+              "text": "$x(t) = \\sum_{k=0}^\\infty \\delta(t - kT)$",
+              "marks": 2
+            },
+            {
+              "id": "6e",
+              "text": "$x(t) = \\delta(at+b)$, $a, b$ real constants",
+              "marks": 2
+            },
+            {
+              "id": "6f",
+              "text": "$x(t) = 1/t$",
+              "marks": 2
+            },
+            {
+              "id": "6g",
+              "text": "$x(t) = \\sin t$",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "text": "Determine whether or not each of the following signals is periodic. If a signal is periodic, determine its fundamental time period :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "7a",
+              "text": "$x[n] = \\sin(\\pi^2 n)$",
+              "marks": 2
+            },
+            {
+              "id": "7b",
+              "text": "$x(t) = \\cos t + \\sin 3t$",
+              "marks": 2
+            },
+            {
+              "id": "7c",
+              "text": "$x[n] = \\cos \\frac{n}{4}$",
+              "marks": 2
+            },
+            {
+              "id": "7d",
+              "text": "$x[n] = \\cos^2 \\frac{\\pi}{8} n$",
+              "marks": 2
+            },
+            {
+              "id": "7e",
+              "text": "$x(t) = \\sin t + \\sin 2t$",
+              "marks": 2
+            },
+            {
+              "id": "7f",
+              "text": "$x[n] = \\sin(5\\pi n)$",
+              "marks": 2
+            },
+            {
+              "id": "7g",
+              "text": "$x(t) = e^{-j3\\pi/4}$",
+              "marks": 2
+            }
+          ]
+        },
+        {
+          "id": "8a",
+          "text": "Calculate the Fourier series coefficient $a_k$ for the continuous time periodic signal $x(t)$ (a sawtooth waveform) shown in the figure.",
+          "marks": 7
+        },
+        {
+          "id": "8b",
+          "text": "The system is described by $y'(t) + 2y(t) = x(t) + x'(t)$. Find the impulse response of the LTI system if the system is causal.",
+          "marks": 7
+        },
+        {
+          "id": "9",
+          "text": "Write short notes on any two of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Even and odd symmetric signal"
+            },
+            {
+              "id": "9b",
+              "text": "Initial and final value theorem of Laplace transform"
+            },
+            {
+              "id": "9c",
+              "text": "Random and deterministic signals"
+            },
+            {
+              "id": "9d",
+              "text": "Force voltage analogy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

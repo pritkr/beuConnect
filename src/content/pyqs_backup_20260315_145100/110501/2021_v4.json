@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2021",
+    "subject": "Analog and Digital Communication System",
+    "subject_slug": "analog-and-digital-communication-system",
+    "subject_code": "110501",
+    "year": 2021,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Attempt any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Define Apogee and Perigee.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>What is the difference between LEO and GEO satellites?</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>What is intermodal dispersion?</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>What is acceptance angle? Discuss its importance.</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Compare the probability of error for ASK and BPSK modulation technique.</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>State the sampling theorem.</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>What is aliasing effect? How can it be reduced?</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Mention the uses of a limiter and discriminator in FM demodulation.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of narrow band FM generation system.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of SSB synchronous demodulation system.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the concept of AM SSB modulation and demodulation with block diagram and also derive\n                        mathematical expression for coherent detection.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What are pre-emphasis and de-emphasis and how is SNR improved by using pre-emphasis and\n                        de-emphasis?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Prove that bandwidth of an FM wave is infinity. Also represent the single tone FM wave as\n                        function of Bessel's function.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Derive the expression for the probability of error of the binary phase shift keying (BPSK)\n                        signal.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Draw and explain the block diagram of phase shift method for generating the SSB signal.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the block diagram of super-heterodyne receiver. Determine the image frequency for\n                        standard broadcast AM receiver using 455 kHz IF and tuned to a station at 640 kHz.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain flat top sampling in detail.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain the sampling process of a signal mathematically. How to generate PPM from PWM signal?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>PCM system uses a uniform quantizer followed by a 7-bit\n                        binary encoder. The bit rate of the system is equal to \\( 50 \\times 10^6 \\text{ bits/sec}\n                        \\).\n                        (i) What is the maximum message signal bandwidth for which the system operates satisfactory?\n                        (ii) Calculate the output signal-to-noise ratio when full load sinusoidal modulating wave of\n                        frequency 1 MHz is applied to the input.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Describe the operation of phase discriminator based FM demodulator.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is Differential Pulse Code Modulation? Explain the working of DPCM with a proper block\n                        diagram.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>(i) A radio transmitter radiates 10 kW and carrier power is 8.5 kW. Calculate the modulation\n                        index. (ii) A broadcast radio transmitter radiates 10 kW, when modulation percentage is 60.\n                        Calculate the carrier power.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Draw and explain the operation of optical receiver.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Derive the expression of acceptance angle for skew rays. An optical fiber has numerical aperture\n                        of 0.344. What is the acceptance angle for meridional rays? Calculate the acceptance angle for\n                        skew rays which change direction by 100° at each reflection.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>State the Kepler's law of planetary motion. Explain the ascending and descending nodes of a\n                        satellite.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>What is look angle? How does it calculate with shifting of satellite with respect to earth\n                        station?</p>"
+        }
+      ]
+    }
+  ]
+}

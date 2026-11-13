@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2017",
+    "subject": "Microprocessor and its Application",
+    "subject_slug": "microprocessor-and-its-application",
+    "subject_code": "031511",
+    "year": 2017,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer as directed any seven of the following:",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "How many general purpose registers are there in 8085 microprocessor?",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "Program counter is an 8-bit register. (State True or False)",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "How many address buses are there in 8085 microprocessor?",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "If sign flag is set result of the arithmetic operation is positive. (State True or False)"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "How many pins are there in 8085 microprocessor?",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "What is the addressing mode of the instruction STA 2400H?"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "LXI H, 2500H is a 3-byte instruction. (State True or False)"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "How many segment registers are there in 8086 microprocessor?",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "How many data buses are there in 8086 microprocessor?",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "Intel 8251 is a programmable counter/interval timer. (State True or False)",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "State the functions of the following pins of 8085 microprocessor: ALE, \\( IO/\\overline{M} \\),\n                        S0,\n                        S1, HLDA",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Discuss flag register of 8085 microprocessor.",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "What are the functions of the following instructions of 8085 microprocessor? LXI H, 2400H, RAL,\n                        LDA\n                        2500H, IN 01",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Explain addressing modes of 8085 microprocessor with suitable examples.",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 9,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Draw the timing diagram of MVI A, 05."
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Discuss the functions of program counter and stack pointer."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 5,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Write an assembly language program to add two 8-bit numbers and sum is 16 bits.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Write an assembly language program to find largest no. in a data array.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "What are the functions of the following pins of Intel 8257? DRQ0 - DRQ3, \\( A_6 - A_7 \\), AEN,\n                        ADSTB"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Draw and discuss the pin description of Intel 8251."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Write the functions of the following pins of 8086 microprocessor: \\( BHE/S7 \\), NMI, \\(\n                        \\overline{TEST} \\), \\( \\overline{DEN} \\)",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Discuss register organization of 8086 microprocessor.",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Write the functions of the following instructions of 8086 microprocessor: MOV AX, DX, ADD AL,\n                        35H,\n                        DIV CL, LODSB",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "Write an assembly language program to add series of 16 bit numbers and sum is 32 bits.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Interfacing to ADC</li>\n<li>Data transfer schemes</li>\n</ul>",
+          "options": [
+            "Interfacing to ADC",
+            "Data transfer schemes"
+          ]
+        }
+      ]
+    }
+  ]
+}

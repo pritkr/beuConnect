@@ -13,10 +13,22 @@
 
 import { Text, View } from "nsh";
 import type { Nav, RouteParams } from "../../app/router";
+import { EVENTS, track } from "../../lib/analytics";
 import { Card, SectionHeader } from "../../ui";
 import { Icon, type IconName } from "../../ui/icons";
+import { parseReg } from "../results/data";
+import type { Identity } from "../results/identity";
 import { daysUntil, parseIso } from "../tools/engine";
-import { attendance, classesToday, planExam, profile, routineAt, savedResult, studiedDone } from "./state";
+import {
+  attendance,
+  classesToday,
+  identity,
+  planExam,
+  profile,
+  routineAt,
+  savedResult,
+  studiedDone,
+} from "./state";
 import type { HomeProfile, SavedResult } from "./state";
 import { NoticePager } from "./pager";
 
@@ -56,11 +68,11 @@ function Door(props: {
       accessibilityLabel={props.label}
     >
       <Icon name={props.icon} size={19} class={INK[props.tone]} />
-      <Text class="flex-1 text-[15px] font-semibold text-foreground" numberOfLines={1}>
+      <Text class="flex-1 text-[15px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
         {props.title}
       </Text>
       {props.value ? (
-        <Text class="text-[13px] tabular-nums text-muted-foreground" numberOfLines={1}>
+        <Text class="text-[13px] tabular-nums text-muted-foreground" style={{ numberOfLines: 1 }}>
           {props.value}
         </Text>
       ) : null}
@@ -71,6 +83,24 @@ function Door(props: {
 
 /* ----------------------------------------------------------------- helpers */
 
+/**
+ * Every door on Home is a feature open, and the route already says which one:
+ * `results.rank` is the results feature, `tools.calculator` is tools. Wrapping
+ * the nav once is why no Door needs its own tracking prop.
+ */
+function trackedNav(nav: Nav): Nav {
+  return {
+    route: nav.route,
+    push: (name: string, params?: RouteParams) => {
+      track(EVENTS.featureOpen, { feature: name.split(".")[0], source: "home" });
+      nav.push(name, params);
+    },
+    pop: (count?: number) => nav.pop(count),
+    popToRoot: () => nav.popToRoot(),
+    replace: (name: string, params?: RouteParams) => nav.replace(name, params),
+  };
+}
+
 function courseParams(who: HomeProfile | null): RouteParams {
   return who ? { branch: who.branch, sem: who.sem } : {};
 }
@@ -78,6 +108,30 @@ function courseParams(who: HomeProfile | null): RouteParams {
 function resultParams(saved: SavedResult | null, who: HomeProfile | null): RouteParams {
   if (saved) return { reg: saved.reg, sem: saved.sem };
   return who ? { sem: who.sem } : {};
+}
+
+/**
+ * The result table is a whole branch, not one student, so it opens on the
+ * roster the student is already in: batch and branch read out of their
+ * registration number, the semester they last looked at. Nothing is invented —
+ * the screen falls back to the newest published semester for whatever is
+ * missing, and highlights their row when a registration number is passed.
+ */
+function tableParams(
+  saved: SavedResult | null,
+  who: HomeProfile | null,
+  person: Identity | null,
+): RouteParams {
+  const reg = saved?.reg || who?.reg || person?.reg || "";
+  const info = reg ? parseReg(reg) : null;
+  const params: RouteParams = {};
+  if (info?.batch) params.batch = info.batch;
+  const branch = person?.branchCode || who?.branch || info?.branch || "";
+  if (branch) params.branch = branch;
+  const sem = saved?.sem || person?.semester || who?.sem || 0;
+  if (sem) params.sem = sem;
+  if (reg) params.reg = reg;
+  return params;
 }
 
 /** "12 days" from the planner's saved exam date; "" when none is set. */
@@ -92,6 +146,7 @@ function plannerValue(now: Date): string {
 /* ------------------------------------------------------------------ blocks */
 
 export function StudySection(props: { nav: Nav }) {
+  const nav = trackedNav(props.nav);
   return (
     <View class="gap-2.5">
       <SectionHeader title="Study" />
@@ -106,22 +161,29 @@ export function StudySection(props: { nav: Nav }) {
               value={done > 0 ? `${done} studied` : ""}
               tone="mint"
               icon="book-open"
-              onPress={() => props.nav.push("syllabus")}
+              onPress={() => nav.push("syllabus")}
               label="Open the syllabus"
             />
             <Door
               title="Notes & VVI"
               tone="ember"
               icon="note"
-              onPress={() => props.nav.push("notes", courseParams(who))}
+              onPress={() => nav.push("notes", courseParams(who))}
               label="Open Notes & VVI"
             />
             <Door
               title="Previous papers"
               tone="amber"
               icon="file-blank"
-              onPress={() => props.nav.push("pyqs")}
+              onPress={() => nav.push("pyqs")}
               label="Open previous year papers"
+            />
+            <Door
+              title="Calculator"
+              tone="amber"
+              icon="calculator"
+              onPress={() => nav.push("tools.calculator")}
+              label="Open the SGPA calculator"
             />
             <Door
               title="Study planner"
@@ -129,7 +191,7 @@ export function StudySection(props: { nav: Nav }) {
               tone="mint"
               icon="calendar-check"
               last
-              onPress={() => props.nav.push("planner", courseParams(who))}
+              onPress={() => nav.push("planner", courseParams(who))}
               label="Open the study planner"
             />
           </Card>
@@ -140,6 +202,7 @@ export function StudySection(props: { nav: Nav }) {
 }
 
 export function ResultsSection(props: { nav: Nav }) {
+  const nav = trackedNav(props.nav);
   return (
     <View class="gap-2.5">
       <SectionHeader title="Results" />
@@ -154,21 +217,28 @@ export function ResultsSection(props: { nav: Nav }) {
               value={saved && saved.sgpa !== null ? saved.sgpa.toFixed(2) : ""}
               tone="ember"
               icon="bar-chart-alt-2"
-              onPress={() => props.nav.push("results", params)}
+              onPress={() => nav.push("results", params)}
               label="Open your result"
+            />
+            <Door
+              title="Result table"
+              tone="ember"
+              icon="table"
+              onPress={() => nav.push("results.table", tableParams(saved, who, identity()))}
+              label="Open the result table"
             />
             <Door
               title="University rank"
               tone="ember"
               icon="medal"
-              onPress={() => props.nav.push("results.rank", params)}
+              onPress={() => nav.push("results.rank", params)}
               label="Open the university rank"
             />
             <Door
               title="Merit list"
               tone="amber"
               icon="trophy"
-              onPress={() => props.nav.push("results.merit", courseParams(who))}
+              onPress={() => nav.push("results.merit", courseParams(who))}
               label="Open the merit list"
             />
             <Door
@@ -176,7 +246,7 @@ export function ResultsSection(props: { nav: Nav }) {
               tone="mint"
               icon="git-compare"
               last
-              onPress={() => props.nav.push("results.battle")}
+              onPress={() => nav.push("results.battle")}
               label="Open result battle"
             />
           </Card>
@@ -187,6 +257,7 @@ export function ResultsSection(props: { nav: Nav }) {
 }
 
 export function CampusSection(props: { nav: Nav; onRefresh: () => void }) {
+  const nav = trackedNav(props.nav);
   return (
     <View class="gap-2.5">
       <SectionHeader title="Campus" />
@@ -202,7 +273,7 @@ export function CampusSection(props: { nav: Nav; onRefresh: () => void }) {
               value={sum ? `${sum.percent}%` : ""}
               tone="mint"
               icon="user-check"
-              onPress={() => props.nav.push("tools.attendance")}
+              onPress={() => nav.push("tools.attendance")}
               label="Open attendance"
             />
             <Door
@@ -210,7 +281,7 @@ export function CampusSection(props: { nav: Nav; onRefresh: () => void }) {
               value={hasRoutine ? (today.length > 0 ? `${today.length} today` : "None today") : ""}
               tone="ember"
               icon="calendar-week"
-              onPress={() => props.nav.push("tools.routine")}
+              onPress={() => nav.push("tools.routine")}
               label="Open the routine"
             />
             <Door
@@ -218,7 +289,7 @@ export function CampusSection(props: { nav: Nav; onRefresh: () => void }) {
               tone="amber"
               icon="calendar-star"
               last
-              onPress={() => props.nav.push("tools.holidays")}
+              onPress={() => nav.push("tools.holidays")}
               label="Open the holiday list"
             />
           </Card>

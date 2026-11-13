@@ -1,0 +1,299 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 3rd Semester Examination, 2023",
+    "subject": "Mathematics-III",
+    "subject_slug": "mathematics-iii",
+    "subject_code": "104303",
+    "year": 2023,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/fill in the blank of the following (Answer\n                    any\n                    seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The value of Chebyshev polynomials \\( T_2(x) \\) is</p>",
+          "options": [
+            "\\( 2x^2 - 1 \\)",
+            "\\( 2x^2 + 1 \\)",
+            "\\( 4x^3 + 3x \\)",
+            "\\( 4x^3 - 3x \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The maximum number of edges in a simple graph with n vertices is</p>",
+          "options": [
+            "\\( \\frac{n(n-1)}{2} \\)",
+            "\\( 2^n \\)",
+            "\\( n^2 \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>If R is a relation on a finite set having n elements, then the number of relations on A is</p>",
+          "options": [
+            "\\( 2^n \\)",
+            "\\( 2^{n^2} \\)",
+            "\\( n^2 \\)",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Let R be a relation on a set A such that \\( R = R^{-1} \\), then R is</p>",
+          "options": [
+            "reflexive",
+            "transitive",
+            "symmetric",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Let \\( f(x) = \\frac{ax+b}{cx+d} \\), then \\( fof(x) = x \\) provided</p>",
+          "options": [
+            "\\( d = -a \\)",
+            "\\( d = a \\)",
+            "\\( a = b = c = d = 1 \\)",
+            "\\( a = b = 1 \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>SD is defined as</p>",
+          "options": [
+            "\\( \\sqrt{\\frac{\\sum f(x-\\bar{x})^2}{\\sum f}} \\)",
+            "\\( \\frac{\\sum f(x-\\bar{x})}{\\sum f} \\)",
+            "\\( \\frac{\\sum f(x-\\bar{x})^2}{\\sum f} \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Let A and B are two possible outcomes of an experiment and suppose \\( P(A) = 0.3 \\), \\( P(B) =\n                        K\n                        \\), \\( P(A \\cup B) = 0.6 \\). If A and B are mutually exclusive events then the value of K is\n                    </p>",
+          "options": [
+            "0.1",
+            "0.2",
+            "0.3",
+            "0.4"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>If the mean of poisson distribution is m, then SD of this distribution is</p>",
+          "options": [
+            "\\( m^2 \\)",
+            "\\( \\sqrt{m} \\)",
+            "m",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The median of the numbers 11, 10, 12, 13, 9 is</p>",
+          "options": [
+            "12.5",
+            "12",
+            "10.5",
+            "11"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>A hypothesis is false but is accepted, then there is an error of type _________.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Find the generating function of Chebyshev polynomials.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Show that \\( T_{n+1}(x) = 2xT_n(x) - T_{n-1}(x) \\), where \\( T_n(x) \\) is Chebyshev\n                        polynomials.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is the wavelet transform?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>For any three sets A, B, C prove that \\( A \\times (B \\cup C) = (A \\times B) \\cup (A \\times\n                        C)\n                        \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Prove that the relation R on the set \\( N \\times N \\) defined by \\( (a,b)R(c,d) \\in R\n                        \\Leftrightarrow a+d = b+c \\) for all \\( (a,b), (c,d) \\in N \\times N \\) is an equivalence\n                        relation.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Show that the function \\( f: Q \\rightarrow Q \\) given by \\( f(x) = 2x - 3 \\) for all \\( x\n                        \\in\n                        Q \\) is a bijection.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Show that: \\( \\int_0^p x(\\text{ber}^2 x + \\text{bei}^2 x)dx = p(\\text{ber } p \\text{ bei}'\n                        p -\n                        \\text{bei } p \\text{ ber}' p) \\).</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Write the vertex set and the edge set, and give a table showing the edge endpoint function for\n                        the\n                        given graph.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/100.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Discuss Skewness and Kurtosis for the following frequency distribution:</p>\n<table border=\"1\" style=\"width:100%; text-align:center; border-collapse:collapse;\">\n<tbody><tr>\n<th>Marks</th>\n<td>0-10</td>\n<td>10-20</td>\n<td>20-30</td>\n<td>30-40</td>\n<td>40-50</td>\n</tr>\n<tr>\n<th>No. of student</th>\n<td>5</td>\n<td>10</td>\n<td>40</td>\n<td>20</td>\n<td>25</td>\n</tr>\n</tbody></table>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>In a partially destroyed laboratory record of an analysis of a correlation data, the following\n                        results only are eligible: Variance of \\( x = 9 \\). Regression equations: \\( 40x - 18y = 214\n                        \\),\n                        \\( 8x - 10y + 66 = 0 \\). Find (i) mean values of x and y, (ii) coefficient of correlation\n                        between\n                        x and y, and (iii) the standard deviation of y and angle between the lines of regressions.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the mean and variance of binomial distribution.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>The probability that a pen manufactured by a company will be defective is 1/10. If 12 such pens\n                        are\n                        manufactured, find the probability that (i) exactly two will be defective, (ii) at least two\n                        will be\n                        defective and (iii) none will be defective.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>In a test 2000 electric bulbs, it was found that the life of a particular make was normally\n                        distributed with an average life of 2040 hours and SD of 60 hours. Estimate the number of bulbs\n                        likely to burn for (i) more than 2150 hours, (ii) less than 1950 hours and (iii) more than 1950\n                        hours and less than 2160 hours.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Find the curve of best fit of the type \\( y = ae^{bx} \\) to the following data by method of\n                        least\n                        square:</p>\n<table border=\"1\" style=\"width:100%; text-align:center; border-collapse:collapse;\">\n<tbody><tr>\n<th>X</th>\n<td>1</td>\n<td>5</td>\n<td>7</td>\n<td>9</td>\n<td>12</td>\n</tr>\n<tr>\n<th>Y</th>\n<td>10</td>\n<td>15</td>\n<td>12</td>\n<td>15</td>\n<td>21</td>\n</tr>\n</tbody></table>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>The mean of a certain normal population is equal to the standard error of the mean of the samples\n                        of\n                        100 from that distribution. Find the probability that the mean of the sample of 25 from the\n                        distribution will be negative.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>An unbiased coin is thrown n times. It is desired that the relative frequency of the appearance\n                        of\n                        head should lie between 0.49 and 0.51. Find the smallest value of n that will ensure this result\n                        with 90% confidence.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

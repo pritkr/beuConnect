@@ -1,17 +1,18 @@
 /**
  * Students — route registration.
  *
- * Five screens over one register that ships with the app, so the whole feature
+ * Six screens over one register that ships with the app, so the whole feature
  * works offline:
  *
  *   students          search the register, grouped by batch
+ *   students.colleges every BEU college: the register first, the rest A–Z
  *   students.college  the college's branches, with their counts
  *   students.branch   one branch, newest batch first
  *   students.student  one student, with the hand-off to Result and Rank
  *   students.leads    the top CGPA holders of one batch, from BEU's roster
  *
  * Titles read their params, so a header names the branch or the student instead
- * of repeating "Students" five times.
+ * of repeating "Students" six times.
  */
 
 import type { RouteDef, RouteParams } from "../../app/router";
@@ -19,6 +20,7 @@ import { displayName } from "../results/data";
 import { shortCollegeName } from "../results/colleges";
 import { COLLEGE_CODE, branchBySlug, studentByReg } from "./data";
 import { StudentsScreen } from "./students";
+import { CollegesScreen } from "./colleges";
 import { CollegeScreen } from "./college";
 import { BranchScreen } from "./branch";
 import { StudentScreen } from "./student";
@@ -37,6 +39,11 @@ export const studentsRoutes: RouteDef[] = [
     render: (nav) => <StudentsScreen nav={nav} />,
   },
   {
+    name: "students.colleges",
+    title: () => "Colleges",
+    render: (nav) => <CollegesScreen nav={nav} />,
+  },
+  {
     name: "students.college",
     title: (params) => {
       const code = str(params, "college");
@@ -48,7 +55,9 @@ export const studentsRoutes: RouteDef[] = [
     name: "students.branch",
     title: (params) => {
       const branch = branchBySlug(str(params, "branch"));
-      return branch ? `${branch.short} students` : "Branch";
+      if (!branch) return "Branch";
+      const session = str(params, "session");
+      return session ? `${branch.short} · ${session}` : `${branch.short} students`;
     },
     render: (nav) => <BranchScreen nav={nav} />,
   },

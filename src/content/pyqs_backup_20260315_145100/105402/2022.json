@@ -1,0 +1,276 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2022",
+    "subject": "Design and Analysis of Algorithms",
+    "subject_slug": "design-and-analysis-of-algorithms",
+    "subject_code": "105402",
+    "year": 2022,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven) :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Any decision trees that sorts elements has height</p>",
+          "options": [
+            "\\( \\Omega(\\lg n) \\)",
+            "\\( \\Omega(n) \\)",
+            "\\( \\Omega(n \\lg n) \\)",
+            "\\( \\Omega(n^2) \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which one of the following is an application of Queue Data Structure?</p>",
+          "options": [
+            "When a resource is shared among multiple consumers",
+            "When data is transferred asynchronously between two processes",
+            "Load balancing",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The complexity of binary search algorithm is</p>",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(\\log n) \\)",
+            "\\( O(n^2) \\)",
+            "\\( O(n \\log n) \\)"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>In linear search algorithm the worst case occurs when</p>",
+          "options": [
+            "the item is somewhere in the middle of the array",
+            "the item is not in the array at all",
+            "the item is the last element in the array",
+            "the item is the last element in the array or is not there at all"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Given an unsorted array. The array has this property that every element in array is at most k\n                        distance from its position in sorted array where k is a positive integer smaller than size of\n                        array.\n                        Which sorting algorithm can be easily modified for sorting this array and what is the obtainable\n                        time complexity?</p>",
+          "options": [
+            "Insertion sort with time complexity \\( O(kn) \\)",
+            "Heap sort with time complexity \\( O(n \\log k) \\)",
+            "Quick sort with time complexity \\( O(k \\log k) \\)",
+            "Merge sort with time complexity \\( O(k \\log k) \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Approach of dynamic programming is similar to</p>",
+          "options": [
+            "parsing",
+            "hash table",
+            "divide and conquer algorithm",
+            "greedy algorithm"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In the divide and conquer process, breaking the problem into smaller sub-problems is the\n                        responsibility of</p>",
+          "options": [
+            "divide/break",
+            "sorting/divide",
+            "conquer/solve",
+            "merge/combine"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A priority queue is implemented as a Max-heap. Initially it has 5 elements. The level order\n                        traversal\n                        of the heap is 10, 8, 5, 3, 2. Two new elements '1' and '7' are inserted into the heap in that\n                        order. The level order traversal of the heap after the insertion of the elements is</p>",
+          "options": [
+            "10, 8, 7, 5, 3, 2, 1",
+            "10, 8, 7, 2, 3, 1, 5",
+            "10, 8, 7, 1, 2, 3, 5",
+            "10, 8, 7, 3, 2, 1, 5"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>If a problem can be solved by combining optimal solutions to non-overlapping problems, the\n                        strategy\n                        is called</p>",
+          "options": [
+            "dynamic programming",
+            "greedy",
+            "divide and conquer",
+            "recursion"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The choice of polynomial class has led to the development of an extensive theory called</p>",
+          "options": [
+            "computational complexity",
+            "time complexity",
+            "problem complexity",
+            "decision complexity"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Calculate the time complexity of the following problem using divide and conquer strategies:<br/>\n                        (i) \\( T(n) = \\sqrt{n} T(\\sqrt{n}) + n \\), \\( n &gt; 2 \\)<br/>\n                        \\( = a \\), \\( n \\le 2 \\)<br/>\n                        (ii) \\( T(n) = T(n-1) + 1/n \\), \\( n &gt; 1 \\)<br/>\n                        \\( = 1 \\), \\( n = 1 \\)</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Write time function and calculate the time complexity, space complexity and number of function\n                        calls\n                        of the following pseudocode using substitution method:<br/>\n                        rec (n) {<br/>\n                        if (\\( n \\le 1 \\)) return(1);<br/>\n                        else { rec (n/2); for (\\( i=1; i \\le n; i++ \\)) printf(\"algorithm\"); }<br/>\n                        }</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the working of merge sort algorithm with an example. Give the complexity calculation of\n                        merge\n                        sort.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What are the rules of manipulate Big-Oh expression and about the typical growth rates of\n                        algorithms.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is heap sort? What is the effect of calling MAX-HEAPIFY(A, i) when the element A[i] is\n                        larger\n                        than its children?</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain how radix sort works, to what inputs it can be applied and what is its asymptotic\n                        complexity?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What do you mean by optimal solution in greedy approach? Define the properties and function of\n                        greedy\n                        approach. Consider the given graph \\( G=(V,E) \\) and find the minimum spanning tree by Prim's\n                        algorithms.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/210.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Find the optimal way to multiply the following matrices to perform the fewest\n                        multiplications:<br/>\n                        A1: \\( 5 \\times 11 \\), A2: \\( 11 \\times 4 \\), A3: \\( 4 \\times 15 \\), A4: \\( 15 \\times\n                        23\n                        \\)\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>You are given a graph containing n vertices and m edges and given that the graph doesn't contain\n                        cycle of odd length. What is the time complexity of the best known algorithm to find out whether\n                        the\n                        graph is bipartite or not?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What is activity selection problem? Suppose that instead of always selecting the first activity\n                        to\n                        finish, we select the last activity to start that is compatible with all previously selected\n                        activities. Describe how this approach is a greedy algorithm, and prove that it yields an\n                        optimal\n                        solution.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Cook's theorem",
+            "Approximation algorithms"
+          ]
+        }
+      ]
+    }
+  ]
+}

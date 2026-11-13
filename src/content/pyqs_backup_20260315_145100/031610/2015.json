@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2015",
+    "subject": "Signals and Systems",
+    "subject_slug": "signals-and-systems",
+    "subject_code": "031610",
+    "year": 2015,
+    "semester": 6,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven of the following questions :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Define causal system.",
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "What is continuous time signal?",
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "text": "Write the condition of existence for Laplace transform.",
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "text": "Define Fourier transform of a sequence.",
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "What is DTFT pair?",
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "What is Fourier integral?",
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "What are analogous systems?",
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "text": "Find the z-transform of discrete-time unit impulse $\\delta(n)$.",
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "What is z-transform of $A\\delta(n-m)$?",
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "Define region of convergence (ROC).",
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Sketch the following signal :\n$x(t) = A[U(t + a) - U(t - a)]$ for $a > 0$\nAlso determine whether the given signal is a power signal or an energy signal or neither.",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "Show that a system with excitation $x(t)$ and response $y(t)$ described by $y(t) = x(t/2)$ is linear, time-variant, non-causal.",
+          "marks": 7
+        },
+        {
+          "id": "3a",
+          "text": "Compare energy and power signals.",
+          "marks": 7
+        },
+        {
+          "id": "3b",
+          "text": "What are the elementary signals? Explain with suitable diagrams.",
+          "marks": 7
+        },
+        {
+          "id": "4a",
+          "text": "Compare force-voltage analogy with force-current analogy.",
+          "marks": 7
+        },
+        {
+          "id": "4b",
+          "text": "Obtain the solution of the differential equation given below using Laplace transform :\n$2 \\frac{dx}{dt} + 8x = 10$\nGiven $x(0^+) = 2$.",
+          "marks": 7
+        },
+        {
+          "id": "5a",
+          "text": "The Laplace transform of $f(t)$ is given by\n$F(s) = \\frac{4}{s(s+2)}$\nFind the final value using the final-value theorem and verify the result by determining $f(t)$ using inverse Laplace transform.",
+          "marks": 7
+        },
+        {
+          "id": "5b",
+          "text": "Find the inverse Fourier transform of $\\delta(\\omega - \\omega_0)$.",
+          "marks": 7
+        },
+        {
+          "id": "6a",
+          "text": "Write the Dirichlet's conditions for Fourier series.",
+          "marks": 7
+        },
+        {
+          "id": "6b",
+          "text": "Obtain Fourier series representation of the periodic rectangular waveform which is defined as\n$x(t) = \\begin{cases} 0 & \\text{for } t \\in (-T/2, -T/4) \\\\ A & \\text{for } t \\in (-T/4, T/4) \\\\ 0 & \\text{for } t \\in (T/4, T/2) \\end{cases}$",
+          "marks": 7
+        },
+        {
+          "id": "7a",
+          "text": "Explain the concept of negative frequency. Find the Fourier transform of the everlasting sinusoid $\\cos \\omega_0 t$.",
+          "marks": 7
+        },
+        {
+          "id": "7b",
+          "text": "Explain the linearity and time-scaling properties of Fourier transform.",
+          "marks": 7
+        },
+        {
+          "id": "8a",
+          "text": "Discuss the classification of turbines based on head.",
+          "marks": 7
+        },
+        {
+          "id": "8b",
+          "text": "Define specific speed. What are different types of turbine based on specific speed?",
+          "marks": 7
+        },
+        {
+          "id": "9",
+          "text": "A hydroelectric station is to be supplied with $10 \\text{ m}^3/\\text{s}$ of water through a penstock which has a friction factor of 0.016. The maximum normal head on the penstock is $50 \\text{ kg/cm}^2$ and a water hammer over pressure of 20% is anticipated over normal pressure. The safe stress in the steel used is presumed to be $3000 \\text{ kg/cm}^2$. The ready penstocks at site are likely to cost ₹ 65000 per tonne including erection charges. The life of the project is 50 years and the rate of interest is 7%. It is proposed to sell the energy at the rate of ₹ 3.03 per kWh. What should be the optimum diameter of the penstock, given that the OMR costs 5%? Assume the turbine efficiency to be 90% and the annual load factor as 0.4.",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

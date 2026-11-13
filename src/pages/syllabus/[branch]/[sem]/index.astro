@@ -3,8 +3,9 @@ export const prerender = true;
 import { getCollection } from 'astro:content';
 import Layout from "../../../../layouts/Layout.astro";
 import branchConfig from "../../../../assets/data/config.json";
-import Header from "../../../../components/header.astro";
-import Footer from "../../../../components/footer.astro";
+import AskAI from "../../../../components/AskAI.astro";
+import Icon from "../../../../components/Icon.astro";
+import SyllabusTopics from "../../../../components/SyllabusTopics.astro";
 import { getCanonicalPyqSubject, getPyqSubjectLookupKeys, slugifySubjectName } from "../../../../utils/pyqSubjects";
 
 export async function getStaticPaths() {
@@ -58,356 +59,318 @@ function getPyqSlug(sub) {
 
     return null;
 }
+
+const subjects = semData && Array.isArray(semData.subjects) ? semData.subjects : [];
+const electivesI = subjects.filter((sub) => (sub.electiveGroup || "") === "Program Elective I");
+const electivesII = subjects.filter((sub) => (sub.electiveGroup || "") === "Program Elective II");
+const nonElectives = subjects.filter((sub) => !sub.electiveGroup);
+const theory = nonElectives.filter((sub) => (sub.type || "").toLowerCase() !== "practical");
+const practicals = nonElectives.filter((sub) => (sub.type || "").toLowerCase() === "practical");
+
+// One loop over one shape: the four copies of the subject block used to be
+// four hand-maintained copies of the same sixty lines.
+const groups = [
+    { label: "Theory", subjects: theory },
+    { label: "Program Elective I", subjects: electivesI },
+    { label: "Program Elective II", subjects: electivesII },
+    { label: "Practical", subjects: practicals },
+].filter((group) => group.subjects.length);
 ---
 
-<Layout title={`Sem ${sem}-${branchInfo.code}`}>
-    <Header />
-    <h1>
-        <a
-            href={`${import.meta.env.BASE_URL}syllabus/${branchInfo.code}/`}
-            style={`view-transition-name:${branchInfo.code}`}
-            >←{branchInfo.name}</a>
-    </h1>
-    <h2 style={`view-transition-name:sem${sem}`}>Semester {sem}</h2>
+<Layout
+    title={`${branchInfo.name} semester ${sem}`}
+    description={`${branchInfo.name} semester ${sem} syllabus, subject by subject.`}
+>
+    <header class="page-head">
+        <div>
+            <p class="back">
+                <a href={`${import.meta.env.BASE_URL}syllabus/${branchInfo.code}/`} style={`view-transition-name:${branchInfo.code}`}>{branchInfo.name}</a>
+            </p>
+            <h1>Semester {sem}</h1>
+        </div>
+    </header>
 
     {
-        semData && semData.subjects && semData.subjects.length ? (
-            <section>
-                {(() => {
-                    const electivesI = semData.subjects.filter(
-                        (s: any) =>
-                            (s.electiveGroup || "") === "Program Elective I",
-                    );
-                    const electivesII = semData.subjects.filter(
-                        (s: any) =>
-                            (s.electiveGroup || "") === "Program Elective II",
-                    );
-                    const nonElectives = semData.subjects.filter(
-                        (s: any) => !s.electiveGroup,
-                    );
-                    const nonPracticals = nonElectives.filter(
-                        (s: any) =>
-                            (s.type || "").toLowerCase() !== "practical",
-                    );
-                    const practicals = nonElectives.filter(
-                        (s: any) =>
-                            (s.type || "").toLowerCase() === "practical",
-                    );
-                    return (
-                        <>
-                            {nonPracticals.length ? <h3>Theory</h3> : null}
-                            {nonPracticals.map((sub: any) => (
-                                <details>
-                                    <summary style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                                        <span style="flex: 1; margin-right: 1rem;">
-                                            <strong>{sub.name}</strong>
-                                            {sub.code ? ` (${sub.code})` : ""}
-                                            {` - ${sub.credits} Credits`}
-                                        </span>
+        groups.length ? (
+            <section class="subjects" data-syllabus>
+                {groups.map((group) => (
+                    <section class="subject-group">
+                        <h2>{group.label}</h2>
+                        {group.subjects.map((sub: any) => (
+                            <details class="subject" data-subject>
+                                <summary class="subject-summary">
+                                    <span class="subject-title">
+                                        <strong>{sub.name}</strong>
+                                        {sub.code ? ` (${sub.code})` : ""}
+                                        {` - ${sub.credits} Credits`}
+                                    </span>
+                                    <span class="subject-tail">
                                         {getPyqSlug(sub) ? (
-                                            <a 
+                                            <a
                                                 href={`${import.meta.env.BASE_URL}pyqs/${getPyqSlug(sub)}`}
-                                                role="button"
-                                                class="outline"
-                                                style="padding: 0.25rem 0.5rem; font-size: 0.75rem; text-decoration: none; border-radius: 4px; white-space: nowrap;"
+                                                class="pyq-link"
                                                 onclick="event.stopPropagation();"
-                                                title="View Previous Year Questions"
                                             >
-                                                📄 PYQs
+                                                PYQs
                                             </a>
                                         ) : null}
-                                    </summary>
-                                    {sub.content
-                                        ? (() => {
-                                              const ltp =
-                                                  sub.summary &&
-                                                  typeof sub.summary ===
-                                                      "object"
-                                                      ? [
-                                                            sub.summary
-                                                                .lecture != null
-                                                                ? `${sub.summary.lecture}L`
-                                                                : null,
-                                                            sub.summary
-                                                                .tutorial !=
-                                                            null
-                                                                ? `${sub.summary.tutorial}T`
-                                                                : null,
-                                                            sub.summary
-                                                                .practical !=
-                                                            null
-                                                                ? `${sub.summary.practical}P`
-                                                                : null,
-                                                        ]
-                                                            .filter(Boolean)
-                                                            .join(" + ")
-                                                      : null;
-                                              return (
-                                                      <p style="white-space: pre-wrap; color: rgba(255, 255, 255, 0.95); font-size: 0.9rem; line-height: 1.6;">
-                                                          {ltp ? `${ltp}\n` : ""}
-                                                          {sub.content}
-                                                      </p>
-                                              );
-                                          })()
-                                        : null}
-                                    {Array.isArray(sub.references) &&
-                                    sub.references.length ? (
-                                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                                            <p style="font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">References:</p>
-                                            <div style="color: rgba(255,255,255,0.8); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                                                {sub.references.map(
-                                                    (ref: any) => (
-                                                        <div style="display: flex; gap: 0.5rem;"><span style="color: #60a5fa;">•</span> <span>{ref}</span></div>
-                                                    ),
-                                                )}
-                                            </div>
-                                        </div>
-                                    ) : null}
-                                </details>
-                            ))}
-
-                            {electivesI && electivesI.length ? (
-                                <details>
-                                    <summary>
-                                        <strong>Program Elective I</strong>
-                                    </summary>
-                                    {electivesI.map((sub: any) => (
-                                        <details>
-                                            <summary style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                                                <span style="flex: 1; margin-right: 1rem;">
-                                                    <strong>{sub.name}</strong>
-                                                    {sub.code ? ` (${sub.code})` : ""}
-                                                    {` - ${sub.credits} Credits`}
-                                                </span>
-                                                {getPyqSlug(sub) ? (
-                                                    <a 
-                                                        href={`${import.meta.env.BASE_URL}pyqs/${getPyqSlug(sub)}`}
-                                                        role="button"
-                                                        class="outline"
-                                                        style="padding: 0.25rem 0.5rem; font-size: 0.75rem; text-decoration: none; border-radius: 4px; white-space: nowrap;"
-                                                        onclick="event.stopPropagation();"
-                                                        title="View Previous Year Questions"
-                                                    >
-                                                        📄 PYQs
-                                                    </a>
-                                                ) : null}
-                                            </summary>
-                                            {sub.content
-                                                ? (() => {
-                                                      const ltp =
-                                                          sub.summary &&
-                                                          typeof sub.summary ===
-                                                              "object"
-                                                              ? [
-                                                                    sub.summary
-                                                                        .lecture !=
-                                                                    null
-                                                                        ? `${sub.summary.lecture}L`
-                                                                        : null,
-                                                                    sub.summary
-                                                                        .tutorial !=
-                                                                    null
-                                                                        ? `${sub.summary.tutorial}T`
-                                                                        : null,
-                                                                    sub.summary
-                                                                        .practical !=
-                                                                    null
-                                                                        ? `${sub.summary.practical}P`
-                                                                        : null,
-                                                                ]
-                                                                    .filter(
-                                                                        Boolean,
-                                                                    )
-                                                                    .join(" + ")
-                                                              : null;
-                                                      return (
-                                                            <p style="white-space: pre-wrap; color: rgba(255, 255, 255, 0.95); font-size: 0.9rem; line-height: 1.6;">
-                                                                {ltp
-                                                                    ? `${ltp}\n`
-                                                                    : ""}
-                                                                {sub.content}
-                                                            </p>
-                                                      );
-                                                  })()
-                                                : null}
-                                            {Array.isArray(sub.references) &&
-                                            sub.references.length ? (
-                                                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                                                    <p style="font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">References:</p>
-                                                    <div style="color: rgba(255,255,255,0.8); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                                                        {sub.references.map(
-                                                            (ref: any) => (
-                                                                <div style="display: flex; gap: 0.5rem;"><span style="color: #60a5fa;">•</span> <span>{ref}</span></div>
-                                                            ),
-                                                        )}
-                                                    </div>
-                                                </div>
-                                            ) : null}
-                                        </details>
-                                    ))}
-                                </details>
-                            ) : null}
-
-                            {electivesII && electivesII.length ? (
-                                <details>
-                                    <summary>
-                                        <strong>Program Elective II</strong>
-                                    </summary>
-                                    {electivesII.map((sub: any) => (
-                                        <details>
-                                            <summary style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                                                <span style="flex: 1; margin-right: 1rem;">
-                                                    <strong>{sub.name}</strong>
-                                                    {sub.code ? ` (${sub.code})` : ""}
-                                                    {` - ${sub.credits} Credits`}
-                                                </span>
-                                                {getPyqSlug(sub) ? (
-                                                    <a 
-                                                        href={`${import.meta.env.BASE_URL}pyqs/${getPyqSlug(sub)}`}
-                                                        role="button"
-                                                        class="outline"
-                                                        style="padding: 0.25rem 0.5rem; font-size: 0.75rem; text-decoration: none; border-radius: 4px; white-space: nowrap;"
-                                                        onclick="event.stopPropagation();"
-                                                        title="View Previous Year Questions"
-                                                    >
-                                                        📄 PYQs
-                                                    </a>
-                                                ) : null}
-                                            </summary>
-                                            {sub.content
-                                                ? (() => {
-                                                      const ltp =
-                                                          sub.summary &&
-                                                          typeof sub.summary ===
-                                                              "object"
-                                                              ? [
-                                                                    sub.summary
-                                                                        .lecture !=
-                                                                    null
-                                                                        ? `${sub.summary.lecture}L`
-                                                                        : null,
-                                                                    sub.summary
-                                                                        .tutorial !=
-                                                                    null
-                                                                        ? `${sub.summary.tutorial}T`
-                                                                        : null,
-                                                                    sub.summary
-                                                                        .practical !=
-                                                                    null
-                                                                        ? `${sub.summary.practical}P`
-                                                                        : null,
-                                                                ]
-                                                                    .filter(
-                                                                        Boolean,
-                                                                    )
-                                                                    .join(" + ")
-                                                              : null;
-                                                      return (
-                                                            <p style="white-space: pre-wrap; color: rgba(255, 255, 255, 0.95); font-size: 0.9rem; line-height: 1.6;">
-                                                                {ltp
-                                                                    ? `${ltp}\n`
-                                                                    : ""}
-                                                                {sub.content}
-                                                            </p>
-                                                      );
-                                                  })()
-                                                : null}
-                                            {Array.isArray(sub.references) &&
-                                            sub.references.length ? (
-                                                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                                                    <p style="font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">References:</p>
-                                                    <div style="color: rgba(255,255,255,0.8); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                                                        {sub.references.map(
-                                                            (ref: any) => (
-                                                                <div style="display: flex; gap: 0.5rem;"><span style="color: #60a5fa;">•</span> <span>{ref}</span></div>
-                                                            ),
-                                                        )}
-                                                    </div>
-                                                </div>
-                                            ) : null}
-                                        </details>
-                                    ))}
-                                </details>
-                            ) : null}
-                            {practicals.length ? <h3>Practical</h3> : null}
-                            {practicals.map((sub: any) => (
-                                <details>
-                                    <summary style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                                        <span style="flex: 1; margin-right: 1rem;">
-                                            <strong>{sub.name}</strong>
-                                            {sub.code ? ` (${sub.code})` : ""}
-                                            {` - ${sub.credits} Credits`}
-                                        </span>
-                                        {getPyqSlug(sub) ? (
-                                            <a 
-                                                href={`${import.meta.env.BASE_URL}pyqs/${getPyqSlug(sub)}`}
-                                                role="button"
-                                                class="outline"
-                                                style="padding: 0.25rem 0.5rem; font-size: 0.75rem; text-decoration: none; border-radius: 4px; white-space: nowrap;"
-                                                onclick="event.stopPropagation();"
-                                                title="View Previous Year Questions"
-                                            >
-                                                📄 PYQs
-                                            </a>
-                                        ) : null}
-                                    </summary>
-                                    {sub.content
-                                        ? (() => {
-                                              const ltp =
-                                                  sub.summary &&
-                                                  typeof sub.summary ===
-                                                      "object"
-                                                      ? [
-                                                            sub.summary
-                                                                .lecture != null
-                                                                ? `${sub.summary.lecture}L`
-                                                                : null,
-                                                            sub.summary
-                                                                .tutorial !=
-                                                            null
-                                                                ? `${sub.summary.tutorial}T`
-                                                                : null,
-                                                            sub.summary
-                                                                .practical !=
-                                                            null
-                                                                ? `${sub.summary.practical}P`
-                                                                : null,
-                                                        ]
-                                                            .filter(Boolean)
-                                                            .join(" + ")
-                                                      : null;
-                                              return (
-                                                      <p style="white-space: pre-wrap; color: rgba(255, 255, 255, 0.95); font-size: 0.9rem; line-height: 1.6;">
-                                                          {ltp ? `${ltp}\n` : ""}
-                                                          {sub.content}
-                                                      </p>
-                                              );
-                                          })()
-                                        : null}
-                                    {Array.isArray(sub.references) &&
-                                    sub.references.length ? (
-                                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                                            <p style="font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 0.5rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">References:</p>
-                                            <div style="color: rgba(255,255,255,0.8); font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-                                                {sub.references.map(
-                                                    (ref: any) => (
-                                                        <div style="display: flex; gap: 0.5rem;"><span style="color: #60a5fa;">•</span> <span>{ref}</span></div>
-                                                    ),
-                                                )}
-                                            </div>
-                                        </div>
-                                    ) : null}
-                                </details>
-                            ))}
-                        </>
-                    );
-                })()}
+                                        <Icon name="chevron-down" size={14} class="subject-chevron" />
+                                    </span>
+                                </summary>
+                                <SyllabusTopics subject={sub} branch={branch} sem={sem} />
+                                {Array.isArray(sub.references) && sub.references.length ? (
+                                    <div class="references">
+                                        <p class="references-label">References</p>
+                                        <ul class="reference-list">
+                                            {sub.references.map((ref: any) => (
+                                                <li>{String(ref).replace(/^\s*\d+[.)]\s*/, "")}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ) : null}
+                            </details>
+                        ))}
+                    </section>
+                ))}
             </section>
         ) : (
-            <p>
-                <em>Data not available for this semester yet.</em>
-            </p>
+            <p class="empty">Syllabus is not available for this semester yet.</p>
         )
     }
-    <Footer />
+
+    <AskAI variant="dialog" />
 </Layout>
+
+<script>
+    // One delegated listener for the whole page: 48 syllabus pages carry a few
+    // hundred checkboxes each, and per-topic listeners would be pure weight.
+    const STORAGE_KEY = "beu_syllabus_done";
+    const root = document.querySelector("[data-syllabus]");
+
+    if (root instanceof HTMLElement) {
+        const readDone = () => {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (!raw) return new Set<string>();
+                const parsed = JSON.parse(raw);
+                if (!Array.isArray(parsed)) return new Set<string>();
+                return new Set(
+                    parsed.filter((id): id is string => typeof id === "string"),
+                );
+            } catch {
+                return new Set<string>();
+            }
+        };
+
+        const writeDone = (done: Set<string>) => {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify([...done]));
+            } catch {
+                // Private mode or a full quota: the checkbox still works for this visit.
+            }
+        };
+
+        const done = readDone();
+        const boxes = root.querySelectorAll<HTMLInputElement>(
+            'input[type="checkbox"][data-topic-id]',
+        );
+
+        for (const box of boxes) {
+            box.checked = done.has(box.dataset.topicId || "");
+        }
+
+        const countChecked = (scope: Element) => {
+            const all = scope.querySelectorAll('input[type="checkbox"][data-topic-id]');
+            let checked = 0;
+            for (const box of all) {
+                if (box instanceof HTMLInputElement && box.checked) checked += 1;
+            }
+            return { checked, total: all.length };
+        };
+
+        const refreshUnit = (unit: Element) => {
+            const out = unit.querySelector("[data-unit-progress]");
+            if (!(out instanceof HTMLElement)) return;
+            const { checked, total } = countChecked(unit);
+            out.textContent = `${checked}/${total}`;
+        };
+
+        const refreshSubject = (subject: Element) => {
+            const { checked, total } = countChecked(subject);
+            const out = subject.querySelector("[data-subject-progress]");
+            if (out instanceof HTMLElement) out.textContent = `${checked}/${total}`;
+            const clear = subject.querySelector("[data-clear-subject]");
+            if (clear instanceof HTMLElement) clear.hidden = checked === 0;
+        };
+
+        for (const subject of root.querySelectorAll("[data-subject]")) {
+            refreshSubject(subject);
+            for (const unit of subject.querySelectorAll("[data-unit-block]")) {
+                refreshUnit(unit);
+            }
+        }
+
+        root.addEventListener("change", (event) => {
+            const box = event.target;
+            if (!(box instanceof HTMLInputElement) || box.type !== "checkbox") return;
+            const id = box.dataset.topicId;
+            if (!id) return;
+
+            if (box.checked) done.add(id);
+            else done.delete(id);
+            writeDone(done);
+
+            const unit = box.closest("[data-unit-block]");
+            if (unit) refreshUnit(unit);
+            const subject = box.closest("[data-subject]");
+            if (subject) refreshSubject(subject);
+        });
+
+        root.addEventListener("click", (event) => {
+            const target = event.target;
+            if (!(target instanceof Element)) return;
+            const button = target.closest("[data-clear-subject]");
+            if (!(button instanceof HTMLElement)) return;
+
+            const subject = button.closest("[data-subject]");
+            if (!subject) return;
+            const key = button.dataset.subjectKey || "";
+            if (!key) return;
+
+            for (const box of subject.querySelectorAll<HTMLInputElement>(
+                'input[type="checkbox"][data-topic-id]',
+            )) {
+                const id = box.dataset.topicId || "";
+                if (!id.startsWith(`${key}:`)) continue;
+                box.checked = false;
+                done.delete(id);
+            }
+            writeDone(done);
+
+            for (const unit of subject.querySelectorAll("[data-unit-block]")) {
+                refreshUnit(unit);
+            }
+            refreshSubject(subject);
+        });
+    }
+</script>
+
+<style>
+    .back {
+        margin: 0 0 var(--s2);
+        font-size: 0.78rem;
+    }
+
+    .back a {
+        color: var(--faint);
+        text-decoration: none;
+    }
+
+    .back a:hover {
+        color: var(--paper);
+    }
+
+    h2 {
+        margin: var(--s6) 0 var(--s2);
+        color: var(--faint);
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        font-weight: 650;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .subject-group:first-child h2 {
+        margin-top: 0;
+    }
+
+    details.subject {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .subject-summary {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: var(--s3);
+        padding: var(--s3) 0;
+        cursor: pointer;
+    }
+
+    .subject-summary strong {
+        color: var(--paper);
+        font-weight: 600;
+    }
+
+    .subject-title {
+        font-size: 0.9rem;
+        color: var(--muted);
+    }
+
+    .subject-summary .subject-title strong {
+        color: var(--paper);
+    }
+
+    .pyq-link {
+        flex: 0 0 auto;
+        color: var(--accent);
+        font-size: 0.72rem;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .pyq-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+
+    .subject-tail {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        /* The summary aligns on baseline; the tail centres itself instead so the
+           chevron keeps its place on rows that have no PYQ link to take a baseline from. */
+        align-self: center;
+        gap: var(--s3);
+    }
+
+    .subject-chevron {
+        flex: none;
+        color: var(--faint);
+        transition: transform var(--dur-ui) var(--ease-out);
+    }
+
+    details[open] .subject-chevron {
+        transform: rotate(180deg);
+    }
+
+    .references {
+        max-width: var(--measure);
+        margin: 0 0 var(--s3);
+        padding-top: var(--s3);
+        border-top: 1px solid var(--line);
+    }
+
+    .references-label {
+        margin: 0 0 var(--s2);
+        color: var(--faint);
+        font-size: 0.68rem;
+        font-weight: 650;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .reference-list {
+        display: grid;
+        gap: var(--s2);
+        margin: 0;
+        padding-left: 1rem;
+        color: var(--muted);
+        font-size: 0.82rem;
+    }
+
+    .empty {
+        margin: var(--s5) 0;
+        color: var(--faint);
+    }
+</style>

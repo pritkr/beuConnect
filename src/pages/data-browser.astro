@@ -1,273 +1,442 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
 // @ts-ignore - Importing DataBrowser script client-side
 import DataBrowserScript from "../components/DataBrowser/DataBrowser.ts?url";
 
 export const prerender = true;
 ---
 
-<Layout title="BEU Student Data Browser | Fast & Private" description="Ultra-fast Mode A/B Student Data Browser. Instantly scan semesters, sort by grades, and drill down into 8-sem profiles." wide={true}>
-	<Header />
-
-	<section class="table-shell" id="data-browser-app">
-		<header class="table-header">
-			<h1 style="view-transition-name:restab">Student Data Browser</h1>
-			<p>High-performance wide-table viewer. Scan thousands of records instantly. Native sorting.</p>
-		</header>
-
-		<!-- Control Filter UI -->
-		<div class="glass-card controls-card">
-			<form id="dbFilterForm">
-				<div class="control-grid-inline">
-					<div class="filter-item">
-						<label for="dbBatch">Batch</label>
-						<select id="dbBatch" name="batch" disabled>
-							<option value="">Loading...</option>
-						</select>
+<Layout
+	title="Student data browser"
+	description="Scan BEU semester records, sort by SGPA or CGPA, and open an eight-semester student profile."
+	wide={true}
+>
+	<header class="page-head">
+		<div>
+			<h1>Student data browser</h1>
 					</div>
+	</header>
 
-					<div class="filter-item">
-						<label for="dbBranch">Branch</label>
-						<select id="dbBranch" name="branch" disabled>
-							<option value="">Loading...</option>
-						</select>
-					</div>
+	<section id="data-browser-app" aria-label="Student data browser">
+		<form id="dbFilterForm" class="controls">
+			<div class="filter">
+				<label for="dbBatch">Batch</label>
+				<select id="dbBatch" name="batch" disabled>
+					<option value="">Loading…</option>
+				</select>
+			</div>
 
-					<div class="filter-item">
-						<label for="dbSemester">Sem</label>
-						<select id="dbSemester" name="semester" disabled>
-							<option value="">Loading...</option>
-						</select>
-					</div>
+			<div class="filter">
+				<label for="dbBranch">Branch</label>
+				<select id="dbBranch" name="branch" disabled>
+					<option value="">Loading…</option>
+				</select>
+			</div>
 
-					<div class="filter-item">
-						<label for="dbCollege">College</label>
-						<select id="dbCollege" name="college" disabled>
-							<option value="">Loading...</option>
-						</select>
-					</div>
+			<div class="filter">
+				<label for="dbSemester">Semester</label>
+				<select id="dbSemester" name="semester" disabled>
+					<option value="">Loading…</option>
+				</select>
+			</div>
 
-					<div class="filter-item">
-						<label for="dbSortBy">Sort By</label>
-						<select id="dbSortBy" disabled>
-							<option value="SGPA">SGPA</option>
-							<option value="CGPA">CGPA</option>
-							<option value="Name">Name</option>
-							<option value="RegNo">RegNo</option>
-						</select>
-					</div>
-					
-					<div class="filter-item">
-						<label for="dbSortDir">Order</label>
-						<select id="dbSortDir" disabled>
-							<option value="desc">High to Low ↓</option>
-							<option value="asc">Low to High ↑</option>
-						</select>
-					</div>
-					
-					<div class="filter-item search-item">
-						<label for="dbSearch">Search Name / RegNo</label>
-						<input type="search" id="dbSearch" placeholder="Type to filter instantly..." />
-					</div>
+			<div class="filter filter-college">
+				<label for="dbCollege">College</label>
+				<select id="dbCollege" name="college" disabled>
+					<option value="">Loading…</option>
+				</select>
+			</div>
 
-					<div class="filter-item btn-item">
-						<!-- Invisible label to align the button correctly with the inputs -->
-						<label aria-hidden="true">&nbsp;</label>
-						<button type="button" id="dbExportBtn" class="outline" disabled>📥 Export</button>
-					</div>
-				</div>
-			</form>
-		</div>
+			<div class="filter">
+				<label for="dbSortBy">Sort</label>
+				<select id="dbSortBy" disabled>
+					<option value="CGPA" selected>CGPA</option>
+					<option value="Name">Name</option>
+					<option value="RegNo">Reg no.</option>
+				</select>
+			</div>
 
-		<!-- UI State Overlays -->
-		<div id="dbLoading" class="status loading" style="display:flex;">
-			<div aria-busy="true">Fetching Manifest & Dictionary...</div>
-		</div>
-		
-		<div id="dbError" class="status error" style="display:none; color: var(--pico-del-color);"></div>
+			<div class="filter">
+				<label for="dbSortDir">Order</label>
+				<select id="dbSortDir" disabled>
+					<option value="desc">High to low</option>
+					<option value="asc">Low to high</option>
+				</select>
+			</div>
 
-		<!-- Mode A: The Virtualized Table (no glass-card, no max-height, scrolls to bottom) -->
-		<div id="dbTableContainer" class="table-container" style="display:none; overflow-x: auto; border: 1px solid var(--pico-table-border-color); position: relative;">
-			<table id="dbTable" style="margin: 0; table-layout: fixed; width: max-content; z-index: 1;">
-				<!-- Table Header Rendered by Vanilla JS dynamically -->
-				<thead id="dbThead" style="position: sticky; top: 0; z-index: 10; background: var(--pico-background-color);">
-				</thead>
-				<tbody id="dbTbody" style="position: relative;">
-					<!-- Virtualized rows injected here -->
-				</tbody>
+			<div class="filter filter-search">
+				<label for="dbSearch">Search</label>
+				<input type="search" id="dbSearch" placeholder="Name or reg no." />
+			</div>
+
+			<div class="filter filter-export">
+				<button type="button" id="dbExportBtn" class="btn btn-ghost" disabled>Export CSV</button>
+			</div>
+		</form>
+
+		<div id="dbLoading" class="status" aria-busy="true">Loading records…</div>
+		<div id="dbError" class="status status-error" role="alert"></div>
+
+		<div
+			id="dbTableContainer"
+			class="table-container"
+			style="display: none; overflow-x: auto; position: relative;"
+		>
+			<table id="dbTable">
+				<thead id="dbThead"></thead>
+				<tbody id="dbTbody"></tbody>
 			</table>
-			<!-- Scroll state padding for virtualizer shifted inside to define bounds -->
-			<div id="dbVirtualPadding" style="display:none; width: 1px; pointer-events: none;"></div>
+			<div id="dbVirtualPadding" style="display: none; width: 1px; pointer-events: none;"></div>
 		</div>
 
-		<!-- Mode B: The Student Profile Drill-Down -->
-		<div id="dbProfileContainer" class="profile-container glass-card" style="display:none; margin-top: 1rem; position: relative;">
-			<button class="outline" id="dbCloseProfileBtn" style="position: absolute; right: 1rem; top: 1rem; padding: 0.2rem 1rem;">✕ Close</button>
-			<div class="profile-header">
-				<h2 id="pfName" style="margin-bottom: 0.2rem;">Student Name</h2>
-				<p id="pfReg" style="color: var(--pico-muted-color);">Registration No</p>
-			</div>
-			
-			<div class="grid profile-stats" style="margin-top: 1rem;">
-				<div>
-					<small>Current CGPA</small>
-					<h3 id="pfCgpa">--</h3>
-				</div>
-				<div>
-					<small>Current Rank</small>
-					<h3 id="pfRank">--</h3>
-				</div>
-				<div>
-					<small>SGPA History</small>
-					<div id="pfSparkline" class="sparkline-box">
-						<!-- Mini CSS bars generated here -->
-					</div>
-				</div>
+		<div
+			id="dbProfileContainer"
+			class="profile"
+			style="display: none; position: relative;"
+		>
+			<button type="button" class="btn btn-ghost profile-close" id="dbCloseProfileBtn">Close</button>
+
+			<div class="profile-head">
+				<h2 id="pfName">Student name</h2>
+				<p id="pfReg" class="mono">Registration number</p>
 			</div>
 
-			<details id="pfHistoryDetails" style="margin-top: 2rem;">
-				<summary><strong>View 8-Semester Detailed History</strong></summary>
-				<div id="pfHistoryLoading" style="display:none;" aria-busy="true">Loading historical profile...</div>
-				<div id="pfHistoryError" style="display:none; color: var(--pico-del-color);"></div>
-				<div id="pfHistoryContent">
-					<!-- Nested accordions per semester injected here -->
+			<dl class="profile-stats">
+				<div>
+					<dt>CGPA</dt>
+					<dd id="pfCgpa" class="num">—</dd>
 				</div>
+				<div>
+					<dt>Rank</dt>
+					<dd id="pfRank" class="num">—</dd>
+				</div>
+				<div class="stat-history">
+					<dt>SGPA history</dt>
+					<dd id="pfSparkline"></dd>
+				</div>
+			</dl>
+
+			<details id="pfHistoryDetails" class="history">
+				<summary>Eight-semester history</summary>
+				<div id="pfHistoryLoading" style="display: none;" aria-busy="true">Loading history…</div>
+				<div id="pfHistoryError" class="status-error" style="display: none;" role="alert"></div>
+				<div id="pfHistoryContent"></div>
 			</details>
 		</div>
-
 	</section>
-
-	<Footer />
 </Layout>
 
 <style>
-	/* EXTREME COMPACT MODE OVERRIDES FOR DATA BROWSER */
-	:root {
-		--pico-spacing: 0.25rem;
-		--pico-typography-spacing-vertical: 0.25rem;
-		--pico-form-element-spacing-vertical: 0.25rem;
-		--pico-form-element-spacing-horizontal: 0.5rem;
+	.controls {
+		display: grid;
+		grid-template-columns: repeat(7, minmax(0, 1fr));
+		align-items: end;
+		gap: var(--s2) var(--s3);
+		margin: var(--s5) 0 var(--s3);
+		padding-bottom: var(--s3);
+		border-bottom: 1px solid var(--line);
+		transition: opacity var(--dur-fast) var(--ease-out);
 	}
 
-	.table-shell {
-		max-width: 100% !important;
-		padding: 0.5rem !important;
-		margin: 0 !important;
+	.filter {
+		display: grid;
+		gap: 0.2rem;
+		min-width: 0;
 	}
 
-	.table-header h1 {
-		font-size: 1.25rem;
-		margin-bottom: 0;
+	.filter-college {
+		grid-column: span 2;
 	}
 
-	.table-header p {
-		font-size: 0.8rem;
-		margin-bottom: 0.5rem;
+	.filter-search {
+		grid-column: span 5;
 	}
 
-	.controls-card {
-		padding: 0.5rem !important;
-		margin-bottom: 0.5rem !important;
+	.filter-export {
+		grid-column: span 2;
+		align-self: end;
+		justify-self: end;
 	}
 
-	/* Micro Filters 1-Line Grid */
-	.control-grid-inline {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.4rem;
-		align-items: flex-end; /* All labels top, inputs bottom */
-	}
-	
-	.filter-item {
-		flex: 1 1 auto;
-		min-width: 70px; /* Compress dropdowns as much as possible */
-		margin-bottom: 0 !important;
-	}
-
-	.search-item {
-		flex: 3 1 auto;
-		min-width: 130px; /* Search box can have a bit more space */
-	}
-
-	.btn-item {
-		flex: 0 1 auto; 
-	}
-
-	.control-grid-inline label {
+	.filter label {
+		color: var(--faint);
 		font-size: 0.65rem;
+		font-weight: 650;
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		margin-bottom: 0.1rem;
-		display: block;
-		white-space: nowrap;
-	}
-	.control-grid-inline select,
-	.control-grid-inline input,
-	.control-grid-inline button {
-		font-size: 0.75rem;
-		height: 26px; /* Insanely short inputs */
-		padding: 0 0.4rem;
-		border-radius: 4px;
-		margin-bottom: 0 !important;
 	}
 
-	/* Ultra Compact Virtual Table - scrolls naturally in main view */
+	.filter select,
+	.filter input {
+		height: 2.1rem;
+		margin: 0;
+		padding: 0 0.45rem;
+		border-radius: var(--r);
+		font-size: 0.8rem;
+	}
+
+	.filter-export .btn {
+		height: 2.1rem;
+		padding: 0 0.75rem;
+		font-size: 0.78rem;
+	}
+
+	.status {
+		margin: var(--s3) 0;
+		color: var(--faint);
+		font-size: 0.85rem;
+	}
+
+	.status-error {
+		margin: var(--s3) 0;
+		color: var(--bad);
+		font-size: 0.85rem;
+	}
+
 	.table-container {
-		will-change: scroll-position;
-		transform: translateZ(0); /* Hardware accel */
-		border-radius: 4px;
 		width: 100%;
+		border: 1px solid var(--line);
+		border-radius: var(--r);
+		background: var(--surface);
+		will-change: scroll-position;
 	}
 
-	#dbTable {
-		font-size: 0.75rem; /* Tiny readable text */
-		line-height: 1.1;
+	:global(#dbTable) {
+		width: 100%;
+		table-layout: fixed;
+		margin: 0;
+		font-size: 0.78rem;
+		line-height: 1.15;
 	}
 
-	#dbTable th, #dbTable td {
-		padding: 0.25rem 0.4rem; /* Minimal padding */
-		height: 28px; /* Force rows to be extremely tight */
-		white-space: nowrap;
+	:global(#dbThead) {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background: var(--surface-2);
+	}
+
+	:global(#dbTbody) {
+		position: relative;
+	}
+
+	:global(#dbTable th),
+	:global(#dbTable td) {
+		height: 28px;
+		padding: 0.25rem 0.45rem;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		white-space: nowrap;
+		border-bottom: 1px solid var(--line);
 	}
 
-	#dbTable th {
+	:global(#dbTable th) {
+		background: var(--surface-2);
+		color: var(--faint);
+		font-size: 0.68rem;
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
 		cursor: pointer;
 		user-select: none;
-		font-weight: 600;
-		font-size: 0.7rem;
-		text-transform: uppercase;
-		letter-spacing: 0.02em;
 	}
 
-	#dbTable th:hover {
-		background: var(--pico-form-element-background-color) !important;
+	:global(#dbTable tbody tr) {
+		cursor: pointer;
 	}
 
-	/* Sticky constraint for first two columns (RegNo, Name) */
-	#dbThead th.sticky-col,
-	#dbTbody td.sticky-col {
+	:global(#dbTable tbody tr:hover) {
+		background: var(--surface-2);
+	}
+
+	:global(#dbThead th.sticky-col),
+	:global(#dbTbody td.sticky-col) {
 		position: sticky;
 		left: 0;
-		background: var(--pico-background-color);
 		z-index: 2;
-		border-right: 1px solid var(--pico-table-border-color);
+		background: var(--surface);
+		border-right: 1px solid var(--line);
 	}
-	
-	#dbThead th.sticky-col {
-		z-index: 11; /* Above standard sticky header */
+
+	:global(#dbThead th.sticky-col) {
+		z-index: 11;
+		background: var(--surface-2);
 	}
-	
-	/* Semantic Grade Colors */
-	:global(.grade-row-o) td { border-left: 2px solid #10b981; }
-	:global(.grade-row-f) td { border-left: 2px solid #ef4444; }
-	:global(.grade-row-borderline) td { border-left: 2px solid #f59e0b; }
+
+	:global(.grade-row-o) td {
+		border-left: 2px solid var(--ok);
+	}
+	:global(.grade-row-f) td {
+		border-left: 2px solid var(--bad);
+	}
+	:global(.grade-row-borderline) td {
+		border-left: 2px solid var(--warn);
+	}
+
+	:global(#dbTable tbody tr.row-mine) {
+		background: var(--accent-soft);
+	}
+	:global(#dbTable tbody tr.row-mine td) {
+		font-weight: 600;
+	}
+	:global(#dbTable tbody tr.row-mine td.sticky-col) {
+		background: var(--accent-soft);
+	}
+
+	@media (max-width: 768px) {
+		:global(#dbTable) {
+			width: 100% !important;
+		}
+
+		:global(#dbTable th[class*="col-"]:not(.col-regno):not(.col-name):not(.col-cgpa)),
+		:global(#dbTable td[class*="col-"]:not(.col-regno):not(.col-name):not(.col-cgpa)) {
+			display: none;
+		}
+
+		:global(#dbTable th.col-regno) {
+			width: 108px !important;
+		}
+
+		:global(#dbTable .col-name.sticky-col) {
+			left: 108px !important;
+		}
+
+		:global(#dbTable th.col-name) {
+			width: 150px !important;
+		}
+
+		:global(#dbTable th.col-cgpa) {
+			width: 64px !important;
+		}
+	}
+
+	.profile {
+		margin-top: var(--s4);
+		padding: var(--s5);
+		border: 1px solid var(--line);
+		border-radius: var(--r-lg);
+		background: var(--surface);
+		animation: profile-in var(--dur-ui) var(--ease-out) both;
+	}
+
+	@keyframes profile-in {
+		from {
+			opacity: 0;
+			transform: translateY(6px);
+		}
+	}
+
+	@keyframes profile-fade {
+		from {
+			opacity: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.profile {
+			animation: profile-fade 120ms ease both !important;
+		}
+	}
+
+	.profile-close {
+		position: absolute;
+		top: var(--s3);
+		right: var(--s3);
+		padding: 0.25rem 0.6rem;
+		font-size: 0.75rem;
+	}
+
+	.profile-head h2 {
+		margin: 0;
+		font-family: var(--font-display);
+		font-size: 2rem;
+		font-weight: 400;
+	}
+
+	.profile-head p {
+		margin: 0.15rem 0 0;
+		color: var(--faint);
+		font-size: 0.8rem;
+	}
+
+	.profile-stats {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0;
+		margin: var(--s4) 0 0;
+		border-top: 1px solid var(--line-strong);
+	}
+
+	.profile-stats > div {
+		padding: var(--s3) var(--s3) var(--s3) 0;
+		border-bottom: 1px solid var(--line);
+	}
+
+	.profile-stats dt {
+		color: var(--faint);
+		font-size: 0.68rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.profile-stats dd {
+		margin: 0.2rem 0 0;
+		color: var(--paper);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.profile-stats dd.num {
+		font-family: var(--font-display);
+		font-size: 1.8rem;
+		line-height: 1;
+	}
+
+	.stat-history {
+		grid-column: span 1;
+	}
+
+	.history {
+		margin-top: var(--s4);
+		border-top: 1px solid var(--line-strong);
+		padding-top: var(--s3);
+	}
+
+	.history > summary {
+		color: var(--muted);
+		font-size: 0.85rem;
+		cursor: pointer;
+	}
+
+	@media (max-width: 760px) {
+		.controls {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.filter,
+		.filter-college,
+		.filter-search,
+		.filter-export {
+			grid-column: span 1;
+		}
+
+		.filter-search,
+		.filter-export {
+			grid-column: span 2;
+			justify-self: stretch;
+		}
+
+		.profile-stats {
+			grid-template-columns: 1fr;
+		}
+
+		.profile {
+			padding: var(--s4);
+		}
+	}
 </style>
 
 <script type="module">
 	// Load the orchestrator explicitly as a module
 	import { initDataBrowser } from "/src/components/DataBrowser/DataBrowser.ts";
-	document.addEventListener('DOMContentLoaded', initDataBrowser);
+	document.addEventListener("DOMContentLoaded", initDataBrowser);
 </script>

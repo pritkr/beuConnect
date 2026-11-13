@@ -2,13 +2,173 @@
  "dataset": "subjects",
  "branch": "ee",
  "branchName": "Electrical Engineering",
- "generatedAt": "2026-10-25T21:55:30Z",
+ "generatedAt": "2026-10-28T03:04:46Z",
  "source": "src/assets/data/branches/ee.json",
  "subjects": [
   {
-   "id": "ee-s1-100110",
+   "id": "ee-s1-100101",
    "semester": 1,
-   "code": "100110",
+   "code": "100101",
+   "name": "Communication Skills",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s1-100101-u1",
+     "number": 1,
+     "title": "Vocabulary Enrichment",
+     "topics": [
+      {
+       "id": "ee-s1-100101-u1-t1",
+       "title": "1 Technical Vocabulary Development",
+       "text": "1.2 Nature of Word Formation 1.3 Root Word and Morpheme, Prefix, and Suffix 1.4 Foreign Expressions in English 1.5 Synonyms and Antonyms, Homophones and Homographs, Abbreviations and Acronyms"
+      }
+     ]
+    },
+    {
+     "id": "ee-s1-100101-u2",
+     "number": 2,
+     "title": "Basics of English Grammar",
+     "topics": [
+      {
+       "id": "ee-s1-100101-u2-t1",
+       "title": "1 Parts of Speech",
+       "text": "2.2 Articles, Prepositions 2.3 Subject Verb Agreement, 2.4 Phrase and Clause 2.5 Formation of Questions using Primary Auxiliaries, Modals, and Wh-Words. 2.6 Tenses, Voice 2.7 Redundancies/Clichés"
+      }
+     ]
+    },
+    {
+     "id": "ee-s1-100101-u3",
+     "number": 3,
+     "title": "Technical Communication",
+     "topics": [
+      {
+       "id": "ee-s1-100101-u3-t1",
+       "title": "1 Communication",
+       "text": "Role and Relevance, 3.2 Process / Steps, Types: formal and informal/verbal and non-verbal (Kinesics, Chronemics, Proxemics, Haptics, Vocalics/Paralanguage 3.3 Barriers to Communication: 3.4 Pattern/channels of communication and experience 3.5 7C’s, for effective communication"
+      }
+     ]
+    },
+    {
+     "id": "ee-s1-100101-u4",
+     "number": 4,
+     "title": "Techniques of Professional Writing",
+     "topics": [
+      {
+       "id": "ee-s1-100101-u4-t1",
+       "title": "1 Letter Writing (formal/informal/ cover letter/application",
+       "text": "4.2 Report Writing, Proposal, Notice, Agenda, and Minutes of Meeting 4.3 Memorandum 4.4 Bio-Data/Resume/Curriculum Vitae 4.5 Essay Writing, Email Writing"
+      }
+     ]
+    },
+    {
+     "id": "ee-s1-100101-u5",
+     "number": 5,
+     "title": "Comprehension and Interpretation Skills",
+     "topics": [
+      {
+       "id": "ee-s1-100101-u5-t1",
+       "title": "1 If (Poem) by Rudyard Kipling",
+       "text": "5.2 Of Studies (Essay) by Sir Francis Bacon 5.3 India: Our Motherland (Essay) by Swami Vivekananda 5.4 A Devoted Son (Story) by Anita Desai 5.5 Unseen/Untaught passage"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 5,
+   "topicCount": 5
+  },
+  {
+   "id": "ee-s1-100102",
+   "semester": 1,
+   "code": "100102",
+   "name": "Engineering Mathematics-I",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s1-100102-u1",
+     "number": 1,
+     "title": "Basic Linear Algebra",
+     "topics": [
+      {
+       "id": "ee-s1-100102-u1-t1",
+       "title": "1 Elementary transformations and Rank of Matrix",
+       "text": "1.1 Elementary transformations and Rank of Matrix, Rank by using Echelon and Normal form of Matrices. Linear dependence & independence of vectors in 𝑛 space 𝑅"
+      }
+     ]
+    },
+    {
+     "id": "ee-s1-100102-u2",
+     "number": 2,
+     "title": "Differential Calculus",
+     "topics": [
+      {
+       "id": "ee-s1-100102-u2-t1",
+       "title": "Single Variable",
+       "text": "2.1 Higher order derivatives; Successive differentiation and Leibnitz’s Theorem 2.2 Mean Value Theorems (Rolle’s; Lagrange’s; Cauchy) 2.3 Indeterminate Forms; L’ Hopital Rule 2.4 Tangents & Normal of Algebraic & Polar Curves, Curvature",
+       "hours": 8
+      }
+     ]
+    },
+    {
+     "id": "ee-s1-100102-u3",
+     "number": 3,
+     "title": "Differential Calculus",
+     "topics": [
+      {
+       "id": "ee-s1-100102-u3-t1",
+       "title": "Several Variables independent variables of degree n",
+       "text": "3.1 Partial differentiations; Euler’s theorems Relevant Units/ Body of Knowledge (BoK) 3.2 Limit, Continuity and differentiability of functions of Several Variables 3.3 Taylor’s theorem with various forms of remainders, Maclaurin's theorem and related problems 3.4 Maxima & Minima for functions of several variables; Lagrange’s Multiplier Method",
+       "hours": 9
+      }
+     ]
+    },
+    {
+     "id": "ee-s1-100102-u4",
+     "number": 4,
+     "title": "Integral Calculus",
+     "topics": [
+      {
+       "id": "ee-s1-100102-u4-t1",
+       "title": "1 Differentiation under the integral sign; Leibnitz’s rule",
+       "text": "4.2 Double integral; Change the order of integration; Evaluation of double integration by changing it into polar co-ordinates 4.3 Triple Integral; Evaluation of Triple integral by changing to Spherical Polar co-ordinates & Cylindrical polar co-ordinates 4.4 Beta; Gamma; Elliptic integral; Relation between Beta & Gamma functions, General Properties and related problems."
+      }
+     ]
+    },
+    {
+     "id": "ee-s1-100102-u5",
+     "number": 5,
+     "title": "Vector Calculus",
+     "topics": [
+      {
+       "id": "ee-s1-100102-u5-t1",
+       "title": "1 Scalar and vector valued functions",
+       "text": "5.1 Scalar and vector valued functions; Concepts of gradient, divergence and curl and their geometrical and physical significance; tangent plane; directional derivative;"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 5,
+   "topicCount": 5
+  },
+  {
+   "id": "ee-s1-100104",
+   "semester": 1,
+   "code": "100104",
    "name": "Engineering Physics",
    "type": "Theory",
    "credits": 3,
@@ -16,116 +176,63 @@
    "confidence": "high",
    "units": [
     {
-     "id": "ee-s1-100110-u1",
+     "id": "ee-s1-100104-u1",
      "number": 1,
-     "title": "Unit 1",
+     "title": "Wave Optics",
      "topics": [
       {
-       "id": "ee-s1-100110-u1-t1",
-       "title": "Frame of Reference",
-       "text": "Non-Inertial frame of reference, rotating coordinate system, centripetal and Coriolis acceleration and its application in weather system.",
-       "hours": 2
-      },
-      {
-       "id": "ee-s1-100110-u1-t2",
-       "title": "Oscillations",
-       "text": "Harmonic Oscillator, Damped Harmonic motion – overdamped, critically Damped and lightly damped oscillators, Force Oscillators and Resonance.",
-       "hours": 3
+       "id": "ee-s1-100104-u1-t1",
+       "title": "1 Interference, Division of amplitude, Newton’s Ring experiment, Michelson interferometer",
+       "text": "1.2 Diffraction, Fraunhofer diffraction, Single and double slit, & Circular aperture 1.3 Diffraction, Grating, 1.4 Rayleigh criterion, resolving power of telescope. 1.5 Polarization, double-refracting crystal, Nicol prism."
       }
      ]
     },
     {
-     "id": "ee-s1-100110-u2",
+     "id": "ee-s1-100104-u2",
      "number": 2,
-     "title": "Unit 2",
+     "title": "Lasers and Optical Fiber",
      "topics": [
       {
-       "id": "ee-s1-100110-u2-t1",
-       "title": "Optics",
-       "text": "Huygens’s Principle, Superposition of Waves and interference of Light by wave front-splitting and amplitude-splitting; Young’s double slit experiment, Michelson interferometer, Fraunhofer diffraction from single slit and circular aperture, Diffraction Grating and their resolving power",
-       "hours": 4
-      },
-      {
-       "id": "ee-s1-100110-u2-t2",
-       "title": "LASER",
-       "text": "Einstein’s theory of matter-radiations interaction, Einstein’s Coefficients (A and B), Amplification by population inversion, Different types of lasers – Gas Laser, Helium-Neon Laser, Solid State Laser (Ruby, Neodymium), Semiconductor Laser.",
-       "hours": 4
+       "id": "ee-s1-100104-u2-t1",
+       "title": "1 Characteristics of laser light",
+       "text": "2.1 Characteristics of laser light, Einstein’s A & B coefficients, Population inversion, pumping mechanism, Optical resonator"
       }
      ]
     },
     {
-     "id": "ee-s1-100110-u3",
+     "id": "ee-s1-100104-u3",
      "number": 3,
-     "title": "Unit 3",
+     "title": "Electromagnetism & Propagation",
      "topics": [
       {
-       "id": "ee-s1-100110-u3-t1",
-       "title": "Quantum Mechanics",
-       "text": "Compton Effect, Photoelectric Effect, Wave Particle duality, de Broglie’s hypothesis, Heisenberg’s Uncertainty Principle, Wave function and wave packets, phase and group velocities, Schrodinger’s Wave Equation, Normalization, Expectation values, Eigenvalues and Eigenfunction.",
-       "hours": 5
-      },
-      {
-       "id": "ee-s1-100110-u3-t2",
-       "title": "Applications in One dimensions",
-       "text": "Application of Schrodinger Wave Equation for particle in one dimensional box – its wavefunction and eigenvalue of energy and momentum.",
-       "hours": 2
+       "id": "ee-s1-100104-u3-t1",
+       "title": "of Waves",
+       "text": "3.1 Electric fields, Gauss’ Law, Dielectrics and Capacitors. 3.2 Magnetic fields & Magnetic Materials. 3.3 Maxwell’s Equations. 3.4 Electromagnetic waves & Poynting Theorem",
+       "hours": 8
       }
      ]
     },
     {
-     "id": "ee-s1-100110-u4",
+     "id": "ee-s1-100104-u4",
      "number": 4,
-     "title": "Unit 4",
+     "title": "Quantum Mechanics",
      "topics": [
       {
-       "id": "ee-s1-100110-u4-t1",
-       "title": "Vector Calculus",
-       "text": "Gradient, Divergence and Curl, Line, Surface and Volume integrals, Gauss’s Divergence theorem and Stokes’ theorem in Cartesian Coordinate.",
-       "hours": 2
-      },
-      {
-       "id": "ee-s1-100110-u4-t2",
-       "title": "Electrostatics",
-       "text": "Gauss’s Law and its applications, Divergence and Curl of Electrostatic fields, Electrostatic Potential, Boundary Conditions, Poisson’s and Laplace’s equations, Dielectrics, Polarization, Bound Charges, Electric displacement, Boundary Conditions in dielectrics.",
-       "hours": 4
+       "id": "ee-s1-100104-u4-t1",
+       "title": "hrs",
+       "text": "4.1 Introduction to Quantum Mechanics. 4.2 De-Broglie hypothesis, Heisenberg uncertainty principle 4.3 Wave function and its characteristics 4.4 Schrödinger’s equation (time-dependent and independent) 4.5 Particle in a box, Energy Eigen values and Eigen functions 4.6 Potential barrier and Tunneling"
       }
      ]
     },
     {
-     "id": "ee-s1-100110-u5",
+     "id": "ee-s1-100104-u5",
      "number": 5,
-     "title": "Unit 5",
+     "title": "Semiconductors & Nano-materials",
      "topics": [
       {
-       "id": "ee-s1-100110-u5-t1",
-       "title": "Magnetostatics",
-       "text": "Lorentz force, Biot-Savart and Ampere’s circuital laws and their applications, Divergence and Curl of Magneto static fields, Magnetic vector potential, Force and torque on a magnetic dipole, Magnetic Materials, Magnetization, Bound currents, Boundary conditions.",
-       "hours": 4
-      },
-      {
-       "id": "ee-s1-100110-u5-t2",
-       "title": "Electrodynamics and Electromagnetic Waves",
-       "text": "Ohm’s law, Motional EMF, Faraday’s Law, Lenz’s law, Self and mutual inductance, Energy stored in magnetic field, Maxwell’s equations in vacuum and nonconducting medium, Continuity Equation, Poynting Theorem, Wave Equations: plain electromagnetic wave in vacuum and their transverse nature and Polarization.",
-       "hours": 4
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100110-u6",
-     "number": 6,
-     "title": "Unit 6",
-     "topics": [
-      {
-       "id": "ee-s1-100110-u6-t1",
-       "title": "Introduction to Solids and Semi-Conductors",
-       "text": "Free electron theory of metal, fermi level, Bloch’s theorem for particle in a periodic Potential, Kroning-Penney model and origin of energy band.",
-       "hours": 3
-      },
-      {
-       "id": "ee-s1-100110-u6-t2",
-       "title": "Electronic Materials",
-       "text": "Metals, semiconductors and insulators, intrinsic and extrinsic semiconductors,Carriertransport, diffusion and drift, P-N junction.",
-       "hours": 3
+       "id": "ee-s1-100104-u5-t1",
+       "title": "semiconductors to explain the differences in their electrical 5.1 Introduction",
+       "text": "semiconductors to explain the differences in their electrical 5.1 Introduction, Types of materials (metal, behavior. semiconductor and insulator) Relevant Units/ Body of Knowledge (BoK)"
       }
      ]
     }
@@ -135,179 +242,76 @@
     "tutorial": 0,
     "practical": 0
    },
-   "unitCount": 6,
-   "topicCount": 12
+   "unitCount": 5,
+   "topicCount": 5
   },
   {
-   "id": "ee-s1-100102",
+   "id": "ee-s1-100105",
    "semester": 1,
-   "code": "100102",
-   "name": "Engineering Mathematics–I",
-   "type": "Theory",
-   "credits": 4,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s1-100102-u1",
-     "number": 1,
-     "title": "Linear Algebra-I",
-     "topics": [
-      {
-       "id": "ee-s1-100102-u1-t1",
-       "title": "Elementary Row operations, Gauss -Jordan Method for finding the inverse of Matrix, Complex Matrix",
-       "text": "Hermitian , Skew Hermitian and Unitary Matrix, Vector space, Sub Spaces, Linear dependence and Independences of Vectors, Linear Span, Basis, Dimension, Extension of basis of subspace, The rank of a matrix, Row and column space, Solvability of system of linear equations."
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100102-u2",
-     "number": 2,
-     "title": "Linear Algebra-II",
-     "topics": [
-      {
-       "id": "ee-s1-100102-u2-t1",
-       "title": "Linear Transformations",
-       "text": "Linear Transformations, Kernel and Range of linear transformation, Matrix Representation of a linear transformation, Rank-Nullity Theorem, Eigen Value and Eigen Vectors, Properties of Eigen vectors, Eigen Bases, Orthogonal Transformation, Similarity Transformation, Matrix Diagonalization, Cayley- Hamilton Theorem."
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100102-u3",
-     "number": 3,
-     "title": "Calculus for single variable",
-     "topics": [
-      {
-       "id": "ee-s1-100102-u3-t1",
-       "title": "Inderminate form",
-       "text": "Inderminate form, L’Hospital Rule, Rolle’s Theorem, Mean Value Theorem, Expansion of function (single variable), Taylor and Maclaurin Series, Riemann Integration, Riemann Sum, Improper Integrals, Beta and Gamma function and their properties."
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100102-u4",
-     "number": 4,
-     "title": "Multivariable Calculus (Differentiation",
-     "topics": [
-      {
-       "id": "ee-s1-100102-u4-t1",
-       "title": "Function with two or more variable",
-       "text": "Function with two or more variable, Limit, continuity and Partial differentiation, Total Differentiation Taylor’s series and Maclaurin’s series for function with two variable, Jacobian, Maxima and Minima, Method of Lagrange’s multiplier."
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100102-u5",
-     "number": 5,
-     "title": "Multivariable Calculus (Integration",
-     "topics": [
-      {
-       "id": "ee-s1-100102-u5-t1",
-       "title": "Double Integral",
-       "text": "Double Integral, change of order of integration, Triple integral, Change of Variable in a Double and Triple Integrals, Change to polar coordinate, Change to cylindrical coordinate, Change to spherical polar coordinate, Application to area and volume using double and triple integral"
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100102-u6",
-     "number": 6,
-     "title": "Vector Calculus",
-     "topics": [
-      {
-       "id": "ee-s1-100102-u6-t1",
-       "title": "Scalar and vector fields",
-       "text": "Scalar and vector fields, Gradient, Directional derivative, Divergence, Curl and their properties, Line integral, Green’s theorem in plane (without proof), Surface integral, Stoke’s theorem (without proof), Volume Integral, Gauss-Divergence’ theorem (without proof)."
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 1,
-    "practical": 0
-   },
-   "unitCount": 6,
-   "topicCount": 6
-  },
-  {
-   "id": "ee-s1-100111",
-   "semester": 1,
-   "code": "100111",
-   "name": "Programming for Problem Solving",
+   "code": "100105",
+   "name": "Introduction to AI",
    "type": "Theory",
    "credits": 3,
    "source": "src/assets/data/branches/ee.json",
    "confidence": "high",
    "units": [
     {
-     "id": "ee-s1-100111-u1",
+     "id": "ee-s1-100105-u1",
      "number": 1,
-     "title": "Introduction to Programming",
+     "title": "Introduction to Artificial Intelligence",
      "topics": [
       {
-       "id": "ee-s1-100111-u1-t1",
-       "title": "Introduction to components of a computer system (disks, memory, processor, where a program is…",
-       "text": "Introduction to components of a computer system (disks, memory, processor, where a program is stored and executed, operating system, compilers etc.). Idea of Algorithm: steps to solve logical and numerical problems. Representation of Algorithm: Flowchart/ Pseudo code with examples. From algorithms to programs; source code, variables (with data types) variables and memory locations, Syntax and Logical Errors in compilation, object and executable code."
+       "id": "ee-s1-100105-u1-t1",
+       "title": "1 What is AI? History and evolution of AI",
+       "text": "1.2 Foundations of AI: philosophy, mathematics, and cognitive-science influences 1.3 Intelligent agents: agent–environment interaction, PEAS (Performance measure, Environment, Actuators, and Sensors) description 1.4 Types of environments (observable, deterministic, episodic, static, discrete, single/multi-agent) 1.5 Types of agents: simple reflex, model- based, goal-based, utility-based, learning agents 1.6 Overview of AI application domains across engineering disciplines"
       }
      ]
     },
     {
-     "id": "ee-s1-100111-u2",
+     "id": "ee-s1-100105-u2",
      "number": 2,
-     "title": "Operators, Conditional Branching and Loops",
+     "title": "Problem Solving by Search",
      "topics": [
       {
-       "id": "ee-s1-100111-u2-t1",
-       "title": "Arithmetic expressions/arithmetic operators",
-       "text": "Arithmetic expressions/arithmetic operators, relational operators, logical operators, bitwise operators and precedence.Writing and evaluation of conditionals and consequent branching, Iteration and loops."
+       "id": "ee-s1-100105-u2-t1",
+       "title": "1 Problem formulation and state-space representation",
+       "text": "2.2 Uninformed search: BFS, DFS, Uniform Cost Search, Depth-Limited and Iterative Deepening Search 2.3 Informed (heuristic) search: Greedy Best- First Search, A* algorithm 2.4 Heuristic function design and admissibility/consistency 2.5 Local search algorithms: Hill Climbing, Simulated Annealing (concept) 2.6 Adversarial search: Minimax algorithm, Alpha-Beta pruning 2.7 Constraint Satisfaction Problems (CSP): concept, backtracking (overview)"
       }
      ]
     },
     {
-     "id": "ee-s1-100111-u3",
+     "id": "ee-s1-100105-u3",
      "number": 3,
-     "title": "Arrays and String",
+     "title": "Knowledge Representation and Reasoning",
      "topics": [
       {
-       "id": "ee-s1-100111-u3-t1",
-       "title": "Array declaration & initialization, bound checking arrays (1-d, 2-d), character arrays and strings",
-       "text": "Array declaration & initialization, bound checking arrays (1-d, 2-d), character arrays and strings."
+       "id": "ee-s1-100105-u3-t1",
+       "title": "1 Knowledge representation issues; propositional logic — syntax and semantics",
+       "text": "3.2 Inference in propositional logic: resolution 3.3 First-order predicate logic — syntax, quantifiers (concept) 3.4 Inference in first-order logic: forward chaining, backward chaining, resolution (concept) 3.5 Structured knowledge representation: semantic networks, frames 3.6 Rule-based (production) systems"
       }
      ]
     },
     {
-     "id": "ee-s1-100111-u4",
+     "id": "ee-s1-100105-u4",
      "number": 4,
-     "title": "Function, Recursion and Pointers",
+     "title": "Reasoning Under Uncertainty",
      "topics": [
       {
-       "id": "ee-s1-100111-u4-t1",
-       "title": "Functions (including using built in libraries), Parameter passing in functions, call by value…",
-       "text": "Functions (including using built in libraries), Parameter passing in functions, call by value, passing arrays to functions: Recursion, as a different way of solving problems. Example programs, such as Finding Factorial, Fibonacci series, Ackerman function etc. Idea of pointers, Defining pointers, Use of Pointers in self- referential structures, idea of call by reference."
+       "id": "ee-s1-100105-u4-t1",
+       "title": "1 Sources of uncertainty; review of basic probability theory",
+       "text": "4.2 Bayes' theorem and its application to AI reasoning 4.3 Bayesian networks: representation and manual inference (overview) 4.4 Introduction to fuzzy logic and fuzzy sets 4.5 Certainty factors and rule-based uncertainty (overview)"
       }
      ]
     },
     {
-     "id": "ee-s1-100111-u5",
+     "id": "ee-s1-100105-u5",
      "number": 5,
-     "title": "User defined Data Types and File handling",
+     "title": "Introduction to Machine Learning and AI Applications",
      "topics": [
       {
-       "id": "ee-s1-100111-u5-t1",
-       "title": "Structure",
-       "text": "Structure- defining, declaring, initializing; accessing structure members, processing of structure, array of structures, structures within structure, structure and function, type definition; Union— definition, declaration, accessing union members, initializing union. Introduction, file declaration, opening and closing a file, working with text and binary files, I/O operations on file, error handling, random access to files"
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100111-u6",
-     "number": 6,
-     "title": "Basic Algorithms",
-     "topics": [
-      {
-       "id": "ee-s1-100111-u6-t1",
-       "title": "Basic Algorithms",
-       "text": "Searching, Basic Sorting Algorithms (Bubble, Insertion and Selection), Finding roots of equations, notion of order of complexity through example programs (no formal definition required)"
+       "id": "ee-s1-100105-u5-t1",
+       "title": "1 Machine learning paradigms",
+       "text": "supervised, unsupervised, reinforcement learning (concept) 5.2 Overview of regression and classification concepts (linear regression, k-NN, decision trees) 5.3 Overview of clustering concept (k-means) 5.4 Introduction to artificial neural networks: perceptron, basic architecture (concept) 5.5 Overview of Natural Language Processing (NLP): concept and applications 5.6 Overview of Computer Vision: concept and applications 5.7 Expert systems: architecture and applications 5.8 Robotics and AI: overview of intelligent robotic systems 5.9 Ethics, bias, and responsible AI; societal and multidisciplinary impact; AI and Sustainable Development engineering contexts. Goals (SDGs)"
       }
      ]
     }
@@ -317,8 +321,8 @@
     "tutorial": 0,
     "practical": 0
    },
-   "unitCount": 6,
-   "topicCount": 6
+   "unitCount": 5,
+   "topicCount": 5
   },
   {
    "id": "ee-s1-100106",
@@ -333,72 +337,60 @@
     {
      "id": "ee-s1-100106-u1",
      "number": 1,
-     "title": "DC Circuit Analysis and Network Theorems",
+     "title": "Electrical fundamentals and DC Circuits",
      "topics": [
       {
        "id": "ee-s1-100106-u1-t1",
-       "title": "DC Circuit Analysis and Network Theorems",
-       "text": "Concepts of Network, Active and Passive elements, voltage and current sources, concept of linearity and linear network, unilateral and bilateral elements. R L and C as linear elements.Source Transformation. Kirchhoff’s Law, loop and nodal methods of analysis; star – delta transformation; Network Theorems: Superposition Theorem, Thevenin’s Theorem, Norton’s Theorem, Maximum Power Transfer Theorem. (Simple Numerical Problems)"
+       "title": "1 Concept of Charge, Current, Voltage, Resistance, Inductance and Capacitance, EMF",
+       "text": "1.2 Ohm's Law and Kirchhoff’s Current and Voltage Laws 1.3 Effect of Temperature on Resistance 1.4 Resistor, Inductor & Capacitor: Properties and Applications 1.5 Series, parallel and series parallel resistor circuits, 1.6 Current and Voltage Divider Rules 1.7 Star-Delta and Delta-star transformations"
       }
      ]
     },
     {
      "id": "ee-s1-100106-u2",
      "number": 2,
-     "title": "Magnetic Circuit",
+     "title": "AC Circuits",
      "topics": [
       {
        "id": "ee-s1-100106-u2-t1",
-       "title": "Magnetic Circuit",
-       "text": "Magnetic circuit concepts, analogy between Electric & Magnetic circuits, Magnetic circuits with DC and AC excitation, Magnetic leakage. B-H curve, Hysteresis and Eddy Current losses, Magnetic circuit calculations."
+       "title": "1 Generation of sinusoidal EMF",
+       "text": "2.1 Generation of sinusoidal EMF; Peak, RMS, average values; form factor; Wave and phasor representation"
       }
      ]
     },
     {
      "id": "ee-s1-100106-u3",
      "number": 3,
-     "title": "Steady State Analysis of Single-Phase AC Circuits",
+     "title": "Magnetic Circuits and Electromagnetic induction",
      "topics": [
       {
        "id": "ee-s1-100106-u3-t1",
-       "title": "Steady State Analysis of Single-Phase AC Circuits",
-       "text": "Sinusoidal, Square and Triangular waveforms–average and effective values, form and peak factors, concept of phasors, phasor representation of sinusoidally varying voltage and current. Analysis of series, parallel, and series – parallel RLC Circuits: Apparent, Active & Reactive Powers, Power factor, causes and problems of low power factor, power factor improvement. Resonance in Series and Parallel Circuits. (Simple Numerical Problems)"
+       "title": "1 Magnetic circuits - Magnetic Flux, Magnetic intensity, Flux Density(B), Magnetomotive Force (MMF",
+       "text": "3.2 Reluctance, Permeability, simple numerical 3.3 Analogy between Electric and Magnetic circuits 3.4 Basic Properties of Magnetic materials 3.5 Magnetic Circuits with DC Excitation 3.6 Magnetic Leakage 3.7 B-H Curve 3.8 Hysteresis and Eddy Current Losses 3.9 Magnetic Circuit Calculations 3.10 Electromagnetic induction - Faradays Laws, Fleming's right hand and left-hand Rules, 3.11 Statically and dynamically induced EMF; Concepts of self-inductance, mutual inductance and coefficient of coupling; Energy stored in magnetic fields."
       }
      ]
     },
     {
      "id": "ee-s1-100106-u4",
      "number": 4,
-     "title": "Three Phase AC Circuits",
+     "title": "Transformer",
      "topics": [
       {
        "id": "ee-s1-100106-u4-t1",
-       "title": "Three Phase AC Circuits",
-       "text": "Three Phase System – its necessity and advantages, meaning of phase sequence and star and delta connections, balanced supply and balanced load, line and phase voltage/ current relations, three phase power and its measurement. (Simple Numerical Problems)"
+       "title": "1 Transformer - Construction, principle of operation, Single phase v/s three phase transformer",
+       "text": "4.2 Emf equation 4.3 Transformer performance – Load test -Voltage regulation, losses and efficiency. 4.4 Single phase v/s 3 phase transformer and its uses 4.5 Special purpose transformers- Introduction and applications only- Audio transformer, Radio Frequency (RF) Transformer, Intermediate Frequency (IF) transformer, Pulse transformer, Isolation transformer, Impedance matching transformer"
       }
      ]
     },
     {
      "id": "ee-s1-100106-u5",
      "number": 5,
-     "title": "Introduction to DC Machines",
+     "title": "Electrical and Special Purpose Machines",
      "topics": [
       {
        "id": "ee-s1-100106-u5-t1",
-       "title": "Introduction to DC Machines",
-       "text": "Principal, Operation, Construction, and types of DC machines, e.m.f. equation of generator and torque equation of motor. Single Phase Transformer: Principle of Operation, Construction, e.m.f. equation, losses in transformer, efficiency. Three Phase Induction Motor:Principal, Operation, and Construction (Simple Numerical Problems)"
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100106-u6",
-     "number": 6,
-     "title": "Soldering",
-     "topics": [
-      {
-       "id": "ee-s1-100106-u6-t1",
-       "title": "Soldering",
-       "text": "Soldering- Soldering and desoldering techniques, breadboard wiring, general-purpose PCB soldering/wiring. Wiring-Types of residential and commercial wiring systems, general rules and guidelines for installation, loadcalculation and sizing of wire, rating of main switch, distribution board."
+       "title": "1 DC machines",
+       "text": "construction, EMF equation, types of DC Motor and applications, need of DC motor starter 5.2 AC machines: Three-phase induction motor construction, working, types, slip, need of starter, DOL, star-delta starter 5.3 Construction, working principle of single-phase induction motors, Starting methods 5.4 Construction, working and applications of - (i) BLDC motor (ii) Servo motor (iii) Stepper motor a given special electrical (iv) Switched Reluctance motor machine. (v) Universal motor (vi) Coreless motor"
       }
      ]
     }
@@ -408,184 +400,73 @@
     "tutorial": 0,
     "practical": 0
    },
-   "unitCount": 6,
-   "topicCount": 6
+   "unitCount": 5,
+   "topicCount": 5
   },
   {
-   "id": "ee-s1-100112",
+   "id": "ee-s1-100101p",
    "semester": 1,
-   "code": "100112",
-   "name": "Workshop Practices",
-   "type": "Theory",
-   "credits": 2,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s1-100112-u1",
-     "number": 1,
-     "title": "Sheet Metal Working",
-     "topics": [
-      {
-       "id": "ee-s1-100112-u1-t1",
-       "title": "Sheet material",
-       "text": "GI sheets, aluminium, tin plate, copper, brass etc; Tools: steel rule, verniercallipers, micrometer, sheet metal gauge, scriber, divider, punches, chisels, hammers, snips, pliers, stakes etc.; operations: scribing, bending, shearing, punching etc; Product development: hexagonal box with cap, funnel etc."
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100112-u2",
-     "number": 2,
-     "title": "Joining",
-     "topics": [
-      {
-       "id": "ee-s1-100112-u2-t1",
-       "title": "Classifications of joining processes",
-       "text": "Classifications of joining processes; Brazing, Soldering, and Mechanical Joints, Arc welding, Gas welding etc."
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100112-u3",
-     "number": 3,
-     "title": "Pattern Making and Foundry Practice",
-     "topics": [
-      {
-       "id": "ee-s1-100112-u3-t1",
-       "title": "Pattern material",
-       "text": "wood, cast iron, brass, aluminium, waxes etc.; Types of patterns: split, single piece, match plate etc; Tools: cope, drag, core, core prints, shovel, riddle, rammer, trowel, slick, lifter, sprue pin, bellow, mallet, vent rod, furnace etc. Moulding sands: green sand, dry sand, loam sand, facing sand etc., Sand casting: Sand preparation, mould making, melting, pouring, and cleaning"
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100112-u4",
-     "number": 4,
-     "title": "Fitting Shop",
-     "topics": [
-      {
-       "id": "ee-s1-100112-u4-t1",
-       "title": "Introduction to Fitting; Fitting Tools",
-       "text": "Files and their classification, Holding Tools, Cutting Tools, Measuring and Marking Tools, Thread Making Tools, Various Fitting Power Tools; Methods Of Filing: Cross Filling and Draw Filing, Other associated operations Marking. Sawing and Chipping; Safety and Precautions in Fitting Shop."
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100112-u5",
-     "number": 5,
-     "title": "Carpentry Shop",
-     "topics": [
-      {
-       "id": "ee-s1-100112-u5-t1",
-       "title": "Introduction to Carpentry Shop; Types of Wood; Seasoning of Wood",
-       "text": "Ty[es of Seasoning Methods; Defects in wood; Structure of Wood; Car[entry Tools; Measuring Tools, Marking Tools, Cutting Tools, Planning Tools, Drilling and Boring Tools, Holding Tools, Striking Tools, Auxiliary tools and materials used in Carpentry; Wood working Processes; Carpentry joints; wood Working Machines: Wood Working Lathe, Circular Saw, Thickness Planer, Band sawSafety and precautions in Carpentry Shop."
-      }
-     ]
-    },
-    {
-     "id": "ee-s1-100112-u6",
-     "number": 6,
-     "title": "Smithy Shop",
-     "topics": [
-      {
-       "id": "ee-s1-100112-u6-t1",
-       "title": "Introduction to Smithy Sho; Forging Tools and Equipment; Forging Operations",
-       "text": "Drawing, Upsetting, Swaging, Punching, Drifting, Fullering, Bending; Hot Working Processes: Rolling, Drop Forging, Press Forging, Hot Extrusion, Hot Drawing, Cold Working Process, Safety and Precautions in Smithy Shop."
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 2,
-    "tutorial": 0,
-    "practical": 0
-   },
-   "unitCount": 6,
-   "topicCount": 6
-  },
-  {
-   "id": "ee-s1-100115p",
-   "semester": 1,
-   "code": "100115P",
-   "name": "Swatch Bharat Mission",
+   "code": "100101P",
+   "name": "Communication Skills Lab",
    "type": "Practical",
    "credits": 1,
    "source": "src/assets/data/branches/ee.json",
    "confidence": "high",
    "units": [
     {
-     "id": "ee-s1-100115p-u1",
+     "id": "ee-s1-100101p-u1",
      "number": 1,
      "title": "Course content",
      "topics": [
       {
-       "id": "ee-s1-100115p-u1-t1",
-       "title": "Understanding the importance of cleanliness and sanitation",
-       "text": "The course could aim to create awareness about the significance of cleanliness and sanitation in maintaining personal health, environmental sustainability, and community well-being. It could cover topics such as waste management, sanitation practices, and the impact of poor sanitation on public health."
+       "id": "ee-s1-100101p-u1-t1",
+       "title": "Skills of Communication (LSRW) • Listening to audio/video lectures and summarizing",
+       "text": "Skills of Communication (LSRW) • Listening to audio/video lectures and summarizing, Reading comprehension with group discussion. • Role play on workplace Scenarios, Story/narrative reconstruction from audio input • Group presentations based on reading materials, note-taking, and report writing from lectures"
       },
       {
-       "id": "ee-s1-100115p-u1-t2",
-       "title": "Developing skills for effective waste management",
-       "text": "The course could provide training on various waste management techniques, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. It could also emphasize the importance of reducing waste generation and promoting sustainable waste management practices."
+       "id": "ee-s1-100101p-u1-t2",
+       "title": "Introduction",
+       "text": "Social, Academic, and Professional • Self-introduction and introducing others. • Face-to-face conversation practice. • Role plays (workplace interactions, daily situations) • Group presentations, Group discussion, and practice • Debate and panel discussion, Seminar presentation with Q&A • Situational communication (office, social, academic contexts)"
       },
       {
-       "id": "ee-s1-100115p-u1-t3",
-       "title": "Promoting behavioural change towards cleanliness",
-       "text": "The course could focus on influencing positivebehavioural change among individuals and communities towards cleanliness. It could include modules on promoting good hygiene practices, creating awareness about the harmful effects of littering and open defecation, and encouraging responsible waste disposal habits."
+       "id": "ee-s1-100101p-u1-t3",
+       "title": "Oral Presentation ➢ Oral presentation",
+       "text": "Audience • Selection, Presentation Techniques ➢ Posture, gesture, and stage presence • Facial expressions • Eye contact techniques ➢ Basics of slide design • Text vs visuals, • Using an image and icon, • Slide timing and pacing, • Common slide mistakes"
       },
       {
-       "id": "ee-s1-100115p-u1-t4",
-       "title": "Creating awareness about Swachh Bharat Mission initiatives",
-       "text": "The course could provide information about the Swachh Bharat Mission initiatives and campaigns launched by the Government of India to promote cleanliness and sanitation, such as SwachhSurvekshan, Swachh Bharat Abhiyan, and Clean India Campaign. It could also discuss the progress made, challenges faced, and future prospects of the Swachh Bharat Mission."
+       "id": "ee-s1-100101p-u1-t4",
+       "title": "Anchoring and Addressing",
+       "text": "Anchoring and Addressing ➢ Role of an anchor vs speaker • Types of anchoring Laboratory Experiment/ Practical Titles • Event flow management ➢ Formal vs. informal introduction • Avoiding common mistakes • Building audience interest ➢ Emotional connection, • Voice modulation • Movement on stage • Managing nervous habits."
       },
       {
-       "id": "ee-s1-100115p-u1-t5",
-       "title": "Engaging in community participation and advocacy",
-       "text": "The course could emphasize the importance of community participation in the Swachh Bharat Mission and provide tools and strategies for engaging with local communities to promote cleanliness and sanitation. It could also encourage advocacy for policy changes and innovations to address sanitation-related issues at the community, regional, and national levels."
+       "id": "ee-s1-100101p-u1-t5",
+       "title": "Interview ➢ Interviews",
+       "text": "Types, • Employer vs candidate • Common interview mistakes • SWOT Analysis ➢ Structuring clear and concise answers • Avoiding memorized/robotic answers. ➢ Listening to questions cautiously • Non-verbal listening cues (nodding, eye contact), • Avoiding interruptions ➢ First impressions in interviews, • Professional greetings (verbal + non-verbal)"
       },
       {
-       "id": "ee-s1-100115p-u1-t6",
-       "title": "Pre-requisite",
-       "text": "Nil"
+       "id": "ee-s1-100101p-u1-t6",
+       "title": "Group Discussion ➢ GD",
+       "text": "types • (academic, professional, selection-based) • Do’s and Don’ts in GD ➢ Role of initiator • Role of participant • Role of moderator/leader • Managing interruptions, • Handling conflicts and disagreements ➢ Structuring arguments logically, • Supporting points with examples/data."
       },
       {
-       "id": "ee-s1-100115p-u1-t7",
-       "title": "Course Outcome",
-       "text": ""
+       "id": "ee-s1-100101p-u1-t7",
+       "title": "Debate, Seminar, Symposium, Conference",
+       "text": "Debate, Seminar, Symposium, Conference Laboratory Experiment/ Practical Titles ➢ Debate • Seminar, • Symposium, • Conference. ➢ Paraphrasing and summarizing • Avoiding interruptions • Constructive feedback techniques • Identifying reliable sources (websites, journals, reports), • Note-taking and organizing information, • Plagiarism • Converting research into speaking points, • Using data/examples"
       },
       {
-       "id": "ee-s1-100115p-u1-t8",
-       "title": "Increased awareness and knowledge about cleanliness and sanitation",
-       "text": "Participants of the course may gain a deeper understanding of the importance of cleanliness and sanitation, including the impact on personal health, environmental sustainability, and community well- being. They may learn about various waste management techniques, hygiene practices, and the initiatives of the Swachh Bharat Mission."
+       "id": "ee-s1-100101p-u1-t8",
+       "title": "Just A Minute Technique with Out of the Box Thinking",
+       "text": "Just A Minute Technique with Out of the Box Thinking ➢ Techniques for Idea Generation • Brainstorming, • Mind mapping • SCAMPER technique (Substitute, Combine, Adapt, Modify, put to other use, Eliminate, Reverse) ➢ Storytelling • Creating mental images through words • Emotional connection and expression ➢ Speaking within time limits • Organizing thoughts quickly,"
       },
       {
-       "id": "ee-s1-100115p-u1-t9",
-       "title": "Enhanced skills for effective waste management",
-       "text": "Participants may acquire practical skills related to waste management, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. They may also develop skills in reducing waste generation and promoting sustainable waste management practices in their communities or workplaces."
+       "id": "ee-s1-100101p-u1-t9",
+       "title": "Sounds, Intonation, and IPA ➢ Phonetics • Sounds",
+       "text": "Vowels and consonants, • Syllables and word stress • Common pronunciation errors influenced by mother tongue) ➢ IPA symbols for English sounds, • IPA for vowels (short, long, diphthongs), • IPA for consonants, using a dictionary with IPA Stress marks in IPA Laboratory Experiment/ Practical Titles ➢ Word stress and sentence stress, • Commonly mispronounced words, • Rhythm and fluency • Self-correction techniques,"
       },
       {
-       "id": "ee-s1-100115p-u1-t10",
-       "title": "Positive behavioral change towards cleanliness",
-       "text": "The course may influence participants to adopt positive behavioral changes towards cleanliness, such as avoiding littering, practicing good hygiene habits, and promoting responsible waste disposal. Participants may develop a sense of responsibility towards maintaining cleanliness in their surroundings and actively contribute towards creating a cleaner environment."
-      },
-      {
-       "id": "ee-s1-100115p-u1-t11",
-       "title": "Increased community participation and advocacy",
-       "text": "Participants may become actively engaged in community participation and advocacy efforts related to cleanliness and sanitation. They may collaborate with local communities, government bodies, and non- governmental organizations (NGOs) to raise awareness, implement cleanliness initiatives, and advocate for policy changes or innovations to address sanitation-related issues."
-      },
-      {
-       "id": "ee-s1-100115p-u1-t12",
-       "title": "Contribution towards Swachh Bharat Mission objectives",
-       "text": "Participants may contribute towards the objectives of the Swachh Bharat Mission, such as promoting cleanliness, ensuring proper waste management, and eliminating open defecation. They may actively participate in Swachh Bharat Mission campaigns, initiatives, and activities, and make a positive impact on their communities and society at large."
-      },
-      {
-       "id": "ee-s1-100115p-u1-t13",
-       "title": "List of Reports",
-       "text": ""
-      },
-      {
-       "id": "ee-s1-100115p-u1-t14",
-       "title": "Any topics related to Swatch Bharat Mission",
-       "text": "Any topics related to Swatch Bharat Mission"
+       "id": "ee-s1-100101p-u1-t10",
+       "title": "Activities",
+       "text": "Role Play, Peer Activities, and Group Activities • Role Play • Group Activities ➢ Role-Based Communication • Situational Communication • Tone, language, and • Behaviour adjustment, • Verbal and non-verbal • adaptation, ➢ Problem-solving • Creative thinking techniques • Decision-making • Evaluating multiple • solutions, • Real-life problem • Innovation and idea • generation."
       }
      ]
     }
@@ -596,12 +477,12 @@
     "practical": 2
    },
    "unitCount": 1,
-   "topicCount": 14
+   "topicCount": 10
   },
   {
-   "id": "ee-s1-100110p",
+   "id": "ee-s1-100104p",
    "semester": 1,
-   "code": "100110P",
+   "code": "100104P",
    "name": "Engineering Physics Lab",
    "type": "Practical",
    "credits": 1,
@@ -609,69 +490,69 @@
    "confidence": "high",
    "units": [
     {
-     "id": "ee-s1-100110p-u1",
+     "id": "ee-s1-100104p-u1",
      "number": 1,
      "title": "Course content",
      "topics": [
       {
-       "id": "ee-s1-100110p-u1-t1",
-       "title": "Determination of the capacitance and permittivity of the given material",
-       "text": "Determination of the capacitance and permittivity of the given material."
+       "id": "ee-s1-100104p-u1-t1",
+       "title": "Diffraction Grating",
+       "text": "Diffraction Grating."
       },
       {
-       "id": "ee-s1-100110p-u1-t2",
-       "title": "Determination of e/m of electron",
-       "text": "Determination of e/m of electron."
+       "id": "ee-s1-100104p-u1-t2",
+       "title": "Newton’s Ring Experiment",
+       "text": "Newton’s Ring Experiment"
       },
       {
-       "id": "ee-s1-100110p-u1-t3",
-       "title": "Determination of Planck’s constant and Photoelectric Work Function using Photoelectric cell",
-       "text": "Determination of Planck’s constant and Photoelectric Work Function using Photoelectric cell."
+       "id": "ee-s1-100104p-u1-t3",
+       "title": "Resolving Power of Telescope",
+       "text": "Resolving Power of Telescope"
       },
       {
-       "id": "ee-s1-100110p-u1-t4",
-       "title": "Verification of inverse square law using photocell",
-       "text": "Verification of inverse square law using photocell."
+       "id": "ee-s1-100104p-u1-t4",
+       "title": "Polarimeter",
+       "text": "Polarimeter"
       },
       {
-       "id": "ee-s1-100110p-u1-t5",
-       "title": "Determination of Wavelength of (He-Ne) LASER using Diffraction Grating Method",
-       "text": "Determination of Wavelength of (He-Ne) LASER using Diffraction Grating Method."
+       "id": "ee-s1-100104p-u1-t5",
+       "title": "Numerical Aperture Optical Fiber (Virtual Lab",
+       "text": "Numerical Aperture Optical Fiber (Virtual Lab)"
       },
       {
-       "id": "ee-s1-100110p-u1-t6",
-       "title": "Calculation of Energy Band Gap of a semiconductor",
-       "text": "Calculation of Energy Band Gap of a semiconductor."
+       "id": "ee-s1-100104p-u1-t6",
+       "title": "Dielectric Constant",
+       "text": "Dielectric Constant"
       },
       {
-       "id": "ee-s1-100110p-u1-t7",
-       "title": "Determination of Dielectric constant using resonance method",
-       "text": "Determination of Dielectric constant using resonance method."
+       "id": "ee-s1-100104p-u1-t7",
+       "title": "Measurement of Plank’s Constant",
+       "text": "Measurement of Plank’s Constant"
       },
       {
-       "id": "ee-s1-100110p-u1-t8",
-       "title": "Determination of Wavelength of Sodium light by measuring the diameter of the Newton’s Ring",
-       "text": "Determination of Wavelength of Sodium light by measuring the diameter of the Newton’s Ring."
+       "id": "ee-s1-100104p-u1-t8",
+       "title": "LE-8 Stern-Gerlach Experiment (Virtual Lab",
+       "text": "LE-8 Stern-Gerlach Experiment (Virtual Lab)"
       },
       {
-       "id": "ee-s1-100110p-u1-t9",
-       "title": "Determination of curvature of convex surface of a lens by Newton’s ring",
-       "text": "Determination of curvature of convex surface of a lens by Newton’s ring."
+       "id": "ee-s1-100104p-u1-t9",
+       "title": "p-n junction",
+       "text": "p-n junction"
       },
       {
-       "id": "ee-s1-100110p-u1-t10",
-       "title": "Verification of existence of Bohr’s Energy level with Frank-Hertz apparatus",
-       "text": "Verification of existence of Bohr’s Energy level with Frank-Hertz apparatus."
+       "id": "ee-s1-100104p-u1-t10",
+       "title": "Hall effect experiment",
+       "text": "Hall effect experiment"
       },
       {
-       "id": "ee-s1-100110p-u1-t11",
-       "title": "Course content",
-       "text": "Determination of the Earth’s horizontal magnetic field intensity and magnetic Moment of a magnet by employing magnetometer."
+       "id": "ee-s1-100104p-u1-t11",
+       "title": "Energy Band Gap Measurement",
+       "text": "Energy Band Gap Measurement"
       },
       {
-       "id": "ee-s1-100110p-u1-t12",
-       "title": "Verification of Faraday’s Law and Lenz’s Law of Electromagnetic Induction",
-       "text": "Verification of Faraday’s Law and Lenz’s Law of Electromagnetic Induction."
+       "id": "ee-s1-100104p-u1-t12",
+       "title": "Changing nanoparticle size alters light absorption",
+       "text": "Changing nanoparticle size alters light absorption."
       }
      ]
     }
@@ -683,87 +564,6 @@
    },
    "unitCount": 1,
    "topicCount": 12
-  },
-  {
-   "id": "ee-s1-100111p",
-   "semester": 1,
-   "code": "100111P",
-   "name": "Programming for Problem Solving Lab",
-   "type": "Practical",
-   "credits": 1,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s1-100111p-u1",
-     "number": 1,
-     "title": "Course content",
-     "topics": [
-      {
-       "id": "ee-s1-100111p-u1-t1",
-       "title": "Tutorial 1",
-       "text": "Problem solving using computers: Lab1: Familiarization with programming environment"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t2",
-       "title": "Tutorial 2",
-       "text": "Variable types and type conversions: Lab 2: Simple computational problems using arithmetic expressions"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t3",
-       "title": "Tutorial 3",
-       "text": "Branching and logical expressions: Lab 3: Problems involving if-then-else structures"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t4",
-       "title": "Tutorial 4",
-       "text": "Loops, while and for loops: Lab 4: Iterative problems e.g., sum of series"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t5",
-       "title": "Tutorial 5",
-       "text": "1D Arrays: searching, sorting: Lab 5: 1D Array manipulation"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t6",
-       "title": "Tutorial 6",
-       "text": "2D arrays and Strings Lab 6: Matrix problems, String operations"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t7",
-       "title": "Tutorial 7",
-       "text": "Functions, call by value: Lab 7: Simple functions"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t8",
-       "title": "Tutorial 8 &9",
-       "text": "Numerical methods (Root finding, numerical differentiation, numerical integration): Lab 8 and 9: Programming for solving Numerical methods problems"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t9",
-       "title": "Tutorial 10",
-       "text": "Recursion, structure of recursive calls Lab 10: Recursive functions"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t10",
-       "title": "Tutorial 11",
-       "text": "Pointers, structures and dynamic memory allocation Lab 11: Pointers and structures"
-      },
-      {
-       "id": "ee-s1-100111p-u1-t11",
-       "title": "Tutorial 12",
-       "text": "File handling: Lab 12: File operations"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 0,
-    "tutorial": 0,
-    "practical": 2
-   },
-   "unitCount": 1,
-   "topicCount": 11
   },
   {
    "id": "ee-s1-100106p",
@@ -782,53 +582,93 @@
      "topics": [
       {
        "id": "ee-s1-100106p-u1-t1",
-       "title": "Verification of Kirchhoff’s laws",
-       "text": "Verification of Kirchhoff’s laws."
+       "title": "Measurement of various electrical parameters",
+       "text": "Measurement of various electrical parameters"
       },
       {
        "id": "ee-s1-100106p-u1-t2",
-       "title": "Verification of Superposition Theorem",
-       "text": "Verification of Superposition Theorem."
+       "title": "Verification of ohm’s law in a nonlinear circuit",
+       "text": "Verification of ohm’s law in a nonlinear circuit"
       },
       {
        "id": "ee-s1-100106p-u1-t3",
-       "title": "Verification of Thevenin’s Theorem",
-       "text": "Verification of Thevenin’s Theorem."
+       "title": "Verification of Kirchhoff’s Current Law and Voltage Law",
+       "text": "Verification of Kirchhoff’s Current Law and Voltage Law"
       },
       {
        "id": "ee-s1-100106p-u1-t4",
-       "title": "Verification of Norton’s Theorem",
-       "text": "Verification of Norton’s Theorem."
+       "title": "Measurement of AC signal parameters",
+       "text": "Measurement of AC signal parameters"
       },
       {
        "id": "ee-s1-100106p-u1-t5",
-       "title": "Verification of Maximum Power Transfer Theorem",
-       "text": "Verification of Maximum Power Transfer Theorem."
+       "title": "Measurement of impedance, current, and power factor",
+       "text": "Measurement of impedance, current, and power factor"
       },
       {
        "id": "ee-s1-100106p-u1-t6",
-       "title": "Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor",
-       "text": "Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor."
+       "title": "Measurement of power and power factor in a single-phase ac series in a",
+       "text": "Measurement of power and power factor in a single-phase ac series in a - (i) Resistive circuit (ii) Inductive circuit."
       },
       {
        "id": "ee-s1-100106p-u1-t7",
-       "title": "Star to Delta and Delta to Star conversion of the three circuit",
-       "text": "Star to Delta and Delta to Star conversion of the three circuit."
+       "title": "Energy efficient lamp",
+       "text": "Energy efficient lamp - Measurement of power consumption of an Incandescent lamp, fluorescent lamp (tube light) and a LED light of same rating."
       },
       {
        "id": "ee-s1-100106p-u1-t8",
-       "title": "Determination of Efficiency by load test of a 1 – Ø Transformer",
-       "text": "Determination of Efficiency by load test of a 1 – Ø Transformer."
+       "title": "Line and Phase voltage measurement of star - delta connection circuit in a 3 phase AC circuit",
+       "text": "Line and Phase voltage measurement of star - delta connection circuit in a 3 phase AC circuit"
       },
       {
        "id": "ee-s1-100106p-u1-t9",
-       "title": "To study the typical BHK house wiring",
-       "text": "To study the typical BHK house wiring"
+       "title": "Determination of (i) Voltage ratio (ii) Polarity of a single-phase Transformer",
+       "text": "Determination of (i) Voltage ratio (ii) Polarity of a single-phase Transformer"
       },
       {
        "id": "ee-s1-100106p-u1-t10",
-       "title": "Study of safety precautions while working on electrical installations and necessity of earthing",
-       "text": "Study of safety precautions while working on electrical installations and necessity of earthing"
+       "title": "Autotransformer specification",
+       "text": "Autotransformer specification"
+      },
+      {
+       "id": "ee-s1-100106p-u1-t11",
+       "title": "Variation of input supply voltage using a single-phase autotransformer",
+       "text": "Variation of input supply voltage using a single-phase autotransformer Laboratory Experiment/ Practical Titles"
+      },
+      {
+       "id": "ee-s1-100106p-u1-t12",
+       "title": "Determination of the voltage ratio and polarity of a single-phase transformer",
+       "text": "Determination of the voltage ratio and polarity of a single-phase transformer."
+      },
+      {
+       "id": "ee-s1-100106p-u1-t13",
+       "title": "Determination of the performance of a single-phase transformer by direct load test",
+       "text": "Determination of the performance of a single-phase transformer by direct load test"
+      },
+      {
+       "id": "ee-s1-100106p-u1-t14",
+       "title": "Determination of the performance of a single-phase transformer OC and SC test",
+       "text": "Determination of the performance of a single-phase transformer OC and SC test"
+      },
+      {
+       "id": "ee-s1-100106p-u1-t15",
+       "title": "Operation of induction motor and starter",
+       "text": "Operation of induction motor and starter."
+      },
+      {
+       "id": "ee-s1-100106p-u1-t16",
+       "title": "Demonstration of cut-out sections of machines",
+       "text": "DC machine, three phase induction machine, Single phase induction machine and synchronous machine."
+      },
+      {
+       "id": "ee-s1-100106p-u1-t17",
+       "title": "Reverse the direction of a given three phase induction motor by reversing the Phase sequence",
+       "text": "Reverse the direction of a given three phase induction motor by reversing the Phase sequence"
+      },
+      {
+       "id": "ee-s1-100106p-u1-t18",
+       "title": "Identification of different parts of a single-phase induction motor and reversing the direction of…",
+       "text": "Identification of different parts of a single-phase induction motor and reversing the direction of rotation"
       }
      ]
     }
@@ -839,13 +679,13 @@
     "practical": 2
    },
    "unitCount": 1,
-   "topicCount": 10
+   "topicCount": 18
   },
   {
    "id": "ee-s1-100112p",
    "semester": 1,
    "code": "100112P",
-   "name": "Workshop Practices Lab",
+   "name": "Programming for Problem Solving Lab",
    "type": "Practical",
    "credits": 1,
    "source": "src/assets/data/branches/ee.json",
@@ -858,53 +698,88 @@
      "topics": [
       {
        "id": "ee-s1-100112p-u1-t1",
-       "title": "Learn and apply of different fitting tools –like work holding",
-       "text": "Learn and apply of different fitting tools –like work holding, marking, measuring, cutting, finishing and miscellaneous. Student will also prepare the report with sketch, specifications and applications of fitting tools demonstrated."
+       "title": "Algorithmic Logic & Basic I/O",
+       "text": "Algorithmic Logic & Basic I/O • Write a C program to calculate the area of various geometrical shapes (circle, triangle, rectangle) using appropriate data types and type casting, accompanied by a flowchart."
       },
       {
        "id": "ee-s1-100112p-u1-t2",
-       "title": "Prepare one simple and another male-female type fitting jobs as per given drawings- 2 jobs",
-       "text": "Prepare one simple and another male-female type fitting jobs as per given drawings- 2 jobs"
+       "title": "Decision Making Systems",
+       "text": "Decision Making Systems • Develop a Student Grading and Classification System using an if-else ladder and a switch- case to handle marks for grading and classify eligible fee waivers by category."
       },
       {
        "id": "ee-s1-100112p-u1-t3",
-       "title": "Learn and apply of different tin smithy tools",
-       "text": "Learn and apply of different tin smithy tools. Student will also prepare the report with sketch, specifications and applications of tin smithy tools demonstrated."
+       "title": "Iterative Problem Solving • Develop a C program to perform the following tasks by using while and for loops",
+       "text": "i) Find all prime numbers between 1 and N ii) Generate the Fibonacci sequence for the value of N."
       },
       {
        "id": "ee-s1-100112p-u1-t4",
-       "title": "Learn and apply of welding equipments and making minimum one model",
-       "text": "Learn and apply of welding equipments and making minimum one model."
+       "title": "1-D Array Operations • Write a C program to",
+       "text": "i) Find the maximum/ minimum element using Linear Search ii) Calculate the average of elements in a 1-D array. Laboratory Experiment/ Practical Titles"
       },
       {
        "id": "ee-s1-100112p-u1-t5",
-       "title": "Learn and apply of foundry tools and making minimum one model",
-       "text": "Learn and apply of foundry tools and making minimum one model."
+       "title": "Matrix Manipulation (2-D Arrays) • Write a C program to perform the following tasks",
+       "text": "i) Matrix Multiplication ii) Find the transpose of a matrix using 2-D arrays"
       },
       {
        "id": "ee-s1-100112p-u1-t6",
-       "title": "Learn and apply of carpentry tools and making minimum one model",
-       "text": "Learn and apply of carpentry tools and making minimum one model."
+       "title": "Pointer Arithmetic & Strings • Write a C program to perform the following tasks without using…",
+       "text": "Pointer Arithmetic & Strings • Write a C program to perform the following tasks without using pointer arithmetic: i) Reverse a string ii) Count vowels/consonants of the given string using pointers"
       },
       {
        "id": "ee-s1-100112p-u1-t7",
-       "title": "Learn and apply of Sheet Metal tools and making minimum one model",
-       "text": "Learn and apply of Sheet Metal tools and making minimum one model."
+       "title": "Recursion vs",
+       "text": "Recursion vs. Iteration • Write a C program to perform the following tasks by using both iterative and recursive functions to compare logic flow: i) Find the factorial value for the given number ii) Find the Greatest Common Divisor (GCD)"
       },
       {
        "id": "ee-s1-100112p-u1-t8",
-       "title": "Learn and apply of Lathe Tools & operations for making a job",
-       "text": "Learn and apply of Lathe Tools & operations for making a job."
+       "title": "Parameter Passing Mechanisms",
+       "text": "Parameter Passing Mechanisms • Develop a C program that swaps two values and updates an array using both Call by Value and Call by Reference."
       },
       {
        "id": "ee-s1-100112p-u1-t9",
-       "title": "Learn and apply the application of measuring tools",
-       "text": "Learn and apply the application of measuring tools."
+       "title": "User-Defined Data Types",
+       "text": "User-Defined Data Types • Create an \"Employee Payroll System\" using Structures and Unions in C to store employee details and compare memory allocation between them."
       },
       {
        "id": "ee-s1-100112p-u1-t10",
-       "title": "Learn and apply any casting process for making a model",
-       "text": "Learn and apply any casting process for making a model"
+       "title": "File Handling Operations • Write a program to create a text file and perform the following tasks",
+       "text": "i) Write student records ii) Read the student records and display records"
+      },
+      {
+       "id": "ee-s1-100112p-u1-t11",
+       "title": "Classes, Objects & Encapsulation",
+       "text": "Classes, Objects & Encapsulation Laboratory Experiment/ Practical Titles • Design a Bank Account class with private data members for balance and public member functions for deposit, withdraw, and display."
+      },
+      {
+       "id": "ee-s1-100112p-u1-t12",
+       "title": "Constructors & Memory Management",
+       "text": "Constructors & Memory Management • Implement a String class that utilizes Constructors (Default, Parameterized, and Copy) and a Destructor to manage the memory dynamically."
+      },
+      {
+       "id": "ee-s1-100112p-u1-t13",
+       "title": "Static Members & Friend Functions",
+       "text": "Static Members & Friend Functions • Develop a program that uses a static member to track the number of objects created and a friend function to compare private data of two different classes."
+      },
+      {
+       "id": "ee-s1-100112p-u1-t14",
+       "title": "Implementation of Inheritances • Write a C++ program to demonstrate the various arithmetic…",
+       "text": "Implementation of Inheritances • Write a C++ program to demonstrate the various arithmetic operations using the following different inheritance concepts: i) Single Inheritance ii) Multiple Inheritance iii) Multilevel Inheritance iv) Hierarchical Inheritance v) Hybrid/virtual Inheritance"
+      },
+      {
+       "id": "ee-s1-100112p-u1-t15",
+       "title": "Polymorphism & Abstract Classes • Write C++ programs to demonstrate the following",
+       "text": "i) Create an Abstract Class Shape with a pure virtual function draw (). ii) Find the area of the shape using function overloading. iii) Perform the addition of two complex numbers using operator overloading."
+      },
+      {
+       "id": "ee-s1-100112p-u1-t16",
+       "title": "Robust Error Management",
+       "text": "Robust Error Management Laboratory Experiment/ Practical Titles • Write a C++ program to demonstrate the exception handling process using try, catch, and throw blocks to handle exceptions such as \"Division by Zero\" or \"Negative Stock Input.\""
+      },
+      {
+       "id": "ee-s1-100112p-u1-t17",
+       "title": "Template Implementation • Write a C++ program using template functions and class templates",
+       "text": "a function to find the max of two values, and a class template like pair to store values of any data type."
       }
      ]
     }
@@ -915,7 +790,123 @@
     "practical": 2
    },
    "unitCount": 1,
-   "topicCount": 10
+   "topicCount": 17
+  },
+  {
+   "id": "ee-s1-100113p",
+   "semester": 1,
+   "code": "100113P",
+   "name": "Sports/Yoga/NCC/NSS",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s1-100113p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "ee-s1-100113p-u1-t1",
+       "title": "Assessment of Body Mass Index (BMI), resting heart rate and physical fitness parameters",
+       "text": "Assessment of Body Mass Index (BMI), resting heart rate and physical fitness parameters"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t2",
+       "title": "Evaluate Flexibility using standard fitness tests",
+       "text": "Evaluate Flexibility using standard fitness tests."
+      },
+      {
+       "id": "ee-s1-100113p-u1-t3",
+       "title": "Evaluate Endurance using standard fitness tests",
+       "text": "Evaluate Endurance using standard fitness tests."
+      },
+      {
+       "id": "ee-s1-100113p-u1-t4",
+       "title": "Evaluate muscular strength using standard fitness tests",
+       "text": "Evaluate muscular strength using standard fitness tests."
+      },
+      {
+       "id": "ee-s1-100113p-u1-t5",
+       "title": "Evaluate agility using standard fitness tests",
+       "text": "Evaluate agility using standard fitness tests."
+      },
+      {
+       "id": "ee-s1-100113p-u1-t6",
+       "title": "Practice of warm-up, stretching and cool- down exercises",
+       "text": "Practice of warm-up, stretching and cool- down exercises"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t7",
+       "title": "Develop a simple fitness and healthy lifestyle plan based on personal fitness assessment",
+       "text": "Develop a simple fitness and healthy lifestyle plan based on personal fitness assessment."
+      },
+      {
+       "id": "ee-s1-100113p-u1-t8",
+       "title": "Perform Standing Asanas",
+       "text": "Perform Standing Asanas (Tadasana, Trikonasana, Vrikshasana"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t9",
+       "title": "Perform Sitting Asanas (Vajrasana, Paschimottanasana, Pavanamuktasana",
+       "text": "Perform Sitting Asanas (Vajrasana, Paschimottanasana, Pavanamuktasana)"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t10",
+       "title": "Practice of Prone Asanas",
+       "text": "Practice of Prone Asanas (Bhujangasana, Shalabhasana, Makarasana Laboratory Experiment/ Practical Titles LE-11Practice of Pranayama (Deep Breathing, Anulom-Vilom, Bhramari and Kapalbhati)"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t11",
+       "title": "Practice of Mindfulness Meditation",
+       "text": "Practice of Mindfulness Meditation"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t12",
+       "title": "Practice of Om Chanting and Breath Awareness Meditation",
+       "text": "Practice of Om Chanting and Breath Awareness Meditation"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t13",
+       "title": "Practice of Shavasana and Guided Relaxation (Yoga Nidra",
+       "text": "Practice of Shavasana and Guided Relaxation (Yoga Nidra)"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t14",
+       "title": "Daily Meditation Log and Stress Self- Assessment",
+       "text": "Daily Meditation Log and Stress Self- Assessment"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t15",
+       "title": "Practice fundamental skills in Athletics (Sprint, Relay, Long Jump or Throw Events",
+       "text": "Practice fundamental skills in Athletics (Sprint, Relay, Long Jump or Throw Events)"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t16",
+       "title": "Practice fundamental skills in one Team Game (Volleyball, Football, Basketball, Cricket or Kho-Kho",
+       "text": "Practice fundamental skills in one Team Game (Volleyball, Football, Basketball, Cricket or Kho-Kho)"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t17",
+       "title": "Officiating and Conduct of Mini Sports Competition",
+       "text": "Officiating and Conduct of Mini Sports Competition"
+      },
+      {
+       "id": "ee-s1-100113p-u1-t18",
+       "title": "Preparation and presentation of a Personal Lifelong Fitness and Wellness Programme including…",
+       "text": "Preparation and presentation of a Personal Lifelong Fitness and Wellness Programme including Stress Management Practices"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 18
   },
   {
    "id": "ee-s2-100215",
@@ -2522,7 +2513,7 @@
      "topics": [
       {
        "id": "ee-s3-103302p-u1-t1",
-       "title": "Course content",
+       "title": "To verify and plot the V-I characteristics of silicon diode & Zener diode in forward and Reverse…",
        "text": "To verify and plot the V-I characteristics of silicon diode & Zener diode in forward and Reverse bias."
       },
       {
@@ -2694,505 +2685,84 @@
    "topicCount": 1
   },
   {
-   "id": "ee-s4-pcceee06",
+   "id": "ee-s4-103401",
    "semester": 4,
-   "code": "PCC-EEE06",
-   "name": "Analog Electronics",
-   "type": "Theory",
-   "credits": 3,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s4-pcceee06-u1",
-     "number": 1,
-     "title": "Diode circuits",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee06-u1-t1",
-       "title": "P-N junction diode",
-       "text": "P-N junction diode, I-V characteristics of a diode; review of half-wave and full-wave rectifiers, Zener diodes, clamping and clipping circuits. 1"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee06-u2",
-     "number": 2,
-     "title": "BJT circuits",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee06-u2-t1",
-       "title": "Structure and I-V characteristics of a BJT; BJT as a switch. BJT as an amplifier",
-       "text": "small-signal model, biasing circuits, current mirror; common-emitter, common-base and common-collector amplifiers; Small signal equivalent circuits, high-frequency equivalent circuits"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee06-u3",
-     "number": 3,
-     "title": "MOSFET circuits",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee06-u3-t1",
-       "title": "MOSFET structure and I-V characteristics. MOSFET as a switch. MOSFET as an amplifier",
-       "text": "small signal model and biasing circuits, common-source, common-gate and common-drain amplifiers; small signal equivalent circuits - gain, input and output impedances, trans-conductance, high frequency equivalent circuit"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee06-u4",
-     "number": 4,
-     "title": "Differential, multi-stage and operational amplifiers",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee06-u4-t1",
-       "title": "Differential amplifier",
-       "text": "Differential amplifier; power amplifier; direct coupled multistage amplifier; internal structure of an operational amplifier, ideal op-amp, non-idealities in an op-amp (Output offset voltage, input bias current, input offset current, slew rate, gain bandwidth product), Frequency Response of the amplifier"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee06-u5",
-     "number": 5,
-     "title": "Linear applications of op-amp",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee06-u5-t1",
-       "title": "Idealized analysis of op-amp circuits",
-       "text": "Idealized analysis of op-amp circuits. Inverting a n d non-inverting amplifier, differential amplifier, +instrumentation amplifier, integrator, active filter, P, PI and PID controllers and lead/lag compensator using an op-amp, voltage regulator, Feedback amplifiers and Oscillators design (Wein bridge and phase shift). Analog to Digital Conversion"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee06-u6",
-     "number": 6,
-     "title": "Nonlinear applications of op-amp",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee06-u6-t1",
-       "title": "Hysteretic Comparator, Zero Crossing Detector, Square-wave and triangular-wave generators",
-       "text": "Hysteretic Comparator, Zero Crossing Detector, Square-wave and triangular-wave generators. Precision rectifier, peak detector. Monoshot"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 0,
-    "practical": 0
-   },
-   "unitCount": 6,
-   "topicCount": 6
-  },
-  {
-   "id": "ee-s4-pcceee07",
-   "semester": 4,
-   "code": "PCC-EEE07",
-   "name": "Analog Electronics Laboratory",
-   "type": "Theory",
-   "credits": 1,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s4-pcceee07-u1",
-     "number": 1,
-     "title": "Course content",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee07-u1-t1",
-       "title": "Hands-on experiments related to the course contents of PCC-EEE06",
-       "text": "Hands-on experiments related to the course contents of PCC-EEE06"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 0,
-    "tutorial": 0,
-    "practical": 2
-   },
-   "unitCount": 1,
-   "topicCount": 1
-  },
-  {
-   "id": "ee-s4-pcceee08",
-   "semester": 4,
-   "code": "PCC-EEE08",
-   "name": "Electrical Machines - II",
-   "type": "Theory",
-   "credits": 3,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s4-pcceee08-u1",
-     "number": 1,
-     "title": "Fundamentals of AC machine windings",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee08-u1-t1",
-       "title": "Physical arrangement of windings in stator and cylindrical rotor",
-       "text": "Physical arrangement of windings in stator and cylindrical rotor; slots for windings; single-turn coil - active portion and overhang; full-pitch coils, concentrated winding, distributed winding, winding axis, 3D visualization of the above winding types, Air-gap MMF distribution with fixed current through winding-concentrated and distributed, Sinusoidally distributed winding, winding distribution factor"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee08-u2",
-     "number": 2,
-     "title": "Pulsating and revolving magnetic fields",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee08-u2-t1",
-       "title": "Constant magnetic field, pulsating magnetic field",
-       "text": "Constant magnetic field, pulsating magnetic field - alternating current in windings with spatial displacement, Magnetic field produced by a single winding - fixed current and alternating current Pulsating fields produced by spatially displaced windings, Windings spatially shifted by 90 degrees, Addition of pulsating magnetic fields, Three windings spatially shifted by 120 degrees (carrying three-phase balanced currents), revolving magnetic field"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee08-u3",
-     "number": 3,
-     "title": "Induction Machines",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee08-u3-t1",
-       "title": "Construction",
-       "text": "Construction, Types (squirrel cage and slip-ring), Torque Slip Characteristics, Starting and Maximum Torque. Equivalent circuit. Phasor 3 Diagram, Losses and Efficiency. Effect of parameter variation on torque speed characteristics (variation of rotor and stator resistances, stator voltage, frequency). Methods of starting, braking and speed control for induction motors. Generator operation. Self-excitation. Doubly-Fed Induction Machines"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee08-u4",
-     "number": 4,
-     "title": "Single-phase induction motors",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee08-u4-t1",
-       "title": "Constructional features",
-       "text": "Constructional features, double revolving field theory, equivalent circuit, determination of parameters. Split-phase starting methods and applications"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee08-u5",
-     "number": 5,
-     "title": "Synchronous machines",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee08-u5-t1",
-       "title": "Constructional features, cylindrical rotor synchronous machine",
-       "text": "Constructional features, cylindrical rotor synchronous machine - generated EMF, equivalent circuit and phasor diagram, armature reaction, synchronous impedance, voltage regulation. Operating characteristics of synchronous machines, V-curves. Salient pole machine - two reaction theory, analysis of phasor diagram, power angle characteristics. Parallel operation of alternators - synchronization and load division"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 0,
-    "practical": 0
-   },
-   "unitCount": 5,
-   "topicCount": 5
-  },
-  {
-   "id": "ee-s4-pcceee09",
-   "semester": 4,
-   "code": "PCC-EEE09",
-   "name": "Electrical Machines Laboratory - II",
-   "type": "Theory",
-   "credits": 1,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s4-pcceee09-u1",
-     "number": 1,
-     "title": "Course content",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee09-u1-t1",
-       "title": "Hands-on experiments related to the course contents of PCC-EEE08 4",
-       "text": "Hands-on experiments related to the course contents of PCC-EEE08 4"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 0,
-    "tutorial": 0,
-    "practical": 2
-   },
-   "unitCount": 1,
-   "topicCount": 1
-  },
-  {
-   "id": "ee-s4-pcceee10",
-   "semester": 4,
-   "code": "PCC-EEE10",
-   "name": "Microprocessors",
-   "type": "Theory",
-   "credits": 3,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s4-pcceee10-u1",
-     "number": 1,
-     "title": "Fundamentals of Microprocessors",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee10-u1-t1",
-       "title": "Fundamentals of Microprocessor Architecture",
-       "text": "Fundamentals of Microprocessor Architecture. 8-bitMicroprocessor and Microcontroller architecture, Comparison of 8-bit microcontrollers, 16-bit and 32-bit microcontrollers. Definition of embedded system and its characteristics, Role of microcontrollers in embedded Systems. Overview of the 8051 family"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee10-u2",
-     "number": 2,
-     "title": "The 8051 Architecture",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee10-u2-t1",
-       "title": "Internal Block Diagram",
-       "text": "Internal Block Diagram, CPU, ALU, address, data and control bus, Working registers, SFRs, Clock and RESET circuits, Stack and Stack Pointer, Program Counter, I/O ports, Memory Structures, Data and Program Memory, Timing diagrams and Execution Cycles"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee10-u3",
-     "number": 3,
-     "title": "Instruction Set and Programming",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee10-u3-t1",
-       "title": "Addressing modes",
-       "text": "Introduction, Instruction syntax, Data types, Subroutines Immediate addressing, Register addressing, Direct addressing, Indirect addressing, Relative addressing, Indexed addressing, Bit inherent addressing, bit direct addressing. 8051 Instruction set, Instruction timings. Data transfer instructions, Arithmetic instructions, Logical instructions, Branch instructions, Subroutine instructions, Bit manipulation instruction. Assembly language programs, C language programs. Assemblers and compilers. Programming and debugging tools"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee10-u4",
-     "number": 4,
-     "title": "Memory and I/O Interfacing",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee10-u4-t1",
-       "title": "Memory and I/O expansion buses, control signals, memory wait states",
-       "text": "Memory and I/O expansion buses, control signals, memory wait states. Interfacing of peripheral devices such as General Purpose I/O, ADC, DAC, timers, counters, memory devices"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee10-u5",
-     "number": 5,
-     "title": "External Communication Interface",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee10-u5-t1",
-       "title": "Synchronous and Asynchronous Communication",
-       "text": "Synchronous and Asynchronous Communication. RS232, SPI, I2C. Introduction and interfacing to protocols like Blue-tooth and Zig-bee"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee10-u6",
-     "number": 6,
-     "title": "5 Applications",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee10-u6-t1",
-       "title": "LED, LCD and keyboard interfacing",
-       "text": "LED, LCD and keyboard interfacing. Stepper motor interfacing, DC Motor interfacing, sensor interfacing"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 0,
-    "practical": 0
-   },
-   "unitCount": 6,
-   "topicCount": 6
-  },
-  {
-   "id": "ee-s4-pcceee11",
-   "semester": 4,
-   "code": "PCC-EEE11",
-   "name": "Digital Electronics and Microprocessor",
-   "type": "Theory",
-   "credits": 1,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s4-pcceee11-u1",
-     "number": 1,
-     "title": "Course content",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee11-u1-t1",
-       "title": "Hands-on experiments related to the course contents of PCC-EEE02 & PCC-EEE10",
-       "text": "Hands-on experiments related to the course contents of PCC-EEE02 & PCC-EEE10"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 0,
-    "tutorial": 0,
-    "practical": 2
-   },
-   "unitCount": 1,
-   "topicCount": 1
-  },
-  {
-   "id": "ee-s4-pcceee12",
-   "semester": 4,
-   "code": "PCC-EEE12",
-   "name": "Signals and Systems",
-   "type": "Theory",
-   "credits": 3,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "ee-s4-pcceee12-u1",
-     "number": 1,
-     "title": "Introduction to Signals and Systems",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee12-u1-t1",
-       "title": "Signals and systems as seen in everyday life, and in various branches of engineering and science",
-       "text": "Signals and systems as seen in everyday life, and in various branches of engineering and science. Signal properties: periodicity, absolute integrability, determinism and stochastic character. Some special signals of importance: the unit step, the unit impulse, the sinusoid, the complex exponential, some special time-limited signals; continuous and discrete time signals, continuous and discrete amplitude signals. System properties: linearity: 6 additivity and homogeneity, shift-invariance, causality, stability, realizability. Examples"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee12-u2",
-     "number": 2,
-     "title": "Behavior of continuous and discrete-time LTI systems",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee12-u2-t1",
-       "title": "Impulse response and step response",
-       "text": "Impulse response and step response, convolution, input-output behavior with aperiodic convergent inputs, cascade interconnections. Characterization of causality and stability of LTI systems. System representation through differential equations and difference equations. State Space Representation of systems. State-Space Analysis, Multi-input, multi-output representation. State Transition Matrix and its Role. Periodic inputs to an LTI system, the notion of a frequency response and its relation to the impulse response"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee12-u3",
-     "number": 3,
-     "title": "Fourier, Laplace and z- Transforms",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee12-u3-t1",
-       "title": "Fourier series representation of periodic signals",
-       "text": "Fourier series representation of periodic signals, Waveform Symmetries, Calculation of Fourier Coefficients. Fourier Transform, convolution/multiplication and their effect in the frequency domain, magnitude and phase response, Fourier domain duality. The Discrete-Time Fourier Transform (DTFT) and the Discrete Fourier Transform (DFT). Parseval's Theorem. Review of the Laplace Transform for continuous time signals and systems, system functions, poles and zeros of system functions and signals, Laplace domain analysis, solution to differential equations and system behavior. The z-Transform for discrete time signals and systems, system functions, poles and zeros of systems and sequences, z-domain analysis"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-pcceee12-u4",
-     "number": 4,
-     "title": "Sampling and Reconstruction",
-     "topics": [
-      {
-       "id": "ee-s4-pcceee12-u4-t1",
-       "title": "The Sampling Theorem and its implications. Spectra of sampled signals. Reconstruction",
-       "text": "ideal interpolator, zero-order hold, first-order hold. Aliasing and its effects. Relation between continuous and discrete time systems. Introduction to the applications of signal and system theory: modulation for communication, filtering, feedback control systems"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 2,
-    "tutorial": 1,
-    "practical": 0
-   },
-   "unitCount": 4,
-   "topicCount": 4
-  },
-  {
-   "id": "ee-s4-bsc401",
-   "semester": 4,
-   "code": "BSC 401",
-   "name": "Mathematics - III(Probability and",
+   "code": "103401",
+   "name": "Digital Electronics",
    "type": "Theory",
    "credits": 4,
    "source": "src/assets/data/branches/ee.json",
    "confidence": "high",
    "units": [
     {
-     "id": "ee-s4-bsc401-u1",
+     "id": "ee-s4-103401-u1",
      "number": 1,
-     "title": "Basic Probability",
+     "title": "Fundamentals of Digital Systems and logic families",
      "topics": [
       {
-       "id": "ee-s4-bsc401-u1-t1",
-       "title": "Probability spaces",
-       "text": "Probability spaces, conditional probability, independence; Discrete random variables, Independent random variables, the multinomial distribution, Poisson approximation to the binomial distribution, infinite sequences of Bernoulli trials, sums of independent random variables; Expectation of Discrete Random Variables, Moments, Variance of a sum, Correlation coefficient, Chebyshev's Inequality"
+       "id": "ee-s4-103401-u1-t1",
+       "title": "Digital signals, digital circuits, AND, OR, NOT, NAND, NOR and Exclusive OR operations, Boolean",
+       "text": "algebra, number systems-binary, signed binary, octal, hexadecimal number, binary arithmetic, one's and two's complements arithmetic, codes, error detecting and correcting codes, characteristics of digital lCs, , examples of IC gates, digital logic families, TTL, Schottky TTL and CMOS logic, interfacing CMOS and TTL, Tri-state logic."
       }
      ]
     },
     {
-     "id": "ee-s4-bsc401-u2",
+     "id": "ee-s4-103401-u2",
      "number": 2,
-     "title": "Continuous Probability Distributions",
+     "title": "Combinational Digital Circuits",
      "topics": [
       {
-       "id": "ee-s4-bsc401-u2-t1",
-       "title": "Continuous random variables and their properties",
-       "text": "Continuous random variables and their properties, distribution functions and densities, normal, exponential and gamma densities"
+       "id": "ee-s4-103401-u2-t1",
+       "title": "Standard representation for logic functions, K-map representation, simplification of logic functions",
+       "text": "using K-map, minimization of logical functions. Don't care conditions, Multiplexer, De- Multiplexer/Decoders, Adders, Sub tractors, BCD arithmetic, carry look ahead adder, serial adder, ALU, elementary ALU design, popular MSI chips, digital comparator, parity checker/generator, code converters, priority encoders, decoders/drivers for display devices, Quine-Mc cluskey method of function realization."
       }
      ]
     },
     {
-     "id": "ee-s4-bsc401-u3",
+     "id": "ee-s4-103401-u3",
      "number": 3,
-     "title": "Bivariate Distributions",
+     "title": "Sequential circuits and systems",
      "topics": [
       {
-       "id": "ee-s4-bsc401-u3-t1",
-       "title": "Bivariate distributions and their properties",
-       "text": "Bivariate distributions and their properties, distribution of sums and quotients, conditional densities, Bayes' rule"
+       "id": "ee-s4-103401-u3-t1",
+       "title": "A 1-bit memory, the circuit properties of Bistable latch, the clocked SR flip flop, J",
+       "text": "A 1-bit memory, the circuit properties of Bistable latch, the clocked SR flip flop, J- K, T and D types"
       }
      ]
     },
     {
-     "id": "ee-s4-bsc401-u4",
+     "id": "ee-s4-103401-u4",
      "number": 4,
-     "title": "Basic Statistics",
+     "title": "A/D and D/A Converters",
      "topics": [
       {
-       "id": "ee-s4-bsc401-u4-t1",
-       "title": "Measures of Central tendency",
-       "text": "Moments, skewness and Kurtosis - Probability distributions: Binomial, Poisson and Normal - evaluation of statistical parameters for these three distributions, Correlation and regression – Rank correlation"
+       "id": "ee-s4-103401-u4-t1",
+       "title": "Digital to analog converters",
+       "text": "weighted resistor/converter, R-2R Ladder D/A converter, specifications for D/A converters, examples of D/A converter ICs, sample and hold circuit, analog to digital converters: quantization and encoding, parallel comparator A/D converter, successive approximation A/D converter, counting A/D converter, dual slope A/D converter, A/D converter using voltage to frequency and voltage to time conversion, specifications of A/D converters, example of A/D converter ICs."
       }
      ]
     },
     {
-     "id": "ee-s4-bsc401-u5",
+     "id": "ee-s4-103401-u5",
      "number": 5,
-     "title": "8 Applied Statistics",
+     "title": "Semiconductor memories and Programmable logic devices",
      "topics": [
       {
-       "id": "ee-s4-bsc401-u5-t1",
-       "title": "Curve fitting by the method of least squares- fitting of straight lines, second degree parabolas…",
-       "text": "Curve fitting by the method of least squares- fitting of straight lines, second degree parabolas and more general curves. Test of significance: Large sample test for single proportion, difference of proportions, single mean, difference of means, and difference of standard deviations"
+       "id": "ee-s4-103401-u5-t1",
+       "title": "Memory organization and operation, expanding memory size, classification and characteristics of",
+       "text": "memories, sequential memory, read only memory (ROM), read and write memory(RAM), content addressable memory (CAM), charge de coupled device memory (CCD), commonly used memory chips, ROM as a PLD."
       }
      ]
     },
     {
-     "id": "ee-s4-bsc401-u6",
+     "id": "ee-s4-103401-u6",
      "number": 6,
-     "title": "Small samples",
+     "title": "Programmable logic array",
      "topics": [
       {
-       "id": "ee-s4-bsc401-u6-t1",
-       "title": "Test for single mean",
-       "text": "Test for single mean, difference of means and correlation coefficients, test for ratio of variances - Chi-square test for goodness of fit and independence of attributes"
+       "id": "ee-s4-103401-u6-t1",
+       "title": "Programmable logic array, Programmable array logic, complex Programmable logic devices (CPLDS",
+       "text": "Field Programmable Gate Array (FPGA)."
       }
      ]
     }
@@ -3206,207 +2776,723 @@
    "topicCount": 6
   },
   {
-   "id": "ee-s4-i9",
+   "id": "ee-s4-103402",
    "semester": 4,
-   "code": "-",
-   "name": "Biology - I",
+   "code": "103402",
+   "name": "Signals and Systems",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s4-103402-u1",
+     "number": 1,
+     "title": "Introduction to Signals and Systems",
+     "topics": [
+      {
+       "id": "ee-s4-103402-u1-t1",
+       "title": "Signals and systems as seen in everyday life",
+       "text": "Signals and systems as seen in everyday life, and in various branches of engineering and science. Signal"
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103402-u2",
+     "number": 2,
+     "title": "Behavior of continuous and discrete-time LTI systems",
+     "topics": [
+      {
+       "id": "ee-s4-103402-u2-t1",
+       "title": "Impulse response and step response, convolution, input-output behavior with aperiodic convergent",
+       "text": "inputs, cascade interconnections. Characterization of causality and stability of LTI systems. System representation through differential equations and difference equations. State space representation of systems. State-Space analysis, Multi-input multi-output representation. State Transition Matrix and its Role. Periodic inputs to an LTI system, the notion of a frequency response and its relation to the impulse response."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103402-u3",
+     "number": 3,
+     "title": "Fourier series and Fourier Transform",
+     "topics": [
+      {
+       "id": "ee-s4-103402-u3-t1",
+       "title": "Fourier series representation of periodic signals, Waveform Symmetries, Calculation of Fourier",
+       "text": "Coefficients. Fourier Transform, convolution/multiplication and their effect in the frequency domain, magnitude and phase response, Fourier domain duality. The Discrete-Time Fourier Transform (DTFT) and the Discrete Fourier Transform (DFT). Parseval's Theorem."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103402-u4",
+     "number": 4,
+     "title": "Laplace Transform",
+     "topics": [
+      {
+       "id": "ee-s4-103402-u4-t1",
+       "title": "Review of the Laplace Transform for continuous time signals and systems, system functions, poles and",
+       "text": "zeros of system functions and signals, Laplace domain analysis, solution to differential equations and system behavior."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103402-u5",
+     "number": 5,
+     "title": "Sampling and Reconstruction",
+     "topics": [
+      {
+       "id": "ee-s4-103402-u5-t1",
+       "title": "The Sampling theorem and its implications. Spectra of sampled signals. Reconstruction",
+       "text": "ideal interpolator, zero-order hold, first-order hold. Aliasing and its effects. Relation between continuous and discrete time systems. Introduction to the applications of signal and system theory: modulation for communication, filtering, feedback control systems."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103402-u6",
+     "number": 6,
+     "title": "Z-Transform",
+     "topics": [
+      {
+       "id": "ee-s4-103402-u6-t1",
+       "title": "The Z-Transform for discrete time signals and systems, system functions, poles and zeros of systems",
+       "text": "and sequences, region of convergence, Z-domain analysis; Unilateral Laplace transform, difference equations, system representations: direct, cascade, parallel forms"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "ee-s4-103403",
+   "semester": 4,
+   "code": "103403",
+   "name": "Electrical Machines - II",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s4-103403-u1",
+     "number": 1,
+     "title": "Fundamentals of AC machine windings",
+     "topics": [
+      {
+       "id": "ee-s4-103403-u1-t1",
+       "title": "Physical arrangement of windings in stator and cylindrical rotor",
+       "text": "Physical arrangement of windings in stator and cylindrical rotor; slots for windings; single-turn coil -"
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103403-u2",
+     "number": 2,
+     "title": "Pulsating and revolving magnetic fields",
+     "topics": [
+      {
+       "id": "ee-s4-103403-u2-t1",
+       "title": "Constant magnetic field, pulsating magnetic field - alternating current in windings with",
+       "text": "spatial displacement, Magnetic field produced by a single winding - fixed current and alternating current Pulsating fields produced by spatially displaced windings, Windings spatially shifted by 90 degrees, Addition of pulsating magnetic fields, Three windings spatially shifted by 120 degrees (carrying three- phase balanced currents), revolving magnetic field."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103403-u3",
+     "number": 3,
+     "title": "Induction Machines",
+     "topics": [
+      {
+       "id": "ee-s4-103403-u3-t1",
+       "title": "Construction, Types (squirrel cage and slip-ring), Torque Slip Characteristics, Starting and Maximum",
+       "text": "Torque. Equivalent circuit. Phasor Diagram, Losses and Efficiency. Effect of parameter variation on torque speed characteristics (variation of rotor and stator resistances, stator voltage, frequency). Methods of starting, braking and speed control for induction motors. Generator operation. Self-excitation. Doubly-Fed Induction Machines; Linear Induction Machine"
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103403-u4",
+     "number": 4,
+     "title": "Single-phase AC motors",
+     "topics": [
+      {
+       "id": "ee-s4-103403-u4-t1",
+       "title": "Single-phase induction motor",
+       "text": "Constructional features, double revolving field theory, equivalent circuit, determination of parameters. Split-phase starting methods and applications; Universal Series Motor"
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103403-u5",
+     "number": 5,
+     "title": "Synchronous machines",
+     "topics": [
+      {
+       "id": "ee-s4-103403-u5-t1",
+       "title": "Constructional features, cylindrical rotor synchronous machine",
+       "text": "Constructional features, cylindrical rotor synchronous machine - generated EMF, equivalent circuit and"
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103403-u6",
+     "number": 6,
+     "title": "Special Electric Machines",
+     "topics": [
+      {
+       "id": "ee-s4-103403-u6-t1",
+       "title": "Reluctance Machines",
+       "text": "Synchronous reluctance, stepper motors, and switched reluctance machines, principles of operation and models for operating characteristics. Steady-state and dynamic performance. PM machines: Basic analysis of magnetic circuit with permanent magnets, Steady-state and dynamic performance of PM synchronous machines, and Brushless DC machines. Servo Motors: Working principle and applications"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "ee-s4-103404",
+   "semester": 4,
+   "code": "103404",
+   "name": "Electromagnetic Field Theory",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s4-103404-u1",
+     "number": 1,
+     "title": "Review of Vector Calculus",
+     "topics": [
+      {
+       "id": "ee-s4-103404-u1-t1",
+       "title": "Vector algebra",
+       "text": "addition, subtraction, components of vectors, scalar and vector multiplications, triple products, three orthogonal coordinate systems (rectangular, cylindrical, and spherical). Vector calculus- differentiation, partial differentiation, integration, vector operator del, gradient, divergence, and curl; integral theorems of vectors. Conversion of a vector from one coordinate system to another."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103404-u2",
+     "number": 2,
+     "title": "Static Electric Field",
+     "topics": [
+      {
+       "id": "ee-s4-103404-u2-t1",
+       "title": "Coulomb's law, Electric field intensity, Electrical field due to point charges. Line, Surface, and",
+       "text": "Volume charge distributions. Gauss' law and its applications. Absolute Electric potential, Potential difference, Calculation of potential differences for different configurations. Electric dipole, Electrostatic Energy, and Energy density"
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103404-u3",
+     "number": 3,
+     "title": "Conductors, Dielectrics, and Capacitance",
+     "topics": [
+      {
+       "id": "ee-s4-103404-u3-t1",
+       "title": "Current and current density, Ohm's Law in Point form, Continuity of current, Boundary conditions of",
+       "text": "perfect dielectric materials. Permittivity of dielectric materials, Capacitance, Capacitance of a two- wire line, Poisson's equation, Laplace's equation, Solution of Laplace and Poisson's equation, Application of Laplace's and Poisson's equations."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103404-u4",
+     "number": 4,
+     "title": "Static Magnetic Fields & Time Varying Fields",
+     "topics": [
+      {
+       "id": "ee-s4-103404-u4-t1",
+       "title": "Static Magnetic Field",
+       "text": "Biot-Savart Law, Ampere Law, Magnetic flux and magnetic flux density, Scalar and Vector Magnetic potentials. Steady magnetic fields produced by current-carrying conductors Time Varying Field: Faraday's law for Electromagnetic induction, Displacement current, Point form of Maxwell's equation, Integral form of Maxwell's equations, Motional Electromotive forces. Boundary Conditions."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103404-u5",
+     "number": 5,
+     "title": "Magnetic Forces, Materials, and Inductance",
+     "topics": [
+      {
+       "id": "ee-s4-103404-u5-t1",
+       "title": "Force on a moving charge",
+       "text": "Force on a moving charge, Force on a differential current element, Force between differential current"
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103404-u6",
+     "number": 6,
+     "title": "Electromagnetic Waves",
+     "topics": [
+      {
+       "id": "ee-s4-103404-u6-t1",
+       "title": "Derivation of Wave Equation, Uniform Plane Waves, Maxwell's equation in Phasor form, Wave",
+       "text": "equation in Phasor form, Plane waves in free space and in a homogenous material. Wave equation for a conducting medium, Plane waves in lossy dielectrics, Propagation in good conductors, Skin effect. Poynting theorem"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "ee-s4-103405",
+   "semester": 4,
+   "code": "103405",
+   "name": "Control System",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s4-103405-u1",
+     "number": 1,
+     "title": "Introduction to control problem",
+     "topics": [
+      {
+       "id": "ee-s4-103405-u1-t1",
+       "title": "Industrial Control examples. Mathematical models of physical systems. Control hardware and their",
+       "text": "models. Transfer function models of linear time-invariant systems. Feedback Control: Open-Loop and Closed-loop systems. Benefits of Feedback. Block diagram algebra."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103405-u2",
+     "number": 2,
+     "title": "Time Response Analysis",
+     "topics": [
+      {
+       "id": "ee-s4-103405-u2-t1",
+       "title": "Standard test signals. Time response of first and second order systems for standard test inputs",
+       "text": "Application of initial and final value theorem. Design specifications for second-order systems based on the time- response. Concept of Stability. Routh-Hurwitz Criteria. Relative Stability analysis. Root-Locus technique. Construction of Root-loci."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103405-u3",
+     "number": 3,
+     "title": "Frequency-response analysis",
+     "topics": [
+      {
+       "id": "ee-s4-103405-u3-t1",
+       "title": "Relationship between time and frequency response, Polar plots, Bode plots",
+       "text": "Relationship between time and frequency response, Polar plots, Bode plots. Nyquist stability criterion."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103405-u4",
+     "number": 4,
+     "title": "Introduction to Controller Design",
+     "topics": [
+      {
+       "id": "ee-s4-103405-u4-t1",
+       "title": "Introduction to Controller Design",
+       "text": "Stability, steady-state accuracy, transient accuracy, disturbance rejection, insensitivity and robustness of"
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103405-u5",
+     "number": 5,
+     "title": "State variable Analysis",
+     "topics": [
+      {
+       "id": "ee-s4-103405-u5-t1",
+       "title": "Concepts of state variables. State space model. Diagonalization of State Matrix. Solution of state",
+       "text": "equations. Eigenvalues and Stability Analysis. Concept of controllability and observability. Pole- placement by state feedback. Discrete-time systems. Difference Equations. State-space models of linear discrete-time systems. Stability of linear discrete-time systems."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103405-u6",
+     "number": 6,
+     "title": "Introduction to Optimal Control and Nonlinear Control",
+     "topics": [
+      {
+       "id": "ee-s4-103405-u6-t1",
+       "title": "Performance Indices. Regulator problem, Tracking Problem. Nonlinear system-Basic concepts and",
+       "text": "analysis."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "ee-s4-103406",
+   "semester": 4,
+   "code": "103406",
+   "name": "Environmental Science",
+   "type": "Theory",
+   "credits": 0,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s4-103406-u1",
+     "number": 1,
+     "title": "Ecosystem",
+     "topics": [
+      {
+       "id": "ee-s4-103406-u1-t1",
+       "title": "• Structure of ecosystem, Biotic & Abiotic components",
+       "text": "• Food chain and food web. • Aquatic (Lentic and Lotic) and terrestrial ecosystem. • Carbon, Nitrogen, Sulphur, Phosphorus cycle. • Global warming -Causes, effects, process, Green House Effect, Ozone depletion."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103406-u2",
+     "number": 2,
+     "title": "Air Pollution",
+     "topics": [
+      {
+       "id": "ee-s4-103406-u2-t1",
+       "title": "• Definition of pollution and pollutant, Natural and manmade sources of air pollution",
+       "text": "Boiler). • Air Pollutants: Types, Particulate Pollutants: Effects and control (Bag filter, Cyclone separator, Electrostatic Precipitator). • Gaseous Pollution Control: Absorber, Catalytic Converter, Effects of air pollution due to Refrigerants, I.C., Boiler."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103406-u3",
+     "number": 3,
+     "title": "Noise Pollution",
+     "topics": [
+      {
+       "id": "ee-s4-103406-u3-t1",
+       "title": "• Noise pollution",
+       "text": "sources of pollution, measurement of pollution level, Effects of Noise pollution, Noise pollution (Regulation and Control) Rules, 2000."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103406-u4",
+     "number": 4,
+     "title": "Water and Soil Pollution",
+     "topics": [
+      {
+       "id": "ee-s4-103406-u4-t1",
+       "title": "• Sources of water pollution",
+       "text": "• Sources of water pollution, Types of water pollutants, Characteristics of water pollutants Turbidity,"
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103406-u5",
+     "number": 5,
+     "title": "Renewable sources of Energy",
+     "topics": [
+      {
+       "id": "ee-s4-103406-u5-t1",
+       "title": "• Solar Energy",
+       "text": "Basics of Solar energy. Flat plate collector (Liquid & Air). Theory of flat plate collector. Importance of coating. Advanced collector. Solar pond. Solar water heater, solar dryer. Solar stills. • Biomass: Overview of biomass as energy source. Thermal characteristics of biomass as fuel. Anaerobic digestion. Biogas production mechanism. Utilisation and storage of biogas. • Wind energy: Current status and future prospects of wind energy. Wind energy in India. Environmental benefits and problem of wind energy. • New Energy Sources: Need of new sources. Different types new energy sources. Applications of (Hydrogen energy, Ocean energy resources, Tidal energy conversion.) Concept, origin and power plants of geothermal energy."
+      }
+     ]
+    },
+    {
+     "id": "ee-s4-103406-u6",
+     "number": 6,
+     "title": "Solid Waste Management, ISO 14000 & Environmental Management",
+     "topics": [
+      {
+       "id": "ee-s4-103406-u6-t1",
+       "title": "• Solid waste generation- Sources and characteristics of",
+       "text": "Municipal solid waste, E- waste, biomedical waste. • Metallic wastes and Non-Metallic wastes (lubricants, plastics, rubber) from industries. Collection and disposal: MSW (3R, principles, energy recovery, sanitary landfill), Hazardous waste. • Air quality act 2004, air pollution control act 1981 and water pollution and control act1996. Structure and role of Central and state pollution control board. • Concept of Carbon Credit, Carbon Footprint. • Environmental management in fabrication industry. • ISO14000: Implementation in industries, Benefits."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "ee-s4-103401p",
+   "semester": 4,
+   "code": "103401P",
+   "name": "Digital Electronics Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s4-103401p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "ee-s4-103401p-u1-t1",
+       "title": "Study and verify the operation of all logic gates",
+       "text": "Study and verify the operation of all logic gates."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t2",
+       "title": "Design and verify NAND & NOR Gate as a Universalgates",
+       "text": "Design and verify NAND & NOR Gate as a Universalgates."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t3",
+       "title": "Design and Verify DE Morgan's Theorem",
+       "text": "Design and Verify DE Morgan's Theorem."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t4",
+       "title": "Design and verity Binary to Gray & Gray to Binary Conversion",
+       "text": "Design and verity Binary to Gray & Gray to Binary Conversion."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t5",
+       "title": "Design and verify Half adder circuit & Half Subtractor circuit",
+       "text": "Design and verify Half adder circuit & Half Subtractor circuit."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t6",
+       "title": "Design and Verity Full adder circuit & Full Subtractor Circuit",
+       "text": "Design and Verity Full adder circuit & Full Subtractor Circuit."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t7",
+       "title": "Study and verify multiplexer and De-multiplexer Circuit",
+       "text": "Study and verify multiplexer and De-multiplexer Circuit."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t8",
+       "title": "Design and Verity BCD to 7-segment display",
+       "text": "Design and Verity BCD to 7-segment display."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t9",
+       "title": "Study of Encoder and Decoder circuit",
+       "text": "Study of Encoder and Decoder circuit"
+      },
+      {
+       "id": "ee-s4-103401p-u1-t10",
+       "title": "Study of characteristics of SR, JK, T & Master-Slave Flip-Flop",
+       "text": "Study of characteristics of SR, JK, T & Master-Slave Flip-Flop."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t11",
+       "title": "Design and Verify shift, register circuit",
+       "text": "Design and Verify shift, register circuit"
+      },
+      {
+       "id": "ee-s4-103401p-u1-t12",
+       "title": "Study and Verity weighted Binary DAC R-2R ladder DAC & Flash ADC",
+       "text": "Study and Verity weighted Binary DAC R-2R ladder DAC & Flash ADC"
+      },
+      {
+       "id": "ee-s4-103401p-u1-t13",
+       "title": "Study of Johnson counter & Binary counter",
+       "text": "Study of Johnson counter & Binary counter."
+      },
+      {
+       "id": "ee-s4-103401p-u1-t14",
+       "title": "Study of 4-bit Synchronous Up/Down mod-n counter",
+       "text": "Study of 4-bit Synchronous Up/Down mod-n counter."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 14
+  },
+  {
+   "id": "ee-s4-103403p",
+   "semester": 4,
+   "code": "103403P",
+   "name": "Electrical Machine - II Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s4-103403p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "ee-s4-103403p-u1-t1",
+       "title": "Study of the three-phase Induction motor starting methods",
+       "text": "Study of the three-phase Induction motor starting methods"
+      },
+      {
+       "id": "ee-s4-103403p-u1-t2",
+       "title": "Determination of equivalent circuit parameters of a three-phase induction Motor",
+       "text": "Determination of equivalent circuit parameters of a three-phase induction Motor"
+      },
+      {
+       "id": "ee-s4-103403p-u1-t3",
+       "title": "To perform a load test on a single-phase squirrel-cage Induction motor",
+       "text": "To perform a load test on a single-phase squirrel-cage Induction motor"
+      },
+      {
+       "id": "ee-s4-103403p-u1-t4",
+       "title": "To perform a load test on a three-phase squirrel-cage Induction motor",
+       "text": "To perform a load test on a three-phase squirrel-cage Induction motor"
+      },
+      {
+       "id": "ee-s4-103403p-u1-t5",
+       "title": "To perform a load test on a three-phase slip ring induction motor",
+       "text": "To perform a load test on a three-phase slip ring induction motor"
+      },
+      {
+       "id": "ee-s4-103403p-u1-t6",
+       "title": "To perform the speed control on a three-phase squirrel cage Induction motor",
+       "text": "To perform the speed control on a three-phase squirrel cage Induction motor"
+      },
+      {
+       "id": "ee-s4-103403p-u1-t7",
+       "title": "To perform the operation of a three-phase synchronous motor by varying the field excitation at",
+       "text": "different mechanical loading"
+      },
+      {
+       "id": "ee-s4-103403p-u1-t8",
+       "title": "Determination of OCC, SCC, and ZPF characteristics of a 3-phase Synchronous Machine",
+       "text": "Determination of OCC, SCC, and ZPF characteristics of a 3-phase Synchronous Machine"
+      },
+      {
+       "id": "ee-s4-103403p-u1-t9",
+       "title": "Determining the V-curve of a Synchronous Machine",
+       "text": "Determining the V-curve of a Synchronous Machine"
+      },
+      {
+       "id": "ee-s4-103403p-u1-t10",
+       "title": "To study the operation of a synchronous generator at NO load and Full load",
+       "text": "To study the operation of a synchronous generator at NO load and Full load"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 10
+  },
+  {
+   "id": "ee-s4-103405p",
+   "semester": 4,
+   "code": "103405P",
+   "name": "Control System Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/ee.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "ee-s4-103405p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "ee-s4-103405p-u1-t1",
+       "title": "To study the potentiometer as an error detector",
+       "text": "To study the potentiometer as an error detector."
+      },
+      {
+       "id": "ee-s4-103405p-u1-t2",
+       "title": "To study the PID controller for an oven",
+       "text": "To study the PID controller for an oven."
+      },
+      {
+       "id": "ee-s4-103405p-u1-t3",
+       "title": "To study the synchro transmission-receiver & output v/s input characteristics",
+       "text": "To study the synchro transmission-receiver & output v/s input characteristics."
+      },
+      {
+       "id": "ee-s4-103405p-u1-t4",
+       "title": "To study the characteristics of a small A.C. servomotor",
+       "text": "To study the characteristics of a small A.C. servomotor."
+      },
+      {
+       "id": "ee-s4-103405p-u1-t5",
+       "title": "Determine the transient response of a 2nd order system",
+       "text": "Determine the transient response of a 2nd order system."
+      },
+      {
+       "id": "ee-s4-103405p-u1-t6",
+       "title": "To study the performance of an Analog PID controller using a simulated system",
+       "text": "To study the performance of an Analog PID controller using a simulated system."
+      },
+      {
+       "id": "ee-s4-103405p-u1-t7",
+       "title": "To study the behavior of DC-separated excited motors at open-loop and closed-loop control",
+       "text": "systems."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 7
+  },
+  {
+   "id": "ee-s4-103407",
+   "semester": 4,
+   "code": "103407",
+   "name": "NPTEL-I (Open Course)",
    "type": "Theory",
    "credits": 3,
    "source": "src/assets/data/branches/ee.json",
    "confidence": "high",
    "units": [
     {
-     "id": "ee-s4-i9-u1",
+     "id": "ee-s4-103407-u1",
      "number": 1,
-     "title": "Introduction",
+     "title": "NPTEL (Open Course) should be taken from the course other than core subjects of the branch",
      "topics": [
       {
-       "id": "ee-s4-i9-u1-t1",
-       "title": "Purpose",
-       "text": "To convey that Biology is as important a scientific discipline as Mathematics, Physics and Chemistry. Bring out the fundamental differences between science and engineering by drawing a comparison between eye and camera, Bird flying and aircraft. Mention the most exciting aspect of biology as an independent scientific discipline. Why do we need to study biology? Discuss how biological observations of the 18th Century lead to major discoveries. Examples from Brownian motion and the origin of thermodynamics by referring to the original observation of Robert Brown and Julius Mayor. These examples will highlight the fundamental importance of observations in any scientific inquiry"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-i9-u2",
-     "number": 2,
-     "title": "Classification",
-     "topics": [
-      {
-       "id": "ee-s4-i9-u2-t1",
-       "title": "Purpose",
-       "text": "To convey that classification per se is not what biology is all about. The underlying criterion, such as morphological, biochemical or ecological, can be highlighted. Hierarchy of life forms at phenomenological level. A 9 common thread weaves this hierarchy Classification. Discuss classification based on (a) cellularity- Unicellular or multicellular (b) ultrastructure prokaryotes or eukaryotes. (c) energy and Carbon utilization -Autotrophs, heterotrophs, lithotrophs (d) Ammonia excretion – ammonotelic, uricotelic, ureotelic (e) Habitat- aquatic or terrestrial (e) Molecular taxonomy- three major kingdoms of life. A given organism can come under different categories based on classification. Model organisms for the study of biology come from different groups. E.coli, S.cerevisiae, D. Melanogaster, C. elegance, A. Thaliana, M. musculus"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-i9-u3",
-     "number": 3,
-     "title": "Genetics",
-     "topics": [
-      {
-       "id": "ee-s4-i9-u3-t1",
-       "title": "Purpose",
-       "text": "To convey that “Genetics is to biology what Newton’s laws are to Physical Sciences''. Mendel’s laws, Concept of segregation and independent assortment. Concept of allele. Gene mapping, Gene interaction, Epistasis. Meiosis and Mitosis are taught as a part of genetics. Emphasis to be given not to the mechanics of cell division nor the phases but how genetic material passed from parent to offspring. Concepts of recessiveness and dominance. Concept of mapping of phenotype to genes. Discuss about the single gene disorders in humans. Discuss the concept of complementation using human genetics"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-i9-u4",
-     "number": 4,
-     "title": "Biomolecules",
-     "topics": [
-      {
-       "id": "ee-s4-i9-u4-t1",
-       "title": "Purpose",
-       "text": "To convey that all forms of life has the same building blocks and yet the manifestations are as diverse as one can imagine. Molecules of life. In this context discuss monomeric units and polymeric structures. Discuss about sugars, starch and cellulose. Amino acids and proteins. Nucleotides and DNA/RNA. Two carbon units and lipids"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-i9-u5",
-     "number": 5,
-     "title": "Enzymes",
-     "topics": [
-      {
-       "id": "ee-s4-i9-u5-t1",
-       "title": "Purpose",
-       "text": "To convey that without catalysis life would not have existed on earth. Enzymology: How to monitor enzyme catalysed reactions. How does an enzyme catalyse reactions? Enzyme classification. Mechanism of enzyme action. Discuss at least two examples. Enzyme kinetics and kinetic parameters. Why should we know these parameters to understand biology? RNA catalysis"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-i9-u6",
-     "number": 6,
-     "title": "Information Transfer",
-     "topics": [
-      {
-       "id": "ee-s4-i9-u6-t1",
-       "title": "Purpose",
-       "text": "The molecular basis of coding and decoding genetic information is universal. Molecular basis of information transfer. DNA as a genetic material. Hierarchy of DNA structure from single stranded to double helix to nucleosomes. Concept of genetic code. Universality and degeneracy of genetic code. Define genes in terms of complementation and recombination"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-i9-u7",
-     "number": 7,
-     "title": "10 Macromolecular analysis",
-     "topics": [
-      {
-       "id": "ee-s4-i9-u7-t1",
-       "title": "Purpose",
-       "text": "To analyse biological processes at the reductionistic level. Proteins- structure and function. Hierarchy in protein structure. Primary secondary, tertiary and quaternary structure. Proteins as enzymes, transporters, receptors and structural elements"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-i9-u8",
-     "number": 8,
-     "title": "Metabolism",
-     "topics": [
-      {
-       "id": "ee-s4-i9-u8-t1",
-       "title": "Purpose",
-       "text": "The fundamental principles of energy transactions are the same in the physical and biological world. Thermodynamics as applied to biological systems. Exothermic and endothermic versus endergonic and exergonic reactions. Concept of Keq and its relation to standard free energy. Spontaneity. ATP as an energy currency. This should include the breakdown of glucose to CO2 + H2O (Glycolysis and Krebs cycle) and synthesis of glucose from CO2 and H2O (Photosynthesis). Energy yielding and energy consuming reactions. Concept of Energy charge"
-      }
-     ]
-    },
-    {
-     "id": "ee-s4-i9-u9",
-     "number": 9,
-     "title": "Microbiology",
-     "topics": [
-      {
-       "id": "ee-s4-i9-u9-t1",
-       "title": "Concept of single celled organisms",
-       "text": "Concept of single celled organisms. Concept of species and strains. Identification and classification of microorganisms. Microscopy. Ecological aspects of single celled organisms. Sterilization and media compositions. Growth kinetics"
+       "id": "ee-s4-103407-u1-t1",
+       "title": "NPTEL (Open Course) should be taken from the course other than core subjects of the branch",
+       "text": "NPTEL (Open Course) should be taken from the course other than core subjects of the branch."
       }
      ]
     }
    ],
    "ltp": {
-    "lecture": 2,
-    "tutorial": 1,
-    "practical": 0
-   },
-   "unitCount": 9,
-   "topicCount": 9
-  },
-  {
-   "id": "ee-s4-i10",
-   "semester": 4,
-   "code": "-",
-   "name": "HSMC Elective Courses",
-   "type": "Theory",
-   "credits": 3,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "none",
-   "units": [],
-   "ltp": {
-    "lecture": 3,
+    "lecture": 0,
     "tutorial": 0,
     "practical": 0
    },
-   "stub": true,
-   "unitCount": 0,
-   "topicCount": 0
-  },
-  {
-   "id": "ee-s4-i11",
-   "semester": 4,
-   "code": "-",
-   "name": "Environmental Science",
-   "type": "Theory",
-   "credits": 0,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "none",
-   "units": [],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 0,
-    "practical": 0
-   },
-   "stub": true,
-   "unitCount": 0,
-   "topicCount": 0
-  },
-  {
-   "id": "ee-s4-i12",
-   "semester": 4,
-   "code": "-",
-   "name": "Capstone Design Project",
-   "type": "Theory",
-   "credits": 0,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "none",
-   "units": [],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 0,
-    "practical": 0
-   },
-   "stub": true,
-   "unitCount": 0,
-   "topicCount": 0
-  },
-  {
-   "id": "ee-s4-i13",
-   "semester": 4,
-   "code": "-",
-   "name": "NCC / NSS / other Clubs & Society",
-   "type": "Theory",
-   "credits": 0,
-   "source": "src/assets/data/branches/ee.json",
-   "confidence": "none",
-   "units": [],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 0,
-    "practical": 0
-   },
-   "stub": true,
-   "unitCount": 0,
-   "topicCount": 0
+   "unitCount": 1,
+   "topicCount": 1
   },
   {
    "id": "ee-s5-pcceee19",

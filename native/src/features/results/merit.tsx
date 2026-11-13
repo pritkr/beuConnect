@@ -231,7 +231,7 @@ export function MeritScreen(props: { nav: Nav }) {
                     <RankMedal rank={place} tied={tied} />
                     <Muted class="text-[10px]">{tied > 1 ? "tied" : "CGPA"}</Muted>
                   </Row>
-                  <Text class="text-[12px] font-semibold leading-4 text-foreground" numberOfLines={2}>
+                  <Text class="text-[12px] font-semibold leading-4 text-foreground" style={{ numberOfLines: 2 }}>
                     {row.name}
                   </Text>
                   <Text class="text-[15px] font-bold tabular-nums text-foreground">{row.cgpaText}</Text>

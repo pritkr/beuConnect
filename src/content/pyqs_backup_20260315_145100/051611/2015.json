@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2015",
+    "subject": "Formal Languages and Automata Theory",
+    "subject_slug": "formal-languages-and-automata-theory",
+    "subject_code": "051611",
+    "year": 2015,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Define any seven of the following :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "Applications of automata theory",
+              "id": "1a",
+              "marks": null
+            },
+            {
+              "text": "Finite automata",
+              "id": "1b",
+              "marks": null
+            },
+            {
+              "text": "Transition graph",
+              "id": "1c",
+              "marks": null
+            },
+            {
+              "text": "Epsilon transition",
+              "id": "1d",
+              "marks": null
+            },
+            {
+              "text": "Regular expression",
+              "id": "1e",
+              "marks": null
+            },
+            {
+              "text": "Regular language",
+              "id": "1f",
+              "marks": null
+            },
+            {
+              "text": "Turing acceptable",
+              "id": "1g",
+              "marks": null
+            },
+            {
+              "text": "Mealy machine",
+              "id": "1h",
+              "marks": null
+            },
+            {
+              "text": "Reducibility",
+              "id": "1i",
+              "marks": null
+            },
+            {
+              "text": "Enumerable language",
+              "id": "1j",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Design an FA that accepts set of strings containing exactly four 1's in every string over alphabets $\\Sigma = \\{0, 1\\}$.",
+              "marks": 7,
+              "id": "2a"
+            },
+            {
+              "text": "Design an NFA for the language $L = \\text{all strings over } \\{0, 1\\} \\text{ that have at least two consecutive 0's or 1's}$.",
+              "marks": 7,
+              "id": "2b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Design a deterministic finite automata which accepts set of strings such that every string containing \"00\" as sub-string but not \"000\" as sub-string.",
+              "marks": 7,
+              "id": "3a"
+            },
+            {
+              "text": "Show that if $L$ is regular, so $L - \\{\\epsilon\\}$ will be also regular.",
+              "marks": 7,
+              "id": "3b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Write a regular expression over alphabets $\\{a, b, c\\}$ contains at least one \"a\" and at least one \"b\".",
+              "marks": 7,
+              "id": "4a"
+            },
+            {
+              "text": "Prove that $L = \\{ 0^n 1^m \\mid n \\leq m \\}$ is not regular language.",
+              "marks": 7,
+              "id": "4b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What do you mean by closer properties of regular language? Define some important closer properties.",
+              "marks": 7,
+              "id": "5a"
+            },
+            {
+              "text": "Prove that, if $L1$ and $L2$ is regular, then $L1 \\cup L2$ is also regular language.",
+              "marks": 7,
+              "id": "5b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain ambiguities in context free grammar and languages.",
+              "marks": 7,
+              "id": "6a"
+            },
+            {
+              "text": "Find context free grammar for the regular expression $r = (a + b)^*$.",
+              "marks": 7,
+              "id": "6b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Show that the following grammar is ambiguous :\n$S \\rightarrow AB \\mid aaB$\n$A \\rightarrow a \\mid Aa$\n$B \\rightarrow b$",
+              "marks": 7,
+              "id": "7a"
+            },
+            {
+              "text": "Define parse tree with its applications in finite automata.",
+              "marks": 7,
+              "id": "7b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What do you mean by push down automata? Explain its move.",
+              "marks": 7,
+              "id": "8a"
+            },
+            {
+              "text": "Using pumping lemma, prove that language $L = \\{ WW \\mid W \\in \\{a, b\\}^* \\}$ is not context free.",
+              "marks": 7,
+              "id": "8b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain turing machine for computing function.",
+              "marks": 7,
+              "id": "9a"
+            },
+            {
+              "text": "Write in brief about NP complete problem.",
+              "marks": 7,
+              "id": "9b"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

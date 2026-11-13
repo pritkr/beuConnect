@@ -10,13 +10,14 @@
 
 import { Text, View } from "nsh";
 import { Btn, Card, Col, Divider, EmptyState, Field, Label, Muted, Panel, Row, Stat } from "../../ui";
-import type { PercentageFormula, TargetResult } from "./engine";
+import type { Grade, PercentageFormula, TargetResult } from "./engine";
 import {
   bestGrade,
   cgpa as cgpaOf,
   ceilTo,
   clamp,
   fixed,
+  gradeForMarks,
   maxEse,
   maxIa,
   num,
@@ -207,6 +208,13 @@ function PredictEditor(props: { row: () => PredictRow }) {
     return row.target !== "F" && requiredEse(row.total, row.ia, row.target) !== null ? "mint" : "amber";
   };
 
+  /** The grade these two marks actually earn — the site calculator's own direction. */
+  const gradeNow = (): Grade | null => {
+    const row = props.row();
+    const ese = num(row.ese);
+    return ese === null ? null : gradeForMarks(row.total, row.ia, ese);
+  };
+
   return (
     <Card class="gap-3 p-3.5">
       <Row class="justify-between gap-2">
@@ -260,6 +268,21 @@ function PredictEditor(props: { row: () => PredictRow }) {
           />
         )}
       </Col>
+
+      <Row class="items-end gap-2">
+        <Field
+          class="flex-1"
+          label={`ESE marks / ${maxEse(props.row().total)}`}
+          value={props.row().ese}
+          onChange={(ese) => patchPredictRow(props.row().id, { ese })}
+          placeholder="46"
+          keyboard="number-pad"
+        />
+        <Col class="items-end gap-1 pb-1.5">
+          <Label>Grade</Label>
+          <Text class="text-[18px] font-bold tabular-nums text-foreground">{gradeNow() ?? "—"}</Text>
+        </Col>
+      </Row>
 
       <Panel tone={tone()} class="gap-1 px-3 py-2.5">
         <Text class="text-[13px] font-semibold leading-5 text-foreground">{predictHeadline(props.row())}</Text>

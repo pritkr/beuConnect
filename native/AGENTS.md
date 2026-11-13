@@ -20,12 +20,14 @@ state is `signal`, data goes through `src/lib/net.ts`.
 | `docs/ANDROID.md` | host, packaging, install, device debugging |
 | `docs/SHOTS.md` | screenshot QA and what a good screen looks like |
 | `docs/A11Y_AUDIT.md` | contrast, touch targets, small screens |
-| `docs/FDROID.md` | the self-hosted repository, repo keys, publishing |
 | `docs/SITE_PARITY.md`, `docs/COMPETITORS.md` | what the app owes the site, and the market |
 
 Skills (load with the skill tool): `beu-native` for authoring, `beu-qa` for
 tests, `beu-release` for shipping, `beuconnect` for repo/site context, `beu-data`
-for generated data.
+for generated data, `nsh` for framework/API reference, `nsh-design-guides` for
+UI rules.
+
+- Docs: nsh.dev/llms.txt (live) · ctx7 `/longbridge/nsh`
 
 Nested `AGENTS.md` files load when you read their area:
 

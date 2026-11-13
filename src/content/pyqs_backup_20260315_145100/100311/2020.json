@@ -1,0 +1,321 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020 (New Course)",
+    "subject": "MATHEMATICS-III (Differential Calculus)",
+    "subject_slug": "mathematics-iii-differential-calculus",
+    "subject_code": "100311",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\lim_{x\\rightarrow0}\\left(\\frac{\\sin x}{x}\\right)^{1/x} \\) is</p>",
+          "options": [
+            "0",
+            "1",
+            "e",
+            "\\( 1/e \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Let \\( f(x)=|x| \\) and \\( g(x)=|x^3| \\), then</p>",
+          "options": [
+            "\\( f(x) \\) and \\( g(x) \\) both are continuous at \\( x=0 \\)",
+            "\\( f(x) \\) and \\( g(x) \\) both are differentiable at \\( x=0 \\)",
+            "\\( f(x) \\) is differentiable but \\( g(x) \\) is not differentiable at \\( x=0 \\)",
+            "\\( f(x) \\) and \\( g(x) \\) both are not differentiable at \\( x=0 \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\nabla^2[(1-x)(1-2x)] \\) is equal to</p>",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "6"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>If \\( \\vec{v} = xy^2\\hat{i} - 2x^2yz\\hat{j} - 3yz^2\\hat{k} \\), then the value of curl \\(\n                        \\vec{v} \\) at (1,1,1) is equal to</p>",
+          "options": [
+            "\\( -(\\hat{j}-2\\hat{k}) \\)",
+            "\\( -(\\hat{i}-3\\hat{k}) \\)",
+            "\\( -(\\hat{i}-2\\hat{k}) \\)",
+            "\\( (\\hat{i}-2\\hat{j}-\\hat{k}) \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The degree of the differential equation \\( y\\frac{dx}{dy} + \\left(\\frac{dx}{dy}\\right)^2 +\n                        \\sin y \\left(\\frac{dx}{dy}\\right)^3 - \\cos x = 0 \\) is</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "Cannot be determined"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The solution of the boundary value problem \\( (x-y^2x)dx - (x^2y-y)dy = 0 \\), \\( y(0)=0 \\) is\n                    </p>",
+          "options": [
+            "\\( x^2-y^2=0 \\)",
+            "\\( 2x-y=0 \\)",
+            "\\( x-2y=0 \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Let \\( P_n(x) \\) be the Legendre polynomial of degree \\( n \\ge 0 \\). If \\( \\int_{-1}^1\n                        P_{n-1}^2(x)dx = \\frac{2}{4n-1} \\) then the value of (k, l) is</p>",
+          "options": [
+            "(1, 1)",
+            "(1, 2)",
+            "(2, 1)",
+            "(2, 2)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The general solution of Bessel differential equation \\( x^2y''(x) + xy'(x) + (x^2-64)y(x) = 0\n                        \\) is</p>",
+          "options": [
+            "\\( y = AJ_8(x) + BJ_{-8}(x) \\), where A and B are arbitrary constants",
+            "\\( y = AJ_8(x) + BY_{-8}(x) \\), where A and B are arbitrary constants",
+            "\\( y = AJ_8(x) + J_{-8}(x) \\), where A is arbitrary constant",
+            "\\( y = J_{3/4}(x) + Y_{3/4}(x) \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The equation \\( p \\tan y + q \\tan x = \\sec^2 z \\) is of order</p>",
+          "options": [
+            "1",
+            "2",
+            "0",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The solution of \\( p \\tan x + q \\tan y = \\tan z \\) is</p>",
+          "options": [
+            "\\( \\sin x / \\sin y = \\varphi(\\sin y / \\sin z) \\)",
+            "\\( \\sin x \\cdot \\sin y = \\varphi(\\sin y / \\sin z) \\)",
+            "\\( \\sin x / \\sin y = \\phi(\\sin y, \\sin z) \\)",
+            "\\( \\sin x / \\sin y = \\varphi(\\sin y \\cdot \\sin z) \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>If \\( y = (\\sin^{-1}x)^2 \\), then show that \\( (1-x^2)y_{n+2} - (2n+1)xy_{n+1} - n^2y_n = 0\n                        \\). Hence find \\( (y_n)_0 \\).</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Find the value of \\( \\lim_{x\\rightarrow0} \\left(\\frac{\\tan x}{x}\\right)^{1/x^2} \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Discuss the continuity of the following function \\( f(x,y) \\) at point (0, 0): <br/> \\( f(x,y)\n                        = \\begin{cases} \\frac{\\sin\\sqrt{|xy|} - \\sqrt{|xy|}}{\\sqrt{x^2+y^2}}, &amp; (x,y) \\neq (0,0)\n                        \\\\ 0, &amp; (x,y) = (0,0) \\end{cases} \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>For the function \\( f(x,y) = \\begin{cases} \\frac{xy(2x^2-3y^2)}{x^2+y^2}, &amp; (x,y) \\neq (0,0)\n                        \\\\ 0, &amp; (x,y) = (0,0) \\end{cases} \\) check whether \\( f_{xy}(0,0) \\) and \\( f_{yx}(0,0)\n                        \\) are equal or not.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Find the minimum value of \\( x^2+y^2+z^2 \\) subject to the condition \\( xyz=a^3 \\).</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Obtain the second-order Taylor's series approximation to the function \\( f(x,y) = xy^2 + y\n                        \\cos(x-y) \\) about the point (1, 1).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>If \\( f = (x^2+y^2+z^2)^{-n} \\), then find div grad \\( f \\) and determine \\( n \\), if div\n                        grad \\( f = 0 \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Verify Green's theorem for \\( \\int_C [(xy+y^2)dx + x^2dy] \\) where C is bounded by \\( y=x\n                        \\), \\( y=x^2 \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Find the value of n for which the vector \\( r^n\\vec{r} \\) solenoidal, where \\( \\vec{r} =\n                        x\\hat{i} + y\\hat{j} + z\\hat{k} \\).</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Solve the differential equation \\( (y^4+2y)dx + (xy^3+2y^4-4x)dy = 0 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Solve \\( p = \\sin(y-xp) \\). Also find its singular solution.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Solve \\( x^2\\frac{d^2y}{dx^2} - 3x\\frac{dy}{dx} + 5y = x \\log x \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Prove that \\( 2nJ_n(x) = x(J_{n-1}(x) + J_{n+1}(x)) \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Prove that \\( \\sum_{n=0}^\\infty \\frac{x^{n+1}}{n+1}P_n(1) =\n                        \\frac{1}{2}\\log\\left(\\frac{1+x}{1-x}\\right) \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Solve \\( x^2p + y^2q = (x+y)z \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Solve \\( (x+y)(p+q)^2 + (x-y)(p-q)^2 = 1 \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    }
+  ]
+}

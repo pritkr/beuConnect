@@ -10,12 +10,13 @@
  * survive a 320 pt screen with the keyboard up.
  */
 
-import { Text, View, cleanup, computed, effect, keyboardFrame, signal, untracked } from "nsh";
+import { LayoutAnimation, Text, View, cleanup, computed, effect, keyboardFrame, signal, untracked } from "nsh";
 import { Input, Sheet } from "nsh/base";
 
 import type { Nav } from "../../app/router";
 import { relativeTime } from "../../lib/net";
 import { Body, Btn, Card, Chip, Col, ErrorState, Field, Label, Mono, Muted, Panel, Row, Screen, SectionHeader } from "../../ui";
+import { motionOn } from "../../ui/motion";
 import {
   MAX_MESSAGE,
   MIN_MESSAGE,
@@ -104,7 +105,7 @@ export function FeedbackComposer(props: { compact?: boolean; onDone?: () => void
                     props.compact ? "min-h-[96px]" : "min-h-[136px]"
                   } bg-transparent py-2 text-[16px] leading-6 text-foreground placeholder:text-muted-foreground`}
                   value={draft().message}
-                  onChange={(message) => patchDraft({ message })}
+                  onChange={({ value }) => patchDraft({ message: value })}
                   placeholder={placeholderFor(selected())}
                   accessibilityLabel="Message"
                   multiline
@@ -154,7 +155,7 @@ export function FeedbackComposer(props: { compact?: boolean; onDone?: () => void
                       </Mono>
                     )
                   }
-                  <Text class="text-[11px] leading-4 text-muted-foreground" numberOfLines={2}>
+                  <Text class="text-[11px] leading-4 text-muted-foreground" style={{ numberOfLines: 2 }}>
                     {target().context}
                   </Text>
                 </View>
@@ -197,7 +198,7 @@ export function FeedbackSheet() {
   return (
     <Sheet
       open={sheetOpen()}
-      onOpenChange={(open: boolean) => {
+      onOpenChange={({ open }) => {
         if (!open) closeFeedback();
       }}
       closeOnSwipe
@@ -211,10 +212,21 @@ export function FeedbackSheet() {
         <Text class="text-[18px] font-bold tracking-tight text-foreground">Feedback</Text>
         <FeedbackComposer compact onDone={closeFeedback} />
         {/* The sheet sits on the root view, so the keyboard covers it unless the
-            content lifts by exactly the keyboard's height. */}
-        {() =>
-          keyboardFrame().height > 0 ? <View style={{ height: keyboardFrame().height }} /> : null
-        }
+            content lifts by exactly the keyboard's height. The spacer's arrival
+            rides the keyboard's own curve instead of jumping in one frame. */}
+        {() => {
+          const frame = keyboardFrame();
+          if (motionOn()) {
+            LayoutAnimation.configureNext({
+              // `keyboardFrame().duration` is milliseconds since 0.4.
+              duration: frame.duration,
+              create: { type: "keyboard" },
+              update: { type: "keyboard" },
+              delete: { type: "keyboard" },
+            });
+          }
+          return frame.height > 0 ? <View style={{ height: frame.height }} /> : null;
+        }}
       </View>
     </Sheet>
   );
@@ -248,7 +260,7 @@ export function FeedbackScreen(props: { nav: Nav }) {
                       <Text class="text-[13px] font-semibold text-foreground">{typeLabel(report.type)}</Text>
                       <Text class="text-[11px] text-muted-foreground">{relativeTime(report.at)}</Text>
                     </Row>
-                    <Text class="text-[12px] leading-4 text-muted-foreground" numberOfLines={2}>
+                    <Text class="text-[12px] leading-4 text-muted-foreground" style={{ numberOfLines: 2 }}>
                       {report.message}
                     </Text>
                     {index < memory().sent.length - 1 ? (

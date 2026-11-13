@@ -1,0 +1,266 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2024",
+    "subject": "Electromagnetic Theory",
+    "subject_slug": "electromagnetic-theory",
+    "subject_code": "104404",
+    "year": 2024,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The divergence of the vector field is</p>",
+          "options": [
+            "Vector",
+            "Scalar",
+            "Can't be both",
+            "None"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The unit of electric field intensity</p>",
+          "options": [
+            "Volt",
+            "Volt per metre",
+            "Tesla",
+            "Metre"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>In Gauss's Law the electric field is related to</p>",
+          "options": [
+            "The charge density",
+            "The potential difference",
+            "The charge enclosed",
+            "The capacitance"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The electric field at a point due to an infinite sheet of charge is:</p>",
+          "options": [
+            "\\( \\frac{\\sigma}{\\epsilon_{0}} \\)",
+            "\\( \\frac{\\sigma}{2\\epsilon_{0}} \\)",
+            "\\( \\frac{2\\epsilon_{0}}{\\sigma} \\)",
+            "0"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The force on a charged particle moving in a magnetic field is maximum when the angle between the\n                        velocity and magnetic field is:</p>",
+          "options": [
+            "\\( 0^{\\circ} \\)",
+            "\\( 45^{\\circ} \\)",
+            "\\( 90^{\\circ} \\)",
+            "\\( 180^{\\circ} \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The energy density in magnetic field is given by</p>",
+          "options": [
+            "\\( \\frac{\\mu H^{2}}{2} \\)",
+            "\\( \\frac{H^{2}}{2\\mu} \\)",
+            "2",
+            "None"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The dot product of the vectors \\( 3i-2j+5k \\) and \\( -i+3j+2k \\) is,</p>",
+          "options": [
+            "-1",
+            "1",
+            "0",
+            "-3i"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The Pointing vector P is</p>",
+          "options": [
+            "\\( E \\times H \\)",
+            "\\( E \\cdot H \\)",
+            "\\( \\frac{1}{2} E \\times H \\)",
+            "\\( (E \\times H)^{2} \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The Maxwell's equation \\( \\nabla \\cdot B = 0 \\) is due to</p>",
+          "options": [
+            "Monopole does not exit",
+            "Coulomb's Law",
+            "Existence of monopoles",
+            "Ampere Circuital Law"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Curl of gradient of a vector is</p>",
+          "options": [
+            "0",
+            "Null Vector",
+            "Unity",
+            "Depends on the constants of the vector"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Write the differential elements (dl, da, dv) in both Cartesian, cylindrical co-ordinate system.\n                    </p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>State divergence theorem. What will be divergence to position vector?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Given the two points, \\( C(-3,2,1) \\) and \\( D(r=5, \\theta=20^{\\circ},\n                        \\varphi=-70^{\\circ})\n                        \\).\n                        find: (i) The spherical coordinates of C (ii) The Cartesian coordinates of D</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Find the divergence of \\( \\vec{A} = 3x^{2}a_{x} + 5x^{2}y^{2}a_{y} + xyz^{3}a_{z} \\) where \\(\n                        a_{x}, a_{y} \\) and \\( a_{z} \\) are unit vectors in cartesian coordinates at point (1,1,1)\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>State and derive Coulomb's law. Write coulomb's law in vector forms.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Derive an expression for intensity of electric field at a point distant r from a point charge.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>An infinite long line charge of uniform density \\( \\rho_{L} \\) C/cm is situated along the\n                        z-axis.\n                        Obtain electric field intensity due to this charge using Gauss's law.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Derive energy density in electrostatic field.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Four 3pC charges are at the corners of a 1-m square. The two charges at the left side of the\n                        square\n                        are positive. The two charges on the right side are negative. Find the field E at the centre of\n                        the\n                        square, \\( \\epsilon_{r}=1 \\)</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>What do you understand by capacitance of a capacitor? Deduce and expression for the capacitance\n                        of a\n                        parallel plate capacitor. How will it be modified when the gaps between the plates is filled\n                        with a\n                        dielectric?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Show that the Faraday's law of electromagnetic induction can be expressed as \\( \\nabla \\times\n                        E\n                        =\n                        -\\partial B/\\partial t \\). Write down its integral form.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain the concept of displacement current and show how it led to the modification of the\n                        Ampere's\n                        law.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss reflection of plane electromagnetic wave incident normally on a perfect dielectric and\n                        obtain\n                        expressions for the two reflection coefficients of electric and magnetic fields.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Define Poynting vector. Mention any two properties of uniform plane wave.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:-",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Biot-Savart's Law",
+            "Magnetic field boundary condition for isotropic medium",
+            "Skin Effect",
+            "Spherical capacitance"
+          ]
+        }
+      ]
+    }
+  ]
+}

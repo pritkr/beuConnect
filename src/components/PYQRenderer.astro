@@ -1,5 +1,6 @@
 ---
 import { renderMarkdown } from '../utils/markdown';
+import 'katex/dist/katex.min.css';
 
 interface Props {
   sections: any[];
@@ -156,343 +157,351 @@ function getAiUrl(type: 'gpt' | 'claude' | 'gemini', fullPrompt: string) {
 }
 ---
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
-  integrity="sha384-n9jH495vst9M6zVVQUivj9u8nQu8qZi6paasUTtr7MsmGoGCA819GLQZByFHLInm"
-  crossorigin="anonymous"
-/>
 
 <div class="pyq-dense-renderer">
   {sections.map((section) => {
     const sectionPrompt = buildSectionPrompt(section, subject, year);
     return (
-    <div class="section-group">
-      <div class="section-header-row">
-        <h4 class="section-heading">
-          <span class="heading-text" set:html={renderMarkdown(section.section_title)} />
-          {section.total_marks && <span class="m-tag big section-marks">[{section.total_marks} Marks]</span>}
-        </h4>
-        <div class="ai-dropdown section-ai">
-          <button class="ai-btn-main outline">Ask AI</button>
-          <div class="ai-menu">
-            <button data-prompt={sectionPrompt} data-url={getAiUrl('gpt', sectionPrompt)} title="Ask ChatGPT" class="ai-menu-item gpt ai-action-btn">ChatGPT</button>
-            <button data-prompt={sectionPrompt} data-url={getAiUrl('gemini', sectionPrompt)} title="Ask Gemini" class="ai-menu-item gem ai-action-btn">Gemini</button>
-            <button data-prompt={sectionPrompt} data-url={getAiUrl('claude', sectionPrompt)} title="Ask Claude" class="ai-menu-item cld ai-action-btn">Claude</button>
-          </div>
+    <section class="paper-section">
+      <header class="section-head">
+        <h3 class="section-title">
+          <span set:html={renderMarkdown(section.section_title)} />
+        </h3>
+        <div class="section-tools">
+          {section.total_marks && <span class="marks">{section.total_marks} marks</span>}
+          <details class="ai">
+            <summary>Ask AI</summary>
+            <div class="ai-menu">
+              <button type="button" data-prompt={sectionPrompt} data-url={getAiUrl('gpt', sectionPrompt)} class="ai-action-btn">ChatGPT</button>
+              <button type="button" data-prompt={sectionPrompt} data-url={getAiUrl('gemini', sectionPrompt)} class="ai-action-btn">Gemini</button>
+              <button type="button" data-prompt={sectionPrompt} data-url={getAiUrl('claude', sectionPrompt)} class="ai-action-btn">Claude</button>
+            </div>
+          </details>
         </div>
-      </div>
-      
+      </header>
+
       {section.questions && section.questions.length > 0 && (
-      <div class="questions-list">
+      <ol class="questions">
         {section.questions.map((q: any) => {
           const fullPrompt = buildFullPromptText(q, section.section_title, subject, year, section.total_marks);
           const questionText = getQuestionText(q);
           const subQuestions = getSubQuestions(q);
+          const marks = q.marks != null ? q.marks : section.total_marks;
           return (
-          <div class="q-box">
-            <div class="q-main">
-              <div class="q-num">Q{cleanId(q.id)}</div>
-              <div class="q-content">
-                <div class="q-text content-rich" set:html={renderMarkdown(questionText)} />
+          <li class="question">
+            <p class="q-num">Q{cleanId(q.id)}</p>
+            <div class="q-body">
+              <div class="q-text content-rich" set:html={renderMarkdown(questionText)} />
 
-                {q.options && q.options.length > 0 && (
-                  <div class="options-grid">
-                    {q.options.map((opt: string, i: number) => (
-                      <div class="opt-item">
-                        <span class="opt-lbl">{getLetter(i)})</span>
-                        <div class="opt-val content-rich" set:html={renderMarkdown(opt)} />
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {subQuestions.length > 0 && (
-                  <div class="sub-list">
-                    {subQuestions.map((sub: any, si: number) => (
-                      <div class="sub-item">
-                        <span class="sub-lbl">{getLetter(si)})</span>
-                        <div class="sub-body">
-                          <div class="sub-text content-rich" set:html={renderMarkdown(getQuestionText(sub))} />
-                          {getSubparts(sub).length > 0 && (
-                            <div class="subparts-list">
-                              {getSubparts(sub).map((part: any) => (
-                                <div class="subpart-item">
-                                  <span class="subpart-lbl">{part.label ? `${part.label})` : '-'}</span>
-                                  <div class="subpart-text content-rich" set:html={renderMarkdown(getQuestionText(part))} />
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                          {sub.options && (
-                            <div class="options-grid mini">
-                              {sub.options.map((sopt: string, soi: number) => (
-                                <div class="opt-item">
-                                  <span class="opt-lbl">{getLetter(soi)})</span>
-                                  <div class="opt-val content-rich" set:html={renderMarkdown(sopt)} />
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                        {sub.marks && <span class="m-tag">[{sub.marks} Marks]</span>}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <div class="q-actions">
-                {(q.marks != null ? <span class="m-tag big">[{q.marks} Marks]</span> : (section.total_marks != null ? <span class="m-tag big">[{section.total_marks} Marks]</span> : null))}
-                <div class="ai-dropdown">
-                  <button class="ai-btn-main">Ask AI</button>
-                  <div class="ai-menu">
-                    <button data-prompt={fullPrompt} data-url={getAiUrl('gpt', fullPrompt)} title="Ask ChatGPT" class="ai-menu-item gpt ai-action-btn">ChatGPT</button>
-                    <button data-prompt={fullPrompt} data-url={getAiUrl('gemini', fullPrompt)} title="Ask Gemini" class="ai-menu-item gem ai-action-btn">Gemini</button>
-                    <button data-prompt={fullPrompt} data-url={getAiUrl('claude', fullPrompt)} title="Ask Claude" class="ai-menu-item cld ai-action-btn">Claude</button>
-                  </div>
+              {q.options && q.options.length > 0 && (
+                <div class="options-grid">
+                  {q.options.map((opt: string, i: number) => (
+                    <div class="opt-item">
+                      <span class="opt-lbl">{getLetter(i)})</span>
+                      <div class="opt-val content-rich" set:html={renderMarkdown(opt)} />
+                    </div>
+                  ))}
                 </div>
-              </div>
+              )}
+
+              {subQuestions.length > 0 && (
+                <div class="sub-list">
+                  {subQuestions.map((sub: any, si: number) => (
+                    <div class="sub-item">
+                      <span class="sub-lbl">{getLetter(si)})</span>
+                      <div class="sub-body">
+                        <div class="sub-text content-rich" set:html={renderMarkdown(getQuestionText(sub))} />
+                        {getSubparts(sub).length > 0 && (
+                          <div class="subparts-list">
+                            {getSubparts(sub).map((part: any) => (
+                              <div class="subpart-item">
+                                <span class="subpart-lbl">{part.label ? `${part.label})` : '-'}</span>
+                                <div class="subpart-text content-rich" set:html={renderMarkdown(getQuestionText(part))} />
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {sub.options && (
+                          <div class="options-grid mini">
+                            {sub.options.map((sopt: string, soi: number) => (
+                              <div class="opt-item">
+                                <span class="opt-lbl">{getLetter(soi)})</span>
+                                <div class="opt-val content-rich" set:html={renderMarkdown(sopt)} />
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                      {sub.marks && <span class="marks">{sub.marks} marks</span>}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
-          </div>
+
+            <div class="q-tools">
+              {marks != null && <span class="marks">{marks} marks</span>}
+              <details class="ai">
+                <summary>Ask AI</summary>
+                <div class="ai-menu">
+                  <button type="button" data-prompt={fullPrompt} data-url={getAiUrl('gpt', fullPrompt)} class="ai-action-btn">ChatGPT</button>
+                  <button type="button" data-prompt={fullPrompt} data-url={getAiUrl('gemini', fullPrompt)} class="ai-action-btn">Gemini</button>
+                  <button type="button" data-prompt={fullPrompt} data-url={getAiUrl('claude', fullPrompt)} class="ai-action-btn">Claude</button>
+                </div>
+              </details>
+            </div>
+          </li>
           );
         })}
-      </div>
+      </ol>
       )}
-    </div>
+    </section>
     );
   })}
 </div>
 
 <script>
-  // Handle AI Dropdown toggles
+  // Copy the prompt where the target needs it, then open the assistant.
   document.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
-    
-    // Close all menus if clicking outside
-    if (!target.closest('.ai-dropdown')) {
-      document.querySelectorAll('.ai-menu').forEach(menu => menu.classList.remove('show'));
-    }
+    const button = target.closest('.ai-action-btn');
+    if (!button) return;
 
-    // Toggle specific menu
-    if (target.classList.contains('ai-btn-main')) {
-      const menu = target.nextElementSibling;
-      const isShowing = menu?.classList.contains('show');
-      document.querySelectorAll('.ai-menu').forEach(m => m.classList.remove('show'));
-      if (!isShowing) menu?.classList.add('show');
-    }
+    const prompt = button.getAttribute('data-prompt');
+    const url = button.getAttribute('data-url');
+    const isGemini = url.startsWith('https://gemini.google.com');
 
-    // Universal AI Prompt Copier & Redirector
-    if (target.classList.contains('ai-action-btn')) {
-      const prompt = target.getAttribute('data-prompt');
-      const url = target.getAttribute('data-url');
-      const isGemini = target.classList.contains('gem');
-      
-      if (prompt && url) {
-        if (isGemini) {
-          // Gemini relies on copy-pasting for complex long prompts
-          navigator.clipboard.writeText(prompt).then(() => {
-            const toast = document.createElement('div');
-            toast.className = 'copy-toast';
-            toast.textContent = `Prompt copied! Paste it in Gemini.`;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
-            window.open('https://gemini.google.com/app', '_blank');
-          }).catch(err => {
-            console.error('Failed to copy prompt:', err);
-            window.open(url, '_blank');
-          });
-        } else {
-          // ChatGPT and Claude handle URL params gracefully
-          window.open(url, '_blank');
-        }
-      }
+    if (!prompt || !url) return;
+
+    button.closest('details')?.removeAttribute('open');
+
+    if (isGemini) {
+      navigator.clipboard.writeText(prompt).then(() => {
+        const toast = document.createElement('div');
+        toast.className = 'copy-toast';
+        toast.textContent = 'Prompt copied. Paste it in Gemini.';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+        window.open('https://gemini.google.com/app', '_blank');
+      }).catch(() => {
+        window.open(url, '_blank');
+      });
+    } else {
+      window.open(url, '_blank');
     }
   });
 </script>
 
 <style is:global>
   .content-rich img {
+    display: block;
     max-width: 100%;
     height: auto;
-    margin: 0.5rem 0;
-    border-radius: 4px;
-    display: block;
+    margin: var(--s3) 0;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
   }
+
   .content-rich p { margin: 0; }
-  .content-rich table { font-size: 0.8rem; margin: 0.5rem 0; width: auto; color: rgba(255, 255, 255, 0.9); }
-  .content-rich { color: rgba(255, 255, 255, 0.95); }
-  .content-rich p, .content-rich li, .content-rich span:not(.katex *), .content-rich strong, .content-rich em { color: rgba(255, 255, 255, 0.95); }
-  
+  .content-rich table { width: auto; margin: var(--s2) 0; font-size: 0.82rem; }
+  .content-rich { color: var(--paper); }
+
   .copy-toast {
     position: fixed;
-    bottom: 2rem;
+    bottom: 1.5rem;
     left: 50%;
-    transform: translateX(-50%);
-    background: var(--accent-blue);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
     z-index: 9999;
-    animation: fadeInOut 3s ease forwards;
+    padding: 0.5rem 0.85rem;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r);
+    background: var(--surface);
+    color: var(--paper);
+    font-size: 0.8rem;
+    transform: translateX(-50%);
+    animation: toast-in 0.2s ease both;
   }
-  @keyframes fadeInOut {
-    0% { opacity: 0; transform: translate(-50%, 1rem); }
-    10% { opacity: 1; transform: translate(-50%, 0); }
-    90% { opacity: 1; transform: translate(-50%, 0); }
-    100% { opacity: 0; transform: translate(-50%, 1rem); }
+
+  @keyframes toast-in {
+    from { opacity: 0; transform: translate(-50%, 0.4rem); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .copy-toast { animation: none; }
   }
 </style>
 
 <style>
   .pyq-dense-renderer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
+    display: grid;
+    gap: var(--s5);
     font-size: 0.9rem;
   }
 
-  .section-group {
-    border: 1px solid var(--border-subtle);
-    border-radius: 8px;
-    background: rgba(255,255,255,0.01);
-    /* Removed overflow: hidden so dropdowns don't get clipped */
+  .paper-section {
+    padding-top: var(--s4);
+    border-top: 1px solid var(--line-strong);
   }
 
-  .section-header-row {
+  .paper-section:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .section-head {
     display: flex;
+    align-items: baseline;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
-    background: rgba(255,255,255,0.03);
-    padding: 0.4rem 0.6rem;
-    border-bottom: 1px solid var(--border-subtle);
-    border-radius: 8px 8px 0 0;
+    gap: var(--s3);
+    padding-bottom: var(--s2);
+    border-bottom: 1px solid var(--line);
   }
 
-  .section-heading {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
+  .section-title {
+    margin: 0;
+    color: var(--muted);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0;
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 700;
   }
-  
-  .heading-text p {
-    margin: 0;
+
+  .section-title p {
     display: inline;
+    margin: 0;
   }
 
-  .section-marks {
-    font-size: 0.65rem;
-    padding: 0.1rem 0.3rem;
-    color: var(--accent-purple);
-    background: rgba(139, 92, 246, 0.15);
+  .section-tools {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: var(--s3);
   }
 
-  .section-ai .ai-btn-main {
-    background: transparent;
-    color: var(--text-muted);
-    border-color: var(--border-subtle);
-    white-space: nowrap;
+  .marks {
+    color: var(--faint);
     font-size: 0.7rem;
-    padding: 0.15rem 0.4rem;
-  }
-  
-  .section-ai .ai-btn-main:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
 
-  .q-box {
-    border-bottom: 1px dashed var(--border-subtle);
-    padding: 0.6rem 0.75rem;
-    position: relative; /* Essential for dropdown rendering */
+  .questions {
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
-  .q-box:last-child { border-bottom: none; }
 
-  .q-main {
+  .question {
     display: grid;
-    grid-template-columns: 2.2rem 1fr auto;
-    gap: 0.5rem;
-    min-width: 0;
+    grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+    gap: var(--s3);
+    padding: var(--s4) 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .question:last-child {
+    border-bottom: 0;
   }
 
   .q-num {
-    font-weight: 900;
-    color: var(--accent-blue);
-    font-size: 0.85rem;
+    margin: 0;
+    padding-top: 0.15rem;
+    color: var(--faint);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
   }
 
-  .q-content { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 0.35rem; 
+  .q-body {
+    display: grid;
+    gap: var(--s2);
     min-width: 0;
   }
 
-  /* Modified to 1fr to ensure long options have full line */
+  .q-text {
+    min-width: 0;
+    line-height: 1.55;
+    overflow-wrap: break-word;
+  }
+
+  .q-tools {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s3);
+    padding-top: 0.15rem;
+  }
+
   .options-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0.25rem;
-    margin-top: 0.15rem;
-    min-width: 0;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 0.15rem var(--s4);
   }
-  .options-grid.mini { grid-template-columns: 1fr; }
+
+  .options-grid.mini {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
   .opt-item {
-    display: flex;
-    gap: 0.3rem;
-    background: rgba(255,255,255,0.02);
-    padding: 0.25rem 0.45rem;
-    border-radius: 4px;
-    border: 1px solid transparent;
+    display: grid;
+    grid-template-columns: 1.1rem minmax(0, 1fr);
+    gap: 0.35rem;
     min-width: 0;
+    padding: 0.1rem 0;
   }
-  .opt-item:hover { border-color: var(--accent-blue); }
-  .opt-lbl { font-weight: 700; color: rgba(255, 255, 255, 0.8); font-size: 0.8rem; }
-  .opt-val { min-width: 0; overflow-wrap: break-word; }
+
+  .opt-lbl {
+    color: var(--faint);
+    font-size: 0.8rem;
+  }
+
+  .opt-val {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
 
   .sub-list {
-    margin-top: 0.4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    padding-left: 0.5rem;
-    border-left: 2px solid rgba(255,255,255,0.05);
+    display: grid;
+    gap: var(--s2);
+    margin-top: var(--s2);
+    padding-left: var(--s3);
+    border-left: 1px solid var(--line);
+  }
+
+  .sub-item {
+    display: grid;
+    grid-template-columns: 1.1rem minmax(0, 1fr) auto;
+    gap: 0.35rem;
     min-width: 0;
   }
 
-  .sub-item { display: flex; gap: 0.35rem; position: relative; min-width: 0; }
-  .sub-lbl { font-weight: 700; color: rgba(255, 255, 255, 0.9); min-width: 1rem; font-size: 0.85rem; }
-  .sub-body { flex: 1; min-width: 0; overflow-wrap: break-word; }
+  .sub-lbl {
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .sub-body {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
 
   .subparts-list {
-    margin-top: 0.35rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding-left: 0.5rem;
+    display: grid;
+    gap: 0.15rem;
+    margin-top: 0.2rem;
   }
 
   .subpart-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.2rem minmax(0, 1fr);
     gap: 0.35rem;
     min-width: 0;
   }
 
   .subpart-lbl {
-    color: rgba(255, 255, 255, 0.75);
-    font-weight: 700;
-    min-width: 1.2rem;
+    color: var(--faint);
     font-size: 0.78rem;
   }
 
@@ -501,118 +510,88 @@ function getAiUrl(type: 'gpt' | 'claude' | 'gemini', fullPrompt: string) {
     overflow-wrap: break-word;
   }
 
-  .q-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.35rem;
-    min-width: 70px;
-    z-index: 5; /* Keep relative context */
-  }
-
-  .m-tag {
-    font-size: 0.65rem;
-    font-weight: 800;
-    color: var(--text-muted);
-    background: rgba(255,255,255,0.05);
-    padding: 0.1rem 0.3rem;
-    border-radius: 3px;
-  }
-  .m-tag.big { background: rgba(139, 92, 246, 0.1); color: var(--accent-purple); padding: 0.15rem 0.35rem; font-size: 0.7rem; }
-
-  /* AI Dropdown Styles */
-  .ai-dropdown {
+  /* Ask AI: native disclosure keeps keyboard and escape behaviour. */
+  .ai {
     position: relative;
-    /* Removed margin-left: auto from generic dropdowns as it broke flow */
-  }
-  
-  .section-ai {
-    margin-left: auto;
-  }
-  
-  .q-actions .ai-dropdown {
-    margin-left: 0;
+    margin: 0;
+    border: 0;
   }
 
-  .ai-btn-main {
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid var(--border-accent);
-    color: var(--accent-blue);
+  .ai summary {
+    padding: 0;
+    color: var(--faint);
     font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.15rem 0.4rem;
-    border-radius: 4px;
+    white-space: nowrap;
     cursor: pointer;
-    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    list-style: none;
   }
 
-  .ai-btn-main:hover {
-    background: var(--accent-blue);
-    color: white;
+  .ai summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ai summary:hover,
+  .ai[open] summary {
+    color: var(--paper);
+  }
+
+  .ai summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   .ai-menu {
-    display: none;
     position: absolute;
     top: 100%;
-    right: 0; /* Lock right edge by default */
-    left: auto; /* Don't allow left auto-expanding to break viewport */
-    margin-top: 0.25rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-sm);
-    flex-direction: column;
-    z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    min-width: max-content; /* Ensure items fit tightly */
+    right: 0;
+    z-index: 20;
+    display: grid;
+    min-width: 8.5rem;
+    margin-top: var(--s1);
+    padding: var(--s1);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r);
+    background: var(--surface);
   }
 
-  .ai-menu.show {
-    display: flex;
-  }
-
-  .ai-menu-item {
-    padding: 0.35rem 0.6rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    text-decoration: none;
-    border: none;
+  .ai-menu button {
+    margin: 0;
+    padding: 0.4rem 0.55rem;
+    border: 0;
+    border-radius: calc(var(--r) - 1px);
     background: transparent;
+    color: var(--muted);
+    font-size: 0.76rem;
     text-align: left;
     cursor: pointer;
-    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
   }
-  .ai-menu-item:last-child { border-bottom: none; }
-  
-  .ai-menu-item:hover { background: rgba(255,255,255,0.05); }
-  .ai-menu-item.gpt:hover { color: #10a37f; }
-  .ai-menu-item.gem:hover { color: #4285f4; }
-  .ai-menu-item.cld:hover { color: #d97757; }
 
-  @media (max-width: 600px) {
-    .q-main { grid-template-columns: 1fr; gap: 0.4rem; }
-    .q-num { background: rgba(59, 130, 246, 0.1); width: fit-content; padding: 0 0.4rem; border-radius: 4px; }
-    
-    /* Ensure the actions row doesn't break boundaries */
-    .q-actions { 
-      flex-direction: row; 
-      justify-content: flex-end; /* Force button to right side */
-      align-items: center; 
-      border-top: 1px solid var(--border-subtle); 
-      padding-top: 0.5rem; 
-      margin-top: 0.4rem; 
-      gap: 1rem;
+  .ai-menu button:hover {
+    background: var(--surface-2);
+    color: var(--paper);
+  }
+
+  @media (max-width: 700px) {
+    .question {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s2);
     }
-    
-    /* Push marks to extreme left, leaving Ask AI on extreme right */
-    .q-actions .m-tag { margin-right: auto; }
-    
-    /* Safely anchor the dropdown internally to not exceed the right bound */
-    .ai-menu {
-      right: 0;
-      left: auto;
+
+    .q-num {
+      padding-top: 0;
+    }
+
+    .q-tools {
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sub-item {
+      grid-template-columns: 1.1rem minmax(0, 1fr);
+    }
+
+    .sub-item > .marks {
+      grid-column: 2;
     }
   }
 </style>

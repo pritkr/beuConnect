@@ -1,0 +1,280 @@
+---
+/**
+ * The PWA's notification opt-in.
+ *
+ * A browser will not let a page subscribe without a gesture, so this is a
+ * button and three topic switches rather than a hidden call at boot. Two cases
+ * are explained instead of papered over:
+ *
+ * - iOS Safari only delivers Web Push to a site added to the Home Screen, so
+ *   the panel says that instead of failing at `subscribe()`.
+ * - A browser that has already blocked notifications cannot be asked again from
+ *   here; the text says where the setting lives.
+ *
+ * `swwe.js` owns delivery. This file owns consent.
+ */
+---
+
+<section id="beu-notify" class="notify" hidden aria-labelledby="beu-notify-title">
+  <div class="notify-head">
+    <div>
+      <h2 id="beu-notify-title">Notifications</h2>
+      <p id="beu-notify-note" class="notify-note" role="status"></p>
+    </div>
+    <button id="beu-notify-action" class="notify-btn" type="button">Turn on</button>
+  </div>
+  <div id="beu-notify-topics" class="notify-topics" hidden>
+    <label><input type="checkbox" value="important" checked /> <span>Important</span></label>
+    <label><input type="checkbox" value="results" checked /> <span>Results</span></label>
+    <label><input type="checkbox" value="notices" /> <span>All notices</span></label>
+  </div>
+</section>
+
+<style>
+  .notify {
+    margin: 1.25rem 0;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+  }
+  .notify[hidden] {
+    display: none;
+  }
+  .notify-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .notify h2 {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .notify-note {
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+  .notify-btn {
+    flex: none;
+    min-height: 2.4rem;
+    padding: 0 0.9rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .notify-btn[disabled] {
+    opacity: 0.55;
+    cursor: default;
+  }
+  .notify-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-top: 0.9rem;
+  }
+  .notify-topics[hidden] {
+    display: none;
+  }
+  .notify-topics label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--paper);
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .notify-topics input {
+    accent-color: var(--accent);
+    width: 1rem;
+    height: 1rem;
+  }
+</style>
+
+<script>
+  const panel = document.getElementById("beu-notify");
+  const note = document.getElementById("beu-notify-note");
+  const action = document.getElementById("beu-notify-action");
+  const topicsBox = document.getElementById("beu-notify-topics");
+  const TOPIC_KEY = "beu.push.topics";
+
+  function base64urlToBytes(value) {
+    const padded = value.replace(/-/g, "+").replace(/_/g, "/");
+    const binary = atob(padded.padEnd(Math.ceil(padded.length / 4) * 4, "="));
+    return Uint8Array.from(binary, (char) => char.charCodeAt(0));
+  }
+
+  function savedTopics() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(TOPIC_KEY) || "null");
+      if (Array.isArray(raw) && raw.length) return raw;
+    } catch (error) {
+      /* a corrupt list falls back to the default */
+    }
+    return ["important", "results"];
+  }
+
+  function checkedTopics() {
+    return Array.from(topicsBox.querySelectorAll("input:checked")).map((input) => input.value);
+  }
+
+  /**
+   * Turning push on needs two separate hops: this page asks the browser, and the
+   * browser asks its own push service — Google's FCM in Chromium, Apple's APNs
+   * in Safari. The second hop does not involve this site at all, so retrying the
+   * button can never fix it, and "Something went wrong, try again" would send
+   * students in a circle. Name the cause instead.
+   */
+  function pushFailure(error) {
+    const name = error && error.name;
+    const text = String((error && error.message) || "");
+    if (name === "NotAllowedError") {
+      return "Notifications are blocked for this site. Allow them in your browser's site settings, then press Turn on again.";
+    }
+    if (/push service/i.test(text)) {
+      return "This browser cannot reach its notification service. Brave: turn on \u201cUse Google services for push messaging\u201d in Settings \u2192 Privacy and security, then press Turn on again.";
+    }
+    if (name === "InvalidAccessError" || name === "InvalidStateError") {
+      return "This browser rejected the notification key. Update the browser, then press Turn on again.";
+    }
+    return "Something went wrong. Try again in a moment.";
+  }
+
+  function paint(state, message) {
+    note.textContent = message;
+    action.textContent = state === "on" ? "Turn off" : state === "blocked" ? "Blocked" : "Turn on";
+    action.disabled = state === "blocked" || state === "unsupported";
+    topicsBox.hidden = state !== "on";
+  }
+
+  /** The subscription already on this device, if the service worker has one. */
+  async function currentSubscription() {
+    const registration = await navigator.serviceWorker.ready;
+    return registration.pushManager.getSubscription();
+  }
+
+  async function subscribe() {
+    const permission =
+      Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
+    if (permission !== "granted") {
+      paint("blocked", "Notifications are blocked for this site. Allow them in your browser's site settings, then press Turn on again.");
+      return;
+    }
+
+    const keyResponse = await fetch("/api/push/key", { cache: "no-store" });
+    if (!keyResponse.ok) {
+      paint("off", "Notifications are not available right now.");
+      return;
+    }
+    const { key } = await keyResponse.json();
+    const registration = await navigator.serviceWorker.ready;
+
+    let subscription = await registration.pushManager.getSubscription();
+    if (!subscription) {
+      try {
+        subscription = await registration.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: base64urlToBytes(key),
+        });
+      } catch (error) {
+        paint("off", pushFailure(error));
+        return;
+      }
+    }
+
+    const topics = checkedTopics();
+    const response = await fetch("/api/push/subscribe", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ subscription: subscription.toJSON(), topics }),
+    });
+    if (!response.ok) {
+      paint("off", "Could not save this device. Try again in a moment.");
+      return;
+    }
+    localStorage.setItem(TOPIC_KEY, JSON.stringify(topics));
+    paint("on", "On for the topics below. Notifications arrive with this site closed.");
+  }
+
+  async function unsubscribe() {
+    const subscription = await currentSubscription();
+    if (subscription) {
+      await fetch("/api/push/unsubscribe", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ endpoint: subscription.endpoint }),
+      }).catch(() => undefined);
+      await subscription.unsubscribe().catch(() => undefined);
+    }
+    paint("off", "Off. You can turn notifications back on any time.");
+  }
+
+  async function saveTopics() {
+    const topics = checkedTopics();
+    localStorage.setItem(TOPIC_KEY, JSON.stringify(topics));
+    const subscription = await currentSubscription();
+    if (!subscription) return;
+    await fetch("/api/push/subscribe", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ subscription: subscription.toJSON(), topics }),
+    }).catch(() => undefined);
+  }
+
+  async function start() {
+    if (!("serviceWorker" in navigator) || !("PushManager" in window) || !("Notification" in window)) {
+      return;
+    }
+    panel.hidden = false;
+
+    const standalone =
+      window.matchMedia("(display-mode: standalone)").matches ||
+      window.navigator.standalone === true;
+    const isIos = /iP(hone|ad|od)/.test(navigator.userAgent);
+    if (isIos && !standalone) {
+      paint("unsupported", "On iPhone and iPad, add BEUConnect to your Home Screen first. Notifications only work from the installed app.");
+      return;
+    }
+
+    const saved = savedTopics();
+    for (const input of topicsBox.querySelectorAll("input")) {
+      input.checked = saved.includes(input.value);
+    }
+
+    if (Notification.permission === "denied") {
+      paint("blocked", "Notifications are blocked for this site in your browser settings.");
+      return;
+    }
+
+    const subscription = await currentSubscription();
+    if (subscription) {
+      paint("on", "On for the topics below. Notifications arrive with this site closed.");
+      return;
+    }
+    paint("off", "Get important notices and results while this site is closed.");
+  }
+
+  action.addEventListener("click", () => {
+    action.disabled = true;
+    const turningOff = action.textContent === "Turn off";
+    (turningOff ? unsubscribe() : subscribe())
+      .catch((error) => paint("off", pushFailure(error)))
+      .finally(() => {
+        action.disabled = false;
+      });
+  });
+
+  topicsBox.addEventListener("change", () => {
+    void saveTopics();
+  });
+
+  void start();
+</script>

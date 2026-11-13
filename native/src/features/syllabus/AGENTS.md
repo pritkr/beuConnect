@@ -22,7 +22,8 @@ bun scripts/data/verify-packs.ts             # decode, counts, per-branch hash
 ```
 
 A plain run is byte-identical when nothing changed. `--from-site` prints what
-changed branch by branch before writing.
+changed branch by branch before writing, and applies `decode.ts`'s `normalise`
+pass, so it reports 0 when the site and the snapshot agree on substance.
 
 ## Rules
 

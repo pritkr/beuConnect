@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech. 4th Semester Examination, 2015",
+    "subject": "POWER SYSTEM-I",
+    "subject_slug": "power-system-i",
+    "subject_code": "031404",
+    "year": 2015,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>For a medium length transmission line, A is</p>",
+          "options": [
+            "equal to B",
+            "equal to C",
+            "equal to D",
+            "not equal to any of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>To increase the transmission capability of a high-voltage longline</p>",
+          "options": [
+            "the resistance can be increased",
+            "the resistance can be decreased",
+            "the series reactance can be reduced",
+            "the shunt admittance can be reduced"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The surge impedance of 50-mile long underground cable is 50 ohms. For a length of 25 miles the\n                        impedance will be</p>",
+          "options": [
+            "26 ohms",
+            "50 ohms",
+            "100 ohms",
+            "12.5 ohms",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>In a transmission system, the weight of copper used is proportional to</p>",
+          "options": [
+            "\\( E^2 \\)",
+            "\\( E \\)",
+            "\\( 1/E^2 \\)",
+            "\\( 1/E \\)",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Stringing chart is useful for</p>",
+          "options": [
+            "finding the sag in the conductor",
+            "the design of tower",
+            "the design of insulator string",
+            "finding the distance between towers"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The regulation of a line at full-load 0.8 of lagging is 12%. The regulation at full-load 0.8 p.f.\n                        leading can be</p>",
+          "options": [
+            "24%",
+            "18%",
+            "12%",
+            "4%"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The inductance of a line is minimum when</p>",
+          "options": [
+            "GMD is high",
+            "GMR is high",
+            "Both GMD and GMR are high",
+            "GMD is low and GMR is high"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which distribution system is more reliable?</p>",
+          "options": [
+            "Ring main system",
+            "Tree system",
+            "Radial system",
+            "All are equally reliable"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In a 3-core cable, the capacitance between 2 conductors (with sheath earthed) is 3 \\( \\mu F\n                        \\).\n                        The capacitance/phase is</p>",
+          "options": [
+            "1.5 \\( \\mu F \\)",
+            "3 \\( \\mu F \\)",
+            "6 \\( \\mu F \\)",
+            "12 \\( \\mu F \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>For a transmission line with resistance R2, reactance X2 and negligible capacitance, the\n                        parameter A\n                        is</p>",
+          "options": [
+            "0",
+            "1",
+            "\\( R + jX \\)",
+            "\\( (R^2 + X^2)^{1/2} \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Describe the various systems of power transmission and compare the following as regard to the\n                        amount\n                        of copper used for the same distance, the same power transfer, the same maximum voltage to\n                        ground\n                        and the same power loss: (a) 3-phase, 3-wire AC (b) 3-wire DC (c) 1-phase, 2-wire AC.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>State Kelvin's law and explain why in practice the law is usually not strictly observed.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>The following data relate to a 2-wire feeder: Current carried throughout the year = 220 A. The\n                        portion of the capital cost which is proportional to X-sectional area = 6 per kg of Cu\n                        conductor.\n                        Cost of energy = 6 P per kWh. Interest and depreciation charges = 10% PA. Density of copper =\n                        8.93\n                        \\( g/cm^3 \\). Specific resistance of copper = 1.8 \\( \\mu\\Omega-cm \\). Find the most\n                        economical\n                        X-section of the conductor.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A 1.5 km long single-phase 2-wire feeder supplies the loads as under: 60 A at 0.8 p.f. (lagging),\n                        600\n                        m from the fed point. 40 A at 0.85 p.f. (lagging), 1200 m from the fed point. 50 A at 0.88 p.f.\n                        (lagging), 1500 m from the fed point. The resistance and reactance of the feeder per km length\n                        (go\n                        and return) are 0.1 \\( \\Omega \\) and 0.2 \\( \\Omega \\) respectively. If the voltage at the\n                        far\n                        end is to be maintained at 220 V, calculate the voltage of the sending end, and its phase angle\n                        with\n                        respect to the receiving end voltage.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Find the inductance per phase of 3-\\(\\phi\\) overhead transmission line using 2 cm diameter\n                        conductors when these are placed at the corners of equilateral triangle of sides 4 meters. Also\n                        do\n                        the derivation needful.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>The three conductors of a 3-\\(\\phi\\) transmission line are arranged in a horizontal plane and\n                        are\n                        4 meters apart. The diameter of each conductor is 2.5 cm. Determine the inductance per km of the\n                        each conductor (line to neutral). Assume balanced load and R, Y, B phase sequence. Determine the\n                        average inductance per phase for regularly transposed line.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Discuss the effect of wind and ice on sag.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>The following data refers to a transmission line supported on level supports: Span length = 220\n                        meters. Hard drawn copper conductor: X-sectional area = 120 \\( mm^2 \\), 37/2-11 mm; \\( W_c =\n                        1/2\n                        \\) kg/m. Ultimate tensile stress = 42.2 \\( kg/mm^2 \\). Factor of safety = 4. Wind pressure =\n                        55\n                        \\( kg/m^2 \\). Thickness of ice coating = 12 mm. Density of ice = 913 \\( kg/m^3 \\). Find the\n                        vertical sag.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A 50 Hz, 3-\\(\\phi\\), 100 km long transmission line has a total resistance of 35 \\( \\Omega\n                        \\),\n                        series reactance of 140 \\( \\Omega \\) and shunt admittance (line to neutral) \\( 930 \\times\n                        10^{-6} \\) mho. It delivers 40 MW at 220 kV at 0.9 p.f. lagging. Using nominal \\( \\pi \\)\n                        method\n                        determine the following: (a) A, B, C, D constants (b) Sending end voltage (c) Sending end\n                        current\n                        (d) Sending end power factor (e) Voltage regulation (f) Transmission efficiency.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Derive the expressions for voltage and current distributions over a longline. Explain the\n                        significance of characteristic impedance loading in connection with the longlines. Deduce the\n                        above\n                        voltage and current relations in the hyperbolic form and obtain the element values of an\n                        equivalent\n                        to represent the longlines.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain briefly the following methods of grading of cables: (a) Capacitance grading (b)\n                        Intersheath\n                        grading.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

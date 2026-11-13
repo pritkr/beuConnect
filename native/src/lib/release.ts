@@ -1,11 +1,10 @@
 /**
- * The app's own release channel, and the one thing every student will use:
- * sending the app to a classmate.
+ * The build's release channel: handing the app to a classmate, and letting a
+ * build shared as a file find its successor.
  *
- * There is no Play Store, so GitHub Releases is the store. The repository is
- * public, `releases/latest` is the newest non-draft release, and the APK asset
- * is named `BEUConnect.apk` in every release — which gives one URL that always
- * downloads the current build:
+ * On GitHub the APK is the store. The repository is public, `releases/latest`
+ * is the newest non-draft release, and the APK asset is named `BEUConnect.apk`
+ * in every release — one URL that always downloads the current build:
  *
  *   https://github.com/pritkr/beuconnect/releases/latest/download/BEUConnect.apk
  *
@@ -16,6 +15,10 @@
  *     names that URL rather than a file, because a chat attachment cannot be
  *     updated and a link can.
  *
+ * The Play build takes the other branch: `isPlay()` short-circuits every call
+ * here and points the share text at the listing instead, because Play forbids
+ * an app that updates itself or links to an APK outside Play.
+ *
  * Nothing here throws: a phone with no connection, a rate-limited API and a
  * repo with no release yet all answer `null`, and the caller renders the
  * version it already knows.
@@ -23,6 +26,7 @@
 
 import { signal } from "nsh";
 import { APP_VERSION } from "./app-info";
+import { PLAY_LISTING, isPlay } from "./channel";
 import { fetchJson, readStore, writeStore } from "./net";
 
 /** `owner/repo` of the public source repository; the release channel lives here. */
@@ -156,6 +160,8 @@ let started = false;
  * the answer, so a student tapping it twice does not spend two API calls.
  */
 export async function checkForUpdates(force = false): Promise<AppRelease | null> {
+  // A Play install is updated by Play and by nothing else; no API call, no row.
+  if (isPlay()) return null;
   if (checking()) return latestRelease();
   checking.set(true);
   try {
@@ -179,7 +185,7 @@ export async function checkForUpdates(force = false): Promise<AppRelease | null>
 
 /** Once per launch, in the background: whatever the answer, no screen waits on it. */
 export function startUpdateCheck(): void {
-  if (started) return;
+  if (started || isPlay()) return;
   started = true;
   void checkForUpdates(false);
 }
@@ -190,8 +196,9 @@ export function availableVersion(release: AppRelease | null = latestRelease()): 
   return compareVersions(release.version, APP_VERSION) > 0 ? release.version : "";
 }
 
-/** Where an update installs from: the APK asset, else the release page. */
+/** Where an update installs from: the listing on Play, the APK asset on GitHub. */
 export function updateUrl(release: AppRelease | null = latestRelease()): string {
+  if (isPlay()) return PLAY_LISTING;
   if (release === null) return RELEASE_PAGE;
   return release.apk !== "" ? release.apk : release.page;
 }
@@ -200,11 +207,15 @@ export function updateUrl(release: AppRelease | null = latestRelease()): string 
 
 /**
  * What one student sends another. Short on purpose: a WhatsApp message that
- * fits two lines on a phone is read; a paragraph is scrolled past. The URL is
- * the always-current APK, not the release page, so the receiver taps once.
+ * fits two lines on a phone is read; a paragraph is scrolled past. The GitHub
+ * build names the always-current APK, not the release page, so the receiver
+ * taps once; the Play build names the listing, which is the only thing Play
+ * allows it to name.
  */
 export function shareMessage(): string {
-  return `BEUConnect — syllabus, previous papers, results, rank and attendance for BEU students. Free, no login, works offline.\n\nDownload: ${APK_URL}`;
+  const line = `BEUConnect — syllabus, previous papers, results, rank and attendance for BEU students. Free, no login, works offline.`;
+  if (isPlay()) return `${line}\n\nGet it on Google Play: ${PLAY_LISTING}`;
+  return `${line}\n\nDownload: ${APK_URL}`;
 }
 
 /** `wa.me/?text=` opens the WhatsApp app on Android, or WhatsApp Web without it. */

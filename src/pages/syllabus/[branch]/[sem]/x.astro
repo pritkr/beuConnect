@@ -2,8 +2,6 @@
 export const prerender = true;
 import Layout from "../../../../layouts/Layout.astro";
 import branchConfig from "../../../../assets/data/config.json";
-import Header from "../../../../components/header.astro";
-import Footer from "../../../../components/footer.astro";
 
 export async function getStaticPaths() {
   const paths = [];
@@ -24,25 +22,28 @@ const data = syllabus.default;
 const semData = data && data.semesters ? data.semesters[sem] : undefined;
 ---
 
-<Layout title={`${branchInfo.name} — Semester ${sem}`}>
-    <Header />
-  <h1><a href="../">←{branchInfo.name}</a></h1>
-  <h2>Semester {sem}</h2>
+<Layout title={`${branchInfo.name} semester ${sem}`}>
+  <header class="page-head">
+    <div>
+      <p class="back"><a href={`${import.meta.env.BASE_URL}syllabus/${branch}/`}>{branchInfo.name}</a></p>
+      <h1>Semester {sem}</h1>
+    </div>
+  </header>
 
   {semData && semData.subjects && semData.subjects.length ? (
-    <section>
+    <div class="subjects">
       {(() => {
         const nonPracticals = semData.subjects.filter((s: any) => (s.type || '').toLowerCase() !== 'practical');
         const practicals = semData.subjects.filter((s: any) => (s.type || '').toLowerCase() === 'practical');
         return (
           <>
-            {nonPracticals.length ? <h3>Theory</h3> : null}
+            {nonPracticals.length ? <h2>Theory</h2> : null}
             {nonPracticals.map((sub: any) => (
               <details>
                 <summary>
                   <strong>{sub.name}</strong>
                   {sub.code ? ` (${sub.code})` : ''}
-                  {` - ${sub.credits} Credits`}
+                  {` · ${sub.credits} credits`}
                 </summary>
                 {sub.content ? (
                   (() => {
@@ -54,29 +55,29 @@ const semData = data && data.semesters ? data.semesters[sem] : undefined;
                         ].filter(Boolean).join(' + ')
                       : null;
                     return (
-                      <p style="white-space: pre-wrap;">{ltp ? `${ltp}\n` : ''}{sub.content}</p>
+                      <p>{ltp ? `${ltp}\n` : ''}{sub.content}</p>
                     );
                   })()
                 ) : null}
                 {Array.isArray(sub.references) && sub.references.length ? (
-                  <div>
-                    <p>References:</p>
-                    <div>
+                  <div class="references">
+                    <p class="label">References</p>
+                    <ul>
                       {sub.references.map((ref: any) => (
-                        <div>{ref}</div>
+                        <li>{ref}</li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 ) : null}
               </details>
             ))}
-            {practicals.length ? <h3>Practical</h3> : null}
+            {practicals.length ? <h2>Practical</h2> : null}
             {practicals.map((sub: any) => (
               <details>
                 <summary>
                   <strong>{sub.name}</strong>
                   {sub.code ? ` (${sub.code})` : ''}
-                  {` - ${sub.credits} Credits`}
+                  {` · ${sub.credits} credits`}
                 </summary>
                 {sub.content ? (
                   (() => {
@@ -88,18 +89,18 @@ const semData = data && data.semesters ? data.semesters[sem] : undefined;
                         ].filter(Boolean).join(' + ')
                       : null;
                     return (
-                      <p style="white-space: pre-wrap;">{ltp ? `${ltp}\n` : ''}{sub.content}</p>
+                      <p>{ltp ? `${ltp}\n` : ''}{sub.content}</p>
                     );
                   })()
                 ) : null}
                 {Array.isArray(sub.references) && sub.references.length ? (
-                  <div>
-                    <p>References:</p>
-                    <div>
+                  <div class="references">
+                    <p class="label">References</p>
+                    <ul>
                       {sub.references.map((ref: any) => (
-                        <div>{ref}</div>
+                        <li>{ref}</li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 ) : null}
               </details>
@@ -107,9 +108,92 @@ const semData = data && data.semesters ? data.semesters[sem] : undefined;
           </>
         );
       })()}
-    </section>
+    </div>
   ) : (
-    <p><em>Data not available for this semester yet.</em></p>
+    <p class="empty">Syllabus is not available for this semester yet.</p>
   )}
-  <Footer />
+
+  <style>
+    .back {
+      margin: 0 0 var(--s2);
+      font-size: 0.78rem;
+    }
+
+    .back a {
+      color: var(--faint);
+      text-decoration: none;
+    }
+
+    .back a:hover {
+      color: var(--paper);
+    }
+
+    .subjects {
+      margin-top: var(--s5);
+      border-top: 1px solid var(--line-strong);
+    }
+
+    h2 {
+      margin: var(--s5) 0 var(--s2);
+      color: var(--faint);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+    }
+
+    summary {
+      padding: var(--s3) 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    summary strong {
+      color: var(--paper);
+      font-weight: 600;
+    }
+
+    details p {
+      max-width: var(--measure);
+      margin: 0 0 var(--s3);
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.65;
+      white-space: pre-wrap;
+    }
+
+    .references {
+      padding-top: var(--s3);
+      border-top: 1px solid var(--line);
+    }
+
+    .label {
+      margin: 0 0 var(--s2);
+      color: var(--faint);
+      font-size: 0.68rem;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .references ul {
+      display: grid;
+      gap: var(--s2);
+      margin: 0 0 var(--s3);
+      padding-left: 1rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .empty {
+      margin: var(--s5) 0;
+      color: var(--faint);
+    }
+  </style>
 </Layout>

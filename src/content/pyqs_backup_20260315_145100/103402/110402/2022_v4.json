@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2022 (New Course)",
+    "subject": "ELECTRICAL MACHINES-II",
+    "subject_slug": "electrical-machines-ii",
+    "subject_code": "103402/110402",
+    "year": 2022,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The pitch factor, in rotating electrical machinery, is defined as the ratio of resultant emf of a\n                    </p>",
+          "options": [
+            "full-pitched coil to that of a chorded coil",
+            "full-pitched coil to the phase emf",
+            "chorded coil to the phase emf",
+            "chorded coil to that of a full-pitched coil"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>For a 3 phase uniformly distributed narrow-spread winding, and the distribution factor is</p>",
+          "options": [
+            "0.9",
+            "0.955",
+            "0.827",
+            "0.97"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>MMF is related to</p>",
+          "options": [
+            "ampere turns",
+            "voltage turns",
+            "ampere hours",
+            "voltage hours",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>When a single-phase winding is excited by an alternating current, then which of the following\n                        statements is correct?</p>",
+          "options": [
+            "It produces one stationary MMF wave",
+            "Produced MMF wave pulsates along its magnetic axis",
+            "It does not produce two counters rotating MMF wave",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Three-phase voltages are applied to the three windings of an electrical machine. If any two\n                        supply\n                        terminals are interchanged, then the rotating MMF wave</p>",
+          "options": [
+            "direction reverses, amplitude alters",
+            "direction reverses, amplitude unaltered",
+            "direction remains same, amplitude alters",
+            "direction remains same, amplitude unaltered"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>An induction motor can be said analogous to</p>",
+          "options": [
+            "transformer",
+            "synchronous motor",
+            "universal motor",
+            "stepper motor"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>No-load current in induction motor is 10%-20% of full-load current and the no-load current of\n                        transformer is 2%-6%.</p>",
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Mechanically air gaps in induction motor are kept very low to avoid</p>",
+          "options": [
+            "lower power factor",
+            "lagging nature",
+            "magnetizing current",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A shaded pole motor is one of the types of</p>",
+          "options": [
+            "DC shunt motor",
+            "differentially compounded DC motor",
+            "synchronous motor",
+            "single-phase induction motor"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following special motors has rotor movement in discrete step?</p>",
+          "options": [
+            "Stepper motor",
+            "Reluctance motor",
+            "Servomotor",
+            "Hysteresis motor"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 10,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Compare full pitch coil and chorded coil in a rotating machine. Discuss MMF of a coil along with\n                        its\n                        distribution in the winding. Explain with the help of suitable neat and labelled diagram.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Discuss the following terms: (i) MMF, flux per pole (ii) Pole pitch (iii) Cylindrical and salient\n                        rotor (iv) Winding distribution factor</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Differentiate concentrated winding and distributed winding, with neat and labelled diagram.\n                        Discuss,\n                        why the windings are distributed sinusoidally.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Explain, how pulsating magnetic field is produced in 1-phase induction motor. Whether it supports\n                        self-starting or not? If supports, how? If not, what measures do we take to make it start?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Discuss the following with suitable diagrams: (i) 1-Phase windings shifted by \\( 90^\\circ \\)\n                        (ii)\n                        3-Phase windings shifted by \\( 120^\\circ \\)</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Provide a basic constructional detail of 3 phase induction motor. Explain the role of wound rotor\n                        and\n                        squirrel cage type rotor in an induction motor.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What are the three different modes of operation of an induction motor? Draw typical torque-slip\n                        characteristic, along with fan load characteristic, explaining the steady-state operating point.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Why is blocked rotor test performed on an induction motor? What is the information perceived from\n                        this test?</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Draw and explain the equivalent circuit diagram of an induction motor.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Mathematically and graphically explain how rotor resistance affects starting torque of an\n                        induction\n                        motor.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A 3-phase, 50 Hz induction motor has a full-load speed of 1440 r.p.m. For this motor,\n                        calculate (i) number of poles; (ii) full load slip and rotor frequency. (iii) speed of stator\n                        field with respect to 1.\n                        stator\n                        structure and 2. rotor structure; (iv) speed of rotor field with respect to 1. rotor structure,\n                        2.\n                        stator structure and 3. stator field.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 8,
+      "questions": []
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Discuss parallel operation of alternators for synchronization and load division.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Develop the power equation for salient pole synchronous machine with the help of two-reaction\n                        theory.\n                    </p>"
+        }
+      ]
+    }
+  ]
+}

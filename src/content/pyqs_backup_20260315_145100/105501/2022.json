@@ -1,0 +1,321 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 5th Semester End Examination, 2022",
+    "subject": "Artificial Intelligence",
+    "subject_slug": "artificial-intelligence",
+    "subject_code": "105501",
+    "year": 2022,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In LISP, the function returns the list that result after the first element is removed (the rest\n                        of the list), is</p>",
+          "options": [
+            "car",
+            "last",
+            "cons",
+            "cdr"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>What is artificial intelligence?</p>",
+          "options": [
+            "Putting your intelligence into computer",
+            "Programming with your own intelligence",
+            "Making a machine intelligent",
+            "Playing a game"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which is the best way to go for game playing problem?</p>",
+          "options": [
+            "Linear approach",
+            "Heuristic approach (some knowledge is stored)",
+            "Random approach",
+            "An optimal approach"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Face Recognition system is based on which type of approach?</p>",
+          "options": [
+            "Weak AI approach",
+            "Applied AI approach",
+            "Cognitive AI approach",
+            "Strong AI approach"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which is not the commonly used programming language for AI?</p>",
+          "options": [
+            "Prolog",
+            "Java",
+            "LISP",
+            "Perl"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What are not represented by using propositional logic?</p>",
+          "options": [
+            "Objects",
+            "Relations",
+            "Both objects and relations",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Inference algorithm is completed only if</p>",
+          "options": [
+            "it can derive any sentence",
+            "it can derive any sentence that is an entailed version",
+            "it is truth preserving",
+            "it can derive any sentence that is an entailed version and it is truth preserving"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which search strategy is also called as blind search?</p>",
+          "options": [
+            "Uniformed search",
+            "Informed search",
+            "Simple reflex search",
+            "All of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which is used for utility functions in game playing algorithm?</p>",
+          "options": [
+            "Linear polynomial",
+            "Weighted polynomial",
+            "Polynomial",
+            "Linear weighted polynomial"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Graph used to represent semantic network is</p>",
+          "options": [
+            "undirected graph",
+            "directed graph",
+            "directed acyclic graph (DAG)",
+            "directed complete graph"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define Artificial Intelligence (AI). Discuss the applications area of AI.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain \\( AO^* \\) algorithm with an example.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain with diagram the organization of a natural language understanding system.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Describe all the levels of language understanding in natural language processing system.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What do you mean by learning? Explain briefly the learning methods. Discuss the advantages and\n                        disadvantages of rule-based system.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the human preferences in encoding uncertainty during parsing.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain hill climbing algorithm. Explain plateau, ridge, and local maxima.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain knowledge acquisition techniques.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is fuzzy set? What is the difference between fuzzy set and crisp set? Explain different\n                        fuzzy set operations using examples.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Write a Prolog program that verified whether an input list is a palindrome.<br/>\n                        Hint: Goal: Palindrome ([r, a, c, e, c, a, r]).<br/>\n                        Output: Yes<br/>\n                        Goal: Palindrome ([a, b, c])<br/>\n                        Output: No</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Consider the Water Jug problem as stated here. \"You are given two jugs, a 4-gallon one and a\n                        3-gallon one. Neither has any measuring marker on it. There is a pump that can be used to fill\n                        the jugs with water. How can you get exactly 2 gallons of water into the 4-gallon jug?\"\n                        Represent this as a problem in State Space Search and state its Production Rules. Show at least\n                        one solution to this problem.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain the basic component of an expert system.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Why is Natural Language Processing (NLP) used? Is NLP difficult to learn? Explain.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Write a function in LISP that computes prime number between 1 and 25 (inclusive).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Describe logistic regression with suitable examples.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Define prior probability and conditional probability. State Bayes's theorem. How is it useful for\n                        decision making under uncertainty.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

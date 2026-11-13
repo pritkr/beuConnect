@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2014",
+    "subject": "Thermodynamics",
+    "subject_slug": "thermodynamics",
+    "subject_code": "021307",
+    "year": 2014,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Use of Tables and Charts permitted."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 State whether the following statements are True or False (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "text": "Zeroth law of the thermodynamics defines temperatures."
+        },
+        {
+          "id": "q1_b",
+          "text": "Characteristic equation of gas is given by (\\( v \\) = specific volume, \\( m \\) = mass of gas) \\( pv = mRT \\)."
+        },
+        {
+          "id": "q1_c",
+          "text": "Otto cycle consists of two constant volumes and two adiabatic processes."
+        },
+        {
+          "id": "q1_d",
+          "text": "Internal energy of ideal gas is a function of temperature and volume."
+        },
+        {
+          "id": "q1_e",
+          "text": "One of the \\( Tds \\) equations has the form \\( Tds = du - vdp \\)."
+        },
+        {
+          "id": "q1_f",
+          "text": "The entropy of fixed amount of ideal gas increases in every isothermal compression."
+        },
+        {
+          "id": "q1_g",
+          "text": "At triple point, ice occupies maximum specific volume."
+        },
+        {
+          "id": "q1_h",
+          "text": "The specific volume of water when heated from \\( 0^\\circ\\text{C} \\), first increases then decreases."
+        },
+        {
+          "id": "q1_i",
+          "text": "The relationship between \\( (\\text{COP})_{\\text{Heat pump}} \\) and \\( (\\text{COP})_{\\text{Refrigerator}} \\) for the same range of temperature operation is \\( (\\text{COP})_{\\text{HP}} = (\\text{COP})_{\\text{R}} + 1 \\)."
+        },
+        {
+          "id": "q1_j",
+          "text": "Standard Barometric pressure is 1013.25 M bar."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2",
+          "type": "theory",
+          "text": "What do you mean by closed system and open system? Explain."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "What do you mean by temperature? What are the common scales used for measuring the temperature of human body?",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "What do you mean by thermodynamic equilibrium? What is equality of temperatures?",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "numerical",
+          "text": "0.5 kg of a perfect gas is heated from \\( 100^\\circ\\text{C} \\) to \\( 300^\\circ\\text{C} \\) at a constant pressure of 2.8 bar. It is then cooled to \\( 100^\\circ\\text{C} \\) at constant volume. Find the overall change in entropy. Take \\( C_p = 1 \\text{ kJ/kg K} \\), \\( C_v = 0.72 \\text{ kJ/kg K} \\).",
+          "total_marks": 7
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "An inventor claims to have heat engine which is capable of developing 19 kW while working between the temperature limits \\( 30^\\circ\\text{C} \\) and \\( -40^\\circ\\text{C} \\). It receives only 1000 kJ/min of heat. Discuss the possibility of the claim.",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5",
+          "type": "theory",
+          "text": "What are Helmholtz function and Gibb's function?"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "List the assumptions made in the analysis of air-standard cycle.",
+          "total_marks": 7
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "With the help of \\( p-V \\) and \\( T-S \\) diagrams show that for the same compression ratio and same heat input \\( \\eta_{\\text{Otto}} > \\eta_{\\text{Dual}} > \\eta_{\\text{Diesel}} \\).",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7",
+          "type": "numerical",
+          "text": "In a thermal power plant operating on an Ideal Rankine cycle, steam of 15 bar and \\( 250^\\circ\\text{C} \\) enters a turbine which generates 40 kW indicated power. If the steam consumption is 300 kg/hr and condenser is maintained at 0.15 bar, determine the final condition of steam, Rankine efficiency and relative efficiency. Neglect pump work. Also determine the fuel to be supplied/hr if its \\( C_{vf} \\) is 41850 kJ/kg.",
+          "total_marks": 14
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8",
+          "type": "theory",
+          "text": "Define and explain the terms in relation to psychrometry.",
+          "sub_questions": [
+            {
+              "id": "q8_a",
+              "text": "Dry bulb, wet bulb and dew point temperature"
+            },
+            {
+              "id": "q8_b",
+              "text": "Relative humidity and specific humidity"
+            }
+          ],
+          "total_marks": 14
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9",
+          "type": "numerical",
+          "text": "A mixture of 1 kg of oxygen and 2 kg of nitrogen occupies \\( 1.2 \\text{ m}^3 \\) volume of temperature 300 K. Assuming perfect gas behaviour, determine the following:",
+          "sub_questions": [
+            {
+              "id": "q9_a",
+              "text": "Specific volume"
+            },
+            {
+              "id": "q9_b",
+              "text": "Pressure"
+            },
+            {
+              "id": "q9_c",
+              "text": "Gas constant"
+            }
+          ],
+          "total_marks": 14
+        }
+      ]
+    }
+  ]
+}

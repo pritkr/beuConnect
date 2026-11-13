@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2021 (New Course)",
+    "subject": "Software Engineering",
+    "subject_slug": "software-engineering",
+    "subject_code": "105504",
+    "year": 2021,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer from any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The incremental model is a result of combination of elements of which two models?</p>",
+          "options": [
+            "Build and FIX model and waterfall model",
+            "Linear model and RAD model",
+            "Waterfall model and RAD model",
+            "Linear model and Prototyping model"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The CMM model is a technique to</p>",
+          "options": [
+            "automatically maintain software reliability",
+            "improve the software process",
+            "test the software",
+            "All of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Maintenance testing is performed using which methodology?</p>",
+          "options": [
+            "Retesting",
+            "Sanity testing",
+            "Breadth test and depth test",
+            "Confirmation testing"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Boundary value analysis belongs to</p>",
+          "options": [
+            "white box testing",
+            "black box testing",
+            "white box and black box testing",
+            "None of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>\"An ordering system may be adapted to cope with a centralized ordering process in one company and\n                        a\n                        distributed process in another.\" Which category the example belongs to?</p>",
+          "options": [
+            "Process specialization",
+            "Platform specialization",
+            "Environment specialization",
+            "Functional specialization"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>... is a measure of the degree of interdependence between modules.</p>",
+          "options": [
+            "Cohesion",
+            "Coupling",
+            "None of the mentioned",
+            "All of the mentioned"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>... and ... are the two issues of requirement analysis.</p>",
+          "options": [
+            "Performance, design",
+            "Stakeholder, developer",
+            "Functional, non-functional",
+            "None of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which granularity level of testing checks the behavior of module cooperation?</p>",
+          "options": [
+            "Unit testing",
+            "Integration testing",
+            "Acceptance testing",
+            "Regression testing"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following states that work expands to fill the time available?</p>",
+          "options": [
+            "CASE tool",
+            "Pricing to win",
+            "Parkinson's law",
+            "Expert judgment"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>A company needs to develop digital signal processing software for one of its newest inventions.\n                        The\n                        software is expected to have 40000 lines of code. The company needs to determine the effort in\n                        person-months needed to develop this software using the basic COCOMO model. The multiplicative\n                        factor for this model is given as 2.8 for the software development on embedded systems, while\n                        the\n                        exponentiation factor is given as 1.20. What is the estimated effort in person-months?</p>",
+          "options": [
+            "234.25",
+            "932.50",
+            "287.80",
+            "122.40"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Give the full form of CASE. Draw CASE diagram showing all components. Describe each component\n                        briefly.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Draw the first two levels of DFDs for an 'Online Examination System'. Make necessary assumptions.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Prepare SRS for an 'Inventory Management System' for a retail medical store. Also explain the\n                        risk\n                        assessment and management in brief. Make necessary assumptions.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Explain cohesion and coupling. How are the concepts of coupling and cohesion useful in arriving\n                        at\n                        good software design?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is software quality assurance? Explain different quality matrices.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What is cyclomatic complexity? How is it computed? Calculate cyclomatic complexity for the\n                        program to\n                        find the smallest of three numbers.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What are project metrices? Explain different types of project metrics with an example for each.\n                    </p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>What are the main objectives of software verification and validation? Explain different\n                        verification\n                        and validation techniques.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain any two of the risk management techniques with suitable examples. With a neat diagram,\n                        explain the different levels of CMM in detail.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>List and explain different categories of tools that can be used for testing.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain Agile process with its advantage. Explain any one Agile process model.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Write the structure of SRS as per IEEE standards.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What are the different methods used for estimating cost and effort required for completing a\n                        project\n                        successfully? Explain any one method in detail.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is software quality? What are three dimensions of software quality? Explain briefly.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain function point based matrices with suitable example.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Write short notes on the following: (i) Project management (ii) Test case design (iii) Software\n                        reliability</p>"
+        }
+      ]
+    }
+  ]
+}

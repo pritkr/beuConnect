@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Examination, 2023",
+    "subject": "Electrical Circuit Analysis",
+    "subject_slug": "electrical-circuit-analysis",
+    "subject_code": "100306",
+    "year": 2023,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Kirchhoff's Current law is based on law of conservation of</p>",
+          "options": [
+            "energy",
+            "momentum",
+            "mass",
+            "charge"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Determine the current if a 20 coulomb charge passes a point in 0.25 seconds</p>",
+          "options": [
+            "10 A",
+            "20 A",
+            "2 A",
+            "80 A"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Comment on the linearity of \\( y[n]=n*x[n] \\).</p>",
+          "options": [
+            "Linear",
+            "Only additive",
+            "Not scalable",
+            "Non linear"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Maximum power transfer occurs at a</p>",
+          "options": [
+            "100% efficiency",
+            "50% efficiency",
+            "25% efficiency",
+            "75% efficiency"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The inverse laplace transform of \\( \\frac{1}{s} - \\frac{e^{-as}}{s} \\) is</p>",
+          "options": [
+            "\\( U(t)-U(t-a) \\)",
+            "\\( U(t) \\)",
+            "\\( U(t-a) \\)",
+            "Zero"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The parameter A of a two port network is equal to</p>",
+          "options": [
+            "\\( V_{2}/V_{1} \\) with \\( I_{1}=0 \\)",
+            "\\( V_{1}/I_{2} \\) with \\( V_{2}=0 \\)",
+            "\\( I_{1}/I_{2} \\) with \\( V_{2}=0 \\)",
+            "\\( V_{1}/V_{2} \\) with \\( I_{2}=0 \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A system is linear if it satisfies</p>",
+          "options": [
+            "Principle of superposition",
+            "Principle of homogeneity",
+            "Both (i) &amp; (ii)",
+            "Only (i)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Given \\( F(S)=(S+2)/S(S+1) \\) the initial and final values of f(t) will be respectively</p>",
+          "options": [
+            "1, 2",
+            "2, 1",
+            "1, 1",
+            "2, 2"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Time constant of RL circuit is</p>",
+          "options": [
+            "\\( L/R \\)",
+            "RL",
+            "\\( R/L \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The transmission parameters are also known as:</p>",
+          "options": [
+            "impedance parameters",
+            "ABCD parameters",
+            "admittance parameters",
+            "hybrid parameters"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>A series R-L circuit has \\( R=2 \\Omega \\) and \\( L=2H \\). A ramp input r(t) is applied at\n                        \\(\n                        t=1 \\text{ sec} \\). Obtain an expression for current through the circuit.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Define time constant. What the significance of time constant?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>State Superposition theorem explaining the conditions in which it is valid.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>In the network shown in figure below, find the value of current flowing through the 6 ohm\n                        resistance\n                        in the circuit given below using superposition theorem.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/161.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>State and explain Thevenin's Theorem. Show the Thevenin's equivalent representation of any\n                        circuit.\n                    </p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>For the circuit given below, determine the current flowing through the 4 ohm resistance by\n                        Thevenin's\n                        theorem. What are the values of Thevenin's resistance and Thevenin's voltage for this circuit.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/160.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Calculate the Laplace Transform of the function \\( f(t)=e^{-t}\\sin(wt) \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Define Gate function? Using Gate function find out the Laplace Transform of a single Sine wave.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/159.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Calculate the impedance, resistance, Power and power factor of a circuit whose expression for\n                        voltage\n                        and current are given by: \\( V = 100\\sin(wt+60^{\\circ}) - 50\\sin(5wt-30^{\\circ}) \\text{\n                        volt}\n                        \\) and \\( I = 10\\sin(wt+60^{\\circ}) - 5\\sin(3wt+30^{\\circ}) \\text{ amp} \\).</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A 400 mH coil of zero resistance is connected to an AC circuit in which 6 mA current is flowing.\n                        Find\n                        out the voltage across the coil if the frequency is 100 Hz.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Obtain the Y &amp; Z parameters of the network shown below. Write the unit of all individual\n                        parameters.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/158.jpg\"/>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Explain frequency response. Why magnitude and phase plots are necessary for frequency response\n                        analysis.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is Q-factor? Calculate the quality factor of a series RLC circuit with \\( L=2H \\), \\(\n                        C=2\\mu\n                        F \\) and \\( R=20 \\Omega \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Norton's Theorem",
+            "Reciprocity Theorem",
+            "Hybrid Parameters of a 2-port network",
+            "Duality and Dual Network"
+          ]
+        }
+      ]
+    }
+  ]
+}

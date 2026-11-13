@@ -1,480 +1,481 @@
 /* eslint-disable */
-/** Syllabus prose, entries 508..561 of the shared string table — generated, do not edit. */
-export const CHUNK_gate_3 = `Mining\x0f\\: \x1eHmining: layout,\x0eb, loading,\x1f@\x0cimechanization,\x17'\x16%mining\x14xhighwall mining; Underground coal
-mining:bord\x01pillar\x0e!room\x01pillar mining, longwall mining, thick seam mining
-\x14nUnderground metal mining: open, supported\x01caved stoping\x14$stope
+/** Syllabus prose, entries 559..612 of the shared string table — generated, do not edit. */
+export const CHUNK_gate_3 = `Mining\x102: Surface mining: layout,\x0fW, loading, \x1b3\x0dmmechanization,\x16<\x15_mining\x142highwall mining; Underground coal
+mining:bord\x01pillar\x0e^room\x01pillar mining, longwall mining, thick seam mining
+\x16ZUnderground metal mining: open, supported\x01caved stoping\x15nstope
 
-mechanization, ore h\x05ling\x0b(.
-Mining \x1a3ry: Generati\x15R\x02\x1e'\x07\x16p, hydraulic\x01pneumatic
-\x10k;\x0dh h\x05ling: wire ropes, haulages, conveyors, face\x01\x0eV
-\x1e4ry, hoisting\x0e!pumps; comminuti\x15R\x0f&\x02\x1e4ry.\x1f\x00\x1eH\x1d9: Air,\x12T\x02soil pollution: \x1eTs\x04\x1cQ, causes\x0cidispersi\x15R\x07contaminati\x15R\x16^; Noise polluti\x15R\x16^; L\x02reclamation;
+mechanization, ore h\x05ling\x0b..
+Mining\x17Xry: Generati\x16a\x02\x1a}\x07\x1c , hydraulic\x01pneumatic
+\x11A;\x0eo h\x05ling: wire ropes, haulages, conveyors, face\x01\x0f9
+\x18<ry, hoisting\x0e^pumps; comminuti\x16a\x0fy\x02\x18<ry.\x1f\x00Surface \x1e0: Air,\x11"\x02soil\x18": \x1ehs\x04\x1eq, causes\x0cMdispersi\x16a\x07contaminati\x16a\x1a%; Noise\x18"\x18D; L\x02reclamation;
 EIA.
-Mine Ventilation: Underground atmosphere; Heat load sources\x17krmal\x11m,
-air cooling;\x10t\x15Hir\x10!\x19y, natural\x01\x18[ventilation; Mine fans\x12Iusage; Auxiliary ventilation; Ventilati\x15Rsurvey\x01\x12w; Ventilati\x15Rnetworks.
-Underground Hazards: Mine Gases, Methane drainage; Underground hazards\x0fofires,
-explosions, dust\x01inundation; Rescue apparatus\x01practices; Safety\x0bh
-plan; Accident data\x1b~assessment; Mine lighting; Mine legislation; Occupational
-health\x01safety.\x1f\x00Mineral Economics: Mineral resource\x0d<; Discounted cash\x11h\x0b5;
+Mine Ventilation: Underground atmosphere; Heat load \x1eo\x19/rmal\x14?,
+air cooling;\x11^\x13Zir\x10$,\x13Qnatural\x01\x1fYventilation; Mine fans\x12@usage; Auxiliary ventilation; Ventilati\x16asurvey\x01\x12B; Ventilati\x16anetworks.
+Underground Hazards: Mine Gases, Methane drainage; Underground hazards\x11Qfires,
+explosions, dust\x01inundation; Rescue apparatus\x01practices; Safety\x0cB
+plan; Accident\x1eE\x1dEassessment; Mine lighting; Mine legislation; Occupational
+health\x01safety.\x1f\x00Mineral Economics: Mineral resource\x0dC; Discounted cash\x11C\x0b:;
 Mine valuation; Mineral taxation.
-Mine \x17<: \x1bz\x14npractices\x01\x13<; Reserve\x19d
-\x0cP: \x1bKgeostatistics\x01\x1eW\x0c9; Optimizati\x15R\x07facility location;
-Mine\x11y\x0c$\x14F, \x0cWmine size\x01mine life; Ultimate pit
-\x1c3\x0c$\x122, Optimum mill cut-off grade\x0c$\x122,
-Stope\x11y,\x13l\x07haul road, Selecti\x15R\x07mining\x10Wvis-à-vis equipment\x0c(.
-\x10l\x0b%:\x1fa\x04reliability; Reliability\x04\x1bb\x15gMaintainability\x12Iavailability; \x101\x0cdming,\x1f@\x01assignment\x0e[; \x15b
-\x1c[Inventory\x15d; Queuing\x0dT; Decisi\x15Rtrees.\x1f\x00\x1a~Matrices\x01Determinants,\x121\x112, Eigen\x1b!\x0ciEigen vectors.
-\x1cVLimit, Continuity\x01\x12yiability; Partial\x13*; Maxima\x01minima;
-Sequences\x01\x10o; Test\x0b)\x156;\x1bt\x10o.
-Vector \x1cVGradient; \x13+; Line, \x1eH\x02volume\x12A; Stokes,
-Gauss\x01Green\x19Js\x14V\x101\x1f{ first\x0fwODEs; Higher\x1a ODEs\x0c,
-\x10 ; \x1dm\x0f6\x02Euler\x0f6\x1eu\x127trans\x0d=ms; PDEs –
-\x11S,\x16Oe\x103\x15i\x02wave\x0b.\x19X\x17^\x1f+s\x04\x1f3\x02sampling\x1c'\x18Q
-\x1amMean, median, mode\x01\x19Y; \x1d'\x0dF; \x18s,
-normal\x01binomial\x0ew;\x134\x07experimental data;\x0dwleast squares
-\x0cl.
-\x10r\x0e*: Solutions\x11A\x1f{ (Bisection, Secant\x1bmton-
-Raphs\x15R\x0bN) \x1f4;\x1f#\x0eRtrapezoidal\x01Simpson\x0f6rule;
-\x12t\x02multi- step\x19:\x0bA.\x1f\x00Laws\x04\x10a: \x1b?law\x0fg\x0c\\\x19+, Second\x1fB\x13eentropy; Enthalpy,
-Gibbs\x01Helmholtz free\x0cT; Maxwell\x0f6\x1f^; Chemical\x15U;\x168to
-metallurgical\x0e!\x10L, ideal\x01regular\x12&; Gibbs\x18$rule,\x1c0
-equilibria, binary\x18$\x19k\x01lever rule, free-\x0c\\vs. compositi\x15R\x12x;
-\x1dO\x17i, Activity, Ellingham\x01\x10J\x1du\x12x;\x17w\x15Ipoint defects,\x1fLs\x01interfaces, adsorpti\x15R\x02segregati\x15Rphenomena.
-Electrochemistry: \x1fG electrode\x15U, Electrochemical cells, Nernst\x0c1,
-\x1bo-pH\x11e.\x1f\x00Momentum\x16D: \x0dRviscosity, shell balances, Bernoulli\x0f6\x117\x16p
-\x0c\\balance\x11D\x11Ypast plane\x1fLs\x01\x0f/pipes.
-Heat\x0eO: Conduction,\x1fP\x0f6Law, 1-D steady\x1e3conduction. Convection: Heat
-\x11L\x1c(\x1fj\x0b)\x0d=ced convection.
-Radiation: Black body \x1fc, Stefan-Boltzman Law, Kirchhoff\x0f6Law.
-Mass\x16D: Diffusi\x15R\x02Fick\x0f6laws, Mass\x12G\x0f~.
-Dimensional\x0cC: Buckingham Pi\x0f0Significance\x04dimensionless\x18v.
-\x0d>Laws\x04Chemical Kinetics: \x1f0\x11x, \x1fM rate\x1bs, Arrhenius
-relation, heterogeneous\x11k, oxidati\x15Rkinetics.
-Electrochemical Kinetics: Polarization.\x1f\x00Comminuti\x15R\x15OSize\x0d<, Flotation, Gravity\x01o\x0bkr\x1eg
+Mine \x18V: \x19\\\x16Zpractices\x01\x160; Reserve\x16j
+\x0c@\x1els\x04geostatistics\x01\x1eq\x0b~; Optimizati\x16a\x07facility location;
+Mine\x11;\x0c8\x12%, \x0cCmine size\x01mine life; Ultimate pit
+\x1at\x0c8\x11w, Optimum mill cut-off grade\x0c8\x11w,
+Stope\x11;,\x14}\x07haul road, Selecti\x16a\x07mining\x116vis-\x00#-vis equipment\x0c6.
+\x117\x0b#: \x1aYreliability; Reliability\x04\x168\x15/Maintainability\x12@availability; \x0fh\x1f[, \x1b3\x02assignment\x0eA;\x1d7
+\x1dEInventory\x13|; Queuing\x0db; Decisi\x16atrees.\x1f\x00\x1cnMatrices\x01Determinants,\x131\x12[, Eigen\x16{\x0cMEigen vectors.
+\x19oLimit, Continuity\x01\x17Biability; Partial\x12c; Maxima\x01minima;
+Sequences\x01\x11R; Test\x0b-\x15P;\x19Y\x11R.
+\x1dg\x19oGradient; \x1ea; Line, Surface\x01volume\x12#; Stokes,
+Gauss\x01Green\x19ps\x15M\x0fh\x13J\x0cifirst\x0fTODEs; Higher\x1bfODEs\x0c.
+\x10n; \x1eD\x11M\x02Euler\x11M\x1e:\x13!trans\x0d/ms; PDEs \x008
+\x12A,\x17Qe\x14a\x19S\x02wave\x0b5\x1b:\x1b): \x1e9\x04\x1dn\x02sampling\x1e8\x1e6
+\x1eXMean, median, mode\x01\x1b;; \x1fQ\x0dp; \x1b~,
+normal\x01binomial\x0f~;\x15k\x07experimental\x1aH;\x0e\\least squares
+\x0cT.
+\x13$\x0eR: Solutions\x12=\x13J\x0ci(Bisection, Secant\x19bton-
+Raphs\x16a\x0b\`) algebraic\x1f}\x14~\x0dXtrapezoidal\x01Simpson\x11Mrule;
+\x155\x02multi- step\x1a|\x0bO.\x1f\x00Laws\x04\x14V: \x18Olaw\x10d\x0cp\x1ab, Second law\x14bentropy; Enthalpy,
+Gibbs\x01Helmholtz free\x0cZ; Maxwell\x11Mrelations; Chemical\x14u;\x14Qto
+metallurgical\x0e^\x10u, ideal\x01regular\x13%; Gibbs\x15Srule,\x18Q
+equilibria, binary\x15Sdiagram\x01lever rule, free-\x0cpvs. compositi\x16a\x14P;
+\x13S\x1ca, Activity, Ellingham\x01\x0e&\x1e~\x14P; \x14V\x14c\x1ef defects,\x1fTs\x01interfaces, adsorpti\x16a\x02segregati\x16aphenomena.
+Electrochemistry: \x1dfelectrode\x14u, Electrochemical cells, Nernst\x0c),
+Potential-pH\x133.\x1f\x00Momentum\x18t: \x0eiviscosity, shell balances, Bernoulli\x11M\x12\`\x1c 
+\x0cpbalance\x128\x11qpast plane\x1fTs\x01\x107pipes.
+Heat\x0f+: Conduction,\x1d;\x11MLaw, 1-D steady\x1bKconduction. Convection: Heat
+\x12J\x1bF relations\x0b-\x0d/ced convection.
+Radiation: Black body radiation, Stefan-Boltzman Law, Kirchhoff\x11MLaw.
+Mass\x18t: Diffusi\x16a\x02Fick\x11Mlaws, Mass\x13'\x0ft.
+Dimensional\x0c=: Buckingham Pi\x10=Significance\x04dimensionless\x159.
+\x0d!Laws\x04Chemical Kinetics: \x18O\x0fr\x14e, reacti\x16arate\x1ca, Arrhenius
+relation, heterogeneous\x14s, oxidati\x16akinetics.
+Electrochemical Kinetics: Polarization.\x1f\x00Comminuti\x16a\x1a]Size\x0dC, Flotation, Gravity\x01o\x0b_r\x10tof
 mineral beneficiation; Agglomeration: sintering, pelletizing\x01briquetting.
-Material\x01\x0eFbalances\x0b'metallurgical\x19)\x1f>\x1a?\x0bK\x0bk
-extracti\x15R\x07non-ferrous metals\x0fgaluminium, copper\x01titanium.
-Ir\x15R\x02Steel Making: Material\x01\x15ibalance\x0b'blast furnace;\x1a:\x01\x0b=
-\x07slags\x01molten salts\x0fgbasicity\x04slags\x13esulphide\x01phosphate capacity\x04slags;
-Producti\x15R\x07metallurgical coke. O\x0bkr\x1eg ir\x15Rmaking (COREX, MIDRE)
-Primary Steel Making\x1fQoxygen furnace,\x13/\x1fb, oxidati\x15R\x11x,
+Material\x01\x0f0balances\x0b,metallurgical\x1c2\x15Z\x1dF\x0bL\x0b_
+extracti\x16a\x07non-ferrous metals\x10daluminium, copper\x01titanium.
+Ir\x16a\x02Steel Making: Material\x01\x19Sbalance\x0b,blast furnace;\x1d>\x01\x0b?
+\x07slags\x01molten salts\x10dbasicity\x04slags\x14bsulphide\x01phosphate capacity\x04slags;
+Producti\x16a\x07metallurgical coke. O\x0b_r\x10t\x07ir\x16amaking (COREX, MIDRE)
+Primary Steel Making\x19hoxygen furnace,\x14' dynamics, oxidati\x16a\x14e,
 electric arc furnace.
-Secondary Steel Making: Ladle\x13/\x0fgdeoxidation, arg\x15Rstirring, desulphurization,
-inclusi\x15Rshape\x0b{,\x1f1\x07degassing\x1fl\x1bKstainless steel
+Secondary Steel Making: Ladle\x14'\x10ddeoxidation, arg\x16astirring, desulphurization,
+inclusi\x16ashape\x0b~,\x11t\x04degassing\x0bX; \x15ostainless steel
 manufacturing.
-\x18WCasting: Fluid\x11h\x0fYtundish\x01mould,\x1bX\x0eAmould,
-segregation,\x0bjclusi\x15R\x0c9.\x1f\x00Chemical Bonding: Ionic, covalent, metallic\x0b@secondary bonding\x0b'\x0d.,
-Crystal\x137\x07solids\x0fgmetals\x01alloys, ionic\x01covalent solids\x0b@polymers.
-X-ray Diffraction: Bragg\x0f6law, optical metallography,\x1f1\x07SEM imaging.
-Crystal Imperfections: Point, line\x01\x16%defects; Coherent, semi-coherent\x0ciincoherent\x0bjterfaces.
-Diffusi\x15R\x0bnSolids: Diffusi\x15R\x117steady\x1e3\x02error\x12o\x10L; Examples-
-homogenenizati\x15R\x02carburization; Kirkendall \x1d!; Uphill \x1cf; Atomic\x15d\x0bH
-interstitial\x01substitutional \x1cf; Pipe \x1cf\x01gra\x0bn\x14=\x1cf.
-Phase\x10,ation: Driving\x0bHce, Homogeneous\x01heterogeneous nucleation, growth
-Kinetics Solidificati\x15R\x0bnisomorphous, eutectic\x01peritectic\x0e!cast\x0e;\x12Imacrosegregation, dendritic solidificati\x15R\x02constitutional supercooling, coring\x0cimicrosegregation.
-Solid-\x17Q\x0fRations: Precipitation, spinoidal decomposition,\x11Fing, massive
-\x12(, dis\x11~precipitation, eutectoid\x13z, \x1cfless
-\x17u; Precipitate coarsening, Gibbs-Thoms\x15R\x1d!.
-\x0b]\x15i\x18A\x04steels, TTT\x01CCT\x11e; \x1eHhardening\x1aBs;
-Recovery, recrystallizati\x15R\x02gra\x0bngrowth; Heat\x1aB\x04cast ir\x15R\x02aluminium
+\x1c@Casting: Fluid\x11C\x10Ntundish\x01mould,\x1et\x12J\x10Nmould,
+segregation,\x0bqclusi\x16a\x0c,.\x1f\x00Chemical Bonding: Ionic, covalent, metallic\x0b;secondary bonding\x0b,\x0d<,
+Crystal\x12z\x07solids\x10dmetals\x01alloys, ionic\x01covalent solids\x0b;polymers.
+X-ray Diffraction: Bragg\x11Mlaw, optical metallography,\x11t\x04SEM imaging.
+Crystal Imperfections: Point, line\x01\x15_defects; Coherent, semi-coherent\x0cMincoherent\x0bqterfaces.
+Diffusi\x16a\x0brSolids: Diffusi\x16a\x12\`steady\x1bK\x02error\x10<\x10u; Examples-
+homogenenizati\x16a\x02carburization; Kirkendall\x1bw; Uphill diffusion; Atomic\x13|\x0bI
+interstitial\x01substitutional diffusion; Pipe diffusi\x16a\x02gra\x0br\x140diffusion.
+Phase\x0f|ation: Driving\x0bIce, Homogeneous\x01heterogeneous nucleation, growth
+Kinetics Solidificati\x16a\x0brisomorphous, eutectic\x01peritectic\x0e^cast\x0fF\x12@macrosegregation, dendritic solidificati\x16a\x02constitutional supercooling, coring\x0cMmicrosegregation.
+Solid-\x15R\x0fNations: Precipitation, spinoidal decomposition,\x119ing, massive
+\x13j, dis\x12;precipitation, eutectoid\x17p, diffusionless
+\x13x; Precipitate coarsening, Gibbs-Thoms\x16a\x19d.
+\x0bM\x19S\x19_\x04steels, TTT\x01CCT\x133; Surface hardening\x1c$s;
+Recovery, recrystallizati\x16a\x02gra\x0brgrowth; Heat\x1c$\x04cast ir\x16a\x02aluminium
 alloys.
-\x13P,\x13}\x02optical\x0d2\x0d..
-\x0d>\x0d=ms\x04corrosi\x15R\x0cLprevention.\x1f\x00Stra\x0bntensor\x01\x14(tensor, \x19M\x15-Mohr\x0f6circle, elasticity, stiffness\x0cicompliance tensor, Yield criteria, Plastic\x1bi\x0eRslip\x01twinning.
-Dislocati\x15R\x108: Edge, screw\x01mixed dislocations, source\x01multiplicati\x15Rof
+\x12M,\x12b\x02optical\x0dU\x0d<.
+\x0d!\x0d/ms\x04corrosi\x16a\x0c^prevention.\x1f\x00Stra\x0brtensor\x01\x14[tensor, \x1b*\x12ZMohr\x11Mcircle, elasticity, stiffness\x0cMcompliance tensor, Yield criteria, Plastic de\x0d/mati\x16a\x12Zslip\x01twinning.
+Dislocati\x16a\x10I: Edge, screw\x01mixed dislocations, source\x01multiplicati\x16aof
 
-dislocations,\x152fields around dislocations; Partial dislocations, dislocati\x15R\x1eas\x12I\x11x.
-Streng\x0bkning Mechanisms: Work/\x18q hardening,\x1coening due\x0b,gra\x0bnboundaries,
-solid\x16s, precipitati\x15R\x02dispersion.
-Fracture behaviour, Griffith\x18@\x0c]elastic fracture mechanics, fracture\x0c2ughness,
-fractography, ductile\x0b,brittle transition.
-Fatigue: Cyclic\x152\x18q behaviour\x13elow\x01high\x16f fatigue, crack growth.
-Mechanisms\x04high\x13Z\x1bi\x01failure; creep\x01\x14(rupture,\x11i
-exponent\x01activati\x15R\x0c>.\x1f\x00Metal Casting: Mould\x10%involving feeding, gating\x01risering, casting practices,
+dislocations,\x14O\x1aJs around dislocations; Partial dislocations, dislocati\x16ainteractions\x12@\x14e.
+Streng\x0b_ning Mechanisms: Work/stra\x0brhardening, streng\x0b_ning due\x0b0gra\x0brboundaries,
+solid\x18v, precipitati\x16a\x02dispersion.
+Fracture behaviour, Griffith\x19[\x0cielastic fracture mechanics, fracture\x0c#ughness,
+fractography, ductile\x0b0brittle transition.
+Fatigue: Cyclic\x14Ostra\x0brbehaviour\x14blow\x01high\x1bv fatigue, crack growth.
+Mechanisms\x04high\x14B de\x0d/mati\x16a\x02failure; creep\x01\x14[rupture,\x120
+exponent\x01activati\x16a\x0cF.\x1f\x00Metal Casting: Mould\x0f&involving feeding, gating\x01risering, casting practices,
 casting defects.
-Hot, Warm\x01Cold Working\x04Metals: Metal\x0bHming\x0fgfundamentals\x04metal\x0bHming
-\x1a?\x07rolling,\x0bHging, extrusion, wire drawing\x01sheet metal\x0bHming, defects\x0bj
-\x0d=ming.
-Metal Joining\x1f%\x04soldering, brazing\x01welding, welding metallurgy, defects\x0bj
-welded joints\x0b'steels\x01aluminium alloys.
-Powder Metallurgy:\x1ep\x04powders, compacti\x15R\x02sintering.
-Non-destructive Testing (NDT): Dye-penetrant, ultrasonic, radiography, eddy\x13K,
-acoustic emissi\x15R\x02\x120particle\x0bjspecti\x15R\x0bN.\x1f\x00\x1a~Matrix algebra,\x121\x112, Eigen\x1cGs\x01eigenvectors.
-\x1cV\x1c4\x12t\x14*, Limit, \x14:, Taylor\x0fh,
-Mean\x18u\x1bNEvaluati\x15R\x07definite\x01improper\x19#Partial\x1bYTotal
-derivative, Maxima\x01minima, Gradient\x17KCurl, Vector identities,
-Directional\x1bYLine, \x1eH\x02Volume\x19#Stokes, Gauss\x01Green’s
-\x1df: \x1f0\x0dI(\x18f\x16THigher\x14O\x195\x19Q\x18_\x1dm\x0f6\x02Euler\x0f6\x0dfInitial\x0ci\x194,\x1e;trans\x0d=ms, Solutions\x04one-\x0dC\x15i\x02wave
-\x169\x127\x0c=.
-Complex\x1a;: Complex\x15L, polar\x0bHm\x04\x1fO\x16e, triangle\x0bje\x1cQ\x19X\x17^\x1f+s\x04\x1f3\x02sampling\x1c'Conditional
-\x1amMean, median, mode\x01\x19Y, \x1d'\x14[\x18s,
-Normal\x01Binomial\x0ew, \x101\x1bO\x1c"\x10r\x0e*: \x10r\x13S\x12p\x1f{ \x1f4.
-Integrati\x15R\x15-trapezoidal\x01Simpson\x0f6rule. \x1fG\x01multi-step\x19:numerical
-\x16F\x17+ial\x0b..\x1f\x00Steady\x01unsteady\x1e3mass\x1f2balances\x142multi\x125, multi-
-component, reacting\x12Oreacting\x15ZUse\x04tie\x15k; re\x1bn,\x17 pass\x12Ipurge\x1ai; Gibb\x0f6\x10Jrule\x01degree\x04freedom\x1c"\x1b?\x02Second\x1fBs\x19W.\x168\x07first\x1fB\x0b,close\x01open
-\x17YSecond\x1fB\x01Entropy. \x18lrmodynamic\x0d2pure substances:\x14k
-\x07\x19B\x02residual\x0eH\x0cMmixtures: partial molar\x0eHfugacity,
-excess\x0d3\x02activity\x0f9;\x18$equilibria: predicting VLE\x04\x0b0;
-chemical \x1fM\x1aI.\x1f\x00Fluid statics,\x1fL tension\x1bmtonian\x12ONewtonian fluids, transport\x0b>,
-shell-balances\x142\x0cF\x0d=m\x04Bernoulli\x14u\x1esbalance,
-\x13x\x07\x18H,\x14u\x07motion,\x14u\x07\x18[\x0c>, Macroscopic
-fricti\x15R\x1e\\s,\x103\x0c~\x02similitude,\x11h\x0f/pipeline\x0e!velocity
-profiles,\x11hmeters, pumps\x01compressors, elementary\x18Mlayer\x18@\x11Ypast
-immersed bodies\x142packed\x01fluidized beds, Turbulent\x0e:: fluctuating velocity,
-universal velocity profile\x01\x14C drop. Particle size\x01shape, particle size
-\x11 size reducti\x15R\x1e.\x04solid particles; free\x01hindered settling;
-centrifuge\x01cyclones; thickening\x1cC, filtration, agitati\x15R\x02mixing;
-conveying\x04solids.\x1f\x00\x14)\x1a6, steady\x01unsteady\x19Hconduction, convecti\x15R\x02\x1fc,
+Hot, Warm\x01Cold Working\x04Metals: Metal\x0bIming\x10dfundamentals\x04metal\x0bIming
+\x1dF\x07rolling,\x0bIging, extrusion, wire drawing\x01sheet metal\x0bIming, defects\x0bq
+\x0d/ming.
+Metal Joining\x18@\x04soldering, brazing\x01welding, welding metallurgy, defects\x0bq
+welded joints\x0b,steels\x01aluminium alloys.
+Powder Metallurgy:\x1fg\x04powders, compacti\x16a\x02sintering.
+Non-destructive Testing (NDT): Dye-penetrant, ultrasonic, radiography, eddy\x13 ,
+acoustic emissi\x16a\x02\x11<particle\x0bqspecti\x16a\x0b\`.\x1f\x00\x1cnMatrix algebra,\x131\x12[, Eigen\x1cZ\x01eigenvectors.
+\x19o\x1eM\x155\x18T, Limit, \x15+, Taylor\x10i,
+Mean\x16}\x1dK\x1a,definite\x01improper\x1duPartial\x1d_Total
+derivative, Maxima\x01minima, Gradient, \x1ea, \x1dgidentities,
+Directional\x1d_Line, Surface\x01Volume\x1duStokes, Gauss\x01Green\x00>s
+\x115\x15M\x18O\x0fr\x0dd(\x17x\x16uHigher\x15F\x1aq\x1b-\x18Y\x1eD\x11M\x02Euler\x11M\x0e<Initial\x0cM\x1ap,\x1f+trans\x0d/ms, Solutions\x04one-\x0f)\x19S\x02wave
+\x18^\x13!\x0c7.
+Complex\x14o: Complex\x12n, polar\x0bIm\x04\x1ei\x14$, triangle\x0bqe\x1eq\x1b:\x1b): \x1e9\x04\x1dn\x02sampling\x1e8Conditional
+\x1eXMean, median, mode\x01\x1b;, \x1fQ\x16e\x1b~,
+Normal\x01Binomial\x0f~, \x0fh\x19r\x1fe\x13$\x0eR: \x13$\x147\x13X\x13J\x0cialgebraic\x0b5.
+Integrati\x16a\x12Ztrapezoidal\x01Simpson\x11Mrule. \x1df\x02multi-step\x1a|\x1e)
+\x17D\x19=ial\x0b5.\x1f\x00Steady\x01unsteady\x1bKmass\x1e; balances\x16,multi\x0fA, multi-
+component, reacting\x12Ireacting\x13fUse\x04tie\x12W; recycle,\x13vpass\x12@purge \x1c/; Gibb\x11M\x0e&rule\x01degree\x04freedom\x1fe\x18O\x02Second laws\x0bjrmodynamics.\x14Q\x07first law\x0b0close\x01open
+\x150Second law\x01Entropy. \x1d.rmodynamic\x0dUpure substances:\x19]
+\x07\x1bU\x02residual\x0f_\x0cWmixtures: partial molar\x0f_fugacity,
+excess\x0dS\x02activity\x0f<;\x15Sequilibria: predicting VLE\x04\x0b3;
+chemical reacti\x16a\x17l.\x1f\x00Fluid statics,\x1fT tension\x19btonian\x12INewtonian fluids, transport\x0bE,
+shell-balances\x16,\x0c>\x0d/m\x04Bernoulli\x15C\x1f# balance,
+\x14.\x07\x1f$,\x15C\x07motion,\x15C\x07\x1fY\x0cF, Macroscopic
+fricti\x16afactors,\x14a\x0d,\x02similitude,\x11C\x107pipeline\x0e^velocity
+profiles,\x11Cmeters, pumps\x01compressors, elementary\x17)layer\x19[\x11qpast
+immersed bodies\x16,packed\x01fluidized beds, Turbulent\x0e): fluctuating velocity,
+universal velocity profile\x01\x15d drop. Particle size\x01shape, particle size
+\x12)size reducti\x16a\x1bj\x07solid particles; free\x01hindered settling;
+centrifuge\x01cyclones; thickening\x17J, filtration, agitati\x16a\x02mixing;
+conveying\x04solids.\x1f\x00\x19n\x04\x0cF, steady\x01unsteady\x1etconduction, convecti\x16a\x02radiation,
 
-\x1aX\x14=layer\x01\x1f~\x18_boiling, condensati\x15R\x0e?evaporation;\x0fS\x15iexchangers\x01evaporators\x0bD\x1cM\x18(;
-\x10-double pipe, shell\x01tube\x19Hexchangers\x0b@\x12t\x02multiple \x1d!
-evaporators.\x1f\x00Fick\x0f6laws, \x1dr\x1cf\x0b'fluids, mass\x12G\x18_film, penetrati\x15R\x0e?\x16%renewal\x0b-ories; momentum,\x19H\x02mass\x12Ganalogies; stage-wise\x0ci\x11~contacting\x01stage efficiencies; HTU\x11QNTU\x0fl;\x10%\x02\x11d\x15Iequipment\x0b)distillation, absorption, leaching, liquid-liquid extraction, drying,
-humidification, dehumidificati\x15R\x02adsorption, membrane\x1d<s (micro-filtration,
-ultra-filtration, nano-filtrati\x15R\x02reverse osmosis).\x1f\x00\x1f,\x1fM rates; kinetics\x04homogeneous\x11k,\x16d\x04kinetic data,
-\x12t\x02multiple\x11k\x0b'ideal reactors, kinetics\x04enzyme\x11k (Michaelis-
-Menten\x01Monod\x15d\x16Tnon-ideal reactors; residence\x19G\x11 \x13h
-parameter\x1a-;\x1cHiso\x1aXreactors; kinetics\x04heterogeneous catalytic\x11k;
-\x1cf\x1aP\x0b'catalysis; rate\x01\x1dK\x0dI\x0bKcatalyst deactivation.\x1f\x00\x0eS\x1cM\x0dF; sensors\x01transducers; P&ID equipment symbols;
-\x1cM\x1e^ing\x01\x0csization,\x12G\x1bVdynamic\x0fns\x04\x0fy
-\x0eN\x10I\x0c.inverse\x0fn,\x13/ \x1fM curve,\x0b{ler modes (P, PI,\x12IPID);\x0dGvalves; transducer\x1fb;\x0e~closed loop\x10y\x0eU
-\x11K,\x16]\x10Y,\x0b{ler tuning, cascade\x01feed\x0bHward\x0b{.\x1f\x00\x0b]\x1cMeconomics\x01cost\x19d\x142depreciati\x15R\x02total
-annualized cost, cost\x0bjdices, rate\x04return, payback period, discounted cash\x0e:,
-\x19'\x0b'\x1cM\x0d9\x02sizing\x04chemical\x0cHequipments\x14l\x1b8
-exchangers\x01multistage contactors.\x1f\x00Inorganic chemical\x0bjdustries (sulfuric acid, phosphoric acid, chlor-alkali\x0bjdustry\x16Tfertilizers
-(Ammonia, Urea, SSP\x01TSP); natural products\x0bjdustries (Pulp\x01Paper, Sugar, Oil,\x12IFats); petroleum refining\x01petrochemicals; polymerizati\x15Rindustries
-(polyethylene, polypropylene, PVC\x01polyester syn\x0bktic fibers).\x1f\x00Determinants\x01matrices,\x121\x112, Eigen\x1b!\x01eigen vectors.
-\x0f<, gradient, divergence, curl, cha\x0bnrules, partial\x1bYdirectional\x13*,
-definite\x01indefinite\x19#line\x1fL\x01volume\x19#\x128\x04Stokes,
-Gauss\x01Green. \x11Z,\x1cH\x0cs, first\x01higher\x0fwordinary\x01\x1db
-\x0df\x1c-.
-\x127\x12(, analytical\x14Y\x07\x1fO\x14[\x1fy, numerical
-\x17/\x0d!iati\x15R\x02\x1a[, \x1fO\x0f1\x1f3\x02statistics.\x1f\x00\x12H: Free-body\x11e\x01\x159; trusses\x01frames; virtual
-work; kinematics\x01\x1fY\x04particles\x01rigid bodies\x0b'plane\x1d$; impulse\x0cimomentum (\x13dangular\x1c2\x0c\\\x0d=mulations.
-\x19=\x0db: Stress\x01\x18q, elastic\x1bss\x16r\x0f6ratio; Mohr\x0f6circle
-\x0bKplane\x152\x02plane \x18q; shear\x0bHce\x01\x1a4 moment\x11e; \x1a4\x0cishear\x16J;\x0c2rsion; Euler\x0f6\x1ey\x07columns;\x0dA\x0bN;\x0b-ories\x01failure,
-\x1cn\x12V\x0bG.
-Vibrations: Free\x01\x0d=ced vibrati\x15R\x07damped\x01undamped\x0e!\x12t\x02multi
-DOF\x0b(.
-\x1aV\x0bc:\x13l\x0bKstatic\x01dynamic loading;\x13l\x07\x1e4\x0e\\ such
-\x1cashafts, gears, rolling\x01sliding contact bearings; Joining\x0cQ\x14lbolting,
-riveting\x01welding.\x1f\x00\x14j: Fluid\x0b>; fluid statics,\x16,\x04floating bodies; Conservation
-laws: Mass, momentum\x1f2(Integral\x01\x0cF\x0d=m); Dimensional\x0b2\x12Idynamic similarity; sources, sinks, doublets, line vortex\x0bDsuperposition; Stoke’s
-\x1eB\x0cU. Generalised Bernoulli\x0f6\x117sources, sinks, dipole, Flow\x0c,
-circulation,\x15U\x11h\x0c.rotational symmetry, hydrodynamical lift, Kutta-Joukowski
-\x0cU. Vortex\x1d$- \x17-\x0f', vortex analogy\x0b,Biot-Savart\x0f6law,
-straight \x1civortex filaments, vortex sheets. Viscous\x11h- Navier-Stoke\x19Z,
-Couette\x0e:, Plane poiseuille\x0e:.\x14k\x04\x18H, Euler\x0f6\x117Bernoulli’s
-\x117Viscous\x11h\x07incompressible fluids, elementary turbulent\x0e:,\x18Mlayer,
-\x11Y\x0f/pipes.
-\x1aulayer\x0dT- Pr\x05tl\x0f6\x14=layer\x0d\`criteri\x15R\x0bK\x1dx, Blasius
-\x130, Sk\x0bnfriction, \x1f  thickness, momentum thickness, Turbulent\x1az
-layer, \x1aulayer\x0b{. Airfoils- Lift, drag, circulation,\x17Z\x0cB-\x1eyof
-th\x0bnaerofoils, wings\x04infinite\x01finite span, circulati\x15R\x11 Cavitation.
-Vorticity\x01Kelvin\x19J, \x1bo\x11h\x18xSources, Sinks\x01Doublets,
-hydrodynamic\x0bHces\x0b'\x1ft\x10!, D’Alembert\x0f6paradox, added-mass, slender-body
-\x18xhydrodynamic\x1a-\x13M, scaling\x1fBs,\x11o\x07\x1ft\x1ey\x0c4\x14_
-waves\x1a*transport, wave/body\x0bHces,\x0e(ised\x1eG\x07lifting\x1fLs.\x1f\x00Ship geometry\x01physical fundamentals\x13eArchimedes’\x12F, buoyancy\x01weight\x15Iship,\x1fBs\x04flotation, heel\x01trim, stable\x01unstable\x1aI\x04ships,\x14W
-\x07streamlined hull shape, ship ma\x0bnparticulars, hydrostatic\x1ai,
-\x18N\x02Trim\x04Ships: Statical\x16, at small angles\x04heel, Inclining experiment.
-Shift\x04centre\x04gravity due\x0b,additi\x15Ror removal\x04mass, transverse movement\x15Imass\x01\x1d!, Free\x1fL \x1d!, Effect\x04suspended mass, \x18Nat large angles
-\x07heel, angle\x04loll, curves\x04statical\x16,, dynamical\x16,, Probabilistic\x0cideterministic Damage \x18N\x11NCharacteristic curves\x04dynamic\x16,.
-Floodable length\x1ai\x01curves. Loss\x04\x1dudue\x0b,grounding, docking
-\x11K.
-Resistance\x01Propulsion: Components\x04ship\x1er,\x0bHm\x1a0, hull roughness,
-\x1e^\x13M\x01ship\x1er predicti\x15R\x14ntank wall\x1aP,\x1cuof
-ship\x1er\x0d$\x10o\x1fHresults,\x1er\x10/dvanced vehicles, appendage\x12Iadded\x1er. Geometry\x04screw propeller, propeller\x0b-ories, hull-propeller
-\x1eas,\x0d$propulsive\x13c definitions. Propeller cavitati\x15R\x02\x1ba.
-Propeller\x10%\x02\x10o. Open\x12T\x02self-propulsi\x15R\x1e^\x1fI. \x16=
-propellers\x0bD\x1eL\x0eC. Propeller\x16E,\x1co\x01manufacturing.
+\x1c?\x140layer\x01\x16 \x16Nboiling, condensati\x16a\x0dmevaporation;\x10U\x19Sexchangers\x01evaporators\x0bT\x1d9\x1c/;
+\x0f.double pipe, shell\x01tube\x1etexchangers\x0b;\x155\x02multiple\x1bw
+evaporators.\x1f\x00Fick\x11Mlaws, molecular diffusi\x16a\x0brfluids, mass\x13'\x18Yfilm, penetrati\x16a\x0dm\x15_renewal\x0b*ories; momentum,\x1et\x02mass\x13'analogies; stage-wise\x0cM\x12;contacting\x01stage efficiencies; HTU\x0fgNTU\x10&;\x0f&\x02\x1a[
+equipment\x0b-distillation, absorption, leaching, liquid-liquid extraction, drying,
+humidification, dehumidificati\x16a\x02adsorption, membrane\x1fjs (micro-filtration,
+ultra-filtration, nano-filtrati\x16a\x02reverse osmosis).\x1f\x00\x1d.ories\x04reacti\x16arates; kinetics\x04homogeneous\x14s,\x1c~\x04kinetic\x1aH,
+\x155\x02multiple\x14s\x0b,ideal reactors, kinetics\x04enzyme\x14s (Michaelis-
+Menten\x01Monod\x13|\x16unon-ideal reactors; residence\x15g\x12)\x12m
+parameter\x19g;\x1d2iso\x1c?reactors; kinetics\x04heterogeneous catalytic\x14s;
+diffusi\x16a\x1dj\x0b,catalysis; rate\x01\x16A\x0dd\x0bLcatalyst deactivation.\x1f\x00\x0dD\x1d9\x0dp; sensors\x01transducers; P&ID equipment symbols;
+\x1d9\x1d~ing\x01\x0d'ization,\x13'\x1a.dynamic\x0efs\x04\x0eJ
+\x0f@\x10q\x0c0inverse\x0ef,\x14' reacti\x16acurve,\x0b~ler modes (P, PI,\x12@PID);\x0dMvalves; transducer dynamics;\x10 closed loop\x11(\x10v
+\x12!,\x197,\x0b~ler tuning, cascade\x01feed\x0bIward\x0b~.\x1f\x00\x0bM\x1d9economics\x01cost\x16j\x16,depreciati\x16a\x02total
+annualized cost, cost\x0bqdices, rate\x04return, payback period, discounted cash\x0e),
+\x18E\x0b,\x1d9\x0co\x02sizing\x04chemical\x0cgequipments\x14dheat
+exchangers\x01multistage contactors.\x1f\x00Inorganic chemical\x0bqdustries (sulfuric acid, phosphoric acid, chlor-alkali\x0bqdustry\x16ufertilizers
+(Ammonia, Urea, SSP\x01TSP); natural products\x0bqdustries (Pulp\x01Paper, Sugar, Oil,\x12@Fats); petroleum refining\x01petrochemicals; polymerizati\x16aindustries
+(polyethylene, polypropylene, PVC\x01polyester syn\x0b_tic fibers).\x1f\x00Determinants\x01matrices,\x131\x12[, Eigen\x16{\x01eigen vectors.
+\x10Q, gradient, divergence, curl, cha\x0brrules, partial\x1d_directional\x12c,
+definite\x01indefinite\x1duline\x1fT\x01volume\x1du\x115\x04Stokes,
+Gauss\x01Green. \x11P,\x1d2\x0d', first\x01higher\x0fTordinary\x01partial\x0cl
+\x0e<\x1e@.
+\x13!\x13j, analytical\x11X\x07\x1ei\x16e\x104\x1ej\x1e)
+\x18F\x17n\x01\x14~, \x1ei\x0f}\x1dn\x02statistics.\x1f\x00\x13A: Free-body\x133\x01\x17l; trusses\x01frames; virtual
+work; kinematics\x01dynamics\x04particles\x01rigid bodies\x0b,plane motion; impulse\x0cMmomentum (\x13gangular\x16G\x0cp\x0d/mulations.
+\x0f,\x18J: Stress\x01strain, elastic\x1cas\x1cd\x11Mratio; Mohr\x11Mcircle
+\x0bLplane\x14O\x02plane strain; shear\x0bIce\x01bending moment\x133; bending\x0cMshear\x1ce;\x0c#rsion; Euler\x11M\x0eQ\x04columns;\x0dg\x0b\`;\x0b*ories\x01failure,
+\x1b\\\x17c\x0bX.
+Vibrations: Free\x01\x0d/ced vibrati\x16a\x07damped\x01undamped\x0e^\x155\x02multi
+DOF\x0b..
+\x15\`\x0ba:\x14}\x0bLstatic\x01dynamic loading;\x14}\x07\x18<\x1exsuch
+as shafts, gears, rolling\x01sliding contact bearings; Joining\x0c<\x14dbolting,
+riveting\x01welding.\x1f\x00\x17u: Fluid\x0bE; fluid statics,\x16L\x04floating bodies; Conservation
+laws: Mass, momentum\x1e; (Integral\x01\x0c>\x0d/m); Dimensional\x0b6\x12@dynamic similarity; \x1eo, sinks, doublets, line vortex\x0bTsuperposition; Stoke\x00>s
+\x17A\x0c]. Generalised Bernoulli\x11M\x12\`\x1eo, sinks, dipole, Flow\x0c.
+circulation,\x14u\x11C\x0c0rotational symmetry, hydrodynamical lift, Kutta-Joukowski
+\x0c]. Vortex motion- \x14<\x0fP, vortex analogy\x0b0Biot-Savart\x11Mlaw,
+straight \x18(vortex filaments, vortex sheets. Viscous\x11C- Navier-Stoke\x1bG,
+Couette\x0e), Plane poiseuille\x0e).\x19]\x04\x1f$, Euler\x11M\x12\`Bernoulli\x00>s
+\x12\`Viscous\x11C\x07incompressible fluids, elementary turbulent\x0e),\x17)layer,
+\x11q\x107pipes.
+Boundary layer\x0db- Pr\x05tl\x11M\x140layer\x0eBcriteri\x16a\x0bLseparation, Blasius
+\x13b, Sk\x0brfriction, \x1d{ thickness, momentum thickness, Turbulent\x18x
+layer, Boundary layer\x0b~. Airfoils- Lift, drag, circulation,\x18-\x0cL-\x0eQ\x14cth\x0braerofoils, wings\x04infinite\x01finite span, circulati\x16a\x12)Cavitation.
+Vorticity\x01Kelvin\x19p, Potential\x11C\x1aPSources, Sinks\x01Doublets,
+hydrodynamic\x0bIces\x0b,\x1f"\x10$, D\x00>Alembert\x11Mparadox, added-mass, slender-body
+\x1aPhydrodynamic\x19g\x17c, scaling laws,\x134\x07\x1f"\x0eQ\x0b0\x14)
+waves\x1e*transport, wave/body\x0bIces,\x0e{ised\x0db\x04lifting\x1fTs.\x1f\x00Ship geometry\x01\x1e fundamentals\x14bArchimedes\x00>\x12K, buoyancy\x01weight\x14cship, laws\x04flotation, heel\x01trim, stable\x01unstable\x1f|\x04ships,\x1b@
+\x07streamlined hull shape, ship ma\x0brparticulars, hydrostatic \x1c/,
+\x18!\x02Trim\x04Ships: Statical\x16L at small angles\x04heel, Inclining experiment.
+Shift\x04centre\x04gravity due\x0b0additi\x16aor removal\x04mass, transverse movement\x14cmass\x01\x19d, Free\x1fT\x1bw, Effect\x04suspended mass, \x18!at large angles
+\x07heel, angle\x04loll, curves\x04statical\x16L, dynamical\x16L, Probabilistic\x0cMdeterministic Damage \x18!\x15=Characteristic curves\x04dynamic\x16L.
+Floodable length \x1c/\x01curves. Loss\x04\x1e~due\x0b0grounding, docking
+\x12!.
+Resistance\x01Propulsion: Components\x04ship\x1cB,\x0bIm\x1by, hull roughness,
+\x1d~\x17c\x01ship\x1cB predicti\x16a\x16Ztank wall\x1d8,\x1d$
+ship\x1cB\x0cd\x11R\x1fNresults,\x1cB\x0f6dvanced vehicles, appendage\x12@added\x1cB. Geometry\x04screw propeller, propeller\x0b*ories, hull-propeller
+interactions,\x0cdpropulsive\x11] definitions. Propeller cavitati\x16a\x02\x1dj.
+Propeller\x0f&\x02\x11R. Open\x11"\x02self-propulsi\x16a\x1d~\x1eu. \x1da
+propellers\x0bT\x19k\x0dx. Propeller \x1b\\, strength\x01manufacturing.
 Unconventional propellers.
-Ship Manoeuvring\x01Motions: Ship path keeping\x01changing,\x0ds\x07motion,
-\x0csised\x19R\x0dVfixed\x16,\x0bjdexes,\x1a-\x1fI. \x18N\x18-in
-\x0b&horizontal\x01vertical planes\x0fgdefinitive manoeuvres\x01sea trials. Rudder
-hydro\x1fY\x18~\x02\x11d. Influence\x04propeller, hull, appendages etc.\x16O
-rudder\x18.. Experimental\x19:\x0b&\x15"hydrodynamic
-\x13:.
-Ocean waves\x0fgregular, irregular, trochoidal. Wave spectrum, encounter\x14K. \x12"
-\x07ship\x1d$s, coupled\x12Ocoupled\x1d$s,\x0ds\x07motion. Dynamic\x1aP
-\x07ship\x1d$\x0b'seaway. \x11Nship\x1d$ stabilisers\x0fgpassive\x01active. \x12y
-numerical\x01experimental\x0fQ\x0c4determine ship\x1d$s\x0fgstrip\x18@BEM, FEM.
-Seakeeping\x1av\x04high-\x1dKmarine vehicles.
-Ship\x12h\x01Strength: Shipbuilding\x1aHjoining\x15%ship\x1dE\x0e?framing\x10y– bottom, side, deck, bulkhead, end\x0e;\x0b@\x16)
-connections. Primary\x01secondary\x1dEmembers, super\x1a]hatch covers,
-\x1e4ry foundations, cargo h\x05ling\x1alsupport\x0e;.
-Loads acting\x0e>ships\x0b'seaway, longitudinal\x01transverse\x1co\x17p\x0ci\x1d5\x0bN. Strength\x04hull girder, stiffened plate\x0eKtorsi\x15R\x07hull
-girder,\x18\\\x01\x14D, local\x1co\x1b~Reliability\x0d_\x02ultimate
-\x18z\x04hull girder,\x1dEvibrations, fatigue\x01fracture.
-Physical Oceanography: Physical\x0d2sea\x10=, \x16= ocean waves -
-tides\x01wind waves\x0b@\x0c@\x13Q. Offshore\x12h: Fixed\x06fshore plat\x0d=ms -
-Jackets, Gravity plat\x0d=ms; Floating plat\x0d=ms\x13esemi-submersibles, jack-ups, TLPs, FPSOs;
-Mooring, stati\x15Rkeeping. Port\x01Harbour\x0b+: Ports\x01Harbours, Port\x0e;
-- Jetties, Dolphins, Liquid berths, Dredging, Navigation.\x1f\x00\x10a: \x1b?law\x19W\x13eClosed\x10Wundergoing\x0d6\x1bn; closed
-\x10<undergoing\x0d6change\x04\x18r; Internal\x0dA\x100\x0cR; Expansi\x15Rwork;\x1eU
-\x0cXideal g\x1ca-\x1bs\x17Z,\x1bs volume, iso\x1a5; adiabatic\x01polytropic
-\x1cM-work done\x01\x15iadded\x0b'\x0ca\x12@; \x1b?law applied\x0b,one -
-\x0dCsteady\x11h\x12@,\x11h\x0c>, steady\x11h\x0c\\\x13x(ID). Second\x1fB
-\x07\x10a\x13e\x11N\x18rments; Reversible\x01irreversible\x13/; Corollaries
-\x07second\x1fB\x13eAbsolute\x13Z scale; Carnot\x16f\x13eCarnot engine, refrigerator\x0ci\x15ipump. Clausius\x0bje\x1eW\x02definiti\x15R\x07entropy, change\x04entropy\x10/n ideal gas;
-G\x1ca\x0fA\x1bns\x01I.C.Engines; G\x1ca\x0fA\x1bns: Carnot\x16f, Brayt\x15R\x1bn, Erricson
-\x1bn, Sterling\x16f etc.; Air\x17]\x1bns- Otto- Diesel, Dual\x01Joule\x16f; Evaluation
-\x0ccrmal\x13c\x01mean\x1b}\x14C; Internal Combusti\x15Rengine -
-\x0dMI.C. engines -\x13t\x11d\x04spark Igniti\x15R\x02Compression
-Igniti\x15Rengines both two stroke\x01four stroke; Stages\x04combusti\x15R\x0bnS.I.\x01C.I.
-engines; Knocking\x01detonation-\x1a0s\x0b{ling knock\x01detonation,\x1eg
-preventing Knocking\x01detonation; Refrigerati\x15R-\x12F\x04\x11d\x04\x19lvapour
-\x1f.\x15_Comparis\x15R\x0c.vapour \x1f.\x15gAir conditioning
-\x11}- Sensible\x1aOing\x01cooling, Humidificati\x15R\x02dehumidification, Cooling\x0cihumidification, Cooling\x01dehumidification- Heating\x01humidification, Heating\x0cidehumidification, Adiabatic mixing\x10/ir streams –cooling\x01\x1b8ing load calculation.
-Marine Diesel Engines: General engine\x12g, Low speed\x01medium speed diesel
-engines, Two\x01Four stroke engines, Scavenging\x01turbo charging, Fuel oil\x0c(,
-Lubricating oil\x0e!cooling\x0e!torque\x01\x0fA\x0d{, Starting air
-\x1aFreversing\x0e!\x0c9s\x01safety\x1bD, Couplings\x01Gearboxes,
-Specific Fuel Consumption. Waste\x19Hrecovery\x13vMARPOL \x1bMs\x01\x0e@
-Efficiency\x13lIndex (EEDI\x16TShip\x19uEfficiency\x1dIPlan (SEEMP).
-Marine Steam Turbines: \x0dkturbines, compounding, re\x1b8, turbine\x0f:,
+Ship Manoeuvring\x01Motions: Ship path keeping\x01changing,\x0e2\x07motion,
+\x0d'ised\x1d!\x0dZfixed\x16L\x0bqdexes,\x19g\x1eu. \x18!\x1fzin
+\x0b'horizontal\x01vertical planes\x10ddefinitive manoeuvres\x01sea trials. Rudder
+hydrodynamics\x18u\x02\x0fL. Influence\x04propeller, hull, appendages etc.\x17Q
+rudder\x12e.\x16cal\x1a|\x0b'\x14 hydrodynamic
+\x12t.
+Ocean waves\x10dregular, irregular, trochoidal. Wave spectrum, encounter\x10?. \x10e
+\x07ship motions, coupled\x12Icoupled motions,\x0e2\x07motion. Dynamic\x1d8
+\x07ship moti\x16a\x0brseaway. \x15=ship moti\x16astabilisers\x10dpassive\x01active. \x17B
+\x1e)\x01experimental\x10t\x0c&\x1dIship motions\x10dstrip\x19[BEM, FEM.
+Seakeeping features\x04high-\x16Amarine vehicles.
+Ship\x13h\x01Strength: Shipbuilding\x18Gjoining\x1azship \x1fd\x0dmframing\x11(\x008 bottom, side, deck, bulkhead, end\x0fF\x0b;\x1ey
+connections. Primary\x01secondary \x1fdmembers, super\x0d-, hatch covers,
+\x18<ry foundations, cargo h\x05ling\x1eVsupport\x0fF.
+Loads acting\x0f$ships\x0b,seaway, longitudinal\x01transverse strength\x1cz\x0cM\x1cC\x0b\`. Strength\x04hull girder, stiffened plate\x0f(torsi\x16a\x07hull
+girder,de\x0d/mati\x16a\x02\x16W, local strength\x1cFReliability\x0dc\x02ultimate
+strength\x04hull girder, \x1fdvibrations, fatigue\x01fracture.
+Physical Oceanography: Physical\x0dUsea\x100, \x1da ocean waves -
+tides\x01wind waves\x0b;\x0cE\x16I. Offshore\x13h: Fixed\x06fshore plat\x0d/ms -
+Jackets, Gravity plat\x0d/ms; Floating plat\x0d/ms\x14bsemi-submersibles, jack-ups, TLPs, FPSOs;
+Mooring, stati\x16akeeping. Port\x01Harbour\x0b&: Ports\x01Harbours, Port\x0fF
+- Jetties, Dolphins, Liquid berths, Dredging, Navigation.\x1f\x00\x14V: \x18Olaw\x0bjrmodynamics\x14bClosed\x116undergoing\x0cccycle; closed
+\x10^undergoing\x0ccchange\x04\x17P; Internal\x0dg\x0f7\x0c\\; Expansi\x16awork; \x1dh
+\x0bJideal gas\x14b\x1aS\x15d,\x1ca volume, iso\x1bN; adiabatic\x01polytropic
+\x1d9-work done\x01\x19Sadded\x0b,\x0cN\x13G; \x18Olaw applied\x0b0one -
+\x0f)steady\x11C\x13G,\x11C\x0cF, steady\x11C\x0cp\x14.(ID). Second law
+\x07\x14V\x14b\x15=\x17Pments; Reversible\x01irreversible\x14'; Corollaries
+\x07second law\x14bAbsolute\x14B scale; Carnot\x1bv\x14bCarnot engine, refrigerator\x0cM\x19Spump. Clausius\x0bqe\x1eq\x01definiti\x16a\x07entropy, change\x04entropy\x0f6n ideal gas;
+Gas\x11xcycles\x01I.C.Engines; Gas\x11xcycles: Carnot\x1bv, Brayt\x16acycle, Erricson
+cycle, Sterling\x1bv etc.; Air\x14vcycles- Otto- Diesel, Dual\x01Joule\x1bv; \x19q
+\x0c?rmal\x11]\x01mean\x1a)\x15d; Internal Combusti\x16aengine -
+\x0d4I.C. engines -\x15D\x1avspark Igniti\x16a\x02Compression
+Igniti\x16aengines both two stroke\x01four stroke; Stages\x04combusti\x16a\x0brS.I.\x01C.I.
+engines; Knocking\x01detonation-\x1bys\x0b~ling knock\x01detonation,\x10tof
+preventing Knocking\x01detonation; Refrigerati\x16a-\x12K\x04\x1avSimple vapour
+\x1bD\x16(Comparis\x16a\x0c0vapour \x1bD\x142Air conditioning
+\x12w- Sensible heating\x01cooling, Humidificati\x16a\x02dehumidification, Cooling\x0cMhumidification, Cooling\x01dehumidification- Heating\x01humidification, Heating\x0cMdehumidification, Adiabatic mixing\x0f6ir streams \x008cooling\x01heating load calculation.
+Marine Diesel Engines: General engine\x11t, Low speed\x01medium speed diesel
+engines, Two\x01Four stroke engines, Scavenging\x01turbo charging, Fuel oil\x0c6,
+Lubricating oil\x0e^cooling\x0e^torque\x01\x109\x0eX, Starting air
+\x1dyreversing\x0e^\x0c,s\x01safety\x1b_, Couplings\x01Gearboxes,
+Specific Fuel Consumption. Waste\x1etrecovery\x16(MARPOL \x18}s\x01\x0e}
+Efficiency\x14}Index (EEDI\x16uShip\x19-Efficiency\x1a_Plan (SEEMP).
+Marine Steam Turbines: \x0d*turbines, compounding, reheat, turbine\x0f\`,
 rotors, blades, casing, Gl\x02sealing, diaphragms, nozzles, bearings etc. Lubrication
-\x0eNexpansi\x15Rarrangements, Gearings. Marine g\x1caturbines\x0fgfundamentals\x04G.T,
-\x11O\x07g\x1caturbines, gearing,\x11Pal\x1av,\x0b{s, combined\x16fs. Nuclear
-propulsi\x15R– physical\x1f1\x0c \x11d\x04nuclear reactors\x0fguse\x04nuclear
-propulsi\x15R\x15Rseagoing vessels,\x1dBPropulsion,
-Marine Boilers: \x11-- fire tube,\x12Ttube boilers, Package boilers, Cochran Boilers,
-Composite boilers, steam\x0b,steam generators, double evaporati\x15Rboilers, exhaust gas
-\x15iexchangers, auxiliary steam plant\x0e!exhaust g\x1caboilers, composite boilers.
-Boiler mounting, combustion, feed\x13vfeed\x12T\x18A.
-Engine Dynamics: Torsional vibrati\x15R\x07engine\x01shafting, axial shaft vibration, \x1fR
-speeds, engine rating, rating corrections, trial\x1fI etc.\x1e!\x04engine\x1b%
-propeller\x16Lsociety rules\x0e>engine\x0f:, Engine room arrangement.
-Automati\x15R\x07ship propulsi\x15Rplants, Maintenance requirements\x01reliability\x15Ipropulsi\x15Rplants.
-Marine Auxiliary \x1a3ry\x11Q\x1bx\x16= pumps\x01piping\x10y\x0bnships
-- hot\x10i, drinking\x10i, cooling\x12T\x02sea\x10=, fuel oil\x0e!lubricating oil
-\x10<filters, coolers, centrifuges, purifiers\x01clarifiers, bilge\x01ballast\x0b(,
-sewage\x1cg, oily\x12Tseparator, air compressors, boilers,\x19Hexchangers,\x11s
+\x0f@expansi\x16aarrangements, Gearings. Marine gas turbines\x10dfundamentals\x04G.T,
+\x13#\x07gas turbines, gearing,\x0f-al features,\x0b~s, combined\x1bvs. Nuclear
+propulsi\x16a\x008\x1ev\x13(\x0b'\x1avnuclear reactors\x10duse\x04nuclear
+propulsi\x16a\x16aseagoing vessels,\x11bPropulsion,
+Marine Boilers: \x10O- fire tube,\x11"tube boilers, Package boilers, Cochran Boilers,
+Composite boilers, steam\x0b0steam generators, double evaporati\x16aboilers, exhaust gas
+\x19Sexchangers, auxiliary steam plant\x0e^exhaust gas boilers, composite boilers.
+Boiler mounting, combustion, feed\x16(feed\x11"\x19_.
+Engine Dynamics: Torsional vibrati\x16a\x07engine\x01shafting, axial shaft vibration, \x1fU
+speeds, engine rating, rating corrections, trial\x1eu etc. \x169\x04engine\x1bL
+propeller\x14Esociety rules\x0f$engine\x0f\`, Engine room arrangement.
+Automati\x16a\x07ship propulsi\x16aplants, Maintenance requirements\x01reliability\x14cpropulsi\x16aplants.
+Marine Auxiliary\x17Xry\x0fg\x1bm\x1da pumps\x01piping\x11(\x0brships
+- hot\x0fx, drinking\x0fx, cooling\x11"\x02sea\x100, fuel oil\x0e^lubricating oil
+\x10^\x1a=, coolers, centrifuges, purifiers\x01clarifiers, bilge\x01ballast\x0b.,
+sewage disposal, oily\x11"separator, air compressors, boilers,\x1etexchangers,\x16#
 
-\x15irecovery\x14xHeat, ventilati\x15R\x02air conditioning\x14xDech\x1aWry\x0cicargo h\x05ling\x14xPropulsions\x01steering gear\x0b(.\x1f\x00Matrix algebra,\x121\x112, Eigen\x1b!\x01eigen vectors.\x1f\x00\x1c4\x12t\x14*, Limit, \x14:, Taylor\x0fh,
-Mean\x18u\x1bNEvaluati\x15R\x07definite\x01improper\x19#Partial\x1bYTotal
-derivative, Maxima\x01minima, Gradient\x17KCurl, Vector identities,
-Directional\x1bYLine, \x1eH\x02Volume\x19#Stokes, Gauss\x01Green’s
-\x128.\x1f\x00\x1f0\x0dI(\x18f\x16THigher\x14O\x195\x19Q\x18_\x1dm\x0f6\x02Euler\x0f6\x0dfInitial\x0ci\x194,\x1e;trans\x0d=ms, Solutions\x04\x1a{\x15i\x02wave
-\x169\x127\x0c=.\x1f\x00Complex\x15L, polar\x0bHm\x04\x1fO\x16e, triangle\x0bje\x1cQ.\x1f\x00\x1d=\x04\x1f3\x02sampling\x1c'Conditional
-\x1amMean, median, mode\x01\x19Y, \x1d'\x14[\x18s,
-Normal\x01Binomial\x0ew, \x101\x1bO\x0b2.\x1f\x00\x10r\x13S\x12p\x1f{ \x1f4.
-Integrati\x15R\x15-trapezoidal\x01Simpson\x0f6rule. \x1fG\x01multi-step\x19:numerical
-\x16F\x17+ial\x0b..\x1f\x00\x0dH\x02descripti\x15R\x07some comm\x15Rrocks\x0bPspecial
-reference\x0b,clastic\x132clastic reservoir rocks. Origin, migrati\x15R\x02accumulati\x15Rof
-Petroleum. Petroleum explorati\x15R\x0bN.\x1f\x00Well\x11y. Drilling\x0cV. Drilling rigs Rig
-operating\x15ZDrilling fluids\x1bQ\x0b=. Drilling fluid maintenance
-equipment. Oil\x11Qg\x1cawell cementing\x0fc. Drill bit\x11R\x13\`. Drill
-string\x11QCasing string\x0d:,\x0fc, \x14m\x11Q\x0cD. Drilling\x18R\x0d-
-\x0dV& remedies. Directional drilling\x0c2ols. Directional survey.\x15M\x04horizontal,
-multilateral, extended reach, slim wells.\x1f\x00Petrophysical\x0d2reservoir rocks. Coring\x01core\x1c"Reservoir fluid\x0b>. Phase behaviour\x04hydrocarb\x15R\x0cR. Flow\x04fluids\x0f?
-porous media. \x176\x02g\x1caconing. Reservoir\x17Z\x15(. Reservoir drives,
-drive mechanics\x01recovery\x1a0s. Reserve\x19d\x11Q\x0cP.\x1f\x00Well equipments. Well completi\x15R\x0cP. Well
-\x1eq\x0fE\x01mitigation. Well servicing\x11QWorkover\x0fc. Workover &
-completi\x15Rfluids. Formati\x15Rdamage. Well stimulati\x15R\x0cP. Artificial lift\x0cQ.
-Field\x1bf\x07oil\x11Qgas. Storage\x01\x17y\x07petroleum\x01petroleum
-products. Metering\x01\x14g oil\x11Qgas. Producti\x15R\x10<\x0c~& \x19'.
-Producti\x15R\x12V. Multi\x10J\x11Y\x0bntubing\x01\x10!-lines. Nodal\x10W\x1ds\x1aMure vessels, storage tanks, shell\x01tube\x19Hexchangers, pumps\x01compressors,
-LNG\x18uchain.
-Particle size\x01shape, particle size\x12-size reducti\x15R\x1e.\x04solid
-particles; free\x01hindered settling; centrifuge\x01cyclones; thickening\x1cC,
+\x19Srecovery\x142Heat, ventilati\x16a\x02air conditioning\x142Dech\x15;ry\x0cMcargo h\x05ling\x142Propulsions\x01steering gear\x0b..\x1f\x00Matrix algebra,\x131\x12[, Eigen\x16{\x01eigen vectors.\x1f\x00\x1eM\x155\x18T, Limit, \x15+, Taylor\x10i,
+Mean\x16}\x1dK\x1a,definite\x01improper\x1duPartial\x1d_Total
+derivative, Maxima\x01minima, Gradient, \x1ea, \x1dgidentities,
+Directional\x1d_Line, Surface\x01Volume\x1duStokes, Gauss\x01Green\x00>s
+\x115.\x1f\x00\x18O\x0fr\x0dd(\x17x\x16uHigher\x15F\x1aq\x1b-\x18Y\x1eD\x11M\x02Euler\x11M\x0e<Initial\x0cM\x1ap,\x1f+trans\x0d/ms, Solutions\x04one\x14a\x19S\x02wave
+\x18^\x13!\x0c7.\x1f\x00Complex\x12n, polar\x0bIm\x04\x1ei\x14$, triangle\x0bqe\x1eq.\x1f\x00\x1e9\x04\x1dn\x02sampling\x1e8Conditional
+\x1eXMean, median, mode\x01\x1b;, \x1fQ\x16e\x1b~,
+Normal\x01Binomial\x0f~, \x0fh\x19r\x0b6.\x1f\x00\x13$\x147\x13X\x13J\x0cialgebraic\x0b5.
+Integrati\x16a\x12Ztrapezoidal\x01Simpson\x11Mrule. \x1df\x02multi-step\x1a|\x1e)
+\x17D\x19=ial\x0b5.\x1f\x00\x0d)\x02descripti\x16a\x07some comm\x16arocks\x0bWspecial
+reference\x0b0clastic\x13"clastic reservoir rocks. Origin, migrati\x16a\x02accumulati\x16aof
+Petroleum. Petroleum explorati\x16a\x0b\`.\x1f\x00Well\x11;. Drilling\x0c4. Drilling rigs Rig
+operating\x13fDrilling fluids\x1dN\x0b?. Drilling fluid maintenance
+equipment. Oil\x0fggas well cementing\x0fn. Drill bit\x11S\x19N. Drill
+string\x0fgCasing string\x0d+,\x0fn, \x13t\x0fg\x0c'. Drilling\x1a#\x0d7
+\x0dZ& remedies. Directional drilling\x0c#ols. Directional survey.\x17,\x04horizontal,
+multilateral, extended reach, slim wells.\x1f\x00Petro\x1e \x0cWreservoir rocks. Coring\x01core\x1feReservoir fluid\x0bE. Phase behaviour\x04hydrocarb\x16a\x0c\\. Flow\x04fluids\x106
+porous media. \x157\x02gas coning. Reservoir\x18-\x182. Reservoir drives,
+drive mechanics\x01recovery\x1bys. Reserve\x16j\x0fg\x0c@.\x1f\x00Well equipments. Well completi\x16a\x0c@. Well
+\x1fh\x0eq\x01mitigation. Well servicing\x0fgWorkover\x0fn. Workover &
+completi\x16afluids. Formati\x16adamage. Well stimulati\x16a\x0c@. \x19{lift\x0c<.
+Field\x1c.\x07oil\x0fggas. Storage\x01\x1b3\x07petroleum\x01petroleum
+products. Metering\x01\x173 oil\x0fggas. Producti\x16a\x10^\x0d,&\x1eU.
+Producti\x16a\x19<. Multi\x0e&\x11q\x0brtubing\x01\x10$-lines. Nodal\x116\x0b:.
+\x16Eure vessels, storage tanks, shell\x01tube\x1etexchangers, pumps\x01compressors,
+LNG\x16}chain.
+Particle size\x01shape, particle size\x13Qsize reducti\x16a\x1bj\x07solid
+particles; free\x01hindered settling; centrifuge\x01cyclones; thickening\x17J,
 
-filtration, agitati\x15R\x02mixing; conveying\x04solids.\x1f\x00Offshore oil\x01g\x1ca\x0f \x11Qocean
-\x11C. Offshore fixed plat\x0d=ms, Offshore mobile units, Stati\x15Rkeeping\x0fQlike
-mooring\x11Qdynamic positioning\x0c(. Offshore drilling\x0fofixed plat\x0d=m, jack-up, ships\x12Isemi submersibles. Use\x04conductors\x01risers. Offshore well completion. Deep
-\x10h\x0e7subsea technology. Offshore\x1ep: Oil\x1bfplat\x0d=ms,
-\x10hinjecti\x15Rplat\x0d=ms, storage, SPM\x01SBM\x1f@\x01utilities. Deep\x10i
-drilling rig. Deep\x12T\x1eq\x0cR. Emerging deep\x12Ttechnologies.\x1f\x00Evaluati\x15R\x07petrophysical\x04sub-\x16%\x0d=mations:
-\x0bW\x0b;, advantages\x01disadvantages\x04SP, resistivity, radioactive,
-acoustic logs\x01\x0dqtools used. Evaluati\x15R\x07CBL/VDL, USIT, SFT, RFT. Production
-logging\x0c2ols,\x12g, limitations\x0fb. Special type\x04logging\x0c2ols. Casing
-inspecti\x15Rtools (\x0eC\x1cv\x02limitations\x16TFormations micro scanner (FMS),
-NMR logging\x12g. \x1bvlog\x16d\x0bG. Cross-plotting\x0bG.\x1f\x00Diffusivity\x11Dderivati\x15R&\x12&. Radius\x04investigation.
-\x13tsuperposition. Horner\x0f6\x199. Drill Stem Testing.\x15Ture Transient
-Tests: Drawdown\x01build up-\x17B\x0b2. Wellbore\x1aP. Multilayer reservoirs.
-Injecti\x15Rwell\x13M. Multiple well\x13M. Interference\x13M, Pulse\x13M, well-\x17B
-\x0c~\x15-use\x04type curves. G\x1cawell\x13M.\x1f\x00Health hazards\x0b'Petroleum Industry:
-Toxicity, Physio\x1e\`al, Asphyxiation, respiratory\x01sk\x0bn\x1d!\x04petroleum hydrocarbons,
-sour gases. Safety\x0fZ: Manual\x11Qautomatic shutdown\x13vblow down\x15ZGas
-detecti\x15R\x0cR. Fire detecti\x15R\x02suppressi\x15R\x17YPersonal protecti\x15R\x10<&
-measures. HSE Policies. Disaster\x11Qcrisis\x0f,\x0bnPetroleum Industry. \x1d9:
-\x1d9\x0fl, impact\x0e>eco-\x15_air,\x12T\x02soil. \x0egimpact\x04drilling &
-\x1eq\x0f \x0e>\x11C, \x12[transport\x04petroleum\x11ss.
-Offshore\x17xstudies. Offshore oil spill\x01oil spill\x0b{. Waste\x1aB
-\x0bN.\x1f\x00\x0d>\x11}\x02mechanism\x04EOR, Screening
-\x07EOR\x13/. \x0dRpattern flooding, recovery\x13c, permeability
-heterogeneity. Macroscopic\x01microscopic \x1f \x13c. EOR\x0bG:
-Chemical flooding, Miscible flooding\x1b9rmal recoveries (steam stimulation, hot\x12T&
-steam flooding,\x0bj-situ combustion\x16TMicrobial EOR.\x1f\x00Coal bed methane, shale gas, oil shale, gas
-hydrate\x0b@heavy oil.\x1f\x00\x0e-: Postulates\x04quantum mechanics. Operators. Time dependent\x01\x1b_
-independent Schrödinger\x0b.. Born\x16d. Dirac bra-ket notation. Particle\x0bj
-a box:\x0bjfinite\x01finite square wells; \x11)tunnelling; particle\x0b'1D, 2D\x013D-box;
-\x0b;. Harmonic oscillator: harmonic\x01anharmonic\x15Us; Hermite
-polynomials. Rotational\x1d$: Angular momentum operators, Rigid rotor. Hydrogen\x0cihydrogen-like atoms: atomic orbitals; radial\x0ex\x0dQ. Multi-\x1ceatoms:
-orbital\x19}; \x1cespin; Pauli exclusi\x15R\x10;; slater determinants.
-Approximati\x15R\x0e*: Variati\x15R\x15c\x02secular determinants; first\x11F
-perturbati\x15R\x0cP. Atomic units. Molecular\x137\x02Chemical bonding: Born-
-Oppenheimer\x19}; Valence bond\x1eG\x02\x0c]combinati\x15R\x15Htomic
-orbitals\x0fg\x1drorbital (LCAO-MO)\x0dT. Hybrid orbitals.\x168\x07LCAO-MO
+filtration, agitati\x16a\x02mixing; conveying\x04solids.\x1f\x00Offshore oil\x01gas\x0fn\x0fgocean
+\x12V. Offshore fixed plat\x0d/ms, Offshore mobile units, Stati\x16akeeping\x10tlike
+mooring\x0fgdynamic positioning\x0c6. Offshore drilling\x11Qfixed plat\x0d/m, jack-up, ships\x12@semi submersibles. Use\x04conductors\x01risers. Offshore well completion. Deep
+\x0fs\x0e subsea technology. Offshore\x1fg: Oil\x1c.plat\x0d/ms,
+\x0fsinjecti\x16aplat\x0d/ms, storage, SPM\x01SBM \x1b3\x02utilities. Deep\x0fx
+drilling rig. Deep\x11"\x1fh\x0c\\. Emerging deep\x11"technologies.\x1f\x00\x1a,petro\x1e \x07sub-\x15_\x0d/mations:
+\x0bF\x0b8, advantages\x01disadvantages\x04SP, resistivity, radioactive,
+acoustic logs\x01\x0d}tools used. \x1a,CBL/VDL, USIT, SFT, RFT. Production
+logging\x0c#ols,\x11t, limitations\x0d0. Special type\x04logging\x0c#ols. Casing
+inspecti\x16atools (\x0dx\x1c{\x02limitations\x16uFormations micro scanner (FMS),
+NMR logging\x11t. \x1bklog\x1c~\x0bX. Cross-plotting\x0bX.\x1f\x00Diffusivity\x128derivati\x16a&\x13%. Radius\x04investigation.
+\x15Dsuperposition. Horner\x11M\x180. Drill Stem Testing.\x13Vure Transient
+Tests: Drawdown\x01build up-\x16R\x0b6. Wellbore\x1d8. Multilayer reservoirs.
+Injecti\x16awell\x17c. Multiple well\x17c. Interference\x17c, Pulse\x17c, well-\x16R
+\x0d,\x12Zuse\x04type curves. Gas well\x17c.\x1f\x00Health hazards\x0b,Petroleum Industry:
+Toxicity, Physio\x18&al, Asphyxiation, respiratory\x01sk\x0br\x19d\x04petroleum hydrocarbons,
+sour gases. Safety\x0el: Manual\x0fgautomatic shutdown\x16(blow down\x13fGas
+detecti\x16a\x0c\\. Fire detecti\x16a\x02suppressi\x16a\x150Personal protecti\x16a\x10^&
+measures. HSE Policies. Disaster\x0fgcrisis\x11H\x0brPetroleum Industry. \x1e0:
+\x1e0\x10&, impact\x0f$eco-\x18Wair,\x11"\x02soil. \x10oimpact\x04drilling &
+\x1fh\x0fD\x0f$\x12V, \x0f4transport\x04petroleum\x16#s.
+Offshore\x1f>studies. Offshore oil spill\x01oil spill\x0b~. Waste\x1c$
+\x0b\`.\x1f\x00\x0d!\x12w\x02\x1e!\x04EOR, Screening
+\x07EOR\x14'. \x0eipattern flooding, recovery\x11], \x1aa
+heterogeneity. Macroscopic\x01microscopic \x1d{\x11]. EOR\x0bX:
+Chemical flooding, Miscible flooding, \x1d.rmal recoveries (steam stimulation, hot\x11"&
+steam flooding,\x0bq-situ combustion\x16uMicrobial EOR.\x1f\x00Coal bed methane, shale gas, oil shale, gas
+hydrate\x0b;heavy oil.\x1f\x00\x0et: Postulates\x04quantum mechanics. Operators. Time dependent\x01\x17@
+independent Schr\x00&dinger\x0b5. Born\x1c~. Dirac bra-ket notation. Particle\x0bq
+a box:\x0bqfinite\x01finite square wells; \x14Ktunnelling; particle\x0b,1D, 2D\x013D-box;
+\x0b8. Harmonic oscillator: harmonic\x01anharmonic\x14us; Hermite
+polynomials. Rotational motion: Angular momentum operators, Rigid rotor. Hydrogen\x0cMhydrogen-like atoms: atomic orbitals; radial\x0f3\x0d>. Multi-electr\x16aatoms:
+orbital\x18[; electr\x16aspin; Pauli exclusi\x16a\x10P; slater determinants.
+Approximati\x16a\x0eR: Variati\x16a\x15r\x02secular determinants; first\x119
+perturbati\x16a\x0c@. Atomic units. Molecular\x12z\x02Chemical bonding: Born-
+Oppenheimer\x18[; Valence bond\x0db\x01\x0cicombinati\x16a\x13Ztomic
+orbitals\x10dmolecular orbital (LCAO-MO)\x0db. Hybrid orbitals.\x14Q\x07LCAO-MO
 +
-\x1ey\x0c4H2 , H2; orbital\x1eG(MOT)\x04homo-\x01heteronuclear diatomic molecules.
-Hückel\x19}\x0c$\x0er\x0c4annular 𝜋\x0fg\x1ce\x0b0.
-Group\x0dT: Symmetry\x0e\\\x01\x0f ; Point groups\x01character tables;
-Internal coordinates\x01vibrational modes; symmetry adapted\x0dwcombinati\x15Rof
-atomic orbitals (LCAO-MO);\x10\`\x07hybrid orbitals\x0bpsymmetry\x1dgpects.
-Spectroscopy: Atomic\x1c5; Russell-Saunders coupling; Term symbols\x0cispectral details; orig\x0bn\x07\x14m rules. Rotational, vibrational, \x1eKic\x01Raman
-\x1be\x04diatomic\x01polyatomic molecules. Line broadening. Einstein’s
-\x0f~.\x1e!\x04transiti\x15Rmoment\x1fr\x0c.molar extincti\x15R\x1c(\x0cioscillator\x1co. \x0d>\x12,nuclear\x13}resonance: gyro\x120ratio;
+\x0eQ\x0b0H2 , H2; orbital\x0db (MOT)\x04homo-\x01heteronuclear diatomic molecules.
+H\x00(ckel\x18[\x0c8\x11,\x0c&annular \x00M\x10delectr\x16a\x0b3.
+Group\x0db: Symmetry\x1ex\x02\x0fD; Point groups\x01character tables;
+Internal coordinates\x01vibrational modes; symmetry adapted\x0e\\combinati\x16aof
+atomic orbitals (LCAO-MO);\x11K\x07hybrid orbitals\x0b=symmetry aspects.
+Spectroscopy: Atomic spectroscopy; Russell-Saunders coupling; Term symbols\x0cMspectral details; orig\x0br\x07\x13t rules. Rotational, vibrational, electronic\x01Raman
+spectroscopy\x04diatomic\x01polyatomic molecules. Line broadening. Einstein\x00>s
+\x0ft. \x169\x04transiti\x16amoment\x18z\x0c0molar extincti\x16a\x1bF\x0cMoscillator strength. \x0d!\x13(nuclear\x12bresonance: gyro\x11<ratio;
 chemical shift, nuclear coupling.
-\x12<: Laws\x19W. \x1bv\x18rs. \x18lrmochemistry. \x18lrmodynamic
-\x1bV\x0c@\x16}: Gibbs-Helmholtz\x01Maxwell\x1fj, Gibbs-Duhem
-\x117van’t Hoff\x0c1. Criteria\x04spontaneity\x01\x159. Absolute entropy.
-Partial molar quantities.\x17w\x04mixing. Chemical\x15U. Fugacity, activity\x12Iactivity\x0f9. Ideal\x01Non-ideal\x12&, Raoult\x0f6Law\x01Henry\x0f6Law,
-Chemical equilibria. Dependence\x04\x159\x1bs\x0e>\x1dP\x02\x14C.
-Ionic mobility\x01conductivity. Debye-Hückel limiting\x1fB. Debye-Hückel-Onsager
-\x0c=. \x1bvelectrode\x15Us\x01electrochemical cells. Nernst\x14k\x0cE
-\x0e',\x1fjhip\x0e]Electrode\x15U\x17krmodynamic quantities,
-Potentiometric\x01conduct metric titrations. Phase rule. Clausius- Clapeyr\x15R\x0c=.
-Phase\x178\x04one component\x0b(: CO2, H2O, S; two component\x0b(: liquid-
-vapour, liquid-liquid\x01solid-liquid\x15ZFractional distillation. Azeotropes\x0cieutectics. Statistical\x17v: micro canonical, canonical\x01gr\x02canonical
-ensembles, Boltzmann\x12-partiti\x15R\x1bV\x1f}\x0b=.
-Kinetics: Elementary, \x19t, opposing\x01consecutive\x11k. Steady\x1dn
-\x199. Mechanisms\x04\x1fO\x11x. Uni\x1dr\x11x. \x1bo
-\x0c\\\x14_s\x01classical trajectories, \x0dRSaddle points, Transiti\x15R\x17Q\x0e/:
+\x13S: Laws\x0bjrmodynamics. \x1bk\x17Ps. \x1d.rmochemistry. \x1d.rmodynamic
+\x1a.\x0cE\x14_: Gibbs-Helmholtz\x01Maxwell relations, Gibbs-Duhem
+\x12\`van\x00>t Hoff\x0c). Criteria\x04spontaneity\x01\x17l. Absolute entropy.
+Partial molar\x1f^. \x14V\x04mixing. Chemical\x14u. Fugacity, activity\x12@activity\x0f<. Ideal\x01Non-ideal\x13%, Raoult\x11MLaw\x01Henry\x11MLaw,
+Chemical equilibria. Dependence\x04\x17l\x1ca\x0f$\x1d|\x02\x15d.
+Ionic mobility\x01conductivity. Debye-H\x00(ckel limiting law. Debye-H\x00(ckel-Onsager
+\x0c7. \x1bkelectrode\x14us\x01electrochemical cells. Nernst\x19]\x0cU
+\x0eh, relationship\x0d{Electrode\x14u\x19/rmodynamic\x1f^,
+Potentiometric\x01conduct metric titrations. Phase rule. Clausius- Clapeyr\x16a\x0c7.
+Phase\x1d:\x04one component\x0b.: CO2, H2O, S; two component\x0b.: liquid-
+vapour, liquid-liquid\x01solid-liquid\x13fFractional distillation. Azeotropes\x0cMeutectics. Statistical\x0b*rmodynamics: micro canonical, canonical\x01gr\x02canonical
+ensembles, Boltzmann\x13Qpartiti\x16a\x1a.\x0b_rmodynamic\x0bE.
+Kinetics: Elementary, \x17\\, opposing\x01consecutive\x14s. Steady\x1bT
+\x180. Mechanisms\x04\x1ei\x14e. Unimolecular\x14s. Potential
+\x0cp\x14)s\x01classical trajectories, \x0eiSaddle \x1efs, Transiti\x16a\x15R\x0eQ:
 
-Eyring\x11Dermodynamic\x1dgpects. Kinetics\x04polymerization. Catalysis\x16*\x0e?enzyme catalysis. Kinetic isotope\x1aP. Fast \x1fM kinetics: relaxati\x15R\x02\x10!
-\x0bN. Diffusi\x15R\x0c9led\x11k. Kinetics\x04photochemical\x01pho\x0c4physical
-\x0ct.
-Surfaces\x01Interfaces: Physisorpti\x15R\x02chemisorption. Langmuir, Freundlich\x0ciBrunauer–Emmett–Teller (BET) iso\x0bkrms. \x1eHcatalysis: Langmuir-Hinshelwood
-mechanism. \x1eHtension, viscosity. Self-assembly. Physical chemistry\x04colloids,
-micelles\x01macromolecules.\x1f\x00Ma\x0bnGroup \x1cN: Hydrides, halides, oxides, oxoacids, nitrides, sulfides\x0fgshapes\x12Ireactivity.\x1a:\x01bonding\x04boranes, carboranes, silicones, silicates, boron
+Eyring\x128ermodynamic aspects. Kinetics\x04polymerization. Catalysis\x17'\x0dmenzyme catalysis. Kinetic isotope\x1d8. Fast reacti\x16akinetics: relaxati\x16a\x02\x10$
+\x0b\`. Diffusi\x16a\x0c,led\x14s. Kinetics\x04photochemical\x01pho\x0c&physical
+\x0dN.
+Surfaces\x01Interfaces: Physisorpti\x16a\x02chemisorption. Langmuir, Freundlich\x0cMBrunauer\x008Emmett\x008Teller (BET) iso\x0b_rms. Surface catalysis: Langmuir-Hinshelwood
+\x1e!. Surface tension, viscosity. Self-assembly. Physical chemistry\x04colloids,
+micelles\x01macromolecules.\x1f\x00Ma\x0brGroup \x17[: Hydrides, halides, oxides, oxoacids, nitrides, sulfides\x10dshapes\x12@reactivity.\x1d>\x01bonding\x04boranes, carboranes, silicones, silicates, boron
 nitride, borazines\x01phosphazenes. Allotropes\x04carbon, phosphorous\x01sulphur.
-Industrial syn\x0bksis\x04compounds\x04ma\x0bngroup\x0e\\. \x1cj\x04noble gases,
-pseudohalogens\x0b@interhalogen compounds. Acid-base\x16*\x02\x11}(Lewis,
-Brønsted, HSAB\x01acid-base catalysis).
-Transiti\x15R\x1cN: Coordinati\x15Rchemistry\x0fg\x163isomerism\x173ories\x04bonding
-(VBT, CFT\x0b@MOT).\x19ulevel\x11e\x0b'\x0eQcrystal\x1eXs, CFSE\x1cvof
-CFT, Jahn-Teller distortion. \x12dspectra\x04transiti\x15Rmetal complexes: spectroscopic
-term symbols, \x14m rules, Orgel\x01Tanabe-Sugano\x11e, nephelauxetic \x1d!\x12IRacah parameter, charge-\x11Lspectra. \x10'\x0cMtransiti\x15Rmetal
-complexes. Ray- Dutt\x01Bailar twists, Reacti\x15Rmechanisms: kinetic\x17krmodynamic
-\x11K, substituti\x15R\x02redox\x11k. Metal-metal multiple bond.
-Lanthanides\x01Actinides: Recovery. Periodic\x0eHspectra\x01\x120\x0b=.
-Organometallics: 18-Electr\x15Rrule; metal-alkyl, metal-carbonyl, metal-olef\x0bn\x02metal-
-carbene complexes\x01metallocenes. Fluxionality\x0b'organometallic complexes. \x0eJ
-organometallic\x11k. Homogeneous catalysis\x13eHydrogenation, hydro\x0d=mylation,
-acetic acid syn\x0bksis, meta\x0bksis\x01olef\x0bnoxidation. Heterogeneous catalysis\x13eFischer-
-Tropsch \x1fM, Ziegler-Natta polymerization.
-Radioactivity: Detecti\x15R\x07radioactivity, Decay\x0cv, half-life\x04radioactive\x0e\\,
-fissi\x15R\x02fusi\x15R\x0ct.
+Industrial syn\x0b_sis\x04compounds\x04ma\x0brgroup\x0fK. \x1aR\x04noble gases,
+pseudohalogens\x0b;interhalogen compounds. Acid-base\x17'\x02\x12w(Lewis,
+Br\x00'nsted, HSAB\x01acid-base catalysis).
+Transiti\x16a\x17[: Coordinati\x16achemistry\x10d\x18_isomerism\x1cpories\x04bonding
+(VBT, CFT\x0b;MOT).\x19-level\x133\x0b,\x0dJcrystal\x16ys, CFSE\x1c{of
+CFT, Jahn-Teller distortion. \x11Zspectra\x04transiti\x16ametal complexes: spectroscopic
+term symbols, \x13t rules, Orgel\x01Tanabe-Sugano\x133, nephelauxetic\x1bw\x12@Racah parameter, charge-\x12Jspectra. \x10%\x0cWtransiti\x16ametal
+complexes. Ray- Dutt\x01Bailar twists, Reacti\x16a\x19t: kinetic\x19/rmodynamic
+\x12!, substituti\x16a\x02redox\x14s. Metal-metal multiple bond.
+Lanthanides\x01Actinides: Recovery. Periodic\x0f_spectra\x01\x11<\x0b?.
+Organometallics: 18-Electr\x16arule; metal-alkyl, metal-carbonyl, metal-olef\x0br\x02metal-
+carbene complexes\x01metallocenes. Fluxionality\x0b,organometallic complexes. \x0df
+organometallic\x14s. Homogeneous catalysis\x14bHydrogenation, hydro\x0d/mylation,
+acetic acid syn\x0b_sis, meta\x0b_sis\x01olef\x0broxidation. Heterogeneous catalysis\x14bFischer-
+Tropsch reaction, Ziegler-Natta polymerization.
+Radioactivity: Detecti\x16a\x07radioactivity, Decay\x0dR, half-life\x04radioactive\x0fK,
+fissi\x16a\x02fusi\x16a\x0dN.
 + +
-Bioinorganic \x1cj: I\x15R(Na\x01K ) transport, oxygen binding, transport\x0ciutilization, \x1ce\x11L\x11x, nitrogen fixation, metalloenzymes containing
+Bioinorganic \x1aR: I\x16a(Na\x01K ) transport, oxygen binding, transport\x0cMutilization, electr\x16a\x12J\x14e, nitrogen fixation, metalloenzymes containing
 magnesium, molybdenum, iron, cobalt, copper\x01zinc.
-Solids: Crystal\x1allattices, Miller planes, crystal packing, crystal defects,
-Bragg\x0f6law, ionic crystals,\x0e;\x04AX, AX2, ABX3 type compounds, spinels, b\x0e?\x18xmetals\x01\x1dQ.
-Instrumental\x0f\\\x04\x0b^: UV-visible, fluorescence\x01FTIR spectrophotometry,
-NMR\x01ESR\x1c5, mass spectrometry, atomic absorpti\x15R\x1be,
-Mössbauer\x1c5 (Fe\x01Sn\x1c2X-ray crystallography. Chromatography\x13U
-GC\x01HPLC. Electroanalytical\x0bG- polarography, cyclic voltammetry, ion-selective
-electrodes. \x18lrmoanalytical\x0bG.\x1f\x00Stereochemistry: Chirality\x01symmetry\x04organic molecules\x0bPor\x0c,out chiral centres\x12I\x15"\x0c@absolute \x1c3s. Relative stereochemistry\x0b'compounds
-having more than\x16Oe stereogenic centre. Homotopic, enantiotopic\x01diastereotopic
-atoms, groups\x01faces. Stereoselective\x01stereospecific syn\x0bksis. Con\x0d=mational
-\x0daacyclic\x01cyclic compounds. Geometrical isomerism\x01optical isomerism.
-Configurational\x01con\x0d=mational\x1aP, atropisomerism\x0b@neighbouring group
-participati\x15R\x15Rreactivity\x01selectivity/specificity.
-Reacti\x15RMechanisms\x1fQmechanistic\x16*– kinetic versus\x0b-rmodynamic
-\x0c9, Hammond\x0f6postulate\x01Curtin-Hammett\x12F.\x0f\\\x04determining
-\x1fM mechanisms\x0eMkinetics, identificati\x15R\x07products,\x0bjtermediates\x0ciisotopic labelling. \x101free-\x0c\\\x1f^hip\x0fgHammett\x01Taft\x0b..
-Nucleophilic\x01electrophilic substituti\x15R\x11x (both aromatic\x01aliphatic). Addition
-\x11x\x0b,carbon-carb\x15R\x02carbon-heteroatom (N\x01O) multiple bonds. Elimination
-\x11x. Reactive\x0bjtermediates\x13ecarbocations, carbanions, carbenes, nitrenes, arynes\x12Ifree radicals. Molecular rearrangements.
-Organic Syn\x0bksis: Syn\x0bksis,\x11k, mechanisms\x01selectivity\x0bjvolving\x0b following
-classes\x04compounds\x0fgalkenes, alkynes, arenes, alcohols, phenols, aldehydes, ketones,
-carboxylic acids, esters, nitriles, halides, nitro compounds, amines\x01amides. Uses\x15IMg, Li, Cu, B, Zn, P, S, Sn\x01Si\x16Sreagents\x0b'organic syn\x0bksis. Carbon-carb\x15Rbond
-\x0d=mati\x15R\x0f/coupling\x11k\x13eHeck, Suzuki, Stille, Sonogoshira, Negishi, Kumada,
-Hiyama, Tsuji-Trost, olef\x0bnmeta\x0bksis\x01McMurry.\x1fa\x04multistep syn\x0bksis -
-retrosyn\x0bktic\x0eKstrategic disconnections, synthons\x01syn\x0bktic \x16js. Atom
-economy\x01Green \x1cj, Umpolung reactivity\x0fg\x0d=myl\x01acyl ani\x15R\x16js.
-Selectivity\x0b'organic syn\x0bksis\x0fgchemo-, regio-\x01stereoselectivity. Protecti\x15R\x0e?deprotecti\x15R\x07\x0dQal groups.\x1fa\x10/symmetric syn\x0bksis\x0fgre\x16F(\x0eU
-enzymatic\x16Tdesymmetrizati\x15R\x02use\x04chiral auxiliaries, organocatalysis. Carbon-carbon\x12Icarbon-heteroatom bond\x0bHming\x11k\x0eMenolates (\x0eBboron
-enolates\x16Tenamines\x01silyl enol e\x0bkrs. Stereoselective additi\x15R\x0c4C=O groups (Cram,
-Prelog\x01Felkin-Anh\x15d).
-Pericyclic Reactions\x01Photochemistry: Electrocyclic, cycloadditi\x15R\x02sigmatropic
-\x11x. Orbital \x1acs\x13eFMO\x01PMO\x1aBs, Woodward-Hoffmann rule.
-Photochemistry\x10/lkenes, arenes\x01carbonyl compounds. Photooxidati\x15R\x0e?photoreduction. Di-𝜋-methane rearrangement, Barton-McCombie \x1fM, Norrish type-I\x12III cleavage \x1fM.
-Heterocyclic Compounds:\x1a:, preparation,\x0d3\x02\x11x\x04furan, pyrrole,
-thiophene, pyridine,\x0bjdole, quinoline\x01isoquinoline.
-Biomolecules:\x1a:,\x0d3\x02\x11x\x04mono-\x01di-saccharides,
-physicochemical\x0d2amino acids, chemical syn\x0bksis\x04peptides, chemical
-\x0fT\x15"peptides\x01proteins,\x1dE\x1eM\x04proteins,
-nucleic acids, lipids, steroids, terpenoids, carotenoids\x0b@alkaloids.
-Experimental \x16n\x0b'Organic \x1cj: Optical rotati\x15R(polarimetry).\x0dY
-\x07\x0eQchromatographic\x0cQ\x14lthin-layer, column, HPLC\x01GC.
-\x11<UV-visible, IR, NMR\x01Mass spectrometry\x0eA\x15m\x122
+Solids: Crystal\x1eVlattices, Miller planes, crystal packing, crystal defects,
+Bragg\x11Mlaw, ionic crystals,\x0fF\x04AX, AX2, ABX3 type compounds, spinels, b\x0dm\x1aPmetals\x01\x1dO.
+Instrumental\x102\x04\x0bo: UV-visible, fluorescence\x01FTIR spectrophotometry,
+NMR\x01ESR spectroscopy, mass spectrometry, atomic absorpti\x16aspectroscopy,
+M\x00&ssbauer spectroscopy (Fe\x01Sn\x16GX-ray crystallography. Chromatography\x15A
+GC\x01HPLC. Electroanalytical\x0bX- polarography, cyclic voltammetry, ion-selective
+electrodes. \x1d.rmoanalytical\x0bX.\x1f\x00Stereochemistry: Chirality\x01symmetry\x04organic molecules\x0bWor\x0c.out chiral centres\x12@\x14 \x0cEabsolute\x1dRs. Relative stereochemistry\x0b,compounds
+having more than\x17Qe stereogenic centre. Homotopic, enantiotopic\x01diastereotopic
+atoms, groups\x01faces. Stereoselective\x01stereospecific syn\x0b_sis. Con\x0d/mational
+\x0e6acyclic\x01cyclic compounds. Geometrical isomerism\x01optical isomerism.
+Configurational\x01con\x0d/mational\x1d8, atropisomerism\x0b;neighbouring group
+participati\x16a\x16areactivity\x01selectivity/specificity.
+Reacti\x16aMechanisms\x19hmechanistic\x17'\x008 kinetic versus\x0b*rmodynamic
+\x0c,, Hammond\x11Mpostulate\x01Curtin-Hammett\x12K.\x102\x04determining
+reacti\x16a\x19t\x0f8kinetics, identificati\x16a\x07products,\x0bqtermediates\x0cMisotopic labelling. \x0fhfree-\x0cprelationship\x10dHammett\x01Taft\x0b5.
+Nucleophilic\x01electrophilic substituti\x16a\x14e (both aromatic\x01aliphatic). Addition
+\x14e\x0b0carbon-carb\x16a\x02carbon-heteroatom (N\x01O) multiple bonds. Elimination
+\x14e. Reactive\x0bqtermediates\x14bcarbocations, carbanions, carbenes, nitrenes, arynes\x12@free radicals. Molecular rearrangements.
+Organic Syn\x0b_sis: Syn\x0b_sis,\x14s,\x1b=\x01selectivity\x0bqvolving\x10L
+classes\x04compounds\x10dalkenes, alkynes, arenes, alcohols, phenols, aldehydes, ketones,
+carboxylic acids, esters, nitriles, halides, nitro compounds, amines\x01amides. Uses\x14cMg, Li, Cu, B, Zn, P, S, Sn\x01Si\x156reagents\x0b,organic syn\x0b_sis. Carbon-carb\x16abond
+\x0d/mati\x16a\x107coupling\x14s\x14bHeck, Suzuki, Stille, Sonogoshira, Negishi, Kumada,
+Hiyama, Tsuji-Trost, olef\x0brmeta\x0b_sis\x01McMurry. \x1aYmultistep syn\x0b_sis -
+retrosyn\x0b_tic\x0f(strategic disconnections, synthons\x01syn\x0b_tic \x19"s. Atom
+economy\x01Green \x1aR, Umpolung reactivity\x10d\x0d/myl\x01acyl ani\x16a\x19"s.
+Selectivity\x0b,organic syn\x0b_sis\x10dchemo-, regio-\x01stereoselectivity. Protecti\x16a\x0dmdeprotecti\x16a\x07\x0d>al groups. \x1aYasymmetric syn\x0b_sis\x10dre\x17D(\x10v
+enzymatic\x16udesymmetrizati\x16a\x02use\x04chiral auxiliaries, organocatalysis. Carbon-carbon\x12@carbon-heteroatom bond\x0bIming\x14s\x0f8enolates (\x10aboron
+enolates\x16uenamines\x01silyl enol e\x0b_rs. Stereoselective additi\x16a\x0c&C=O groups (Cram,
+Prelog\x01Felkin-Anh\x13|).
+Pericyclic Reactions\x01Photochemistry: Electrocyclic, cycloadditi\x16a\x02sigmatropic
+\x14e. Orbital \x1fks\x14bFMO\x01PMO\x1c$s, Woodward-Hoffmann rule.
+Photochemistry\x0f6lkenes, arenes\x01carbonyl compounds. Photooxidati\x16a\x0dmphotoreduction. Di-\x00M-methane rearrangement, Barton-McCombie reaction, Norrish type-I\x12@II cleavage reaction.
+Heterocyclic Compounds:\x1d>, preparation,\x0dS\x02\x14e\x04furan, pyrrole,
+thiophene, pyridine,\x0bqdole, quinoline\x01isoquinoline.
+Biomolecules:\x1d>,\x0dS\x02\x14e\x04mono-\x01di-saccharides,
+physicochemical\x0dUamino acids, chemical syn\x0b_sis\x04peptides, chemical
+\x10@\x14 peptides\x01proteins, \x1fdfeatures\x04proteins,
+nucleic acids, lipids, steroids, terpenoids, carotenoids\x0b;alkaloids.
+\x17|al\x1a$\x0b,Organic \x1aR: Optical rotati\x16a(polarimetry).\x0cq
+\x07\x0dJchromatographic\x0c<\x14dthin-layer, column, HPLC\x01GC.
+\x10VUV-visible, IR, NMR\x01Mass spectrometry\x0er\x1fd\x11w
 
-\x07organic molecules.\x1f\x00Vector \x1cV\x101vector space: basis, orthogonality\x01completeness; matrices;
-similarity\x1c|, diagonalization, eigen\x1b!\x01eigen vectors;\x0e(\x195: second\x1a \x18g\x18Sinvolving
-special\x0b|; \x1fO\x0b5: \x1dm-Riemann\x14/, \x1dm'\x16B,
-singularities, residue\x1f[\x0ez;\x1e;trans\x0d=m,\x1bt\x0b5;
-elementary ide\x1caabout tensors: covariant\x01contravariant tensors.\x1f\x00Lagrangian Formulation: D'Alembert's\x12F, Euler-Lagrange\x11DHamilton's
-\x10;, calculus\x04\x1eCs; symmetry\x01\x19+\x1fBs; central\x0bHce\x1d$:
-Kepler\x17j\x01Ru\x0bkr\x0d=d scattering; small oscillations: coupled oscillations\x0cinormal modes; rigid body\x1fb:\x0bjteria tensor, orthogonal\x1c|, Euler
-angles, Torque free\x1d$\x0dvsymmetric\x0c2p; Hamiltonian\x01Hamilton'\x19Z\x15Imotion; Liouville'\x16B; canonical\x1c|: action-angle\x17.\x18s
-brackets, Hamilton- Jacobi\x0c1.
-Special\x17F\x04Relativity: Lorentz\x1c|, relativistic kinematics, mass-\x0c>
-equivalence.\x1f\x00Solutions\x04electrostatic\x01magnetostatic\x0e[\x142\x194;
-\x1a>images;\x1d<\x04\x0dF; dielectrics\x01conductors;\x13}\x0d.;
-multipole expansion; Maxwell'\x19Z; scalar\x01vector\x15Us; Coulomb\x0ciLorentz gauges; \x17n waves\x0b'free space,\x1cHconducting\x01conducting
-media; reflecti\x15R\x02\x1e'at normal\x01oblique\x0bjcidences; polarizati\x15Rof
-\x17n waves; Poynting vector, Poynting\x0f0\x0c\\\x02momentum\x15I\x17n waves; \x1fc\x0foa moving charge.\x1f\x00Postulates\x04quantum mechanics; uncertainty\x12F; Schrodinger\x0c1; Dirac Bra-
-Ket notation,\x0dwvectors\x01operators\x0b'Hilbert space;\x16Oe\x103\x153s: step
-\x153, finite rectangular well, tunneling\x0foa\x15U barrier, particle\x16Qbox,
-harmonic oscillator; two\x01three\x103\x0b0: \x11)degeneracy; hydrogen
-atom; angular momentum\x01spin; additi\x15R\x15Hngular momenta; \x1eCal\x1aS\x0e?WKB\x19},\x19Gindependent perturbati\x15R\x0e/; elementary scattering\x0dT,
-Born\x19}; symmetries\x0b'quantum\x181\x0b0.\x1f\x00Laws\x19W; macro\x18rs\x01micro\x18rs;\x18$space; ensembles; partition
-\x1dofree\x0cT, calculati\x15R\x0ccrmodynamic quantities; classical\x01quantum
-statistics; degenerate Fermi gas; black body \x1fc\x01Planck's\x0exlaw; Bose-
-Einste\x0bncondensation; first\x01second\x0fw\x10Jtransitions,\x18$equilibria, \x1fR
-point.\x1f\x00Spectra\x04one-\x02many-\x1ceatoms; spin-orbit\x0bjteraction: LS\x01jj couplings; fine\x0cihyperfine\x0e;; Zeeman\x01Stark\x1aP; electric dipole transitions\x01\x14m rules;
-rotational\x01vibrational spectra\x04diatomic molecules; \x1eKic transitions\x0bj
-diatomic molecules, Franck-Cond\x15R\x10;; Raman \x1d!; EPR, NMR, ESR, X-ray
-spectra; lasers: Einste\x0bn\x18_populati\x15Rinversion, two\x01three level\x0b(.\x1f\x00\x1aEcrystallography; diffracti\x15R\x17/\x0fT\x122; bonding\x0bj
-solids; lattice vibrations\x17krmal\x0d2solids; free \x1ce\x0e/; b\x15Jory
-\x07solids: nearly free \x1ce\x02tight binding\x15d; metals, \x1dQ\x0ciinsulators; conductivity, mobility\x01\x1a9mass; Optical\x0d2solids; Kramer's-
-Kronig relation,\x0bjtra-\x01inter-b\x02transitions; dielectric\x0d2solid; dielectric
-\x1dopolarizability, ferroelectricity;\x13}\x0cMsolids; dia, para, ferro,
-antiferro\x01ferri- magnetism, domains\x01\x120anisotropy; superconductivity: Type-
-I\x01Type II superconductors, Meissner \x1d!, Lond\x15R\x117BCS\x17F, flux
-quantization.\x1f\x00\x1afs\x0b'\x12<: Electr\x15R\x02hole statistics\x0b'intrinsic\x01extrinsic
-\x1dQ; metal-semiconductor junctions; Ohmic\x01rectifying contacts; PN
-diodes, bipolar juncti\x15Rtransistors,\x1eX \x1d! transistors; negative\x01positive
-feedback\x0cf; oscillators,\x11Pal\x10\\s, active filters; basics\x04\x1fU\x1e\`
-\x12%combinational\x01sequential\x11\\flip-flops,\x18mrs, counters, registers, A/D\x12ID/A conversion.\x1f\x00Nuclear radii\x01charge\x0ew, nuclear binding\x0cT, electric\x01\x13-
-moments; semi-empirical mass\x0bHmula; nuclear\x15d; liquid drop\x1a-, nuclear shell
-\x1e^; nuclear\x0bHce\x01two nucle\x15R\x18j; alpha decay, beta-decay, \x17n
-transitions\x0b'nuclei; Ru\x0bkr\x0d=d scattering, nuclear\x11k, \x19+\x1fBs; fission\x12Ifusion; particle accelerators\x01detectors; elementary particles; photons, baryons,
-mesons\x01leptons; quark\x1a-; \x19+\x1fBs, isosp\x0bnsymmetry, charge
-conjugation, parity\x01\x1b_-reversal\x0bjvariance.\x1f\x00\x1a~Matrix algebra,\x121\x112, Eigen\x1b!\x01Eigen vectors.
-\x1cV\x1c4\x12t\x14*, Limit, \x14:, Mean\x18!
-\x1bNEvaluati\x15R\x07definite\x01improper\x19#Partial\x1bYTotal derivative,
-Maxima\x01minima, Gradient\x17KCurl, Vector identities, Directional
-\x13:; Line, \x1eH\x02Volume\x12A; Stokes, Gauss\x01Green\x19Js\x14V\x1f0\x0dI(\x18f\x16THigher\x14O\x195\x19Q\x18_\x1dm\x0f6\x02Euler\x0f6\x0dfInitial\x0ci\x194,\x1e;trans\x0d=ms.
-Complex\x1a;: Analytic\x0fB\x1dm\x0f6\x1eB\x0f)Taylor\x0fh\x19X\x17^\x1f+s\x04\x1f3\x02sampling\x1c'Conditional
-\x1amMean, median, mode\x01\x19Y, \x101\x1bO, R\x05om
-\x14[\x18s, normal, binomial\x01\x1en\x0ew.
-\x10r\x0e*: \x10r\x13S\x12p\x14'\x0c]\x1f4,
-Integrati\x15R\x15-trapezoidal\x01Simpson\x0f6rules, \x1fG\x01multi-step\x1aG\x195.\x1f\x00\x19A:\x1a:, physical\x01\x18[\x0eL\x0ez
-\x07comm\x15R\x0c\`\x0d. (metals\x01alloys, \x1dQ, ceramics, polymers\x0bT
-composites\x0fgmetal, polymer\x01ceramic\x1b>); Iron-carb\x15R\x159\x1c0
-\x19k; Heat\x1aB\x04metals\x01alloys\x0c$influence\x0e>\x18[\x0b=;
-Stress-\x18q behavior\x04metals\x01alloys.
-Applied\x1e~\x0b3mechanics\x0fg\x18Y\x0d=ce\x0e!free body\x0fl,
-\x0dI\x07\x159; Trusses; Strength\x04\x0d.\x0fg\x10U, \x18q\x0bL
-\x1f^hip; Failure\x0b-ories; Mohr\x0f6circle (\x10U); Deflecti\x15R\x07beams, \x1a4\x01shear
-\x14D; Euler\x0f6\x1ey\x07columns; Thick\x01th\x0bncylinders; Torsion.
-\x12B\x1aR\x01\x0bc:\x134\x07planar mechanisms, cams\x01followers;
-Governors\x01fly wheels;\x13l\x07bolted, riveted\x01welded joints; Interference/shrink fit
-joints; Fricti\x15R\x02lubrication;\x13l\x07shafts, keys, couplings, spur gears, belt drives,
-brakes\x01clutches;\x15Ture vessels.
-\x18lrmal\x01Fluids\x0b+: Fluid mechanics\x0fgfluid statics, Bernoulli\x0f6\x117\x10!
-\x0f/pipes, laminar\x01turbulent\x0e:s,\x0ds\x07\x1f7momentum,
+\x07organic molecules.\x1f\x00\x1dg\x19o\x0fh\x1emspace: basis, orthogonality\x01completeness; matrices;
+similarity\x163, diagonalization, eigen\x16{\x01eigen vectors;\x0e{\x1aq: second\x1bf\x1a:\x1a"involving
+special\x0bl; \x1ei\x0b:: \x1eD-Riemann\x14I, \x1eD'\x15.,
+singularities, residue\x1f*\x0c|;\x1f+trans\x0d/m,\x19Y\x0b:;
+elementary ideas about tensors: covariant\x01contravariant tensors.\x1f\x00Lagrangian Formulation: D'Alembert's\x12K, Euler-Lagrange\x128Hamilton's
+\x10P, calculus\x04variations; symmetry\x01\x1ab laws; central\x0bIce motion:
+Kepler\x16~\x01Ru\x0b_r\x0d/d scattering; small oscillations: coupled oscillations\x0cMnormal modes; rigid body dynamics:\x0bqteria tensor, orthogonal\x163, Euler
+angles, Torque free moti\x16a\x0f7symmetric\x0c#p; Hamiltonian\x01Hamilton'\x1bG\x14cmotion; Liouville'\x15.; canonical\x163: action-angle\x1a\`\x1b~
+brackets, Hamilton- Jacobi\x0c).
+Special\x18=\x04Relativity: Lorentz\x163, relativistic kinematics, mass-\x0cF
+equivalence.\x1f\x00Solutions\x04electrostatic\x01magnetostatic\x0eA\x16,\x1ap;
+\x1dDimages;\x1fj\x04\x0dp; dielectrics\x01conductors;\x12b\x0d<;
+multipole expansion; Maxwell'\x1bG; scalar\x01\x1em\x14fs; Coulomb\x0cMLorentz gauges; \x1b2 waves\x0b,free space,\x1d2conducting\x01conducting
+media; reflecti\x16a\x02\x1a}at normal\x01oblique\x0bqcidences; polarizati\x16aof
+\x1b2 waves; Poynting vector, Poynting\x10=\x0cp\x02momentum\x14c\x1b2 waves; radiati\x16a\x13Da moving charge.\x1f\x00Postulates\x04quantum mechanics; uncertainty\x12K; Schrodinger\x0c); Dirac Bra-
+Ket notation,\x0e\\vectors\x01operators\x0b,Hilbert space;\x17Qe\x14a\x14fs: step
+\x14f, finite rectangular well, tunneling\x11Qa\x14u barrier, particle\x14mbox,
+harmonic oscillator; two\x01three\x14a\x0b3: \x14Kdegeneracy; hydrogen
+atom; angular momentum\x01spin; additi\x16a\x13Zngular momenta; variational\x19l\x0dmWKB\x18[,\x15gindependent perturbati\x16a\x0eQ; elementary scattering\x0db,
+Born\x18[; symmetries\x0b,quantum \x1fY\x0b3.\x1f\x00Laws\x0bjrmodynamics; macro\x17Ps\x01micro\x17Ps;\x15Sspace; ensembles; partition
+\x0d>, free\x0cZ, calculati\x16a\x0c?rmodynamic\x1f^; classical\x01quantum
+statistics; degenerate Fermi gas; black body radiati\x16a\x02Planck's\x0f3law; Bose-
+Einste\x0brcondensation; first\x01second\x0fT\x0e&transitions,\x15Sequilibria, \x1fU
+\x1ef.\x1f\x00Spectra\x04one-\x02many-electr\x16aatoms; spin-orbit\x0bqteraction: LS\x01jj couplings; fine\x0cMhyperfine\x0fF; Zeeman\x01Stark\x1d8; electric dipole transitions\x01\x13t rules;
+rotational\x01vibrational spectra\x04diatomic molecules; electronic transitions\x0bq
+diatomic molecules, Franck-Cond\x16a\x10P; Raman\x1bw; EPR, NMR, ESR, X-ray
+spectra; lasers: Einste\x0br\x18Ypopulati\x16ainversion, two\x01three level\x0b..\x1f\x00\x16?crystallography; diffracti\x16a\x18F\x10@\x11w; bonding\x0bq
+solids; lattice vibrations\x19/rmal\x0dUsolids; free electr\x16a\x0eQ; b\x17Tory
+\x07solids: nearly free electr\x16a\x02tight binding\x13|; metals, \x1dO\x0cMinsulators; conductivity, mobility\x01\x17(mass; Optical\x0dUsolids; Kramer's-
+Kronig relation,\x0bqtra-\x01inter-b\x02transitions; dielectric\x0dUsolid; dielectric
+\x0d>, polarizability, ferroelectricity;\x12b\x0cWsolids; dia, para, ferro,
+antiferro\x01ferri- magnetism, domains\x01\x11<anisotropy; superconductivity: Type-
+I\x01Type II superconductors, Meissner\x1bw, Lond\x16a\x12\`BCS\x18=, flux
+quantization.\x1f\x00\x1eJs\x0b,\x13S: Electr\x16a\x02hole statistics\x0b,intrinsic\x01extrinsic
+\x1dO; metal-semiconductor junctions; Ohmic\x01rectifying contacts; PN
+diodes, bipolar juncti\x16atransistors,\x1bM\x19d transistors; negative\x01positive
+feedback\x0cO; oscillators,\x0f-al\x0d[s, active\x17]; basics\x04\x1b^\x18&
+\x12Ncombinational\x01sequential\x11uflip-flops,\x15^rs, counters, registers, A/D\x12@D/A conversion.\x1f\x00Nuclear radii\x01charge\x0f~, nuclear binding\x0cZ, electric\x01\x11}
+moments; semi-empirical mass\x0bImula; nuclear\x13|; liquid drop\x19g, nuclear shell
+\x1d~; nuclear\x0bIce\x01two nucle\x16a\x188; alpha decay, beta-decay, \x1b2
+transitions\x0b,nuclei; Ru\x0b_r\x0d/d scattering, nuclear\x14s, \x1ab laws; fission\x12@fusion; particle accelerators\x01detectors; elementary particles; photons, baryons,
+mesons\x01leptons; quark\x19g; \x1ab laws, isosp\x0brsymmetry, charge
+conjugation, parity\x01\x17@-reversal\x0bqvariance.\x1f\x00\x1cnMatrix algebra,\x131\x12[, Eigen\x16{\x01Eigen vectors.
+\x19o\x1eM\x155\x18T, Limit, \x15+, Mean\x16_
+\x1dK\x1a,definite\x01improper\x1duPartial\x1d_Total derivative,
+Maxima\x01minima, Gradient, \x1ea, \x1dgidentities, Directional
+\x12t; Line, Surface\x01Volume\x12#; Stokes, Gauss\x01Green\x19ps\x15M\x18O\x0fr\x0dd(\x17x\x16uHigher\x15F\x1aq\x1b-\x18Y\x1eD\x11M\x02Euler\x11M\x0e<Initial\x0cM\x1ap,\x1f+trans\x0d/ms.
+Complex\x14o: Analytic\x0fH\x1eD\x11M\x17A\x10'Taylor\x10i\x1b:\x1b): \x1e9\x04\x1dn\x02sampling\x1e8Conditional
+\x1eXMean, median, mode\x01\x1b;, \x0fh\x19r, R\x05om
+\x16e\x1b~, normal, binomial\x01exponential\x0f~.
+\x13$\x0eR: \x13$\x147\x13X\x13}\x0cialgebraic\x0b5,
+Integrati\x16a\x12Ztrapezoidal\x01Simpson\x11Mrules, \x1df\x02multi-step\x1c0\x1aq.\x1f\x00\x0b)\x1e/\x0et,\x1ev\x02\x1fY\x0fV\x0c|
+\x07comm\x16a\x0d%\x0d< (metals\x01alloys, \x1dO, ceramics, polymers\x0bN
+composites\x10dmetal, polymer\x01ceramic\x19e); Iron-carb\x16a\x17l\x18Q
+diagram; Heat\x1c$\x04metals\x01alloys\x0c8influence\x0f$\x1fY\x0b?;
+Stress-stra\x0brbehavior\x04metals\x01alloys.
+Applied\x0d":\x0b@mechanics\x10d\x17m\x0d/ce\x0e^free body\x10&,
+\x0dd\x07\x17l; Trusses; Strength\x1eK\x10d\x11B, stra\x0br\x0bd
+relationship; Failure\x0b*ories; Mohr\x11Mcircle (\x11B); Deflecti\x16a\x07beams, bending\x01shear
+\x16W; Euler\x11M\x0eQ\x04columns; Thick\x01th\x0brcylinders; Torsion.
+\x12'\x13a\x01\x0ba:\x15k\x07planar\x1b=, cams\x01followers;
+Governors\x01fly wheels;\x14}\x07bolted, riveted\x01welded joints; Interference/shrink fit
+joints; Fricti\x16a\x02lubrication;\x14}\x07shafts, keys, couplings, spur gears, belt drives,
+brakes\x01clutches;\x13Vure vessels.
+\x1d.rmal\x01Fluids\x0b&: Fluid mechanics\x10dfluid statics, Bernoulli\x11M\x12\`\x10$
+\x107pipes, laminar\x01turbulent\x0e)s,\x0e2\x07\x1f$\x01momentum,
 capillary
-action; Dimensional\x1b~\x10a\x0fgzeroth, first\x01second\x1fBs\x15I\x15A\x173rmodynamic\x1al\x0ct, calculati\x15R\x07work\x01\x15i\x0d=
-\x1aF\x0dVvolumes; Air\x17]\x1bns; Heat\x12G– \x1at\x0eG
-conduction, convecti\x15R\x02\x1fc.`;
+action; Dimensional\x1cF\x14V\x10dzeroth, first\x01second laws\x14c\x1bi\x1cprmodynamic\x1eV\x0dN, calculati\x16a\x07work\x01\x19S\x0d/
+\x1dy\x0dZvolumes; Air\x14vcycles; Heat\x13'\x008 \x1b#\x0dy
+conduction, convecti\x16a\x02radiation.`;
 export const CHUNK_gate_3_COUNT = 54;

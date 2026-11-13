@@ -73,6 +73,14 @@ const ICONS = {
   "time-five": { r: 0xec46, s: 0xeec8 },
   "up-arrow-alt": { r: 0xec5d, s: 0xeedc },
   "down-arrow-alt": { r: 0xeab7, s: 0xed92 },
+
+  /* Branches. The glyph each one carries lives in `branch-icon.ts`. */
+  "hard-hat": { r: 0xef2e },
+  "code-alt": { r: 0xea69 },
+  broadcast: { r: 0xea05 },
+  "bolt-circle": { r: 0xe9dd },
+  plug: { r: 0xebbf },
+  laptop: { r: 0xeb2b },
 } satisfies Record<string, Glyph>;
 
 export type IconName = keyof typeof ICONS;

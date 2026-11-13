@@ -1,0 +1,244 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 7th Semester Examination, 2015",
+    "subject": "Artificial Intelligence",
+    "subject_slug": "artificial-intelligence",
+    "subject_code": "051717",
+    "year": 2015,
+    "semester": 7,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions are of equal value.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "theory",
+          "text": "Answer any seven of the following questions:",
+          "parts": [
+            {
+              "id": "q1_a",
+              "type": "theory",
+              "text": "What is intelligence? What are the ways to demonstrate it?"
+            },
+            {
+              "id": "q1_b",
+              "type": "theory",
+              "text": "What is artificial intelligence? What are the applications of it? Explain."
+            },
+            {
+              "id": "q1_c",
+              "type": "theory",
+              "text": "What is the difference between information and knowledge?"
+            },
+            {
+              "id": "q1_d",
+              "type": "theory",
+              "text": "What do you understand by knowledge?"
+            },
+            {
+              "id": "q1_e",
+              "type": "theory",
+              "text": "What is the importance of knowledge?"
+            },
+            {
+              "id": "q1_f",
+              "type": "theory",
+              "text": "What is the difference between declarative knowledge and procedural knowledge?"
+            },
+            {
+              "id": "q1_g",
+              "type": "theory",
+              "text": "Distinguish between conventional computing method and AI computing method."
+            },
+            {
+              "id": "q1_h",
+              "type": "theory",
+              "text": "What are frames?"
+            },
+            {
+              "id": "q1_i",
+              "type": "theory",
+              "text": "What do you mean by scripts?"
+            },
+            {
+              "id": "q1_j",
+              "type": "theory",
+              "text": "What do you understand by pattern matching?"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "parts": [
+            {
+              "id": "q2_a",
+              "type": "theory",
+              "text": "Evaluate the following:",
+              "parts": [
+                {
+                  "id": "q2_a_i",
+                  "type": "theory",
+                  "text": "`(quote (+ 1 2))`"
+                },
+                {
+                  "id": "q2_a_ii",
+                  "type": "theory",
+                  "text": "`(quote (+ 1 2))` (Note: Extra paren in paper)"
+                },
+                {
+                  "id": "q2_a_iii",
+                  "type": "theory",
+                  "text": "`(+ 1 2)`"
+                },
+                {
+                  "id": "q2_a_iv",
+                  "type": "theory",
+                  "text": "`(a)`"
+                }
+              ]
+            },
+            {
+              "id": "q2_b",
+              "type": "theory",
+              "text": "Count the number of elements in each of the following lists:",
+              "parts": [
+                {
+                  "id": "q2_b_i",
+                  "type": "theory",
+                  "text": "`(WATER SUGAR CITRIC ACID ANTI-OXIDANT E104 E110 E150)`"
+                },
+                {
+                  "id": "q2_b_ii",
+                  "type": "theory",
+                  "text": "`(KALI-ON-THE-BEACH SATRY JAVA)`"
+                }
+              ]
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "q3",
+          "parts": [
+            {
+              "id": "q3_a",
+              "type": "theory",
+              "text": "How are symbolic structures formed in predicate logic?"
+            },
+            {
+              "id": "q3_b",
+              "type": "theory",
+              "text": "What do you mean by WFF? Write down the properties of WFF."
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "q4",
+          "type": "theory",
+          "text": "Solve the following problems with AI techniques:",
+          "parts": [
+            {
+              "id": "q4_a",
+              "type": "theory",
+              "text": "8-puzzle"
+            },
+            {
+              "id": "q4_b",
+              "type": "theory",
+              "text": "Travelling salesman problem"
+            },
+            {
+              "id": "q4_c",
+              "type": "theory",
+              "text": "Missionaries and cannibals"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "type": "theory",
+          "text": "An example of nonmonotonic reasoning involve birds and flying. Consider the following facts:",
+          "context": "- Most things do not fly.\n- Most birds do fly, unless they are too young or lean or have a broken wing.\n- Penguin and ostriches do not fly.\n- Magical ostriches fly.\n- Tweety is a bird.\n- Chirpy is either a penguin or an ostrich.\n- Feathers is a magical ostrich.\nUsing one or more nonmonotonic reasoning system(s), answer the following:\n- Does Tweety fly?\n- Does Chirpy fly?\n- Does Feathers fly?\n- Does Paul fly?"
+        },
+        {
+          "id": "q6",
+          "parts": [
+            {
+              "id": "q6_a",
+              "type": "theory",
+              "text": "How is $A^*$ used to solve 8-puzzle problem?"
+            },
+            {
+              "id": "q6_b",
+              "type": "theory",
+              "text": "What is heuristic? State its significance in AI."
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "q7",
+          "parts": [
+            {
+              "id": "q7_a",
+              "type": "theory",
+              "text": "Write a rule-base system for animals in Zoo."
+            },
+            {
+              "id": "q7_b",
+              "type": "theory",
+              "text": "What do you mean by representation, organization, manipulation and acquisition of knowledge?"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "q8",
+          "type": "theory",
+          "text": "Consider the following set of training examples:",
+          "context": "| Instance | Classification | a1 | a2 |\n| :--- | :--- | :--- | :--- |\n| 1 | + | T | T |\n| 2 | + | T | T |\n| 3 | - | T | F |\n| 4 | + | F | F |\n| 5 | - | F | T |\n| 6 | - | F | T |\n",
+          "parts": [
+            {
+              "id": "q8_a",
+              "type": "theory",
+              "text": "What is the entropy of the collection of training examples w.r.t. target function classification?"
+            },
+            {
+              "id": "q8_b",
+              "type": "theory",
+              "text": "What is the information gain of a2 relative to these training examples?"
+            }
+          ]
+        },
+        {
+          "id": "q9",
+          "type": "theory",
+          "text": "Write short notes on the following:",
+          "parts": [
+            {
+              "id": "q9_a",
+              "type": "theory",
+              "text": "Bayes' theorem"
+            },
+            {
+              "id": "q9_b",
+              "type": "theory",
+              "text": "Part of Speech Tagging (POST) in NLP"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -19,12 +19,16 @@
  * "continue" card.
  */
 
-import { Scroll, Text, View, computed, effect, signal, untracked, type JSX } from "nsh";
+import { LayoutAnimation, Scroll, Text, View, computed, effect, signal, untracked, type JSX } from "nsh";
 
+import { EVENTS, track } from "../../lib/analytics";
+import type { Nav, RouteParams } from "../../app/router";
 import { readStore, writeStore } from "../../lib/net";
 import { loadProfile, useProfile } from "../settings/profile";
 import { Badge, Btn, Card, Check, Divider, Label, Muted, Panel, Row, SectionHeader } from "../../ui";
-import { Icon } from "../../ui/icons";
+import { motionOn } from "../../ui/motion";
+import { Icon, type IconName } from "../../ui/icons";
+import { branchIcon } from "../../ui/branch-icon";
 import { AskAi } from "../../ui/ask-ai";
 import { topicPrompt } from "../../lib/ask-ai";
 import { TopicActions } from "./topic-actions";
@@ -42,6 +46,20 @@ import {
   type Topic,
   type Unit,
 } from "./parse";
+import {
+  RECENT_MAX,
+  filterEntries,
+  filterGateRows,
+  focusGateRows,
+  printedHours,
+  recentList,
+  type SubjectFilter,
+} from "./filters";
+
+// The screens import the predicates from this module; keeping one re-export
+// means the pure logic can still be tested without the stores.
+export { RECENT_MAX, filterEntries, filterGateRows, focusGateRows, printedHours, recentList };
+export type { SubjectFilter };
 
 export type { Course };
 
@@ -72,6 +90,8 @@ export const open = signal<Record<string, boolean>>({});
 /** Which unit accordions are expanded. Session-only, like `open`. */
 export const unitOpen = signal<Record<string, boolean>>({});
 export const lastSubject = signal<LastSubject | null>(null);
+/** The papers opened before `lastSubject`, newest first. Persisted, capped. */
+export const recent = signal<LastSubject[]>([]);
 
 const hydrated = signal(false);
 
@@ -79,6 +99,7 @@ const COURSE_KEY = "syllabus.course";
 const STUDIED_KEY = "syllabus.studied";
 const SAVED_KEY = "syllabus.saved";
 const LAST_KEY = "syllabus.last";
+const RECENT_KEY = "syllabus.recent";
 
 function markMap(value: unknown): Record<string, boolean> {
   if (!value || typeof value !== "object" || Array.isArray(value)) return {};
@@ -100,11 +121,12 @@ export function pinCourse(branch: string, sem: number): boolean {
 }
 
 async function hydrate(): Promise<void> {
-  const [storedCourse, storedStudied, storedSaved, storedLast] = await Promise.all([
+  const [storedCourse, storedStudied, storedSaved, storedLast, storedRecent] = await Promise.all([
     readStore<Course | null>(COURSE_KEY, null),
     readStore<unknown>(STUDIED_KEY, {}),
     readStore<unknown>(SAVED_KEY, {}),
     readStore<LastSubject | null>(LAST_KEY, null),
+    readStore<unknown>(RECENT_KEY, []),
   ]);
 
   // The profile is the student's own course: it decides the branch, and its
@@ -129,6 +151,11 @@ async function hydrate(): Promise<void> {
       at: Number(storedLast.at) || 0,
     });
   }
+  // An install from before the history existed has a last paper but no list;
+  // seeding it from the last paper keeps the shelf continuous.
+  const history = recentList(storedRecent);
+  const last = lastSubject();
+  recent.set(history.length || !last ? history : [last]);
   hydrated.set(true);
 }
 
@@ -167,6 +194,9 @@ effect(() => {
 effect(() => {
   if (hydrated()) void writeStore(LAST_KEY, lastSubject());
 });
+effect(() => {
+  if (hydrated()) void writeStore(RECENT_KEY, recent());
+});
 
 /** Runs `run` once, after the first paint, without tracking what it reads. */
 export function once(run: () => void): void {
@@ -187,6 +217,21 @@ export function subjectKey(branch: string, sem: number, code: string): string {
   return `${branch}|${sem}|${code}`;
 }
 
+/**
+ * Opens a subject, from any of the five doors (shelf, continue card, search,
+ * recents). `source` is the only difference between them, which is exactly the
+ * question worth asking: which door do students arrive through.
+ */
+export function openSyllabusSubject(nav: Nav, params: RouteParams, source: string): void {
+  track(EVENTS.syllabusSubjectOpen, {
+    branch: params.branch,
+    sem: params.sem,
+    subject: params.code,
+    source,
+  });
+  nav.push("syllabus.subject", params);
+}
+
 export function toggleTopic(branch: string, sem: number, code: string, topicId: string): void {
   const key = topicKey(branch, sem, code, topicId);
   studied.update((marks) => {
@@ -194,6 +239,14 @@ export function toggleTopic(branch: string, sem: number, code: string, topicId: 
     if (next[key]) delete next[key];
     else next[key] = true;
     return next;
+  });
+  // Whether a topic was marked or unmarked is the one thing the syllabus needs
+  // to know: it says how far the reading actually got.
+  track(EVENTS.syllabusTopicToggle, {
+    branch,
+    sem,
+    subject: code,
+    label: studied()[key] ? "mark" : "unmark",
   });
 }
 
@@ -207,7 +260,15 @@ export function toggleSaved(key: string): void {
 }
 
 export function toggleOpen(key: string): void {
+  // Opening a topic changes the height of the row and everything below it.
+  // NSH glides that reflow natively; with Reduce Motion on it snaps into place.
+  if (motionOn()) LayoutAnimation.easeInEaseOut();
   open.update((map) => ({ ...map, [key]: !map[key] }));
+}
+
+/** Opens or closes one topic body without toggling it. */
+export function setOpen(key: string, value: boolean): void {
+  open.update((map) => (map[key] === value ? map : { ...map, [key]: value }));
 }
 
 /** `branch|sem|code|unitId` — one unit accordion. */
@@ -215,11 +276,15 @@ export function unitKey(branch: string, sem: number, code: string, unitId: strin
   return `${branch}|${sem}|${code}|${unitId}`;
 }
 
-export function setUnitOpen(key: string, value: boolean): void {
-  unitOpen.update((map) => {
-    if (map[key] === value) return map;
-    return { ...map, [key]: value };
-  });
+/**
+ * Opens or closes a unit. Only a tap passes `animate`: a search jump or a
+ * restored bookmark expands while the page is moving, and a reflow animation
+ * there would fight the scroll.
+ */
+export function setUnitOpen(key: string, value: boolean, animate = false): void {
+  if (unitOpen()[key] === value) return;
+  if (animate && motionOn()) LayoutAnimation.easeInEaseOut();
+  unitOpen.update((map) => ({ ...map, [key]: value }));
 }
 
 /** Opens or closes a whole paper's units ("Expand all" / "Collapse all"). */
@@ -240,7 +305,12 @@ export function unitDone(unit: Unit, branch: string, sem: number, code: string):
 }
 
 export function rememberSubject(branch: string, sem: number, code: string, name: string): void {
-  lastSubject.set({ branch, sem, code, name, at: Date.now() });
+  const entry = { branch, sem, code, name, at: Date.now() };
+  lastSubject.set(entry);
+  recent.update((list) => {
+    const rest = list.filter((item) => subjectKey(item.branch, item.sem, item.code) !== subjectKey(branch, sem, code));
+    return [entry, ...rest].slice(0, RECENT_MAX);
+  });
 }
 
 /* -------------------------------------------------------------------- data */
@@ -450,7 +520,10 @@ export interface SearchResult {
 const indexCache = new Map<string, IndexedSubject[]>();
 
 function indexOf(branch: string): IndexedSubject[] {
-  const cached = indexCache.get(branch);
+  // The index is built from a parsed pack, so a feed update must not keep
+  // serving the words of the copy it replaced.
+  const key = `${branch}@${dataVersion()}`;
+  const cached = indexCache.get(key);
   if (cached) return cached;
   const parsed = pack(branch);
   const subjects: IndexedSubject[] = [];
@@ -482,7 +555,7 @@ function indexOf(branch: string): IndexedSubject[] {
       }
     }
   }
-  indexCache.set(branch, subjects);
+  indexCache.set(key, subjects);
   return subjects;
 }
 
@@ -609,6 +682,42 @@ export function matchesIn(units: readonly Unit[], term: string, cap = 40): Subje
   return found.slice(0, cap);
 }
 
+/* ------------------------------------------------------------------ recent */
+
+/** One paper from the visit history, resolved against the current packs. */
+export interface RecentItem {
+  key: string;
+  branch: string;
+  sem: number;
+  code: string;
+  name: string;
+  done: number;
+  topics: number;
+}
+
+/**
+ * The visit history with its live progress. Reads `recent` and `studied`, so it
+ * belongs in the JSX (or a `computed`), never in a `const` above it. A paper a
+ * newer data feed dropped simply leaves the list.
+ */
+export function recentItems(): RecentItem[] {
+  const out: RecentItem[] = [];
+  for (const item of recent()) {
+    const entry = entriesOf(item.branch, item.sem).find((row) => row.subject.code === item.code);
+    if (!entry) continue;
+    out.push({
+      key: subjectKey(item.branch, item.sem, item.code),
+      branch: item.branch,
+      sem: item.sem,
+      code: item.code,
+      name: entry.subject.name || item.name,
+      done: doneIn(entry),
+      topics: entry.topics,
+    });
+  }
+  return out;
+}
+
 /* ------------------------------------------------------------------- saved */
 
 /** One line of the saved list: a branch heading or something kept. */
@@ -638,6 +747,27 @@ export function savedItems(): SavedLine[] {
 
   for (const key of Object.keys(marks)) {
     if (!marks[key]) continue;
+    // A saved GATE topic is keyed `gate|paper|unit|topic`; its paper is a GATE
+    // code, not a branch, so it is claimed before the branch shape is read.
+    if (key.startsWith("gate|")) {
+      const code = key.split("|")[1] ?? "";
+      const line = code ? gateLine(code, key) : null;
+      if (!line) continue;
+      const row: SavedLine = {
+        kind: "row",
+        key,
+        branch: "gate",
+        sem: 0,
+        code,
+        label: line.title,
+        hint: `${gatePack(code)?.name ?? code} · GATE`,
+        topic: key,
+      };
+      const rows = byBranch.get("gate");
+      if (rows) rows.push(row);
+      else byBranch.set("gate", [row]);
+      continue;
+    }
     const [branch, semText, code, topicId] = key.split("|");
     const sem = Number(semText);
     if (!branch || !code || !Number.isFinite(sem)) continue;
@@ -692,7 +822,7 @@ export function savedItems(): SavedLine[] {
       sem: 0,
       code: "",
       label: branchName(code),
-      hint: `${rows.length} saved · ${credits} credits`,
+      hint: code === "gate" ? `${rows.length} saved` : `${rows.length} saved · ${credits} credits`,
       topic: null,
     });
     for (const row of rows) lines.push(row);
@@ -786,13 +916,25 @@ export function gateRows(code: string): GateLine[] {
   return lines;
 }
 
+/** One GATE topic by its saved key, or null when the paper no longer has it. */
+export function gateLine(code: string, key: string): GateLine | null {
+  return gateRows(code).find((line) => line.kind === "topic" && line.key === key) ?? null;
+}
+
 /* ------------------------------------------------------------------ pieces */
 
 function clamp(value: number): number {
   return Number.isFinite(value) ? Math.max(0, Math.min(100, value)) : 0;
 }
 
-/** A progress bar whose width is read inside the tree, so it follows a tick. */
+/**
+ * A progress bar whose value is read inside the tree, so it follows a tick.
+ *
+ * The fill is a `transform: scaleX`, not a `width`: it stays on the compositor
+ * and glides in 220 ms, which is the same motion `Progress` in `src/ui` uses.
+ * A width animation would re-lay-out the row on every tick and still land with
+ * a snap on a small phone.
+ */
 export function Bar(props: { value: number; tone?: "ember" | "mint"; class?: string }) {
   return (
     <View
@@ -801,8 +943,10 @@ export function Bar(props: { value: number; tone?: "ember" | "mint"; class?: str
       accessibilityValue={{ min: 0, max: 100, now: Math.round(clamp(props.value)) }}
     >
       <View
-        class={`h-full rounded-full ${props.tone === "mint" ? "bg-accent-ink" : "bg-primary"}`}
-        style={{ width: `${clamp(props.value)}%` }}
+        class={`h-full w-full origin-left rounded-full ${
+          props.tone === "mint" ? "bg-accent-ink" : "bg-primary"
+        } transition-transform duration-[220ms] ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none`}
+        style={{ transform: [{ scaleX: clamp(props.value) / 100 }] }}
       />
     </View>
   );
@@ -818,10 +962,17 @@ export function Pct(props: { value: number; class?: string }) {
 }
 
 /** A selectable pill. Reads `active` in the tree so a tap repaints it. */
-export function Pick(props: { children?: JSX.Element | string | number; active: boolean; onPress: () => void; label?: string }) {
+export function Pick(props: {
+  children?: JSX.Element | string | number;
+  active: boolean;
+  onPress: () => void;
+  label?: string;
+  /** Optional leading icon, tinted with the pill's own ink. */
+  icon?: IconName;
+}) {
   return (
     <View
-      class={`min-h-11 flex-row items-center rounded-full border px-4 active:opacity-80 ${
+      class={`min-h-11 flex-row items-center gap-2 rounded-full border px-4 active:opacity-80 ${
         props.active ? "border-foreground bg-foreground" : "border-border-strong bg-card"
       }`}
       onPress={props.onPress}
@@ -829,7 +980,10 @@ export function Pick(props: { children?: JSX.Element | string | number; active: 
       accessibilityLabel={props.label}
       accessibilityState={{ selected: props.active }}
     >
-      <Text class={`text-[13px] font-semibold ${props.active ? "text-background" : "text-foreground"}`} numberOfLines={1}>
+      {props.icon ? (
+        <Icon name={props.icon} size={14} class={props.active ? "text-background" : "text-foreground"} />
+      ) : null}
+      <Text class={`text-[13px] font-semibold ${props.active ? "text-background" : "text-foreground"}`} style={{ numberOfLines: 1 }}>
         {props.children}
       </Text>
     </View>
@@ -840,7 +994,7 @@ export function Pick(props: { children?: JSX.Element | string | number; active: 
 export function SemCard(props: { sem: number; papers: number; credits: number; active: boolean; onPress: () => void }) {
   return (
     <View
-      class={`w-[104px] gap-0.5 rounded-2xl border p-3 active:scale-[0.98] ${
+      class={`w-[104px] gap-0.5 rounded-2xl border p-3 active:scale-[0.98] transition-transform duration-150 ease-out motion-reduce:transition-none ${
         props.active ? "border-foreground bg-foreground" : "border-border bg-card"
       }`}
       onPress={props.onPress}
@@ -849,10 +1003,10 @@ export function SemCard(props: { sem: number; papers: number; credits: number; a
       accessibilityState={{ selected: props.active }}
     >
       <Text class={`text-[14px] font-bold ${props.active ? "text-background" : "text-foreground"}`}>{`Sem ${props.sem}`}</Text>
-      <Text class={`text-[11px] ${props.active ? "text-background opacity-80" : "text-muted-foreground"}`} numberOfLines={1}>
+      <Text class={`text-[11px] ${props.active ? "text-background opacity-80" : "text-muted-foreground"}`} style={{ numberOfLines: 1 }}>
         {`${props.papers} papers`}
       </Text>
-      <Text class={`text-[11px] tabular-nums ${props.active ? "text-background opacity-80" : "text-muted-foreground"}`} numberOfLines={1}>
+      <Text class={`text-[11px] tabular-nums ${props.active ? "text-background opacity-80" : "text-muted-foreground"}`} style={{ numberOfLines: 1 }}>
         {`${props.credits} credits`}
       </Text>
     </View>
@@ -868,11 +1022,12 @@ function contact(subject: Subject): string {
 }
 
 /** Credits and contact hours on one line that wraps between groups, never mid-number. */
-export function CreditLine(props: { subject: Subject }) {
+export function CreditLine(props: { subject: Subject; hours?: number }) {
   return (
     <Row class="flex-wrap items-center gap-1.5">
       <Badge tone="ember">{`${props.subject.credits} credits`}</Badge>
       <Badge>{props.subject.type || "Theory"}</Badge>
+      {props.hours && props.hours > 0 ? <Badge tone="mint">{`${props.hours} hrs printed`}</Badge> : null}
       <Muted class="text-[11px] tabular-nums" numberOfLines={1}>
         {contact(props.subject)}
       </Muted>
@@ -889,6 +1044,8 @@ export function SubjectCard(props: {
   subject: Subject;
   sem: number;
   progress: () => Progress;
+  /** The sum of the hours the source prints on its unit headings; 0 when it prints none. */
+  hours?: number;
   saved: () => boolean;
   onToggleSaved: () => void;
   onNotes: () => void;
@@ -909,7 +1066,7 @@ export function SubjectCard(props: {
         <Pct value={pct()} />
       </Row>
       <View class="mt-3 gap-2">
-        <CreditLine subject={props.subject} />
+        <CreditLine subject={props.subject} hours={props.hours} />
         <Bar value={pct()} />
       </View>
       {/* Notes and papers belong to the paper, not to each of its forty topics:
@@ -940,7 +1097,7 @@ export function SourceBox(props: { content: () => string; note: () => string; on
   return (
     <View class="gap-2">
       <Card>
-        <Text class="text-[14px] leading-6 text-foreground" selectable>
+        <Text class="text-[14px] leading-6 text-foreground" style={{ userSelect: "text" }}>
           {() => props.content() || "The source carries no unit text for this paper."}
         </Text>
       </Card>
@@ -976,6 +1133,15 @@ export function ProgressCard(props: {
         {() => (props.own() ? <Label class="flex-1 text-primary-ink">Your branch</Label> : <View class="flex-1" />)}
         <Muted class="text-[11px]">{`${shortBranch(props.branch)} · Sem ${props.sem}`}</Muted>
       </Row>
+      <Row class="items-center gap-2">
+        <Muted class="text-[11px] tabular-nums">
+          {() => `${props.progress().papers} papers · ${props.progress().credits} credits`}
+        </Muted>
+        <View class="flex-1" />
+        <Muted class="text-[11px] tabular-nums">
+          {() => `${props.progress().topics} topics`}
+        </Muted>
+      </Row>
       <Row class="items-center gap-3">
         <Pct value={pct()} />
         <Text class="flex-1 text-[15px] font-semibold text-foreground">
@@ -998,7 +1164,7 @@ export function OwnBranchCard(props: { line: () => string; onOpen: () => void })
     >
       <View class="flex-1 gap-0.5">
         <Label class="text-primary-ink">Your branch</Label>
-        <Text class="text-[14px] font-semibold text-foreground" numberOfLines={1}>
+        <Text class="text-[14px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
           {() => props.line()}
         </Text>
       </View>
@@ -1026,29 +1192,6 @@ export function NoticePanel(props: {
   );
 }
 
-/** The GATE paper card and the 30-paper rail, kept together. */export function GateHeader(props: { paper: () => string; onPick: (code: string) => void }) {
-  return (
-    <View class="gap-3 pb-2 pt-4">
-      <View class="overflow-hidden rounded-[28px] border border-border bg-card p-4">
-        <Label>GATE</Label>
-        <Text class="mt-1 text-[22px] font-bold leading-7 tracking-tight text-foreground">
-          {() => gatePack(props.paper())?.name ?? "GATE syllabus"}
-        </Text>
-        <Muted class="mt-1 text-[12px]">Split section by section into the exact topics GATE names.</Muted>
-      </View>
-      <Scroll horizontal scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
-        <Each of={GATE_META} key={(meta) => meta.code}>
-          {(meta: () => (typeof GATE_META)[number]) => (
-            <Pick active={meta().code === props.paper()} label={meta().name} onPress={() => props.onPick(meta().code)}>
-              {meta().code}
-            </Pick>
-          )}
-        </Each>
-      </Scroll>
-    </View>
-  );
-}
-
 /** Branch and semester: the two choices that decide which papers are on screen. */
 export function CourseRail(props: {
   branch: () => string;
@@ -1064,7 +1207,12 @@ export function CourseRail(props: {
         <Scroll horizontal scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
           <Each of={BRANCH_META} key={(meta) => meta.code}>
             {(meta: () => (typeof BRANCH_META)[number]) => (
-              <Pick active={meta().code === props.branch()} label={meta().name} onPress={() => props.onBranch(meta().code)}>
+              <Pick
+                active={meta().code === props.branch()}
+                icon={branchIcon(meta().code)}
+                label={meta().name}
+                onPress={() => props.onBranch(meta().code)}
+              >
                 {meta().short}
               </Pick>
             )}
@@ -1102,7 +1250,7 @@ export function CourseRail(props: {
 /** Text with the matching part of the search term in ember ink. */
 export function Highlight(props: { text: string; term: string; class?: string; numberOfLines?: number }) {
   return (
-    <Text class={props.class} numberOfLines={props.numberOfLines}>
+    <Text class={props.class} style={{ numberOfLines: props.numberOfLines }}>
       {matchRange(props.text, props.term) ? props.text.slice(0, matchRange(props.text, props.term)?.start ?? 0) : props.text}
       {matchRange(props.text, props.term) ? (
         <Text class="font-bold text-primary-ink">
@@ -1129,7 +1277,7 @@ export function ContinueCard(props: { name: string; branch: string; sem: number;
         <View class="flex-1" />
         <Muted class="text-[11px]">{`${shortBranch(props.branch)} · Sem ${props.sem}`}</Muted>
       </Row>
-      <Text class="text-[15px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+      <Text class="text-[15px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
         {props.name}
       </Text>
       <Row class="items-center gap-2">
@@ -1140,18 +1288,54 @@ export function ContinueCard(props: { name: string; branch: string; sem: number;
   );
 }
 
+/**
+ * One paper from the visit history: compact, so six of them fit above the
+ * saved shelf without turning it into a second landing screen.
+ */
+export function RecentRow(props: { item: () => RecentItem; onOpen: (item: RecentItem) => void }) {
+  const pct = computed(() => {
+    const value = props.item();
+    return value.topics ? (value.done / value.topics) * 100 : 0;
+  });
+
+  return (
+    <View
+      class="min-h-11 flex-row items-center gap-3 rounded-2xl border border-border bg-card px-3 py-2.5 active:bg-muted"
+      onPress={() => props.onOpen(props.item())}
+      role="button"
+      accessibilityLabel={`Reopen ${props.item().name}`}
+    >
+      <View class="flex-1 gap-0.5">
+        <Text class="text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 1 }}>
+          {props.item().name}
+        </Text>
+        <Text class="text-[11px] text-muted-foreground" style={{ numberOfLines: 1 }}>
+          {`${props.item().code} · ${shortBranch(props.item().branch)} · Sem ${props.item().sem}`}
+        </Text>
+      </View>
+      <View class="w-16 gap-1">
+        <Bar value={pct()} class="h-1.5" />
+        <Text class="text-[10px] tabular-nums text-muted-foreground">
+          {`${props.item().done}/${props.item().topics}`}
+        </Text>
+      </View>
+      <Icon name="chevron-right" size={16} class="text-muted-foreground" />
+    </View>
+  );
+}
+
 export function SubjectRow(props: {
   item: () => SubjectEntry;
-  /** True when this paper also belongs to the student's own semester. */
-  mine?: () => boolean;
   onOpen: (entry: SubjectEntry) => void;
+  /** True when this paper belongs to the student's own branch and semester. */
+  mine?: () => boolean;
 }) {
   const done = computed(() => doneIn(props.item()));
   const mine = computed(() => props.mine?.() === true);
 
   return (
     <View
-      class="flex-row items-center gap-3 rounded-3xl border border-border bg-card p-4 active:scale-[0.99] active:bg-muted"
+      class="flex-row items-center gap-3 rounded-3xl border border-border bg-card p-4 active:bg-muted transition-colors duration-150 ease-out motion-reduce:transition-none"
       onPress={() => props.onOpen(props.item())}
       role="button"
       accessibilityLabel={`${props.item().subject.name}, ${props.item().subject.credits} credits`}
@@ -1162,12 +1346,12 @@ export function SubjectRow(props: {
       </View>
       <View class="flex-1 gap-1">
         <Row class="items-start gap-2">
-          <Text class="flex-1 text-[15px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+          <Text class="flex-1 text-[15px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
             {props.item().subject.name}
           </Text>
           {mine() ? <Badge tone="mint">Yours</Badge> : null}
         </Row>
-        <Text class="text-[11px] text-muted-foreground" numberOfLines={1}>
+        <Text class="text-[11px] text-muted-foreground" style={{ numberOfLines: 1 }}>
           {`${props.item().subject.code} · ${props.item().units.length} units · ${props.item().topics} topics`}
         </Text>
         <Row class="items-center gap-2">
@@ -1219,7 +1403,7 @@ export function TopicRow(props: {
           class="mt-0.5"
         />
         <View
-          class="flex-1 gap-1 py-3"
+          class="flex-1 gap-1 py-3 active:opacity-60"
           onPress={() => toggleOpen(markKey)}
           role="button"
           accessibilityLabel={props.topic.title}
@@ -1229,7 +1413,7 @@ export function TopicRow(props: {
             class={`text-[14px] font-medium leading-5 ${
               studied()[markKey] ? "text-muted-foreground" : "text-foreground"
             }`}
-            numberOfLines={open()[markKey] ? 0 : 2}
+            style={{ numberOfLines: open()[markKey] ? 0 : 2 }}
           >
             {props.topic.title}
           </Text>
@@ -1257,7 +1441,7 @@ export function TopicRow(props: {
       {open()[markKey] ? (
         <View class="mb-2 ml-[48px] mr-3 gap-2 rounded-2xl bg-muted p-3">
           {hasBody ? (
-            <Text class="text-[13px] leading-6 text-foreground" selectable>
+            <Text class="text-[13px] leading-6 text-foreground" style={{ userSelect: "text" }}>
               {props.topic.body}
             </Text>
           ) : null}
@@ -1332,7 +1516,7 @@ export function UnitBlock(props: {
         role="button"
         accessibilityLabel={`Unit ${props.index + 1}, ${props.unit().title}`}
         accessibilityState={{ expanded: props.open() }}
-        onLayout={(bounds) => props.onMeasure(bounds.origin.y)}
+        onLayout={({ bounds }) => props.onMeasure(bounds.origin.y)}
       >
         {selfNumbered() ? null : (
           <View class="h-8 w-8 items-center justify-center rounded-xl bg-muted">
@@ -1340,7 +1524,7 @@ export function UnitBlock(props: {
           </View>
         )}
         <View class="flex-1 gap-1">
-          <Text class="text-[14px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+          <Text class="text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
             {props.unit().title}
           </Text>
           <Muted class="text-[11px]" numberOfLines={1}>
@@ -1496,7 +1680,7 @@ export function HitRow(props: { item: () => Hit; term: () => string; onOpen: (hi
           numberOfLines={2}
         />
       ) : null}
-      <Text class="text-[11px] text-muted-foreground" numberOfLines={1}>
+      <Text class="text-[11px] text-muted-foreground" style={{ numberOfLines: 1 }}>
         {props.item().topic
           ? `${props.item().subject} · ${props.item().topics} topics`
           : `${props.item().topics} topics · open the paper`}
@@ -1511,7 +1695,7 @@ export function SavedLineView(props: { item: () => SavedLine; onOpen: (line: Sav
     <View>
       {props.item().kind === "group" ? (
         <Row class="items-end justify-between gap-2 pb-1 pt-2">
-          <Text class="flex-1 text-[12px] font-bold uppercase tracking-wide text-muted-foreground" numberOfLines={1}>
+          <Text class="flex-1 text-[12px] font-bold uppercase tracking-wide text-muted-foreground" style={{ numberOfLines: 1 }}>
             {props.item().label}
           </Text>
           <Muted class="text-[11px] tabular-nums">{props.item().hint}</Muted>
@@ -1527,15 +1711,15 @@ export function SavedLineView(props: { item: () => SavedLine; onOpen: (line: Sav
             />
           </View>
           <View
-            class="flex-1 gap-0.5"
+            class="flex-1 gap-0.5 active:opacity-60"
             onPress={() => props.onOpen(props.item())}
             role="button"
             accessibilityLabel={`Open ${props.item().label}`}
           >
-            <Text class="text-[14px] font-semibold text-foreground" numberOfLines={2}>
+            <Text class="text-[14px] font-semibold text-foreground" style={{ numberOfLines: 2 }}>
               {props.item().label}
             </Text>
-            <Text class="text-[11px] text-muted-foreground" numberOfLines={1}>
+            <Text class="text-[11px] text-muted-foreground" style={{ numberOfLines: 1 }}>
               {props.item().hint}
             </Text>
           </View>
@@ -1554,7 +1738,13 @@ export function SavedLineView(props: { item: () => SavedLine; onOpen: (line: Sav
 }
 
 /** A GATE line: a section heading, or a topic that opens its detail. */
-export function GateLineView(props: { item: () => GateLine; onToggle: (mark: string) => void }) {
+export function GateLineView(props: {
+  item: () => GateLine;
+  onToggle: (mark: string) => void;
+  /** Whether this topic is kept on the Saved shelf. */
+  saved?: () => boolean;
+  onSave?: (mark: string) => void;
+}) {
   return (
     <View>
       {props.item().kind === "section" ? (
@@ -1567,22 +1757,34 @@ export function GateLineView(props: { item: () => GateLine; onToggle: (mark: str
         </View>
       ) : (
         <View class="gap-2 rounded-2xl bg-muted p-3">
-          <View
-            class="flex-row items-center gap-2 active:opacity-70"
-            onPress={() => props.onToggle(props.item().mark)}
-            role="button"
-            accessibilityLabel={props.item().title}
-            accessibilityState={{ expanded: open()[props.item().mark] === true }}
-          >
-            <View class="h-1.5 w-1.5 rounded-full bg-accent" />
-            <Text class="flex-1 text-[13px] font-semibold leading-5 text-foreground" numberOfLines={2}>
-              {props.item().title}
-            </Text>
-            {props.item().hint ? <Badge tone="mint">{props.item().hint}</Badge> : null}
-            <Text class="text-[12px] text-muted-foreground">{open()[props.item().mark] ? "−" : "+"}</Text>
-          </View>
+          <Row class="items-center gap-1">
+            <View
+              class="min-h-11 flex-1 flex-row items-center gap-2 active:opacity-70"
+              onPress={() => props.onToggle(props.item().mark)}
+              role="button"
+              accessibilityLabel={props.item().title}
+              accessibilityState={{ expanded: open()[props.item().mark] === true }}
+            >
+              <View class="h-1.5 w-1.5 rounded-full bg-accent" />
+              <Text class="flex-1 text-[13px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
+                {props.item().title}
+              </Text>
+              {props.item().hint ? <Badge tone="mint">{props.item().hint}</Badge> : null}
+              <Text class="text-[12px] text-muted-foreground">{open()[props.item().mark] ? "−" : "+"}</Text>
+            </View>
+            {props.onSave ? (
+              <Btn
+                variant="link"
+                icon="star"
+                iconSolid={props.saved?.() === true}
+                class="min-h-11 min-w-11 justify-center px-1"
+                label={props.saved?.() === true ? "Remove this topic from saved" : "Save this topic"}
+                onPress={() => props.onSave?.(props.item().mark)}
+              />
+            ) : null}
+          </Row>
           {open()[props.item().mark] ? (
-            <Text class="text-[13px] leading-6 text-muted-foreground" selectable>
+            <Text class="text-[13px] leading-6 text-muted-foreground" style={{ userSelect: "text" }}>
               {props.item().body}
             </Text>
           ) : null}
@@ -1596,14 +1798,14 @@ export function GateLineView(props: { item: () => GateLine; onToggle: (mark: str
 export function UndoLine(props: { label: string; onUndo: () => void; onDismiss: () => void }) {
   return (
     <View class="flex-row items-center gap-1 border-b border-border bg-accent/10 py-1 pl-4 pr-2">
-      <Text class="flex-1 text-[12px] text-foreground" numberOfLines={1}>
+      <Text class="flex-1 text-[12px] text-foreground" style={{ numberOfLines: 1 }}>
         {`Removed “${props.label}”`}
       </Text>
-      <Btn variant="link" class="min-h-9 px-2" label="Undo removal" onPress={props.onUndo}>
+      <Btn variant="link" class="min-h-11 px-2" label="Undo removal" onPress={props.onUndo}>
         Undo
       </Btn>
       <View
-        class="h-9 w-9 items-center justify-center rounded-full active:bg-muted"
+        class="h-11 w-11 items-center justify-center rounded-full active:bg-muted"
         onPress={props.onDismiss}
         role="button"
         accessibilityLabel="Dismiss undo"

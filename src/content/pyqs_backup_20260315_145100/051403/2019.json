@@ -1,0 +1,316 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2019",
+    "subject": "Data Structures",
+    "subject_slug": "data-structures",
+    "subject_code": "051403",
+    "year": 2019,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Which of the following best describes an array?",
+              "options": [
+                "A data structure that shows a hierarchical behaviour",
+                "Container of objects of similar types",
+                "Container of objects of mixed types",
+                "All of the above"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "b",
+              "text": "The process of removing an element from stack is called",
+              "options": [
+                "create",
+                "push",
+                "evaluation",
+                "pop"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "c",
+              "text": "In a stack, if a user tries to remove an element from empty stack it is called",
+              "options": [
+                "underflow",
+                "empty collection",
+                "overflow",
+                "garbage collection"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "d",
+              "text": "A linear collection of data elements where the linear node is given by means of pointer is called",
+              "options": [
+                "linked list",
+                "node list",
+                "primitive list",
+                "None of the above"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "e",
+              "text": "What would be the asymptotic time complexity to add a node at the end of singly linked list, if the pointer is initially pointing to the head of the list?",
+              "options": [
+                "$O(1)$",
+                "$O(n)$",
+                "$\\Theta(n)$",
+                "$\\Theta(1)$"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "f",
+              "text": "With what data structure can a priority queue be implemented?",
+              "options": [
+                "Array",
+                "List",
+                "Heap",
+                "All of the above"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "g",
+              "text": "What is the functionality of the following piece of code?\n```java\npublic void fun(int x) {\n    q1.offer(x);\n}\n```",
+              "options": [
+                "Perform push() with push as the costlier operation",
+                "Perform push() with pop as the costlier operation",
+                "Perform pop() with push as the costlier operation",
+                "Perform pop() with pop as the costlier operation"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "h",
+              "text": "In a max-heap, element with the greatest key is always in which of the following nodes?",
+              "options": [
+                "Leaf node",
+                "First node of left subtree",
+                "Root node",
+                "First node of right subtree"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "i",
+              "text": "What is the specialty about the in-order traversal of a binary search tree?",
+              "options": [
+                "It traverses in a non-increasing order",
+                "It traverses in an increasing order",
+                "It traverses in a random fashion",
+                "None of the above"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "j",
+              "text": "Which of the following is not an application of priority queue?",
+              "options": [
+                "Huffman codes",
+                "Interrupt handling in operating system",
+                "Undo operation in text editors",
+                "Bayesian spam filter"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Explain array implementation of priority queues and list implementations of priority queues.",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Differentiate between row major and column major array index notations. How is index calculated in both? Explain your answer by using the example of an integer array $a[10][10]$ and the element $a[2][5]$ is to be accessed.",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "What is doubly linked list? What are its applications? Explain how an element can be deleted from the list using appropriate pseudocode.",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Consider two strings $X = x_1, x_2, \\dots, x_n$ and $Y = y_1, y_2, \\dots, y_n$, where $x_i, 1 \\le i \\le n$ and $y_j, 1 \\le j \\le m$ are the members of finite set symbols. Write an algorithm to generate a string by taking 1 element from each list. When any one string is exhausted, the output string should store rest of the elements of other string.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "What do you understand by 'garbage'? Explain how garbage collection method is used for allocating and freeing memory storage.",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Suppose the following eight numbers are inserted in order into an empty binary search tree:\n$T : 50, 33, 44, 22, 77, 35, 60, 40$\nDraw the tree T.",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Discuss pre-order and post-order tree traversal techniques. Write the pseudo-code for these two traversal methods.",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Write the algorithms for insertion sort and merge sort with examples and discuss their complexities.",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Write an algorithm to perform breadth first search (BFS). Compare the BFS and DFS search techniques.",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Explain the working of merge sort on the following data:\n$\\{10, 15, 0, 17, 20, 25, 30, 16, 70, 6\\}$\nShow all intermediate steps. Also, mention its time complexity.",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "What is meant by a spanning tree of a graph? Give an algorithm to find a spanning tree. What is the complexity of your algorithm?",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What do you mean by tree traversal? Give a recursive algorithm for tree traversal. Determine the complexity of your algorithm.",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Algorithm A requires $n^2$ days and algorithm B requires $n^3$ sec to solve a problem. Which algorithm would you prefer for a problem instance with $n = 10^6$?",
+              "marks": 7,
+              "id": "8_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Assume the recurrence relation $T(n) = 2T(n/2) + n, n \\ge 2$ with boundary condition $T(1) = 0$. What is the time complexity?",
+              "marks": 7,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Write short notes on the following:",
+              "subparts": [
+                {
+                  "letter": "a",
+                  "text": "Hashing methods"
+                },
+                {
+                  "letter": "b",
+                  "text": "Height balanced tree"
+                },
+                {
+                  "letter": "c",
+                  "text": "Operation in circular queue"
+                },
+                {
+                  "letter": "d",
+                  "text": "AVL tree"
+                }
+              ],
+              "marks": 14,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

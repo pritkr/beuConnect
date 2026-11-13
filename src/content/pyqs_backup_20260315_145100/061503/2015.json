@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2015",
+    "subject": "OPERATING SYSTEM",
+    "subject_slug": "operating-system",
+    "subject_code": "061503",
+    "year": 2015,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Which of the following is a non-preemptive OS?",
+              "options": [
+                "UNIX",
+                "Windows 95",
+                "Windows NT",
+                "None of the above"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "The CPU utilization is low when the system is",
+              "options": [
+                "timesharing",
+                "thrashing",
+                "multiprocessing",
+                "None of the above"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Which of the following is a part of FAT?",
+              "options": [
+                "Sector info",
+                "Disk type",
+                "Modified info",
+                "Date info"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "The available routing schemes are",
+              "options": [
+                "fixed routing",
+                "virtual routing",
+                "dynamic routing"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Which of the following CPU scheduling algorithms will prevent starvation problem?",
+              "options": [
+                "Shortest-job-first",
+                "Priority scheduling",
+                "Priority scheduling with aging mechanism",
+                "None of the above"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "The problem of thrashing may be reduced by",
+              "options": [
+                "using prepaging mechanism",
+                "writing well-structured programs",
+                "Both (i) and (ii)",
+                "Neither (i) nor (ii)"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "The purpose of virtual memory system is to",
+              "options": [
+                "allow multiprocessing",
+                "allow multiprogramming",
+                "allow batch processing",
+                "allow execution of a program that requires larger memory than the size of the physical main memory"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "A file system uses the contiguous space allocation mechanism for disk space allocation. For better utilization of disk space, this file system must use",
+              "options": [
+                "a garbage collection mechanism",
+                "a disk compaction mechanism",
+                "a linked-block allocation mechanism",
+                "an indexed-block allocation mechanism"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "CPU performance is based on",
+              "options": [
+                "ALU width",
+                "clock speed",
+                "number of instructions executed per second",
+                "how well CPU interacts with the rest of the system",
+                "Both (i) and (ii)",
+                "None of the above"
+              ],
+              "answer": "v",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What are the main purposes of an operating system?",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "In a multiprogramming and time-sharing environment several users share the system simultaneously. This situation can result in various security problems. (i) Explain any two such problems. (ii) Can we ensure the same degree of security in a time-shared machine as we have in dedicated machine? Explain your answer.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What are the differences between user-level threads and kernel-level threads? Under what circumstances is one type better than the other?",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What resources are used when a thread is created? How do they differ from those used when a process is created?",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Describe the actions taken by a kernel to context switch between kernel-level threads.",
+              "id": "3_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is critical-section problem? How are semaphores helpful in solving this problem?",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What is race condition? Explain Peterson's solution to mutual exclusion problem.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Explain the concept of transaction atomicity.",
+              "id": "4_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "State and explain the necessary and sufficient conditions for a deadlock.",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain the issues with deadlock detection and resolution.",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What are the various allocation policies in variable partition multiprogramming? Explain the differences between internal and external fragmentations.",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Consider a main memory with the capacity of 4 page frames. Assume that the pages of a process are referenced in the order as given below :\n1, 3, 4, 4, 3, 2, 1, 7, 5, 6, 4, 2, 1, 2\nWhich of FIFO or LRU would be better in the case as a page replacement policy and why?",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is the cause of thrashing? How does the system detect thrashing, and once detected what can the system do to eliminate it?",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Consider the following page reference string :\n1, 2, 3, 4, 2, 1, 5, 6, 2, 1, 2, 3, 7, 6, 3, 2, 1, 2, 3, 6\nHow many page faults would occur from the following replacement algorithms, assuming 1, 2, 3, 4, 5, 6 or 7 frames?\n(i) LRU (ii) FIFO (iii) Optimal",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Consider a system that supports the strategies of contiguous, linked and indexed allocation. What criteria should be the used in deciding which strategy is best utilized for a particular file?",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What are the structures used in file-system implementation? Explain.",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Is disk scheduling, other than FCFS scheduling, useful in a single-user environment? Explain your answer.",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Suppose that a disk drive has 5000 cylinders, numbered 0 to 4999. The drive is currently serving a request at cylinder 143 and the previous request was at cylinder 125. The queue of pending requests in FIFO order is 86, 1470, 913, 1774, 948, 1509, 1022, 1750, 130. Starting from the current head position, what is the total distance (in cylinders) that the disk arm moves to satisfy all the pending requests for each of the following disk-scheduling algorithms?\n(i) SSTF (ii) SCAN (iii) C-SCAN",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

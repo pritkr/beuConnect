@@ -1,0 +1,275 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2022",
+    "subject": "Strength of Materials",
+    "subject_slug": "strength-of-materials",
+    "subject_code": "102405",
+    "year": 2022,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Two parallel, equal and opposite forces acting tangentially to the surface of the body is called\n                    </p>",
+          "options": [
+            "complementary stress",
+            "compressive stress",
+            "shear stress",
+            "tensile stress"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Maximum shear stress is</p>",
+          "options": [
+            "average sum of principal stresses",
+            "average difference of principal stresses",
+            "average sum as well as difference of principal stresses",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>What will be the radius of gyration of a circular plate of diameter \\( 10 \\text{ cm} \\)?</p>",
+          "options": [
+            "\\( 2.5 \\text{ cm} \\)",
+            "\\( 2.0 \\text{ cm} \\)",
+            "\\( 1.5 \\text{ cm} \\)",
+            "\\( 3 \\text{ cm} \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following are statically determinate beams?</p>",
+          "options": [
+            "Only simply supported beams",
+            "Continuous beams",
+            "Fixed beams",
+            "Cantilever, overhanging and simply supported beams"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>In a cantilever carrying uniformly varying load starting from zero at the free end, the bending\n                        moment diagram</p>",
+          "options": [
+            "is a horizontal line parallel to x-axis",
+            "is a line inclined to x-axis",
+            "follows a parabolic law",
+            "follows a cubic law"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Calculate the deflection if the slope is \\( 0.0225 \\text{ radians} \\). Take the distance of\n                        centre of gravity of bending moment to free end as 2 metres.</p>",
+          "options": [
+            "\\( 45 \\text{ mm} \\)",
+            "\\( 35 \\text{ mm} \\)",
+            "\\( 28 \\text{ mm} \\)",
+            "\\( 49 \\text{ mm} \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Hoop stress in a thin vessel is</p>",
+          "options": [
+            "\\( pD/4t \\)",
+            "\\( pD/2t \\)",
+            "\\( pD/3t \\)",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Hoop shrinking in thick cylinders is done to achieve</p>",
+          "options": [
+            "increased stresses",
+            "decreased stresses",
+            "uniform stresses",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Two shafts in torsion will have equal strength if</p>",
+          "options": [
+            "only diameter of the shafts is same",
+            "only angle of twist of the shaft is same",
+            "only material of the shaft is same",
+            "only torque transmitting capacity of the shaft is same"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>What is the maximum principal stress induced in a solid shaft of \\( 40 \\text{ mm} \\) diameter\n                        which is subjected to both bending moment and torque of \\( 300 \\text{ kN-mm} \\) and \\( 150\n                        \\text{ kN-mm} \\) respectively?</p>",
+          "options": [
+            "\\( 50.57 \\text{ N/mm}^2 \\)",
+            "\\( 28.1 \\text{ N/mm}^2 \\)",
+            "\\( 21.69 \\text{ N/mm}^2 \\)",
+            "\\( 52.32 \\text{ N/mm}^2 \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Derive the relation between \\( E \\) and \\( K \\). A bar of \\( 30 \\text{ mm} \\) diameter is\n                        subjected to a pull of \\( 60 \\text{ kN} \\). The measurement extension on gauge length of \\(\n                        200 \\text{ mm} \\) is \\( 0.1 \\text{ mm} \\) and change in diameter is \\( 0.004 \\text{ mm}\n                        \\). Calculate \\( E \\), Poisson ratio and \\( K \\).</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Three bars made of copper, zinc and aluminium are of equal length and have cross-section \\( 500\n                        \\), \\( 700 \\) and \\( 1000 \\text{ mm}^2 \\) respectively. They are rigidly connected at\n                        their ends. If this compound member is subjected to a longitudinal pull of \\( 250 \\text{ kN}\n                        \\). Estimate the proportional of the load carried on each rod and the induced stresses. Take\n                        the values of \\( E \\) for copper \\( = 1.3 \\times 10^5 \\text{ N/mm}^2 \\) and for zinc \\(\n                        1.0 \\times 10^5 \\text{ N/mm}^2 \\) and for aluminium \\( = 0.8 \\times 10^5 \\text{ N/mm}^2\n                        \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>A material is subjected to two mutually perpendicular tensile direct stresses of \\( 40 \\text{\n                        MPa} \\) and \\( 30 \\text{ MPa} \\) together with a shear stress of \\( 20 \\text{ MPa} \\),\n                        shear stress being clock-wise on the face carrying the \\( 40 \\text{ MPa} \\) tensile stress.\n                        Determine-<br/>\n                        (a) the stresses on a plane making an angle of \\( 40^{circ} \\) counter-clockwise to the plane\n                        of the \\( 40 \\text{ MPa} \\) stress;<br/>\n                        (b) the principal stresses and their planes;<br/>\n                        (c) the maximum shear stress and its plane.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>With the help of mathematical proof, show that the torque transmitted by the hollow shaft is\n                        greater than the solid shaft.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A hollow shaft with diameter ratio \\( 3/5 \\) is required to transmit \\( 450 \\text{ kW} \\) at\n                        \\( 120 \\text{ r.p.m.} \\) The shearing stress in the shaft must not exceed \\( 60 \\text{\n                        N/mm}^2 \\) and the twist in a length of \\( 2.5 \\text{ m} \\) is not to exceed \\( 1^{circ}\n                        \\). Calculate the minimum external diameter of the shaft. Take \\( C = 80 \\text{ kN/mm}^2 \\).\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A simply supported beam is subjected to a combination of loads as shown in Fig. 1. Sketch the\n                        shear force and bending moment diagrams and find the position and magnitude of maximum bending\n                        moment.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/37.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive expression for moment of inertia for circular lamina and thin ring.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Determine the moment of inertia of the beam cross-section about the centroidal axis shown in Fig.\n                        2.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/38.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Derive the expression for the change in diameter and for the change in volume of a thin spherical\n                        shell when it is subjected to an internal pressure.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A thin cylinder is \\( 3.5 \\text{ m} \\) long, \\( 90 \\text{ cm} \\) in diameter, and the\n                        thickness of the metal is \\( 12 \\text{ mm} \\). It is subjected to an internal pressure of \\(\n                        2.8 \\text{ N/mm}^2 \\). Calculate the change in dimensions of the cylinder and the maximum\n                        intensity of shear stress induced. \\( E = 200 \\text{ GPa} \\) and Poisson's ratio \\( = 0.3\n                        \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Calculate circumferential and radial stress in a thick cylinder assuming internal pressure \\(\n                        p_i \\) and internal pressure = zero.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>An external pressure of \\( 10 \\text{ MN/m}^2 \\) is applied to a thick cylinder of internal\n                        diameter \\( 160 \\text{ mm} \\) and external diameter \\( 320 \\text{ mm} \\). If the maximum\n                        hoop stress permitted on the inside wall of the cylinder is limited to \\( 30 \\text{ MN/m}^2\n                        \\), what maximum internal pressure can be applied assuming the cylinder has closed ends? What\n                        will be the change in outside diameter when this pressure is applied? \\( E = 207 \\text{\n                        GN/m}^2 \\), \\( v = 0.29 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Deduce the expression for bending equation. What is section moduli of hollow circular section and\n                        solid circular section?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>A simply supported beam is subjected to uniformly distributed load in combination with couple \\(\n                        M \\). It is required to determine the deflection shown in Fig. 3.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/36.jpg\"/>"
+        }
+      ]
+    }
+  ]
+}

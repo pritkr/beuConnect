@@ -51,7 +51,7 @@ RULES=(
   'calendar prev/next: control border|s/class="h-11 w-11 items-center justify-center rounded-full border border-border active:bg-muted"/class="h-11 w-11 items-center justify-center rounded-full border border-border-strong active:bg-muted"/g'
   'icon button: control border|s/"border-destructive\/30" : "border-border"/"border-destructive\/30" : "border-border-strong"/g'
   'micro type 9 px → 11 px|s/text-\[9px\]/text-[11px]/g'
-  'clock column: grow, never clip|s/w-\[52px\]/min-w-[52px]/g'
+  'clock column: grow, never clip|s/(^|[^-])w-\[52px\]/\1min-w-[52px]/g'
   'routine subject: 2 lines|s/class="flex-1 text-\[13px\] leading-5 text-foreground" numberOfLines=\{1\}/class="flex-1 text-[13px] leading-5 text-foreground" numberOfLines={2}/g'
   'notice title: 3 lines|s/numberOfLines=\{2\}>\{props\.notice\.title\}/numberOfLines={3}>{props.notice.title}/g'
   'post title: 3 lines|s/numberOfLines=\{2\}>\{props\.post\.title\}/numberOfLines={3}>{props.post.title}/g'

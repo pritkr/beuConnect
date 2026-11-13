@@ -1,0 +1,251 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "MICROPROCESSOR AND MICROCONTROLLER",
+    "subject_slug": "microprocessor-and-microcontroller",
+    "subject_code": "104505",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Differentiate between the following (any seven) :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "DCR and DCX",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "CALL and JMP",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "STAX and LDAX",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "XTHL and PCHL",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "RIM and SIM",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "DAA and DAD",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "CMA and CMC",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "SHLD and SPHL",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "RET and RST",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "ORA and XRI",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "List the four categories of 8085 instructions that manipulate the data.",
+              "marks": 6,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "Assemble the following program, starting with the memory address 2020 H and tell the output of the program :\nMVI A, 8F H\nMVI B, 68 H\nSUB B\nANI 0F H\nSTA 2070 H\nHLT",
+              "marks": 8,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is a flag? How many flags are there in 8085? Explain the flag register of 8085 microprocessor.",
+              "marks": 2,
+              "id": "3_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain the function of ALE signal in the 8085 microprocessor.",
+              "marks": 4,
+              "id": "3_sub"
+            },
+            {
+              "number": "c",
+              "text": "Design a seven-segment LED output port with the device address F5 H, using a 74LS138 3-to-8 decoder, a 74LS20 4-input NAND gate, a 74LS02 NOR gate, and a common anode seven-segment LED. Given $\\overline{\\text{WR}}$ and $IO/\\overline{\\text{M}}$ signals from 8085 generate the $\\overline{\\text{IOW}}$ control signal. Write the instructions to display digit 7 at the port.",
+              "marks": 8,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Draw the timing diagram of IN 80H.",
+              "marks": 6,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "What are tri-state devices and why are they essential in a bus-oriented system? In the figure given below specify the memory address of ROM 1, ROM 2 and R/WM1. Now eliminate the second decoder and connect $\\overline{\\text{CS}}_4$ to $\\overline{\\text{CE}}$ of the R/MW1 and identify its memory map and foldback space.",
+              "marks": 8,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Describe the various addressing modes of 8085 microprocessor with suitable examples.",
+              "marks": 5,
+              "id": "5_sub"
+            },
+            {
+              "number": "b",
+              "text": "Draw the pin out diagram of 8085 microprocessor and explain the various signals.",
+              "marks": 9,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Draw and explain the architecture of 8086. Describe the function of queue in 8086. How does the queue speed up processing?",
+              "marks": 6,
+              "id": "6_sub"
+            },
+            {
+              "number": "b",
+              "text": "Discuss the addressing technique used in 8086 and explain the various addressing modes of 8086.",
+              "marks": 8,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Draw the block diagram of 8255 PPI and explain the various modes in which 8255 can operate. Write down the control word for 8255 and explain each bit.",
+              "marks": 8,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "A keyboard and seven-segment display are connected to the 8255 PPI on ports A and B respectively. WAP to monitor the keyboard to sense a key pressed and display the number of the key at the seven-segment display LED.",
+              "marks": 6,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "A set of 10 current readings is stored in the memory location starting at 2050H. The readings are expected to be positive ($< 127_{10}$). Draw the flowchart and WAP to\u2014 (i) check each reading to determine whether it is positive or negative; (ii) reject all negative readings; (iii) add all positive readings; (iv) output FFH to PORT 1 at any time if the sum exceeds eight bits to indicate the overload; otherwise display the sum. If no output port is available in the system, go to step 5; (v) store FFH in the memory location 2070H when the sum exceeds eight bits, otherwise store the sum.",
+              "marks": 8,
+              "id": "8_sub"
+            },
+            {
+              "number": "b",
+              "text": "Draw the block diagram of 8251 PPI and explain briefly the different sections of 8251. Explain how the 8251 PPI is initialized.",
+              "marks": 6,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "WAP to count from 0 to 20H with a delay of 100 ms between each count. After the count 20H, the counter should reset itself and repeat the sequence. Draw a flowchart and show calculations for setting up the delay.",
+              "marks": 9,
+              "id": "9_sub"
+            },
+            {
+              "number": "b",
+              "text": "The main program is stored beginning at 0100H the main program (at 0120H) has called the subroutine at 0150H, and when the microprocessor is executing the instruction at location 0151, it is interrupted. Read the program and answer the following questions : (i) Specify the contents of stack location 03FFH after the CALL instruction. (ii) Specify the stack locations where the contents of registers B and C are stored. (iii) When the program is interrupted, what is the memory address stored on the stack?",
+              "marks": 5,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

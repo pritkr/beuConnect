@@ -4,15 +4,17 @@
  * Nothing here is decorative: every URL is one the app actually talks to, the
  * captcha paragraph describes exactly what `results/portal.tsx` does, and the
  * privacy paragraph is the literal truth of the build (no account, no
- * analytics, no third-party SDK).
+ * third-party SDK; the one count that leaves is hashed and switchable, and the
+ * policy it points at is `src/pages/privacy.astro` on the site).
  */
 
 import { Image, Text, View, signal, Clipboard } from "nsh";
 
 import { Badge, Body, Card, Divider, Label, Mono, Muted, Panel, Screen, SectionHeader } from "../../ui";
 import { APP_BUILD, APP_VERSION } from "../../lib/app-info";
+import { setAnalyticsEnabled, useAnalytics } from "../../lib/analytics";
 import { feedStatus } from "../data-feed/store";
-import { ScreenIntro } from "./ui";
+import { SettingsGroup, SettingsToggle } from "./ui";
 import { ShareButton, UpdatePanel } from "./release-rows";
 import logo from "../../../assets/logo.png";
 
@@ -53,12 +55,18 @@ const SOURCES: readonly Source[] = [
   {
     title: "Source code",
     detail: "The app and the site, in one repository.",
-    url: "https://github.com/pritkr/beuconnect",
+    url: "https://github.com/pritkr/beuconnectaw",
+  },
+  {
+    title: "Privacy policy",
+    detail: "What this app collects, what it never touches, and how to delete it.",
+    url: "https://beu.prit.eu.org/privacy",
   },
 ];
 
 export function AboutScreen() {
   const copied = signal("");
+  const analytics = useAnalytics();
 
   const copy = (url: string): void => {
     void Clipboard.writeText(url).then(() => {
@@ -72,17 +80,11 @@ export function AboutScreen() {
   return (
     <Screen>
       <Body>
-        <ScreenIntro
-          label="The app"
-          title="About"
-        />
-
         <View class="items-center gap-2 py-3">
           <Image
             src={logo}
-            resizeMode="contain"
             class="h-16 w-16 rounded-[20px]"
-            style={{ width: 64, height: 64 }}
+            style={{ objectFit: "contain", width: 64, height: 64 }}
             accessibilityElementsHidden
           />
           <Text class="text-[22px] font-bold tracking-tight text-foreground">BEUConnect</Text>
@@ -100,9 +102,6 @@ export function AboutScreen() {
           <Text class="text-[14px] leading-6 text-foreground">
             A native app for Bihar Engineering University students: syllabus split into topics, results rendered
             properly, previous papers, rank, merit, calculators, attendance, routine and notices.
-          </Text>
-          <Text class="text-[13px] leading-5 text-muted-foreground">
-            Built with NativeShell — real platform views on Android, iOS, macOS and the web, not a website in a box.
           </Text>
         </Card>
 
@@ -145,25 +144,43 @@ export function AboutScreen() {
         <Panel tone="mint" class="gap-2">
           <Label>Your data stays on this phone</Label>
           <Text class="text-[13px] leading-5 text-foreground">
-            No account, no analytics, no advertising, no tracking SDK. Your profile, results, read marks and attendance
-            live in this device's storage.
+            No account, no advertising, no tracking SDK. Your profile, results, read marks and attendance live in this
+            device's storage.
           </Text>
           <Text class="text-[12px] leading-5 text-muted-foreground">
-            Nothing is uploaded unless you send feedback or open BEU's result portal. Outside that portal — which loads
-            Google reCAPTCHA — the app talks only to beu.prit.eu.org and beu-bih.ac.in.
+            The one thing that leaves is an anonymous count of which screens and buttons get used, so the app can be
+            built around what students actually open. It carries no name, registration number or typed text, and the
+            switch below stops it.
           </Text>
         </Panel>
+
+        <SectionHeader title="Usage analytics" />
+        <SettingsGroup>
+          <SettingsToggle
+            title="Send anonymous usage"
+            hint="Screen names and taps. Never your registration number, results or search text."
+            checked={analytics()}
+            onChange={(on) => void setAnalyticsEnabled(on)}
+            last
+          />
+        </SettingsGroup>
+
+        <Card class="gap-1">
+          <Text class="text-[12px] leading-5 text-muted-foreground">
+            Requests go to beu.prit.eu.org for app data, analytics and feedback, beu-bih.ac.in when you open the result
+            portal (that page loads Google reCAPTCHA), and api.github.com to check for a newer build.
+          </Text>
+        </Card>
 
         <Panel tone="plain" class="gap-1">
           <Label>Not an official BEU app</Label>
           <Muted class="text-[12px] leading-5">
-            Made by students, for students. The university's notice is always the final word; treat a result here as a
-            copy of what BEU published, not a replacement for it.
+            Not affiliated with Bihar Engineering University. The university's notice is the final word; a result here
+            is a copy of what BEU published.
           </Muted>
         </Panel>
 
         <View class="items-center gap-1 pb-2 pt-1">
-          <Muted>BEUConnect {APP_VERSION} · built for Bihar Engineering University</Muted>
           <Muted class="text-[11px]">Icons: Boxicons (MIT) · subset font</Muted>
         </View>
       </Body>

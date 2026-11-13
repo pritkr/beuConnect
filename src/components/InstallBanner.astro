@@ -1,49 +1,48 @@
 ---
 // src/components/InstallBanner.astro
+import Icon from "./Icon.astro";
 ---
 
 <div id="pwa-install-banner" class="hidden install-banner" aria-hidden="true">
   <div class="banner-content">
-    <div class="banner-text">
-      <strong>Install BEU Connect</strong>
-      <p>Get faster access, offline results & PYQs.</p>
-    </div>
+    <p class="banner-text">Install BEUConnect</p>
     <div class="banner-actions">
-      <button id="pwa-install-btn" class="outline">Install</button>
-      <button id="pwa-close-btn" class="close-icon" aria-label="Close">✕</button>
+      <button id="pwa-install-btn" class="btn btn-primary">Install</button>
+      <button id="pwa-close-btn" class="banner-close" aria-label="Dismiss install banner">
+        <Icon name="x" size={16} />
+      </button>
     </div>
   </div>
 </div>
 
 <!-- Modal for iOS Users -->
-<dialog id="ios-install-modal">
+<dialog id="ios-install-modal" class="ios-modal">
   <article>
     <header>
-      <button aria-label="Close" rel="prev" id="close-ios-modal"></button>
-      Install on iOS
+      <h2>Add to home screen</h2>
+      <button aria-label="Close" id="close-ios-modal" class="modal-close">
+        <Icon name="x" size={16} />
+      </button>
     </header>
-    <p>
-      To install BEU Connect on your iPhone: <br><br>
-      1. Tap the <strong>Share</strong> button <svg width="20" height="20" viewBox="0 0 50 50" style="vertical-align: middle; fill: currentColor;"><path d="M25 2L12 16h8v18h10V16h8L25 2zM10 38v8h30v-8h-30z"/></svg> at the bottom of Safari.<br>
-      2. Scroll down and tap <strong>"Add to Home Screen"</strong>.
-    </p>
+    <ol>
+      <li>Tap Share in Safari.</li>
+      <li>Choose Add to Home Screen.</li>
+    </ol>
   </article>
 </dialog>
 
 <style>
-  /* Custom Sticky Bottom Banner CSS mapping nicely with Pico.css */
   .install-banner {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: var(--pico-card-background-color);
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
     z-index: 9999;
-    padding: 0.6rem 1rem;
+    width: 100%;
+    padding: var(--s3) var(--s4);
+    border-top: 1px solid var(--line-strong);
+    background: var(--surface);
     transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-top: 1px solid var(--pico-muted-border-color);
+    transition: transform 0.25s ease;
   }
 
   .install-banner.visible {
@@ -56,59 +55,120 @@
 
   .banner-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 800px;
+    justify-content: space-between;
+    gap: var(--s4);
+    max-width: var(--max);
     margin: 0 auto;
-    gap: 0.5rem;
   }
 
-  .banner-text p {
-    margin-bottom: 0;
-    margin-top: 0.1rem;
-    font-size: 0.75rem;
-    color: var(--pico-muted-color, var(--text-muted));
-    line-height: 1.2;
-  }
-
-  .banner-text strong {
-    font-size: 0.95rem;
-    color: var(--pico-color, var(--text-primary));
+  .banner-text {
+    margin: 0;
+    color: var(--paper);
+    font-size: 0.88rem;
+    font-weight: 500;
   }
 
   .banner-actions {
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
-    gap: 0.25rem;
+    gap: var(--s2);
   }
 
   #pwa-install-btn {
     margin: 0;
-    padding: 0.35rem 0.75rem;
-    font-size: 0.85rem;
-    width: auto;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
   }
 
-  .close-icon {
-    background: none;
-    border: none;
-    color: var(--pico-muted-color, var(--text-muted));
-    font-size: 1.1rem;
+  .banner-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--r);
+    background: transparent;
+    color: var(--faint);
     cursor: pointer;
-    padding: 0.2rem;
-    width: auto;
-    box-shadow: none;
-  }
-  
-  .close-icon:hover,
-  .close-icon:focus {
-    background: none;
-    color: var(--pico-color, var(--text-primary));
-    box-shadow: none;
   }
 
-  #ios-install-modal article {
-    max-width: 400px;
+  .banner-close:hover {
+    color: var(--paper);
+    background: var(--surface-2);
+  }
+
+  .ios-modal {
+    width: min(100% - 1rem, 24rem);
+    padding: 0;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-lg);
+    background: var(--surface);
+    color: var(--paper);
+  }
+
+  .ios-modal::backdrop {
+    background: var(--scrim);
+  }
+
+  .ios-modal article {
+    margin: 0;
+    padding: var(--s5);
+    background: transparent;
+  }
+
+  .ios-modal header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s3);
+    margin-bottom: var(--s3);
+  }
+
+  .ios-modal h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: var(--r);
+    background: transparent;
+    color: var(--faint);
+    cursor: pointer;
+  }
+
+  .modal-close:hover {
+    color: var(--paper);
+    background: var(--surface-2);
+  }
+
+  .ios-modal ol {
+    display: grid;
+    gap: var(--s2);
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .install-banner {
+      transition: none;
+    }
   }
 </style>
 
@@ -117,7 +177,7 @@
   const installBanner = document.getElementById('pwa-install-banner');
   const installBtn = document.getElementById('pwa-install-btn');
   const closeBtn = document.getElementById('pwa-close-btn');
-  
+
   const iosModal = document.getElementById('ios-install-modal');
   const closeIosModal = document.getElementById('close-ios-modal');
 
@@ -138,7 +198,7 @@
     if (isStandalone()) return false;
     const dismissedAt = localStorage.getItem('beu_pwa_dismissed');
     if (!dismissedAt) return true;
-    
+
     const daysSinceDismissed = (Date.now() - parseInt(dismissedAt)) / (1000 * 60 * 60 * 24);
     return daysSinceDismissed > 7; // Show again after 7 days
   };
@@ -160,7 +220,7 @@
     e.preventDefault();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
-    
+
     // Show our custom UI after a 3 second delay (so it doesn't block initial page load)
     setTimeout(showBanner, 3000);
   });
@@ -183,18 +243,16 @@
       if (deferredPrompt) {
         // Hide the install banner
         if (installBanner) installBanner.classList.remove('visible');
-        
+
         // Show the native install prompt
         deferredPrompt.prompt();
-        
+
         // Wait for the user to respond to the prompt
         const { outcome } = await deferredPrompt.userChoice;
         if (outcome === 'accepted') {
-          console.log('User accepted the install prompt');
           // Clear the prompt variable
           deferredPrompt = null;
         } else {
-          console.log('User dismissed the install prompt');
           // Save dismissal state
           localStorage.setItem('beu_pwa_dismissed', Date.now().toString());
         }
@@ -226,7 +284,7 @@
       if (iosModal) iosModal.removeAttribute('open');
     });
   }
-  
+
   // Track successful installation to hide UI
   window.addEventListener('appinstalled', () => {
     if (installBanner) {
@@ -234,6 +292,5 @@
       installBanner.classList.add('hidden');
     }
     deferredPrompt = null;
-    console.log('PWA was installed');
   });
 </script>

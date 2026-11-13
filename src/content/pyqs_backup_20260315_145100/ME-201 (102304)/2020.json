@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Special Examination, 2020",
+    "subject": "Thermodynamics",
+    "subject_slug": "thermodynamics",
+    "subject_code": "ME-201 (102304)",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are EIGHT questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Students should be allowed to use the steam tables and Mollier diagram."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In a cycle</p>",
+          "options": [
+            "end states are different",
+            "end states are identical",
+            "there is no connection between starting and end state",
+            "cyclic integral of any property is non-zero"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Zeroth law of thermodynamics forms the basis of</p>",
+          "options": [
+            "enthalpy measurement",
+            "temperature measurement",
+            "entropy measurement",
+            "energy measurement"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The cyclic integral of which of the following is zero?</p>",
+          "options": [
+            "Temperature",
+            "Work transfer",
+            "Latent heat",
+            "Heat transfer"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which one of the following parameters remains constant in a throttling process?</p>",
+          "options": [
+            "Pressure",
+            "Temperature",
+            "Enthalpy",
+            "Entropy"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>An isentropic process is always</p>",
+          "options": [
+            "irreversible and adiabatic",
+            "reversible and adiabatic",
+            "frictionless and irreversible",
+            "reversible and isothermal"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A cyclic heat engine operates between a source temperature of \\( 927^\\circ\\text{C} \\) and a\n                        sink\n                        temperature of \\( 27^\\circ\\text{C} \\). What will be the maximum efficiency of the heat\n                        engine?\n                    </p>",
+          "options": [
+            "97%",
+            "80%",
+            "75%",
+            "70%"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following expressions is true for Tds?</p>",
+          "options": [
+            "dh - vdp",
+            "dh + vdp",
+            "dh - pdv",
+            "dh + pdv"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>With increase in saturation pressure of water vapour</p>",
+          "options": [
+            "the saturation temperature decreases",
+            "the enthalpy of evaporation decreases",
+            "the enthalpy of evaporation increases",
+            "the specific volume of phase change increases"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Availability function of a closed system is expressed as</p>",
+          "options": [
+            "\\( U + p_0V - T_0S \\)",
+            "\\( U + p_0dV - T_0dS \\)",
+            "\\( U + p_0V - T_0S \\)",
+            "\\( dU + p_0dV - T_0dS \\)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>At a pressure of 4 MPa, the temperature at which liquid water boils is</p>",
+          "options": [
+            "\\( 29^\\circ\\text{C} \\)",
+            "\\( 143.6^\\circ\\text{C} \\)",
+            "\\( 100^\\circ\\text{C} \\)",
+            "\\( 250.4^\\circ\\text{C} \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain what you understand by thermodynamic equilibrium.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Distinguish between the terms 'change of state', 'path' and 'process'.</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>One mol of air at 0.45 MPa and 450 K initially undergoes the processes- (i) heating at constant\n                        pressure till the volume gets doubled and (ii) expansion at constant temperature till the volume\n                        is\n                        five times of initial volume sequentially. Determine the work done by air.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Show that energy is a property of a system.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Write the steady flow energy equation for a single stream entering and a single stream leaving a\n                        control volume.</p>"
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>In a gas turbine the gas enters at the rate of 5 kg/s with a velocity of 50 m/s and enthalpy of\n                        900\n                        kJ/kg and leaves the turbine with a velocity of 150 m/s and enthalpy of 400 kJ/kg. The loss of\n                        heat\n                        from the gases to the surroundings is 25 kJ/kg. Assume for gas \\( R = 0.285 \\text{ kJ/kgK} \\)\n                        and\n                        \\( c_p = 1.004 \\text{ kJ/kg-K} \\) and the inlet conditions to be at 100 kPa and \\(\n                        27^\\circ\\text{C} \\). Determine the power output of the turbine and the diameter of the inlet\n                        pipe.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Establish the equivalence of Kelvin-Planck and Clausius statement.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>An engine has a heat input of 500 kJ at \\( 437^\\circ\\text{C} \\). It rejects 200 kJ at \\(\n                        82^\\circ\\text{C} \\). The engine develops 250 kJ of work. Check whether such an engine is\n                        possible\n                        or not.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>\"Two reversible adiabatic paths cannot intersect each other.\" Write True or False. Justify with\n                        proper explanation.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>A reversible engine operates between temperatures \\( T_1 \\) and \\( T \\), where \\( T_1 &gt; T\n                        \\).\n                        The energy rejected from this engine is received by a second reversible engine at the same\n                        temperature \\( T \\). The second engine rejects energy at temperature \\( T_2 \\), where \\(\n                        T_2 &lt; T_1 \\). Show that the temperature \\( T \\) is the arithmetic mean of temperatures \\(\n                            T_1 \\) and \\( T_2 \\) if the engines produce the same amount of work output.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Establish the inequality of Clausius.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Steam flows in a pipeline at 1.5 MPa. After expanding to 0.1 MPa in a throttling calorimeter, the\n                        temperature is found to be \\( 120^\\circ\\text{C} \\). Find the quality of steam in the\n                        pipeline.\n                        What is the maximum moisture at 1.5 MPa that can be determined with this set-up if at least \\(\n                        5^\\circ\\text{C} \\) of degree of superheat is required after throttling for accurate readings?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is meant by availability?</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Air expands through a turbine from 500 kPa, \\( 520^\\circ\\text{C} \\) to 100 kPa, \\(\n                        300^\\circ\\text{C} \\). During expansion 10 kJ/kg of heat is lost to the surroundings which is\n                        at\n                        98 kPa, \\( 20^\\circ\\text{C} \\). Neglecting the KE and PE changes, determine per kg of air\n                        (i)\n                        the decrease in availability, (ii) the maximum work and (iii) the irreversibility. For air, take\n                        \\(\n                        c_p = 1.005 \\text{ kJ/kg-K} \\), \\( h = c_pT \\) where \\( c_p \\) is constant.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Define the terms 'unsaturated air' and 'relative humidity'.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>With the help of a suitable diagram, explain the psychrometric chart.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>With the help of a suitable diagram, explain the process of cooling and dehumidification.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    }
+  ]
+}

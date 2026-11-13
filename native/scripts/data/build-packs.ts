@@ -23,7 +23,8 @@
  */
 import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { MAX_TOKENS, SEPARATOR, Table, literal, pack, rankPhrases, renderChunk, renderDict, symbol } from "./wire-lib.ts";
+import { MAX_TOKENS, SEPARATOR, Table, literal, pack, rankPhrases, renderChunk, renderDict, symbol, wideChars } from "./wire-lib.ts";
+import { normalise } from "../../src/features/syllabus/data/decode.ts";
 
 const DATA = new URL("../../src/features/syllabus/data/", import.meta.url);
 const SITE = new URL("../../../src/assets/data/", import.meta.url);
@@ -75,9 +76,11 @@ if (fromSite) {
     const site = JSON.parse(readFileSync(file, "utf8"));
     const pack = branches[meta.code];
     for (const [sem, block] of Object.entries<any>(site.semesters)) {
-      const list: Subject[] = (block.subjects ?? []).map((s: any) => {
-        const subject: Subject = { name: s.name, type: s.type, credits: s.credits };
-        if (s.code) subject.code = s.code;
+      // The site has blank codes and exact duplicates; `decode.ts` fixes both at
+      // the boundary. Run the same pass here so a site import is a no-op when
+      // the only difference is that normalisation.
+      const list = normalise((block.subjects ?? []).map((s: any) => {
+        const subject: Subject = { name: s.name, type: s.type, credits: s.credits, code: s.code ?? "" };
         for (const key of ["lecture", "tutorial", "practical"] as const) {
           if (s.summary && typeof s.summary[key] === "number") subject[key] = s.summary[key];
         }
@@ -85,7 +88,7 @@ if (fromSite) {
         if (typeof s.content === "string" && s.content) subject.content = s.content;
         if (Array.isArray(s.references) && s.references.length) subject.references = s.references;
         return subject;
-      });
+      })) as Subject[];
       const was = JSON.stringify(pack.semesters[sem] ?? []);
       if (was !== JSON.stringify(list)) {
         changed++;
@@ -167,11 +170,12 @@ if (problems.length) {
 const chunks = table.chunk(LIMIT);
 const corpus = table.entries.map((e) => e.value).join(SEPARATOR);
 const dict = rankPhrases(corpus, MAX_TOKENS);
+const wide = wideChars(corpus);
 const total = table.entries.reduce((n, e) => n + e.value.length, 0);
 let packed = 0;
 const files: Record<string, string> = {};
 
-files["dict.ts"] = renderDict(dict);
+files["dict.ts"] = renderDict(dict, wide);
 
 files["table/index.ts"] = `/* eslint-disable */
 /**
@@ -195,7 +199,7 @@ ${chunks.map((c) => `  ${symbol(c.name)}_COUNT,`).join("\n")}
 
 for (const chunk of chunks) {
   const entries = table.entries.slice(chunk.from, chunk.to).map((e) => e.value);
-  const blob = entries.map((e) => pack(e, dict)).join(SEPARATOR);
+  const blob = entries.map((e) => pack(e, dict, wide)).join(SEPARATOR);
   packed += blob.length;
   files[`table/${chunk.name}.ts`] = renderChunk(
     chunk,
@@ -285,7 +289,7 @@ const rendered = Object.entries(files).reduce((n, [, text]) => n + bytes(text), 
 const wires = Object.values(branchWires).join("").length + Object.values(gateWires).join("").length;
 const dictChars = dict.reduce((n, p) => n + p.length, 0);
 console.log(`  prose      ${String(total).padStart(8)} chars in ${table.entries.length} strings`);
-console.log(`  packed     ${String(packed).padStart(8)} chars (${(packed / total * 100).toFixed(1)}%) + ${dict.length} tokens/${dictChars} chars`);
+console.log(`  packed     ${String(packed).padStart(8)} chars (${(packed / total * 100).toFixed(1)}%) + ${dict.length} tokens/${dictChars} chars, ${wide.length} wide escaped`);
 console.log(`  wires      ${String(wires).padStart(8)} chars for ${Object.keys(branchWires).length} branches + ${Object.keys(gateWires).length} papers`);
 console.log(`  files      ${String(rendered).padStart(8)} B in ${Object.keys(files).length} modules (${chunks.length} chunks, max ${Math.max(...chunks.map((c) => bytes(files[`table/${c.name}.ts`])))} B)`);
 console.log(`  ${check ? (stale ? `✗ ${stale} file(s) out of date` : "✓ up to date") : `wrote ${stale} file(s)`}`);

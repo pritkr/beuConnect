@@ -27,6 +27,14 @@ export interface Dataset {
   college: string;
   /** Absolute CSV URL on the site. */
   url: string;
+  /**
+   * Lowercased haystack, built once when the manifest is parsed.
+   *
+   * A keystroke at the data browser would otherwise re-derive three labels per
+   * row, thousands of times. Optional because `data.table` builds a throwaway
+   * `Dataset` for the download; `searchDatasets` falls back to deriving it.
+   */
+  search?: string;
 }
 
 export interface Manifest {
@@ -90,6 +98,27 @@ export function datasetUrl(batch: string, college: string, branch: string, sem: 
   return `${SITE}/data/wide_${batch}_${college}_${branch}_sem${sem}.csv`;
 }
 
+/**
+ * Every spelling a reader might type for one dataset, lowercased once.
+ *
+ * The college appears by code, official name and the short name a student
+ * actually uses ("GEC Sheikhpura"), and the branch by code, full label and
+ * short label — so "gec", "105" and "cse" all find it. The semester appears as
+ * a bare number and as "sem 3", because that is how the query is phrased but
+ * not how the manifest stores it.
+ */
+export function datasetSearchText(dataset: Dataset): string {
+  const college = dataset.college;
+  return [
+    `batch ${dataset.batch}`,
+    `branch ${dataset.branch} ${branchLabel(dataset.branch)} ${shortBranchLabel(dataset.branch)}`,
+    `sem ${dataset.sem} semester ${dataset.sem}`,
+    `college ${college} ${collegeName(college)} ${shortCollegeName(college)}`,
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
 /** Converts the manifest into one row per published dataset. */
 export function datasetsFromManifest(payload: Manifest): Dataset[] {
   const out: Dataset[] = [];
@@ -110,14 +139,16 @@ export function datasetsFromManifest(payload: Manifest): Dataset[] {
         const id = `${batch}|${branch}|${sem}|${college}`;
         if (seen.has(id)) continue;
         seen.add(id);
-        out.push({
+        const dataset: Dataset = {
           id,
           batch,
           branch,
           sem,
           college,
           url: datasetUrl(batch, college, branch, sem),
-        });
+        };
+        dataset.search = datasetSearchText(dataset);
+        out.push(dataset);
       }
     }
   }
@@ -130,14 +161,81 @@ export function datasetsFromManifest(payload: Manifest): Dataset[] {
   );
 }
 
+/** GEC Sheikhpura — the college this project is built around. */
+export const HOME_COLLEGE = "157";
+
+/** A profile branch path (`cse`, `mech`, …) → the code the manifest uses. */
+const MANIFEST_BRANCH: Record<string, string> = {
+  civil: "101",
+  mech: "102",
+  ee: "103",
+  ece: "104",
+  cse: "105",
+  eee: "110",
+};
+
+export function manifestBranch(branch: string): string {
+  return MANIFEST_BRANCH[branch.trim().toLowerCase()] ?? "";
+}
+
+/**
+ * The same order the manifest builds, with one college lifted inside every
+ * batch/branch/semester group: the student's own college, else GEC Sheikhpura,
+ * then the rest by code. Lifting only the college keeps the groups intact — a
+ * list that reordered the whole index by college would scatter the batches.
+ */
+export function prioritizeCollege(datasets: Dataset[], college: string): Dataset[] {
+  const first = college !== "" ? college : HOME_COLLEGE;
+  const rank = (code: string) => (code === first ? 0 : code === HOME_COLLEGE ? 1 : 2);
+  return [...datasets].sort(
+    (left, right) =>
+      Number(right.batch) - Number(left.batch) ||
+      left.branch.localeCompare(right.branch) ||
+      right.sem - left.sem ||
+      rank(left.college) - rank(right.college) ||
+      left.college.localeCompare(right.college),
+  );
+}
+
+/** Words that mean "semester" on their own, so `sem 3` narrows to semester 3. */
+const SEMESTER_WORDS = new Set(["sem", "semester"]);
+
 export function searchDatasets(datasets: Dataset[], query: string): Dataset[] {
-  const needle = query.trim().toLowerCase();
-  if (!needle) return datasets;
+  const words = query
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .map((word) => word.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
+    .filter((word) => word.length > 0);
+  if (words.length === 0) return datasets;
+
+  /*
+   * "sem 3" is a semester filter, not a substring hunt: a bare "3" also lives
+   * inside batch 23 and college 157, so a search that ignored the word would
+   * answer with next year's table. The semester pair is taken out of the token
+   * list and compared exactly; every other word still has to appear.
+   */
+  let wanted: number | null = null;
+  const tokens: string[] = [];
+  for (let index = 0; index < words.length; index += 1) {
+    const word = words[index];
+    if (SEMESTER_WORDS.has(word) && index + 1 < words.length && /^\d{1,2}$/.test(words[index + 1])) {
+      wanted = Number(words[index + 1]);
+      index += 1;
+      continue;
+    }
+    const inline = /^(?:sem|semester)(\d{1,2})$/.exec(word);
+    if (inline) {
+      wanted = Number(inline[1]);
+      continue;
+    }
+    tokens.push(word);
+  }
+
   return datasets.filter((dataset) => {
-    const haystack = `${dataset.batch} ${dataset.branch} ${branchLabel(dataset.branch)} ${dataset.sem} ${dataset.college} ${collegeName(
-      dataset.college,
-    )}`.toLowerCase();
-    return haystack.includes(needle);
+    if (wanted !== null && dataset.sem !== wanted) return false;
+    const haystack = dataset.search ?? datasetSearchText(dataset);
+    return tokens.every((token) => haystack.includes(token));
   });
 }
 

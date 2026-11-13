@@ -18,6 +18,7 @@
  */
 
 import type { Nav } from "../../app/router";
+import { EVENTS, track } from "../../lib/analytics";
 import { RAW, SNAPSHOT, decode, type PdfPaper } from "./pdf-catalog";
 import type { CatalogSubject } from "./catalog";
 import { dataVersion, livePdfRaw } from "../data-feed/pyqs";
@@ -116,6 +117,7 @@ export function pdfFileStem(paper: PdfPaper): string {
 
 /** Opens a PDF in the app's viewer (native pages on Android, WebView elsewhere). */
 export function openPdfPaper(nav: Nav, paper: PdfPaper, title = paper.subjectName): void {
+  track(EVENTS.pyqPdfOpen, { subject: title, year: paper.year });
   nav.push("pyqs.pdf", {
     url: paper.url,
     title,

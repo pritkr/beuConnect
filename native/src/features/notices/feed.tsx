@@ -11,8 +11,8 @@ import {
   markAllRead, postReadKey, unreadPosts,
 } from "./api";
 import {
-  OfflinePanel, UndoBar, annBusy, annFailure, buildPostRows, once, plural, readUndo, rowCell, syncAnnouncements,
-  type ListRow,
+  OfflinePanel, UndoBar, annBusy, annFailure, buildPostRows, once, plural, readUndo, rowCell, sectionIndices,
+  syncAnnouncements, type ListRow,
 } from "./parts";
 
 /**
@@ -75,6 +75,7 @@ export function AnnouncementsScreen(props: { nav: Nav }) {
           keyExtractor={(row: ListRow) => row.key}
           estimatedItemSize={112}
           contentClass="px-4 pb-8 gap-2"
+          stickyHeaderIndices={sectionIndices(rows())}
           refreshing={annBusy() && announcements().length > 0}
           onRefresh={() => syncAnnouncements(true)}
           header={() => (

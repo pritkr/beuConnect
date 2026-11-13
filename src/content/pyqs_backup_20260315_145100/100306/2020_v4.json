@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Examination, 2020",
+    "subject": "Electrical Circuit Analysis",
+    "subject_slug": "electrical-circuit-analysis",
+    "subject_code": "100306",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The Norton's equivalent of the circuit shown in figure below is</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/183.jpg\"/>",
+          "options": [
+            "\\( I_{N}=5/2 \\text{ A} \\) and \\( R_{N}=2\\Omega \\)",
+            "\\( I_{N}=4/5 \\text{ A} \\) and \\( R_{N}=1\\Omega \\)",
+            "\\( I_{N}=2/5 \\text{ A} \\) and \\( R_{N}=1\\Omega \\)",
+            "\\( I_{N}=2/5 \\text{ A} \\) and \\( R_{N}=2\\Omega \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>A 10 mH inductor carries a sinusoidal current of 1 A r.m.s. at a frequency of 50 Hz. The average\n                        power dissipated by the inductor is</p>",
+          "options": [
+            "0 W",
+            "0.25 W",
+            "0.5 W",
+            "1.0 W"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Thevenin's equivalent circuit consists of</p>",
+          "options": [
+            "current source and series impedance",
+            "voltage source and series impedance",
+            "voltage source and shunt impedance",
+            "current source and shunt impedance"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>A two-element series circuit is connected across an AC source given by \\(\n                        e=200\\sqrt{2}\\sin(314t+20) \\text{ V} \\). The current is found to be \\(\n                        i=10\\sqrt{2}\\cos(314t-25) \\text{ A} \\). Then parameters of the circuit are</p>",
+          "options": [
+            "\\( R=20\\Omega \\) and \\( C=160\\mu F \\)",
+            "\\( R=14.14\\Omega \\) and \\( C=225\\mu F \\)",
+            "\\( L=45\\text{ mH} \\) and \\( C=225\\mu F \\)",
+            "\\( L=45\\text{ mH} \\) and \\( C=160\\mu F \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>There are no transients in pure resistance circuits because they</p>",
+          "options": [
+            "offer high resistance",
+            "obey Ohm's law",
+            "have no stored energy",
+            "are linear circuits"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>In the below network, the switch K is opened at \\( t=0 \\). Then \\( \\frac{dV}{dt} \\) at \\(\n                        t=0^{+} \\) is</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/182.jpg\"/>",
+          "options": [
+            "1000 V/sec",
+            "100 V/sec",
+            "10 V/sec",
+            "1 V/sec"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>When a number of two-port network is cascaded, then</p>",
+          "options": [
+            "Z-parameters are added up",
+            "Y-parameters are added up",
+            "h-parameters are multiplied",
+            "ABCD-parameters are multiplied"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Two coils are coupled in such a way that the mutual inductance between them is 16 mH. If the\n                        inductances of the coils are 20 mH and 80 mH respectively, the coefficient of coupling is</p>",
+          "options": [
+            "0.01",
+            "0.4",
+            "0.1",
+            "0.0025"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>When a unit impulse voltage is applied to an inductor of 1 H, the energy supplied by the source\n                        is</p>",
+          "options": [
+            "2 J",
+            "1 J",
+            "1/2 J",
+            "1/4 J"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The h-parameters \\( h_{11} \\) and \\( h_{22} \\) are related to Z and Y-parameters as</p>",
+          "options": [
+            "\\( h_{11}=Z_{11} \\) and \\( h_{22}=1/Z_{22} \\)",
+            "\\( h_{11}=Z_{11} \\) and \\( h_{22}=Y_{22} \\)",
+            "\\( h_{11}=1/Y_{11} \\) and \\( h_{22}=1/Z_{22} \\)",
+            "\\( h_{11}=1/Y_{11} \\) and \\( h_{22}=Y_{22} \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Two mutually coupled identical coils are connected in series having self-inductance \\( L=4\n                        \\text{ mH} \\) and mutual inductance \\( M=2 \\text{ mH} \\). <br/>What are the maximum and\n                        minimum\n                        possible values of equivalent inductances?</p>\n<p>Determine the coefficient of coupling between the coils.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Show that Thevenin's and Norton's theorems are dual to each other.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Using Norton's theorem, find the current in \\( 5\\Omega \\) resistor for the circuit shown\n                        below.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/186.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>When can a two-port circuit be declared as a reciprocal circuit?</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Find ABCD parameters for the two-port network shown in the figure below:</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/181.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Prove that the average power in an AC circuit is given by \\( W=VI\\cos\\phi \\), where symbols\n                        have their usual meanings.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>A voltage of \\( e(t)=150\\sin(1000t) \\) is applied across a series R-L-C circuit, where \\(\n                        R=40\\Omega \\), \\( L=0.13 \\text{ H} \\) and \\( C=10\\mu\\text{F} \\). (i) Compute the r.m.s.\n                        value of the steady-state current. (ii) Find the r.m.s. voltage across the inductor. (iii) Find\n                        the r.m.s. voltage across the capacitor. (iv) Determine the active and reactive power supplied\n                        by the source.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Determine overall Z-parameters when two 2-port networks with identical \\(\n                        Z_{11}=Z_{12}=Z_{21}=Z_{22}=2\\Omega \\) are connected in cascade.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>In the R-L-C circuit shown in figure below, \\( I_{s}=10 \\text{ A} \\), \\( R=1\\Omega \\), \\(\n                        L=1\\text{H} \\), \\( C=1\\mu\\text{F} \\) and \\( i_{L}(0^{-})=0 \\). Determine the following\n                        parameters\n                        after the switch is closed at \\( t=0 \\): (a) \\( V(0^{+}) \\) (b) \\( \\frac{dV}{dt} \\) at\n                        \\( t=0^{+} \\) (c) \\( \\frac{d^{2}V}{dt^{2}} \\) at \\( t=0^{+} \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/185.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>An R-L-C tank circuit is composed of components having values as \\( R=0.2\\Omega \\), \\( L=100\n                        \\text{ mH} \\) and \\( C=50\\mu\\text{F} \\). Determine the resonance frequency and the\n                        corresponding input current at 24 V.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Obtain the values of R, L and C in a series R-L-C circuit that resonates at 1.5 kHz and consumes\n                        50 W from a 50 V a.c. source operating at the resonance frequency. The bandwidth is 0.75 kHz.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>For the circuit shown below, obtain the current through the capacitor C at \\( t=0^{+} \\) using\n                        Laplace transform following the switching takes place at \\( t=0 \\). Assume the capacitor to be\n                        initially discharged.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/184.jpg\"/>"
+        }
+      ]
+    }
+  ]
+}

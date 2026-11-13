@@ -51,7 +51,23 @@ trap cleanup EXIT INT TERM
 # it runs first and it is cheap.
 run_lint() {
   echo "── lint: list heights ──"
-  bun scripts/lint-list-height.mjs
+  bun scripts/lint-list-height.mjs || return 1
+  # A horizontal scroll that is `flex-1` in a column sizes its own height to
+  # zero: the heading paints and the chips do not. Same silent failure as a
+  # `List` without a height, and equally invisible to a rendering test.
+  echo "── lint: rail heights ──"
+  bun scripts/lint-rail-height.mjs || return 1
+  # A signal setter passed bare (`onChange={query.set}`) loses its scope: the
+  # first keystroke or tap throws "not a live signal" and the screen dies. No
+  # rendering test can see it, because the screen mounts fine. This scan can.
+  echo "── lint: signal setters ──"
+  bun scripts/lint-signal-setter.mjs || return 1
+  # Campus Wi-Fi sign-in runs in Java, with the app closed, where no test can
+  # reach it. Every way its wiring breaks is silent — a dropped receiver, a job
+  # that is no longer persisted, a missing wake lock — and the screen still
+  # says "on". This reads the host instead.
+  echo "── lint: wi-fi host ──"
+  bun scripts/lint-wifi-host.mjs || return 1
 }
 
 run_check() {
@@ -65,8 +81,15 @@ run_check() {
   # would make every phone re-download its own syllabus.
   echo "── data: live feed hashes ──"
   bun scripts/data/publish-feed.ts --check || return 1
+  # Every bundled dataset is decoded and counted, and every public CSV is
+  # scanned for a contact, email, DOB, gender or caste column. A missing file or
+  # a stale count is a silent failure no screen test can see.
+  echo "── data: bundled + public CSVs ──"
+  uv run python scripts/verify.py || return 1
   echo "── nsh check ──"
-  nsh check 2>&1 | tail -40
+  # A migration prints more than the last 40 lines of errors; `CHECK_TAIL` widens
+  # the view without changing what the gate decides.
+  nsh check 2>&1 | tail -"${CHECK_TAIL:-40}"
   return "${PIPESTATUS[0]}"
 }
 
@@ -93,7 +116,7 @@ run_test() {
       if (known) next
     }
     { print }
-  ' | tail -100
+  ' | tail -"${CHECK_TAIL:-100}"
   return "${PIPESTATUS[0]}"
 }
 

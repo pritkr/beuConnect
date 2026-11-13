@@ -35,7 +35,16 @@ import {
   subjectsOf,
 } from "../src/features/pyqs/catalog";
 import { RAW as PDF_RAW, decode as decodePdfs } from "../src/features/pyqs/pdf-catalog";
-import { ALL_STUDENTS, BRANCH_COUNTS, SESSION_COUNTS, TOTAL, studentByReg, studentsInBranch } from "../src/features/students/data";
+import {
+  ALL_STUDENTS,
+  BRANCH_COUNTS,
+  BRANCH_COUNTS_BY_SESSION,
+  SESSION_COUNTS,
+  TOTAL,
+  batchLabel,
+  studentByReg,
+  studentsInBranch,
+} from "../src/features/students/data";
 import { BRANCH_META, BRANCH_PACKS } from "../src/features/syllabus/data/packs";
 import type { BranchPack } from "../src/features/syllabus/parse";
 import { parseSyllabus } from "../src/features/syllabus/parse";
@@ -91,13 +100,32 @@ describe("pyq pdfs", () => {
 });
 
 describe("student register", () => {
-  // In the public source the register is a stub, so this test has nothing to
-  // read. It runs in the maintainer's checkout, where the real data is generated.
   test("the totals add up and a real registration resolves", () => {
+    // In the public source the register is a stub, so this test has nothing to
+    // read. It runs in the maintainer's checkout, where the real data is generated.
     if (ALL_STUDENTS.length === 0) return;
     expect(ALL_STUDENTS.length).toBe(TOTAL);
     expect(Object.values(SESSION_COUNTS).reduce((sum, count) => sum + count, 0)).toBe(TOTAL);
     expect(Object.values(BRANCH_COUNTS).reduce((sum, count) => sum + count, 0)).toBe(TOTAL);
+
+    // The college accordion reads this table; every row of it must add up to the
+    // published count for that batch, and every column to the published branch.
+    const perBatch = Object.values(BRANCH_COUNTS_BY_SESSION).map((counts) =>
+      Object.values(counts).reduce((sum, count) => sum + count, 0),
+    );
+    expect(perBatch.reduce((sum, count) => sum + count, 0)).toBe(TOTAL);
+    for (const [session, counts] of Object.entries(BRANCH_COUNTS_BY_SESSION)) {
+      expect(Object.values(counts).reduce((sum, count) => sum + count, 0)).toBe(SESSION_COUNTS[session]);
+    }
+    for (const [branch, count] of Object.entries(BRANCH_COUNTS)) {
+      const column = Object.values(BRANCH_COUNTS_BY_SESSION).reduce(
+        (sum, counts) => sum + (counts[branch] ?? 0),
+        0,
+      );
+      expect(column).toBe(count);
+    }
+    expect(batchLabel("2024-28")).toBe("2K24");
+    expect(batchLabel("")).toBe("");
 
     expect(studentsInBranch("cse").length).toBe(BRANCH_COUNTS.cse);
 
@@ -180,6 +208,16 @@ describe("pyq shelf coverage", () => {
     const ordered = orderSubjects(allSubjects(), { now: new Date("2026-10-26T12:00:00") });
     expect(ordered.length).toBe(allSubjects().length);
     expect(new Set(ordered.map((subject) => subject.key)).size).toBe(allSubjects().length);
+  });
+
+  test("the current semester sorts first", () => {
+    const now = new Date(2026, 9, 26);
+    const ordered = orderSubjects(allSubjects(), { current: 3, now });
+    expect(ordered.length).toBeGreaterThan(0);
+    expect(ordered[0]?.sem).toBe(3);
+    const firstOther = ordered.findIndex((subject) => subject.sem !== 3);
+    expect(firstOther).toBeGreaterThan(0);
+    expect(ordered.slice(firstOther).every((subject) => subject.sem !== 3)).toBe(true);
   });
 });
 

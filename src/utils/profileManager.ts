@@ -21,6 +21,7 @@ export interface BEUProfile {
 	currentSem: number;
 	lastSgpa?: string;
 	lastCgpa?: string;
+	lastSemChecked?: number;
 }
 
 /**

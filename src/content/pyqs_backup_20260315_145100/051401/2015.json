@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2015",
+    "subject": "Object-Oriented Programming",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051401",
+    "year": 2015,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct option (any seven):",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "Find out the error in following block of code:\n```cpp\nif (x = 100)\n    cout << \"x is 100\";\n```\n(i) 100 should be enclosed in quotations\n(ii) There is no semicolon at end of first line\n(iii) Equals to operator mistake\n(iv) Variable x should not be inside quotation",
+              "id": "1a"
+            },
+            {
+              "text": "Which of the following is not a jump statement in C++?\n(i) Break\n(ii) Goto\n(iii) Exit\n(iv) Switch",
+              "id": "1b"
+            },
+            {
+              "text": "Consider the following statements:\n```cpp\nint *p;\nint i, k;\ni = 142;\nk = i;\np = &i;\n```\nWhich of the following statements changes the value of i to 143?\n(i) k = 143;\n(ii) *k = 143;\n(iii) p = 143;\n(iv) *p = 143;",
+              "id": "1c"
+            },
+            {
+              "text": "Which of the following is false?\n(i) Variable has scope and visibility\n(ii) Variables having scope may not be visible\n(iii) Variables having visibility may not have scope\n(iv) None of the above",
+              "id": "1d"
+            },
+            {
+              "text": "A class cannot be:\n(i) virtual\n(ii) generic\n(iii) inline\n(iv) friend",
+              "id": "1e"
+            },
+            {
+              "text": "Which of the following is/are false?\n(i) Inheritance is deriving new class from existing class\n(ii) In an inheritance, all data and function members of base class are derived by derived class\n(iii) We can specify which data and function members of base class will be inherited by derived class\n(iv) We can add new functions to derived class without recompiling the base class",
+              "id": "1f"
+            },
+            {
+              "text": "What is true about inline functions?\n(i) It's a compulsion on the compiler to make function inline\n(ii) It's a request to the compiler to make the function inline\n(iii) It's the indication to the compiler that the function is recursive\n(iv) It's the indication to the compiler that the function is member function",
+              "id": "1g"
+            },
+            {
+              "text": "The statement `char s = 'A'` will internally assign value to s is:\n(i) 0\n(ii) 90\n(iii) 65\n(iv) 127",
+              "id": "1h"
+            },
+            {
+              "text": "If p is a pointer, then p++ means:\n(i) increment the value of p\n(ii) increment the pointer p\n(iii) increment the address of the variable to which p is pointing\n(iv) increment the value of the variable to which p is pointing",
+              "id": "1i"
+            },
+            {
+              "text": "Which of the following is not the member of class?\n(i) Static function\n(ii) Friend function\n(iii) Constant function\n(iv) Virtual function",
+              "id": "1j"
+            }
+          ]
+        },
+        {
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "text": "Explain template and its type with an example.",
+              "id": "2a",
+              "marks": 7
+            },
+            {
+              "text": "Write a program using function template to find the cube of a given integer, float and double number.",
+              "id": "2b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "text": "What is the output of the following code?\n```cpp\n#include <iostream.h>\nclass A {\npublic:\n    void f() {\n        std::cout << \"A::f\" << std::endl;\n    }\n    virtual void g() {\n        std::cout << \"A::g\" << std::endl;\n    }\n};\n\nclass B : public A {\npublic:\n    void f() {\n        std::cout << \"B::f\" << std::endl;\n    }\n    virtual void g() {\n        std::cout << \"B::g\" << std::endl;\n    }\n};\n\nint main(int argc, char** argv) {\n    A a; B b;\n    A* aPtr = &a;\n    A* bPtr = &b;\n    aPtr->f();\n    aPtr->g();\n    bPtr->f();\n    bPtr->g();\n    return 0;\n}\n```\nIs there anything to be noticed? Explain it.",
+              "id": "3a",
+              "marks": 10
+            },
+            {
+              "text": "What is virtual destructor? How virtual functions call up is maintained?",
+              "id": "3b",
+              "marks": 4
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "text": "Conversion from class to basic type",
+              "id": "4a",
+              "marks": 5
+            },
+            {
+              "text": "Function prototyping",
+              "id": "4b",
+              "marks": 4
+            },
+            {
+              "text": "Overload resolution",
+              "id": "4c",
+              "marks": 5
+            }
+          ],
+          "text": "Explain the following:"
+        },
+        {
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "text": "Write the expressions to represent the following:\n(i) p is a function whose argument is a pointer to an array of characters and which returns a pointer to an integer.\n(ii) p is a function whose argument is a pointer to character and which returns a pointer to an array of ten integers.",
+              "id": "5a",
+              "marks": 7
+            },
+            {
+              "text": "What is encapsulation? What are its advantages? How can encapsulation are enforced in C++?",
+              "id": "5b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "text": "a pointer and a reference;",
+              "id": "6a",
+              "marks": 5
+            },
+            {
+              "text": "new and malloc;",
+              "id": "6b",
+              "marks": 4
+            },
+            {
+              "text": "object and class.",
+              "id": "6c",
+              "marks": 5
+            }
+          ],
+          "text": "Give the difference between\u2014"
+        },
+        {
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "text": "In which situation catch blocks are used? Also give types of catch handler in C++.",
+              "id": "7a",
+              "marks": 7
+            },
+            {
+              "text": "Write a program to show the concept of rethrowing an exception.",
+              "id": "7b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "text": "Explain nested switch () case statement with an example and also show its output.",
+              "id": "8a",
+              "marks": 7
+            },
+            {
+              "text": "What are iteration statements? Write a program in C++ for iteration statements (any one) and also show its output.",
+              "id": "8b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "text": "What is function overloading? How it differs from operator overloading?",
+              "id": "9a",
+              "marks": 7
+            },
+            {
+              "text": "What are the differences between a C++ struct and C++ class?",
+              "id": "9b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

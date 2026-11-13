@@ -35,7 +35,7 @@ export function TabBar(props: { active: string; onSelect: (name: string) => void
           const on = props.active === tab.name;
           return (
             <View
-              class={`flex-1 items-center justify-center gap-1 rounded-[18px] pb-1 pt-2 focus:ring-2 focus:ring-ring ${
+              class={`flex-1 items-center justify-center gap-1 rounded-[18px] pb-1 pt-2 active:opacity-70 focus:ring-2 focus:ring-ring ${
                 on ? "bg-muted" : "active:bg-muted/60"
               }`}
               onPress={() => props.onSelect(tab.name)}
@@ -51,12 +51,16 @@ export function TabBar(props: { active: string; onSelect: (name: string) => void
               />
               <Text
                 class={`text-[11px] ${on ? "font-bold text-foreground" : "font-medium text-muted-foreground"}`}
-                numberOfLines={1}
+                style={{ numberOfLines: 1 }}
                 maxFontSizeMultiplier={1.4}
               >
                 {tab.label}
               </Text>
-              <View class={`h-[3px] w-5 rounded-full ${on ? "bg-primary" : "bg-transparent"}`} />
+              <View
+                class={`h-[3px] w-5 rounded-full ${
+                  on ? "bg-primary" : "bg-transparent"
+                }`}
+              />
             </View>
           );
         })}

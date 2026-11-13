@@ -16,6 +16,7 @@
  * helpers in `lib/net` serve the last cached copy when a request fails.
  */
 
+import { noteStudent } from "../../lib/analytics";
 import { NetError, SITE, fetchJson, fetchText, getCache, putCache, readStore, writeStore } from "../../lib/net";
 import { collegeName } from "./colleges";
 import type { ParsedResult } from "./parse-html";
@@ -143,6 +144,19 @@ export const BRANCHES: BranchDef[] = [
   { code: "110", name: "Electrical & Electronics Engineering", short: "EEE" },
   { code: "161", name: "Electrical & Electronics Engineering (161)", short: "EEE" },
 ];
+
+/**
+ * Profile/syllabus branch paths mapped to BEU's numeric branch codes, so a
+ * saved `cse` fills a result table's `105` chip.
+ */
+export const BRANCH_CODE_BY_PATH: Record<string, string> = {
+  civil: "101",
+  mech: "102",
+  ee: "103",
+  ece: "104",
+  cse: "105",
+  eee: "110",
+};
 
 /**
  * Which (batch, branch) tables BEU has published, per semester. Mirrors the
@@ -1157,17 +1171,30 @@ const TABLE_KEY = "results.table.prefs";
 
 export async function readRecent(): Promise<RecentLookup[]> {
   const rows = await readStore<RecentLookup[]>(RECENT_KEY, []);
-  return Array.isArray(rows) ? rows.filter((row) => row && typeof row.reg === "string") : [];
+  const clean = Array.isArray(rows) ? rows.filter((row) => row && typeof row.reg === "string") : [];
+  // Analytics reads the saved number here rather than in the tracker: the key
+  // belongs to this feature, and the tracker only ever sees the hash.
+  noteStudent(clean[0]?.reg ?? "", labelsFor(clean[0]?.reg ?? ""));
+  return clean;
+}
+
+/** A registration number's readable branch and college, from this module's tables. */
+function labelsFor(reg: string): { branchName: string; collegeName: string } {
+  const info = parseReg(reg);
+  if (!info) return { branchName: "", collegeName: "" };
+  return { branchName: branchName(info.branch), collegeName: collegeName(info.college) };
 }
 
 export async function rememberLookup(entry: RecentLookup): Promise<void> {
   const rows = await readRecent();
+  noteStudent(entry.reg, labelsFor(entry.reg));
   const numeric = digits(entry.reg);
   const next = [entry, ...rows.filter((row) => !(digits(row.reg) === numeric && row.sem === entry.sem))].slice(0, 8);
   await writeStore(RECENT_KEY, next);
 }
 
 export async function forgetRecent(): Promise<void> {
+  noteStudent("");
   await writeStore(RECENT_KEY, [] as RecentLookup[]);
 }
 
@@ -1178,16 +1205,19 @@ export interface TablePrefs {
   college: string;
 }
 
-export async function readTablePrefs(): Promise<TablePrefs> {
-  const fallback: TablePrefs = { batch: batches()[0] ?? "25", branch: "105", sem: 1, college: "" };
+export async function readSavedTablePrefs(): Promise<TablePrefs | null> {
   const stored = await readStore<TablePrefs | null>(TABLE_KEY, null);
-  if (!stored || typeof stored.batch !== "string" || typeof stored.branch !== "string") return fallback;
+  if (!stored || typeof stored.batch !== "string" || typeof stored.branch !== "string") return null;
   return {
     batch: stored.batch,
     branch: stored.branch,
     sem: Number(stored.sem) || 1,
     college: typeof stored.college === "string" ? stored.college : "",
   };
+}
+
+export async function readTablePrefs(): Promise<TablePrefs> {
+  return (await readSavedTablePrefs()) ?? { batch: batches()[0] ?? "25", branch: "105", sem: 1, college: "" };
 }
 
 export async function writeTablePrefs(prefs: TablePrefs): Promise<void> {

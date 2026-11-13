@@ -1,0 +1,326 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2017",
+    "subject": "ELECTROMAGNETIC FIELD THEORY",
+    "subject_slug": "electromagnetic-field-theory",
+    "subject_code": "031506",
+    "year": 2017,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct alternatives for any seven of the following :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "A Gaussian surface for application is",
+              "options": [
+                "a closed surface",
+                "a symmetrical closed surface",
+                "a semi-closed surface",
+                "any surface"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Which one of the following statements is not characteristic of a static magnetic field?",
+              "options": [
+                "It is conservative",
+                "It is solenoidal",
+                "It has link and sources",
+                "Magnetic flux lines are always closed"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Electric field in a region containing space charges can be found using",
+              "options": [
+                "Laplace's equation",
+                "Poisson's equation",
+                "Coulomb's law",
+                "Helmholtz equation"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "In a transmission line, electromagnetic energy is transported by",
+              "options": [
+                "the flow of electrons",
+                "the flow of electrons and holes",
+                "the associated electric and magnetic field",
+                "electric field only"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "In a certain region, the electric field $E = 0$, potential $V$, there must be",
+              "options": [
+                "zero",
+                "a constant",
+                "a function of position",
+                "infinity"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The work done by the force $F = 4a_x - 3a_y + 2a_z\\text{ N}$ in giving a $1\\text{ nC}$ charge a displacement of $10a_x + 2a_y - 7a_z\\text{ m}$ is",
+              "options": [
+                "103 nJ",
+                "60 nJ",
+                "64 nJ",
+                "20 nJ"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Which of the following is a mathematically incorrect expression?",
+              "options": [
+                "$\\text{grad div}$",
+                "$\\text{curl grad}$",
+                "$\\text{div grad}$",
+                "$\\text{curl curl}$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The flux through each turn of a 100 turn coil is $(t^3 - 2t)\\text{ m Wb}$, where $t$ is in seconds. The induced e.m.f. at $t = 2\\text{s}$ is",
+              "options": [
+                "1 V",
+                "-1 V",
+                "4 mV",
+                "0.4 V"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Which is the major factor for determining whether a medium is free space, lossless dielectric, loss dielectric or good conductor?",
+              "options": [
+                "Attenuation constant",
+                "Constitutive parameters $(\\alpha, \\epsilon, \\mu)$",
+                "Loss tangent",
+                "Reflection coefficient"
+              ],
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Answer the following :",
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Find the divergence and curl of the following vectors $A = x^2 yz\\ a_x + xz\\ a_z$.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Given the point $P(-2, 6, 3)$. Express $P$ in cylindrical and spherical coordinates.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "A point charge of $30\\text{ nC}$ is located at the origin while plane $y = 3$ carries charge $10\\text{ nC}/\\text{m}^2$. Find $D$ at $(0, 4, 3)$.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "A thin ring of radius $5\\text{ cm}$ is placed on the plane $z = 1\\text{ cm}$ so that its centre is at $(0, 0, 1)\\text{ cm}$. If the ring carries $50\\text{ mA}$ along $a_\\phi$, find $H$ at $(0, 0, -1)\\text{ cm}$.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Answer the following :",
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Derive the following equations :\n(i) $\\nabla \\times H = J$\n(ii) $\\nabla \\times B = 0$",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Determine the self-inductance of a coaxial cable of inner radius $a$ and outer radius $b$.",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Find the force on a straight conductor of length $0.20\\text{ m}$ carrying a current of $5.0\\text{ A}$ in the $a_z$ direction, where the field is $B = 4 \\times 10^3 (a_x + a_y)\\text{ tesla}$.",
+              "id": "3_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Answer the following :",
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "State and explain the significance of Helmholtz's theorem.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Write Lorentz force equation. Hence obtain the expression of force acting on a straight conduction of length $L$ in a uniform magnetic field $B$.",
+              "id": "4_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Answer the following :",
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the following :\n(i) Divergence of a vector field\n(ii) Gradient of a scalar field",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Consider the volume current density distribution in cylindrical coordinates as\n$J(r, \\phi, z) = 0, \\quad 0 < r < a$\n$J(r, \\phi, z) = J_0 (r/a) a_z, \\quad a < r < b$\n$= 0, \\quad b < r < \\infty$\nFind the magnetic field intensity $H$ in various regions.",
+              "id": "5_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Answer the following :",
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Derive wave equation for lossy dielectric medium.",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What is propagation constant?",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Derive the expression for intrinsic impedance for lossy dielectric medium.",
+              "id": "6_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Answer the following :",
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Transform a vector $A = y a_x - x a_y + z a_z$ into cylindrical coordinate.",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "State the expression of divergence for three-coordinate system.",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "In electrostatic field problem, the electric field is given by $E = -\\text{grad } V$, where $V$ is the scalar field potential. If $V = r^2 \\phi - 2\\theta$ in spherical coordinate, find $E$.",
+              "id": "7_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Answer the following :",
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Determine the charge densities due to each of the following electric flux densities :\n(i) $D = (r \\sin \\theta) \\hat{r} + (3r \\cos \\phi) \\hat{\\phi} + (z^2) \\hat{k}$\n(ii) $D = \\left( \\frac{2 \\cos \\theta}{r^3} \\right) \\hat{r} + \\left( \\frac{\\sin \\theta}{r^3} \\right) \\hat{\\theta}$",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "A spherical charge distribution is given by\n$\\rho = \\rho_0 \\left( \\frac{r}{a} \\right), \\quad r < a$\n$0, \\quad r > a$\nFind $V$ and $E$ everywhere.",
+              "id": "8_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "Write short notes of the following :",
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Stokes theorem",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Green's theorem",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Helmholtz theorem",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Laplace and Poisson's equation",
+              "id": "9_sub",
+              "marks": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

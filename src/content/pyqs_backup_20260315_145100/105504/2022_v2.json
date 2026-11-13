@@ -1,0 +1,318 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2022",
+    "subject": "Software Engineering",
+    "subject_slug": "software-engineering",
+    "subject_code": "105504",
+    "year": 2022,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven questions\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "The spiral model was originally proposed by",
+          "options": [
+            "IBM",
+            "Barry Boehm",
+            "Pressman",
+            "Royce"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "Measure of reliability is given by",
+          "options": [
+            "mean time between success",
+            "MTBF",
+            "mean reliable",
+            "MTTR"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "Which of the following is not a use of a CASE tool?",
+          "options": [
+            "It supports structured analysis and design (SA/SD)",
+            "It maintains the data dictionary",
+            "It checks whether DFDs are balanced or not",
+            "It compiles with the available system"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "Name of an evaluation technique to assess the quality of test cases is",
+          "options": [
+            "mutation analysis",
+            "validation",
+            "verification",
+            "performance analysis"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "What is the most popular model for student program?",
+          "options": [
+            "Waterfall model",
+            "Built-and-fix model",
+            "Spiral model",
+            "Rational unified model"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "Which of the following is not a part of bug report?",
+          "options": [
+            "Test case",
+            "Output",
+            "Software version",
+            "LOC"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Independent modules are easier to maintain and test because of",
+          "options": [
+            "code modification is limited",
+            "reusable modules are possible",
+            "error propagation is reduced",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "In size-oriented metrics, metrics are developed based on the",
+          "options": [
+            "number of functions",
+            "number of user inputs",
+            "number of lines of code",
+            "amount of memory usage"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "Classes communicate with one another via",
+          "options": [
+            "processed information",
+            "interfaces",
+            "messages",
+            "coupling"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "Software is not considered to be collection of executable programming code, associated libraries\n                        and\n                        documentations.",
+          "options": [
+            "Statement is true",
+            "Software is only data structures with algorithms",
+            "Statement is false",
+            "Statement underestimates software"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Explain in detail the classical waterfall model with help of a neat and labelled diagram."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "What is prototyping model? Explain the problems and advantages of prototyping in detail.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Develop a test case for any testing technique for 'student admission system'.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Define cohesion and coupling. Explain various types of each of them.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "What are CASE tools? With a suitable diagram, explain the categories of CASE tools.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "What are the different COCOMO models? Explain the phases involved in the detailed COCOMO model."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "What are the types of user-interface design?"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Explain the stages of object-oriented design process."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Unified modelling language</li>\n<li>Object-oriented analysis modelling</li>\n<li>Object-oriented design concepts and methods</li>\n</ul>",
+          "options": [
+            "Unified modelling language",
+            "Object-oriented analysis modelling",
+            "Object-oriented design concepts and methods"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Explain coding standards, coding guidelines and code review techniques in detail."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "What is software quality? Discuss software quality attributes.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "Discuss the differences between object-oriented and function-oriented designs.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

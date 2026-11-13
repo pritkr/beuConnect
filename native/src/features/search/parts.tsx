@@ -43,7 +43,7 @@ export function SearchField(props: {
         testID="search-input"
         class="min-h-11 flex-1 bg-transparent text-[16px] text-foreground placeholder:text-muted-foreground"
         value={props.value}
-        onChange={props.onChange}
+        onChange={({ value }) => props.onChange(value)}
         onSubmit={(event) => props.onSubmit(event.text)}
         placeholder={props.placeholder}
         accessibilityLabel="Search everything"
@@ -116,7 +116,7 @@ export function KindChip(props: { kind: HitKind }) {
       class={`h-6 w-[42px] shrink-0 items-center justify-center rounded-full ${TONES[props.kind]}`}
       accessibilityElementsHidden
     >
-      <Text class="text-[9px] font-bold uppercase tracking-[0.06em]" numberOfLines={1}>
+      <Text class="text-[9px] font-bold uppercase tracking-[0.06em]" style={{ numberOfLines: 1 }}>
         {KIND_CHIP[props.kind]}
       </Text>
     </View>
@@ -135,13 +135,13 @@ export function Highlight(props: { text: string; term: string; class?: string; n
   const at = term.length > 0 ? props.text.toLowerCase().indexOf(term) : -1;
   if (at < 0) {
     return (
-      <Text class={props.class} numberOfLines={props.numberOfLines}>
+      <Text class={props.class} style={{ numberOfLines: props.numberOfLines }}>
         {props.text}
       </Text>
     );
   }
   return (
-    <Text class={props.class} numberOfLines={props.numberOfLines}>
+    <Text class={props.class} style={{ numberOfLines: props.numberOfLines }}>
       {at > 0 ? props.text.slice(0, at) : null}
       <Text class="font-bold text-primary-ink">{props.text.slice(at, at + term.length)}</Text>
       {props.text.slice(at + term.length)}
@@ -165,7 +165,7 @@ export function ResultRow(props: {
 }) {
   return (
     <Row
-      class="min-h-[52px] rounded-3xl border border-border bg-card px-3.5 py-2.5 active:scale-[0.99] active:bg-muted focus:ring-2 focus:ring-ring"
+      class="min-h-[52px] rounded-3xl border border-border bg-card px-3.5 py-2.5 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted focus:ring-2 focus:ring-ring"
       onPress={props.onPress}
       label={`${KIND_TITLE[props.kind]}: ${props.title}. ${props.meta}`}
     >

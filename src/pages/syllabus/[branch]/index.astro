@@ -2,8 +2,6 @@
 export const prerender = true;
 import branchConfig from "../../../assets/data/config.json";
 import Layout from "../../../layouts/Layout.astro";
-import Header from "../../../components/header.astro";
-import Footer from "../../../components/footer.astro";
 
 export async function getStaticPaths() {
 	return branchConfig.branches.map((branch) => ({
@@ -14,28 +12,103 @@ export async function getStaticPaths() {
 const { branch } = Astro.params;
 const branchInfo = branchConfig.branches.find((b) => b.code === branch);
 if (!branchInfo) throw new Error(`Unknown branch: ${branch}`);
+
+const syllabus = (await import(`../../../assets/data/branches/${branchInfo.file}.json`)).default;
+const semesters = Array.from({ length: 8 }, (_, i) => {
+	const sem = i + 1;
+	const entry = syllabus?.semesters?.[String(sem)];
+	const subjects = Array.isArray(entry?.subjects) ? entry.subjects : [];
+	const credits = subjects.reduce((total, subject) => total + (Number(subject.credits) || 0), 0);
+	return { sem, subjects: subjects.length, credits };
+});
 ---
 
-<Layout title={`${branchInfo.name} Syllabus`}>
-    <Header />
-    <h1><a href="../" style="view-transition-name:beusyl">←BEU Syllabus</a></h1>
-    <h2 style={`view-transition-name:${branch}`}>{branchInfo.name}</h2>
-    <h2>Semesters</h2>
+<Layout
+    title={`${branchInfo.name} syllabus`}
+    description={`${branchInfo.name} syllabus for semesters 1 to 8.`}
+>
+    <header class="page-head">
+        <div>
+            <p class="back">
+                <a href={`${import.meta.env.BASE_URL}syllabus/`} style="view-transition-name:beusyl">Syllabus</a>
+            </p>
+            <h1 style={`view-transition-name:${branch}`}>{branchInfo.name}</h1>
+            <p class="meta">Semesters 1–8</p>
+        </div>
+    </header>
 
-    <ul>
+    <ol class="semester-list">
         {
-            Array.from({ length: 8 }, (_, i) => i + 1).map((sem) => (
+            semesters.map((entry) => (
                 <li>
                     <a
-                        href={`${import.meta.env.BASE_URL}syllabus/${branch}/${sem}/`}
-                        style={`view-transition-name:sem${sem}`}
+                        href={`${import.meta.env.BASE_URL}syllabus/${branch}/${entry.sem}/`}
+                        style={`view-transition-name:sem${entry.sem}`}
                     >
-                        Semester {sem}
+                        <span class="num">Semester {entry.sem}</span>
+                        {entry.subjects > 0 && (
+                            <span class="detail num">
+                                {entry.subjects} subjects
+                                {entry.credits > 0 && ` · ${entry.credits} credits`}
+                            </span>
+                        )}
+                        <span class="arrow" aria-hidden="true">→</span>
                     </a>
                 </li>
             ))
         }
-    </ul>
+    </ol>
 
-    <Footer />
+    <style>
+        .back {
+            margin: 0 0 var(--s2);
+            font-size: 0.78rem;
+        }
+
+        .back a {
+            color: var(--faint);
+            text-decoration: none;
+        }
+
+        .back a:hover {
+            color: var(--paper);
+        }
+
+        .semester-list {
+            margin: var(--s5) 0 0;
+            padding: 0;
+            list-style: none;
+            border-top: 1px solid var(--line-strong);
+        }
+
+        .semester-list li {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .semester-list a {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: var(--s4);
+            padding: var(--s3) 0;
+            color: var(--paper);
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .semester-list a:hover .num {
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+        }
+
+        .detail {
+            margin-left: auto;
+            color: var(--faint);
+            font-size: 0.8rem;
+        }
+
+        .arrow {
+            color: var(--faint);
+        }
+    </style>
 </Layout>

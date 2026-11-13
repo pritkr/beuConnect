@@ -54,6 +54,9 @@ roster — and must never be a screen's default.
 - All four read the same roster/wide model; do not fork the maths.
 - `ranking.ts` and `data.ts` are the pure functions; test them in `qa/unit/`.
 - Never invent a rank, a tie-break or a CGPA. A missing row is missing.
+- A typed number opens its own class semester, clamped to the newest published
+  table. A table with no CGPA says so and offers the newest one instead of
+  printing `of 0 ranked`.
 - `results.table` prefs and `results.recent` are persisted — keep the keys.
 
 ## Files

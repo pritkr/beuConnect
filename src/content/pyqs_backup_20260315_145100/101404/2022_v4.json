@@ -1,0 +1,296 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2022",
+    "subject": "Introduction to Fluid Mechanics",
+    "subject_slug": "introduction-to-fluid-mechanics",
+    "subject_code": "101404",
+    "year": 2022,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Two fluids 1 and 2 have mass densities of \\( \\rho_1 \\) and \\( \\rho_2 \\) respectively. If\n                        \\(\n                        \\rho_1 &gt; \\rho_2 \\), which one of the following expressions will represent the relation\n                        between\n                        their specific volumes \\( v_1 \\) and \\( v_2 \\)?</p>",
+          "options": [
+            "\\( v_1 &gt; v_2 \\)",
+            "\\( v_1 &lt; v_2 \\)",
+            "\\( v_1 = v_2 \\)",
+            "Cannot be determined due to insufficient information"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which one of the following is the dimension of mass density?</p>",
+          "options": [
+            "\\( [M^1L^{-3}T^0] \\)",
+            "\\( [M^1L^3T^0] \\)",
+            "\\( [M^0L^{-3}T^0] \\)",
+            "\\( [M^0L^3T^0] \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Specific gravity is what kind of property?</p>",
+          "options": [
+            "Intensive",
+            "Extensive",
+            "None of the above",
+            "It depends on external conditions"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following is the dimension of kinematic viscosity?</p>",
+          "options": [
+            "\\( [L^1T^{-1}] \\)",
+            "\\( [L^1T^{-2}] \\)",
+            "\\( [L^2T^{-1}] \\)",
+            "\\( [L^2T^{-2}] \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The rise in the level of a liquid in a tube is h. What will be the rise in the level if the same\n                        amount of liquid is poured into a tube of half the diameter?</p>",
+          "options": [
+            "0",
+            "h/2",
+            "h",
+            "2h"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A hydraulic press has a ram of 30 cm diameter and a plunger of 2 cm diameter. It is used for\n                        lifting\n                        a weight of 35 kN. Find the force required at the plunger.</p>",
+          "options": [
+            "233.3 kN",
+            "311.1 kN",
+            "466.6 kN",
+            "155.5 kN"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Can the flow inside a nozzle be steady and uniform?</p>",
+          "options": [
+            "Yes",
+            "Never",
+            "It can be steady but never uniform",
+            "It can be uniform but never steady"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>What is the maximum number of times the pathlines of two particles can intersect in a\n                        one-dimensional\n                        flow?</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "Infinite"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Darcy-Weisbach equation gives relation between</p>",
+          "options": [
+            "pressure and temperature",
+            "mass, volume and pressure",
+            "head loss and pressure loss",
+            "pressure loss only"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The main property that affects a boundary layer is</p>",
+          "options": [
+            "temperature",
+            "pressure",
+            "viscosity",
+            "surface tension"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all questions :",
+      "total_marks": 3,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>State the difference between solid and fluid under the action of various forces.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>What is kinematic viscosity? What are its units?</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>A U-tube is made up of two capillaries of bores 1.2 mm and 2.4 mm respectively. The tube is held\n                        vertical and partially filled with liquid of surface tension \\( 0.06 \\, N/m \\) and zero\n                        contact\n                        angle. If the estimated difference in the level of two menisci is 15 mm, determine the mass\n                        density\n                        of the liquid.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>The velocity distribution in a viscous flow over a flat plate is given by \\( u = 4y - y^2 \\)\n                        where\n                        u is the velocity in \\( m/s \\) at a distance of y metre normal to the plate. If the dynamic\n                        viscosity of fluid is \\( 1.6 \\, Ns/m^2 \\), determine the shear stress at \\( y = 0 \\) m and\n                        \\( y\n                        = 0.1 \\) m.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Determine the gauge pressure at point a shown in Fig. 1, if liquid A has \\( SG=0.75 \\) and\n                        liquid B\n                        has \\( SG=1.20 \\). The liquid surrounding point a is water, and the tank on the left is open\n                        to\n                        the atmosphere.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/115.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>The tank shown in Fig. 2 is 3 m wide into the paper. Neglecting atmospheric pressure, compute the\n                        hydrostatic (i) horizontal force, (ii) vertical force and (iii) resultant force on\n                        quarter-circle\n                        panel BC.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/116.jpg\"/>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Derive the expressions for total pressure and centre of pressure for a vertically immersed\n                        surface.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 9,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>The stream function in a two-dimensional, incompressible flow field is given as \\( \\Psi = A(x^2\n                        -\n                        y^2) \\). <br/> (i) Determine the velocity components. <br/> (ii) Determine whether the above flow\n                        field represents a possible case of an incompressible flow or not. <br/> (iii) Obtain an\n                        expression\n                        for the velocity potential.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Distinguish among pathlines, streamlines and streaklines.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Petroleum oil (specific gravity = 0.9 and viscosity = \\( 0.013 \\, Ns/m^2 \\)) flows\n                        isothermally\n                        through a horizontal 5 cm pipe. A Pitot tube is inserted at the centre of a pipe and its leads\n                        are\n                        filled with the same oil and attached to a U-tube containing water. The reading on the manometer\n                        is\n                        10 cm. Calculate the volumetric flow of oil in \\( m^3/s \\). The coefficient of Pitot tube is\n                        0.98.\n                    </p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Describe an orifice meter and find an expression for measuring discharge of fluid through a pipe\n                        with\n                        this device. List all the assumptions made.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve all questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>The load carrying capacity W, of a journal bearing is known to depend on its diameter D, length l\n                        and\n                        clearance c, in addition to its angular speed \\( \\omega \\), and lubricant viscosity \\( \\mu\n                        \\).\n                        Establish a dimensionless relationship of these parameters with the help of Buckingham's \\(\n                        \\pi\n                        \\)\n                        theorem.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>What are meant by geometric, kinematic and dynamic similarities?</p>"
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>What do you understand by total energy line and hydraulic gradient line?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Oil, with \\( \\rho = 900 \\, kg/m^3 \\) and \\( \\nu = 0.00001 \\, m^2/s \\), flows at \\( 0.2\n                        \\,\n                        m^3/s\n                        \\) through 500 m of 200 mm diameter cast-iron pipe. Determine (i) the head loss and (ii) the\n                        pressure drop if the pipe slopes down at \\( 10^{\\circ} \\) in the flow direction.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Find the loss of head when a pipe of diameter 200 mm is suddenly enlarged to a diameter of 400\n                        mm.\n                        The rate of flow of water through the pipe is \\( 250 \\, litres/s \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve all questions :",
+      "total_marks": 5,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What is a siphon? On what principle it works?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>How would you distinguish between hydrodynamically smooth and rough pipe?</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>What are meant by scale and intensity of turbulence in turbulent flow?</p>"
+        }
+      ]
+    }
+  ]
+}

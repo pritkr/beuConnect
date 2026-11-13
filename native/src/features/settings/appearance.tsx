@@ -8,12 +8,11 @@
  * app changes around it.
  */
 
-import { Text, View, signal, colorScheme } from "nsh";
+import { Text, View, fontScale, signal } from "nsh";
 
-import { Badge, Body, Label, Muted, Panel, Screen, SectionHeader, Subtitle } from "../../ui";
+import { Badge, Body, Label, Muted, Panel, Screen, SectionHeader } from "../../ui";
 import type { Scheme } from "./prefs";
 import { schemeHint, schemeLabel, setAppearance, useAppearance } from "./prefs";
-import { ScreenIntro } from "./ui";
 
 const PALETTES: Record<"light" | "dark", { bg: string; card: string; ink: string; primary: string; accent: string }> = {
   light: { bg: "#FBF8F4", card: "#FFFFFF", ink: "#17130F", primary: "#E4572E", accent: "#0E6B5C" },
@@ -57,16 +56,8 @@ export function AppearanceScreen() {
   return (
     <Screen>
       <Body>
-        <ScreenIntro
-          label="Look"
-          title="Appearance"
-        />
-
         <Panel tone="plain" class="gap-3">
-          <View class="flex-row items-center justify-between gap-2">
-            <Label>Live preview</Label>
-            <Badge tone="mint">Ink &amp; Ember</Badge>
-          </View>
+          <Label>Live preview</Label>
           <View class="gap-1">
             <Text class="text-[18px] font-bold tracking-tight text-foreground">Semester 5</Text>
           </View>
@@ -90,7 +81,7 @@ export function AppearanceScreen() {
           return (
             <View
               class={`gap-3 rounded-3xl border p-4 ${
-                active ? "border-primary bg-primary/8" : "border-border bg-card"
+                active ? "border-primary bg-primary/10" : "border-border bg-card"
               } active:opacity-80`}
               onPress={() => choose(option)}
               role="radio"
@@ -109,25 +100,31 @@ export function AppearanceScreen() {
                   <Text class="text-[15px] font-semibold text-foreground">{schemeLabel(option)}</Text>
                   <Text class="text-[12px] text-muted-foreground">{schemeHint(option)}</Text>
                 </View>
-                {active ? <Badge tone="ember">Active</Badge> : null}
               </View>
               <Swatches scheme={option} />
             </View>
           );
         })}
 
-        <Muted class="px-1">
-          Currently showing: {colorScheme() === "dark" ? "dark" : "light"}
-          {appearance() === "system" ? " (following the phone)" : ""}.
-        </Muted>
-
         <Panel tone="amber" class="gap-1">
           <Label>Device-wide</Label>
           <Muted class="text-[12px] leading-5">
-            This choice applies to the whole app, not one screen: dialogs, the native header and the status bar follow
-            it too. It is saved on this phone and applied again on the next launch.
+            The whole app follows this choice — dialogs, the native header and the status bar too. It is saved on this
+            phone and applied on the next launch.
           </Muted>
         </Panel>
+
+        <SectionHeader title="Text size" />
+        <View class="gap-3 rounded-3xl border border-border bg-card p-4">
+          <View class="flex-row items-center justify-between gap-3">
+            <Text class="text-[15px] font-semibold text-foreground">Text size</Text>
+            <Badge tone="neutral">{fontScale().toFixed(1)}× · System</Badge>
+          </View>
+          <Text class="text-[13px] leading-5 text-muted-foreground">Unit 3 · Trees and graphs</Text>
+          <Text class="text-[15px] font-semibold leading-6 text-foreground">Data Structures & Algorithms</Text>
+          <Text class="text-[20px] font-bold leading-7 tracking-tight text-foreground">Semester 5</Text>
+          <Muted>Follows the phone. Android: Settings → Display → Font size.</Muted>
+        </View>
 
         {failed() ? (
           <Panel tone="plain" class="gap-1">

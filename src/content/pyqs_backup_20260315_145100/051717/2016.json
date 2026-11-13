@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 7th Semester Examination, 2016",
+    "subject": "Artificial Intelligence",
+    "subject_slug": "artificial-intelligence",
+    "subject_code": "051717",
+    "year": 2016,
+    "semester": 7,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this paper.",
+    "Attempt Five Question in all.",
+    "Question No. 1 is Compulsory.",
+    "The marks are indicated in the right hand margin."
+  ],
+  "sections": [
+    {
+      "section_title": "Section A",
+      "questions": [
+        {
+          "id": "q1",
+          "type": "theory",
+          "text": "Answer any seven question of the following.",
+          "marks": 14,
+          "parts": [
+            {
+              "id": "q1_i",
+              "type": "theory",
+              "text": "Differentiate Information, Knowledge and Meta Knowledge with reference to Artificial Intelligence."
+            },
+            {
+              "id": "q1_ii",
+              "type": "theory",
+              "text": "What is Best First Search? Explain in brief that Breadth First Search and Depth First Search are special cases of Best First Search."
+            },
+            {
+              "id": "q1_iii",
+              "type": "theory",
+              "text": "Explain Syntactic analysis in short."
+            },
+            {
+              "id": "q1_iv",
+              "type": "theory",
+              "text": "Explain non-monotonic reasoning with example."
+            },
+            {
+              "id": "q1_v",
+              "type": "theory",
+              "text": "What is Minimax Procedure?"
+            },
+            {
+              "id": "q1_vi",
+              "type": "theory",
+              "text": "What are confidence factors?"
+            },
+            {
+              "id": "q1_vii",
+              "type": "theory",
+              "text": "Difference between Classical and Fuzzy Logic."
+            },
+            {
+              "id": "q1_viii",
+              "type": "theory",
+              "text": "How Formal Probability theory differs from Bayesian Probability theory?"
+            },
+            {
+              "id": "q1_ix",
+              "type": "theory",
+              "text": "Explain Bayesian Networks."
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "type": "theory",
+          "text": "What is heuristic search? Explain with example. Also write heuristic function for Hill Climbing and Tic-Tac-Toe.",
+          "marks": 14
+        },
+        {
+          "id": "q3",
+          "type": "theory",
+          "text": "Distinguish between fuzzy Reasoning and probabilistic reasoning with examples.",
+          "marks": 14
+        },
+        {
+          "id": "q4",
+          "type": "theory",
+          "text": "Explain Logical Representation Scheme and Procedural Representation Scheme in detail.",
+          "marks": 14
+        },
+        {
+          "id": "q5",
+          "type": "theory",
+          "text": "Let Ax: \"x is an astronaut\", Px: \"x is a planet\", and V(x, y): \"x will travel to y\". Give Well-Formed Formula for the below.",
+          "marks": 14,
+          "parts": [
+            {
+              "id": "q5_a",
+              "type": "theory",
+              "text": "Some astronauts will travel to every planet."
+            },
+            {
+              "id": "q5_b",
+              "type": "theory",
+              "text": "Other astronauts will travel to no planets."
+            },
+            {
+              "id": "q5_c",
+              "type": "theory",
+              "text": "Every planet will be visited by some astronauts."
+            },
+            {
+              "id": "q5_d",
+              "type": "theory",
+              "text": "Every astronaut will travel to at least one planet."
+            },
+            {
+              "id": "q5_e",
+              "type": "theory",
+              "text": "No astronaut will travel only one planet."
+            },
+            {
+              "id": "q5_f",
+              "type": "theory",
+              "text": "Some astronauts will travel many planets."
+            },
+            {
+              "id": "q5_g",
+              "type": "theory",
+              "text": "No planet will be visited by all astronauts."
+            }
+          ]
+        },
+        {
+          "id": "q6",
+          "type": "theory",
+          "text": "Explain Understanding, Perception, Learning and generation in Natural Language Processing.",
+          "marks": 14
+        },
+        {
+          "id": "q7",
+          "parts": [
+            {
+              "id": "q7_a",
+              "type": "theory",
+              "text": "How are the symbolic structures formed in predicate logic?",
+              "marks": 7
+            },
+            {
+              "id": "q7_b",
+              "type": "theory",
+              "text": "Define WFF. Write down the properties of WFF.",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "q8",
+          "type": "theory",
+          "text": "Explain in detail AO* algorithm and search procedure with a suitable example.",
+          "marks": 14
+        },
+        {
+          "id": "q9",
+          "type": "theory",
+          "text": "Write Short note on:",
+          "marks": 14,
+          "parts": [
+            {
+              "id": "q9_a",
+              "type": "theory",
+              "text": "Limitations of Expert Systems."
+            },
+            {
+              "id": "q9_b",
+              "type": "theory",
+              "text": "Structured representation of knowledge."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

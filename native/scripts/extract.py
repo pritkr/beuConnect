@@ -42,10 +42,13 @@ def read_json(path: Path) -> Any:
         return json.load(fh)
 
 
+def serialize(data: Any) -> str:
+    return json.dumps(data, ensure_ascii=False, indent=1) + "\n"
+
+
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    text = json.dumps(data, ensure_ascii=False, indent=1)
-    path.write_text(text + "\n", encoding="utf-8")
+    path.write_text(serialize(data), encoding="utf-8")
 
 
 def tidy(value: str | None) -> str:
@@ -87,12 +90,26 @@ UNIT_RE = re.compile(
     r"(?im)^[ \t]*(unit|module|part)\s*[-–—:.]*\s*(\d+(?:\.\d+)?)\b"
 )
 NUMBERED_RE = re.compile(
-    r"(?m)^[ \t]*(?:\d{1,2}\s*[.)]|\(\s*\d{1,2}\s*\))\s+"
+    r"(?m)^[ \t]*(?:\d{1,2}\s*[.)]|\(\s*\d{1,2}\s*\)|LE\s*-\s*\d{1,2})\s+"
 )
 HOURS_RE = re.compile(
     r"\(?\s*(\d+(?:\.\d+)?)\s*(?:hrs?|hours?|lectures?|periods?)\s*\)?",
     re.IGNORECASE,
 )
+GENERIC_HEADINGS = {
+    "course content",
+    "course contents",
+    "course overview",
+    "overview",
+    "contents",
+    "detailed contents",
+    "list of experiments",
+    "list of programs",
+    "experiments",
+    "practicals",
+}
+
+
 REFERENCE_RE = re.compile(
     r"(?im)^[ \t]*references?\s*:"
     r"|\btexts?\s*/\s*references?\s*:?"
@@ -185,6 +202,20 @@ def derive_heading(value: str, fallback: str) -> str:
     return fallback
 
 
+def prose_heading(value: str) -> str:
+    """Short heading for a long experiment or prose line.
+
+    Uses the leading phrase before any bullet glyph, then the first sentence,
+    so numbered lab lists do not collapse into one repeated label.
+    """
+    lead = re.split(r"\s*[\u27a2\u2022\u00b7|]\s*", tidy(value), maxsplit=1)[0]
+    lead = re.split(r"\s+Laboratory\s", lead, maxsplit=1)[0]
+    lead = clean_title(lead)
+    if 3 <= len(lead) <= 100:
+        return lead
+    return first_sentence(value, 100)
+
+
 def first_sentence(value: str, limit: int = 110) -> str:
     text = tidy(value)
     match = re.match(r"(.{8,160}?[.!?])(?:\s|$)", text)
@@ -241,7 +272,9 @@ def topic_from_chunk(chunk: str, fallback: str) -> dict[str, Any]:
     title = ""
     if ":" in line:
         head, after = line.split(":", 1)
-        if len(head) <= 110:
+        # "2:1", "10:30" and similar ratios are content, not headings
+        ratio = head[-1:].isdigit() and after[:1].isdigit()
+        if len(head) <= 110 and not ratio:
             title = clean_title(head)
             body = "\n".join(part for part in (after, rest) if part)
         else:
@@ -253,7 +286,14 @@ def topic_from_chunk(chunk: str, fallback: str) -> dict[str, Any]:
             title = candidate
             body = rest or line
         else:
-            title = derive_heading(line, fallback)
+            title = derive_heading(line, "")
+            if not title:
+                generic = fallback.strip().lower() in GENERIC_HEADINGS
+                title = (
+                    prose_heading(line)
+                    if generic or not fallback
+                    else fallback
+                )
             body = line
 
     hours = find_hours(line)
@@ -981,7 +1021,7 @@ BRANCH_NAMES = {
     "106": "Information Technology",
     "107": "Leather Technology Engineering",
     "110": "Electrical & Electronics Engineering",
-    "161": "Electrical & Electronics Engineering (161)",
+    "161": "Mechatronics Engineering",
 }
 BRANCH_SLUGS = {
     "101": "civil",
@@ -992,7 +1032,7 @@ BRANCH_SLUGS = {
     "106": "it",
     "107": "leather",
     "110": "eee",
-    "161": "eee",
+    "161": "met",
 }
 
 
@@ -1032,7 +1072,9 @@ def add_availability(
     sources[(college, branch, batch, semester)].add(source)
 
 
-def build_colleges(gaps: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str, Any]]:
+def build_colleges(
+    gaps: list[dict[str, Any]], *, offline: bool = False
+) -> tuple[dict[str, Any], dict[str, Any]]:
     colleges_path = ROOT / "src/data/colleges.json"
     try:
         colleges_raw = read_json(colleges_path)
@@ -1100,7 +1142,10 @@ def build_colleges(gaps: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str
         "wide": "public/data/wide_*.csv",
     }
 
-    live, live_error = fetch_live_manifest()
+    if offline:
+        live, live_error = None, None
+    else:
+        live, live_error = fetch_live_manifest()
     if live_error:
         gaps.append(
             {
@@ -1228,7 +1273,11 @@ def build_colleges(gaps: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str
                     or BRANCH_NAMES.get(branch_code, f"Branch {branch_code}"),
                     "slug": BRANCH_SLUGS.get(branch_code, "other"),
                     "confidence": confidence,
-                    "source": "; ".join(provenance.get(source, source) for source in sorted(used_sources)),
+                    "source": "; ".join(
+                        provenance.get(source, source)
+                        for source in sorted(used_sources)
+                        if source != "live-manifest"
+                    ),
                     "batches": batch_map,
                 }
             )
@@ -1279,17 +1328,67 @@ def build_colleges(gaps: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str
 # ---------------------------------------------------------------- manifest
 
 
-def main() -> int:
-    generated = ""
+USAGE = """usage: extract.py [--check] [--offline]
+
+Generate the bundled data in native/assets/data from the site sources.
+
+  --check    compare a fresh generation with the files on disk; write nothing
+  --offline  skip the live manifest fetch (stable builds without network)
+"""
+
+
+def resolve_generated(check_only: bool) -> str:
+    """One stamp for every file; --check reuses the shipped stamp."""
     epoch = os.environ.get("SOURCE_DATE_EPOCH")
     if epoch and epoch.isdigit():
         stamp = datetime.fromtimestamp(int(epoch), timezone.utc)
-    else:
-        stamp = datetime.now(timezone.utc)
-    generated = stamp.replace(microsecond=0).isoformat().replace("+00:00", "Z")
+        return stamp.replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    if check_only:
+        try:
+            shipped = read_json(OUT / "manifest.json").get("generatedAt")
+            if isinstance(shipped, str) and shipped:
+                return shipped
+        except (OSError, json.JSONDecodeError, AttributeError):
+            pass
+    stamp = datetime.now(timezone.utc)
+    return stamp.replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
+
+def preserved_students() -> tuple[list[dict[str, Any]], int | None]:
+    """The register pipeline owns students-gecs.json and its manifest row.
+
+    This script rewrites manifest.json, so carry a valid `students` entry (and
+    its total) forward instead of deleting another pipeline's output.
+    """
+    try:
+        existing = read_json(OUT / "manifest.json")
+    except (OSError, json.JSONDecodeError):
+        return [], None
+    entries: list[dict[str, Any]] = []
+    for entry in existing.get("datasets") or []:
+        if not isinstance(entry, dict) or entry.get("dataset") != "students":
+            continue
+        if (OUT / str(entry.get("path", ""))).is_file():
+            entries.append(entry)
+    total = (existing.get("totals") or {}).get("students")
+    return entries, total if isinstance(total, int) else None
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = list(sys.argv[1:] if argv is None else argv)
+    if any(arg in {"--help", "-h"} for arg in args):
+        print(USAGE.strip())
+        return 0
+    unknown = [arg for arg in args if arg not in {"--check", "--offline"}]
+    if unknown:
+        print(f"unknown argument(s): {' '.join(unknown)}\n\n{USAGE.strip()}", file=sys.stderr)
+        return 2
+    check_only = "--check" in args
+    offline = "--offline" in args
+
+    generated = resolve_generated(check_only)
     gaps: list[dict[str, Any]] = []
-    OUT.mkdir(parents=True, exist_ok=True)
+    outputs: dict[str, dict[str, Any]] = {}
 
     subjects_docs, branch_summary = build_subjects(gaps)
     branches_doc = {
@@ -1298,45 +1397,41 @@ def main() -> int:
         "source": "src/assets/data/config.json; src/pages/syllabus/[branch]/index.astro",
         "branches": [branch_summary[code] for code in sorted(branch_summary)],
     }
-    write_json(OUT / "branches.json", branches_doc)
+    outputs["branches.json"] = branches_doc
 
     subject_entries: list[dict[str, Any]] = []
     expected_subject_files: set[str] = set()
     for code, doc in sorted(subjects_docs.items()):
         doc["generatedAt"] = generated
-        path = OUT / f"subjects-{code}.json"
-        write_json(path, doc)
-        expected_subject_files.add(path.name)
+        name = f"subjects-{code}.json"
+        outputs[name] = doc
+        expected_subject_files.add(name)
         subject_entries.append(
             {
                 "dataset": "subjects",
                 "branch": code,
-                "path": path.name,
+                "path": name,
                 "count": len(doc["subjects"]),
                 "generatedAt": generated,
                 "source": doc["source"],
             }
         )
-    # Remove generated subject files for branches that no longer exist.
-    for path in OUT.glob("subjects-*.json"):
-        if path.name not in expected_subject_files:
-            path.unlink()
 
     gate_doc = build_gate(gaps)
     gate_doc["generatedAt"] = generated
-    write_json(OUT / "gate.json", gate_doc)
+    outputs["gate.json"] = gate_doc
 
     holidays_doc = parse_holidays(gaps)
     holidays_doc["generatedAt"] = generated
-    write_json(OUT / "holidays.json", holidays_doc)
+    outputs["holidays.json"] = holidays_doc
 
     grading_doc = build_grading(gaps)
     grading_doc["generatedAt"] = generated
-    write_json(OUT / "grading.json", grading_doc)
+    outputs["grading.json"] = grading_doc
 
-    colleges_doc, colleges_summary = build_colleges(gaps)
+    colleges_doc, colleges_summary = build_colleges(gaps, offline=offline)
     colleges_doc["generatedAt"] = generated
-    write_json(OUT / "colleges.json", colleges_doc)
+    outputs["colleges.json"] = colleges_doc
 
     gaps.append(
         {
@@ -1376,6 +1471,7 @@ def main() -> int:
         "batches": colleges_summary["batchCount"],
     }
 
+    register_entries, register_total = preserved_students()
     datasets: list[dict[str, Any]] = [
         {
             "dataset": "branches",
@@ -1413,7 +1509,14 @@ def main() -> int:
             "generatedAt": generated,
             "source": colleges_doc["source"],
         },
+        *register_entries,
     ]
+    if register_entries:
+        totals["students"] = (
+            register_total
+            if register_total is not None
+            else sum(int(entry["count"]) for entry in register_entries)
+        )
 
     manifest = {
         "dataset": "manifest",
@@ -1423,9 +1526,39 @@ def main() -> int:
         "totals": totals,
         "gaps": gaps,
     }
-    write_json(OUT / "manifest.json", manifest)
+    outputs["manifest.json"] = manifest
 
-    print(f"Wrote {len(datasets) + 1} files to {rel(OUT)}")
+    stale = [
+        path
+        for path in sorted(OUT.glob("subjects-*.json"))
+        if path.name not in expected_subject_files
+    ]
+
+    if check_only:
+        changed: list[str] = []
+        for name, doc in sorted(outputs.items()):
+            path = OUT / name
+            if not path.is_file():
+                changed.append(f"{name} (missing)")
+            elif path.read_text(encoding="utf-8") != serialize(doc):
+                changed.append(name)
+        changed.extend(f"{path.name} (stale)" for path in stale)
+        if changed:
+            print(f"STALE: {len(changed)} file(s) differ from a fresh generation:")
+            for item in changed:
+                print(f"  x {item}")
+            print("Run: uv run python native/scripts/extract.py")
+            return 1
+        print(f"OK: {len(outputs)} generated files match a fresh generation")
+        return 0
+
+    OUT.mkdir(parents=True, exist_ok=True)
+    for name, doc in sorted(outputs.items()):
+        write_json(OUT / name, doc)
+    for path in stale:
+        path.unlink()
+
+    print(f"Wrote {len(outputs)} files to {rel(OUT)}")
     print(
         "branches {branches} · semesters {semestersWithSyllabus}/{semestersInCourse} · "
         "subjects {subjects} · units {units} · topics {topics}".format(**totals)

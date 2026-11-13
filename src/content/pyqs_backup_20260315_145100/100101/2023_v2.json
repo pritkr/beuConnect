@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Examination, 2023",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100101",
+    "year": 2023,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer the following Questions (any seven only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "State Kirchoff's Current law and Kirchoff's Voltage Law."
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "Define Network and Circuit."
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "State Maximum Power Transfer Theorem.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "State the steps to solve the super position theorem."
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "Write two differences between Real Power and Reactive Power.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "Define Resonance."
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "Draw BH Characteristic of ferromagnetic material.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "Write the types of DC Motor and Generator."
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "Why Earthing is important for an electrical Circuit?"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "What are the basic differences between generator and motor?",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Derive an expression for the current and impedance for a series RL and RC circuit excited by a\n                        Sinusoidally alternating voltage. Draw the Phasor diagrams."
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "A series circuit consisting of a \\(10\\,\\Omega\\) resistor, a \\(100\\,\\mu\\mathrm{F}\\)\n                        capacitor and a \\(10\\,\\mathrm{mH}\\) inductor is driven by a 50 Hz a.c. voltage source of\n                        maximum value 100 volts. Calculate the equivalent impedance, Current in the circuit and the\n                        phase angle."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "A load resistance \\(R_L\\,\\Omega\\) is connected across the source \\(V_s\\) with internal\n                        resistance \\(R_{\\text{int}}\\) in series with source. Obtain the condition that the power\n                        transferred to load from source is maximum."
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "A resistance \\(R\\) is connected in series with a parallel circuit comprising two resistances of\n                        \\(12\\,\\Omega\\) and \\(8\\,\\Omega\\) respectively. The total power dissipated in the circuit\n                        is 70 W when the applied voltage is 20V. Calculate \\(R\\)."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "With neat diagram explain the construction and principle of a single-phase transformer. What are\n                        the characteristics of an ideal transformer?",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Derive the emf equation of a transformer.",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Draw a neat sketch of a DC generator and label the component parts. Name the material used for\n                        each component part."
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Explain the operating principle of Three phase Induction motor.",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "With neat diagrams, explain various types of fuses used in electrical wiring systems."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Write a detailed note on Fuse and circuit breaker."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "State and Explain Thevenin's Theorem for a DC Circuit. Write applications, advantages and\n                        limitations of Thevenin's Theorem."
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "State Norton's theorem.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "A three single phase balanced load connected in three phase three wires star form, with the help\n                        of phasor diagram, obtain the relationship between line and phase quantities of voltage and\n                        current."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Batteries and its types and application</li>\n<li>Losses in Transformer</li>\n<li>Differences between Balanced, Unbalanced and Faulty Electrical Systems</li>\n<li>Working and application of Synchronous generator</li>\n</ul>",
+          "options": [
+            "Batteries and its types and application",
+            "Losses in Transformer",
+            "Differences between Balanced, Unbalanced and Faulty Electrical Systems",
+            "Working and application of Synchronous generator"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2019",
+    "subject": "MATHEMATICS-II (Ordinary Differential Equations and\n                Complex Variables)",
+    "subject_slug": "mathematics-ii-ordinary-differential-equations-and-complex-variables",
+    "subject_code": "102202",
+    "year": 2019,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer the following (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Find the directional derivative of \\(\\varphi(x,y,z)=x^{2}yz+4~xz^{2}\\) at \\((1,-2,-1)\\) in\n                        the direction \\(2i-j-2k\\)</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Evaluate \\(\\nabla.[r\\nabla(1/r^{3})].\\)</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>What is the degree of the differential equation\n                        \\(\\left(\\frac{d^{3}y}{dx^{3}}\\right)^{2/3}+\\left(\\frac{d^{3}y}{dx^{3}}\\right)^{3/2}=0\\)?\n                    </p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Find the general solution of the differential equation\n                        \\(x(x^{2}+3y^{2})dx+y(y^{2}+3x^{2})dy=0\\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Evaluate the integral \\(\\int_{C}\\frac{(e^{z}+\\sin~\\pi z)dz}{(z-1)(z+1)(z+4)},\\)\n                        \\(C:|z|=2\\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Evaluate the integral \\(\\int_{C}\\frac{dz}{(z^{2}+4z+3)^{2}}\\) \\(C:|z|=4\\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Define the pole-type singularity with an example.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Find the bilinear transformation that maps \\(z_{1}=\\infty,\\) \\(z_{2}=i\\) and \\(z_{3}=0\\)\n                        into the points \\(w_{1}=0,\\) \\(w_{2}=i\\) and \\(w_{3}=\\infty.\\)</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>If \\( a{&lt;}b,\\) then evaluate the integral \\(\\int_{a}^{b}|(x-a)+(x-b)|dx \\)</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Evaluate the integral \\(\\int_{0}^{\\infty}\\int_{x}^{\\infty}\\frac{e^{-y}}{y}dy~dx\\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Evaluate the integral \\(\\int_{0}^{a}\\int_{y}^{a}\\frac{x}{(x^{2}+y)^{2}}dy~dx\\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Find the mass of a plate in the form of a quadrant of an ellipse\n                        \\(\\frac{x^{2}}{a^{2}}+\\frac{y^{2}}{b^{2}}=1\\) whose density per unit area is given by\n                        \\(\\rho=kxy.\\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Evaluate \\(\\int_{C}F\\cdot dr,\\) where \\(F=(3x^{2}+6y)i-14yzj+20xz^{2}k\\) from \\((0,0,0)\\)\n                        to \\((1,1,1)\\) along the path \\(x=t,\\) \\(y=t^{2}\\) and \\(z=t^{3}\\)</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Evaluate \\(\\int_{C}F\\cdot dr\\) along the straight line joining \\((0,0,0)\\) to \\((1,1,1)\\)\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Solve the differential equation \\((x^{2}+y^{2}+x)dx-(2x^{2}+2y^{2}-y)dy=0\\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Solve the differential equation \\(y=2px+y^{2}p^{3}\\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>State and prove Rodrigues' formula.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Show that \\(2nJ_{n}(x)=x[J_{n+1}(x)+J_{n-1}(x)]\\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Find the series solution of the differential equation\n                        \\(x^{2}\\frac{d^{2}y}{dx^{2}}+6~x\\frac{dy}{dx}+(x^{2}+6)y=0\\)</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>State and prove the sufficient condition for a function \\(w=f(z)\\) to be analytic.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Find an analytic function \\(f(z)\\) such that\n                        \\(\\operatorname{Re}\\{f^{\\prime}(z)\\}=3x^{2}-4y-3y^{2}\\) and \\(f(1+i)=0\\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss the nature of the singularities for \\(\\left(\\frac{1-\\cosh~z}{z^{3}}\\right).\\) Also\n                        determine the order of the pole and corresponding residue if it exists.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Find what regions of the w-plane correspond by the transformation\n                        \\(w=\\left(\\frac{z-i}{z+i}\\right)\\) to the interior of a circle of centre \\(z=-i.\\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Evaluate \\(\\oint_{C}\\frac{\\sin^{2}z}{z(z-1)(2z+5)}dz,\\) \\(C:|z-1|+|z+1|=3\\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Evaluate \\(\\int_{0}^{\\infty}\\frac{\\sin(mx)}{x(x^{2}+a^{2})}dx\\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        }
+      ]
+    }
+  ]
+}

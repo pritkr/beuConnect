@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2021",
+    "subject": "Linear Integrated Circuits And Applications",
+    "subject_slug": "linear-integrated-circuits-and-applications",
+    "subject_code": "104504",
+    "year": 2021,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are EIGHT questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Answer any seven of the following questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "theory",
+          "text": "What is a comparator?"
+        },
+        {
+          "id": "q1_b",
+          "type": "theory",
+          "text": "Define settling time of D/A converter."
+        },
+        {
+          "id": "q1_c",
+          "type": "theory",
+          "text": "How does a precision rectifier differ from the conventional rectifier?"
+        },
+        {
+          "id": "q1_d",
+          "type": "theory",
+          "text": "What output voltage would be produced by a D/A converter whose output range is 0 to 10 V and whose input binary number is 0101 for a 4-bit DAC?"
+        },
+        {
+          "id": "q1_e",
+          "type": "theory",
+          "text": "What is the main drawback of dual slope ADC?"
+        },
+        {
+          "id": "q1_f",
+          "type": "theory",
+          "text": "Give the classification of voltage regulators with example."
+        },
+        {
+          "id": "q1_g",
+          "type": "theory",
+          "text": "A PLL frequency multiplier has an input frequency of \\( f \\) and a decade counter is included in the loop. What will be the frequency of the PLL output?"
+        },
+        {
+          "id": "q1_h",
+          "type": "theory",
+          "text": "Why is frequency compensation required in operational amplifiers?"
+        },
+        {
+          "id": "q1_i",
+          "type": "theory",
+          "text": "Draw a sample and hold circuit."
+        },
+        {
+          "id": "q1_j",
+          "type": "theory",
+          "text": "Which is fastest ADC? Give proper reasoning."
+        }
+      ]
+    },
+    {
+      "section_title": "2. Answer both parts:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "With the help of neat circuit diagram, explain the working of a basic bandgap voltage reference.",
+          "metadata": { "marks": 7 }
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "Explain the steps used for fabrication of integrated diodes with necessary diagrams.",
+          "metadata": { "marks": 7 }
+        }
+      ]
+    },
+    {
+      "section_title": "3. Answer both parts:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "Sketch the basic circuit using OPAMP to perform the mathematical operation of differentiation and explain its working. What are the limitations of the basic differentiator?",
+          "metadata": { "marks": 7 }
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "Define output offset voltage. Explain the methods to nullify offset voltage.",
+          "metadata": { "marks": 7 }
+        }
+      ]
+    },
+    {
+      "section_title": "4. Answer both parts:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "Explain the working of multiplier using suitable OPAMP circuit diagram and supporting equations.",
+          "metadata": { "marks": 7 }
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "Draw the circuit diagram of a phase locked loop (PLL) used as amplitude modulation (AM) detector and explain its operation.",
+          "metadata": { "marks": 7 }
+        }
+      ]
+    },
+    {
+      "section_title": "5. Answer both parts:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "Draw the block diagram and explain principle of working, characteristic and applications of a frequency synthesizer.",
+          "metadata": { "marks": 7 }
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "Explain the working of a switched capacitor filter with supporting circuit diagram. How can a resistor be realized using switched capacitor?",
+          "metadata": { "marks": 7 }
+        }
+      ]
+    },
+    {
+      "section_title": "6. Answer both parts:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "Explain the working of weighted resistor D/A converter with circuit diagram.",
+          "metadata": { "marks": 7 }
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "With a suitable diagram, explain the working of successive approximation type A/D converter.",
+          "metadata": { "marks": 7 }
+        }
+      ]
+    },
+    {
+      "section_title": "7. Answer both parts:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "Discuss the principle of operation of NE565 PLL circuit.",
+          "metadata": { "marks": 7 }
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "If an IC 555 timer is used to generate a ramp voltage with constant collector current of \\( 1\\text{ mA} \\), \\( V_{CC} = 15\\text{ V} \\) and \\( C = 0.1\\text{ }\\mu\\text{F} \\), what would be the slope of the ramp generated? How much is the peak value of the ramp generated? What is the duration of the ramp?",
+          "metadata": { "marks": 7 }
+        }
+      ]
+    },
+    {
+      "section_title": "8. Answer both parts:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "Design a timer which should turn on heater immediately after pressing a push button and should hold heater in ON state for 6 seconds.",
+          "metadata": { "marks": 7 }
+        },
+        {
+          "id": "q8_b",
+          "type": "theory",
+          "text": "Explain the monostable operation of 555 timer.",
+          "metadata": { "marks": 7 }
+        }
+      ]
+    }
+  ]
+}

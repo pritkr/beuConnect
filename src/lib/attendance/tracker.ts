@@ -109,7 +109,7 @@ export class AttendanceState {
     }
 
     calculateStatus(attended: number, total: number): StatusResult {
-        if (total === 0) return { percent: 0, msg: 'No classes yet', type: 'neutral', bunkable: 0, required: 0 };
+        if (total === 0) return { percent: 0, msg: '', type: 'neutral', bunkable: 0, required: 0 };
 
         const percent = (attended / total) * 100;
         const targetRatio = this.settings.targetPercentage / 100;

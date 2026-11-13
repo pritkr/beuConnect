@@ -17,7 +17,7 @@ import { describe, expect, test } from "nsh/test";
 import type { RankRow } from "../../src/features/results/data";
 import { currentSemester, ranked, sortByCgpa } from "../../src/features/results/data";
 import { cgpa, gradeForMarks, requiredSgpa, sgpa } from "../../src/features/tools/engine";
-import { attendanceStatus } from "../../src/features/tools/engine";
+import { attendanceAdvice, attendanceStatus } from "../../src/features/tools/engine";
 
 /** Two decimals, so a float's last bit never decides a test. */
 function rounded(value: number): number {
@@ -116,6 +116,20 @@ describe("attendance", () => {
     expect(status.percent).toBe(0);
     expect(status.required).toBe(0);
   });
+
+  test("the advice is safe only at or above the exact target", () => {
+    expect(attendanceAdvice(40, 50, 75).headline).toBe("Can miss 3 more");
+    // 45/60 is exactly 75%: at the line, one more bunk breaks it.
+    expect(attendanceAdvice(45, 60, 75).headline).toBe("At the 75% line");
+    expect(attendanceAdvice(44, 60, 75).headline).toBe("Attend 4 in a row");
+  });
+
+  test("a target already missed is never dressed up as a bunk", () => {
+    const lost = attendanceAdvice(49, 50, 100);
+    expect(lost.level).toBe("lost");
+    expect(lost.headline).toBe("Target missed");
+    expect(lost.headline.toLowerCase()).not.toContain("can miss");
+  });
 });
 
 describe("ranking", () => {
@@ -166,5 +180,27 @@ describe("semester", () => {
     expect(currentSemester("22", false, JAN_2026)).toBe(8);
     // A graduated batch is clamped, not extrapolated.
     expect(currentSemester("19", false, OCT_2026)).toBe(8);
+  });
+
+  test("a year later is two semesters later", () => {
+    const AUG_2027 = new Date(2027, 7, 1);
+    expect(currentSemester("26", false, AUG_2027)).toBe(3);
+    expect(currentSemester("25", false, AUG_2027)).toBe(5);
+    expect(currentSemester("24", false, AUG_2027)).toBe(6);
+  });
+
+  test("the 2024 batch started in January 2025, one semester late", () => {
+    expect(currentSemester("24", false, new Date(2025, 1, 10))).toBe(1);
+  });
+
+  test("lateral entry joins two semesters in, and never below one", () => {
+    expect(currentSemester("24", true, OCT_2026)).toBe(2);
+    expect(currentSemester("23", true, OCT_2026)).toBe(5);
+    expect(currentSemester("26", true, OCT_2026)).toBe(1);
+  });
+
+  test("junk is a first-semester student, not a crash", () => {
+    expect(currentSemester("", false, OCT_2026)).toBe(1);
+    expect(currentSemester("zz", false, OCT_2026)).toBe(1);
   });
 });

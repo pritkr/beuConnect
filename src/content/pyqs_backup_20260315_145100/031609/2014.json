@@ -1,0 +1,282 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 6th Semester Exam., 2014",
+    "subject": "POWER ELECTRONICS",
+    "subject_slug": "power-electronics",
+    "subject_code": "031609",
+    "year": 2014,
+    "semester": 6,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The questions are of equal value.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Power electronic device with poor turn-off gain is",
+              "options": [
+                "symmetrical thyristor",
+                "conventional thyristor",
+                "power bipolar junction transistor",
+                "gate turn-off thyristor"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "It is preferable to use a train of pulse of high frequency for gate triggering of SCR in order to reduce",
+              "options": [
+                "$\\frac{dv}{dt}$ problem",
+                "$\\frac{di}{dt}$ problem",
+                "the size of the pulse transformer",
+                "the complexity of the firing circuit"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "In a fully-controlled converter, the load voltage is controlled by which of the following quantity?",
+              "options": [
+                "Extension angle",
+                "Firing angle",
+                "Conduction angle",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "In a single-phase full-wave controlled bridge rectifier, minimum output voltage and maximum output voltage are obtained at which conduction angle?",
+              "options": [
+                "$0^\\circ, 180^\\circ$ respectively",
+                "$180^\\circ, 0^\\circ$ respectively",
+                "$0^\\circ, 0^\\circ$ respectively",
+                "$180^\\circ, 180^\\circ$ respectively"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "In the continuous conduction mode, the output voltage waveform does not depend on",
+              "options": [
+                "firing angle",
+                "conduction angle",
+                "supply",
+                "load"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "A step-down chopper is operated in the continuous conduction mode in steady state with a constant duty ration $D$. If $V_o$ is the magnitude of the d.c. output voltage and $V_s$ is the magnitude of the d.c. input voltage, the ratio $V_o / V_s$ is given by",
+              "options": [
+                "$D$",
+                "$1 - D$",
+                "$\\frac{1}{1 - D}$",
+                "$\\frac{D}{1 - D}$"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "In a single-pulse modulation PWM inverter, third harmonics can be eliminated if the pulse-width is made equal to",
+              "options": [
+                "$30^\\circ$",
+                "$150^\\circ$",
+                "$60^\\circ$",
+                "$120^\\circ$"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "In case of voltage-source inverter, free-wheeling can be needed for the load of",
+              "options": [
+                "inductive nature",
+                "capacitive nature",
+                "resistive nature",
+                "back e.m.f. nature"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "PWM switching is preferred in voltage-source inverters for the purpose of",
+              "options": [
+                "controlling output voltage",
+                "output harmonics",
+                "reducing filter size",
+                "controlling output voltage, output harmonic and reducing filter size"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "Compared to a single-phase half-bridge inverter, the output power of a single-phase full-bridge inverter is higher by a factor of",
+              "options": [
+                "12",
+                "8",
+                "4",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "Circuit of given Fig. 1, employing resonant-pulse commutation (or class-B commutation) has $C = 20\\mu\\text{F}$ and $L = 5\\mu\\text{H}$. Initial voltage across capacitor is $V_s = 230\\text{V}$, for a constant load current of 300 A, calculate-",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "2ai",
+              "text": "conduction time for the auxiliary thyristor;",
+              "marks": null
+            },
+            {
+              "id": "2aii",
+              "text": "voltage across the main thyristor when it gets commutated;",
+              "marks": null
+            },
+            {
+              "id": "2aiii",
+              "text": "the circuit turn-off time for the main thyristor.",
+              "marks": null
+            },
+            {
+              "id": "2b",
+              "text": "What is complementary impulse commutation?",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "text": "A d.c. battery is charged through a resistor $R$ as shown in Fig. 2. Derive an expression for the average value of charging current in terms of $V_m, E, R, \\text{etc.}$ On the assumption that SCR is fired continuously-",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "3a",
+              "text": "for an a.c. source voltage of $230\\text{V, 50 Hz}$, find the value of average charging current for $R = 8\\Omega$ and $E = 150\\text{V}$;",
+              "marks": null
+            },
+            {
+              "id": "3b",
+              "text": "find the power supplied to battery and that dissipated in the resistor;",
+              "marks": null
+            },
+            {
+              "id": "3c",
+              "text": "calculate the supply p.f.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "text": "A single-phase full-converter bridge is connected to RLE load. The source voltage is $230\\text{V, 50 Hz}$. The average load current of 10 A is constant over the working range for $R = 0.4\\Omega$ and $L = 2\\text{mH}$.",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "4a",
+              "text": "Compute the firing angle delay for $E = 120\\text{V}$.",
+              "marks": null
+            },
+            {
+              "id": "4b",
+              "text": "Compute the firing angle delay for $E = -120\\text{V}$. Indicate which source is delivering power to load in parts (a) and (b). Sketch the time variations of output voltage and load current for both the parts.",
+              "marks": null
+            },
+            {
+              "id": "4c",
+              "text": "In case output current is assumed constant, find the input p.f. for both the parts (a) and (b).",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "text": "For type-A chopper of Fig. 3, DC source voltage $= 230\\text{V}$, load resistance $= 10\\Omega$. Take a voltage drop of 2 V across chopper when it is on, for a duty cycle of 0.4, calculate-",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "5ai",
+              "text": "the average and r.m.s. values of output voltage;",
+              "marks": null
+            },
+            {
+              "id": "5aii",
+              "text": "the chopper efficiency.",
+              "marks": null
+            },
+            {
+              "id": "5b",
+              "text": "What is meant by step-up chopper? Explain its operation.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "text": "A step-down chopper, fed from $220\\text{V d.c.}$ is connected to RL load with $R = 10\\Omega$ and $L = 150\\text{mH}$, chopper frequency is $1250\\text{Hz}$ and duty cycle is 0.5. Calculate-",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "6a",
+              "text": "the minimum and maximum value of load current;",
+              "marks": null
+            },
+            {
+              "id": "6b",
+              "text": "the maximum value of ripple current;",
+              "marks": null
+            },
+            {
+              "id": "6c",
+              "text": "the average and r.m.s. values of load current;",
+              "marks": null
+            },
+            {
+              "id": "6d",
+              "text": "the r.m.s. value of chopper current.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "text": "With the help of equivalent circuit, obtain the nature of waveform of phase voltage of a star-connected resistive load fed from a three-phase DC to AC bridge-inverter operating in $180^\\circ$ conduction mode.",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "text": "Describe the working of single-phase full-bridge inverter.",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "8b",
+              "text": "A single-phase full-bridge inverter has R-L-C load of $R = 4\\Omega, L = 35\\text{mH}$ and $C = 155\\mu\\text{F}$. The DC input voltage is $230\\text{V}$ and the output frequency is $50\\text{Hz}$. Find an expression for load current up to fifth harmonic. Also calculate- (i) the r.m.s. value of fundamental load current; (ii) the power absorbed by load and the fundamental power.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "text": "Sketch static I-V characteristics of a thyristor. Label the various voltages, currents and the operating modes on this sketch.",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9b",
+              "text": "SCR with a rating of $1000\\text{V}$ and $200\\text{A}$ are available to be used in a string to handle $6\\text{kV}$ and $1\\text{kA}$. Calculate the no. of series and parallel units required in case derating factors are (i) 0.1 and (ii) 0.2.",
+              "marks": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

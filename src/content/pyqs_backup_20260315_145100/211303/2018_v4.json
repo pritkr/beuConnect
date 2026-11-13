@@ -1,0 +1,289 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2018",
+    "subject": "MATHEMATICS-III",
+    "subject_slug": "mathematics-iii",
+    "subject_code": "211303",
+    "year": 2018,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>If \\( P_n \\) is the Legendre polynomial of first kind, then the value of \\( \\int_{-1}^1\n                        P_{n+1}^2 dx \\) is</p>",
+          "options": [
+            "\\( \\frac{2}{(2n+1)} \\)",
+            "\\( \\frac{2}{(2n+2)} \\)",
+            "\\( \\frac{2}{(2n+3)} \\)",
+            "\\( \\frac{2}{(2n+4)} \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>If \\( J_n \\) the Bessel's function of first kind, then the value of \\( J_{3/2} \\) is</p>",
+          "options": [
+            "\\( \\sqrt{\\frac{2}{\\pi x}}\\left(\\frac{\\cos x}{x} - \\sin x\\right) \\)",
+            "\\( \\sqrt{\\frac{2}{\\pi x}}\\left(\\frac{\\sin x}{x} - \\cos x\\right) \\)",
+            "\\( \\sqrt{\\frac{2}{\\pi x}}\\sin x \\)",
+            "\\( \\sqrt{\\frac{2}{\\pi x}}\\cos x \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The general solution of \\( \\frac{d^2y}{dx^2} + 9y = \\sin^3 x \\) is</p>",
+          "options": [
+            "\\( y = A \\cos(3x+B) + \\frac{1}{24}\\sin x - \\sin 3x \\)",
+            "\\( y = A e^{3x} + Be^{-3x} + \\frac{1}{32}\\sin x + \\frac{1}{2}\\cos 3x \\)",
+            "\\( y = A + Be^{3x} + 2\\sin x - \\frac{5}{13}\\sin 3x \\)",
+            "\\( y = A \\sin(3x+B) + \\frac{3}{32}\\sin x + \\frac{x}{24}\\cos 3x \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The general solution of \\( \\frac{\\partial^2 u}{\\partial x^2} + \\frac{\\partial^2\n                        u}{\\partial y^2} = 0 \\) is</p>",
+          "options": [
+            "\\( u = f(x+iy) + g(x-iy) \\)",
+            "\\( u = f(x+y) + g(x-y) \\)",
+            "\\( u = cf(x-iy) \\)",
+            "\\( u = cg(x+iy) \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The radius of convergence of the series \\( \\sum_{n=0}^\\infty (3+4i)^n z^n \\) is</p>",
+          "options": [
+            "5",
+            "\\( \\frac{1}{5} \\)",
+            "\\( 3+4i \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The value of the integral \\( \\oint_{|z|=2} \\frac{e^{2z}}{(z+1)^4} dz \\) is</p>",
+          "options": [
+            "\\( 2\\pi ie^{-1} \\)",
+            "\\( \\frac{8\\pi i}{3}e^{-2} \\)",
+            "\\( \\frac{2\\pi i}{3}e^{-2} \\)",
+            "0"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Let A, B and C be any three independent events. Which one of the following is incorrect\n                        statement?</p>",
+          "options": [
+            "\\( P(A/B) = P(A) \\)",
+            "\\( P(B/A) = P(B) \\)",
+            "\\( P(A \\cap B) = P(A)P(B) \\)",
+            "\\( P(A \\cup B) = P(A) + P(B) \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A random variable X has a Poisson distribution. If \\( 4P(X=2) = P(X=1) + P(X=0) \\) then the\n                        variance of X is</p>",
+          "options": [
+            "3",
+            "2",
+            "1",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The moment-generating function of a continuous random variable X be given as, \\( M_X(t) =\n                        (1-t)^{-9}, |t|&lt;1 \\). Then its mean and variance are</p>",
+          "options": [
+            "(9, 1/9)",
+            "(9, 9)",
+            "(3, 3)",
+            "(1/9, 1/9)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>For the differential equation \\( t(t-2)^2y'' + ty' + y = 0 \\), \\( t=0 \\) is</p>",
+          "options": [
+            "an ordinary point",
+            "a branch point",
+            "an irregular point",
+            "a regular singular point"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Solve the following differential equation in series form: \\( x(x-1)\\frac{d^2y}{dx^2} +\n                        (3x-1)\\frac{dy}{dx} + y = 0 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Show that \\( P_{2n}(0) = (-1)^n \\frac{(2n)!}{2^{2n}(n!)^2} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Show that \\( P_n(x) \\) is the coefficient of \\( t^n \\) in the expansion of \\(\n                        (1-2xt+t^2)^{-1/2} \\) in ascending power of t.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Prove that \\( J_{5/2}(x) = \\sqrt{\\frac{2}{\\pi\n                        x}}\\left[\\left(\\frac{3-x^2}{x^2}\\right)\\sin x - \\frac{3\\cos x}{x}\\right] \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Solve the differential equation \\( (p^2+q^2)y = qz \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Solve the linear partial differential equation \\( \\frac{\\partial^2 z}{\\partial x^2} +\n                        \\frac{\\partial^2 z}{\\partial x \\partial y} - 6\\frac{\\partial^2 z}{\\partial y^2} = y \\cos\n                        x \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A tightly stretched string with fixed end points \\( x=0 \\) and \\( x=l \\) is initially at rest\n                        in its equilibrium position. If it is set vibrating by giving to each of its points on initial\n                        velocity \\( \\lambda x(l-x) \\), find the displacement of the string at any distance x from one\n                        end at any time t.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Prove that \\( (1-x^2)P_n'(x) = (n+1)[xP_n(x) - P_{n+1}(x)] \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>If \\( f(z) = u+iv \\) is an analytic function and \\( u-v = e^{-x}[(x-y)\\sin y - (x+y)\\cos y]\n                        \\), then find u, v and analytic function \\( f(z) \\).</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Show that if \\( f(z) = u+iv \\) is an analytic function and (i) Re \\( f(z) \\) = constant, (ii)\n                        Im \\( f(z) \\) = constant, then \\( f(z) \\) is a constant.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find all possible Taylor and Laurent series expansions of the function \\( f(z) =\n                        1/[(z+1)(z+2)^2] \\) about the point \\( z=1 \\).</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Evaluate the integral \\( \\int_0^{2\\pi} \\frac{d\\theta}{2+\\sin\\theta} \\) by using the\n                        residue theorem.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>The odds that person X speaks the truth are 3:2 and the odds that person Y speaks the truth are\n                        5:3. In what percentage of cases are they likely to contradict each other on an identical point?\n                    </p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>A random variable X has the following probability function: <br/> P(x) values for x = 0, 1, 2, 3,\n                        4, 5, 6 are respectively \\( 0, k, 2k, 2k, 3k, k^2, 2k^2, 7k^2+k \\). <br/> (i) Find k. <br/> (ii)\n                        Evaluate \\( P(X&lt;6) \\), \\( P(X\\ge6) \\) and \\( P(0<x<5) <br=\"\" \\).=\"\"> (iii) If \\(\n                            P(X\\le\\alpha)&gt;1/2 \\), find the minimum value of \\( \\alpha \\). <br/> (iv) Determine the\n                            distribution function of X.</x<5)></p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Let X be a non-negative random variable such that \\( \\log X = Y \\) (say) is normally\n                        distributed with mean \\( \\mu \\) and variance \\( \\sigma^2 \\). <br/> (i) Write down the\n                        probability density function of X. Find \\( E(X) \\) and var(X). <br/> (ii) Find the median and\n                        the mode of the distribution of X.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>In one sample of 8 observations, the sum of the squares of deviations of the sample values from\n                        the sample mean was 84.4 and in other sample of 10 observations it was 102.6. Test whether this\n                        difference is significant at 5 per cent level, given that the 5 per cent point of F for \\(\n                        n_1=7 \\) and \\( n_2=9 \\) degrees of freedom is 3.29.</p>"
+        }
+      ]
+    }
+  ]
+}

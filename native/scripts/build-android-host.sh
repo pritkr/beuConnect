@@ -21,7 +21,10 @@ ENTRY="${ENTRY:-App.tsx}"
 SUFFIX="${SUFFIX:-}"
 SDK="${ANDROID_HOME:-${ANDROID_SDK:-$HOME/Library/Android/sdk}}"
 BUILD_TOOLS="$(find "$SDK/build-tools" -maxdepth 1 -mindepth 1 -type d | sort -V | tail -1)"
-NDK="${ANDROID_NDK_HOME:-${ANDROID_NDK:-$(find "$SDK/ndk" -maxdepth 1 -mindepth 1 -type d | sort -V | tail -1)}}"
+NDK="${ANDROID_NDK_HOME:-${ANDROID_NDK:-}}"
+if [ -z "$NDK" ] && [ -d "$SDK/ndk" ]; then
+  NDK="$(find "$SDK/ndk" -maxdepth 1 -mindepth 1 -type d | sort -V | tail -1)"
+fi
 HOST_TAG="$(uname -s | tr '[:upper:]' '[:lower:]')-x86_64"
 # The newest platform installed, not a pinned one: a build server and a laptop
 # rarely have the same set, and `android-35` is a fine target for a `minSdk 28`
@@ -34,7 +37,20 @@ D8="$BUILD_TOOLS/d8"
 ZIPALIGN="$BUILD_TOOLS/zipalign"
 APKSIGNER="$BUILD_TOOLS/apksigner"
 STRIP="$NDK/toolchains/llvm/prebuilt/$HOST_TAG/bin/llvm-strip"
+# The NDK is the usual source of `llvm-strip`, but stripping an ELF is not
+# Android-specific: a distro LLVM does it the same. Only when neither exists is
+# the build missing a tool.
+if [ ! -x "$STRIP" ] && command -v llvm-strip >/dev/null 2>&1; then
+  STRIP="$(command -v llvm-strip)"
+fi
+# 0.4 and earlier put the AAR in the installer's tarball; 0.5 moved it to a
+# release asset of its own, so an updated `nsh` leaves `~/.nsh/embed` empty.
+# `NSH_AAR` (a build from source) wins; otherwise use the distribution's copy
+# when it is there, and fetch the release's otherwise.
 AAR="${NSH_AAR:-$HOME/.nsh/embed/android/nsh.aar}"
+if [ ! -f "$AAR" ] && [ -z "${NSH_AAR:-}" ]; then
+  AAR="$(./scripts/fetch-nsh-embed.sh)"
+fi
 
 # The version lives in exactly one place — `nsh.json` — and this reads it for
 # the APK's versionCode/versionName. Hard-coding it here once already meant a
@@ -62,42 +78,99 @@ OUT="$ROOT/.nsh/out"
 WORK="$OUT/host"
 STAGE="$WORK/stage"
 
-for tool in "$AAPT2" "$D8" "$ZIPALIGN" "$APKSIGNER" "$STRIP" "$AAR" "$PLATFORM"; do
+for tool in "$AAPT2" "$D8" "$ZIPALIGN" "$APKSIGNER" "$STRIP" "$AAR" "$PLATFORM" "$KEYSTORE"; do
   [ -e "$tool" ] || { echo "missing: $tool" >&2; exit 1; }
 done
-# Only a signing build needs the key. `SIGN=0` stops at the aligned APK, and the
-# caller that signs (a repository, F-Droid for one) has no keystore here.
-if [ "${SIGN:-1}" != "0" ]; then
-  [ -e "$KEYSTORE" ] || { echo "missing: $KEYSTORE" >&2; exit 1; }
+
+# Firebase Cloud Messaging ships as AARs. `android/libs` is filled once by
+# scripts/fetch-android-libs.sh (Gradle is used as a dependency resolver, not as
+# the app's build system) and is then a fixed classpath for javac/d8.
+LIBS="$ROOT/android/libs"
+if [ ! -f "$LIBS/manifest.txt" ]; then
+  echo "▸ android/libs is empty"
+  "$ROOT/scripts/fetch-android-libs.sh"
 fi
+
+# Firebase's runtime configuration, normally injected by the Google services
+# Gradle plugin. Without a google-services.json this writes nothing and the app
+# builds with push disabled instead of failing.
+"$ROOT/scripts/firebase-config.sh"
 
 echo "▸ bundling the app"
 rm -rf "$WORK"
-mkdir -p "$WORK/classes" "$WORK/dex" "$WORK/res" "$WORK/app"
-nsh package "$ENTRY" --target android -o "$OUT/raw" >/dev/null
+mkdir -p "$WORK/classes" "$WORK/dex" "$WORK/res" "$WORK/app" "$WORK/gen"
+if [ "${SKIP_BUNDLE:-0}" = "1" ] && [ -f "$OUT/raw/BEUConnect.apk" ]; then
+  echo "  reusing the existing bundle (SKIP_BUNDLE=1)"
+else
+  nsh package "$ENTRY" --target android -o "$OUT/raw" >/dev/null
+fi
 unzip -q -o "$OUT/raw/BEUConnect.apk" "assets/nsh/*" -d "$WORK/app"
 
 echo "▸ compiling resources"
-"$AAPT2" compile --dir android/res -o "$WORK/res/resources.zip"
+"$AAPT2" compile --dir android/res -o "$WORK/res/app.zip"
+RES_ARGS=(-R "$WORK/res/app.zip")
+mkdir -p "$WORK/aar"
+# Rebuild the extraction from scratch: a dependency that disappeared would
+# otherwise leave its old classes.jar in the glob and keep linking.
+rm -rf "$WORK/aar"
+mkdir -p "$WORK/aar"
+for aar in "$LIBS"/*.aar; do
+  name="$(basename "$aar" .aar)"
+  unzip -q -o "$aar" -d "$WORK/aar/$name"
+  # A library contributes resources (attrs, colours, strings) exactly like the
+  # app does; aapt2 needs them as their own compiled archive so a name that
+  # exists in both is an overlay, not a duplicate.
+  if [ -d "$WORK/aar/$name/res" ]; then
+    "$AAPT2" compile --dir "$WORK/aar/$name/res" -o "$WORK/res/lib-$name.zip"
+    RES_ARGS+=(-R "$WORK/res/lib-$name.zip")
+  fi
+done
+# Library code references its own generated R class — play-services-basement
+# reads google_app_id through `com.google.android.gms.common.R$string`, and
+# without that class the app dies in FirebaseInitProvider before the first
+# frame. Gradle generates one R.java per AAR; aapt2 only does that for the app
+# package unless every library package the jars import is named, so collect
+# them from the bytecode instead of pinning a list that drifts with the deps.
+# `android` is the platform's own R, which aapt2 cannot generate.
+EXTRA_PACKAGES="$(
+  for jar in "$WORK"/aar/*/classes.jar "$LIBS"/*.jar; do
+    [ -e "$jar" ] || continue
+    { unzip -p "$jar" '*.class' 2>/dev/null || true; } |
+      grep -aoE '([a-z][a-z0-9_]*/)+R\$[A-Za-z]+' |
+      sed 's#/R\$[A-Za-z]*##' | tr '/' '.'
+  done | grep -vx android | sort -u | paste -sd: - || true
+)"
 "$AAPT2" link \
   -o "$WORK/base.apk" \
   -I "$PLATFORM" \
   --manifest android/AndroidManifest.xml \
   --min-sdk-version 28 --target-sdk-version "$TARGET_SDK" \
   --version-code "$APP_BUILD" --version-name "$APP_VERSION" \
-  -R "$WORK/res/resources.zip" \
+  --java "$WORK/gen" \
+  ${EXTRA_PACKAGES:+--extra-packages "$EXTRA_PACKAGES"} \
+  "${RES_ARGS[@]}" \
   --auto-add-overlay
 
-echo "▸ compiling the host (PdfPage)"
-rm -rf "$WORK/aar"
-mkdir -p "$WORK/aar"
-unzip -q "$AAR" classes.jar -d "$WORK/aar"
+echo "▸ compiling the host (PdfPage, notifications)"
+rm -rf "$WORK/nshaar"
+mkdir -p "$WORK/nshaar"
+unzip -q "$AAR" classes.jar -d "$WORK/nshaar"
+# classes.jar first: javac reads a classpath left to right, and the host's own
+# classes must win over a same-named copy inside a library.
+CLASSPATH="$PLATFORM:$WORK/nshaar/classes.jar"
+for jar in "$WORK"/aar/*/classes.jar "$LIBS"/*.jar; do
+  [ -e "$jar" ] && CLASSPATH="$CLASSPATH:$jar"
+done
 javac -source 11 -target 11 -Xlint:-options -nowarn \
-  -classpath "$PLATFORM:$WORK/aar/classes.jar" \
+  -classpath "$CLASSPATH" \
   -d "$WORK/classes" \
+  $(find "$WORK/gen" -name 'R.java') \
   android/java/com/longbridge/nsh/*.java
 "$D8" --min-api 28 --lib "$PLATFORM" --output "$WORK/dex" \
-  "$WORK/aar/classes.jar" $(find "$WORK/classes" -name '*.class')
+  "$WORK/nshaar/classes.jar" \
+  "$WORK"/aar/*/classes.jar \
+  "$LIBS"/*.jar \
+  $(find "$WORK/classes" -name '*.class')
 
 echo "▸ assembling $ABI"
 rm -rf "$STAGE"

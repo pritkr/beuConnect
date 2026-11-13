@@ -1,0 +1,448 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import collegesData from "../../../data/colleges.json";
+import configData from "../../../assets/data/config.json";
+import { allStudents } from "../../../lib/students/register";
+
+export const prerender = true;
+
+// Types
+type StudentRecord = {
+  RegNo: string;
+  Name: string;
+  Provisional?: boolean;
+  [key: string]: string | boolean | undefined;
+};
+
+type BranchData = {
+  students: StudentRecord[];
+  branchCode: string; // The numeric code (e.g., 105)
+};
+
+type SessionData = {
+  [branchCode: string]: BranchData;
+};
+
+type CollegeStudents = {
+  [sessionYear: string]: SessionData;
+};
+
+// Branch code mapping (from string code to numeric code)
+// We need to reverse this to display names given a numeric code found in CSV filename
+const branchCodeMap: Record<string, string> = {
+  cse: "105",
+  ece: "104",
+  ee: "103",
+  mech: "102",
+  civil: "101",
+  eee: "110",
+};
+
+// Create reverse map: 105 -> cse
+const numericToBranchCode: Record<string, string> = Object.entries(
+  branchCodeMap,
+).reduce(
+  (acc, [key, val]) => {
+    acc[val] = key;
+    return acc;
+  },
+  {} as Record<string, string>,
+);
+
+// The GECS register uses branch keys; the CSVs use the numeric BEU branch codes.
+// Mechatronics is in the register and the CSVs but not in config.json's list.
+const registerBranchNames: Record<string, string> = {
+  met: "Mechatronics Engineering",
+};
+
+export async function getStaticPaths() {
+  // The register uses branch keys; the CSVs use the numeric BEU branch codes.
+  const registerBranchCodes: Record<string, string> = {
+    civil: "101",
+    mech: "102",
+    ee: "103",
+    ece: "104",
+    cse: "105",
+    met: "161",
+  };
+
+  // "2026-30" -> "26" so the existing getSessionLabel() renders "2026-2030".
+  function registerSessionKey(session: string): string {
+    const startYear = Number(session.slice(0, 4));
+    if (!Number.isFinite(startYear)) return session;
+    return String(startYear % 100).padStart(2, "0");
+  }
+
+  // College 157 only: add register students the CSVs do not have. The 2026-30
+  // batch has no result CSVs yet, so its students exist only in the register.
+  function mergeRegister(collegeStudentData: CollegeStudents) {
+    // One page, one row per student: a reg no already shown in any batch (the
+    // CSVs bucket lateral-entry students by reg prefix) is not added again.
+    const seen = new Set<string>();
+    for (const session of Object.values(collegeStudentData)) {
+      for (const branch of Object.values(session)) {
+        for (const student of branch.students) seen.add(student.RegNo);
+      }
+    }
+
+    for (const student of allStudents()) {
+      const branchCode = registerBranchCodes[student.branch];
+      if (!branchCode) continue;
+
+      // Provisional registrations have no BEU reg no yet: the roll no is the id.
+      const identifier = student.provisionalReg
+        ? student.rollNo ?? student.regNo
+        : student.regNo;
+      if (!identifier || seen.has(identifier)) continue;
+      seen.add(identifier);
+
+      const session = registerSessionKey(student.session);
+      collegeStudentData[session] ??= {};
+      collegeStudentData[session][branchCode] ??= {
+        students: [],
+        branchCode,
+      };
+      collegeStudentData[session][branchCode].students.push({
+        RegNo: identifier,
+        Name: student.name,
+        Provisional: student.provisionalReg ? true : undefined,
+      });
+    }
+  }
+
+  // Use Vite's glob import to get all matching CSV files statically
+  const csvFiles = import.meta.glob('/public/data/students_*.csv', { query: '?raw', import: 'default', eager: true });
+
+  // Map to store all student data: CollegeCode -> CollegeStudents
+  const allData: Record<string, CollegeStudents> = {};
+
+  try {
+    console.log("Starting glob analysis. Found keys:", Object.keys(csvFiles).length);
+    // Iterate over the statically imported files
+    for (const [filePath, fileContent] of Object.entries(csvFiles)) {
+      // Filename format: /public/data/students_{session}_{college}_{branch}_{sem}.csv
+      const file = filePath.split('/').pop() || "";
+      const parts = file.replace(".csv", "").split("_");
+      if (parts.length < 5) continue;
+
+      const session = parts[1];
+      const collegeCode = parts[2];
+      const branchNumeric = parts[3];
+
+      // Initialize structure
+      if (!allData[collegeCode]) allData[collegeCode] = {};
+      if (!allData[collegeCode][session]) allData[collegeCode][session] = {};
+      if (!allData[collegeCode][session][branchNumeric]) {
+        allData[collegeCode][session][branchNumeric] = {
+          students: [],
+          branchCode: branchNumeric,
+        };
+      }
+
+      // Read and parse file
+      try {
+        const text = fileContent as string;
+        const lines = text.trim().split('\n');
+        let records: StudentRecord[] = [];
+        
+        if (lines.length >= 2) {
+          const headers = lines[0].split(',').map(h => h.trim());
+          records = lines.slice(1).map(line => {
+            const values = line.split(',');
+            const obj: any = {};
+            headers.forEach((h, i) => {
+              obj[h] = values[i] ? values[i].trim() : '';
+            });
+            return obj as StudentRecord;
+          });
+        }
+
+        // Add unique students (by RegNo)
+        const currentStudents =
+          allData[collegeCode][session][branchNumeric].students;
+        const studentMap = new Map(currentStudents.map((s) => [s.RegNo, s]));
+
+        for (const rec of records) {
+          if (rec.RegNo && rec.Name) {
+            if (!studentMap.has(rec.RegNo)) {
+              studentMap.set(rec.RegNo, { RegNo: rec.RegNo, Name: rec.Name });
+            }
+          }
+        }
+
+        allData[collegeCode][session][branchNumeric].students = Array.from(
+          studentMap.values(),
+        );
+      } catch (err) {
+        console.error(`Error parsing ${file}:`, err);
+      }
+    }
+  } catch (err) {
+    console.error("FATAL Error processing data files:", err);
+  }
+
+  console.log("Glob processing complete. Returning colleges data.");
+
+  return collegesData.map((college) => {
+    // Sort sessions descending (newest first)
+    const collegeStudentData = allData[college.CollegeCode] || {};
+
+    // Only GECS has a register; every other college keeps its CSV data as-is.
+    if (college.CollegeCode === "157") {
+      mergeRegister(collegeStudentData);
+    }
+
+    return {
+      params: { college: college.abbreviations },
+      props: {
+        collegeData: college,
+        studentData: collegeStudentData,
+      },
+    };
+  });
+}
+
+const { college } = Astro.params;
+const { collegeData, studentData } = Astro.props;
+
+// Helper to get branch details from numeric code
+function getBranchInfo(numericCode: string) {
+  const code = numericToBranchCode[numericCode];
+  if (!code) {
+    // Mechatronics (161) only appears at GECS; keep other colleges untouched.
+    if (numericCode === "161" && collegeData?.CollegeCode === "157") {
+      return { name: registerBranchNames.met, code: "met" };
+    }
+    return { name: `Branch ${numericCode}`, code: numericCode };
+  }
+  const info = configData.branches.find((b) => b.code === code);
+  return info || { name: code.toUpperCase(), code };
+}
+
+// Get sorted sessions (descending)
+const sortedSessions = Object.keys(studentData || {}).sort(
+  (a, b) => Number(b) - Number(a),
+);
+
+// Generate session label (e.g., 24 -> 2024-2028)
+function getSessionLabel(sess: string) {
+  const startYear = 2000 + Number(sess);
+  return `${startYear}-${startYear + 4}`;
+}
+
+const totalStudents = sortedSessions.reduce(
+  (total, session) =>
+    total +
+    Object.values(studentData[session] as SessionData).reduce(
+      (sum, branch) => sum + branch.students.length,
+      0,
+    ),
+  0,
+);
+---
+
+<Layout title={collegeData ? `${collegeData.Name} student list` : "Student list"}>
+  {collegeData ? (
+    <>
+      <header class="page-head">
+        <div>
+          <p class="back"><a href={import.meta.env.BASE_URL + "listofstudents/"} style="view-transition-name:los">Student registry</a></p>
+          <h1 style={`view-transition-name:${collegeData.abbreviations}`}>{collegeData.Name}</h1>
+          <p class="meta num">{totalStudents} students · {sortedSessions.length} batches</p>
+        </div>
+      </header>
+
+      {
+        sortedSessions.length === 0 ? (
+          <p class="empty">No student data is available for this college.</p>
+        ) : (
+          <div class="sessions">
+            {sortedSessions.map((session) => {
+              const branchCodes = Object.keys(studentData[session]);
+              branchCodes.sort();
+
+              return (
+                <details class="session" open>
+                  <summary class="session-summary">
+                    <span>Batch {getSessionLabel(session)}</span>
+                    <span class="num count">{branchCodes.length} branches</span>
+                  </summary>
+
+                  <div class="branches">
+                    {branchCodes.map((bCode) => {
+                      const branchInfo = getBranchInfo(bCode);
+                      const students = studentData[session][bCode].students;
+                      students.sort((a, b) => a.RegNo.localeCompare(b.RegNo));
+
+                      return (
+                        <details class="branch">
+                          <summary class="branch-summary">
+                            <span>{branchInfo.name}</span>
+                            <span class="num count">{students.length}</span>
+                          </summary>
+
+                          <div class="table-wrap">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th scope="col" class="col-index">No.</th>
+                                  <th scope="col">Reg no.</th>
+                                  <th scope="col">Name</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {students.map((student, idx) => (
+                                  <tr>
+                                    <td class="col-index num">{idx + 1}</td>
+                                    <td class="mono">{student.RegNo}{student.Provisional ? <span class="chip">Provisional</span> : null}</td>
+                                    <td>{student.Name}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </details>
+                      );
+                    })}
+                  </div>
+                </details>
+              );
+            })}
+          </div>
+        )
+      }
+    </>
+  ) : (
+    <p class="empty">College data is not available.</p>
+  )}
+</Layout>
+
+<style>
+  .back {
+    margin: 0 0 var(--s2);
+    font-size: 0.78rem;
+  }
+
+  .back a {
+    color: var(--faint);
+    text-decoration: none;
+  }
+
+  .back a:hover {
+    color: var(--paper);
+  }
+
+  .sessions {
+    display: grid;
+    gap: var(--s5);
+    margin-top: var(--s5);
+  }
+
+  .session {
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .session-summary {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s3);
+    padding: var(--s3) 0;
+    color: var(--paper);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .count {
+    color: var(--faint);
+    font-size: 0.72rem;
+  }
+
+  .branches {
+    display: grid;
+    padding-left: var(--s4);
+  }
+
+  .branch {
+    border-top: 1px solid var(--line);
+  }
+
+  .branch-summary {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s3);
+    padding: var(--s3) 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin-bottom: var(--s3);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+  }
+
+  table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+
+  th {
+    padding: var(--s2) var(--s3);
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--line);
+    color: var(--faint);
+    font-size: 0.66rem;
+    font-weight: 650;
+    letter-spacing: 0.06em;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: var(--s2) var(--s3);
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  tbody tr:hover {
+    background: var(--surface-2);
+  }
+
+  .col-index {
+    width: 3rem;
+    text-align: right;
+  }
+
+  .chip {
+    display: inline-block;
+    margin-left: 0.35rem;
+    padding: 0.1rem 0.4rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--r);
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 650;
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .empty {
+    margin: var(--s5) 0;
+    color: var(--faint);
+  }
+</style>

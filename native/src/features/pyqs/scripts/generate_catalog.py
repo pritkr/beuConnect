@@ -173,6 +173,25 @@ def canonical(name: str, slug: str) -> tuple[str, str]:
     return cleaned, slug or slugify(cleaned)
 
 
+def representative(papers: list[tuple[str, dict]]) -> dict:
+    """The folder's own identity: the subject most of its files agree on.
+
+    A stray file can sort first. `101406` opens with a 2014 Transportation paper
+    and then holds eleven Materials, Testing & Evaluation papers, so naming the
+    folder after `papers[0]` made a Materials folder look like Transportation —
+    and the new Sem-IV Transportation row then claimed all twelve papers.
+    Majority wins; ties keep the first file's name.
+    """
+    counts = Counter(normalize(str(raw["metadata"].get("subject") or "")) for _, raw in papers)
+    if not counts:
+        return papers[0][1]["metadata"]
+    winner = counts.most_common(1)[0][0]
+    for _, raw in papers:
+        if normalize(str(raw["metadata"].get("subject") or "")) == winner:
+            return raw["metadata"]
+    return papers[0][1]["metadata"]
+
+
 def code_of(metadata: dict, folder: str) -> str:
     raw = str(metadata.get("subject_code") or "").strip()
     match = re.search(r"\b(\d{6})\b", raw) or re.search(r"\b(\d{6})\b", folder)
@@ -308,7 +327,7 @@ def build_beu() -> dict:
         if not papers:
             continue
 
-        first = papers[0][1]["metadata"]
+        first = representative(papers)
         code = code_of(first, folder.name)
         branch, sem, forced_name = branch_and_sem(code, first, folder.name)
         subject_name = forced_name or str(first.get("subject") or "")

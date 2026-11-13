@@ -15,6 +15,12 @@ hex colours.
   the first time the runtime sees it; use a token map or a ternary.
 - **44 pt targets.** Pressables are `min-h-11` with `active:` feedback, never
   hover-only.
+- **Content arrives; it does not teleport.** When a skeleton is replaced by real
+  content (a lookup result, the name the first run resolves), wrap the real
+  content in `Enter`: one motion per mount, `opacity` + 8 pt, 240 ms on the
+  app's one curve. Not on a tab root or a list that changes while the student is
+  reading it — those are opened many times a day, and a fade on every open reads
+  as the app waiting.
 - **Text grows.** Use `min-h`, never a fixed height around text; test at
   `fontScale` 1.0 / 1.3 / 2.0.
 - **Small phone first.** 320 pt, 16 pt gutter, two columns; no wide tables.
@@ -24,6 +30,9 @@ hex colours.
   emoji, a `★`, or a `›` in a `Text`. Add a name to `ICONS`, then
   `uv run scripts/icons/build-boxicons.py`; `./scripts/check.sh` fails when the
   font and the map disagree. Solid is for selected states only.
+- **A branch keeps one mark everywhere.** Resolve it through `branchIcon()` in
+  `branch-icon.ts`, which accepts both a slug (`cse`) and BEU's numeric code
+  (`105`); do not write a second branch → icon map in a feature.
 
 ## If you touch a token
 

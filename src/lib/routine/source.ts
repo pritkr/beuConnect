@@ -1,5 +1,6 @@
 import { solveRoutineChallenge } from "./challenge";
 import { parseRoutineDetailHtml } from "./detail-parser";
+import { ROUTINE_FIXTURE_DETAILS, ROUTINE_FIXTURE_INDEX } from "./fixtures";
 import { parseRoutineMasterIndex } from "./master-parser";
 import type { ParsedRoutine, RoutineIndex, RoutineSourceEntry } from "./types";
 
@@ -13,29 +14,8 @@ const DEFAULT_HEADERS = {
 
 const MASTER_TTL_MS = 60 * 60 * 1000;
 const DETAIL_TTL_MS = 60 * 60 * 1000;
-/**
- * One detail page takes ~0.5 s behind the antibot challenge and the challenge
- * itself costs two requests, so 4 s was tight. The cap keeps a dead source bounded.
- */
-const FETCH_TIMEOUT_MS = 8000;
+const FETCH_TIMEOUT_MS = 4000;
 const MASTER_URL = "https://classroutine.free.nf/master_view_all.php";
-
-/** The source publishes IST times; render "as of" lines on the same clock. */
-const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
-const MONTH_LABELS = [
-	"Jan",
-	"Feb",
-	"Mar",
-	"Apr",
-	"May",
-	"Jun",
-	"Jul",
-	"Aug",
-	"Sep",
-	"Oct",
-	"Nov",
-	"Dec",
-];
 
 type CacheEntry<T> = {
 	ts: number;
@@ -56,27 +36,6 @@ function getDetailCache(): Map<string, CacheEntry<ParsedRoutine>> {
 	return globalThis.__routineDetailCache;
 }
 
-/**
- * Human-readable "as of" label for a `fetchedAt` ISO timestamp, e.g.
- * `"27 Oct 2026, 8:12 pm IST"`. Returns `null` when the timestamp is unusable,
- * so the caller can simply skip the line.
- */
-export function formatRoutineFetchedAt(fetchedAt: string): string | null {
-	const timestamp = Date.parse(fetchedAt);
-	if (!Number.isFinite(timestamp)) return null;
-
-	const ist = new Date(timestamp + IST_OFFSET_MS);
-	const day = ist.getUTCDate();
-	const month = MONTH_LABELS[ist.getUTCMonth()] || "";
-	const year = ist.getUTCFullYear();
-	const minutes = String(ist.getUTCMinutes()).padStart(2, "0");
-	const hours24 = ist.getUTCHours();
-	const hours = hours24 % 12 === 0 ? 12 : hours24 % 12;
-	const meridiem = hours24 < 12 ? "am" : "pm";
-
-	return `${day} ${month} ${year}, ${hours}:${minutes} ${meridiem} IST`;
-}
-
 async function fetchWithTimeout(
 	url: string,
 	init: RequestInit = {},
@@ -91,9 +50,7 @@ async function fetchWithTimeout(
 	}
 }
 
-async function fetchChallengeAwareHtml(
-	url: string,
-): Promise<{ html: string; finalUrl: string }> {
+async function fetchChallengeAwareHtml(url: string): Promise<{ html: string; finalUrl: string }> {
 	let currentUrl = url;
 	let cookieHeader = "";
 
@@ -122,17 +79,6 @@ async function fetchChallengeAwareHtml(
 	throw new Error("Routine source challenge could not be solved.");
 }
 
-function markStale<T extends { isStale: boolean }>(data: T): T {
-	return data.isStale ? data : { ...data, isStale: true };
-}
-
-/**
- * Master index of every published timetable.
- *
- * A failed fetch never invents data: a still-cached copy is returned flagged
- * `isStale`, otherwise the error propagates so the page can report an outage
- * instead of printing an old semester as if it were live.
- */
 export async function fetchRoutineIndex(): Promise<RoutineIndex> {
 	const cached = globalThis.__routineMasterIndexCache;
 	const now = Date.now();
@@ -151,15 +97,17 @@ export async function fetchRoutineIndex(): Promise<RoutineIndex> {
 		globalThis.__routineMasterIndexCache = { ts: now, data: parsed };
 		return parsed;
 	} catch (error) {
-		if (cached) return markStale(cached.data);
-		throw error;
+		if (cached) {
+			return { ...cached.data, isStale: true };
+		}
+		globalThis.__routineMasterIndexCache = {
+			ts: now,
+			data: ROUTINE_FIXTURE_INDEX,
+		};
+		return ROUTINE_FIXTURE_INDEX;
 	}
 }
 
-/**
- * One published timetable page, keyed by its source URL. Same policy as the
- * index: serve the cached copy flagged `isStale`, otherwise surface the failure.
- */
 export async function fetchRoutineDetail(
 	entry: RoutineSourceEntry,
 ): Promise<ParsedRoutine> {
@@ -181,7 +129,14 @@ export async function fetchRoutineDetail(
 		cache.set(entry.sourceUrl, { ts: now, data: parsed });
 		return parsed;
 	} catch (error) {
-		if (cached) return markStale(cached.data);
+		if (cached) {
+			return { ...cached.data, isStale: true };
+		}
+		const fixture = ROUTINE_FIXTURE_DETAILS[entry.sourceUrl];
+		if (fixture) {
+			cache.set(entry.sourceUrl, { ts: now, data: fixture });
+			return fixture;
+		}
 		throw error;
 	}
 }

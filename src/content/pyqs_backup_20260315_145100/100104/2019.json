@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Exam., 2019 (New Course)",
+    "subject": "Programming for Problem Solving",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100104",
+    "year": 2019,
+    "semester": 1,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer from any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Let x be an integer which can take a value of 0 or 1. The statement if (x == 0)x = 1; else x = 0;\n                        is equivalent to which one of the following?</p>",
+          "options": [
+            "x = 1 - x",
+            "x = x + 1",
+            "x = x * 1",
+            "x = 1% x"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>A program attempts to generate as many permutations as possible of the string, 'abcd' by pushing\n                        the characters a, b, c, d in the same order onto a stack, but it may pop off the top character\n                        at any time. Which one of the following strings cannot be generated using this program?</p>",
+          "options": [
+            "abcd",
+            "dcba",
+            "cabd",
+            "cbad"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Suppose a C program has floating constant 1.414, what is the best way to convert this 'float'\n                        data type?</p>",
+          "options": [
+            "(float)1.414",
+            "Float (1.414)",
+            "1.414f or 1.414F",
+            "1.414 itself of 'float' data type, i.e., nothing else required"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>What is the output of the following program?<br/>\n                        void main(){<br/>\n                          int a;<br/>\n                          a=1;<br/>\n                          while(a&lt;=1)<br/>\n                            if(a%2)<br/>\n                              printf(\"%d\", a++);<br/>\n                            else<br/>\n                              printf(\"%d\", ++a);<br/>\n                          printf(\"%d\", a+10);<br/>\n                        }</p>",
+          "options": [
+            "011",
+            "012",
+            "111",
+            "112"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the output of this C code?<br/>\n                        #include&lt;stdio.h&gt;<br/>\n                        void main()<br/>\n                        {<br/>\n                          int a = 5 * 3 + 2 - 4;<br/>\n                          printf(\"%d\", a);<br/>\n                        }</p>",
+          "options": [
+            "13",
+            "14",
+            "12",
+            "16"
+          ],
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What is the output of this C code?<br/>\n                        #include&lt;stdio.h&gt;<br/>\n                        void main()<br/>\n                        {<br/>\n                          int b = 6;<br/>\n                          int c = 7;<br/>\n                          int a = ++b+c--;<br/>\n                          printf(\"%d\", a);<br/>\n                        }</p>",
+          "options": [
+            "Run-time error",
+            "15",
+            "13",
+            "14"
+          ],
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>What is the output of this C code?<br/>\n                        #include&lt;stdio.h&gt;<br/>\n                        void foo(int*);<br/>\n                        int main()<br/>\n                        {<br/>\n                          int i = 10;<br/>\n                          foo((&amp;i)++);<br/>\n                        }<br/>\n                        void foo(int* p)<br/>\n                        {<br/>\n                          printf(\"%d\n\", *p);<br/>\n                        }</p>",
+          "options": [
+            "10",
+            "some garbage value",
+            "compile-time error",
+            "segmentation fault/code crash"
+          ],
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>User-defined data type can be derived by</p>",
+          "options": [
+            "struct",
+            "enum",
+            "typedef",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>As per C language standard, which of the following is/are not keyword(s)? Pick the best\n                        statement:<br/>auto, make, main, sizeof, elseif</p>",
+          "options": [
+            "make, main",
+            "sizeof",
+            "auto, make",
+            "make, main, elseif"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>What is the output of this C code (when 1 is entered)?<br/>\n                        #include&lt;stdio.h&gt;<br/>\n                        void main()<br/>\n                        {<br/>\n                          double ch;<br/>\n                          printf (\"enter a value between 1 to 2:\");<br/>\n                          scanf(\"%lf\", &amp;ch);<br/>\n                          switch (ch)<br/>\n                          {<br/>\n                            case 1:<br/>\n                              printf(\"1\");<br/>\n                              break;<br/>\n                            case 2:<br/>\n                              printf(\"2\");<br/>\n                              break;<br/>\n                          }<br/>\n                        }</p>",
+          "options": [
+            "Compile-time error",
+            "1",
+            "2",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What do you mean by pre-processor? Also explain the use of %i format specifier w.r.t, scanf()\n                        function.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Write a C program to Perform binary search on a set of given sorted numbers.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Write a C program to find the number of lines in a text file.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain pointer arithmetic with the help of suitable diagrams.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain the following bitwise operators:<br/>\n                        (a) Bitwise AND<br/>\n                        (b) Bitwise OR<br/>\n                        (c) Bitwise XOR<br/>\n                        (d) Bitwise Left Shift</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What do you mean by 'call by reference'? Explain with the help of a function which swaps two\n                        numbers.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Write a C program of the following:<br/>\n                        (a) Reverse a string without using strrev().<br/>\n                        (b) Concatenate two strings without using strcat()</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Write a 'recursive' C program to print the following:<br/>\n                        (a) GCD of two numbers<br/>\n                        (b) Merge-sort of a set of given numbers</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    }
+  ]
+}

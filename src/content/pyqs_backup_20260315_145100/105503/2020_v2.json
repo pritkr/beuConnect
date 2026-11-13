@@ -1,0 +1,300 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2020",
+    "subject": "FORMAL LANGUAGES AND AUTOMATA THEORY",
+    "subject_slug": "formal-languages-and-automata-theory",
+    "subject_code": "105503",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "Definition of a language L with alphabet {a} is given as \\( L = \\{a^{nk} \\mid k &gt; 0 \\}, \\)\n                        and n\n                        is a\n                        positive integer constant. What is the minimum number of states needed in a DFA to recognize L?",
+          "options": [
+            "\\( k + 1 \\)",
+            "\\( n + 1 \\)",
+            "\\( 2^{n+1} \\)",
+            "\\( 2^{k+1} \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "Which of the following versions of Unix came up with YACC first?",
+          "options": [
+            "V3",
+            "V5",
+            "CB UNIX",
+            "UNIX-RT"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "A pushdown automata can be represented as \\( PDA = \\epsilon \\text{-} NFA + [\\text{stack}]\n                        \\).",
+          "options": [
+            "True",
+            "False"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "A language accepted by deterministic pushdown automata is closed under which of the following?",
+          "options": [
+            "Complement",
+            "Union",
+            "Both (i) and (ii)",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "A _____ is context free grammar with atmost one non-terminal in the right handside of the\n                        production.",
+          "options": [
+            "linear grammar",
+            "linear bounded grammar",
+            "regular grammar",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "The lexical analysis for a modern language such as Java needs the power of which one of the\n                        following\n                        machine models in a necessary and sufficient sense?",
+          "options": [
+            "Finite state automata",
+            "Deterministic pushdown automata",
+            "Non-deterministic pushdown automata",
+            "Turing machine"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Let \\( L = \\{w \\in (0+1)^* \\mid w \\text{ has even number of 1s}\\} \\), i.e., L is the set\n                        of all\n                        bit\n                        strings with even number of 1s. Which one of the regular expression below represents L?",
+          "options": [
+            "\\( (0^*10^*1)^* \\)",
+            "\\( 0^*(10^*10^*)^* \\)",
+            "\\( 0^*(10^*1^*)^*0^* \\)",
+            "\\( 0^*1(10^*1)^*10^* \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "What is the minimum number of states in deterministic finite automata (DFA) for string starting\n                        with\n                        \\( ba^2 \\) and ending with a over alphabet {a, b}?",
+          "options": [
+            "Ten",
+            "Nine",
+            "Eight",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "The decision problem is the function from string to",
+          "options": [
+            "char",
+            "int",
+            "boolean",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "A language L may not be accepted by a turing machine if",
+          "options": [
+            "it is recursively enumerable",
+            "it is recursive",
+            "L can be enumerated by some turing machine",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Write the context-free grammar to create palindrome over {a, b}."
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Construct a DFA which accepts the set of all binary strings that interpreted as binary\n                        representation\n                        of an unsigned decimal integer, is divisible by 5."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Design a turing machine to compute the sum of two positive integers m and n."
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Design a NPDA for accepting the string \\( L = \\) set of all palindrome over {a, b} by the empty\n                        stack\n                        and by final state.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Construct finite automaton corresponding to the regular expression: \\( (a+b)^*c d^*e \\)",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Explain the multi-tape version of turing machine and its significance."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Show given grammar over alphabet {a, b} verify whether it is ambiguous or unambiguous : \\( S\n                        \\rightarrow a / abSb / aAb \\), \\( A \\rightarrow bS / aAAb \\)",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Show that \\( L = \\) palindrome over {a, b} is not regular."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "Prove that if L is generated by a CFG, then L is accepted by a non-deterministic PDA by empty\n                        stack."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Design a pushdown automaton for the following context-free grammar: \\( S \\rightarrow aB \\mid\n                        bA\n                        \\),\n                        \\( A \\rightarrow aS \\mid bAA \\mid a \\), \\( B \\rightarrow bS \\mid aBB \\mid b \\)",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Design a turing machine that accepts all palindromes over \\( \\Sigma = \\{a, b\\} \\).",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Explain Myhill-Nerode theorem for minimization of automata with suitable example."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Prove that if L is the language generated by an unrestricted grammar \\( G=(N,T,P,S) \\), then L\n                        is\n                        recognized by a turing machine."
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "Design a pushdown automata for accepting the string for the language \\( L = \\{WW^R \\mid W \\in\n                        (a,b)^*\\} \\) by the empty stack as well as final state.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Minimization of automata</li>\n<li>Type 2 grammar (Context free)</li>\n<li>NP-hard problem</li>\n<li>Pumping lemma for CFL</li>\n</ul>",
+          "options": [
+            "Minimization of automata",
+            "Type 2 grammar (Context free)",
+            "NP-hard problem",
+            "Pumping lemma for CFL"
+          ]
+        }
+      ]
+    }
+  ]
+}

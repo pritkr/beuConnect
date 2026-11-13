@@ -13,6 +13,8 @@ import type { Grade, PercentageFormula, SubjectTotal } from "./engine";
 import { clamp, isGrade, maxIa } from "./engine";
 import { sanitiseRoutine } from "./routine-parse";
 import type { ParsedRoutine } from "./routine-parse";
+import { EMPTY_WIFI_STATUS } from "./wifi-auto";
+import type { WifiStatus } from "./wifi-auto";
 import type {
   AttendanceAction,
   AttendanceEntry,
@@ -46,6 +48,8 @@ export interface PredictRow {
   total: SubjectTotal;
   ia: number;
   target: Grade;
+  /** A what-if ESE mark, as typed; "" until the student enters one. */
+  ese: string;
 }
 
 export interface PlannerDraft {
@@ -66,17 +70,17 @@ export interface CalcExtras {
 }
 
 export function freshCalculator(): CalculatorState {
-  return { mode: "sgpa", subjects: [0, 1, 2, 3].map(blankSubject), semesters: [] };
+  return { mode: "sgpa", subjects: [0, 1, 2, 3].map(blankSubject), semesters: [], branch: "", semester: 0 };
 }
 
 export function freshPredictRow(index: number): PredictRow {
-  return { id: newId("pred"), name: `Paper ${index + 1}`, total: 100, ia: 0, target: "B" };
+  return { id: newId("pred"), name: `Paper ${index + 1}`, total: 100, ia: 0, target: "B", ese: "" };
 }
 
 export function freshExtras(): CalcExtras {
   return {
     predict: {
-      rows: [freshPredictRow(0), freshPredictRow(1)],
+      rows: [freshPredictRow(0)],
       planner: { current: "", previous: "", target: "", semester: "" },
     },
     percent: { value: "", formula: "beu" },
@@ -89,6 +93,11 @@ export const calc = signal<CalculatorState>(freshCalculator());
 export const attendance = signal<AttendanceState>(DEFAULT_ATTENDANCE);
 export const routine = signal<RoutineState>(DEFAULT_ROUTINE);
 export const wifi = signal<WifiState>(DEFAULT_WIFI);
+/**
+ * The Android runner's last word. `idle` until a host answers, so a desktop
+ * build shows the same screen without pretending it checked anything.
+ */
+export const wifiStatus = signal<WifiStatus>(EMPTY_WIFI_STATUS);
 export const extras = signal<CalcExtras>(freshExtras());
 
 /** False until storage has been read, so nothing overwrites it with defaults. */
@@ -143,7 +152,18 @@ export function normaliseCalculator(value: unknown): CalculatorState {
     }
   }
 
-  return { mode, subjects, semesters };
+  // The preset pick: a branch the pack carries, and a semester in 1–8. Junk is
+  // "nothing picked" rather than a crash or a wrong paper list.
+  const branch = asText(raw.branch, "").trim().toLowerCase().slice(0, 12);
+  const semester = Math.round(asFinite(raw.semester, 0));
+
+  return {
+    mode,
+    subjects,
+    semesters,
+    branch,
+    semester: semester >= 1 && semester <= 8 ? semester : 0,
+  };
 }
 
 export function normaliseAttendance(value: unknown): AttendanceState {
@@ -209,7 +229,19 @@ export function normaliseRoutine(value: unknown): RoutineState {
 export function normaliseWifi(value: unknown): WifiState {
   if (!value || typeof value !== "object") return DEFAULT_WIFI;
   const raw = value as Record<string, unknown>;
-  return { regNo: asText(raw.regNo, "").slice(0, 24), portal: asText(raw.portal, "").slice(0, 120) };
+  const regNo = asText(raw.regNo, "").trim().slice(0, 24);
+  const password = asText(raw.password, "").trim().slice(0, 64);
+  return {
+    // An empty field is "never set", not "sign in as nobody": the shipped
+    // account fills it, and the screen can still clear it while typing.
+    regNo: regNo || DEFAULT_WIFI.regNo,
+    portal: asText(raw.portal, "").trim().slice(0, 200),
+    password: password || DEFAULT_WIFI.password,
+    // Both switches default to on, so an install from before this feature
+    // starts working on the next launch instead of needing a visit here.
+    auto: raw.auto !== false,
+    rotate: raw.rotate !== false,
+  };
 }
 
 export function normaliseExtras(value: unknown): CalcExtras {
@@ -230,6 +262,7 @@ export function normaliseExtras(value: unknown): CalcExtras {
         total,
         ia: clamp(Math.round(asFinite(item.ia, 0)), 0, maxIa(total)),
         target: typeof item.target === "string" && isGrade(item.target) ? item.target : "B",
+        ese: asText(item.ese, "").slice(0, 5),
       });
     }
   }

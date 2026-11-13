@@ -1,60 +1,151 @@
 ---
 export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
+import Icon from "../../components/Icon.astro";
 import branchConfig from "../../assets/data/config.json";
-import Header from "../../components/header.astro";
-import Footer from "../../components/footer.astro";
+
+const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="BEU Syllabus | BEUConnect" description="Complete B.Tech syllabus for all branches under Bihar Engineering University (BEU). Detailed semester-wise breakdown for CSE, ECE, Civil, Mechanical, and EE.">
-    <Header />
-    <h1 style="view-transition-name:beusyl">BEU Syllabus</h1>
-    <p style="color: rgba(255, 255, 255, 0.85);">Select your branch to view all semesters.</p>
-    
-    <div id="smart-syl-box" style="display: none; padding: 1rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent-blue); border-radius: 12px; margin-bottom: 1.5rem;">
-        <span style="font-size: 0.8rem; font-weight: 700; color: #60a5fa; text-transform: uppercase;">Your Branch</span>
-        <h2 id="smart-syl-title" style="margin: 0.2rem 0 0.5rem; font-size: 1.4rem; color: #fff;">...</h2>
-        <a id="smart-syl-link" href="#" class="outline-btn" style="padding: 0.5rem 1rem; border-radius: 8px; border-color: rgba(96, 165, 250, 0.4); color: #93c5fd;">View Your Syllabus →</a>
-    </div>
+<Layout
+	title="BEU syllabus"
+	description="Semester-wise B.Tech syllabus for six Bihar Engineering University branches: CSE, ECE, EE, Mechanical, Civil and EEE."
+>
+	<header class="page-head">
+		<div>
+			<h1>Syllabus</h1>
+			<p class="meta">Six branches · Semesters 1–8</p>
+		</div>
+	</header>
 
-    <ul>
-    {
-        branchConfig.branches.map((branch) => (
-            <li style="margin-bottom: 0.5rem;">
-                <a
-                    href={`${import.meta.env.BASE_URL}syllabus/${branch.code}/`}
-                    style={`view-transition-name:${branch.code}; color: rgba(255, 255, 255, 0.9); font-weight: 500;`}
-                >
-                    {branch.name}
-                </a>
-            </li>
-        ))
-    }
-    </ul>
-    <Footer />
+	<div id="smart-syl-box" class="smart" hidden>
+		<h2 id="smart-syl-title">—</h2>
+		<a id="smart-syl-link" href="#">Open your semester</a>
+	</div>
+
+	<ul class="branch-list">
+		{
+			branchConfig.branches.map((branch) => (
+				<li>
+					<a href={`${base}syllabus/${branch.code}/`}>
+						<span class="branch-name">{branch.name}</span>
+						<span class="branch-code mono">{branch.code.toUpperCase()}</span>
+						<span class="branch-sem">Sem 1–8</span>
+						<Icon name="arrow-right" size={16} />
+					</a>
+				</li>
+			))
+		}
+	</ul>
 </Layout>
 
-<script>
-    document.addEventListener("DOMContentLoaded", async () => {
-        if (typeof window !== "undefined" && document.documentElement.classList.contains("is-logged-in")) {
-            try {
-                const { getProfile } = await import("../../utils/profileManager");
-                const profile = getProfile();
-                if (profile && profile.branchName && profile.branchPath) {
-                    const smartBox = document.getElementById("smart-syl-box");
-                    const smartTitle = document.getElementById("smart-syl-title");
-                    const smartLink = document.getElementById("smart-syl-link") as HTMLAnchorElement;
+<style>
+	.smart {
+		margin-bottom: var(--s5);
+		padding: var(--s4) var(--s5);
+		border-left: 3px solid var(--accent);
+		border-radius: 0 var(--r) var(--r) 0;
+		background: var(--accent-soft);
+	}
 
-                    if (smartBox && smartTitle && smartLink) {
-                        smartTitle.textContent = profile.branchName;
-                        const semPath = profile.currentSem ? `${profile.currentSem}/` : "";
-                        smartLink.href = `${import.meta.env.BASE_URL}syllabus/${profile.branchPath}/${semPath}`;
-                        smartBox.style.display = "block";
-                    }
-                }
-            } catch (e) {
-                console.error("Failed to load smart defaults for syllabus list", e);
-            }
-        }
-    });
+	.smart h2 {
+		margin: 0.15rem 0 var(--s3);
+		font-size: 1.6rem;
+	}
+
+	.smart a {
+		font-size: 0.85rem;
+		font-weight: 600;
+	}
+
+	.branch-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.branch-list a {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 4rem 6rem 1rem;
+		align-items: center;
+		gap: var(--s3);
+		min-height: 3.6rem;
+		padding: var(--s3) 0;
+		border-bottom: 1px solid var(--line);
+		color: var(--paper);
+		text-decoration: none;
+	}
+
+	.branch-list a:hover {
+		color: var(--accent);
+	}
+
+	.branch-name {
+		font-size: 1rem;
+	}
+
+	.branch-code,
+	.branch-sem {
+		color: var(--faint);
+		font-size: 0.78rem;
+	}
+
+	.branch-code {
+		font-family: var(--font-mono);
+		letter-spacing: 0.04em;
+	}
+
+	.branch-sem {
+		text-align: right;
+	}
+
+	.branch-list svg {
+		color: var(--line-strong);
+	}
+
+	.branch-list a:hover svg {
+		color: var(--accent);
+	}
+
+	@media (max-width: 560px) {
+		.branch-list a {
+			grid-template-columns: minmax(0, 1fr) auto;
+			row-gap: 0.15rem;
+		}
+
+		.branch-code {
+			grid-row: 2;
+		}
+
+		.branch-sem {
+			grid-row: 2;
+			text-align: left;
+		}
+
+		.branch-list svg {
+			grid-row: 1 / span 2;
+			grid-column: 2;
+		}
+	}
+</style>
+
+<script>
+	import { getProfile } from "../../utils/profileManager";
+
+	const box = document.getElementById("smart-syl-box");
+	const title = document.getElementById("smart-syl-title");
+	const link = document.getElementById("smart-syl-link") as HTMLAnchorElement | null;
+
+	const profile = getProfile();
+
+	if (box && title && link && profile?.branchName && profile.branchPath) {
+		title.textContent = profile.branchName;
+		link.href = `${import.meta.env.BASE_URL}syllabus/${profile.branchPath}/${
+			profile.currentSem ? `${profile.currentSem}/` : ""
+		}`;
+		link.textContent = profile.currentSem
+			? `Open semester ${profile.currentSem}`
+			: "Open your branch";
+		box.hidden = false;
+	}
 </script>

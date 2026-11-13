@@ -16,7 +16,7 @@
  * screens are only reached when `usesNativePdf()` says so.
  */
 
-import { Text, View, computed, nativeComponent, platform, signal, type YNode } from "nsh";
+import { Text, View, computed, nativeComponent, platform, signal, type NativeComponentRef } from "nsh";
 
 import { Btn, Muted, Panel, Screen } from "../../ui";
 import type { Nav } from "../../app/router";
@@ -56,7 +56,7 @@ export function usesNativePdf(): boolean {
  * there are no page buttons.
  */
 export function NativePdfScreen(props: { nav: Nav; url: string; title: string; name?: string }) {
-  let node: YNode | null = null;
+  let node: NativeComponentRef | null = null;
   const pages = signal(0);
   const page = signal(1);
   const failed = signal("");
@@ -97,7 +97,7 @@ export function NativePdfScreen(props: { nav: Nav; url: string; title: string; n
           name={props.name ?? props.title}
           page={1}
           style={{ flex: 1 }}
-          ref={(element: YNode) => {
+          ref={(element: NativeComponentRef) => {
             node = element;
           }}
           onReady={(event) => {

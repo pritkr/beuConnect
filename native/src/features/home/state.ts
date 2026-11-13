@@ -140,11 +140,15 @@ function profileFrom(profileRow: unknown, courseRow: unknown): HomeProfile | nul
   };
 }
 
-/** `10:00` → 600; anything that is not a clock time → -1. */
+/** `10:00` → 600; anything that is not a real clock time → -1. */
 export function minutesOf(time: string): number {
   const match = /^(\d{1,2}):(\d{2})$/.exec(time.trim());
   if (!match) return -1;
-  return Number(match[1]) * 60 + Number(match[2]);
+  const hours = Number(match[1]);
+  const minutes = Number(match[2]);
+  if (!Number.isFinite(hours) || !Number.isFinite(minutes)) return -1;
+  if (hours > 23 || minutes > 59) return -1;
+  return hours * 60 + minutes;
 }
 
 /** Today's saved timetable, in clock order, from `tools.routine`. */

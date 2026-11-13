@@ -14,7 +14,7 @@ import { formatBytes } from "../../lib/bytes";
 import { relativeTime } from "../../lib/net";
 import { Badge, Body, Btn, ErrorState, Label, Loading, Muted, Progress, Screen, SectionHeader } from "../../ui";
 import { branchShort, isProfileComplete, useProfile } from "../settings/profile";
-import { ClearAction, ScreenIntro, SettingsGroup, SettingsRow, confirmDestructive } from "../settings/ui";
+import { ClearAction, SettingsGroup, SettingsRow, confirmDestructive } from "../settings/ui";
 import { feedStatus, syncDataFeed } from "../data-feed/store";
 import {
   PACKS,
@@ -126,8 +126,6 @@ export function OfflineScreen() {
   return (
     <Screen>
       <Body>
-        <ScreenIntro label="On this phone" title="Offline data" />
-
         {error() ? <ErrorState title="Storage unavailable" message={error() ?? undefined} onRetry={scan} /> : null}
 
         {report() === null ? (

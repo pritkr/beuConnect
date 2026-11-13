@@ -2,13 +2,94 @@
  "dataset": "subjects",
  "branch": "cse",
  "branchName": "Computer Science & Engineering",
- "generatedAt": "2026-10-25T21:55:30Z",
+ "generatedAt": "2026-10-28T03:04:46Z",
  "source": "src/assets/data/branches/cse.json",
  "subjects": [
   {
-   "id": "cse-s1-100110",
+   "id": "cse-s1-100102",
    "semester": 1,
-   "code": "100110",
+   "code": "100102",
+   "name": "Engineering Mathematics - I",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/cse.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "cse-s1-100102-u1",
+     "number": 1,
+     "title": "Basic Linear Algebra",
+     "topics": [
+      {
+       "id": "cse-s1-100102-u1-t1",
+       "title": "1 Elementary transformations and Rank of Matrix",
+       "text": "1.1 Elementary transformations and Rank of Matrix, Rank by using Echelon and Normal form of Matrices. Linear dependence & independence of vectors in 𝑅 𝑛 space"
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100102-u2",
+     "number": 2,
+     "title": "Differential Calculus",
+     "topics": [
+      {
+       "id": "cse-s1-100102-u2-t1",
+       "title": "Single Variable",
+       "text": "2.1 Higher order derivatives; Successive differentiation and Leibnitz’s Theorem 2.2 Mean Value Theorems (Rolle’s; Lagrange’s; Cauchy) 2.3 Indeterminate Forms; L’ Hopital Rule 2.4 Tangents & Normal of Algebraic & Polar Curves, Curvature Rule.",
+       "hours": 8
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100102-u3",
+     "number": 3,
+     "title": "Differential Calculus",
+     "topics": [
+      {
+       "id": "cse-s1-100102-u3-t1",
+       "title": "Several Variables",
+       "text": "3.1 Partial differentiations; Euler’s theorems 3.2 Limit, Continuity and differentiability of functions of Several Variables 3.3 Taylor’s theorem with various forms of remainders, Maclaurin's theorem and related problems 3.4 Maxima & Minima for functions of several variables; Lagrange’s Multiplier Method",
+       "hours": 9
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100102-u4",
+     "number": 4,
+     "title": "Integral Calculus",
+     "topics": [
+      {
+       "id": "cse-s1-100102-u4-t1",
+       "title": "1 Differentiation under the integral sign; Leibnitz’s rule",
+       "text": "4.2 Double integral; Change the order of integration; Evaluation of double integration by changing it into polar co-ordinates 4.3 Triple Integral; Evaluation of Triple integral by changing to Spherical Polar co-ordinates & Cylindrical polar co-ordinates 4.4 Beta; Gamma; Elliptic integral; Relation between Beta & Gamma functions, General Properties and related problems."
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100102-u5",
+     "number": 5,
+     "title": "Vector Calculus",
+     "topics": [
+      {
+       "id": "cse-s1-100102-u5-t1",
+       "title": "1 Scalar and vector valued functions",
+       "text": "5.1 Scalar and vector valued functions; Concepts of gradient, divergence and curl and their geometrical and physical significance; tangent plane; directional derivative;"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 5,
+   "topicCount": 5
+  },
+  {
+   "id": "cse-s1-100104",
+   "semester": 1,
+   "code": "100104",
    "name": "Engineering Physics",
    "type": "Theory",
    "credits": 3,
@@ -16,116 +97,62 @@
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s1-100110-u1",
+     "id": "cse-s1-100104-u1",
      "number": 1,
-     "title": "Unit 1",
+     "title": "Wave Optics",
      "topics": [
       {
-       "id": "cse-s1-100110-u1-t1",
-       "title": "Frame of Reference",
-       "text": "Non-Inertial frame of reference, rotating coordinate system, centripetal and Coriolis acceleration and its application in weather system.",
-       "hours": 2
-      },
-      {
-       "id": "cse-s1-100110-u1-t2",
-       "title": "Oscillations",
-       "text": "Harmonic Oscillator, Damped Harmonic motion – overdamped, critically Damped and lightly damped oscillators, Force Oscillators and Resonance.",
-       "hours": 3
+       "id": "cse-s1-100104-u1-t1",
+       "title": "1 Interference, Division of amplitude, Newton’s Ring experiment, Michelson interferometer",
+       "text": "1.2 Diffraction, Fraunhofer diffraction, Single and double slit, & Circular aperture 1.3 Diffraction, Grating, 1.4 Rayleigh criterion, resolving power of telescope. 1.5 Polarization, double-refracting crystal, Nicol prism."
       }
      ]
     },
     {
-     "id": "cse-s1-100110-u2",
+     "id": "cse-s1-100104-u2",
      "number": 2,
-     "title": "Unit 2",
+     "title": "Lasers and Optical Fiber",
      "topics": [
       {
-       "id": "cse-s1-100110-u2-t1",
-       "title": "Optics",
-       "text": "Huygens’s Principle, Superposition of Waves and interference of Light by wave front- splitting and amplitude-splitting; Young’s double slit experiment, Michelson interferometer, Fraunhofer diffraction from single slit and circular aperture, Diffraction Grating and their resolving power",
-       "hours": 4
-      },
-      {
-       "id": "cse-s1-100110-u2-t2",
-       "title": "LASER",
-       "text": "Einstein’s theory of matter-radiations interaction, Einstein’s Coefficients (A and B), Amplification by population inversion, Different types of lasers – Gas Laser, Helium-Neon Laser, Solid State Laser (Ruby, Neodymium), Semiconductor Laser.",
-       "hours": 4
+       "id": "cse-s1-100104-u2-t1",
+       "title": "1 Characteristics of laser light",
+       "text": "2.1 Characteristics of laser light, Einstein’s A & B coefficients, Population inversion, pumping mechanism, Optical resonator"
       }
      ]
     },
     {
-     "id": "cse-s1-100110-u3",
+     "id": "cse-s1-100104-u3",
      "number": 3,
-     "title": "Unit 3",
+     "title": "Electromagnetism & Propagation of Waves",
      "topics": [
       {
-       "id": "cse-s1-100110-u3-t1",
-       "title": "Quantum Mechanics",
-       "text": "Compton Effect, Photoelectric Effect, Wave Particle duality, de Broglie’s hypothesis, Heisenberg’s Uncertainty Principle, Wave function and wave packets, phase and group velocities, Schrodinger’s Wave Equation, Normalization, Expectation values, Eigenvalues and Eigenfunction.",
-       "hours": 5
-      },
-      {
-       "id": "cse-s1-100110-u3-t2",
-       "title": "Applications in One dimensions",
-       "text": "Application of Schrodinger Wave Equation for particle in one dimensional box – its wavefunction and eigenvalue of energy and momentum.",
-       "hours": 2
+       "id": "cse-s1-100104-u3-t1",
+       "title": "1 Electric fields, Gauss’ Law, Dielectrics and Capacitors",
+       "text": "3.2 Magnetic fields & Magnetic Materials. 3.3 Maxwell’s Equations. 3.4 Electromagnetic waves & Poynting Theorem"
       }
      ]
     },
     {
-     "id": "cse-s1-100110-u4",
+     "id": "cse-s1-100104-u4",
      "number": 4,
-     "title": "Unit 4",
+     "title": "Quantum Mechanics",
      "topics": [
       {
-       "id": "cse-s1-100110-u4-t1",
-       "title": "Vector Calculus",
-       "text": "Gradient, Divergence and Curl, Line, Surface and Volume integrals, Gauss’s Divergence theorem and Stokes’ theorem in Cartesian Coordinate.",
-       "hours": 2
-      },
-      {
-       "id": "cse-s1-100110-u4-t2",
-       "title": "Electrostatics",
-       "text": "Gauss’s Law and its applications, Divergence and Curl of Electrostatic fields, Electrostatic Potential, Boundary Conditions, Poisson’s and Laplace’s equations, Dielectrics, Polarization, Bound Charges, Electric displacement, Boundary Conditions in dielectrics.",
-       "hours": 4
+       "id": "cse-s1-100104-u4-t1",
+       "title": "1 Introduction to Quantum Mechanics",
+       "text": "4.2 De-Broglie hypothesis, Heisenberg uncertainty principle 4.3 Wave function and its characteristics 4.4 Schrödinger’s equation (time-dependent and independent) 4.5 Particle in a box, Energy Eigen values and Eigen functions 4.6 Potential barrier and Tunneling"
       }
      ]
     },
     {
-     "id": "cse-s1-100110-u5",
+     "id": "cse-s1-100104-u5",
      "number": 5,
-     "title": "Unit 5",
+     "title": "Semiconductors & Nano-materials",
      "topics": [
       {
-       "id": "cse-s1-100110-u5-t1",
-       "title": "Magnetostatics",
-       "text": "Lorentz force, Biot-Savart and Ampere’s circuital laws and their applications, Divergence and Curl of Magneto static fields, Magnetic vector potential, Force and torque on a magnetic dipole, Magnetic Materials, Magnetization, Bound currents, Boundary conditions.",
-       "hours": 4
-      },
-      {
-       "id": "cse-s1-100110-u5-t2",
-       "title": "Electrodynamics and Electromagnetic Waves",
-       "text": "Ohm’s law, Motional EMF, Faraday’s Law, Lenz’s law, Self and mutual inductance, Energy stored in magnetic field, Maxwell’s equations in vacuum and nonconducting medium, Continuity Equation, Poynting Theorem, Wave Equations: plain electromagnetic wave in vacuum and their transverse nature and Polarization.",
-       "hours": 4
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100110-u6",
-     "number": 6,
-     "title": "Unit 6",
-     "topics": [
-      {
-       "id": "cse-s1-100110-u6-t1",
-       "title": "Introduction to Solids and Semi-Conductors",
-       "text": "Free electron theory of metal, fermi level, Bloch’s theorem for particle in a periodic Potential, Kroning-Penney model and origin of energy band.",
-       "hours": 3
-      },
-      {
-       "id": "cse-s1-100110-u6-t2",
-       "title": "Electronic Materials",
-       "text": "Metals, semiconductors and insulators, intrinsic and extrinsic semiconductors,Carriertransport, diffusion and drift, P-N junction.",
-       "hours": 3
+       "id": "cse-s1-100104-u5-t1",
+       "title": "1 Introduction, Types of materials (metal, semiconductor and insulator",
+       "text": "5.2 Intrinsic and extrinsic semiconductors, P-type and N-type semiconductors, Diffusion, Drift and Fermi level 5.3 Photodiode, P-N junction transistor, LED 5.4 Hall effect 5.5 Solar cell and its characteristics. 5.6 Introduction to nanoscience& nanotechnology, the significance of nanoscale 5.7 Unique Properties: Comparison of bulk and nanomaterials, large surface-to-volume ratio, change in band gap, and optical/electrical/mechanical properties at the nanoscale. 5.8 Classification of Nanostructured Materials: 0D (Quantum Dot), 1D (Nanowire"
       }
      ]
     }
@@ -135,179 +162,76 @@
     "tutorial": 0,
     "practical": 0
    },
-   "unitCount": 6,
-   "topicCount": 12
+   "unitCount": 5,
+   "topicCount": 5
   },
   {
-   "id": "cse-s1-100102",
+   "id": "cse-s1-100105",
    "semester": 1,
-   "code": "100102",
-   "name": "Engineering Mathematics–I",
-   "type": "Theory",
-   "credits": 4,
-   "source": "src/assets/data/branches/cse.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "cse-s1-100102-u1",
-     "number": 1,
-     "title": "Linear Algebra-I",
-     "topics": [
-      {
-       "id": "cse-s1-100102-u1-t1",
-       "title": "Elementary Row operations, Gauss -Jordan Method for finding the inverse of Matrix, Complex Matrix",
-       "text": "Hermitian , Skew Hermitian and Unitary Matrix, Vector space, Sub Spaces, Linear dependence and Independences of Vectors, Linear Span, Basis, Dimension, Extension of basis of subspace, The rank of a matrix, Row and column space, Solvability of system of linear equations."
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100102-u2",
-     "number": 2,
-     "title": "Linear Algebra-II",
-     "topics": [
-      {
-       "id": "cse-s1-100102-u2-t1",
-       "title": "Linear Transformations",
-       "text": "Linear Transformations, Kernel and Range of linear transformation, Matrix Representation of a linear transformation, Rank-Nullity Theorem, Eigen Value and Eigen Vectors, Properties of Eigen vectors, Eigen Bases, Orthogonal Transformation, Similarity Transformation, Matrix Diagonalization, Cayley- Hamilton Theorem."
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100102-u3",
-     "number": 3,
-     "title": "Calculus for single variable",
-     "topics": [
-      {
-       "id": "cse-s1-100102-u3-t1",
-       "title": "Inderminate form",
-       "text": "Inderminate form, L’Hospital Rule, Rolle’s Theorem, Mean Value Theorem, Expansion of function (single variable), Taylor and Maclaurin Series, Riemann Integration, Riemann Sum, Improper Integrals, Beta and Gamma function and their properties."
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100102-u4",
-     "number": 4,
-     "title": "Multivariable Calculus (Differentiation",
-     "topics": [
-      {
-       "id": "cse-s1-100102-u4-t1",
-       "title": "Function with two or more variable",
-       "text": "Function with two or more variable, Limit, continuity and Partial differentiation, Total Differentiation Taylor’s series and Maclaurin’s series for function with two variable, Jacobian, Maxima and Minima, Method of Lagrange’s multiplier."
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100102-u5",
-     "number": 5,
-     "title": "Multivariable Calculus (Integration",
-     "topics": [
-      {
-       "id": "cse-s1-100102-u5-t1",
-       "title": "Double Integral",
-       "text": "Double Integral, change of order of integration, Triple integral, Change of Variable in a Double and Triple Integrals, Change to polar coordinate, Change to cylindrical coordinate, Change to spherical polar coordinate, Application to area and volume using double and triple integral"
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100102-u6",
-     "number": 6,
-     "title": "Vector Calculus",
-     "topics": [
-      {
-       "id": "cse-s1-100102-u6-t1",
-       "title": "Scalar and vector fields",
-       "text": "Scalar and vector fields, Gradient, Directional derivative, Divergence, Curl and their properties, Line integral, Green’s theorem in plane (without proof), Surface integral, Stoke’s theorem (without proof), Volume Integral, Gauss-Divergence’ theorem (without proof)."
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 1,
-    "practical": 0
-   },
-   "unitCount": 6,
-   "topicCount": 6
-  },
-  {
-   "id": "cse-s1-100111",
-   "semester": 1,
-   "code": "100111",
-   "name": "Programming for Problem Solving",
+   "code": "100105",
+   "name": "Introduction to AI",
    "type": "Theory",
    "credits": 3,
    "source": "src/assets/data/branches/cse.json",
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s1-100111-u1",
+     "id": "cse-s1-100105-u1",
      "number": 1,
-     "title": "Introduction to Programming",
+     "title": "Introduction to Artificial Intelligence",
      "topics": [
       {
-       "id": "cse-s1-100111-u1-t1",
-       "title": "Introduction to components of a computer system (disks, memory, processor, where a program is…",
-       "text": "Introduction to components of a computer system (disks, memory, processor, where a program is stored and executed, operating system, compilers etc.). Idea of Algorithm: steps to solve logical and numerical problems. Representation of Algorithm: Flowchart/ Pseudo code with examples. From algorithms to programs; source code, variables (with data types) variables and memory locations, Syntax and Logical Errors in compilation, object and executable code."
+       "id": "cse-s1-100105-u1-t1",
+       "title": "1 What is AI? History and evolution of AI",
+       "text": "1.2 Foundations of AI: philosophy, mathematics, and cognitive-science influences 1.3 Intelligent agents: agent–environment interaction, PEAS (Performance measure, Environment, Actuators, and Sensors) description 1.4 Types of environments (observable, deterministic, episodic, static, discrete, single/multi-agent) 1.5 Types of agents: simple reflex, model- based, goal-based, utility-based, learning agents 1.6 Overview of AI application domains across engineering disciplines"
       }
      ]
     },
     {
-     "id": "cse-s1-100111-u2",
+     "id": "cse-s1-100105-u2",
      "number": 2,
-     "title": "Operators, Conditional Branching and Loops",
+     "title": "Problem Solving by Search problem",
      "topics": [
       {
-       "id": "cse-s1-100111-u2-t1",
-       "title": "Arithmetic expressions/arithmetic operators",
-       "text": "Arithmetic expressions/arithmetic operators, relational operators, logical operators, bitwise operators and precedence.Writing and evaluation of conditionals and consequent branching, Iteration and loops."
+       "id": "cse-s1-100105-u2-t1",
+       "title": "1 Problem formulation and state-space representation",
+       "text": "2.2 Uninformed search: BFS, DFS, Uniform Cost Search, Depth-Limited and Iterative Deepening Search 2.3 Informed (heuristic) search: Greedy Best- First Search, A* algorithm 2.4 Heuristic function design and admissibility/consistency 2.5 Local search algorithms: Hill Climbing, Simulated Annealing (concept) 2.6 Adversarial search: Minimax algorithm, Alpha-Beta pruning 2.7 Constraint Satisfaction Problems (CSP): concept, backtracking (overview)"
       }
      ]
     },
     {
-     "id": "cse-s1-100111-u3",
+     "id": "cse-s1-100105-u3",
      "number": 3,
-     "title": "Arrays and String",
+     "title": "Knowledge Representation and Reasoning",
      "topics": [
       {
-       "id": "cse-s1-100111-u3-t1",
-       "title": "Array declaration & initialization, bound checking arrays (1-d, 2-d), character arrays and strings",
-       "text": "Array declaration & initialization, bound checking arrays (1-d, 2-d), character arrays and strings."
+       "id": "cse-s1-100105-u3-t1",
+       "title": "1 Knowledge representation issues; propositional logic — syntax and semantics",
+       "text": "3.2 Inference in propositional logic: resolution 3.3 First-order predicate logic — syntax, quantifiers (concept) 3.4 Inference in first-order logic: forward chaining, backward chaining, resolution (concept) 3.5 Structured knowledge representation: semantic networks, frames 3.6 Rule-based (production) systems"
       }
      ]
     },
     {
-     "id": "cse-s1-100111-u4",
+     "id": "cse-s1-100105-u4",
      "number": 4,
-     "title": "Function, Recursion and Pointers",
+     "title": "Reasoning Under Uncertainty",
      "topics": [
       {
-       "id": "cse-s1-100111-u4-t1",
-       "title": "Functions (including using built in libraries), Parameter passing in functions, call by value…",
-       "text": "Functions (including using built in libraries), Parameter passing in functions, call by value, passing arrays to functions: Recursion, as a different way of solving problems. Example programs, such as Finding Factorial, Fibonacci series, Ackerman function etc. Idea of pointers, Defining pointers, Use of Pointers in self- referential structures, idea of call by reference."
+       "id": "cse-s1-100105-u4-t1",
+       "title": "1 Sources of uncertainty; review of basic probability theory",
+       "text": "4.2 Bayes' theorem and its application to AI reasoning 4.3 Bayesian networks: representation and manual inference (overview) 4.4 Introduction to fuzzy logic and fuzzy sets 4.5 Certainty factors and rule-based uncertainty operations. (overview)"
       }
      ]
     },
     {
-     "id": "cse-s1-100111-u5",
+     "id": "cse-s1-100105-u5",
      "number": 5,
-     "title": "User defined Data Types and File handling",
+     "title": "Introduction to Machine Learning and AI Applications",
      "topics": [
       {
-       "id": "cse-s1-100111-u5-t1",
-       "title": "Structure",
-       "text": "Structure- defining, declaring, initializing; accessing structure members, processing of structure, array of structures, structures within structure, structure and function, type definition; Union— definition, declaration, accessing union members, initializing union. Introduction, file declaration, opening and closing a file, working with text and binary files, I/O operations on file, error handling, random access to files"
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100111-u6",
-     "number": 6,
-     "title": "Basic Algorithms",
-     "topics": [
-      {
-       "id": "cse-s1-100111-u6-t1",
-       "title": "Basic Algorithms",
-       "text": "Searching, Basic Sorting Algorithms (Bubble, Insertion and Selection), Finding roots of equations, notion of order of complexity through example programs (no formal definition required)"
+       "id": "cse-s1-100105-u5-t1",
+       "title": "1 Machine learning paradigms",
+       "text": "supervised, unsupervised, reinforcement learning (concept) 5.2 Overview of regression and classification concepts (linear regression, k-NN, decision trees) 5.3 Overview of clustering concept (k-means) 5.4 Introduction to artificial neural networks: perceptron, basic architecture (concept) 5.5 Overview of Natural Language Processing (NLP): concept and applications 5.6 Overview of Computer Vision: concept and applications 5.7 Expert systems: architecture and applications 5.8 Robotics and AI: overview of intelligent multidisciplinary engineering robotic systems contexts. 5.9 Ethics, bias, and responsible AI; societal impact; AI and Sustainable Development Goals (SDGs)"
       }
      ]
     }
@@ -317,187 +241,155 @@
     "tutorial": 0,
     "practical": 0
    },
-   "unitCount": 6,
-   "topicCount": 6
+   "unitCount": 5,
+   "topicCount": 5
   },
   {
-   "id": "cse-s1-100115p",
+   "id": "cse-s1-100108",
    "semester": 1,
-   "code": "100115P",
-   "name": "Swatch Bharat Mission",
-   "type": "Practical",
-   "credits": 1,
+   "code": "100108",
+   "name": "Computer Fundamentals & Emerging Technologies",
+   "type": "Theory",
+   "credits": 3,
    "source": "src/assets/data/branches/cse.json",
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s1-100115p-u1",
+     "id": "cse-s1-100108-u1",
      "number": 1,
-     "title": "Course content",
+     "title": "Fundamentals of Computer Systems",
      "topics": [
       {
-       "id": "cse-s1-100115p-u1-t1",
-       "title": "Understanding the importance of cleanliness and sanitation",
-       "text": "The course could aim to create awareness about the significance of cleanliness and sanitation in maintaining personal health, environmental sustainability, and community well-being. It could cover topics such as waste management, sanitation practices, and the impact of poor sanitation on public health."
-      },
+       "id": "cse-s1-100108-u1-t1",
+       "title": "1 Classification of computers, Functional units",
+       "text": "1.2 Central Processing Unit (CPU) organization and working 1.3 Memory: Architecture, Memory Representation, Memory Hierarchy 1.4 CPU Registers, Impact of Cache Memory on System Performance 1.5 Motherboard and its components 1.6 The Von-Neumann architecture 1.7 Machine language, assembly language, high-level programming languages Compiler, Interpreter"
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100108-u2",
+     "number": 2,
+     "title": "Data Representation",
+     "topics": [
       {
-       "id": "cse-s1-100115p-u1-t2",
-       "title": "Developing skills for effective waste management",
-       "text": "The course could provide training on various waste management techniques, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. It could also emphasize the importance of reducing waste generation and promoting sustainable waste management practices."
-      },
+       "id": "cse-s1-100108-u2-t1",
+       "title": "in computers. 2.1 Data Representation & Number Systems",
+       "text": "2.2 Conversion between decimal and binary systems. 2.3 Conversion among binary, octal, and hexadecimal systems. 2.4 Binary arithmetic (addition, subtraction) 2.5 Signed number representation (1’s complement). 2.6 Signed number representation (2’s complement). 2.7 American Standard Code for Information Interchange (ASCII), Unicode Data representation in memory."
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100108-u3",
+     "number": 3,
+     "title": "Computer Software and Operating Systems",
+     "topics": [
       {
-       "id": "cse-s1-100115p-u1-t3",
-       "title": "Promoting behavioural change towards cleanliness",
-       "text": "The course could focus on influencing positivebehavioural change among individuals and communities towards cleanliness. It could include modules on promoting good hygiene practices, creating awareness about the harmful effects of littering and open defecation, and encouraging responsible waste disposal habits."
-      },
+       "id": "cse-s1-100108-u3-t1",
+       "title": "1 Introduction to Software, Types of Software",
+       "text": "3.2 System Software 3.3 Application Software 3.4 Operating System (OS), Objectives of Operating System 3.5 Types of OS (Batch, Time-sharing, Distributed, Real- time) 3.6 Functions of OS (Process, Memory Management) 3.7 User Interface (Command Line Interface Vs Graphical User Interface) 3.8 File system basics examples: Windows, Linux, macOS."
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100108-u4",
+     "number": 4,
+     "title": "Computer Networks and Internet Basics",
+     "topics": [
       {
-       "id": "cse-s1-100115p-u1-t4",
-       "title": "Creating awareness about Swachh Bharat Mission initiatives",
-       "text": "The course could provide information about the Swachh Bharat Mission initiatives and campaigns launched by the Government of India to promote cleanliness and sanitation, such as SwachhSurvekshan, Swachh Bharat Abhiyan, and Clean India Campaign. It could also discuss the progress made, challenges faced, and future prospects of the Swachh Bharat Mission."
-      },
+       "id": "cse-s1-100108-u4-t1",
+       "title": "1 Introduction to Computer Networks",
+       "text": "4.2 Importance of Networking. 4.3 Data Transmission Media, Data Transmission across Media. 4.4 Data Transmission in a Network. 4.5 Network Types: Local Area Network (LAN), Wide Area Network (WAN), Metropolitan Area Network (MAN). 4.6 Network Topologies (Star, Bus, Ring, Mesh), Communication Protocol. 4.7 Network Devices (Hub, Switch, Router, Modem, Gateway), Wireless Networking. 4.8 Introduction to Internet: Internet Protocol (IP) Address. 4.9 Transmission Control Protocol (TCP), User Datagram Protocol (UDP), Hypertext Transfer Protocol (HTTP), File Transfer Protocol (FTP), Domain Name System (DNS), Uniform Resource Locator (URL), Client- Server Architecture."
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100108-u5",
+     "number": 5,
+     "title": "Emerging Technologies",
+     "topics": [
       {
-       "id": "cse-s1-100115p-u1-t5",
-       "title": "Engaging in community participation and advocacy",
-       "text": "The course could emphasize the importance of community participation in the Swachh Bharat Mission and provide tools and strategies for engaging with local communities to promote cleanliness and sanitation. It could also encourage advocacy for policy changes and innovations to address sanitation-related issues at the community, regional, and national levels."
-      },
-      {
-       "id": "cse-s1-100115p-u1-t6",
-       "title": "Pre-requisite",
-       "text": "Nil"
-      },
-      {
-       "id": "cse-s1-100115p-u1-t7",
-       "title": "Course Outcome",
-       "text": ""
-      },
-      {
-       "id": "cse-s1-100115p-u1-t8",
-       "title": "Increased awareness and knowledge about cleanliness and sanitation",
-       "text": "Participants of the course may gain a deeper understanding of the importance of cleanliness and sanitation, including the impact on personal health, environmental sustainability, and community well- being. They may learn about various waste management techniques, hygiene practices, and the initiatives of the Swachh Bharat Mission."
-      },
-      {
-       "id": "cse-s1-100115p-u1-t9",
-       "title": "Enhanced skills for effective waste management",
-       "text": "Participants may acquire practical skills related to waste management, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. They may also develop skills in reducing waste generation and promoting sustainable waste management practices in their communities or workplaces."
-      },
-      {
-       "id": "cse-s1-100115p-u1-t10",
-       "title": "Positive behavioral change towards cleanliness",
-       "text": "The course may influence participants to adopt positive behavioral changes towards cleanliness, such as avoiding littering, practicing good hygiene habits, and promoting responsible waste disposal. Participants may develop a sense of responsibility towards maintaining cleanliness in their surroundings and actively contribute towards creating a cleaner environment."
-      },
-      {
-       "id": "cse-s1-100115p-u1-t11",
-       "title": "Increased community participation and advocacy",
-       "text": "Participants may become actively engaged in community participation and advocacy efforts related to cleanliness and sanitation. They may collaborate with local communities, government bodies, and non- governmental organizations (NGOs) to raise awareness, implement cleanliness initiatives, and advocate for policy changes or innovations to address sanitation-related issues."
-      },
-      {
-       "id": "cse-s1-100115p-u1-t12",
-       "title": "Contribution towards Swachh Bharat Mission objectives",
-       "text": "Participants may contribute towards the objectives of the Swachh Bharat Mission, such as promoting cleanliness, ensuring proper waste management, and eliminating open defecation. They may actively participate in Swachh Bharat Mission campaigns, initiatives, and activities, and make a positive impact on their communities and society at large."
-      },
-      {
-       "id": "cse-s1-100115p-u1-t13",
-       "title": "List of Reports",
-       "text": ""
-      },
-      {
-       "id": "cse-s1-100115p-u1-t14",
-       "title": "Any topics related to Swatch Bharat Mission",
-       "text": "Any topics related to Swatch Bharat Mission"
+       "id": "cse-s1-100108-u5-t1",
+       "title": "1 Internet of Things (IoT",
+       "text": "Concept and architecture, Applications (Smart homes, Smart cities) 5.2 Cyber Security: Basic security Terminologies, CIA Triad, Types of cyber threats and countermeasures 5.3 Artificial Intelligence (AI): Introduction, AI agents, Applications. 5.4 Machine Learning (ML): Types of learning paradigms, Real-world applications. 5.5 Blockchain: Concept of distributed ledger, Blocks, hashing, decentralization. 5.6 Data Science: Data Lifecycle, Role of data in decision making. ledger."
       }
      ]
     }
    ],
    "ltp": {
-    "lecture": 0,
+    "lecture": 3,
     "tutorial": 0,
-    "practical": 2
+    "practical": 0
    },
-   "unitCount": 1,
-   "topicCount": 14
+   "unitCount": 5,
+   "topicCount": 5
   },
   {
-   "id": "cse-s1-100113",
+   "id": "cse-s1-100109",
    "semester": 1,
-   "code": "100113",
-   "name": "IT Workshop",
+   "code": "100109",
+   "name": "Universal Human Values",
    "type": "Theory",
    "credits": 2,
    "source": "src/assets/data/branches/cse.json",
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s1-100113-u1",
+     "id": "cse-s1-100109-u1",
      "number": 1,
-     "title": "PC HARDWARE",
+     "title": "Self-Exploration, Happiness and Prosperity",
      "topics": [
       {
-       "id": "cse-s1-100113-u1-t1",
-       "title": "Identification of the peripherals of a computer, components in a CPU and its functions",
-       "text": "Identification of the peripherals of a computer, components in a CPU and its functions. Block diagram of the CPU along with the configuration of each peripheral. Functions of Motherboard. Assembling and Disassembling of PC. Installation of OS. Basic Linux commands"
+       "id": "cse-s1-100109-u1-t1",
+       "title": "1 Self-Exploration",
+       "text": "1.2 Continuous Happiness and Prosperity 1.3 Right Understanding:"
       }
      ]
     },
     {
-     "id": "cse-s1-100113-u2",
+     "id": "cse-s1-100109-u2",
      "number": 2,
-     "title": "INTERNET Web Browsers",
+     "title": "Relationship, Physical Facility and Human Being",
      "topics": [
       {
-       "id": "cse-s1-100113-u2-t1",
-       "title": "INTERNET Web Browsers",
-       "text": "INTERNET(4 lectures) Web Browsers, Access of websites, Surfing the Web, Search Engines, Customization of web browsers, proxy settings, bookmarks, search toolbars, pop-up blockers.Antivirus types, Protection from various threats",
-       "hours": 4
+       "id": "cse-s1-100109-u2-t1",
+       "title": "1 Right Understanding, Relationship and Physical Facility",
+       "text": "2.2 Happiness and Prosperity 2.3 Human being as a co-existence of the sentient ‘Self’ and the material ‘Body’"
       }
      ]
     },
     {
-     "id": "cse-s1-100113-u3",
+     "id": "cse-s1-100109-u3",
      "number": 3,
-     "title": "MICROSOFT WORD Overview of MS word features",
+     "title": "Values in Human Relationships and Harmony in Society",
      "topics": [
       {
-       "id": "cse-s1-100113-u3-t1",
-       "title": "MICROSOFT WORD Overview of MS word features",
-       "text": "MICROSOFT WORD(4 lectures) Overview of MS word features. Usage of Hyperlink, Symbols, Spell Check, Track Changes. Table of Content, Newspaper columns, Images from files and clipart, Drawing toolbar and Word Art, Formatting Images, Textboxes, Paragraphs and Mail Merge in word. Using Word to create Project Certificate, Project Abstract, News Letter, Resume",
-       "hours": 4
+       "id": "cse-s1-100109-u3-t1",
+       "title": "1 Values in human-human relationship Relevant Units/ Body of Knowledge (BoK",
+       "text": "3.2 Harmony in the Society"
       }
      ]
     },
     {
-     "id": "cse-s1-100113-u4",
+     "id": "cse-s1-100109-u4",
      "number": 4,
-     "title": "LaTeX Word Orientation",
+     "title": "Harmony in Nature and Existence",
      "topics": [
       {
-       "id": "cse-s1-100113-u4-t1",
-       "title": "Overview of LaTeX and tool word",
-       "text": "Importance of LaTeX and MS office or equivalent (FOSS) tool Word as word Processors, Details of the four tasks and features that would be covered in each, Using LaTeX and word – Accessing, overview of toolbars, saving files, Using help and resources, rulers, format painter in word. Using LaTeX and Word to create a project certificate. Features to be covered:- Formatting Fonts in word, Drop Cap in word, Applying Text effects, Using Character Spacing, Borders and Colors, Inserting Header and Footer, Using Date and Time option in both LaTeX. Creating project abstract Features to be covered:-Formatting Styles, Inserting table, Bullets and Numbering, Changing Text Direction, Cell alignment, Footnote, Hyperlink, Symbols, Spell Check, Track Changes. Creating a Newsletter: Features to be covered:- Table of Content, Newspaper columns, Images from files and clipart, Drawing toolbar and Word Art, Formatting Images, Textboxes, Paragraphs and Mail Merge in word"
+       "id": "cse-s1-100109-u4-t1",
+       "title": "1 Harmony in the Nature",
+       "text": "4.2 Interconnectedness and mutual fulfilment among the four orders of nature 4.3 Existence as Co-existence of mutually interacting units in all-pervasive space 4.4 Holistic perception of harmony at all levels of existence"
       }
      ]
     },
     {
-     "id": "cse-s1-100113-u5",
+     "id": "cse-s1-100109-u5",
      "number": 5,
-     "title": "MICROSOFT EXCEL Overview of Excel Features Excel formulae & Functions, conditional formatting, Charts, Hyper linking, Renaming and…",
+     "title": "Implications of Holistic Understanding on Professional Ethics",
      "topics": [
       {
-       "id": "cse-s1-100113-u5-t1",
-       "title": "Gridlines, Format Cells, Summation, auto fill, Formatting) Calculating GPA (Features",
-       "text": "- Cell Referencing, Formulae and functions in excel"
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100113-u6",
-     "number": 6,
-     "title": "MICROSOFT POWER POINT Overview of PowerPoint features",
-     "topics": [
-      {
-       "id": "cse-s1-100113-u6-t1",
-       "title": "MICROSOFT POWER POINT Overview of PowerPoint features",
-       "text": "MICROSOFT POWER POINT( 4 lectures) Overview of PowerPoint features, Insertion of images, slide transition, Custom animation, Hyperlinks",
-       "hours": 4
+       "id": "cse-s1-100109-u5-t1",
+       "title": "1 Natural acceptance of human values",
+       "text": "5.2 Definitiveness of Ethical Human Conduct 5.3 Basis for Humanistic Education, Humanistic Constitution and Humanistic Universal Order 5.4 Competence in professional ethics 5.5 Strategy for transition from the present state to Universal Human Order: a. At the level of individual b. At the level of society Universal Human Order at individual and society levels."
       }
      ]
     }
@@ -507,88 +399,76 @@
     "tutorial": 0,
     "practical": 0
    },
-   "unitCount": 6,
-   "topicCount": 6
+   "unitCount": 5,
+   "topicCount": 5
   },
   {
-   "id": "cse-s1-100106",
+   "id": "cse-s1-100110",
    "semester": 1,
-   "code": "100106",
-   "name": "Basic Electrical Engineering",
+   "code": "100110",
+   "name": "Essence of Indian Constitution",
    "type": "Theory",
-   "credits": 3,
+   "credits": 0,
    "source": "src/assets/data/branches/cse.json",
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s1-100106-u1",
+     "id": "cse-s1-100110-u1",
      "number": 1,
-     "title": "DC Circuit Analysis and Network Theorems",
+     "title": "Constitution and Preamble",
      "topics": [
       {
-       "id": "cse-s1-100106-u1-t1",
-       "title": "DC Circuit Analysis and Network Theorems",
-       "text": "Concepts of Network, Active and Passive elements, voltage and current sources, concept of linearity and linear network, unilateral and bilateral elements. R L and C as linear elements.Source Transformation. Kirchhoff’s Law, loop and nodal methods of analysis; star – delta transformation; Network Theorems: Superposition Theorem, Thevenin’s Theorem, Norton’s Theorem, Maximum Power Transfer Theorem. (Simple Numerical Problems)"
+       "id": "cse-s1-100110-u1-t1",
+       "title": "1 Meaning of the constitution of India",
+       "text": "1.2 Historical perspective of the Constitution of India. 1.3 Salient features and characteristics of the Constitution of India. 1.4 Preamble to the Constitution of India."
       }
      ]
     },
     {
-     "id": "cse-s1-100106-u2",
+     "id": "cse-s1-100110-u2",
      "number": 2,
-     "title": "Magnetic Circuit",
+     "title": "Fundamental Rights and Duties",
      "topics": [
       {
-       "id": "cse-s1-100106-u2-t1",
-       "title": "Magnetic Circuit",
-       "text": "Magnetic circuit concepts, analogy between Electric & Magnetic circuits, Magnetic circuits with DC and AC excitation, Magnetic leakage. B-H curve, Hysteresis and Eddy Current losses, Magnetic circuit calculations."
+       "id": "cse-s1-100110-u2-t1",
+       "title": "1 Fundamental Rights under Part-III",
+       "text": "2.2 Fundamental duties and their significance."
       }
      ]
     },
     {
-     "id": "cse-s1-100106-u3",
+     "id": "cse-s1-100110-u3",
      "number": 3,
-     "title": "Steady State Analysis of Single-Phase AC Circuits",
+     "title": "Directive Principles",
      "topics": [
       {
-       "id": "cse-s1-100106-u3-t1",
-       "title": "Steady State Analysis of Single-Phase AC Circuits",
-       "text": "Sinusoidal, Square and Triangular waveforms–average and effective values, form and peak factors, concept of phasors, phasor representation of sinusoidally varying voltage and current. Analysis of series, parallel, and series – parallel RLC Circuits: Apparent, Active & Reactive Powers, Power factor, causes and problems of low power factor, power factor improvement. Resonance in Series and Parallel Circuits. (Simple Numerical Problems)"
+       "id": "cse-s1-100110-u3-t1",
+       "title": "1 Relevance of Directive Principles of State Policy under part-IV",
+       "text": "3.2 Different articles of State policies under part- IV"
       }
      ]
     },
     {
-     "id": "cse-s1-100106-u4",
+     "id": "cse-s1-100110-u4",
      "number": 4,
-     "title": "Three Phase AC Circuits",
+     "title": "Governance",
      "topics": [
       {
-       "id": "cse-s1-100106-u4-t1",
-       "title": "Three Phase AC Circuits",
-       "text": "Three Phase System – its necessity and advantages, meaning of phase sequence and star and delta connections, balanced supply and balanced load, line and phase voltage/ current relations, three phase power and its measurement. (Simple Numerical Problems)"
+       "id": "cse-s1-100110-u4-t1",
+       "title": "1 Governance under part-VI",
+       "text": "4.2 State Legislature, Legislative Assembly & Legislative Council."
       }
      ]
     },
     {
-     "id": "cse-s1-100106-u5",
+     "id": "cse-s1-100110-u5",
      "number": 5,
-     "title": "Introduction to DC Machines",
+     "title": "Amendments of Constitution",
      "topics": [
       {
-       "id": "cse-s1-100106-u5-t1",
-       "title": "Introduction to DC Machines",
-       "text": "Principal, Operation, Construction, and types of DC machines, e.m.f. equation of generator and torque equation of motor. Single Phase Transformer: Principle of Operation, Construction, e.m.f. equation, losses in transformer, efficiency. Three Phase Induction Motor:Principal, Operation, and Construction (Simple Numerical Problems)"
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100106-u6",
-     "number": 6,
-     "title": "Soldering",
-     "topics": [
-      {
-       "id": "cse-s1-100106-u6-t1",
-       "title": "Soldering",
-       "text": "Soldering- Soldering and desoldering techniques, breadboard wiring, general-purpose PCB soldering/wiring. Wiring-Types of residential and commercial wiring systems, general rules and guidelines for installation, loadcalculation and sizing of wire, rating of main switch, distribution board."
+       "id": "cse-s1-100110-u5-t1",
+       "title": "1 Amendment of Constitutional Powers and Procedure",
+       "text": "5.2 Major Constitutional Amendment procedure - Important amendments. 42nd, 44th, 74th, 76th, 86th and 91st"
       }
      ]
     }
@@ -598,13 +478,92 @@
     "tutorial": 0,
     "practical": 0
    },
-   "unitCount": 6,
-   "topicCount": 6
+   "unitCount": 5,
+   "topicCount": 5
   },
   {
-   "id": "cse-s1-100110p",
+   "id": "cse-s1-100111",
    "semester": 1,
-   "code": "100110P",
+   "code": "100111",
+   "name": "Basics of Electrical & Electronics Engineering",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/cse.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "cse-s1-100111-u1",
+     "number": 1,
+     "title": "Basic Electrical Circuits",
+     "topics": [
+      {
+       "id": "cse-s1-100111-u1-t1",
+       "title": "1 Electrical Circuit Elements",
+       "text": "Resistance, inductance, and capacitance as active and passive elements 1.2 Classification of Elements: Unilateral and bilateral elements; linear and nonlinear elements 1.3 Basic Circuit Laws: Ohm’s law and Kirchhoff’s current and voltage laws 1.4 Circuit Configurations: Series and parallel circuits, voltage sources, current sources, and source transformation 1.5 Circuit Analysis Methods: Mesh analysis and nodal analysis techniques 1.6 Network Theorems and Transformations: Current divider rule, voltage divider rule, and star-delta transformation"
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100111-u2",
+     "number": 2,
+     "title": "A.C. Circuits",
+     "topics": [
+      {
+       "id": "cse-s1-100111-u2-t1",
+       "title": "1 Signals and Waveforms",
+       "text": "Common electrical signals and their waveform characteristics 2.2 AC Quantities: Instantaneous, peak, average, and RMS values of alternating in AC circuits. signals 2.3 Waveform Factors: Peak factor and form factor of sinusoidal waves 2.4 Phase and Phasors: Phase difference, lagging, leading, in-phase quantities, and phasor representation in rectangular and polar forms 2.5 AC Circuit Parameters: Impedance, admittance, power factor, and power triangle 2.6 Three-Phase Systems: Necessity, advantages, phase sequence, and balanced/unbalanced supply and load concepts"
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100111-u3",
+     "number": 3,
+     "title": "Basic Electrical Machines",
+     "topics": [
+      {
+       "id": "cse-s1-100111-u3-t1",
+       "title": "1 Electromagnetic Principles",
+       "text": "Basic laws of electromagnetism, self-inductance, and mutual inductance 3.2 DC Machines: Principle of operation, construction, classification, and applications of DC machines 3.3 Single-Phase Transformers: Necessity, working principle, construction, and E.M.F. equation of transformers 3.4 Transformer Performance: Voltage ratio, current ratio, and voltage regulation with significance 3.5 Induction Motors: Overview of single- phase and three-phase induction motors and their working principles 3.6 Motor Applications: Applications of induction motors and fractional horsepower motors"
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100111-u4",
+     "number": 4,
+     "title": "Semiconductor Devices",
+     "topics": [
+      {
+       "id": "cse-s1-100111-u4-t1",
+       "title": "1 Semiconductor Materials",
+       "text": "Intrinsic and extrinsic semiconductor types 4.2 p-n Junction Diode: Construction, characteristics, forward bias, and reverse bias operation 4.3 Diode Behavior: Temperature effects and breakdown mechanisms in diodes 4.4 Diode Applications: Half-wave rectifier, full- wave rectifier, filters, and Zener diode as voltage regulator 4.5 BJT Fundamentals: PNP and NPN transistors, construction, and operating principles 4.6 BJT Applications: CE configuration as amplifier and transistor as a switch"
+      }
+     ]
+    },
+    {
+     "id": "cse-s1-100111-u5",
+     "number": 5,
+     "title": "Fundamentals of Digital, Analog Electrical Safety Electronics, Measurement and",
+     "topics": [
+      {
+       "id": "cse-s1-100111-u5-t1",
+       "title": "1 Binary, octal, and hexadecimal number systems; binary addition and basic number operations",
+       "text": "5.2 Basic logic gates, universal gates, and Boolean algebra 5.3 LEDs, seven-segment display and truth table; overview of digital and analog integrated circuits 5.4 Functions and applications of IC 7805 and IC 7912; basic features and applications of multimeter and CRO 5.5 Fundamentals, types, and uses of sensors and transducers; generation, transmission, and distribution of electrical power 5.6 Safe handling practices, prevention of electrical hazards; functions and applications of fuse, MCB, and MCCB 5.7 Purpose, importance, and methods of earthing systems"
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 5,
+   "topicCount": 5
+  },
+  {
+   "id": "cse-s1-100104p",
+   "semester": 1,
+   "code": "100104P",
    "name": "Engineering Physics Lab",
    "type": "Practical",
    "credits": 1,
@@ -612,69 +571,69 @@
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s1-100110p-u1",
+     "id": "cse-s1-100104p-u1",
      "number": 1,
      "title": "Course content",
      "topics": [
       {
-       "id": "cse-s1-100110p-u1-t1",
-       "title": "Determination of the capacitance and permittivity of the given material",
-       "text": "Determination of the capacitance and permittivity of the given material."
+       "id": "cse-s1-100104p-u1-t1",
+       "title": "Diffraction Grating",
+       "text": "Diffraction Grating."
       },
       {
-       "id": "cse-s1-100110p-u1-t2",
-       "title": "Determination of e/m of electron",
-       "text": "Determination of e/m of electron."
+       "id": "cse-s1-100104p-u1-t2",
+       "title": "Newton’s Ring Experiment",
+       "text": "Newton’s Ring Experiment"
       },
       {
-       "id": "cse-s1-100110p-u1-t3",
-       "title": "Determination of Planck’s constant and Photoelectric Work Function using Photoelectric cell",
-       "text": "Determination of Planck’s constant and Photoelectric Work Function using Photoelectric cell."
+       "id": "cse-s1-100104p-u1-t3",
+       "title": "Resolving Power of Telescope",
+       "text": "Resolving Power of Telescope"
       },
       {
-       "id": "cse-s1-100110p-u1-t4",
-       "title": "Verification of inverse square law using photocell",
-       "text": "Verification of inverse square law using photocell."
+       "id": "cse-s1-100104p-u1-t4",
+       "title": "Polarimeter",
+       "text": "Polarimeter"
       },
       {
-       "id": "cse-s1-100110p-u1-t5",
-       "title": "Determination of Wavelength of (He-Ne) LASER using Diffraction Grating Method",
-       "text": "Determination of Wavelength of (He-Ne) LASER using Diffraction Grating Method."
+       "id": "cse-s1-100104p-u1-t5",
+       "title": "Numerical Aperture Optical Fiber (Virtual Lab",
+       "text": "Numerical Aperture Optical Fiber (Virtual Lab)"
       },
       {
-       "id": "cse-s1-100110p-u1-t6",
-       "title": "Calculation of Energy Band Gap of a semiconductor",
-       "text": "Calculation of Energy Band Gap of a semiconductor."
+       "id": "cse-s1-100104p-u1-t6",
+       "title": "Dielectric Constant",
+       "text": "Dielectric Constant"
       },
       {
-       "id": "cse-s1-100110p-u1-t7",
-       "title": "Determination of Dielectric constant using resonance method",
-       "text": "Determination of Dielectric constant using resonance method."
+       "id": "cse-s1-100104p-u1-t7",
+       "title": "Measurement of Plank’s Constant",
+       "text": "Measurement of Plank’s Constant"
       },
       {
-       "id": "cse-s1-100110p-u1-t8",
-       "title": "Determination of Wavelength of Sodium light by measuring the diameter of the Newton’s Ring",
-       "text": "Determination of Wavelength of Sodium light by measuring the diameter of the Newton’s Ring."
+       "id": "cse-s1-100104p-u1-t8",
+       "title": "LE-8 Stern-Gerlach Experiment (Virtual Lab",
+       "text": "LE-8 Stern-Gerlach Experiment (Virtual Lab)"
       },
       {
-       "id": "cse-s1-100110p-u1-t9",
-       "title": "Determination of curvature of convex surface of a lens by Newton’s ring",
-       "text": "Determination of curvature of convex surface of a lens by Newton’s ring."
+       "id": "cse-s1-100104p-u1-t9",
+       "title": "p-n junction",
+       "text": "p-n junction"
       },
       {
-       "id": "cse-s1-100110p-u1-t10",
-       "title": "Verification of existence of Bohr’s Energy level with Frank-Hertz apparatus",
-       "text": "Verification of existence of Bohr’s Energy level with Frank-Hertz apparatus."
+       "id": "cse-s1-100104p-u1-t10",
+       "title": "Hall effect experiment",
+       "text": "Hall effect experiment"
       },
       {
-       "id": "cse-s1-100110p-u1-t11",
-       "title": "Course content",
-       "text": "Determination of the Earth’s horizontal magnetic field intensity and magnetic Moment of a magnet by employing magnetometer."
+       "id": "cse-s1-100104p-u1-t11",
+       "title": "Energy Band Gap Measurement",
+       "text": "Energy Band Gap Measurement"
       },
       {
-       "id": "cse-s1-100110p-u1-t12",
-       "title": "Verification of Faraday’s Law and Lenz’s Law of Electromagnetic Induction",
-       "text": "Verification of Faraday’s Law and Lenz’s Law of Electromagnetic Induction."
+       "id": "cse-s1-100104p-u1-t12",
+       "title": "Changing nanoparticle size alters light absorption",
+       "text": "Changing nanoparticle size alters light absorption."
       }
      ]
     }
@@ -691,7 +650,7 @@
    "id": "cse-s1-100111p",
    "semester": 1,
    "code": "100111P",
-   "name": "Programming for Problem Solving Lab",
+   "name": "Basics of Electrical & Electronics Engineering Lab",
    "type": "Practical",
    "credits": 1,
    "source": "src/assets/data/branches/cse.json",
@@ -704,58 +663,83 @@
      "topics": [
       {
        "id": "cse-s1-100111p-u1-t1",
-       "title": "Tutorial 1",
-       "text": "Problem solving using computers: Lab1: Familiarization with programming environment"
+       "title": "Identification of active and passive components and Ohm’s Law verification",
+       "text": "Identification of active and passive components and Ohm’s Law verification"
       },
       {
        "id": "cse-s1-100111p-u1-t2",
-       "title": "Tutorial 2",
-       "text": "Variable types and type conversions: Lab 2: Simple computational problems using arithmetic expressions"
+       "title": "Application of Kirchhoff’s Laws in series and parallel circuits",
+       "text": "Application of Kirchhoff’s Laws in series and parallel circuits"
       },
       {
        "id": "cse-s1-100111p-u1-t3",
-       "title": "Tutorial 3",
-       "text": "Branching and logical expressions: Lab 3: Problems involving if-then-else structures"
+       "title": "Improvement of power factor of a single-phase load using a capacitor",
+       "text": "Improvement of power factor of a single-phase load using a capacitor"
       },
       {
        "id": "cse-s1-100111p-u1-t4",
-       "title": "Tutorial 4",
-       "text": "Loops, while and for loops: Lab 4: Iterative problems e.g., sum of series"
+       "title": "Determination of voltage and turns ratios of a single-phase transformer",
+       "text": "Determination of voltage and turns ratios of a single-phase transformer"
       },
       {
        "id": "cse-s1-100111p-u1-t5",
-       "title": "Tutorial 5",
-       "text": "1D Arrays: searching, sorting: Lab 5: 1D Array manipulation"
+       "title": "Identification of main parts of DC machines and induction machines using cut-section models",
+       "text": "Identification of main parts of DC machines and induction machines using cut-section models"
       },
       {
        "id": "cse-s1-100111p-u1-t6",
-       "title": "Tutorial 6",
-       "text": "2D arrays and Strings Lab 6: Matrix problems, String operations"
+       "title": "Determination of V–I characteristics of a P–N junction diode",
+       "text": "Determination of V–I characteristics of a P–N junction diode"
       },
       {
        "id": "cse-s1-100111p-u1-t7",
-       "title": "Tutorial 7",
-       "text": "Functions, call by value: Lab 7: Simple functions"
+       "title": "Performance of half-wave and full- wave rectifiers with and without filters using sinusoidal input",
+       "text": "Performance of half-wave and full- wave rectifiers with and without filters using sinusoidal input"
       },
       {
        "id": "cse-s1-100111p-u1-t8",
-       "title": "Tutorial 8 &9",
-       "text": "Numerical methods (Root finding, numerical differentiation, numerical integration): Lab 8 and 9: Programming for solving Numerical methods problems"
+       "title": "Analysis of the operation of a voltage regulator using a Zener Diode",
+       "text": "Analysis of the operation of a voltage regulator using a Zener Diode Laboratory Experiment/ Practical Titles"
       },
       {
        "id": "cse-s1-100111p-u1-t9",
-       "title": "Tutorial 10",
-       "text": "Recursion, structure of recursive calls Lab 10: Recursive functions"
+       "title": "Input and output characterization of common emitter (CE) bipolar junction transistor",
+       "text": "Input and output characterization of common emitter (CE) bipolar junction transistor"
       },
       {
        "id": "cse-s1-100111p-u1-t10",
-       "title": "Tutorial 11",
-       "text": "Pointers, structures and dynamic memory allocation Lab 11: Pointers and structures"
+       "title": "Implementation of logic gates (AND, OR, NOT, XOR) using Universal gates",
+       "text": "Implementation of logic gates (AND, OR, NOT, XOR) using Universal gates"
       },
       {
        "id": "cse-s1-100111p-u1-t11",
-       "title": "Tutorial 12",
-       "text": "File handling: Lab 12: File operations"
+       "title": "Measurement of signal parameters using a CRO",
+       "text": "Measurement of signal parameters using a CRO"
+      },
+      {
+       "id": "cse-s1-100111p-u1-t12",
+       "title": "Identification of different types of cable, wires and fuses",
+       "text": "Identification of different types of cable, wires and fuses"
+      },
+      {
+       "id": "cse-s1-100111p-u1-t13",
+       "title": "Operation of protection devices such as fuse, MCB, and MCCB",
+       "text": "Operation of protection devices such as fuse, MCB, and MCCB"
+      },
+      {
+       "id": "cse-s1-100111p-u1-t14",
+       "title": "Demonstration of earthing techniques and electrical safety practices",
+       "text": "Demonstration of earthing techniques and electrical safety practices"
+      },
+      {
+       "id": "cse-s1-100111p-u1-t15",
+       "title": "Wiring of single lamp and fan with regulator controlled by a switch with fuse/MCB protection",
+       "text": "Wiring of single lamp and fan with regulator controlled by a switch with fuse/MCB protection"
+      },
+      {
+       "id": "cse-s1-100111p-u1-t16",
+       "title": "Handling of Meggers and measurement of earth resistance",
+       "text": "Handling of Meggers and measurement of earth resistance."
       }
      ]
     }
@@ -766,163 +750,107 @@
     "practical": 2
    },
    "unitCount": 1,
-   "topicCount": 11
+   "topicCount": 16
   },
   {
-   "id": "cse-s1-100113p",
+   "id": "cse-s1-100112p",
    "semester": 1,
-   "code": "100113P",
-   "name": "IT Workshop Lab",
+   "code": "100112P",
+   "name": "Programming for Problem Solving Lab",
    "type": "Practical",
    "credits": 1,
    "source": "src/assets/data/branches/cse.json",
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s1-100113p-u1",
-     "number": 1,
-     "title": "PC Hardware Task 1",
-     "topics": [
-      {
-       "id": "cse-s1-100113p-u1-t1",
-       "title": "Identify the peripherals of a computer, components in a CPU and its functions",
-       "text": "Identify the peripherals of a computer, components in a CPU and its functions. Different types of printer. Task 2: Every student should disassemble and assemble the PC back to working condition. Lab instructors should verify the work and follow it up with a Viva. Also students need to go through the video which shows the process of assembling a PC. A video would be given as part of the course content"
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100113p-u2",
-     "number": 2,
-     "title": "Task 1",
-     "topics": [
-      {
-       "id": "cse-s1-100113p-u2-t1",
-       "title": "Every student should individually install MS windows on the personal computer",
-       "text": "Every student should individually install MS windows on the personal computer. Lab instructor should verify the installation and follow it up with a Viva. Task 2: Every student should install Linux on the computer. This computer should have windows installed. The system should be configured as dual boot with both Windows and Linux. Lab instructors should verify the installation and follow it up with a Viva. Task 3: Different commands of DOS and Linux"
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100113p-u3",
-     "number": 3,
-     "title": "Internet& World Wide Web Task1",
-     "topics": [
-      {
-       "id": "cse-s1-100113p-u3-t1",
-       "title": "Orientation & Connectivity Boot Camp",
-       "text": "Students should get connected to their Local Area Network and access the Internet. In the process they configure the TCP/IP setting. Finally students should demonstrate, to the instructor, how to access the websites and email. If there is no internet connectivity preparations need to be made by the instructors to simulate the WWW on the LAN. Task 2: Web Browsers, Surfing the Web: Students customize their web browsers with the LAN proxy settings, bookmarks, search toolbars and pop up blockers. Also, plug-ins like Macromedia Flash and JRE for applets should be configured. Task 3: Search Engines & Netiquette: Students should know what search engines are and how to use the search engines. A few topics would be given to the students for which they need to search on Google. This should be demonstrated to the instructors by the student. Task 4: Cyber Hygiene: Students would be exposed to the various threats on the internet and would be asked to configure their computer to be safe on the internet. They need to customize their browsers to block pop ups, block active x downloads to avoid viruses and/or worms"
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100113p-u4",
-     "number": 4,
-     "title": "LaTeX Task 1 – Word Orientation",
-     "topics": [
-      {
-       "id": "cse-s1-100113p-u4-t1",
-       "title": "The mentor needs to give an overview of LaTeX and tool word",
-       "text": "Importance of LaTeX and MS office or equivalent (FOSS) tool Word as word Processors, Details of the four tasks and features that would be covered in each, Using LaTeX and word – Accessing, overview of toolbars, saving files, Using help and resources, rulers, format painter in word. Task 2: Using LaTeX and Word to create a project certificate. Features to be covered:- Formatting Fonts in word, Drop Cap in word, Applying Text effects, Using Character Spacing, Borders and Colors, Inserting Header and Footer, Using Date and Time option in both LaTeX. Task 3: Creating project abstract Features to be covered:-Formatting Styles, Inserting table, Bullets and Numbering, Changing Text Direction, Cell alignment, Footnote, Hyperlink, Symbols, Spell Check, Track Changes. Task 4: Creating a Newsletter: Features to be covered:- Table of Content, Newspaper columns, Images from files and clipart, Drawing toolbar and Word Art, Formatting Images, Textboxes, Paragraphs and Mail Merge in word"
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100113p-u5",
-     "number": 5,
-     "title": "Excel Orientation",
-     "topics": [
-      {
-       "id": "cse-s1-100113p-u5-t1",
-       "title": "The mentor needs to tell the importance of MS office or equivalent (FOSS) tool Excel as a…",
-       "text": "The mentor needs to tell the importance of MS office or equivalent (FOSS) tool Excel as a Spreadsheet tool, give the details of the four tasks and features that would be covered in each. Using Excel – Accessing, overview of toolbars, saving excel files, Using help and resources. Task 1: Creating a Scheduler - Features to be covered: Gridlines, Format Cells, Summation, auto fill, Formatting Text Task 2 : Calculating GPA - .Features to be covered:- Cell Referencing, Formulae in excel – average, std. deviation, Charts, Renaming and Inserting worksheets, Hyper linking, Count function, LOOKUP/VLOOKUP Task 3: Split cells, freeze panes, group and outline, Sorting, Boolean and logical operators, Conditional formatting"
-      }
-     ]
-    },
-    {
-     "id": "cse-s1-100113p-u6",
-     "number": 6,
-     "title": "Powerpoint",
-     "topics": [
-      {
-       "id": "cse-s1-100113p-u6-t1",
-       "title": "Task 1",
-       "text": "Students will be working on basic power point utilities and tools which help them create basic powerpoint presentations. PPT Orientation, Slide Layouts, Inserting Text, Word Art, Formatting Text, Bullets and Numbering, Auto Shapes, Lines and Arrows in PowerPoint. Task 2: Interactive presentations - Hyperlinks, Inserting –Images, Clip Art, Audio, Video, Objects, Tables and Charts. Task 3: Master Layouts (slide, template, and notes), Types of views (basic, presentation, slide slotter, notes etc), and Inserting – Background, textures, Design Templates, Hidden slides"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 0,
-    "tutorial": 0,
-    "practical": 2
-   },
-   "unitCount": 6,
-   "topicCount": 6
-  },
-  {
-   "id": "cse-s1-100106p",
-   "semester": 1,
-   "code": "100106P",
-   "name": "Basic Electrical Engineering Lab",
-   "type": "Practical",
-   "credits": 1,
-   "source": "src/assets/data/branches/cse.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "cse-s1-100106p-u1",
+     "id": "cse-s1-100112p-u1",
      "number": 1,
      "title": "Course content",
      "topics": [
       {
-       "id": "cse-s1-100106p-u1-t1",
-       "title": "Verification of Kirchhoff’s laws",
-       "text": "Verification of Kirchhoff’s laws."
+       "id": "cse-s1-100112p-u1-t1",
+       "title": "Algorithmic Logic & Basic I/O",
+       "text": "Algorithmic Logic & Basic I/O • Write a C program to calculate the area of various geometrical shapes (circle, triangle, rectangle) using appropriate data types and type casting, accompanied by a flowchart."
       },
       {
-       "id": "cse-s1-100106p-u1-t2",
-       "title": "Verification of Superposition Theorem",
-       "text": "Verification of Superposition Theorem."
+       "id": "cse-s1-100112p-u1-t2",
+       "title": "Decision Making Systems",
+       "text": "Decision Making Systems • Develop a Student Grading and Classification System using an if-else ladder and a switch-case to handle marks for grading and classify eligible fee waivers by category."
       },
       {
-       "id": "cse-s1-100106p-u1-t3",
-       "title": "Verification of Thevenin’s Theorem",
-       "text": "Verification of Thevenin’s Theorem."
+       "id": "cse-s1-100112p-u1-t3",
+       "title": "Iterative Problem Solving • Develop a C program to perform the following tasks by using while and for loops",
+       "text": "i) Find all prime numbers between 1 and N ii) Generate the Fibonacci sequence for the value of N. Laboratory Experiment/ Practical Titles"
       },
       {
-       "id": "cse-s1-100106p-u1-t4",
-       "title": "Verification of Norton’s Theorem",
-       "text": "Verification of Norton’s Theorem."
+       "id": "cse-s1-100112p-u1-t4",
+       "title": "1-D Array Operations • Write a C program to",
+       "text": "i) Find the maximum/ minimum element using Linear Search ii) Calculate the average of elements in a 1-D array."
       },
       {
-       "id": "cse-s1-100106p-u1-t5",
-       "title": "Verification of Maximum Power Transfer Theorem",
-       "text": "Verification of Maximum Power Transfer Theorem."
+       "id": "cse-s1-100112p-u1-t5",
+       "title": "Matrix Manipulation (2-D Arrays) • Write a C program to perform the following tasks",
+       "text": "i) Matrix Multiplication ii) Find the transpose of a matrix using 2-D arrays"
       },
       {
-       "id": "cse-s1-100106p-u1-t6",
-       "title": "Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor",
-       "text": "Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor."
+       "id": "cse-s1-100112p-u1-t6",
+       "title": "Pointer Arithmetic & Strings • Write a C program to perform the following tasks without using…",
+       "text": "Pointer Arithmetic & Strings • Write a C program to perform the following tasks without using pointer arithmetic: i) Reverse a string ii) Count vowels/consonants of the given string using pointers"
       },
       {
-       "id": "cse-s1-100106p-u1-t7",
-       "title": "Star to Delta and Delta to Star conversion of the three circuit",
-       "text": "Star to Delta and Delta to Star conversion of the three circuit."
+       "id": "cse-s1-100112p-u1-t7",
+       "title": "Recursion vs",
+       "text": "Recursion vs. Iteration • Write a C program to perform the following tasks by using both iterative and recursive functions to compare logic flow: i) Find the factorial value for the given number ii) Find the Greatest Common Divisor (GCD)"
       },
       {
-       "id": "cse-s1-100106p-u1-t8",
-       "title": "Determination of Efficiency by load test of a 1 – Ø Transformer",
-       "text": "Determination of Efficiency by load test of a 1 – Ø Transformer."
+       "id": "cse-s1-100112p-u1-t8",
+       "title": "Parameter Passing Mechanisms",
+       "text": "Parameter Passing Mechanisms • Develop a C program that swaps two values and updates an array using both Call by Value and Call by Reference."
       },
       {
-       "id": "cse-s1-100106p-u1-t9",
-       "title": "To study the typical BHK house wiring",
-       "text": "To study the typical BHK house wiring"
+       "id": "cse-s1-100112p-u1-t9",
+       "title": "User-Defined Data Types",
+       "text": "User-Defined Data Types • Create an \"Employee Payroll System\" using Structures and Unions in C to store employee details and compare memory allocation between them."
       },
       {
-       "id": "cse-s1-100106p-u1-t10",
-       "title": "Study of safety precautions while working on electrical installations and necessity of earthing",
-       "text": "Study of safety precautions while working on electrical installations and necessity of earthing"
+       "id": "cse-s1-100112p-u1-t10",
+       "title": "File Handling Operations Laboratory Experiment/ Practical Titles • Write a program to create a…",
+       "text": "File Handling Operations Laboratory Experiment/ Practical Titles • Write a program to create a text file and perform the following tasks: i) Write student records ii) Read the student records and display records"
+      },
+      {
+       "id": "cse-s1-100112p-u1-t11",
+       "title": "Classes, Objects & Encapsulation",
+       "text": "Classes, Objects & Encapsulation • Design a Bank Account class with private data members for balance and public member functions for deposit, withdraw, and display."
+      },
+      {
+       "id": "cse-s1-100112p-u1-t12",
+       "title": "Constructors & Memory Management",
+       "text": "Constructors & Memory Management • Implement a String class that utilizes Constructors (Default, Parameterized, and Copy) and a Destructor to manage the memory dynamically."
+      },
+      {
+       "id": "cse-s1-100112p-u1-t13",
+       "title": "Static Members & Friend Functions",
+       "text": "Static Members & Friend Functions • Develop a program that uses a static member to track the number of objects created and a friend function to compare private data of two different classes."
+      },
+      {
+       "id": "cse-s1-100112p-u1-t14",
+       "title": "Implementation of Inheritances • Write a C++ program to demonstrate the various arithmetic…",
+       "text": "Implementation of Inheritances • Write a C++ program to demonstrate the various arithmetic operations using the following different inheritance concepts: i) Single Inheritance ii) Multiple Inheritance iii) Multilevel Inheritance iv) Hierarchical Inheritance v) Hybrid/virtual Inheritance"
+      },
+      {
+       "id": "cse-s1-100112p-u1-t15",
+       "title": "Polymorphism & Abstract Classes Laboratory Experiment/ Practical Titles • Write C++ programs to…",
+       "text": "Polymorphism & Abstract Classes Laboratory Experiment/ Practical Titles • Write C++ programs to demonstrate the following: i) Create an Abstract Class Shape with a pure virtual function draw (). ii) Find the area of the shape using function overloading. iii) Perform the addition of two complex numbers using operator overloading."
+      },
+      {
+       "id": "cse-s1-100112p-u1-t16",
+       "title": "Robust Error Management",
+       "text": "Robust Error Management • Write a C++ program to demonstrate the exception handling process using try, catch, and throw blocks to handle exceptions such as \"Division by Zero\" or \"Negative Stock Input.\""
+      },
+      {
+       "id": "cse-s1-100112p-u1-t17",
+       "title": "Template Implementation • Write a C++ program using template functions and class templates",
+       "text": "a function to find the max of two values, and a class template like pair to store values of any data type."
       }
      ]
     }
@@ -933,7 +861,7 @@
     "practical": 2
    },
    "unitCount": 1,
-   "topicCount": 10
+   "topicCount": 17
   },
   {
    "id": "cse-s2-100215",
@@ -1655,7 +1583,7 @@
       },
       {
        "id": "cse-s2-100218p-u1-t2",
-       "title": "List of Experiments",
+       "title": "Write a program to check whether a given number has an even number of 1's in its binary…",
        "text": "Write a program to check whether a given number has an even number of 1's in its binary representation (No control flow allowed)."
       },
       {
@@ -1665,7 +1593,7 @@
       },
       {
        "id": "cse-s2-100218p-u1-t4",
-       "title": "List of Experiments",
+       "title": "Write a program to return a list in which duplicates are removed and the items are sorted from a…",
        "text": "Write a program to return a list in which duplicates are removed and the items are sorted from a given input list of strings."
       },
       {
@@ -1690,7 +1618,7 @@
       },
       {
        "id": "cse-s2-100218p-u1-t9",
-       "title": "List of Experiments",
+       "title": "Write a program that accepts a sequence of whitespace separated words as input and prints the…",
        "text": "Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically."
       }
      ]
@@ -2419,7 +2347,7 @@
      "topics": [
       {
        "id": "cse-s3-105301p-u1-t1",
-       "title": "Course content",
+       "title": "Universal Gates (i) Identification and verification of NAND gate (IC #7400) and NOR gate (IC #7402)",
        "text": "Universal Gates (i) Identification and verification of NAND gate (IC #7400) and NOR gate (IC #7402). (ii) Construction and Verification of all other gate (AND, OR, NOT, XOR) USING a) Only NAND gate b) Only NOR gate"
       },
       {
@@ -2439,7 +2367,7 @@
       },
       {
        "id": "cse-s3-105301p-u1-t5",
-       "title": "Course content",
+       "title": "Latches and Flip Flops (i)Construction and Verification of a Latch circuit using NAND/NOR gates",
        "text": "Latches and Flip Flops (i)Construction and Verification of a Latch circuit using NAND/NOR gates. (ii) Construction and Verification of S-R Flip Flop using above Latch circuits. (iii) Verification of J-K Flip Flop using IC # 7476 (Dual J-KFF) (iv) Construction and Verification of D-Flip Flop and T-Flip Flop using J-K FF (IC #7476). (v) Construction and Verification of Master Slave J-K Flip Flop."
       },
       {
@@ -2449,7 +2377,7 @@
       },
       {
        "id": "cse-s3-105301p-u1-t7",
-       "title": "Course content",
+       "title": "Synchronous & Asynchronous Counters (i) Construction and verification of 2-bit Ripple counter…",
        "text": "Synchronous & Asynchronous Counters (i) Construction and verification of 2-bit Ripple counter using J-K FF. (ii) Construction and verification of Mod-3 up and Mod-3 down synchronous counter. (iii) Construction and verification of 2-bit Ring counter using J-K FF. (iv) Construction and verification of 2-bit twisted Ring (Johnson) counter using J-K FF."
       },
       {
@@ -2768,101 +2696,10 @@
    "topicCount": 1
   },
   {
-   "id": "cse-s4-100404",
-   "semester": 4,
-   "code": "100404",
-   "name": "Discrete Mathematics",
-   "type": "Theory",
-   "credits": 4,
-   "source": "src/assets/data/branches/cse.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "cse-s4-100404-u1",
-     "number": 1,
-     "title": "Sets, Relation and Function",
-     "topics": [
-      {
-       "id": "cse-s4-100404-u1-t1",
-       "title": "Sets, Relation and Function",
-       "text": "Operations and Laws of Sets, Cartesian Products, Binary Relation, Partial Ordering Relation, Equivalence Relation, Image of a Set, Sum and Product of Functions, Bijective functions, Inverse and Composite Function, Size of a Set, Finite and infinite Sets, Countable and uncountable Sets, Cantor's diagonal argument and The Power Set theorem, Schroeder-Bernstein theorem."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100404-u2",
-     "number": 2,
-     "title": "Principles of Mathematical Induction",
-     "topics": [
-      {
-       "id": "cse-s4-100404-u2-t1",
-       "title": "Principles of Mathematical Induction",
-       "text": "The Well-Ordering Principle, Recursive definition, The Division algorithm: Prime Numbers, The Greatest Common Divisor: Euclidean Algorithm, The Fundamental Theorem of Arithmetic. Basic counting techniques-inclusion and exclusion, pigeon-hole principle, permutation and combination."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100404-u3",
-     "number": 3,
-     "title": "Propositional Logic",
-     "topics": [
-      {
-       "id": "cse-s4-100404-u3-t1",
-       "title": "Propositional Logic",
-       "text": "Syntax, Semantics, Validity and Satisfiability, Basic Connectives and Truth Tables, Logical Equivalence: The Laws of Logic, Logical Implication, Rules of Inference, The use of Quantifiers."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100404-u4",
-     "number": 4,
-     "title": "Proof Techniques",
-     "topics": [
-      {
-       "id": "cse-s4-100404-u4-t1",
-       "title": "Proof Techniques",
-       "text": "Some Terminology, Proof Methods and Strategies, Forward Proof, Proof by Contradiction, Proof by Contraposition, Proof of Necessity and Sufficiency."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100404-u5",
-     "number": 5,
-     "title": "Algebraic Structures and Morphism",
-     "topics": [
-      {
-       "id": "cse-s4-100404-u5-t1",
-       "title": "Algebraic Structures and Morphism",
-       "text": "Algebraic Structures with one Binary Operation, Semi Groups, Monoids, Groups, Congruence Relation and Quotient Structures, Free and Cyclic Monoids and Groups, Permutation Groups, Substructures, Normal Subgroups, Algebraic Structures with two Binary Operation, Rings, Integral Domain and Fields. Boolean Algebraand Boolean Ring, Identities of Boolean Algebra, Duality, Representation of Boolean Function, Disjunctive and Conjunctive Normal Form"
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100404-u6",
-     "number": 6,
-     "title": "Graphs and Trees",
-     "topics": [
-      {
-       "id": "cse-s4-100404-u6-t1",
-       "title": "Graphs and Trees",
-       "text": "Graphs and their properties, Degree, Connectivity, Path, Cycle, Sub Graph, Isomorphism, Eulerian and Hamiltonian Walks, Graph Coloring, Coloring maps and Planar Graphs, Coloring Vertices, Coloring Edges, List Coloring, Perfect Graph, definition properties and Example, rooted trees, trees and sorting, weighted trees and prefix codes, Bi-connected component and Articulation Points, Shortest distances. Computer Oriented Approach, 3rd Edition by, Tata McGraw –Hill."
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 1,
-    "practical": 0
-   },
-   "unitCount": 6,
-   "topicCount": 6
-  },
-  {
    "id": "cse-s4-105401",
    "semester": 4,
    "code": "105401",
-   "name": "Computer Organization & Architecture",
+   "name": "Computer Organization and Architecture",
    "type": "Theory",
    "credits": 3,
    "source": "src/assets/data/branches/cse.json",
@@ -2888,7 +2725,7 @@
       {
        "id": "cse-s4-105401-u2-t1",
        "title": "Data representation",
-       "text": "signed number representation, fixed and floating point representations, character representation. Computer arithmetic – integer addition and subtraction, ripple carry adder, carry look-ahead adder, etc. multiplication – shift-and- add, Booth multiplier, carry save multiplier, etc. Division restoring and non-restoring techniques, floating point arithmetic."
+       "text": "signed number representation, fixed and floating point representations, character representation. Computer arithmetic – integer addition and subtraction, ripple carry adder, carry look-ahead adder, etc. multiplication – shift-and-add, Booth multiplier, carry save multiplier, etc. Division restoring and non-restoring techniques, floating point arithmetic."
       }
      ]
     },
@@ -2912,7 +2749,7 @@
       {
        "id": "cse-s4-105401-u4-t1",
        "title": "Peripheral devices and their characteristics",
-       "text": "Input-output subsystems, I/O device interface, I/O transfers–program controlled, interrupt driven and DMA, privileged and non- privileged instructions, software interrupts and exceptions. Programs and processes– role of interrupts in process state transitions, I/O device interfaces – SCII, USB."
+       "text": "Input-output subsystems, I/O device interface, I/O transfers–program controlled, interrupt driven and DMA, privileged and non- privileged instructions, software interrupts and exceptions. Programs and processes–role of interrupts in process state transitions, I/O device interfaces – SCII, USB."
       }
      ]
     },
@@ -2950,10 +2787,101 @@
    "topicCount": 6
   },
   {
+   "id": "cse-s4-105402",
+   "semester": 4,
+   "code": "105402",
+   "name": "Formal Language and Automata Theory",
+   "type": "Theory",
+   "credits": 4,
+   "source": "src/assets/data/branches/cse.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "cse-s4-105402-u1",
+     "number": 1,
+     "title": "Introduction",
+     "topics": [
+      {
+       "id": "cse-s4-105402-u1-t1",
+       "title": "Alphabet, languages and grammars, productions and derivation, Chomsky hierarchy of languages",
+       "text": "Alphabet, languages and grammars, productions and derivation, Chomsky hierarchy of languages."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105402-u2",
+     "number": 2,
+     "title": "Regular languages and finite automata",
+     "topics": [
+      {
+       "id": "cse-s4-105402-u2-t1",
+       "title": "Regular expressions and languages",
+       "text": "Regular expressions and languages, deterministic finite automata (DFA) and equivalence with regular expressions, nondeterministic finite automata (NFA) and equivalence with DFA, regular grammars and equivalence with finite automata, properties of regular languages, pumping lemma for regular languages, minimization of finite automata"
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105402-u3",
+     "number": 3,
+     "title": "Context-free languages and pushdown automata",
+     "topics": [
+      {
+       "id": "cse-s4-105402-u3-t1",
+       "title": "Context-free grammars (CFG) and Context-free languages (CFL",
+       "text": "Context-free grammars (CFG) and Context-free languages (CFL), Chomsky and Greibach normal forms, nondeterministic pushdown automata (PDA) and equivalence with CFG, parse trees, ambiguity in CFG, pumping lemma for context-free languages, deterministic pushdown automata, closure properties of CFLs."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105402-u4",
+     "number": 4,
+     "title": "Context-sensitive languages",
+     "topics": [
+      {
+       "id": "cse-s4-105402-u4-t1",
+       "title": "Context-sensitive grammars (CSG) and Context-sensitive languages",
+       "text": "Context-sensitive grammars (CSG) and Context-sensitive languages, linear bounded automata and equivalence with CSG."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105402-u5",
+     "number": 5,
+     "title": "Turing machines",
+     "topics": [
+      {
+       "id": "cse-s4-105402-u5-t1",
+       "title": "The basic model for Turing machines (TM",
+       "text": "The basic model for Turing machines (TM), Turing recognizable (Recursively enumerable) and Turing-decidable (recursive) languages and their closure properties, variants of Turing machines, nondeterministic TMs and equivalence with deterministic TMs, unrestricted grammars and equivalence with Turing machines, TMs as enumerators."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105402-u6",
+     "number": 6,
+     "title": "Undecidability",
+     "topics": [
+      {
+       "id": "cse-s4-105402-u6-t1",
+       "title": "Church-Turing thesis",
+       "text": "Church-Turing thesis, universal Turing machine, the universal and diagonalization languages, reduction between languages and Rice’s theorem, undecidable problems about languages."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 1,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
    "id": "cse-s4-105403",
    "semester": 4,
    "code": "105403",
-   "name": "Operating Systems",
+   "name": "Design and Analysis of Algorithms",
    "type": "Theory",
    "credits": 3,
    "source": "src/assets/data/branches/cse.json",
@@ -2967,254 +2895,67 @@
       {
        "id": "cse-s4-105403-u1-t1",
        "title": "Introduction",
-       "text": "Concept of Operating Systems, Generations of Operating systems, Types of Operating Systems, OS Services, System Calls, Structure of an OS-Layered, Monolithic, Microkernel Operating Systems, Concept of Virtual Machine. Case study on UNIX and WINDOWS Operating System."
+       "text": "Characteristics of algorithm. Analysis of algorithm: Asymptotic analysis of complexity bounds – best, average and worst-case behavior; Performance measurements of Algorithm, Time and space trade-offs, Analysis of recursive algorithms through recurrence relations: Substitution method, Recursion tree method and Masters’ theorem."
       }
      ]
     },
     {
      "id": "cse-s4-105403-u2",
      "number": 2,
-     "title": "Processes",
-     "topics": [
-      {
-       "id": "cse-s4-105403-u2-t1",
-       "title": "Processes",
-       "text": "Definition, Process Relationship, Different states of a Process, Process State transitions, Process Control Block (PCB), Context switching. Thread: Definition, Various states, Benefits of threads, Types of threads, Concept of multithreads Process Scheduling: Foundation and Scheduling objectives, Types of Schedulers, Scheduling criteria: CPU utilization, Throughput, Turnaround Time, Waiting Time, Response Time; Scheduling algorithms: Pre-emptive and Non pre-emptive, FCFS, SJF, RR; Multiprocessor scheduling: Real Time scheduling: RM and EDF."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-105403-u3",
-     "number": 3,
-     "title": "Inter-process Communication",
-     "topics": [
-      {
-       "id": "cse-s4-105403-u3-t1",
-       "title": "Inter-process Communication",
-       "text": "Critical Section, Race Conditions, Mutual Exclusion, Hardware Solution, Strict Alternation, Peterson’s Solution, The Producer - Consumer Problem, Semaphores, Event Counters, Monitors, Message Passing, Shared Memory, Classical IPC Problems: Reader’s & Writer Problem, Dinning Philosopher Problem etc."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-105403-u4",
-     "number": 4,
-     "title": "Deadlocks",
-     "topics": [
-      {
-       "id": "cse-s4-105403-u4-t1",
-       "title": "Deadlocks",
-       "text": "Definition, Necessary and sufficient conditions for Deadlock, Deadlock Prevention, and Deadlock Avoidance: Banker’s algorithm, Deadlock detection and Recovery."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-105403-u5",
-     "number": 5,
-     "title": "Memory Management",
-     "topics": [
-      {
-       "id": "cse-s4-105403-u5-t1",
-       "title": "Memory Management",
-       "text": "Basic concept, Logical and Physical address map, Memory allocation: Contiguous Memory allocation – Fixed and variable partition–Internal and External fragmentation and Compaction; Paging and Segmentation: Principle of Advantages and Disadvantages of paging and segmentation. Virtual Memory: Basics of Virtual Memory – Hardware and control structures – Not recently used (NRU) and Least Recently used (LRU)."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-105403-u6",
-     "number": 6,
-     "title": "File Management",
-     "topics": [
-      {
-       "id": "cse-s4-105403-u6-t1",
-       "title": "File Management",
-       "text": "Concept of File, Access methods, File types, File operation, Directory structure, File System structure, Allocation methods (contiguous, linked, indexed), Free- space management (bit vector, linked list, grouping), directory implementation (linear list, hash table), efficiency and performance. Disk Management: Disk structure, Disk scheduling - FCFS, SSTF, SCAN, C-SCAN, 5 Disk reliability, Disk formatting, Boot-block, Bad blocks I/O Hardware: I/O devices, Device controllers, Direct memory access, Principles of I/O Software: Goals of Interrupt handlers, Device drivers, Device independent I/O software, Secondary-Storage Structure."
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 0,
-    "practical": 0
-   },
-   "unitCount": 6,
-   "topicCount": 6
-  },
-  {
-   "id": "cse-s4-105402",
-   "semester": 4,
-   "code": "105402",
-   "name": "Design and Analysis of Algorithms",
-   "type": "Theory",
-   "credits": 3,
-   "source": "src/assets/data/branches/cse.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "cse-s4-105402-u1",
-     "number": 1,
-     "title": "Introduction",
-     "topics": [
-      {
-       "id": "cse-s4-105402-u1-t1",
-       "title": "Introduction",
-       "text": "Characteristics of algorithm. Analysis of algorithm: Asymptotic analysis of complexity bounds – best, average and worst-case behavior; Performance measurements of Algorithm, Time and space trade-offs, Analysis of recursive algorithms through recurrence relations: Substitution method, Recursion tree method and Masters’ theorem."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-105402-u2",
-     "number": 2,
      "title": "Introduction to Divide and Conquer paradigm",
      "topics": [
       {
-       "id": "cse-s4-105402-u2-t1",
+       "id": "cse-s4-105403-u2-t1",
        "title": "Introduction to Divide and Conquer paradigm",
        "text": "Binary Search, Quick and Merge sorting techniques, linear time selection algorithm, Strassen’s Matrix Multiplication, Karatsuba Algorithm for fast multiplication etc. Introduction to Heap: Min and Max Heap, Build Heap, Heap Sort"
       }
      ]
     },
     {
-     "id": "cse-s4-105402-u3",
+     "id": "cse-s4-105403-u3",
      "number": 3,
      "title": "Overview of Brute-Force, GreedyProgramming, Dynamic Programming, Branch",
      "topics": [
       {
-       "id": "cse-s4-105402-u3-t1",
-       "title": "Overview of Brute-Force, GreedyProgramming, Dynamic Programming, Branch- and- Bound and…",
-       "text": "Overview of Brute-Force, GreedyProgramming, Dynamic Programming, Branch- and- Bound and Backtrackingmethodologies. Greedy paradigm examples of exact optimization solution: Minimum Cost Spanning Tree, Knapsack problem, Job Sequencing Problem, Huffman Coding, Single source shortest path problem."
+       "id": "cse-s4-105403-u3-t1",
+       "title": "Overview of Brute-Force, GreedyProgramming, Dynamic Programming, Branch- and-Bound and…",
+       "text": "Overview of Brute-Force, GreedyProgramming, Dynamic Programming, Branch- and-Bound and Backtrackingmethodologies. Greedy paradigm examples of exact optimization solution: Minimum Cost Spanning Tree, Knapsack problem, Job Sequencing Problem, Huffman Coding, Single source shortest path problem."
       }
      ]
     },
     {
-     "id": "cse-s4-105402-u4",
+     "id": "cse-s4-105403-u4",
      "number": 4,
      "title": "Dynamic Programming, difference between dynamic programming and divide and conquer, Applications",
      "topics": [
       {
-       "id": "cse-s4-105402-u4-t1",
+       "id": "cse-s4-105403-u4-t1",
        "title": "Dynamic Programming, difference between dynamic programming and divide and conquer, Applications",
        "text": "Fibonacci Series, Matrix Chain Multiplication, 0-1 Knapsack Problem, Longest Common Subsequence, Travelling Salesman Problem, Rod Cutting, Bin Packing. Heuristics – characteristics and their application domains."
       }
      ]
     },
     {
-     "id": "cse-s4-105402-u5",
+     "id": "cse-s4-105403-u5",
      "number": 5,
-     "title": "Graph and Tree Algorithms",
+     "title": "in graphs, Traversal Graph and Tree Algorithms",
      "topics": [
       {
-       "id": "cse-s4-105402-u5-t1",
-       "title": "Graph and Tree Algorithms",
-       "text": "Representational issues in graphs, Traversal algorithms: Depth First Search (DFS) and Breadth First Search (BFS); Shortest path algorithms: Bellman- Ford algorithm,Dijkstra’s algorithm & Analysis of Dijkstra’s algorithm using heaps, Floyd-Warshall’s all pairs shortest path algorithm.Transitive closure, Topological sorting, Network Flow Algorithm, Connected Component"
+       "id": "cse-s4-105403-u5-t1",
+       "title": "in graphs, Traversal Graph and Tree Algorithms",
+       "text": "Representational issues First Search (BFS); algorithms: Depth First Search (DFS) and Breadth Shortest path algorithms: Bellman- Ford algorithm,Dijkstra’s algorithm & Analysis of Dijkstra’s algorithm using heaps, Floyd-Warshall’s all pairs shortest path algorithm.Transitive closure, Topological sorting, Network Flow Algorithm, Connected Component"
       }
      ]
     },
     {
-     "id": "cse-s4-105402-u6",
+     "id": "cse-s4-105403-u6",
      "number": 6,
      "title": "Tractable and Intractable Problems",
      "topics": [
       {
-       "id": "cse-s4-105402-u6-t1",
-       "title": "Tractable and Intractable Problems: Computability of Algorithms, Computability classes – P, NP…",
-       "text": "Tractable and Intractable Problems: Computability of Algorithms, Computability classes – P, NP, NP-complete and NP-hard. Cook’s theorem, Standard NP-complete problems and Reduction techniques.Approximation algorithms, Randomized algorithms Edition, Michael T Goodrich and Roberto Tamassia, Wiley."
-      },
-      {
-       "id": "cse-s4-105402-u6-t2",
-       "title": "Algorithms—A Creative Approach, 3RD Edition, UdiManber, Addison- Wesley, Reading, MA. 8",
-       "text": "Algorithms—A Creative Approach, 3RD Edition, UdiManber, Addison- Wesley, Reading, MA. 8"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 3,
-    "tutorial": 0,
-    "practical": 0
-   },
-   "unitCount": 6,
-   "topicCount": 7
-  },
-  {
-   "id": "cse-s4-100403",
-   "semester": 4,
-   "code": "100403",
-   "name": "Digital Electronics",
-   "type": "Theory",
-   "credits": 3,
-   "source": "src/assets/data/branches/cse.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "cse-s4-100403-u1",
-     "number": 1,
-     "title": "Fundamentals of Digital Systems and logic families",
-     "topics": [
-      {
-       "id": "cse-s4-100403-u1-t1",
-       "title": "Fundamentals of Digital Systems and logic families",
-       "text": "Digital signals, digital circuits, AND, OR, NOT, NAND, NOR and Exclusive-OR operations, Boolean algebra, examples of IC gates, number systems-binary, signed binary, octal hexadecimal number, binary arithmetic, one’s and two’s complements arithmetic, codes, error detecting and correcting codes, characteristics of digital lCs, digital logic families, TTL, Schottky TTL and CMOS logic, interfacing CMOS and TTL, Tri - state logic."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100403-u2",
-     "number": 2,
-     "title": "Combinational Digital Circuits",
-     "topics": [
-      {
-       "id": "cse-s4-100403-u2-t1",
-       "title": "Combinational Digital Circuits",
-       "text": "Standard representation for logic functions K-map representation, simplification of logic functions using K-map, minimization of logical functions. Don’t care conditions, Multiplexer, DeMultiplexer/Decoders, Adders, Subtractors, BCD arithmetic, carry look ahead adder, serial adder, ALU, elementary ALU design, popular MSI chips, digital comparator, parity checker/generator, code converters, priority encoders, decoders/drivers for display devices, Q-M method of function realization."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100403-u3",
-     "number": 3,
-     "title": "Sequential circuits and systems",
-     "topics": [
-      {
-       "id": "cse-s4-100403-u3-t1",
-       "title": "Sequential circuits and systems",
-       "text": "A 1-bit memory, the circuit properties of Bistable latch, the clocked SR flip flop, J- K-T and D types flip flops, applications of flip flops, shift registers, applications of shift registers, serial to parallel converter, parallel to serial converter, ring counter, sequence generator, ripple (Asynchronous) counters, synchronous counters, counters design using flip flops, special counter IC’s, asynchronous sequential counters, applications of counters."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100403-u4",
-     "number": 4,
-     "title": "A/D and D/A Converters",
-     "topics": [
-      {
-       "id": "cse-s4-100403-u4-t1",
-       "title": "A/D and D/A Converters",
-       "text": "Digital to analog converters: weighted resistor/converter, R- 2RLadder D/A converter, specifications for D/A converters, examples of D/A converter lCs, sample and hold circuit, analog to digital converters: quantization and encoding, parallel comparator A/D converter, successive approximation A/D converter, counting A/D converter, dual slope A/D converter, A/D converter using Voltage to frequency and voltage to time conversion, specifications of A/D converters, example of A/D converter ICs."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100403-u5",
-     "number": 5,
-     "title": "Semiconductor memories",
-     "topics": [
-      {
-       "id": "cse-s4-100403-u5-t1",
-       "title": "Semiconductor memories",
-       "text": "Memory organization and operation, expanding memory size, classification and characteristics of memories, sequential memory, read only memory (ROM), read and write memory(RAM), content addressable memory (CAM), charge de coupled device memory (CCD), commonly used memory chips, ROM as a PLD."
-      }
-     ]
-    },
-    {
-     "id": "cse-s4-100403-u6",
-     "number": 6,
-     "title": "Programmable logic devices Programmable logic array",
-     "topics": [
-      {
-       "id": "cse-s4-100403-u6-t1",
-       "title": "Programmable logic devices Programmable logic array",
-       "text": "Programmable logic devices Programmable logic array, Programmable array logic, complex Programmable logic devices (CPLDS), Field Programmable Gate Array (FPGA). 9"
+       "id": "cse-s4-105403-u6-t1",
+       "title": "Tractable and Intractable Problems",
+       "text": "Computability of Algorithms, Computability classes – P, NP, NP-complete and NP-hard. Cook’s theorem, Standard NP-complete problems and Reduction techniques.Approximation algorithms, Randomized algorithms"
       }
      ]
     }
@@ -3228,84 +2969,85 @@
    "topicCount": 6
   },
   {
-   "id": "cse-s4-100407",
+   "id": "cse-s4-105404",
    "semester": 4,
-   "code": "100407",
-   "name": "Human Resource Development and Organizational Behavior",
+   "code": "105404",
+   "name": "Database Management System",
    "type": "Theory",
    "credits": 3,
    "source": "src/assets/data/branches/cse.json",
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s4-100407-u1",
+     "id": "cse-s4-105404-u1",
      "number": 1,
-     "title": "Introduction",
+     "title": "Database system architecture",
      "topics": [
       {
-       "id": "cse-s4-100407-u1-t1",
-       "title": "Introduction",
-       "text": "HR Role and Functions, Concept and Significance of HR, Changing role of HR managers - HR functions and Global Environment, role of a HR Manager. Human Resources Planning: HR Planning andRecruitment: Planning Process - planning at different levels - Job Analysis"
+       "id": "cse-s4-105404-u1-t1",
+       "title": "Data Abstraction, Data Independence, Data Definition Language (DDL), Data Manipulation Language…",
+       "text": "Data Abstraction, Data Independence, Data Definition Language (DDL), Data Manipulation Language (DML). Data models: Entity-relationship model, network model, relational and object oriented data models, integrity constraints, data manipulation operations."
       }
      ]
     },
     {
-     "id": "cse-s4-100407-u2",
+     "id": "cse-s4-105404-u2",
      "number": 2,
-     "title": "Recruitment and selection processes",
+     "title": "Relational query languages",
      "topics": [
       {
-       "id": "cse-s4-100407-u2-t1",
-       "title": "Recruitment and selection processes - Restructuring strategies - Recruitment-Sources of…",
-       "text": "Recruitment and selection processes - Restructuring strategies - Recruitment-Sources of Recruitment-Selection Process-Placement and Induction-Retention of Employees. Training and Development: need for skill upgradation - Assessment of training needs - Retraining and Redeployment methods and techniques of training employees and executives – performance appraisal systems."
+       "id": "cse-s4-105404-u2-t1",
+       "title": "Relational algebra, Tuple and domain relational calculus, SQL3, DDL and DML constructs, Open…",
+       "text": "Relational algebra, Tuple and domain relational calculus, SQL3, DDL and DML constructs, Open source and Commercial DBMS - MYSQL, ORACLE, DB2, SQL server. Relational database design: Domain and data dependency, Armstrong’s axioms, Normal forms, Dependency preservation, Lossless design. Query processing and optimization: Evaluation of relational algebra expressions, Query equivalence, Join strategies, Query optimization algorithms."
       }
      ]
     },
     {
-     "id": "cse-s4-100407-u3",
+     "id": "cse-s4-105404-u3",
      "number": 3,
-     "title": "Performance Management System",
+     "title": "Storage strategies",
      "topics": [
       {
-       "id": "cse-s4-100407-u3-t1",
-       "title": "Performance Management System",
-       "text": "Definition, Concepts and Ethics-Different methods of Performance Appraisal- Rating Errors Competency management. Industrial Relations : Factors influencing industrial relations - State Interventions and Legal Framework - Role of Trade unions - Collective Bargaining - Workers; participation in management."
+       "id": "cse-s4-105404-u3-t1",
+       "title": "Indices, B-trees, hashing",
+       "text": "Indices, B-trees, hashing. (4 hrs)",
+       "hours": 4
       }
      ]
     },
     {
-     "id": "cse-s4-100407-u4",
+     "id": "cse-s4-105404-u4",
      "number": 4,
-     "title": "Organizational Behaviour",
+     "title": "Transaction processing",
      "topics": [
       {
-       "id": "cse-s4-100407-u4-t1",
-       "title": "Organizational Behaviour",
-       "text": "Definition, Importance, Historical Background, Fundamental Concepts of OB, Challenges and Opportunities for OB."
+       "id": "cse-s4-105404-u4-t1",
+       "title": "Concurrency control",
+       "text": "Concurrency control, ACID property, Serializability of scheduling, Locking and timestamp based schedulers, Multi-version and optimistic Concurrency Control schemes, Database recovery."
       }
      ]
     },
     {
-     "id": "cse-s4-100407-u5",
+     "id": "cse-s4-105404-u5",
      "number": 5,
-     "title": "Personality and Attitudes",
+     "title": "Database Security",
      "topics": [
       {
-       "id": "cse-s4-100407-u5-t1",
-       "title": "Personality and Attitudes",
-       "text": "Meaning of personality, Personality Determinants and Traits, Development of Personality, Types of Attitudes, Job Satisfaction."
+       "id": "cse-s4-105404-u5-t1",
+       "title": "Authentication",
+       "text": "Authentication, Authorization and access control, DAC, MAC and RBAC models, Intrusion detection, SQL injection."
       }
      ]
     },
     {
-     "id": "cse-s4-100407-u6",
+     "id": "cse-s4-105404-u6",
      "number": 6,
-     "title": "Leadership",
+     "title": "Advanced topics",
      "topics": [
       {
-       "id": "cse-s4-100407-u6-t1",
-       "title": "Leadership",
-       "text": "Definition, Importance, Theories of Leadership Styles. Organizational Politics: Definition, Factors contributing to Political Behavior. Conflict Management: Traditional vis-a-vis Modern View of Conflict, Functional and Dysfunctional Conflict, Conflict Process, Negotiation - Bargaining Strategies, Negotiation Process."
+       "id": "cse-s4-105404-u6-t1",
+       "title": "Object oriented and object relational databases",
+       "text": "Object oriented and object relational databases, Logical databases, Web databases, Distributed databases, Data warehousing and data mining."
       }
      ]
     }
@@ -3319,24 +3061,84 @@
    "topicCount": 6
   },
   {
-   "id": "cse-s4-105410",
+   "id": "cse-s4-105405",
    "semester": 4,
-   "code": "105410",
-   "name": "Environmental Science",
+   "code": "105405",
+   "name": "Effective Technical Communication",
    "type": "Theory",
-   "credits": 0,
+   "credits": 3,
    "source": "src/assets/data/branches/cse.json",
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s4-105410-u1",
+     "id": "cse-s4-105405-u1",
      "number": 1,
-     "title": "Course content",
+     "title": "Information Design and Development",
      "topics": [
       {
-       "id": "cse-s4-105410-u1-t1",
-       "title": "We as human being are not an entity separate from the environment around us rather we are a…",
-       "text": "We as human being are not an entity separate from the environment around us rather we are a constituent seamlessly integrated and co-exist with the environment around us. We are not an entity so separate from the environment that we can think of mastering and controlling it rather we must understand that each and every action of ours reflects on the environment and vice versa. Ancient wisdom drawn from Vedas about environment and its sustenance reflects these ethos. There is a direct application of this wisdom even in modern times. Idea of an activity based course on environment protection is to sensitize the students on the above issues through following two type of activities: (a) Awareness Activities: i) Small group meetings about water management, promotion of recycle use, generation of less waste, avoiding electricity waste ii) Slogan making events iii) Poster making events iv) Cycle rally v) Lectures from experts (b) Actual Activities: i) Plantation ii) Gifting a tree to see its full growth iii) Cleanliness drive iv) Drive for segregation of waste v) To live some big environmentalist for a week or so to understand his work vi) To work in kitchen garden for mess vii) To know about the different varieties of plants viii) Shutting down the fans and ACs of the campus for an hour or so 12"
+       "id": "cse-s4-105405-u1-t1",
+       "title": "Different kinds of technical documents",
+       "text": "Different kinds of technical documents,Information development life cycle, Organization structures, factors affecting information and document design, Strategies for organization, Information design and writing for print and for online media."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105405-u2",
+     "number": 2,
+     "title": "Technical Writing, Grammar and Editing",
+     "topics": [
+      {
+       "id": "cse-s4-105405-u2-t1",
+       "title": "Technical writing process",
+       "text": "Technical writing process, forms of discourse, Writing drafts and revising, Collaborative writing, creating indexes, technical writing style and language. Basics of grammar, study of advanced grammar, editing strategies to achieve appropriate technical style. Introduction to advanced technical communication, Usability, Human factors, Managing technical communication projects, time estimation, Single sourcing, Localization."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105405-u3",
+     "number": 3,
+     "title": "Self-development and Assessment",
+     "topics": [
+      {
+       "id": "cse-s4-105405-u3-t1",
+       "title": "Self assessment",
+       "text": "Self assessment, Awareness, Perception and Attitudes, Values and belief, Personal goal setting, career planning, Self-esteem. Managing Time; Personal memory, Rapid reading, taking notes; Complex problem solving; Creativity."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105405-u4",
+     "number": 4,
+     "title": "Communication",
+     "topics": [
+      {
+       "id": "cse-s4-105405-u4-t1",
+       "title": "Public speaking",
+       "text": "Public speaking, Group discussion, Oral; presentation, Interviews, Graphic presentation, Presentation aids, Personality Development."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105405-u5",
+     "number": 5,
+     "title": "Technical Writing",
+     "topics": [
+      {
+       "id": "cse-s4-105405-u5-t1",
+       "title": "Writing reports",
+       "text": "Writing reports, project proposals, brochures, newsletters, technical articles, manuals, official notes, business letters, memos, progress reports, minutes of meetings, event report."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105405-u6",
+     "number": 6,
+     "title": "Ethics",
+     "topics": [
+      {
+       "id": "cse-s4-105405-u6-t1",
+       "title": "Business ethics",
+       "text": "Business ethics, Etiquettes in social and office settings, Email etiquettes, Telephone Etiquettes, Engineering ethics, managing time, Role and responsibility of engineer, Work culture in jobs, Personal memo"
       }
      ]
     }
@@ -3346,14 +3148,105 @@
     "tutorial": 0,
     "practical": 0
    },
-   "unitCount": 1,
-   "topicCount": 1
+   "unitCount": 6,
+   "topicCount": 6
+  },
+  {
+   "id": "cse-s4-105406",
+   "semester": 4,
+   "code": "105406",
+   "name": "Computer Networks",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/cse.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "cse-s4-105406-u1",
+     "number": 1,
+     "title": "Overview of Data Communication and Networking",
+     "topics": [
+      {
+       "id": "cse-s4-105406-u1-t1",
+       "title": "Overview of Data Communication and Networking",
+       "text": "OSI Reference Model, TCP/IP Protocol Suite; Network Architecture and Physical Topology."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105406-u2",
+     "number": 2,
+     "title": "Physical Layer",
+     "topics": [
+      {
+       "id": "cse-s4-105406-u2-t1",
+       "title": "Physical Layer",
+       "text": "Analog and Digital Signals, Transmission Impairment, Data Rate Limits, Performance Analysis of a Network; Representation and Synchronization of Bits, Analog and Digital Transmission; Multiplexing and Spreading Techniques; Guided Transmission Media; Circuit, Packet and Virtual Circuit. Switching"
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105406-u3",
+     "number": 3,
+     "title": "Data Link Layer",
+     "topics": [
+      {
+       "id": "cse-s4-105406-u3-t1",
+       "title": "Data Link Layer",
+       "text": "Framing, Flow and Error Control (Noiseless and Noisy Channels Protocols), PointToPoint Protocol; Random Access protocols (Pure/slotted ALOHA, CSMA/CD, CSMA/CA), Controlled Access Protocol (Bit-Map, Polling and Token Passing), Channelization (TDMA, FDMA, CDMA); Physical Addressing and Ethernet; Connecting LANs and Virtual LANs."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105406-u4",
+     "number": 4,
+     "title": "Network Layer",
+     "topics": [
+      {
+       "id": "cse-s4-105406-u4-t1",
+       "title": "Network Layer",
+       "text": "Internet Protocol version 4 and 6; Address Mapping (ARP, RARP, BOOTP and DHCP), ICMP and IGMP, Routing Algorithms."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105406-u5",
+     "number": 5,
+     "title": "Transport Layer",
+     "topics": [
+      {
+       "id": "cse-s4-105406-u5-t1",
+       "title": "Transport Layer",
+       "text": "UDP, TCP; Congestion Control and QoS; Client-Server Model and Socket Interface."
+      }
+     ]
+    },
+    {
+     "id": "cse-s4-105406-u6",
+     "number": 6,
+     "title": "Application Layer",
+     "topics": [
+      {
+       "id": "cse-s4-105406-u6-t1",
+       "title": "Application Layer",
+       "text": "DNS, Remote Logging, Electronic Mail (SMTP, POP), FTP, Introduction to WWW and HTTP."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 3,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "unitCount": 6,
+   "topicCount": 6
   },
   {
    "id": "cse-s4-105401p",
    "semester": 4,
    "code": "105401P",
-   "name": "Computer Organization & Architecture Lab",
+   "name": "Computer Organization and Architecture Lab",
    "type": "Practical",
    "credits": 1,
    "source": "src/assets/data/branches/cse.json",
@@ -3376,33 +3269,33 @@
       },
       {
        "id": "cse-s4-105401p-u1-t3",
-       "title": "Design Verilog HDL to implement simple circuits using structural, Data flow and Behavioural model",
-       "text": "Design Verilog HDL to implement simple circuits using structural, Data flow and Behavioural model."
+       "title": "Design Verilog HDL to implement simple circuits using structural, data flow and behavioural model",
+       "text": "Design Verilog HDL to implement simple circuits using structural, data flow and behavioural model."
       },
       {
        "id": "cse-s4-105401p-u1-t4",
-       "title": "Design Verilog HDL to implement Binary Adder-Subtractor Half and Full Adder",
-       "text": "Design Verilog HDL to implement Binary Adder-Subtractor Half and Full Adder, Half and Full Subtractor."
+       "title": "Design Verilog HDL to implement binary adder-subtractor",
+       "text": "Design Verilog HDL to implement binary adder-subtractor, half and full adder, half and full subtractor."
       },
       {
        "id": "cse-s4-105401p-u1-t5",
-       "title": "Design Verilog HDL to implement Decimal adder",
-       "text": "Design Verilog HDL to implement Decimal adder."
+       "title": "Design Verilog HDL to implement decimal adder",
+       "text": "Design Verilog HDL to implement decimal adder."
       },
       {
        "id": "cse-s4-105401p-u1-t6",
-       "title": "Design Verilog program to implement Different types of multiplexer like 2",
-       "text": "1, 4:1 and 8:1."
+       "title": "Design Verilog program to implement different types of multiplexer like 2:1, 4:1 and 8:1",
+       "text": "Design Verilog program to implement different types of multiplexer like 2:1, 4:1 and 8:1."
       },
       {
        "id": "cse-s4-105401p-u1-t7",
-       "title": "Design Verilog program to implement types of De-Multiplexer",
-       "text": "Design Verilog program to implement types of De-Multiplexer."
+       "title": "Design Verilog program to implement types of de-multiplexer",
+       "text": "Design Verilog program to implement types of de-multiplexer."
       },
       {
        "id": "cse-s4-105401p-u1-t8",
-       "title": "Design Verilog program for implementing various types of Flip-Flops such as SR, JK and D",
-       "text": "Design Verilog program for implementing various types of Flip-Flops such as SR, JK and D."
+       "title": "Design Verilog program for implementing various types of flip-flops such as SR, JK and D",
+       "text": "Design Verilog program for implementing various types of flip-flops such as SR, JK and D."
       },
       {
        "id": "cse-s4-105401p-u1-t9",
@@ -3421,8 +3314,8 @@
       },
       {
        "id": "cse-s4-105401p-u1-t12",
-       "title": "Develop an ALP to count the number of ones and zeros in two consecutive memory locations. 13",
-       "text": "Develop an ALP to count the number of ones and zeros in two consecutive memory locations. 13"
+       "title": "Develop an ALP to count the number of ones and zeros in two consecutive memory locations",
+       "text": "Develop an ALP to count the number of ones and zeros in two consecutive memory locations."
       }
      ]
     }
@@ -3439,7 +3332,7 @@
    "id": "cse-s4-105403p",
    "semester": 4,
    "code": "105403P",
-   "name": "Operating Systems Lab",
+   "name": "Design and Analysis of Algorithms Lab",
    "type": "Practical",
    "credits": 1,
    "source": "src/assets/data/branches/cse.json",
@@ -3448,143 +3341,67 @@
     {
      "id": "cse-s4-105403p-u1",
      "number": 1,
-     "title": "Preform all Experiments Operating System Lab",
-     "topics": [
-      {
-       "id": "cse-s4-105403p-u1-t1",
-       "title": "Write a program to implement FCFS scheduling algorithm",
-       "text": "Write a program to implement FCFS scheduling algorithm."
-      },
-      {
-       "id": "cse-s4-105403p-u1-t2",
-       "title": "Write a program to implement SJF scheduling algorithm",
-       "text": "Write a program to implement SJF scheduling algorithm."
-      },
-      {
-       "id": "cse-s4-105403p-u1-t3",
-       "title": "Write a program to implement priority scheduling algorithm",
-       "text": "Write a program to implement priority scheduling algorithm."
-      },
-      {
-       "id": "cse-s4-105403p-u1-t4",
-       "title": "Write a program to implement round robin scheduling",
-       "text": "Write a program to implement round robin scheduling."
-      },
-      {
-       "id": "cse-s4-105403p-u1-t5",
-       "title": "Write a program to implement banker’s algorithm",
-       "text": "Write a program to implement banker’s algorithm."
-      },
-      {
-       "id": "cse-s4-105403p-u1-t6",
-       "title": "Write a device driver for any device or peripheral",
-       "text": "Write a device driver for any device or peripheral."
-      },
-      {
-       "id": "cse-s4-105403p-u1-t7",
-       "title": "Write a program to implement disk scheduling algorithm",
-       "text": "Write a program to implement disk scheduling algorithm."
-      },
-      {
-       "id": "cse-s4-105403p-u1-t8",
-       "title": "Write a program to implement dining philosopher problem",
-       "text": "Write a program to implement dining philosopher problem."
-      },
-      {
-       "id": "cse-s4-105403p-u1-t9",
-       "title": "Write a program to implement producer consumer problem",
-       "text": "Write a program to implement producer consumer problem."
-      },
-      {
-       "id": "cse-s4-105403p-u1-t10",
-       "title": "Write a program to implement LRU page replacement algorithm. 14",
-       "text": "Write a program to implement LRU page replacement algorithm. 14"
-      }
-     ]
-    }
-   ],
-   "ltp": {
-    "lecture": 0,
-    "tutorial": 0,
-    "practical": 2
-   },
-   "unitCount": 1,
-   "topicCount": 10
-  },
-  {
-   "id": "cse-s4-105402p",
-   "semester": 4,
-   "code": "105402P",
-   "name": "Design and Analysis of Algorithms Lab",
-   "type": "Practical",
-   "credits": 1,
-   "source": "src/assets/data/branches/cse.json",
-   "confidence": "high",
-   "units": [
-    {
-     "id": "cse-s4-105402p-u1",
-     "number": 1,
      "title": "Course content",
      "topics": [
       {
-       "id": "cse-s4-105402p-u1-t1",
-       "title": "Course content",
+       "id": "cse-s4-105403p-u1-t1",
+       "title": "Sort a given set of elements using the Quick sort method and determine the time required to sort…",
        "text": "Sort a given set of elements using the Quick sort method and determine the time required to sort the elements. Repeat the experiment for different values of n, the number of elements in the list to be sorted. The elements can be read from a file or can be generated using the random number generator."
       },
       {
-       "id": "cse-s4-105402p-u1-t2",
-       "title": "Course content",
-       "text": "Implement a Merge Sort algorithm to sort a given set of elements and determine the time required to sort the elements. Repeat the experiment for different values of n, the number of elements in the list to be sorted .The elements can be read from a file or can be generated using the random number generator."
+       "id": "cse-s4-105403p-u1-t2",
+       "title": "Implement a Merge Sort algorithm to sort a given set of elements and determine the time required…",
+       "text": "Implement a Merge Sort algorithm to sort a given set of elements and determine the time required to sort the elements. Repeat the experiment for different values of n, the number of elements in the list to be sorted. The elements can be read from a file or can be generated using the random number generator."
       },
       {
-       "id": "cse-s4-105402p-u1-t3",
+       "id": "cse-s4-105403p-u1-t3",
        "title": "Compute the transitive closure of a given directed graph using Warshall's algorithm",
        "text": "Compute the transitive closure of a given directed graph using Warshall's algorithm."
       },
       {
-       "id": "cse-s4-105402p-u1-t4",
+       "id": "cse-s4-105403p-u1-t4",
        "title": "Implement 0/1 Knapsack problem using Dynamic Programming",
        "text": "Implement 0/1 Knapsack problem using Dynamic Programming."
       },
       {
-       "id": "cse-s4-105402p-u1-t5",
+       "id": "cse-s4-105403p-u1-t5",
        "title": "From a given vertex in a weighted connected graph",
-       "text": "From a given vertex in a weighted connected graph, find shortest paths to other vertices using Dijikstra’s algorithm."
+       "text": "From a given vertex in a weighted connected graph, find shortest paths to other vertices using Dijkstra’s algorithm."
       },
       {
-       "id": "cse-s4-105402p-u1-t6",
+       "id": "cse-s4-105403p-u1-t6",
        "title": "Find Minimum Cost Spanning Tree of a given undirected graph using Kruskal’s algorithm",
        "text": "Find Minimum Cost Spanning Tree of a given undirected graph using Kruskal’s algorithm."
       },
       {
-       "id": "cse-s4-105402p-u1-t7",
+       "id": "cse-s4-105403p-u1-t7",
        "title": "Print all the nodes reachable from a given starting node in a digraph using the BFS method",
        "text": "Print all the nodes reachable from a given starting node in a digraph using the BFS method."
       },
       {
-       "id": "cse-s4-105402p-u1-t8",
+       "id": "cse-s4-105403p-u1-t8",
        "title": "Check whether a given graph is connected or not using the DFS method",
        "text": "Check whether a given graph is connected or not using the DFS method."
       },
       {
-       "id": "cse-s4-105402p-u1-t9",
+       "id": "cse-s4-105403p-u1-t9",
        "title": "Find a subset of a given set S = {s1",
-       "text": "Find a subset of a given set S = {s1, s2,....., sN} of n positive integers whose sum is equal to a given positive integer d. For example, if S= {1, 2, 5, 6, 8} and d = 9 there are two solutions {1,2,6}and{1,8}.A suitable message is to be displayed if the given problem instance doesn't have a solution."
+       "text": "Find a subset of a given set S = {s1, s2,....., sN} of n positive integers whose sum is equal to a given positive integer d. For example, if S= {1, 2, 5, 6, 8} and d = 9 there are two solutions {1,2,6} and {1,8}. A suitable message is to be displayed if the given problem instance doesn't have a solution."
       },
       {
-       "id": "cse-s4-105402p-u1-t10",
-       "title": "Course content",
+       "id": "cse-s4-105403p-u1-t10",
+       "title": "Implement any scheme to find the optimal solution for the Travelling Salesperson problem and then…",
        "text": "Implement any scheme to find the optimal solution for the Travelling Salesperson problem and then solve the same problem instance using any approximation algorithm and determine the error in the approximation."
       },
       {
-       "id": "cse-s4-105402p-u1-t11",
+       "id": "cse-s4-105403p-u1-t11",
        "title": "Find Minimum Cost Spanning Tree of a given undirected graph using Prim’s algorithm",
        "text": "Find Minimum Cost Spanning Tree of a given undirected graph using Prim’s algorithm."
       },
       {
-       "id": "cse-s4-105402p-u1-t12",
-       "title": "Implement N Queen's problem using Backtracking. 15",
-       "text": "Implement N Queen's problem using Backtracking. 15"
+       "id": "cse-s4-105403p-u1-t12",
+       "title": "Implement N Queen's problem using Backtracking",
+       "text": "Implement N Queen's problem using Backtracking."
       }
      ]
     }
@@ -3598,74 +3415,69 @@
    "topicCount": 12
   },
   {
-   "id": "cse-s4-100403p",
+   "id": "cse-s4-105404p",
    "semester": 4,
-   "code": "100403P",
-   "name": "Digital Electronics Lab",
+   "code": "105404P",
+   "name": "Database Management System Lab",
    "type": "Practical",
    "credits": 1,
    "source": "src/assets/data/branches/cse.json",
    "confidence": "high",
    "units": [
     {
-     "id": "cse-s4-100403p-u1",
+     "id": "cse-s4-105404p-u1",
      "number": 1,
      "title": "Course content",
      "topics": [
       {
-       "id": "cse-s4-100403p-u1-t1",
-       "title": "Course content",
-       "text": "Universal Gates (i) Identification and verification of NAND gate (IC #7400) and NOR gate (IC #7402). (ii) Construction and Verification of all other gate (AND, OR, NOT, XOR) USING a) Only NAND gate b) Only NOR gate"
+       "id": "cse-s4-105404p-u1-t1",
+       "title": "Student should decide on a case study and formulate the problem statement",
+       "text": "Student should decide on a case study and formulate the problem statement."
       },
       {
-       "id": "cse-s4-100403p-u1-t2",
-       "title": "Code Convertor & Parity Generator and checker",
-       "text": "Code Convertor & Parity Generator and checker. (i) Identification & verification of NOT (7404), AND (7408) OR (7432) & XOR (7486) gates. (ii) Design, construction and verification of 3-bit Binary to Gray convertor and 3-bit Grey to Binary convertor circuit. (iii) Design, construction and verification of 3-bit odd/even Parity Generator and 4-bit odd/even parity checker circuit."
+       "id": "cse-s4-105404p-u1-t2",
+       "title": "Conceptual Designing using ER Diagrams (Identifying entities, attributes, keys and relationships…",
+       "text": "Conceptual Designing using ER Diagrams (Identifying entities, attributes, keys and relationships between entities, cardinalities, generalization, specialization etc.) Note: Student is required to submit a document by drawing ER Diagram to the Lab teacher."
       },
       {
-       "id": "cse-s4-100403p-u1-t3",
-       "title": "Adder, Subtractor & Magnitude comparator circuits",
-       "text": "Adder, Subtractor & Magnitude comparator circuits. (i) Design, construction and verification of Half Adder and Half Subtractor circuit. (ii) Design, construction and verification of Full Adder and Full Subtractor circuit. (iii) Design, construction and verification of 1-bit and 4-bit Magnitude comparator. (iv) BCD Adder/Subtractor"
+       "id": "cse-s4-105404p-u1-t3",
+       "title": "Converting ER Model to Relational Model (Represent entities and relationships in Tabular form…",
+       "text": "Converting ER Model to Relational Model (Represent entities and relationships in Tabular form, Represent attributes as columns, identifying keys) Note: Student is required to submit a document showing the database tables created from ER Model."
       },
       {
-       "id": "cse-s4-100403p-u1-t4",
-       "title": "Decoder, MUX & DMUX (i) Construction and verification of BCD to 7-segment decoder using IC # 7447…",
-       "text": "Decoder, MUX & DMUX (i) Construction and verification of BCD to 7-segment decoder using IC # 7447 (ii) Verification of 4:1 MUX, 8:1 MUX & 16:1 MUX. (iii) Verification of 1:4 DMUX, 1:8 DMUX (iv) Cascading of MUIX and Cascading of Decoders."
+       "id": "cse-s4-105404p-u1-t4",
+       "title": "Normalization -To remove the redundancies and anomalies in the above relational tables",
+       "text": "Normalization -To remove the redundancies and anomalies in the above relational tables, Normalize up to Third Normal Form."
       },
       {
-       "id": "cse-s4-100403p-u1-t5",
-       "title": "Course content",
-       "text": "Latches and Flip Flops (i)Construction and Verification of a Latch circuit using NAND/NOR gates. (ii) Construction and Verification of S-R Flip Flop using above Latch circuits. (iii) Verification of J-K Flip Flop using IC # 7476 (Dual J-KFF) (iv) Construction and Verification of D-Flip Flop and T-Flip Flop using J-K FF (IC #7476). (v) Construction and Verification of Master Slave J-K Flip Flop."
+       "id": "cse-s4-105404p-u1-t5",
+       "title": "Creation of Tables using SQL",
+       "text": "Creation of Tables using SQL- Overview of using SQL tool, Data types in SQL, Creating Tables (along with Primary and Foreign keys), Altering Tables and Dropping Tables."
       },
       {
-       "id": "cse-s4-100403p-u1-t6",
-       "title": "Shift Registers (i) Verification of D-FF using IC # 7474",
-       "text": "Shift Registers (i) Verification of D-FF using IC # 7474 (Dual D- FF). (ii) Construction and verification of a 2-bit Shift Right Register using IC # 7474 (iii) Construction and verification of a 2-bit Shift Left Register using IC # 7474 (iv) Verification of SISO, SIPO, PISO & PIPO Shift Registers."
+       "id": "cse-s4-105404p-u1-t6",
+       "title": "Practicing DML commands- Insert, Select, Update, Delete",
+       "text": "Practicing DML commands- Insert, Select, Update, Delete."
       },
       {
-       "id": "cse-s4-100403p-u1-t7",
-       "title": "Course content",
-       "text": "Synchronous & Asynchronous Counters (i) Construction and verification of 2-bit Ripple counter using J-K FF. (ii) Construction and verification of Mod-3 up and Mod-3 down synchronous counter. (iii) Construction and verification of 2-bit Ring counter using J-K FF. (iv) Construction and verification of 2-bit twisted Ring (Johnson) counter using J-K FF."
+       "id": "cse-s4-105404p-u1-t7",
+       "title": "Practicing Queries using ANY, ALL, IN, EXISTS, NOT EXISTS, UNION, INTERSECT, CONSTRAINTS etc",
+       "text": "Practicing Queries using ANY, ALL, IN, EXISTS, NOT EXISTS, UNION, INTERSECT, CONSTRAINTS etc."
       },
       {
-       "id": "cse-s4-100403p-u1-t8",
-       "title": "Design and construction of a 4 bit sequence generator",
-       "text": "Design and construction of a 4 bit sequence generator"
+       "id": "cse-s4-105404p-u1-t8",
+       "title": "Practicing Sub queries (Nested, Correlated) and Joins (Inner, Outer and Equi",
+       "text": "Practicing Sub queries (Nested, Correlated) and Joins (Inner, Outer and Equi)."
       },
       {
-       "id": "cse-s4-100403p-u1-t9",
-       "title": "Digital to Analog Converter (DAC",
-       "text": "Digital to Analog Converter (DAC). Construction & Verification of D/A converters using following methods. a) Weighted Resistor type b) R-2R ladder network type"
+       "id": "cse-s4-105404p-u1-t9",
+       "title": "Practice Queries using COUNT, SUM, AVG, MAX, MIN, GROUP BY, HAVING, VIEWS Creation and Dropping",
+       "text": "Practice Queries using COUNT, SUM, AVG, MAX, MIN, GROUP BY, HAVING, VIEWS Creation and Dropping."
       },
       {
-       "id": "cse-s4-100403p-u1-t10",
-       "title": "Analog to Digital Converter (ADC",
-       "text": "Analog to Digital Converter (ADC). Construction & Verification of A/D Converter using following methods. a) Counter type b) Successive Approximation type"
-      },
-      {
-       "id": "cse-s4-100403p-u1-t11",
-       "title": "Familiarization with multisim. Design of various Digital Circuits using Multisim. 16",
-       "text": "Familiarization with multisim. Design of various Digital Circuits using Multisim. 16"
+       "id": "cse-s4-105404p-u1-t10",
+       "title": "Practicing on Triggers",
+       "text": "Practicing on Triggers - creation of trigger, Insertion using trigger, Deletion using trigger, Updating using trigger."
       }
      ]
     }
@@ -3676,7 +3488,177 @@
     "practical": 2
    },
    "unitCount": 1,
-   "topicCount": 11
+   "topicCount": 10
+  },
+  {
+   "id": "cse-s4-105406p",
+   "semester": 4,
+   "code": "105406P",
+   "name": "Computer Networks Lab",
+   "type": "Practical",
+   "credits": 1,
+   "source": "src/assets/data/branches/cse.json",
+   "confidence": "high",
+   "units": [
+    {
+     "id": "cse-s4-105406p-u1",
+     "number": 1,
+     "title": "Course content",
+     "topics": [
+      {
+       "id": "cse-s4-105406p-u1-t1",
+       "title": "Write a report that includes a diagram showing the topology",
+       "text": "Write a report that includes a diagram showing the topology, type of connection devices, and speed of the wired and wireless LAN in your organization. Also find out the MAC and IP addresses and the subnet mask of your computer."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t2",
+       "title": "Install and run a network diagnosis tool such as TCP dump or Wireshark",
+       "text": "Install and run a network diagnosis tool such as TCP dump or Wireshark. Start capturing packets on an active interface, open a browser and type the address of your favourite search engine. Wait till the page loads and stop capture. List out the type and number of each type of packets captured."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t3",
+       "title": "Write a program to create a server that listens to port 53 using stream sockets",
+       "text": "Write a program to create a server that listens to port 53 using stream sockets. Write a simple client program to connect to the server. Send a simple text message \"Hello\" from the client to the server and the server to the client and close the connection."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t4",
+       "title": "Write a program to create a chat server that listens to port 54 using stream sockets",
+       "text": "Write a program to create a chat server that listens to port 54 using stream sockets. Write a simple client program to connect to the server. Send multiple text messages from the client to the server and vice versa. When either party types \"Bye\", close the connection."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t5",
+       "title": "Write a program to create a server that listens to port 55 using stream sockets",
+       "text": "Write a program to create a server that listens to port 55 using stream sockets. Write a simple client program to connect to the server. The client should request for a text file and the server should return the file before terminating the connection."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t6",
+       "title": "Write a program to create a server that listens to port 56 using stream sockets",
+       "text": "Write a program to create a server that listens to port 56 using stream sockets. Write a simple client program to connect to the server. Run multiple clients that request the server for binary files. The server should service each client one after the other before terminating the connection"
+      },
+      {
+       "id": "cse-s4-105406p-u1-t7",
+       "title": "Write a program to create a server that listens to port 57 using stream sockets",
+       "text": "Write a program to create a server that listens to port 57 using stream sockets. Write a simple client program to connect to the server. Run multiple clients that request the server for text files. The server should service all clients concurrently."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t8",
+       "title": "Write a program to create a server that listens to port 59 using datagram sockets",
+       "text": "Write a program to create a server that listens to port 59 using datagram sockets. Write a simple client program that requests the server for a binary file. The server should service multiple clients concurrently and send the requested files in response."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t9",
+       "title": "Creation of sample network topologies using CISCO packet tracer",
+       "text": "Creation of sample network topologies using CISCO packet tracer."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t10",
+       "title": "Creation of a subnet, assignment of addresses and communication within and outside the subnet",
+       "text": "Creation of a subnet, assignment of addresses and communication within and outside the subnet."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t11",
+       "title": "Error Detection using CRC (Python/Java",
+       "text": "Implement the Cyclic Redundancy Check (CRC) algorithm for error detection in data transmission."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t12",
+       "title": "Hamming Code for Error Correction (Python/Java",
+       "text": "Implement the Hamming Code algorithm to detect and correct single-bit errors in transmitted data."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t13",
+       "title": "Sliding Window Protocol (Python/Java",
+       "text": "Simulate Stop-and-Wait and Go-Back-N ARQ protocols to demonstrate flow control in a network."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t14",
+       "title": "Selective Repeat ARQ (Python/Java",
+       "text": "Implement the Selective Repeat ARQ protocol for reliable data transmission."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t15",
+       "title": "CSMA/CD and CSMA/CA Simulation (Python/Java",
+       "text": "Simulate Carrier Sense Multiple Access with Collision Detection (CSMA/CD) and Collision Avoidance (CSMA/CA)."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t16",
+       "title": "IPv4 and IPv6 Addressing (Python/Java",
+       "text": "Implement a program to validate and classify IP addresses as IPv4 or IPv6."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t17",
+       "title": "ARP and RARP Implementation (Python/Java",
+       "text": "Simulate Address Resolution Protocol (ARP) and Reverse Address Resolution Protocol (RARP)."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t18",
+       "title": "BOOTP and DHCP Simulation (Python/Java",
+       "text": "Implement the BOOTP and DHCP mechanisms for dynamic IP address allocation."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t19",
+       "title": "Routing Algorithms (Python/Java",
+       "text": "Implement the Distance Vector Routing (DVR) and Link State Routing (LSR) algorithms."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t20",
+       "title": "TCP and UDP Simulation (Python/Java",
+       "text": "Implement a client-server model to demonstrate TCP and UDP socket programming."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t21",
+       "title": "Congestion Control using Leaky Bucket Algorithm (Python/Java",
+       "text": "Simulate the Leaky Bucket algorithm for congestion control."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t22",
+       "title": "Congestion Control using Token Bucket Algorithm (Python/Java",
+       "text": "Implement the Token Bucket algorithm to regulate network traffic."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t23",
+       "title": "FTP and HTTP Simulation (Python/Java",
+       "text": "Implement a program to simulate FTP file transfer and send HTTP GET/POST requests."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t24",
+       "title": "DNS Query Resolution (Python/Java",
+       "text": "Write a program to perform DNS resolution and retrieve IP addresses for given domain names."
+      },
+      {
+       "id": "cse-s4-105406p-u1-t25",
+       "title": "Email Client Simulation (Python/Java",
+       "text": "Implement a basic email client that can send and receive messages using SMTP and POP3 protocols."
+      }
+     ]
+    }
+   ],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 2
+   },
+   "unitCount": 1,
+   "topicCount": 25
+  },
+  {
+   "id": "cse-s4-105407",
+   "semester": 4,
+   "code": "105407",
+   "name": "NPTEL-I (Open Course)",
+   "type": "Theory",
+   "credits": 3,
+   "source": "src/assets/data/branches/cse.json",
+   "confidence": "none",
+   "units": [],
+   "ltp": {
+    "lecture": 0,
+    "tutorial": 0,
+    "practical": 0
+   },
+   "stub": true,
+   "unitCount": 0,
+   "topicCount": 0
   },
   {
    "id": "cse-s5-100508",

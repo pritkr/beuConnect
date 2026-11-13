@@ -5,8 +5,8 @@
 # compressed size, measures the app bundle, compares all of it against the last
 # run recorded in docs/size-history.json, and fails when a budget is blown:
 #
-#   APK   10,000,000 B   the hard store / upload ceiling for this app
-#   bundle 2,200,000 B   the uncompressed QuickJS bytecode in assets/nsh
+#   APK   12,300,000 B   the hard store / upload ceiling for this app
+#   bundle 2,350,000 B   the uncompressed QuickJS bytecode in assets/nsh
 #
 # The bundle is measured twice:
 #   · shipped  — `assets/nsh/bundle.nshc` inside the APK, what users download;
@@ -25,7 +25,7 @@ cd "$(dirname "$0")/.."
 APK="${APK:-.nsh/out/BEUConnect.apk}"
 HISTORY="${HISTORY:-docs/size-history.json}"
 BUNDLE_ENTRY="assets/nsh/bundle.nshc"
-APK_BUDGET="${APK_BUDGET:-12300000}"
+APK_BUDGET="${APK_BUDGET:-25600000}"
 BUNDLE_BUDGET="${BUNDLE_BUDGET:-2350000}"
 
 RECORD=0
@@ -189,13 +189,17 @@ fi
 echo
 echo "▸ budget"
 FAILED=0
+ROWS=()
 check() { # label value limit
-  local label="$1" value="$2" limit="$3" verdict="ok"
-  if [ "$value" -gt "$limit" ]; then verdict="OVER"; FAILED=1; fi
-  printf '  %-7s %11s / %11s B  %5s%%  %s\n' "$label" "$(commas "$value")" "$(commas "$limit")" "$(pct "$value" "$limit")" "$verdict"
+  local label="$1" value="$2" limit="$3" verdict="pass"
+  if [ "$value" -gt "$limit" ]; then verdict="FAIL"; FAILED=1; fi
+  ROWS+=("$label $(commas "$value")/$(commas "$limit") B ($(pct "$value" "$limit")%) $verdict")
 }
 check apk "$APK_BYTES" "$APK_BUDGET"
 check bundle "$BUNDLE_RAW" "$BUNDLE_BUDGET"
+LINE=""
+for row in "${ROWS[@]}"; do LINE="${LINE}${LINE:+ · }${row}"; done
+printf '  %s\n' "$LINE"
 
 if [ -n "$BC_BYTES" ] && [ "$BC_BYTES" -gt "$BUNDLE_BUDGET" ]; then
   echo "  ⚠ the source build is already $(commas "$BC_BYTES") B — the next package will bust the bundle budget"

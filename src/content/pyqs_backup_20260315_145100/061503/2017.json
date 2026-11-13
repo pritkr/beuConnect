@@ -1,0 +1,339 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2017",
+    "subject": "OPERATING SYSTEMS",
+    "subject_slug": "operating-systems",
+    "subject_code": "061503",
+    "year": 2017,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "The operating system manages",
+              "options": [
+                "memory",
+                "processes",
+                "disks and I/O devices",
+                "All of the above"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "When a computer is turned on or restarted, a special type of absolute loader called _______ is executed.",
+              "options": [
+                "compile and go loader",
+                "boot loader",
+                "bootstrap loader",
+                "relating loader"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "In which type of operating systems, the response time is very crucial?",
+              "options": [
+                "Unix Operating System",
+                "Real-time Operating System",
+                "Batch Operating System",
+                "Network Operating System"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Bringing a page into the memory only when it is needed is called",
+              "options": [
+                "deadlock",
+                "page fault",
+                "dormant paging",
+                "demand paging"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "A page fault occurs when",
+              "options": [
+                "deadlock happens",
+                "segmentation starts",
+                "page is found in the memory",
+                "page is not found in the memory"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "A program in execution is called",
+              "options": [
+                "paging",
+                "process",
+                "virtual memory",
+                "demand page"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "Copying a process from memory to disk to allow space for other processes is called",
+              "options": [
+                "swapping",
+                "deadlock",
+                "demand paging",
+                "page fault"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "What does Belady's anomaly relate to?",
+              "options": [
+                "Page Replacement Algorithm",
+                "Memory Management Algorithm",
+                "Deadlock Prevention Algorithm",
+                "Disk Scheduling Algorithm"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "The piece of code that only one thread should execute at a time is called",
+              "options": [
+                "mutual exclusion",
+                "critical section",
+                "synchronization",
+                "None of the above"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "When a process waits indefinitely for some resources which are being used by other processes, it is called",
+              "options": [
+                "Starvation",
+                "Demand Paging",
+                "Segmentation",
+                "None of the above"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the layered structure of an operating system with the help of a diagram. Discuss the various functions performed by the operating system.",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Explain the concept of a process. With the help of a state transition diagram, discuss the various process states.",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Consider the following set of processes with the length of CPU burst time in milliseconds :\nProcess | Burst Time (ms) | Priority\nP1 | 10 | 3\nP2 | 1 | 1\nP3 | 2 | 3\nP4 | 1 | 4\nP5 | 5 | 2\nThe processes are assumed to have arrived in the order P1, P2, P3, P4, P5 and all at time 0.",
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Draw Gantt chart, illustrating the execution of these processes using FCFS, SJF, and Round Robin (quantum = 1) scheduling.",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What is turnaround time of each process for each of the above scheduling algorithms in part (a)?",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "What is the waiting time for each process for each of the scheduling algorithms in part (a)?",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Which of the schedules in part (a) results in the overall minimal average waiting time?",
+              "id": "3_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the critical section problem with the help of an example. Discuss the requirements that need to be satisfied for a solution of the critical section problem.",
+              "id": "4_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Elaborate upon the conditions necessary for a deadlock situation to arise.",
+              "id": "4_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "With the help of a labelled diagram, explain how logical address is translated into physical address using paging mechanism.",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What are the various memory allocation schemes?",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Discuss with examples the following page replacement algorithms : (i) FIFO (ii) LRU",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Differentiate between external and internal fragmentations.",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the usage of Resource Allocation Graph for Deadlock Avoidance.",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "What is meant by directory? Briefly discuss the various structures of a directory.",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Suppose that a disk drive has 5000 cylinders, numbered 0 to 4999. The drive is currently serving a request at cylinder 143, and the previous request was at cylinder 125. The queue of pending requests, in FIFO order, is :\n86, 1470, 913, 1774, 948, 1509, 1022, 1750, 130\nStarting from the current head position, what is the total distance (in cylinders) that the disk arm moves to satisfy all the pending requests for each of the following disk-scheduling algorithms?",
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "FCFS",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "SSTF",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "SCAN",
+              "id": "8_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Process control block",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Schedulers",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Semaphores",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

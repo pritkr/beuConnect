@@ -7,7 +7,9 @@ Source (read-only, never touched by this script):
 
 Outputs:
 
-    native/assets/data/students-gecs.json        canonical roster (the app reads this)
+    native/assets/data/students-gecs.json        canonical roster (the app reads this;
+                                                 contact details, DOB, gender and
+                                                 caste are never serialized)
     native/assets/data/manifest.json             one "students" dataset entry + totals.students
     src/data/students/gecs-<branch>.csv          site CSVs, 4-column contract + extra columns
     src/data/students/gecsheikhpura<branch>.csv  legacy 4-column files kept for old consumers
@@ -37,7 +39,7 @@ import os
 import re
 import sys
 from collections import Counter
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -49,6 +51,12 @@ DEFAULT_SOURCE = (
     Path.home() / "gecs-cli" / "dumps" / "20261026_031340" / "students_basic_details.csv"
 )
 SOURCE_LABEL = "gecs-cli/dumps/20261026_031340/students_basic_details.csv"
+
+# Read from the dump, never written to the canonical JSON or the site CSVs.
+# The app does not need them, the site projects its own trimmed copy, and this
+# repo is public: phone numbers, emails, dates of birth, gender and caste are
+# personal data, so they stay in the private dump only.
+PRIVATE_FIELDS = ("phone", "guardianPhone", "email", "dob", "gender", "category")
 
 # Batch -> session.  2K22 == 2022-26 … 2K26 == 2026-30.
 SESSION_BY_BATCH = {
@@ -126,26 +134,6 @@ def natural(value: str) -> list[tuple[int, Any]]:
     ]
 
 
-def phone(value: str | None) -> str:
-    digits = re.sub(r"\D", "", value or "")
-    if len(digits) == 12 and digits.startswith("91"):
-        digits = digits[2:]
-    elif len(digits) == 11 and digits.startswith("0"):
-        digits = digits[1:]
-    return digits
-
-
-def iso_date(value: str | None) -> str:
-    text = tidy(value)
-    if not text:
-        return ""
-    try:
-        date.fromisoformat(text)
-    except ValueError:
-        return ""
-    return text
-
-
 def put(record: dict[str, Any], key: str, value: Any) -> None:
     """Omit empty values instead of writing "" (keeps the bundle small)."""
     if value is None or value == "":
@@ -210,14 +198,8 @@ def build_records(rows: Iterable[dict[str, str]]) -> list[dict[str, Any]]:
             "branchLabel": branch_meta["label"],
         }
         put(record, "section", section)
-        put(record, "gender", tidy(row.get("gender")))
-        put(record, "dob", iso_date(row.get("date_of_birth")))
         put(record, "guardian", tidy(row.get("guardian_name")))
-        put(record, "guardianPhone", phone(row.get("guardian_mobile_no")))
-        put(record, "phone", phone(row.get("mobile_no")))
-        put(record, "email", tidy(row.get("email_id")).lower())
         record["hosteller"] = hosteller
-        put(record, "category", tidy(row.get("category")))
         put(record, "admissionType", tidy(row.get("admission_type")))
         put(record, "status", tidy(row.get("status")))
         records.append(record)
@@ -276,8 +258,25 @@ def csv_text(records: list[dict[str, Any]], columns: list[str]) -> str:
     return buffer.getvalue()
 
 
+def assert_private_free(records: Iterable[dict[str, Any]], where: str) -> None:
+    """Refuse to serialize personal data into a public artifact.
+
+    The dump carries contact details, dates of birth, gender and caste. None of
+    it is read by the app, and the site projects a trimmed copy, so the only
+    thing these keys can do in the canonical JSON is leak.
+    """
+    for record in records:
+        leaked = [key for key in PRIVATE_FIELDS if key in record]
+        if leaked:
+            raise ValueError(
+                f"{where}: private field(s) {', '.join(leaked)} on record "
+                f"{record.get('regNo', record.get('id', '?'))} must not be serialized"
+            )
+
+
 def write_json_array(path: Path, records: list[dict[str, Any]]) -> None:
     """One record per line: compact, and every change is one diff line."""
+    assert_private_free(records, path.name)
     lines = [json.dumps(record, ensure_ascii=False, separators=(",", ":")) for record in records]
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("[\n" + ",\n".join(lines) + "\n]\n", encoding="utf-8")
@@ -355,6 +354,10 @@ def check(records: list[dict[str, Any]]) -> int:
         print(f"FAILED: {path.relative_to(ROOT)} is missing")
         return 1
     stored = json.loads(path.read_text(encoding="utf-8"))
+    try:
+        assert_private_free(stored, path.name)
+    except ValueError as error:
+        errors.append(str(error))
     if stored != records:
         errors.append("students-gecs.json does not match the source dump")
 

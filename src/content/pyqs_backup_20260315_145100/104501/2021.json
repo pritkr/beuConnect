@@ -1,0 +1,159 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "Computer Networks And Security",
+    "subject_slug": "computer-networks-and-security",
+    "subject_code": "104501",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (any seven) :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "SHA-1 produces a hash value of\n(i) 256 bits\n(ii) 160 bits\n(iii) 180 bits\n(iv) 128 bits",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "b",
+              "text": "Which of the following tasks is not done by data link layer?\n(i) Framing\n(ii) Error control\n(iii) Flow control\n(iv) Channel coding",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "c",
+              "text": "Which of the following routing algorithms can be used for network layer design?\n(i) Shortest path algorithm\n(ii) Distance vector routing\n(iii) Link state routing\n(iv) All of the above",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "d",
+              "text": "The physical layer translates logical communication requests from the ______ into hardware specific operations.\n(i) data link layer\n(ii) network layer\n(iii) transport layer\n(iv) application layer",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "e",
+              "text": "Which of the following is the type of firewall?\n(i) Packet filtering firewall\n(ii) Dual-homed gateway firewall\n(iii) Screened host firewall\n(iv) Dual-host firewall",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "f",
+              "text": "In TCP, sending and receiving data are done as\n(i) stream of bytes\n(ii) sequence of characters\n(iii) lines of data\n(iv) packets",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "g",
+              "text": "In the IPv6 header, the traffic class field is similar to which field in the IPv4 header?\n(i) Fragmentation field\n(ii) Fast-switching\n(iii) ToS field\n(iv) Option field",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "h",
+              "text": "Which of the following are transport layer protocols used in networking?\n(i) TCP and FTP\n(ii) UDP and HTTP\n(iii) TCP and UDP\n(iv) HTTP and FTP",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "i",
+              "text": "An ALOHA network uses an 18.2 kbps channel for sending message packets of 100 bits long size. Calculate the maximum throughput.\n(i) 5999\n(ii) 6900\n(iii) 6027\n(iv) 5027",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "j",
+              "text": "RSA stands for\n(i) Rivest-Shamir-Adleman\n(ii) Roger-Shamir-Adrian\n(iii) Robert-Shamir-Anthoney\n(iv) Rivest-Shaw-Adleman",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ]
+        },
+        {
+          "text": "What is TCP/IP model? Explain the functions, protocols and services of each layer. Compare it with OSI model.",
+          "marks": 14,
+          "id": "2"
+        },
+        {
+          "text": "What are Hamming distance and Hamming code? Explain with an example.",
+          "marks": 14,
+          "id": "3"
+        },
+        {
+          "text": "Differentiate between classful and classless IP addressing. Subnet the IP address 203.10.93.0/24 into 30 subnets. Is 203.10.93.30 a valid host ID after subnetting?",
+          "marks": 14,
+          "id": "4"
+        },
+        {
+          "text": "Differentiate between OSPF and RIP protocols with an example.",
+          "marks": 14,
+          "id": "5"
+        },
+        {
+          "text": "Discuss flow and error control protocols of transport layer. In the stop-and-wait protocol, show the case in which the receiver receives a duplicate packet (which is also out of order) Hint : Think about a delayed ACK. What is the reaction of the receiver to this event?",
+          "marks": 14,
+          "id": "6"
+        },
+        {
+          "text": "Write short notes on the following :\n(a) HTTP\n(b) FTP\n(c) DNS\n(d) TELNET",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "HTTP",
+              "marks": 3,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "FTP",
+              "marks": 3,
+              "id": "7_sub"
+            },
+            {
+              "number": "c",
+              "text": "DNS",
+              "marks": 3,
+              "id": "7_sub"
+            },
+            {
+              "number": "d",
+              "text": "TELNET",
+              "marks": 3,
+              "id": "7_sub"
+            }
+          ]
+        },
+        {
+          "text": "How is security provided by SSL? What services are provided by the SSL Record Protocol? What steps are involved in the SSL Record Protocol transmission?",
+          "marks": 14,
+          "id": "8"
+        },
+        {
+          "text": "Differentiate between symmetric key crypto-system and asymmetric key cryptosystem. Explain RSA algorithm in detail with an example.",
+          "marks": 14,
+          "id": "9"
+        }
+      ]
+    }
+  ]
+}

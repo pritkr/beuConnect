@@ -30,6 +30,10 @@ Sheikhpura (college `157`); `ROSTER_TOTAL`, `ROSTER_SESSIONS` and
   is the set BEU publishes (MET has no code).
 - **Sorting is the published order**, not a new rank. `rank.ts` is the pure
   logic; change it with a unit test.
+- **Categorising happens on the college screen.** It is a batch accordion with
+  a branch pill filter; each branch row opens `students.branch` scoped to that
+  batch by `session`. The branch screen is the only place that lists students
+  under a batch, and it is the only one that virtualises them.
 
 ## Regenerate
 
@@ -45,5 +49,5 @@ bundled data and counts against the APK budget.
 ## Files
 
 `roster-data.ts` (generated), `leads-data.ts` (generated join input),
-`data.ts`, `rank.ts`, `students.tsx`, `student.tsx`, `college.tsx`,
-`branch.tsx`, `leads.tsx`, `components.tsx`.
+`data.ts`, `rank.ts`, `college-list.ts`, `students.tsx`, `colleges.tsx`,
+`student.tsx`, `college.tsx`, `branch.tsx`, `leads.tsx`, `components.tsx`.

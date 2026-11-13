@@ -37,6 +37,7 @@ import type { Nav, RouteDef } from "../../app/router";
 import { param } from "../../app/router";
 import { Body, EmptyState, Muted, Screen } from "../../ui";
 import { formatDate, readStore, relativeTime, writeStore } from "../../lib/net";
+import { EVENTS, track } from "../../lib/analytics";
 import { BRANCH_META, branchPack, gatePack } from "../syllabus/active";
 import { dataVersion } from "../data-feed/pyqs";
 import { parseGate, parseSyllabus, type BranchPack, type GatePack, type Subject } from "../syllabus/parse";
@@ -363,6 +364,7 @@ function remember(target: Target): void {
  */
 function open(nav: Nav, target: Target): void {
   remember(target);
+  track(EVENTS.searchResultOpen, { kind: target.kind, route: target.route });
   nav.push(target.route, target.params);
 }
 
@@ -513,6 +515,11 @@ function SearchScreen(props: { nav: Nav }) {
     const clean = value.trim();
     query.set(clean);
     if (clean.length === 0) filter.set("all");
+    // The words themselves never leave: length and result count are enough to
+    // see whether search finds things.
+    if (clean.length > 0) {
+      track(EVENTS.searchQuery, { query_length: clean.length, words: clean.split(/\s+/).length });
+    }
   };
   const type = (value: string): void => {
     typed.set(value);

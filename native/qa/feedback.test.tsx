@@ -10,6 +10,7 @@
 
 import { expect, open, test } from "nsh/test";
 
+import { APP_VERSION } from "../src/lib/app-info";
 import { DOWN, ONBOARDED, openRoute, visible } from "./support";
 
 const ENDPOINT = "POST https://beu.prit.eu.org/api/feedback";
@@ -43,7 +44,7 @@ test("the report carries every field the site expects", async () => {
   expect(sent.type).toBe("bug");
   expect(sent.message).toBe("The SGPA is blank for semester 5.");
   expect(sent.page).toBe("native/feedback");
-  expect(sent.context).toContain("BEUConnect 1.0.0");
+  expect(sent.context).toContain(`BEUConnect ${APP_VERSION}`);
   expect(sent.hp).toBe("");
 }, 20000);
 

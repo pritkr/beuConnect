@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2020",
+    "subject": "Analog and Digital Communication System",
+    "subject_slug": "analog-and-digital-communication-system",
+    "subject_code": "110501",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven of the following questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>What is the criterion for Carson's bandwidth calculation?</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>List the advantages of DSB-FC modulation scheme.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>A signal has frequency component from 300 Hz to 1.8 kHz. What is the minimum possible rate at\n                        which the signal has to be sampled?</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Define the numerical aperture of step index fiber.</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>What is the need of cladding?</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>What are the advantages of geostationary satellite?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Mention the uses of frequency discriminator in FM demodulation.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Write the advantages of hand-off process.</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>What do you mean by baseband signal?</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Compare the spectrum occupancy of PSK and FSK schemes.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What is the basic limitation of SSB modulation scheme? How is it eliminated by VSB modulation?\n                    </p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of super heterodyne AM receiver and explain the function of IF amplifier.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>80 micrometer core diameter single-mode fiber has a core refractive index of 2, relative\n                        refractive index difference of 0.3% and operating wavelength of 1.55 micrometer. Determine\n                        critical radius of curvature. Explain bending losses.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Discuss the Armstrong's method of indirect FM generation in detail.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is ISI? Explain how ISI can be removed by employing a raised cosine filter.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Derive the output SNR of AM envelop detector. Also calculate its figure of merit.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the convolution codes, their advantages and disadvantages.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>A sinusoidal message signal of peak voltage 20 V and peak frequency of 5 kHz is transmitted\n                        through 256 levels PCM system. The sampling rate is 25% higher than Nyquist rate Calculate the\n                        sampling frequency, bit rate, bandwidth, step size, maximum quantization error and SNR in dB.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain the sampling process of a signal mathematically. Write how to generate PPM from PWM\n                        signal?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Derive the power calculation of AM signal.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is the probability of error in presence of white noise for BPSK system? We are required to\n                        transmit \\( 2.08 \\times 10^6 \\) binary digits per second with \\( P_b \\le 10^{-7} \\). The\n                        channel noise PSD is \\( Sn(f)=10^{-8} \\). Determine the transmission bandwidth and signal\n                        power required in binary.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>What are the noise considerations in PCM? Explain the TDM-PAM concept.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>An angle modulated signal with carrier frequency \\( \\omega_c = 2\\pi \\times 10^5 \\text{\n                        rad/sec}\n                        \\) is given as follow: \\( \\phi_{FM}(t) = 10 \\cos(\\omega_c t + 5 \\sin(3000t) + 10\n                        \\sin(2000t)) \\). (i) Find power of modulated signal. (ii) Find the maximum frequency\n                        deviation.\n                        (iii) Find the maximum phase deviation. (iv) Estimate the bandwidth of FM signal.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain the different types of diversity technique used in wireless communication system.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain telemetry, tracking and command control system in detail.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Explain Snell's law. What is total internal reflection? Explain with suitable diagram.</p>"
+        }
+      ]
+    }
+  ]
+}

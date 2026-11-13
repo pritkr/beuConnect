@@ -1,0 +1,248 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2016",
+    "subject": "Data Structures",
+    "subject_slug": "data-structures",
+    "subject_code": "051403",
+    "year": 2016,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "There are 8, 15, 13 and 14 nodes in four different trees. Which one of them can form a full binary tree?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Which data structure is used to perform recursion and why?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "c",
+              "text": "List out the areas in which data structures are applied extensively.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "d",
+              "text": "Sorting is not possible by using which of the following methods and why?\nInsertion, Selection, Exchange, Deletion",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "e",
+              "text": "What is FIFO?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "f",
+              "text": "What is a postfix expression?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "g",
+              "text": "Differentiate between linear and non-linear data structures.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "h",
+              "text": "How do you insert a new item in a binary search tree?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "i",
+              "text": "Differentiate between stack and array.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "j",
+              "text": "What is an AVL tree?",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Write binary search algorithm and trace to search element 91 in the following list:\n13, 30, 62, 73, 81, 88, 91",
+              "marks": 10,
+              "id": "2_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What are the limitations of binary search?",
+              "marks": 4,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Draw a binary tree from its inorder and preorder traversal sequences given as follows:\nInorder: d b g e h a c n f\nPreorder: a b d e g h c f n",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What is stack? How can stack be used to check whether an expression is correctly parenthesized or not? [Hint: () is correct but (( or )()( is not]",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Convert the following infix expression into a postfix expression (show steps):\n$A * (B+D) / E - F(G + H/k)$",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "letter": "b",
+              "text": "How do you find the complexity of an algorithm? What is the relation between the time and the space complexities of an algorithm?",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Write an algorithm to create a singly linked list. Explain the steps to do the following operations:",
+              "subparts": [
+                {
+                  "letter": "a",
+                  "text": "Insert a new node at the end"
+                },
+                {
+                  "letter": "b",
+                  "text": "Delete the first node"
+                }
+              ],
+              "marks": 14,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Arrange the given list of elements in ascending order using quick sort:\n44, 33, 11, 55, 77, 90, 40, 60, 99, 22, 88, 66",
+              "marks": 8,
+              "id": "6_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Define an array. How does an array differ from an ordinary variable? How are arrays represented in the memory?",
+              "marks": 6,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Define hashing. Describe any two commonly used hash functions. Describe one method of collision resolution.",
+              "marks": 14,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Write down the procedure for inserting and deleting elements from a circular queue implemented using arrays.",
+              "marks": 8,
+              "id": "8_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What is a height balanced tree? Explain how the height is balanced after addition/deletion of nodes in it.",
+              "marks": 6,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Write short notes on any two the following:",
+              "subparts": [
+                {
+                  "letter": "a",
+                  "text": "Doubly linked list"
+                },
+                {
+                  "letter": "b",
+                  "text": "Huffman algorithm"
+                },
+                {
+                  "letter": "c",
+                  "text": "Circular queue"
+                }
+              ],
+              "marks": 14,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

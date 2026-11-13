@@ -36,3 +36,21 @@ pnpm-debug.log*
 native/.nsh/
 native/dist/
 native/node_modules/
+
+# Firebase client config, downloaded per checkout from the console, and the
+# res/values file scripts/firebase-config.sh derives from it.
+native/android/google-services.json
+native/android/res/values/firebase.xml
+
+# scratch: logs, one-off probes, throwaway harnesses
+.tmp/
+native/.tmp/
+native/.tmp-peek/
+
+# python bytecode
+__pycache__/
+*.pyc
+native/android/libs/*.aar
+native/android/libs/*.jar
+native/android/deps/.gradle/
+native/android/deps/build/

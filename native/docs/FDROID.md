@@ -93,7 +93,7 @@ builds itself.
 
 BEUConnect is a NativeShell app, and that is the whole difficulty. Its Android
 host is assembled from two artefacts of `longbridge/nsh` (Apache-2.0, tag
-`v0.3.0`): the `nsh` CLI that bundles `App.tsx` into `assets/nsh/`, and the
+`v0.5.0`): the `nsh` CLI that bundles `App.tsx` into `assets/nsh/`, and the
 Android runtime — `libnsh.so` plus `classes.jar` — that the rest of the APK is
 compiled against. The installer puts both in `~/.nsh`, as binaries from a release
 tarball, which is not a trusted binary source.
@@ -101,7 +101,7 @@ tarball, which is not a trusted binary source.
 Both have source, so `scripts/build-nsh-from-source.sh` builds them:
 
 ```sh
-git clone --depth 1 --branch v0.3.0 https://github.com/longbridge/nsh ../nsh
+git clone --depth 1 --branch v0.5.0 https://github.com/longbridge/nsh ../nsh
 NSH_SRC=../nsh ./scripts/build-nsh-from-source.sh arm64-v8a
 ```
 

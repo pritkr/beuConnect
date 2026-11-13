@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2018",
+    "subject": "Strength of Material",
+    "subject_slug": "strength-of-material",
+    "subject_code": "021306",
+    "year": 2018,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The percentage elongation and the percentage reduction in area depend upon</p>",
+          "options": [
+            "tensile strength of the material",
+            "ductility of the material",
+            "toughness of the material",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The property of a material by which it can be drawn to a smaller section by applying a tensile\n                        load is called</p>",
+          "options": [
+            "elasticity",
+            "plasticity",
+            "ductility",
+            "malleability"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A shaft is said to be in pure torsion if</p>",
+          "options": [
+            "turning moment is applied at one end and other end is free",
+            "turning force is applied at one end and other end is free",
+            "two opposite turning moments are applied to the shaft",
+            "combination of torsional load and bending load is applied to the shaft"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Two shafts in torsion will have equal strength if</p>",
+          "options": [
+            "only diameter of the shafts is same",
+            "only angle of twist of the shafts is same",
+            "only material of the shafts is same",
+            "only torque transmitting capacity of the shafts is same"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which of the following are statically determinate beams?</p>",
+          "options": [
+            "Only simply supported beams",
+            "Cantilever, overhanging and simply supported beams",
+            "Fixed beams",
+            "Continuous beams"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>In a cantilever carrying a uniformly varying load starting from zero at the free end, the shear\n                        force diagram</p>",
+          "options": [
+            "is a horizontal line parallel to x-axis",
+            "is a line inclined to x-axis",
+            "follows a parabolic law",
+            "follows a cubic law"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which one of the following methods is the best for finding slope and deflection?</p>",
+          "options": [
+            "Double integration method",
+            "Macaulay's method",
+            "Strain energy method",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following stresses can be determined using Mohr's circle method?</p>",
+          "options": [
+            "Torsional stress",
+            "Bending stress",
+            "Principal stress",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Hoop strain in a thin shell is</p>",
+          "options": [
+            "\\( \\sigma_h/E \\)",
+            "\\( \\sigma_l/E \\)",
+            "\\( 3\\sigma_h/E \\)",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Oil tanks, steam boilers, gas pipes are the examples of</p>",
+          "options": [
+            "thick shells",
+            "thin cylinders",
+            "hoop cylinders",
+            "longitudinal cylinders"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Determine the stress in each section of the bar shown in figure below when subjected to an axial\n                        tensile load of \\( 20 \\text{ kN} \\). The central section is \\( 30 \\text{ mm} \\) square\n                        cross-section, the other portions are of circular section, their diameters being indicated. What\n                        will be the total extension of the bar? For the bar material, \\( E = 210 \\text{ GN/m}^2 \\).\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/42.jpg\"/>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>The following data relate to a bar subjected to a tensile test: Diameter of bar \\( = 25 \\text{\n                        mm} \\), Tensile load \\( = 50 \\text{ kN} \\), Gauge length \\( = 250 \\text{ mm} \\),\n                        Extension of the bar \\( = 0.121 \\text{ mm} \\) and Change in diameter \\( = 0.00357 \\text{\n                        mm} \\). Calculate the Poisson's ratio and the values of three moduli.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>The stresses on two mutually perpendicular planes through a point in a body are \\( 30 \\text{\n                        MPa} \\) and \\( 15 \\text{ MPa} \\) both tensile along with a shear stress of \\( 25 \\text{\n                        MPa} \\). Using both analytical and graphical methods, find-<br/>\n                        (a) the magnitude and direction of principal stresses;<br/>\n                        (b) the magnitude of the normal and shear stresses on a plane on which the shear stress is\n                        maximum.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>With the help of suitable assumptions, deduce torsion equation for a solid circular shaft.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A hollow steel shaft transmits \\( 200 \\text{ kW} \\) of power at \\( 150 \\text{ r.p.m.} \\)\n                        The total angle of twist in a length of \\( 5 \\text{ m} \\) of the shaft is \\( 3^{\\circ} \\).\n                        Find the inner and outer diameters of the shaft if the permissible shear stress is \\( 60\n                        \\text{ MPa} \\). Assume modulus of rigidity as \\( 80 \\text{ GN/m}^2 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>The given figure shows an overhanging beam: (a) Sketch the shear force and bending moment\n                        diagrams giving the important numerical values. (b) Calculate the maximum bending moment and the\n                        point at which it occurs.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/41.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>A cantilever of length 2 meters carries a uniformly distributed load of \\( 2500 \\text{ N} \\)\n                        per metre for a distance of 1.25 meters from the fixed end and a point load of \\( 1000 \\text{\n                        N} \\) at the free end. If the section is rectangular \\( 120 \\text{ mm} \\) side and \\( 240\n                        \\text{ mm} \\) deep, find the deflection at the free end. Take \\( E = 10000 \\text{ N/mm}^2\n                        \\).</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A simply supported beam of span L carries a uniformly distributed load W per unit run over the\n                        whole span. If now the beam be provided with a prop at the centre of the span so that the prop\n                        holds the beam to the level of the end supports, find the reaction of the prop. Draw SF and BM\n                        diagrams.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What do you mean by principal planes and principal stresses? Derive the expression for principal\n                        stresses for a body subjected to direct and shear stresses.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Two planes AB and BC which are at right angles carry shear stresses of intensity \\( 17.5 \\text{\n                        N/mm}^2 \\) while these planes also carry a tensile stress of \\( 70 \\text{ N/mm}^2 \\) and a\n                        compressive stress of \\( 35 \\text{ N/mm}^2 \\) respectively. Determine the principal planes\n                        and the principal stresses. Also determine the maximum shear stress and the planes on which it\n                        acts.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Calculate the change in dimensions of a thin cylindrical shell due to an internal pressure. Also\n                        calculate the change in length and diameter of the cylindrical shell.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>A cylindrical shell \\( 2 \\text{ m} \\) long which is closed at the ends has an internal\n                        diameter of \\( 800 \\text{ mm} \\) and a wall thickness of \\( 10 \\text{ mm} \\). Calculate\n                        the circumferential and longitudinal stresses induced and also change in dimensions of the shell\n                        if it is subjected to an internal pressure of \\( 1.5 \\text{ MN/m}^2 \\). Take \\( E = 205\n                        \\text{ GN/m}^2 \\) and \\( l/m = 0.3 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>State and prove Castigliano's first theorem.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>A beam simply supported over a span of \\( 2 \\text{ m} \\) carries a uniformly distributed load\n                        of \\( 15 \\text{ kN/m} \\) over the entire span. Taking \\( EI = 2.25 \\text{ MN/m}^2 \\) and\n                        using Castigliano's theorem, determine the deflection at the centre of beam.</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2017",
+    "subject": "Analog Electronics",
+    "subject_slug": "analog-electronics",
+    "subject_code": "041404",
+    "year": 2017,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer of the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Early effect in BJT refers to",
+              "marks": 2,
+              "options": [
+                "avalanche breakdown",
+                "thermal runaway",
+                "base-width modulation",
+                "Zener breakdown"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "When a BJT is employed as an amplifier, it operates",
+              "marks": 2,
+              "options": [
+                "in cutoff",
+                "in saturation",
+                "in the active region",
+                "well into saturation"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "Thermal runaway is not possible in FET because, as the temperature of FET increases",
+              "marks": 2,
+              "options": [
+                "the mobility decreases",
+                "the transconductance increases",
+                "the drain current increases",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "If the output of a logic gate is '1' when all its inputs are at logic '0', the gate is either",
+              "marks": 2,
+              "options": [
+                "a NAND or a NOR",
+                "an AND or an EX-NOR",
+                "an OR or an NAND",
+                "an EX-OR or an EX-NOR"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "In a tuned-amplifier, the bandwidth can be decreased by",
+              "marks": 2,
+              "options": [
+                "increasing the quality factor $Q$",
+                "decreasing the quality factor $Q$",
+                "increasing resonant frequency",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "Feedback factor $\\beta$ of an amplifier is",
+              "marks": 2,
+              "options": [
+                "always greater than 1",
+                "less than or equal to 1",
+                "always zero",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "Class-C amplifier is mostly used",
+              "marks": 2,
+              "options": [
+                "in tuned amplifier",
+                "in RC coupled amplifier",
+                "as audio amplifier",
+                "as high-voltage amplifier"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "The overall efficiency of a cascaded system is generally",
+              "marks": 2,
+              "options": [
+                "equal to the efficiency of the most efficient stage",
+                "equal to the efficiency of the least efficient stage",
+                "greater than the efficiency of any individual stage",
+                "less than the efficiency of any individual stage"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "RC phase-shift oscillators are suitable for",
+              "marks": 2,
+              "options": [
+                "audio frequencies",
+                "radio frequencies",
+                "microwave frequencies",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "Which of the following is true for an RC phase-shift oscillator?",
+              "marks": 2,
+              "options": [
+                "It does not require feedback",
+                "It operates at audio frequencies",
+                "It operates at radio frequencies",
+                "It uses an inductor"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Given the $V_{CE}$ vs $I_C$ curves of a typical transistor. How do we determine the value of $\\alpha$ and $\\beta$? Discuss.",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "Derive an expression for small-signal voltage gain $A_V$, input resistance $R_i$ and output resistance $R_o$ of an emitter-follower amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "3a",
+          "text": "Discuss why efficiency is a major issue in power amplifiers. Delineate the advantages of class-B and class-C amplifiers over their class-A counterpart. Draw respective frequency response curves.",
+          "marks": 7
+        },
+        {
+          "id": "3b",
+          "text": "Draw the low-frequency equivalent circuit of a typical RC-coupled CE amplifier and derive an expression for the lower-cutoff frequency $f_L$. Sketch the frequency response curve.",
+          "marks": 7
+        },
+        {
+          "id": "4",
+          "text": "Discuss the method of determining the output voltage, current and gain of cascaded amplifier. Mention the main factors restricting the performance of such a practical system.",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "text": "Explain the concept of negative feedback in amplifiers. What is the effect of negative feedback on the input and output impedances of a voltage series feedback amplifier?",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "text": "Find the transfer function for an amplifier having low-frequency gain $A_L = \\frac{s \\cdot A_{mid}}{s + \\omega_L}$ and high-frequency gain $A_H = \\frac{A_{mid}}{1 + \\frac{s}{\\omega_H}}$. Find its output when a step input of $1\\text{ V}$ is applied to it.",
+          "marks": 14
+        },
+        {
+          "id": "7a",
+          "text": "Explain the operation of a class-A power amplifier and calculate its efficiency.",
+          "marks": 7
+        },
+        {
+          "id": "7b",
+          "text": "Explain the working of $RC$ phase-shift oscillator using transistor. Also write the expression for frequency of oscillation.",
+          "marks": 7
+        },
+        {
+          "id": "8",
+          "text": "Discuss how impedance matching limits the performance of a Colpitts oscillator system. Given a standard Colpitts oscillator, can you propose a method of tuning it to higher or lower frequencies? Provide analytical arguments.",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "text": "Write short notes on any two of the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Tuned amplifiers"
+            },
+            {
+              "id": "9b",
+              "text": "Crystal oscillator"
+            },
+            {
+              "id": "9c",
+              "text": "Ideal voltage and transresistance amplifiers"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

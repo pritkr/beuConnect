@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2015",
+    "subject": "Data Structures",
+    "subject_slug": "data-structures",
+    "subject_code": "051403",
+    "year": 2015,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "If the sequence of operations\u2014push(1), push(2), pop, push(1), push(2), pop, pop, pop, push(2), pop are performed on a stack, the sequence of popped out values is",
+              "options": [
+                "2, 2, 1, 1, 2",
+                "2, 2, 1, 2, 2",
+                "2, 1, 2, 2, 1",
+                "2, 1, 2, 2, 2"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Queue can be used to implement",
+              "options": [
+                "radix sort",
+                "quicksort",
+                "recursion",
+                "depth first search"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "c",
+              "text": "The number of binary trees with 3 nodes which when traversed in post-order gives the sequence A, B, C is",
+              "options": [
+                "3",
+                "9",
+                "7",
+                "5"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "d",
+              "text": "A binary tree has $n$ leaf nodes. The number of nodes of degree 2 in this tree is",
+              "options": [
+                "$\\log_2 n$",
+                "$n-1$",
+                "$n$",
+                "$2^n$"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "e",
+              "text": "Sparse matrices have",
+              "options": [
+                "many zero entries",
+                "many non-zero entries",
+                "higher dimension",
+                "None of the above"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "f",
+              "text": "The postfix expression for $*+ab-cd$ is",
+              "options": [
+                "$ab+cd-*$",
+                "$abcd+-*$",
+                "$ab+cd*-$",
+                "$ab+-cd*$"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "g",
+              "text": "The memory address of the first element of an array is called",
+              "options": [
+                "floor address",
+                "foundation address",
+                "first address",
+                "base address"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "h",
+              "text": "The memory address of fifth element of an array can be calculated by the formula",
+              "options": [
+                "LOC(Array[5])=Base(Array)+W(5-lower bound)",
+                "LOC(Array[5])=Base(Array[5])+(5-lower bound)",
+                "LOC(Array[5])=Base(Array[4])+(5-upper bound)",
+                "None of the above"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "i",
+              "text": "Which of the following data structures are indexed structures?",
+              "options": [
+                "Linear arrays",
+                "Linked lists",
+                "Both of the above",
+                "None of the above"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "j",
+              "text": "Which of the following is not the required condition for binary search algorithm?",
+              "options": [
+                "The list must be sorted",
+                "There should be the direct access to the middle element in any sublist",
+                "There must be mechanism to delete and/or insert elements in list",
+                "None of the above"
+              ],
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "What is a data structure? What is the need of data structures?",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Explain Big-Oh notation with the help of example.",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Write suitable array declaration for the following:\n- 100 items of integer type\n- A string of 25 characters\n- An integer matrix of order $5 \\times 4$\nCan an array be initialized? If yes, how?",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Write a program that sorts a given list of numbers using quicksort.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Explain overflow and underflow conditions of a stack with examples.",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What are priority queues? Write their applications.",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Write a program that travels a linked list consisting of nodes of the following struct type:\n```c\nstruct student {\n    char name[15];\n    int roll;\n    struct student *next;\n};\n```\nWhile traversing, it counts the number of nodes in the list. Finally, the count is printed.",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Explain the merits and demerits of static and dynamic memory allocation techniques.",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Define the following terms:\n(i) Root\n(ii) Leaf nodes\n(iii) Empty tree\n(iv) Sub-tree",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "letter": "b",
+              "text": "What are heap trees? Discuss a minheap and a maxheap tree with the help of examples. What are the operations that can be performed on a heap tree?",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Explain the following graph theory terms:\n(i) Node\n(ii) Undirected graph\n(iii) Edge\n(iv) Connected graph\n(v) Directed graph\n(vi) Disconnected graph",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Write the Warshall's algorithm.",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Write an explanatory note on AVL rotations.",
+              "marks": 7,
+              "id": "8_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Write an algorithm for inserting a key K in a B-tree.",
+              "marks": 7,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "What is a sparse matrix? What are the methods to represent a sparse matrix?",
+              "marks": 7,
+              "id": "9_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Use a stack to convert the following infix arithmetic expression into a postfix expression:\n$(A-B)*(C/D)+E$\nShow the changing status of the stack in tabular form.",
+              "marks": 7,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

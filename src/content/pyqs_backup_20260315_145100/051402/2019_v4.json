@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2019",
+    "subject": "Computer Architecture",
+    "subject_slug": "computer-architecture",
+    "subject_code": "051402",
+    "year": 2019,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer for any seven of the following:",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>How many \\( 128 \\times 8 \\) bit RAMs are required to design \\( 32k \\times 32 \\) bit RAM?\n                    </p>",
+          "options": [
+            "512",
+            "128",
+            "1024",
+            "32"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The sequence of events that happen during a typical fetch operation is</p>",
+          "options": [
+            "PC \\( \\rightarrow \\) MAR \\( \\rightarrow \\) Memory \\( \\rightarrow \\) MDR \\(\n                            \\rightarrow \\) IR",
+            "PC \\( \\rightarrow \\) Memory \\( \\rightarrow \\) MDR \\( \\rightarrow \\) IR",
+            "PC \\( \\rightarrow \\) Memory \\( \\rightarrow \\) IR",
+            "PC \\( \\rightarrow \\) MAR \\( \\rightarrow \\) Memory \\( \\rightarrow \\) IR"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>in case of pipelining processor, loop buffer is</p>",
+          "options": [
+            "very high speed memory maintained by the instruction fetch stage",
+            "very high speed memory maintained by the instruction decode stage",
+            "very high speed memory maintained by the instruction execute stage",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The intradata transfer techniques are implemented using</p>",
+          "options": [
+            "serial I/O",
+            "parallel I/O",
+            "Both (i) and (ii)",
+            "Neither (i) nor (ii)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The average memory access time for a machine with a cache hit rate of 90% where the cache access\n                        time\n                        is 10 ns and the memory access time is 100 ns is</p>",
+          "options": [
+            "55 ns",
+            "45 ns",
+            "90 ns",
+            "19 ns"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The minimum time delay between the initiations of two independent memory operations is called</p>",
+          "options": [
+            "access time",
+            "cycle time",
+            "transfer rate",
+            "latency time"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In case of vectored interrupt, interrupt vector means</p>",
+          "options": [
+            "the branch information from the source which interrupts the system",
+            "an address that points to a location in memory where the beginning address of the I/O\n                            service\n                            routine is stored",
+            "Both (i) and (ii)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A microprogrammed control unit</p>",
+          "options": [
+            "is faster than a hardwired control unit",
+            "facilitates easy implementation of new instructions",
+            "is useful when every small program is to be run",
+            "usually refers to the control unit of the microprocessor"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Relative addressing mode is used to write position independent code because</p>",
+          "options": [
+            "the code in this mode is easy to atomize",
+            "the code in this mode is easy to relocate in the memory",
+            "the code in this mode is easy to make resident",
+            "the code execution faster in this mode"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following holds data and processing instructions temporarily until the CPU needs it?\n                    </p>",
+          "options": [
+            "ROM",
+            "Control unit",
+            "Main memory",
+            "Coprocessor chip"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>How do instruction set, compiler technology, CPU implementation and control, and cache and memory\n                        hierarchy affect the CPU performance? Justify the effects in terms of program length, clock rate\n                        and\n                        effective CPI.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>How is virtual memory managed using paging and TLB? Explain with suitable example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain register reference and memory reference instructions in detail with suitable examples.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of control unit of basic computer. Explain in detail with control timing\n                        diagrams.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain one, two and three-address instruction with suitable examples.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Give an integrated diagram, showing the TLB and cache operations for a logical/virtual address\n                        generated by a processor.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the daisy chaining mechanism for bus arbitration. Analzye the three bus arbitration\n                        methods-daisy chaining, polling and independent requesting with respect to communication\n                        reliability\n                        in the even of hardware failures.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Give the block diagram of microprogram sequencer for a control memory and explain it properly.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What do you understand by hardwired control? Give various methods to design hardwired control\n                        unit.\n                        Describe any one with suitable example.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Describe autoincrement and autodecrement addressing modes with proper examples.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is direct memory access? Explain. Give block diagram of circuitry required for direct memory\n                        access.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A digital computer has a common bus system of 16 registers of 32 bits each. The bus is\n                        constructed\n                        with multiplexers. (i) How many selection inputs are there in each multiplexer? (ii) What size\n                        of\n                        multiplexers is needed?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>When do you say the floating point number is normalized? Explain how floating point\n                        representation of\n                        number is done. Represent the number (+46.25) as floating point binary number with 32 bits.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What are hazards in pipeline architecture? Explain its type with suitable example.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What is array processor? Explain SIMD array processor with suitable example.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>A DMA controller transfers 16-bit words to memory using cycle stealing. The words are assembled\n                        from\n                        a device that transmits characters at the rate of 2400 characters per second. The CPU is\n                        fetching\n                        and executing instructions at an average rate of 1 million instructions per second. By how much\n                        will\n                        the CPU be slowed down because of DMA transfer?</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "Control Systems",
+    "subject_slug": "control-systems",
+    "subject_code": "100502",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Attempt any seven :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Define a closed-loop control system using an example.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "b",
+              "text": "Find transfer function of a series $R$-$L$ circuit.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "c",
+              "text": "Define gain margin and phase margin using Bode plot.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "d",
+              "text": "Define gain cross-over frequency and phase cross-over frequency using Bode plot.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "e",
+              "text": "Explain BIBO stability and develop the expression for it.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "f",
+              "text": "Define minimum phase, non-minimum phase and all-pass transfer functions.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "g",
+              "text": "Discuss the effects of (i) addition of zeros and (ii) addition of poles on root locus.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "h",
+              "text": "Define gain margin and phase margin using polar plot.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "i",
+              "text": "State Nyquist criterion. Write the advantages of Nyquist plot.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "j",
+              "text": "What do you mean by describing function?",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Derive the transfer function of the network shown below :\n[Circuit Diagram]\n\nb) Find the equations of the system shown in figure below :\n[Mechanical System Diagram]\n\nc) Write and explain block diagram reduction rules.",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Derive the transfer function of the network shown below : [Circuit Diagram] Components: $2\\mu\\text{F}$ capacitor, $1/2\\text{ M}\\Omega$ resistor, $2\\mu\\text{F}$ capacitor, $1\\text{ M}\\Omega$ resistor. Input $v_i(t)$, Output $v_o(t)$.",
+              "marks": 5,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "Find the equations of the system shown in figure below : [Mechanical System Diagram] Masses $M_1, M_2$, Springs $K_2$, Dampers $D_1, D_2$, Force $f$, Displacements $x_1, x_2$.",
+              "marks": 5,
+              "id": "2_sub"
+            },
+            {
+              "number": "c",
+              "text": "Write and explain block diagram reduction rules.",
+              "marks": 4,
+              "id": "2_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Consider a unity feedback control system with forward path gain $A$, feedback path gain $H$ and forward path transfer function $G(s) = \\frac{\\omega_n^2}{s^2 + 2\\xi\\omega_ns + \\omega_n^2}$ with $\\omega_n = 8\\pi/T, T = 6.28\\text{ sec}$ and $\\xi = 0.3$. Calculate the open-loop and closed-loop sensitivities for changes in $A$ and $H$.\n\nb) Derive peak overshoot. Find $J$ and $D$ for the system shown in figure below to yield $35\\%$ peak overshoot and a settling time of $1.5$ seconds (for $2\\%$ error band) for a step input of torque $T(t)$ :\n[Torsional System Diagram]",
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Consider a unity feedback control system with forward path gain $A$, feedback path gain $H$ and forward path transfer function $G(s) = \\frac{\\omega_n^2}{s^2 + 2\\xi\\omega_ns + \\omega_n^2}$ with $\\omega_n = 8\\pi/T, T = 6.28\\text{ sec}$ and $\\xi = 0.3$. Calculate the open-loop and closed-loop sensitivities for changes in $A$ and $H$.",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "number": "b",
+              "text": "Derive peak overshoot. Find $J$ and $D$ for the system shown in figure below to yield $35\\%$ peak overshoot and a settling time of $1.5$ seconds (for $2\\%$ error band) for a step input of torque $T(t)$ : [Torsional System Diagram] Torque $T(t)$, Angle $\\theta(t)$, Inertia $J$, Damper $D$, Spring $K = 3\\text{ N-m/rad}$.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) A unity feedback servo driven instrument has open-loop transfer function $G(s) = \\frac{K}{s(sT+2)}$.\n(i) Find the factor by which the gain $(K)$ must be multiplied so that the damping ratio increases from $0.3$ to $0.9$.\n(ii) Find the factor by which the time constant $(T)$ must be multiplied so that the damping ratio decreases from $0.9$ to $0.3$.\n(iii) Show that $\\frac{TK_1 - 1}{TK_2 - 1} = 11.39$ when the system overshoot reduces from $70\\%$ to $30\\%$ where $K_1$ and $K_2$ are the values of $K$ for $70\\%$ and $30\\%$ overshoot.\n\nb) Using generalized error series, calculate the steady-state error of a unity feedback system having $G(s) = \\frac{40}{s(s+15)}$ for the following excitations :\n(i) $r(t) = 8$\n(ii) $r(t) = 4t + 5$\n(iii) $r(t) = t^2/3 + 9$\n(iv) $r(t) = 1 + 18t + 25t^2/2$",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "A unity feedback servo driven instrument has open-loop transfer function $G(s) = \\frac{K}{s(sT+2)}$. (i) Find the factor by which the gain $(K)$ must be multiplied so that the damping ratio increases from $0.3$ to $0.9$. (ii) Find the factor by which the time constant $(T)$ must be multiplied so that the damping ratio decreases from $0.9$ to $0.3$. (iii) Show that $\\frac{TK_1 - 1}{TK_2 - 1} = 11.39$ when the system overshoot reduces from $70\\%$ to $30\\%$ where $K_1$ and $K_2$ are the values of $K$ for $70\\%$ and $30\\%$ overshoot.",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "Using generalized error series, calculate the steady-state error of a unity feedback system having $G(s) = \\frac{40}{s(s+15)}$ for the following excitations : (i) $r(t) = 8$ (ii) $r(t) = 4t + 5$ (iii) $r(t) = t^2/3 + 9$ (iv) $r(t) = 1 + 18t + 25t^2/2$",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Consider a unity feedback system with forward path transfer function $G(s) = \\frac{K(s+5)}{s^3 + ps^2 + 8s + 3}$ has the oscillation of $3.5\\text{ rad/sec}$. Determine the values of $K_{marginal}$ and $p$. There are no poles in RHP.\n\nb) Draw root locus for the system having $G(s) = \\frac{K(s+2)(s+4)}{(s+1)(s+3)(s+5)}$ and find the gain $K$ for $\\xi = 0.341$.",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Consider a unity feedback system with forward path transfer function $G(s) = \\frac{K(s+5)}{s^3 + ps^2 + 8s + 3}$ has the oscillation of $3.5\\text{ rad/sec}$. Determine the values of $K_{marginal}$ and $p$. There are no poles in RHP.",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "number": "b",
+              "text": "Draw root locus for the system having $G(s) = \\frac{K(s+2)(s+4)}{(s+1)(s+3)(s+5)}$ and find the gain $K$ for $\\xi = 0.341$.",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Sketch the Nyquist plot for a system having $G(s)H(s) = \\frac{10(1+0.9s)}{s^2(0.1s+1)(0.05s+1)}$. In addition, comment on the closed-loop stability.\n\nb) Sketch the Bode plot for the system $G(s)H(s) = \\frac{Ke^{-0.2s}}{s(s+10)(1+0.5s)}$. Determine the system gain $K$ for the gain cross-over frequency to be $4\\text{ rad/s}$. What is the phase margin for this value of $K$?",
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Sketch the Nyquist plot for a system having $G(s)H(s) = \\frac{10(1+0.9s)}{s^2(0.1s+1)(0.05s+1)}$. In addition, comment on the closed-loop stability.",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "number": "b",
+              "text": "Sketch the Bode plot for the system $G(s)H(s) = \\frac{Ke^{-0.2s}}{s(s+10)(1+0.5s)}$. Determine the system gain $K$ for the gain cross-over frequency to be $4\\text{ rad/s}$. What is the phase margin for this value of $K$?",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) The open-loop transfer function with unity feedback is given by $G(s) = \\frac{20}{s(s+8)}$. Design a lead compensator such that the closed-loop system satisfies the following specifications :\nStatic velocity error constant $= 15\\text{ s}^{-1}$\nPhase margin $= 55^\\circ$\nGain margin $\\ge 12\\text{ dB}$\n\nb) Find $K$ and $a$ for a feedback system with forward path transfer function $G(s) = \\frac{K}{s(s+a)}$ so that resonant peak is $3.8$ and resonant frequency is $30\\text{ rad/s}$. Also determine the settling time and bandwidth of the system.",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "The open-loop transfer function with unity feedback is given by $G(s) = \\frac{20}{s(s+8)}$. Design a lead compensator such that the closed-loop system satisfies the following specifications : Static velocity error constant $= 15\\text{ s}^{-1}$ Phase margin $= 55^\\circ$ Gain margin $\\ge 12\\text{ dB}$",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "Find $K$ and $a$ for a feedback system with forward path transfer function $G(s) = \\frac{K}{s(s+a)}$ so that resonant peak is $3.8$ and resonant frequency is $30\\text{ rad/s}$. Also determine the settling time and bandwidth of the system.",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Find the transfer function of the given state-space model :\n$\\dot{x} = \\begin{bmatrix} -5 & 0 & 1 \\\\ 1 & -4 & 0 \\\\ 1 & 1 & -1 \\end{bmatrix} x + \\begin{bmatrix} 1 & 0 \\\\ 0 & 2 \\\\ 1 & 0 \\end{bmatrix} u, y = \\begin{bmatrix} 8 & 1 & -1 \\\\ 0 & 1 & 0 \\end{bmatrix} x$\n\nb) Consider the state-space model of an LTI system with matrices $A = \\begin{bmatrix} 0 & 1 \\\\ -6 & -5 \\end{bmatrix}, B = \\begin{bmatrix} 0 \\\\ 8 \\end{bmatrix}$. Find the state transition matrix.\n\nc) Consider the LTI system $\\dot{x} = \\begin{bmatrix} 0 & 1 \\\\ -5 & -9 \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} + \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} u$. Find the non-homogeneous solution if $x_1(0) = 4, x_2(0) = 0$ and $u$ is a unit step function.",
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Find the transfer function of the given state-space model : $\\dot{x} = \\begin{bmatrix} -5 & 0 & 1 \\\\ 1 & -4 & 0 \\\\ 1 & 1 & -1 \\end{bmatrix} x + \\begin{bmatrix} 1 & 0 \\\\ 0 & 2 \\\\ 1 & 0 \\end{bmatrix} u, y = \\begin{bmatrix} 8 & 1 & -1 \\\\ 0 & 1 & 0 \\end{bmatrix} x$",
+              "marks": 5,
+              "id": "8_sub"
+            },
+            {
+              "number": "b",
+              "text": "Consider the state-space model of an LTI system with matrices $A = \\begin{bmatrix} 0 & 1 \\\\ -6 & -5 \\end{bmatrix}, B = \\begin{bmatrix} 0 \\\\ 8 \\end{bmatrix}$. Find the state transition matrix.",
+              "marks": 4,
+              "id": "8_sub"
+            },
+            {
+              "number": "c",
+              "text": "Consider the LTI system $\\dot{x} = \\begin{bmatrix} 0 & 1 \\\\ -5 & -9 \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix} + \\begin{bmatrix} 0 \\\\ 1 \\end{bmatrix} u$. Find the non-homogeneous solution if $x_1(0) = 4, x_2(0) = 0$ and $u$ is a unit step function.",
+              "marks": 5,
+              "id": "8_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Explain how linear state regulator is used for accommodation of external disturbances acting on the process.\n\nb) Derive the describing function of dead-zone non-linearity.\n\nc) Describe the different types of singular points and discuss their importance in stability analyses of non-linear system.",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain how linear state regulator is used for accommodation of external disturbances acting on the process.",
+              "marks": 5,
+              "id": "9_sub"
+            },
+            {
+              "number": "b",
+              "text": "Derive the describing function of dead-zone non-linearity.",
+              "marks": 4,
+              "id": "9_sub"
+            },
+            {
+              "number": "c",
+              "text": "Describe the different types of singular points and discuss their importance in stability analyses of non-linear system.",
+              "marks": 5,
+              "id": "9_sub"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

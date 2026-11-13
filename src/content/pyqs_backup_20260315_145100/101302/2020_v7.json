@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020",
+    "subject": "BASIC ELECTRONICS",
+    "subject_slug": "basic-electronics",
+    "subject_code": "101302",
+    "year": 2020,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Fill in the blanks/Answer any seven of the following:",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>In CB configuration, output characteristics may be shown by plot of _______.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>The _______ carriers enter the channel region through the _______ terminal and leave the channel\n                        through the _______ terminal in JFET.</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Mention the advantages of Wien bridge oscillator.</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>What is reverse leakage current in CE configuration?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>How is amplifier different from the oscillator?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Name the breakdown mechanism in the lightly doped P-N junction diode under reverse biased\n                        condition.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Draw the V-I characteristics of photodiode.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 10
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>What is transconductance with reference to JFET?</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>What is the effect of removing bypass capacitor across the emitter resistor in case of CE\n                        amplifier?</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>What is meant by phase reversal?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Find the DC voltage, ripple factor and efficiency for the half-wave rectifier given in the\n                        circuit. What should be PIV of the diode used? If bridge rectifier is used for same power\n                        supply, what will be the value of DC voltage and PIV of diode?</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/ec3b082a-de1a-4ffb-b811-aff4e26accf7.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Calculate the range of \\(I_{L}\\) and \\(R_{L}\\) so that \\(V_{RL}\\) being maintained at 10 V\n                        and also calculate the value of maximum voltage rating in the circuit with 50V source, 1K series\n                        resistor, 10V Zener with \\(I_{Zmax}\\) 32 mA, Variable \\(R_L\\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/4707705e-7bf8-4261-a372-80bb0009dc77.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Draw the waveform of output \\(v_{0}\\) and explain the operation of circuit with AC source\n                        \\(v_i\\), Resistor R, Parallel clippers with diodes and batteries \\(V_{R1}\\) and \\(V_{R2}\\)\n                        where \\(V_{R1} &lt; V_{R2}\\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/d1e8274a-a547-423f-8a04-47341b746193.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Discuss the application of SCR as a power control with the help of circuit diagram.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>For the network given, determine the following parameters using the approximate equivalent model:\n                        Voltage gain \\(A_{v}\\), current gain \\(A_{i}\\), input impedance \\(Z_{i}'\\) and\n                        \\(Z_{i}\\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/9a438a32-ec77-49ad-b0ad-3b4927bb40ba.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Calculate the value of \\(R_{1}\\) in the biasing circuit so that the Q-point is fixed at\n                        \\(I_{C}=8~mA\\) and \\(V_{CE}=3V\\) with \\(V_{CC} = -9V\\), 250\\(\\Omega\\) collector\n                        resistor, 500\\(\\Omega\\) emitter resistor, \\(\\beta=80\\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/20ff0f88-9765-41c0-8ef5-695251f33161.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Given a depletion-type MOSFET. In the positive \\(v_{GS}\\) region, does the drain current\n                        increase at a significantly higher rate than for negative value? Does the \\(I_{D}\\) curve\n                        become more and more vertical with increasing positive values of \\(V_{GS}\\)?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Draw V-I characteristic curves of JFET and mark various regions. Explain how FET is\n                        voltage-controlled device.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain the working of single-stage common emitter amplifier with the help of circuit diagram.\n                        Draw and explain the DC load-line analysis of this amplifier.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A single-stage amplifier has voltage gain of 10 and bandwidth of 1 MHz. Three such stages are\n                        cascaded and negative feedback of 10% is applied to the cascade stage. Find out the overall\n                        voltage gain and bandwidth of cascade stage with feedback.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the operation of Colpitts oscillator with the help of circuit diagram.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Draw the block diagram and explain the operation of sweep frequency generator.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss with the help of circuit diagram, the purpose of providing negative feedback and positive\n                        feedback.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Draw the circuit diagram of voltage-shunt feedback amplifier and derive the expression of\n                        closed-loop voltage gain using op-amp.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain the operation performed by the circuit with AC \\(v_{in}\\), Resistor \\(R_1\\),\n                        Capacitor \\(C_F\\) in feedback, Load \\(R_L\\) and derive the expression of output voltage\n                        \\(v_{0}\\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/7b48be65-ba2b-4ae4-8887-585afc4ad450.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Op-amp can be used to add the DC voltage (addition operation). Draw the circuit and explain the\n                        operation of adder using op-amp in non-inverting mode.</p>"
+        }
+      ]
+    }
+  ]
+}

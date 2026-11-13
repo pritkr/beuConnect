@@ -5,6 +5,11 @@
  * fine — but parsing them in one synchronous burst would drop frames on a
  * low-end phone. `parseCsvInChunks` reads a few hundred records per turn and
  * reports progress; the caller can cancel it when the screen goes away.
+ *
+ * Once a table is parsed, `toRows` builds each row's search text once and
+ * `filterRows` / `sortRows` read that row, never the columns: a keystroke on a
+ * 5,000-row file then costs one string scan per row instead of six, and no
+ * cell is lowercased or number-parsed inside a comparator.
  */
 
 export interface CsvTable {
@@ -173,27 +178,55 @@ export function numericCell(value: string): number | null {
 export interface TableRow {
   key: string;
   cells: string[];
+  /**
+   * Lowercased blob of just the columns a reader searches, built once when the
+   * file is turned into rows. Rebuilding it per keystroke costs more than the
+   * filter itself on a multi-thousand-row table.
+   */
+  search?: string;
+}
+
+/** The report columns a search may match. Marks stay out of it. */
+const SEARCH_COLUMNS = ["RegNo", "Name", "FatherName", "CollegeCode", "Branch", "Semester", "RollNo"];
+
+function rowSearch(cells: string[], indices: number[]): string {
+  let blob = "";
+  for (const index of indices) {
+    const value = cells[index];
+    if (!value) continue;
+    blob += `${blob ? " " : ""}${value}`;
+  }
+  return blob.toLowerCase();
 }
 
 export function toRows(table: CsvTable): TableRow[] {
   const regIndex = columnIndex(table.columns, "RegNo");
+  const searchIndices = SEARCH_COLUMNS.map((name) => columnIndex(table.columns, name)).filter(
+    (index) => index >= 0,
+  );
   return table.rows.map((cells, index) => ({
     key: regIndex >= 0 && cells[regIndex] ? `${cells[regIndex]}-${index}` : `row-${index}`,
     cells,
+    search: rowSearch(cells, searchIndices),
   }));
 }
 
 export function filterRows(rows: TableRow[], columns: string[], query: string): TableRow[] {
-  const needle = query.trim().toLowerCase();
-  if (!needle) return rows;
-  const indices = ["RegNo", "Name", "FatherName", "CollegeCode", "Branch", "Semester"]
-    .map((name) => columnIndex(columns, name))
-    .filter((index) => index >= 0);
+  const tokens = query
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    // A pasted "kumar," or "24/CV/19." is the same word without its comma.
+    .map((token) => token.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
+    .filter((token) => token.length > 0);
+  if (tokens.length === 0) return rows;
+
+  const indices = SEARCH_COLUMNS.map((name) => columnIndex(columns, name)).filter(
+    (index) => index >= 0,
+  );
   return rows.filter((row) => {
-    for (const index of indices) {
-      if ((row.cells[index] ?? "").toLowerCase().includes(needle)) return true;
-    }
-    return false;
+    const haystack = row.search ?? rowSearch(row.cells, indices);
+    return tokens.every((token) => haystack.includes(token));
   });
 }
 
@@ -201,16 +234,75 @@ export function sortRows(rows: TableRow[], columns: string[], key: string, direc
   const index = columnIndex(columns, key);
   if (index < 0) return rows;
   const factor = direction === "asc" ? 1 : -1;
-  const copy = rows.slice();
-  copy.sort((left, right) => {
-    const a = left.cells[index] ?? "";
-    const b = right.cells[index] ?? "";
-    const na = numericCell(a);
-    const nb = numericCell(b);
-    if (na !== null && nb !== null && na !== nb) return (na - nb) * factor;
-    if (na !== null && nb === null) return -1;
-    if (na === null && nb !== null) return 1;
-    return a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }) * factor;
+
+  // Parse each key once, not once per comparison: a 3,000-row table makes
+  // ~35,000 comparisons, and parsing a number in each of them is the sort.
+  // Text is compared from a precomputed lowercase key, because `localeCompare`
+  // builds a collator per call and QuickJS has no `Intl.Collator` to hoist.
+  const decorated = rows.map((row) => {
+    const raw = row.cells[index] ?? "";
+    return { row, raw, text: raw.toLowerCase(), number: numericCell(raw) };
   });
-  return copy;
+
+  decorated.sort((left, right) => {
+    const a = left.number;
+    const b = right.number;
+    if (a !== null && b !== null && a !== b) return (a - b) * factor;
+    if (a !== null && b === null) return -1;
+    if (a === null && b !== null) return 1;
+    if (left.text === right.text) return 0;
+    return (left.text < right.text ? -1 : 1) * factor;
+  });
+
+  return decorated.map((entry) => entry.row);
+}
+
+export interface ScoredRow {
+  row: TableRow;
+  /** 1-based place; equal scores share a place, the way a rank list does. */
+  place: number;
+  /** The raw cell, so the screen shows the file's own number, not a reformat. */
+  value: string;
+  score: number;
+  /** Which column the score came from. */
+  column: "CGPA" | "SGPA";
+}
+
+/**
+ * The best rows of one published table.
+ *
+ * CGPA is used when any row carries one, otherwise SGPA — never a mix, and
+ * never a made-up zero. A row with no score is not a candidate, so a table
+ * without marks has no top three rather than a fake podium.
+ */
+export function topScored(rows: TableRow[], columns: string[], limit = 3): ScoredRow[] {
+  const cgpa = columnIndex(columns, "CGPA");
+  const sgpa = columnIndex(columns, "SGPA");
+  const useCgpa =
+    cgpa >= 0 && rows.some((row) => numericCell(row.cells[cgpa] ?? "") !== null);
+  const index = useCgpa ? cgpa : sgpa;
+  if (index < 0 || limit <= 0) return [];
+
+  const scored: { row: TableRow; value: string; score: number }[] = [];
+  for (const row of rows) {
+    const value = row.cells[index] ?? "";
+    const score = numericCell(value);
+    if (score === null) continue;
+    scored.push({ row, value: value.trim(), score });
+  }
+  scored.sort((left, right) => right.score - left.score || left.row.key.localeCompare(right.row.key));
+
+  const out: ScoredRow[] = [];
+  for (const entry of scored.slice(0, limit)) {
+    const previous = out[out.length - 1];
+    const place = previous && previous.score === entry.score ? previous.place : out.length + 1;
+    out.push({
+      row: entry.row,
+      place,
+      value: entry.value,
+      score: entry.score,
+      column: useCgpa ? "CGPA" : "SGPA",
+    });
+  }
+  return out;
 }

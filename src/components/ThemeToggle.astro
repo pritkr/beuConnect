@@ -1,0 +1,88 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<button
+	class="theme-toggle"
+	id="themeToggle"
+	type="button"
+	aria-label="Switch to light theme"
+	aria-live="polite"
+>
+	<span class="theme-slot theme-slot-dark" aria-hidden="true">
+		<Icon name="sun" size={16} />
+	</span>
+	<span class="theme-slot theme-slot-light" aria-hidden="true">
+		<Icon name="moon" size={16} />
+	</span>
+</button>
+
+<style>
+	.theme-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.1rem;
+		height: 2.1rem;
+		padding: 0;
+		border: 1px solid var(--line);
+		border-radius: var(--r);
+		background: transparent;
+		color: var(--muted);
+		cursor: pointer;
+	}
+
+	.theme-toggle:hover {
+		border-color: var(--line-strong);
+		background: var(--surface);
+		color: var(--paper);
+	}
+
+	.theme-slot {
+		display: flex;
+	}
+
+	.theme-slot-light {
+		display: none;
+	}
+
+	:global([data-theme="light"]) .theme-slot-light {
+		display: flex;
+	}
+
+	:global([data-theme="light"]) .theme-slot-dark {
+		display: none;
+	}
+</style>
+
+<script>
+	const root = document.documentElement;
+	const toggle = document.getElementById("themeToggle");
+	const meta = document.querySelector('meta[name="theme-color"]');
+
+	const paint = (theme: "light" | "dark") => {
+		toggle?.setAttribute(
+			"aria-label",
+			theme === "light" ? "Switch to dark theme" : "Switch to light theme",
+		);
+		meta?.setAttribute("content", theme === "light" ? "#f6f2e8" : "#0c1310");
+	};
+
+	paint(root.getAttribute("data-theme") === "light" ? "light" : "dark");
+
+	toggle?.addEventListener("click", () => {
+		const next =
+			root.getAttribute("data-theme") === "light" ? "dark" : "light";
+		root.setAttribute("data-theme", next);
+		try {
+			localStorage.setItem("beu_theme", next);
+		} catch {
+			/* private mode: the choice just does not persist */
+		}
+		paint(next);
+		// Iframes and runtime-built markup listen for this instead of guessing.
+		window.dispatchEvent(
+			new CustomEvent("beu:theme", { detail: { theme: next } }),
+		);
+	});
+</script>

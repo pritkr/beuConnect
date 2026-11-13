@@ -10,6 +10,8 @@ it; a change here is its own change, with the whole suite run afterwards.
 | `router.ts` | `Route`, `Nav`, `RouteDef`, `param`, `numParam` |
 | `registry.tsx` | the single merge point: `ALL_ROUTES`, `ROUTE_MAP`, `routeExists` |
 | `shell.tsx` | the nav stack, app-drawn header, first-run gate |
+| `crash.tsx` | `ScreenBoundary`, `ScreenCrash`, `RootCrash`, `safeTitle`, `crashDetail` |
+| `root.tsx` | the root `ErrorBoundary` around `Shell`, mounted by `boot.ts` |
 | `tabbar.tsx` | the five tabs and their view-drawn marks |
 | `more.tsx` | the shell-owned `more` screen |
 | `coming-soon.tsx` | `NotFound` |
@@ -32,6 +34,12 @@ it; a change here is its own change, with the whole suite run afterwards.
   `onboarding` route is also registered so QA can mount it. Its `onDone` is a
   no-op because the shell owns the transition.
 - **`NavStack` needs `class="flex-1"`.** Without it every page is zero-height.
+- **A screen that throws is one screen.** The shell mounts every route inside
+  `ScreenBoundary` and the shell inside `RootCrash`; do not add a second
+  top-level boundary. A fallback never throws, never prints a stack trace, and
+  always offers a way out. The boundary is a page child, as `shell.tsx` mounts
+  it — not the direct return of a reactive `{() => …}` slot, which does not
+  contain the throw.
 - **Two headers are deliberate**: Android/iOS get the system header (`title`),
   desktop gets the app-drawn `PageHeader` in the `header` slot. Always supply
   both.

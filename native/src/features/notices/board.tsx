@@ -12,12 +12,13 @@
 import { List, Text, View, computed, signal } from "nsh";
 import type { Nav } from "../../app/router";
 import { Btn, EmptyState, ErrorState, Muted, Row, Screen, Search, Title } from "../../ui";
+import { maybeAskForNotifications } from "../settings/notifications";
 import { boardOffline, isRead, markAllRead, notices, noticesFetchedAt } from "./api";
 import {
   ChipRail, NoticesSkeleton, OfflinePanel, UndoBar, boardCourse, boardFetchedLabel, boardGroup, boardQuery,
   boardScope, boardSemester, buildNoticeRows, busy, chipItems, courseFacets, failure, noteTopRow, noticesLoaded,
-  once, pinnedCount, plural, readUndo, resetBoardFilters, rowCell, semesterFacets, syncNotices, topRowIndex,
-  unreadCount, type BoardScope, type ListRow,
+  once, pinnedCount, plural, readUndo, resetBoardFilters, rowCell, sectionIndices, semesterFacets, syncNotices,
+  topRowIndex, unreadCount, type BoardScope, type ListRow,
 } from "./parts";
 
 /**
@@ -94,6 +95,9 @@ function boardEmpty() {
 
 export function NoticesScreen(props: { nav: Nav }) {
   once(syncNotices);
+  // The one contextual permission prompt: this screen is where a student sees
+  // what a notification would be about. A refusal is remembered by the host.
+  once(maybeAskForNotifications);
   const filtersOpen = signal(boardCourse() !== "All" || boardSemester() !== "All");
   const undo = readUndo();
   const rows = computed<ListRow[]>(() =>
@@ -118,6 +122,7 @@ export function NoticesScreen(props: { nav: Nav }) {
           keyExtractor={(row: ListRow) => row.key}
           estimatedItemSize={96}
           contentClass="px-4 pb-6 gap-2"
+          stickyHeaderIndices={sectionIndices(rows())}
           initialScrollIndex={topRowIndex(rows())}
           onViewableItemsChange={noteTopRow}
           refreshing={busy() && notices().length > 0}
@@ -133,7 +138,7 @@ export function NoticesScreen(props: { nav: Nav }) {
                     role="button"
                     accessibilityLabel="Announcements"
                   >
-                    <Text class="text-[13px] font-semibold text-primary-ink" numberOfLines={1}>Announcements ›</Text>
+                    <Text class="text-[13px] font-semibold text-primary-ink" style={{ numberOfLines: 1 }}>Announcements ›</Text>
                   </View>
                 </Row>
                 <Muted class="text-[12px] tabular-nums" numberOfLines={1}>
@@ -146,7 +151,6 @@ export function NoticesScreen(props: { nav: Nav }) {
               <Search value={boardQuery()} onChange={(value) => boardQuery.set(value)} placeholder="Search notices" />
 
               <ChipRail
-                label="Show"
                 items={[
                   { value: "all", text: `All ${notices().length}` },
                   { value: "unread", text: `Unread ${unread()}` },

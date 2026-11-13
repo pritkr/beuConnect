@@ -1,0 +1,289 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 3rd Semester Examination, 2023",
+    "subject": "Mathematics III (PDE, Probability & Statistics)",
+    "subject_slug": "mathematics-iii-pde-probability-statistics",
+    "subject_code": "100312",
+    "year": 2023,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The order of the PDE obtained by eliminating \\( f \\) from \\( z = f(x^2 + y^2) \\) is</p>",
+          "options": [
+            "First",
+            "Second",
+            "Third",
+            "Fourth"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Who was the first person to develop the heat equation?</p>",
+          "options": [
+            "Galileo Galilee",
+            "Joseph Fourier",
+            "Daniel Gabriel",
+            "none of these"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The linear partial differential equation of order one is known as</p>",
+          "options": [
+            "Lagrange's linear PDE",
+            "Cauchy's linear PDE",
+            "Charpit's linear PDE",
+            "none of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Poisson distribution is</p>",
+          "options": [
+            "Discrete",
+            "Continuous",
+            "Normal",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The total area under the normal curve above the x-axis is</p>",
+          "options": [
+            "0",
+            "1",
+            "0.5",
+            "-1"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Two unbiased coins are tossed simultaneously. The probability of getting less than 3 tails is</p>",
+          "options": [
+            "0",
+            "1",
+            "1/2",
+            "1/4"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The median for the series: 4, 6, 9, 4, 10 is</p>",
+          "options": [
+            "4",
+            "5",
+            "6",
+            "1.5"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The relation between mean, median and mode is</p>",
+          "options": [
+            "Mode = 3 Median - 2 Mean",
+            "Mode = 2 Median - 3 Mean",
+            "Mean = 3 Median - Mode",
+            "none of these"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>If the regression coefficients are 0.8 &amp; 0.2, what would be the value of coefficient of\n                        correlation?\n                    </p>",
+          "options": [
+            "0.6",
+            "0.5",
+            "0.4",
+            "0.3"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The expected value of the number of heads in 15 tosses of a coin is</p>",
+          "options": [
+            "15",
+            "30",
+            "7.5",
+            "8.5"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Form partial differential equation by eliminating the function \\( f \\) from \\( Z =\n                        e^{ax+by}f(ax-by) \\).</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Solve the linear partial differential equation: \\( \\frac{\\partial^2 z}{\\partial x^2} +\n                        2\\frac{\\partial^2 z}{\\partial x \\partial y} + \\frac{\\partial^2 z}{\\partial y^2} =\n                        \\sin(2x+3y) \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Obtain the general solution of heat flow equation \\( k\\left(\\frac{\\partial^2 u}{\\partial\n                        x^2}\\right) = \\frac{\\partial u}{\\partial t} \\) by the method of separation of variables.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Show that a general solution of wave equation \\( c^2\\left(\\frac{\\partial^2\n                        \\varphi}{\\partial\n                        x^2}\\right) = \\frac{\\partial^2 \\varphi}{\\partial t^2} \\) is \\( \\varphi = f(x+ct) +\n                        g(x-ct)\n                        \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Obtain solution of Laplace's Equation in cylindrical polar coordinates.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Determine whether the following equation is hyperbolic, parabolic, and elliptic? \\(\n                        x\\frac{\\partial^2 u}{\\partial t^2} + t\\frac{\\partial^2 u}{\\partial x \\partial t} +\n                        \\frac{\\partial^2 z}{\\partial t^2} = 0 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>If X is a random variable such that \\( E[X] = 3 \\) and \\( E[X^2] = 13 \\), use the Chebyshev's\n                        inequality to determine the lower bound for \\( P[-2 &lt; X &lt; 8] \\).</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Two integers are selected at random from 1 to 11. If the sum is even, find the probability that\n                        both\n                        the numbered are odd.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>State and prove Baye's theorem.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Find the mean number of heads in three tosses of a coin.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>The first four moments of a distribution about \\( x = 2 \\) are 1, 2.5, 5.5 and 16. Calculate\n                        moments about the mean.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>The following table gives the number of aircraft accidents that occurred during the various days\n                        of\n                        the week. Find whether the accidents are uniformly distributed over the week. (The tabulated\n                        value\n                        of Chi-square at 5% level for 6 degree of freedom is 12.59).</p>\n<table border=\"1\" style=\"width:100%; text-align:center; border-collapse:collapse;\">\n<tbody><tr>\n<th>Days</th>\n<th>Sun</th>\n<th>Mon</th>\n<th>Tue</th>\n<th>Wed</th>\n<th>Thu</th>\n<th>Fri</th>\n<th>Sat</th>\n</tr>\n<tr>\n<td>No. of accidents</td>\n<td>14</td>\n<td>16</td>\n<td>8</td>\n<td>12</td>\n<td>11</td>\n<td>9</td>\n<td>14</td>\n</tr>\n</tbody></table>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A random sample of 5 college students is selected and their grades in Mathematics &amp; Statistics\n                        are\n                        found to be:</p>\n<table border=\"1\" style=\"width:100%; text-align:center; border-collapse:collapse;\">\n<tbody><tr>\n<th>Mathematics</th>\n<td>85</td>\n<td>60</td>\n<td>73</td>\n<td>40</td>\n<td>90</td>\n</tr>\n<tr>\n<th>Statistics</th>\n<td>93</td>\n<td>75</td>\n<td>65</td>\n<td>50</td>\n<td>80</td>\n</tr>\n</tbody></table>\n<p>Calculate Spearman's rank correlation coefficient.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>By the method of least square, find the straight line that best fits the following data:</p>\n<table border=\"1\" style=\"width:100%; text-align:center; border-collapse:collapse;\">\n<tbody><tr>\n<th>X</th>\n<td>1</td>\n<td>2</td>\n<td>3</td>\n<td>4</td>\n<td>5</td>\n</tr>\n<tr>\n<th>Y</th>\n<td>14</td>\n<td>27</td>\n<td>40</td>\n<td>55</td>\n<td>68</td>\n</tr>\n</tbody></table>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Binomial distribution",
+            "Poisson Distribution",
+            "Normal Distribution"
+          ]
+        }
+      ]
+    }
+  ]
+}

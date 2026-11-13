@@ -1,0 +1,304 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Examination, 2025",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100212",
+    "year": 2025,
+    "semester": 2,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Kirchhoff's Current Law is based on</p>",
+          "options": [
+            "Conservation of momentum",
+            "Conservation of magnetic flux",
+            "Conservation of energy",
+            "Conservation of charge"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>In a bilateral element, voltage-current relation</p>",
+          "options": [
+            "Changes with direction",
+            "Same in both directions",
+            "Constant",
+            "Nonlinear"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Eddy current loss can be reduced by</p>",
+          "options": [
+            "Thick laminations",
+            "No laminations",
+            "Thin laminations",
+            "Magnetic shielding"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>A circuit with low power factor draws</p>",
+          "options": [
+            "Less current",
+            "No current",
+            "More current",
+            "Zero reactive power"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Superposition theorem is not applicable to networks containing</p>",
+          "options": [
+            "Nonlinear elements",
+            "Dependent current source",
+            "Dependent voltage source",
+            "Transformers"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Transformer efficiency is maximum when</p>",
+          "options": [
+            "Iron loss &lt; Copper loss",
+            "Copper loss &gt; Iron loss",
+            "Iron loss &gt; Copper loss",
+            "Iron loss = Copper loss"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A good solder joint should be</p>",
+          "options": [
+            "Dull and grainy",
+            "Thick and uneven",
+            "Shiny and smooth",
+            "Blackened"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Transformer works on</p>",
+          "options": [
+            "AC only",
+            "Both AC &amp; DC",
+            "DC only",
+            "High voltage only"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Permeability is highest in</p>",
+          "options": [
+            "Air",
+            "Soft iron",
+            "Wood",
+            "Aluminum"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The rms value of a sinusoidal voltage with peak-to-peak value of 240 V is</p>",
+          "options": [
+            "84.86 V",
+            "94.68 V",
+            "77.82 V",
+            "89.15 V"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Determine the value of current flowing through the 10 \\( \\Omega \\) resistor for given circuit:\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/102f3a9e-4526-4ef3-9cb8-f699a80ae062.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>State and explain the Maximum Power Transfer Theorem, and derive the condition under which\n                        maximum power is delivered to the load.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Define delta network and star network and derive the formulae to convert a delta network into its\n                        equivalent star network.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>A voltage wave has the variation shown in figure.<br/>\n                        (i) Find the average and effective values of the voltage.<br/>\n                        (ii) If this voltage is applied to a 10 \\( \\Omega \\) resistance, find the dissipated power.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/0a7b5378-291a-408c-a3de-12a1d2c078f1.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A 100 W resistor is connected in series with a choke coil. When a 400 V, 50 Hz supply is applied\n                        to this combination, the voltages across the resistance and the choke coil are 200 V and 360 V\n                        respectively. Find the power consumed by the choke coil. Also, calculate the power factor of the\n                        choke coil and the power factor of the circuit.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Define and find the expression for the condition of resonance, bandwidth and quality factor of a\n                        series R-L-C circuit.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Derive the relationship between phase and line quantities (voltage, current) for a balanced\n                        three-phase delta-connected system. Also draw neat diagrams.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Three similar coils each having a resistance of 10 \\( \\Omega \\) and inductance of 0.04 H are\n                        connected in star across 3 phase, 50 Hz, 200 V supply. Calculate the line current, total power\n                        absorbed, reactive volt amperes and total volt amperes.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive an emf equation for a single-phase transformer and explain voltage and current ratio of an\n                        ideal transformer.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A 250 kVA, 50 Hz single-phase transformer has ratio of secondary to primary turns as 0.1. The\n                        secondary voltage at no-load condition is 240 V. Calculate (i) primary voltage and (ii) full\n                        load primary and secondary currents.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the working principle of DC generator and derive expression for the emf of a DC\n                        generator.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Explain the working principle and operation of Three Phase Induction Motor.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Explain the steps involved in proper soldering and desoldering of electronic components.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain the difference between breadboard wiring and PCB wiring with advantages and limitations.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any four of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Residential and Commercial wiring systems.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Superposition Theorem</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Hysteresis and Eddy Current losses</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Power factor improvement</p>"
+        },
+        {
+          "id": "q9_5",
+          "type": "theory",
+          "text": "<p>Power Triangle</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

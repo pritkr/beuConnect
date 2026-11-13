@@ -56,7 +56,7 @@ export function Stepper(props: {
   };
 
   return (
-    <Row class="gap-1.5" role="group">
+    <Row class="gap-1.5">
       <View
         class="h-11 w-11 items-center justify-center rounded-full border border-border-strong bg-card active:bg-muted"
         onPress={() => next(-step)}

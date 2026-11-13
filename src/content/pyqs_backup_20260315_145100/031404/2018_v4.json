@@ -1,0 +1,280 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech. 4th Semester Examination, 2018",
+    "subject": "POWER SYSTEM-I",
+    "subject_slug": "power-system-i",
+    "subject_code": "031404",
+    "year": 2018,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following distribution systems is preferred for good efficiency and high economy?\n                    </p>",
+          "options": [
+            "Single-phase, 2-wire system",
+            "2-phase, 3-wire system",
+            "3-phase, 3-wire system",
+            "3-phase, 4-wire system"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The main drawback(s) of overhead system over underground system is/are</p>",
+          "options": [
+            "underground system is more flexible than overhead system",
+            "higher charging current",
+            "surge problem",
+            "high initial cost"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The highest transmission voltage used in India is</p>",
+          "options": [
+            "400 kV",
+            "220 kV",
+            "132 kV",
+            "765 kV"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The function of steel wire in an ACSR conductor is to</p>",
+          "options": [
+            "compensate for skin effect",
+            "take care of surges",
+            "provide additional mechanical strength",
+            "reduce inductance"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Corona is accompanied by</p>",
+          "options": [
+            "violet visible discharge in darkness",
+            "hissing sound",
+            "power loss",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The conductor carries more current on the surface in comparison to its core. This phenomenon is\n                        called the</p>",
+          "options": [
+            "skin effect",
+            "corona",
+            "Ferranti effect",
+            "Lenz's effect"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Ferranti effect happens in transmission line when the line is</p>",
+          "options": [
+            "short and loaded",
+            "long and loaded",
+            "long and unloaded",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A transmission line is distortionless if</p>",
+          "options": [
+            "\\( RG = LC \\)",
+            "\\( RC = GL \\)",
+            "\\( R/C = G/L \\)",
+            "\\( R = G \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The receiving-end voltage of a transmission line will be greater than the sending-end voltage if\n                        the\n                        load is</p>",
+          "options": [
+            "greater than SIL (surge impedance loading)",
+            "less than SIL",
+            "equal to SIL",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Capacitor grading of cable means</p>",
+          "options": [
+            "use of dielectrics in different concentrations",
+            "introduction of capacitances at various lengths of cable to counter the effect of inductance",
+            "use of dielectric of different permittivities",
+            "grading according to capacitance per km length of the cable"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain 3-phase, 4-wire system of distribution of electrical power.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>A 2-wire feeder ABC has a load of 100 Ampere at unity p.f. at C and 65 Ampere at p.f. 0.8 lagging\n                        at\n                        B. The impedance AB is \\( (0.06+j0.08)\\Omega \\) and that of BC is \\( (0.04+j0.12)\\Omega\n                        \\). If\n                        the voltage at the far end C is to be maintained at 230 V, determine the voltage (i) at A and\n                        (ii)\n                        at B.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for the capacitance of a single-phase overhead transmission line.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Find out capacitance of a single-phase line 30 km long consisting of two parallel wires each 15\n                        mm\n                        diameter and 1.5 m apart.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A single-phase line has an impedance of \\( 5 \\angle 60^{\\circ} \\Omega \\). It is supplying a\n                        load\n                        of 120 A, 33 kV at 0.8 p.f. lagging. Calculate its regulation.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>In a 3-phase, 4-wire system, the line voltage is 400 V and non-inductive loads of 10, 8 and 5 kW\n                        are\n                        connected between the three line conductors and the neutral. Calculate (i) the current in each\n                        line\n                        and (ii) the current in the neutral conductor.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What are the sources of vibrations in a transmission line? Explain the methods used to damp out\n                        these\n                        vibrations.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Obtain an expression for the sag of a transmission line supported by towers of different heights\n                        at\n                        the ends.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Define regulation of a 3-phase a.c. transmission system and develop an expression for approximate\n                        voltage regulation.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain surge impedance loading with respect to an overhead transmission line.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>An overhead 3-phase transmission line delivers 5 MW at 22 kV at 0.8 lagging power factor. The\n                        resistance and reactance of each conductor are 4 \\( \\Omega \\) and 6 \\( \\Omega \\)\n                        respectively.\n                        Determine: (a) Sending-end voltage (b) Percentage regulation (c) Total line losses (d)\n                        Transmission\n                        efficiency.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>With the neat labelled diagram, show the various parts of a high-voltage single-core cable.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain briefly the following methods of grading of cables: (i) Capacitance grading (ii)\n                        Intersheath\n                        grading.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>A 132 kV transmission line has the following data: Weight of conductor = 680 kg/km, Length of\n                        span =\n                        260 m, Ultimate strength = 3100 kg, Safety factor = 2. Calculate the height above ground at\n                        which\n                        the conductor should be supported. Ground clearance required is 10 m.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>The three conductors of a 3-phase transmission line are arranged in a horizontal plane and are 3\n                        m\n                        apart. The diameter of each conductor is 4 cm. Determine the inductance per km of each phase.\n                        Assume\n                        balanced load and R, Y, B phase sequence.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

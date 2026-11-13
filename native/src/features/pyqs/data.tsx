@@ -5,36 +5,36 @@
  * row per batch/branch/semester/college. Rows open the virtualized table.
  */
 
-import { List, Scroll, Text, View, computed, effect, signal, cleanup } from "nsh";
+import { List, Text, View, computed, effect, signal, cleanup } from "nsh";
 import type { Nav, RouteDef } from "../../app/router";
 import { param } from "../../app/router";
 import {
-  Badge,
   Btn,
-  Chip,
   EmptyState,
   ErrorState,
-  Label,
   Loading,
   Muted,
   Screen,
   Search,
-  SectionHeader,
   Stat,
   ListBar,
 } from "../../ui";
 import { Icon } from "../../ui/icons";
+import { branchIcon } from "../../ui/branch-icon";
+import { profileCollege, useProfile, useProfileReady } from "../settings/profile";
 import type { Dataset } from "./api";
 import {
   branchLabel,
   collegeName,
   errorMessage,
   loadDatasets,
+  manifestBranch,
+  prioritizeCollege,
   searchDatasets,
   shortBranchLabel,
   shortCollegeName,
 } from "./api";
-import { Cell, Hero } from "./components";
+import { Cell, ChipRail, Hero } from "./components";
 
 interface DataState {
   phase: "loading" | "ready" | "error";
@@ -46,8 +46,47 @@ function uniq<T>(values: T[]): T[] {
   return [...new Set(values)];
 }
 
+/**
+ * One published table, as a dense row: semester lead, the college a student
+ * recognises, then batch and branch on one muted line.
+ *
+ * The manifest holds thousands of these; a card with a full college name and
+ * two chips spent three lines on data the title already says.
+ */
+function DatasetRow(props: { item: Dataset; onPress: () => void; label: string }) {
+  const item = props.item;
+  return (
+    <View
+      class="min-h-14 flex-row items-center gap-3 rounded-2xl border border-border bg-card px-3 py-2 active:bg-muted"
+      onPress={props.onPress}
+      role="button"
+      accessibilityLabel={props.label}
+    >
+      <View class="w-11 items-center justify-center rounded-xl bg-muted py-1">
+        <Text class="text-[15px] font-bold tabular-nums leading-5 text-foreground" style={{ numberOfLines: 1 }}>
+          {item.sem}
+        </Text>
+        <Text class="text-[9px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+          Sem
+        </Text>
+      </View>
+      <View class="flex-1 gap-0.5">
+        <Text class="text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
+          {shortCollegeName(item.college)}
+        </Text>
+        <Text class="text-[11px] leading-4 text-muted-foreground" style={{ numberOfLines: 1 }}>
+          {`Batch ${item.batch} · ${shortBranchLabel(item.branch)}`}
+        </Text>
+      </View>
+      <Icon name="chevron-right" size={16} class="text-muted-foreground" />
+    </View>
+  );
+}
+
 function DataScreen(props: { nav: Nav }) {
   const nav = props.nav;
+  // The field filters immediately: the index is precomputed and the list is
+  // virtualised, so a debounce only adds a visible lag.
   const query = signal(param(nav, "q"));
   const filters = signal(false);
   const batch = signal<string | null>(null);
@@ -55,6 +94,8 @@ function DataScreen(props: { nav: Nav }) {
   const sem = signal<number | null>(null);
   const attempt = signal(0);
   const state = signal<DataState>({ phase: "loading", items: [], error: "" });
+  const person = useProfile();
+  const personReady = useProfileReady();
 
   effect(() => {
     void attempt();
@@ -72,6 +113,40 @@ function DataScreen(props: { nav: Nav }) {
       },
     );
   });
+
+  /**
+   * Open on the student's own tables: their batch, branch and semester come
+   * from the saved registration number. Applied once, and only when a filter
+   * for it exists — a profile never turns into a filter that matches nothing.
+   */
+  let defaultsApplied = false;
+  effect(() => {
+    if (defaultsApplied || !personReady() || state().phase !== "ready") return;
+    defaultsApplied = true;
+    const student = person();
+    const items = state().items;
+    const theirBatch = student.reg.slice(0, 2);
+    const theirBranch = manifestBranch(student.branch);
+    if (theirBatch !== "" && items.some((dataset) => dataset.batch === theirBatch)) batch.set(theirBatch);
+    if (
+      theirBranch !== "" &&
+      items.some(
+        (dataset) =>
+          dataset.branch === theirBranch && (batch() === null || dataset.batch === batch()),
+      )
+    ) {
+      branch.set(theirBranch);
+    }
+    const inScope = (dataset: Dataset) =>
+      (batch() === null || dataset.batch === batch()) &&
+      (branch() === null || dataset.branch === branch());
+    if (student.sem >= 1 && items.some((dataset) => inScope(dataset) && dataset.sem === student.sem)) {
+      sem.set(student.sem);
+    }
+  });
+
+  /** The student's college leads every group; Sheikhpura next. */
+  const preferredCollege = computed(() => profileCollege(person()));
 
   const batches = computed(() =>
     uniq(state().items.map((dataset) => dataset.batch)).sort(
@@ -114,7 +189,9 @@ function DataScreen(props: { nav: Nav }) {
         (chosenBranch === null || dataset.branch === chosenBranch) &&
         (chosenSem === null || dataset.sem === chosenSem),
     );
-    return searchDatasets(rows, query());
+    // The manifest's batch/branch/semester grouping is kept; the student's
+    // college (then Sheikhpura) is lifted inside each group.
+    return prioritizeCollege(searchDatasets(rows, query()), preferredCollege());
   });
 
   const collegeCount = computed(() => uniq(state().items.map((dataset) => dataset.college)).length);
@@ -198,25 +275,19 @@ function DataScreen(props: { nav: Nav }) {
       {() => (
         <List
           class="flex-1"
-        each={filtered()}
-        keyExtractor={(dataset: Dataset) => dataset.id}
-        estimatedItemSize={92}
-        contentClass="gap-2 px-4 pb-10"
-        keyboardShouldPersistTaps="handled"
-        keyboardDismissMode="on-drag"
-        refreshing={state().phase === "loading" && state().items.length > 0}
-        onRefresh={retry}
-        empty={<View>{empty()}</View>}
+          each={filtered()}
+          keyExtractor={(dataset: Dataset) => dataset.id}
+          estimatedItemSize={64}
+          contentClass="gap-1.5 px-4 pb-10"
+          keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
+          refreshing={state().phase === "loading" && state().items.length > 0}
+          onRefresh={retry}
+          empty={<View>{empty()}</View>}
         header={
           <View class="gap-4 pb-2 pt-4">
             <Hero>
-              <View class="gap-2">
-                <Label>BEU · Data browser</Label>
-                <Text class="text-[30px] font-bold leading-8 tracking-tight text-foreground">
-                  Every result table.
-                </Text>
-              </View>
-              <View class="mt-4 flex-row gap-4">
+              <View class="flex-row gap-4">
                 <Stat
                   value={state().phase === "ready" ? String(state().items.length) : "—"}
                   label="Datasets"
@@ -232,7 +303,11 @@ function DataScreen(props: { nav: Nav }) {
               </View>
             </Hero>
 
-            <Search value={query()} onChange={query.set} placeholder="College, branch, batch or semester" />
+            <Search
+              value={query()}
+              onChange={(value) => query.set(value)}
+              placeholder="College, branch or batch"
+            />
 
             <View class="flex-row items-center justify-between gap-2">
               <Btn variant="ghost" onPress={() => filters.update((open) => !open)} label="Filters">
@@ -243,58 +318,48 @@ function DataScreen(props: { nav: Nav }) {
 
             <If when={filters()}>
               <View class="gap-3 rounded-3xl border border-border bg-card p-3.5">
-                <View class="gap-2">
-                  <Label>Batch</Label>
-                  <Scroll horizontal class="flex-1" scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
-                    <Chip active={batch() === null} onPress={() => pickBatch(null)}>
-                      All
-                    </Chip>
-                    {batches().map((value) => (
-                      <Chip active={batch() === value} onPress={() => pickBatch(value)}>
-                        {value}
-                      </Chip>
-                    ))}
-                  </Scroll>
-                </View>
+                <ChipRail
+                  label="Batch"
+                  note={batch() ?? "All"}
+                  value={batch() ?? "all"}
+                  options={[
+                    { key: "all", label: "All" },
+                    ...batches().map((value) => ({ key: value, label: value })),
+                  ]}
+                  onSelect={(key) => pickBatch(key === "all" ? null : key)}
+                />
 
-                <View class="gap-2">
-                  <Label>Branch</Label>
-                  <Scroll horizontal class="flex-1" scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
-                    <Chip active={branch() === null} onPress={() => pickBranch(null)}>
-                      All
-                    </Chip>
-                    {branchCodes().map((value) => (
-                      <Chip active={branch() === value} onPress={() => pickBranch(value)}>
-                        {shortBranchLabel(value)}
-                      </Chip>
-                    ))}
-                  </Scroll>
-                </View>
+                <ChipRail
+                  label="Branch"
+                  note={branch() === null ? "All" : shortBranchLabel(branch() as string)}
+                  value={branch() ?? "all"}
+                  options={[
+                    { key: "all", label: "All" },
+                    ...branchCodes().map((value) => ({
+                      key: value,
+                      label: shortBranchLabel(value),
+                      icon: branchIcon(value),
+                    })),
+                  ]}
+                  onSelect={(key) => pickBranch(key === "all" ? null : key)}
+                />
 
-                <View class="gap-2">
-                  <Label>Semester</Label>
-                  <Scroll horizontal class="flex-1" scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
-                    <Chip active={sem() === null} onPress={() => sem.set(null)}>
-                      All
-                    </Chip>
-                    {sems().map((value) => (
-                      <Chip active={sem() === value} onPress={() => sem.set(value)}>
-                        {`Sem ${value}`}
-                      </Chip>
-                    ))}
-                  </Scroll>
-                </View>
+                <ChipRail
+                  label="Semester"
+                  note={sem() === null ? "All" : `Sem ${sem()}`}
+                  value={sem() === null ? "all" : String(sem())}
+                  options={[
+                    { key: "all", label: "All" },
+                    ...sems().map((value) => ({ key: String(value), label: `Sem ${value}` })),
+                  ]}
+                  onSelect={(key) => sem.set(key === "all" ? null : Number(key))}
+                />
 
                 <Btn variant="secondary" onPress={clear} label="Clear filters">
                   Clear all
                 </Btn>
               </View>
             </If>
-
-            <SectionHeader
-              title="Datasets"
-              trailing={<Badge tone="mint">{`${filtered().length} table${filtered().length === 1 ? "" : "s"}`}</Badge>}
-            />
           </View>
         }
         footer={<View class="h-4" />}
@@ -303,46 +368,23 @@ function DataScreen(props: { nav: Nav }) {
           <Cell
             row={row}
             id={(item) => item.id}
-            build={(item) => {
-              const full = collegeName(item.college);
-              const short = shortCollegeName(item.college);
-              return (
-                <View
-                  class="min-h-11 flex-row items-center gap-3 rounded-3xl border border-border bg-card p-3.5 active:scale-[0.99] active:bg-muted"
-                  onPress={() =>
-                    nav.push("data.table", {
-                      batch: item.batch,
-                      branch: item.branch,
-                      sem: item.sem,
-                      college: item.college,
-                    })
-                  }
-                  role="button"
-                  accessibilityLabel={`${full}, semester ${item.sem}, batch ${item.batch}`}
-                >
-                  <View class="w-12 items-center justify-center gap-0.5 rounded-2xl bg-muted py-2">
-                    <Text class="text-[17px] font-bold tabular-nums text-foreground">{item.sem}</Text>
-                    <Text class="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground">
-                      sem
-                    </Text>
-                  </View>
-                  <View class="flex-1 gap-1">
-                    <Text class="text-[14px] font-semibold leading-5 text-foreground" numberOfLines={2}>
-                      {short}
-                    </Text>
-                    {full !== short ? <Muted numberOfLines={1}>{full}</Muted> : null}
-                    <View class="flex-row flex-wrap items-center gap-1.5">
-                      <Badge tone="ember">{`Batch ${item.batch}`}</Badge>
-                      <Muted>{shortBranchLabel(item.branch)}</Muted>
-                    </View>
-                  </View>
-                  <Icon name="chevron-right" size={18} class="text-muted-foreground" />
-                </View>
-              );
-            }}
+            build={(item) => (
+              <DatasetRow
+                item={item}
+                onPress={() =>
+                  nav.push("data.table", {
+                    batch: item.batch,
+                    branch: item.branch,
+                    sem: item.sem,
+                    college: item.college,
+                  })
+                }
+                label={`Open ${collegeName(item.college)}, semester ${item.sem}, batch ${item.batch}, ${branchLabel(item.branch)}`}
+              />
+            )}
           />
         )}
-      </List>
+        </List>
       )}
     </Screen>
   );

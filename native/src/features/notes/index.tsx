@@ -15,6 +15,7 @@
 import { Clipboard, View, announce, effect, signal, untracked } from "nsh";
 import type { Nav, RouteDef } from "../../app/router";
 import { numParam, param } from "../../app/router";
+import { EVENTS, track } from "../../lib/analytics";
 import {
   Badge,
   Body,
@@ -146,6 +147,7 @@ function NotesScreen(props: { nav: Nav }) {
   };
 
   const open = (subject: NoteSubject): void => {
+    track(EVENTS.noteOpen, { subject: subject.name, sem: subject.sem, branch: subject.branch });
     props.nav.push("notes.subject", {
       branch: subject.branch,
       sem: subject.sem,

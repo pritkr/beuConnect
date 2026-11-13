@@ -261,7 +261,13 @@ const repaired = repairYears(catalog);
 const filled = fillMechSem7(catalog);
 const packed = pack(catalog);
 
-const header = source.slice(0, source.indexOf("export const RAW = ")).trimEnd();
+// Re-running this tool must not stack its own comment. Cut at the packed-form
+// marker when it is already there, otherwise at the RAW export.
+const HEADER_MARK = "/**\n * The packed wire form.";
+const packedAt = source.indexOf(HEADER_MARK);
+const header = (
+  packedAt >= 0 ? source.slice(0, packedAt) : source.slice(0, source.indexOf("export const RAW = "))
+).trimEnd();
 const next = `${header}
 
 /**

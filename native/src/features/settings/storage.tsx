@@ -16,10 +16,16 @@
 
 import { Text, View, signal, Storage } from "nsh";
 
-import { Body, ErrorState, Label, Loading, Muted, Progress, Screen, SectionHeader } from "../../ui";
+import { Body, Btn, ErrorState, Label, Loading, Muted, Progress, Screen, SectionHeader } from "../../ui";
 import { STORAGE_LIMIT } from "../../lib/cache";
 import { clearDataFeed } from "../data-feed/store";
-import { ClearAction, ScreenIntro, SettingsGroup, SettingsRow, confirmDestructive, formatBytes, utf8Bytes } from "./ui";
+import { ClearAction, SettingsGroup, SettingsRow, confirmDestructive, formatBytes, utf8Bytes } from "./ui";
+import { loadProfile } from "./profile";
+import { reloadPreferences } from "./prefs";
+import { reloadDatedReminders } from "./dates";
+
+/** The runtime stores this app's keys under this prefix, and nothing else. */
+const APP_PREFIX = "beu.";
 
 type GroupId = "tables" | "saved" | "papers" | "live" | "syllabus" | "notices" | "other";
 
@@ -138,7 +144,11 @@ interface Flash {
   text: string;
 }
 
+/** The remembered registration is about you, not a download, so it is kept. */
+const IDENTITY_PREFIX = "beu.cache.identity:";
+
 function groupOf(key: string): GroupId | "kept" {
+  if (key.startsWith(IDENTITY_PREFIX)) return "kept";
   for (const group of GROUPS) {
     if (group.match(key)) return group.id;
   }
@@ -181,6 +191,8 @@ export function StorageScreen() {
   const snapshot = signal<Snapshot | null>(null);
   const error = signal<string | null>(null);
   const flash = signal<Flash | null>(null);
+  const resetting = signal(false);
+  const resetNote = signal("");
   let started = false;
 
   const refresh = (): void => {
@@ -226,8 +238,86 @@ export function StorageScreen() {
           /* the keys are gone either way; the next launch hydrates from storage */
         }
       }
-      flash.set({ id: group.id, text: `Removed ${countLabel(victims.length, group)} · ${formatBytes(bytes)} freed` });
-      refresh();
+      // Re-measure instead of trusting the plan: a key that refused to delete is
+      // still there, and the count and bytes must say so.
+      let after: Snapshot | null = null;
+      try {
+        after = await scan();
+      } catch {
+        after = null;
+      }
+      if (after) {
+        const left = countOf(after, group.id);
+        const removed = victims.length - left.keys;
+        const freed = Math.max(0, bytes - left.bytes);
+        snapshot.set(after);
+        error.set(null);
+        flash.set({
+          id: group.id,
+          text:
+            removed === 0
+              ? `Still on this phone · ${formatBytes(left.bytes)}`
+              : `Removed ${countLabel(removed, group)} · ${formatBytes(freed)} freed`,
+        });
+      } else {
+        flash.set({ id: group.id, text: `Removed ${countLabel(victims.length, group)} · ${formatBytes(bytes)} freed` });
+        refresh();
+      }
+    })();
+  };
+
+  const appKeys = (): Entry[] => (snapshot()?.entries ?? []).filter((entry) => entry.key.startsWith(APP_PREFIX));
+
+  /**
+   * The one action that forgets everything. It never calls `Storage.clear()`:
+   * the runtime's store can hold keys the app did not write, and the promise on
+   * this screen is exactly the `beu.` prefix.
+   */
+  const resetAll = (): void => {
+    void (async () => {
+      const current = snapshot();
+      if (!current) return;
+      const victims = appKeys();
+      if (victims.length === 0) return;
+      const bytes = victims.reduce((total, entry) => total + entry.bytes, 0);
+      const confirmed = await confirmDestructive(
+        "Reset BEUConnect?",
+        `This deletes all ${victims.length} keys the app has stored (${formatBytes(bytes)}): your profile, saved results, offline papers, read marks and settings. It cannot be undone.`,
+        "Reset everything",
+      );
+      if (!confirmed) return;
+      resetting.set(true);
+      for (const entry of victims) {
+        try {
+          await Storage.removeItem(entry.key);
+        } catch {
+          /* re-measure below: a key that refused to delete must still be counted */
+        }
+      }
+      // The screens already on the stack hold module signals: rehydrate the
+      // ones this folder owns so they cannot show what was just deleted.
+      try {
+        await Promise.all([loadProfile(), reloadPreferences(), reloadDatedReminders()]);
+      } catch {
+        /* Storage reads never throw through net.ts, but a reset must finish anyway */
+      }
+      let after: Snapshot | null = null;
+      try {
+        after = await scan();
+      } catch {
+        after = null;
+      }
+      resetting.set(false);
+      flash.set(null);
+      if (after) {
+        snapshot.set(after);
+        error.set(null);
+        const left = after.entries.filter((entry) => entry.key.startsWith(APP_PREFIX)).length;
+        resetNote.set(`Cleared ${victims.length - left} keys · ${formatBytes(bytes)} freed`);
+      } else {
+        resetNote.set("App data cleared");
+        refresh();
+      }
     })();
   };
 
@@ -237,11 +327,6 @@ export function StorageScreen() {
   return (
     <Screen>
       <Body>
-        <ScreenIntro
-          label="On this phone"
-          title="Storage"
-        />
-
         {error() ? (
           <ErrorState title="Storage unavailable" message={error() ?? undefined} onRetry={refresh} />
         ) : snapshot() === null ? (
@@ -260,10 +345,10 @@ export function StorageScreen() {
                 value={(total() / CAPACITY) * 100}
                 tone={total() / CAPACITY > 0.8 ? "amber" : "ember"}
               />
-              <Muted>{formatBytes(total())} of 5 MB. The 5 MB cap is the runtime's storage limit.</Muted>
+              <Muted>5 MB is the runtime's storage limit.</Muted>
             </View>
 
-            <SectionHeader title="What you can clear" />
+            <SectionHeader title="Clear" />
 
             {GROUPS.map((group) => {
               const size = countOf(snapshot(), group.id);
@@ -303,9 +388,20 @@ export function StorageScreen() {
             </SettingsGroup>
 
             <Muted class="px-1">
-              Clearing a group only removes the keys named in its confirmation. Your profile, settings and the work you
-              typed are never touched by this screen.
+              Only the keys named in the confirmation are removed. Profile, settings and the work you typed stay.
             </Muted>
+
+            <SectionHeader title="Reset" />
+            <View class="gap-3 rounded-3xl border border-destructive/30 bg-destructive/5 p-4">
+              <View class="gap-0.5">
+                <Text class="text-[15px] font-semibold text-foreground">Reset app data</Text>
+                <Muted>Deletes every key the app has stored, including your profile. Reopen the app to clear screens already open.</Muted>
+              </View>
+              <Btn variant="danger" disabled={resetting() || appKeys().length === 0} onPress={resetAll}>
+                {resetting() ? "Resetting…" : "Reset app data"}
+              </Btn>
+              {resetNote() === "" ? null : <Muted class="text-accent">{resetNote()}</Muted>}
+            </View>
           </View>
         )}
       </Body>

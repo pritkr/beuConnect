@@ -111,10 +111,10 @@ function LeadRowView(props: { lead: Lead; place: number; onPress: () => void }) 
     >
       <Text class="w-7 text-right text-[13px] font-bold tabular-nums text-muted-foreground">{props.place}</Text>
       <View class="flex-1 gap-0.5">
-        <Text class="text-[15px] font-semibold text-foreground" numberOfLines={1}>
+        <Text class="text-[15px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
           {lead.name}
         </Text>
-        <Text class="text-[11px] text-muted-foreground" numberOfLines={1}>
+        <Text class="text-[11px] text-muted-foreground" style={{ numberOfLines: 1 }}>
           {`${branchShort(lead.branch)} · Sem ${lead.sem}`}
         </Text>
       </View>
@@ -213,7 +213,7 @@ export function LeadsScreen(props: { nav: Nav }) {
         <Fresh
           when={`chips:${session()}`}
           build={() => (
-            <Scroll horizontal class="flex-1" scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
+            <Scroll horizontal class="min-h-11" scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
               {SESSIONS.map((value) => (
                 <Chip active={session() === value} onPress={() => session.set(value)}>
                   {value}

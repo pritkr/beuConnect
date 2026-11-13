@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2024",
+    "subject": "Analog Circuits",
+    "subject_slug": "analog-circuits",
+    "subject_code": "104401",
+    "year": 2024,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>JFET can be operated with</p>",
+          "options": [
+            "negative gate only",
+            "gate voltage only",
+            "positive as well as negative gate voltage",
+            "none of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which power amplifier has the highest collector efficiency</p>",
+          "options": [
+            "C",
+            "A",
+            "B",
+            "AB"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which amplifier is used for 180-degree phase shift</p>",
+          "options": [
+            "differential amplifier",
+            "non inverting amplifier",
+            "inverting amplifier",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>A MOSFET has three terminals, namely</p>",
+          "options": [
+            "cathode, anode, grid",
+            "source, gate, drain",
+            "emitter, base, collector",
+            "none of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The maximum efficiency of resistance loaded class B power amplifier is</p>",
+          "options": [
+            "5%",
+            "50%",
+            "30%",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A JFET is also called _______ transistor</p>",
+          "options": [
+            "unipolar",
+            "bipolar",
+            "injunction",
+            "none of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In a phase shift oscillator, the frequency determining elements are</p>",
+          "options": [
+            "L and C",
+            "R, L and C",
+            "R and C",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The leakage current across a pn junction is due to</p>",
+          "options": [
+            "Minority carriers",
+            "Majority carriers",
+            "Junction capacitance",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>An oscillator converts</p>",
+          "options": [
+            "a.c. power into d.c. power",
+            "a.c. power into a.c. power",
+            "mechanical power into a.c. power",
+            "none of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>In a transistor</p>",
+          "options": [
+            "\\( I_E = I_C - I_B \\)",
+            "\\( I_B = I_C + I_E \\)",
+            "\\( I_C = I_E + I_B \\)",
+            "\\( I_E = I_C + I_B \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>In a full wave rectifier, the input is from 30-0-30V transformer. The load and diode forward\n                        resistances are 100\\( \\Omega \\) and 10\\( \\Omega \\) respectively. Calculate the average\n                        voltage, dc output power, ac input power, rectification efficiency and percentage regulation.\n                    </p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain the working of positive clamping circuit.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Draw the common emitter circuit and sketch the input and output characteristics. Also explain\n                        active region, cutoff region and saturation region by indicating them on the characteristic\n                        curve.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>With a neat circuit diagram explain the Voltage Divider Bias circuit by giving its exact\n                        analysis.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the characteristics of an Ideal Op-Amp. Mention some of the applications of Op-Amp.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain R-2R ladder DAC with example?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain Successive type ADC with neat circuit diagram.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Describe the construction and operation of JFET and draw its characteristics.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain Colpitts oscillator with Circuit diagram and derive its frequency.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain RC coupled transistor amplifier with neat circuit diagram in a middle frequency Range.\n                    </p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain RC- phase shift oscillator using op-amp and derive its frequency.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Describe the construction and operation of depletion type MOSFET and draw its characteristics.\n                    </p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Describe class A Power Amplifier. Derive the expression for its maximum conversion Efficiency.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain Wien bridge oscillator using op-amp and derive its frequency.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain MOSFET as an amplifier?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Describe class B Power Amplifier. Derive the expression for its maximum conversion Efficiency.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

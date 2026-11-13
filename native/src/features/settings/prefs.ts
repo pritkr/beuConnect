@@ -41,13 +41,9 @@ export function schemeLabel(value: Scheme): string {
   return value === "light" ? "Light" : value === "dark" ? "Dark" : "System";
 }
 
-/** "Light — warm paper, always", for the settings list. */
+/** The one fact that separates the three choices. */
 export function schemeHint(value: Scheme): string {
-  return value === "light"
-    ? "Warm paper, always"
-    : value === "dark"
-      ? "Ink, for late nights"
-      : "Follows the phone";
+  return value === "light" ? "Always light" : value === "dark" ? "Always dark" : "Follows the phone";
 }
 
 /* ------------------------------------------------------------------ reminders */
@@ -63,7 +59,8 @@ export interface Reminders {
 
 export const REMINDER_LIMIT = 3;
 
-export const DEFAULT_REMINDERS: Reminders = { classes: true, times: ["08:30"], holidays: true };
+/** No invented class time: the student adds the times they actually start. */
+export const DEFAULT_REMINDERS: Reminders = { classes: true, times: [], holidays: true };
 
 /** "8:30 am", for chips and the next-reminder line. */
 export function timeLabel(value: string): string {
@@ -140,15 +137,21 @@ let started = false;
 function hydrate(): void {
   if (started) return;
   started = true;
-  void Promise.all([readStore<unknown>(APPEARANCE_KEY, "system"), readStore<unknown>(REMINDERS_KEY, null)]).then(
-    ([storedScheme, storedReminders]) => {
-      const scheme = isScheme(storedScheme) ? storedScheme : "system";
-      appearance.set(scheme);
-      setColorScheme(scheme);
-      reminders.set(normalizeReminders(storedReminders));
-      ready.set(true);
-    },
-  );
+  void reloadPreferences();
+}
+
+/** Reads both keys again and applies them — used after "Reset app data". */
+export async function reloadPreferences(): Promise<void> {
+  started = true;
+  const [storedScheme, storedReminders] = await Promise.all([
+    readStore<unknown>(APPEARANCE_KEY, "system"),
+    readStore<unknown>(REMINDERS_KEY, null),
+  ]);
+  const scheme = isScheme(storedScheme) ? storedScheme : "system";
+  appearance.set(scheme);
+  setColorScheme(scheme);
+  reminders.set(normalizeReminders(storedReminders));
+  ready.set(true);
 }
 
 // Imported at boot by the settings routes; this is what makes the saved theme

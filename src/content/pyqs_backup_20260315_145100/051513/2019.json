@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2019",
+    "subject": "Computer Network",
+    "subject_slug": "computer-network",
+    "subject_code": "051513",
+    "year": 2019,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer from any seven of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>This layer is an addition to OSI model when compared with TCP IP model:</p>",
+          "options": [
+            "Application layer",
+            "Presentation layer",
+            "Session layer",
+            "Both session layer and presentation layer"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Application layer is implemented on:</p>",
+          "options": [
+            "end systems",
+            "NIC",
+            "ethernet",
+            "route"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following is not applicable for IP?</p>",
+          "options": [
+            "Error reporting",
+            "Handle addressing conventions",
+            "Datagram format",
+            "Packet handling conventions"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which one of the following is not a function of network layer?</p>",
+          "options": [
+            "Routing",
+            "Inter-networking",
+            "Congestion control",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>For a 10 Mbps Ethernet link, if the length of the packet is 32 bits, the transmission delay is\n                        (in\n                        milliseconds):</p>",
+          "options": [
+            "3.2",
+            "32",
+            "0.32",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Transmission delay does not depend on:</p>",
+          "options": [
+            "packet length",
+            "distance between the routers",
+            "transmission rate",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In TCP, sending and receiving data is done as:</p>",
+          "options": [
+            "stream of bytes",
+            "sequence of characters",
+            "lines of data",
+            "packets"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Suppose a TCP connection is transferring a file of 1000 bytes. The first byte is numbered 10001.\n                        What\n                        is the sequence number of the segment if all data is sent in only one segment?</p>",
+          "options": [
+            "10000",
+            "10001",
+            "12001",
+            "11001"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The protocol on which DNS application run is:</p>",
+          "options": [
+            "Telnet",
+            "UDP",
+            "HTTP",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>____ allows you to connect and login to a remote computer.</p>",
+          "options": [
+            "Telnet",
+            "FTP",
+            "HTTP",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Draw a neat diagram of TCP/IP protocol stack with the protocols and functionality implemented on\n                        each\n                        layer. Also explain, why there is a need for having a layered architecture (like OSI and TCP/IP)\n                        in\n                        networks.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>We know that there are 2 types of address schemes (i.e. IP address and MAC address) in computer\n                        networks. Explain what the need of having two types of addresses. What will happen if we use\n                        only IP\n                        address in computer networks?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What do you mean by Random Access Protocols? Explain the limitations of using ALOHA as random\n                        access\n                        protocol.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>In the context of Transmission Control Protocol (TCP), explain the statement, \"TCP help us to\n                        establish a reliable connection over an unreliable network\".</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Outline the difference between TCP and UDP.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Why there is a need of doing error control at transport layer despite of the fact that we are\n                        doing\n                        the same thing at the data link layer? Why we are doing this error correction multiple times?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain type of delays in computer networks. Suppose a node A wants to send data of 200 mb to\n                        node B.\n                        The bandwidth of the channel is 1 Gbps. There are three routers in between node A to node B.\n                        Assume\n                        other delays equal to 0. Calculate the total delay involved.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>With the help of neat figures, explain sliding window mechanism.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Compare the following terms:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>(a) ARP vs RARP</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>(b) Unicast vs Multicast</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>(c) Flooding vs Broadcasting</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>(d) Amplifiers vs Repeaters</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    }
+  ]
+}

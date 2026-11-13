@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Special Exam., 2020",
+    "subject": "Electrical Circuit Analysis",
+    "subject_slug": "electrical-circuit-analysis",
+    "subject_code": "100306 (PCC-EEE-01)",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven questions of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Find the current I in the circuit of Fig. 1 by using the superposition theorem. [DIAGRAM\n                        INSTRUCTION: A circuit with a 1A upward current source, a parallel 4 ohm resistor, followed by a\n                        T-network (1 ohm, 2 ohm, 3 ohm) and a 1V DC source.]</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/172.jpg\"/>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>In Fig. 2, find the value of \\( R_{Th} \\) and \\( I_{SC} \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/169.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Find the value of \\( R_{L} \\) of Fig. 3 so that the maximum power can be transferred. [DIAGRAM\n                        INSTRUCTION: A circuit with two DC sources and an independent 1A current source, mixed with 10\n                        ohm resistors, ending in load resistor RL.]</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/168.jpg\"/>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Find the Z-parameters of the two-port network shown in Fig. 4.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/167.jpg\"/>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Two coupled coils have self-inductances \\( L_{1}=50 \\text{ mH} \\) and \\( L_{2}=200 \\text{\n                        mH} \\) and a coefficient of coupling \\( k=0.5 \\). If coil 2 has 1000 turns, and \\(\n                        i_{1}=5.0\\sin(400t)\\text{A} \\), find the voltage at coil 2.</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>four 2-mark questions are missing</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Use the superposition theorem in the circuit shown in Fig. 7 to find current I. [DIAGRAM\n                        INSTRUCTION: A 10V DC source connected to a 5 ohm resistor, a dependent voltage source \\(\n                        2V_{x} \\), a shunt 2 ohm resistor (with voltage \\( V_{x} \\)), and a 2A independent current\n                        source.]</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/171.jpg\"/>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Draw the Thévenin's equivalent circuit of Fig. 8 and hence find the current through \\(\n                        R=2\\Omega \\). (All the resistances shown in the figure are in ohm).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/170.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>State compensation theorem.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Find the current \\( I_{0} \\) of Fig. 9 using the superposition theorem.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/166.jpg\"/>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>In the circuit of Fig. 10, find the effective value of the resistance seen by the source \\(\n                        V_{s} \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/165.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>Define incidence matrix. Find the complete incidence matrix of the graph shown in Fig. 11.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/164.jpg\"/>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Define the g-parameters of an electrical circuit.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Find the g-parameters in the circuit shown in Fig. 12.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/180.jpg\"/>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>Find the Z-parameters and Y-parameters of the circuit shown in Fig. 13.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/179.jpg\"/>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Find the Laplace transform of \\( f(t)=e^{-\\alpha t}\\cos(\\omega t) \\), \\( \\alpha&gt;0 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Calculate the inverse Laplace transform of \\( F(s)=\\frac{1}{s(s^{2}-a^{2})} \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>In the series R-C circuit, the capacitor has an initial charge 2.5 mC. At \\( t=0 \\), the switch\n                        is closed and a constant-voltage source \\( V=100\\text{ V} \\) is applied. Use the Laplace\n                        transform method to find the current in the circuit after closing the switch.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Draw the graph for the given incidence matrix: <br/> \\( [A] = \\begin{bmatrix} -1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\n                        &amp; 1 &amp; 0 \\\\ 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 1 \\\\ 0 &amp; 0 &amp; -1 &amp; 0 &amp; -1 &amp; 0 &amp; -1 \\\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp;\n                        -1 &amp; 0 &amp; 0 \\\\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\end{bmatrix} \\)</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Find the cut-set matrix from the graph as shown in Fig. 14.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/175.jpg\"/>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        },
+        {
+          "id": "q6_3",
+          "type": "theory",
+          "text": "<p>Consider the network shown in Fig. 15, draw the graph and determine (i) number of links, (ii)\n                        rank of the graph and (iii) total number of trees.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/178.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>State the characteristics of an ideal transformer.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Define r.m.s. value, form factor, peak factor, complex power and half power frequency.</p>"
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>Calculate the resonant frequency of a series R-L-C circuit.</p>"
+        },
+        {
+          "id": "q7_4",
+          "type": "theory",
+          "text": "<p>Obtain the current in each branch of the network shown in Fig. 16, using the mesh current method.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/177.jpg\"/>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Obtain the total power supplied by the 60 V source and the power absorbed in each resistor in the\n                        network of Fig. 17.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/174.jpg\"/>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Compute the mesh currents of Fig. 18.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/173.jpg\"/>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>Define supermesh and supernode.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Derive step response of a series R-C circuit.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Define forced response and natural response.</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>For the circuit shown in Fig. 19, the switch K is moved from position 1 to position 2 at \\( t=0\n                        \\text{ s} \\). Find the current \\( i(t) \\) assuming \\( i(0_{-})=2\\text{ A} \\) and \\(\n                        V_{c}(0_{+})=2\\text{ V} \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/176.jpg\"/>"
+        }
+      ]
+    }
+  ]
+}

@@ -17,7 +17,7 @@
  *    `Cell` instead of reading `row()` once into a variable.
  */
 
-import { List, Scroll, Text, View, WebView, computed, effect, signal, cleanup, type YNode } from "nsh";
+import { List, Scroll, Text, View, WebView, computed, effect, signal, cleanup, type WebViewRef } from "nsh";
 import type { Nav, RouteDef, RouteParams } from "../../app/router";
 import { param } from "../../app/router";
 import {
@@ -33,6 +33,7 @@ import {
   Muted,
   Screen,
   SectionHeader,
+  scrollAnimated,
 } from "../../ui";
 import { openExternal } from "../../lib/link";
 import { NetError } from "../../lib/net";
@@ -48,7 +49,7 @@ import {
   type CatalogSubject,
 } from "./catalog";
 import { Cell, PdfYearRow, QuestionCard, SectionTitle, readableText, sectionLabel } from "./components";
-import { PdfScreen } from "./gate";
+import { PdfProblem, PdfScreen, inspectPdf, type PdfLibrary } from "./gate";
 import { NativePdfScreen, usesNativePdf } from "../notes/native-pdf";
 import {
   openPdfPaper,
@@ -92,6 +93,9 @@ interface ListScroller {
  * show the question sliding underneath; the band's own top padding survives.
  */
 const STICKY_GAP = 8;
+
+/** A paper's PDF screen sends a reader back to the shelf, not the GATE index. */
+const PAPER_LIBRARY: PdfLibrary = { label: "All papers", route: "pyqs" };
 
 function targetFromParams(params: RouteParams): PaperTarget {
   const year = Number(params.year ?? 0) || 0;
@@ -482,7 +486,7 @@ function PaperScreen(props: {
       sem: props.subject.sem,
     });
   };
-  const jumpTo = (row: number) => list?.scrollToIndex({ index: row, animated: true, viewPosition: 0 });
+  const jumpTo = (row: number) => list?.scrollToIndex({ index: row, animated: scrollAnimated(), viewPosition: 0 });
 
   return (
     <Screen>
@@ -612,7 +616,7 @@ function SitePage(props: { nav: Nav }) {
   const url = base && anchor ? `${base}#${anchor}` : base;
   const loading = signal(true);
   const failed = signal("");
-  let view: YNode | null = null;
+  let view: WebViewRef | null = null;
 
   const retry = () => {
     failed.set("");
@@ -639,7 +643,7 @@ function SitePage(props: { nav: Nav }) {
         <View class="flex-row items-start justify-between gap-2">
           <View class="flex-1">
             <Label>On the site</Label>
-            <Text class="text-[15px] font-bold leading-6 tracking-tight text-foreground" numberOfLines={2}>
+            <Text class="text-[15px] font-bold leading-6 tracking-tight text-foreground" style={{ numberOfLines: 2 }}>
               {name}
             </Text>
           </View>
@@ -725,28 +729,23 @@ export const paperRoutes: RouteDef[] = [
     title: (params) => String(params.title ?? "PDF"),
     render: (nav) => {
       const url = param(nav, "url");
-      if (!/^https?:\/\//i.test(url)) {
-        return (
-          <Screen>
-            <View class="p-4">
-              <EmptyState icon="paperclip" title="No file attached"/>
-            </View>
-          </Screen>
-        );
-      }
+      // The host check runs before the platform branch: Android's native
+      // viewer must not be handed a file the WebView is not allowed to open.
+      const check = inspectPdf(url);
+      if (!check.ok) return <PdfProblem nav={nav} check={check} raw={url} library={PAPER_LIBRARY} />;
       // Android draws the pages natively and can save the file; every other
       // host keeps the WebView. The platform never changes mid-run.
       if (usesNativePdf()) {
         return (
           <NativePdfScreen
             nav={nav}
-            url={url}
+            url={check.url}
             title={param(nav, "title") || "PDF"}
             name={param(nav, "name") || undefined}
           />
         );
       }
-      return <PdfScreen nav={nav} url={url} />;
+      return <PdfScreen nav={nav} url={check.url} library={PAPER_LIBRARY} />;
     },
   },
 ];

@@ -1,0 +1,215 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2016",
+    "subject": "Object-Oriented Programming",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051401",
+    "year": 2016,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven):",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "What is the output of the following code?\n```cpp\nchar symbol[3]={'a','b','c'};\nfor (int index=0; index<3; index++)\n    cout << symbol[index];\n```\n(i) a b c\n(ii) \"abc\"\n(iii) abc\n(iv) 'abc'",
+              "id": "1a"
+            },
+            {
+              "text": "If a class C is derived from class B, which is derived from class A, all through public inheritance, then a class C member function can access\n(i) protected and public data only in C and B\n(ii) protected and public data only in C\n(iii) private data in A and B\n(iv) protected data in A and B",
+              "id": "1b"
+            },
+            {
+              "text": "In C++, the range of signed integer type variable is\n(i) 0 to $2^{16}$\n(ii) $-2^{15}$ to $2^{15} - 1$\n(iii) $-2^7$ to $2^7 - 1$\n(iv) 0 to $2^8$",
+              "id": "1c"
+            },
+            {
+              "text": "The function whose prototype is `void getData(Item *thing);` receives\n(i) a pointer to a structure\n(ii) a reference to a structure\n(iii) a copy of a structure\n(iv) four bytes",
+              "id": "1d"
+            },
+            {
+              "text": "Format flags may be combined using the\n(i) bitwise OR operator (|)\n(ii) logical OR operator (||)\n(iii) bitwise AND operator (&)\n(iv) logical AND operator (&&)",
+              "id": "1e"
+            },
+            {
+              "text": "Which of the following types of class allows only one object of it to be created?\n(i) Virtual class\n(ii) Abstract class\n(iii) Singleton class\n(iv) Friend class",
+              "id": "1f"
+            },
+            {
+              "text": "cout is a/an\n(i) operator\n(ii) function\n(iii) object\n(iv) macro",
+              "id": "1g"
+            },
+            {
+              "text": "The size of object is equal to\n(i) total size of member data variables\n(ii) total size of member function\n(iii) Both (i) and (ii)\n(iv) None of the above",
+              "id": "1h"
+            },
+            {
+              "text": "If A and B are Boolean variables, then the expression `(!A) || (!B)` is equivalent to which of the following conditions?\n(i) !(A && B)\n(ii) !(A || B)\n(iii) !(A) && !(B)\n(iv) True",
+              "id": "1i"
+            },
+            {
+              "text": "What will be stored in n by the following statements?\n```cpp\nint n;\nn = 17 + 10 / 7;\n```\n(i) 18\n(ii) 3\n(iii) 3.857..\n(iv) 18.428..",
+              "id": "1j"
+            }
+          ]
+        },
+        {
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "text": "Write a program that defines a shape class with a constructor that gives value to width and height. Then define two sub-classes triangle and rectangle, that calculate the area of the shape `area()`. In the main, define two variables a triangle and a rectangle and then call the `area()` function in this two variables.",
+              "id": "2a",
+              "marks": 10
+            },
+            {
+              "text": "What are pure virtual functions? Write the syntax.",
+              "id": "2b",
+              "marks": 4
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "text": "What is inline function? What are its advantages and disadvantages?",
+              "id": "3a",
+              "marks": 7
+            },
+            {
+              "text": "Draw the exception handling model.",
+              "id": "3b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "text": "What is multilevel inheritance? How is it different from multiple inheritance?",
+              "id": "4a",
+              "marks": 7
+            },
+            {
+              "text": "How can a common friend function to two different classes be declared?",
+              "id": "4b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "text": "What are the basic differences between manipulators and IOS member functions in implementation? Give examples.",
+              "id": "5a",
+              "marks": 7
+            },
+            {
+              "text": "What is object-oriented programming? How is it different from procedure-oriented programming?",
+              "id": "5b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "6",
+          "sub_questions": [
+            {
+              "text": "Explain the following functions with examples for manipulating file pointers: seekg(), seekp(), tellg(), tellp()",
+              "id": "6a",
+              "marks": 7
+            },
+            {
+              "text": "What is the difference between passing a parameter by reference and constant reference? Explain with an example.",
+              "id": "6b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "text": "Write a program that asks the user for an integer number and find the sum of all natural numbers up to that number.",
+              "id": "7a",
+              "marks": 7
+            },
+            {
+              "text": "Class Y has been derived from class X. The class Y does not contain any data members of its own. Does the class Y require constructor? State your answer with Yes or No and why.",
+              "id": "7b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "text": "What is operator overloading? List out the operators that cannot be overloaded.",
+              "id": "8a",
+              "marks": 7
+            },
+            {
+              "text": "What are generic classes? Why are they useful? Explain with an example how these are implemented in C++.",
+              "id": "8b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Differentiate between the following and give examples to bring out the difference:",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "text": "Private and public inheritances",
+              "id": "9a"
+            },
+            {
+              "text": "Instantiation and specialization of a template class",
+              "id": "9b"
+            },
+            {
+              "text": "Static and dynamic bindings",
+              "id": "9c"
+            },
+            {
+              "text": "A class and a struct",
+              "id": "9d"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

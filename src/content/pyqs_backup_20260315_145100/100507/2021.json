@@ -1,0 +1,177 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2021",
+    "subject": "POWER SYSTEMS-I",
+    "subject_slug": "power-systems-i",
+    "subject_code": "100507",
+    "year": 2021,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven of the following questions :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "What is the difference between radial and mesh systems?",
+              "marks": null
+            },
+            {
+              "id": "1b",
+              "text": "Draw the one-line diagram of the typical power system.",
+              "marks": null
+            },
+            {
+              "id": "1c",
+              "text": "Consider that in a power system network the voltage has been reduced significantly. What should be done in the generator to improve the voltage in the power system network?",
+              "marks": null
+            },
+            {
+              "id": "1d",
+              "text": "Which type of fault would be severe among the line to ground fault or symmetrical fault, when the fault occurs near to the generator when $X_1 = X_2 \\gg X_0$ and $X_1 = X_2 \\ll X_0$? Consider the neutral of the generator is solidly grounded.",
+              "marks": null
+            },
+            {
+              "id": "1e",
+              "text": "What is the difference between a lightning arrester and surge absorber?",
+              "marks": null
+            },
+            {
+              "id": "1f",
+              "text": "What is meant by protective angle? Give its value for reliable protection.",
+              "marks": null
+            },
+            {
+              "id": "1g",
+              "text": "What are symmetrical components and why are they required?",
+              "marks": null
+            },
+            {
+              "id": "1h",
+              "text": "What is a neutral grounding and why is it required?",
+              "marks": null
+            },
+            {
+              "id": "1i",
+              "text": "Which type of circuit breaker is used for more than 400 kV?",
+              "marks": null
+            },
+            {
+              "id": "1j",
+              "text": "Mention the advantages of DC transmission system over AC transmission system.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "A generator transformer unit is connected to a line through a circuit breaker. The unit ratings are :\nGenerator : 15 MVA, 11 kV, $X''_d = 0.3$ p.u., $X'_d = 0.3$ p.u., $X_d = 0.6$ p.u.\nTransformer : 15 MVA, 12.7/66 kV, reactance $= 0.06$ p.u.\nThe system is operating at no load at a line voltage of 66 kV, when a three-phase fault occurs on the line just beyond the circuit breaker. Find-",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "2a",
+              "text": "the initial symmetrical r.m.s. current in the breaker;",
+              "marks": null
+            },
+            {
+              "id": "2b",
+              "text": "the maximum possible d.c. offset current in the breaker;",
+              "marks": null
+            },
+            {
+              "id": "2c",
+              "text": "the momentary current rating of the breaker;",
+              "marks": null
+            },
+            {
+              "id": "2d",
+              "text": "the current to be interrupted by the breaker and the interrupting kVA;",
+              "marks": null
+            },
+            {
+              "id": "2e",
+              "text": "the sustained short-circuit current in the breaker.",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "text": "A single-phase 50 Hz generator supplies an inductive load of 8 MW at a power factor of 0.707 lagging by means of an overhead transmission line 15 km long. The line resistance and inductances are of 0.023 ohm and 0.56 mH per km. The voltage at the receiving end is required to be kept constant at 11 kV.",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "3a",
+              "text": "Find the sending end voltage and voltage regulation of the line.",
+              "marks": null
+            },
+            {
+              "id": "3b",
+              "text": "Find the value of the capacitors to be placed in parallel with the load such that the regulation is reduced to 60% of that obtained in part (a).",
+              "marks": null
+            },
+            {
+              "id": "3c",
+              "text": "Compare the transmission efficiency in parts (a) and (b).",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "text": "Discuss in detail about the over-current and directional protection scheme. Also, discuss in detail about the advantages and disadvantages of both the protection schemes and mention their applications.",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "text": "Discuss in detail about the permanent magnet synchronous generator and induction generator for power generation through wind energy. Also discuss why there is a requirement of using two types of generators. What is the advantage of using one over the other generator?",
+          "marks": 14
+        },
+        {
+          "id": "6a",
+          "text": "Draw the sequence diagrams of all types of connections of a transformer.",
+          "marks": 5
+        },
+        {
+          "id": "6b",
+          "text": "A synchronous machine 1 generating 1 p.u. voltage is connected through a Y/Y transformer of reactance of 0.1 p.u. to two transmission lines in parallel. The other ends of the lines are connected through a Y/Y transformer of reactance of 0.15 p.u. to a machine 2 generating 1 p.u. voltage. For both transformers $X_1 = X_2 = X_0$. Calculate the current fed into a double line to ground fault on the line side terminals of the transformer fed from machine 2. The star points of machine 1 and of the two transformers are solidly grounded. The reactance (p.u.) of the machines and lines referred to a common base are as follows :\nMachine 1: $X_1=0.45, X_2=0.35, X_0=0.05$\nMachine 2: $X_1=0.40, X_2=0.30, X_0=0.04$\nLine each: $X_1=0.30, X_2=0.30, X_0=0.64$",
+          "marks": 9
+        },
+        {
+          "id": "7",
+          "text": "Explain in detail about the sinusoidal steady-state representation of short, medium and transmission lines.",
+          "marks": 14
+        },
+        {
+          "id": "8a",
+          "text": "Describe the construction, principle of operation and application of (i) rod gap and (ii) expulsion gap.",
+          "marks": 9
+        },
+        {
+          "id": "8b",
+          "text": "Explain clearly how the rating of lightning arrester is selected. What is the best location of lightning arrester and why?",
+          "marks": 5
+        },
+        {
+          "id": "9",
+          "text": "Explain about the typical waveform of synchronous generator under balanced terminal short-circuit conditions for steady-state, transient and sub-transient equivalent circuit. Derive the essential expressions also.",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

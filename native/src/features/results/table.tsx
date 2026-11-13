@@ -24,18 +24,19 @@
  * does not, so every changing chunk is rebuilt through `Fresh` or `Each`.
  */
 
-import { List, Text, View, cleanup, computed, effect, signal, type YNode } from "nsh";
+import { List, Text, View, cleanup, computed, effect, signal, type ListRef } from "nsh";
 
 import type { Nav } from "../../app/router";
 import { param } from "../../app/router";
 import { debounce } from "../../lib/net";
-import { Btn, Chip, Divider, EmptyState, ErrorState, Label, Muted, Panel, Row, Screen, Search, Subtitle } from "../../ui";
+import { Btn, Chip, Divider, EmptyState, ErrorState, Label, Muted, Panel, Row, Screen, Search, Subtitle, scrollAnimated } from "../../ui";
 import { RowsSkeleton, StudentRowView, TableCaption } from "./components";
 import type { RankRow } from "./data";
 import { branchShort, digits, hasCoverage, loadRoster, parseReg, readRecent, semsFor } from "./data";
 import { tieSize } from "./ranking";
 import type { Async } from "./shared";
 import { Fresh, SelectionChips, cleanReg, idle, isValidReg, rosterError, useTableSelection } from "./shared";
+import { useProfile } from "../settings/profile";
 
 /** Typing a letter should not re-filter 2,000 rows on every keystroke. */
 const SEARCH_DEBOUNCE = 220;
@@ -87,10 +88,12 @@ export function ResultTableScreen(props: { nav: Nav }) {
   const state = signal<Async<RankRow[]>>(idle<RankRow[]>());
 
   /* The row to highlight: the number in the search field, else the one this
-     screen was opened with, else the last lookup on this phone. Pinning keeps
-     the highlight after the search is cleared for the jump. */
+     screen was opened with, else the saved registration number, else the last
+     lookup on this phone. Pinning keeps the highlight after the search is
+     cleared for the jump. */
+  const person = useProfile();
   const routeReg = cleanReg(param(nav, "reg"));
-  const knownReg = signal(routeReg);
+  const knownReg = signal(routeReg !== "" ? routeReg : digits(person().reg));
   const pinned = signal("");
 
   const typedReg = computed(() => {
@@ -100,7 +103,7 @@ export function ResultTableScreen(props: { nav: Nav }) {
 
   const myReg = computed(() => typedReg() || pinned() || knownReg());
 
-  let list: YNode | null = null;
+  let list: ListRef | null = null;
   let lastRows: RankRow[] | null = null;
   let lastKey = "";
   let autoScrolled = "";
@@ -191,6 +194,11 @@ export function ResultTableScreen(props: { nav: Nav }) {
 
   effect(() => {
     if (knownReg()) return;
+    const saved = digits(person().reg);
+    if (saved !== "") {
+      knownReg.set(saved);
+      return;
+    }
     void readRecent().then((recent) => {
       if (!knownReg() && recent.length > 0) knownReg.set(recent[0].reg);
     });
@@ -269,12 +277,12 @@ export function ResultTableScreen(props: { nav: Nav }) {
     const index = sorted().findIndex((candidate) => digits(candidate.reg) === digits(row.reg));
     if (index < 0) return;
     page.set(Math.max(1, Math.ceil((index + 1) / PAGE)));
-    setTimeout(() => list?.scrollToIndex({ index, animated: true, viewPosition: 0.3 }), 90);
+    setTimeout(() => list?.scrollToIndex({ index, animated: scrollAnimated(), viewPosition: 0.3 }), 90);
   };
 
   /** The student's own batch + branch, when they differ from the open table. */
   const regTable = (): { batch: string; branch: string } | null => {
-    const info = parseReg(routeReg);
+    const info = parseReg(myReg());
     if (!info || semsFor(info.batch, info.branch).length === 0) return null;
     const sel = selection();
     if (info.batch === sel.batch && info.branch === sel.branch) return null;
@@ -433,14 +441,14 @@ export function ResultTableScreen(props: { nav: Nav }) {
           />
         </View>
 
-        <If when={routeReg !== "" && !loading() && state().status === "ready" && myRow() === null}>
+        <If when={myReg() !== "" && !loading() && state().status === "ready" && myRow() === null}>
           <Fresh
-            when={`absent:${routeReg}:${selection().batch}:${selection().branch}`}
+            when={`absent:${myReg()}:${selection().batch}:${selection().branch}`}
             build={() => {
               const target = regTable();
               return (
                 <Row class="flex-wrap items-center justify-between gap-2">
-                  <Muted class="flex-1 text-[11px] leading-4">{`${routeReg} is not in this table.`}</Muted>
+                  <Muted class="flex-1 text-[11px] leading-4">{`${myReg()} is not in this table.`}</Muted>
                   {target ? (
                     <Btn
                       variant="ghost"
@@ -461,7 +469,7 @@ export function ResultTableScreen(props: { nav: Nav }) {
           <Panel tone="amber" class="gap-1">
             <Label>Could not refresh</Label>
             <Subtitle class="text-[12px] leading-5">
-              The latest roster could not be read. These rows are the copy already on this phone.
+              These rows are the copy already on this phone.
             </Subtitle>
             <Btn variant="secondary" class="min-h-11" onPress={retry}>
               Try again
@@ -489,7 +497,7 @@ export function ResultTableScreen(props: { nav: Nav }) {
             initialScrollIndex={Math.max(0, (page() - 1) * PAGE)}
             refreshing={state().status === "loading" && rows().length > 0}
             onRefresh={retry}
-            ref={(node: YNode) => {
+            ref={(node: ListRef) => {
               list = node;
             }}
             separator={<Divider />}

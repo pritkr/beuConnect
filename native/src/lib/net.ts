@@ -6,6 +6,7 @@
 import { Storage } from "nsh";
 
 import { readValue, removeEntry, stampOf, writeEntry } from "./cache";
+import { ensureStudent, studentHeaders } from "./student-context";
 
 export const SITE = "https://beu.prit.eu.org";
 
@@ -44,6 +45,32 @@ export interface FetchOptions {
 }
 
 const inflight = new Map<string, Promise<string>>();
+
+/** The app's own worker; only its requests carry the student headers. */
+function isOwnHost(url: string): boolean {
+  return url === SITE || url.startsWith(SITE + "/");
+}
+
+/**
+ * The headers a request carries.
+ *
+ * Requests to our own API add the student context (`x-beu-reg`,
+ * `x-beu-student`, `x-beu-branch`, `x-beu-college`, `x-beu-batch`), so the
+ * worker can join a request to a student without trusting a query string.
+ * Third-party hosts get only what the caller asked for: GitHub, Supabase and
+ * BEU's portal have no use for a registration number, and the portal rejects
+ * unknown headers on its cross-origin form posts.
+ */
+export async function headersFor(
+  url: string,
+  extra?: Record<string, string>,
+): Promise<Record<string, string> | undefined> {
+  if (!isOwnHost(url)) return extra;
+  await ensureStudent();
+  const student = studentHeaders();
+  if (Object.keys(student).length === 0) return extra;
+  return extra === undefined ? student : { ...student, ...extra };
+}
 
 function withTimeout(url: string, init: RequestInit, timeout: number): Promise<Response> {
   return new Promise<Response>((resolve, reject) => {
@@ -88,10 +115,11 @@ export async function fetchText(url: string, options: FetchOptions = {}): Promis
   const existing = inflight.get(key);
   if (existing) return existing;
 
+  const headers = await headersFor(url, options.headers);
   const run = (async () => {
     const response = await withTimeout(
       url,
-      { method: "GET", headers: options.headers, cache: options.cache },
+      { method: "GET", headers, cache: options.cache },
       timeout,
     );
     if (!response.ok) {
@@ -124,9 +152,10 @@ function refreshInBackground(url: string, options: FetchOptions): void {
   const key = options.cacheKey ?? url;
   if (inflight.has(key)) return;
   const run = (async () => {
+    const headers = await headersFor(url, options.headers);
     const response = await withTimeout(
       url,
-      { method: "GET", headers: options.headers, cache: options.cache },
+      { method: "GET", headers, cache: options.cache },
       options.timeout ?? 20000,
     );
     if (!response.ok) return "";
@@ -152,11 +181,12 @@ export async function fetchJson<T>(url: string, options: FetchOptions = {}): Pro
 
 /** POSTs JSON and returns the parsed response (empty object when there is none). */
 export async function postJson<T>(url: string, body: unknown, timeout = 20000): Promise<T> {
+  const headers = (await headersFor(url, { "content-type": "application/json" })) ?? {};
   const response = await withTimeout(
     url,
     {
       method: "POST",
-      headers: { "content-type": "application/json" },
+      headers,
       body: JSON.stringify(body),
     },
     timeout,

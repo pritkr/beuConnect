@@ -1,27 +1,17 @@
 /**
- * The small, shared pieces of the settings area: a consistent screen intro,
- * a grouped list, a 44 pt row, a switch and a destructive text action. They are
- * built from `src/ui` and keep every settings screen looking like one place.
+ * The small, shared pieces of the settings area: a grouped list, a 44 pt row,
+ * a switch and a destructive text action. They are built from `src/ui` and keep
+ * every settings screen looking like one place. Screens open on their first
+ * control — the nav header already names the route, so there is no intro block.
  */
 
 import { Text, View } from "nsh";
 import { AlertDialog } from "nsh/base";
 import { formatBytes, utf8Bytes } from "../../lib/bytes";
 import type { Children } from "../../ui";
-import { Label, Subtitle, Title } from "../../ui";
 import { Icon } from "../../ui/icons";
 
 export { formatBytes, utf8Bytes };
-
-/** Label + title. Every settings screen opens with it. */
-export function ScreenIntro(props: { label: string; title: string }) {
-  return (
-    <View class="gap-1 pt-1">
-      <Label>{props.label}</Label>
-      <Title>{props.title}</Title>
-    </View>
-  );
-}
 
 /** A card that holds rows: hairline border, oversized radius, no inner padding. */
 export function SettingsGroup(props: { children?: Children; class?: string }) {
@@ -61,7 +51,7 @@ export function SettingsRow(props: {
         {props.hint ? <Text class="text-[12px] leading-4 text-muted-foreground">{props.hint}</Text> : null}
       </View>
       {props.value ? (
-        <Text class="max-w-[132px] text-right text-[13px] text-muted-foreground" numberOfLines={1}>
+        <Text class="max-w-[132px] text-right text-[13px] text-muted-foreground" style={{ numberOfLines: 1 }}>
           {props.value}
         </Text>
       ) : null}
@@ -145,11 +135,11 @@ export async function confirmDestructive(title: string, description: string, con
       title,
       description,
       actions: [
-        { label: "Cancel", role: "cancel" },
-        { label: confirmLabel, role: "destructive" },
+        { id: "cancel", label: "Cancel", role: "cancel" },
+        { id: "confirm", label: confirmLabel, role: "destructive" },
       ],
     });
-    return choice === confirmLabel;
+    return choice.action === "confirm";
   } catch {
     return false;
   }

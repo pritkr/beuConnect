@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020",
+    "subject": "Analog Electronic Circuits",
+    "subject_slug": "analog-electronic-circuits",
+    "subject_code": "100302",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Symbols and notations carry their usual meanings."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven questions of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>What is the function of clamping circuits?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Explain diode positive shunt clipper circuit with waveforms.</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Explain the half-wave rectifier with suitable diagram.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>What is integrator circuit?</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Write down the three differences between BJT and JFET.</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Explain the important characteristics of Darlington emitter-follower.</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>What is precision rectifier circuit?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>What are the advantages of h-parameters?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Attempt any two parts from each :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Derive the expression for stability factor for fix bias circuit with respect to \\( I_{CO} \\),\n                        \\( V_{BE} \\) and \\( \\beta \\).</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>State and prove Miller's theorem.</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>A voltage divider biased circuit has \\( R_1=39k\\Omega \\), \\( R_2=82 k\\Omega \\), \\(\n                        R_C=3.3k\\Omega \\), \\( R_E=1k\\Omega \\) and \\( V_{CC}=18V \\). The silicon transistor has\n                        used\n                        \\( \\beta=120 \\) Find Q-point and stability factor.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Attempt any two parts from each :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>An op-amp has gain bandwidth product of 15 MHz. Determine the bandwidth of op-amp when \\(\n                        A_{CL}=500 \\). Also, find the maximum value of \\( A_{CL} \\) when frequency is 200 KHz.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What are the advantages and features of instrumentation amplifier? Derive the expression for\n                        output voltage of instrumentation amplifier.</p>"
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>The data sheet of N-channel JFET gives the following details: \\( I_{DSS}=9mA \\) and pinch-off\n                        voltage = -4.5V (i) At what value of \\( V_{GS} \\) will \\( I_D \\) be equal to 3 mA? (ii) What\n                        is its \\( g_m \\) at this \\( I_D \\)?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Attempt any two parts from each :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for input impedance voltage gain, current gain and output impedance for an\n                        emitter-follower circuit using h-parameter model for the transistor.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the need of cascading amplifier. Draw and explain the block diagram of two-stage cascade\n                        amplifier.</p>"
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>Derive an expression for frequency of oscillators in Wien bridge oscillator.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Attempt any two parts from each :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the principle of operation of oscillator and effect of loop gain (A\\( \\beta \\)) on the\n                        output of oscillator.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>With the help of neat diagram, explain the construction working and characteristics of N-channel\n                        depletion-type MOSFET.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q5_3",
+          "type": "theory",
+          "text": "<p>A given amplifier arrangement has the following voltage gains: \\( A_{v1}=10 \\), \\( A_{v2}=20\n                        \\) and \\( A_{v3}=40 \\). Calculate the overall voltage gain and determine the total voltage\n                        gain in dB.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Attempt any two parts from each :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Determine \\( Z_{in} \\), \\( Z_{out} \\) and \\( A_v \\) for JFET common source amplifier with\n                        fixed bias configuration using AC equivalent small signal model.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>With the help of neat diagram, explain the construction working and characteristics of N-channel\n                        JFET.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q6_3",
+          "type": "theory",
+          "text": "<p>Explain the law frequency response of single-stage RC-coupled amplifier.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Attempt any two parts from each :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Obtain an h-parameter equivalent circuit of CB and CE configurations.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>With the help of block diagram, explain the concept of feedback.</p>"
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>Discuss with the help of circuit example, the purpose of providing- (i) negative feedback; (ii)\n                        positive feedback in amplifier.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Attempt any two parts from each :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Draw the high frequency equivalent circuit of an emitter follower and derive the expression of\n                        upper cut-off frequency \\( f_H \\).</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Transistor's short circuit current gain is measured to be 25 at a frequency of 2 MHz. If \\(\n                        f_\\beta=200 \\) kHz, calculate the following: (i) The current gain bandwidth product (ii) \\(\n                        h_{fe} \\) at low frequency (iii) Short circuit current gain at 10 MHz and 100 MHz.</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>A phase-shift oscillator uses three identical R-C sections in feedback network. The value of\n                        components are \\( R=100 K\\Omega \\) and \\( C=0.01 \\mu F \\). Calculate the frequency of\n                        oscillator.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Attempt any two parts from each :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>An amplifier has a voltage gain of 40. The amplifier is now modified to provide a 10% negative\n                        feedback in series with the input. Determine the following: (i) Voltage gain with feedback (ii)\n                        Amount of feedback in dB (iii) Loop gain.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Write the important advantage of a negative feedback amplifier and show that how bandwidth of an\n                        amplifier increases with negative feedback.</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>What is transistor biasing? Explain emitter bias circuit with relevant circuit and equations.</p>"
+        }
+      ]
+    }
+  ]
+}

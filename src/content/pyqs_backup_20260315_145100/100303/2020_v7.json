@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020",
+    "subject": "BASIC ELECTRONICS ENGINEERING",
+    "subject_slug": "basic-electronics-engineering",
+    "subject_code": "100303",
+    "year": 2020,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer the following questions (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Why is negative feedback desired in amplifier application?</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Draw the voltage transfer curve of op-amp.</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>State the Barkhausen's criteria for electronic system to oscillate with feedback.</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>How is amplifier different from the oscillator?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Why is the reception in the case of amplitude modulation usually noisy?</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>What is cell splitting and how does it increase the capacity of cellular network?</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Justify that BJT is current controlled while FET is voltage-controlled device.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Name the breakdown mechanism in the lightly doped P-N junction diode under reverse biased\n                        condition.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Why is Gray code also called as reflected code? Convert \\((396)_{10}\\) to Gray code.</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>For the logical circuit shown in the figure, derive the simplified Boolean expression for output\n                        Y.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/01079b84-9b65-4d4f-a408-68eb7a0c42fe.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Draw the waveform of output \\(V_{0}\\) and explain the operation of circuit with AC source\n                        \\(V_i\\), Resistor R, Parallel diode clippers with bias voltages \\(V_{R1}\\) and \\(V_{R2}\\).\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/57d45866-855e-4133-bd9d-c4e66bb94cba.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>In the given circuit, calculate the load current \\(I_{L}\\) and Zener diode current \\(I_{Z}\\)\n                        with 20V source, 1k\\(\\Omega\\) resistor, 5V Zener diode, 1.2k\\(\\Omega\\) Load \\(R_L\\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/cabfde3c-6188-419a-97cf-a0b7fc96a679.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Calculate the maximum DC voltage and DC current available from a half-wave rectifier. What is the\n                        PIV of the diode used in the rectifier?</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/d0bd0993-0394-4150-9e25-009edf3ec7c3.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Calculate the value of \\(R_{1}\\) in the biasing circuit, so that the Q-point is fixed at\n                        \\(I_{C}=8~mA\\) and \\(V_{CE}=3~V\\) with \\(-V_{CC} = -9V\\), 250\\(\\Omega\\) collector\n                        resistor, 500\\(\\Omega\\) emitter resistor, \\(\\beta=80\\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/623837d7-de01-48d6-97e5-06231285282f.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Minimize the given Boolean function F using K map in SOP and implement using NAND gate:\n                        \\(F(A,B,C,D)=AB\\overline{C}D+\\overline{A}BCD+\\overline{A}\\overline{B}\\overline{C} \\) +\n                        \\( \\overline{A}\\overline{B}\\overline{D}+A\\overline{C}+A\\overline{B}C+\\overline{B}C\\)</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>The circuit given is the basic application of op-amp to perform the addition operation. Explain\n                        the operation of circuit and derive the expression of output voltage.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/1ac49273-1c6f-4798-b393-8cfeab778ec4.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Design the voltage follower using op-amp and explain the operation.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Draw the circuit diagram of voltage-shunt feedback amplifier and derive the expression of\n                        closed-loop voltage gain.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of cellular network and briefly explain its operation.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Draw the functional block diagram of AM transmitter and receiver.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Design Schmitt trigger using IC 555 timer and explain its operation with the help of functional\n                        diagram.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>If \\(R_{1}=R_{2}=R_{3}=450~k\\Omega\\) and \\(C_{1}=C_{2}=C_{3}=60pF\\), determine the frequency\n                        of oscillation in phase-shift oscillator. Draw the basic circuit of an R-C phase-shift\n                        oscillator and explain its operation.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A new clocked X-Y flip-flop is defined with inputs X and Y in addition to the clock input. The\n                        flip-flop functions are as follows:<br/>If XY=00 the flip-flop changes state with each clock\n                        pulse.<br/>If XY=01 the flip-flop state Q becomes 1 with the next clock pulse.<br/>If XY=10,\n                        the\n                        flip-flop state Q becomes 0 with the next clock pulse.<br/>If XY=11, no change of state occurs\n                        with the clock pulse.<br/>Write the truth table and excitation table of X-Y flip-flop.\n                        Implement\n                        the X-Y flip-flop using a J-K flip-flop.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is the race around condition in J-K flip-flop? What are the methods to resolve the race\n                        around condition in J-K flip-flop? Explain each method with the help of example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What are the problems with normal encoder? How can these problems be solved by the priority\n                        decoder? Design 2 to 4 lines priority encoder.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of micro-controller and briefly explain each block.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    }
+  ]
+}

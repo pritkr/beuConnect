@@ -1,0 +1,231 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2016",
+    "subject": "Digital Signal Processing",
+    "subject_slug": "digital-signal-processing",
+    "subject_code": "041710",
+    "year": 2016,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any seven questions :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Find convolution of $x[n] = a^n u[n]$ and $G[n] = u[n]$ (use sum of sequence)",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "b",
+              "text": "If $x[n] = (6 - n)\\{u[n] - u[n - 6]\\}$, sketch $y[n] = x(4 - n)$.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "c",
+              "text": "Find the correlation between the sequence $x(n) = u[n] - u[n - 6]$ and $G[n] = u(n - 2) - u(n - 5)$.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "d",
+              "text": "Define the linear phase filter.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "e",
+              "text": "Find the frequency response of the parallel network shown in Fig.-1. The systems are Linear shift-invariant systems.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "f",
+              "text": "Find the DTFT of the sequence $x_1[n] = a^n u[n]$ for $|a| < 1$.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "g",
+              "text": "Let $G[n]$ be the unit sample response of an linear shift invariant system. Find the frequency response when $G[n] = \\delta[n] + 6\\delta[n - 1] + 3\\delta[n - 2]$.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "h",
+              "text": "Explain Nyquist Sampling theorem with proper mathematical expressions.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "i",
+              "text": "If $X(Z)$ is $Z$ transform of $x[n]$, then find the $Z$ transform of $nx[n]$.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "j",
+              "text": "Let $x[n]$ be the sequence $x[n] = 2\\delta[n] + \\delta[n - 1] + \\delta[n - 3]$ then find four-point DFT of $x[n]$.",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Suppose that a sequence $x[n]$ has a $Z$ transform $X(z) = \\frac{4 - \\frac{7}{4}z^{-1} + \\frac{1}{4}z^{-2}}{1 - \\frac{3}{4}z^{-1} + \\frac{1}{8}z^{-2}}$ with ROC $|z| > \\frac{1}{2}$ find $x[n]$ using partial fraction expansion method.\nb) Discuss the advantages of DSP over analog processing.",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Suppose that a sequence $x[n]$ has a $Z$ transform $X(z) = \\frac{4 - \\frac{7}{4}z^{-1} + \\frac{1}{4}z^{-2}}{1 - \\frac{3}{4}z^{-1} + \\frac{1}{8}z^{-2}}$ with ROC $|z| > \\frac{1}{2}$ find $x[n]$ using partial fraction expansion method.",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "Discuss the advantages of DSP over analog processing.",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) The $Z$-transform of a sequence $x[n]$ is $X(z) = \\frac{z + 2z^{-2} + z^{-3}}{1 - 3z^{-4} + z^{-5}}$ if ROC include the unit circle. Then find the DTFT of $x[n]$ at $\\omega = \\pi$.\nb) Evaluate the convolution of the two sequence $G[n] = (0.5)^n u[n]$ and $x[n] = 3^n u[-n]$.",
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "The $Z$-transform of a sequence $x[n]$ is $X(z) = \\frac{z + 2z^{-2} + z^{-3}}{1 - 3z^{-4} + z^{-5}}$ if ROC include the unit circle. Then find the DTFT of $x[n]$ at $\\omega = \\pi$.",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "number": "b",
+              "text": "Evaluate the convolution of the two sequence $G[n] = (0.5)^n u[n]$ and $x[n] = 3^n u[-n]$.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) A causal linear shift-invariant system is characterized by the difference equation $y[n] = \\frac{1}{4}y[n - 1] + \\frac{1}{8}y[n - 2] + x[n] - x[n - 1]$. Find the system function $H(z)$, and the unit sample response $G[n]$.\nb) How may we compute the N-point DFT of two real-valued sequencer $x_1(n)$ and $x_2(n)$, using one N-point DFT?",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "A causal linear shift-invariant system is characterized by the difference equation $y[n] = \\frac{1}{4}y[n - 1] + \\frac{1}{8}y[n - 2] + x[n] - x[n - 1]$. Find the system function $H(z)$, and the unit sample response $G[n]$.",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "How may we compute the N-point DFT of two real-valued sequencer $x_1(n)$ and $x_2(n)$, using one N-point DFT?",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Consider two Sequence $x_1(n) = \\cos(\\frac{2\\pi n}{n})$ and $x_2(n) = \\sin(\\frac{2\\pi n}{N})$. Find the N point circular convolution of $x_1(n)$ with $x_2(n)$. (one DFT property)\nb) Design a Low pass buffer worth filler to meet the specifications $f_p = 6\\text{ kHz}, f_s = 10\\text{ kHz}, S_p = \\delta s = 0.1$.",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Consider two Sequence $x_1(n) = \\cos(\\frac{2\\pi n}{n})$ and $x_2(n) = \\sin(\\frac{2\\pi n}{N})$. Find the N point circular convolution of $x_1(n)$ with $x_2(n)$. (one DFT property)",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "number": "b",
+              "text": "Design a Low pass buffer worth filler to meet the specifications $f_p = 6\\text{ kHz}, f_s = 10\\text{ kHz}, S_p = \\delta s = 0.1$.",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ]
+        },
+        {
+          "text": "Discuss with mathematical expression on decimation in time FFT algorithm also draw the eight point radix-2 butterfly signal flow diagram.",
+          "marks": 14,
+          "id": "6"
+        },
+        {
+          "text": "a) Consider the causal linear shift-invariant filter with system function $H(z) = \\frac{(1 + 0.875z^{-1})}{(1 + 0.2z^{-1} + 0.9z^{-2})(1 - 0.7z^{-1})}$. Draw a signal flow graph for the system using direct form II.\nb) Show that for bilinear transformation $S = \\frac{2}{T} \\frac{1 - z^{-1}}{1 + z^{-1}}$ where T is sampling duration.",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Consider the causal linear shift-invariant filter with system function $H(z) = \\frac{(1 + 0.875z^{-1})}{(1 + 0.2z^{-1} + 0.9z^{-2})(1 - 0.7z^{-1})}$. Draw a signal flow graph for the system using direct form II.",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "Show that for bilinear transformation $S = \\frac{2}{T} \\frac{1 - z^{-1}}{1 + z^{-1}}$ where T is sampling duration.",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Design a filter with $H_d(e^{j\\omega}) = \\begin{cases} e^{-j3\\omega}, & \\frac{-\\pi}{4} \\le \\omega \\le \\frac{\\pi}{4} \\\\ 0, & \\frac{\\pi}{4} \\le |\\omega| \\le \\pi \\end{cases}$ using a Hamming window with $M=7$\nb) Derive order formula for Chebyshev filter. Assume required parameters.",
+          "marks": 14,
+          "id": "8",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Design a filter with $H_d(e^{j\\omega}) = \\begin{cases} e^{-j3\\omega}, & \\frac{-\\pi}{4} \\le \\omega \\le \\frac{\\pi}{4} \\\\ 0, & \\frac{\\pi}{4} \\le |\\omega| \\le \\pi \\end{cases}$ using a Hamming window with $M=7$.",
+              "marks": 7,
+              "id": "8_sub"
+            },
+            {
+              "number": "b",
+              "text": "Derive order formula for Chebyshev filter. Assume required parameters.",
+              "marks": 7,
+              "id": "8_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) Determine the IDFT of $x[u] = \\{3, (2 + j), 1, (2 - j)\\}$.\nb) Consider the discrete time sequence $x[n] = \\cos(\\frac{n\\pi}{8})$. Find two different continuous time signal, that would produce this sequence when sampled at a frequency of $f_s = 10\\text{ Hz}$.",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Determine the IDFT of $x[u] = \\{3, (2 + j), 1, (2 - j)\\}$.",
+              "marks": 7,
+              "id": "9_sub"
+            },
+            {
+              "number": "b",
+              "text": "Consider the discrete time sequence $x[n] = \\cos(\\frac{n\\pi}{8})$. Find two different continuous time signal, that would produce this sequence when sampled at a frequency of $f_s = 10\\text{ Hz}$.",
+              "marks": 7,
+              "id": "9_sub"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

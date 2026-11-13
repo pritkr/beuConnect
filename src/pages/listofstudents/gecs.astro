@@ -1,0 +1,318 @@
+---
+export const prerender = false;
+import Layout from "../../layouts/Layout.astro";
+import { allStudents, type RosterStudent } from "../../lib/students/register";
+
+type BranchGroup = {
+  label: string;
+  students: RosterStudent[];
+};
+
+type SessionGroup = {
+  session: string;
+  count: number;
+  branches: BranchGroup[];
+};
+
+const register = allStudents();
+
+const rollKey = (student: RosterStudent) =>
+  (student.rollNo ?? student.regNo).replace(/[^0-9a-z]/gi, "").toUpperCase();
+
+const sessionGroups: SessionGroup[] = [...new Set(register.map((s) => s.session))]
+  .sort((a, b) => b.localeCompare(a))
+  .map((session) => {
+    const students = register.filter((s) => s.session === session);
+    const branches = [...new Set(students.map((s) => s.branch))]
+      .map((branch) => {
+        const rows = students
+          .filter((s) => s.branch === branch)
+          .sort((a, b) => rollKey(a).localeCompare(rollKey(b), undefined, { numeric: true }));
+        return {
+          label: rows[0]?.branchLabel ?? branch,
+          students: rows,
+        };
+      })
+      .sort((a, b) => a.label.localeCompare(b.label));
+
+    return { session, count: students.length, branches };
+  });
+
+const total = register.length;
+
+const searchText = (student: RosterStudent) =>
+  `${student.name} ${student.regNo} ${student.rollNo ?? ""}`.toLowerCase();
+---
+
+<Layout
+  title="GEC Sheikhpura student roster"
+  description="Student roster for Government Engineering College, Sheikhpura."
+>
+  <header class="page-head">
+    <div>
+      <p class="back"><a href={`${import.meta.env.BASE_URL}listofstudents/`}>Student registry</a></p>
+      <h1>GEC Sheikhpura</h1>
+      <p class="meta num">{total.toLocaleString("en-IN")} students · {sessionGroups.length} batches</p>
+    </div>
+  </header>
+
+  <div class="search-wrap">
+    <label class="sr-only" for="rosterSearch">Search students</label>
+    <input
+      type="search"
+      id="rosterSearch"
+      placeholder="Name, reg no. or roll no."
+      autocomplete="off"
+      spellcheck="false"
+    />
+  </div>
+
+  <p class="search-status num" id="rosterStatus" role="status" aria-live="polite"></p>
+  <p class="empty" id="rosterEmpty" hidden>No student matches that search.</p>
+
+  <div class="sessions" id="roster">
+    {
+      sessionGroups.map((group) => (
+        <details class="session" open data-group>
+          <summary>
+            <span>Batch {group.session}</span>
+            <span class="count num">{group.count.toLocaleString("en-IN")}</span>
+          </summary>
+
+          <div class="branches">
+            {group.branches.map((branch) => (
+              <div class="branch" data-group>
+                <h2 class="branch-head">
+                  <span>{branch.label}</span>
+                  <span class="count num">{branch.students.length.toLocaleString("en-IN")}</span>
+                </h2>
+
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="col-index">No.</th>
+                        <th scope="col">Roll no.</th>
+                        <th scope="col">Reg no.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col" class="col-section">Section</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {branch.students.map((student, index) => (
+                        <tr data-search={searchText(student)}>
+                          <td class="col-index num">{index + 1}</td>
+                          <td class="mono">{student.rollNo ?? "—"}</td>
+                          <td class="mono">
+                            {student.regNo}
+                            {student.provisionalReg && <span class="prov">prov.</span>}
+                          </td>
+                          <td class="name">{student.name}</td>
+                          <td class="col-section num">{student.section ?? "—"}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
+          </div>
+        </details>
+      ))
+    }
+  </div>
+
+  <style>
+    .back {
+      margin: 0 0 var(--s2);
+      font-size: 0.78rem;
+    }
+
+    .back a {
+      color: var(--faint);
+      text-decoration: none;
+    }
+
+    .back a:hover {
+      color: var(--paper);
+    }
+
+    .search-wrap {
+      max-width: 24rem;
+      margin: var(--s5) 0 var(--s2);
+    }
+
+    .search-status {
+      margin: 0 0 var(--s3);
+      color: var(--faint);
+      font-size: 0.75rem;
+    }
+
+    .search-status:empty {
+      display: none;
+    }
+
+    .empty {
+      margin: 0 0 var(--s3);
+      color: var(--faint);
+      font-size: 0.9rem;
+    }
+
+    .sessions {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s4);
+    }
+
+    .session {
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .session summary {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--s3);
+      padding: var(--s3) 0;
+      color: var(--paper);
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .count {
+      color: var(--faint);
+      font-size: 0.72rem;
+    }
+
+    .branches {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s4);
+      padding-bottom: var(--s4);
+    }
+
+    .branch-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--s3);
+      margin-bottom: var(--s2);
+      color: var(--muted);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .table-wrap {
+      max-width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      margin: 0;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+    }
+
+    th {
+      padding: var(--s2) var(--s3);
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--line);
+      color: var(--faint);
+      font-size: 0.66rem;
+      font-weight: 650;
+      letter-spacing: 0.06em;
+      text-align: left;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: var(--s2) var(--s3);
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      vertical-align: baseline;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .name {
+      color: var(--paper);
+      min-width: 9rem;
+    }
+
+    .col-index {
+      width: 3rem;
+      text-align: right;
+    }
+
+    .col-section {
+      width: 4.5rem;
+      text-align: right;
+    }
+
+    .prov {
+      margin-left: 0.35rem;
+      color: var(--faint);
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+  </style>
+
+  <script>
+    const searchInput = document.getElementById("rosterSearch") as HTMLInputElement | null;
+    const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>("#roster tbody tr"));
+    const index = rows.map((row) => (row.dataset.search ?? "").toLowerCase());
+    const status = document.getElementById("rosterStatus");
+    const empty = document.getElementById("rosterEmpty");
+    const branches = Array.from(document.querySelectorAll<HTMLElement>("#roster .branch[data-group]"));
+    const sessions = Array.from(document.querySelectorAll<HTMLElement>("#roster details[data-group]"));
+
+    const format = (count: number) => count.toLocaleString("en-IN");
+
+    function applyFilter(raw: string) {
+      const query = raw.trim().toLowerCase();
+      let visible = 0;
+
+      for (let i = 0; i < rows.length; i++) {
+        const match = query === "" || index[i].includes(query);
+        rows[i].hidden = !match;
+        if (match) visible++;
+      }
+
+      for (const branch of branches) {
+        branch.hidden = branch.querySelector("tbody tr:not([hidden])") === null;
+      }
+
+      for (const session of sessions) {
+        session.hidden = session.querySelector(".branch[data-group]:not([hidden])") === null;
+      }
+
+      if (status) {
+        // At rest the header already states the size of the register; the live
+        // line only speaks while a filter is narrowing it.
+        status.textContent =
+          query === ""
+            ? ""
+            : `${format(visible)} ${visible === 1 ? "student" : "students"}`;
+      }
+      if (empty) {
+        empty.hidden = visible > 0;
+      }
+    }
+
+    searchInput?.addEventListener("input", (event) => {
+      applyFilter((event.target as HTMLInputElement).value);
+    });
+
+    applyFilter("");
+  </script>
+</Layout>

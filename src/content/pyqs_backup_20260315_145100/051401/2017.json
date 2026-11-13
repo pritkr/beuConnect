@@ -1,0 +1,327 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2017",
+    "subject": "OBJECT ORIENTED PROGRAMMING",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051401",
+    "year": 2017,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this Paper.",
+    "Attempt Five questions in all.",
+    "Question No. 1 is Compulsory.",
+    "All questions carry equal marks."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any Seven questions from this:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "The address of a variable temp of type float is",
+              "options": [
+                "*temp",
+                "&temp",
+                "Float & temp",
+                "float temp&"
+              ],
+              "answer": "B",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "The process of building new classes from existing one is called ________.",
+              "options": [
+                "Polymorphism",
+                "Structure",
+                "Inheritance",
+                "Cascading"
+              ],
+              "answer": "C",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "An array element is accessed using",
+              "options": [
+                "a FIFO approach",
+                "an index number",
+                "the operator",
+                "a member name"
+              ],
+              "answer": "B",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "If there is a pointer p to object of a base class and it contains the address of an object of a derived class and both classes contain a virtual member function abc(), then the statement p->abc(); will cause the version of abc() in the ________ class to be executed.",
+              "options": [
+                "Base Class",
+                "Derived class",
+                "Produces compile time error",
+                "Produces runtime error"
+              ],
+              "answer": "B",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Overloading a postfix increment operator by means of a member function takes",
+              "options": [
+                "no arguments",
+                "one argument",
+                "two argument",
+                "three argument"
+              ],
+              "answer": "B",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "What will be the output of the following program?\n```cpp\n#include<iostream.h>\nvoid main() {\n    float x=5, y=2; int result;\n    result=x%y; cout<<result;\n}\n```",
+              "options": [
+                "1",
+                "1.0",
+                "Error message",
+                "2.5"
+              ],
+              "answer": "C",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "Member functions, when defined within the class specification:",
+              "options": [
+                "are always inline",
+                "are not inline",
+                "are inline by default, unless they are too big or too complicated.",
+                "are not inline by default"
+              ],
+              "answer": "C",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "An exception is caused by",
+              "options": [
+                "a runtime error",
+                "a syntax error",
+                "a problem in the operating system",
+                "a hardware problem"
+              ],
+              "answer": "A",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "Which of the following expressions is illegal?",
+              "options": [
+                "(10 6)",
+                "(false && true)",
+                "bool (x) = (bool) 10;",
+                "float y = 12.67;"
+              ],
+              "answer": "A",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "What is the output of given code fragment?\n```cpp\nint f=1, i=2; while(++i<5)\nf*=i;\ncount<<f;\n```",
+              "options": [
+                "12",
+                "24",
+                "6",
+                "3"
+              ],
+              "answer": "A",
+              "id": "1_sub",
+              "marks": null
+            }
+          ],
+          "id": "1"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the importance of using friend function in operator overloading with the help of an example.",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is a default argument and constant argument? Explain each with an example.",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ],
+          "id": "2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain a pure virtual function with an example.",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is function template? Give an example of it. Also differentiate between template class and class template.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ],
+          "id": "3",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "How does inheritance influences the working of constructor and destructor? Give the following set of definitions\n```cpp\nclass x { };\nclass y: public x { };\nclass z: public y { };\nz obj;\n```",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "Write a program to read three numbers $x, y$ and $z$ and evaluate $R$ given by $R = z/(x-y)$. Use exception handling to throw an exception in case division by zero is attempted.",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ],
+          "id": "4",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain the use of this pointer with an example. Explain what happens when a pointer is deleted twice.",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is downcast? Explain why and when do we use protected instead or private.",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ],
+          "id": "5",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is a friend function? Explain the advantages of using friend classes.",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is C-string? Give an example in support of your answer. Also explain the problem associated with C-string.",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ],
+          "id": "6",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is a container class? What are the types of container classes?",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "Create an array that can hold ten integers, and get input form user. Display those values on the screen, and then prompt the user for an integer. Search though the array, and count the number of times the item is found.",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ],
+          "id": "7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is a variable? Write rules for defining a variable in C++. Also explain different types of storage classes in C++.",
+              "marks": 7,
+              "id": "8_sub"
+            },
+            {
+              "number": "b",
+              "text": "What is encapsulation? What are its advantages? How can encapsulation are enforced in C++?",
+              "marks": 7,
+              "id": "8_sub"
+            }
+          ],
+          "id": "8",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Differentiate the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Pointer to constant vs pointer constant",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Inspector vs Mutator",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Vectors vs Dequeues",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Realloc() vs free()",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "id": "9"
+        }
+      ]
+    }
+  ]
+}

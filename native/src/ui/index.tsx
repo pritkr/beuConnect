@@ -31,11 +31,14 @@
  * and leave the warning alone.
  */
 
-import { Text, View, Scroll, Canvas, cleanup, token, type JSX } from "nsh";
+import { Text, View, Scroll, Canvas, keyboardFrame, token, type JSX } from "nsh";
 import { Input } from "nsh/base";
 
 import { FeedbackFooter } from "../features/feedback/footer";
 import { Icon, type IconName } from "./icons";
+
+export { scrollAnimated } from "./motion";
+export { Enter } from "./enter";
 
 export type Children = JSX.Element | JSX.Element[] | string | number | false | null | undefined;
 
@@ -104,7 +107,11 @@ export function Row(props: {
   const interactive = typeof props.onPress === "function";
   return (
     <View
-      class={`flex-row items-center gap-3 ${interactive ? "min-h-11" : ""} ${props.class ?? ""}`}
+      class={`flex-row items-center gap-3 ${
+        interactive
+          ? "min-h-11 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted focus:ring-2 focus:ring-ring"
+          : ""
+      } ${props.class ?? ""}`}
       onPress={props.onPress}
       role={(props.role ?? (interactive ? "button" : undefined)) as never}
       accessibilityLabel={props.label ?? (interactive ? textLabel(props.children) : undefined)}
@@ -126,13 +133,34 @@ export function Spacer(props: { size?: number }) {
   return <View style={{ height: props.size ?? 8 }} />;
 }
 
+/**
+ * Keeps its content above the software keyboard.
+ *
+ * A sheet sits on the root view, so the keyboard covers it unless the content
+ * lifts by exactly the keyboard's height. `keyboardFrame().height` reports that
+ * height; this reserves it as a trailing spacer, which is what a platform
+ * "padding" avoidance does without moving the sheet's own background. It is a
+ * spacer rather than a padding change so the sheet's drag gesture still starts
+ * at the sheet edge.
+ */
+export function KeyboardAvoidingView(props: { children?: Children; class?: string }) {
+  return (
+    <View class={props.class}>
+      {props.children}
+      {() =>
+        keyboardFrame().height > 0 ? <View style={{ height: keyboardFrame().height }} /> : null
+      }
+    </View>
+  );
+}
+
 /* -------------------------------------------------------------------- text */
 
 export function Title(props: { children?: Children; class?: string; numberOfLines?: number }) {
   return (
     <Text
       class={`text-2xl font-bold tracking-tight text-foreground ${props.class ?? ""}`}
-      numberOfLines={props.numberOfLines}
+      style={{ numberOfLines: props.numberOfLines }}
     >
       {props.children}
     </Text>
@@ -141,7 +169,7 @@ export function Title(props: { children?: Children; class?: string; numberOfLine
 
 export function Subtitle(props: { children?: Children; class?: string; numberOfLines?: number }) {
   return (
-    <Text class={`text-[15px] leading-6 text-muted-foreground ${props.class ?? ""}`} numberOfLines={props.numberOfLines}>
+    <Text class={`text-[15px] leading-6 text-muted-foreground ${props.class ?? ""}`} style={{ numberOfLines: props.numberOfLines }}>
       {props.children}
     </Text>
   );
@@ -149,7 +177,7 @@ export function Subtitle(props: { children?: Children; class?: string; numberOfL
 
 export function Muted(props: { children?: Children; class?: string; numberOfLines?: number }) {
   return (
-    <Text class={`text-xs text-muted-foreground ${props.class ?? ""}`} numberOfLines={props.numberOfLines}>
+    <Text class={`text-xs text-muted-foreground ${props.class ?? ""}`} style={{ numberOfLines: props.numberOfLines }}>
       {props.children}
     </Text>
   );
@@ -169,7 +197,7 @@ export function Label(props: { children?: Children; class?: string; role?: "head
 
 export function Mono(props: { children?: Children; class?: string; numberOfLines?: number }) {
   return (
-    <Text class={`font-mono text-[13px] text-foreground ${props.class ?? ""}`} numberOfLines={props.numberOfLines}>
+    <Text class={`font-mono text-[13px] text-foreground ${props.class ?? ""}`} style={{ numberOfLines: props.numberOfLines }}>
       {props.children}
     </Text>
   );
@@ -183,7 +211,7 @@ export function Mono(props: { children?: Children; class?: string; numberOfLines
 export function ListBar(props: { title: string; meta?: string; class?: string }) {
   return (
     <View class={`flex-row items-baseline justify-between gap-2 border-b border-border bg-card px-4 py-2.5 ${props.class ?? ""}`}>
-      <Text class="flex-1 text-[14px] font-semibold tracking-tight text-foreground" numberOfLines={1}>
+      <Text class="flex-1 text-[14px] font-semibold tracking-tight text-foreground" style={{ numberOfLines: 1 }}>
         {props.title}
       </Text>
       {props.meta ? <Muted class="text-[11px] tabular-nums">{props.meta}</Muted> : null}
@@ -205,7 +233,9 @@ export function Card(props: {
   return (
     <View
       class={`rounded-3xl border bg-card p-4 ${interactive ? "min-h-11 border-border-strong" : "border-border"} ${
-        interactive ? "active:scale-[0.985] active:bg-muted focus:ring-2 focus:ring-ring" : ""
+        interactive
+          ? "active:bg-muted focus:ring-2 focus:ring-ring transition-colors duration-150 ease-out motion-reduce:transition-none"
+          : ""
       } ${props.class ?? ""}`}
       testID={props.testID}
       onPress={props.onPress}
@@ -258,12 +288,12 @@ export function SectionHeader(props: {
       {props.trailing ? <View>{props.trailing}</View> : null}
       {props.action ? (
         <View
-          class="-mr-3 min-h-11 justify-center rounded-full px-3 active:bg-muted focus:ring-2 focus:ring-ring"
+          class="-mr-3 min-h-11 justify-center rounded-full px-3 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted focus:ring-2 focus:ring-ring"
           onPress={props.onAction}
           role="button"
           accessibilityLabel={props.action}
         >
-          <Text class="text-[13px] font-semibold text-primary-ink" numberOfLines={1}>
+          <Text class="text-[13px] font-semibold text-primary-ink" style={{ numberOfLines: 1 }}>
             {props.action}
           </Text>
         </View>
@@ -302,8 +332,8 @@ export function Chip(props: {
     active ? "text-background" : props.tone === "mint" ? "text-accent-ink" : "text-foreground";
   return (
     <View
-      class={`min-h-11 flex-row items-center rounded-full border px-4 ${surface(props.active === true)} ${
-        interactive ? "active:opacity-80 focus:ring-2 focus:ring-ring" : ""
+      class={`min-h-11 flex-row items-center gap-2 rounded-full border px-4 ${surface(props.active === true)} ${
+        interactive ? "active:opacity-80 focus:ring-2 focus:ring-ring transition-opacity duration-150 ease-out motion-reduce:transition-none" : ""
       } ${props.class ?? ""}`}
       onPress={props.onPress}
       role={interactive ? "button" : undefined}
@@ -314,8 +344,8 @@ export function Chip(props: {
         <Icon name={props.icon} size={14} solid={props.iconSolid} class={ink(props.active === true)} />
       ) : null}
       <Text
-        class={`text-[13px] ${props.active === true ? "font-bold" : "font-semibold"} ${ink(props.active === true)}`}
-        numberOfLines={1}
+        class={`text-[13px] font-semibold ${ink(props.active === true)}`}
+        style={{ numberOfLines: 1 }}
       >
         {props.children}
       </Text>
@@ -341,14 +371,14 @@ export function Check(props: {
 }) {
   return (
     <View
-      class={`h-11 w-11 items-center justify-center rounded-xl active:opacity-60 focus:ring-2 focus:ring-ring ${props.class ?? ""}`}
+      class={`h-11 w-11 items-center justify-center rounded-xl active:scale-95 transition-transform duration-150 ease-out motion-reduce:transition-none focus:ring-2 focus:ring-ring ${props.class ?? ""}`}
       onPress={props.onPress}
       role="checkbox"
       accessibilityState={{ checked: props.checked }}
       accessibilityLabel={props.label}
     >
       <View
-        class={`h-6 w-6 items-center justify-center rounded-[7px] border-2 ${
+        class={`h-6 w-6 items-center justify-center rounded-[7px] border-2 transition-colors duration-150 motion-reduce:transition-none ${
           props.checked ? "border-accent bg-accent" : "border-border-strong bg-card"
         }`}
       >
@@ -398,7 +428,7 @@ export function Btn(props: {
   return (
     <View
       class={`min-h-11 flex-row items-center justify-center gap-2 rounded-full px-5 py-2.5 ${styles[variant]} ${
-        props.disabled ? "opacity-40" : "active:scale-[0.98] focus:ring-2 focus:ring-ring"
+        props.disabled ? "opacity-40" : "transition-colors duration-150 ease-out motion-reduce:transition-none focus:ring-2 focus:ring-ring"
       } ${props.class ?? ""}`}
       testID={props.testID}
       onPress={props.disabled ? undefined : props.onPress}
@@ -436,7 +466,7 @@ export function Field(props: {
         <Input
           class="min-h-12 flex-1 bg-transparent text-[16px] text-foreground placeholder:text-muted-foreground"
           value={props.value}
-          onChange={props.onChange}
+          onChange={({ value }) => props.onChange(value)}
           placeholder={props.placeholder}
           accessibilityLabel={props.label ?? props.placeholder}
           keyboardType={props.keyboard ?? "default"}
@@ -471,7 +501,7 @@ export function Search(props: {
       <Input
         class="min-h-11 flex-1 bg-transparent text-[15px] text-foreground placeholder:text-muted-foreground"
         value={props.value}
-        onChange={props.onChange}
+        onChange={({ value }) => props.onChange(value)}
         placeholder={props.placeholder ?? "Search"}
         accessibilityLabel={props.placeholder ?? "Search"}
         autoCorrect={false}
@@ -480,7 +510,7 @@ export function Search(props: {
       />
       {props.value ? (
         <View
-          class="-mr-3 h-11 w-11 items-center justify-center rounded-full active:bg-muted focus:ring-2 focus:ring-ring"
+          class="-mr-3 h-11 w-11 items-center justify-center rounded-full transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted focus:ring-2 focus:ring-ring"
           onPress={() => props.onChange("")}
           role="button"
           accessibilityLabel="Clear search"
@@ -497,7 +527,7 @@ export function Search(props: {
 export function Skeleton(props: { w?: number; h?: number; class?: string }) {
   return (
     <View
-      class={`animate-pulse rounded-2xl bg-muted ${props.w === undefined ? "w-full" : ""} ${props.class ?? ""}`}
+      class={`motion-safe:animate-pulse rounded-2xl bg-muted ${props.w === undefined ? "w-full" : ""} ${props.class ?? ""}`}
       style={{ height: props.h ?? 16, width: props.w }}
     />
   );
@@ -560,7 +590,7 @@ export function Badge(props: { children?: Children; tone?: "ember" | "mint" | "a
   };
   return (
     <View class={`rounded-full px-2 py-0.5 ${map[tone]} ${props.class ?? ""}`}>
-      <Text class="text-[11px] font-semibold tracking-wide" numberOfLines={1}>
+      <Text class="text-[11px] font-semibold tracking-wide" style={{ numberOfLines: 1 }}>
         {props.children}
       </Text>
     </View>
@@ -590,7 +620,10 @@ export function Progress(props: {
       accessibilityValue={{ min: 0, max: 100, now: Math.round(pct(props.value)) }}
       accessibilityLabel={props.label ?? "Progress"}
     >
-      <View class={`h-full rounded-full ${fill}`} style={{ width: `${pct(props.value)}%` }} />
+      <View
+        class={`h-full w-full origin-left rounded-full ${fill} transition-transform duration-[220ms] ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none`}
+        style={{ transform: [{ scaleX: pct(props.value) / 100 }] }}
+      />
     </View>
   );
 }
@@ -611,7 +644,7 @@ export function Stat(props: {
     } ${props.class ?? ""}`}>
       <Text
         class={`text-[30px] font-bold tabular-nums tracking-tight ${ink}`}
-        numberOfLines={1}
+        style={{ numberOfLines: 1 }}
         adjustsFontSizeToFit
         minimumFontScale={0.6}
       >
@@ -659,34 +692,16 @@ export function Ring(props: { value: number; size?: number; label?: string; tone
 /* ----------------------------------------------------------------- marquee */
 
 /**
- * A one-line auto-advancing ticker. Long strings and long lists of short
- * strings both work: the row scrolls itself every few seconds and can always
- * be dragged by hand, so it never traps a touch on a small phone.
+ * A one-line strip of short strings, horizontal and draggable. It never
+ * advances on its own: a ticker that moves while the student is reading takes
+ * the page away from them, and the row is already scrollable by hand.
  */
 export function Marquee(props: {
   items: string[];
   label?: string;
   onPressItem?: (item: string, index: number) => void;
   class?: string;
-  interval?: number;
 }) {
-  let node: { scrollTo?: (o: { x?: number; y?: number; animated?: boolean }) => void } | null = null;
-  let offset = 0;
-  let contentWidth = 0;
-  let viewport = 0;
-
-  const tick = () => {
-    if (!node || typeof node.scrollTo !== "function" || contentWidth <= viewport) return;
-    offset += Math.max(120, viewport * 0.7);
-    if (offset > contentWidth - viewport + 8) offset = 0;
-    node.scrollTo({ x: offset, animated: true });
-  };
-
-  if (typeof setInterval === "function") {
-    const timer = setInterval(tick, props.interval ?? 3600);
-    cleanup(() => clearInterval(timer));
-  }
-
   return (
     <View class={`flex-row items-center gap-2 overflow-hidden rounded-full border border-border bg-card pl-2 ${props.class ?? ""}`}>
       {props.label ? (
@@ -695,17 +710,11 @@ export function Marquee(props: {
         </View>
       ) : null}
       <Scroll
-        class="flex-1"
+        class="min-h-11 flex-1"
         horizontal
         bounces={false}
         scrollbar={false}
         contentClass="flex-row items-center gap-6 py-2.5 pr-4"
-        ref={(n: unknown) => {
-          node = n as unknown as typeof node;
-        }}
-        onLayout={(bounds) => {
-          viewport = bounds.size.width;
-        }}
       >
         {props.items.map((item, index) => (
           <View
@@ -718,16 +727,11 @@ export function Marquee(props: {
             hitSlop={props.onPressItem ? 8 : undefined}
           >
             <View class="h-1.5 w-1.5 rounded-full bg-primary/60" accessibilityElementsHidden />
-            <Text class="max-w-[260px] text-[13px] font-medium text-foreground" numberOfLines={1}>
+            <Text class="max-w-[260px] text-[13px] font-medium text-foreground" style={{ numberOfLines: 1 }}>
               {item}
             </Text>
           </View>
         ))}
-        <View
-          onLayout={(bounds) => {
-            contentWidth = Math.max(contentWidth, bounds.size.width);
-          }}
-        />
       </Scroll>
     </View>
   );

@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2016",
+    "subject": "SOFTWARE ENGINEERING",
+    "subject_slug": "software-engineering",
+    "subject_code": "051614",
+    "year": 2016,
+    "semester": 6,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven of the following as directed :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "What is a software prototype?",
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "A structure chart differs from a flowchart in which of the following ways?",
+              "options": [
+                "It is always difficult to identify different modules of the software from its flowchart representation",
+                "Data interchange among different modules is not presented in a flowchart",
+                "Sequential ordering of tasks inherent in a flowchart is suppressed in a structure chart",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "In the context of modular software design, which one of the following combinations is desirable?",
+              "options": [
+                "High cohesion and high coupling",
+                "High cohesion and low coupling",
+                "Low cohesion and high coupling",
+                "Low cohesion and low coupling"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "What is the importance of constructing DFDs in the context of a good software design?",
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "Which diagrams in UML capture the structural aspect of the system?",
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "External entities may appear at all levels of DFDs. Mark either True or False and justify your answer.",
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "If we increase the size of a software product by two times, then the time required to develop that software product would be double. Mark either True or False and justify your answer.",
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "text": "What is meant by domain modelling?",
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "A version and a release of a software product are synonyms. Mark either True or False and justify your answer.",
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "During project scheduling, resource allocation to different activities is done using which of the following representations?",
+              "options": [
+                "PERT chart",
+                "Activity network representation",
+                "Work breakdown structure",
+                "Gantt chart"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "text": "Explain the problems that might be faced by an organization if it does not follow any software life cycle model. Explain in detail the spiral model of software development highlighting at least two activities carried out in each phase of the model.",
+          "marks": 14
+        },
+        {
+          "id": "3",
+          "text": "Describe the basic characteristics of user interface design.",
+          "marks": 14
+        },
+        {
+          "id": "4",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "4a",
+              "text": "Explain equivalence class partitioning and boundary value analysis.",
+              "marks": 7
+            },
+            {
+              "id": "4b",
+              "text": "A company needs to develop digital signal processing software for one of its newest inventions. The software is expected to have 40,000 lines of code. The company needs to determine the effort in person-months needed to develop this software using the basic COCOMO model. The multiplicative factors for this model is given as 2.8 for the software development on embedded systems, while the exponentiation factor is given as 1.20. What is the estimated effort in person-months?",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "text": "Differentiate between cohesion and coupling, and explain their types in brief.",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "text": "What is UML? Explain in detail the nine types of diagram associated with it.",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "7a",
+              "text": "What are different approaches for debugging? Write down the general guidelines for performing effective debugging.",
+              "marks": 7
+            },
+            {
+              "id": "7b",
+              "text": "Explain in detail different approaches for performing black box testing.",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "text": "Answer the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "8a",
+              "text": "Write a short note on PERT charts. Explain when you should use PERT charts and when you should use Gantt charts while you are performing the duties of a project manager.",
+              "marks": 7
+            },
+            {
+              "id": "8b",
+              "text": "What are different metrics for software project size estimation? Point out the major shortcomings of lines of code (LOC) metric in order to use it as a software project size metric.",
+              "marks": 7
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "text": "What is the main purpose of SEI capability maturity model (SEI CMM)? Explain five different levels of SEI CMM model. How can SEI CMM model be used to improve the quality of software?",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "Database Management System",
+    "subject_slug": "database-management-system",
+    "subject_code": "105502",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer from the following (any seven) :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "The relational model feature is that there\n(i) is no need for primary key data\n(ii) is much more data independence than some other database models\n(iii) are explicit relationships among records\n(iv) are tables with many dimensions",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "b",
+              "text": "Which of the following operations is used if we are interested in only certain columns of a table?\n(i) PROJECTION\n(ii) SELECTION\n(iii) UNION\n(iv) JOIN",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "c",
+              "text": "Which of the following is the original purpose of SQL?\n(i) To specify the syntax and semantics of SQL data definition language\n(ii) To specify the syntax and semantics of SQL manipulation language\n(iii) To define the data structures\n(iv) All of the above",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "d",
+              "text": "Which of the following is true?\n(i) B+ tree allows only the rapid random access\n(ii) B+ tree allows only the rapid sequential access\n(iii) B+ tree allows rapid random access as well as rapid sequential access\n(iv) B+ tree allows rapid random access and slower sequential access",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "e",
+              "text": "Transaction processing is associated with everything below, *except*\n(i) conforming an action or triggering a response\n(ii) producing detailed summary or exception report\n(iii) recording a business activity\n(iv) maintaining a data",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "f",
+              "text": "Which of the following is used at the end of the view to reject the tuples which do not satisfy the condition in where clause?\n(i) With\n(ii) Check\n(iii) With check\n(iv) All of the above",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "g",
+              "text": "Many applications use ______ where two independent factors are used to identify a user.\n(i) Two-factor authentication\n(ii) Cross-site request forgery\n(iii) Cross-site scripting\n(iv) Cross-site scoring scripting",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "h",
+              "text": "______ allows a system administrator to associate a function with a relation; the function returns a predicate that must be added to any query that uses the relation.\n(i) OpenID\n(ii) Single-site system\n(iii) Security Assertion Markup Language (SAML)\n(iv) Virtual Private Database (VPD)",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "i",
+              "text": "The Object Query Language is which of the following?\n(i) Similar to SQL and uses a select-from-where structure\n(ii) Similar to SQL and uses a select-where structure\n(iii) Similar to SQL and uses a from-where structure\n(iv) Not similar to SQL",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "number": "j",
+              "text": "Which join refers to join records from the right table that have no matching key in the left table and are included in the result set?\n(i) Left outer join\n(ii) Right outer join\n(iii) Full outer join\n(iv) Half outer join",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) List five responsibilities of the database manager. For each responsibility, explain the problem that would arise if the responsibility were not discharged.\nb) Consider a two-dimensional integer array of size name that is to be used in your favourite programming language. Using the array as an example, illustrate the difference (i) between the three levels of data abstraction and (ii) between a schema and instances.",
+          "marks": 14,
+          "id": "2",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "List five responsibilities of the database manager. For each responsibility, explain the problem that would arise if the responsibility were not discharged.",
+              "marks": 7,
+              "id": "2_sub"
+            },
+            {
+              "number": "b",
+              "text": "Consider a two-dimensional integer array of size name that is to be used in your favourite programming language. Using the array as an example, illustrate the difference (i) between the three levels of data abstraction and (ii) between a schema and instances.",
+              "marks": 7,
+              "id": "2_sub"
+            }
+          ]
+        },
+        {
+          "text": "Construct an E-R diagram for a car insurance company that has a set of customers, each of whom owns one or more cars. Each car has associated with it zero to any number of recorded accidents.",
+          "marks": 14,
+          "id": "3"
+        },
+        {
+          "text": "a) What are DDL and DML? Explain with the help of examples.\nb) Explain the following operations with the help of examples : (i) Set of intersection operation (ii) Natural join operation (iii) Division operation",
+          "marks": 14,
+          "id": "4",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What are DDL and DML? Explain with the help of examples.",
+              "marks": 7,
+              "id": "4_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain the following operations with the help of examples : (i) Set of intersection operation (ii) Natural join operation (iii) Division operation",
+              "marks": 7,
+              "id": "4_sub"
+            }
+          ]
+        },
+        {
+          "text": "a) What are the differences between primary index and secondary index?\nb) How does the remapping of bad sectors by disk controllers affect data retrievals rates?",
+          "marks": 14,
+          "id": "5",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What are the differences between primary index and secondary index?",
+              "marks": 7,
+              "id": "5_sub"
+            },
+            {
+              "number": "b",
+              "text": "How does the remapping of bad sectors by disk controllers affect data retrievals rates?",
+              "marks": 7,
+              "id": "5_sub"
+            }
+          ]
+        },
+        {
+          "text": "Show that the two-phase locking protocol ensures conflict serializability and that transaction can be serialized according to their lock points.",
+          "marks": 14,
+          "id": "6"
+        },
+        {
+          "text": "a) Make a list of security concerns for a bank. For each item on your list, state whether this concern relates to physical security, human security, operating-system security or database security.\nb) Explain web and distributed database with the help of example.",
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Make a list of security concerns for a bank. For each item on your list, state whether this concern relates to physical security, human security, operating-system security or database security.",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain web and distributed database with the help of example.",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ]
+        },
+        {
+          "text": "Consider the following ordering schedule\u2014'S' of transactions:\nT1 : R(A); T1 : A:=A+5; T1 : commit; T2 : R(B); T2 : B:=B+5; T3 : R(C); T3:C:=C+5; T3 : C:=C+5; T4 : R(A); T4 : A:=A+5; T4 : R(D); T4 : D:=D+5; T4 : commit; T2 : commit; T3 : commit;\nLet the initial value of A=B=C=D=0. The system follows log-based recovery process of immediate database modification. The assumption is the concurrency control system uses strict 2PL, and all the transactions share a common disk buffer and single log. Explain what happens during the recovery process, if it occurs a failure at 'T2 : commit' statement.",
+          "marks": 14,
+          "id": "8"
+        },
+        {
+          "text": "Write a short note on any *one* of the following :\na) SQL injection\nb) Database recovery",
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "SQL injection",
+              "marks": 14,
+              "id": "9_sub"
+            },
+            {
+              "number": "b",
+              "text": "Database recovery",
+              "marks": 14,
+              "id": "9_sub"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

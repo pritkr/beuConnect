@@ -313,11 +313,11 @@ export async function askDestructive(title: string, description: string, confirm
       title,
       description,
       actions: [
-        { label: "Cancel", role: "cancel" },
-        { label: confirmLabel, role: "destructive" },
+        { id: "cancel", label: "Cancel", role: "cancel" },
+        { id: "confirm", label: confirmLabel, role: "destructive" },
       ],
     });
-    return choice === confirmLabel;
+    return choice.action === "confirm";
   } catch {
     return true;
   }

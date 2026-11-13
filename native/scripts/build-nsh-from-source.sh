@@ -28,7 +28,7 @@ ABI="${1:-arm64-v8a}"
 
 # The pinned upstream. A build from an arbitrary HEAD is not reproducible, so a
 # tag or commit is required, not a branch.
-NSH_REV="${NSH_REV:-v0.3.0}"
+NSH_REV="${NSH_REV:-v0.5.0}"
 
 find_nsh() {
   local candidate
@@ -46,7 +46,7 @@ if ! NSH_SRC="$(find_nsh)"; then
 build-nsh-from-source: no nsh checkout.
 Clone the pinned revision next to this repo, or point at one:
 
-  git clone --depth 1 --branch v0.3.0 https://github.com/longbridge/nsh ../nsh
+  git clone --depth 1 --branch v0.5.0 https://github.com/longbridge/nsh ../nsh
   NSH_SRC=../nsh ./scripts/build-nsh-from-source.sh
 EOF
   exit 1

@@ -4,7 +4,7 @@
  * Source of truth, in this order:
  *   1. `native/docs/BUILD_SPEC.md` — each area's top-level route.
  *   2. `native/src/app/tabbar.tsx` — the five tabs.
- *   3. `native/src/app/more.tsx` — the fifteen "More" entries (namespaced names:
+ *   3. `native/src/app/more.tsx` — the twenty "More" entries (namespaced names:
  *      `results.rank`, `tools.calculator`, `settings.about`, …).
  *
  * QA reads this; feature modules own registration. A name here that is not in
@@ -44,6 +44,13 @@ export const ROUTE_CONTRACT: RouteContract[] = [
   { name: "home", area: "home", entry: "tab", params: {}, owned: true },
   { name: "syllabus", area: "syllabus", entry: "tab", params: { branch: "cse", sem: 3 }, owned: true },
   { name: "results", area: "results", entry: "tab", params: {}, owned: true },
+  {
+    name: "results.table",
+    area: "results",
+    entry: "more",
+    params: { batch: "24", branch: "105", sem: 2, reg: "24105157010" },
+    owned: true,
+  },
   { name: "tools", area: "tools", entry: "tab", params: {}, owned: true },
   { name: "pyqs", area: "pyqs", entry: "more", params: {}, owned: true },
   { name: "notes", area: "notes", entry: "more", params: {}, owned: true },
@@ -55,8 +62,8 @@ export const ROUTE_CONTRACT: RouteContract[] = [
     owned: true,
   },
   {
-    name: "notes.file",
-    area: "notes",
+    name: "pyqs.pdf",
+    area: "pyqs",
     entry: "notes.subject",
     params: { url: "https://beu.prit.eu.org/notes/cse/3/dsa-unit-1.pdf", title: "DSA — Unit 1" },
     owned: true,
@@ -118,6 +125,8 @@ export const MORE_ENTRIES: { label: string; route: string }[] = [
   { label: "University rank", route: "results.rank" },
   { label: "Merit list", route: "results.merit" },
   { label: "Result battle", route: "results.battle" },
+  { label: "Student register", route: "students" },
+  { label: "Result table", route: "results.table" },
   { label: "Attendance", route: "tools.attendance" },
   { label: "Routine", route: "tools.routine" },
   { label: "Holidays", route: "tools.holidays" },

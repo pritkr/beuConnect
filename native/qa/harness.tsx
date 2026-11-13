@@ -4,12 +4,13 @@
  * The shell cannot deep-link, so tests hand the route to this harness through
  * storage: `openRoute("results", { reg, sem })`.
  *
- * **Curated on purpose.** This file imports the route arrays of the areas the
- * suite actually mounts — not `src/app/registry.tsx`. A feature that is
- * mid-refactor and does not compile (a missing export, a renamed helper) can
- * then no longer take the whole suite down with it: the damage stops at the
- * tests that mount that area, and the failure names the route. The app's real
- * merge — every feature, duplicates included — is `qa/registry.test.ts`'s job.
+ * **Every merged area, imported through `qa/harness-routes.ts`** — not
+ * `src/app/registry.tsx`, so this module stays a plain route host rather than a
+ * second shell. Keeping the list in its own file lets `qa/registry.test.ts`
+ * compare it with `ALL_ROUTES` without booting a second app, and stops the
+ * harness drifting into testing a route the shell cannot show (or missing one
+ * that it can). A module that exists but is not merged must not be added there:
+ * it would give a mount test a green screen the app cannot reach.
  *
  * The recording `Nav` mirrors every push/replace into storage (`qa.navlog`)
  * because a test can read `app.storage()` but not the app module's variables.
@@ -19,26 +20,10 @@
 import { Text, View, mount, resource, Storage } from "nsh";
 
 import type { Nav, RouteDef, RouteParams } from "../src/app/router";
-import { feedbackRoutes } from "../src/features/feedback";
-import { homeRoutes } from "../src/features/home";
-import { notesRoutes } from "../src/features/notes";
-import { noticesRoutes } from "../src/features/notices";
-import { onboardingRoutes } from "../src/features/onboarding";
-import { resultsRoutes } from "../src/features/results";
-import { searchRoutes } from "../src/features/search";
-import { syllabusRoutes } from "../src/features/syllabus";
+import { HARNESS_ROUTES } from "./harness-routes";
 
-/** Every route this harness can mount. Add an area here when a test needs it. */
-const ROUTES: RouteDef[] = [
-  ...feedbackRoutes,
-  ...homeRoutes,
-  ...notesRoutes,
-  ...noticesRoutes,
-  ...onboardingRoutes,
-  ...resultsRoutes,
-  ...searchRoutes,
-  ...syllabusRoutes,
-];
+/** Every route this harness can mount. Add an area to `harness-routes.ts`. */
+const ROUTES: RouteDef[] = HARNESS_ROUTES;
 
 const ROUTE_MAP: Record<string, RouteDef> = Object.fromEntries(
   ROUTES.map((definition) => [definition.name, definition]),

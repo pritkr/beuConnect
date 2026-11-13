@@ -17,6 +17,7 @@ import { platform, signal } from "nsh";
 
 import type { Route } from "../../app/router";
 import { APP_BUILD, APP_VERSION } from "../../lib/app-info";
+import { EVENTS, track } from "../../lib/analytics";
 import { NetError, SITE, postJson, readStore, writeStore } from "../../lib/net";
 import { branchShort, collegeShortLabel, useProfile } from "../settings/profile";
 import type { FeedbackDraft, FeedbackMemory, FeedbackType } from "./state";
@@ -307,6 +308,7 @@ export async function sendFeedback(): Promise<void> {
     }));
     void writeStore(MEMORY_KEY, memory());
     status.set("sent");
+    track(EVENTS.feedbackSubmit, { type: current.type });
   } catch (error) {
     status.set("idle");
     failure.set(sendFailure(error));

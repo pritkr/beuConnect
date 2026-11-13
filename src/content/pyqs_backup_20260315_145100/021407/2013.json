@@ -1,0 +1,289 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2013",
+    "subject": "Thermodynamics",
+    "subject_slug": "thermodynamics",
+    "subject_code": "021407",
+    "year": 2013,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "In case of free expansion between state-1 and state-2, which of the following is correct considering no heat interaction?",
+          "options": [
+            "\\( U_1 = U_2 \\)",
+            "\\( W_{1-2} = 0 \\)",
+            "\\( Q_{1-2} = 0 \\)",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "The latent heat of vaporisation with increase in pressure of water",
+          "options": [
+            "increases",
+            "remains constant",
+            "decreases",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "As differentials heat and work would be described mathematically as",
+          "options": [
+            "inexact",
+            "exact",
+            "discontinuity",
+            "point function"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "Heat is being supplied to air in a cylinder fitted with a frictionless piston held by a constant weight, the process is",
+          "options": [
+            "isochoric",
+            "isobaric",
+            "adiabatic",
+            "isothermal"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "Expansion of hot gases in an IC engine can be approximated to an",
+          "options": [
+            "isochoric",
+            "isobaric",
+            "adiabatic",
+            "isothermal"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "A refrigerator and a heat pump operate between same temperature limits. If the COP of refrigerator is 4, then the COP of heat pump is",
+          "options": [
+            "3",
+            "4",
+            "4.4",
+            "5"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "A relation of vapour pressure to enthalpy of vaporisation is expressed in",
+          "options": [
+            "van der Waals equation",
+            "Maxwell relation",
+            "Carrier equation",
+            "Clausius-Clapeyron equation"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "For same maximum pressure and temperature among Otto, diesel and dual cycles",
+          "options": [
+            "diesel cycle is most efficient",
+            "Otto cycle is most efficient",
+            "dual cycle is most efficient",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "Thermal efficiency of Rankine cycle can be improved by steam",
+          "options": [
+            "reheating",
+            "superheating",
+            "regeneration",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "The process of removing moisture from air at constant dry-bulb temperature is known as",
+          "options": [
+            "sensible heating",
+            "sensible cooling",
+            "dehumidification",
+            "humidification"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "Define internal energy. Show that internal energy is a property of a system.",
+          "total_marks": 6
+        },
+        {
+          "id": "q2_b",
+          "type": "numerical",
+          "text": "A cylinder contains \\( 0.12 \\text{ m}^3 \\) of air at 1 bar and \\( 90^\\circ\\text{C} \\). It is compressed to \\( 0.03 \\text{ m}^3 \\). The final pressure being 6 bar. Find the index of compression, increase in internal energy and heat transferred. Take \\( R = 0.287 \\text{ kJ/kg}\\cdot\\text{K} \\) and \\( C_v = 0.717 \\text{ kJ/kg}\\cdot\\text{K} \\).",
+          "total_marks": 8
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "Prove that the Kelvin-Planck and Clausius statement of the second law of thermodynamics are equivalent to each other.",
+          "total_marks": 6
+        },
+        {
+          "id": "q3_b",
+          "type": "numerical",
+          "text": "A reversed Carnot cycle operating as a refrigerator has a refrigerating capacity of 100 kJ/s while operating between temperature limits of \\( -20^\\circ\\text{C} \\) and \\( 35^\\circ\\text{C} \\). Determine (i) power input and (ii) COP. What would be its efficiency if it runs as an engine?",
+          "total_marks": 8
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "State and prove Clausius inequality.",
+          "total_marks": 7
+        },
+        {
+          "id": "q4_b",
+          "type": "numerical",
+          "text": "During isothermal heat addition process of a Carnot cycle, 800 kJ heat is added to the working fluid from a source of \\( 527^\\circ\\text{C} \\). Determine (i) change in entropy of the working fluid, (ii) change in entropy of the source and (iii) total entropy change during the process.",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "Define the following:",
+          "sub_questions": [
+            {
+              "id": "q5_ai",
+              "text": "Pure substance"
+            },
+            {
+              "id": "q5_aii",
+              "text": "Saturation state"
+            },
+            {
+              "id": "q5_aiii",
+              "text": "Triple point and critical point"
+            }
+          ],
+          "total_marks": 6
+        },
+        {
+          "id": "q5_b",
+          "type": "numerical",
+          "text": "A vessel of volume \\( 0.04 \\text{ m}^3 \\) contains a mixture of saturated water and saturated steam at a temperature of \\( 250^\\circ\\text{C} \\). The mass of liquid is 9 kg. Find the pressure, the mass, the specific volume, the enthalpy, the entropy and the internal energy.",
+          "total_marks": 8
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6",
+          "type": "numerical",
+          "text": "In an air-standard dual cycle, the pressure and temperature at beginning of compression are 1 bar and \\( 57^\\circ\\text{C} \\) respectively. The heat supplied in the cycle is 1250 kJ/kg, two-third of this being added at constant volume and rest at constant pressure. If the compression ratio is 16, determine the air-standard efficiency.",
+          "total_marks": 14
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "Give limitation of Carnot vapour power cycle and explain how Rankine cycle helps in overcoming them.",
+          "total_marks": 5
+        },
+        {
+          "id": "q7_b",
+          "type": "numerical",
+          "text": "A steam power plant running on Rankine cycle has steam entering HP turbine at 20 MPa, \\( 500^\\circ\\text{C} \\) and leaving LP turbine at 90% dryness. Considering condenser pressure of 0.005 MPa and reheating occurring up to the temperature of \\( 500^\\circ\\text{C} \\), determine the thermal efficiency of the cycle.",
+          "total_marks": 9
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "What do you understand by dry-bulb and wet-bulb temperatures? When do d.b.t., w.b.t. and d.p.t. become equal?",
+          "total_marks": 6
+        },
+        {
+          "id": "q8_b",
+          "type": "numerical",
+          "text": "\\( 10 \\text{ m}^3/\\text{min} \\) of air at 1 atm and \\( 20^\\circ\\text{C} \\) with 90% RH is mixed with \\( 20 \\text{ m}^3/\\text{min} \\) of air at 1 atm and \\( 40^\\circ\\text{C} \\) with 20% RH. Calculate the resulting state of mixture.",
+          "total_marks": 8
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve the following :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "Explain Maxwell relation in thermodynamics.",
+          "total_marks": 6
+        },
+        {
+          "id": "q9_b",
+          "type": "numerical",
+          "text": "A gaseous mixture consists of 1 kg of oxygen and 2 kg of nitrogen at a pressure of 150 kPa and a temperature of \\( 20^\\circ\\text{C} \\). Determine the change in internal energy and enthalpy of the mixture when the mixture is heated to a temperature of \\( 100^\\circ\\text{C} \\) (i) at constant volume and (ii) at constant pressure.",
+          "total_marks": 8
+        }
+      ]
+    }
+  ]
+}

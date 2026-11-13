@@ -84,7 +84,6 @@ export const branchMap: Record<string, string> = {
 	"106": "Information Technology",
 	"107": "Leather Technology Engineering",
 	"110": "Electrical & Electronics Engineering",
-	"161": "Mechatronics Engineering",
 };
 
 export const branchPathMap: Record<string, string> = {
@@ -105,14 +104,6 @@ export const branchPathMap: Record<string, string> = {
 	"163": "ece",
 };
 
-const batchToSemMap: Record<number, number> = {
-	2025: 2,
-	2024: 4,
-	2023: 5,
-	2022: 8,
-	2021: 8,
-};
-
 export function normalizeRegNo(regNo: string): string {
 	return regNo.trim().toUpperCase();
 }
@@ -123,10 +114,30 @@ export function inferLateralEntry(numericReg: string): boolean {
 	return Number.isFinite(rollNumber) && rollNumber >= 900;
 }
 
-export function inferCurrentSemester(batchYear: number): number {
-	const mappedSemester = batchToSemMap[batchYear];
-	if (mappedSemester !== undefined) return mappedSemester;
-	return batchYear < 2021 ? 8 : 1;
+/**
+ * Semester a batch is sitting in right now.
+ *
+ * BEU runs on a July–June academic year: odd semesters Jul–Dec, even semesters
+ * Jan–Jun. A batch admitted in July N is in semester 1 that autumn, semester 2
+ * the following spring, and so on, capped at 8. The 2024 batch is the
+ * exception: those admissions ran late and their first semester began in
+ * January 2025. Counting sessions from that start is what a student is
+ * actually attending, which no published roster can say — the roster only knows
+ * what BEU has already published, and publication lags the class.
+ */
+export function inferCurrentSemester(
+	batchYear: number,
+	now: Date = new Date(),
+): number {
+	if (!Number.isFinite(batchYear)) return 1;
+
+	// A session is its year and half: July is the odd semester, January the
+	// even one, so January 2025 → 4050 and July 2026 → 4053.
+	const session = (when: Date): number =>
+		when.getFullYear() * 2 + (when.getMonth() >= 6 ? 1 : 0);
+	const first = batchYear === 2024 ? (batchYear + 1) * 2 : batchYear * 2 + 1;
+
+	return Math.min(8, Math.max(1, session(now) - first + 1));
 }
 
 export function parseBeuRegNo(regNo: string): ParsedBeuRegNo | null {

@@ -1,6 +1,6 @@
 import { Text, View } from "nsh";
 import type { Nav } from "./router";
-import { Body, Card, Divider, Label, Row, Screen, SectionHeader, Title } from "../ui";
+import { Body, Card, Divider, Row, Screen, SectionHeader } from "../ui";
 import { Icon, type IconName } from "../ui/icons";
 import { APP_VERSION } from "../lib/app-info";
 
@@ -44,7 +44,9 @@ const GROUPS: Group[] = [
       { title: "University rank", hint: "Where you stand, branch and college", route: "results.rank", icon: "medal" },
       { title: "Merit list", hint: "Toppers by branch and semester", route: "results.merit", icon: "trophy" },
       { title: "Result battle", hint: "Compare two results, subject by subject", route: "results.battle", icon: "git-compare" },
+      { title: "Student register", hint: "GEC Sheikhpura's students, college by college", route: "students", icon: "group" },
       { title: "SGPA / CGPA calculator", hint: "Grades in, percentage out", route: "tools.calculator", icon: "calculator" },
+      { title: "Result table", hint: "Branch rosters, ranked by CGPA", route: "results.table", icon: "table" },
       { title: "Data browser", hint: "Every published dataset, searchable", route: "data", icon: "data" },
     ],
   },
@@ -73,11 +75,6 @@ export function MoreScreen(props: { nav: Nav }) {
   return (
     <Screen>
       <Body>
-        <View class="gap-1 pt-1">
-          <Label>BEUConnect</Label>
-          <Title class="text-[30px]">More</Title>
-        </View>
-
         <View class="gap-5">
           {GROUPS.map((group) => (
             <View class="gap-2">
@@ -95,7 +92,7 @@ export function MoreScreen(props: { nav: Nav }) {
                       <Icon name={item.icon} size={19} class="text-muted-foreground" />
                     </View>
                     <View class="flex-1 gap-0.5">
-                      <Text class="text-[15px] font-semibold text-foreground" numberOfLines={2}>
+                      <Text class="text-[15px] font-semibold text-foreground" style={{ numberOfLines: 2 }}>
                         {item.title}
                       </Text>
                     </View>
@@ -116,7 +113,7 @@ export function MoreScreen(props: { nav: Nav }) {
         <Divider class="mt-2" />
         <Row class="justify-between gap-3 px-1 pb-2">
           <Text class="flex-1 text-[12px] leading-4 text-muted-foreground">Made for Bihar Engineering University</Text>
-          <Text class="shrink-0 text-[12px] tabular-nums text-muted-foreground" numberOfLines={1}>
+          <Text class="shrink-0 text-[12px] tabular-nums text-muted-foreground" style={{ numberOfLines: 1 }}>
             v{APP_VERSION}
           </Text>
         </Row>

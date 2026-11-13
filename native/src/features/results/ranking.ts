@@ -58,3 +58,59 @@ export function missingSentence(unranked: number): string {
   if (unranked <= 0) return "";
   return `${students(unranked)} in this table have no CGPA, so they are not ranked.`;
 }
+
+/* ------------------------------------------------------------ distribution */
+
+/** BEU grades on a 10-point scale; a value outside it is not a CGPA. */
+const SCALE = 10;
+
+/** One column of the CGPA spread: `[from, to)` on the 10-point scale. */
+export interface CgpaBand {
+  /** Lower edge, inclusive. */
+  from: number;
+  /** Upper edge, exclusive; the last band also holds a perfect 10. */
+  to: number;
+  /** Ranked students whose CGPA falls in this band. */
+  count: number;
+}
+
+/** Two decimals at most, so a band edge never prints a float's leftovers. */
+function edge(value: number): number {
+  return Math.round(value * 100) / 100;
+}
+
+/**
+ * Which band a CGPA falls in, or null when the value is not on BEU's scale.
+ * A missing CGPA has no band: it is not a zero and must not be drawn as one.
+ */
+export function cgpaBandIndex(value: number | null | undefined, bands = 10): number | null {
+  if (value === null || value === undefined) return null;
+  if (!Number.isFinite(value) || value < 0 || value > SCALE) return null;
+  const size = SCALE / bands;
+  return Math.min(bands - 1, Math.floor(value / size));
+}
+
+/**
+ * The CGPA spread of a roster, in `bands` equal slices of the 10-point scale.
+ *
+ * The histogram answers the question a rank alone cannot: is the student in a
+ * cluster or on a ledge? It counts only rows that carry a real CGPA, so the
+ * columns always sum to the number of ranked students in the table.
+ */
+export function cgpaDistribution(rows: RankRow[], bands = 10): CgpaBand[] {
+  const size = SCALE / bands;
+  const out: CgpaBand[] = [];
+  for (let index = 0; index < bands; index += 1) {
+    out.push({ from: edge(index * size), to: edge((index + 1) * size), count: 0 });
+  }
+  for (const row of rows) {
+    const index = cgpaBandIndex(row.cgpa, bands);
+    if (index !== null) out[index].count += 1;
+  }
+  return out;
+}
+
+/** `8` → `"8"`, `8.5` → `"8.5"`: a band edge without a trailing zero. */
+export function bandEdge(value: number): string {
+  return Number.isInteger(value) ? String(value) : value.toFixed(1);
+}

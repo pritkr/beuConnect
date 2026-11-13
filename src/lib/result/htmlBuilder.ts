@@ -1,5 +1,6 @@
 import type { ResultPayload, SubjectRow, ViewMode } from "./types";
 import { normalizeFailedSubjects, getLegacyDocumentBase, absolutizeAssetUrls } from "./parser";
+import { OFFICIAL_PORTAL_URL } from "./portal";
 
 export const MODERN_CSS = `
 <style>
@@ -357,54 +358,265 @@ export function stringOrNA(value: unknown): string {
 	return "NA";
 }
 
-export const buildErrorHTML = (title: string, message: string) => `
-<!doctype html>
-<html lang="en">
+const CARD_CSS = `
+<style>
+	/* The card stands alone in an iframe, so it carries its own tokens instead
+	   of importing the site sheet. Same desk, same two themes. */
+	@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap');
+
+	:root {
+		--bg: #0c1310;
+		--surface: #121c16;
+		--paper: #f2ede2;
+		--muted: #c4bdae;
+		--faint: #938d80;
+		--line: #29372e;
+		--line-strong: #3b4c40;
+		--accent: #f0a63c;
+		--accent-hover: #ffc266;
+		--accent-ink: #1a1206;
+		--shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+		--sans: "Public Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+		--serif: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", serif;
+		color-scheme: dark;
+	}
+
+	[data-theme="light"] {
+		--bg: #f6f2e8;
+		--surface: #fdfaf2;
+		--paper: #14201a;
+		--muted: #4a564d;
+		--faint: #5f6a61;
+		--line: #ded5c3;
+		--line-strong: #c5bba6;
+		--accent: #935400;
+		--accent-hover: #7a4500;
+		--accent-ink: #fffaf0;
+		--shadow: 0 10px 28px rgba(52, 42, 22, 0.12);
+		color-scheme: light;
+	}
+
+	@media (prefers-color-scheme: light) {
+		:root:not([data-theme]) {
+			--bg: #f6f2e8;
+			--surface: #fdfaf2;
+			--paper: #14201a;
+			--muted: #4a564d;
+			--faint: #5f6a61;
+			--line: #ded5c3;
+			--line-strong: #c5bba6;
+			--accent: #935400;
+			--accent-hover: #7a4500;
+			--accent-ink: #fffaf0;
+			--shadow: 0 10px 28px rgba(52, 42, 22, 0.12);
+			color-scheme: light;
+		}
+	}
+
+	body {
+		margin: 0;
+		min-height: 100vh;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		padding: clamp(1rem, 4vw, 2.5rem) clamp(0.75rem, 3vw, 1.5rem);
+		background: var(--bg);
+		color: var(--paper);
+		font-family: var(--sans);
+		-webkit-font-smoothing: antialiased;
+	}
+
+	.result-card {
+		width: 100%;
+		max-width: 32rem;
+		padding: clamp(1.25rem, 4vw, 1.85rem);
+		border: 1px solid var(--line);
+		border-top: 3px solid var(--accent);
+		border-radius: 4px;
+		background: var(--surface);
+		box-shadow: var(--shadow);
+	}
+
+	.result-card h1 {
+		margin: 0 0 0.5rem;
+		font-family: var(--serif);
+		font-size: clamp(1.4rem, 5vw, 1.7rem);
+		font-weight: 400;
+		line-height: 1.15;
+		letter-spacing: -0.01em;
+		color: var(--paper);
+	}
+
+	.result-card p {
+		margin: 0;
+		max-width: 44ch;
+		color: var(--muted);
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.result-card-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.6rem;
+		margin-top: 1.5rem;
+	}
+
+	.result-card-actions .action {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 2.5rem;
+		padding: 0.65rem 1rem;
+		border: 1px solid var(--line-strong);
+		border-radius: 4px;
+		background: transparent;
+		color: var(--paper);
+		font-family: inherit;
+		font-size: 0.875rem;
+		font-weight: 600;
+		line-height: 1.1;
+		text-align: center;
+		text-decoration: none;
+		transition: border-color 120ms ease, background-color 120ms ease, color 120ms ease;
+	}
+
+	.result-card-actions .action:hover {
+		border-color: var(--paper);
+	}
+
+	.result-card-actions .action:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+	}
+
+	.result-card-actions .action-primary {
+		border-color: var(--accent);
+		background: var(--accent);
+		color: var(--accent-ink);
+	}
+
+	.result-card-actions .action-primary:hover {
+		border-color: var(--accent-hover);
+		background: var(--accent-hover);
+		color: var(--accent-ink);
+	}
+
+	.result-card-actions .action-quiet {
+		border-color: transparent;
+		color: var(--faint);
+		font-weight: 500;
+		padding-inline: 0.5rem;
+	}
+
+	.result-card-actions .action-quiet:hover {
+		border-color: transparent;
+		color: var(--paper);
+	}
+</style>
+`;
+
+type CardAction = {
+	label: string;
+	href: string;
+	variant?: "primary" | "quiet";
+	external?: boolean;
+};
+
+function renderCardActions(actions: CardAction[]): string {
+	if (actions.length === 0) return "";
+	const items = actions
+		.map((action) => {
+			const classes = [
+				"action",
+				action.variant === "primary" ? "action-primary" : "",
+				action.variant === "quiet" ? "action-quiet" : "",
+			]
+				.filter(Boolean)
+				.join(" ");
+			const external = action.external ? ' target="_blank" rel="noopener"' : "";
+			return `<a class="${classes}" href="${escapeHtml(action.href)}"${external}>${escapeHtml(action.label)}</a>`;
+		})
+		.join("\n");
+	return `<div class="result-card-actions">${items}</div>`;
+}
+
+/** A card carries the site theme it was opened under. Omitted means "follow
+ * the reader's system", which is what a shared link should do. */
+export type CardTheme = "light" | "dark";
+
+/** Standalone card document. It carries CARD_CSS alone — the result stylesheet
+ * is for BEU's own markup and would only fight it.
+ *
+ * `result.astro` reads the text of `.error-card` inside the frame to set the
+ * page status, so that class marks the heading and sentence alone — never the
+ * actions. */
+function buildCardHTML(
+	title: string,
+	body: string,
+	actions: CardAction[] = [],
+	theme?: CardTheme,
+): string {
+	const themeAttr = theme ? ` data-theme="${theme}"` : "";
+	return `<!doctype html>
+<html lang="en"${themeAttr}>
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
-	<style>
-		body {
-			font-family: 'Outfit', sans-serif;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			margin: 0;
-			background-color: transparent;
-			padding: 1.5rem;
-		}
-		.error-card {
-			background: #ffffff;
-			border-radius: 14px;
-			max-width: 460px;
-			width: 100%;
-			padding: 2rem;
-			box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
-			border: 1px solid #e5e7eb;
-		}
-		h2 {
-			margin: 0 0 0.6rem;
-			font-size: 1.15rem;
-			color: #111827;
-		}
-		p {
-			margin: 0;
-			line-height: 1.6;
-			color: #4b5563;
-			word-break: break-word;
-		}
-	</style>
+	<meta name="color-scheme" content="${theme ?? "light dark"}" />
+	<title>${escapeHtml(title)}</title>
+	${CARD_CSS}
 </head>
 <body>
-	<div class="error-card">
-		<h2>${escapeHtml(title)}</h2>
-		<p>${escapeHtml(message)}</p>
+	<div class="result-card">
+		<div class="error-card">
+			<h1>${escapeHtml(title)}</h1>
+			<p>${escapeHtml(body)}</p>
+		</div>
+		${renderCardActions(actions)}
 	</div>
 </body>
-</html>
-`;
+</html>`;
+}
+
+export function buildErrorHTML(
+	title: string,
+	message: string,
+	options: { retryHref?: string; theme?: CardTheme } = {},
+): string {
+	return buildCardHTML(
+		title,
+		message,
+		options.retryHref
+			? [{ href: options.retryHref, label: "Try again", variant: "quiet" }]
+			: [],
+		options.theme,
+	);
+}
+
+/** The portal cannot be read without a human solving its challenge. */
+export function buildCaptchaHTML(
+	options: { retryHref?: string; theme?: CardTheme } = {},
+): string {
+	const actions: CardAction[] = [
+		{
+			href: OFFICIAL_PORTAL_URL,
+			label: "Open BEU portal",
+			variant: "primary",
+			external: true,
+		},
+	];
+	if (options.retryHref) {
+		actions.push({ href: options.retryHref, label: "Try again", variant: "quiet" });
+	}
+	return buildCardHTML(
+		"BEU asks for a captcha",
+		"The university result portal requires a captcha before it returns data. Open the portal, complete the check, and read the result there.",
+		actions,
+		options.theme,
+	);
+}
 
 export function getSemOrdinal(semester: number): string {
 	if (semester === 1) return "1st";

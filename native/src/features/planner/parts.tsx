@@ -16,6 +16,7 @@
 import { Text, View, signal, type Accessor } from "nsh";
 
 import { Badge, Btn, Card, Check, Chip, Divider, EmptyState, Field, Label, Muted, Panel, Progress, Stat } from "../../ui";
+import { branchIcon } from "../../ui/branch-icon";
 import { BRANCH_META } from "../syllabus/data/packs";
 import type { Topic } from "../syllabus/parse";
 import {
@@ -177,15 +178,15 @@ export function PlanSummary(props: {
 }) {
   return (
     <Card class="overflow-hidden gap-4">
-      <View class="absolute -right-12 -top-16 h-44 w-44 rounded-full bg-primary/12" pointerEvents="none" />
-      <View class="absolute -right-2 top-20 h-20 w-20 rounded-full bg-accent/12" pointerEvents="none" />
+      <View class="absolute -right-12 -top-16 h-44 w-44 rounded-full bg-primary/12" style={{ pointerEvents: "none" }} />
+      <View class="absolute -right-2 top-20 h-20 w-20 rounded-full bg-accent/12" style={{ pointerEvents: "none" }} />
 
       <View class="gap-1">
         <View class="flex-row items-center justify-between gap-2">
           <Label class="flex-1">{`${branchShort(props.course.branch)} · SEMESTER ${props.course.sem}`}</Label>
           <Chip label="Change course" onPress={props.onCourse}>Course</Chip>
         </View>
-        <Text class="text-[26px] font-bold leading-8 tracking-tight text-foreground" numberOfLines={2}>
+        <Text class="text-[26px] font-bold leading-8 tracking-tight text-foreground" style={{ numberOfLines: 2 }}>
           {daysTitle(props.plan())}
         </Text>
         <View class="flex-row items-center gap-2">
@@ -200,7 +201,7 @@ export function PlanSummary(props: {
             Dates
           </Chip>
         </View>
-        <Text class={`text-[12px] font-semibold leading-5 ${verdictInk(props.plan())}`} numberOfLines={2}>
+        <Text class={`text-[12px] font-semibold leading-5 ${verdictInk(props.plan())}`} style={{ numberOfLines: 2 }}>
           {verdictText(props.plan())}
         </Text>
       </View>
@@ -391,7 +392,7 @@ export function Chooser(props: {
     <Card class="gap-4">
       <View class="gap-1">
         <Label>Course</Label>
-        <Text class="text-[19px] font-bold leading-6 tracking-tight text-foreground" numberOfLines={2}>
+        <Text class="text-[19px] font-bold leading-6 tracking-tight text-foreground" style={{ numberOfLines: 2 }}>
           {props.draft.branch ? branchName(props.draft.branch) : "Pick your branch and semester"}
         </Text>
       </View>
@@ -400,7 +401,11 @@ export function Chooser(props: {
         <Label>BRANCH</Label>
         <View class="flex-row flex-wrap gap-2">
           {BRANCH_META.map((item) => (
-            <Chip active={props.draft.branch === item.code} onPress={() => props.onBranch(item.code)}>
+            <Chip
+              active={props.draft.branch === item.code}
+              onPress={() => props.onBranch(item.code)}
+              icon={branchIcon(item.code)}
+            >
               {item.short}
             </Chip>
           ))}
@@ -456,7 +461,7 @@ export function TopicTick(props: {
           class={`text-[13px] leading-5 ${
             props.studied()[props.studiedKey] === true ? "text-muted-foreground" : "text-foreground"
           }`}
-          numberOfLines={2}
+          style={{ numberOfLines: 2 }}
         >
           {props.title}
         </Text>
@@ -505,7 +510,7 @@ export function DayCard(props: {
   }
 
   return (
-    <Card class="gap-2">
+    <Card testID={`planner-day-${props.day.day}`} class="gap-2">
       <View class="flex-row items-baseline justify-between gap-2">
         <Label>{`Day ${props.day.day}`}</Label>
         <Muted class="tabular-nums">
@@ -572,7 +577,7 @@ export function UnitCard(props: {
           {props.row.subject}
         </Muted>
 
-        <Text class="text-[15px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+        <Text class="text-[15px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
           {props.row.title}
         </Text>
 
@@ -591,7 +596,7 @@ export function UnitCard(props: {
           <Muted class="flex-1 text-[11px] tabular-nums" numberOfLines={1}>
             {`${doneIn(props.plan(), props.row.topics.length)} of ${props.row.topics.length} done`}
           </Muted>
-          <Text class="text-[12px] font-semibold text-primary-ink" numberOfLines={1}>
+          <Text class="text-[12px] font-semibold text-primary-ink" style={{ numberOfLines: 1 }}>
             {props.open()[props.row.key] ? "Hide" : "Topics"}
           </Text>
         </View>

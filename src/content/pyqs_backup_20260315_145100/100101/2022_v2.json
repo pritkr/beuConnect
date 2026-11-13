@@ -1,0 +1,310 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Exam-2022",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100101",
+    "year": 2022,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory"
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "The maximum power will be transferred from a voltage source to a load when",
+          "options": [
+            "The source impedance is half of the load impedance",
+            "The source impedance is equal to the load impedance",
+            "The source impedance is twice that of the load impedance",
+            "The source impedance and load impedance both must be zero"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "The unit of magnetic flux density is",
+          "options": [
+            "\\(\\mathrm{Wb}\\)",
+            "\\(\\mathrm{Wb/m^2}\\)",
+            "\\(\\mathrm{A/m^2}\\)",
+            "AT"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "The condition for maximum efficiency in a transformer is",
+          "options": [
+            "The core losses should be equal to friction and windage losses",
+            "The copper losses equal to mechanical losses",
+            "The core losses equal to copper losses",
+            "The copper losses should be equal to half of the core losses"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "If a circuit does not contain any source of energy or emf, it is known as",
+          "options": [
+            "Unilateral circuit",
+            "Bilateral Circuit",
+            "Passive network",
+            "Active network"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "Which of the following elements of electrical engineering cannot be analysed using Ohm's law?",
+          "options": [
+            "Resistor",
+            "Inductor",
+            "Capacitor",
+            "Transistor"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "How many cycles will an AC signal make in 2 seconds if its frequency is 100 Hz?",
+          "options": [
+            "50",
+            "100",
+            "150",
+            "200"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "For domestic wiring purpose, how are circuits connected?",
+          "options": [
+            "Straight",
+            "Series",
+            "Parallel",
+            "Serial"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "Pure inductive circuit",
+          "options": [
+            "Consumes some power on average",
+            "Does not take power at all from a line",
+            "Takes power from the line during some part of the cycle and then returns back to it during\n                            other part of the cycle",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "The time constant for an RL circuit is",
+          "options": [
+            "RC",
+            "L/R",
+            "LR",
+            "R/L"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "Which of the elements in the following is not bilateral?",
+          "options": [
+            "Resistor",
+            "Inductor",
+            "Capacitor",
+            "Transistor"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Define Q-factor. What is the Q-factor (quality factor) of a series circuit that resonates at 6\n                        kHz, has equal reactance of 4 kilo-ohms each and a resistor value of 50 ohms?"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "A series R-L-C circuit containing a resistance of \\(10\\,\\Omega\\), an inductance of 0.45 H and\n                        a capacitor of \\(400\\,\\mu\\mathrm{F}\\) is connected in series across a 120 V, 50 Hz supply.\n                        Calculate the total circuit impedance, the circuit current, power factor and draw the voltage\n                        phasor diagram."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Explain the procedure of Thevenin's theorem and Norton's theorem to simplify any complex DC\n                        Circuit. What are the similarities and dissimilarities between these two theorems?"
+        },
+        {
+          "id": "q3_2",
+          "type": "mcq",
+          "text": "Explain with proper examples:-",
+          "options": [
+            "(i) Linear &amp; Non-linear circuits",
+            "(ii) Active &amp; Passive circuits",
+            "(iii) Unilateral &amp; Bilateral circuits",
+            "(iv) Lumped &amp; Distributed Circuits"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Explain the working principle and construction of a three phase induction motor. What is meant by\n                        slip in an Induction motor?",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "mcq",
+          "text": "A 3-Phase, 400 V, 50 Hz, 4-Pole induction motor runs at slip of 0.05. Determine:",
+          "options": [
+            "(i) Synchronous speed",
+            "(ii) Motor speed",
+            "(iii) Frequency of the rotor current",
+            "(iv) Speed of the rotor magnetic flux relative to the stator flux"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Explain the working of single-phase transformer on no-load condition and draw its phasor diagram.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "A 100 kVA transformer is rated 11 kW/230V, 50 Hz. It requires 310V to be applied to the primary\n                        to circulate full-load current with short on the secondary side absorbing 5.21 kW. Determine its\n                        per cent voltage regulation and the primary voltage for power factors of (i) unity (ii) 0.8\n                        lagging and (iii) 0.8 leading."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "A \\(4\\,\\Omega\\) resistor is connected to a 10 mH inductor across a 100 V, 50 Hz voltage\n                        source. Find the (i) impedance of the circuit (ii) input current (iii) voltage drop across the\n                        resistor and inductor (iv) power factor of the circuit (v) real power consumed in the circuit\n                        and (vi) total power supplied."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "A series RL-C circuit has inductance of 10 mH and resistance of \\(2\\,\\Omega\\). What is the\n                        value of capacitance that will produce resonance? Also find the current at resonance frequency\n                        and maximum instantaneous energy stored in the inductance at resonance. Assume the supply as 230\n                        V, 10000 Hz sinusoidal."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Derive the expressions of equivalent star network resistances from the delta network comprising\n                        of \\(R_{12}, R_{23}, R_{31}\\) where nodes are termed as 1, 2, 3 respectively."
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Two coils, connected in series-aiding fashion, have a total inductance of 250 mH. When connected\n                        in a series-opposing configuration, the coils have a total inductance of 150 mH. If the\n                        inductance of one coil (\\(L_1\\)) is three times the other, then find \\(L_1, L_2\\) and M.\n                        What is the coupling coefficient?",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Compare electric and magnetic circuits, clearly stating similarities and dissimilarities between\n                        them. State five applications of magnetic circuit in engineering field."
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "Draw and explain the B-H curves for air and a magnetic material. What are different types of\n                        magnetic losses? How can they be minimized?"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Switch fuse unit (SFU)</li>\n<li>Application of MCB, ELCB &amp; MCCB</li>\n<li>Power factor improvement</li>\n<li>First-order RL and RC circuits</li>\n</ul>",
+          "options": [
+            "Switch fuse unit (SFU)",
+            "Application of MCB, ELCB &amp; MCCB",
+            "Power factor improvement",
+            "First-order RL and RC circuits"
+          ]
+        }
+      ]
+    }
+  ]
+}

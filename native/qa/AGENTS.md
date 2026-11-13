@@ -2,7 +2,10 @@
 
 `qa/README.md` is the full contract; the `beu-qa` skill is the working loop.
 
-52 tests, 13 mounts. Everything here is test code.
+A few hundred tests, and the count moves — the gate is the count. Everything
+here is test code. The table below is the QA-owned core;
+feature-owned files (`feedback`, `results`, `planner`, `tools`, `unit/routine`,
+`unit/plan`, `unit/syllabus`) run in the same pass.
 
 ## Run
 
@@ -21,11 +24,13 @@ Never `nsh test` directly. Budget: under 15 s.
 | `registry.test.ts` | static route contracts (merge, names, titles, push targets, tabs/More) |
 | `shell.test.tsx` | `App.tsx`: tabs, stack, bar, back — 3 mounts |
 | `screens.test.tsx` | home, syllabus, results, notes, search, notices, onboarding |
+| `integration.test.tsx` | every route cold/offline, params vs entity, dark mode, More → back, harness/registry equality |
+| `crash.test.tsx` | the failure contract: a screen, the shell and a timer throw; fallbacks, retry and back |
 | `unit/logic.test.ts` | grades, SGPA/CGPA, target planner, attendance, ranking, semester |
 | `unit/result-parse.test.ts` | BEU result page reader, real Angular/ASP.NET fixtures |
 | `unit/offline.test.ts` | offline pack key ownership and byte accounting |
 | `data.test.ts` | syllabus packs, PYQ catalogue + PDFs, roster, notes manifest |
-| `harness.tsx` | one route in isolation, curated to the 8 mounted areas |
+| `harness.tsx` | one route in isolation, curated to the areas `harness-routes.ts` lists |
 | `support.ts` | `openRoute`, `expectPage`, `navEntries`/`awaitNav`, `pressFirst` |
 | `routes.contract.ts` | required names (missing = `test.todo`, not red) |
 | `push-targets.ts` | generated — do not edit |

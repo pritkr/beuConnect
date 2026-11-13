@@ -1,0 +1,295 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2019",
+    "subject": "THERMODYNAMICS",
+    "subject_slug": "thermodynamics",
+    "subject_code": "102804",
+    "year": 2019,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Students should be allowed to use the steam tables and Mollier diagram."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer from the following (any seven):",
+          "marks": null,
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "Ice kept in a wall-insulated thermoflask is an example of which system?",
+              "options": [
+                "A closed system",
+                "An isolated system",
+                "An open system",
+                "Non-flow adiabatic system"
+              ],
+              "answer": "An isolated system"
+            },
+            {
+              "number": "(b)",
+              "text": "Which one of the following is the extensive property of a thermodynamic system?",
+              "options": [
+                "Volume",
+                "Pressure",
+                "Temperature",
+                "Density"
+              ],
+              "answer": "Volume"
+            },
+            {
+              "number": "(c)",
+              "text": "In a general compression process, 1 kJ of mechanical work is supplied to 2 kg of fluid and 400 J of heat is rejected to the cooling jacket. The change in specific internal energy would be",
+              "options": [
+                "700 J",
+                "350 J",
+                "300 J",
+                "600 J"
+              ],
+              "answer": "300 J"
+            },
+            {
+              "number": "(d)",
+              "text": "First law of thermodynamics defines",
+              "options": [
+                "temperature",
+                "enthalpy",
+                "internal energy",
+                "entropy"
+              ],
+              "answer": "internal energy"
+            },
+            {
+              "number": "(e)",
+              "text": "Under what conditions, the change in the enthalpy of a system equals the heat supplied?",
+              "options": [
+                "Constant volume",
+                "Constant pressure",
+                "Constant temperature",
+                "Standard temperature-pressure conditions"
+              ],
+              "answer": "Constant pressure"
+            },
+            {
+              "number": "(f)",
+              "text": "In a Carnot cycle, the rejection of heat is",
+              "options": [
+                "at constant pressure",
+                "at constant volume",
+                "at constant temperature",
+                "partly at constant pressure and partly at constant volume"
+              ],
+              "answer": "at constant temperature"
+            },
+            {
+              "number": "(g)",
+              "text": "A Carnot cycle is having an efficiency of 0.75. If the temperature of the high temperature reservoir is $727^\\circ\\text{C}$, what is the temperature of the low temperature reservoir?",
+              "options": [
+                "$23^\\circ\\text{C}$",
+                "$-23^\\circ\\text{C}$",
+                "$0^\\circ\\text{C}$",
+                "$250^\\circ\\text{C}$"
+              ],
+              "answer": "$-23^\\circ\\text{C}$"
+            },
+            {
+              "number": "(h)",
+              "text": "Second law of thermodynamics defines",
+              "options": [
+                "entropy",
+                "enthalpy",
+                "efficiency",
+                "internal energy"
+              ],
+              "answer": "entropy"
+            },
+            {
+              "number": "(i)",
+              "text": "For a thermodynamic cycle to be irreversible, it is necessary that",
+              "options": [
+                "$\\oint \\frac{\\delta Q}{T} = 0$",
+                "$\\oint \\frac{\\delta Q}{T} > 0$",
+                "$\\oint \\frac{\\delta Q}{T} < 0$",
+                "$\\oint \\frac{\\delta Q}{T} \\ge 0$"
+              ],
+              "answer": "$\\oint \\frac{\\delta Q}{T} < 0$"
+            },
+            {
+              "number": "(j)",
+              "text": "Which of the following parameters remains constant during superheating of steam?",
+              "options": [
+                "Temperature",
+                "Enthalpy",
+                "Pressure",
+                "Internal energy"
+              ],
+              "answer": "Pressure"
+            }
+          ],
+          "id": "1"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "State the first law of thermodynamics. What is PMM1?",
+              "marks": "4"
+            },
+            {
+              "number": "(b)",
+              "text": "Define quasi-static process.",
+              "marks": "2"
+            },
+            {
+              "number": "(c)",
+              "text": "The internal energy of a certain substance is given by the equation $u = 3.56pv + 84$, where $u$ is given in kJ/kg, $p$ is in kPa and $v$ is in $m^3/kg$. A system composed of 3 kg of this substance expands from an initial pressure of 500 kPa and a volume of $0.22\\text{ m}^3$ to a final pressure 100 kPa in a process in which pressure and volume are related by $pv^{1.2} = \\text{constant}$. If the expansion is quasi-static, find Q, $\\Delta U$, and W for this process.",
+              "marks": "8"
+            }
+          ],
+          "id": "2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "Derive an expression for conservation of energy for a steady flow process.",
+              "marks": "6"
+            },
+            {
+              "number": "(b)",
+              "text": "Consider a nozzle which is used to increase the velocity of a steady flowing stream. At the inlet to the nozzle, the enthalpy of fluid is 3000 kJ/kg and the velocity is 50 m/s. At the exit of the nozzle, the enthalpy is 2700 kJ/kg. The nozzle is kept horizontal and is well-insulated. (i) Find the velocity at the exit of the nozzle and the mass flow rate. (ii) If the inlet area is $0.12\\text{ m}^2$ and the sp. volume of the fluid at the inlet is $0.19\\text{ m}^3/kg$, find the exit area of the nozzle, if the specific volume of the fluid at the exit is $0.5\\text{ m}^3/kg$.",
+              "marks": "8"
+            }
+          ],
+          "id": "3",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "State the Carnot theorem and explain with the help of suitable example.",
+              "marks": "6"
+            },
+            {
+              "number": "(b)",
+              "text": "Two reversible heat engines A and B are arranged in series, engine A rejecting heat directly to engine B. Engine A receives 180 kJ at a temperature of $422^\\circ\\text{C}$ from a hot source, while engine B is in communication with a cold sink at a temperature of $5.5^\\circ\\text{C}$. If the work output of A is twice that of B, find (i) the intermediate temperature between A and B, (ii) the efficiency of each engine and (iii) heat rejected to the cold sink.",
+              "marks": "8"
+            }
+          ],
+          "id": "4",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "State the prove Clausius theorem.",
+              "marks": "7"
+            },
+            {
+              "number": "(b)",
+              "text": "Show that there is a decrease in available energy, when heat is transferred through a finite temperature difference.",
+              "marks": "7"
+            }
+          ],
+          "id": "5",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "Show that the adiabatic mixing of two fluids is irreversible.",
+              "marks": "4"
+            },
+            {
+              "number": "(b)",
+              "text": "\"An adiabatic process need not be isentropic, but if the process is adiabatic and reversible, it must be isentropic.\" Is it true or false? Explain with proper justification.",
+              "marks": "4"
+            },
+            {
+              "number": "(c)",
+              "text": "A reversible power cycle operates with temperature limits 800 K and 300 K. If it takes 480 kJ of heat, then what would be the unavailable work?",
+              "marks": "6"
+            }
+          ],
+          "id": "6",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "What are various forms of energy?",
+              "marks": "4"
+            },
+            {
+              "number": "(b)",
+              "text": "Consider a system of cylinder and piston arrangement containing gas. Initially, the gas is at 500 kPa and occupies a volume of $0.2\\text{ m}^3$. The force exerted by the spring is proportional to the displacement from its equilibrium position. Take ambient pressure as 100 kPa. The gas is heated until the volume becomes $0.4\\text{ m}^3$ and the pressure attained as 1 MPa. Determine the work done by the gas. Draw the schematic and p-V diagram.",
+              "marks": "10"
+            }
+          ],
+          "id": "7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "What is the critical state? Draw the phase equilibrium diagram for a pure substance on h-s plot with relevant constant property lines.",
+              "marks": "6"
+            },
+            {
+              "number": "(b)",
+              "text": "Why do the isobars on Mollier diagram diverge from one another?",
+              "marks": "4"
+            },
+            {
+              "number": "(c)",
+              "text": "What is quality of steam? What are the different methods of measurement of quality of steam?",
+              "marks": "4"
+            }
+          ],
+          "id": "8",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "number": "(a)",
+              "text": "Steam initially at 1.5 MPa, $300^\\circ\\text{C}$ expands reversibly and adiabatically in a steam turbine to $40^\\circ\\text{C}$. Determine the ideal work output of the turbine per kg of steam.",
+              "marks": "8"
+            },
+            {
+              "number": "(b)",
+              "text": "With the help of suitable diagram, explain heating and humidification.",
+              "marks": "6"
+            }
+          ],
+          "id": "9",
+          "marks": null,
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

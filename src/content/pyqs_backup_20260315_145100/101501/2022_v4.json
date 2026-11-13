@@ -1,0 +1,270 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 5th Semester Examination, 2022",
+    "subject": "Analysis and Design of Concrete Structure",
+    "subject_slug": "analysis-and-design-of-concrete-structure",
+    "subject_code": "101501",
+    "year": 2022,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "IS 456:2000 is allowed."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The characteristic strength of concrete is defined as that compressive strength below which not\n                        more\n                        than</p>",
+          "options": [
+            "10% of result fail",
+            "20% of result fail",
+            "5% of result fail",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>By controlling the span to depth ratio of beam, which of the following can be controlled</p>",
+          "options": [
+            "shear stress in beam",
+            "flexural stress in beam",
+            "deflection of beam.",
+            "all of the above."
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The minimum area of tension steel for Fe415 in the slab as per IS 456:2000 is</p>",
+          "options": [
+            "0.10% of gross area",
+            "0.12% of gross area",
+            "0.15% of gross area",
+            "0.20% of gross area"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>As per IS456:2000, the ultimate compressive strain in concrete in bending is assumed as</p>",
+          "options": [
+            "0.002",
+            "0.0035",
+            "0.003",
+            "0.004"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The material factor of safety for concrete and steel in the limit state method of design are\n                        respectively:</p>",
+          "options": [
+            "1.0 and 1.5",
+            "1.5 and 1.5",
+            "1.5 and 1.15",
+            "1.15 and 1.15"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A reinforced concrete structure has to be constructed along a seacoast. The minimum grade of\n                        concrete\n                        to be used as per IS 456:2000 is</p>",
+          "options": [
+            "M-15",
+            "M-20",
+            "M-25",
+            "M-30"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In a singly reinforced beam the tensile steel reaches its maximum allowable stress earlier than\n                        concrete. Such section is known as</p>",
+          "options": [
+            "Under Reinforced section.",
+            "Over Reinforced section",
+            "Balanced section",
+            "Economic section"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The lateral ties in a reinforced concrete rectangular column under axial compression are used to\n                    </p>",
+          "options": [
+            "avoid the buckling of longitudinal steel under compression.",
+            "provide adequate shear capacity",
+            "provide adequate confinement to concrete",
+            "Reduce the axial deformation of column"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>To minimize the effect of differential settlement, the area of a footing should be designed for\n                    </p>",
+          "options": [
+            "dead load only",
+            "dead load + live load",
+            "dead load + fraction of live load",
+            "fraction of dead load + live load"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The modulus of rupture of concrete in terms of its characteristic cube compressive strength \\(\n                        f_{ck} \\) (in MPa) according to IS 456:2000 is</p>",
+          "options": [
+            "\\( 7000\\sqrt{f_{ck}} \\)",
+            "\\( 0.7\\sqrt{f_{ck}} \\)",
+            "\\( 0.07\\sqrt{f_{ck}} \\)",
+            "\\( 7\\sqrt{f_{ck}} \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What do you mean by principle of stability?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Distinguish between under reinforced and over reinforce beams.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>Enlist and explain various design philosophies for the design of reinforced concrete structure.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Design an isolated footing for a square column, 400 mm x 400 mm, reinforced with 8-20 mm bars and\n                        carrying a service load of 2000 kN. Assume soil with a safe bearing capacity of \\( 300 \\,\n                        kN/m^2\n                        \\) at a depth of 1.5 m below ground. Assume M25 grade concrete and Fe415 grade steel for the\n                        footing.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A doubly reinforced concrete beam is 400 mm wide and 600 mm deep to the centre of tensile\n                        reinforcement. The compression reinforcement consists of 4 bars of 16 mm diameter, and is placed\n                        with its centre at a depth of 40 mm from the top. The tensile reinforcement consists of 4 bars\n                        of 20\n                        mm diameter. The section is subjected to a bending moment of 100 kN-m. Determine the stresses in\n                        concrete and steel. Take m = 16.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain different types of loads and their combination for the design of reinforced concrete\n                        structure.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Discuss the role of engineer, architects, user and builder in building planning design and\n                        construction.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Design a circular column with helical reinforcement subjected to a working load of 1500 kN.\n                        Diameter\n                        of the column is 450 mm. The column has unsupported length of 3.5 m and is effectively held in\n                        position at both ends but not restrained against rotation. Use limit state design method. Use\n                        M25\n                        concrete and HYSD Fe415 steel.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>If maximum strain at a highly compressed zone is considered as 0.0025 then the depth of neutral\n                        axis\n                        for the balanced section will be? Use following data: Width of beam = 250 mm, Overall depth of\n                        beam\n                        = 400 mm, Effective cover = 50 mm, Area of steel in tension = \\( 500 \\, mm^2 \\). Grade of\n                        concrete\n                        and steel are M20 and Fe250 respectively.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A reinforced concrete beam of rectangular cross section of breadth 230 mm and effective depth of\n                        400\n                        mm is subjected to a factored shear force of 120 kN. The grade of concrete, main steel and\n                        stirrup\n                        steel are M20, Fe415 and Fe250 respectively. Area of main steel provided gives, design shear\n                        strength of concrete \\( (\\tau_c) \\) as \\( 0.48 \\, N/mm^2 \\). For a limited state of\n                        collapse\n                        in\n                        shear, design shear reinforcement.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A hall has clear dimension 3m x 9m, with wall thickness 230 mm. The live load on the slab is \\(\n                        3 \\,\n                        kN/m^2 \\) and finishing load of \\( 1 \\, kN/m^2 \\) may be assumed. Use M20 concrete and Fe415\n                        grade steel. Design the slab.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Determine the moment of resistance a T-section having the following properties: Flange width =\n                        2000\n                        mm, Flange depth = 100 mm, Web width = 250 mm, Effective depth = 750 mm, Area of steel = 8 bars\n                        of\n                        20 mm diameter, material used = M25 grade of concrete and Fe415 HYSD bars.</p>"
+        }
+      ]
+    }
+  ]
+}

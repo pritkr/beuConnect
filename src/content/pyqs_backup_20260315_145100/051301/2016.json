@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Examination, 2016",
+    "subject": "Object Oriental Programming",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051301",
+    "year": 2016,
+    "semester": 3,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "There are Nine Questions in this Paper.",
+    "Attempt Five questions in all.",
+    "Question No. 1 is Compulsory.",
+    "The marks are indicated in the right hand margin."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Explain briefly about the following terms (any seven):",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "Overloading",
+              "id": "1a"
+            },
+            {
+              "text": "Overriding",
+              "id": "1b"
+            },
+            {
+              "text": "C++ STL",
+              "id": "1c"
+            },
+            {
+              "text": "Constructor",
+              "id": "1d"
+            },
+            {
+              "text": "Destructor",
+              "id": "1e"
+            },
+            {
+              "text": "Inheritance",
+              "id": "1f"
+            },
+            {
+              "text": "Encapsulation",
+              "id": "1g"
+            },
+            {
+              "text": "Templates",
+              "id": "1h"
+            },
+            {
+              "text": "Protected variable",
+              "id": "1i"
+            },
+            {
+              "text": "Private function",
+              "id": "1j"
+            }
+          ]
+        },
+        {
+          "text": "Write a C++ program to overload '-' operator to calculate age from date of birth and current date.",
+          "marks": 14,
+          "id": "2"
+        },
+        {
+          "marks": 14,
+          "id": "3",
+          "sub_questions": [
+            {
+              "text": "What is a friend function and what are its advantages?",
+              "id": "3a",
+              "marks": 7
+            },
+            {
+              "text": "What are the guidelines that should be followed while using friend function?",
+              "id": "3b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Compare overloading and overriding of function with example.",
+          "marks": 14,
+          "id": "4"
+        },
+        {
+          "text": "What is exception handling? Write a C++ program to demonstrate the 'try', 'catch' and 'throw' keywords?",
+          "marks": 14,
+          "id": "5"
+        },
+        {
+          "text": "Define C++ classes to represent the information of an ORGANISATION having EMPLOYEES and CLIENTS. Provide subclasses MANAGER, CLERK and SUPPORT_STAFF. In this organisation employees work on projects requested by clients.",
+          "marks": 14,
+          "id": "6"
+        },
+        {
+          "marks": 14,
+          "id": "7",
+          "sub_questions": [
+            {
+              "text": "What is virtual function? Explain with an example.",
+              "id": "7a",
+              "marks": 7
+            },
+            {
+              "text": "Explain the abstract class with an example.",
+              "id": "7b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Explain inline functions with an example program. What are the conditions, where inline functions cannot be expanded?",
+          "marks": 14,
+          "id": "8"
+        },
+        {
+          "marks": 14,
+          "id": "9",
+          "sub_questions": [
+            {
+              "text": "What is the difference between compile time and run time errors? What is the use of stack unwinding in exception handling?",
+              "id": "9a",
+              "marks": 7
+            },
+            {
+              "text": "Discuss void, this and const pointers.",
+              "id": "9b",
+              "marks": 7
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

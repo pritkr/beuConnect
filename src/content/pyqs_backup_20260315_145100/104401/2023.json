@@ -1,0 +1,233 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2023 Semester-IV",
+    "subject": "ECE Analog Circuit",
+    "subject_slug": "ece-analog-circuit",
+    "subject_code": "104401",
+    "year": 2023,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Write the answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of these are incorrect about Darlington amplifier?</p>",
+          "options": [
+            "It has a high input resistance",
+            "The output resistance is low",
+            "It has a unity voltage gain",
+            "It is a current buffer"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>What is a cascade amplifier?</p>",
+          "options": [
+            "A cascade of two CE amplifiers",
+            "A cascade of two CB amplifiers",
+            "A cascade of CE and CB amplifiers",
+            "A cascade of CB and CC amplifiers"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>What is the output of a class B amplifier for sinusoidal input?</p>",
+          "options": [
+            "Sinusoidal amplifier",
+            "Half-sinusoidal",
+            "Sinusoidal with higher frequency",
+            "Square wave"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>In a class B amplifier, it is found that DC power is 25W, find the ac power.</p>",
+          "options": [
+            "10 W",
+            "62.5 W",
+            "25 W",
+            "50 W"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>In an oscillator if phase of feedback is same as that of oscillation waveform then feedback is\n                        called</p>",
+          "options": [
+            "Positive feedback",
+            "Negative feedback",
+            "Cannot be predicted",
+            "Either positive or negative depending upon frequency"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>For a MOSFET, the pinch-off voltage is -3V. Gate to source voltage is 20V. W/L ratio is 5.\n                        Process transconductance parameter is 40\\( \\mu A/V^2 \\). Find drain to source current in\n                        saturation.</p>",
+          "options": [
+            "0.10 mA",
+            "0.05mA",
+            "- 0.05mA",
+            "-50A"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>For a MOSFET, the pinch-off voltage is -3V. Gate to source voltage is 20V. W/L ratio is 5.\n                        Process transconductance parameter is 40\\( \\mu A/V^2 \\). Find drain to source current in\n                        saturation.</p>",
+          "options": [
+            "1100 \\( \\Omega \\)",
+            "11000 \\( \\Omega \\)",
+            "900 \\( \\Omega \\)",
+            "110 \\( \\Omega \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The hybrid \\( \\pi \\) model is used for</p>",
+          "options": [
+            "Analysis of BJT for low frequency",
+            "Analysis of BJT at high frequency",
+            "Analysis of BJT for feedback",
+            "Analysis of BJT for large signal"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which oscillator is characterized by a split capacitor in its tank circuit?</p>",
+          "options": [
+            "RC phase shift oscillator",
+            "Colpitts oscillator",
+            "Wien bridge oscillator",
+            "none"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The gate voltage in a JFET at which drain current becomes zero is called</p>",
+          "options": [
+            "pinch-off voltage.",
+            "saturation voltage",
+            "active voltage.",
+            "cut-off voltage."
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain construction and working of Enhancement and Depletion type MOSFET.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is power amplifier. Explain Transformer coupled Class-A amplifier.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Barkhausen criteria play an important role while designing Oscillator justify. Explain Hartley\n                        and RC phase shift Oscillator.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the effect of voltage series and voltage shunt feedback on gain &amp; impedance of amplifier.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>The BJT is connected as a CE amplifier. Determine \\( Z_i \\), \\( Z_0 \\), \\( A_v \\), \\( A_i\n                        \\) hybrid model.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Describe current mirror circuit in BJT. What are the condition to design current mirror circuit.\n                        Obtain the expression for current transfer ratio.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Derive the expression for voltage gain and current gain and B.W of multistage amplifier.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>In brief explain the working of voltage series and current series circuit. Explain the same in\n                        case of BJT.</p>"
+        }
+      ]
+    }
+  ]
+}

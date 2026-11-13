@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 6th Semester Examination, 2023",
+    "subject": "Compiler Design",
+    "subject_slug": "compiler-design",
+    "subject_code": "105601",
+    "year": 2023,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory.",
+    "Symbols used (if any) have their usual meanings."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven questions of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "Which of the following is the most powerful parser?",
+          "options": [
+            "SLR",
+            "LALR",
+            "Canonical LR",
+            "Operator precedence"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "A top down parser generates",
+          "options": [
+            "Rightmost derivation",
+            "Rightmost derivation in reverse",
+            "Left most Derivation",
+            "Left most derivation in reverse"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "A shift reduce parser carries out the actions specified within braces immediately after reducing\n                        with the corresponding rule of grammar: \\( S \\rightarrow xxW \\) {print \"1\"}, \\( S\n                        \\rightarrow y \\) {print \"2\"}, \\( S \\rightarrow Sz \\) {print \"3\"}. What is the translation\n                        of xxxxyzz using the syntax directed translation scheme described by the above rules?",
+          "options": [
+            "23131",
+            "11233",
+            "11231",
+            "33211"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "Three-address code involves",
+          "options": [
+            "Exactly 3 address",
+            "At most 3 addresses",
+            "No unary operator",
+            "None"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "Handle pruning forms the basis of",
+          "options": [
+            "Bottom up parsing",
+            "Top down parsing",
+            "Predictive parsing",
+            "Recursive descent parsing"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "Left factoring guarantees",
+          "options": [
+            "Not occurring of backtracking",
+            "Cycle free parse tree",
+            "Error free target code",
+            "Correct LL(1) parsing table"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Consider a grammar \\( A \\rightarrow aS_1 | aS_2 \\). The left factored grammar produced from\n                        the grammar is",
+          "options": [
+            "\\( A' \\rightarrow aA, A \\rightarrow S_1 | S_2 \\)",
+            "\\( A' \\rightarrow aA, A \\rightarrow aS_1 | aS_2 \\)",
+            "\\( A' \\rightarrow S_1 | S_2, A \\rightarrow S_1 | S_2 \\)",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "Synthesized attributes are calculated",
+          "options": [
+            "From the values of attributes of the children of the node",
+            "From the values of attributes of the parent of the node",
+            "From the values of attributes of the siblings of the node",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "The method which merges the bodies of two loops is",
+          "options": [
+            "Loop rolling",
+            "Loop Jamming",
+            "Constant folding",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "For a grammar G, shift reduce (S-R) conflicts are present in LALR(1) parser, if and only if",
+          "options": [
+            "The LALR (1) parser for G has S-R conflicts",
+            "The LR(0) parser for G has S-R conflicts",
+            "The SLR(1) parser for G has S-R conflicts",
+            "The SLR(0) parser for G has S-R conflicts"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Explain the working of each phase of compiler in detail with an example.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "What is an activation record? Explain how they are used to access various local and global\n                        variables.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "What are the advantages of LALR parsing over SLR and CLR methods?",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Write the algorithm to compute FIRST and FOLLOW for a given grammar.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "What is shift-reduce conflict?",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Given the Syntax-Directed Definition below with the synthesized attribute val. Draw the annotated\n                        parse tree for the expression \\( (3+4)*(5+6) \\):<br/>\n                        \\( L \\rightarrow E \\) ; \\( L.val = E.val \\)<br/>\n                        \\( E \\rightarrow T \\) ; \\( E.val = T.val \\)<br/>\n                        \\( E \\rightarrow E_1 + T \\) ; \\( E.val = E_1.val + T.val \\)<br/>\n                        \\( T \\rightarrow F \\) ; \\( T.val = F.val \\)<br/>\n                        \\( T \\rightarrow T_1 * F \\) ; \\( T.val = T_1.val * F.val \\)<br/>\n                        \\( F \\rightarrow (E) \\) ; \\( F.val = E.val \\)<br/>\n                        \\( F \\rightarrow digit \\) ; \\( F.val = digit.lexval \\)",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Find the FIRST and FOLLOW from the following production:<br/>\n                        \\( S \\rightarrow aBDh \\)<br/>\n                        \\( B \\rightarrow cC \\)<br/>\n                        \\( C \\rightarrow bC | \\epsilon \\)<br/>\n                        \\( D \\rightarrow EF \\)<br/>\n                        \\( E \\rightarrow g | \\epsilon \\)<br/>\n                        \\( F \\rightarrow f | \\epsilon \\)"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Construct the predictive parsing table for the following grammar:<br/>\n                        \\( S \\rightarrow A \\)<br/>\n                        \\( A \\rightarrow aB | Ad \\)<br/>\n                        \\( B \\rightarrow bBC | f \\)<br/>\n                        \\( C \\rightarrow cg \\)",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Explain how type checking and error reporting are performed in compiler. Draw syntax tree and DAG\n                        for the statement: \\( a = (a*b+c)\\wedge(b+c)*b+c \\)",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "What is handle? Consider the grammar: \\( E \\rightarrow E+E | E*E | id \\). Find the handles of\n                        the right sentential forms of the reduction for the string \\( id_1 + id_2 * id_3 \\)."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "When a grammar is called ambiguous? Is there any technique to remove ambiguity? Justify whether\n                        the grammar is ambiguous or not: \\( A \\rightarrow AA | (A) | a \\)"
+        },
+        {
+          "id": "q6_3",
+          "type": "theory",
+          "text": "Discuss about operator precedence parser."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Differentiate between S-attribute SDT and L-attribute SDT with suitable examples.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Consider the following grammar: \\( E \\rightarrow E+T | T \\), \\( T \\rightarrow T*F | F \\),\n                        \\( F \\rightarrow id \\). Draw a SLR state transition diagram for the above grammar. Also draw\n                        the SLR parse table."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Consider the following grammar: \\( S \\rightarrow CC \\), \\( C \\rightarrow cC | d \\). Find\n                        the LR(1) set of items.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "Translate the expression \\( a=(a+b)*(c+d)+(a+b+c) \\) into (i) Quadruple (ii) Triple (iii)\n                        Indirect triple.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>LEX and YACC</li>\n<li>Peephole Optimization</li>\n<li>Symbol Table</li>\n<li>Predictive parser</li>\n</ul>",
+          "options": [
+            "LEX and YACC",
+            "Peephole Optimization",
+            "Symbol Table",
+            "Predictive parser"
+          ]
+        }
+      ]
+    }
+  ]
+}

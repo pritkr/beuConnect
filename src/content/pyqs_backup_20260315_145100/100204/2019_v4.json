@@ -1,0 +1,310 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2019 (New Course)",
+    "subject": "Programming for Problem Solving",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100204",
+    "year": 2019,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct alternative (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>What will be the data type of result of the following operation?<br/>(float)a * (int)b/(long)c *\n                        (double)d)</p>",
+          "options": [
+            "int",
+            "long",
+            "float",
+            "double"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>What does the following declaration mean?<br/>int (*ptr) [10];</p>",
+          "options": [
+            "ptr is array of pointers to 10 integers",
+            "ptr is a pointer to an array of 10 integers",
+            "ptr is an array of 10 integers",
+            "ptr is a pointer to array"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following is a correct format for declaration of function?</p>",
+          "options": [
+            "return-type function-name (argument type);",
+            "return-type function-name (argument type) {}",
+            "return-type (argument type) function-name;",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The value obtained in the function is given back to main by using ______ keyword.</p>",
+          "options": [
+            "return",
+            "static",
+            "new",
+            "volatile"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which data type is most suitable for storing a number 65000 in a 32-bit system?</p>",
+          "options": [
+            "signed short",
+            "unsigned short",
+            "long",
+            "int"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Which of the following declarations is not supported by C?</p>",
+          "options": [
+            "String str;",
+            "Char *str;",
+            "Float str = 3e2;",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following is an invalid if-else statement?</p>",
+          "options": [
+            "if (if (i == 1)) {}",
+            "if (func1 (a)) {}",
+            "if (a) {}",
+            "if ((char) a) {}"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A local variable declaration with no storage class specified is by default</p>",
+          "options": [
+            "auto",
+            "extern",
+            "static",
+            "register"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Automatic variables are initialized to</p>",
+          "options": [
+            "zero",
+            "junk value",
+            "None of the above",
+            "Both (i) and (ii)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The getchar() function is defined in ______ header file.</p>",
+          "options": [
+            "conio.h",
+            "stdio.h",
+            "iostream.h",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What do you understand by the term 'problem solving'? How can programming be used to do problem\n                        solving?</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Discuss about the components of computer system. How are they involved in computer programming\n                        activity?</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>Write the algorithm for exchanging the values of two variables.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Differentiate between flowchart, pseudo-code and source code.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What are the outcomes of compilation of a program? Discuss in detail.</p>"
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>What are constants? List the types of constants as defined in C language.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What are the libraries? How are they different from header files?</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What is an array? Write a C program to find the average of 10 numbers of an array.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>What do you understand by the operator precedence? Explain.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Define storage classes of C with some appropriate examples.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>What is branching? What are the possible types of branching and the C statements used for such\n                        type of branching? Give a detailed explanation with example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Write a C program to calculate 12!/8. The operation is factorial of 12, divided by 8. Also\n                        comment by examine whether the algorithm used is efficient.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>What is type casting? Explain its classification through examples.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Give the purpose, proper syntax and other variants of 'getch()' and 'gets()' functions.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>How can an array of numbers be passed to function as parameter? Write an example C program in\n                        support.</p>"
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>What is dynamic memory allocation in C?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Differentiate between the following:<br/>\n                        (i) Structures and Union<br/>\n                        (ii) Formatted and Unformatted data files</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is a file? List different operations performed on file. How are they achieved? Explain.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Write a C program to create an array of structures named \"STUDENT\" with fields, Name, Cell no,\n                        Address, and Marks. How to show any student record using this structure?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Which of the sorting algorithm is better than other and why? Explain.</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Write C program for merge sort algorithm.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

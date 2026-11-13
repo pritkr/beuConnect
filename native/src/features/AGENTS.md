@@ -35,9 +35,16 @@ src/features/<area>/
    Offline shows the last cached copy, labelled as such.
 6. **Lists virtualise.** Over ~30 rows use `List`, with height, a reactive
    `each` wrapper and loading/empty slots. Never nest a `List` in a `Scroll`.
-7. **Data honesty.** Never invent a row. If the upstream has no value, show the
+   A horizontal `Scroll` needs a height from its content (`min-h-11`) or an
+   explicit one (`h-11`) — `flex-1` inside a column sizes it to zero and
+   paints nothing.
+7. **Wrap a setter, never pass it.** `onChange={query.set}` compiles and then
+   throws `not a live signal` on the first keystroke or tap, replacing the
+   screen with the error boundary. Write `onChange={(value) => query.set(value)}`.
+   `scripts/lint-signal-setter.mjs` fails the gate on the bare form.
+8. **Data honesty.** Never invent a row. If the upstream has no value, show the
    gap; do not default a CGPA, a rank, a date or a paper.
-8. **No new route outside your own `<area>Routes`.** If you must add one, say so
+9. **No new route outside your own `<area>Routes`.** If you must add one, say so
    in the handoff and update `docs/ARCHITECTURE.md` §4 and `qa/routes.contract.ts`.
 
 ## Area-specific reading

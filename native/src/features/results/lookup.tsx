@@ -3,14 +3,19 @@
  *
  * One registration number and one semester in; the result is rendered from
  * JSON (live BEU, this device's saved copy, or BEU's published semester
- * table) as native views. BEU now puts a captcha in front of that JSON, so the
- * submit goes to `results.web`: the university's own page in a WebView, with
- * the number and semester already filled in. The student solves the captcha
- * there, the page is read on the phone, and the result is saved under the same
- * cache key as every other path.
+ * table) as native views. The fast path needs no captcha; when BEU's server
+ * refuses it, this screen says what happened and sends the student to the
+ * captcha portal, which saves its payload under the same key.
+ *
+ * Two states matter more than the happy path:
+ *
+ * - A copy already on this phone opens while BEU is down, and the screen says
+ *   when that copy was saved.
+ * - A refresh never blanks a result the student is reading; if it fails, the
+ *   copy stays and a note explains why it did not update.
  */
 
-import { Text, View, cleanup, computed, effect, signal } from "nsh";
+import { Text, View, announce, cleanup, computed, effect, signal } from "nsh";
 import type { Nav } from "../../app/router";
 import { numParam, param } from "../../app/router";
 import {
@@ -19,25 +24,22 @@ import {
   Btn,
   Card,
   Chip,
-  ErrorState,
+  Enter,
   Label,
   Muted,
   Panel,
   Row,
   Screen,
   SectionHeader,
-  Skeleton,
   Subtitle,
   Title,
 } from "../../ui";
-import { Icon } from "../../ui/icons";
-import { relativeTime } from "../../lib/net";
-import { ActionTile, SemChips } from "./components";
+import { formatDate } from "../../lib/net";
+import { EVENTS, track } from "../../lib/analytics";
+import type { FailureKind } from "./components";
+import { ActionTile, ResultSkeleton, SemChips, failureKind } from "./components";
 import type { RecentLookup, ResultData } from "./data";
-import { forgetRecent, loadResult, parseReg, readRecent, rememberLookup, savedCopy } from "./data";
-import { branchShort } from "./data";
-import type { Identity } from "./identity";
-import { resolveIdentity } from "./identity";
+import { branchShort, forgetRecent, loadResult, parseReg, readRecent, rememberLookup, savedCopy } from "./data";
 import { shortCollegeName } from "./colleges";
 import { ResultView } from "./result-view";
 import type { Async } from "./shared";
@@ -46,9 +48,9 @@ import {
   RegField,
   clampedSem,
   cleanReg,
+  errorMessage,
   idle,
   isValidReg,
-  readableError,
   suggestedSem,
 } from "./shared";
 
@@ -56,6 +58,59 @@ interface LookupRequest {
   reg: string;
   sem: number;
 }
+
+const FAILURE: Record<FailureKind, { badge: string; title: string; body: string }> = {
+  offline: {
+    badge: "Offline",
+    title: "No connection",
+    body: "The phone could not reach BEU. Try again when you are online.",
+  },
+  server: {
+    badge: "Server",
+    title: "BEU did not answer",
+    body: "The result server refused the request. The captcha portal is the live path.",
+  },
+  missing: {
+    badge: "No result",
+    title: "Nothing for that number",
+    body: "BEU has published no result for this number and semester. Check the digits.",
+  },
+  unknown: {
+    badge: "Failed",
+    title: "No result this time",
+    body: "",
+  },
+};
+
+/** Why the last attempt failed, and the two ways out of it. */
+function FailurePanel(props: {
+  kind: FailureKind;
+  message: string;
+  onRetry: () => void;
+  onPortal: () => void;
+}) {
+  const copy = FAILURE[props.kind];
+  const portalFirst = props.kind === "server" || props.kind === "missing";
+  const tone = props.kind === "server" || props.kind === "unknown" ? "ember" : "amber";
+  return (
+    <Panel tone={tone} class="gap-3">
+      <Row class="gap-2">
+        <Badge tone={tone}>{copy.badge}</Badge>
+        <Text class="flex-1 text-[15px] font-semibold leading-5 text-foreground">{copy.title}</Text>
+      </Row>
+      <Subtitle class="text-[12px] leading-5">{copy.body || props.message}</Subtitle>
+      <Btn variant={portalFirst ? "primary" : "secondary"} class="min-h-11" onPress={props.onPortal}>
+        Solve captcha on BEU
+      </Btn>
+      <Btn variant={portalFirst ? "secondary" : "primary"} class="min-h-11" onPress={props.onRetry}>
+        Try again
+      </Btn>
+    </Panel>
+  );
+}
+
+/** The result whose entrance has played; a refresh of the same one updates in place. */
+let enteredResult = "";
 
 export function ResultsScreen(props: { nav: Nav }) {
   const nav = props.nav;
@@ -65,52 +120,23 @@ export function ResultsScreen(props: { nav: Nav }) {
   const reg = signal(routeReg);
   const sem = signal(clampedSem(routeSem, routeReg));
   const semChosen = signal(routeSem >= 1 && routeSem <= 8);
-  /* Opening a route with a number is a request already under way, so the first
-     frame is a loading state — never an empty "check a result" panel. */
-  const state = signal<Async<ResultData>>(
-    isValidReg(routeReg)
-      ? { status: "loading", data: null, error: "" }
-      : idle<ResultData>(),
-  );
+  const state = signal<Async<ResultData>>(idle<ResultData>());
   const request = signal<LookupRequest | null>(
     isValidReg(routeReg) ? { reg: routeReg, sem: clampedSem(routeSem, routeReg) } : null,
   );
   const recents = signal<RecentLookup[]>([]);
   const savedAt = signal<number | null>(null);
   const formError = signal("");
+  const failure = signal<FailureKind | null>(null);
+  const failureText = signal("");
+  const attempt = signal(0);
 
   const info = computed(() => (isValidReg(reg()) ? parseReg(reg()) : null));
 
-  /*
-   * Who this number belongs to. A name is cheap — the identity cache, a result
-   * already saved here, a published roster — so the header can say whose result
-   * it is while BEU's slow server is still being asked.
-   *
-   * `who` stores the number each answer was resolved for, and that is the guard:
-   * a late roster read is dropped unless the field still holds the number it was
-   * asked about, and the name only shows under the number it belongs to. One
-   * resolve per registration change; the result load below never waits on it.
-   */
-  const who = signal<{ reg: string; identity: Identity } | null>(null);
-
-  effect(() => {
-    const value = reg();
-    if (!isValidReg(value)) return;
-    let alive = true;
-    cleanup(() => {
-      alive = false;
-    });
-    void resolveIdentity(value).then((identity) => {
-      /* The guard: only the answer for the number in the field right now lands. */
-      if (!alive || reg() !== value) return;
-      who.set(identity ? { reg: value, identity } : null);
-    });
-  });
-
-  const student = computed(() => {
-    const found = who();
-    return found !== null && found.reg === reg() ? found.identity : null;
-  });
+  /* The copy already on screen for the current reg + semester, so a refresh
+     keeps it visible instead of falling back to a skeleton. */
+  let lastKey = "";
+  let lastData: ResultData | null = null;
 
   const start = (regValue: string, semValue: number) => {
     const value = cleanReg(regValue);
@@ -122,21 +148,6 @@ export function ResultsScreen(props: { nav: Nav }) {
     reg.set(value);
     sem.set(semValue);
     request.set({ reg: value, sem: semValue });
-  };
-
-  /**
-   * The main path now: BEU publishes results only behind a captcha, so the
-   * number and semester go to BEU's own page in a WebView, where the student
-   * solves it. The captured page is parsed and saved on this phone.
-   */
-  const openPortal = () => {
-    const value = cleanReg(reg());
-    if (!isValidReg(value)) {
-      formError.set("Enter at least 8 digits of your registration number.");
-      return;
-    }
-    formError.set("");
-    nav.push("results.web", { reg: value, sem: sem() });
   };
 
   const onReg = (next: string) => {
@@ -151,53 +162,65 @@ export function ResultsScreen(props: { nav: Nav }) {
     if (request() !== null) start(reg(), next);
   };
 
-  /* The one network read: every submit, retry and recent tap lands here. */
+  /* The one read: every submit, retry, recent tap and pull-to-refresh. */
   effect(() => {
     const req = request();
     if (!req) return;
+    const key = `${req.reg}:${req.sem}`;
+    const keep = key === lastKey ? lastData : null;
+    lastKey = key;
+    lastData = keep;
+    void attempt(); // read: retry and pull-to-refresh fetch again
+
     let alive = true;
     cleanup(() => {
       alive = false;
     });
 
-    state.set({ status: "loading", data: null, error: "" });
-    void (async () => {
-      try {
-        const data = await loadResult(req.reg, req.sem);
+    failure.set(null);
+    failureText.set("");
+    state.set({ status: "loading", data: keep, error: "" });
+    // Semester only: the registration number is a student's identity and never
+    // goes into a payload.
+    track(EVENTS.resultLookup, { sem: req.sem });
+
+    void loadResult(req.reg, req.sem).then(
+      async (data) => {
         if (!alive) return;
+        lastData = data;
         state.set({ status: "ready", data, error: "" });
-        await rememberLookup({
-          reg: data.reg || req.reg,
-          sem: req.sem,
-          name: data.name,
-          at: Date.now(),
-        });
+        // The screen swaps a skeleton for a result in place; a screen reader
+        // hears nothing unless the change is announced.
+        announce(
+          data.sgpa === null
+            ? "Result loaded."
+            : `Result loaded. SGPA ${data.sgpa}${data.status ? `, ${data.status.toLowerCase()}` : ""}.`,
+        );
+        track(EVENTS.resultOutcome, { outcome: "ok", sem: req.sem });
+        await rememberLookup({ reg: data.reg || req.reg, sem: req.sem, name: data.name, at: Date.now() });
         const rows = await readRecent();
         if (alive) recents.set(rows);
-      } catch (error) {
-        if (alive) {
-          state.set({
-            status: "error",
-            data: null,
-            /* No raw fetch line ("GET https://…: no response is listed for
-               it") on a phone screen: a short sentence, and the captcha
-               portal below stays the live path. */
-            error: readableError(
-              error,
-              "BEU could not be reached, and no copy of this result is on this phone. Check your connection, or open the captcha portal below.",
-            ),
-          });
-        }
-      }
-    })();
+      },
+      (error) => {
+        if (!alive) return;
+        track(EVENTS.resultOutcome, { outcome: "error", sem: req.sem, reason: failureKind(error) });
+        failure.set(failureKind(error));
+        failureText.set(errorMessage(error));
+        state.set(
+          keep
+            ? { status: "ready", data: keep, error: "" }
+            : { status: "error", data: null, error: errorMessage(error) },
+        );
+      },
+    );
   });
 
-  /* Recents once, and again after every successful lookup above. */
+  /* Recent lookups once, and again after every successful read above. */
   effect(() => {
     void readRecent().then((rows) => recents.set(rows));
   });
 
-  /* Does this device already hold a copy of the current reg + semester? */
+  /* Is this reg + semester already saved on the phone? */
   effect(() => {
     const value = reg();
     const target = sem();
@@ -214,73 +237,32 @@ export function ResultsScreen(props: { nav: Nav }) {
     });
   });
 
+  const retry = () => start(reg(), sem());
+  const portal = () => nav.push("results.portal", { reg: reg(), sem: sem() });
   const clearRecents = () => {
     void forgetRecent();
     recents.set([]);
   };
-
-  /** The number this phone used last: the one-tap path back to a result. */
-  const latest = computed(() => (recents().length > 0 ? recents()[0] : null));
-
-  /** Put a saved number in the form without loading it yet. */
-  const useNumber = (row: RecentLookup) => {
-    reg.set(cleanReg(row.reg));
-    sem.set(row.sem);
-    semChosen.set(true);
-    formError.set("");
+  const refresh = () => {
+    if (request()) attempt.update((value) => value + 1);
   };
+
+  const data = () => state().data;
 
   return (
     <Screen>
-      <Body>
-        <View class="gap-1 pt-1">
-          <Label>{() => (student() === null ? "BEU · Results" : `Semester ${sem()}`)}</Label>
-          <Title numberOfLines={2}>{() => student()?.name ?? "Check your result"}</Title>
+      <Body
+        refreshing={state().status === "loading" && data() !== null}
+        onRefresh={refresh}
+      >
+        <View class="gap-1">
+          <Label>BEU · Results</Label>
+          <Title>Every mark, in one place.</Title>
+          <Subtitle>Papers, credits and SGPA, drawn natively.</Subtitle>
         </View>
 
-        {() => {
-          const row = latest();
-          if (row === null || state().data !== null) return null;
-          return (
-            <Card class="gap-3" testID="lookup-saved">
-              <Row class="flex-wrap items-center justify-between gap-2">
-                <Label>Saved on this phone</Label>
-                <Muted class="tabular-nums">{relativeTime(row.at)}</Muted>
-              </Row>
-              <View class="gap-0.5">
-                <Text class="text-[17px] font-semibold leading-5 text-foreground" numberOfLines={2}>
-                  {row.name || "Your last lookup"}
-                </Text>
-                <Muted class="tabular-nums" numberOfLines={1}>
-                  {`${row.reg} · semester ${row.sem}`}
-                </Muted>
-              </View>
-              <Row class="gap-3">
-                <Btn
-                  class="flex-1 min-h-11"
-                  onPress={() => start(row.reg, row.sem)}
-                  label={`Open ${row.reg} semester ${row.sem}`}
-                >
-                  Open saved result
-                </Btn>
-                <Btn variant="ghost" class="min-h-11" onPress={() => useNumber(row)} label="Use this number">
-                  Use number
-                </Btn>
-              </Row>
-              <Muted class="text-[11px] leading-4">
-                A result saved here opens even when BEU's server is down.
-              </Muted>
-            </Card>
-          );
-        }}
-
         <Card class="gap-4">
-          <RegField
-            value={reg()}
-            onChange={onReg}
-            onSubmit={openPortal}
-            autoFocus={routeReg === ""}
-          />
+          <RegField value={reg()} onChange={onReg} onSubmit={retry} autoFocus={routeReg === ""} />
 
           <If when={info()}>
             <Fresh
@@ -296,140 +278,115 @@ export function ResultsScreen(props: { nav: Nav }) {
             />
           </If>
 
-          <Fresh
-            when={`sem:${sem()}`}
-            build={() => <SemChips value={sem()} onChange={onSem} />}
-          />
+          <Fresh when={`sem:${sem()}`} build={() => <SemChips value={sem()} onChange={onSem} />} />
 
-          {formError() ? (
-            <Text class="text-[12px] font-medium text-destructive">{formError()}</Text>
-          ) : null}
+          {formError() ? <Text class="text-[12px] font-medium text-destructive">{formError()}</Text> : null}
 
           <Fresh
             when={`go:${state().status}:${sem()}`}
             build={() => (
-              <Btn
-                class="min-h-12"
-                disabled={state().status === "loading"}
-                onPress={openPortal}
-                label="Check result"
-              >
+              <Btn class="min-h-12" disabled={state().status === "loading"} onPress={retry} label="Check result">
                 {state().status === "loading" ? "Contacting BEU…" : `Check semester ${sem()} result`}
               </Btn>
             )}
           />
 
-          <Muted class="text-[11px] leading-4">
-            BEU asks for a captcha now, so the next screen is BEU's own page with your number and semester ready.
-            Solve it there; the result is read back here and saved on this phone, so it opens instantly next time.
-          </Muted>
+          <Muted class="text-[11px] leading-4">A saved copy opens even when BEU is down.</Muted>
         </Card>
 
-        <If when={savedAt() !== null && state().data === null}>
-          <Panel tone="amber" class="gap-2">
-            <Row class="flex-wrap items-center gap-2">
+        {savedAt() !== null && data() === null ? (
+          <Panel tone="amber" class="gap-1">
+            <Row class="gap-2">
               <Badge tone="amber">Saved copy</Badge>
-              <Muted class="tabular-nums">{relativeTime(savedAt() ?? 0)}</Muted>
+              <Muted>{formatDate(savedAt() ?? 0)}</Muted>
             </Row>
-            <Btn variant="secondary" class="min-h-11" onPress={() => start(reg(), sem())}>
-              Open the saved copy
-            </Btn>
+            <Subtitle class="text-[12px] leading-5">
+              This semester is already on this phone. It opens if BEU cannot be reached.
+            </Subtitle>
           </Panel>
-        </If>
+        ) : null}
 
-        <If when={state().data === null && recents().length > 1}>
+        <If when={recents().length > 0 && data() === null}>
           <View class="gap-2">
             <SectionHeader title="Recent lookups" action="Clear" onAction={clearRecents} />
-            <Each of={recents().slice(1, 7)} key={(row) => `${row.reg}-${row.sem}`}>
-              {(row) => (
-                <View
-                  class="min-h-11 flex-row items-center gap-3 rounded-2xl border border-border bg-card px-3.5 py-3 active:bg-muted"
-                  onPress={() => start(row().reg, row().sem)}
-                  role="button"
-                  accessibilityLabel={`Open ${row().reg} semester ${row().sem}`}
-                >
-                  <View class="flex-1 gap-0.5">
-                    <Text class="text-[14px] font-semibold text-foreground" numberOfLines={1}>
-                      {row().name || row().reg}
-                    </Text>
-                    <Muted class="tabular-nums">
-                      {`${row().reg} · Sem ${row().sem} · ${relativeTime(row().at)}`}
-                    </Muted>
-                  </View>
-                  <Icon name="chevron-right" size={18} class="text-muted-foreground" />
-                </View>
+            <Fresh
+              when={`recents:${recents()
+                .map((row) => `${row.reg}:${row.sem}`)
+                .join(",")}`}
+              build={() => (
+                <Row class="flex-wrap gap-2">
+                  {recents()
+                    .slice(0, 6)
+                    .map((row) => (
+                      <Chip onPress={() => start(row.reg, row.sem)}>
+                        {`Sem ${row.sem} · ${row.name || row.reg}`}
+                      </Chip>
+                    ))}
+                </Row>
               )}
-            </Each>
+            />
           </View>
         </If>
 
-        <If when={state().status === "loading"}>
-          <View class="gap-3">
-            <Muted>Contacting BEU. Their server can take up to a minute.</Muted>
-            <Card class="gap-3">
-              <Skeleton h={22} w={200} />
-              <Skeleton h={14} />
-              <Skeleton h={14} w={240} />
-            </Card>
-            <Row class="gap-3">
-              <View class="flex-1">
-                <Skeleton h={84} />
-              </View>
-              <View class="flex-1">
-                <Skeleton h={84} />
-              </View>
-            </Row>
-            <Card class="gap-3">
-              <Skeleton h={14} />
-              <Skeleton h={14} w={250} />
-              <Skeleton h={14} w={220} />
-            </Card>
-          </View>
+        <If when={state().status === "loading" && data() === null}>
+          <ResultSkeleton label="Contacting BEU. This can take a minute." />
         </If>
 
         <If when={state().status === "error"}>
-          <ErrorState
-            title="No result this time"
-            message={state().error}
-            onRetry={() => start(reg(), sem())}
+          <Fresh
+            when={`failed:${failure()}:${failureText()}`}
+            build={() => (
+              <FailurePanel
+                kind={failure() ?? "unknown"}
+                message={failureText()}
+                onRetry={retry}
+                onPortal={portal}
+              />
+            )}
           />
         </If>
 
-        <If when={state().status === "error"}>
-          <Card class="gap-3" testID="captcha-explainer">
-            <Row class="gap-2">
-              <Badge tone="ember">Captcha</Badge>
-              <Muted class="text-[12px]">BEU asks for a person</Muted>
-            </Row>
-            <Muted class="text-[12px] leading-5">
-              BEU's result server now puts a captcha in front of the data, and only a human can solve one. This app
-              does not solve it, replay it or go around it.
-            </Muted>
-            <Muted class="text-[12px] leading-5">
-              Open the official page once, solve the captcha yourself, and submit. The app reads the answer BEU
-              gives you, saves it on this phone and draws it natively.
-            </Muted>
-            <Btn
-              variant="secondary"
-              class="min-h-11"
-              onPress={openPortal}
-              label="Open BEU's result page"
-            >
-              Open BEU's result page
-            </Btn>
-            <Muted class="text-[11px] leading-4">
-              Your registration number and semester are filled in on the page, so the only thing left to do is the
-              captcha.
-            </Muted>
-          </Card>
-        </If>
+        <Fresh
+          when={`stale:${failureText()}:${data() ? "yes" : "no"}`}
+          build={() =>
+            data() && failureText() ? (
+              <Panel tone="amber" class="gap-1">
+                <Row class="gap-2">
+                  <Badge tone="amber">Not refreshed</Badge>
+                  <Muted>{formatDate(data()?.savedAt ?? 0)}</Muted>
+                </Row>
+                <Subtitle class="text-[12px] leading-5">
+                  BEU did not answer just now, so this is the copy saved earlier.
+                </Subtitle>
+              </Panel>
+            ) : (
+              <View />
+            )
+          }
+        />
 
-        <If when={state().data}>
-          {(data) => (
-            <ResultView
-              data={data()}
-              onRank={() => nav.push("results.rank", { reg: data().reg, sem: data().semester })}
-              onBattle={() => nav.push("results.battle", { a: data().reg, sem: data().semester })}
+        <If when={data()}>
+          {() => (
+            <Fresh
+              when={`view:${data()?.reg}:${data()?.semester}:${data()?.source}:${data()?.savedAt}`}
+              build={() => {
+                const result = data();
+                if (!result) return <View />;
+                // The card arrives when a different result replaces the skeleton. A
+                // refresh of the same one updates in place: re-entering content the
+                // student pulled down for is motion, not information.
+                const id = `${result.reg}:${result.semester}`;
+                const first = id !== enteredResult;
+                enteredResult = id;
+                const body = (
+                  <ResultView
+                    data={result}
+                    onRank={() => nav.push("results.rank", { reg: result.reg, sem: result.semester })}
+                    onBattle={() => nav.push("results.battle", { a: result.reg, sem: result.semester })}
+                  />
+                );
+                return first ? <Enter>{body}</Enter> : body;
+              }}
             />
           )}
         </If>
@@ -444,7 +401,7 @@ export function ResultsScreen(props: { nav: Nav }) {
               onPress={() => nav.push("results.table")}
             />
             <ActionTile
-              icon="medal"
+              icon="hash"
               title="Rank"
               hint="Where you stand"
               tone="mint"

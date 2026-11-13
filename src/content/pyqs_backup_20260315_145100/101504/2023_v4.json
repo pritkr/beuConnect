@@ -1,0 +1,260 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 5th Semester Examination, 2023",
+    "subject": "Hydraulic Engineering",
+    "subject_slug": "hydraulic-engineering",
+    "subject_code": "101504",
+    "year": 2023,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following best describes hydraulic engineering?</p>",
+          "options": [
+            "The study of water movement in natural water bodies like rivers and lakes",
+            "The application of fluid mechanics principles to solve problems involving the collection,\n                            storage, control, transport, regulation, and use of water",
+            "The engineering discipline that deals with the design and construction of different bridges.",
+            "The design and analysis of structures subjected to dynamic loads"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following statements about boundary layer separation is correct?</p>",
+          "options": [
+            "Boundary layer separation occurs when the pressure gradient is zero.",
+            "Boundary layer separation occurs when the pressure gradient is negative.",
+            "Boundary layer separation occurs when the pressure gradient is positive.",
+            "Boundary layer separation is independent of the pressure gradient."
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>In a rectangular open channel, critical depth is achieved when</p>",
+          "options": [
+            "The Froude number is greater than 1.",
+            "The Froude number is less than 1.",
+            "The Froude number is equal to 1.",
+            "The Reynolds number is 2000."
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>In an open channel flow, the specific energy E is defined as the sum of the depth of flow y and\n                        the\n                        velocity head \\( \\frac{V^2}{2g} \\). For a given discharge, the specific energy is minimum\n                        when:\n                    </p>",
+          "options": [
+            "The flow is subcritical.",
+            "The flow is critical.",
+            "The flow is supercritical.",
+            "The flow is laminar."
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>A rectangular open channel has a width of 3 meters and carries a discharge of 15 cubic meters per\n                        second. If the flow depth at a certain section is 2 meters, calculate the specific energy at\n                        that\n                        section.</p>",
+          "options": [
+            "2.37 meters",
+            "4.21 meters",
+            "3.04 meters",
+            "5.19 meters"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>When analyzing non-uniform flow using the standard step method, which of the following conditions\n                        must be met to ensure convergence and accuracy of the computed water surface profiles?</p>",
+          "options": [
+            "The step size must be small enough to assume linear variation of hydraulic parameters.",
+            "The Froude number must be less than 1 at every computational step.",
+            "The flow must be uniform at the downstream boundary.",
+            "The flow depth must remain constant across each computational step."
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A rectangular open channel with a width of 4 meters carries a discharge of 20 cubic meters per\n                        second. If the depth of flow before the hydraulic jump (initial depth) is 0.5 meters, calculate\n                        the\n                        sequent depth (depth after the hydraulic jump). (Assume gravitational acceleration \\( g = 9.81\n                        \\,\n                        m/s^2 \\))</p>",
+          "options": [
+            "2.5 meters",
+            "3.5 meters",
+            "3.0 meters",
+            "4.0 meters"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following is a characteristic effect of a hydraulic jump occurring in an open\n                        channel\n                        flow?</p>",
+          "options": [
+            "Decrease in water surface elevation and increase in flow velocity.",
+            "Increase in flow velocity and energy dissipation.",
+            "Increase in water surface elevation and decrease in flow velocity.",
+            "Decrease in water surface elevation and energy dissipation."
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>In a CFD simulation of an open channel flow with complex geometry, which turbulence model is most\n                        suitable for accurately capturing the effects of turbulence and flow separation around\n                        obstacles?\n                    </p>",
+          "options": [
+            "Laminar Flow Model",
+            "Spalart-Allmaras Model",
+            "k-ε Model",
+            "Smagorinsky-Lily Model"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>A rectangular channel has \\( H=20 \\, m \\), \\( n=0.020 \\) and \\( S_0=0.0004 \\). If the\n                        normal\n                        depth is 1.0 m, a depth of 0.8 m in a GVF in this channel is a part of</p>",
+          "options": [
+            "M1",
+            "M2",
+            "M3",
+            "S1"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Discuss the development of the boundary layer in open channel flow. Explain the significance of\n                        the\n                        boundary layer thickness and how it varies along the length of the channel.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>A smooth flat plate is placed in a uniform flow of water with a velocity of \\( 0.5 \\, m/s \\).\n                        The\n                        water has a kinematic viscosity of \\( 1 \\times 10^{-6} \\, m^2/sec \\). Calculate the boundary\n                        layer\n                        thickness at a distance of 2 meters from the leading edge of the plate. Determine whether the\n                        boundary layer is laminar or turbulent at this location.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is meant by economical section of a channel? Derive the condition for the most economical\n                        rectangular section.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>The discharge of water through a rectangular channel of width 8 m is \\( 15 \\, m^3/s \\) when\n                        depth\n                        of flow of water is 1.2 m. Calculate (i) specific energy of flowing water (ii) critical depth\n                        and\n                        critical velocity (iii) value of minimum specific energy.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for discharge through an open channel by Chezy's Formula and obtain an\n                        expression for conveyance.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A trapezoidal channel has side slopes of 1H to 4V and side slope of its bed is 1 in 2000.\n                        Determine\n                        the optimum dimensions of the channel, if it has to carry water at 0.5 \\( m^3/s \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the term hydraulic jump. Derive an expression for the depth of hydraulic jump in terms of\n                        the\n                        upstream Froude number.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Find the slope of the free water surface in a rectangular channel of width 20 m, having depth of\n                        flow\n                        5 m. The discharge through the channel is \\( 50 \\, m^3/s \\). The bed of the channel is having\n                        a\n                        slope of 1 in 4000. Take the value of Chezy's constant \\( C=60 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>The depth of flow of water, at a certain section of a rectangular channel of 2 m wide is 0.3 m.\n                        The\n                        discharge through the channel is \\( 1.5 \\, m^3/s \\). Determine whether a hydraulic jump will\n                        occur, and if so, find its height and loss of energy.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Define the term: (i) Afflux (ii) Back water curve.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Discuss the various methods used to measure fluid velocity in open channel flows and closed\n                        conduit\n                        systems in hydraulic engineering.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Discuss the different types of channel transitions, such as expansions, contractions, and bends,\n                        and\n                        their impact on flow characteristics.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss the concept of a surge in open channel flow as a moving hydraulic jump. Explain the\n                        difference between a positive surge and a negative surge, including their causes,\n                        characteristics,\n                        and impacts on the flow. Illustrate your explanation with diagrams and real-life examples where\n                        applicable.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What is hydroinformatics and how does it integrate with traditional hydraulic engineering?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Identify main technological tools and software used in hydroinformatics. How do these tools\n                        enhance\n                        the analysis and management of water resources?</p>"
+        }
+      ]
+    }
+  ]
+}

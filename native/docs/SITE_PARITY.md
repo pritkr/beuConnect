@@ -1,10 +1,10 @@
 # Site ↔ native parity
 
-Snapshot: **2026-10-27** · site `https://beu.prit.eu.org` · app `native/`
-Site side read from `src/pages/**`: **36 files — 33 page files + 3 API
-endpoints**. App side read from `src/app/registry.tsx` + every feature module:
-**55 registered routes** across thirteen modules (including the first-run
-`onboarding`), plus the shell-owned `more` screen.
+Snapshot: **2026-10-31** · site `https://beu.prit.eu.org` · app `native/`
+Site side read from `src/pages/**`: **42 files — 33 page files + 9 API
+endpoints**. App side re-counted from `src/app/registry.tsx` + every feature
+module on 2026-10-31: **61 registered routes** across thirteen modules
+(including the first-run `onboarding`), plus the shell-owned `more` screen.
 
 Statuses: **done** = the feature exists natively and does the same job ·
 **partial** = exists, one capability is missing or narrowed ·
@@ -14,7 +14,7 @@ Statuses: **done** = the feature exists natively and does the same job ·
 | # | Site feature | Native route | Status | Implemented in |
 |---:|---|---|---|---|
 | 1 | `/` home: tiles, latest notices | `home` | done | `features/home/index.tsx` |
-| 2 | `/result`: lookup, BEU page in an **iframe** | `results` + `results.web` | done | `features/results/lookup.tsx`, `web.tsx` |
+| 2 | `/result`: lookup, BEU page in an **iframe** | `results` + `results.portal` (linked); `results.web` registered but unlinked, `docs/BLOCKERS.md` B5 | done | `features/results/lookup.tsx`, `portal.tsx`, `web.tsx` |
 | 3 | `/result-table`: branch roster ranked by CGPA | `results.table` | done | `features/results/table.tsx` |
 | 4 | `/rank`: one student's branch + college standing | `results.rank` | done | `features/results/rank.tsx` |
 | 5 | `/merit-list`: toppers by branch/semester | `results.merit` | done | `features/results/merit.tsx` |
@@ -29,12 +29,12 @@ Statuses: **done** = the feature exists natively and does the same job ·
 | 14 | `/notice-board`: curated static notices | `notices` (merged feed) | done | `features/notices/api.ts` |
 | 15 | `/announcements`, `/[slug]`: editorial posts | `notices.announcements`, `notices.post` | done | `features/notices/index.tsx` |
 | 16 | `/data-browser`: filter/sort/export any published dataset | `data`, `data.table` | done | `features/pyqs/data.tsx`, `data-table.tsx` |
-| 17 | `/listofstudents`, `/[college]`, `/gecs`, `/gecscv`: college directory | `students`, `.college`, `.branch`, `.student`, `.leads`; `data` | partial — the GEC Sheikhpura directory exists, but nothing in More or search links to it yet; other colleges are reachable only as datasets | `features/students/index.tsx`, `features/pyqs/data.tsx` |
+| 17 | `/listofstudents`, `/[college]`, `/gecs`, `/gecscv`: college directory | `students`, `.colleges`, `.college`, `.branch`, `.student`, `.leads`; `data` | partial — More opens the GEC Sheikhpura register, and `students.colleges` names every BEU college with the register first and "No register" on the rest; another college's own roster is reachable only as a dataset | `features/students/index.tsx`, `features/pyqs/data.tsx` |
 | 18 | `/syllabus`, `/[branch]`, `/[branch]/[sem]`, `/x` | `syllabus`, `.subject`, `.search`, `.saved` | done | `features/syllabus/index.tsx` |
 | 19 | `/gate-syllabus`, `/[paper]`: 30 papers | `syllabus.gate` | done | `features/syllabus/index.tsx` |
 | 20 | `/gate-pyqs`, `/[branch]`: GATE PDFs | `pyqs.gate` | done | `features/pyqs/gate.tsx` |
 | 21 | `/pyqs`, `/[subject]`: one page per subject shelf | `pyqs`, `pyqs.paper`, `pyqs.site`, `pyqs.pdf` | done | `features/pyqs/browse.tsx`, `paper.tsx` |
-| 22 | `/api/result`: server-side BEU fetch | results data layer, `results.web` | partial — upstream now demands a captcha (§1) | `features/results/data.ts`, `web.tsx`, `parse-html.ts` |
+| 22 | `/api/result`: server-side BEU fetch | results data layer, `results.portal` (linked), `results.web` | partial — upstream now demands a captcha (§1) | `features/results/data.ts`, `portal.tsx`, `web.tsx`, `parse-html.ts` |
 | 23 | `/api/notices/important` | `notices`, Home ticker | done | `features/notices/api.ts` |
 | 24 | `/api/feedback`: bug / wrong-data / idea reports | `feedback` (alias `tools.feedback`) | done | `features/feedback/index.tsx` |
 | 25 | `/404` | not-found screen | done | `src/app/coming-soon.tsx` |
@@ -43,28 +43,32 @@ Statuses: **done** = the feature exists natively and does the same job ·
 | 28 | — (native-only) | `notes`, `notes.subject` | done | `features/notes/index.tsx` |
 | 29 | — (native-only) | `planner` | done | `features/planner/index.tsx` |
 | 30 | — (native-only) | `search` | done | `features/search/index.tsx` |
+| 31 | — (native-only) | `settings`, `.profile`, `.appearance`, `.reminders`, `.notifications`, `.storage`, `.about` (+ bare aliases) | done | `features/settings/index.tsx` |
+| 32 | — (native-only) | `settings.offline` | done | `features/offline/index.tsx` |
+| 33 | — (native-only) | `onboarding`: one registration number resolves a name before a profile exists | done | `features/onboarding/index.tsx` |
 
-Counts: **23 done · 3 partial · 1 different-by-design · 3 not planned**.
+Counts: **26 done · 3 partial · 1 different-by-design · 3 not planned**.
 
 ## 1. The result path: the captcha page
 
-BEU gates its own result token behind a reCAPTCHA, so the site's server-side
-lookup cannot finish on its own:
+BEU gates its own result token behind a captcha: the token endpoint refuses with
+`403`, and the result page itself runs Cloudflare Turnstile.
 
 ```
 GET https://beu-bih.ac.in/backend/v1/result/token
-→ 403 {"message":"CAPTCHA verification required."}            (2026-10-26)
+→ 403 {"message":"Access denied."}                             (2026-10-28;
+         the same endpoint said "CAPTCHA verification required." on 2026-10-26)
 
 GET https://beu.prit.eu.org/api/result?reg=…&sem=…&format=json
-→ 502 {"status":502,"message":"Target server returned status 530. …"}
+→ 503 {"status":503,"message":"The university result portal requires a captcha before it returns data. Open the portal, complete the check, and read the result there.","code":"upstream_captcha","retryable":false,"officialUrl":"https://beu-bih.ac.in/result-three"}
 ```
 
-The native app still tries the fast path first, then this phone's saved copy,
-then the published `wide_*.csv` row. When all three miss, the error state offers
-**`results.web`** — the only honest way through.
+The native app tries this phone's fresh saved copy first (under ten minutes),
+then the live fast path, then any saved copy, then the published `wide_*.csv`
+row. When all four miss, the error state offers **`results.portal`**, and lookup
+and battle push that route.
 
-`features/results/web.tsx` is that screen. BEU's result flow is three Angular
-routes in one document:
+BEU's result flow is three Angular routes in one document:
 
 ```
 /result-one                 the published exam list, one clickable row each
@@ -72,27 +76,9 @@ routes in one document:
 /result-three?d=<b64>       the result, handed over in Angular router state
 ```
 
-1. The WebView opens `https://beu-bih.ac.in/result-one` at phone size, with the
-   registration number and semester in the route params.
-2. `injectedJavaScript` installs one watcher for the whole visit (an Angular
-   route change is not a document load). It opens the `<ordinal> Semester
-   Examination` row for the student's batch, skips supplementary and backlog
-   rows, fills `#reg` once and never overwrites an edit, and reports BEU's own
-   `.alert-danger` text.
-3. When `app-result-three` holds the result, it posts
-   `{kind:"result", html}` exactly once and stops polling.
-4. `parseResultHtml()` (`features/results/parse-html.ts`) reads that markup with
-   no DOM and no dependencies — tables first, then label/value pairs, then the
-   SGPA table's own semester column — and returns `null` rather than guessing.
-5. `saveParsedResult()` writes the **same** cache key
-   (`beu.cache.result:<digits>:<sem>`) and the **same** `ResultData` shape, so
-   rank, battle, merit, recents and Home treat it as an ordinary result. The
-   screen then swaps the WebView for `<ResultView>` and offers "Open in Results".
+### 1.1 The linked screen: `results.portal`
 
-The student solves the captcha in the page. The app never solves, bypasses,
-replays or farms a token; it only reads the result the student already earned.
-
-`features/results/portal.tsx` is the older JSON capture, kept for direct links:
+`features/results/portal.tsx` is what the app opens today:
 
 1. Loads `https://beu-bih.ac.in/result-three` in a native `WebView`.
 2. Injects `CAPTURE_HOOK` through `injectedJavaScriptBeforeContentLoaded`, i.e.
@@ -111,13 +97,34 @@ replays or farms a token; it only reads the result the student already earned.
    it as an ordinary result.
 5. The screen switches from the WebView to `<ResultView>` and offers
    "Open in Results". Before the capture lands it offers "Copy my registration
-   number" and fills the form, but never touches the captcha.
+   number", but never touches the captcha. After 10 seconds without a captcha
+   widget the hook posts `{probe:"nocaptcha"}`, so the screen can say the
+   challenge itself did not load.
 
-The student solves the captcha in the page. The app never solves, bypasses,
-replays or farms a token; it only reads the result the student already earned.
-After 10 seconds without a captcha widget that older hook posts
-`{probe:"nocaptcha"}`,
-so the screen can say the challenge itself did not load.
+### 1.2 `results.web`: registered, not linked
+
+`features/results/web.tsx` is the page-walker. It is registered in the same
+module and mounts in QA, but nothing in the app pushes it yet, so it is not
+reachable from a running screen.
+
+1. The WebView opens `https://beu-bih.ac.in/result-one` at phone size, with the
+   registration number and semester in the route params.
+2. `injectedJavaScript` installs one watcher for the whole visit (an Angular
+   route change is not a document load). It opens the `<ordinal> Semester
+   Examination` row for the student's batch, skips supplementary and backlog
+   rows, fills `#reg` once and never overwrites an edit, and reports BEU's own
+   `.alert-danger` text.
+3. When `app-result-three` holds the result, it posts
+   `{kind:"result", html}` exactly once and stops polling.
+4. `parseResultHtml()` (`features/results/parse-html.ts`) reads that markup with
+   no DOM and no dependencies — tables first, then label/value pairs, then the
+   SGPA table's own semester column — and returns `null` rather than guessing.
+5. `saveParsedResult()` writes the **same** cache key and the **same**
+   `ResultData` shape, then the screen swaps the WebView for `<ResultView>`.
+
+Both screens are honest about the gate: the student solves the captcha in the
+page, and the app never solves, bypasses, replays or farms a token. Each reads
+the result the student already earned.
 
 `nsh.json` must allow every host the WebView navigates to:
 
@@ -132,11 +139,12 @@ so the screen can say the challenge itself did not load.
 ] }
 ```
 
-The three Google hosts are the reCAPTCHA endpoints the portal's form loads; the
-last three are the Google Docs viewer Android's WebView falls back to for a PDF.
-A web view checks top-level navigations, so a missing host means the portal (or
-its challenge) never loads and `onError` shows "The portal did not load." — a
-configuration bug, not a network failure. See `docs/ANDROID.md` §4.
+The Cloudflare host is the Turnstile widget the result form loads; the next
+three are the reCAPTCHA endpoints the older portal uses; the last three are the
+Google Docs viewer Android's WebView falls back to for a PDF. A web view checks
+top-level navigations, so a missing host means the page (or its challenge) never
+loads and `onError` shows "The portal did not load." — a configuration bug, not
+a network failure. See `docs/ANDROID.md` §4.
 
 ## 2. Identity: a registration number becomes a person
 
@@ -186,7 +194,7 @@ bun scripts/verify-identity.ts
 
 | Site thing | What the app does instead | Why |
 |---|---|---|
-| `/wifi` bookmarklet: drag a `javascript:` link to the toolbar | Same logic, built as a **copyable snippet**, plus steps and copy buttons for the number / portal address / password. The password is never persisted. | Phone browsers strip `javascript:` from the address bar; a bookmarklet is a desktop-only affordance. |
+| `/wifi`: bookmarklet, auto-login **userscript**, and the desktop daemon installer | The same sign-in, done by the app: an Android `JobService` probes the captive portal and authenticates every 15 minutes, with the manual steps and copy buttons as the fallback | Phones cannot run a bookmarklet, a userscript or a desktop daemon. A job that runs with the app closed is the phone's version of the daemon, and it is the one thing the site could never do. |
 | `/result` iframe showing BEU's page | Native result view; the official page appears only for the captcha | A result is data, not a page. Native rows are searchable, copyable and work offline. |
 | `/result?view=official` raw BEU HTML | — | Debug affordance, not a student need. |
 | `/attendance` JSON import/export | Attendance lives in `beu.tools.attendance`; no file-picker capability is declared in `nsh.json` | Import/export was desktop plumbing. |
@@ -197,7 +205,7 @@ bun scripts/verify-identity.ts
 | Capability | Route | File |
 |---|---|---|
 | First run: one registration number resolves a name and college before a profile exists | `onboarding` | `features/onboarding/index.tsx` |
-| Captcha page → native result capture | `results.web`; the older JSON hook is `results.portal` | `features/results/web.tsx`, `parse-html.ts`, `portal.tsx` |
+| Captcha page → native result capture | `results.portal` (linked) and `results.web` | `features/results/portal.tsx`, `web.tsx`, `parse-html.ts` |
 | Registration number → name/CGPA with no captcha (Home greeting) | `home`, `results` | `features/results/identity.ts` |
 | Eight-semester SGPA history, state rank, college rank from the wide CSV | `results` | `features/results/result-view.tsx` |
 | Percentage conversion, BEU ×10 and AICTE (CGPA − 0.75) ×10 | `tools.calculator` | `features/tools/index.tsx` |
@@ -207,22 +215,26 @@ bun scripts/verify-identity.ts
 | Study plan: syllabus topics spread over the days left | `planner` | `features/planner/index.tsx` |
 | One search box over subjects, papers, notices, datasets and screens | `search` | `features/search/index.tsx` |
 | Offline last-good cache, saved result copies, recent lookups | every screen | `lib/net.ts`, `features/results/data.ts` |
+| Live syllabus, GATE and PYQ updates from `/data/app/manifest.json` without a store release | — (data layer) | `features/data-feed/store.ts` |
 | Notices search across the board **and** announcements | `notices.search` | `features/notices/index.tsx` |
 | Deep-linkable dataset table (batch/branch/sem/college in the route) | `data.table` | `features/pyqs/data-table.tsx` |
-| Profile, appearance (light/dark/system), reminders, storage, offline data, about | `settings`, `.profile`, `.appearance`, `.reminders`, `.storage`, `.offline`, `.about` | `features/settings/index.tsx`, `features/offline/index.tsx` |
+| Profile, appearance (light/dark/system), reminders, notifications, storage, offline data, about | `settings`, `.profile`, `.appearance`, `.reminders`, `.notifications`, `.storage`, `.offline`, `.about` | `features/settings/index.tsx`, `features/offline/index.tsx` |
+| Notices with the app closed | site: Web Push opt-in on `/notices/`; app: FCM topics `important` / `results` / `notices` | `../src/components/NotificationOptIn.astro`, `features/settings/notifications.tsx` |
 | Routine week view + "in session / next" spotlight | `tools.routine` | `features/tools/index.tsx` |
 | Attendance date log with undo, target line | `tools.attendance` | `features/tools/index.tsx` |
 
-## 5. Live probes (2026-10-26)
+## 5. Live probes (2026-10-28)
 
 | Request | Result | App handles it |
 |---|---|---|
-| `GET /api/result?reg=21101157017&sem=3&format=json` | **502**, 89 B, 5.5 s | yes → saved copy → CSV → portal |
-| `GET beu-bih.ac.in/backend/v1/result/token` | **403** `CAPTCHA verification required.`, 28 B | yes → `results.web` |
+| `GET /api/result?reg=21101157017&sem=3&format=json` | **503**, 257 B (`code: upstream_captcha`) | yes → saved copy → CSV; the screen offers `results.portal` |
+| `GET beu-bih.ac.in/backend/v1/result/token` | **403** `Access denied.`, 28 B | yes → `results.portal` |
 | `GET /api/notices/important?limit=2` | **200**, 502 B JSON | yes |
 | `GET /data/students_24_all_105_sem2.csv` | **200**, 210,053 B (header `Session,RegNo,Name,SGPA,Cur. CGPA,CollegeCode,CollegeName`) | yes → identity, table, rank, merit |
 | `GET /data/manifest/index.json` | **200**, 30,305 B | yes → `data` |
+| `POST /api/feedback` with `{}` | **400** `{"ok":false,"message":"Please include a bit more detail."}` | yes → the form's own validation message |
 
 Notice and announcement links point at `beu-bih.ac.in/backend/…pdf`; the notices
-PDF screen keeps them inside the WebView when the host is allowlisted (and says
-so when it is not), rather than leaving a dead end.
+PDF screen draws the pages natively on Android (`PdfPage` in the app's own host)
+and otherwise keeps them in a WebView when the host is allowlisted — saying so
+when it is not — rather than leaving a dead end.

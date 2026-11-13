@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2018",
+    "subject": "Design and Analysis of Algorithms",
+    "subject_slug": "design-and-analysis-of-algorithms",
+    "subject_code": "051506",
+    "year": 2018,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt any FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which algorithm is better for sorting between bubble sort and quicksort?</p>",
+          "options": [
+            "Bubble sort",
+            "Quicksort",
+            "Both are equally good",
+            "These cannot be compared"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>An algorithm which uses the past results and uses them to find the new results is</p>",
+          "options": [
+            "brute force",
+            "divide and conquer",
+            "dynamic programming algorithm",
+            "None of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Out of the following which property of algorithm does not share?</p>",
+          "options": [
+            "Input",
+            "Finiteness",
+            "Generality",
+            "Constancy"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following standard algorithms is not a greedy algorithm?</p>",
+          "options": [
+            "Dijkstra's shortest path algorithm",
+            "Kruskal algorithm",
+            "Bellmen Ford shortest path algorithm",
+            "Prim's algorithm"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the time complexity of Huffman coding?</p>",
+          "options": [
+            "\\( O(N) \\)",
+            "\\( O(N \\log N) \\)",
+            "\\( O(N(\\log N)^2) \\)",
+            "\\( O(N^2) \\)"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>How many comparisons are required to sort the list 1, 2, 3... n using insertion sort?</p>",
+          "options": [
+            "\\( (n^2+n+2)/2 \\)",
+            "\\( (n^3+n-2)/2 \\)",
+            "\\( (n^2+n-2)/2 \\)",
+            "\\( (n^2-n-2)/2 \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following is true about Huffman coding?</p>",
+          "options": [
+            "Huffman coding may become lossy in some cases",
+            "Huffman codes may not be optimal lossless codes in some cases",
+            "In Huffman coding, no code is prefix of any other code",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A complexity of algorithm depends upon</p>",
+          "options": [
+            "time only",
+            "space only",
+            "both time and space",
+            "None of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A text is made up of the characters a, b, c, d, e each occurring with the probability 0.11, 0.40,\n                        0.16, 0.09 and 0.24 respectively. The optimal Huffman coding technique will have the average\n                        length\n                        of</p>",
+          "options": [
+            "2.40",
+            "2.16",
+            "2.26",
+            "2.15"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Build heap is used in heap sort as a first step for sorting. What is the time complexity of build\n                        heap operation?</p>",
+          "options": [
+            "\\( O(n \\log n) \\)",
+            "\\( O(n^2) \\)",
+            "\\( O(\\log n) \\)",
+            "\\( O(n) \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Solve the following recurrence by successive substitution method:<br/>\n                        \\( f(1) = 1 \\), if \\( n=1 \\)<br/>\n                        \\( f(n) = 3f(n/2) + 6 \\), if \\( n&gt;1 \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>COUNTING SORT algorithm assumes that each of the n input elements is an integer in the range 0 to\n                        k,\n                        for some integer k. When \\( k=O(n) \\), the sort runs in \\( \\Theta(n) \\) time. Change\n                        COUNTING\n                        SORT algorithm for the numbers lying in the range p to q where \\( (q-p) \\) is still \\( O(n)\n                        \\).\n                        Also analyze the new complexity.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Consider a directed acyclic graph with non-negative edge costs and with a given start vertex s.\n                        Write\n                        an algorithm to compute distances from source s in \\( O(E+V) \\) time. Justify why your\n                        algorithm\n                        is correct.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain, with an example, why Dijkstra's algorithm might take \\( \\Omega(V \\log V) \\) time.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Consider the two standard representations of directed graphs: the adjacency-list representation\n                        and\n                        the adjacency-matrix representation. Find a problem that can be solved more efficiently in the\n                        adjacency-list representation than in the adjacency-matrix representation, and another problem\n                        that\n                        can be solved more efficiently in the adjacency-matrix representation than in the adjacency-list\n                        representation.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Differentiate between the following: Fractional Knapsack vs. 0/1 Knapsack.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Differentiate between the following: Kruskal's vs. Prim's Algorithm.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What are NP-complete problems? Write some problems which are P, NP and NP-hard. Explain any\n                        NP-hard\n                        problem in detail.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Explain quicksort and its asymptotic complexities. Take some distinct numbers and perform\n                        quicksort\n                        over it.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain travelling salesman problem using Greedy method.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Explain travelling salesman problem using Dynamic programming method.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

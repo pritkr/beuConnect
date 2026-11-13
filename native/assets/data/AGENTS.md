@@ -25,15 +25,23 @@ edit is erased by the next regeneration and may not be reachable offline at all.
   `SOURCE_DATE_EPOCH=$(git log -1 --format=%ct)` for a reproducible run.
 - **Gaps stay gaps.** A subject with no source text is a stub; a GATE paper with
   no sections says so. No invented prose, date, mark or student.
-- **PII is not documentation.** `students-gecs.json` is personal data; do not
-  paste rows into issues, tests or screenshots.
+- **PII is not documentation.** The register dump in `~/gecs-cli` is personal
+  data. `students-gecs.json` is generated identity + affiliation only — contact
+  numbers, email, DOB, gender and caste are dropped by the generator — but rows
+  still name real students, so do not paste them into issues, tests or
+  screenshots.
 - **Size matters.** This directory is most of the bundled payload;
   `./scripts/size-report.sh` after any growth.
 
 ## After a change
 
 ```sh
+uv run python native/scripts/extract.py --check   # no drift, writes nothing
 uv run python native/scripts/verify.py
 ./scripts/check.sh test
 ./scripts/size-report.sh
 ```
+
+`extract.py --check` reuses the shipped `generatedAt` (unless `SOURCE_DATE_EPOCH`
+is set) and carries the roster pipeline's `students` entry forward, so it passes
+on an unchanged tree and fails on any source edit that was not regenerated.

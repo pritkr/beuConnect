@@ -27,8 +27,8 @@ function resultCache(data: ResultData): Record<string, string> {
   };
 }
 
-function rosterCache(csv: string): Record<string, string> {
-  return { "beu.cache.roster:21:105:1": entry(csv) };
+function rosterCache(csv: string, sem = 1): Record<string, string> {
+  return { [`beu.cache.roster:21:105:${sem}`]: entry(csv) };
 }
 
 function identityCache(name: string): Record<string, string> {
@@ -41,7 +41,7 @@ function identityCache(name: string): Record<string, string> {
         sgpa: 8.75,
         branchCode: "105",
         branchName: "Computer Science & Engineering",
-        collegeCode: "105",
+        collegeCode: "157",
         collegeName: "Government Engineering College Sheikhpura",
         semester: 1,
         source: "cache",
@@ -56,7 +56,7 @@ const ASHA: ResultData = {
   name: "Asha Kumari",
   fatherName: "",
   motherName: "",
-  collegeCode: "105",
+  collegeCode: "157",
   collegeName: "Government Engineering College Sheikhpura",
   branchCode: "105",
   branchName: "Computer Science & Engineering",
@@ -102,16 +102,43 @@ const ASHA_BLANK: ResultData = {
 
 const ROSTER = [
   "RegNo,Name,SGPA,Cur. CGPA,CollegeCode,CollegeName",
-  "21105157098,ASHA KUMARI,8.75,8.60,105,Government Engineering College Sheikhpura",
-  "21105157102,Bharat Kumar,8.20,8.10,105,Government Engineering College Sheikhpura",
+  "21105157098,ASHA KUMARI,8.75,8.60,157,Government Engineering College Sheikhpura",
+  "21105157102,Bharat Kumar,8.20,8.10,157,Government Engineering College Sheikhpura",
   "21105157190,Dev Raj,9.00,9.10,106,Sityog Institute of Technology",
+].join("\n");
+
+/** Semester 1 as BEU publishes it: an SGPA, no CGPA, so nobody has a rank. */
+const ROSTER_NO_CGPA = [
+  "RegNo,Name,SGPA,Cur. CGPA,CollegeCode,CollegeName",
+  "21105157098,ASHA KUMARI,8.75,,157,Government Engineering College Sheikhpura",
+  "21105157102,Bharat Kumar,8.20,,157,Government Engineering College Sheikhpura",
+  "21105157190,Dev Raj,9.00,,106,Sityog Institute of Technology",
+  "21105157150,Tara Devi,8.90,,157,Government Engineering College Sheikhpura",
+].join("\n");
+
+/** The batch's newest published table, with a CGPA for every row. */
+const ROSTER_SEM8 = [
+  "RegNo,Name,SGPA,Cur. CGPA,CollegeCode,CollegeName",
+  "21105157098,ASHA KUMARI,8.75,8.60,157,Government Engineering College Sheikhpura",
+  "21105157102,Bharat Kumar,8.20,8.10,157,Government Engineering College Sheikhpura",
+  "21105157190,Dev Raj,9.00,9.10,106,Sityog Institute of Technology",
+  "21105157150,Tara Devi,8.90,8.70,157,Government Engineering College Sheikhpura",
+].join("\n");
+
+/** One student without a CGPA in a table where everybody else has one. */
+const ROSTER_ONE_UNRANKED = [
+  "RegNo,Name,SGPA,Cur. CGPA,CollegeCode,CollegeName",
+  "21105157098,ASHA KUMARI,8.75,,157,Government Engineering College Sheikhpura",
+  "21105157102,Bharat Kumar,8.20,8.10,157,Government Engineering College Sheikhpura",
+  "21105157190,Dev Raj,9.00,9.10,106,Sityog Institute of Technology",
+  "21105157150,Tara Devi,8.90,8.70,157,Government Engineering College Sheikhpura",
 ].join("\n");
 
 /* ── every screen at 320 pt ──────────────────────────────────────────── */
 
 describe("results routes at 320 pt", () => {
   const CASES: { name: string; check: string }[] = [
-    { name: "results", check: "Check your result" },
+    { name: "results", check: "Check semester" },
     { name: "results.table", check: "Who is on top?" },
     { name: "results.rank", check: "Where you stand." },
     { name: "results.merit", check: "The toppers." },
@@ -176,14 +203,140 @@ describe("results rank and merit", () => {
     expect(text).not.toContain("ASHA KUMARI");
   }, 20000);
 
+  test("a typed number opens its own table, so college rank and rivals exist", async () => {
+    const app = await openRoute("results.rank", {}, {
+      network: DOWN,
+      storage: { ...rosterCache(ROSTER_NO_CGPA, 1), ...rosterCache(ROSTER_SEM8, 8) },
+    });
+    await app.wait(300);
+
+    // Before a number is typed the screen must not claim batch 20 has no table.
+    expect(visible(app)).not.toContain("No roster for batch 20");
+
+    await app.type("label:Registration number", REG);
+    await app.wait(200);
+    // The form names the typed batch before Find is pressed.
+    expect(visible(app)).toContain("BATCH 2021 · CSE");
+    // Batch 21 is in semester 8: the button follows the number, not a stale 1.
+    await app.press("text:Find semester 8 rank");
+    await app.wait(500);
+
+    const text = visible(app);
+    expect(text).toContain("SEMESTER 8");
+    expect(text).toContain("COLLEGE RANK");
+    expect(text).toContain("of 3 ranked");
+    expect(text).toContain("Tara Devi");
+    expect(text).not.toContain("No CGPA published");
+
+    // The college scope counts only GEC Sheikhpura, and lists its students.
+    await app.press("text:GEC Sheikhpura >> nth=0");
+    await app.wait(300);
+    const collegeText = visible(app);
+    expect(collegeText).toContain("RANK IN GEC SHEIKHPURA");
+    expect(collegeText).toContain("GEC Sheikhpura rank 2 of 3 students by CGPA.");
+  }, 20000);
+
+  test("a semester without a number is a hint, not a table choice", async () => {
+    const app = await openRoute("results.rank", { sem: 1 }, {
+      network: DOWN,
+      storage: { ...rosterCache(ROSTER_NO_CGPA, 1), ...rosterCache(ROSTER_SEM8, 8) },
+    });
+    await app.wait(300);
+
+    await app.type("label:Registration number", REG);
+    await app.wait(200);
+    await app.press("text:Find semester 8 rank");
+    await app.wait(500);
+
+    expect(visible(app)).toContain("of 3 ranked");
+  }, 20000);
+
+  test("a table with no CGPA explains itself and offers the newest one", async () => {
+    const app = await openRoute("results.rank", { reg: REG, sem: 1 }, {
+      network: DOWN,
+      storage: { ...rosterCache(ROSTER_NO_CGPA, 1), ...rosterCache(ROSTER_SEM8, 8) },
+    });
+    await app.wait(500);
+
+    let text = visible(app);
+    expect(text).toContain("NO CGPA IN THIS TABLE");
+    expect(text).toContain("SGPAs only");
+    expect(text).toContain("Open semester 8");
+    expect(text).not.toContain("of 0 ranked");
+
+    await app.press("text:Open semester 8");
+    await app.wait(500);
+    text = visible(app);
+    expect(text).toContain("of 3 ranked");
+    expect(text).toContain("Tara Devi");
+  }, 20000);
+
+  test("a student with no CGPA is not shown as rank zero", async () => {
+    const app = await openRoute("results.rank", { reg: REG, sem: 1 }, {
+      network: DOWN,
+      storage: rosterCache(ROSTER_ONE_UNRANKED),
+    });
+    await app.wait(500);
+
+    const text = visible(app);
+    expect(text).toContain("not ranked · 3 ranked here");
+    expect(text).toContain("not in this order");
+    expect(text).toContain("No CGPA published, so no rank.");
+    expect(text).not.toContain("of 0 ranked");
+    // There is no place to compare, so the rivals card is not a row of dashes.
+    expect(text).not.toContain("NEAREST RIVALS");
+  }, 20000);
+
+  test("a number from an unpublished batch says so before Find", async () => {
+    const app = await openRoute("results.rank", {}, {
+      network: DOWN,
+      storage: { ...rosterCache(ROSTER_NO_CGPA, 1), ...rosterCache(ROSTER_SEM8, 8) },
+    });
+    await app.wait(300);
+
+    await app.type("label:Registration number", "27105157098");
+    await app.wait(200);
+
+    const text = visible(app);
+    expect(text).toContain("BEU has published no roster for this batch and branch yet.");
+    expect(text).toContain("No table to read");
+    expect(text).not.toContain("FIND SEMESTER 1 RANK");
+  }, 20000);
+
+  test("a class ahead of the newest table says which table it is reading", async () => {
+    const app = await openRoute("results.rank", {}, { network: DOWN, storage: {} });
+    await app.wait(300);
+
+    await app.type("label:Registration number", "24105157098");
+    await app.wait(200);
+
+    const text = visible(app);
+    expect(text).toContain("Your class is in semester");
+    expect(text).toContain("BEU's newest published table is semester 2.");
+    expect(text).toContain("Find semester 2 rank");
+  }, 20000);
+
+  test("a rank opened from the register lands on a published table", async () => {
+    const app = await openRoute("results.rank", { reg: REG, sem: 5 }, {
+      network: DOWN,
+      storage: { ...rosterCache(ROSTER_NO_CGPA, 1), ...rosterCache(ROSTER_SEM8, 8) },
+    });
+    await app.wait(500);
+
+    const text = visible(app);
+    expect(text).toContain("SEMESTER 8");
+    expect(text).toContain("of 3 ranked");
+    expect(text).toContain("Tara Devi");
+  }, 20000);
+
   test("college merit shows college places, not branch places", async () => {
     const app = await openRoute(
       "results.merit",
-      { reg: REG, college: "105", batch: "21", branch: "105", sem: 1 },
+      { reg: REG, college: "157", batch: "21", branch: "105", sem: 1 },
       { network: DOWN, storage: rosterCache(ROSTER) },
     );
     await app.wait(500);
-    await app.press("text:College 105 >> nth=0");
+    await app.press("text:GEC Sheikhpura >> nth=0");
     await app.wait(300);
 
     const texts = app.texts();

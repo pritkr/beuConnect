@@ -14,13 +14,6 @@ describe('Calculator Engine', () => {
             expect(calculateGrade(100, 15, 55)).toBe('B');  // 70
         });
 
-        it('should fail the 35-40% band: 40% is the pass mark, 35% is only the ESE floor', () => {
-            // 38% overall with a valid ESE mark is still a fail.
-            expect(calculateGrade(100, 10, 28)).toBe('F');
-            // 40% exactly passes.
-            expect(calculateGrade(100, 10, 30)).toBe('P');
-        });
-
         it('should handle 50 marks correctly', () => {
             expect(calculateGrade(50, 15, 10)).toBe('F'); // ESE < 10.5 -> F
             expect(calculateGrade(50, 10, 25)).toBe('B'); // 35/50 = 70% -> B

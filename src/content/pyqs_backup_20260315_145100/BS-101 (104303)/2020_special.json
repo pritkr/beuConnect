@@ -1,0 +1,285 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Special Exam., 2020",
+    "subject": "MATHEMATICS-III",
+    "subject_slug": "mathematics-iii",
+    "subject_code": "BS-101 (104303)",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer the following as directed (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The value of Chebyshev polynomials \\( T_3(x) \\) is</p>",
+          "options": [
+            "\\( 2x^2 - 1 \\)",
+            "\\( 2x^2 + 1 \\)",
+            "\\( 4x^3 + 3x \\)",
+            "\\( 4x^3 - 3x \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\frac{d}{dx}(x \\text{ bei}' x) \\) is</p>",
+          "options": [
+            "\\( -x \\text{ ber } x \\)",
+            "\\( -\\text{bet } x \\)",
+            "\\( x \\text{ ber } x \\)",
+            "\\( -x \\text{ ber } x \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following functions is inverse of itself?</p>",
+          "options": [
+            "\\( f(x) = \\frac{1-x}{1+x} \\)",
+            "\\( f(x) = 5^{\\log x} \\)",
+            "\\( f(x) = 2^{x(x-1)} \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Given \\( f(x) = \\log\\left(\\frac{1+x}{1-x}\\right) \\) and \\( g(x) = \\frac{3x+x^3}{1-3x^2}\n                        \\). Then \\( f \\circ g(x) \\) equals</p>",
+          "options": [
+            "\\( -f(x) \\)",
+            "\\( 3f(x) \\)",
+            "\\( |f(x)|^3 \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>If a function \\( f: (2,\\infty) \\rightarrow B \\) defined by \\( f(x) = x^2 - 4x + 5 \\) is a\n                        bijection, then B =</p>",
+          "options": [
+            "R",
+            "\\( [1, \\infty) \\)",
+            "\\( [4, -1] \\)",
+            "\\( [5, \\infty) \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>If \\( r_1 \\) and \\( r_2 \\) are two regression coefficients, then signs of \\( r_1 \\) and \\(\n                        r_2 \\) depend on _________.</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Regression coefficient of y on x is 0.7 and that of x on y is 3.2. Is the correlation coefficient\n                        consistent? (State Yes or No)</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The SD of the binomial distribution is</p>",
+          "options": [
+            "\\( \\sqrt{npq} \\)",
+            "\\( \\sqrt{np} \\)",
+            "\\( npq \\)",
+            "\\( pq \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>A hypothesis is true but is rejected, then there is an error of type _________.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>A hypothesis is false but is accepted, then there is an error of type _________.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>State and prove the orthogonality property of Chebyshev polynomials.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Show that \\( (1-x^2)T_n'(x) = nT_{n-1}(x) - nxT_n(x) \\), where \\( T_n(x) \\) is Chebyshev\n                        polynomials.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What are the applications of wavelets transform?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>For any three sets A, B and C, prove that \\( A \\times (B \\cup C) = (A \\times B) \\cap (A\n                        \\times C) \\). (Note: There is a typo in the original question paper which asks to prove\n                        intersection instead of union, please prove accordingly or state the standard relation).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Prove that the relation R on the set \\( N \\times N \\) defined by \\( (a,b)R(c,d) \\in R\n                        \\Leftrightarrow a+d = b+c \\) for all \\( (a,b), (c,d) \\in N \\times N \\) is an equivalence\n                        relation.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Show that the function \\( f: R \\rightarrow R \\) defined by \\( f(x) = 3x^3 + 3 \\) for all \\(\n                        x \\in R \\) is a bijection.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Derive the expression of ber and bei functions.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Consider the given graph. Find all edges that are incident on \\( v_1 \\), all vertices that are\n                        adjacent to \\( v_1 \\), all edges that are adjacent to \\( e_1 \\), all loops, all parallel\n                        edges, all vertices that are adjacent to themselves, and all isolated vertices.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/100.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>The first four moments about the working mean 28.5 of a distribution are 0.294, 7.144, 42.409 and\n                        454.98. Calculate the moment about the mean. Also evaluate \\( \\beta_1 \\), \\( \\beta_2 \\)\n                        and comment upon the skewness and kurtosis of the distribution.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Compute the Karl Pearson's coefficient correlation using the data given below:</p>\n<table border=\"1\" style=\"width:100%; text-align:center; border-collapse:collapse;\">\n<tbody><tr>\n<th>X</th>\n<td>1</td>\n<td>5</td>\n<td>3</td>\n<td>2</td>\n<td>1</td>\n<td>1</td>\n<td>7</td>\n<td>3</td>\n</tr>\n<tr>\n<th>Y</th>\n<td>6</td>\n<td>1</td>\n<td>0</td>\n<td>0</td>\n<td>1</td>\n<td>2</td>\n<td>1</td>\n<td>5</td>\n</tr>\n</tbody></table>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the moment-generating function of Poisson distribution.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>In a certain factory turning out razor blades, there is a small chance of 0.002 for any blade to\n                        be defective. The blades are supplied in packets of 10. Calculate the approximate number of\n                        packets containing no defective, one defective and two defective blades respectively in a\n                        consignment of 10000 packets.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>In a normal distribution, 31% of the items are under 45 and 8% are over 64. Find the mean and SD\n                        of the distribution.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Discuss the method of least square.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>The mean of a certain normal population is equal to the standard error of the mean of the samples\n                        of 100 from that distribution. Find the probability that the mean of the sample of 25 from the\n                        distribution will be negative.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>An unbiased coin is thrown n times. It is desired that the relative frequency of the appearance\n                        of head should lie between 0.49 and 0.51. Find the smallest value of n that will ensure this\n                        result with 90% confidence.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

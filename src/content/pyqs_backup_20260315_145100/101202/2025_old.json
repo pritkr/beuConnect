@@ -1,0 +1,292 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Examination, 2025 (Old Course)",
+    "subject": "Mathematics - II (Differential Equation)",
+    "subject_slug": "mathematics-ii-differential-equation",
+    "subject_code": "101202",
+    "year": 2025,
+    "semester": 2,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>For the differential equation, \\( (x-1) \\frac{d^2y}{dx^2} + \\cot(\\pi x) \\frac{dy}{dx} +\n                        ( cosec^2 \\pi x)y = 0 \\) which of the following statement is true?</p>",
+          "options": [
+            "0 is regular and 1 is irregular",
+            "0 is irregular and 1 is regular",
+            "Both 0 and 1 are regular",
+            "Both 0 and 1 are irregular"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Let \\( P_n(x) \\) be the Legendre polynomial of degree \\( n \\ge 0 \\). Then \\( \\int_{-1}^{1}\n                        P_n(x) dx = 2 \\) if n is</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>\\( \\int_{0}^{\\pi/2} \\sqrt{\\pi x} J_{1/2}(2x) dx = k \\) then k is</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "\\( \\sqrt{\\pi} \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The solution of \\( p+q=z \\) is</p>",
+          "options": [
+            "\\( f(xy, y \\log z) = 0 \\)",
+            "\\( f(x+y, y+\\log z) = 0 \\)",
+            "\\( f(x-y, y-\\log z) = 0 \\)",
+            "\\( f(x/y, y/\\log z) = 0 \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The complementary function of \\( \\frac{\\partial^2 z}{\\partial x^2} - 4 \\frac{\\partial^2\n                        z}{\\partial x \\partial y} + 4 \\frac{\\partial^2 z}{\\partial y^2} = x+y \\) is</p>",
+          "options": [
+            "\\( f(y+2x) + xg(y+2x) \\)",
+            "\\( f(y-2x) + xg(y-2x) \\)",
+            "\\( x f(y+2x) + y g(y+2x) \\)",
+            "\\( x f(y+2x) - y g(y+2x) \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>The transformation \\( w = \\sin z \\) is conformal</p>",
+          "options": [
+            "at all points",
+            "at all points except \\( z = n\\pi + \\frac{\\pi}{2} \\), \\( n=0, \\pm 1, \\pm 2, \\dots\n                            \\)",
+            "at all points except \\( z = n\\pi + \\frac{\\pi}{2} \\), \\( n=0, 1, 2, \\dots \\)",
+            "at all points except \\( z = n\\pi + \\frac{\\pi}{2} \\), \\( n=1, 2, 3, \\dots \\)"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The value of \\( \\int_C \\frac{3z^2 + 7z + 1}{z-4} dz \\), where C is \\( 9x^2 + 4y^2 = 36 \\)\n                        is</p>",
+          "options": [
+            "\\( 2\\pi i \\)",
+            "0",
+            "\\( 3\\pi i \\)",
+            "\\( 4\\pi i \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Newton's iterative formula to find the value of \\( \\sqrt{N} \\) is</p>",
+          "options": [
+            "\\( x_{n+1} = \\frac{1}{2} (x_n - N/x_n) \\)",
+            "\\( x_{n+1} = \\frac{1}{2} (x_n - Nx_n) \\)",
+            "\\( x_{n+1} = \\frac{1}{2} (x_n + N/x_n) \\)",
+            "\\( x_{n+1} = \\frac{1}{2} (x_n + Nx_n) \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>While applying Simpson's 3/8 rule the number of sub intervals should be</p>",
+          "options": [
+            "Odd",
+            "8",
+            "Even",
+            "Multiple of 3"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>In the geometrical meaning of Euler's algorithm, the curve is approximated as a</p>",
+          "options": [
+            "Straight line",
+            "Circle",
+            "Parabola",
+            "Ellipse"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Solve \\( y = 2px + y^2 p^3 \\).</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Solve \\( (px-y)(py+x) = a^2 p \\).</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Find the solution of the differential equation \\( x^2 y'' - 4xy' + 6y = x^4 \\cos x \\), \\(\n                        y(\\pi)=0, y'(\\pi)=1 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>State and prove the orthogonal property of Legendre polynomial.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Find the solution of the following partial differential equation: \\( (x^2-yz)p + (y^2-zx)q =\n                        z^2-xy \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Find the solution of the following partial differential equation: \\( 2z + p^2 + qy + 2y^2 = 0\n                        \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Find the solution of the partial differential equation \\( (D - 5D' - 6)z = 6e^{6x} \\log(y+5x)\n                        \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 9
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Show that the function \\( f(z) = \\sqrt{|xy|} \\) is not analytic at the origin even though C.R.\n                        equations are satisfied thereof.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Find the Taylor series expansion of the function \\( f(z) = \\sin z \\). Also find the values of\n                        \\( f^{(2n)}(0) \\) and \\( f^{(2n-1)}(0) \\).</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Write the statement of Cauchy Integral formula. Hence, evaluate the integral \\( \\int_C\n                        \\frac{z-1}{(z+1)^2(z-2)} dz \\) where C is the circle \\( |z-i|=2 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the value of the integral \\( \\int_{0}^{\\infty} \\frac{\\cos ax - \\cos bx}{x^2} dx \\)\n                        where \\( a, b &gt; 0 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Discuss the rate of convergence of Bisection method.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A third degree polynomial passes through the points (0,1), (1, 1), (2, 1) and (3, -2). Find the\n                        polynomial.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Evaluate \\( \\int_{4}^{5/2} \\log x \\, dx \\) by Simpson's 1/3 rule and Simpson's 3/8 rule, by\n                        dividing the range into 6 parts.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Using Euler's modified method, find numerical solution of the differential equation \\(\n                        \\frac{dy}{dx} = x + |\\sqrt{y}| \\) with \\( y(0)=1 \\) for \\( 0 \\le x \\le 0.6 \\), in steps\n                        of 0.2.</p>"
+        }
+      ]
+    }
+  ]
+}

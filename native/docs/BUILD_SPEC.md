@@ -5,7 +5,7 @@ The contract every screen in `native/` has to meet. Site source
 only — the app is not a skin of the site and has its own navigation, design
 language and data path.
 
-App root `native/` · entry `App.tsx` → `mount(Shell)` · framework NativeShell
+App root `native/` · entry `App.tsx` → `boot()` → `mount(Shell)` · framework NativeShell
 (TSX on QuickJS, real platform views) · Android is the shipping target, macOS is
 the dev host.
 
@@ -13,14 +13,14 @@ the dev host.
 
 ```
 native/
-├── App.tsx                 mount(Shell) — 3 lines, do not grow it
+├── App.tsx                 entry: calls boot() and nothing else
 ├── nsh.json                id, version, theme tokens, capabilities
 ├── src/app/                router contract, registry, shell, tab bar, More, 404
 ├── src/ui/index.tsx        the design system; the only place that encodes the look
 ├── src/lib/net.ts          fetch + cache + Storage + formatting
 ├── src/features/<area>/    one folder per area, owns its routes and data
 ├── qa/                     route contract, push-target scan, mount tests
-└── docs/                   this file, ARCHITECTURE, SITE_PARITY, ANDROID, SIZE
+└── docs/                   ARCHITECTURE, SITE_PARITY, ANDROID, SIZE, SHOTS, this file
 ```
 
 `src/app/**`, `src/ui/**` and `src/lib/**` are shared foundation. A feature
@@ -29,7 +29,7 @@ suite run afterwards.
 
 ## 2. Area scopes
 
-Thirteen areas own the 55 registered routes (`docs/ARCHITECTURE.md` has the full
+Thirteen areas own the 60 registered routes (`docs/ARCHITECTURE.md` has the full
 table with params).
 
 | Area | Owns | Screens |
@@ -37,22 +37,24 @@ table with params).
 | **home** | `home` | greeting with the saved name, next action (class / result / setup), study and result tiles, notice pager (8 latest, auto-advance), next holiday |
 | **onboarding** | `onboarding` | first run: one registration number, then the student's name and college before a profile exists |
 | **syllabus** | `syllabus`, `.subject`, `.search`, `.saved`, `.gate` | branch + semester from the saved course, subject list, unit/topic rows with ticked progress, cross-subject search, saved subjects, 30 GATE papers |
-| **results** | `results`, `.table`, `.rank`, `.merit`, `.battle`, `.web`, `.portal` | lookup, branch roster table, rank report, merit list, 1v1 battle, BEU's captcha page read back natively, older JSON capture |
-| **pyqs** | `pyqs`, `.paper`, `.pdf`, `.gate`, `data`, `data.table` | BEU paper browser (List, virtualized), one paper parsed natively, PDF WebView, GATE index/paper/PDF, dataset index, dataset table |
+| **results** | `results`, `.table`, `.rank`, `.merit`, `.battle`, `.web`, `.portal` | lookup, branch roster table, rank report, merit list, 1v1 battle, the linked captcha screen (`portal`) and the unlinked HTML walker (`web`) |
+| **pyqs** | `pyqs`, `.paper`, `.site`, `.pdf`, `.gate`, `data`, `data.table` | BEU paper browser (List, virtualized), one paper parsed natively, the BEU subject page, PDF viewer, GATE index/paper/PDF, dataset index, dataset table |
 | **notes** | `notes`, `.subject` | branch + semester shelf, VVI short notes with copy, handwritten PDFs in the native viewer, stale-cache line when offline |
 | **planner** | `planner` | syllabus spread over the days to an exam date, topics/day, revision buffer, ticks shared with Syllabus |
 | **search** | `search` | one local index over subjects, GATE papers, notices, datasets and screens, grouped results, kind filters |
 | **tools** | `tools`, `.calculator`, `.attendance`, `.routine`, `.holidays`, `.wifi` + the bare aliases `attendance`/`routine`/`holidays`/`wifi` | hub, SGPA/CGPA/predict/percent, attendance with log + undo, routine today/week, 2026 holiday grid, Wi-Fi helper |
-| **feedback** | `feedback` | the sheet the footer opens, the report page with what is sent and the last five |
-| **students** | `students`, `.college`, `.branch`, `.student`, `.leads` | GEC Sheikhpura register by college and branch, one student card, batch CGPA leaders |
-| **notices** | `notices`, `.detail`, `.announcements`, `.post`, `.search` | scraped BEU board, notice detail (native markdown), announcements, announcement post, search over both |
-| **settings** | `settings`, `.profile`, `.appearance`, `.reminders`, `.storage`, `.about` | profile, light/dark/system, holiday reminders, cache size + clear, about |
+| **feedback** | `feedback`, `tools.feedback` | the sheet the footer opens, the report page with what is sent and the last five |
+| **students** | `students`, `.colleges`, `.college`, `.branch`, `.student`, `.leads` | GEC Sheikhpura register: batch accordion with a branch filter on the college screen, branch list scoped to one batch, one student card, batch CGPA leaders |
+| **notices** | `notices`, `.detail`, `.announcements`, `.post`, `.search`, `.pdf` | scraped BEU board, notice detail (native markdown), announcements, announcement post, search over both, notice PDF |
+| **settings** | `settings`, `.profile`, `.appearance`, `.reminders`, `.storage`, `.offline`, `.about` + the bare aliases `profile`/`appearance`/`reminders`/`about` | profile, light/dark/system, holiday reminders, cache size + clear, bundled-data refresh and feed state (`features/offline`), about |
 
-The bare `attendance`, `routine`, `holidays`, `wifi` and `tools.feedback` routes
-are compatibility aliases: nothing in the app pushes them, but an older link or
-an external deep link must still land. `feedback` is canonical — More and search
-push it with the current route attached — and `tools.feedback` is its alias.
-Keep them registered; they are the same `render`, not new screens.
+The bare `attendance`, `routine`, `holidays`, `wifi`, `profile`, `appearance`,
+`reminders`, `about` and `tools.feedback` routes are compatibility aliases:
+nothing in the app pushes them, but an older link or an external deep link must
+still land. `feedback` is canonical — More and search push it with the current
+route attached — and `tools.feedback` is its alias. The four bare settings names
+alias their `settings.*` screens. Keep them registered; they are the same
+`render`, not new screens.
 
 ## 3. Rules that have already cost time here
 
@@ -128,9 +130,9 @@ silently breaks persistence.
   every label, number and greeting goes inside `Text`, `Title`, `Muted` or
   `Label`.
 - **`WebView` is not a screen.** The only two uses allowed are the result
-  captcha (`results.web`, with `results.portal` as the older capture) and a PDF
-  (`pyqs.gate` / `pyqs.pdf`). A page that could be native views must be native
-  views.
+  captcha (`results.portal` and `results.web`) and a PDF (`pyqs.pdf` /
+  `notices.pdf`; Android's own host draws those with `PdfPage` first). A page
+  that could be native views must be native views.
 - **A `WebView` host is a capability.** Adding a `WebView` means adding its host
   to `nsh.json` `capabilities.webview.hosts`; otherwise the navigation is
   refused before it starts.
@@ -169,17 +171,26 @@ A screen is done when all of these are true:
    with the network down and asserts the body is a real page, not `No screen for`.
    Errors must render `ErrorState` with a retry, not a blank screen.
 5. **Params are read through `param`/`numParam`** and a missing/absurd param
-   yields a usable screen (the table/monitor routes show a "pick one" state
-   rather than crashing).
+   yields a usable screen (`results.table` and `data.table` show a "pick one"
+   state rather than crashing).
 6. **Data goes through `src/lib/net`** (`fetchJson`/`fetchText`/`postJson` +
    `cacheKey`), never a bare `fetch`; the host is in `nsh.json`.
 7. **Persistence is async** and keyed under the area's `KEYS` object; clearing
    the cache must not delete it.
 8. **No new dependency.** `native/` has no `package.json`; anything imported is
    bundled into `assets/nsh/bundle.nshc` and counted against the size budget.
-9. **APK budget respected** — `.nsh/out/BEUConnect.apk` stays under 10,000,000
-   bytes after `./scripts/package-android.sh`; `./scripts/size-report.sh` is the
-   check (owned by the size workstream, do not edit its script).
+9. **APK budget respected** — `.nsh/out/BEUConnect.apk` stays under
+   `scripts/size-report.sh`'s 12,300,000 B APK budget (and the source bundle
+   under its 2,350,000 B budget) after `./scripts/package-android.sh`. The
+   script is the check and the two overrides are `APK_BUDGET` / `BUNDLE_BUDGET`;
+   raising either needs a reason in `docs/SIZE.md`.
 10. **Docs updated** — a new route gets a row in `docs/ARCHITECTURE.md` and a row
     (or a line under "app-only") in `docs/SITE_PARITY.md`; a new screen gets an
     entry in the `SHOTS` table of `scripts/shots.sh` so it can be photographed.
+11. **Failure stays inside the screen.** The shell mounts every route under
+    `ScreenBoundary` and the shell itself under `RootCrash`; a screen never
+    installs its own top-level boundary and never assumes a throw will be
+    caught outside the app. A fallback must not throw, must not print a stack
+    trace, and must always offer a way out (`qa/crash.test.tsx` is the
+    contract). Timers are covered by `guardTimers()` in `boot.ts`; do not call
+    `setTimeout` expecting a throw to surface anywhere.

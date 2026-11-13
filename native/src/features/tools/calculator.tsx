@@ -5,16 +5,40 @@
  * inline, and it rounds once, at display.
  */
 
-import { Text, View } from "nsh";
-import { Body, Btn, Card, Col, Divider, EmptyState, Field, Label, Muted, Row, Screen, SectionHeader } from "../../ui";
+import { Clipboard, Text, View, signal } from "nsh";
+import { Body, Btn, Card, Chip, Col, Divider, EmptyState, Field, Label, Muted, Row, Screen, SectionHeader } from "../../ui";
 import { GRADE_POINTS, cgpa as cgpaOf, countedPapers, countedSemesters, fixed, num, roundHalfUp, sgpa as sgpaOf } from "./engine";
 import { BigResult, GradePills, IconButton, ModeChips, Stepper } from "./kit";
 import type { ModeOption } from "./kit";
 import { Percent, Predict } from "./predict";
+import { PRESET_BRANCHES, PRESET_SEMESTERS, presetLabel, presetPapers } from "./presets";
+import type { PresetPaper } from "./presets";
 import { askDestructive } from "./shared";
+import { EVENTS, track } from "../../lib/analytics";
 import type { CalcMode, CalcSemester, CalcSubject } from "./state";
 import { blankSubject, newId } from "./state";
 import { calc, extras, freshCalculator, freshExtras, persistCalculator, persistExtras } from "./store";
+
+const copied = signal("");
+
+/** Copies a result and shows the outcome on the button itself. */
+async function copyText(key: string, text: string): Promise<void> {
+  try {
+    await Clipboard.writeText(text);
+    copied.set(key);
+  } catch {
+    copied.set(`error:${key}`);
+  }
+  setTimeout(() => {
+    if (copied() === key || copied() === `error:${key}`) copied.set("");
+  }, 2200);
+}
+
+function copyLabel(key: string, fallback: string): string {
+  if (copied() === key) return "Copied";
+  if (copied() === `error:${key}`) return "Could not copy";
+  return fallback;
+}
 
 const CALC_MODES: readonly ModeOption<CalcMode>[] = [
   { value: "sgpa", label: "SGPA" },
@@ -25,6 +49,7 @@ const CALC_MODES: readonly ModeOption<CalcMode>[] = [
 
 export function setCalcMode(mode: CalcMode): void {
   calc.update((state) => ({ ...state, mode }));
+  track(EVENTS.calculatorUse, { mode });
 }
 
 function patchSubject(id: string, patch: Partial<CalcSubject>): void {
@@ -91,6 +116,74 @@ function semesterInputs(semesters: readonly CalcSemester[]): { sgpa: number; cre
   }));
 }
 
+/* ----------------------------------------------------------------- presets */
+
+function pickBranch(branch: string): void {
+  calc.update((state) => ({ ...state, branch }));
+  persistCalculator();
+}
+
+function pickSemester(semester: number): void {
+  calc.update((state) => ({ ...state, semester }));
+  persistCalculator();
+}
+
+/** A row the student has touched: a grade, or a name that is not the default. */
+function started(subject: CalcSubject): boolean {
+  return subject.grade !== null || !/^Subject \d+$/.test(subject.name.trim());
+}
+
+async function loadPreset(): Promise<void> {
+  const state = calc();
+  const papers = presetPapers(state.branch, state.semester);
+  if (papers.length === 0) return;
+
+  if (state.subjects.some(started)) {
+    const keep = await askDestructive(
+      "Replace these papers?",
+      `${presetLabel(state.branch, state.semester)} has ${papers.length} papers. The rows here are replaced; saved semesters stay.`,
+      "Replace",
+    );
+    if (!keep) return;
+  }
+
+  calc.update((current) => ({
+    ...current,
+    subjects: papers.map((paper) => ({
+      id: newId("sub"),
+      name: paper.name,
+      credits: paper.credits,
+      grade: null,
+    })),
+  }));
+  persistCalculator();
+  track(EVENTS.calculatorPreset, { branch: state.branch, sem: state.semester, papers: papers.length });
+}
+
+/** The summary a student pastes into a group chat. */
+function sgpaSummary(): string {
+  const state = calc();
+  const result = sgpaOf(state.subjects);
+  const where = state.branch && state.semester > 0 ? presetLabel(state.branch, state.semester) : "";
+  const lines = [`SGPA ${fixed(result.value)}${where ? ` · ${where}` : ""}`, `${result.credits} credits`];
+  for (const subject of state.subjects) {
+    if (!subject.grade || subject.credits <= 0) continue;
+    lines.push(`• ${subject.name} — ${subject.credits} cr — ${subject.grade}`);
+  }
+  return lines.join("\n");
+}
+
+function cgpaSummary(): string {
+  const state = calc();
+  const average = cgpaOf(semesterInputs(state.semesters));
+  const lines = [`CGPA ${fixed(average.value)} · ${average.credits} credits`];
+  for (const semester of state.semesters) {
+    if (!semester.sgpa && !semester.credits) continue;
+    lines.push(`• ${semester.name} — SGPA ${semester.sgpa || "—"} — ${semester.credits || "0"} cr`);
+  }
+  return lines.join("\n");
+}
+
 function saveCurrentSemester(): void {
   const state = calc();
   const result = sgpaOf(state.subjects);
@@ -112,6 +205,7 @@ function saveCurrentSemester(): void {
     ],
   }));
   persistCalculator();
+  track(EVENTS.calculatorSave, { mode: state.mode, credits: result.credits, papers: state.subjects.length });
 }
 
 async function resetCalculator(): Promise<void> {
@@ -170,6 +264,18 @@ function SgpaPanel() {
         }
       />
 
+      <Row class="justify-end">
+        <Btn
+          variant="ghost"
+          disabled={result().credits === 0}
+          onPress={() => void copyText("sgpa", sgpaSummary())}
+        >
+          {copyLabel("sgpa", "Copy result")}
+        </Btn>
+      </Row>
+
+      <Presets />
+
       <SectionHeader title="Papers" action="Add paper" onAction={addSubject} />
 
       <If when={subjects().length === 0}>
@@ -189,8 +295,54 @@ function SgpaPanel() {
   );
 }
 
-function SubjectEditor(props: { subject: () => CalcSubject; index: () => number }) {
-  const points = (): string => {
+/**
+ * The branch and semester picker. The paper list comes from the syllabus pack,
+ * so "Load CSE · Sem 3" fills in the papers the student actually sits — the
+ * credits and names are the site's own, not a guess.
+ */
+function Presets() {
+  const branch = (): string => calc().branch;
+  const semester = (): number => calc().semester;
+  const papers = (): PresetPaper[] => presetPapers(branch(), semester());
+  const picked = (): boolean => branch() !== "" && semester() > 0;
+
+  return (
+    <Card class="gap-3 p-3.5">
+      <Row class="items-center justify-between gap-2">
+        <Label>My semester</Label>
+        <Muted class="text-[11px]">
+          {picked() ? (papers().length > 0 ? `${papers().length} papers` : "None in the syllabus") : ""}
+        </Muted>
+      </Row>
+
+      <Row class="flex-wrap gap-1.5">
+        {() =>
+          PRESET_BRANCHES.map((meta) => (
+            <Chip active={branch() === meta.code} onPress={() => pickBranch(meta.code)}>
+              {meta.short}
+            </Chip>
+          ))
+        }
+      </Row>
+
+      <Row class="flex-wrap gap-1.5">
+        {() =>
+          PRESET_SEMESTERS.map((value) => (
+            <Chip active={semester() === value} onPress={() => pickSemester(value)}>
+              {`S${value}`}
+            </Chip>
+          ))
+        }
+      </Row>
+
+      <Btn variant="secondary" disabled={!picked() || papers().length === 0} onPress={() => void loadPreset()}>
+        {picked() ? `Load ${presetLabel(branch(), semester())}` : "Pick a branch and semester"}
+      </Btn>
+    </Card>
+  );
+}
+
+function SubjectEditor(props: { subject: () => CalcSubject; index: () => number }) {  const points = (): string => {
     const grade = props.subject().grade;
     return grade ? String(GRADE_POINTS[grade]) : "—";
   };
@@ -297,6 +449,16 @@ function CgpaPanel() {
         }
         tone="mint"
       />
+
+      <Row class="justify-end">
+        <Btn
+          variant="ghost"
+          disabled={average().credits === 0}
+          onPress={() => void copyText("cgpa", cgpaSummary())}
+        >
+          {copyLabel("cgpa", "Copy result")}
+        </Btn>
+      </Row>
 
       <SectionHeader title="Semesters" action="Add semester" onAction={addSemester} />
 

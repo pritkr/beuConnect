@@ -37,7 +37,7 @@
  * rows read from the CSVs — same order, names and count.
  */
 
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -106,7 +106,13 @@ function parseCsv(source) {
 }
 
 function records(file) {
-  const rows = parseCsv(readFileSync(join(DATA, file), "utf8"));
+  const path = join(DATA, file);
+  // The archive is a tracked input, not an output: a clean checkout that lost
+  // it would silently drop the 461 pre-2K22 students from the app roster.
+  if (!existsSync(path)) {
+    fail(`${file} is missing from src/data/students — it is a tracked input, restore it from git`);
+  }
+  const rows = parseCsv(readFileSync(path, "utf8"));
   const header = rows.shift() ?? [];
   return rows
     .filter((row) => row.some((value) => value.trim() !== ""))
@@ -316,6 +322,13 @@ console.log(`  ${sessions.map((session) => `${session} ${sessionCounts[session]}
 if (dropped.length > 0) console.log(`  dropped ${dropped.length} archive duplicate(s): ${dropped.join(", ")}`);
 console.log(`  round-trip identical · module ${kb(sourceSize.length)} → ${kb(Buffer.byteLength(header))}`);
 
-if (CHECK_ONLY) process.exit(0);
+if (CHECK_ONLY) {
+  const withoutStamp = (text) => text.replace(/\d{4}-\d{2}-\d{2}/g, "DATE");
+  const current = sourceSize.length > 0 ? sourceSize.toString("utf8") : "";
+  if (withoutStamp(current) !== withoutStamp(header)) {
+    fail("roster-data.ts is stale — run: bun scripts/build-students-data.mjs");
+  }
+  process.exit(0);
+}
 writeFileSync(FILE, header);
 console.log(`wrote ${FILE}`);

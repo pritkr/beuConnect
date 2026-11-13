@@ -1,0 +1,418 @@
+---
+export const prerender = true;
+import Layout from "../layouts/Layout.astro";
+
+const CONTACT = "pritform@gmail.com";
+const UPDATED = "31 October 2026";
+---
+
+<Layout
+	title="Privacy"
+	description="What BEUConnect collects, what it never touches, and how to get your data deleted. Plain words, no dark patterns."
+>
+	<article class="privacy">
+		<header class="privacy-head">
+			<p class="eyebrow">Privacy</p>
+			<h1>Your data, in plain words</h1>
+			<p class="lede">
+				Short version: we don't sell anything, there are no ads, and the only personal thing we
+				touch is your registration number — because that's how a result gets fetched.
+			</p>
+		</header>
+
+		<section class="card short" aria-labelledby="short">
+			<h2 id="short">The short version</h2>
+			<ul>
+				<li>No ads. No data selling. No ad trackers. Ever.</li>
+				<li>Your registration number is used to fetch your result, and nothing else.</li>
+				<li>Analytics get a <strong>hash</strong> of your number, never the number.</li>
+				<li>There's no account and no password. Almost everything stays on your phone.</li>
+				<li>You can switch analytics off, and you can email us to delete anything.</li>
+			</ul>
+		</section>
+
+		<section aria-labelledby="who">
+			<h2 id="who">Who runs this</h2>
+			<p>
+				BEUConnect is a student project, built and run by one person — Prit, at GEC Sheikhpura.
+				It is <strong>not official</strong>, not affiliated with Bihar Engineering University, and
+				not run by a company. That also means there's no legal team and no growth department:
+				just one inbox.
+			</p>
+			<p>
+				Contact for anything in this page:
+				<a href={`mailto:${CONTACT}`}>{CONTACT}</a>.
+			</p>
+		</section>
+
+		<section aria-labelledby="collect">
+			<h2 id="collect">What we actually handle</h2>
+			<p>
+				This is the whole list. If something isn't here, we don't have it.
+			</p>
+
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th>What</th>
+							<th>Why</th>
+							<th>Where it goes</th>
+							<th>How long</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>Registration number</strong></td>
+							<td>
+								To fetch your result, rank, merit standing and class routine. Its digits also
+								tell the app your batch, branch and college, so screens open on the right one.
+							</td>
+							<td>
+								Our server (<code>beu.prit.eu.org</code>), then the BEU result portal. Saved on
+								your phone so you don't retype it.
+							</td>
+							<td>
+								On your phone until you clear it. On our server: not stored — it lives only for
+								the length of the request.
+							</td>
+						</tr>
+						<tr>
+							<td><strong>Guardian's mobile number</strong> (attendance only)</td>
+							<td>
+								It's the login the GEC Sheikhpura attendance portal uses. We pass it through so
+								the portal can answer.
+							</td>
+							<td>The college's attendance service (Supabase).</td>
+							<td>Not stored by us, not logged, not in any error message.</td>
+						</tr>
+						<tr>
+							<td><strong>Feedback you send</strong></td>
+							<td>To read it and reply.</td>
+							<td>
+								Our server, then a private Telegram channel. Includes the page you were on, your
+								IP and browser string, which the server sees anyway.
+							</td>
+							<td>Until the issue is closed.</td>
+						</tr>
+						<tr>
+							<td><strong>Usage analytics</strong></td>
+							<td>To know which screens people actually use, so we stop building dead ones.</td>
+							<td>Google Analytics 4, through our own server.</td>
+							<td>14 months (Google's default).</td>
+						</tr>
+						<tr>
+							<td><strong>Stuff saved on your phone</strong></td>
+							<td>
+								Offline access: saved results, cached papers, theme, attendance you logged,
+								reminders.
+							</td>
+							<td>Only your device. We never see it.</td>
+							<td>Until you clear the app's storage.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section aria-labelledby="never">
+			<h2 id="never">What we never collect</h2>
+			<p>
+				Location, contacts, camera, microphone, photos, files, health data, financial data,
+				messages, call logs, your advertising ID, biometrics. We don't have an account system, so
+				there's no password to leak. The app asks for no permission it doesn't visibly need.
+			</p>
+		</section>
+
+		<section aria-labelledby="analytics">
+			<h2 id="analytics">Analytics, specifically</h2>
+			<p>
+				The site sends events with Google's <code>gtag.js</code>. The app does the same job
+				without the script: it batches events and hands them to our own server, which forwards
+				them to Google with a secret the app never sees. One property, one vocabulary, so the two
+				can be compared.
+			</p>
+			<p>An event can carry:</p>
+			<ul>
+				<li>the screen you opened and the feature it belongs to;</li>
+				<li>the action you took (opened a paper, saved a result, marked attendance);</li>
+				<li>your branch, college and batch <em>as codes</em>;</li>
+				<li>a 10-character hash of your registration number — so we can count distinct students;</li>
+				<li>app version, platform, and a random client id.</li>
+			</ul>
+			<p>An event never carries:</p>
+			<ul>
+				<li>your registration number, name or phone number;</li>
+				<li>anything you typed. Search sends the word count, not the words. Feedback sends its type, not its text.</li>
+			</ul>
+			<p>
+				On the website, the page address sent to analytics has its query string removed, so a
+				<code>?reg=…</code> in a URL never reaches Google.
+			</p>
+			<p>
+				<strong>Turning it off:</strong> in the app, Settings → About → <em>Send anonymous usage</em>.
+				It clears whatever is queued and every later event is a no-op. On the site, an ad blocker
+				does the same job.
+			</p>
+		</section>
+
+		<section aria-labelledby="cookies">
+			<h2 id="cookies">Cookies and local storage</h2>
+			<p>
+				No ad cookies, no third-party tracking cookies, no cookie banner because there's nothing
+				to consent to. The site uses local storage for your theme and for attendance you log, and
+				a service worker caches pages and PDFs so they open offline. The app keeps its data in
+				local storage under <code>beu.</code> keys. Clearing site data or app storage wipes all of
+				it.
+			</p>
+		</section>
+
+		<section aria-labelledby="public">
+			<h2 id="public">Public data we republish</h2>
+			<p>
+				Result tables, merit lists and the student register are built from BEU's own published
+				result pages. That data is already public — we just make it searchable, sortable and
+				readable on a phone. We don't add anything to it: no phone numbers, no email, no date of
+				birth, no gender, no category.
+			</p>
+			<p>
+				If your row is here and you want it gone, email us with the registration number and we'll
+				remove it. You don't have to explain why.
+			</p>
+		</section>
+
+		<section aria-labelledby="others">
+			<h2 id="others">Who else touches the data</h2>
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th>Service</th>
+							<th>What it does for us</th>
+							<th>What it sees</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare</a></td>
+							<td>Hosts the site and the API.</td>
+							<td>Requests, including IP addresses.</td>
+						</tr>
+						<tr>
+							<td><a href="https://policies.google.com/privacy" rel="noopener">Google Analytics</a></td>
+							<td>Counts usage.</td>
+							<td>The events described above, with a hash — never your number.</td>
+						</tr>
+						<tr>
+							<td><a href="https://supabase.com/privacy" rel="noopener">Supabase</a></td>
+							<td>Backs the GEC Sheikhpura attendance portal.</td>
+							<td>The registration number and the guardian mobile you enter.</td>
+						</tr>
+						<tr>
+							<td><a href="https://telegram.org/privacy" rel="noopener">Telegram</a></td>
+							<td>Delivers feedback to us.</td>
+							<td>Your feedback text, optional contact, IP and browser string.</td>
+						</tr>
+						<tr>
+							<td><a href="https://docs.github.com/en/site-policy/privacy-policies" rel="noopener">GitHub</a></td>
+							<td>Serves app updates.</td>
+							<td>Nothing personal — it's a public download check.</td>
+						</tr>
+						<tr>
+							<td><a href="https://beu-bih.ac.in" rel="noopener">BEU result portal</a></td>
+							<td>The university's own system.</td>
+							<td>The registration number you ask us to look up.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p>We don't sell data, share it for advertising, or hand it to anyone else.</p>
+			<p>
+				Some of these run outside India — Google and Cloudflare may store data on servers
+				elsewhere. They're the only ones that do, and the analytics they hold is aggregate and
+				hashed, never a registration number.
+			</p>
+		</section>
+
+		<section aria-labelledby="rights">
+			<h2 id="rights">Your rights</h2>
+			<p>
+				Under India's Digital Personal Data Protection Act, 2023 — and just as a decent default —
+				you can:
+			</p>
+			<ul>
+				<li><strong>ask what we hold</strong> about you;</li>
+				<li><strong>get it corrected</strong> if it's wrong;</li>
+				<li><strong>get it deleted</strong> — including your row in a published table;</li>
+				<li><strong>withdraw consent</strong> by switching analytics off;</li>
+				<li><strong>complain</strong>, first to us, and then to the Data Protection Board of India.</li>
+			</ul>
+			<p>
+				Email <a href={`mailto:${CONTACT}`}>{CONTACT}</a>. We answer within 30 days, usually much
+				faster. Because there are no accounts, most of what we'd delete is already only on your
+				phone — clearing app storage removes it instantly.
+			</p>
+		</section>
+
+		<section aria-labelledby="minors">
+			<h2 id="minors">If you're under 18</h2>
+			<p>
+				BEU students are normally 18 or older. If you're younger, please use BEUConnect with a
+				parent or guardian's permission, and don't send us anyone else's personal details.
+			</p>
+		</section>
+
+		<section aria-labelledby="security">
+			<h2 id="security">Security</h2>
+			<p>
+				Everything runs over HTTPS. We don't store passwords or payment details, and the app
+				carries only publishable keys. We collect as little as possible on purpose, because the
+				safest data is the data you never collected. No system is perfect, and we won't pretend
+				otherwise.
+			</p>
+		</section>
+
+		<section aria-labelledby="changes">
+			<h2 id="changes">Changes</h2>
+			<p>
+				Last updated <strong>{UPDATED}</strong>. If this page changes in a way that matters, the
+				date changes and the app's About screen says so. We won't quietly rewrite it.
+			</p>
+		</section>
+
+		<section class="card contact" aria-labelledby="contact">
+			<h2 id="contact">Still reading? Ask us anything.</h2>
+			<p>
+				<a href={`mailto:${CONTACT}`}>{CONTACT}</a>
+			</p>
+			<p class="fine">
+				Unofficial student project. Not affiliated with Bihar Engineering University.
+			</p>
+		</section>
+	</article>
+</Layout>
+
+<style>
+	.privacy {
+		max-width: 48rem;
+		margin-inline: auto;
+		padding-block: var(--s6) var(--s8);
+	}
+
+	.privacy-head {
+		margin-bottom: var(--s5);
+	}
+
+	.eyebrow {
+		margin: 0 0 var(--s2);
+		color: var(--accent);
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	.privacy h1 {
+		margin: 0 0 var(--s3);
+		font-size: clamp(2rem, 5vw, 2.9rem);
+		line-height: 1.05;
+	}
+
+	.lede {
+		margin: 0;
+		color: var(--muted);
+		font-size: 1.05rem;
+	}
+
+	.privacy h2 {
+		margin-top: var(--s6);
+		margin-bottom: var(--s3);
+		font-size: 1.35rem;
+	}
+
+	.privacy p,
+	.privacy li {
+		line-height: 1.65;
+	}
+
+	.privacy ul {
+		padding-left: 1.1rem;
+	}
+
+	.privacy li + li {
+		margin-top: var(--s1);
+	}
+
+	.card {
+		padding: var(--s4) var(--s5);
+		border: 1px solid var(--line);
+		border-radius: 14px;
+		background: var(--surface-2);
+	}
+
+	.short {
+		margin-block: var(--s5);
+		border-color: var(--accent-line);
+		background: var(--accent-soft);
+	}
+
+	.short h2 {
+		margin-top: 0;
+	}
+
+	.short ul {
+		margin-bottom: 0;
+	}
+
+	.table-wrap {
+		overflow-x: auto;
+		border: 1px solid var(--line);
+		border-radius: 12px;
+	}
+
+	.table-wrap table {
+		margin: 0;
+		font-size: 0.92rem;
+	}
+
+	.table-wrap th,
+	.table-wrap td {
+		vertical-align: top;
+	}
+
+	.table-wrap th {
+		white-space: nowrap;
+	}
+
+	code {
+		font-size: 0.85em;
+	}
+
+	.contact {
+		margin-top: var(--s7);
+	}
+
+	.contact h2 {
+		margin-top: 0;
+	}
+
+	.contact p {
+		margin: 0;
+	}
+
+	.fine {
+		margin-top: var(--s2) !important;
+		color: var(--muted);
+		font-size: 0.85rem;
+	}
+
+	@media (max-width: 640px) {
+		.card {
+			padding: var(--s3) var(--s4);
+		}
+
+		.table-wrap table {
+			font-size: 0.86rem;
+		}
+	}
+</style>

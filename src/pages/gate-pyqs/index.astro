@@ -1,8 +1,6 @@
 ---
 export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/header.astro";
-import Footer from "../../components/footer.astro";
 import pyqData from "../../data/gate-pyqs.json";
 import {
   gatePyqSubjectOrder,
@@ -26,120 +24,70 @@ const subjects = Object.entries(pyqData)
     if (bi !== undefined) return 1;
     return a.code.localeCompare(b.code);
   });
+
+const paperCount = subjects.reduce((total, subject) => total + subject.paperCount, 0);
 ---
 
 <Layout
-  title="GATE Previous Year Questions | BEU Connect"
-  description="Access all subject-wise GATE previous year question papers in one place."
+  title="GATE previous year papers"
+  description="Subject-wise GATE previous year question papers."
 >
-  <Header />
-  <main class="container">
-    <section class="header-section">
-      <h1 class="gradient-text">GATE PYQs</h1>
-      <p class="subtitle">
-        All subjects from your `public/GATEPYQs/` folders are now live.
-      </p>
-    </section>
+  <header class="page-head">
+    <div>
+      <h1>GATE PYQs</h1>
+      <p class="meta num">{paperCount} papers · {subjects.length} subjects</p>
+    </div>
+  </header>
 
-    <section class="grid" aria-label="GATE subjects">
-      {subjects.map((subject) => (
-        <a href={`${base}gate-pyqs/${subject.code}`} class="subject-card">
-          <span class="subject-code">{subject.code}</span>
-          <h2>{subject.name}</h2>
-          <p>{subject.paperCount} papers</p>
-        </a>
-      ))}
-    </section>
-  </main>
-  <Footer />
+  <div class="subject-grid" aria-label="GATE subjects">
+    {subjects.map((subject) => (
+      <a href={`${base}gate-pyqs/${subject.code}`} class="subject-card">
+        <span class="subject-code num">{subject.code}</span>
+        <span class="subject-name">{subject.name}</span>
+        <span class="subject-count num">{subject.paperCount}</span>
+      </a>
+    ))}
+  </div>
 </Layout>
 
 <style>
-  .container {
-    padding: 2rem 1rem;
-    max-width: 1080px;
-    margin: 0 auto;
-  }
-
-  .header-section {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .gradient-text {
-    margin: 0;
-    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
-    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .subtitle {
-    margin: 0.5rem auto 0;
-    max-width: 680px;
-    color: var(--text-secondary);
-  }
-
-  .grid {
+  .subject-grid {
     display: grid;
-    gap: 0.9rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media (min-width: 720px) {
-    .grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-
-  @media (min-width: 1080px) {
-    .grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 0;
+    margin-top: var(--s5);
+    border-top: 1px solid var(--line-strong);
   }
 
   .subject-card {
-    border: 1px solid var(--border-subtle);
-    background: linear-gradient(165deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.95));
-    border-radius: 14px;
-    padding: 0.95rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
+    display: grid;
+    grid-template-columns: 3.4rem minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: var(--s3);
+    padding: var(--s4) var(--s3) var(--s4) 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--paper);
     text-decoration: none;
-    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-    min-height: 148px;
   }
 
-  .subject-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--border-accent);
-    box-shadow: var(--shadow-glow);
+  .subject-card:hover .subject-name {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
 
   .subject-code {
-    width: fit-content;
-    padding: 0.25rem 0.55rem;
-    border-radius: 999px;
-    background: rgba(59, 130, 246, 0.15);
-    border: 1px solid rgba(59, 130, 246, 0.35);
-    color: #8cc7ff;
-    font-size: 0.75rem;
-    font-weight: 700;
+    color: var(--faint);
+    font-size: 0.7rem;
     letter-spacing: 0.04em;
   }
 
-  .subject-card h2 {
-    margin: 0;
-    font-size: 0.98rem;
-    line-height: 1.35;
-    color: var(--text-primary);
+  .subject-name {
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 
-  .subject-card p {
-    margin: auto 0 0;
-    font-size: 0.82rem;
-    color: var(--text-muted);
+  .subject-count {
+    color: var(--faint);
+    font-size: 0.75rem;
   }
 </style>

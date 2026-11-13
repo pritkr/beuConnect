@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Special Exam., 2020",
+    "subject": "POWER SYSTEM-II",
+    "subject_slug": "power-system-ii",
+    "subject_code": "031508",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer/Choose the correct option from any seven of the\n                    following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The power output from a hydroelectric power plant depends on three parameters.</p>",
+          "options": [
+            "Head, Type and Dam of discharge",
+            "Head, Discharge and Efficiency of the system",
+            "Efficiency of the system, type of draft tube and type of turbine used",
+            "Type of dam, discharge and type of catchment area"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Low head hydro-plant is also known as</p>",
+          "options": [
+            "canal power plant",
+            "medium head hydro-plant",
+            "run-off river hydro-plant",
+            "base load hydro-plant"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Demand factor is defined as</p>",
+          "options": [
+            "average load/maximum load",
+            "maximum demand/connected load",
+            "connected load/maximum demand",
+            "average load/maximum load"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The area under a load curve gives</p>",
+          "options": [
+            "average demand",
+            "energy consumed",
+            "maximum demand",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which among the following is the most severe fault?</p>",
+          "options": [
+            "Single line to ground fault",
+            "Double line to ground fault",
+            "Line-to-line fault",
+            "Symmetrical fault"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What is the value of the zero sequence current?</p>",
+          "options": [
+            "3 times the current in the neutral wire",
+            "\\( 1/3 \\) times the current in the neutral wire",
+            "\\( \\sqrt{3} \\) times the current in the neutral wire",
+            "Equal to the current in the neutral wire"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which among the following methods is used for improving the system stability?</p>",
+          "options": [
+            "Increasing the system voltage",
+            "Reducing the transfer reactance",
+            "Using high-speed circuit-breaker",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The transient stability limit of the power system can be increased by introducing</p>",
+          "options": [
+            "series inductance",
+            "shunt inductance",
+            "series capacitance",
+            "shunt capacitance"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>What do you mean by positive sequence network?</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Define diversity factor and mention its significance.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What are the factors to be considered in selecting the site of a hydroelectric power plant? Write\n                        a\n                        short note on the selection of hydraulic turbine.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>A generating station has the following data: installed capacity = 300 MW; capacity factor = 50%;\n                        annual load factor = 60%; annual cost of fuel, oil, etc. = \\( 9 \\times 10^7 \\); capital cost\n                        =\n                        \\( 10^9 \\); annual interest and depreciation = 10%. Calculate (i) the minimum reserve capacity\n                        of\n                        the station and (ii) the cost per kWh generated.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain with neat sketch pumped storage peak load plant.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Estimate the generating cost per kWh delivered from a generating station from the following data:\n                        Plant capacity = 50 MW; Annual load factor = 40%; Capital cost = 1.2 crores; Annual cost of\n                        wages,\n                        taxation, etc. = 4 lakhs; cost of fuel, lubrication, maintenance, etc. = 1.0 paise/kWh\n                        generated.\n                        Interest 5% per annum, depreciation 6% per annum of initial value.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Deduce and draw the sequence network for LLG fault at terminal of unloaded generator.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A 25 MVA, 13.2 kV alternator with solidly grounded neutral has a subtransient reactance of 0.25\n                        p.u.\n                        The negative and zero sequence reactances are 0.35 and 0.1 p.u. respectively. A single line to\n                        ground fault occurs at the terminals of an unloaded alternator; determine the fault current and\n                        line-to-line voltages on neglecting resistances.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Derive the expression of fault current for line-to-line fault on unloaded generator.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>The line currents in phases a, b and c respectively are \\( 500+j150 \\), \\( 100+j600 \\) and\n                        \\(\n                        -300+j600 \\) referred to the same reference vector. Find the symmetrical component of current.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is 'equal area criterion' and how is it derived from the swing equation? Explain the\n                        operation\n                        of a synchronous motor using this criterion when sudden increase in mechanical load on that\n                        motor\n                        occurs.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A 50 Hz synchronous generator having an internal voltage 1.2 pu, H = 5.2 MJ/MVA and a reactance\n                        of\n                        0.4 pu is connected to an infinite bus through a double circuit line, each line of reactance\n                        0.35\n                        pu. The generator is delivering 0.8 pu power and the infinite bus voltage is 1.0 pu. Determine:\n                        maximum power transfer, steady state operating angle, and natural frequency of oscillation if\n                        damping is neglected.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What are the assumptions made during the stability analysis of a multi-machine system? Derive the\n                        equation for reduced admittance matrix.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>A 50 Hz, 4-pole turbo alternator rated 150 MVA, 11 kV has an inertia constant of 9 MJ/MVA. Find\n                        the\n                        (i) stored energy at synchronous speed, (ii) rotor acceleration if the input mechanical power is\n                        raised to 100 MW when the electrical load is 75 MW and (iii) speed at the end of 10 cycles if\n                        acceleration is assumed constant at the initial value.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Enlist the effects of high-load factor on the operation of power plants.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>The energy cost of a 100 MW steam station working at 40% load factor comes out to be 12 paise/kWh\n                        of\n                        energy generated. What will be the cost of energy generated if the load factor is improved to\n                        60%?\n                        The fuel cost of the power station due to increased generation increase the annual generation\n                        cost\n                        by 5%.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Plant capacity factor</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Surge tank</p>"
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>Reactor control of short circuit currents</p>"
+        },
+        {
+          "id": "q9_4",
+          "type": "theory",
+          "text": "<p>Steady state stability</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    }
+  ]
+}

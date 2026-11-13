@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2020",
+    "subject": "Engineering Mechanics",
+    "subject_slug": "engineering-mechanics",
+    "subject_code": "100310",
+    "year": 2020,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "type": "mcq",
+              "text": "Choose the correct alternative from any seven of the following :",
+              "subparts": [
+                {
+                  "letter": "a",
+                  "text": "Which of the following is a vector quantity?",
+                  "options": [
+                    "Energy",
+                    "Mass",
+                    "Momentum",
+                    "Angle"
+                  ]
+                },
+                {
+                  "letter": "b",
+                  "text": "Kinetic friction is the",
+                  "options": [
+                    "tangent of angle between normal reaction and the resultant of normal reaction and the limiting friction",
+                    "ratio of limiting friction and normal reaction",
+                    "friction force acting when the body is just about to move",
+                    "friction force acting when the body is in motion"
+                  ]
+                },
+                {
+                  "letter": "c",
+                  "text": "The angular velocity (in rad/s) of a body rotating at $N$ revolutions per minute is",
+                  "options": [
+                    "$\\pi N/60$",
+                    "$\\pi N/180$",
+                    "$2\\pi N/60$",
+                    "$2\\pi N/18$"
+                  ]
+                },
+                {
+                  "letter": "d",
+                  "text": "D'Alembert's principle is used for",
+                  "options": [
+                    "reducing the problem of kinetics to equivalent static problem",
+                    "determining stresses in the truss",
+                    "stability of floating bodies",
+                    "designing safe structures"
+                  ]
+                },
+                {
+                  "letter": "e",
+                  "text": "If rain is falling in the opposite direction of the movement of a pedestrian, he has to hold his umbrella",
+                  "options": [
+                    "more inclined when moving",
+                    "less inclined when moving",
+                    "more inclined when standing",
+                    "less inclined when standing"
+                  ]
+                },
+                {
+                  "letter": "f",
+                  "text": "A flywheel on a motor goes from rest to 1000 r.p.m. in 6 sec. The number of revolutions made is nearly equal to",
+                  "options": [
+                    "25",
+                    "50",
+                    "100",
+                    "250"
+                  ]
+                },
+                {
+                  "letter": "g",
+                  "text": "Bending moment is zero in axial thrust diagram at",
+                  "options": [
+                    "point of contra-flexure",
+                    "point of inflection",
+                    "Both (i) and (ii)",
+                    "None of the above"
+                  ]
+                },
+                {
+                  "letter": "h",
+                  "text": "The moment of inertia of hollow circular section about a central axis perpendicular to section as compared to its moment of inertia about horizontal axis is",
+                  "options": [
+                    "same",
+                    "double",
+                    "half",
+                    "four times"
+                  ]
+                },
+                {
+                  "letter": "i",
+                  "text": "Mass moment of inertia of a uniform thin rod of mass $M$ and length $l$ about its mid-point and perpendicular to its length is",
+                  "options": [
+                    "$(2/3) Ml^2$",
+                    "$(1/3) Ml^2$",
+                    "$(3/4) Ml^2$",
+                    "$(1/12) Ml^2$"
+                  ]
+                },
+                {
+                  "letter": "j",
+                  "text": "A particle is moving with a constant velocity along a line parallel to positive x-axis. The magnitude of its angular momentum with respect to the origin is",
+                  "options": [
+                    "zero",
+                    "increasing with $x$",
+                    "decreasing with $x$",
+                    "remaining constant"
+                  ]
+                }
+              ],
+              "id": "1_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Find the moment of a force 5 N directed along one side of a cube of side length 2 m with respect to\u2014 (a) all vertices of the cube; (b) all axes going through the sides.",
+          "marks": 14,
+          "id": "2"
+        },
+        {
+          "text": "Draw the free-body diagram of the 50 kg paper roll which has a center of mass at $G$ and rests on the smooth blade of the paper hauler (in Fig. 1). Explain the significance of each force acting on the diagram.",
+          "marks": 14,
+          "diagram": "Fig. 1",
+          "id": "3"
+        },
+        {
+          "text": "Explain, with due mathematical expression, the mass moment of inertia for an object. Derive the mass moment of inertia about the centroidal axes of a solid sphere, a solid cylinder, and a solid right circular cone.",
+          "marks": 14,
+          "id": "4"
+        },
+        {
+          "text": "At the instant shown (in Fig. 2), the disk is rotating with an angular velocity of $\\omega$ and has an angular acceleration of $\\alpha$. Determine the velocity and acceleration of cylinder $B$ at this instant. Neglect the size of the pulley at $C$.",
+          "marks": 14,
+          "diagram": "Fig. 2",
+          "id": "5"
+        },
+        {
+          "text": "The hollow circular shaft is subjected to an internal torque of $T = 10\\text{ kN}\\cdot\\text{m}$ (in Fig. 3). Determine the shear stress developed at points $A$ and $B$. Represent each state of stress on an element.",
+          "marks": 14,
+          "diagram": "Fig. 3",
+          "id": "6"
+        },
+        {
+          "text": "Draw shear force and bending moment diagrams for the beam shown (in Fig. 4). Determine the internal normal force, shear force, and moment at points $C$ and $D$ in the simply supported beam. Point $D$ is located just to the left of the 10 kN concentrated load.",
+          "marks": 14,
+          "diagram": "Fig. 4",
+          "id": "7"
+        },
+        {
+          "text": "If the coefficient of static friction at all contacting surfaces is $\\mu_s$ (in Fig. 5), determine the inclination $\\theta$ at which the identical blocks, each of weight $W$, begin to slide.",
+          "marks": 14,
+          "diagram": "Fig. 5",
+          "id": "8"
+        },
+        {
+          "text": "Write short notes on the following with suitable mathematical expressions: (a) Angle of repose; (b) Types of supports and their reactions; (c) Polar moment of inertia; (d) General planar motion.",
+          "marks": 14,
+          "id": "9"
+        }
+      ]
+    }
+  ]
+}

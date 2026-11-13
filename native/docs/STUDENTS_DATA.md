@@ -3,8 +3,9 @@
 `native/assets/data/students-gecs.json` is the full student roster for
 Government Engineering College, Sheikhpura (BEU college code `157`): **1,323
 students** across batches **2K22–2K26**. It is generated from the college
-register, never hand-edited. The website (`src/pages/listofstudents/`) and the
-native app read the same file.
+register, never hand-edited. The app's packed roster (`roster-data.ts`) and the
+site's register are built from the same dump by their own packers; the JSON is
+the standalone dataset the data browser lists.
 
 ## Source
 
@@ -12,7 +13,8 @@ native app read the same file.
 |---|---|
 | Register dump | `~/gecs-cli/dumps/20261026_031340/students_basic_details.csv` |
 | Rows | 1,323 |
-| Columns used | `id, roll_no, registration_no, name, gender, date_of_birth, batch, branch, admission_type, status, mobile_no, email_id, guardian_name, guardian_mobile_no, is_hosteller, category` |
+| Columns serialized | `id, roll_no, registration_no, name, batch, branch, admission_type, status, guardian_name, is_hosteller` |
+| Columns read, never serialized | `gender, date_of_birth, mobile_no, email_id, guardian_mobile_no, category` — personal data and a caste field; the generator refuses to write them (`PRIVATE_FIELDS`) |
 | Read-only | Yes. The dump folder holds live faculty credentials; this pipeline only reads the CSV and never runs the register CLI. |
 
 `gecs-cli/reports/GEC_2K26_students_full_report.md` is the 2K26 cross-check
@@ -48,7 +50,7 @@ Set `SOURCE_DATE_EPOCH` for a reproducible manifest stamp.
 | `native/assets/data/manifest.json` | — | One `students` dataset entry + `totals.students` |
 | `src/data/students/gecs-<branch>.csv` | per branch | Site CSV: the 4-column contract plus extra columns |
 | `src/data/students/gecsheikhpura<branch>.csv` | per branch | Legacy 4-column files (`Session,Sno,RegNo,Name`) |
-| `src/data/students/gecs-archive-2019-2021.csv` | 467 | Frozen pre-2K22 rows from the old lists; not generated, not in the register |
+| `src/data/students/gecs-archive-2019-2021.csv` | 467 | Frozen pre-2K22 rows from the old lists; not generated and not in the canonical JSON, but packed into the app's `roster-data.ts` (461 after 6 duplicates) |
 
 CSV row counts are in the [counts](#counts) table. Branch files exist for
 `cse, ece, ee, mech, civil, met`.
@@ -71,18 +73,18 @@ type Student = {
   branch: "cse" | "ece" | "ee" | "mech" | "civil" | "met";
   branchLabel: string;          // "Computer Science & Engineering" …
   section?: "A" | "B";          // 2K26 CSE only
-  gender?: "M" | "F";
-  dob?: string;                 // "YYYY-MM-DD"; 2K26 only
-  guardian?: string;
-  guardianPhone?: string;       // digits only
-  phone?: string;               // digits only
-  email?: string;               // lowercase
+  guardian?: string;            // guardian / father's name (a public identity field)
   hosteller: boolean;           // always present
-  category?: "BC" | "EBC" | "EWS" | "SC" | "ST" | "UR" | "BC(OBC)";
   admissionType?: string;       // "Regular" (2K26 only)
   status?: string;              // "Active" (2K26 only)
 };
 ```
+
+The roster is **PII-free by contract**: contact numbers, email, date of birth,
+gender and caste category are read from the dump and dropped here. They are not
+in the committed file, not in the APK bundle and not in the site's register.
+`assert_private_free()` fails the build if a new field ever reintroduces one,
+and `scripts/verify.py` re-checks the committed file.
 
 **Omitted keys mean “not recorded”** — the generator never writes `""`. Do not
 assume an optional key exists; use `student.guardian ?? ""`. `id`, `name`,
@@ -92,7 +94,7 @@ assume an optional key exists; use `student.guardian ?? ""`. `id`, `name`,
 Example (2K26, provisional):
 
 ```json
-{"id":1616,"name":"SAZIYA KHANAM","rollNo":"26CSE01","regNo":"26CSE01","provisionalReg":true,"batch":"2K26","session":"2026-30","branch":"cse","branchLabel":"Computer Science & Engineering","section":"A","gender":"F","dob":"2007-09-27","guardian":"MAZHAR ASIF","guardianPhone":"8676935281","phone":"8521027432","email":"saziyakhanam90@gmail.com","hosteller":false,"category":"EBC","admissionType":"Regular","status":"Active"}
+{"id":1616,"name":"SAZIYA KHANAM","rollNo":"26CSE01","regNo":"26CSE01","provisionalReg":true,"batch":"2K26","session":"2026-30","branch":"cse","branchLabel":"Computer Science & Engineering","section":"A","guardian":"MAZHAR ASIF","hosteller":false,"admissionType":"Regular","status":"Active"}
 ```
 
 ## How to load it
@@ -188,13 +190,37 @@ Measured from the 2026-10-26 dump (`--check` pins these):
 
 ## Privacy
 
-The JSON is bundled app data and carries phone, email, DOB and guardian name so
-the app can use them offline. The website **does not publish them**:
-`src/data/students/roster.ts` projects records to `PublicStudent`
-(`id, name, rollNo, regNo, provisionalReg, batch, session, branch, branchLabel,
-section, hosteller`) and that is the only shape the pages render. No phone,
-email, DOB, address, guardian or category reaches the HTML or the client script.
-Keep it that way when adding screens.
+The register dump is the only place personal data lives, and it stays outside
+the repository. The canonical roster is projected down to identity and
+affiliation: name, roll number, registration number, batch, session, branch,
+section, guardian **name**, hosteller and admission status. Phone numbers,
+emails, dates of birth, gender and caste category are read and discarded.
+
+Three independent guards keep it that way:
+
+- `PRIVATE_FIELDS` in `build-students-data.py`; `assert_private_free()` raises
+  before the JSON is written.
+- `build-students-data.py --check` re-reads the committed file and fails on a
+  banned key.
+- `scripts/verify.py` fails the data check if a committed record carries one,
+  and scans every public CSV header under `public/data`, `pythonscripts` and
+  `src/data/students` for contact, email, DOB, gender or caste columns.
+
+A scan on 2026-10-30 found a `ContactNo` column (student mobile numbers) in six
+`public/data/students_25_157_*_sem0.csv` files and six extractor outputs under
+`pythonscripts/`. The column was stripped, `25listextractfrompdf/extract.py` no
+longer writes it, and the new CSV guard prevents a recurrence. The deployed site
+still serves the old files until the next web deploy.
+
+The site does not read this file at runtime: `scripts/sync-student-register.ts`
+projects the same dump to `src/assets/data/students/gecs-register.json`
+(`regNo, rollNo, name, branch, branchLabel, session, section, provisionalReg`).
+The APK does not bundle it either — `src/features/students/roster-data.ts`
+carries `reg|name|roll`.
+
+The register file is still in git history from before 2026-10-30. Removing the
+current blob does not remove the old one; a full purge needs a history rewrite
+plus a force push, which is a separate, coordinated operation.
 
 ## Manifest entry
 
@@ -220,13 +246,13 @@ builder afterwards.
 
 ## Known gaps
 
-- **995 students have no DOB** in the register (only 2K26 is populated: 328/334).
-- **64 guardian phones, 46 student phones, 28 emails and 24 guardian names are
-  missing**; they are omitted, not blanked. One guardian phone (`916200848`) is
-  nine digits in the source and is preserved as-is.
-- **Gender, category and admission type exist only for 2K26** (gender 246 M /
-  88 F, category 334, admission type “Regular” 334). Older batches have blank
-  columns; the site does not render these fields.
+- **24 guardian names are missing** (1,299 of 1,323 present); the key is omitted,
+  not blanked. A screen must read `student.guardian ?? ""`.
+- **Admission type exists only for 2K26** (“Regular”, 334 records); older batches
+  omit the key.
+- **The dump's contact, DOB, gender and caste columns are partial and are never
+  serialized.** DOB and gender cover 2K26 only; publishing a partial column would
+  read as a fact, so the roster leaves all six out.
 - **Roll numbers are unreliable outside 2K26** (2K22 contains `21ECE02` and
   `23DME06`), so the site shows the official registration number there. Roll
   numbers are also not globally unique: `24DCSE05` exists in both 2K23 and
@@ -235,4 +261,6 @@ builder afterwards.
   mixed case). No title-casing was invented.
 - **`src/data/students/gecs-archive-2019-2021.csv`** holds 467 pre-2K22 rows
   (2019-23, 2020-24, 2021-25) recovered from the old site CSVs. The register
-  dump starts at 2K22, so the archive is frozen and not regenerated.
+  dump starts at 2K22, so the archive is frozen and not regenerated. It is a
+  **tracked input**: `build-students-data.mjs` packs it into the app roster and
+  fails loudly if it is missing, so it must be committed like source code.

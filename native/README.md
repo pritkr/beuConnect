@@ -6,15 +6,15 @@ calculators, attendance, routine, holidays and settings. One TSX codebase on
 [NativeShell](https://nsh.dev); Android is the shipping target and macOS is the
 development host.
 
-- **55 registered routes** across thirteen feature modules (including the
-  first-run `onboarding`), plus the shell-owned `more` screen (56 destinations).
+- **60 registered routes** across thirteen feature modules (including the
+  first-run `onboarding`), plus the shell-owned `more` screen (61 destinations).
 - Results work through BEU's published rosters even when BEU's JSON API is down,
   and through BEU's own result page — the captcha is solved by the student, the
   page is read on the phone, and the result is saved natively — when neither
   works. A registration number is resolved to a name and CGPA for Home without
   ever solving a captcha.
-- The Android APK is **12.11 MB** (12,110,647 B) instead of the ~50 MB universal
-  build, and installs the same way: `docs/ANDROID.md`.
+- The Android APK is **12.11 MB** (12,110,647 B); the same host built for every
+  ABI is **34.3 MB** (34,319,296 B). It installs the same way: `docs/ANDROID.md`.
 
 ## Three commands
 
@@ -48,7 +48,7 @@ interactive dev loop, but still one nsh process at a time.
 | Tools | `tools`, `.calculator`, `.attendance`, `.routine`, `.holidays`, `.wifi`, `.feedback` (+ four compatibility aliases) |
 | Students | `students`, `.college`, `.branch`, `.student`, `.leads` — published rosters and CGPA leaders |
 | Feedback | `feedback` — a bug, wrong data or an idea, sent to the site |
-| Settings | `settings`, `.profile`, `.appearance`, `.reminders`, `.storage`, `.offline`, `.about` |
+| Settings | `settings`, `.profile`, `.appearance`, `.reminders`, `.storage`, `.offline`, `.about` (+ bare aliases `profile`, `appearance`, `reminders`, `about`) |
 
 Every route, with the params it reads: `docs/ARCHITECTURE.md` §4.
 
@@ -56,7 +56,7 @@ Every route, with the params it reads: `docs/ARCHITECTURE.md` §4.
 
 ```
 native/
-├── App.tsx                 applies the saved appearance, then mount(Shell)
+├── App.tsx                 entry: boot() applies the saved appearance, mounts Shell
 ├── nsh.json                id, version, theme tokens, network/webview hosts
 ├── src/app/                router contract, registry, shell, tab bar, More, 404
 ├── src/ui/index.tsx        the design system ("Ink & Ember") — the only place with the look
@@ -77,8 +77,9 @@ native/
 2. **Names are namespaced.** Top-level `<area>`, sub-routes `<area>.<thing>`;
    params are read with `param(nav, "…")` / `numParam(nav, "…")`, never a cast.
 3. **A WebView is a last resort.** The only uses are the BEU captcha page
-   (`results.web`, with `results.portal` behind it) and a PDF (`pyqs.pdf`,
-   `notices.pdf`); Android renders note PDFs natively instead.
+   (`results.portal` and `results.web`) and a PDF (`pyqs.pdf`,
+   `notices.pdf`). On Android those PDF screens render pages natively through
+   `PdfPage`; the WebView is the fallback for every other host.
 4. **Data goes through `src/lib/net.ts`.** No raw `fetch`, no ad-hoc storage
    keys: `readStore` / `writeStore` add the `beu.` prefix, `putCache` adds
    `beu.cache.`, and every network call has a timeout and a last-good copy.
@@ -108,8 +109,11 @@ Live data comes from the site (allowlisted in `nsh.json`):
 - `GET /api/notices/important`, `/data/manifest/index.json`, `/data/notes.json`,
   `POST /api/feedback`
 
-The one exception is the GECS attendance register, which reads its own Supabase
-host in `src/features/tools/gecs.ts`.
+Beyond the site and `beu-bih.ac.in` (BEU's own result pages), two hosts are
+allowlisted, neither for study data: the GECS attendance register reads its own
+Supabase host (`src/features/tools/gecs.ts`), and the update row in Settings
+reads `api.github.com` for the newest release tag (`src/lib/release.ts`); when
+that call fails it shows the build's own version.
 
 On first run `onboarding` asks for the number once. After that it is resolved to
 a name and CGPA from the saved result, then BEU's newest published roster — no
@@ -117,5 +121,5 @@ captcha, no name typed twice. Check it without the app:
 
 ```sh
 bun scripts/verify-identity.ts                 # the maintainer's number
-bun scripts/verify-identity.ts 24105157010 2   # same number, first semester to try
+bun scripts/verify-identity.ts 24105157010     # any registration number
 ```

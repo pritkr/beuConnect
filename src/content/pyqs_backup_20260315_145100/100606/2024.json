@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Examination, 2024",
+    "subject": "Digital Signal Processing",
+    "subject_slug": "digital-signal-processing",
+    "subject_code": "100606",
+    "year": 2024,
+    "semester": 6,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following is a continuous-time signal?</p>",
+          "options": [
+            "Sinusoidal wave",
+            "Impulse signal",
+            "Unit step signal",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>What does DTFT stand for?</p>",
+          "options": [
+            "Discrete-Time Fourier Transform",
+            "Digital-Time Fourier Transform",
+            "Dynamic-Time Fourier Transform",
+            "Discrete Transfer Fourier Transform"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The process of converting continuous-time signals into discrete-time signals is called?</p>",
+          "options": [
+            "Quantization",
+            "Sampling",
+            "Lasing",
+            "Reconstruction"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>What is the frequency domain representation of LTI systems called?</p>",
+          "options": [
+            "Fourier Series",
+            "Fourier Transform",
+            "Laplace Transform",
+            "Both i and ii"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>A system is causal if:</p>",
+          "options": [
+            "Output depends on future inputs",
+            "Output depends only on present and past inputs",
+            "Output is independent of input",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What is the result of convolving two impulse signals?</p>",
+          "options": [
+            "Impulse signal",
+            "Zero signal",
+            "Step signal",
+            "Constant signal"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The sampling theorem states that to avoid aliasing, the sampling rate must be:</p>",
+          "options": [
+            "Less than the Nyquist rate",
+            "Equal to the Nyquist rate",
+            "Greater than or equal to twice the maximum signal frequency",
+            "Greater than the Nyquist rate"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following is used to compute the convolution of two discrete signals?</p>",
+          "options": [
+            "Fourier Transform",
+            "Laplace Transform",
+            "Z-transform",
+            "Convolution sum"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following represents the Nyquist rate?</p>",
+          "options": [
+            "Twice the highest frequency",
+            "Half the highest frequency",
+            "Equal to the highest frequency",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which property of DFT leads to a reduction in computational complexity?</p>",
+          "options": [
+            "Symmetry",
+            "Linearity",
+            "Circular convolution",
+            "Time-shifting"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the advantages of DSP over analog signal processing. Provide practical examples to\n                        support\n                        your explanation.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Discuss the stability and causality conditions of discrete-time systems. Provide examples of\n                        systems\n                        that are stable and causal.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the basic elements of a DSP system with a block diagram. How does it function in\n                        practical\n                        applications?</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Compare the correlation and convolution of discrete-time signals with examples.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Differentiate between continuous-time and discrete-time signals. Use diagrams to illustrate their\n                        key\n                        characteristics.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the properties of the Discrete-Time Fourier Transform (DTFT) for LTI system with\n                        applications.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Derive the formula for the Inverse Discrete-Time Fourier Transform with suitable examples.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain the process of sampling continuous-time signals and discuss the significance of the\n                        Nyquist\n                        rate in digital signal processing.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Discuss the relationship between the time-domain and frequency-domain representations of signals\n                        using the Fourier transform.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain the reconstruction of signals from their samples using an ideal low-pass filter.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the difference between FIR and IIR filters. What are the advantages and disadvantages of\n                        each?</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Discuss the properties of the Discrete Fourier Transform (DFT). Explain its significance.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Derive the Fast Fourier Transform (FFT) algorithm and explain how it improves the computation of\n                        the\n                        DFT.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Determine the convolution for the two sequences \\( x(n)=\\{3,2,1,2\\} \\), \\(\n                        h(n)=\\{1,2,1,2\\}\n                        \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Illustrate how the properties of linearity and time-invariance simplify the analysis of\n                        discrete-time\n                        systems with examples.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Explain the concept of periodicity in continuous-time and discrete-time signals. How do their\n                        periodicity conditions differ?</p>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2016",
+    "subject": "Analog Electronics",
+    "subject_slug": "analog-electronics",
+    "subject_code": "041404",
+    "year": 2016,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Early effect in BJT refers to",
+              "marks": 2,
+              "options": [
+                "avalanche breakdown",
+                "thermal runaway",
+                "base-width modulation",
+                "Zener breakdown"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "For a BJT, the common-base current gain $\\alpha = 0.98$ and the collector base junction reverse bias saturation current $I_{CO} = 0.6 \\text{ \\mu A}$. This BJT is connected in the common-emitter mode and operated in the active region with a base drive current $I_B = 20 \\text{ \\mu A}$. The collector current $I_C$ for this mode of operation is",
+              "marks": 2,
+              "options": [
+                "$0.98 \\text{ mA}$",
+                "$0.99 \\text{ mA}$",
+                "$1.0 \\text{ mA}$",
+                "$1.01 \\text{ mA}$"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "When a BJT is employed as an amplifier, it operates",
+              "marks": 2,
+              "options": [
+                "in cutoff",
+                "in saturation",
+                "in the active region",
+                "well into saturation"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "A transistor amplifier has a measured S/N ratio of 10 at its input and 5 at its output. Its noise figure is",
+              "marks": 2,
+              "options": [
+                "$10 \\text{ dB}$",
+                "$3 \\text{ dB}$",
+                "$2 \\text{ dB}$",
+                "$1 \\text{ dB}$"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "Refer to the circuit of figure, the values of upper and lower cutoff frequencies are respectively [Diagram: RC filter circuit diagram with two stages]",
+              "marks": 2,
+              "options": [
+                "$\\frac{1}{2\\pi \\times 10^{-6}}$ and $\\frac{1}{2\\pi \\times 10^{-3}}$",
+                "$\\frac{1}{2\\pi \\times 10^{-6}}$ and $0$",
+                "$\\frac{1}{2\\pi \\times 10^{-6}}$ and $10^6$",
+                "$0$ and $\\frac{1}{2\\pi \\times 10^{-6}}$"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "When an amplifier is provided with current series feedback, its",
+              "marks": 2,
+              "options": [
+                "input impedance increases and output impedance decreases",
+                "input and output impedances both decrease",
+                "input impedance decreases and output impedance increases",
+                "input and output impedances both increase"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "A power amplifier delivers $50 \\text{ W}$ output at $50\\%$ efficiency. The maximum power dissipated by the transistor is",
+              "marks": 2,
+              "options": [
+                "$25 \\text{ W}$",
+                "$50 \\text{ W}$",
+                "$100 \\text{ W}$",
+                "$300 \\text{ W}$"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "What determines the lowest frequency in a tuned-amplifier?",
+              "marks": 2,
+              "options": [
+                "Turn-off time",
+                "Turn-on time",
+                "Time constant",
+                "Modulation"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "The voltage gain of an amplifier without feedback and with negative feedback respectively are 100 and 20. Determine the percentage of negative feedback ($\\beta$).",
+              "marks": 2,
+              "options": [
+                "$0.04$",
+                "$0.05$",
+                "$0.4$",
+                "$0.8$"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "Which of the following is true for an RC phase-shift oscillator?",
+              "marks": 2,
+              "options": [
+                "It does not require feedback",
+                "It operates at audio frequencies",
+                "It operates at radio frequencies",
+                "It uses an inductor"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Given the $V_{CE}$ vs $I_C$ curves of a typical transistor. How do we determine the value of $\\alpha$ and $\\beta$? Discuss.",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "Enlist all the values of typical h-parameters for a general purpose transistor. Write two differences between CE and CB configuration of a bipolar junction transistor.",
+          "marks": 7
+        },
+        {
+          "id": "3a",
+          "text": "Given the $r_e$ model, derive an expression for the voltage gain $A_V$ for a common base configuration.",
+          "marks": 7
+        },
+        {
+          "id": "3b",
+          "text": "How does one construct a hybrid $\\pi$-model of a transistor from the physical parameters? Draw and explain.",
+          "marks": 7
+        },
+        {
+          "id": "4",
+          "text": "Draw the low-frequency equivalent circuit of a typical RC-coupled CE amplifier and derive an expression for the lower-cutoff frequency $f_L$. Sketch the frequency response curve.",
+          "marks": 14
+        },
+        {
+          "id": "5",
+          "text": "Discuss the method of determining the output voltage, current and gain of cascaded amplifier. Mention the main factors restricting the performance of such a practical system.",
+          "marks": 14
+        },
+        {
+          "id": "6a",
+          "text": "Derive an expression for the effect of negative feedback on input impedance of an amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "6b",
+          "text": "Derive the fundamental requirement of an oscillator system. Explain.",
+          "marks": 7
+        },
+        {
+          "id": "7",
+          "text": "Discuss how impedance matching limits the performance of a Colpitts oscillator system. Given a standard Colpitts oscillator, can you propose a method of tuning it to higher or lower frequencies? Provide analytical arguments.",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "text": "Discuss why efficiency is a major issue in power amplifiers. Delineate the advantages of class-B and class-C amplifiers over their class-A counterpart. Draw respective frequency response curves.",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "text": "Write short notes on any two of the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Tuned amplifiers"
+            },
+            {
+              "id": "9b",
+              "text": "Hybrid $\\pi$-capacitances"
+            },
+            {
+              "id": "9c",
+              "text": "FET as an amplifier"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

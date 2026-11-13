@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2024",
+    "subject": "Digital Electronics",
+    "subject_slug": "digital-electronics",
+    "subject_code": "100403",
+    "year": 2024,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer of the following questions (any seven only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>What is the use of K-map?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Discuss Universal gates.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Add hexadecimal number 2ABC &amp; 98F2.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Number of 2:1 mux requires designing 256:1 mux is .........</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Find 2's complement of 1011011.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>What is the function of a sample-and-hold circuit?</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Define term propagation delay.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Define race around condition in JK flip flop.</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>What is the purpose of expanding memory size?</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>Differentiate between ROM and RAM.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Realize XNOR logic function using NAND gate only.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Simplify \\( Y = ABC + AB\\overline{C} + A\\overline{B}C \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>A logic circuit has four inputs A, B, C, D and output Y. Y = 1 when A &amp; B are both 1 subjected to\n                        the condition that C and D are both low or both high. Design the logic circuit.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Design 8 to 3 line Encoder circuit.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Implement NAND gate using TTL logic family.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Design a parallel-to-serial converter using shift registers and explain its operation.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Compare the characteristics and applications of JK and T flip-flops.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Explain the working principle of an R-2R ladder DAC with a detailed diagram.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Design a 3-bit flash ADC and explain its working with an example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the Simplified logical expression for Y.<br/>\n                        \\( Y (A, B, C, D, E) = \\Sigma m \\)(0, 2, 4, 7, 8, 10, 12, 16, 18, 20, 23, 24, 25, 26, 27, 28)\n                    </p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Summarize the design procedure for a synchronous sequential circuit.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Implement S-R, T, D flip-flops using J-K flip-flop. Also show the implementation with help of\n                        State Tables.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Discuss the organization and operation of content-addressable memory (CAM).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>(a) Binary Parallel Adder<br/>\n                        (b) Digital IC logic families</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    }
+  ]
+}

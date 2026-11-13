@@ -15,8 +15,10 @@
  * characters (`\x01`-`\x09` alone for the top nine, then `\x0b`-`\x1f` followed
  * by `\x20`-`\x7e`). A literal newline stays a newline — `\x0a` is deliberately
  * not a token lead — and anything that would need a third byte is rejected.
- * Generated files carry literal text and nothing else, so the compiler folds
- * each into a single string constant.
+ * Characters above U+007E are escaped (`\x00` + a printable) because a single
+ * wide character turns the whole chunk into UTF-16: 41 of them were doubling
+ * 500 KB of prose. Generated files carry literal text and nothing else, so the
+ * compiler folds each into a single string constant.
  */
 
 /** Escape the three things a template literal cannot hold verbatim. */
@@ -27,6 +29,26 @@ export function esc(text: string): string {
 /** Template-literal source for `text`, with control characters spelled `\xNN`. */
 export function literal(text: string): string {
   return esc(text).replace(/[\u0000-\u0009\u000b-\u001f]/g, (c) => `\\x${c.charCodeAt(0).toString(16).padStart(2, "0")}`);
+}
+
+/**
+ * Wide characters are escaped, because the atom table is all-or-nothing: one
+ * character above U+00FF turns a whole chunk into UTF-16 and doubles it. `\x00`
+ * plus one printable (U+0021…U+007E, so 94 of them) stands in for the character,
+ * which keeps every chunk in the 8-bit form. `DICT` is pure ASCII by luck of the
+ * corpus, but the table is not: 41 distinct characters, over a thousand uses.
+ */
+export const WIDE_LEAD = "\u0000";
+export const WIDE_BASE = 0x21;
+export const WIDE_LIMIT = 0x7e - 0x21 + 1;
+
+/** The characters a corpus needs escaped, in codepoint order (stable across runs). */
+export function wideChars(corpus: string): string[] {
+  const seen = new Set<string>();
+  for (const c of corpus) if (c.codePointAt(0)! > 0x7e) seen.add(c);
+  const out = [...seen].sort();
+  if (out.length > WIDE_LIMIT) throw new Error(`${out.length} wide characters, the escape holds ${WIDE_LIMIT}`);
+  return out;
 }
 
 /** Owners are branch codes and `gate`; chunk files are named after them. */
@@ -131,7 +153,9 @@ export function rankPhrases(corpus: string, max: number): string[] {
 }
 
 /** Corpus → token stream. Greedy longest match, so a phrase beats its parts. */
-export function pack(corpus: string, dict: string[]): string {
+export function pack(corpus: string, dict: string[], wide: string[] = []): string {
+  const wideAt = new Map<string, number>();
+  for (let i = 0; i < wide.length; i++) wideAt.set(wide[i], i);
   const trie = new Map<string, unknown>();
   for (let i = 0; i < dict.length; i++) {
     let node = trie;
@@ -165,15 +189,22 @@ export function pack(corpus: string, dict: string[]): string {
     } else {
       const code = corpus.charCodeAt(i);
       if (code < 0x20 && code !== 0x0a) throw new Error(`control character U+00${code.toString(16).padStart(2, "0")} in the corpus`);
-      parts.push(corpus[i]);
-      i++;
+      const ch = code >= 0xd800 && code <= 0xdbff ? corpus.slice(i, i + 2) : corpus[i];
+      const at = wideAt.get(ch);
+      if (at !== undefined) {
+        parts.push(WIDE_LEAD, String.fromCharCode(WIDE_BASE + at));
+        i += ch.length;
+        continue;
+      }
+      parts.push(ch);
+      i += ch.length;
     }
   }
   return parts.join("");
 }
 
 /** The decoder's half: `decode.ts` unpacks with the same alphabet. */
-export function renderDict(dict: string[], target = "decode.ts"): string {
+export function renderDict(dict: string[], wide: string[] = [], target = "decode.ts"): string {
   return `/* eslint-disable */
 /**
  * The token dictionary: \`${target}\` expands each entry when it unpacks a chunk.
@@ -183,6 +214,9 @@ export function renderDict(dict: string[], target = "decode.ts"): string {
 export const DICT: string[] = [
 ${dict.map((p) => `  \`${literal(p)}\`,`).join("\n")}
 ];
+
+/** Characters above U+007E, in the order \`\\x00\` + a printable stands for them. */
+export const WIDE: string[] = ${JSON.stringify(wide, null, 0).replace(/","/g, '", "')};
 `;
 }
 

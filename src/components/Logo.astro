@@ -1,0 +1,67 @@
+---
+/**
+ * The mark is a bookmark: the thing you put in a book to hold your place,
+ * which is what the site does for a student's semester. Drawn as geometry so
+ * it is identical in a 16px tab and in the footer.
+ *
+ * The wordmark uses Bricolage Grotesque, deliberately not the Instrument Serif
+ * display face — a logo should not read as another heading.
+ */
+export interface Props {
+	size?: number;
+	class?: string;
+}
+
+const base = import.meta.env.BASE_URL;
+const size = Astro.props.size ?? 26;
+---
+
+<a class:list={["brand", Astro.props.class]} href={base} aria-label="BEUConnect home">
+	<svg
+		class="brand-mark"
+		width={size}
+		height={size}
+		viewBox="0 0 32 32"
+		aria-hidden="true"
+		focusable="false"
+	>
+		<path
+			d="M7 3h18a2 2 0 0 1 2 2v24l-11-6.6L5 29V5a2 2 0 0 1 2-2Z"
+			fill="var(--accent)"></path>
+	</svg>
+	<span class="brand-word">BEU<em>Connect</em></span>
+</a>
+
+<style>
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		color: var(--paper);
+		text-decoration: none;
+	}
+
+	.brand:hover {
+		color: var(--paper);
+	}
+
+	.brand-mark {
+		display: block;
+		flex: none;
+	}
+
+	.brand-word {
+		font-family: "Bricolage Grotesque", var(--font-sans);
+		font-size: 1.32rem;
+		font-weight: 700;
+		font-optical-sizing: auto;
+		line-height: 1;
+		letter-spacing: -0.035em;
+		white-space: nowrap;
+	}
+
+	.brand-word em {
+		font-style: normal;
+		color: var(--accent);
+	}
+</style>

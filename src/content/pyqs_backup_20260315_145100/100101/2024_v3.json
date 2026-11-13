@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Examination, 2024 (Old)",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100101",
+    "year": 2024,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "Ohms law is applicable to",
+          "options": [
+            "Semiconductors",
+            "Vacuum tubes",
+            "Carbon resistors",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "The condition for maximum power transfer from a voltage source to load is",
+          "options": [
+            "the source impedance is half of the load impedance",
+            "the source impedance is equal to the load impedance",
+            "the source impedance is twice that of the load impedance",
+            "the source impedance and load impedance both must be zero"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "The time constant of RL circuit is?",
+          "options": [
+            "1/RL",
+            "R/L",
+            "RL",
+            "L/R"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "The superposition theorem is used when the circuit contains.",
+          "options": [
+            "A single voltage source",
+            "Passive elements only",
+            "A number of voltage sources",
+            "All the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "The power factor in an AC circuit is defined as the ratio of:",
+          "options": [
+            "Active power to reactive power",
+            "Apparent power to active power",
+            "Active power to apparent power",
+            "Apparent power to reactive power"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "If 20, 30, and 50 ohms are connected in delta connection, then what are its equivalent values (in\n                        ohms) in star connection?",
+          "options": [
+            "6, 10, 10",
+            "6, 10, 15",
+            "15, 15, 10",
+            "6, 15, 15"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "In a balanced three-phase system, the phase difference between any two phases is:",
+          "options": [
+            "\\( 180^{\\circ} \\)",
+            "\\( 90^{\\circ} \\)",
+            "\\( 60^{\\circ} \\)",
+            "\\( 120^{\\circ} \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "The main function of the commutator in a DC machine is to:",
+          "options": [
+            "Reduce losses",
+            "Convert AC to DC",
+            "Reverse current direction in armature winding",
+            "Provide insulation"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "In a series RLC circuit, resonance occurs when:",
+          "options": [
+            "\\( X_{L}=X_{C} \\)",
+            "\\( X_{L}&gt;X_{C} \\)",
+            "\\( X_{L}=R \\)",
+            "\\( R=X_{C} \\)"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "Which tool is commonly used for desoldering?",
+          "options": [
+            "Multimeter",
+            "Breadboard",
+            "Soldering iron",
+            "Solder sucker"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "State and prove Maximum Power Transfer Theorem for a DC network. Calculate the maximum power for\n                        a given network.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "[Question text missing from original document, likely related to circuit analysis]"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "State Norton's Theorem and draw the Norton's equivalent circuit."
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Discuss the difference between ideal and practical voltage and current source. Differentiate\n                        among real, reactive and apparent power."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Discuss the analogy between the electrical and magnetic circuit.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "A resistor R ohms and capacitor 5\\(\\mu\\)F are connected in series across a 200V dc supply.\n                        Calculate the value of R such that the voltage across the capacitor becomes 100V in 5 secs after\n                        the circuit is switched on."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "A coil has resistance of 7ohm and inductance of 3.18mH connected to 230V, 50Hz supply. Calculate:\n                        (i) phase angle (ii) power factor (iii) power consumed (iv) voltage drop across R and L."
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Describe the idea behind phasors. How do phasors depict voltages and currents that fluctuate\n                        sinusoidally?"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "What is power factor? Discuss its importance in electrical systems, causes of low power factor,\n                        and methods of improvement."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Describe the difference between star and delta connections.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Explain the single-phase transformer's design and operation. Determine the EMF formula."
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Describe the construction and working principle of a DC generator. Derive the EMF equation.",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "What are the general rules and guidelines for electrical installation in residential wiring?\n                        Include any relevant safety standards."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ol class=\"options-list\">\n<li>Application of KCL &amp; KVL in DC Circuit</li>\n<li>Hysteresis and Eddy Current Loss</li>\n<li>Resonance</li>\n<li>Working of DC Motor</li>\n</ol>",
+          "options": [
+            "Application of KCL &amp; KVL in DC Circuit",
+            "Hysteresis and Eddy Current Loss",
+            "Resonance",
+            "Working of DC Motor"
+          ]
+        }
+      ]
+    }
+  ]
+}

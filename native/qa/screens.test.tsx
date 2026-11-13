@@ -22,12 +22,31 @@
 import { describe, expect, test } from "nsh/test";
 
 import type { ResultData } from "../src/features/results/data";
+import { routeExists } from "../src/app/registry";
 import { DOWN, ONBOARDED, awaitNav, openRoute, visible } from "./support";
 
 const REG = "21105157098";
 const SPACED = "2110-5157-098";
 /** 24 batch: in Sem 4 from July 2026, whatever a stored profile claims. */
 const REG_24 = "24105157010";
+
+/** Every door Home shows, in reading order: the words a student taps, and where they go. */
+const HOME_DOORS: { text: string; route: string }[] = [
+  { text: "Notes & VVI", route: "notes" },
+  { text: "Previous papers", route: "pyqs" },
+  { text: "Syllabus", route: "syllabus" },
+  { text: "Study planner", route: "planner" },
+  { text: "Search", route: "search" },
+  { text: "Your result", route: "results" },
+  { text: "Result table", route: "results.table" },
+  { text: "University rank", route: "results.rank" },
+  { text: "Merit list", route: "results.merit" },
+  { text: "Result battle", route: "results.battle" },
+  { text: "All notices", route: "notices" },
+  { text: "Attendance", route: "tools.attendance" },
+  { text: "Routine", route: "tools.routine" },
+  { text: "Holidays", route: "tools.holidays" },
+];
 
 /* ── fixtures ─────────────────────────────────────────────────────────── */
 
@@ -93,17 +112,79 @@ const NOTES_CACHE = {
   "beu.cache.notes.manifest": JSON.stringify({ at: Date.now(), value: JSON.stringify(NOTES_MANIFEST) }),
 };
 
+/** The app's own `beu.*` storage, so a second mount sees what the first saved. */
+function carry(app: { storage(): Record<string, string> }): Record<string, string> {
+  return Object.fromEntries(Object.entries(app.storage()).filter(([key]) => key.startsWith("beu.")));
+}
+
 /* ── the screens ──────────────────────────────────────────────────────── */
 
 describe("home", () => {
-  test("opens offline, with real doors and no invented numbers", async () => {
+  test("opens offline, with the four blocks in order and no invented numbers", async () => {
     const app = await openRoute("home", {}, { network: DOWN, storage: {} });
     const text = visible(app);
     expect(app.shows("id:home-scroll")).toBe(true);
     // A door the app added and once forgot to link.
     expect(text).toContain("Notes & VVI");
+    // Today, Study, Results, Campus: the order a day runs in.
+    let previous = -1;
+    for (const title of ["TODAY", "STUDY", "RESULTS", "CAMPUS"]) {
+      const at = text.indexOf(title);
+      expect(at).toBeGreaterThan(previous);
+      previous = at;
+    }
     // Nothing is saved, so nothing may be claimed: no SGPA, no attendance.
     expect(text).not.toContain("SGPA");
+  }, 20000);
+
+  test("every door is a registered route that opens", async () => {
+    const missing = HOME_DOORS.filter((door) => !routeExists(door.route)).map(
+      (door) => `${door.text} → ${door.route}`,
+    );
+    expect(missing).toEqual([]);
+
+    // A tall phone so every block lays out and no door is below the fold. The
+    // harness records each push; it never navigates away from Home.
+    const app = await openRoute("home", {}, { width: 320, height: 2000, network: DOWN, storage: {} });
+    for (const door of HOME_DOORS) {
+      await app.press(door.text);
+      await awaitNav(app, door.route);
+    }
+  }, 20000);
+
+  test("a registration number already on the device names the student", async () => {
+    const at = Date.now();
+    const app = await openRoute("home", {}, {
+      network: DOWN,
+      storage: {
+        "beu.profile": JSON.stringify({ reg: REG_24, branch: "cse", sem: 2, college: "157" }),
+        [`beu.cache.identity:${REG_24}`]: JSON.stringify({
+          at,
+          value: JSON.stringify({
+            reg: REG_24,
+            name: "PRIT KUMAR",
+            cgpa: null,
+            sgpa: null,
+            branchCode: "105",
+            branchName: "Computer Science & Engineering",
+            collegeCode: "157",
+            collegeName: "Government Engineering College, Sheikhpura",
+            semester: 2,
+            source: "roster",
+            at,
+          }),
+        }),
+      },
+    });
+    // The cache read lands a turn after mount; no second form, no typed name.
+    let text = visible(app);
+    for (let turn = 0; turn < 20 && !text.includes(", Prit."); turn += 1) {
+      await app.wait(100);
+      text = visible(app);
+    }
+    expect(text).toContain(", Prit.");
+    // The class line is the course the number implies, not a profile card.
+    expect(text).toContain("CSE ·");
   }, 20000);
 });
 
@@ -126,7 +207,7 @@ describe("syllabus", () => {
   test("a paper opens with its own units", async () => {
     const app = await openRoute(
       "syllabus.subject",
-      { branch: "cse", sem: 1, code: "100110" },
+      { branch: "cse", sem: 1, code: "100104" },
       { network: DOWN, storage: ONBOARDED },
     );
     const text = visible(app);
@@ -143,24 +224,24 @@ describe("syllabus", () => {
       { branch: "cse", sem: 1, code: "100102" },
       { network: DOWN, storage: NOTES_CACHE },
     );
-    await app.press("label:Elementary Row operations");
-    await app.waitFor("label:Search YouTube for Elementary Row operations");
+    await app.press("label:1.1 Elementary transformations and Rank of Matrix");
+    await app.waitFor("label:Search YouTube for 1.1 Elementary transformations and Rank of Matrix");
 
     // The VVI sheet exists in the manifest, so the door to it exists too.
-    expect(app.shows("label:Short note for Engineering Mathematics–I")).toBe(true);
+    expect(app.shows("label:Short note for Engineering Mathematics - I")).toBe(true);
 
     // YouTube is a search, never an answer the app invented.
-    await app.press("label:Search YouTube for Elementary Row operations");
+    await app.press("label:Search YouTube for 1.1 Elementary transformations and Rank of Matrix");
     await app.waitUntil(() => app.openedUrls().length > 0);
     const search = app.openedUrls()[0];
     expect(search.startsWith("https://www.youtube.com/results?search_query=")).toBe(true);
-    expect(decodeURIComponent(search)).toContain("Engineering Mathematics–I Elementary Row operations");
+    expect(decodeURIComponent(search)).toContain("Engineering Mathematics - I 1.1 Elementary transformations and Rank of Matrix");
 
-    await app.press("label:Copy Elementary Row operations");
-    await app.waitUntil(() => (app.clipboard() ?? "").includes("Elementary Row operations"));
+    await app.press("label:Copy 1.1 Elementary transformations and Rank of Matrix");
+    await app.waitUntil(() => (app.clipboard() ?? "").includes("1.1 Elementary transformations and Rank of Matrix"));
     expect(app.clipboard() ?? "").toContain("100102");
 
-    await app.press("label:Short note for Engineering Mathematics–I");
+    await app.press("label:Short note for Engineering Mathematics - I");
     const entry = await awaitNav(app, "notes.subject");
     expect(entry.params.code).toBe("100102");
     expect(Number(entry.params.sem)).toBe(1);
@@ -187,7 +268,15 @@ describe("results", () => {
     const app = await openRoute("results", { reg: REG, sem: 1 }, { network: DOWN });
     await app.wait(2600);
     const text = visible(app);
-    if (!text.includes("No result this time")) {
+    // The copy per failure kind is the screen's, not the test's: server,
+    // offline, missing and unknown each name the fault differently.
+    const named = [
+      "No result this time",
+      "BEU did not answer",
+      "No connection",
+      "Nothing for that number",
+    ].find((title) => text.includes(title));
+    if (!named) {
       throw new Error(`the failure was not reported to the user.\n  rendered: ${text.slice(0, 400)}`);
     }
     // A screen that drops the retry strands the student.
@@ -213,12 +302,31 @@ describe("notes", () => {
 describe("search", () => {
   test("a syllabus code finds its subject with the network down", async () => {
     const app = await openRoute("search", {}, { network: DOWN, storage: ONBOARDED });
-    await app.type("id:search-input", "100110");
+    await app.type("id:search-input", "100104");
     await app.wait(200);
     const text = visible(app);
     expect(text).toContain("Engineering Physics");
     // The exact code leads the lab paper that only shares its prefix.
     expect(text.indexOf("Engineering Physics")).toBeLessThan(text.indexOf("Engineering Physics Lab"));
+  }, 30000);
+});
+
+describe("student register", () => {
+  test("the colleges page leads with the register and a search for it agrees", async () => {
+    const app = await openRoute("students.colleges", {}, { network: DOWN, storage: ONBOARDED });
+    const rows = app.texts();
+    const register = rows.indexOf("GEC Sheikhpura");
+    expect(register).toBeGreaterThan(-1);
+    // First row of the list, ahead of every college without a register.
+    const firstOther = rows.findIndex((line) => line.startsWith("Adwaita"));
+    expect(firstOther).toBeGreaterThan(register);
+
+    await app.type("label:College name or code", "sheikhpura");
+    await app.wait(200);
+    const narrowed = visible(app);
+    expect(narrowed).toContain("GEC Sheikhpura");
+    // The row the query just found is not contradicted by an empty state.
+    expect(narrowed).not.toContain("No college matches");
   }, 30000);
 });
 

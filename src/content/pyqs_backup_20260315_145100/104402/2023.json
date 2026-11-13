@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2023",
+    "subject": "Analog Communication",
+    "subject_slug": "analog-communication",
+    "subject_code": "104402",
+    "year": 2023,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>In NBFM, the modulation index is close to</p>",
+          "options": [
+            "1",
+            "10",
+            "greater than 1",
+            "infinite"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The maximum power efficiency of an AM modulator is</p>",
+          "options": [
+            "50%",
+            "25%",
+            "75%",
+            "100%"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Spectral density of white noise is</p>",
+          "options": [
+            "Varies with frequency",
+            "Constant",
+            "Varies with bandwidth",
+            "Varies with amplitude"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>If the step size of a system is 0.0721, find its quantization power?</p>",
+          "options": [
+            "\\( 3.25 \\times 10^{-3} \\)",
+            "\\( 4.33 \\times 10^{-3} \\)",
+            "\\( 4.33 \\times 10^{-4} \\)",
+            "\\( 3.25 \\times 10^{-2} \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which of the following frequency is not transmitted in AM transmission?</p>",
+          "options": [
+            "Upper side band frequency",
+            "Carrier frequency",
+            "Lower side band frequency",
+            "Audio frequency"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What is the use of Companding?</p>",
+          "options": [
+            "in PCM transmitters to allow amplitude limiting in the receivers",
+            "in PCM receiver to overcome impulse noise",
+            "to overcome quantizing noise in PCM",
+            "to protect small signals in PCM from quantizing distortion"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Envelope Detector is a/an</p>",
+          "options": [
+            "Coherent detector",
+            "Asynchronous Detector",
+            "Synchronous Detector",
+            "Product Demodulator"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A 1000KHz carrier is modulated by 100Hz and 200Hz waves, then which of the following frequencies\n                        cannot be present at the output?</p>",
+          "options": [
+            "1000.1 KHz",
+            "999.9 KHz",
+            "1000.2 KHz",
+            "999.7 KHz"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>For 100% modulation, power in each sideband is _____ of that of carrier.</p>",
+          "options": [
+            "50%",
+            "60%",
+            "25%",
+            "33.33%"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The frequency of local oscillator</p>",
+          "options": [
+            "can be either below or above the RF frequency",
+            "is below the RF frequency",
+            "is above the RF frequency",
+            "is fixed typically at 450KHz"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>A radio receiver with equivalent noise bandwidth of 10kHz has a noise figure of 20dB.If input SNR\n                        to receiver is 40dB, determine the output SNR. What is equivalent noise temperature if ambient\n                        temperature is 27°C.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Discuss the Armstrong method for the generation of wideband FM.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the working of slope detector method used for demodulation.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Write notes on PAM, PPM and PWM.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain need of modulation and its advantage.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Derive the expression for power content in an AM wave.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>When a super-heterodyne receiver is tuned to 600kHz,its local oscillator provides the mixer with\n                        an input at 1055 kHz. What is the image frequency? The antenna of the receiver is connected to\n                        the mixer via a tuned circuit with Q 50. What will be the rejection ratio for the calculated\n                        image frequency?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is demodulation? Explain square law demodulator.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Derive the expression of AM modulated wave and draw its waveform.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Thermal Noise and Shot Noise &amp; Carson Rule.",
+            "DSB-SC &amp; VSB",
+            "Difference between Analog &amp; Digital communication",
+            "Synchronous detection of DSB-SC"
+          ]
+        }
+      ]
+    }
+  ]
+}

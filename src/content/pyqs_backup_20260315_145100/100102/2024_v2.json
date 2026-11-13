@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B. Tech. Ist Semester Examination, 2024",
+    "subject": "Engineering Mathematics -I",
+    "subject_slug": "engineering-mathematics-i",
+    "subject_code": "100102",
+    "year": 2024,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "Which operation is not an elementary row operation?",
+          "options": [
+            "Swapping two rows",
+            "Adding a multiple of one row to another",
+            "Multiplying a row by zero.",
+            "Multiplying a row by a non-zero constant"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "The rank of a matrix is:",
+          "options": [
+            "Number of non-zero rows in echelon form",
+            "Number of columns",
+            "Number of rows",
+            "None above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "The inverse of a matrix using Gauss-Jordan:",
+          "options": [
+            "only determinant calculation",
+            "Reducing matrix to diagonal form",
+            "Augmenting with identity matrix and applying row operations",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "A matrix is diagonalizable:",
+          "options": [
+            "It has repeated eigenvalues only",
+            "It is symmetric",
+            "It has a full set of linearly independent eigenvectors",
+            "It is square"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "A matrix is similar to a diagonal matrix if:",
+          "options": [
+            "It has complex entries",
+            "It has n linearly independent eigenvectors",
+            "It is invertible",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "A function is Riemann integrable if:",
+          "options": [
+            "It is continuous",
+            "It has infinite discontinuities",
+            "It is discontinuous everywhere",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Jacobian is:",
+          "options": [
+            "A scalar",
+            "A vector",
+            "A matrix of partial derivatives",
+            "A function"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "Taylor's expansion for multivariable function includes:",
+          "options": [
+            "Only first order terms",
+            "Only second order",
+            "All orders",
+            "Only constant term"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "Change of variables in double integral involves:",
+          "options": [
+            "Matrix algebra",
+            "Laplace transforms",
+            "Jacobian",
+            "Only constant term"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "Triple integral over a region gives:",
+          "options": [
+            "Area",
+            "Length",
+            "Volume",
+            "Angle"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "What is the difference between a vector space and a subspace? Illustrate with examples."
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Define and explain rank, row space, and column space of a matrix with examples."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Explain the Cayley-Hamilton Theorem and verify it for a 2x2 matrix."
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Define and compute the Jacobian for transformation \\( x = u + v \\) of \\( u - v \\)."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Explain the Gauss-Jordan method for finding the inverse of a matrix with an example."
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Define Hermitian, Skew-Hermitian, and Unitary matrices. Provide examples for each."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Explain and prove the Rank-Nullity theorem."
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Describe the method of finding eigenvalues and eigenvectors of a matrix."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "State and prove Rolle's Theorem with a graphical example."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Define Beta and Gamma functions. Derive the relation between them."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Derive the Taylor series for a function of two variables."
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Solve a maxima-ratum problem using second derivative test."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Evaluate a double integral to find area under a curve."
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "Convert a double integral into polar coordinates and evaluate."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": []
+    }
+  ]
+}

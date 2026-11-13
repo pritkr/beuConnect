@@ -1,8 +1,6 @@
 ---
 export const prerender = false;
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
 
 const regParam = Astro.url.searchParams.get("reg")?.trim();
 let errorMsg = "";
@@ -149,7 +147,7 @@ if (regParam) {
 				
 				const userStudent = uniqueStudents.find(s => s.reg.replace(/\D/g, "") === numericReg);
 				if (!userStudent) {
-					errorMsg = "we don't have your data";
+					errorMsg = "No result data is available for this registration number yet.";
 				} else {
 					studentData = userStudent;
 					overallRank = userStudent.overallRank;
@@ -169,166 +167,189 @@ if (regParam) {
 			}
 		}
 	} else {
-		errorMsg = "Invalid Registration Number";
+		errorMsg = "Enter a valid BEU registration number.";
 	}
 }
 ---
 
-<Layout title="BEU Rank Checker | BEUConnect" description="Find your overall state rank among all Bihar Engineering University (BEU) students. Analyze performance based on CGPA and college data.">
-	<Header />
+<Layout
+	title="BEU rank"
+	description="Find a Bihar Engineering University student's rank within their branch and across the whole university."
+>
+	<header class="page-head">
+		<div>
+			<h1>Rank</h1>
+			<p class="meta">Based on stored result data</p>
+		</div>
+	</header>
 
-	<section class="rank-dashboard">
-		<header class="text-center dashboard-header">
-			<h1 class="gradient-text">BEU Rank Checker</h1>
-			<p>Discover your standing among thousands of students across Bihar Engineering University.</p>
-		</header>
-
-		{!studentData && (
-			<div class="glass-card" style="padding: 2rem; max-width: 500px; margin: 0 auto;">
+	{
+		!studentData && (
+			<div class="rank-form">
 				<form method="GET" action="">
-					<label for="reg">Registration Number</label>
-					<input type="text" id="reg" name="reg" placeholder="e.g. 23105157001" required value={regParam || ""} />
-					<button type="submit" class="primary" style="width: 100%; border-radius: 50px; margin-top: 1rem;">Check Rank</button>
+					<label class="field-label" for="reg">Registration number</label>
+					<div class="rank-input">
+						<input
+							type="text"
+							id="reg"
+							name="reg"
+							inputmode="numeric"
+							placeholder="23105157001"
+							required
+							value={regParam || ""}
+						/>
+						<button type="submit" class="btn-primary">Check rank</button>
+					</div>
 				</form>
-				
-				{errorMsg && (
-					<div style="margin-top: 1.5rem; padding: 1rem; background: var(--pico-del-color); color: white; border-radius: 8px; text-align: center;">
-						<strong>{errorMsg}</strong>
-					</div>
-				)}
-			</div>
-		)}
 
-		{studentData && (
-			<div class="result-container glass-card">
-				<div class="student-header text-center">
-					<div class="avatar-placeholder">🏅</div>
+				{errorMsg && <p class="form-status is-error" role="alert">{errorMsg}</p>}
+			</div>
+		)
+	}
+
+	{
+		studentData && (
+			<div class="rank-result">
+				<div class="student">
 					<h2>{studentData.name}</h2>
-					<p class="reg-number">{studentData.reg}</p>
-					<p class="college-name">{studentData.collegeCode} - {studentData.collegeName}</p>
+					<p class="mono">{studentData.reg}</p>
+					<p>{studentData.collegeCode} — {studentData.collegeName}</p>
 				</div>
-				
-				<div class="stats-grid">
-					<div class="stat-box">
-						<span class="stat-label">University Rank (Overall)</span>
-						<span class="stat-value gradient-text">#{overallRank}</span>
-						<span class="stat-sub">out of {totalStudents}</span>
+
+				<dl class="rank-stats">
+					<div>
+						<dt>University rank</dt>
+						<dd class="num">#{overallRank}</dd>
+						<dd class="sub num">of {totalStudents}</dd>
 					</div>
-					<div class="stat-box">
-						<span class="stat-label">Branch Rank</span>
-						<span class="stat-value gradient-text">#{branchRank}</span>
-						<span class="stat-sub">out of {totalBranchStudents}</span>
+					<div>
+						<dt>Branch rank</dt>
+						<dd class="num">#{branchRank}</dd>
+						<dd class="sub num">of {totalBranchStudents}</dd>
 					</div>
-					<div class="stat-box">
-						<span class="stat-label">CGPA</span>
-						<span class="stat-value">{studentData.cgpa.toFixed(2)}</span>
+					<div>
+						<dt>CGPA</dt>
+						<dd class="num">{studentData.cgpa.toFixed(2)}</dd>
 					</div>
-					<div class="stat-box">
-						<span class="stat-label">Sem {targetSem} SGPA</span>
-						<span class="stat-value">{studentData.sgpa.toFixed(2)}</span>
+					<div>
+						<dt>Sem {targetSem} SGPA</dt>
+						<dd class="num">{studentData.sgpa.toFixed(2)}</dd>
 					</div>
-				</div>
-				
-				<div class="action-links">
-					<a href={`${import.meta.env.BASE_URL}result-table?session=${batch}&branch=${cseCode}&semester=${targetSem}&college=${studentData.collegeCode}`} role="button" class="outline">View Result Table</a>
-					<a href={`${import.meta.env.BASE_URL}result?reg=${studentData.reg}&sem=${targetSem}`} role="button" class="primary">View Full Result</a>
+				</dl>
+
+				<div class="rank-actions">
+					<a
+						href={`${import.meta.env.BASE_URL}result-table?session=${batch}&branch=${cseCode}&semester=${targetSem}&college=${studentData.collegeCode}`}
+						class="btn btn-ghost"
+					>
+						Result table
+					</a>
+					<a
+						href={`${import.meta.env.BASE_URL}result?reg=${studentData.reg}&sem=${targetSem}`}
+						class="btn btn-primary"
+					>
+						Full result
+					</a>
 				</div>
 			</div>
-		)}
-	</section>
-
-	<style>
-		.rank-dashboard {
-			max-width: 800px;
-			margin: 0 auto;
-			display: flex;
-			flex-direction: column;
-			gap: 2rem;
-		}
-		.gradient-text {
-			background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			font-weight: 800;
-			display: inline-block;
-		}
-		.result-container {
-			padding: 2.5rem;
-		}
-		.avatar-placeholder {
-			font-size: 3.5rem;
-			margin-bottom: 0.5rem;
-		}
-		.student-header h2 {
-			margin-bottom: 0.2rem;
-			font-weight: 700;
-		}
-		.reg-number {
-			color: var(--pico-muted-color);
-			font-weight: 600;
-			margin-bottom: 0.2rem;
-		}
-		.college-name {
-			font-size: 0.9rem;
-			color: var(--pico-muted-color);
-			margin-bottom: 2rem;
-		}
-		.stats-grid {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 1.5rem;
-			margin-bottom: 2.5rem;
-		}
-		.stat-box {
-			background: var(--pico-card-background-color);
-			border: 1px solid var(--pico-muted-border-color);
-			border-radius: 12px;
-			padding: 1.5rem;
-			text-align: center;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		.stat-label {
-			font-size: 0.85rem;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			color: var(--pico-muted-color);
-			margin-bottom: 0.5rem;
-		}
-		.stat-value {
-			font-size: 2.5rem;
-			font-weight: 800;
-			line-height: 1.2;
-		}
-		.stat-sub {
-			font-size: 0.85rem;
-			color: var(--pico-muted-color);
-			margin-top: 0.2rem;
-		}
-		.action-links {
-			display: flex;
-			gap: 1rem;
-			justify-content: center;
-		}
-		.action-links a {
-			border-radius: 50px;
-			padding: 0.75rem 2rem;
-			font-weight: 600;
-		}
-		@media (max-width: 600px) {
-			.stats-grid {
-				grid-template-columns: 1fr;
-			}
-			.action-links {
-				flex-direction: column;
-			}
-			.action-links a {
-				width: 100%;
-			}
-		}
-	</style>
-
-	<Footer />
+		)
+	}
 </Layout>
+
+<style>
+	.rank-form {
+		max-width: 30rem;
+		padding: var(--s5);
+		border: 1px solid var(--line);
+		border-radius: var(--r-lg);
+		background: var(--surface);
+	}
+
+	.rank-form form {
+		display: grid;
+		gap: 0.35rem;
+		margin: 0;
+	}
+
+	.rank-input {
+		display: flex;
+		gap: var(--s2);
+	}
+
+	.rank-input input {
+		flex: 1;
+		min-width: 0;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.rank-input button {
+		flex: 0 0 auto;
+	}
+
+	.rank-result {
+		display: grid;
+		gap: var(--s5);
+		max-width: 44rem;
+	}
+
+	.student h2 {
+		font-family: var(--font-display);
+		font-size: 2rem;
+		font-weight: 400;
+	}
+
+	.student p {
+		margin: 0.15rem 0 0;
+		font-size: 0.85rem;
+	}
+
+	.rank-stats {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0;
+		margin: 0;
+		border-top: 1px solid var(--line-strong);
+	}
+
+	.rank-stats div {
+		padding: var(--s4) 0;
+		border-bottom: 1px solid var(--line);
+	}
+
+	.rank-stats dt {
+		color: var(--faint);
+		font-size: 0.72rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	.rank-stats dd {
+		margin: 0.15rem 0 0;
+		color: var(--paper);
+		font-family: var(--font-display);
+		font-size: 2rem;
+		line-height: 1;
+	}
+
+	.rank-stats dd.sub {
+		font-family: var(--font-sans);
+		font-size: 0.72rem;
+		color: var(--faint);
+	}
+
+	.rank-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--s2);
+	}
+
+	@media (max-width: 560px) {
+		.rank-stats {
+			grid-template-columns: 1fr;
+		}
+
+		.rank-input {
+			flex-direction: column;
+		}
+	}
+</style>

@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2013",
+    "subject": "Object Oriented Programming",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "213658",
+    "year": 2013,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven) :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "Which of the following statements is correct? (i) A reference is stored on heap (ii) A reference is stored on stack (iii) A reference is stored in a queue (iv) A reference is stored in a binary tree",
+              "id": "1(a)",
+              "marks": null
+            },
+            {
+              "text": "How many parameters does a Default Constructor accept? (i) 0 (ii) 1 (iii) 2 (iv) 3",
+              "id": "1(b)",
+              "marks": null
+            },
+            {
+              "text": "Destructor has the same name as the constructor and it is preceded by (i) ~ (ii) ! (iii) & (iv) ?",
+              "id": "1(c)",
+              "marks": null
+            },
+            {
+              "text": "Which of the following types of class allows only one object of it to be created? (i) Virtual class (ii) Abstract class (iii) Singleton class (iv) Friend class",
+              "id": "1(d)",
+              "marks": null
+            },
+            {
+              "text": "Which of the following statements is correct? (i) Two functions having same number of argument, order and type of argument can be overloaded if both functions do not have any default argument (ii) Overloaded function must have default arguments (iii) Overloaded function must have default arguments starting from the left of argument list (iv) A function can be overloaded more than once",
+              "id": "1(e)",
+              "marks": null
+            },
+            {
+              "text": "Which of the following statements is incorrect? (i) Default arguments can be provided for pointers to functions (ii) A function can have all its arguments as default (iii) Default argument cannot be provided for pointers to functions (iv) A default argument cannot be redefined in later declaration",
+              "id": "1(f)",
+              "marks": null
+            },
+            {
+              "text": "Which of the following is not a type of constructor? (i) Copy constructor (ii) Friend constructor (iii) Default constructor (iv) Parameterized constructor",
+              "id": "1(g)",
+              "marks": null
+            },
+            {
+              "text": "Which of the following access specifies is used in a class definition by default? (i) Protected (ii) Public (iii) Private (iv) Friend",
+              "id": "1(h)",
+              "marks": null
+            },
+            {
+              "text": "Which of the following statements is correct with respect to the use of friend keyword inside a class? (i) A private data member can be declared as a friend (ii) A class may be declared as a friend (iii) An object may be declared as a friend (iv) We can use friend keyword as a class name",
+              "id": "1(i)",
+              "marks": null
+            },
+            {
+              "text": "How many types of polymorphisms are supported by C++? (i) 1 (ii) 2 (iii) 3 (iv) 4",
+              "id": "1(j)",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Define string. How does a string type differ from C type string?",
+              "marks": 7,
+              "id": "2(a)"
+            },
+            {
+              "text": "WAP in C++ that reads a particular string and displays the frequency of each character in the string.",
+              "marks": 7,
+              "id": "2(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What is STL? Describe with example.",
+              "marks": 7,
+              "id": "3(a)"
+            },
+            {
+              "text": "WAP in C++ using the function `count()` to how many elements in a container have a specified value.",
+              "marks": 7,
+              "id": "3(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain exception handling and their types.",
+              "marks": 7,
+              "id": "4(a)"
+            },
+            {
+              "text": "WAP in C++ to demonstrate the use of multiple Catch statements.",
+              "marks": 7,
+              "id": "4(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Describe streams.",
+              "marks": 7,
+              "id": "5(a)"
+            },
+            {
+              "text": "Write about the following functions : `put() ; get() ; width() ; getline() ; fill().`",
+              "marks": 7,
+              "id": "5(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Describe polymorphism with suitable examples.",
+              "marks": 7,
+              "id": "6(a)"
+            },
+            {
+              "text": "WAP in C++ using array of pointers to accept desired number of integers and display their sum.",
+              "marks": 7,
+              "id": "6(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "What is inheritance? Describe its types with examples.",
+          "marks": 14,
+          "id": "7"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain \u2018this\u2019 pointer. Differentiate between overloaded functions and function templates.",
+              "marks": 7,
+              "id": "8(a)"
+            },
+            {
+              "text": "What is a virtual function? WAP to demonstrate use of virtual functions.",
+              "marks": 7,
+              "id": "8(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain friend function along with example.",
+              "marks": 7,
+              "id": "9(a)"
+            },
+            {
+              "text": "Describe type conversion with examples.",
+              "marks": 7,
+              "id": "9(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

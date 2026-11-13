@@ -3,17 +3,17 @@
 How a screen becomes a native view, where state lives, and how data reaches it.
 Read this before adding a feature folder.
 
-- App root: `native/` · entry: `App.tsx` → `mount(Shell)`
+- App root: `native/` · entry: `App.tsx` → `boot()` → `mount(Shell)`
 - Framework: NativeShell (TSX on QuickJS, real platform views)
-- Routes registered: **55** in `ALL_ROUTES` (thirteen modules, including the
-  first-run `onboarding`), plus the shell-owned `more` screen (**56
+- Routes registered: **59** in `ALL_ROUTES` (thirteen modules, including the
+  first-run `onboarding`), plus the shell-owned `more` screen (**60
   destinations**). Count verified against `src/app/registry.tsx` and every
-  `src/features/*/index.tsx`, 2026-10-27.
+  `src/features/*/index.tsx`, 2026-10-28.
 
 ## 1. The shape, in one picture
 
 ```
-App.tsx ── apply saved appearance ── mount(Shell)
+App.tsx ── boot(): saved appearance ── mount(Shell)
                                         │
 ┌──────────────── src/app/shell.tsx ────▼───────────────────────────────────┐
 │ const stack = createNavStack<Route>([{ name: "home", params: {} }])        │
@@ -86,7 +86,10 @@ First run is the other shell-level gate. `Shell` reads `introDone()` (the
 the first frame is never Home. While `intro` is `true` the shell renders
 `OnboardingScreen` instead of the stack. The `onboarding` route is registered as
 well, so QA can mount the screen directly; its `onDone` is a no-op because the
-shell owns the transition.
+shell owns the transition. If the read fails, the shell shows Home rather than
+holding a blank first frame — the app opening on Home is a better failure than
+the app looking dead. The same rule covers analytics, warmups and the update
+check: each runs through `quietly()`, because none of them is worth a screen.
 
 `NavStack` supplies the behaviour that would otherwise be per-screen code:
 
@@ -103,6 +106,34 @@ the stack is deeper than its root or the software keyboard is up
 Route names are namespaced strings, not URLs. The dot is the area boundary
 (`syllabus.subject`, `results.table`, `pyqs.paper`), and the prefix is how QA
 maps a route back to the folder that owns it.
+
+### A screen that throws is one screen
+
+`nsh` has no global error hook: an exception that escapes a component body, a
+binding, an effect or a listener ends the JavaScript context, and the phone keeps
+the last frame — the failure a student reports as "the app crashed". So the
+shell mounts every route inside `ScreenBoundary` (`src/app/crash.tsx`), and
+`boot.ts` mounts the shell inside one root `ErrorBoundary` (`src/app/root.tsx`).
+
+- The route's body is mounted as a component (`RouteScreen`), so a throw inside
+  `definition.render(nav)` happens *under* the boundary instead of while the
+  shell is building the element.
+- `ScreenCrash` keeps the header, names the route, scrubs digit runs
+  (`crashDetail`) and offers two ways out: "Go back" pops, or replaces the stack
+  with Home when the broken screen is the only one; "Try again" calls `reset()`.
+- `RootCrash` is the last resort — "Reopen" re-renders the shell — so a failure
+  above the routes still paints something, never a blank window.
+- `safeTitle` keeps the header usable when a feature's `title()` is what broke.
+
+Two rules for anything in that path: a fallback must never throw itself, and it
+must never show a stack trace. The boundary is mounted as a page child, the way
+the shell does it; a boundary dropped straight into a reactive `{() => …}` slot
+is a different mount and does not contain the throw.
+
+Timers are the other escape hatch: no boundary sits above a `setTimeout`
+callback, so `boot.ts` calls `guardTimers()` (`src/lib/timers.ts`) first, which
+wraps `setTimeout`, `setInterval`, `requestAnimationFrame` and `queueMicrotask`
+to log a throw instead of ending the context. `qa/crash.test.tsx` proves it.
 
 ## 3. The feature-folder contract
 
@@ -134,14 +165,16 @@ Rules the code follows today:
    lines: it spreads `browseRoutes`, `paperRoutes`, `gateRoutes`, `dataRoutes`,
    `dataTableRoutes`. A one-screen area (`home`, `onboarding`) may keep that
    screen in `index.tsx`; the rule bites once a folder has several screens.
-6. **Aliases are routes too.** `attendance`, `routine`, `holidays`, `wifi` and
-   `tools.feedback` are registered twice: the `tools.` name is what the app
-   pushes, and the bare name is a compatibility alias for an old link or an
-   external deep link. The render is the same component. `feedback` is the
-   exception: More and search push the bare name, because the shell mounts its
-   sheet and every `Body` ends with its footer; `tools.feedback` is the alias it
-   keeps for older links. `data` and `data.table` are not aliases — they are
-   pyqs' own namespace, pushed by More, search and `pyqs`.
+6. **Aliases are routes too.** `attendance`, `routine`, `holidays` and `wifi`
+   are registered twice: the app pushes `tools.<name>` from More and the Tools
+   hub, and the bare name is a compatibility alias for an old link or an
+   external deep link. `feedback` runs the other way: More and search push the
+   bare name, because the shell mounts its sheet and every `Body` ends with its
+   footer, and `tools.feedback` is the alias older links kept. Same component
+   either way. `profile`, `appearance`, `reminders` and `about` are the same
+   compatibility aliases for their `settings.*` screens; nothing pushes the bare
+   names. `data` and `data.table` are not aliases — they are pyqs' own
+   namespace, pushed by More, search and `pyqs`.
 7. **A `<List>` needs a height.** It is a scroll view: it takes its size from its
    parent's constraints, and inside a `Screen` there is nothing to inherit, so a
    list with no `class="flex-1"` (or an explicit `h-`) lays out at zero pixels.
@@ -149,7 +182,10 @@ Rules the code follows today:
    with it, so the route shows a title bar over a blank page. `scripts/
    lint-list-height.mjs` scans the source for it and `scripts/check.sh` runs the
    scan before the types. Never nest a `List` in a scrolling column: map the
-   rows into a `View` instead, as `planner` does.
+   rows into a `View` instead, as `planner` does. The same rule applies to a
+   horizontal rail: a `Scroll` that is `flex-1` inside a column sizes its own
+   height to zero, so a chip rail paints a heading over nothing.
+   `scripts/lint-rail-height.mjs` guards it.
 8. **`List` reads its `each` once.** It captures the array at first paint, so
    data that can arrive late (storage hydration, a fetch) never reaches it.
    Wrap the list in a reactive block — `{() => <List each={rows()} … />}` — or
@@ -166,14 +202,15 @@ Rules the code follows today:
 
 ### Generated data
 
-`src/features/pyqs/catalog-data.ts` is the one generated file in the app: a packed
-JSON wire form (95 KB instead of 319 KB) that `decode()` expands. Reproduce it with
+`src/features/pyqs/catalog-data.ts` is a generated file: a packed JSON wire form
+(95 KB instead of 319 KB) that `decode()` expands. Reproduce it with
 `bun scripts/pack-pyq-catalog.mjs`. The script loads the file through its own
 `decode`, so re-running is safe, and it refuses to write unless the round-trip is
 identical. Two repairs live in that script because the generator is not in this
 repository: ten papers whose year was `0` (recovered from `id`), and the five
 Mechanical Sem 7 subjects BEU's paper archive has but the syllabus pack does not
-(102701–102706, with their 2021–2022 papers, no invented marks or duration).
+(102701–102703, 102705, 102706, with their 2021–2022 papers, no invented marks
+or duration).
 
 ## 4. Every route
 
@@ -210,12 +247,12 @@ returns.
 | 25 | `tools.routine` | — | Routine | `features/tools/index.tsx` |
 | 26 | `tools.holidays` | — | Holidays | `features/tools/index.tsx` |
 | 27 | `tools.wifi` | — | Wi-Fi help | `features/tools/index.tsx` |
-| 28 | `tools.feedback` | `from?` (where it was opened) | Feedback | `features/feedback/index.tsx` |
+| 28 | `tools.feedback` | `from?` (where it was opened) | Feedback | `features/feedback/index.tsx` (alias of `feedback`) |
 | 29 | `attendance` | — | Attendance | alias in `features/tools/index.tsx` |
 | 30 | `routine` | — | Routine | alias in `features/tools/index.tsx` |
 | 31 | `holidays` | — | Holidays | alias in `features/tools/index.tsx` |
 | 32 | `wifi` | — | Wi-Fi help | alias in `features/tools/index.tsx` |
-| 33 | `feedback` | `from?` (where it was opened) | Feedback | `features/feedback/index.tsx` (alias of `tools.feedback`) |
+| 33 | `feedback` | `from?` (where it was opened) | Feedback | `features/feedback/index.tsx` |
 | 34 | `notices` | `id?` (opens that notice) | Notices / notice title | `features/notices/index.tsx` |
 | 35 | `notices.detail` | `id` | notice title | `features/notices/index.tsx` |
 | 36 | `notices.announcements` | — | Announcements | `features/notices/index.tsx` |
@@ -226,18 +263,24 @@ returns.
 | 41 | `settings.profile` | — | Profile | `features/settings/index.tsx` |
 | 42 | `settings.appearance` | — | Appearance | `features/settings/index.tsx` |
 | 43 | `settings.reminders` | — | Reminders | `features/settings/index.tsx` |
-| 44 | `settings.storage` | — | Storage | `features/settings/index.tsx` |
-| 45 | `settings.about` | — | About | `features/settings/index.tsx` |
-| 46 | `settings.offline` | — | Offline data | `features/offline/index.tsx` |
-| 47 | `notes` | `branch?`, `sem?` (seed) | Notes & VVI | `features/notes/index.tsx` |
-| 48 | `notes.subject` | `branch`, `sem`, `code`, `name?` | subject name | `features/notes/index.tsx` |
-| 49 | `planner` | `branch?`, `sem?` | Study planner | `features/planner/index.tsx` |
-| 50 | `search` | `q?`, `kind?` (seed) | Search | `features/search/index.tsx` |
-| 51 | `students` | — | Students | `features/students/index.tsx` |
-| 52 | `students.college` | `college?` | college name / `College N` | `features/students/index.tsx` |
-| 53 | `students.branch` | `branch?`, `college?` | `<BRANCH> students` | `features/students/index.tsx` |
-| 54 | `students.student` | `reg?` | the student's name | `features/students/index.tsx` |
-| 55 | `students.leads` | — | Top by CGPA | `features/students/index.tsx` |
+| 44 | `settings.notifications` | — | Notifications | `features/settings/index.tsx` |
+| 45 | `settings.storage` | — | Storage | `features/settings/index.tsx` |
+| 46 | `settings.about` | — | About | `features/settings/index.tsx` |
+| 47 | `settings.offline` | — | Offline data | `features/offline/index.tsx` |
+| 48 | `notes` | `branch?`, `sem?` (seed) | Notes & VVI | `features/notes/index.tsx` |
+| 49 | `notes.subject` | `branch`, `sem`, `code`, `name?` | subject name | `features/notes/index.tsx` |
+| 50 | `planner` | `branch?`, `sem?` | Study planner | `features/planner/index.tsx` |
+| 51 | `search` | `q?`, `kind?` (seed) | Search | `features/search/index.tsx` |
+| 52 | `students` | — | Students | `features/students/index.tsx` |
+| 53 | `students.colleges` | — | Colleges | `features/students/index.tsx` |
+| 54 | `students.college` | `college?` | college name / `College N` | `features/students/index.tsx` |
+| 55 | `students.branch` | `branch?`, `college?`, `session?` | `<BRANCH> students` / `<BRANCH> · <session>` | `features/students/index.tsx` |
+| 56 | `students.student` | `reg?` | the student's name | `features/students/index.tsx` |
+| 57 | `students.leads` | — | Top by CGPA | `features/students/index.tsx` |
+| 58 | `profile` | — | Profile | `features/settings/index.tsx` (alias of `settings.profile`) |
+| 59 | `appearance` | — | Appearance | `features/settings/index.tsx` (alias of `settings.appearance`) |
+| 60 | `reminders` | — | Reminders | `features/settings/index.tsx` (alias of `settings.reminders`) |
+| 61 | `about` | — | About | `features/settings/index.tsx` (alias of `settings.about`) |
 | — | `more` (shell) | — | More | `src/app/more.tsx` |
 
 ## 5. State
@@ -284,7 +327,7 @@ publication lags the class by one or two semesters.
 | `profile` | `settings/profile.ts` | name, registration number, branch, semester |
 | `onboarding` | `features/onboarding/index.tsx` | `{ done, skipped, at }` — first-run gate read by the shell |
 | `appearance` | `settings/prefs.ts` | `light` / `dark` / `system` |
-| `reminders.v1` | `settings/prefs.ts` | `{ classes, times, holidays }` |
+| `reminders.v1`, `reminders.dates.v1` | `settings/prefs.ts`, `settings/dates.ts` | holiday reminder toggles and per-date dismissals |
 | `syllabus.course`, `.saved`, `.studied` | `syllabus/index.tsx` | course, bookmarked subjects, ticked topics |
 | `tools.calculator`, `.calculator.extras`, `.attendance`, `.routine`, `.wifi` | `tools/state.ts` (`KEYS`) | the toolkit's saved work |
 | `feedback.draft`, `feedback.memory` | `features/feedback/state.ts` | the unsent report and the last five that were sent |
@@ -294,6 +337,8 @@ publication lags the class by one or two semesters.
 | `notices.read.v1` | `notices/api.ts` | which notices and announcements were opened (posts are keyed `a:<slug>`) |
 | `notices.searches.v1` | `notices/parts.tsx` | recent searches |
 | `notes.course`, `planner`, `search.recent` | `notes/data.ts`, `planner/index.tsx`, `search/index.tsx` | Notes' chosen course, the study plan, and the last eight searches |
+| `offline.warmed.v1` | `features/offline/packs.ts` | when the bundled packs were last refreshed |
+| `release.check` | `lib/release.ts` | the newest GitHub release tag and when it was read, for six hours |
 
 Cache keys (`beu.cache.` prefix), all through `lib/net.ts`:
 
@@ -322,55 +367,61 @@ Four upstream shapes fold into one native model (`ResultData`, `RankRow`,
 from.
 
 ```
-        fast path                              published path
- GET /api/result?…&format=json      GET /data/students_{batch}_all_{branch}_sem{n}.csv
- (site → BEU, retried once)         GET /data/wide_{batch}_{college}_{branch}_sem{n}.csv
+        roster path                           result path
+  students_{batch}_all_{branch}_sem{n}.csv    loadResult(reg, sem)
         │                                      │
-        ▼                                      ▼
-   payloadFrom()                    csvRecords() → wideFromRecord() / rank()
-        │                                      │
+        ▼                                      ├─ saved copy < 10 min → cache
+   csvRecords() → ranked()              ├─ GET /api/result → payloadFrom()
+        │                                      ├─ saved copy, any age → cache
+        │                                      └─ wide_…csv → wideFromRecord()
         └───────────────┬──────────────────────┘
                         ▼
              ResultData { source: live | cache | csv }
                         ▼
       Storage: beu.cache.result:<digits(reg)>:<sem>
 
-  bundled assets                  BEU's own result page (results.web)
-  assets/data/*.json              /result-one → /result-two → /result-three
-  (syllabus, GATE, holidays,      injected watcher → postMessage(html)
-   colleges, grading)             → parseResultHtml() → saveParsedResult()
-                                  → the same cache key as the fast path
+  bundled assets                  BEU's own result page
+  assets/data/*.json              portal: /result-three → hook result/get-result
+  (syllabus, GATE, holidays,      → payloadFrom() → captureResult()
+   colleges, grading)             web: /result-one → fill #reg → postMessage
+                                  → parseResultHtml() → saveParsedResult()
+                                  both → the same cache key
 ```
 
-1. **Live JSON** — `loadResult(reg, sem)` calls
+1. **Fresh saved copy** — `loadResult(reg, sem)` reads Storage with a ten-minute
+   max age first. A result for a finished semester cannot change, so a copy
+   saved in that window returns with `source: "cache"` and the network is never
+   touched.
+2. **Live JSON** — the same call requests
    `SITE/api/result?reg=…&sem=…&format=json`, accepts `{ status: 200, data }`,
    and retries once only when the failure was a network failure (`status 0`); a
    4xx/5xx is deterministic and is not retried.
-2. **Saved copy** — the same call reads Storage with `cacheMaxAge: 0`. Anything
-   ever seen (live, CSV or captcha) is here, so a second visit is instant and
-   works offline; a copy younger than ten minutes skips the network entirely.
-3. **Published CSV** — `students_{batch}_all_{branch}_sem{n}.csv` is the whole
+3. **Saved copy, any age** — after a failed live call it reads Storage with
+   `cacheMaxAge: 0`, which never expires. Anything ever seen (live, CSV or
+   captcha) is here, so a screen that worked once keeps working offline.
+4. **Published CSV** — `students_{batch}_all_{branch}_sem{n}.csv` is the whole
    branch roster: table, rank, merit and identity. `wide_{batch}_{college}_{branch}_sem{n}.csv`
    is one student with per-paper ESE / IA / total / grade, eight-semester SGPA
    history, state rank and college rank, and is the last resort for a result
    while BEU's API is down. `COVERAGE` in `results/data.ts` lists which
    batch/branch/semester tables exist, so the app offers only real combinations.
-4. **The captcha page** — BEU now answers its token endpoint with
-   `403 CAPTCHA verification required.` and puts Cloudflare Turnstile in front of
-   its result page, so `results.web` (`features/results/web.tsx`) is the path that
-   works: it loads `https://beu-bih.ac.in/result-one` in a `WebView`, and an
-   injected watcher opens the row for the student's semester, fills `#reg`, waits
-   for the result and posts the markup of `app-result-three` once to the native
-   side via `window.nsh.postMessage`. The three result routes are one Angular
-   document and the data is in router state, so a direct `/result-three` load is
-   empty — the watcher has to walk the page. `parseResultHtml()`
-   (`features/results/parse-html.ts`) reads that markup without a DOM and
-   `saveParsedResult()` writes the same cache key as the fast path. The captcha is
-   solved by the student in the page; the app never solves, bypasses or replays
-   it. `results.portal` (`features/results/portal.tsx`) keeps the older JSON
-   capture: it hooks the portal's `result/get-result` XHR/fetch on `/result-three`
-   and normalises the payload with `payloadFrom()` / `captureResult()`.
-5. **Identity** — `results/identity.ts` turns a registration number into a
+5. **The captcha page** — BEU answers its token endpoint with
+   `403` and puts Cloudflare Turnstile in front of its result page. The screen
+   the app links to is `results.portal` (`features/results/portal.tsx`): lookup
+   and battle push it, it loads `https://beu-bih.ac.in/result-three` in a
+   `WebView`, and a hook installed before the page's own scripts captures the
+   `result/get-result` XHR/fetch body and normalises it with `payloadFrom()` /
+   `captureResult()`.
+   `results.web` (`features/results/web.tsx`) is the page-walker: registered and
+   mounted by QA, but nothing pushes it yet. It loads `/result-one`, opens the
+   row for the student's semester, fills `#reg`, and posts the markup of
+   `app-result-three` once to `parseResultHtml()` / `saveParsedResult()`. The
+   three result routes are one Angular document and the data is in router state,
+   so a direct `/result-three` load is empty — walking the page is how that
+   markup is read. Either screen writes the same cache key as the fast path. The
+   captcha is solved by the student in the page; the app never solves, bypasses
+   or replays it.
+6. **Identity** — `results/identity.ts` turns a registration number into a
    person, cheapest first: the identity cache (`identity:<digits>`, permanent) →
    any result already saved for that number (semester 8 down to 1) → BEU's
    published roster for the batch + branch, newest three semesters, first `RegNo`
@@ -380,18 +431,19 @@ from.
    the answer arrives after first paint; the hero's greeting and avatar initial
    re-read it. With no match, Home falls back to the profile name or a nameless
    greeting — never a guessed name.
-6. **Bundled data** — `assets/data/manifest.json` + 12 files: six subject packs
-   (343 subjects, 1,405 units, 2,324 topics), 30 GATE papers, 39 holidays, 52
-   colleges, 7 grades and the GEC register. Generated by `scripts/extract.py`,
-   packed by `scripts/data/build-packs.ts` and validated by `scripts/verify.py` /
-   `scripts/data/verify-packs.ts` — never edited by hand.
-7. **Live feed** — the published difference over step 6: a ~2 KB manifest plus
+7. **Bundled data** — `assets/data/manifest.json` + 12 files: six subject packs
+   (343 subjects, 1,405 units, 2,324 topics), the branch list (6 branches), 30
+   GATE papers, 39 holidays, 52 colleges, 7 grades and the GEC register.
+   Generated by `scripts/extract.py`, packed by `scripts/data/build-packs.ts` and
+   validated by `scripts/verify.py` / `scripts/data/verify-packs.ts` — never
+   edited by hand.
+8. **Live feed** — the published difference over step 7: a ~2 KB manifest plus
    content-addressed payloads at `https://beu.prit.eu.org/data/app/`, applied
    whole or not at all (`src/features/data-feed/`). A corrected topic or a new
    paper year reaches every installed app without a store release, while
    unchanged prose keeps the hash this build already carries and costs no bytes.
    Published by `scripts/data/publish-feed.ts`; see `docs/OFFLINE.md`.
-8. **Notes** — `notes` fetches `https://beu.prit.eu.org/data/notes.json`, one
+9. **Notes** — `notes` fetches `https://beu.prit.eu.org/data/notes.json`, one
    manifest of subjects, VVI topics and PDF links, into
    `beu.cache.notes.manifest`. A copy younger than 30 minutes renders with no
    request; an older copy renders at once and refreshes behind the screen, and a
@@ -401,7 +453,7 @@ from.
    upstream: the planner reads the syllabus packs, and search indexes those plus
    the notices and dataset lists already on the device.
 
-`scripts/verify-identity.ts` repeats step 5 against the live roster with no app
+`scripts/verify-identity.ts` repeats step 6 against the live roster with no app
 runtime and prints the name, SGPA, CGPA and college the app will show.
 
 ## 7. Network
@@ -430,13 +482,18 @@ postJson<T>(url, body, timeout)     // POST application/json
 - **Errors** — `NetError` carries an HTTP status; `httpMessage(status)` turns it
   into a sentence and screens render that through `ErrorState`, never a stack
   trace.
+- **Student headers** — every request to `beu.prit.eu.org` carries the saved
+  number's context as `x-beu-reg`, `x-beu-student` (10-hex), `x-beu-branch`,
+  `x-beu-college` and `x-beu-batch`, parsed once in
+  `src/lib/student-context.ts`. No other host gets them: GitHub, Supabase and
+  the BEU portal never see a registration number.
 
 Hosts are allowlisted in `nsh.json`:
 
 - `capabilities.network.hosts`: `beu.prit.eu.org` (every fetch),
   `beu-bih.ac.in` (the portal host), `rptbalyjcevtxoxyvzli.supabase.co` (GECS
-  attendance), `api.github.com` (the release check — one call per launch at
-  most, cached for six hours in `beu.cache.release.check`).
+  attendance), `api.github.com` (the release check — one background call per
+  launch at most, cached for six hours in `beu.release.check`).
 - `capabilities.webview.hosts`: `beu.prit.eu.org`, `beu-bih.ac.in`,
   `www.beu-bih.ac.in`, `beu.ac.in`, `www.beu.ac.in` (portal and PDFs),
   `challenges.cloudflare.com` for the Turnstile widget the result page loads,
@@ -451,12 +508,13 @@ say the page did not load. See `docs/ANDROID.md` §4.
 
 ### The system-browser handoff
 
-nsh 0.3.0 added `openUrl` (from `nsh`): it hands a URL to another app, an
-`ACTION_VIEW` intent on Android. The app's single helper, `openExternal()` in
-`src/features/notices/parts.tsx`, calls it and returns whether the handoff
-happened; when it throws — no handler, or a scheme the capability does not
-grant — the caller copies the link instead. Every caller goes through that
-helper; no screen reaches for the call directly.
+`openUrl` (from `nsh`) hands a URL to another app, an `ACTION_VIEW` intent on
+Android. Since nsh 0.4 it resolves to `{ opened }` instead of a bare boolean and
+rejects when no app can take the link or the scheme is not granted. The app's
+single helper, `openExternal()` in `src/lib/link.ts` (re-exported by
+`notices/parts.tsx`), unwraps that to a boolean; when the call rejects, the
+caller copies the link instead. Every caller goes through that helper; no screen
+reaches for the call directly.
 
 The intent is only allowed for the schemes `nsh.json` grants:
 
@@ -514,17 +572,18 @@ block before the call site.
   side-by-side previews, which must show every scheme at once and so cannot use
   the live tokens.
 - `setColorScheme("light" | "dark" | "system")` from `nsh` flips every token at
-  once. The choice is persisted as `beu.appearance`; `App.tsx` applies
+  once. The choice is persisted as `beu.appearance`; `boot()` applies
   a stored `light` / `dark` before mount (no light flash on a dark launch),
   `system` leaves the platform default, and `settings/prefs.ts` applies every
   later change.
-- `nsh test` prints `unknown class` for `text-primary-ink`, `text-accent-ink`
-  and `border-border-strong`. It is a false positive in the 0.3.0 build's class
-  check (`nsh check` is clean, and the tokens resolve in both schemes: verified
-  with `app.spanStyle` — `#B0401D` light, `#FF7A4D` dark). The check reads
-  `primary-ink` as the token `primary` with the shade `-ink`, because our extra
-  tokens share a prefix with a shadcn token. Re-spelling them
-  (`text-(--primary-ink)`, `border-(color:--border-strong)`) warns the same, so
-  keep the readable spelling and ignore the line.
+- `nsh test` prints `unknown class` for `text-primary-ink`, `text-accent-ink`,
+  `bg-accent-ink` and `border-border-strong`. It is a false positive in the
+  0.3.0 build's class check (`nsh check` is clean, and all four tokens resolve in
+  both schemes: for example `primary-ink` is `#B0401D` light and `#FF7A4D` dark,
+  `accent-ink` is `#0E6B5C` / `#6FE3C9`). The check reads `primary-ink` as the
+  token `primary` with the shade `-ink`, because our extra tokens share a prefix
+  with a shadcn token. Re-spelling them (`text-(--primary-ink)`,
+  `border-(color:--border-strong)`) warns the same, so keep the readable spelling
+  and ignore the line.
 - `bun scripts/contrast.ts` gates the token pairs at WCAG 4.5:1 for text and
   3:1 for controls; run it after any theme edit.

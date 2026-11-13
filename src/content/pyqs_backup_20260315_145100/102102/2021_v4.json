@@ -1,0 +1,308 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Exam., 2021",
+    "subject": "Mathematics—I (Calculus and Linear Algebra)",
+    "subject_slug": "mathematics-i-calculus-and-linear-algebra",
+    "subject_code": "102102",
+    "year": 2021,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven) :",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>If \\( Y = \\int_0^a t^4 e^{-2t^2} dt \\), then the value of \\( Y \\) is</p>",
+          "options": [
+            "\\( \\frac{\\sqrt{2\\pi}}{64} \\)",
+            "\\( \\frac{3\\sqrt{\\pi}}{64} \\)",
+            "\\( \\frac{5\\sqrt{2\\pi}}{64} \\)",
+            "\\( \\frac{3\\sqrt{2\\pi}}{64} \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The maximum area of a sector whose perimeter is \\( k \\) is given by</p>",
+          "options": [
+            "\\( \\frac{k^2}{16} \\)",
+            "\\( \\frac{k^2}{8} \\)",
+            "\\( \\frac{k^2}{4} \\)",
+            "\\( \\frac{k^2}{1} \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The function \\( f(x) = \\begin{cases} x^2, &amp; 0 \\leq x \\leq \\frac{1}{2} \\\\ x, &amp;\n                        \\frac{1}{2}\n                        &lt; x \\leq 1 \\end{cases} \\), then \\( \\lim_{x \\to \\frac{1}{2}} f(x) \\)</p>",
+          "options": [
+            "has the value \\( \\frac{1}{2} \\)",
+            "has the value 1",
+            "has the value 2",
+            "does not exist"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>If \\( \\alpha, \\beta \\) are the roots of the equation \\( ax^2 + bx + c = 0 \\), then \\(\n                        \\lim_{x \\to \\alpha} \\frac{1 - \\cos(\\alpha x^2 + bx + c)}{(x - \\alpha)^2} \\) is equal to\n                    </p>",
+          "options": [
+            "\\( \\frac{a^2}{2} (\\alpha - \\beta)^2 \\)",
+            "\\( -\\frac{a^2}{2} (\\alpha - \\beta)^2 \\)",
+            "\\( \\frac{a^2}{2} (\\alpha - \\beta)^2 \\)",
+            "0"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The series \\( x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\frac{x^4}{4} + ... \\) converges for</p>",
+          "options": [
+            "\\( (-1 &lt; x \\leq 1) \\)",
+            "\\( |x| &lt; 1 \\) only",
+            "\\( |x| \\leq 1 \\)",
+            "all real values of \\( x \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>If \\( u_n = \\sqrt{n+1} - \\sqrt{n}, \\quad v_n = \\sqrt{n^4 + 1} - n^2 \\), then</p>",
+          "options": [
+            "\\( \\sum_{n=1}^{\\infty} u_n \\) converges but \\( \\sum_{n=1}^{\\infty} v_n \\) diverges",
+            "\\( \\sum_{n=1}^{\\infty} u_n \\) diverges but \\( \\sum_{n=1}^{\\infty} v_n \\) converges",
+            "\\( \\sum_{n=1}^{\\infty} u_n \\) and \\( \\sum_{n=1}^{\\infty} v_n \\) both converge",
+            "\\( \\sum_{n=1}^{\\infty} u_n \\) and \\( \\sum_{n=1}^{\\infty} v_n \\) both diverge"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>\\( \\lim_{(x, y) \\to (0, 0)} \\frac{1 - x - y}{x^2 + y^2} \\) is</p>",
+          "options": [
+            "0",
+            "1",
+            "-1",
+            "Does not exist"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The gradient of the function \\( f(x, y, z) = \\log (x^2 + y^2 + z^2) \\) at \\( (3, -4, 5) \\)\n                        is</p>",
+          "options": [
+            "\\( \\frac{1}{\\sqrt{3}} (i + j + k) \\)",
+            "\\( \\frac{1}{3} (i + j + k) \\)",
+            "\\( \\frac{1}{25} (3i^2 - 4j + 5k) \\)",
+            "\\( \\frac{1}{25} (3i^2 + 4j + 5k) \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>If \\( A \\) and \\( B \\) are any two square matrices of order \\( 2 \\times 2 \\), then \\( (A\n                        + B)^2 \\) is equal to</p>",
+          "options": [
+            "\\( A^2 + 2AB + B^2 \\)",
+            "\\( A^2 + AB - BA + B^2 \\)",
+            "\\( A^2 + AB + BA + B^2 \\)",
+            "\\( A^2 + 2BA + B^2 \\)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The system of equations \\( x - y + 3z = 4, x + z = 2, x + y - z = 0 \\) has</p>",
+          "options": [
+            "infinitely many solutions",
+            "finitely many solutions",
+            "a unique solution",
+            "no solution"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 10,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Evaluate \\( \\int_{0}^{\\infty} x^{m} e^{-ax^n} dx \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Find the surface of the solid formed by the revolution about the axis of \\( y \\), of the part\n                        of the curve \\( ay^2 = x^3 \\) from \\( x = 0 \\) to \\( x = 4a \\), which is above the \\( x\n                        \\)-axis.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 10,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Verify the Rolle's theorem for the function \\( f(x) = 2x^3 + x^2 - 4x - 2 \\).</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Find \\( \\lim_{x \\to \\frac{\\pi}{2}} (\\sin x)^{\\tan x} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Discuss the convergence of the sequence whose \\( n \\) th term is \\( a_n = \\frac{1}{\\log n}\n                        \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 8
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Test the convergence of the following series : \\( 1 + \\frac{x}{1} + \\frac{1}{2} \\cdot\n                        \\frac{x^3}{3} + \\frac{1 \\cdot 3 \\cdot x^5}{2 \\cdot 4 \\cdot 5} + \\frac{1 \\cdot 3 \\cdot 5\n                        \\cdot x^7}{2 \\cdot 4 \\cdot 5 \\cdot 6 \\cdot 7} + \\cdots \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Find the Fourier series expansion of the function \\( f(x) = \\{ \\pi + x \\}, -\\pi \\leq x\n                        \\leq \\pi \\). Hence deduce that \\( \\frac{\\pi}{4} = 1 - \\frac{1}{3} + \\frac{1}{5} -\n                        \\frac{1}{7} + \\cdots \\)</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Find the Fourier cosine series and Fourier sine series of the following function in given\n                        interval : \\( f(x) = \\{ x + x^2 \\}, 0 &lt; x &lt; 1 \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Discuss continuity of the following function at the point \\( (-1, c) \\) : \\( f(x, y) =\n                        \\begin{cases} \\frac{x^2 y}{(1 + x)}, &amp; x \\neq -1 \\\\ y, &amp; (x, y) = (-1, c)\n                        \\end{cases}\n                        \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Find the extreme value of \\( xyz \\), when \\( x + y + z = a, a &gt; 0 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the maximum value of the function \\( f(x) = \\frac{1}{x} \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Find the equation of the tangent plane to the surface \\( xy + yz + zx = -1 \\), at the point \\(\n                        (1, -1, 2) \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Find the eigenvalues and eigenvectors of the following matrix : \\( \\begin{bmatrix} -2 &amp; 2\n                        &amp; -3\n                        \\\\ 2 &amp; 1 &amp; -6 \\\\ -1 &amp; -2 &amp; 0 \\end{bmatrix} \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Verify Cayley-Hamilton theorem for the matrix \\( \\begin{bmatrix} 0 &amp; c &amp; b \\\\ -c\n                        &amp; 0 &amp; a \\\\\n                        b &amp; -a &amp; 0 \\end{bmatrix} \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Determine the range of the following linear transformation. Also find the rank of \\( T \\),\n                        where it exists, \\( T: V_3 \\rightarrow V_3 \\), defined by \\( T(x_1, x_2, x_3) = \\left(\n                        \\frac{1}{2} x_1 + x_2 + x_3, \\, x_1 - \\frac{1}{3} x_2, \\, x_3 \\right) \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

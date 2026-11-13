@@ -7,7 +7,7 @@ by the app at runtime.
 ## The gate
 
 ```sh
-./scripts/check.sh            # list-height lint + data hashes + nsh check
+./scripts/check.sh            # lints + feed hashes + data check + nsh check
 ./scripts/check.sh test       # the above + nsh test (the gate)
 ./scripts/check.sh test-only  # nsh test only
 ./scripts/check.sh test-only qa/unit/data-feed.test.ts   # one file, still locked
@@ -20,6 +20,20 @@ It takes a lock, waits for the holder (up to 15 min), and always releases it.
 
 `scripts/lint-list-height.mjs` runs first: a `<List>` without a height paints
 nothing, and no rendering test can see it. Do not remove that step.
+
+`scripts/lint-rail-height.mjs` runs next to it for the same reason: a horizontal
+`Scroll` that is `flex-1` inside a column sizes its own height to zero, so a
+rail's chips paint nowhere while `app.texts()` still reports them.
+
+`scripts/lint-signal-setter.mjs` runs next: a signal setter passed bare
+(`onChange={query.set}`) mounts fine and then throws `not a live signal` on the
+first keystroke or tap, so it is a crash no rendering test reaches. The fix is
+`onChange={(value) => query.set(value)}`.
+
+`scripts/lint-wifi-host.mjs` runs next to it: campus Wi-Fi sign-in lives in
+Java, with the app closed, where `qa/` cannot reach it. A dropped receiver, a
+job that stops being persisted or a missing wake lock all leave the screen
+saying "on" while nothing runs, so the scan reads the host's own facts.
 
 ## Data pipelines
 

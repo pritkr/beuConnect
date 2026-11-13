@@ -33,7 +33,7 @@ export function PdfScreen(props: { nav: Nav; scope?: PdfScope }) {
   // Android draws the pages itself (PdfRenderer in the app's own host): no
   // WebView, no Google Docs, and the file can be saved to Downloads. The
   // platform never changes while the app runs, so this branch is stable.
-  if (url !== null && usesNativePdf()) {
+  if (url !== "" && usesNativePdf()) {
     return <NativePdfScreen nav={props.nav} url={url} title={param(props.nav, "title") || "PDF"} />;
   }
 
@@ -98,7 +98,7 @@ export function PdfScreen(props: { nav: Nav; scope?: PdfScope }) {
         }
         return (
           <View class="flex-1">
-            <View class={`h-0.5 w-full ${loaded() ? "bg-border" : "animate-pulse bg-primary"}`} />
+            <View class="h-0.5 w-full bg-border" />
             <WebView
               class="flex-1"
               testID={scope === "notes" ? "notes-pdf" : "notices-pdf"}

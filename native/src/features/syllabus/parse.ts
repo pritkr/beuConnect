@@ -132,6 +132,9 @@ function headingOf(rest: string): Heading {
  * ("Module 1 Digital Principle: Analog Vs Digital, Number System, …"). What
  * names the unit is the head; everything after it is content, and content
  * dropped along with the heading is the syllabus silently losing topics.
+ * Whether that tail becomes rows or the first topic's detail is decided later,
+ * once it is known whether the block also has numbered topics: with numbers,
+ * the list on the heading is the unit's intro, not a row that outranks topic 1.
  */
 function splitHeading(text: string): { title: string; inline: string } {
   if (text.length <= HEADING_MAX) return { title: text, inline: "" };
@@ -310,7 +313,7 @@ export function parseSyllabus(content: string): Unit[] {
 
   const units: Unit[] = [];
   for (const block of blocks) {
-    const topics = [...inlineTopics(block.inline), ...splitTopics(block.lines.join("\n"), block.explicit)];
+    const topics = splitTopics(block.lines.join("\n"), block.explicit, block.inline);
     // "Detailed contents:" is a caption the source printed above the units, not
     // a topic. Everything else is kept, even a unit whose topics are all on the
     // heading line: a hidden unit reads like a shorter syllabus.
@@ -338,16 +341,19 @@ export function parseSyllabus(content: string): Unit[] {
   return units;
 }
 
+/** A topic before `parseSyllabus` gives it the id its unit owns. */
+type DraftTopic = Omit<Topic, "id">;
+
 /**
- * The content a heading carried with it. It is prose or a comma list, so it is
- * split by sentence and, when a sentence is a plain list of short items, by
- * item: each becomes a topic a student can tick, and every word of the source
- * stays in a title or a body.
+ * The content a heading carried with it, when the block has no numbered topics
+ * to own it. It is prose or a comma list, so it is split by sentence and, when
+ * a sentence is a plain list of short items, by item: each becomes a topic a
+ * student can tick, and every word of the source stays in a title or a body.
  */
-function inlineTopics(text: string): { title: string; body: string; hours: string | null }[] {
+function inlineTopics(text: string): DraftTopic[] {
   const clean = tidy(text);
   if (!clean) return [];
-  const out: { title: string; body: string; hours: string | null }[] = [];
+  const out: DraftTopic[] = [];
   for (const sentence of splitSentences(clean)) {
     const items = listItems(sentence);
     if (items) {
@@ -400,7 +406,7 @@ function paragraphsOf(text: string): string[] {
  * title, and the rest of the sentence — never a word of it less — becomes the
  * body that expands under it.
  */
-function sentenceTopic(text: string, index: number): Topic {
+function sentenceTopic(text: string): DraftTopic {
   const clean = tidy(text);
   const hoursMatch = HOURS_RE.exec(clean);
   const hours = hoursMatch ? hoursLabel(hoursMatch) : null;
@@ -408,7 +414,7 @@ function sentenceTopic(text: string, index: number): Topic {
   // When the title is the whole sentence (or a shortened copy of it) the body
   // keeps the full text; otherwise it keeps the clause the title did not take.
   const rest = title.endsWith("…") || title.length >= clean.length ? clean : tidy(clean.slice(title.length)).replace(/^[\s:;,.\-–—]+/, "");
-  return { id: `t${index + 1}`, title, body: rest, hours };
+  return { title, body: rest, hours };
 }
 
 /**
@@ -419,8 +425,12 @@ function sentenceTopic(text: string, index: number): Topic {
  * explicit unit, each sentence is a topic. A block the source never split into
  * units stays one honest topic — nothing is invented where the source names
  * nothing.
+ *
+ * `inline` is whatever the heading carried on its own line. With numbering it
+ * describes the unit and opens the first topic's body; without numbering it is
+ * the only content there is, so it supplies the topics themselves.
  */
-function splitTopics(text: string, explicit: boolean): Topic[] {
+function splitTopics(text: string, explicit: boolean, inline = ""): DraftTopic[] {
   const seeds: { number: number | null; text: string }[] = [];
   for (const line of text.split("\n")) {
     if (!line.trim()) continue;
@@ -429,12 +439,13 @@ function splitTopics(text: string, explicit: boolean): Topic[] {
 
   const numbered = seeds.some((seed) => seed.number !== null);
   if (!numbered) {
+    const lead = inlineTopics(inline);
     const whole = tidy(text);
-    if (!whole) return [];
-    if (!explicit) return [sentenceTopic(whole, 0)];
-    const topics: Topic[] = [];
+    if (!whole) return lead;
+    if (!explicit) return [...lead, sentenceTopic(whole)];
+    const topics: DraftTopic[] = [...lead];
     for (const paragraph of paragraphsOf(text)) {
-      for (const sentence of splitSentences(paragraph)) topics.push(sentenceTopic(sentence, topics.length));
+      for (const sentence of splitSentences(paragraph)) topics.push(sentenceTopic(sentence));
     }
     return topics;
   }
@@ -445,8 +456,11 @@ function splitTopics(text: string, explicit: boolean): Topic[] {
     else if (grouped.length) grouped[grouped.length - 1].body.push(seed.text);
     else grouped.push({ title: seed.text, body: [] });
   }
+  // The heading's own tail is content the source printed before topic 1, so it
+  // expands with topic 1 instead of becoming a row that is not in the PDF.
+  if (inline) grouped[0].body.unshift(inline);
 
-  return grouped.map((topic, index) => {
+  return grouped.map((topic) => {
     const bodyText = tidy(topic.body.join("\n"));
     const titleText = tidy(topic.title);
     const hoursMatch = HOURS_RE.exec(`${titleText} ${bodyText}`);
@@ -456,7 +470,6 @@ function splitTopics(text: string, explicit: boolean): Topic[] {
     if (cleanTitle) {
       const split = splitLongTitle(cleanTitle);
       return {
-        id: `t${index + 1}`,
         title: split.title,
         body: tidy(`${split.rest} ${bodyText}`),
         hours,
@@ -465,7 +478,7 @@ function splitTopics(text: string, explicit: boolean): Topic[] {
 
     // A numbered line whose text was only an hours note: the body still names
     // the topic, so lift its first clause rather than showing an empty row.
-    return sentenceTopic(bodyText, index);
+    return sentenceTopic(bodyText);
   });
 }
 

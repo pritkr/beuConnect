@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2015",
+    "subject": "Computer Networks",
+    "subject_slug": "computer-networks",
+    "subject_code": "051513",
+    "year": 2015,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer as directed of the following (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>(a) Network layer of OSI model does not establish any relationship among different packets of\n                        same\n                        message. (Write True or False)</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>(b) What is repeater?</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>(c) What is baud rate?</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>(d) What is switch?</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>(e) What is flooding in routing?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>(f) What is TCP?</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>(g) What is the role of a bridge?</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>(h) What do you mean by connectionless service?</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>(i) List two protocols in channelization category.</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>(j) What is byte-oriented protocol?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions:",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the responsibilities of first four layers of OSI model.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Compare between TCP/IP and OSI models.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the transmission characteristics of twisted pair.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Compare and contrast between byte-oriented and bit-oriented protocols. Also compare between\n                        byte-stuffing and bit-stuffing.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain the reasons for moving from stop-and-wait ARQ protocol to Go-back-N ARQ protocol.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Define framing and discuss the reasons for its need. What are fixed-size and variable-size\n                        framings?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Draw the flow diagram for the CSMA/CD and explain. Also compare CSMA/CD with ALOHA.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions:",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is bridge? Explain about spanning tree.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>What are the common Gigabit Ethernet implementations?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions:",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the procedure for checksum and verification in the IPv4 protocol. What part of an IPv4\n                        packet\n                        is covered in the checksum calculation and why? Are options, if present, included in the\n                        calculation?</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Discuss the types of ICMP messages.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions:",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Discuss four types of link defined by OSPF. What is the basis of classification for the four\n                        types of\n                        link defined by OSPF?</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>List RIP shortcomings and their corresponding fixes.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>TCP is sending data at 2 Mbytes/sec. If the sequence number starts with 7000, how long does it\n                        take\n                        before the sequence number goes back to zero?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Explain connection establishment in TCP using three-way handshaking.</p>"
+        }
+      ]
+    }
+  ]
+}

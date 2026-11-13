@@ -49,6 +49,9 @@ export class VirtualTable {
         // We hide esoteric Subject marks (_ESE, _IA) by default for cleaner mobile view.
         this.visibleColumns = columns.filter(c => {
             if (c.includes("_ESE") || c.includes("_IA") || c.includes("_Total")) return false;
+            if (c.endsWith("_Grade")) return false;
+            if (["Session", "FatherName", "MotherName", "CollegeCode", "Branch", "Semester", "ExamHeld", "SGPA"].includes(c)) return false;
+            if (c === "SGPA_History") return false;
             if (c === "Type" || c === "MonthYear" || c === "ExamYear") return false;
             return true;
         });
@@ -73,6 +76,7 @@ export class VirtualTable {
         this.visibleColumns.forEach((col, idx) => {
             const th = document.createElement("th");
             th.textContent = col;
+            th.classList.add(`col-${col.toLowerCase()}`);
             
             // Assign explicit widths to prevent CSS collapse under table-layout: fixed
             th.style.width = "100px"; // Default fallback width
@@ -151,7 +155,7 @@ export class VirtualTable {
             table.style.top = `${topSpacerHeight}px`;
             table.style.left = "0";
             table.style.zIndex = "1";
-            table.style.width = "max-content"; // Ensure wide table keeps its width
+            table.style.width = "100%";
 
             // No translateY needed on tbody if we shift the entire table container relative to scroll
             this.tbody.style.transform = "none";

@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University",
+    "exam_title": "2012 (A)",
+    "subject": "CONTROL SYSTEM",
+    "subject_slug": "control-system",
+    "subject_code": "102415",
+    "year": 2012,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are TEN questions in this paper.",
+    "Attempt any FIVE questions."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>What is servomechanism? Differentiate between open-loop and closed-loop control system.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Obtain the transfer function of the block diagram shown in Fig 1.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/218.jpg\"/>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Write technical notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>(a) LVDT<br/>\n                        (b) Strain gauges<br/>\n                        (c) CRO<br/>\n                        (d) Hygrometer</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is the principle of measuring pressure by elastic transducers? Discuss the elastic\n                        diaphragms\n                        for the measurement of pressure. Give the examples of secondary transducers used with\n                        diaphragms.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>For the system shown in Fig. 2 given below, find the transfer function \\( X(s)/F(s) \\) where\n                        symbols have their usual meanings.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/217.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Analyse the time response of second-order system.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Define rise time, peak time, settling time and peak overshoot.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is transducer? Distinguish between the active and passive transducer.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Describe the operating principle of piezoelectric pickups.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Draw a neat sketch of an orifice meter. Derive an expression of flow rate and state its\n                        advantages\n                        over venturi meter.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Describe the construction and working of thermocouples. Describe the thermo-electric laws and\n                        their\n                        applications.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of electronic counter and explain its working.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Describe the construction and working of hot-wire anemometer.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>How are frequency and phase of a signal measured using CRO?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.10 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q10_1",
+          "type": "theory",
+          "text": "<p>Explain the stability of control system with the help of Routh-Hurwitz criterion.</p>"
+        },
+        {
+          "id": "q10_2",
+          "type": "theory",
+          "text": "<p>The characteristic equation of a system is \\( s^{5}+4s^{4}+8s^{3}+8s^{2}+7s+4=0 \\). Determine\n                        if\n                        the system is stable.</p>"
+        }
+      ]
+    }
+  ]
+}

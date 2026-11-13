@@ -1,0 +1,42 @@
+---
+/**
+ * The UPI wordmark. Letters take the current text colour so the mark reads in
+ * both themes; the arrow keeps its own orange and green, as the brand does.
+ * Traced from the public UPI logo (NPCI). Inline so it adds no request.
+ */
+export interface Props {
+	width?: number;
+	class?: string;
+}
+
+const width = Astro.props.width ?? 64;
+const height = (width / 3.7059).toFixed(1);
+---
+
+<svg
+	class={Astro.props.class}
+	viewBox="0 0 99.073357 26.6"
+	width={width}
+	height={height}
+	role="img"
+	aria-label="UPI"
+	focusable="false"
+>
+	<g transform="translate(-69.492225,-94.655692)">
+		<g transform="matrix(0.26458333,0,0,0.26458333,-66.29975,41.032589)">
+			<path d="M802.15997,300.72H782.62l27.05999,-98.05h19.53998z" fill="currentColor"></path>
+			<g transform="translate(791.90997,205.71001)">
+				<path
+					d="m0,0c-1.28,-1.76 -3.37,-2.72 -6.25,-2.72h-107.3l-5.28,19.22h19.539999v0h77.990002L-26.91,37.009998h-77.99v-0.16h-19.54l-16.17,58.64h19.38l10.89,-39.409996h87.76c2.719999,0 5.440001,-0.810002 7.84,-2.730004 2.41,-1.919998 4.01,-4.159999 4.81,-6.889999L0.8,7.21C1.6,4.33 1.44,1.92 0,0Z"
+					fill="currentColor"></path>
+			</g>
+			<g transform="translate(639.77002,294.63)">
+				<path
+					d="m0,0c-0.96,3.84 -4.49,6.57 -8.49,6.57h-100.73c-2.72,0 -4.81,-0.96 -6.09,-2.89 -1.44,-1.92 -1.6,-4.16 -0.96,-6.88l24.659999,-88.439999H-72.07L-94.010002,-12.66H-16.02l22.1,-78.979999h19.379999z"
+					fill="currentColor"></path>
+			</g>
+			<path d="M862.84998,202.83L887.67999,252.00999L835.63,301.20001Z" fill="#028c45"></path>
+			<path d="m845.56,202.83l24.65997,49.17999 -51.88995,49.19002z" fill="#f47920"></path>
+		</g>
+	</g>
+</svg>

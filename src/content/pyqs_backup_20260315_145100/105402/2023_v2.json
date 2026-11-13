@@ -1,0 +1,289 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "End Semester Examination - 2023",
+    "subject": "Design and Analysis of Algorithms",
+    "subject_slug": "design-and-analysis-of-algorithms",
+    "subject_code": "105402",
+    "year": 2023,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "The fractional Knapsack problem can be solved by using",
+          "options": [
+            "Greedy method",
+            "Divided and conquer method",
+            "Dynamic programming",
+            "None of these"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "BFS on a graph \\( G=(V,E) \\) has running time",
+          "options": [
+            "\\( O(|V|+|E|) \\)",
+            "\\( O(|V|) \\)",
+            "\\( O(|E|) \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "The minimum number of colors needed to color a graph having \\( n&gt;3 \\) vertices and 2 edges is",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "1"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "Complexity the recurrence relation \\( T(n)=8T(\\frac{n}{2})+n^2 \\) is",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(n^2) \\)",
+            "\\( O(\\log_2 n) \\)",
+            "\\( O(n^3) \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "Travelling salesman problem belongs to",
+          "options": [
+            "P class",
+            "NP class",
+            "NP- hard",
+            "NP- complete class"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "Kruskal's algorithm uses ___ and Prism' algorithm uses ___ in determining the MST",
+          "options": [
+            "Edges, vertex",
+            "Vertex, edges",
+            "Edges, edges",
+            "Vertex, vertex"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Level order traversal of a rooted tree can be done by starting from root and performing",
+          "options": [
+            "Depth first search",
+            "Breadth first search",
+            "Pre-order traversal",
+            "In-order traversal"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "An algorithm is made up of two independent time complexities \\( f(n) \\) and \\( g(n) \\). Then\n                        the\n                        complexities of the algorithm is in order of",
+          "options": [
+            "\\( f(n) \\times g(n) \\)",
+            "\\( \\max(f(n), g(n)) \\)",
+            "\\( \\min(f(n), g(n)) \\)",
+            "\\( f(n)+g(n) \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "Which of the following standard algorithms is not a greedy algorithm?",
+          "options": [
+            "Dijkstra's shortest path algorithm",
+            "Kruskal algorithm",
+            "Bellman ford shortest path algorithm",
+            "Prim's algorithm"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "The node removal of which makes a graph disconnected is called",
+          "options": [
+            "Pendant vertex",
+            "Bridge",
+            "Articulation point",
+            "Coloured vertex"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Write the algorithm for quick-sort and find its complexity."
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Discuss the average, worst, best time complexity of the algorithm. Give suitable examples."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Construct the Huffman coding tree for the text of characters with given frequencies: T:43, I:38,\n                        V:16, K:8, L:56, E:12, O:41, Z:13, P:22, R:6.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "State the general Knapsack problem. Write a greedy algorithm for this problem and derive its time\n                        complexity."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "State master's theorem and find the time complexity for the following recurrence: \\( T(n) =\n                        2T(n^{1/2}) + \\log n \\)"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "What is negative weight-cycle? Write Bellman-Ford algorithm to find single source shortest\n                        distance\n                        of a directed graph."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Find the minimum number of operations required for the following matrix chain multiplication\n                        using\n                        dynamic programming: \\( A(10 \\times 20) * B(20 \\times 50) * C(50 \\times 1) * D(1 \\times\n                        100)\n                        \\)"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Write Knuth-Morris-Pratt algorithm for string matching problem."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "Write an algorithm to find a minimum spanning tree (MST) for an undirected graph. Estimate the\n                        time\n                        complexity of your algorithm."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Using greedy strategy. Schedule the following jobs within deadline so as to maximize the profit.\n                        Deadline and profits are mentioned as follow:<br/>\n                        Job i: 1, 2, 3, 4 <br/>\n                        Deadline d: 3, 2, 3, 1 <br/>\n                        Profit g: 9, 7, 7, 2"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Write an algorithm for n-queen's problem find its time-complexity and explain the algorithm using\n                        an\n                        example."
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Solve the single source shortest path problem for the following graph considering '1' as the\n                        source\n                        vertex using Dijkstra's algorithm."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Define the classes P and NP."
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "Discuss what you mean by polynomial reduction."
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "Discuss diagrammatically the relation among P class, NP class, NP hard and NP complete."
+        },
+        {
+          "id": "q8_4",
+          "type": "theory",
+          "text": "Describe Clique Decision Problem (CDP)."
+        },
+        {
+          "id": "q8_5",
+          "type": "theory",
+          "text": "Explain the max-flow min-cut theorem with an example."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Asymptotic notations</li>\n<li>Heap creation technique</li>\n<li>Strassen's matrix multiplication</li>\n<li>Divide-and-Conquer vs Dynamic programming</li>\n</ul>",
+          "options": [
+            "Asymptotic notations",
+            "Heap creation technique",
+            "Strassen's matrix multiplication",
+            "Divide-and-Conquer vs Dynamic programming"
+          ]
+        }
+      ]
+    }
+  ]
+}

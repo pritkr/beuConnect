@@ -1,10 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
 import { getNoticeBoard } from "../lib/beuNotices";
 
-export const prerender = true;
+// Notices come from BEU at request time. Prerendering this page made every
+// build depend on their server being reachable; the snapshot label was also
+// stale the moment it shipped.
+export const prerender = false;
+
+Astro.response.headers.set(
+	"Cache-Control",
+	"public, s-maxage=300, stale-while-revalidate=900",
+);
 
 const boardNotices = await getNoticeBoard({ important: false, limit: 200 });
 const buildTime = new Date().toISOString();
@@ -19,56 +25,58 @@ const formatDate = (value: string | null) =>
 		: "Date unavailable";
 ---
 
-<Layout title="Notice Board | BEUConnect" description="Stay updated with the latest official notices, exam schedules, and circulars from Bihar Engineering University (BEU).">
-	<Header />
-
-	<section class="notice-board-shell">
-		<header class="notice-board-header">
-			<p class="eyebrow">BEU Notice Board</p>
-			<h1>Static Notice Board</h1>
-			<p class="subtitle">
-				Main board snapshot is static. Important slider updates fast on client-side with short cache.
+<Layout
+	title="Notice board"
+	description="Official notices, exam schedules and circulars from Bihar Engineering University."
+>
+	<header class="page-head">
+		<div>
+			<h1>Notice board</h1>
+			<p class="meta">
+				Snapshot {new Date(buildTime).toLocaleDateString("en-IN", {
+					day: "numeric",
+					month: "short",
+					year: "numeric",
+				})}
 			</p>
-			<p class="stamp">Static snapshot: {new Date(buildTime).toLocaleString("en-IN")}</p>
-		</header>
-
-		<div class="slider-shell" aria-label="Important notices">
-			<div id="importantSliderTrack" class="slider-track">
-				<p class="slider-loading">Loading important notices...</p>
-			</div>
 		</div>
+	</header>
 
-		<div class="static-card glass-card">
-			<div class="row-head">
-				<h2>All Non-Important Notices</h2>
-				<p>{boardNotices.length} notices</p>
-			</div>
-			<div class="table-wrap">
-				<table>
-					<thead>
-						<tr>
-							<th>Date</th>
-							<th>Notice</th>
-							<th>Link</th>
-						</tr>
-					</thead>
-					<tbody>
-						{
-							boardNotices.map((notice) => (
-								<tr>
-									<td>{formatDate(notice.date)}</td>
-									<td>{notice.title}</td>
-									<td>
-										<a href={notice.link} target="_blank" rel="noopener">
-											Open
-										</a>
-									</td>
-								</tr>
-							))
-						}
-					</tbody>
-				</table>
-			</div>
+	<section aria-labelledby="important-heading" class="block">
+		<h2 id="important-heading">Important</h2>
+		<div id="importantNoticeList" class="notice-list" aria-live="polite">
+			<p class="empty">Loading important notices…</p>
+		</div>
+	</section>
+
+	<section aria-labelledby="all-heading" class="block">
+		<h2 id="all-heading">All notices</h2>
+		<p class="count num" id="all-count">{boardNotices.length} notices</p>
+		<div class="table-scroll">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Date</th>
+						<th scope="col">Notice</th>
+						<th scope="col"><span class="sr-only">Link</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						boardNotices.map((notice) => (
+							<tr>
+								<td class="num">{formatDate(notice.date)}</td>
+								<td>{notice.title}</td>
+								<td class="cell-link">
+									<a href={notice.link} target="_blank" rel="noopener">
+										Open
+									</a>
+								</td>
+							</tr>
+						))
+					}
+				</tbody>
+			</table>
 		</div>
 	</section>
 
@@ -76,7 +84,7 @@ const formatDate = (value: string | null) =>
 		const CACHE_KEY = "beu_important_notice_slider_v1";
 		const CACHE_TTL_MS = 3 * 60 * 1000;
 		const REFRESH_MS = 60 * 1000;
-		const track = document.getElementById("importantSliderTrack");
+		const list = document.getElementById("importantNoticeList");
 
 		function normalizeLink(link) {
 			if (!link) return "https://beu-bih.ac.in";
@@ -88,22 +96,21 @@ const formatDate = (value: string | null) =>
 		}
 
 		function render(items) {
-			if (!track) return;
+			if (!list) return;
 			if (!items.length) {
-				track.innerHTML = '<p class="slider-loading">No important notices right now.</p>';
+				list.innerHTML = '<p class="empty">No important notices right now.</p>';
 				return;
 			}
 
-			const html = [...items, ...items]
+			list.innerHTML = items
 				.map(
 					(item) => `
-					<a class="slider-item" href="${normalizeLink(item.link)}" target="_blank" rel="noopener">
-						<span class="slider-badge">Important</span>
+					<a class="notice-row" href="${normalizeLink(item.link)}" target="_blank" rel="noopener">
 						<span>${String(item.board || item.title || "").trim()}</span>
+						<span class="row-link">Open</span>
 					</a>`,
 				)
 				.join("");
-			track.innerHTML = html;
 		}
 
 		function readCache() {
@@ -154,133 +161,104 @@ const formatDate = (value: string | null) =>
 	</script>
 
 	<style>
-		.notice-board-shell {
-			max-width: 1100px;
-			margin: 0 auto;
+		.block {
 			display: grid;
-			gap: 1rem;
+			gap: var(--s3);
+			margin-top: var(--s6);
 		}
 
-		.notice-board-header {
-			display: grid;
-			gap: 0.25rem;
-		}
-
-		.eyebrow {
+		.block h2 {
 			margin: 0;
+			font-family: var(--font-sans);
+			font-size: 0.75rem;
+			font-weight: 650;
+			letter-spacing: 0.1em;
 			text-transform: uppercase;
-			letter-spacing: 0.12em;
-			font-size: 0.74rem;
-			font-weight: 700;
-			color: #93c5fd;
+			color: var(--faint);
 		}
 
-		.notice-board-header h1 {
+		.count {
 			margin: 0;
-		}
-
-		.subtitle,
-		.stamp {
-			margin: 0;
-		}
-
-		.stamp {
+			color: var(--faint);
 			font-size: 0.8rem;
-			color: #94a3b8;
 		}
 
-		.slider-shell {
-			overflow: hidden;
-			border-radius: 14px;
-			border: 1px solid var(--border-subtle);
-			background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(3, 7, 18, 0.92));
-			padding: 0.45rem 0;
-		}
-
-		.slider-track {
-			display: flex;
-			gap: 0.6rem;
-			min-width: max-content;
-			animation: marquee 34s linear infinite;
-			padding-inline: 0.6rem;
-		}
-
-		.slider-shell:hover .slider-track {
-			animation-play-state: paused;
-		}
-
-		.slider-item {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.45rem;
-			padding: 0.4rem 0.7rem;
-			border-radius: 999px;
-			background: rgba(30, 41, 59, 0.85);
-			border: 1px solid rgba(148, 163, 184, 0.25);
-			white-space: nowrap;
-			color: #e2e8f0;
-			font-size: 0.86rem;
-		}
-
-		.slider-item:hover {
-			background: rgba(14, 165, 233, 0.2);
-			border-color: rgba(14, 165, 233, 0.45);
-			color: #f0f9ff;
-		}
-
-		.slider-badge {
-			font-size: 0.68rem;
-			padding: 0.16rem 0.42rem;
-			border-radius: 999px;
-			background: rgba(251, 191, 36, 0.24);
-			border: 1px solid rgba(251, 191, 36, 0.45);
-			color: #fef3c7;
-			font-weight: 700;
-		}
-
-		.slider-loading {
-			margin: 0;
-			padding: 0.4rem 0.7rem;
-			font-size: 0.85rem;
-			color: #cbd5e1;
-		}
-
-		.static-card {
-			padding: 0.95rem;
+		.notice-list {
 			display: grid;
-			gap: 0.7rem;
+			border-top: 1px solid var(--line-strong);
 		}
 
-		.row-head {
+
+		:global(.notice-row) {
 			display: flex;
+			align-items: baseline;
 			justify-content: space-between;
-			align-items: center;
-			gap: 0.75rem;
+			gap: var(--s4);
+			padding: var(--s3) 0;
+			border-bottom: 1px solid var(--line);
+			color: var(--paper);
+			text-decoration: none;
 		}
 
-		.row-head h2,
-		.row-head p {
+
+		:global(.notice-row:hover span:first-child) {
+			text-decoration: underline;
+			text-underline-offset: 0.18em;
+		}
+
+
+		:global(.row-link) {
+			flex: 0 0 auto;
+			color: var(--faint);
+			font-size: 0.8rem;
+		}
+
+
+		:global(.empty) {
 			margin: 0;
+			padding: var(--s4) 0;
+			border-bottom: 1px solid var(--line);
+			color: var(--faint);
 		}
 
-		.table-wrap {
-			overflow: auto;
+		.table-scroll {
+			overflow-x: auto;
+			border-top: 1px solid var(--line-strong);
 		}
 
 		table {
+			margin: 0;
 			width: 100%;
 			font-size: 0.9rem;
 		}
 
-		@keyframes marquee {
-			0% {
-				transform: translateX(0);
-			}
-			100% {
-				transform: translateX(-50%);
-			}
+		th {
+			padding: var(--s2) var(--s3) var(--s2) 0;
+			background: none;
+			border-bottom: 1px solid var(--line);
+			color: var(--faint);
+			font-size: 0.7rem;
+			font-weight: 650;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+		}
+
+		td {
+			padding: var(--s3) var(--s3) var(--s3) 0;
+			border-bottom: 1px solid var(--line);
+			vertical-align: baseline;
+		}
+
+		td.num {
+			white-space: nowrap;
+			color: var(--muted);
+			font-size: 0.8rem;
+			font-variant-numeric: tabular-nums;
+		}
+
+		.cell-link {
+			text-align: right;
+			white-space: nowrap;
 		}
 	</style>
-
-	<Footer />
 </Layout>

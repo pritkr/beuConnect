@@ -13,12 +13,15 @@ import { CHUNK_cse_4, CHUNK_cse_4_COUNT } from "./cse-4";
 import { CHUNK_ece_1, CHUNK_ece_1_COUNT } from "./ece-1";
 import { CHUNK_ece_2, CHUNK_ece_2_COUNT } from "./ece-2";
 import { CHUNK_ee_1, CHUNK_ee_1_COUNT } from "./ee-1";
+import { CHUNK_ee_2, CHUNK_ee_2_COUNT } from "./ee-2";
 import { CHUNK_mech_1, CHUNK_mech_1_COUNT } from "./mech-1";
 import { CHUNK_mech_2, CHUNK_mech_2_COUNT } from "./mech-2";
+import { CHUNK_mech_3, CHUNK_mech_3_COUNT } from "./mech-3";
 import { CHUNK_civil_1, CHUNK_civil_1_COUNT } from "./civil-1";
 import { CHUNK_civil_2, CHUNK_civil_2_COUNT } from "./civil-2";
 import { CHUNK_civil_3, CHUNK_civil_3_COUNT } from "./civil-3";
 import { CHUNK_eee_1, CHUNK_eee_1_COUNT } from "./eee-1";
+import { CHUNK_eee_2, CHUNK_eee_2_COUNT } from "./eee-2";
 import { CHUNK_gate_1, CHUNK_gate_1_COUNT } from "./gate-1";
 import { CHUNK_gate_2, CHUNK_gate_2_COUNT } from "./gate-2";
 import { CHUNK_gate_3, CHUNK_gate_3_COUNT } from "./gate-3";
@@ -34,12 +37,15 @@ export const CHUNKS: string[] = [
   CHUNK_ece_1,
   CHUNK_ece_2,
   CHUNK_ee_1,
+  CHUNK_ee_2,
   CHUNK_mech_1,
   CHUNK_mech_2,
+  CHUNK_mech_3,
   CHUNK_civil_1,
   CHUNK_civil_2,
   CHUNK_civil_3,
   CHUNK_eee_1,
+  CHUNK_eee_2,
   CHUNK_gate_1,
   CHUNK_gate_2,
   CHUNK_gate_3,
@@ -57,12 +63,15 @@ export const COUNTS: number[] = [
   CHUNK_ece_1_COUNT,
   CHUNK_ece_2_COUNT,
   CHUNK_ee_1_COUNT,
+  CHUNK_ee_2_COUNT,
   CHUNK_mech_1_COUNT,
   CHUNK_mech_2_COUNT,
+  CHUNK_mech_3_COUNT,
   CHUNK_civil_1_COUNT,
   CHUNK_civil_2_COUNT,
   CHUNK_civil_3_COUNT,
   CHUNK_eee_1_COUNT,
+  CHUNK_eee_2_COUNT,
   CHUNK_gate_1_COUNT,
   CHUNK_gate_2_COUNT,
   CHUNK_gate_3_COUNT,

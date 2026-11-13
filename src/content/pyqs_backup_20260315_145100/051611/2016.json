@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2016",
+    "subject": "Formal Languages and Automata Theory",
+    "subject_slug": "formal-languages-and-automata-theory",
+    "subject_code": "051611",
+    "year": 2016,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer for any seven of the following :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The output of the Moore Machine depends\n(i) only on present state\n(ii) only on current input symbol\n(iii) both on present state and current input symbol\n(iv) None of the above",
+              "id": "1a",
+              "marks": null
+            },
+            {
+              "text": "The logic of pumping lemma is a good example of\n(i) the pigeon-hole principle\n(ii) the divide-and-conquer technique\n(iii) recursion\n(iv) iteration",
+              "id": "1b",
+              "marks": null
+            },
+            {
+              "text": "Regular languages are closed under\n(i) union\n(ii) intersection\n(iii) complementation\n(iv) All of the above",
+              "id": "1c",
+              "marks": null
+            },
+            {
+              "text": "The language $L = \\{a^n b^n a^n, \\text{where } n = 1, 2, 3, \\dots\\}$ is a\n(i) regular language\n(ii) context-free language\n(iii) non context-free language\n(iv) None of the above",
+              "id": "1d",
+              "marks": null
+            },
+            {
+              "text": "A language $L$ is denoted by a regular expression $L = (ab | ba) abb$. Which of the following is not a legal string within $L$?\n(i) $ababb$\n(ii) $abbaabb$\n(iii) $baabb$\n(iv) None of the above",
+              "id": "1e",
+              "marks": null
+            },
+            {
+              "text": "Context-free languages are not closed under\n(i) union\n(ii) intersection\n(iii) concatenation",
+              "id": "1f",
+              "marks": null
+            },
+            {
+              "text": "Context-free languages are\n(i) a proper superset of regular languages\n(ii) recognizable by PDA\n(iii) also called type 2 languages\n(iv) All of the above",
+              "id": "1g",
+              "marks": null
+            },
+            {
+              "text": "Choose the incorrect statements :\n(i) Every subset of a countable set is countable\n(ii) The class of DPDA is not countable\n(iii) The class of TMs is countable\n(iv) The class of LBA is countable",
+              "id": "1h",
+              "marks": null
+            },
+            {
+              "text": "Which of the following statements is true?\n(i) The language $\\{a^n \\mid n \\text{ is prime}\\}$ is regular language.\n(ii) The union of 2 recursive languages is recursive.\n(iii) Recursive enumerable languages are closed under complementation.\n(iv) Recursive languages are not closed under complementation.",
+              "id": "1i",
+              "marks": null
+            },
+            {
+              "text": "In case of TM, in which of the following cases a string will be accepted?\n(i) Entire string has been consumed and TM halts in the final state\n(ii) Entire string has been consumed and TM halts is the non-final state\n(iii) Entire string has not been consumed and TM halts is in any state",
+              "id": "1j",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Obtain the regular expression for the following sets :",
+              "subparts": [
+                {
+                  "label": "i",
+                  "text": "Set of strings over $\\Sigma = \\{a, b\\}$ with exactly two $a$."
+                },
+                {
+                  "label": "ii",
+                  "text": "Set of strings over $\\Sigma = \\{a, b, c\\}$ where all runs of $a$'s have lengths that are multiples of three."
+                },
+                {
+                  "label": "iii",
+                  "text": "Set of strings over $\\Sigma = \\{a, b, c\\}$ such that every string contains a substring $ccc$."
+                },
+                {
+                  "label": "iv",
+                  "text": "$L = \\{ a^x \\mid x \\text{ is divisible by 3 or 5} \\}$."
+                }
+              ],
+              "marks": 10,
+              "id": "2a"
+            },
+            {
+              "text": "Show that $(ab)^* \\neq a^* b^*$.",
+              "marks": 4,
+              "id": "2b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Construct NFA equivalent to the following regular expression : $r = (ab | ba)^* aa(ab | ba)^*$.",
+              "marks": 4,
+              "id": "3a"
+            },
+            {
+              "text": "Construct an NFA with $\\epsilon$ moves for the regular expression $r = a(a+b)^*$.",
+              "marks": 5,
+              "id": "3b"
+            },
+            {
+              "text": "Construct an NFA for the set of all strings over $\\Sigma = \\{a, b\\}$ with exactly two $a$.",
+              "marks": 5,
+              "id": "3c"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Construct a DFA for the regular expression $r = 0^* 1^* 2^*$.",
+              "marks": 7,
+              "id": "4a"
+            },
+            {
+              "text": "Find out the regular expression for the following transition diagram : [Diagram required]",
+              "marks": 7,
+              "id": "4b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Prove the following two properties : (i) Regular sets are closed over the concatenation operation (ii) Regular sets are closed over the complement operation.",
+              "marks": 6,
+              "id": "5a"
+            },
+            {
+              "text": "Show with the help of pumping lemma that following language is not regular : $L = \\{ ww \\mid w \\in \\{0, 1\\}^* \\}$.",
+              "marks": 4,
+              "id": "5b"
+            },
+            {
+              "text": "Represent the language that contains strings over $\\Sigma = \\{0, 1\\}$ and has even number of 0's.",
+              "marks": 4,
+              "id": "5c"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Give the CFG for each of the languages defined by the following regular expressions :",
+              "subparts": [
+                {
+                  "label": "i",
+                  "text": "$a^* b$"
+                },
+                {
+                  "label": "ii",
+                  "text": "$(ab)^*$"
+                },
+                {
+                  "label": "iii",
+                  "text": "$(baa + abb)^*$"
+                }
+              ],
+              "marks": 9,
+              "id": "6a"
+            },
+            {
+              "text": "Construct a CFG for the set of non-negative odd integers.",
+              "marks": 5,
+              "id": "6b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "For the grammar $G$, which is defined as\n$S \\rightarrow aB \\mid bA$\n$A \\rightarrow a \\mid aS \\mid bAA$\n$B \\rightarrow b \\mid bS \\mid aBB$\nwhere $S$ is the starting symbol, show the leftmost derivation, rightmost derivation and parse tree for the string 'abbbaa'.",
+              "marks": 9,
+              "id": "7a"
+            },
+            {
+              "text": "Determine a CFG without unit production equivalent to the CFG given below :\n$S \\rightarrow a \\mid Xb \\mid aYa \\mid b \\mid aa$\n$X \\rightarrow Y$\n$Y \\rightarrow b \\mid X$",
+              "marks": 5,
+              "id": "7b"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Find the CNF (Chomsky Normal Form) for the following CFG :\n$S \\rightarrow ABA$\n$A \\rightarrow aaA \\mid \\epsilon$\n$B \\rightarrow bB \\mid \\epsilon$",
+              "marks": 5,
+              "id": "8a"
+            },
+            {
+              "text": "Eliminate null productions from the following CFG :\n$S \\rightarrow Xa$\n$X \\rightarrow aX \\mid bX \\mid \\epsilon$",
+              "marks": 4,
+              "id": "8b"
+            },
+            {
+              "text": "Convert the following grammar to GNF :\n$A_1 \\rightarrow A_2 A_3$\n$A_2 \\rightarrow A_3 A_1 \\mid b$\n$A_3 \\rightarrow A_1 A_2 \\mid a$",
+              "marks": 5,
+              "id": "8c"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Design a PDA that accepts the language $L = \\{ wcw^R \\mid w \\in \\{0, 1\\}^* \\}$.",
+              "marks": 4,
+              "id": "9a"
+            },
+            {
+              "text": "Design a PDA that accepts the language $L = \\{ a^n b^m a^n \\mid m, n > 0 \\}$.",
+              "marks": 4,
+              "id": "9b"
+            },
+            {
+              "text": "Design a TM that recognizes strings containing equal number of 0's and 1's.",
+              "marks": 6,
+              "id": "9c"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

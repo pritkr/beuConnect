@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2017",
+    "subject": "Fluid Mechanics",
+    "subject_slug": "fluid-mechanics",
+    "subject_code": "011307",
+    "year": 2017,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The resultant hydrostatic force acts through a point is known as</p>",
+          "options": [
+            "centre of gravity",
+            "centre of buoyancy",
+            "centre of pressure",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>For a floating body, the buoyant force passes through the</p>",
+          "options": [
+            "centre of gravity of the body",
+            "centre of gravity of the submerged part of the body",
+            "metacentre of the body",
+            "centroid of the liquid displaced by the body"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The streamline is a line</p>",
+          "options": [
+            "which is along the path of particle",
+            "which is always parallel to the main direction of flow",
+            "across which there is no flow",
+            "on which tangent drawn at any point gives the direction of the velocity"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>An orifice is known as large orifice when the head of liquid from the centre of the orifice is\n                    </p>",
+          "options": [
+            "more than the 10 times the depth of the orifice",
+            "less than 10 times depth of the orifice",
+            "less than 5 times depth of the orifice",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Bernoulli's theorem deals with the law of conservation of</p>",
+          "options": [
+            "mass",
+            "momentum",
+            "energy",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Irrotational flow means</p>",
+          "options": [
+            "the fluid does not rotate while moving",
+            "the fluid moves in straight line",
+            "the net rotation of fluid particles about their mass centre is zero",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The coefficient of friction of laminar flow through a circular pipe is given by</p>",
+          "options": [
+            "\\( f=\\frac{0\\cdot0791}{(R_e)^{1/4}} \\)",
+            "\\( f=\\frac{16}{R_e} \\)",
+            "\\( f=\\frac{64}{R_e} \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Models are known undistorted model, if</p>",
+          "options": [
+            "the prototype and model are having different scale ratios",
+            "the prototype and model are having same scale ratios",
+            "model and prototype are kinematically similar",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The geometric similarity between model and prototype means</p>",
+          "options": [
+            "the similarity discharge",
+            "the similarity of linear dimensions",
+            "the similarity of motion",
+            "the similarity of forces"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Poise is the unit of</p>",
+          "options": [
+            "mass density",
+            "kinematic viscosity",
+            "viscosity",
+            "velocity gradient"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 9,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define the terms 'buoyancy' and 'centre of buoyancy'. Derive an expression for the metacentric\n                        height of a floating body.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Find the volume of the water displaced and position of centre of buoyancy for a wooden block of\n                        width 2.5 m and of depth 1.5 m when it floats horizontally in water. The density of wooden block\n                        is \\( 650~kg/m^3 \\) and its length is 6.0 m.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>The velocity components for a steady flow are given as \\( u=0 \\), \\( v=-y^3-4z \\), \\(\n                        w=3y^2z \\). Determine (i) whether the flow field is one-, two- or three-dimensional, (ii)\n                        whether the flow is compressible and (iii) the stream function for the flow.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Show that the equation of continuity reduces to Laplace's equation when the liquid is\n                        incompressible and irrotational.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A plate, 0.025 mm distance from a fixed plate, moves at \\( 60~cm/s \\) and requires a force of 2\n                        newton per unit area, i.e., \\( 2~N/m^2 \\) to maintain this speed. Determine the fluid\n                        viscosity between the plates.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A pipe branches into two pipes as shown in Fig. 1 below: The pipe has diameter of 55 cm at A, 25\n                        cm at B, 28 cm at C and 17 cm at D. If the velocity at A and C be \\( 2~m/sec \\) and \\(\n                        4~m/sec \\) respectively, then find the total quantity of liquid at A and velocities at B and D.\n                    </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/118.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>State Bernoulli's theorem for steady flow of an incompressible fluid. Derive an expression for\n                        Bernoulli's equation from first principle and state the assumption made for such a derivation.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Water is flowing through a pipe of 5 cm diameter under a pressure of \\( 29\\cdot43~N/cm^2 \\)\n                        (gauge) and with mean velocity of \\( 2\\cdot0~m/s \\). Find the total head or total energy per\n                        unit weight of the water at cross section, which is 5 m above the datum line.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Discuss the relative merits and demerits of venturimeter with respect to orifice-meter.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>What is a pitot tube? How will you determine the velocity at any point with the help of pitot\n                        tube?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Discuss the Hardy cross method for pipe network.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Calculate the discharge in each pipe of the network shown in the Fig. 2 given below. The pipe\n                        network consists of 5 pipes. The head loss \\( h_f \\) in pipe is given by \\( h_f=rQ^2 \\). The\n                        values of r for various pipes and also the inflow or outflows at nodes are shown in the Fig. 2\n                        below.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/117.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Define laminar flow. Discuss generalized plane Couette flow between parallel plates. Determine\n                        the volumetric flow rate, shear stress and coefficient of friction.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Oil flows between two parallel plates, one of which is at rest and the other moves with a\n                        velocity U. If the pressure is decreasing in the direction of the flow at a rate of \\(\n                        0\\cdot10~lbf/ft^3 \\), the dynamic viscosity is \\( 10^{-3}lbf-sec/ft^2 \\), the spacing of the\n                        plates is 2 inches and volumetric flow Q per unit width is \\( 0.15~ft^2/sec \\), what is the\n                        value of U?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Discuss types of similarity and explain each of them.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Using Buckingham's \\( \\pi \\) theorem, show that the frictional torque T of a disk of diameter\n                        D\n                        rotating at a speed N in a fluid of viscosity \\( \\mu \\), density \\( \\rho \\) in a turbulent\n                        flow is given by \\( T=D^5N^2\\rho\\phi\\left(\\frac{\\mu}{D^2N\\rho}\\right) \\)</p>"
+        }
+      ]
+    }
+  ]
+}

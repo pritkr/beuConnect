@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2020",
+    "subject": "Analog Electronics",
+    "subject_slug": "analog-electronics",
+    "subject_code": "041404",
+    "year": 2020,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Explain the characteristics of ideal voltage amplifier.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Which FET amplifier offers a high-input impedance and a low-output impedance?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "c",
+              "text": "Explain about diffusion capacitance in BJT amplifier.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "d",
+              "text": "In common-base BJT amplifier, what is the phase difference between AC collector voltage to emitter voltage?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "e",
+              "text": "Explain how $h_{fe}$ is frequency dependent in high frequency response of a BJT amplifier.",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "f",
+              "text": "What is the gain bandwidth product?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "g",
+              "text": "Why does current gain of a bipolar transistor drop at high frequencies?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "h",
+              "text": "On which parameters the bandwidth of an RF-tuned amplifier depends?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "i",
+              "text": "Why is negative feedback employed in high gain amplifiers?",
+              "marks": 2,
+              "id": "1_sub"
+            },
+            {
+              "letter": "j",
+              "text": "Which oscillator is used for audio-frequency applications?",
+              "marks": 2,
+              "id": "1_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Draw the approximate small-signal equivalent circuit at low frequency for common-base amplifier with load resistance $R_L$. Compute the current gain in terms of $h$ parameters.",
+              "marks": 8,
+              "id": "2_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Explain the frequency distortion in amplifier and list the various causes for distortion.",
+              "marks": 6,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Draw and explain the working of low-frequency small-signal equivalent circuit of common-collector BJT.",
+              "marks": 6,
+              "id": "3_sub"
+            },
+            {
+              "letter": "b",
+              "text": "For the given hybrid $\\pi$ model of a transistor shown in figure below, compute the (i) parameters of low-frequency hybrid model, (ii) quiescent collector current at the room temperature, (iii) frequency $f_T$ at which the CE short-circuit current gain is unity.",
+              "marks": 8,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Draw the small-signal equivalent circuit at high frequency for common-drain FET amplifier with load resistance $R_L$. Compute the expression for current gain.",
+              "marks": 8,
+              "id": "4_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Draw and explain the working of bootstrapped Darlington circuit.",
+              "marks": 6,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "What must be the relationship between $t_r$ and high 3-dB frequency $f_H$ in order to amplify the pulse without excessive distortion?",
+              "marks": 5,
+              "id": "5_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Sketch the high-frequency step response of a low-pass single-pole amplifier and explain the intermediate steps required to achieve the output.",
+              "marks": 9,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Calculate the overall lower 3-dB and upper 3-dB frequencies for five non-interacting stages amplifier having an individual stage lower 3-dB $f_1 = 50\\text{ Hz}$ and upper 3-dB $f_2 = 5\\text{ MHz}$.",
+              "marks": 8,
+              "id": "6_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Define tilt and how the tilt is related to the low 3-dB frequency $f_L$.",
+              "marks": 6,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Draw a small-signal equivalent circuit model for common-source FET amplifier and derive an expression for a 3-dB bandwidth of its frequency response.",
+              "marks": 9,
+              "id": "7_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Compute overall noise figure of 8 cascaded amplifiers having equal individual power gain = $50\\text{ dB}$ and noise factor = $4\\text{ dB}$.",
+              "marks": 5,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Explain the working of class AB power amplifier.",
+              "marks": 7,
+              "id": "8_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Derive an expression for the oscillation frequency of a Colpitts oscillator and compute its value for given $L = 12\\text{ mH}$, $C_1 = 30\\text{ nF}$ and $C_2 = 300\\text{ nF}$.",
+              "marks": 7,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Compute the bandwidth for single tuned BJT amplifier uses one parallel-tuned circuit as load.",
+              "marks": 14,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

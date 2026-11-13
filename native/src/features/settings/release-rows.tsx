@@ -1,20 +1,24 @@
 /**
  * The two rows every app without a store needs: hand the app to a classmate,
- * and take the next build.
+ * and take the next build — plus the Play build's version of the same idea,
+ * which is one share row and no update row at all.
  *
  * Sharing is a link, not a file. An APK in a WhatsApp chat is a dead copy —
  * nobody can update it, and some WhatsApp builds refuse `.apk` documents
- * outright. The link points at `releases/latest/download/BEUConnect.apk`, so
- * the person who opens it next term still gets the current build.
+ * outright. On GitHub the link points at `releases/latest/download/BEUConnect.apk`,
+ * so the person who opens it next term still gets the current build; on Play it
+ * points at the listing, because Play forbids the other one.
  *
  * Updating is honest about what it knows: `Up to date`, `vX.Y.Z`, or
- * `Not checked` — never a version this phone has not actually seen.
+ * `Not checked` — never a version this phone has not actually seen. None of it
+ * exists in the Play build: Play is the only thing allowed to update a Play app.
  */
 
 import { Clipboard, Text, View, announce, signal } from "nsh";
 import { Badge, Btn, Label, Panel, Row } from "../../ui";
 import { openExternal } from "../../lib/link";
 import { APP_VERSION } from "../../lib/app-info";
+import { isPlay } from "../../lib/channel";
 import {
   availableVersion,
   checkForUpdates,
@@ -51,7 +55,7 @@ export function ShareAppRow(props: { last?: boolean }) {
       {() => (
         <SettingsRow
           title="Share BEUConnect"
-          hint="Sends the download link on WhatsApp"
+          hint={isPlay() ? "Sends the Play link on WhatsApp" : "Sends the download link on WhatsApp"}
           value={shareNote() !== "" ? shareNote() : "Share"}
           onPress={shareApp}
           last={props.last}
@@ -80,6 +84,7 @@ export function updateState(): string {
 }
 
 export function UpdateRow(props: { last?: boolean }) {
+  if (isPlay()) return null;
   return (
     <View>
       {() => {
@@ -103,6 +108,7 @@ export function UpdateRow(props: { last?: boolean }) {
  * carries, and one button that downloads it.
  */
 export function UpdatePanel() {
+  if (isPlay()) return null;
   return (
     <View>
       {() => {
@@ -125,7 +131,7 @@ export function UpdatePanel() {
             </View>
             {release.notes !== "" ? (
               <View class="gap-1 rounded-2xl bg-card/60 p-3">
-                <Text class="text-[12px] leading-5 text-foreground" numberOfLines={6}>
+                <Text class="text-[12px] leading-5 text-foreground" style={{ numberOfLines: 6 }}>
                   {release.notes}
                 </Text>
               </View>
@@ -142,6 +148,7 @@ export function UpdatePanel() {
 
 /** A badge for a header, so "there is a new build" is visible without opening Settings. */
 export function UpdateBadge() {
+  if (isPlay()) return null;
   return (
     <View>
       {() => {

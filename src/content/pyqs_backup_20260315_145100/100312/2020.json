@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2020",
+    "subject": "MATHEMATICS\u2014III ( PDE, Probability and Statistics )",
+    "subject_slug": "mathematics\u2014iii-(-pde-probability-and-statistics-)",
+    "subject_code": "100312",
+    "year": 2020,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "If $P_n$ is the Legendre polynomial, then the value of $\\int_{-1}^{1} x^m P_n dx, (m < n)$ is",
+              "options": [
+                "$\\frac{2}{(2n+1)}$",
+                "0",
+                "1",
+                "$\\frac{2}{(2m+1)}$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "If $J_n$ is the Bessel's function of first kind, then $\\left[J_{-\\frac{1}{2}}(x)\\right]^2 + \\left[J_{\\frac{1}{2}}(x)\\right]^2$ is equal to",
+              "options": [
+                "$\\sqrt{\\frac{2}{\\pi x}} \\left( \\frac{\\cos x}{x} - \\sin x \\right)$",
+                "$\\sqrt{\\frac{2}{\\pi x}} \\left( \\frac{\\sin x}{x} - \\cos x \\right)$",
+                "$\\frac{2}{\\pi x}$",
+                "$\\frac{1}{\\pi x}$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The particular integral of $(D^2 - a^2 D'^2)Z = x^2$, is",
+              "options": [
+                "$\\frac{1}{12} x^4$",
+                "$\\frac{1}{3} x^3 + \\frac{1}{2} yx^2$",
+                "$\\frac{1}{4} x^4$",
+                "$x^4 + \\frac{1}{2} yx^2$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The function $3x^2 + 5x - 6$ in terms of Legendre polynomial is equal to",
+              "options": [
+                "$P_2 + 5P_1 - 5P_0$",
+                "$2P_2 + P_1 - 5P_0$",
+                "$2P_2 + P_1 - P_0$",
+                "$2P_2 + 5P_1 - 5P_0$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Let the joint probability density function of the continuous random variables $X$ and $Y$ be $f(x, y) = \\begin{cases} k(x^2 + y^2); & 0 < x < 1, 0 < y < 1 \\\\ 0; & \\text{elsewhere} \\end{cases}$. Then the value of $k$ is",
+              "options": [
+                "1",
+                "3/2",
+                "2",
+                "5/2"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Let $A$ and $B$ be any two events. Which one of the following is correct?",
+              "options": [
+                "$P(A \\cap \\overline{B}) = P(A) - P(A \\cap B)$",
+                "$P(\\overline{A} \\cap B) = P(A) - P(A \\cap B)$",
+                "$P(A \\cup B) = P(A) + P(B)$",
+                "$P(A \\cap B) = P(A) + P(B)$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "If $P(A \\cap B) = \\frac{1}{4}$, $P(A \\cup B) = \\frac{3}{4}$, $P(\\overline{A}) = \\frac{2}{3}$, then $P(A | B)$ is equal to",
+              "options": [
+                "1/3",
+                "1/4",
+                "1/2",
+                "3/8"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "If $\\mu$ is the mean and $\\sigma$ is the standard deviation of a set of measurements, which are normally distributed, then the percentage of measurements within the range $\\mu \\pm \\sigma$ is",
+              "options": [
+                "70",
+                "65",
+                "67.45",
+                "68.26"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "If the density function of gamma distribution is $f(x) = \\begin{cases} \\frac{x^{\\alpha-1} e^{-\\frac{x}{\\beta}}}{\\beta^\\alpha \\Gamma\\alpha}, & x > 0 \\\\ 0, & x \\le 0 \\end{cases}$. Then mean is equal to",
+              "options": [
+                "$\\alpha$",
+                "$\\beta$",
+                "$\\alpha\\beta$",
+                "$\\alpha\\beta^2$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The moment generating function of a continuous random variable $X$ be given as $M_X(t) = (1-t)^{-5}$ for $|t| < 1$. Then its mean and variance are",
+              "options": [
+                "$(5, \\frac{1}{5})$",
+                "$(\\frac{1}{5}, \\frac{1}{5})$",
+                "$(5, \\frac{1}{15})$",
+                "$(5, 5)$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Solve : $(2xy-1) \\frac{\\partial z}{\\partial x} + (z-2x^2) \\frac{\\partial z}{\\partial y} = 2(x-yz)$",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Solve : $(D^2 - DD' - 2D'^2) Z = (2x^2 + xy - y^2) \\sin xy - \\cos xy$",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Reduce the following equation into canonical form and hence solve it :\n$x^2(y-1) \\frac{\\partial^2 z}{\\partial x^2} + x(1-y^2) \\frac{\\partial^2 z}{\\partial x \\partial y} + y(y-1) \\frac{\\partial^2 z}{\\partial y^2} + xy \\frac{\\partial z}{\\partial x} - \\frac{\\partial z}{\\partial y} = 0$",
+          "id": "3",
+          "marks": null
+        },
+        {
+          "text": "State and prove orthogonal properties of Legendre polynomials.",
+          "id": "4",
+          "marks": null
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "The chance that doctor $A$ will diagnose a disease $X$ correctly is 60%. The chance that a patient will die by this treatment after correct diagnosis is 40% and the chance of death by wrong diagnosis is 70%. A patient of doctor $A$, who had disease $X$, died. What is the chance that his disease was diagnosed correctly?",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "State axiomatic definition of the probability. Also prove that for any two events $A$ and $B$, $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$.",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Let the joint probability density function of the continuous random variables $X$ and $Y$ be $f(x, y) = \\begin{cases} kxy; & 0 < x < 2, 1 < y < 3 \\\\ 0; & \\text{elsewhere} \\end{cases}$. Find the value of $k$ and probability density function of $X+Y$. Also find the mean and variance of $X$ and $Y$.",
+          "id": "6",
+          "marks": null
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Fit a second degree parabola to the following data, where $x$ is the independent variable :\n| x | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n|---|---|---|---|---|---|---|---|---|---|\n| y | 2 | 6 | 7 | 8 | 10 | 11 | 11 | 10 | 9 |",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "If $X$ and $Y$ are two uncorrelated variables and if $u = x+y$, $v = x-y$, then find the coefficient of correlation between $u$ and $v$ in terms of $\\sigma_x$ and $\\sigma_y$ the standard deviations of $x$ and $y$ respectively.",
+              "id": "7_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "The first four moments of a distribution about the value 4 of the variable are -1.5, 17, -30, 108. Find first four moments about the mean.",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "In a distribution exactly normal, 17% of the items are under 35 and 79% items are under 63. What are the mean and standard deviation of the distribution?",
+              "id": "8_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "If the probability that an individual suffers a bad reaction from injection of a given serum is 0.001, determine the probability that out of 1000 individuals (i) exactly 4 and (ii) more than 3 individuals will suffer a bad reaction.",
+              "id": "9_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "The mean lifetime of a sample of 100 fluorescent light bulbs produced by a company is computed to be 1570 hours with a standard deviation of 120 hours. If $\\mu$ is the mean lifetime of all the bulbs produced by the company, test the hypothesis $\\mu = 1600$ hours against the alternative hypothesis $\\mu < 1600$, using a level of significance of (i) 0.05 and (ii) 0.01.",
+              "id": "9_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

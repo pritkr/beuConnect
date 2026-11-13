@@ -21,6 +21,11 @@
  *
  * Ties break by the newer batch, then name A–Z, then registration number, so
  * the same query always produces the same screen.
+ *
+ * The register is 1,784 rows and every keystroke ranks it, so the row fields
+ * the matcher reads are normalised once into a `StudentIndex` (`indexStudents`)
+ * and `rankIndexed` scores against that copy. `rankStudents` is the same two
+ * calls in one — keep them equal, and say so in `qa/unit/students-search.test.ts`.
  */
 
 export interface SearchableStudent {
@@ -77,24 +82,6 @@ function codeScore(codes: readonly string[], query: string): number {
   return 0;
 }
 
-function scoreOf(row: SearchableStudent, query: string, tokens: readonly string[]): number {
-  const codes = [compactSearch(row.reg), compactSearch(row.roll ?? "")].filter(Boolean);
-  const byCode = codeScore(codes, compactSearch(query));
-  if (byCode > 0) return byCode;
-
-  const name = normaliseSearch(row.name);
-  if (name.startsWith(query)) return SCORE.namePrefix;
-
-  const words = name.split(" ").filter(Boolean);
-  if (tokens.length > 0 && tokens.every((token) => tokenHit(token, words))) return SCORE.tokens;
-
-  // A one-letter query is useful at a word start, not inside every name.
-  if (tokens.length > 0 && tokens.every((token) => token.length >= 2 && name.includes(token))) {
-    return SCORE.substring;
-  }
-  return 0;
-}
-
 function sessionYear(row: SearchableStudent): number {
   const fromSession = Number((row.session ?? "").slice(0, 4));
   if (Number.isFinite(fromSession) && fromSession > 0) return fromSession;
@@ -106,25 +93,96 @@ function compareText(left: string, right: string): number {
   return left < right ? -1 : left > right ? 1 : 0;
 }
 
+/** One row, normalised once: what the scorer compares and what ties break on. */
+export interface IndexedStudent<T extends SearchableStudent = SearchableStudent> {
+  readonly row: T;
+  /** `normaliseSearch(row.name)`. */
+  readonly name: string;
+  /** The name's words, in order, for the word-start and initials tiers. */
+  readonly words: readonly string[];
+  /** The compact registration and roll; empty strings dropped. */
+  readonly codes: readonly string[];
+  /** `sessionYear(row)`, read only by the tie-break. */
+  readonly year: number;
+}
+
+/** A pool of rows with their normalised fields; rank it as often as you like. */
+export interface StudentIndex<T extends SearchableStudent = SearchableStudent> {
+  readonly items: readonly IndexedStudent<T>[];
+}
+
+function indexStudent<T extends SearchableStudent>(row: T): IndexedStudent<T> {
+  const name = normaliseSearch(row.name);
+  return {
+    row,
+    name,
+    words: name.split(" ").filter(Boolean),
+    codes: [compactSearch(row.reg), compactSearch(row.roll ?? "")].filter(Boolean),
+    year: sessionYear(row),
+  };
+}
+
+/** Normalise every row once. The input order is kept, so an empty query browses it. */
+export function indexStudents<T extends SearchableStudent>(rows: readonly T[]): StudentIndex<T> {
+  return { items: rows.map(indexStudent) };
+}
+
+/** The same index narrowed to the rows `keep` accepts, input order kept. */
+export function filterIndex<T extends SearchableStudent>(
+  index: StudentIndex<T>,
+  keep: (row: T) => boolean,
+): StudentIndex<T> {
+  return { items: index.items.filter((item) => keep(item.row)) };
+}
+
+function scoreIndexed(
+  item: IndexedStudent,
+  query: string,
+  compact: string,
+  tokens: readonly string[],
+): number {
+  const byCode = codeScore(item.codes, compact);
+  if (byCode > 0) return byCode;
+
+  if (item.name.startsWith(query)) return SCORE.namePrefix;
+
+  if (tokens.length > 0 && tokens.every((token) => tokenHit(token, item.words))) return SCORE.tokens;
+
+  // A one-letter query is useful at a word start, not inside every name.
+  if (tokens.length > 0 && tokens.every((token) => token.length >= 2 && item.name.includes(token))) {
+    return SCORE.substring;
+  }
+  return 0;
+}
+
 /**
  * The rows that match `query`, best first. An empty or all-punctuation query
  * returns the input order, because the caller is showing a browse list.
  */
-export function rankStudents<T extends SearchableStudent>(rows: readonly T[], query: string): T[] {
+export function rankIndexed<T extends SearchableStudent>(index: StudentIndex<T>, query: string): T[] {
   const normalised = normaliseSearch(query);
-  if (!normalised) return rows.slice();
+  if (!normalised) return index.items.map((item) => item.row);
+  const compact = compactSearch(query);
   const tokens = normalised.split(" ").filter(Boolean);
-  const hits: { row: T; score: number }[] = [];
-  for (const row of rows) {
-    const score = scoreOf(row, normalised, tokens);
-    if (score > 0) hits.push({ row, score });
+  const hits: { item: IndexedStudent<T>; score: number }[] = [];
+  for (const item of index.items) {
+    const score = scoreIndexed(item, normalised, compact, tokens);
+    if (score > 0) hits.push({ item, score });
   }
   hits.sort(
     (left, right) =>
       right.score - left.score ||
-      sessionYear(right.row) - sessionYear(left.row) ||
-      compareText(left.row.name, right.row.name) ||
-      compareText(left.row.reg, right.row.reg),
+      right.item.year - left.item.year ||
+      compareText(left.item.row.name, right.item.row.name) ||
+      compareText(left.item.row.reg, right.item.row.reg),
   );
-  return hits.map((hit) => hit.row);
+  return hits.map((hit) => hit.item.row);
+}
+
+/**
+ * The rows that match `query`, best first — `indexStudents` + `rankIndexed`.
+ * A caller that ranks the same pool more than once should keep the index.
+ */
+export function rankStudents<T extends SearchableStudent>(rows: readonly T[], query: string): T[] {
+  return rankIndexed(indexStudents(rows), query);
 }

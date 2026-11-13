@@ -20,6 +20,7 @@
  */
 
 import { Text, View, computed, signal } from "nsh";
+import { EVENTS, track } from "../../lib/analytics";
 import { formatDate } from "../../lib/net";
 import { Badge, Body, Btn, Card, Chip, Col, Divider, EmptyState, Field, Label, Muted, Progress, Ring, Row, Screen, SectionHeader } from "../../ui";
 import { Icon, type IconName } from "../../ui/icons";
@@ -113,6 +114,7 @@ function addAttendanceSubject(raw?: string): void {
     subjects: [...state.subjects, { id: newId("sub"), name: name.slice(0, 60), attended: 0, total: 0, source: "manual" }],
   }));
   persistAttendance();
+  track(EVENTS.attendanceSubjectAdd, { source: raw ? "suggestion" : "typed" });
 }
 
 function patchSubject(subjectId: string, attended: number, total: number): void {
@@ -133,6 +135,7 @@ function patchSubject(subjectId: string, attended: number, total: number): void 
     ),
   }));
   persistAttendance();
+  track(EVENTS.attendanceMark, { total });
 }
 
 async function removeAttendanceSubject(subject: AttendanceSubject): Promise<void> {
@@ -393,14 +396,20 @@ export function AttendanceScreen() {
                 value={overall().status.percent}
                 size={84}
                 label={overall().total > 0 ? `${overall().status.percent}%` : "—"}
-                tone={advice().level === "safe" ? "mint" : "ember"}
+                tone={advice().level === "safe" || advice().level === "empty" ? "mint" : "ember"}
               />
             )}
             <Col class="flex-1">
               <Label>Overall</Label>
               <Text class="text-[16px] font-semibold leading-5 text-foreground">{advice().headline}</Text>
               <Muted class="text-[11px]">
-                {`${overall().attended} present of ${overall().total} held · ${plural(state().subjects.length, "paper", "papers")}`}
+                {overall().total === 0
+                  ? `No classes yet · ${plural(state().subjects.length, "paper", "papers")}`
+                  : `${overall().attended} present of ${overall().total} held · ${plural(
+                      state().subjects.length,
+                      "paper",
+                      "papers",
+                    )}`}
               </Muted>
             </Col>
           </Row>
@@ -413,12 +422,10 @@ export function AttendanceScreen() {
             </Muted>
           </View>
           <Divider />
-          <Row class="justify-between gap-2">
-            <Col class="flex-1">
-              <Label>Target</Label>
-            </Col>
+          <View class="gap-2">
+            <Label>Target</Label>
             {() => (
-              <Row class="gap-1.5">
+              <Row class="flex-wrap gap-1.5">
                 <Each of={ATTENDANCE_TARGETS as readonly number[]} key={(target: number) => String(target)}>
                   {(target) => (
                     <Chip active={state().target === target()} onPress={() => setAttendanceTarget(target())}>
@@ -428,7 +435,7 @@ export function AttendanceScreen() {
                 </Each>
               </Row>
             )}
-          </Row>
+          </View>
         </Card>
 
         <GecsSyncCard />
@@ -724,7 +731,7 @@ function MonthGrid(props: {
         <Each of={cells()} key={(cell, index) => (cell ? cell.iso : `blank-${index}`)}>
           {(cell) => (
             <View
-              class={`h-10 w-[13.2%] items-center justify-center rounded-lg border ${
+              class={`h-11 w-[13.2%] items-center justify-center rounded-lg border active:opacity-70 ${
                 cell() === null ? "border-transparent" : look(cell()!.iso).tint
               } ${cell() !== null && cell()!.iso === props.selected() ? "border-primary border-2" : ""}`}
               onPress={cell() === null || cell()!.iso > todayIso() ? undefined : () => props.onPick(cell()!.iso)}

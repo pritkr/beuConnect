@@ -17,12 +17,13 @@
  * feeds it signals and renders what comes back.
  */
 
-import { List, View, cleanup, computed, effect, signal, type Accessor, type JSX } from "nsh";
+import { LayoutAnimation, List, View, cleanup, computed, effect, signal, type Accessor, type JSX } from "nsh";
 
 import type { Nav, RouteDef } from "../../app/router";
 import { numParam, param } from "../../app/router";
 import { Badge, Body, Btn, Chip, Loading, Screen, SectionHeader } from "../../ui";
 import { readStore, writeStore } from "../../lib/net";
+import { motionOn } from "../../ui/motion";
 import { BRANCH_META, branchPack } from "../syllabus/active";
 import { dataVersion } from "../data-feed/pyqs";
 import { parseSyllabus, type BranchPack, type Subject } from "../syllabus/parse";
@@ -484,9 +485,15 @@ function PlannerContent(props: {
   const pace = (): number => planStore()?.minutesPerDay || DEFAULT_MINUTES;
 
   const toggleOpen = (key: string): void => {
+    // A unit body changing height reflows everything below it; NSH glides it.
+    if (motionOn()) LayoutAnimation.easeInEaseOut();
     open.update((value) => ({ ...value, [key]: !value[key] }));
   };
-  const toggleExpanded = (): void => expanded.update((value) => !value);
+  const toggleExpanded = (): void => {
+    // Seven days to the whole run is the largest reflow on the screen.
+    if (motionOn()) LayoutAnimation.easeInEaseOut();
+    expanded.update((value) => !value);
+  };
 
   const unitsHeading = () => (
     <SectionHeader

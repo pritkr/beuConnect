@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2022",
+    "subject": "SIGNALS AND SYSTEMS",
+    "subject_slug": "signals-and-systems",
+    "subject_code": "110406",
+    "year": 2022,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Answer any seven of the following as directed :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Determine the fundamental period of the signal\n$x[n] = 1 + e^{j \\frac{4\\pi n}{7}} - e^{j \\frac{2\\pi n}{5}}$",
+              "marks": 2
+            },
+            {
+              "id": "1b",
+              "text": "Check whether the signal\n$x(t) = 2e^{j(t + \\frac{\\pi}{4})} u(t)$\nis periodic or not. If periodic, then compute the periodicity.",
+              "marks": 2
+            },
+            {
+              "id": "1c",
+              "text": "Find the convolution of two signals $x_1(t) = e^{-t^2}$ and $x_2(t) = 3t^2$",
+              "marks": 2
+            },
+            {
+              "id": "1d",
+              "text": "Let $X(e^{j\\omega})$ be the DTFT of $x[n]$, prove that\n$X(e^{j0}) = \\sum_{n=-\\infty}^\\infty x[n]$",
+              "marks": 2
+            },
+            {
+              "id": "1e",
+              "text": "The step response of an LTI system when the impulse response $h(n)$ is unit step $u(n)$ is ______.",
+              "marks": 2
+            },
+            {
+              "id": "1f",
+              "text": "Use the convolution property of Laplace transform to determine\n$y(t) = e^{at} u(t) * e^{bt} u(t)$\nwhere symbols have their usual meanings.",
+              "marks": 2
+            },
+            {
+              "id": "1g",
+              "text": "Determine the Laplace transform of the signal $x(t) = \\cos^3(3t) u(t)$.",
+              "marks": 2
+            },
+            {
+              "id": "1h",
+              "text": "If $X(z) \\longleftrightarrow x[n]$ with ROC : $R$, then prove that\n$Z\\{x[-n]\\} = X(z^{-1})$\nwith ROC : $\\frac{1}{R}$.",
+              "marks": 2
+            },
+            {
+              "id": "1i",
+              "text": "List down the properties of region of convergence (ROC).",
+              "marks": 2
+            },
+            {
+              "id": "1j",
+              "text": "Determine the conditions on the sampling interval $T_s$ so that\n$x(t) = \\cos(\\pi t) + 3\\sin(2\\pi t) + \\sin(4\\pi t)$\nis uniquely represented by the discrete-time sequence $x[n] = x(n T_s)$.",
+              "marks": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Consider a causal LTI system that is represented by the difference equation\n$y[n] - \\frac{3}{4}y[n-1] + \\frac{1}{8}y[n-2] = 2x[n]$\nFind the frequency response $H(e^{j\\omega})$ and the impulse response $h[n]$ of the system.",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "Find the inverse DTFT of $X(e^{j\\omega}) = \\delta(\\omega), -\\pi < \\omega \\le \\pi$.",
+          "marks": 3
+        },
+        {
+          "id": "2c",
+          "text": "Find the Fourier transform of $x(n) = a^{|n|}, |a| < 1$.",
+          "marks": 4
+        },
+        {
+          "id": "3a",
+          "text": "Find the Z-transform of\n$x(n) = \\begin{cases} (0.5)^n u(n), & n > 0 \\\\ (0.25)^{-n}, & n < 0 \\end{cases}$",
+          "marks": 6
+        },
+        {
+          "id": "3b",
+          "text": "Find the inverse Z-transform of\n$X(z) = \\frac{1 - \\frac{1}{4}z^{-1}}{1 - \\frac{1}{9}z^{-1}}$ ROC : $|z| > \\frac{1}{3}$",
+          "marks": 4
+        },
+        {
+          "id": "3c",
+          "text": "Comment on the causality of the system whose transfer function is given by\n$H(z) = \\frac{3 - 4z^{-1}}{1 - 3.5z^{-1} + 1.5z^{-2}}, |z| > 3$",
+          "marks": 4
+        },
+        {
+          "id": "4a",
+          "text": "Derive the condition for BIBO stability.",
+          "marks": 2
+        },
+        {
+          "id": "4b",
+          "text": "Consider a continuous-time system with input $x(t)$ and output $y(t)$ is related by $y(t) = x(\\sin(t))$. Is the system (i) causal and (ii) linear?",
+          "marks": 5
+        },
+        {
+          "id": "4c",
+          "text": "Sketch the signal $x(t) = \\delta(\\cos t)$.",
+          "marks": 3
+        },
+        {
+          "id": "4d",
+          "text": "Find even and odd components of signal $x(t) = e^{-2t} \\cos(t)$.",
+          "marks": 4
+        },
+        {
+          "id": "5a",
+          "text": "Compute the Fourier transform of the signal (periodic rectangular pulse train) shown in Fig. 1.",
+          "marks": 6
+        },
+        {
+          "id": "5b",
+          "text": "Compute the step response of the LTI system\n$H(s) = \\frac{6(s+1)}{s(s+3)}$; $\\text{Re}\\{s\\} > 0$",
+          "marks": 5
+        },
+        {
+          "id": "5c",
+          "text": "State and prove Parseval's theorem.",
+          "marks": 3
+        },
+        {
+          "id": "6a",
+          "text": "A system is defined as $y(n) = x(n^2)$. Check whether the system is linear or non-linear, time-varying or time-invariant, causal or non-causal and memory less or memory type.",
+          "marks": 5
+        },
+        {
+          "id": "6b",
+          "text": "Compute the convolution $y[n] = x[n] * h[n]$ where $x[n] = u(n-1)$ and $h[n] = \\alpha^n u(n-1)$.",
+          "marks": 7
+        },
+        {
+          "id": "6c",
+          "text": "Compute the Nyquist sampling rate for the signal $g(t) = 10\\cos(50\\pi t)\\cos^2(150\\pi t)$.",
+          "marks": 2
+        },
+        {
+          "id": "7a",
+          "text": "Consider the causal difference equation $y[n] - 0.8y[n-1] = 2x[n]$ where the input signal is $x[n] = (\\frac{1}{2})^n u(n)$ with $y[-1] = 0$. Find the output response $y[n]$.",
+          "marks": 4
+        },
+        {
+          "id": "7b",
+          "text": "Compute the inverse Z-transform of $X(z) = \\frac{z}{(1-0.5z^{-1})}; |z| < 0.5$. Find the signal $x[n]$ using the power series expansion method.",
+          "marks": 4
+        },
+        {
+          "id": "7c",
+          "text": "Consider the stable LTI system defined by its transfer function\n$H(z) = \\frac{z^2 + z - 2}{z^2 + z + 0.5}$.\nSketch the pole-zero plot for this transfer function and give its ROC. Is the system causal? Sketch the direct form realization of this system.",
+          "marks": 6
+        },
+        {
+          "id": "8a",
+          "text": "Let $x[n]$ be an arbitrary function with even and odd parts as $x_e[n], x_o[n]$, respectively. Show that\n$\\sum_{n=-\\infty}^\\infty x^2[n] = \\sum_{n=-\\infty}^\\infty x_e^2[n] + \\sum_{n=-\\infty}^\\infty x_o^2[n]$",
+          "marks": 4
+        },
+        {
+          "id": "8b",
+          "text": "Perform the convolution operation between $x[n] = \\{0, 0, 0, 0, \\underset{\\uparrow}{2}, -3, 1, 0, 0\\}$ and $h[n] = \\{0, 0, 0, \\underset{\\uparrow}{1}, 2, 2, 0, 0, 0\\}$ using graphical method.",
+          "marks": 6
+        },
+        {
+          "id": "8c",
+          "text": "The signal $x(t)$ is shown in Fig. 2. Sketch the signals for $\\alpha = 1/2$ and $\\alpha = 2$ (assuming the task is to sketch $x(\\alpha t)$).",
+          "marks": 4
+        },
+        {
+          "id": "9",
+          "text": "Write short notes on any four of the following :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Power and energy signals"
+            },
+            {
+              "id": "9b",
+              "text": "Relationship between Laplace and Z-transform"
+            },
+            {
+              "id": "9c",
+              "text": "Initial and Final value theorems"
+            },
+            {
+              "id": "9d",
+              "text": "Properties of Fourier transform"
+            },
+            {
+              "id": "9e",
+              "text": "Zero-order hold circuit"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import { initFilters, type AppState } from "./filters.ts";
 import { VirtualTable } from "./table.ts";
 import type { WorkerRequest, WorkerResponse } from "./parser.worker.ts";
 import { openProfileView, closeProfileView } from "./profile.ts";
+import { getProfile } from "../../utils/profileManager";
 
 let worker: Worker;
 let tableRender: VirtualTable;
@@ -13,6 +14,9 @@ let tableRender: VirtualTable;
 let currentColumns: string[] = [];
 let activeIndices: number[] = [];
 let matrixCache: string[][] = []; // Lightweight mirror copy, strictly just strings. Fast in JS.
+
+/** The saved student's own registration number, so their row can say so. */
+const myReg = () => (getProfile()?.regNo || "").replace(/\s/g, "");
 
 export function initDataBrowser() {
     const loadingUI = document.getElementById("dbLoading")!;
@@ -67,9 +71,16 @@ export function initDataBrowser() {
             // Re-use logic: we only render visible columns mapped mathematically
             const visibleIdxs = currentColumns.map((col, i) => {
                 if (col.includes("_ESE") || col.includes("_IA") || col.includes("_Total")) return -1;
+                if (col.endsWith("_Grade")) return -1;
+                if (["Session", "FatherName", "MotherName", "CollegeCode", "Branch", "Semester", "ExamHeld", "SGPA"].includes(col)) return -1;
+                if (col === "SGPA_History") return -1;
                 if (col === "Type" || col === "MonthYear" || col === "ExamYear") return -1;
                 return i;
             }).filter(i => i !== -1);
+
+            // The student's own row keeps its published place; it is only marked.
+            const regIdx = currentColumns.indexOf("RegNo");
+            const mine = myReg();
 
             for (let i = startIndex; i <= endIndex; i++) {
                 const matrixRowId = activeIndices[i];
@@ -84,19 +95,18 @@ export function initDataBrowser() {
                 if (sgpaText.includes("FAIL")) cssClass = "grade-row-f";
                 else if (parseFloat(sgpaText) >= 8.5) cssClass = "grade-row-o";
                 else cssClass = "grade-row-default";
+                if (mine && (rowStrings[regIdx] || "").replace(/\s/g, "") === mine) cssClass += " row-mine";
 
                 let rowHtml = `<tr class="${cssClass}" data-idx="${matrixRowId}" style="cursor: pointer;">`;
                 for (const colArrayRawIdx of visibleIdxs) {
                     const colName = currentColumns[colArrayRawIdx];
                     const val = rowStrings[colArrayRawIdx] || "";
                     
-                    let cellStyles = "";
-                    if (colName === "RegNo" || colName === "Name") {
-                        cellStyles = "class='sticky-col'";
-                        if (colName === "Name") cellStyles += " style='left: 100px;'";
-                    }
-                    
-                    rowHtml += `<td ${cellStyles}>${val}</td>`;
+                    const cellClasses = [`col-${colName.toLowerCase()}`];
+                    if (colName === "RegNo" || colName === "Name") cellClasses.push("sticky-col");
+                    const cellStyles = `class="${cellClasses.join(" ")}"`;
+                    const inlineStyle = colName === "Name" ? " style='left: 120px;'" : "";
+                    rowHtml += `<td ${cellStyles}${inlineStyle}>${val}</td>`;
                 }
                 rowHtml += `</tr>`;
                 htmlChunks.push(rowHtml);

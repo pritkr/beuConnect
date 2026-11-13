@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Exam., 2021 (New Course)",
+    "subject": "Basic Electrical Engineering",
+    "subject_slug": "basic-electrical-engineering",
+    "subject_code": "100201",
+    "year": 2021,
+    "semester": 2,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Lamps in street lighting are all connected in</p>",
+          "options": [
+            "series",
+            "parallel",
+            "series-parallel",
+            "end-end"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The rotor slots in a 3-phase induction motor are kept inclined. This phenomenon is known as</p>",
+          "options": [
+            "skewing",
+            "crawling",
+            "cogging",
+            "hardening"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>An alternator with higher value of SCR has</p>",
+          "options": [
+            "poor voltage regulation and lower stability limit",
+            "better voltage regulation and higher stability limit",
+            "poor voltage regulation and higher stability limit",
+            "better voltage regulation and lower stability limit"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>If the flux of a DC motor approaches zero, its speed will</p>",
+          "options": [
+            "approach infinity",
+            "approach zero",
+            "remain unchanged",
+            "between zero and infinity"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The core flux of a practical transformer with a resistive load</p>",
+          "options": [
+            "is strictly constant with load changes",
+            "increases linearly with load",
+            "increases as the square root of the load",
+            "decreases with increase in load"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A transformer has a percentage resistance of 2% and percentage reactance of 4%. What are its\n                        voltage regulations at 0.8 lagging and 0.8 leading respectively?</p>",
+          "options": [
+            "4.8% and -0.6%",
+            "3.2% and -1.6%",
+            "1.6% and -3.2%",
+            "4% and -0.8%"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Higher the Q of a series circuit, narrower its</p>",
+          "options": [
+            "pass band",
+            "resonance curve",
+            "bandwidth",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>A 10 mH inductor carries a sinusoidal current of 1A r.m.s. at a frequency of 50 Hz. The average\n                        power dissipated by the inductor is</p>",
+          "options": [
+            "0 W",
+            "0.25 W",
+            "0.5 W",
+            "1 W"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following statements is incorrect?</p>",
+          "options": [
+            "Resistance is a passive element.",
+            "Inductor is a passive element.",
+            "Current source is a passive element.",
+            "Voltage source is an active element."
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following is not bilateral element?</p>",
+          "options": [
+            "Constant current source",
+            "Resistor",
+            "Inductor",
+            "Capacitor"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve all parts :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Find the current through each resistor of the following circuit using nodal analysis:</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/c1412c92-cf5f-4e8e-bfa7-1bd68418a5d5.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain the concept of superposition theorem applied to the electric circuit by taking a\n                        3-element T-network and two batteries.</p>"
+        },
+        {
+          "id": "q2_3",
+          "type": "theory",
+          "text": "<p>Find the equivalent resistance between points A and B in the following circuit:</p>\n<img alt=\"Question Diagram\" class=\"question-diagram pyq-img\" src=\"/assets/pyqs/images/a0ce9611-2272-41af-83f9-4ac0173ab1ab.png\" style=\"max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; display: block;\"/>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all parts :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>An iron cored coil draws 2A at 0.5 p.f. lag against a 50 Hz, 100 V supply. Iron core being then\n                        removed, the voltage applied being 50 V, the current rises to 5A at 0.78 lag. Find the\n                        inductance of each case.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>A resistance of \\(10\\,\\Omega\\), an inductance of 150 mH and a capacitor of\n                        \\(100\\,\\mu\\mathrm{F}\\) are connected across a 50 V, 50 Hz source. Find the branch currents\n                        and total current. Draw the phasor diagram.</p>"
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>Discuss the effect of resistance of RLC series circuit on the frequency response curve.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve all parts :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>An iron ring 8 cm mean diameter is made up of round iron diameter 1 cm and permeability of 900\n                        has an air gap of 2 mm wide. It consists of winding with 400 turns carrying a current of 3.5 A.\n                        Determine— (i) MMF; (ii) total reluctance; (iii) the flux; (iv) flux density in ring.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Give the comparison between electric circuit and magnetic circuit.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_3",
+          "type": "theory",
+          "text": "<p>Explain the experimental method of obtaining hysteresis loop of magnetic circuit.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve all parts :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>The open-circuit and short-circuit tests on a 10 kVA, 125/250 V, 50 Hz single-phase transformer\n                        gave the following results: <br/>OC test : 125 V, 0.6 A, 50 W on LV side <br/>SC test : 15 V,\n                        30\n                        A, 100 W\n                        on HV side <br/>Calculate (i) copper loss on full load, (ii) full-load efficiency at 0.8\n                        leading\n                        p.f., (iii) half-load efficiency at 0.8 leading p.f. and (iv) voltage regulation at full load,\n                        0.9 leading p.f.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Explain the various three-phase transformer connections with neat circuit and phasor diagrams.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve all parts :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Draw the speed-torque characteristics of DC shunt motors and series motors.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Explain the constructional details of alternators.</p>"
+        },
+        {
+          "id": "q6_3",
+          "type": "theory",
+          "text": "<p>The lap wound armature of a 4-pole DC shunt motor has 600 armature turns and it takes 100 Amps\n                        when running at 600 r.p.m. The flux per pole is 100 mWb. Calculate the gross mechanical torque\n                        developed and the net power output if the torque lost in friction, windage and core losses is 60\n                        N-m.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve all parts :",
+      "total_marks": 4,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>A 4-pole, 50 Hz, 3-phase induction motor running on full load develops a useful torque of 200 N-m\n                        when the rotor e.m.f. makes 120 complete cycles per minute. If the mechanical torque lost in\n                        friction and rotor core loss is 15 N-m, calculate the— (i) shaft power output; (ii) rotor copper\n                        losses; (iii) stator input; (iv) motor efficiency.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Differentiate the principle of operation of induction and synchronous motors.</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 7
+          }
+        },
+        {
+          "id": "q7_3",
+          "type": "theory",
+          "text": "<p>Draw the speed-torque characteristics of an induction motor.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q7_4",
+          "type": "theory",
+          "text": "<p>List the various types of DC generators and draw their electrical circuits.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve all parts :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Define cold ranking ampere and specific power in batteries.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Describe the various devices used to improve the system power factor.</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>Explain the various types of earthing systems.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Explain maximum power transfer theorem applied in a DC network.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Why a DC series motor cannot be started on no load? Explain your answer with the help of basic\n                        speed-torque equation and necessary diagrams.</p>"
+        }
+      ]
+    }
+  ]
+}

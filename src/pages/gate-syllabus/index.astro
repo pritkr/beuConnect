@@ -1,29 +1,66 @@
 ---
 export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
-import Header from "../../components/header.astro";
-import Footer from "../../components/footer.astro";
 import papers from "../../assets/data/gate-papers.json";
+
+const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="GATE Syllabus">
-    <Header />
-    <h1 style="view-transition-name:gatesyl">GATE Syllabus</h1>
+<Layout title="GATE syllabus" description="Paper-wise GATE syllabus.">
+    <header class="page-head">
+        <div>
+            <h1>GATE syllabus</h1>
+            <p class="meta num">{papers.length} papers</p>
+        </div>
+    </header>
 
-    <ul>
+    <ul class="paper-list">
         {
             papers.map((p) => (
                 <li>
                     <a
-                        href={`/gate-syllabus/${p.code}/`}
+                        href={`${base}gate-syllabus/${p.code}/`}
                         style={`view-transition-name:${p.code}`}
                     >
-                        {p.code} - {p.name}
+                        <span class="code num">{p.code}</span>
+                        <span class="name">{p.name}</span>
                     </a>
                 </li>
             ))
         }
     </ul>
 
-    <Footer />
+    <style>
+        .paper-list {
+            margin: var(--s5) 0 0;
+            padding: 0;
+            list-style: none;
+            border-top: 1px solid var(--line-strong);
+        }
+
+        .paper-list li {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .paper-list a {
+            display: grid;
+            grid-template-columns: 4rem minmax(0, 1fr);
+            align-items: baseline;
+            gap: var(--s3);
+            padding: var(--s3) 0;
+            color: var(--paper);
+            text-decoration: none;
+        }
+
+        .paper-list a:hover .name {
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+        }
+
+        .code {
+            color: var(--faint);
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+        }
+    </style>
 </Layout>

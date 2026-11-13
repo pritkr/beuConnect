@@ -12,7 +12,7 @@
  * is a module call, so any screen can offer it without knowing where it lives.
  */
 
-import { Clipboard, Text, View, nativeComponent, platform, signal, type YNode } from "nsh";
+import { Clipboard, Text, View, nativeComponent, platform, signal, type NativeComponentRef } from "nsh";
 
 import { webAskLink } from "../lib/ask-ai";
 import { openExternal } from "../lib/link";
@@ -43,7 +43,7 @@ const bridge: {
  */
 export function AskAiBridge() {
   if (platform.os !== "android") return null;
-  let host: YNode | null = null;
+  let host: NativeComponentRef | null = null;
 
   const settle = (outcome: Outcome): void => {
     const waiting = bridge.settle;
@@ -54,7 +54,7 @@ export function AskAiBridge() {
   return (
     <AskAiHost
       style={{ width: 0, height: 0 }}
-      ref={(element: YNode) => {
+      ref={(element: NativeComponentRef) => {
         host = element;
         bridge.send = (prompt: string) => host?.command("open", { prompt });
       }}
@@ -115,7 +115,7 @@ export function AskAi(props: { prompt: string; class?: string }) {
   return (
     <View class={props.class}>
       <View
-        class={`min-h-11 flex-row items-center gap-2 rounded-xl px-1 active:bg-muted ${
+        class={`min-h-11 flex-row items-center gap-2 rounded-xl px-1 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted ${
           working() ? "opacity-50" : ""
         }`}
         onPress={() => void ask()}

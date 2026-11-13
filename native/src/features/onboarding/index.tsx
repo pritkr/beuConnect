@@ -19,7 +19,8 @@
 
 import { Text, View, effect, signal } from "nsh";
 import type { RouteDef } from "../../app/router";
-import { Body, Btn, Card, Chip, Field, Label, Muted, Screen, Skeleton, Subtitle, Title } from "../../ui";
+import { Body, Btn, Card, Chip, Enter, Field, Label, Muted, Screen, Skeleton, Subtitle, Title } from "../../ui";
+import { branchIcon } from "../../ui/branch-icon";
 import { readStore, writeStore } from "../../lib/net";
 import { currentSemester, parseReg, branchShort, branchName, digits } from "../results/data";
 import { collegeName } from "../results/colleges";
@@ -44,6 +45,43 @@ function statusLine(phase: Phase, reg: string, who: Identity | null): string {
   if (phase === "none") return "BEU has not published this number yet. You can still use every tool.";
   if (reg.length > 0 && reg.length < 8) return "That is short — BEU numbers have 8 to 11 digits.";
   return "";
+}
+
+/** The name plays its entrance once; a re-check must not replay it. */
+let nameArrived = false;
+
+/**
+ * The name the roster resolved — mounted the moment one is known, and kept
+ * through the re-check that every keystroke past the 8th digit starts.
+ *
+ * The screen used to answer that re-check with two skeleton bars, so typing the
+ * last three digits replaced the promise with grey lines and back again. A name
+ * that is already on screen stays on screen; only its ink changes.
+ */
+function RosterMatch(props: { who: Identity; checking: boolean }) {
+  const first = !nameArrived;
+  nameArrived = true;
+  const body = (
+    <View
+      class={`gap-1 transition-opacity duration-150 ease-out motion-reduce:transition-none ${
+        props.checking ? "opacity-60" : ""
+      }`}
+    >
+      <Text class="text-[20px] font-bold tracking-tight text-foreground" style={{ numberOfLines: 2 }}>
+        {props.who.name}
+      </Text>
+      <Text class="text-[12px] leading-4 text-muted-foreground" style={{ numberOfLines: 2 }}>
+        {/* The block only exists once a name is known, so it always speaks the
+            found line; the dim is what says a check is running. */}
+        {statusLine("found", props.who.reg, props.who)}
+      </Text>
+      <View class="mt-1 flex-row items-center gap-1.5">
+        <View class="h-1.5 w-1.5 rounded-full bg-accent" />
+        <Text class="text-[11px] font-semibold text-accent-ink">Found in BEU's roster</Text>
+      </View>
+    </View>
+  );
+  return first ? <Enter>{body}</Enter> : body;
 }
 
 function Onboarding(props: { onDone: () => void }) {
@@ -145,6 +183,10 @@ function Onboarding(props: { onDone: () => void }) {
 
           {() => {
             const now = phase();
+            const found = who();
+            // A resolved name outranks the check: it is the same name the
+            // roster just gave, and it stays put while the next one is read.
+            if (found) return <RosterMatch who={found} checking={now === "checking"} />;
             if (now === "checking") {
               return (
                 <View class="gap-2">
@@ -153,25 +195,8 @@ function Onboarding(props: { onDone: () => void }) {
                 </View>
               );
             }
-            const found = who();
-            if (now === "found" && found) {
-              return (
-                <View class="gap-1">
-                  <Text class="text-[20px] font-bold tracking-tight text-foreground" numberOfLines={2}>
-                    {found.name}
-                  </Text>
-                  <Text class="text-[12px] leading-4 text-muted-foreground" numberOfLines={2}>
-                    {statusLine(now, digits(reg()), found)}
-                  </Text>
-                  <View class="mt-1 flex-row items-center gap-1.5">
-                    <View class="h-1.5 w-1.5 rounded-full bg-accent" />
-                    <Text class="text-[11px] font-semibold text-accent-ink">Found in BEU's roster</Text>
-                  </View>
-                </View>
-              );
-            }
             return statusLine(now, digits(reg()), null) === "" ? null : (
-              <Text class="text-[12px] leading-4 text-muted-foreground" numberOfLines={3}>
+              <Text class="text-[12px] leading-4 text-muted-foreground" style={{ numberOfLines: 3 }}>
                 {statusLine(now, digits(reg()), null)}
               </Text>
             );
@@ -186,7 +211,12 @@ function Onboarding(props: { onDone: () => void }) {
                 <Label>Branch</Label>
                 <View class="flex-row flex-wrap gap-2">
                   {BRANCH_META.map((item) => (
-                    <Chip active={branch() === item.code} onPress={() => branch.set(item.code)} label={item.name}>
+                    <Chip
+                      active={branch() === item.code}
+                      onPress={() => branch.set(item.code)}
+                      icon={branchIcon(item.code)}
+                      label={item.name}
+                    >
                       {item.short}
                     </Chip>
                   ))}

@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "MATHEMATICS\u2014III ( PDE, Probability and Statistics )",
+    "subject_slug": "mathematics\u2014iii-(-pde-probability-and-statistics-)",
+    "subject_code": "100312",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "If $z = f \\left( \\frac{xy}{z} \\right)$ satisfies the partial differential equation $x^\\alpha p - yq = \\beta$, where $p = \\frac{\\partial z}{\\partial x}$ and $q = \\frac{\\partial z}{\\partial y}$, then the value of $(\\alpha, \\beta)$ is",
+              "options": [
+                "(1, 0)",
+                "(0, 1)",
+                "(0, 0)",
+                "(1, 1)"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The particular integral of the PDE $xy \\frac{\\partial^2 z}{\\partial x \\partial y} = 1$ is $\\log(ax) \\log(by)$. Then the value of $(a, b)$ is",
+              "options": [
+                "(1, 1)",
+                "(2, 1)",
+                "(2, 3)",
+                "(1, 2)"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The solution of the PDE $y^2 zp + x^2 zq = y^2 x$ is $x^\\alpha - y^\\beta = f(x^2 - z^2)$. Then the value of $(\\alpha, \\beta)$ is",
+              "options": [
+                "(2, 3)",
+                "(3, 3)",
+                "(3, 1)",
+                "(1, 1)"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Let $A$ and $B$ are two possible outcomes of an experiment and suppose $P(A) = 0.3$, $P(B) = \\frac{K}{7}$ and $P(A \\cup B) = 0.6$. If $A$ and $B$ are independent events, then the value of $K$ is",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "The first three moments of a distribution about 5 are 2, 7, 15 respectively. Then the mean and variance of the distribution are",
+              "options": [
+                "(5, 15)",
+                "(7, 15)",
+                "(7, 52)",
+                "(7, 3)"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "If two dice are thrown and the probability that the sum is neither 8 nor 12 is $\\frac{5}{k}$, then the value of $k$ is",
+              "options": [
+                "3",
+                "4",
+                "6",
+                "12"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "A random variable $X$ has mean 2 and variance 3. If the upper bound for $P(|X-2| > 6)$ by using Chebyshev's inequality is $\\frac{1}{K}$, then the value of $K$ is",
+              "options": [
+                "9",
+                "12",
+                "15",
+                "18"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "If the mean of exponential distribution $f(x) = \\begin{cases} ke^{-kx}, & x > 0 \\\\ 0, & x \\le 0 \\end{cases}$ is $\\frac{1}{6}$, then the value of $k$ is",
+              "options": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Let $X$ and $Y$ have joint p.d.f. $f(x, y) = \\begin{cases} cxy; & 0 < x < 2, 0 < y < 1 \\\\ 0; & \\text{elsewhere} \\end{cases}$ and $E(xy) = \\frac{p}{q}$. Then the value of $(p, q)$ is",
+              "options": [
+                "(4, 9)",
+                "(4, 4)",
+                "(8, 9)",
+                "(9, 4)"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "text": "Two random variables have the least square regression lines with equations $2x+y=5$ and $3x+2y=8$. Then the correlation coefficient between two variables $x$ and $y$ is",
+              "options": [
+                "$\\frac{\\sqrt{3}}{2}$",
+                "$-\\frac{\\sqrt{3}}{2}$",
+                "$\\frac{1}{2}$",
+                "$-\\frac{1}{2}$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Obtain the partial differential equation by eliminating the arbitrary function $u = f(x^2 + y^2 + z^2, z^2 - 2xy)$",
+              "id": "2_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Solve $z^2 (p^2 + q^2) = x^2 + y^2$ where $p = \\frac{\\partial z}{\\partial x}$ and $q = \\frac{\\partial z}{\\partial y}$",
+              "id": "2_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Solve the partial differential equation $(2D^2 - DD' - 3D'^2)z = 5e^{x-y}$.",
+              "id": "3_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Prove that $(1-x^2)P'_n(x) = n[P_{n-1}(x) - xP_n(x)]$ where $P_n(x)$ is the Legendre's polynomial of the first kind.",
+              "id": "3_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Two ends $A$ and $B$ of a rod of length 20 cm have the temperatures 30 \u00b0C and 80 \u00b0C, respectively, until the steady-state conditions prevail. Then the temperatures at the ends $A$ and $B$ are changed to 40 \u00b0C and 60 \u00b0C, respectively. Find the temperature distribution of the rod at any time $t$.",
+          "id": "4",
+          "marks": null
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Let $A$, $B$ and $C$ be three independent events. Then show that $B$ and $A \\cap \\overline{C}$ are also independent.",
+              "id": "5_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "A coin is tossed. If it turns up $H$, two balls will be drawn from urn $A$, otherwise 2 balls will be drawn from urn $B$. Urn $A$ contains 3 red and 5 blue balls, urn $B$ contains 7 red and 5 blue balls. What is the probability that urn $A$ is used? It is given that both balls are blue. (Find in both cases, when balls were chosen with replacement and without replacement.)",
+              "id": "5_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "If $X$ and $Y$ are independent Poisson variates such that $P(X=1) = P(X=2)$ and $P(Y=2) = P(Y=3)$. Find the variance of $X - 2Y$.",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Show that the recurrence relation between the moments of binomial distribution is given by $\\mu_{r+1} = p q \\left( n r \\mu_{r-1} + \\frac{d\\mu_r}{dp} \\right)$ where $\\mu_r$ is the $r$th order moment about the mean.",
+              "id": "6_sub",
+              "marks": null
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Given the joint probability density function of $X$ and $Y$ as $f(x, y) = \\begin{cases} kxy; & 0 < x < 4, 0 < y < 3 \\\\ 0; & \\text{elsewhere} \\end{cases}$",
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Compute the probability density function of $X+2Y$.",
+              "id": "7_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Compute the following :\n(i) $P(1 < y \\le 2)$\n(ii) $P(1 < x + 2y \\le 3)$\n(iii) $P(x > 1/y \\le 2)$",
+              "id": "7_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "The table gives the stopping distance $y$ (feet) of an automobile travelling at speed $x$ (miles per hour) as the instant danger is sighted :\n| x | 30 | 45 | 60 | 75 | 90 | 105 |\n|---|----|----|----|----|----|-----|\n| y | 16 | 27 | 40 | 60 | 87 | 115 |",
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Fit a least-square parabola of the form $y = a + bx + cx^2$ to the data.",
+              "id": "8_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Estimate $y$ when $x = 60$ miles per hour and 120 miles per hour. Also compute the coefficient of correlation for the above data.",
+              "id": "8_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "It has been found from experience that the mean breaking strength of a particular brand of thread is 275.6 grams with a standard deviation of 39.7 grams. Recently a sample of 36 pieces of thread showed a mean breaking strength of 253.2 grams. Can one conclude at a significance level of (a) 0.05 and (b) 0.01 that the thread has become inferior?",
+          "id": "9",
+          "marks": null
+        }
+      ]
+    }
+  ]
+}

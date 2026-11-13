@@ -1,5 +1,5 @@
 /**
- * Small pieces shared by the five student screens.
+ * Small pieces shared by the six student screens.
  *
  * `Fresh` is the rebuild-on-key block the kit needs: a `List` captures its
  * `each` array and its slots once, and `Chip` reads `active` in its body, so a
@@ -43,15 +43,15 @@ export function StudentRow(props: { student: Student; meta?: string; onPress: ()
       label={`${student.name}, ${student.reg}`}
     >
       <View class="flex-1 gap-0.5">
-        <Text class="text-[15px] font-semibold text-foreground" numberOfLines={1}>
+        <Text class="text-[15px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
           {student.name}
         </Text>
-        <Text class="font-mono text-[11px] text-muted-foreground" numberOfLines={1}>
+        <Text class="font-mono text-[11px] text-muted-foreground" style={{ numberOfLines: 1 }}>
           {student.reg}
         </Text>
       </View>
       {props.meta ? (
-        <Text class="text-[11px] font-medium text-muted-foreground" numberOfLines={1}>
+        <Text class="text-[11px] font-medium text-muted-foreground" style={{ numberOfLines: 1 }}>
           {props.meta}
         </Text>
       ) : null}
@@ -78,7 +78,7 @@ export function TextAction(props: { label: string; onPress: () => void }) {
       role="button"
       accessibilityLabel={props.label}
     >
-      <Text class="text-[13px] font-semibold text-primary-ink" numberOfLines={1}>
+      <Text class="text-[13px] font-semibold text-primary-ink" style={{ numberOfLines: 1 }}>
         {props.label}
       </Text>
     </View>

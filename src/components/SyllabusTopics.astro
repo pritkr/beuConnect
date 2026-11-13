@@ -1,0 +1,288 @@
+---
+/**
+ * One subject body: parsed units of topics with a checkbox per topic, a live
+ * unit counter, and an Ask AI trigger per unit. The persisted state lives in
+ * localStorage and is restored by the single delegated script on the page.
+ */
+import branchConfig from "../assets/data/config.json";
+import { parseSyllabusContent } from "../lib/syllabus/parse";
+import AskAI from "./AskAI.astro";
+
+interface Props {
+	subject: {
+		name?: string;
+		code?: string;
+		summary?: { lecture?: number; tutorial?: number; practical?: number } | null;
+		content?: string;
+	};
+	branch: string;
+	sem: string | number;
+}
+
+const { subject, branch, sem } = Astro.props;
+
+const content = typeof subject?.content === "string" ? subject.content : "";
+const units = parseSyllabusContent(content);
+const totalTopics = units.reduce((sum, unit) => sum + unit.topics.length, 0);
+
+const branchName =
+	branchConfig.branches.find((entry) => entry.code === branch)?.name ?? branch;
+const subjectCode = String(subject?.code ?? subject?.name ?? "").replaceAll(":", "-");
+const subjectKey = `${branch}:${sem}:${subjectCode}`;
+const subjectName = subject?.name ?? "";
+
+const summary = subject?.summary ?? null;
+const ltp = summary
+	? [
+			summary.lecture != null ? `${summary.lecture}L` : null,
+			summary.tutorial != null ? `${summary.tutorial}T` : null,
+			summary.practical != null ? `${summary.practical}P` : null,
+		]
+			.filter(Boolean)
+			.join(" + ")
+	: "";
+
+/** A prompt long enough to blow past URL limits is cut at a word boundary. */
+const PROMPT_LIMIT = 1800;
+
+const PROMPT_TAIL =
+	" Teach it with worked examples and state what to revise first.";
+
+function unitPrompt(unit: (typeof units)[number]) {
+	const topics = unit.topics.join("; ").trim();
+	const heading = unit.title ? `: ${unit.title}` : "";
+	const body = topics ? `: ${topics}` : "";
+	const stop = /[.!?]$/.test(body) ? "" : ".";
+	const lead = `Explain this BEU ${branchName} semester ${sem} syllabus unit, "${subjectName}" — Unit ${unit.number}${heading}`;
+	const prompt = `${lead}${body}${stop}${PROMPT_TAIL}`;
+
+	if (prompt.length <= PROMPT_LIMIT) return prompt;
+
+	const room = PROMPT_LIMIT - lead.length - PROMPT_TAIL.length - 1;
+	if (room <= 0) return prompt;
+	const cut = body.slice(0, room);
+	const space = cut.lastIndexOf(" ");
+	return `${lead}${cut.slice(0, space > 0 ? space : cut.length)}…${PROMPT_TAIL}`;
+}
+---
+
+{
+	units.length ? (
+		<div class="subject-topics">
+			<p class="subject-meta">
+				{ltp ? <span class="ltp">{ltp}</span> : <span />}
+				<span class="subject-progress">
+					<span data-subject-progress>{`0/${totalTopics}`}</span>
+					<span class="sr-only"> topics done</span>
+				</span>
+			</p>
+
+			{units.map((unit, unitIndex) => (
+				<div class="unit" data-unit-block>
+					{unit.number > 0 ? (
+						<header class="unit-head">
+							<span class="unit-label">Unit {unit.number}</span>
+							{unit.title ? <span class="unit-title">{unit.title}</span> : null}
+							<span class="unit-meta">
+								{unit.hours != null ? (
+									<span class="unit-hours">{unit.hours} hrs</span>
+								) : null}
+								{unit.topics.length ? (
+									<span class="unit-progress">
+										<span data-unit-progress>{`0/${unit.topics.length}`}</span>
+										<span class="sr-only"> topics done</span>
+									</span>
+								) : null}
+								<AskAI
+									prompt={unitPrompt(unit)}
+									unit={`Unit ${unit.number}`}
+									subject={subjectName}
+								/>
+							</span>
+						</header>
+					) : null}
+
+					{unit.topics.length ? (
+						<div class="topic-list">
+							{unit.topics.map((topic, topicIndex) => (
+								<label class="topic">
+									<input
+										type="checkbox"
+										data-topic-id={`${subjectKey}:${unitIndex + 1}:${topicIndex}`}
+									/>
+									<span class="topic-text">{topic}</span>
+								</label>
+							))}
+						</div>
+					) : null}
+				</div>
+			))}
+
+			<div class="subject-foot">
+				<button
+					type="button"
+					class="clear-progress"
+					data-clear-subject
+					data-subject-key={subjectKey}
+					hidden
+				>
+					Clear progress
+				</button>
+			</div>
+		</div>
+	) : null
+}
+
+<style>
+	.subject-topics {
+		padding: 0 0 var(--s3);
+	}
+
+	.subject-meta {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: var(--s3);
+		max-width: none;
+		margin: 0 0 var(--s2);
+		color: var(--faint);
+		font-size: 0.72rem;
+		font-variant-numeric: tabular-nums;
+		line-height: 1.4;
+	}
+
+	.ltp {
+		letter-spacing: 0.02em;
+		white-space: nowrap;
+	}
+
+	.subject-progress,
+	.unit-progress,
+	.unit-hours {
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+	}
+
+	.unit {
+		padding-top: var(--s3);
+		border-top: 1px solid var(--line);
+	}
+
+	.unit + .unit {
+		margin-top: var(--s2);
+	}
+
+	.unit-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		column-gap: var(--s3);
+		row-gap: var(--s1);
+		padding-bottom: var(--s2);
+	}
+
+	.unit-label {
+		flex: 0 0 auto;
+		color: var(--paper);
+		font-size: 0.78rem;
+		font-weight: 650;
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+	}
+
+	.unit-title {
+		flex: 1 1 14ch;
+		min-width: 0;
+		color: var(--muted);
+		font-size: 0.82rem;
+		line-height: 1.4;
+		overflow-wrap: anywhere;
+	}
+
+	.unit-meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: var(--s1) var(--s3);
+		margin-left: auto;
+		font-size: 0.7rem;
+		color: var(--faint);
+	}
+
+	.topic-list {
+		display: grid;
+		gap: 0.05rem;
+	}
+
+	.topic {
+		display: grid;
+		grid-template-columns: 1rem minmax(0, 1fr);
+		align-items: start;
+		gap: var(--s2);
+		margin: 0;
+		padding: 0.16rem 0;
+		cursor: pointer;
+	}
+
+	.topic input[type="checkbox"] {
+		appearance: auto;
+		-webkit-appearance: checkbox;
+		width: 1rem;
+		height: 1rem;
+		margin: 0.22rem 0 0;
+		padding: 0;
+		border: 0;
+		background: none;
+		accent-color: var(--accent);
+		cursor: pointer;
+	}
+
+	.topic-text {
+		color: var(--muted);
+		font-size: 0.85rem;
+		line-height: 1.55;
+		overflow-wrap: anywhere;
+	}
+
+	.topic input:checked + .topic-text {
+		text-decoration: line-through;
+		text-decoration-color: var(--faint);
+		text-decoration-thickness: 1px;
+	}
+
+	/* A narrow column squeezes the unit title into a stack of three words; give it
+	   its own row under the label and the hours instead. */
+	@media (max-width: 560px) {
+		.unit-title {
+			order: 3;
+			flex-basis: 100%;
+		}
+	}
+
+	.subject-foot {
+		display: flex;
+		justify-content: flex-end;
+		padding-top: var(--s2);
+	}
+
+	button.clear-progress {
+		width: auto;
+		min-height: 0;
+		margin: 0;
+		padding: 0.2rem 0;
+		border: 0;
+		background: transparent;
+		color: var(--faint);
+		font-size: 0.72rem;
+		font-weight: 500;
+		line-height: 1.4;
+	}
+
+	button.clear-progress:hover {
+		border: 0;
+		background: transparent;
+		color: var(--paper);
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+	}
+</style>

@@ -15,7 +15,6 @@ import { Chip, Divider, EmptyState, Muted, Row, Screen, Search } from "../../ui"
 import { Fresh, SessionHeader, StudentRow, TextAction } from "./components";
 import type { Student } from "./data";
 import {
-  COLLEGE_CODE,
   SESSIONS,
   SESSION_COUNTS,
   TOTAL,
@@ -25,6 +24,7 @@ import {
   searchStudents,
 } from "./data";
 import { normaliseSearch } from "./rank";
+import { EVENTS, track } from "../../lib/analytics";
 
 type ListItem =
   | { kind: "session"; session: string; count: number }
@@ -46,6 +46,18 @@ export function StudentsScreen(props: { nav: Nav }) {
   const nav = props.nav;
   const query = signal("");
   const session = signal("");
+  // The register is other people's data: a search is counted by its length and
+  // its result count, never by what was typed.
+  let searchedAt = 0;
+  const search = (value: string): void => {
+    query.set(value);
+    const now = Date.now();
+    const clean = value.trim();
+    if (clean.length >= 2 && now - searchedAt > 2000) {
+      searchedAt = now;
+      track(EVENTS.studentsSearch, { query_length: clean.length, results: rows().length });
+    }
+  };
 
   const searching = computed(() => normaliseSearch(query()) !== "");
   const rows = computed(() => searchStudents(query(), { session: session() || undefined }));
@@ -89,12 +101,18 @@ export function StudentsScreen(props: { nav: Nav }) {
   return (
     <Screen>
       <View class="gap-3 border-b border-border bg-background px-4 pb-1 pt-3">
-        <Search value={query()} onChange={query.set} placeholder="Name, roll or registration number" />
+        <Search value={query()} onChange={search} placeholder="Name, roll or registration number" />
 
         <Fresh
           when={`chips:${session()}`}
           build={() => (
-            <Scroll horizontal class="flex-1" scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
+            <Scroll
+              horizontal
+              scrollbar={false}
+              bounces={false}
+              class="-mx-4"
+              contentClass="flex-row gap-2 px-4"
+            >
               <Chip active={session() === ""} onPress={() => session.set("")}>
                 All
               </Chip>
@@ -113,10 +131,7 @@ export function StudentsScreen(props: { nav: Nav }) {
             <Row class="justify-between gap-2">
               <Muted class="text-[11px] tabular-nums">{countLine()}</Muted>
               <Row class="-mr-2 gap-0">
-                <TextAction
-                  label="Branches"
-                  onPress={() => nav.push("students.college", { college: COLLEGE_CODE })}
-                />
+                <TextAction label="Colleges" onPress={() => nav.push("students.colleges")} />
                 <TextAction label="Top CGPA" onPress={() => nav.push("students.leads")} />
               </Row>
             </Row>

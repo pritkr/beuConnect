@@ -59,11 +59,11 @@ function ToolDoor(props: {
       accessibilityLabel={props.title}
     >
       <Icon name={props.icon} size={19} class={INK[props.tone]} />
-      <Text class="flex-1 text-[15px] font-semibold text-foreground" numberOfLines={1}>
+      <Text class="flex-1 text-[15px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
         {props.title}
       </Text>
       {props.value ? (
-        <Text class="text-[13px] tabular-nums text-muted-foreground" numberOfLines={1}>
+        <Text class="text-[13px] tabular-nums text-muted-foreground" style={{ numberOfLines: 1 }}>
           {props.value}
         </Text>
       ) : null}

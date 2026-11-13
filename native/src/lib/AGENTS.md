@@ -20,10 +20,17 @@ its own change, with the suite run afterwards.
 - **Storage is async.** `readStore` / `writeStore` / `removeStore` add `beu.`;
   `putCache` / `getCache` add `beu.cache.` and enforce `CACHE_BUDGET`. Never
   invent a key in a screen without adding it to the area's `KEYS`.
+- **Student headers ride on our own requests.** `student-context.ts` parses the
+  saved number once; `net.ts` adds `x-beu-reg|student|branch|college|batch` to
+  `beu.prit.eu.org` only. Never add them to GitHub, Supabase or the BEU portal —
+  a third party has no use for a registration number.
 - **Cache entries are `{ at, value }`.** `src/lib/cache.ts` owns eviction and
   the budget; do not write cache rows directly.
 - **Formatting is shared.** Dates, numbers and bytes go through `net.ts` /
   `bytes.ts` so two screens cannot disagree.
+- **Timers are guarded once.** `timers.ts` wraps the four timer globals in
+  `boot.ts`; a throw inside a timer body is logged, not fatal. Do not re-wrap
+  them in a screen, and do not rely on a timer to report its own failure.
 
 ## Checklist for a new endpoint
 

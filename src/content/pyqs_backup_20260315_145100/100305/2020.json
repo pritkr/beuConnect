@@ -1,0 +1,293 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020",
+    "subject": "Digital Electronics",
+    "subject_slug": "digital-electronics",
+    "subject_code": "100305",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Dynamic RAM employs</p>",
+          "options": [
+            "capacitor or MOSFET",
+            "FET or JFET",
+            "capacitor or BJT",
+            "BJT or MOS"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The resolution of a 10-bit AD converter for an input range of 10 V is approximately</p>",
+          "options": [
+            "1 V",
+            "1 mV",
+            "10 mV",
+            "100 mV"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The evolution of PLD begins with</p>",
+          "options": [
+            "EROM",
+            "RAM",
+            "PROM",
+            "EEPROM"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>The parameter through which 16 distinct values can be represented is known as</p>",
+          "options": [
+            "bit",
+            "byte",
+            "word",
+            "nibble"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The number of full and half adders required to add 16-bit number is</p>",
+          "options": [
+            "8 HA, 8 FA",
+            "1 HA, 15 FA",
+            "16 HA, 0 FA",
+            "4 HA, 12 FA"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>If we record any music in any recorder, such type of process is called</p>",
+          "options": [
+            "multiplexing",
+            "encoding",
+            "decoding",
+            "demultiplexing"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The no. of D flip-flop required to form a 5-bit ring counter is</p>",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>An overflow is a/an</p>",
+          "options": [
+            "hardware problem",
+            "software problem",
+            "user-input problem",
+            "input-output problem"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The systematic reduction of logic circuits is accomplished by</p>",
+          "options": [
+            "symbolic reduction",
+            "TTL logic",
+            "Boolean algebra",
+            "truth table"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>A latch is an example of a/an</p>",
+          "options": [
+            "monostable multivibrator",
+            "astable multivibrator",
+            "bistable multivibrator",
+            "555 timer"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>(a) Design an excess-3 to BCD code converter using minimum number of NAND gates.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>(b) Prove the following:<br/>\n                        \\( A \\oplus B = \\overline{A} \\oplus \\overline{B} \\)<br/>\n                        \\( A \\oplus \\overline{B} = \\overline{A \\oplus B} = \\overline{A} \\oplus B \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>(a) How can we implement preset and clear inputs in a flip-flop? Explain with the help of a\n                        diagram and list their uses. </p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>(b) Design a Mod 9 counter using T flip-flops.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>(a) Explain internal organization of \\( 16 \\times 2 \\) memory chips using suitable diagrams.\n                        Calculate the maximum rate at which data can be stored and read for a memory having following\n                        timing parameters:</p>\n<table border=\"1\" style=\"width:100%; text-align:left; border-collapse: collapse;\">\n<tbody><tr>\n<th>Parameter</th>\n<th>Time (ns)</th>\n</tr>\n<tr>\n<td>Read to Output Valid Time \\( (t_{RD}) \\)</td>\n<td>70</td>\n</tr>\n<tr>\n<td>Data Setup Time \\( (t_{DW}) \\)</td>\n<td>120</td>\n</tr>\n<tr>\n<td>Read to Cycle Time \\( (t_{RC}) \\)</td>\n<td>200</td>\n</tr>\n<tr>\n<td>Write Release Time \\( (t_{WR}) \\)</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Write Cycle \\( (t_{WC}) \\)</td>\n<td>200</td>\n</tr>\n</tbody></table>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>(b) Differentiate between Word Capacity and Word Size. Design a \\( 16 \\times 8 \\) CAM, using\n                        \\( 8 \\times 2 \\) CAM chips.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>(a) Define resolution, linearity, accuracy and settling time of D/A converters. A typical D/A\n                        converter has a full-scale analog output of 10 V and accepts 6 binary bits as input. What will\n                        be the voltage corresponding to each analog step?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>(b) Design a 3-bit parallel comparator A/D converter that provides output in 2's complement\n                        format.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>(a) Design a BCD to 7-segment display decoder circuit using logic gates.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>(b) Design full adder using the following: (i) 8:1 mux (ii) 4:1 mux</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>(a) On the following graph, inputs CLK and D are shown: . They are inputs to a D latch and a\n                        positive edge triggered D flip-flop. Assuming initial output 0, draw the output waveform for\n                        flip-flop and latch. Do the two outputs differ? If so, why?</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/206.jpg\"/>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>(b) Explain SIPO and SISO operations of shift register with relevant logic diagrams and truth\n                        tables. </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>(a) Identify the following logic functions implemented at F: </p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/205.jpg\"/>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>(b) Implement the following CMOS logics: <br/>\n                        (i) \\( \\overline{AB(A+B)} \\) <br/>\n                        (ii) \\( \\overline{((CD) + B)A} \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 8,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>(a) What are weighted, non-weighted, cyclic and self-complementary codes? Explain each with\n                        examples.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>(b) Find the values of X in the following conversions:<br/>\n                        (i) \\( (95.10)_{10} \\) to \\( (X)_2 \\)<br/>\n                        (ii) \\( (70)_8 \\) to \\( (X)_2 \\)<br/>\n                        (iii) \\( (168.16)_8 \\) to \\( (X)_{16} \\)</p>"
+        }
+      ]
+    }
+  ]
+}

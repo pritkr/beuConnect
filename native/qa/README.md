@@ -1,6 +1,6 @@
 # QA — the native suite
 
-Everything under `qa/` is test code. It proves seven things and nothing else:
+Everything under `qa/` is test code. It proves eight things and nothing else:
 
 1. the route table merges without a duplicate, and every name, title, tab,
    More entry and push target resolves (`registry.test.ts`);
@@ -12,14 +12,19 @@ Everything under `qa/` is test code. It proves seven things and nothing else:
 5. the BEU result page is read correctly from real fixtures
    (`unit/result-parse.test.ts`);
 6. the four generated snapshots still add up (`data.test.ts`);
-7. a cache key belongs to exactly one offline pack (`unit/offline.test.ts`).
+7. a cache key belongs to exactly one offline pack (`unit/offline.test.ts`);
+8. every merged route survives a cold, offline, param-less open, two entity
+   screens render the entity their params name, and every More row pushes and
+   pops (`integration.test.tsx`).
 
-That is **52 tests and 13 mounts**, against 335 tests / 169 mounts before the
-rewrite. The old suite mounted every route twice and slept 220 ms after each
-mount; both are gone.
+That is **a few hundred tests and a handful of mounts**, down from 335 tests /
+169 mounts before the rewrite. The old suite mounted every route twice and slept 220 ms
+after each mount; both are gone. The number moves as feature owners add tests —
+the gate is `./qa/run-tests.sh`, not this count.
 
 Files the table below does not list (`feedback.test.tsx`, `results.test.tsx`,
-`unit/routine.test.ts`) are owned by their feature and run in the same pass.
+`planner.test.tsx`, `tools.test.tsx`, `unit/routine.test.ts`, `unit/plan.test.ts`,
+`unit/syllabus.test.ts`) are owned by their feature and run in the same pass.
 `qa/tmp-*` files are screenshot scratch, not suite.
 
 ## Run
@@ -34,8 +39,8 @@ Files the table below does not list (`feedback.test.tsx`, `results.test.tsx`,
 directory per project; `scripts/check.sh` takes a lock, waits for the holder,
 and always releases it.
 
-Budget: **under 15 s** end to end. The owned files are ~6 s; a full `qa/`
-pass that includes the feature tests is ~8 s.
+Budget: **under 15 s** end to end. The owned files are ~7 s; a full `qa/` pass
+that includes the feature tests is ~13 s.
 
 ## The files
 
@@ -44,6 +49,7 @@ pass that includes the feature tests is ~8 s.
 | `qa/registry.test.ts` | static contracts: no duplicate route name across features, name shape, `title()` for every plausible param set, every push target / tab / More entry resolves | 0 |
 | `qa/shell.test.tsx` | `App.tsx`: five tabs, one stack entry, child hides the bar, back restores it | 3 (shared) |
 | `qa/screens.test.tsx` | home, syllabus (landing + paper + topic), results (offline + retry), notes, search, notices, onboarding | 10 |
+| `qa/integration.test.tsx` | every `ALL_ROUTES` route cold and offline, params vs entity, dark mode, More → back; the harness list cannot drift from the registry | every route |
 | `qa/unit/logic.test.ts` | grade bands, SGPA/CGPA, target planner, attendance, ranking, semester | 0 |
 | `qa/unit/result-parse.test.ts` | the Angular and ASP.NET result pages, and `null` for a page that is not a result | 0 |
 | `qa/data.test.ts` | syllabus packs, PYQ catalogue + PDFs, student register, notes manifest | 0 |
@@ -125,6 +131,13 @@ The runner filters four documented false-positive warnings
 (`text-primary-ink`, `border-border-strong`, `text-accent-ink`, `bg-accent-ink`,
 see `docs/ARCHITECTURE.md`) and keeps everything else. Any other unknown class
 is a real typo.
+
+`scripts/check.sh` keeps only the last 100 lines, so a failure in an early file
+(`data`, `feedback`, `registry`) can scroll out of view. Re-run that one file:
+
+```bash
+./scripts/check.sh test-only qa/registry.test.ts
+```
 
 ## Deliberately loose assertions
 

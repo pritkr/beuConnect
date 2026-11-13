@@ -1,0 +1,121 @@
+---
+export const prerender = true;
+import Layout from "../../layouts/Layout.astro";
+import collegesData from "../../data/colleges.json";
+
+const collegeCount = collegesData.length;
+---
+
+<Layout
+	title="Student registry"
+	description="Browse BEU student rosters by college and branch."
+>
+	<header class="page-head">
+		<div>
+			<h1>Student registry</h1>
+			<p class="meta num">{collegeCount} colleges</p>
+		</div>
+	</header>
+
+	<div class="search-wrap">
+		<label class="field-label sr-only" for="collegeSearch">Search colleges</label>
+		<input type="search" id="collegeSearch" placeholder="Name, code or district" />
+	</div>
+
+	<div class="college-grid" id="collegeGrid">
+		{
+			collegesData.map((college) => (
+				<a
+					href={`${import.meta.env.BASE_URL}listofstudents/${college.abbreviations}`}
+					class="college-card"
+					data-name={college.Name.toLowerCase()}
+					data-code={college.CollegeCode}
+					style={`view-transition-name:${college.abbreviations}`}
+				>
+					<span class="college-code num">{college.CollegeCode}</span>
+					<span class="college-name">{college.Name}</span>
+				</a>
+			))
+		}
+	</div>
+
+	<p class="empty" id="collegeEmpty" hidden>No college matches that search.</p>
+
+	<style>
+		.search-wrap {
+			max-width: 24rem;
+			margin: var(--s5) 0 var(--s4);
+		}
+
+		.college-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+			gap: 0;
+			border-top: 1px solid var(--line-strong);
+		}
+
+		.college-card {
+			display: flex;
+			align-items: baseline;
+			gap: var(--s3);
+			padding: var(--s4) var(--s3) var(--s4) 0;
+			border-bottom: 1px solid var(--line);
+			color: var(--paper);
+			text-decoration: none;
+		}
+
+		.college-card:hover .college-name {
+			text-decoration: underline;
+			text-underline-offset: 0.2em;
+		}
+
+		.college-code {
+			flex: 0 0 3.2rem;
+			color: var(--faint);
+			font-size: 0.72rem;
+			letter-spacing: 0.04em;
+		}
+
+		.college-name {
+			font-size: 0.9rem;
+			line-height: 1.4;
+		}
+
+		.empty {
+			margin: var(--s4) 0;
+			color: var(--faint);
+			font-size: 0.9rem;
+		}
+
+		.empty[hidden] {
+			display: none;
+		}
+
+		@media (max-width: 600px) {
+			.college-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
+
+	<script>
+		const searchInput = document.getElementById("collegeSearch") as HTMLInputElement | null;
+		const cards = document.querySelectorAll<HTMLElement>(".college-card");
+		const empty = document.getElementById("collegeEmpty");
+
+		searchInput?.addEventListener("input", (event) => {
+			const query = (event.target as HTMLInputElement).value.trim().toLowerCase();
+			let visible = 0;
+
+			cards.forEach((card) => {
+				const name = card.getAttribute("data-name") || "";
+				const code = card.getAttribute("data-code") || "";
+				const match = name.includes(query) || code.includes(query);
+				card.hidden = !match;
+				if (match) visible++;
+			});
+
+			if (empty) empty.hidden = visible > 0;
+		});
+	</script>
+</Layout>

@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2012",
+    "subject": "Object Oriented Programming",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051301",
+    "year": 2012,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Answer any seven MCQs :",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "Which of the following is not a valid identifier in C++? (i) Return (ii) MyInt (iii) MyInteger (iv) Total3",
+              "id": "1(a)",
+              "marks": null
+            },
+            {
+              "text": "What is the value of $x$ after the following statements? `int x; x = 0; x = x + 30;` (i) 0 (ii) 30 (iii) 33 (iv) Garbage",
+              "id": "1(b)",
+              "marks": null
+            },
+            {
+              "text": "What is the value of the following expression? `(true && (4/3 || !(6)))` (i) True (ii) False (iii) 0 (iv) Illegal syntax",
+              "id": "1(c)",
+              "marks": null
+            },
+            {
+              "text": "When defining a class, the class should be composed of the kind of values a variable of the class can contain, and (i) member functions for that class (ii) the keyword private (iii) other class definitions (iv) nothing else",
+              "id": "1(d)",
+              "marks": null
+            },
+            {
+              "text": "Data members or member functions of a class that are declared to be private may (i) only be accessed by the main program (ii) only be accessed by members of the class (iii) not be accessed by the class (iv) be considered as global variables",
+              "id": "1(e)",
+              "marks": null
+            },
+            {
+              "text": "When overloading an operator, which of the following is true? (i) One of the arguments must be an object of the class (ii) The operator can be a friend or a member of the class (iii) The operator does not have to be a friend or a member of the class (iv) All of the above (v) None of the above",
+              "id": "1(f)",
+              "marks": null
+            },
+            {
+              "text": "`class derived : public base1, public base2 {}` is an example of (i) polymorphic inheritance (ii) multilevel inheritance (iii) hierarchical inheritance (iv) multiple inheritance",
+              "id": "1(g)",
+              "marks": null
+            },
+            {
+              "text": "In the derived class definition, you list from the base class (i) all the member functions every time (ii) only those member functions that need to be redefined (iii) only those member functions that were in the public section (iv) only those member functions you want to overload",
+              "id": "1(h)",
+              "marks": null
+            },
+            {
+              "text": "Which of the following is not a valid reason for using exception handling? (i) Throw and catch can be used like goto (ii) The procedure for handling an error depends on the situation (iii) Need to handle built-in exceptions (iv) None of the above",
+              "id": "1(i)",
+              "marks": null
+            },
+            {
+              "text": "You should make a function a virtual function if (i) every class that is derived from this class uses all the member functions from this class (ii) every class that is derived from this class needs to redefine this function (iii) that function is an operator (iv) only in the derived classes",
+              "id": "1(j)",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Write five differences between Procedural and Object-Oriented Programming.",
+              "id": "2(a)",
+              "marks": null
+            },
+            {
+              "text": "Differentiate between Private, Public and Protected data members of the class using examples.",
+              "marks": null,
+              "id": "2(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Mention the difference between C and C++. Why is it necessary to include header files in a program written in these languages?",
+              "id": "3(a)",
+              "marks": null
+            },
+            {
+              "text": "Write a C++ program to find the sum of the series $1+3+5+\\dots+n$.",
+              "id": "3(b)",
+              "marks": null
+            },
+            {
+              "text": "Define copy constructor. Explain its significance. Under which condition is it invoked? Support your answer with an example.",
+              "marks": null,
+              "id": "3(c)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Discuss the basic data types of C++. Suggest appropriate data type for the following:",
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "Someone's height in meters"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "An exclamation mark"
+                },
+                {
+                  "label": "(iii)",
+                  "text": "The number of students in a university"
+                }
+              ],
+              "id": "4(a)",
+              "marks": null
+            },
+            {
+              "text": "Write a program, which will accept a string of maximum 10 characters from the keyboard, and count the occurrences of each of the 5 vowels in the string. The output should be in tabbed format as shown below:\n\nA E I O U\n0 1 0 0 1",
+              "id": "4(b)",
+              "marks": null
+            },
+            {
+              "text": "Explain branching statements used in C++ with example.",
+              "marks": null,
+              "id": "4(c)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What is operator overloading in C++? Explain with suitable example. Also list operators which cannot be overloaded.",
+              "id": "5(a)",
+              "marks": null
+            },
+            {
+              "text": "Differentiate between Operator and Function overloading with the help of suitable example.",
+              "marks": null,
+              "id": "5(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Create a class **complex** and implement the following:",
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "Define suitable constructors and destructors"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "Overload the operators + and -"
+                },
+                {
+                  "label": "(iii)",
+                  "text": "Write a friend function sum which adds the real and imaginary parts of a complex object"
+                }
+              ],
+              "id": "6(a)",
+              "marks": null
+            },
+            {
+              "text": "With relevant examples, explain (i) multilevel inheritance (ii) hybrid inheritance.",
+              "marks": null,
+              "id": "6(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Explain the concept of a destructor in a class. What is its role in terms of cleanup of unwanted objects?",
+              "id": "7(a)",
+              "marks": null
+            },
+            {
+              "text": "How is an exception handling performed in C++? Write a program that throws an arithmetic exception as and when a number input is greater than 9999.",
+              "marks": null,
+              "id": "7(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Design and implement a class **string** using an array, with a maximum size of 20 characters. The class should contain the necessary constructors, destructor, overloaded assignment operator and a friend function for concatenation of two strings. Make suitable assumptions if required. Also write `main()` for the above.",
+              "id": "8(a)",
+              "marks": null
+            },
+            {
+              "text": "What is an inline function? In which situations would you make a function inline? Give two examples of inline functions.",
+              "marks": null,
+              "id": "8(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Syntactically explain nested \"if-else\" statement in C++.",
+              "id": "9(a)",
+              "marks": null
+            },
+            {
+              "text": "Define the following:",
+              "marks": null,
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "Polymorphism"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "Typecasting"
+                },
+                {
+                  "label": "(iii)",
+                  "text": "Class and instance"
+                },
+                {
+                  "label": "(iv)",
+                  "text": "Containership"
+                },
+                {
+                  "label": "(v)",
+                  "text": "Abstract class"
+                }
+              ],
+              "id": "9(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

@@ -39,14 +39,14 @@
  * and keeps the string, so the screens that only want `BRANCH_META` (home,
  * settings) never pay for it.
  */
-import { DICT } from "./dict";
+import { DICT, WIDE } from "./dict";
 
 const SEP = "|";
 const ABSENT = "-";
 const ELECTIVE = "e";
 /** Entry separator: `\x1f\x00` cannot occur inside a packed entry (see build-packs.ts). */
 const FIELD = "\u001f\u0000";
-const TOKENS = /[\u0001-\u0009]|[\u000b-\u001f][\u0020-\u007e]/g;
+const TOKENS = /\u0000[\u0021-\u007e]|[\u0001-\u0009]|[\u000b-\u001f][\u0020-\u007e]/g;
 
 /** One line of a branch wire. */
 function subject(f: string[], table: Lookup): Record<string, unknown> {
@@ -80,7 +80,7 @@ function derivedCode(name: string, type: string): string {
  * and a few exact duplicates. Both are fixed here, once, at the boundary — every
  * screen above this line sees a code that is present and unique per semester.
  */
-function normalise(rows: unknown[]): unknown[] {
+export function normalise(rows: unknown[]): unknown[] {
   const kept: Record<string, unknown>[] = [];
   const byCode = new Map<string, Record<string, unknown>>();
   for (const entry of rows) {
@@ -148,11 +148,13 @@ export type Lookup = (index: number) => string;
 /**
  * Token stream → text. The alphabet is fixed by `scripts/data/wire-lib.ts`:
  * `\x01`-`\x09` are the nine best phrases, `\x0b`-`\x1f` + a printable are the
- * rest, and everything else is itself.
+ * rest, `\x00` + a printable is a wide character (so one "…" cannot turn a whole
+ * chunk into UTF-16), and everything else is itself.
  */
 export function unpack(blob: string): string {
   return blob.replace(TOKENS, (token) => {
     const lead = token.charCodeAt(0);
+    if (lead === 0) return WIDE[token.charCodeAt(1) - 0x21];
     return lead <= 9 ? DICT[lead - 1] : DICT[9 + (lead - 0x0b) * 95 + (token.charCodeAt(1) - 0x20)];
   });
 }

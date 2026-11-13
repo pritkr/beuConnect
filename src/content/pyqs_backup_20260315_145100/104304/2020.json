@@ -1,0 +1,319 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2020",
+    "subject": "Network Theory",
+    "subject_slug": "network-theory",
+    "subject_code": "104304",
+    "year": 2020,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (any seven):",
+          "marks": 14,
+          "id": "1",
+          "sub_questions": [
+            {
+              "text": "The output $y(t)$ and the input $x(t)$ of a system are related by the equation $y(t) = x(t) + c$, where $m$ and $c$ are constants. The system (i) is linear (ii) is non-linear (iii) may be linear or non-linear depending on $y(t)$ and $x(t)$ (iv) None of the above.",
+              "id": "1(a)",
+              "marks": null
+            },
+            {
+              "text": "Which one of the following is a linear system? (i) $y(t) = 2u(t)$ (ii) $y(t) = 2u(t) + 5$ (iii) $y(t) = 2u^2(t)$ (iv) $y(t) = 2u^2(t) + 5$",
+              "id": "1(b)",
+              "marks": null
+            },
+            {
+              "text": "The graph of a network has six branches with three tree branches. The minimum number of equations required for the solution of the network is (i) 2 (ii) 3 (iii) 4 (iv) 5",
+              "id": "1(c)",
+              "marks": null
+            },
+            {
+              "text": "The condition for over-damped response of an $RLC$ series circuit is (i) $\\frac{R^2}{4L^2} = \\frac{1}{LC}$ (ii) $\\frac{R^2}{4L^2} < \\frac{1}{LC}$ (iii) $\\frac{R^2}{4L^2} > \\frac{1}{LC}$ (iv) $\\frac{R^2}{4L^2} \\le \\frac{1}{LC}$",
+              "id": "1(d)",
+              "marks": null
+            },
+            {
+              "text": "The value of the impulse function $\\delta(t)$ at $t=0$ is (i) 0 (ii) $\\infty$ (iii) 1 (iv) indeterminate",
+              "id": "1(e)",
+              "marks": null
+            },
+            {
+              "text": "In a two-port network containing linear bilateral passive circuit elements, which one of the following conditions for $z$-parameters would hold? (i) $z_{11} = z_{22}$ (ii) $z_{12}z_{21} = z_{11}z_{22}$ (iii) $z_{11}z_{12} = z_{22}z_{21}$ (iv) $z_{12} = z_{21}$",
+              "id": "1(f)",
+              "marks": null
+            },
+            {
+              "text": "If $f(t)$ is a periodic waveform with even symmetry, then its Fourier series expansion does not contain (i) sine terms (ii) cosine terms (iii) odd harmonics (iv) even harmonics",
+              "id": "1(g)",
+              "marks": null
+            },
+            {
+              "text": "In a series resonant circuit, to obtain a low-pass characteristic, across which element should the output voltage be taken? (i) Resistor (ii) Inductor (iii) Capacitor",
+              "id": "1(h)",
+              "marks": null
+            },
+            {
+              "text": "A high-pass filter circuit is basically (i) a differentiating circuit with low-time constant (ii) a differentiating circuit with large-time constant (iii) an integrating circuit with low-time constant (iv) an integrating circuit with large-time constant",
+              "id": "1(i)",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Define the following functions:",
+              "marks": 4,
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "Step function"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "Ramp function"
+                },
+                {
+                  "label": "(iii)",
+                  "text": "Gate function"
+                },
+                {
+                  "label": "(iv)",
+                  "text": "Impulse function"
+                }
+              ],
+              "id": "2(a)"
+            },
+            {
+              "text": "Determine whether the system defined by $y(t) = \\sin[x(t)]$ is time-invariant.",
+              "marks": 5,
+              "id": "2(b)"
+            },
+            {
+              "text": "Determine whether the following continuous-time systems are stable:",
+              "marks": 5,
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "$y(t) = tx(t)$"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "$y(t) = x(t) \\sin 10 \\pi t$"
+                }
+              ],
+              "id": "2(c)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Derive the expression for transient voltage across the resistor and capacitor when switch $S$ is on in Fig. 1:",
+              "marks": 8,
+              "has_diagram": true,
+              "id": "3(a)"
+            },
+            {
+              "text": "In Fig. 2 the switch $K$ is closed. Find the time when the current from the battery reaches to $500\\text{ mA}$.",
+              "marks": 6,
+              "has_diagram": true,
+              "id": "3(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What is 'network topology'?",
+              "marks": 2,
+              "id": "4(a)"
+            },
+            {
+              "text": "State the advantages offered by the graph theory as applied to electric circuit problems.",
+              "marks": 4,
+              "id": "4(b)"
+            },
+            {
+              "text": "Write down the incidence matrix and cut-set matrices for the network shown in Fig. 3:",
+              "marks": 8,
+              "has_diagram": true,
+              "id": "4(c)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Discuss the advantages of the Laplace transform method over the conventional classical methods of solving the linear differential equations with constant coefficients.",
+              "marks": 3,
+              "id": "5(a)"
+            },
+            {
+              "text": "Explain gate function. Obtain the equation of a gate function starting at origin and duration $T$.",
+              "marks": 3,
+              "id": "5(b)"
+            },
+            {
+              "text": "Find the response current of a series $RL$ circuit consisting of a resistor $R = 3\\text{ }\\Omega$ and an inductor $L = 1\\text{ H}$ when each of the following driving force voltage is applied:",
+              "marks": 8,
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "Unit ramp voltage, $r(t-2)$"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "Unit impulse voltage, $\\delta(t-2)$"
+                },
+                {
+                  "label": "(iii)",
+                  "text": "Unit step voltage, $u(t-2)$"
+                },
+                {
+                  "label": "(iv)",
+                  "text": "Pulse of width $a$ and magnitude $1\\text{ V}$ beginning at time $t = 2\\text{ seconds}$"
+                }
+              ],
+              "id": "5(c)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What are the open-circuit impedance parameters of a two-port network? Why are they so called?",
+              "marks": 3,
+              "id": "6(a)"
+            },
+            {
+              "text": "What are transmission parameters? Where are they most effectively used?",
+              "marks": 3,
+              "id": "6(b)"
+            },
+            {
+              "text": "Obtain the $z$-parameters for the circuit shown in Fig. 4:",
+              "marks": 8,
+              "has_diagram": true,
+              "id": "6(c)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "What are different types of filters?",
+              "marks": 4,
+              "id": "7(a)"
+            },
+            {
+              "text": "In a series $LCR$ type band-pass filter, $L = 50\\text{ mH}$, $C = 127\\text{ nF}$ and $R = 63\\text{ }\\Omega$. Determine (i) the resonance frequency and (ii) the bandwidth.",
+              "marks": 4,
+              "id": "7(b)"
+            },
+            {
+              "text": "Design a low-pass filter with $RC$ and $RL$ circuits.",
+              "marks": 6,
+              "id": "7(c)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Check whether the following polynomials are Hurwitz or not:",
+              "marks": 7,
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "$F(s) = s^4 + s^3 + 5s^2 + 3s + 4$"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "$F(s) = s^7 + 2s^6 + 2s^5 + s^4 + 4s^3 + 8s^2 + 8s + 4$"
+                }
+              ],
+              "id": "8(a)"
+            },
+            {
+              "text": "Determine whether the following polynomials are positive real:",
+              "marks": 7,
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "$\\frac{3s^2+5}{s(s^2+1)}$"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "$\\frac{10(s+1)^2}{(s+2)(s^2-6s+5)}$"
+                }
+              ],
+              "id": "8(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "text": "Find the first and second Cauer forms of $LC$ networks for the impedance function: $Z(s) = \\frac{s^4+10s^2+9}{s^3+4s}$",
+              "marks": 7,
+              "id": "9(a)"
+            },
+            {
+              "text": "Determine whether the following polynomials are positive real:",
+              "marks": 7,
+              "subparts": [
+                {
+                  "label": "(i)",
+                  "text": "$\\frac{s(s^2+6)}{(s^2+2)^2}$"
+                },
+                {
+                  "label": "(ii)",
+                  "text": "$\\frac{10(s+1)^2}{(s+2)(s^2-6s+5)}$"
+                }
+              ],
+              "id": "9(b)"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

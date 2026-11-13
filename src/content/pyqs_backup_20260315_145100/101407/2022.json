@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University",
+    "exam_title": "B.Tech 4th Semester Exam., 2022 (New Course)",
+    "subject": "MECHANICAL ENGINEERING",
+    "subject_slug": "mechanical-engineering",
+    "subject_code": "101407",
+    "year": 2022,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Extensive property of a system is one whose value</p>",
+          "options": [
+            "depends on the mass of the system, like volume",
+            "does not depend on the mass of the system, like temperature, pressure, etc.",
+            "is not dependent on the path followed but on the state",
+            "is dependent on the path followed and not on the state"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>For reversible adiabatic process, the change in entropy is</p>",
+          "options": [
+            "maximum",
+            "minimum",
+            "zero",
+            "unpredictable"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>If \\( Q_{1} \\) is the heat transfer between hot temperature source and machine, and \\( Q_{2}\n                        \\)\n                        between cold temperature source and machine, then for heat pump, COP will be equal to</p>",
+          "options": [
+            "\\( \\frac{Q_{1}}{Q_{1}-Q_{2}} \\)",
+            "\\( \\frac{Q_{2}}{Q_{1}-Q_{2}} \\)",
+            "\\( \\frac{Q_{1}}{Q_{2}-Q_{1}} \\)",
+            "\\( \\frac{Q_{2}}{Q_{2}-Q_{1}} \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Kelvin-Planck law deals with</p>",
+          "options": [
+            "conservation of heat",
+            "conservation of work",
+            "conservation of heat into work",
+            "conservation of work into heat"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>For same compression ratio and for same heat added</p>",
+          "options": [
+            "Otto cycle is more efficient than diesel cycle",
+            "diesel cycle is more efficient than Otto cycle",
+            "efficiency depends on other factors",
+            "both Otto and diesel cycles are equally efficient"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Gas turbine cycle consists of</p>",
+          "options": [
+            "two isothermal and two isentropic processes",
+            "two isentropic and two constant volume processes",
+            "two isentropic, one constant volume and one constant pressure processes",
+            "two isentropic and two constant pressure processes"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Tripple point temperature and pressure for water are</p>",
+          "options": [
+            "\\( 0\\cdot01^{\\circ}C \\) and 0.006028 atm",
+            "\\( 0^{\\circ}C \\) and 1 atm",
+            "\\( 100^{\\circ}C \\) and 1 atm",
+            "\\( 1^{\\circ}C \\) and 1 atm"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Select the correct relation.</p>",
+          "options": [
+            "\\( TdS = dU + pdV \\)",
+            "\\( dH = TdS + Vdp \\)",
+            "\\( TdS = c_{p}dT - Vdp \\)",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The first law of thermodynamics gives \\( dU = \\delta Q - \\delta W \\) and the second law tells\n                        that \\( dS &gt; \\frac{\\delta Q}{T} \\). In which of the way these two laws can be combined and\n                        written?</p>",
+          "options": [
+            "\\( dU \\ge TdS - pdV \\)",
+            "\\( dU \\le dS - pdV \\)",
+            "\\( dU \\le TdS + pdV \\)",
+            "\\( dU = TdS - pdV \\)"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Air-standard efficiency of diesel cycle is a function of</p>",
+          "options": [
+            "compression ratio and the ratio of maximum to minimum temperature",
+            "compression ratio and cut-off ratio",
+            "compression ratio and the ratio of maximum to minimum pressure",
+            "compression ratio and the ratio of exhaust temperature to inlet temperature"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Define the following terms:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>(a) Perpetual motion machine of second kind<br/>\n                        (b) Point and path functions<br/>\n                        (c) Total energy of the system<br/>\n                        (d) Psychrometry<br/>\n                        (e) Pure substance<br/>\n                        (f) Exergy destruction<br/>\n                        (g) Refrigeration</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>A certain water heater operates under steady flow conditions receiving \\( 4.2 \\text{ kg/s} \\)\n                        of\n                        water at \\( 75^{\\circ}C \\) temperature, enthalpy \\( 313\\cdot93 \\text{ kJ/kg} \\). The\n                        water is\n                        heated by mixing with the steam which is supplied to the heater at temperature \\(\n                        100\\cdot2^{\\circ}C \\) and enthalpy \\( 2676 \\text{ kJ/kg} \\). The mixture leaves the heater\n                        as\n                        liquid water at temperature \\( 100^{\\circ}C \\) and enthalpy \\( 419 \\text{ kJ/kg} \\). How\n                        much\n                        steam must be supplied to the heater per hour?</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>In an air-standard diesel cycle, the compression ratio is 16, and at the beginning of isentropic\n                        compression, the temperature is \\( 15^{\\circ}C \\) and the pressure is 0.1 MPa. Heat is added\n                        until the temperature at the end of the constant pressure process is \\( 1480^{\\circ}C \\).\n                        Calculate (i) the cut-off ratio, (ii) the heat supplied per kg of air, (iii) the cycle\n                        efficiency,\n                        and (iv) the mean effective pressure.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A gas flows steadily through a rotary compressor. The gas enters the compressor at a temperature\n                        of\n                        \\( 16^{\\circ}C \\), a pressure of 100 kPa, and an enthalpy of \\( 391\\cdot2 \\text{ kJ/kg}\n                        \\).\n                        The gas leaves the compressor at a temperature of \\( 245^{\\circ}C \\), a pressure of 0.6 MPa,\n                        and\n                        enthalpy of \\( 534\\cdot5 \\text{ kJ/kg} \\). There is no heat transfer to or from the gas as\n                        it\n                        flows through the compressor. Evaluate the external work done per unit mass of gas assuming the\n                        gas\n                        velocities at entry and exit to be negligible.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Evaluate the external work done per unit mass of gas when the gas velocity at entry is \\( 80\n                        \\text{\n                        m/s} \\) and that at exit is \\( 160 \\text{ m/s} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Define 'reversibility' and 'irreversibility'. What are the various causes of irreversibility?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Derive an expression for entropy change in an irreversible process.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>State Kelvin-Planck and Clausius statements for 2nd law of thermodynamics and show the\n                        equivalence\n                        between these statements.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>A gas of mass 1.5 kg undergoes a quasi-static expansion which follows a relationship \\( p = a +\n                        bV\n                        \\), where a and b are constants. The initial and final pressures are 1000 kPa and 200 kPa\n                        respectively and the corresponding volumes are \\( 0\\cdot20 \\text{ m}^{3} \\) and \\(\n                        1\\cdot20\n                        \\text{ m}^{3} \\). The specific internal energy of the gas is given by the relation \\( u = 1.5\n                        pv\n                        - 85 \\text{ kJ/kg} \\), where p is in kPa and v is in \\( \\text{m}^{3}\\text{/kg} \\).\n                        Calculate\n                        the net transfer and maximum internal energy of the gas attained during expansion.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Saturated air at \\( 2^{\\circ}C \\) is required to be supplied to a room where the temperature\n                        must\n                        be held at \\( 20^{\\circ}C \\) with a relative humidity of 50%. The air is heated and then\n                        water at\n                        \\( 10^{\\circ}C \\) is sprayed in to give the required humidity. Determine the temperature to\n                        which\n                        the air must be heated and the mass of spray water required per \\( \\text{m}^{3} \\) of air at\n                        room\n                        conditions. Assume that the total pressure is constant at 1.013 bar and neglect the fan power.\n                        Use\n                        steam table for required data.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>What are Helmholtz's and Gibbs' functions? Write four Maxwell's equations.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>A turbo-compressor delivers \\( 2\\cdot33 \\text{ m}^{3}\\text{/s} \\) of air at 0.276 MPa, \\(\n                        43^{\\circ}C \\) which is heated at this pressure to \\( 430^{\\circ}C \\) and finally expanded\n                        in a\n                        turbine which delivers 1860 kW. During the expansion, there is a heat transfer of 0.09 MJ/s to\n                        the\n                        surroundings. Calculate the turbine exhaust temperature if changes in kinetic and potential\n                        energies\n                        are negligible.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>A vessel of volume \\( 0.04 \\text{ m}^{3} \\) contains a mixture of saturated water and\n                        saturated\n                        steam at a temperature of \\( 250^{\\circ}C \\). The mass of the liquid present is 9 kg. Find\n                        the\n                        pressure, the mass, the specific volume, the enthalpy, the entropy, and the internal energy.\n                        <br/>\n                        Given: At \\( 250^{\\circ}C \\), \\( P_{sat} = 3\\cdot973 \\text{ MPa} \\), \\( \\nu_{f} =\n                        0.0012512\n                        \\text{ m}^{3}\\text{/kg} \\), \\( \\nu_{g} = 0.05013 \\text{ m}^{3}\\text{/kg} \\), \\( h_{f} =\n                        1085\\cdot36 \\text{ kJ/kg} \\), \\( h_{fg} = 1716\\cdot2 \\text{ kJ/kg} \\), \\( s_{f} =\n                        2\\cdot7927 \\text{ kJ/kg K} \\), \\( s_{fg} = 3\\cdot2802 \\text{ kJ/kg K} \\), \\( u_{f} =\n                        1080\\cdot39 \\text{ kJ/kg} \\), \\( u_{fg} = 1522 \\text{ kJ/kg} \\).\n                    </p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>A gas turbine plant operates on the Brayton cycle between the temperatures \\( 27^{\\circ}C \\)\n                        and\n                        \\( 800^{\\circ}C \\). <br/>\n                        (i) Find the pressure ratio at which the cycle efficiency approaches the Carnot cycle\n                        efficiency.<br/>\n                        (ii) Find the pressure ratio at which the work done per kg of air is maximum.<br/>\n                        (iii) Compare the efficiency at this pressure ratio with the Carnot efficiency for the given\n                        temperatures.</p>"
+        }
+      ]
+    }
+  ]
+}

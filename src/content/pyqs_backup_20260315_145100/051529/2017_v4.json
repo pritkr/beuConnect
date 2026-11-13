@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2017",
+    "subject": "INTRODUCTION TO JAVA PROGRAMMING LANGUAGE",
+    "subject_slug": "introduction-to-java-programming-language",
+    "subject_code": "051529",
+    "year": 2017,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of any seven of the following:",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Size (in bytes) of float and double in Java is:</p>",
+          "options": [
+            "4 and 8",
+            "8 and 8",
+            "4 and 4",
+            "8 and 4"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following operators is used to allocate memory to array variable in Java?</p>",
+          "options": [
+            "malloc",
+            "alloc",
+            "new",
+            "new malloc"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following is an incorrect array declaration?</p>",
+          "options": [
+            "int arr[] = new int[5]",
+            "int [] arr = new int[5]",
+            "int arr[] = int[5] new",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following is used as default for a member of a class if no access specifier is used\n                        for\n                        it?</p>",
+          "options": [
+            "private",
+            "public",
+            "protected",
+            "None of the above (default/package-private)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which of the following methods of string class is used to obtain character at specified index?\n                    </p>",
+          "options": [
+            "char()",
+            "Charat()",
+            "charat()",
+            "charAt()"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>What does AWT stand for?</p>",
+          "options": [
+            "All Window Tools",
+            "All Writing Tools",
+            "Abstract Window Toolkit",
+            "Abstract Writing Toolkit"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following keywords is used to prevent the content of a variable from being modified?\n                    </p>",
+          "options": [
+            "final",
+            "last",
+            "constant",
+            "static"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which of the following functions is used to perform some actions when the object is to be\n                        destroyed?\n                    </p>",
+          "options": [
+            "finalize()",
+            "delete()",
+            "main()",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>What is the order of precedence (highest to lowest) of the following operators?<br/>1. &amp;&amp;<br/>2.\n                        ==<br/>3. ?:</p>",
+          "options": [
+            "1 -&gt; 2 -&gt; 3",
+            "2 -&gt; 1 -&gt; 3",
+            "3 -&gt; 2 -&gt; 1",
+            "2 -&gt; 3 -&gt; 1"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which of the following classes is related to all the exceptions that can be caught by using\n                        catch?\n                    </p>",
+          "options": [
+            "Error",
+            "Exception",
+            "RuntimeException",
+            "All of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What are the various access specifiers for JAVA classes? Discuss the various types of inheritance\n                        supported by JAVA.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Discuss the different types of operators in JAVA along with their precedence relationship.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is JDBC connection? Explain the types of JAVA drivers available for database connectivity.\n                        List\n                        the advantages and disadvantages of each of the mentioned JAVA drivers.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>What is the difference between final, finally and finalize in JAVA? Compare and contrast between\n                        'throw' and 'throws'.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>What is a thread? Explain the different states in which a thread can exist. Why does a dead\n                        thread\n                        occur? What are the actions that can occur when a thread enters blocked state?</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the various OOPs concepts in JAVA.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What is an immutable class? How to create an immutable class?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>What is an abstract class? Explain with example. Differentiate between abstract class and\n                        interfaces.\n                        What are the advantages of interfaces over abstract classes?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What are applets? Which package contains the applet class? Explain the applet life cycle methods.\n                    </p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>What is the difference between swing and applet? How is a frame created and closed in an applet?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>How can we restrict inheritance for a class? Does JAVA support multiple inheritance? Justify your\n                        answer.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Write a program to insert an element at the last index of an array in JAVA.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Explain the concept of static methods with suitable examples.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is event handling? What are the steps involved in event handling?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Validate the generated offline data in ``native/assets/data``.
+"""Validate the generated data the app ships and the site serves.
 
-Checks manifest counts, unique ids, required shapes, and the documented gaps.
+Checks manifest counts, unique ids, required shapes, the documented gaps, and
+that no public CSV in the repo carries a contact, email or caste column.
 Python 3 standard library only:
 
     uv run python native/scripts/verify.py
@@ -9,6 +10,7 @@ Python 3 standard library only:
 
 from __future__ import annotations
 
+import csv
 import json
 import sys
 from collections import Counter
@@ -50,10 +52,60 @@ def unique(values: list[str]) -> list[str]:
     return duplicates
 
 
+# A public CSV in this repo is served to the world; these columns never belong
+# in one. The roster pipeline already refuses them, and this scan catches any
+# other pipeline (site result tables, one-off extractors) that writes them.
+PRIVATE_COLUMNS = {
+    "contactno",
+    "mobile",
+    "mobileno",
+    "phone",
+    "phoneno",
+    "guardianmobile",
+    "guardianmobileno",
+    "guardianphone",
+    "email",
+    "emailid",
+    "dateofbirth",
+    "dob",
+    "gender",
+    "category",
+    "caste",
+}
+
+CSV_DIRS = ("public/data", "pythonscripts", "src/data/students")
+
+
 def required(entry: dict[str, Any], fields: tuple[str, ...], label: str) -> None:
     for field in fields:
         if field not in entry:
             errors.append(f"{label}: missing '{field}'")
+
+
+def scan_public_csvs() -> int:
+    """Count public CSVs and fail on any contact, identity or caste column."""
+    scanned = 0
+    for rel in CSV_DIRS:
+        base = ROOT / rel
+        if not base.is_dir():
+            continue
+        for path in sorted(base.rglob("*.csv")):
+            scanned += 1
+            try:
+                with path.open("r", encoding="utf-8-sig", newline="") as handle:
+                    header = next(csv.reader(handle), [])
+            except (OSError, UnicodeDecodeError):
+                continue
+            leaked = sorted(
+                {
+                    name.strip()
+                    for name in header
+                    if name.strip().lower().replace(" ", "").replace("_", "") in PRIVATE_COLUMNS
+                }
+            )
+            if leaked:
+                errors.append(f"{path.relative_to(ROOT)}: private column(s) {', '.join(leaked)}")
+    return scanned
 
 
 def main() -> int:
@@ -61,6 +113,8 @@ def main() -> int:
     if not isinstance(manifest, dict):
         print("manifest.json is missing or unreadable")
         return 1
+
+    scan_public_csvs()
 
     check(manifest.get("dataset") == "manifest", "manifest: dataset must be 'manifest'")
     check(bool(manifest.get("generatedAt")), "manifest: generatedAt is empty")
@@ -101,10 +155,35 @@ def main() -> int:
         if not check(path.is_file(), f"manifest: missing file {path.name}"):
             continue
         doc = load(path)
+        dataset = entry.get("dataset")
+
+        # The roster is a separate pipeline (build-students-data.py) and its file
+        # is a JSON array, not a document.  Check the manifest contract here;
+        # that script owns the record schema and its own --check.
+        if dataset == "students":
+            if check(isinstance(doc, list), f"{path.name}: expected a JSON array"):
+                counts["students"] = len(doc)
+                check(
+                    entry["count"] == len(doc),
+                    f"{path.name}: count {entry['count']} != {len(doc)}",
+                )
+                ids = [str(record.get("id")) for record in doc if isinstance(record, dict)]
+                check(len(ids) == len(doc), f"{path.name}: non-object record")
+                check(not unique(ids), f"{path.name}: duplicate student id")
+                # Contact details, DOB, gender and caste stay in the private dump.
+                # The canonical roster is committed to a public repo and bundled
+                # into the APK; neither is a place for personal data.
+                private = {"phone", "guardianPhone", "email", "dob", "gender", "category"}
+                leaked = sorted(
+                    {key for record in doc if isinstance(record, dict) for key in private if key in record}
+                )
+                check(not leaked, f"{path.name}: private field(s) {', '.join(leaked)} in a public file")
+            rows.append(("students", entry["count"], "ok"))
+            continue
+
         if not isinstance(doc, dict):
             continue
 
-        dataset = entry.get("dataset")
         if dataset == "branches":
             branch_doc = doc
             branches = doc.get("branches") or []
@@ -277,6 +356,8 @@ def main() -> int:
             check(doc.get("maxGpa") == 10, f"{path.name}: maxGpa")
             check(doc.get("marks", {}).get("100") == {"ia": 30, "ese": 70}, f"{path.name}: 100-mark split")
             check(doc.get("marks", {}).get("50") == {"ia": 20, "ese": 30}, f"{path.name}: 50-mark split")
+            check(doc.get("pass", {}).get("esePercent") == 35, f"{path.name}: ESE pass percent")
+            check(doc.get("pass", {}).get("overallPercent") == 40, f"{path.name}: overall pass percent")
             pass_ese = doc.get("pass", {}).get("eseMinByTotal") or []
             check(
                 [(item.get("total"), item.get("eseMin")) for item in pass_ese]
@@ -350,6 +431,11 @@ def main() -> int:
     totals = manifest.get("totals") or {}
     for key, value in expected.items():
         check(totals.get(key) == value, f"manifest totals: {key} {totals.get(key)} != {value}")
+    if "students" in counts:
+        check(
+            totals.get("students") == counts["students"],
+            f"manifest totals: students {totals.get('students')} != {counts['students']}",
+        )
 
     # Every branch summary must agree with its subject file.
     for branch in (branch_doc or {}).get("branches", []):
@@ -359,10 +445,12 @@ def main() -> int:
         check(branch.get("topicCount") == subject_topics.get(code), f"branches: {code} topicCount")
         check(branch.get("stubCount") == subject_stubs.get(code), f"branches: {code} stubCount")
 
-    # No stray generated files.
+    # No stray generated files.  `students-gecs.json` belongs to the separate
+    # student-register pipeline and is intentionally left in place.
     on_disk = {path.name for path in DATA.glob("*.json")}
     expected_files = listed_paths | {"manifest.json"}
-    check(not (on_disk - expected_files), f"data: unexpected files {sorted(on_disk - expected_files)}")
+    unexpected = on_disk - expected_files - {"students-gecs.json"}
+    check(not unexpected, f"data: unexpected files {sorted(unexpected)}")
     check(not (expected_files - on_disk), f"data: missing files {sorted(expected_files - on_disk)}")
 
     documented_gaps = Counter(gap.get("dataset") for gap in gaps if isinstance(gap, dict))

@@ -88,14 +88,14 @@ function asRecord(value: unknown): Record<string, unknown> | null {
   return value as Record<string, unknown>;
 }
 
-/** `{ branch, sem }` from any store that carries a course, or null. */
-export function courseFrom(value: unknown): Course | null {
+/** `{ branch, sem }` from any store that carries a course, or null. `at` pins the session calendar for tests. */
+export function courseFrom(value: unknown, at: Date = new Date()): Course | null {
   const row = asRecord(value);
   if (!row) return null;
   const raw = typeof row.branch === "string" ? row.branch.trim().toLowerCase() : "";
   // A registration number implies the current semester; prefer it over a
   // stored (and possibly stale) semester so a 24-batch student lands on Sem 4.
-  const derived = classSemester(row);
+  const derived = classSemester(row, at);
   const sem = derived > 0 ? derived : Math.round(Number(row.sem ?? row.semester));
   const branch = BRANCH_META.some((meta) => meta.code === raw) ? raw : "";
   if (!branch || !(sem >= 1 && sem <= 8)) return null;

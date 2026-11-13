@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "Electrical Machines 1",
+    "subject_slug": "electrical-machines-1",
+    "subject_code": "100307",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Permeability in a magnetic circuit corresponds to ____ in an electric circuit.",
+              "options": [
+                "resistance",
+                "resistivity",
+                "conductivity",
+                "conductance"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "letter": "b",
+              "text": "The area of his hysteresis loss is a measure of",
+              "options": [
+                "permittivity",
+                "permeance",
+                "energy loss per cycle",
+                "magnetic flux"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "letter": "c",
+              "text": "The unit of reluctance is",
+              "options": [
+                "meter/henry",
+                "henry/meter",
+                "henry",
+                "1/henry"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "letter": "d",
+              "text": "The direction of rotation of a d.c. series motor can be reversed",
+              "options": [
+                "by interchanging supply terminals",
+                "by interchanging field terminals",
+                "either by interchanging supply terminals or by interchanging field terminals",
+                "by interchanging supply terminals as well as field terminals"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "letter": "e",
+              "text": "Match the type of machine in List-I with characteristic/application in List-II and tick the correct answer from the code given below :\nList-I\nA. Dc shunt generator\nB. Dc series motor\nC. Level compounded dc generator\nD. Dc series generator\n\nList-II\n1. Electric traction\n2. Has good voltage regulation\n3. Must have residual flux\n4. Used as booster\n\nCode :",
+              "options": [
+                "A-4, B-1, C-2, D-3",
+                "A-3, B-2, C-1, D-4",
+                "A-4, B-2, C-1, D-3",
+                "A-3, B-1, C-2, D-4"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "letter": "f",
+              "text": "The armature resistance of a 6-pole lap wound d.c. machine is $0.05\\text{ ohm}$. If the armature is rewound as a wave-winding, what is the armature resistance?",
+              "options": [
+                "$0.45\\text{ ohm}$",
+                "$0.30\\text{ ohm}$",
+                "$0.15\\text{ ohm}$",
+                "$0.10\\text{ ohm}$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "letter": "g",
+              "text": "The use of higher flux density in the transformer design",
+              "options": [
+                "reduces the weight per kVA",
+                "increases the weight per kVA",
+                "has no relation with the weight of transformer",
+                "increases the weight per kW"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "letter": "h",
+              "text": "Cores of large power transformer are made from which one of the following?",
+              "options": [
+                "Hot-rolled steel",
+                "Cold-rolled non-grain oriented steel",
+                "Cold-rolled grain oriented steel",
+                "Ferrite"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "letter": "i",
+              "text": "It is advised to use auto-transformer if the transformation ratio is",
+              "options": [
+                "greater than 1.0",
+                "near to 1.0",
+                "0.25",
+                "0.5"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "letter": "j",
+              "text": "Scott connections are used in",
+              "options": [
+                "three-phase to single-phase transformation",
+                "three-phase to two-phase transformation",
+                "single-phase to three-phase transformation",
+                "All of the above"
+              ],
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Explain how the primary current increases as the current on the secondary side of the transformer is increased.",
+              "marks": 5,
+              "id": "2_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Define reluctance and inductance.",
+              "marks": 4,
+              "id": "2_sub"
+            },
+            {
+              "letter": "c",
+              "text": "Explain why open-circuit and short-circuit tests should be performed on LV and HV sides respectively.",
+              "marks": 5,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Transformer is a constant-flux machine. Justify with the help of equivalent circuit.",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Derive a condition for maximum efficiency of a transformer.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "What is meant by commutation in d.c. machine? Differentiate between good commutation and bad commutation. Enumerate the mechanical and electrical conditions leading to poor commutation in d.c. machines.",
+              "marks": 10,
+              "id": "4_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Explain the advantages of four-point starter over the three-point starter.",
+              "marks": 4,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Describe and compare the various methods of speed control of d.c. motors.",
+              "marks": 10,
+              "id": "5_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Explain the terms 'base speed' and 'speed regulation' of d.c. motor.",
+              "marks": 4,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "A $250\\text{ V}$ d.c. series motor has armature and series field resistance of $0.25\\ \\Omega$ and $0.15\\ \\Omega$ respectively.",
+              "subquestions": [
+                {
+                  "number": "i",
+                  "text": "Calculate the current for developing a torque of $80\\text{ Nm}$ at $1200\\text{ r.p.m.}$"
+                },
+                {
+                  "number": "ii",
+                  "text": "Calculate the percentage reduction in flux when the motor runs at $1800\\text{ r.p.m.}$ at half the current obtained in part (i)."
+                }
+              ],
+              "marks": 14,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "A $5\\text{ kVA}$, single-phase transformer has a core loss of $40\\text{ watts}$ and full load ohmic loss of $100\\text{ watts}$. The daily variation of load on the transformer is as follows:\n7 am to 1 pm : $3\\text{ kW}$ at p.f. 0.6\n1 pm to 6 pm : $2\\text{ kW}$ at p.f. 0.8\n6 pm to 1 am : $6\\text{ kW}$ at p.f. 0.9\n1 am to 7 am : No load.\nDetermine the all-day efficiency of the transformer.",
+              "marks": 8,
+              "id": "7_sub"
+            },
+            {
+              "letter": "b",
+              "text": "For a commutator machine with 6 poles and 40 coils, determine for a simplex lap winding\u2014\n(i) the number of commutator segments;\n(ii) back pitch and front pitch;\n(iii) commutator pitch.",
+              "marks": 6,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "The following test data were taken on a $30\\text{ kVA}$, $2400/240\\text{ V}$, $50\\text{Hz}$, single-phase transformer:\nOpen circuit test : $V = 2400\\text{ V}$, $I = 0.3\\text{ A}$, $P = 230\\text{ W}$\nShort circuit test : $V = 70\\text{ V}$, $I = 18.8\\text{ A}$, $P = 1050\\text{ W}$\nDetermine the primary terminal voltage, real and reactive power input and efficiency, when a current of $12.5\\text{ A}$ at $240\\text{ V}$ is drawn from the low voltage side by a load of 0.8 p.f. lagging.",
+              "marks": 10,
+              "id": "8_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Explain why the e.m.f. generated in the armature of a d.c. motor is called 'back e.m.f.'.",
+              "marks": 4,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "letter": "a",
+              "text": "Discuss how the parallel operation of two single-phase transformers is affected by\u2014\n(i) unequal voltage ratio;\n(ii) unequal per unit leakage impedances but same $x_e / r_e$ ratio.",
+              "marks": 8,
+              "id": "9_sub"
+            },
+            {
+              "letter": "b",
+              "text": "Explain the Biot-Savart law.",
+              "marks": 6,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

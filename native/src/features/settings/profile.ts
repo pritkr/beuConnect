@@ -154,6 +154,16 @@ export function collegeShortLabel(code: string): string {
   return code && COLLEGE_NAMES[code] ? shortCollegeName(code) : "";
 }
 
+/**
+ * The college a profile belongs to: the code the student confirmed, else the
+ * one their registration number carries. "" when neither is known.
+ */
+export function profileCollege(profile: Profile): string {
+  if (profile.college) return profile.college;
+  const info = parseReg(profile.reg);
+  return info ? info.college : "";
+}
+
 /** "Aashish", or "there" when the profile has no name yet. */
 export function greetingName(profile: Profile): string {
   return profile.name.split(" ")[0] || "there";

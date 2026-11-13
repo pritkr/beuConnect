@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "Special Examination - 2023",
+    "subject": "Digital Electronics",
+    "subject_slug": "digital-electronics",
+    "subject_code": "100403",
+    "year": 2023,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven question only:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Define Dynamic RAM.</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>The resolution of a 10-bit AD converter for an input range of 10 V is approximately _________</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>The parameter through which 16 distinct values can be represented is known as _________</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>Define Multiplexing.</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Write the significance of Truth table.</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Write the differences between Combinational and Sequential circuit.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>A hexadecimal odometer displays F52F. The next reading will be _________</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>The basic property of Sequential circuit is _________</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>How many entries will be in the truth table of a 4-input NAND gate?</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>What is Dual Slope ADC?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What are weighted, non-weighted, cyclic and self-complementary codes? Explain each with examples.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Design a BCD to 7-segment display decoder circuit using logic gates.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Design a 3-bit parallel comparator A/D convertor that provides output in 2's complement format.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Design full adder using 8:1 mux.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Design full adder using 4:1 mux.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is binary shift register? Write down their application.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Minimize the following expression using k-map<br/>\n                        \\( f(P,Q,R,S) = \\Sigma m(0,1,4,5,7,12,13) \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Describe the procedure to design Mod-6 counter.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "RAM",
+            "ROM",
+            "CMOS logic",
+            "Operation of TTL logic circuit working as NAND Gate"
+          ]
+        }
+      ]
+    }
+  ]
+}

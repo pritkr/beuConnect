@@ -29,7 +29,8 @@ import {
   Stat,
   ListBar,
 } from "../../ui";
-import { SITE } from "../../lib/net";
+import { branchIcon } from "../../ui/branch-icon";
+import { SITE, debounce } from "../../lib/net";
 import {
   activeSemesters,
   branches,
@@ -45,6 +46,7 @@ import { rankSubjects } from "./importance";
 import { gateTotalPapers, searchGateSubjects } from "./gate-index";
 import { openPdfPaper } from "./pdf-index";
 import { cachedPaperSlugs } from "./api";
+import { EVENTS, track } from "../../lib/analytics";
 import {
   clearRecents,
   effectiveCourse,
@@ -86,6 +88,14 @@ function selectionOf(): { branch: string | null; sem: number | null } {
 
 function BrowseScreen(props: { nav: Nav }) {
   const query = signal(param(props.nav, "q"));
+  const field = signal(param(props.nav, "q"));
+  // Typing repaints the list; the delay keeps a 1 400-row shelf from rebuilding
+  // on every keystroke while the text the student sees stays instant.
+  const commit = debounce((value: string) => query.set(value), 120);
+  const clearSearch = () => {
+    field.set("");
+    query.set("");
+  };
   const openSubject = signal("");
   /** Slugs with papers already on the device, for the row badges. */
   const savedSlugs = signal<Set<string>>(new Set());
@@ -133,11 +143,17 @@ function BrowseScreen(props: { nav: Nav }) {
     const current = selectionOf().sem;
     const sem = current !== null && sems.includes(current) ? current : null;
     setPrefs({ branch, sem });
+    track(EVENTS.pyqSelect, { label: "branch", branch: branch ?? "all", sem: sem ?? "all" });
+  };
+
+  const pickSem = (sem: number | null) => {
+    setPrefs({ ...selectionOf(), sem });
+    track(EVENTS.pyqSelect, { label: "sem", sem: sem ?? "all" });
   };
 
   return (
     <Screen>
-      {() => <ListBar title="Previous papers" meta={`${matches().length} subjects`} />}
+      {() => <ListBar title={`${matches().length} subjects`} />}
       {() => (
         <List
           class="flex-1"
@@ -176,7 +192,7 @@ function BrowseScreen(props: { nav: Nav }) {
                 }
                 onAction={() =>
                   query().trim()
-                    ? query.set("")
+                    ? clearSearch()
                     : setPrefs({ ...selectionOf(), sem: null })
                 }
               />
@@ -211,8 +227,11 @@ function BrowseScreen(props: { nav: Nav }) {
               </Hero>
 
               <Search
-                value={query()}
-                onChange={query.set}
+                value={field()}
+                onChange={(value) => {
+                  field.set(value);
+                  commit(value);
+                }}
                 placeholder="Subject, code or year"
               />
 
@@ -232,6 +251,7 @@ function BrowseScreen(props: { nav: Nav }) {
                       <Chip
                         active={active}
                         onPress={() => pickBranch(branch.key)}
+                        icon={branchIcon(branch.key)}
                         label={`${shortBranchName(branch.key)}, ${
                           subjectsOf(branch.key, null).length
                         } subjects`}
@@ -255,7 +275,7 @@ function BrowseScreen(props: { nav: Nav }) {
                 <View class="flex-row flex-wrap gap-2">
                   <Chip
                     active={selectionOf().sem === null}
-                    onPress={() => setPrefs({ ...selectionOf(), sem: null })}
+                    onPress={() => pickSem(null)}
                     label="All semesters"
                   >
                     All
@@ -266,7 +286,7 @@ function BrowseScreen(props: { nav: Nav }) {
                       <Chip
                         active={active}
                         tone={effectiveCourse()?.sem === sem ? "amber" : undefined}
-                        onPress={() => setPrefs({ ...selectionOf(), sem })}
+                        onPress={() => pickSem(sem)}
                         label={`Semester ${sem}${activeSems().includes(sem) ? ", in session" : ""}`}
                       >
                         {`Sem ${sem}`}
@@ -286,7 +306,7 @@ function BrowseScreen(props: { nav: Nav }) {
                   />
                   <Scroll
                     horizontal
-                    class="flex-1"
+                    class="min-h-11"
                     scrollbar={false}
                     bounces={false}
                     contentClass="flex-row gap-2 pr-4"
@@ -344,9 +364,11 @@ function BrowseScreen(props: { nav: Nav }) {
                   expanded={openSubject() === item.key}
                   saved={savedSlugs().has(item.slug)}
                   onSavedChange={readSaved}
-                  onToggle={() =>
-                    openSubject.set(openSubject() === item.key ? "" : item.key)
-                  }
+                  onToggle={() => {
+                    const open = openSubject() !== item.key;
+                    if (open) track(EVENTS.pyqSubjectOpen, { subject: item.name, sem: item.sem });
+                    openSubject.set(open ? item.key : "");
+                  }}
                   onSyllabus={() =>
                     props.nav.push("syllabus.subject", {
                       branch: item.branch,

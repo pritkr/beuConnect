@@ -1,0 +1,10 @@
+import { BRANCH_PACKS } from "../src/features/syllabus/data/packs";
+import { parseSyllabus, type BranchPack } from "../src/features/syllabus/parse";
+const pack = JSON.parse(BRANCH_PACKS["cse"]) as BranchPack;
+const s = pack.semesters["3"].find((x) => x.code === "105306")!;
+const units = parseSyllabus(s.content);
+console.log(units[5].title, units[5].topics.length);
+for (const t of units[5].topics) console.log(" -", t.id, "|", t.title.slice(0, 70));
+const lab = pack.semesters["3"].find((x) => x.code === "105302P")!;
+console.log("LAB", lab.name);
+for (const u of parseSyllabus(lab.content)) console.log(" ", u.id, u.title, u.topics.slice(0,3).map(t=>`${t.id}:${t.title.slice(0,50)}`));

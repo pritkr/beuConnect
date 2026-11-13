@@ -34,6 +34,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
 
 /**
  * One continuous column of pages, drawn by Android's own PdfRenderer.
@@ -189,11 +190,13 @@ final class PdfPageView extends View {
         loading = true;
         invalidate();
         final String target = url;
-        io.execute(() -> {
+        submit(() -> {
             File cached;
             try {
                 cached = cacheFile(target);
-            } catch (IOException error) {
+            } catch (Throwable error) {
+                // A blocked network, a full cache, a redirect loop: the screen
+                // says so. Uncaught on the io thread, any of these is a crash.
                 fail(ticket, "Could not download this PDF. Check the connection and try again.");
                 return;
             }
@@ -206,7 +209,7 @@ final class PdfPageView extends View {
     }
 
     private void open(int ticket) {
-        io.execute(() -> {
+        submit(() -> {
             int[] widths;
             int[] heights;
             synchronized (rendererLock) {
@@ -227,7 +230,11 @@ final class PdfPageView extends View {
                         heights[index] = page.getHeight();
                         page.close();
                     }
-                } catch (IOException | RuntimeException error) {
+                } catch (Throwable error) {
+                    // Not just IOException: a protected or truncated file makes
+                    // PdfRenderer throw unchecked, and an uncaught throw on the
+                    // io thread ends the process. Close whatever half-opened.
+                    closeRenderer();
                     fail(ticket, "This PDF could not be opened. It may be damaged or protected.");
                     return;
                 }
@@ -350,6 +357,17 @@ final class PdfPageView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        try {
+            drawPages(canvas);
+        } catch (RuntimeException error) {
+            // A bitmap recycled under the canvas, a renderer that went away:
+            // lose the frame, not the app. The next invalidation retries, and
+            // a screen that keeps failing still leaves the rest of the app
+            // usable instead of taking the process down on the draw thread.
+        }
+    }
+
+    private void drawPages(Canvas canvas) {
         if (loading && pageCount == 0) {
             drawNotice(canvas, "Opening the PDF");
             return;
@@ -414,7 +432,7 @@ final class PdfPageView extends View {
         final int width = need;
         final int ticket = request;
         inFlight.put(index, width);
-        io.execute(() -> {
+        submit(() -> {
             Bitmap bitmap = null;
             try {
                 bitmap = render(index, width);
@@ -439,18 +457,26 @@ final class PdfPageView extends View {
     private Bitmap render(int index, int width) {
         synchronized (rendererLock) {
             if (renderer == null || index >= pageCount) return null;
-            int height = Math.max(1, Math.round(width * (pageHeights[index] / (float) pageWidths[index])));
-            Bitmap bitmap;
+            Bitmap bitmap = null;
             try {
+                int height = Math.max(1, Math.round(width * (pageHeights[index] / (float) pageWidths[index])));
                 bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            } catch (OutOfMemoryError error) {
+                bitmap.eraseColor(Color.WHITE);
+                PdfRenderer.Page page = renderer.openPage(index);
+                try {
+                    page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
+                } finally {
+                    page.close();
+                }
+                return bitmap;
+            } catch (Throwable error) {
+                // A damaged or protected page, a renderer that went away, a
+                // heap that cannot hold this bitmap: the page stays blank and
+                // the rest of the document still works. On a worker thread an
+                // uncaught throw here is a process death, not a blank page.
+                if (bitmap != null) bitmap.recycle();
                 return null;
             }
-            bitmap.eraseColor(Color.WHITE);
-            PdfRenderer.Page page = renderer.openPage(index);
-            page.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
-            page.close();
-            return bitmap;
         }
     }
 
@@ -513,14 +539,17 @@ final class PdfPageView extends View {
             return;
         }
         final String display = downloadFileName();
-        io.execute(() -> {
+        submit(() -> {
             try {
                 String where = save(sourceFile, display);
                 Map<String, Object> event = new HashMap<>();
                 event.put("name", display);
                 event.put("path", where);
                 emit("saved", event);
-            } catch (IOException | SecurityException error) {
+            } catch (Throwable error) {
+                // `save` can fail with unchecked exceptions too (a resolver
+                // that went away, a full disk reported as IllegalState), and
+                // this runs on the io thread: an escape kills the app.
                 Map<String, Object> event = new HashMap<>();
                 event.put("message", "Could not save the PDF to Downloads.");
                 emit("fail", event);
@@ -693,7 +722,29 @@ final class PdfPageView extends View {
     }
 
     private void emit(String name, Map<String, Object> data) {
-        post(() -> bridge.emit(name, data));
+        post(() -> {
+            try {
+                bridge.emit(name, data);
+            } catch (RuntimeException ignored) {
+                // The JS side of this page is gone (navigated away, bundle
+                // reloaded): an event nobody hears is not worth a crash.
+            }
+        });
+    }
+
+    /**
+     * Runs {@code work} on the io thread, unless the view has been closed.
+     *
+     * `close()` shuts the executor down; a frame or a command that was already
+     * queued then throws `RejectedExecutionException` on the caller — the UI
+     * thread — which Android treats as a fatal crash. A closed PDF has nothing
+     * left to render, so dropping the work is the correct outcome.
+     */
+    private void submit(Runnable work) {
+        try {
+            io.execute(work);
+        } catch (RejectedExecutionException ignored) {
+        }
     }
 
     private static String sha1(String text) {

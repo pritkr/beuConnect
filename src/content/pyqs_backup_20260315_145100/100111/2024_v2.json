@@ -1,0 +1,306 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Examination, 2024",
+    "subject": "Programming for Problem Solving",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100111",
+    "year": 2024,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer the following (Any seven question only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "Which of the following is a valid variable name in C?",
+          "options": [
+            "2value",
+            "@value",
+            "value_2",
+            "value#2"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "Which of these is not a valid data type in C?",
+          "options": [
+            "int",
+            "real",
+            "float",
+            "char"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "Which of the following is the correct syntax for if statement?",
+          "options": [
+            "if [condition] then",
+            "if condition then",
+            "if (condition)",
+            "if {condition}"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "What is the output of printf(\"%d\", 5 + 3 * 2)?",
+          "options": [
+            "16",
+            "11",
+            "10",
+            "13"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "Which header file is required to use printf()?",
+          "options": [
+            "stdlib.h",
+            "conio.h",
+            "stdio.h",
+            "string.h"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "Which keyword is used to define a constant in C?",
+          "options": [
+            "final",
+            "constant",
+            "#define",
+            "static"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "What is the index of the first element in an array?",
+          "options": [
+            "1",
+            "-1",
+            "0",
+            "Depends on array"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "Which one is the logical AND operator in C?",
+          "options": [
+            "&amp;",
+            "|",
+            "&amp;&amp;",
+            "||"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "Which format specifier is used for printing float values?",
+          "options": [
+            "%d",
+            "%c",
+            "%f",
+            "%x"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "Which of these is not a loop in C?",
+          "options": [
+            "for",
+            "while",
+            "do-while",
+            "repeat-until"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Explain the structure of a C program with an example.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Describe basic data types in C with memory size."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "What is an algorithm. Write an algorithm to perform the addition of two numbers in C and draw a\n                        flowchart to represent the addition of two numbers."
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Write a program to check whether a number is even or odd using if-else."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Explain Arithmetic and Logical operators in C with example programs.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Explain Relational and Bitwise operators with example programs.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Explain call by value and call by reference with examples.",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "What is the difference between library functions and user-defined functions?",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "What is an array in C programming? Write advantages of using arrays. Explain a one-dimensional\n                        array with a suitable example program."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Describe the difference between character array and string."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Write the difference Between Array and Structure in C programming.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Write the difference Between Structure and Union in C programming.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "What is a pointer? Explain pointer declaration and initialization with sample program.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "What is file? Explain text file and binary file in details."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Structure</li>\n<li>Union</li>\n<li>Recursion</li>\n<li>Fibonacci series program</li>\n</ul>",
+          "options": [
+            "Structure",
+            "Union",
+            "Recursion",
+            "Fibonacci series program"
+          ]
+        }
+      ]
+    }
+  ]
+}

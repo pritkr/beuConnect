@@ -1,4 +1,5 @@
-Same app as 1.1.1.
+The result table is now a first-class destination: a door on Home, a row in
+More, and a search result, ranked above the data browser.
 
-The Android build no longer needs a JavaScript runtime on the build machine,
-only the Android SDK, a JDK and Rust. Nothing in the app changed.
+Automatic campus sign-in puts the Wi-Fi session back when the portal drops it,
+and the student register searches all 1,784 rows without a stutter.

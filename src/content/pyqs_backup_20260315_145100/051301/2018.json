@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2018",
+    "subject": "OBJECT-ORIENTED PROGRAMMING",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051301",
+    "year": 2018,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct option of the following (any seven) :",
+          "id": "1",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Which of the following types of class allows only one object of it to be created?",
+              "options": [
+                "Virtual Class",
+                "Abstract Class",
+                "Singleton Class",
+                "Friend Class"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Which of the following statements is correct?",
+              "options": [
+                "Base class pointer cannot point to derived class.",
+                "Derived class pointer cannot point to base class.",
+                "Pointer to derived class cannot be created.",
+                "Pointer to base class cannot be created."
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Which of the following statements is correct?",
+              "options": [
+                "A constructor is called at the time of declaration of an object.",
+                "A constructor is called at the time of use of an object.",
+                "A constructor is called at the time of declaration of a class.",
+                "A constructor is called at the time of use of a class."
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Which of the following approaches is adapted by C++?",
+              "options": [
+                "Top-down",
+                "Bottom-up",
+                "Right-left",
+                "Left-right"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Which of the following is not type of class?",
+              "options": [
+                "Abstract Class",
+                "Final Class",
+                "Start Class",
+                "String Class"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "What is default access specifier for data members or member functions declared within a class without any specifier in C++?",
+              "options": [
+                "Private",
+                "Protected",
+                "Public",
+                "Depends on compiler"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "Which is known as generic class?",
+              "options": [
+                "Abstract Class",
+                "Final Class",
+                "Template Class",
+                "Efficient Code"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "What is scope of a class nested inside another class?",
+              "options": [
+                "Protected scope",
+                "Private scope",
+                "Global scope",
+                "Depends on access specifier and inheritance used"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "Which syntax for class definition is wrong?",
+              "options": [
+                "Class student{};",
+                "Student class{};",
+                "Class student {public : student(int a){ }};",
+                "Class student {student(int a){ }};"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "Which among the following best describes the inheritance?",
+              "options": [
+                "Copying the code already written",
+                "Using the code already written once",
+                "Using already defined functions in programming language",
+                "Using the data and functions into derived segment"
+              ],
+              "answer": "iv",
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "What do you understand by object-oriented programming? What are the advantages of programming using object-oriented approach?",
+          "id": "2",
+          "marks": null
+        },
+        {
+          "text": "What are the different data types in C++? Explain that C++ is an object-oriented language.",
+          "id": "3",
+          "marks": null
+        },
+        {
+          "text": "What is a class? Also write an example (syntax) to define a class in C++. Differentiate between a class and an object.",
+          "id": "4",
+          "marks": null
+        },
+        {
+          "text": "What is inheritance? What are the different types of inheritance in C++? Explain with suitable diagram.",
+          "id": "5",
+          "marks": null
+        },
+        {
+          "text": "Write short notes with examples on each of the following with respect to C++ :",
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Data abstraction",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Overriding",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Encapsulation",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "Virtual function",
+              "id": "6_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "Constructor and destructor",
+              "id": "6_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "text": "What do you mean by polymorphism? What are the static and dynamic polymorphism techniques?",
+          "id": "7",
+          "marks": null
+        },
+        {
+          "text": "Define Exception Handling. What are the uses of keywords try, throw and catch? Explain with an example by writing a C++ program.",
+          "id": "8",
+          "marks": null
+        },
+        {
+          "text": "What is Access Modifier in C++? Define each type and also differentiate between these.",
+          "id": "9",
+          "marks": null
+        }
+      ]
+    }
+  ]
+}

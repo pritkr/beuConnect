@@ -1,0 +1,291 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2022",
+    "subject": "Engineering Mechanics",
+    "subject_slug": "engineering-mechanics",
+    "subject_code": "100310",
+    "year": 2022,
+    "semester": 0,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (Any seven question only):",
+          "marks": null,
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "The angle of inclination of the plane at which the body begins to move down the plane under its own weight is called:",
+              "options": [
+                "(i) Angle of Friction",
+                "(ii) Angle of Repose",
+                "(iii) Angle of Projection",
+                "(iv) None of these"
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "The bending moment on a section is maximum where shearing force is",
+              "options": [
+                "(i) minimum",
+                "(ii) maximum",
+                "(iii) zero",
+                "(iv) equal"
+              ]
+            },
+            {
+              "part": "(c)",
+              "text": "Mass moment of inertia of circular disc",
+              "options": [
+                "(i) $0.0981\\text{ md}^2$",
+                "(ii) $0.25\\text{ md}^2$",
+                "(iii) $0.5\\text{ md}^2$",
+                "(iv) None of the above"
+              ]
+            },
+            {
+              "part": "(d)",
+              "text": "A simply supported beam of span ($l$) is carries a point load ($W$) at the centre of the beam. The bending moment diagram will be a",
+              "options": [
+                "(i) parabola with maximum ordinate at the centre of the beam",
+                "(ii) parabola with maximum ordinate at one end of the beam",
+                "(iii) triangle with maximum ordinate at the centre of the beam",
+                "(iv) triangle with maximum ordinate at one end of the beam"
+              ]
+            },
+            {
+              "part": "(e)",
+              "text": "Continuous beams are",
+              "options": [
+                "(i) Statically Determinate Beam",
+                "(ii) Statically Indeterminate Beam",
+                "(iii) Frame Beam",
+                "(iv) None of these"
+              ]
+            },
+            {
+              "part": "(f)",
+              "text": "Principle of transmissibility can be applied only when the body is treated as",
+              "options": [
+                "(i) A particle",
+                "(ii) A rigid body",
+                "(iii) deformable",
+                "(iv) a continuum"
+              ]
+            },
+            {
+              "part": "(g)",
+              "text": "For perfect elastic collision, coefficient of restitution is",
+              "options": [
+                "(i) 0",
+                "(ii) 1",
+                "(iii) 0 to 1",
+                "(iv) Less than 1"
+              ]
+            },
+            {
+              "part": "(h)",
+              "text": "A hinge support constrains",
+              "options": [
+                "(i) Translational motion along x-direction only",
+                "(ii) Translational motion along y-direction only",
+                "(iii) Rotational motion perpendicular to the x and y axis",
+                "(iv) Translational motion along both x and y direction"
+              ]
+            },
+            {
+              "part": "(i)",
+              "text": "The centre of mass is the ratio of ________ to ________.",
+              "options": [
+                "(i) The product of centroid and mass to the total weight",
+                "(ii) The addition of centroid and weight to the total weight",
+                "(iii) The subtraction of centroid and weight to the total weight",
+                "(iv) The product of centroid and mass to the total mass"
+              ]
+            },
+            {
+              "part": "(j)",
+              "text": "Centre of mass and centre of gravity of rigid body",
+              "options": [
+                "(i) Always coincide",
+                "(ii) May be or may be not coincide",
+                "(iii) Never coincide",
+                "(iv) None of these"
+              ]
+            }
+          ],
+          "id": "Q.1"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "What are scalar, vector and tensor quantities? Explain parallelogram law of vector addition. Describe a second order tensor quantity."
+            }
+          ],
+          "id": "Q.2",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "Four forces of magnitude $10\\text{ N}$, $20\\text{ N}$, $30\\text{ N}$ and $40\\text{ N}$ are acting respectively along the four sides of a square $ABCD$ as shown in fig.1 below.\n\n![Fig. 1](diagram_placeholder_1)\n\nDetermine the resultant moment about the point $C$. Each side of square is given $1\\text{ m}$.",
+              "marks": [
+                7
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "The four coplanar forces are acting at a point as shown in Fig 2. One of the forces is unknown and its magnitude is shown by $P$.\n\n![Fig. 2](diagram_placeholder_2)\n\nThe resultant is having a magnitude $500\\text{ N}$ and is acting along x-axis. Determine the unknown force $P$ and its inclination with x-axis.",
+              "marks": [
+                7
+              ]
+            }
+          ],
+          "id": "Q.3",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "The equation of motion of particle moving in a straight line is given by $s = 15t + 3t^2 - t^3$ where $s$ is the distance covered from the starting point in metre at the end of $t$ seconds. Find:\n(i) the velocity and acceleration at start,\n(ii) the time, when the particle reaches its maximum velocity, and\n(iii) the maximum velocity of the particle",
+              "marks": [
+                7
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "A stone is thrown vertically upwards with a velocity of $29.40\\text{ m/s}$ from the top of a tower $49\\text{ m}$ high. Calculate:\n(i) time required for the stone to reach the ground,\n(ii) velocity of the stone in its downward travel at the point in the same level as the point of projection, and\n(iii) the maximum height to which the stone will rise in its flight.",
+              "marks": [
+                7
+              ]
+            }
+          ],
+          "id": "Q.4",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "Derive the relation for a circular shaft when subjected to torsion as given below\n$$\\frac{T}{J} = \\frac{\\tau}{r} = \\frac{G\\theta}{L}$$\nWhere:\n$T = \\text{Torque transmitted,}$\n$J = \\text{polar moment of inertia,}$\n$\\tau = \\text{Max. shear stress,}$\n$r = \\text{Radius of the shaft,}$\n$G = \\text{Modulus of rigidity,}$\n$\\theta = \\text{Angle of twist, and}$\n$L = \\text{Length of the shaft.}$",
+              "marks": [
+                7
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "Explain the term \u2013 work, virtual displacement & virtual work.",
+              "marks": [
+                7
+              ]
+            }
+          ],
+          "id": "Q.5",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "Explain the type of loadings and support reactions.",
+              "marks": [
+                5
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "Two identical rollers, each of weight $50\\text{ N}$ are supported by an inclined plane and a vertical wall as shown in Fig.3. Find the reaction at the point of supports $A$, $B$ and $C$. Assume all the surfaces to be smooth.\n\n![Fig. 3](diagram_placeholder_3)",
+              "marks": [
+                9
+              ]
+            }
+          ],
+          "id": "Q.6",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "What is the advantage of the method of section over the method of joints? How will you use the method of section in finding forces in the members of a truss?",
+              "marks": [
+                5
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "A truss of span $7.5\\text{ m}$ is loaded as shown in Fig. 4. Find the reactions and forces in the members of the truss.\n\n![Fig. 4](diagram_placeholder_4)",
+              "marks": [
+                9
+              ]
+            }
+          ],
+          "id": "Q.7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "State the laws of Coulomb's friction. Discuss the factors which the friction force depends on.",
+              "marks": [
+                7
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "Briefly explain the origin of friction. Show that in an inclined plane the angle of friction is equal to the angle of repose.",
+              "marks": [
+                7
+              ]
+            }
+          ],
+          "id": "Q.8",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "subQuestions": [
+            {
+              "part": "(a)",
+              "text": "A small ball of mass $10\\text{ kg}$, falls under the gravity through a height of $6\\text{ cm}$ as shown below (fig. 5). the balls hits the spring and compress it through an distance of '$y$'. Find the value of $y$, if spring constant is $10\\text{ N/m}$.\n\n![Fig. 5](diagram_placeholder_5)",
+              "marks": [
+                7
+              ]
+            },
+            {
+              "part": "(b)",
+              "text": "Prove that the moment of inertia of a circular section about a horizontal axis (in the plane of the circular section) and passing through the CG of the section is given by $\\pi D^4/64$.",
+              "marks": [
+                7
+              ]
+            }
+          ],
+          "id": "Q.9",
+          "marks": null,
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

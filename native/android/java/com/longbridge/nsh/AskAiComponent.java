@@ -1,7 +1,6 @@
 package com.longbridge.nsh;
 
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -60,8 +59,10 @@ final class AskAiComponent implements NshComponent {
         try {
             activity.startActivity(Intent.createChooser(send, "Ask AI"));
             emit("opened", "");
-        } catch (ActivityNotFoundException | SecurityException none) {
-            // No app on the device accepts text: keep the prompt readable.
+        } catch (Throwable none) {
+            // No app on the device accepts text, or the activity is gone by
+            // the time the chooser opens: keep the prompt readable. Uncaught
+            // here (this runs on the UI thread) would end the app.
             copy(prompt);
             emit("fail", "No app could take the prompt. It is on the clipboard.");
         }
@@ -77,9 +78,14 @@ final class AskAiComponent implements NshComponent {
     }
 
     private void emit(String name, String app) {
-        Map<String, Object> event = new HashMap<>();
-        event.put("app", app);
-        bridge.emit(name, event);
+        try {
+            Map<String, Object> event = new HashMap<>();
+            event.put("app", app);
+            bridge.emit(name, event);
+        } catch (RuntimeException ignored) {
+            // The JS side of the bridge is gone; an event nobody hears is not
+            // a crash.
+        }
     }
 
     @Override

@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2019",
+    "subject": "SIGNALS AND SYSTEMS",
+    "subject_slug": "signals-and-systems",
+    "subject_code": "031510",
+    "year": 2019,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer any seven of the following questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Find the fundamental period and frequency of the signal \\( x(t)=\\cos 18\\pi t+\\sin 12\\pi t\n                        \\)</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>With an example, prove that cascade combination of an LTI system and its inverse system results\n                        an identity system.</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>Check whether the system \\( y(t)=tx(t) \\) is causal and stable.</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>What is the physical significance of convolution?</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>What do you mean by convergence of Fourier series?</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>Prove that \\( x_{even}(t)\\leftrightarrow Re\\{a_{k}\\} \\) where \\( x(t) \\) is real and \\(\n                        x(t)\\leftrightarrow a_{k} \\).</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Determine the Laplace transform for the signal \\( x(t)=e^{-5t}u(t-1) \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>For an LTI system to be causal and stable, what should be the condition on ROC and locations of\n                        poles?</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Find the z-transform and ROC of \\( x[n]=(\\frac{1}{5})^{n}u(n-3) \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>State and prove time reversal property of z-transform.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Compute and plot the even and odd parts of the given discrete and continuous signals from the\n                        figures.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/64.jpg\"/>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Let \\( x(t)=u(t-3)-u(t-5) \\) and \\( h(t)=e^{-3t}u(t) \\). Compute:<br/>\n                        (i) \\( y(t)=x(t)*h(t) \\)<br/>\n                        (ii) \\( g(t)=(dx(t)/dt)*h(t) \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>For each of the following systems, check the properties of linearity, time-invariance, causality\n                        and BIBO stability:<br/>\n                        (i) \\( y(t)=x(t/2) \\)<br/>\n                        (ii) \\( y[n]=nx[n] \\)</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Compute and plot the convolution \\( y[n]=x[n]*h[n] \\) where \\( x[n]=(\\frac{1}{2})^{n-2}u[n-2]\n                        \\) and \\( h[n]=u[n+2] \\).</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Obtain the differential equations for the given systems.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/63.jpg\"/>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Explain the 'property of sifting' of discrete-time unit impulse.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>State and prove the following properties of continuous-time Fourier series:<br/>\n                        (i) Frequency shifting<br/>\n                        (ii) Periodic convolution in time-domain<br/>\n                        (iii) Time scaling<br/>\n                        (iv) Differentiation in time-domain</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Calculate the Fourier series coefficients for the periodic signal<br/>\n                        \\( x(t)=\\begin{cases}2&amp;,&amp;0\\le t&lt; 2\\\\ -2,&amp;2\\le t&lt; 4\\end{cases} \\)<br/>\n                            with fundamental frequency \\( \\omega_{0}=\\pi/2 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>State and prove the following properties of discrete-time Fourier transform:<br/>\n                        (i) Time shifting<br/>\n                        (ii) Time expansion<br/>\n                        (iii) Multiplication of two signals in time-domain<br/>\n                        (iv) Differentiation in frequency</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Compute the Fourier transform of \\( x[n]=(\\frac{1}{4})^{|n-1|} \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Consider an LTI system whose response to the input \\( x(t)=(e^{-t}+e^{-3t})u(t) \\) is \\(\n                        y(t)=(2e^{-t}-2e^{-4t})u(t) \\). Using Laplace transforms, find the impulse response of the\n                        system. Also compute its frequency response.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Determine the inverse Laplace transform of \\( X(s)=\\frac{(s+1)}{(s+1)^{2}+4} \\), \\(\n                        Re\\{s\\}&gt;-1 \\).</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Determine the impulse response of the system described by the difference equation \\(\n                        y[n]=\\frac{1}{2}[x[n]+x[n-1]+y[n-1]] \\). Assume that the system is initially relaxed.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Solve the following linear difference equation:<br/>\n                        \\( y[n]+\\frac{1}{2}y[n-1]-\\frac{1}{4}y[n-2]=0 \\)<br/>\n                        Given that \\( y[-1]=y[-2]=1 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Determine all possible signals of \\( x(n) \\) associated with the following z-transforms:<br/>\n                        (i) \\( X(z)=\\frac{1}{1-\\frac{3}{2}z^{-1}+\\frac{1}{2}z^{-2}} \\)<br/>\n                        (ii) \\( X(z)=\\frac{5}{1-\\frac{1}{2}z^{-1}+\\frac{1}{4}z^{-2}} \\)</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Obtain the z-transform and ROC of the following sequence:<br/>\n                        \\( x(n)=(\\frac{1}{2})^{n}[u[n]-u[n-10]] \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 16
+          }
+        }
+      ]
+    }
+  ]
+}

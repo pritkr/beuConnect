@@ -64,6 +64,10 @@ export interface CalculatorState {
   mode: CalcMode;
   subjects: CalcSubject[];
   semesters: CalcSemester[];
+  /** The branch whose paper list was last picked; "" until the student picks. */
+  branch: string;
+  /** The semester that went with `branch`; 0 until the student picks. */
+  semester: number;
 }
 
 export function newId(prefix = "id"): string {
@@ -78,6 +82,8 @@ export const DEFAULT_CALCULATOR: CalculatorState = {
   mode: "sgpa",
   subjects: [blankSubject(0), blankSubject(1), blankSubject(2), blankSubject(3)],
   semesters: [],
+  branch: "",
+  semester: 0,
 };
 
 /* -------------------------------------------------------------- attendance */
@@ -148,9 +154,29 @@ export const DEFAULT_ROUTINE: RoutineState = {
 export interface WifiState {
   regNo: string;
   portal: string;
+  /**
+   * The portal password. It is kept on this device because the Android
+   * background runner signs in while the app is closed and has nothing else to
+   * read. It is sent to the campus portal and to nothing else.
+   */
+  password: string;
+  /** Arm the Android background sign-in. */
+  auto: boolean;
+  /** Try nearby registration suffixes when the portal says the user is unknown. */
+  rotate: boolean;
 }
 
-export const DEFAULT_WIFI: WifiState = { regNo: "", portal: "" };
+/**
+ * The account the app opens with, so the first launch already signs in. Both
+ * fields are on the screen: a student whose number differs changes it once.
+ */
+export const DEFAULT_WIFI: WifiState = {
+  regNo: "24105157049",
+  portal: "",
+  password: "123456",
+  auto: true,
+  rotate: true,
+};
 
 /* ------------------------------------------------------------------ writes */
 

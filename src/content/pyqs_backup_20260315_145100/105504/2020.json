@@ -1,0 +1,309 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Examination, 2020 (New Course)",
+    "subject": "Software Engineering",
+    "subject_slug": "software-engineering",
+    "subject_code": "105504",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>A characteristic of a software system that can lead to a system error is known as</p>",
+          "options": [
+            "human error or mistake",
+            "system fault",
+            "system error",
+            "system failure"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following is a complementary approach to function-oriented approach?</p>",
+          "options": [
+            "Object-oriented analysis",
+            "Object-oriented design",
+            "Structured approach",
+            "Both object-oriented analysis and design"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following is not a use of a CASE tool?</p>",
+          "options": [
+            "It supports structured analysis and design (SA/SD)",
+            "It maintains the data dictionary",
+            "It checks whether DFDs are balanced or not",
+            "It complies with the available system"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Name of an evaluation technique to assess the quality of test cases is</p>",
+          "options": [
+            "mutation analysis",
+            "validation",
+            "verification",
+            "performance analysis"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Which of the following is not a part of bug report?</p>",
+          "options": [
+            "Test case",
+            "Output",
+            "Software version",
+            "LOC"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Cyclomatic complexity method comes under which testing method?</p>",
+          "options": [
+            "Yellow box",
+            "White box",
+            "Grey box",
+            "Black box"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>In size-oriented metrics, metrics are developed based on the</p>",
+          "options": [
+            "number of functions",
+            "number of user inputs",
+            "number of lines of code",
+            "amount of memory usage"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Which one of the following is not desired in a good Software Requirement Specifications (SRS)\n                        document?</p>",
+          "options": [
+            "Functional requirements",
+            "Non-functional requirements",
+            "Goals of implementation",
+            "Algorithms for software implementation"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>A software organization has been assessed at SEI CMM Level 4. Which of the following does the\n                        organization need to practice beside Process Change Management and Technology Change Management\n                        in\n                        order to achieve Level 5?</p>",
+          "options": [
+            "Defect detection",
+            "Defect prevention",
+            "Defect isolation",
+            "Defect propagation"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>...... is a measure of the degree of interdependence between modules.</p>",
+          "options": [
+            "Cohesion",
+            "Coupling",
+            "None of the above",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>What is waterfall model for software development? Explain the situation, in which the spiral\n                        model\n                        for software development should be preferred over waterfall model.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>A program is to be developed to simulate the operations of a scientific calculator. List the\n                        facilities to be provided by this calculator. Analyze this using a DFD 0-level and 1-level\n                        diagram.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is prototyping model? Explain the problems and advantages of prototyping in detail.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Develop a test case for any testing technique for 'student admission system'.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Define cohesion and coupling. Explain various types of each of them.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What are CASE tools? With a suitable diagram, explain the categories of CASE tools.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Explain the roles and responsibilities of the following personnels in the S/W development\n                        process:\n                        (i) Project Manager (ii) Project Leader (iii) System Analyst (iv) Developer</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Design the following for an E-commerce solution for an electronic products company that gives\n                        choice\n                        to the users to select a/few product(s) from the available range, order them and allow to make\n                        the\n                        payments online: (i) Design the DFDs (level-0, 1 and 2). (ii) Prepare SRS document. List\n                        assumptions, if any. (iii) Design an ER-diagram. List all the entities, attributes, key\n                        constraints\n                        and cordiality. (iv) Draw a Gantt chart. (v) Specify the software engineering pre-design which\n                        suits\n                        this application development.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Discuss the software metric that can be applied to the qualitative assessment of software quality\n                        and\n                        side effects that occur during maintenance phase.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>How are boundary conditions tested in black box testing? Explain with example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Write short notes on the following:",
+      "total_marks": 5,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Unified modelling language",
+            "Object-oriented analysis modelling",
+            "Object-oriented design concepts and methods"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Consider a large scale project for which the requirement manpower is \\( K=600 \\) PY and the\n                        development time is 3 years 6 months. (i) Calculate the peak manning and peak time. (ii) What is\n                        the\n                        manpower cost after 1 year and 2 months?</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What are the risk management activities? Is it possible to prioritize the risks? Explain with\n                        suitable example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What are the different architectural styles applied for software development? Explain with\n                        diagrams.\n                    </p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>What is 'acceptance' testing? Explain briefly alpha testing and beta testing with suitable\n                        examples.\n                    </p>"
+        }
+      ]
+    }
+  ]
+}

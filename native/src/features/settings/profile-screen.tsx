@@ -16,7 +16,8 @@
 
 import { Keyboard, Text, View, computed, effect, signal } from "nsh";
 import type { JSX } from "nsh";
-import { Badge, Body, Btn, Chip, Field, Label, Muted, Panel, Screen, SectionHeader } from "../../ui";
+import { Badge, Body, Btn, Chip, Field, Label, Muted, Panel, Screen } from "../../ui";
+import { branchIcon } from "../../ui/branch-icon";
 import type { Identity } from "../results/identity";
 import { resolveIdentity } from "../results/identity";
 import {
@@ -43,7 +44,7 @@ import {
   useProfileReady,
 } from "./profile";
 import type { Profile } from "./profile";
-import { confirmDestructive, ScreenIntro, SettingsGroup, SettingsRow } from "./ui";
+import { confirmDestructive, SettingsGroup, SettingsRow } from "./ui";
 
 type Status = "idle" | "saved" | "error" | "deleted";
 
@@ -307,7 +308,7 @@ export function ProfileScreen() {
       return (
         <Panel tone="mint" class="gap-2">
           <Label>What BEU says</Label>
-          <Text class="text-[20px] font-bold tracking-tight text-foreground" numberOfLines={2}>
+          <Text class="text-[20px] font-bold tracking-tight text-foreground" style={{ numberOfLines: 2 }}>
             {identity.name}
           </Text>
           {identity.collegeName || identity.collegeCode ? (
@@ -379,8 +380,6 @@ export function ProfileScreen() {
   return (
     <Screen>
       <Body>
-        <ScreenIntro label="You" title="Your profile" />
-
         <Panel tone="ember" class="gap-1">
           <Label>Home greets you</Label>
           <Text class="text-[22px] font-bold tracking-tight text-foreground">Hi, {greetingName(preview())}</Text>
@@ -416,7 +415,8 @@ export function ProfileScreen() {
                   <Chip
                     active={draft().branch === branch.code}
                     onPress={() => update({ branch: branch.code })}
-                    class="min-h-10 px-3"
+                    icon={branchIcon(branch.code)}
+                    class="px-3"
                   >
                     {branch.short}
                   </Chip>
@@ -433,7 +433,7 @@ export function ProfileScreen() {
             {() => (
               <View class="flex-row flex-wrap gap-2">
                 {SEMESTERS.map((sem) => (
-                  <Chip active={draft().sem === sem} onPress={() => update({ sem })} class="min-h-10">
+                  <Chip active={draft().sem === sem} onPress={() => update({ sem })}>
                     {String(sem)}
                   </Chip>
                 ))}
@@ -480,7 +480,6 @@ export function ProfileScreen() {
 
         {hasProfile() ? (
           <View class="gap-3 pt-2">
-            <SectionHeader title="Danger zone" />
             <SettingsGroup>
               <SettingsRow
                 title="Delete profile"

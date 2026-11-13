@@ -1,18 +1,27 @@
 /**
  * One branch, newest batch first, A–Z inside each batch.
  *
- * The search field is above the list, so it stays visible while the branch
- * scrolls. Typing turns the grouped list into one ranked list; the batch is
- * then printed on every row, because the section header is gone.
+ * The search field and the batch pills are above the list, so they stay visible
+ * while the branch scrolls. The pills scope the branch to one batch — the college
+ * screen hands a batch over in the `session` param — and typing turns the
+ * grouped list into one ranked list, with the batch printed on every row because
+ * the section header is gone.
  */
 
-import { List, View, computed, signal } from "nsh";
+import { List, Scroll, View, computed, signal } from "nsh";
 import type { Nav } from "../../app/router";
 import { param } from "../../app/router";
-import { Divider, EmptyState, Muted, Screen, Search } from "../../ui";
+import { Chip, Divider, EmptyState, Muted, Screen, Search } from "../../ui";
 import { Fresh, SessionHeader, StudentRow } from "./components";
 import type { Student } from "./data";
-import { branchBySlug, formatCount, groupBySession, searchStudents, studentsInBranch } from "./data";
+import {
+  SESSIONS,
+  branchBySlug,
+  formatCount,
+  groupBySession,
+  searchStudents,
+  studentsInBranch,
+} from "./data";
 import { normaliseSearch } from "./rank";
 
 type ListItem =
@@ -34,7 +43,9 @@ function BranchRow(props: { item: ListItem; nav: Nav }) {
 export function BranchScreen(props: { nav: Nav }) {
   const nav = props.nav;
   const branch = branchBySlug(param(nav, "branch"));
+  const requested = param(nav, "session").trim();
   const query = signal("");
+  const session = signal(SESSIONS.includes(requested) ? requested : "");
 
   if (!branch) {
     return (
@@ -53,19 +64,21 @@ export function BranchScreen(props: { nav: Nav }) {
   }
 
   const base = studentsInBranch(branch.slug);
-  const groups = computed(() => groupBySession(base).length);
+  const scope = computed(() => (session() ? base.filter((student) => student.session === session()) : base));
   const searching = computed(() => normaliseSearch(query()) !== "");
-  const rows = computed(() => searchStudents(query(), { branch: branch.slug }));
-  const countLine = computed(() =>
-    searching()
-      ? `${formatCount(rows().length)} of ${formatCount(base.length)}`
-      : `${formatCount(base.length)} students · ${groups()} batches`,
-  );
+  const rows = computed(() => searchStudents(query(), { branch: branch.slug, session: session() }));
+  const countLine = computed(() => {
+    if (searching()) return `${formatCount(rows().length)} of ${formatCount(scope().length)}`;
+    const groups = groupBySession(scope()).length;
+    return `${formatCount(scope().length)} students · ${groups} ${groups === 1 ? "batch" : "batches"}`;
+  });
 
   const items = computed<ListItem[]>(() => {
     const found = rows();
-    if (searching()) {
-      return found.map((student) => ({ kind: "student", student, meta: student.session }));
+    if (searching() || session()) {
+      // The batch is in the title and the selected chip when scoped, so only a
+      // search result needs it on the row.
+      return found.map((student) => ({ kind: "student", student, meta: searching() ? student.session : "" }));
     }
     return groupBySession(found).flatMap((group) => [
       { kind: "session" as const, session: group.session, count: group.count },
@@ -86,7 +99,30 @@ export function BranchScreen(props: { nav: Nav }) {
   return (
     <Screen>
       <View class="gap-3 border-b border-border bg-background px-4 pb-2 pt-3">
-        <Search value={query()} onChange={query.set} placeholder="Name or registration number" />
+        <Search value={query()} onChange={(value) => query.set(value)} placeholder="Name or registration number" />
+
+        <Fresh
+          when={`chips:${session()}`}
+          build={() => (
+            <Scroll
+              horizontal
+              scrollbar={false}
+              bounces={false}
+              class="-mx-4"
+              contentClass="flex-row gap-2 px-4"
+            >
+              <Chip active={session() === ""} onPress={() => session.set("")}>
+                All
+              </Chip>
+              {SESSIONS.map((value) => (
+                <Chip active={session() === value} onPress={() => session.set(value)}>
+                  {value}
+                </Chip>
+              ))}
+            </Scroll>
+          )}
+        />
+
         <Fresh
           when={countLine()}
           build={() => <Muted class="text-[11px] tabular-nums">{countLine()}</Muted>}
@@ -94,7 +130,7 @@ export function BranchScreen(props: { nav: Nav }) {
       </View>
 
       <Fresh
-        when={normaliseSearch(query())}
+        when={`${normaliseSearch(query())}|${session()}`}
         build={() => (
           <List
             class="flex-1"

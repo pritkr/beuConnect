@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2017",
+    "subject": "OBJECT-ORIENTED PROGRAMMING",
+    "subject_slug": "object-oriented-programming",
+    "subject_code": "051301",
+    "year": 2017,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (any seven):",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "To prevent any method from overriding, we declare the method as",
+              "options": [
+                "static",
+                "const",
+                "final",
+                "None of the above"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "b",
+              "text": "Which of the following types of class allows only one object of it to be created?",
+              "options": [
+                "Virtual class",
+                "Abstract class",
+                "Singleton class",
+                "Friend class"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "c",
+              "text": "Multiple inheritance means",
+              "options": [
+                "one class inheriting from more superclasses",
+                "more classes inheriting from one superclass",
+                "more classes inheriting from more superclasses",
+                "None of the above"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "d",
+              "text": "When the compiler cannot differentiate between two overloaded constructors, they are called",
+              "options": [
+                "overloaded",
+                "destructed",
+                "ambiguous",
+                "overriding"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "e",
+              "text": "In C++, dynamic memory allocation is accomplished with the operator",
+              "options": [
+                "new",
+                "this",
+                "malloc",
+                "delete"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "f",
+              "text": "If we create a file by 'ifstream', then the default mode of the file is",
+              "options": [
+                "ios::out",
+                "ios::in",
+                "ios::app",
+                "ios::binary"
+              ],
+              "answer": "ii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "g",
+              "text": "To perform file I/O operations, we must use _______ header file.",
+              "options": [
+                "<ifstream>",
+                "<ofstream>",
+                "<fstream>",
+                "Any of these"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "h",
+              "text": "Which keyword is used to check exception in the block of code?",
+              "options": [
+                "Catch",
+                "Throw",
+                "Try",
+                "None of the above"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "i",
+              "text": "What will happen when the exception is not caught in the program?",
+              "options": [
+                "Error",
+                "Program will execute",
+                "Block of that code will not execute",
+                "None of the above"
+              ],
+              "answer": "i",
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "j",
+              "text": "Which of the following gives the memory address of integer variable a?",
+              "options": [
+                "*a;",
+                "a;",
+                "&a;",
+                "address(a);"
+              ],
+              "answer": "iii",
+              "id": "1_sub",
+              "marks": null
+            }
+          ],
+          "id": "1"
+        },
+        {
+          "text": "Distinguish between static binding and dynamic binding. Explain the use of virtual functions and the vtable in dynamic binding.",
+          "marks": 14,
+          "id": "2"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Explain adaptor class or wrapper classes with example.",
+              "marks": 7,
+              "id": "3_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain dangling pointer with the help of an example.",
+              "marks": 7,
+              "id": "3_sub"
+            }
+          ],
+          "id": "3",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "Compare between overloading and overriding of functions with example.",
+          "marks": 14,
+          "id": "4"
+        },
+        {
+          "text": "Define a class CARTESIAN to represent a point in cartesian coordinates $(x, y)$ and class POLAR to represent it in polar coordinates $(r, \\theta)$. Use constructor conversion and operator conversion functions in class CARTESIAN to convert object of one type into another.",
+          "marks": 14,
+          "id": "5"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is a friend function and what are its advantages?",
+              "marks": 7,
+              "id": "6_sub"
+            },
+            {
+              "number": "b",
+              "text": "What are the guidelines that should be followed while using friend function?",
+              "marks": 7,
+              "id": "6_sub"
+            }
+          ],
+          "id": "6",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "Describe scope and life of a variable.",
+              "marks": 7,
+              "id": "7_sub"
+            },
+            {
+              "number": "b",
+              "text": "Describe 'this' pointer with its applications.",
+              "marks": 7,
+              "id": "7_sub"
+            }
+          ],
+          "id": "7",
+          "marks": null,
+          "text": "Answer the following:"
+        },
+        {
+          "text": "With a suitable example, explain how a function is invoked using pointers.",
+          "marks": 14,
+          "id": "8"
+        },
+        {
+          "sub_questions": [
+            {
+              "number": "a",
+              "text": "What is a constructor? Describe the types of constructor each with an example.",
+              "marks": 7,
+              "id": "9_sub"
+            },
+            {
+              "number": "b",
+              "text": "Explain pointer-to-pointer with an example.",
+              "marks": 7,
+              "id": "9_sub"
+            }
+          ],
+          "id": "9",
+          "marks": null,
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

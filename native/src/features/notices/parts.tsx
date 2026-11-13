@@ -17,9 +17,10 @@
  * board, the same filter and the row the student left.
  */
 
-import { Clipboard, Scroll, Text, View, effect, signal, untracked } from "nsh";
+import { Clipboard, Scroll, Text, View, announce, effect, signal, untracked } from "nsh";
 import type { Nav } from "../../app/router";
 import { formatDate, relativeTime, readStore, writeStore } from "../../lib/net";
+import { EVENTS, track } from "../../lib/analytics";
 import { Badge, Btn, Chip, Label, Muted, Panel, Row, Skeleton } from "../../ui";
 import { Icon } from "../../ui/icons";
 import {
@@ -164,10 +165,17 @@ export function syncNotices(force = false): void {
     void loadNotices().catch(() => undefined);
     return;
   }
+  const wasLoaded = noticesLoaded();
   busy.set(true);
   failure.set("");
   (force ? refreshNotices() : loadNotices())
-    .then(() => failure.set(""))
+    .then(() => {
+      failure.set("");
+      // A first load or a pull-to-refresh is the student's own action, so it
+      // speaks; the background hydration above stays quiet. Never announce an
+      // error — the error card is text the reader reaches.
+      if (force || !wasLoaded) announce(`Notices loaded. ${plural(notices().length, "notice")}.`);
+    })
     .catch((error: unknown) => failure.set(reason(error)))
     .finally(() => {
       busy.set(false);
@@ -183,10 +191,14 @@ export function syncAnnouncements(force = false): void {
     void loadAnnouncements().catch(() => undefined);
     return;
   }
+  const wasLoaded = announcements().length > 0;
   annBusy.set(true);
   annFailure.set("");
   (force ? refreshAnnouncements() : loadAnnouncements())
-    .then(() => annFailure.set(""))
+    .then(() => {
+      annFailure.set("");
+      if (force || !wasLoaded) announce(`Announcements loaded. ${plural(announcements().length, "post")}.`);
+    })
     .catch((error: unknown) => annFailure.set(reason(error)))
     .finally(() => {
       annBusy.set(false);
@@ -239,6 +251,15 @@ function noticeRow(notice: Notice): ListRow {
 
 function postRow(post: Announcement): ListRow {
   return { kind: "post", key: `p:${post.slug}`, post };
+}
+
+/** Indices of every section heading, for the list's sticky pinning. */
+export function sectionIndices(rows: ListRow[]): number[] {
+  const indices: number[] = [];
+  for (let index = 0; index < rows.length; index += 1) {
+    if (rows[index].kind === "group") indices.push(index);
+  }
+  return indices;
 }
 
 function sectioned(sections: { section: Section; rows: ListRow[] }[]): ListRow[] {
@@ -370,7 +391,12 @@ export async function copyText(text: string): Promise<boolean> {
   }
 }
 
-/** A short-lived confirmation line under a screen's actions. */
+/**
+ * A short-lived confirmation line under a screen's actions.
+ *
+ * It is the last child of its container, so nothing follows it to push around;
+ * it appears in one frame and goes in one three seconds later.
+ */
 export function flash(): { note: () => string; say: (text: string) => void } {
   const value = signal("");
   return {
@@ -403,6 +429,9 @@ export function rememberSearch(term: string): void {
   const next = [text, ...recent().filter((item) => item.toLowerCase() !== text.toLowerCase())].slice(0, 6);
   recent.set(next);
   void writeStore(RECENT_KEY, next);
+  // The words stay on the phone; how they were searched is the part worth
+  // counting, since a notice board is the app's news feed.
+  track(EVENTS.noticesSearch, { query_length: text.length });
 }
 
 export function rememberSoon(term: string): void {
@@ -424,25 +453,31 @@ export function chipItems(values: string[]): { value: string; text: string }[] {
 
 /** A labelled chip rail: what it filters, then the options, scrolling sideways. */
 export function ChipRail(props: {
-  label: string;
+  /** Optional: the two facet rails that share a screen need one, a rail whose
+   *  chips say what they are does not — and at 320 pt the 62 pt gutter is the
+   *  difference between three chips fitting and the third one needing a scroll. */
+  label?: string;
   items: { value: string; text: string }[];
   active: string;
   onPick: (value: string) => void;
 }) {
+  const rail = props.label ?? "options";
   return (
     <Row class="gap-2">
-      <View class="w-[62px]">
-        <Label>{props.label}</Label>
-      </View>
+      {props.label ? (
+        <View class="w-[62px]">
+          <Label>{props.label}</Label>
+        </View>
+      ) : null}
       {/* The rail wraps its own scroll so the spoken label of a chip says
           which rail it belongs to ("Course: MCA"), not just "MCA". The id sits
           on the scroll view itself, so a test can scroll the rail by id. */}
       <View class="flex-1">
-        <Scroll horizontal scrollbar={false} bounces={false} class="h-11" contentClass="flex-row gap-2 pr-4" testID={`rail-${props.label}`}>
+        <Scroll horizontal scrollbar={false} bounces={false} class="h-11" contentClass="flex-row gap-2 pr-4" testID={`rail-${rail}`}>
           {props.items.map((item) => (
             <Chip
               active={props.active === item.value}
-              label={`${props.label}: ${item.text}`}
+              label={props.label ? `${props.label}: ${item.text}` : item.text}
               onPress={() => props.onPick(item.value)}
             >
               {item.text}
@@ -507,12 +542,19 @@ export function UndoBar(props: { text: string; onUndo: () => void }) {
   );
 }
 
-/** One month, day or category heading, with how many rows sit under it. */
+/**
+ * One month, day or category heading, with how many rows sit under it.
+ *
+ * The list pins it (`stickyHeaderIndices`) while its own rows scroll past, so
+ * it carries an opaque `bg-background` — a translucent band would show the
+ * cards sliding underneath it. `pt-3` keeps the breathing room the pinned bar
+ * would otherwise lose once it sticks.
+ */
 function GroupRow(props: { label: string; count: number }) {
   return (
-    <View class="flex-row items-center justify-between gap-2 px-1 pb-1 pt-3">
+    <View class="flex-row items-center justify-between gap-2 border-b border-border bg-background px-1 pb-1.5 pt-3">
       <Row class="gap-2">
-        <View class="h-1.5 w-1.5 rounded-full bg-primary" />
+        <View class="h-1.5 w-1.5 rounded-full bg-primary" accessibilityElementsHidden />
         <Label role="header">{props.label}</Label>
       </Row>
       <Muted class="text-[11px] tabular-nums" numberOfLines={1}>{props.count}</Muted>
@@ -530,7 +572,7 @@ function NoticeCard(props: { notice: Notice; onPress: () => void }) {
   const attachment = (): boolean => pdfUrl(props.notice.link) !== null;
   return (
     <View
-      class="min-h-[76px] flex-row items-start gap-3 rounded-3xl border border-border bg-card p-4 active:scale-[0.99] active:bg-muted"
+      class="min-h-[76px] flex-row items-start gap-3 rounded-3xl border border-border bg-card p-4 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted"
       onPress={props.onPress}
       role="button"
       accessibilityLabel={`${unread() ? "Unread. " : ""}${props.notice.important ? "Pinned. " : ""}${props.notice.title}`}
@@ -546,7 +588,7 @@ function NoticeCard(props: { notice: Notice; onPress: () => void }) {
         </Row>
         <Text
           class={`text-[15px] leading-5 text-foreground ${unread() ? "font-bold" : "font-semibold"}`}
-          numberOfLines={2}
+          style={{ numberOfLines: 3 }}
         >
           {props.notice.title}
         </Text>
@@ -569,7 +611,7 @@ export function PostCard(props: { post: Announcement; onPress: () => void }) {
   };
   return (
     <View
-      class="min-h-[88px] gap-2 rounded-3xl border border-border bg-card p-4 active:scale-[0.99] active:bg-muted"
+      class="min-h-[88px] gap-2 rounded-3xl border border-border bg-card p-4 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted"
       onPress={props.onPress}
       role="button"
       accessibilityLabel={`${fresh() ? "New. " : ""}${props.post.title}`}
@@ -582,8 +624,8 @@ export function PostCard(props: { post: Announcement; onPress: () => void }) {
         </Row>
         <Icon name="chevron-right" size={18} class="text-muted-foreground" />
       </Row>
-      <Text class="text-[15px] font-semibold leading-5 text-foreground" numberOfLines={2}>{props.post.title}</Text>
-      {props.post.excerpt ? <Text class="text-[12px] leading-5 text-muted-foreground" numberOfLines={3}>{props.post.excerpt}</Text> : null}
+      <Text class="text-[15px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>{props.post.title}</Text>
+      {props.post.excerpt ? <Text class="text-[12px] leading-5 text-muted-foreground" style={{ numberOfLines: 3 }}>{props.post.excerpt}</Text> : null}
       <Row class="flex-wrap gap-1.5">
         {props.post.tags.map((tag) => <Badge>#{tag}</Badge>)}
         <Muted class="text-[11px]" numberOfLines={1}>{props.post.author}</Muted>
@@ -646,10 +688,26 @@ export function RowView(props: { row: ListRow; nav: Nav }) {
   if (row.kind === "group") return <GroupRow label={row.label} count={row.count} />;
   if (row.kind === "notice") {
     const notice = row.notice;
-    return <NoticeCard notice={notice} onPress={() => props.nav.push("notices.detail", { id: notice.id })} />;
+    return (
+      <NoticeCard
+        notice={notice}
+        onPress={() => {
+          track(EVENTS.noticeOpen, { kind: "notice" });
+          props.nav.push("notices.detail", { id: notice.id });
+        }}
+      />
+    );
   }
   const post = row.post;
-  return <PostCard post={post} onPress={() => props.nav.push("notices.post", { slug: post.slug })} />;
+  return (
+    <PostCard
+      post={post}
+      onPress={() => {
+        track(EVENTS.noticeOpen, { kind: "post" });
+        props.nav.push("notices.post", { slug: post.slug });
+      }}
+    />
+  );
 }
 
 /**

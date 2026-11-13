@@ -22,6 +22,13 @@ a design choice.
 - **Routine is per-student.** `/routine?reg=…` is a live proxy; parse in
   `routine-parse.ts`, never in the screen, and show an empty state when it
   fails.
+- **The Wi-Fi password is stored, deliberately.** Automatic sign-in runs from
+  an Android `JobService` with the app closed, so it has nothing else to read:
+  `tools.wifi` keeps the password on the device and the screen says where it
+  lives. It goes to the portal host the network itself named, never anywhere
+  else. Do not add a second copy, a log line that contains it, or a "never
+  stored" promise. The runner logs one `beu-wifi` line per state *change* —
+  the phase and the portal's own sentence, never the credentials.
 - **Aliases stay registered.** `attendance`, `routine`, `holidays`, `wifi`
   are compatibility names for `tools.*`; same render, no new screen. `feedback`
   is the exception: it lives in `features/feedback` (the shell mounts its sheet
@@ -39,7 +46,7 @@ a design choice.
 | `attendance.tsx`, `routine.tsx`, `routine-parse.ts` | day-to-day utilities |
 | `holidays.tsx`, `holidays-data.ts`, `calendar.ts` | 2026 calendar |
 | `hub.tsx`, `index.tsx`, `kit.tsx`, `shared.tsx` | hub, route table, shared UI |
-| `wifi.tsx` | campus Wi-Fi portal helper |
+| `wifi.tsx`, `wifi-auto.ts`, `wifi-bridge.tsx` | campus Wi-Fi: the screen, the runner's states, the Android wire |
 | `gecs.ts` | GECS register client, normaliser and offline snapshot |
 
 ## Gate

@@ -92,6 +92,26 @@ function attribute(value: string): string {
   return clean(value.replace(/</g, " "));
 }
 
+/**
+ * A post's text with its links kept, as markdown.
+ *
+ * `clean` drops every tag, which also dropped the only thing an announcement's
+ * attachment sometimes is: an `<a href>` in its body. Bodies render through
+ * `TextView`, so an anchor is rewritten to `[label](href)` and the address
+ * survives into both the markdown and the PDF scan in `./pdf-url`.
+ */
+function bodyText(value: string): string {
+  const linked = value.replace(
+    /<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi,
+    (match, href: string, label: string) => {
+      const url = attribute(href);
+      const text = clean(label);
+      return url && text ? `[${text}](${url})` : match;
+    },
+  );
+  return clean(linked);
+}
+
 function isDate(value: string | null | undefined): value is string {
   if (!value) return false;
   const parsed = new Date(value).getTime();
@@ -241,17 +261,22 @@ function noticesFromImportant(payload: ImportantPayload): Notice[] {
   return notices;
 }
 
-/** Merges by id: the HTML facets win, the JSON feed decides "important". */
+/** Merges by identity: the HTML facets win, the JSON feed decides "important". */
 export function mergeNotices(primary: Notice[], overlay: Notice[]): Notice[] {
   const byId = new Map<string, Notice>();
-  for (const notice of primary) byId.set(notice.id, notice);
+  // Key on the identity the title and date imply, not the stored `id`: a row
+  // cached by an older build (or handed in by a test) may carry a different
+  // id for the same circular, and it must still collapse to one row.
+  const keyOf = (notice: Notice) => noticeId(notice.title, notice.date);
+  for (const notice of primary) byId.set(keyOf(notice), notice);
   for (const notice of overlay) {
-    const existing = byId.get(notice.id);
+    const key = keyOf(notice);
+    const existing = byId.get(key);
     if (!existing) {
-      byId.set(notice.id, notice);
+      byId.set(key, notice);
       continue;
     }
-    byId.set(notice.id, {
+    byId.set(key, {
       ...existing,
       important: existing.important || notice.important,
       link: existing.link || notice.link,
@@ -634,14 +659,15 @@ export async function fetchAnnouncement(slug: string): Promise<AnnouncementPost>
 
   const title = firstMatch(block, /<h1[^>]*>([\s\S]*?)<\/h1>/i) || slug.replace(/-/g, " ");
   const meta = metaParts(block);
-  const excerpt = firstMatch(block, /<p[^>]*class="[^"]*\bpost-excerpt\b[^"]*"[^>]*>([\s\S]*?)<\/p>/i);
+  const excerptMatch = /<p[^>]*class="[^"]*\bpost-excerpt\b[^"]*"[^>]*>([\s\S]*?)<\/p>/i.exec(block);
+  const excerpt = excerptMatch ? bodyText(excerptMatch[1]) : "";
   const section = /<section[^>]*class="[^"]*\bpost-body\b[^"]*"[^>]*>([\s\S]*?)<\/section>/i.exec(block);
   const body: string[] = [];
   if (section) {
     PARAGRAPH_RE.lastIndex = 0;
     let paragraph = PARAGRAPH_RE.exec(section[1]);
     while (paragraph !== null) {
-      const text = clean(paragraph[1]);
+      const text = bodyText(paragraph[1]);
       if (text.length > 0) body.push(text);
       paragraph = PARAGRAPH_RE.exec(section[1]);
     }

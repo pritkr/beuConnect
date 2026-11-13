@@ -95,13 +95,13 @@ export function SubjectRow(props: {
         <View class="flex-1 gap-1">
           <Text
             class="text-[15px] font-semibold leading-5 text-foreground"
-            numberOfLines={2}
+            style={{ numberOfLines: 2 }}
           >
             {subject.name}
           </Text>
           <Text
             class="text-[12px] leading-4 text-muted-foreground"
-            numberOfLines={2}
+            style={{ numberOfLines: 2 }}
           >
             {courseLine(subject)}
           </Text>
@@ -212,7 +212,7 @@ function OfflineSave(props: { slug: string; count: number; onSaved: () => void }
         <Badge tone={has() ? "mint" : failed() ? "amber" : "neutral"}>
           {has() ? "Offline" : failed() ? "Failed" : "Not saved"}
         </Badge>
-        <Text class="text-[12px] font-semibold text-foreground" numberOfLines={1}>
+        <Text class="text-[12px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
           {busy()
             ? `Saving ${props.count} paper${props.count === 1 ? "" : "s"}…`
             : has()
@@ -256,7 +256,7 @@ export function CardLink(props: {
 }) {
   return (
     <View
-      class="min-h-11 flex-1 gap-1 rounded-3xl border border-border bg-card p-4 active:scale-[0.98] active:bg-muted"
+      class="min-h-11 flex-1 gap-1 rounded-3xl border border-border bg-card p-4 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted"
       onPress={props.onPress}
       role="button"
       accessibilityLabel={`${props.title}: ${props.hint}`}

@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Special Exam., 2020",
+    "subject": "Design and Analysis of Algorithms",
+    "subject_slug": "design-and-analysis-of-algorithms",
+    "subject_code": "051506",
+    "year": 2020,
+    "semester": 5,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are EIGHT questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Find the complexity of the below program:<br/>\n                        void function(int n) { int i=1, s=1; while(s&lt;=n) { i++; s+=i; printf(\"*\"); } }</p>",
+          "options": [
+            "\\( \\Omega(n) \\)",
+            "\\( O(\\sqrt{n}) \\)",
+            "\\( \\Theta(loglogn) \\)",
+            "\\( \\Theta(sqrt(n)) \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>How many undirected graphs (not necessarily connected) can be constructed out of a given set \\(\n                        V =\n                        \\{V_1, V_2, \\dots, V_n\\} \\) of n vertices?</p>",
+          "options": [
+            "\\( n(n-1)/2 \\)",
+            "\\( 2^n \\)",
+            "\\( n! \\)",
+            "\\( 2^{n(n-1)/2} \\)"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The recurrence relation capturing the optimal time of the Tower of Hanoi problem with n discs is\n                    </p>",
+          "options": [
+            "\\( T(n)=2T(n-2)+2 \\)",
+            "\\( T(n)=2T(n-1)+n \\)",
+            "\\( T(n)=2T(n/2)+1 \\)",
+            "\\( T(n)=2T(n-1)+1 \\)"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Dijkstra's algorithm is based on</p>",
+          "options": [
+            "dynamic programming",
+            "divide and conquer",
+            "greedy programming",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Randomized quicksort is an extension of quicksort where the pivot is chosen randomly. What is the\n                        worst case complexity of sorting n numbers using randomized quicksort?</p>",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(n^2) \\)",
+            "\\( O(n \\log n) \\)",
+            "\\( O(n!) \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Name three sorting algorithms which are stable by nature.</p>",
+          "options": [
+            "Bubble sort, Insertion sort, Merge sort",
+            "Bubble sort, Quick sort, Heap sort",
+            "Insertion sort, Radix sort, Heap sort",
+            "Count sort, Radix sort, Quick sort"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>What is the worst time complexity of insertion sort?</p>",
+          "options": [
+            "\\( n \\log n \\)",
+            "\\( \\log n \\)",
+            "\\( n \\)",
+            "\\( n^2 \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The most efficient algorithm for finding the number of connected components in an undirected\n                        graph of\n                        n vertices and m edges has the time complexity</p>",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(m) \\)",
+            "\\( O(m+n) \\)",
+            "\\( O(mn) \\)"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which of the following statement is not true about breadth-first search (BFS) in an undirected\n                        graph\n                        starting at a vertex v?</p>",
+          "options": [
+            "BFS identifies all vertices reachable from v.",
+            "Using an adjacency list instead of an adjacency matrix can improve the worst case complexity\n                            to\n                            \\( O(n+m) \\).",
+            "BFS cannot be used to check for cycles in the graph.",
+            "BFS can be used to identify the furthest vertex from v in any graph, in terms of number of\n                            nodes."
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Finding the location of the element with a given value is</p>",
+          "options": [
+            "traversal",
+            "search",
+            "sort",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Write the asymptomatic notation used for best case, average case and worst case analysis of\n                        algorithm. Write an algorithm for finding maximum element in an array. Give best, worst and\n                        average\n                        case complexities.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the brute force method to find the two closet points in a set of n points in\n                        k-dimensional\n                        space.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Explain the working of merge sort algorithm with an example. Give the complexity calculation of\n                        merge\n                        sort.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Write an algorithm based on divide-and-conquer strategy to search an element in a given list.\n                        Assume\n                        that the elements of list are in sorted order.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>What is the relationship among P, NP and NP-complete problems? Show with the help of a diagram.\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Give the complete solution (step-by-step using state space tree) for N-Queen problem using\n                        back-tracking with pseudocode. Give the complexity analysis.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Construct the Huffman coding tree for the text of characters with given frequencies: T:43, I:38,\n                        V:16, K:8, L:56, E:12, O:41, Z:13, P:22, R:6. Also find the variable length Huffman codes and\n                        frequency path length for corresponding above characters.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the optimal way to multiply the following matrices to perform the fewest\n                        multiplications:<br/>\n                        \\( A_1: 5 \\times 11 \\), \\( A_2: 11 \\times 4 \\), \\( A_3: 4 \\times 15 \\), \\( A_4: 15\n                        \\times\n                        23\n                        \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Travelling salesman problem",
+            "Activity selection problem",
+            "Monte Carlo types",
+            "Divide-and-Conquer vs. Dynamic programming"
+          ]
+        }
+      ]
+    }
+  ]
+}

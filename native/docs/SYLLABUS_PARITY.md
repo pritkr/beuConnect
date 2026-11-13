@@ -1,6 +1,6 @@
 # Syllabus parity — site ↔ native
 
-Snapshot **2026-10-26** · site `https://beu.prit.eu.org` · app `native/`
+Snapshot **2026-10-28** · site `https://beu.prit.eu.org` · app `native/`
 
 The site's syllabus pages (`/syllabus`, `/[branch]`, `/[branch]/[sem]`, `/x`)
 read `src/assets/data/branches/*.json` and `src/assets/data/gate/*.json`. The app
@@ -16,31 +16,38 @@ Measured with a read-only audit of both sides: every subject matched on
 
 | Branch | Site rows | App subjects | Semesters published | Units | Topics |
 |---|---:|---:|---|---:|---:|
-| CSE | 72 | **71** | 1–6 | 305 | 928 |
-| ECE | 42 | 42 | 1–5 | 177 | 841 |
-| EE | 54 | 54 | 1–5 | 180 | 873 |
-| MECH | 57 | 57 | 1–6 | 231 | 810 |
-| CIVIL | 71 | 71 | 1–6 | 323 | 1,454 |
-| EEE | 47 | 47 | 1, 2, 3, 6 | 191 | 582 |
-| **Total** | **343** | **342** | — | **1,407** | **5,488** |
+| CSE | 72 | **71** | 1–6 | 302 | 884 |
+| ECE | 47 | 47 | 1–5 | 178 | 799 |
+| EE | 51 | 51 | 1–5 | 176 | 814 |
+| MECH | 60 | 60 | 1–6 | 232 | 811 |
+| CIVIL | 74 | 74 | 1–6 | 314 | 1,225 |
+| EEE | 57 | 57 | 1, 2, 3, 4, 6 | 221 | 761 |
+| **Total** | **361** | **360** | — | **1,423** | **5,294** |
 
 Per semester, site rows → app subjects (all equal except CSE 6):
 
 | Branch | S1 | S2 | S3 | S4 | S5 | S6 |
 |---|---:|---:|---:|---:|---:|---:|
 | CSE | 10 → 10 | 10 → 10 | 12 → 12 | 11 → 11 | 6 → 6 | **23 → 22** |
-| ECE | 10 → 10 | 10 → 10 | 10 → 10 | 5 → 5 | 7 → 7 | — |
-| EE | 10 → 10 | 10 → 10 | 11 → 11 | 13 → 13 | 10 → 10 | — |
-| MECH | 10 → 10 | 9 → 9 | 10 → 10 | 6 → 6 | 8 → 8 | 14 → 14 |
-| CIVIL | 10 → 10 | 10 → 10 | 12 → 12 | 10 → 10 | 9 → 9 | 20 → 20 |
-| EEE | 10 → 10 | 10 → 10 | 10 → 10 | — | — | 17 → 17 |
+| ECE | 10 → 10 | 10 → 10 | 10 → 10 | 10 → 10 | 7 → 7 | — |
+| EE | 10 → 10 | 10 → 10 | 11 → 11 | 10 → 10 | 10 → 10 | — |
+| MECH | 10 → 10 | 9 → 9 | 10 → 10 | 9 → 9 | 8 → 8 | 14 → 14 |
+| CIVIL | 10 → 10 | 10 → 10 | 12 → 12 | 13 → 13 | 9 → 9 | 20 → 20 |
+| EEE | 10 → 10 | 10 → 10 | 10 → 10 | 10 → 10 | — | 17 → 17 |
 
 **Zero subjects missing, zero extra, zero unit-text differences.** Credits,
-types, contact hours and electives match on all 342 subjects. Four `name`s and
-18 `code`s are not byte-identical, and every one is a deliberate, recorded fix:
+types, contact hours and electives match on all 360 subjects. Three `name`s and
+10 `code`s are not byte-identical, and every one is a deliberate, recorded fix:
 one merged duplicate and three titles completed where the source cut mid-word
-(§2), plus the 18 blank codes the app mints an id for (§6). Every row the site
+(§2), plus the 10 blank codes the app mints an id for (§6). Every row the site
 shows, the app shows, on one screen.
+
+Semesters 1–3 and 5–6 carry the scheme the site already had. **Sem 4 is the
+2024-28 scheme for all six branches** (EE and CSE were already; CIVIL, ECE, MECH
+and EEE were re-transcribed from BEU's own Semester-IV documents, which renamed
+`101401`–`101407`, `102401`–`102405`, `104401`–`104405` and `110401`–`110406`
+and added their labs). Both sides changed together, so parity holds; the scheme
+evidence is in `src/features/syllabus/data/AUDIT.md` §1.
 
 ## 2. The one row that merged: CSE Sem 6 `105601`
 
@@ -53,7 +60,7 @@ shows, the app shows, on one screen.
 
 `decode.ts` normalises the pack by `(branch, semester, code)` and keeps the
 **richer** row, so the app has one `105601` with the units and credits of the
-first row. This is the 343 → 342 difference, and it is the correct merge: no
+first row. This is the 361 → 360 difference, and it is the correct merge: no
 content is lost, and the typo'd shell row adds nothing.
 
 ### Three names the source cut mid-word
@@ -71,53 +78,51 @@ Codes, credits, unit text and references are untouched; only the display name
 is completed. A student searching for the real title finds the paper, and a
 professor reading the row is not shown a sentence that stops mid-word.
 
-## 3. References: 190 count differences, 0 text differences
+## 3. References: 207 subjects, 1,822 entries, identical on both sides
 
-190 subjects carry fewer `references` entries in the app than on the site
-(e.g. Engineering Mathematics–I: 5 vs 11). In every one of the 190, the joined
-text is identical once list numbering is dropped: the site stores each **wrapped
-PDF line** as an entry, the pack stores each **numbered item** joined. Same
-words, same order, different line breaks.
+The pack stores each **numbered item** as one entry, and so does the site JSON —
+`build-packs.ts --from-site` runs `decode.ts`'s `normalise`, which joins a
+wrapped PDF line back into the item it belongs to. So every subject's reference
+list is entry-for-entry the same on both sides: 207 subjects carry references,
+1,822 entries in total, and no subject differs in count or text.
+
+Earlier snapshots recorded 190 count differences here, because the import step
+stored the site's wrapped lines as separate entries. That is fixed at the
+source, not papered over downstream.
 
 No `.tsx` in the app renders `references` today — the paper screen reads units
-and the full `content` — so this is a storage-shape difference, not a capability
-gap. The audit proved all 190 reflow-only by joining each set and stripping list
-numbering. The suite runs headless from the shipped pack, so it pins the shape
-instead — **206 papers, 934 lines, none blank** — and a refresh that actually
-drops text moves those numbers.
+and the full `content` — so this is a storage-shape detail, not a capability
+gap. `bun scripts/data/verify-packs.ts` pins the 1,822 total.
 
-## 4. Empty content: 19 papers
+## 4. Empty content: 13 papers
 
 Every subject below has a code, credits and a type but **no unit text**, on the
-site as well (except the last two, which are stubs upstream too — same cause).
-The app shows the honest empty state ("No unit text for this paper") and never
-invents units.
+site as well. The app shows the honest empty state ("No unit text for this
+paper") and never invents units.
 
 | Branch | Sem | Code | Paper |
 |---|---:|---|---|
+| CSE | 4 | `105407` | NPTEL-I (Open Course) |
 | CSE | 6 | `100604P` | NPTEL Courses-2 Lab |
-| EE | 4 | `X-HSMC-ELECTIVE-COURSES` | HSMC Elective Courses |
-| EE | 4 | `X-ENVIRONMENTAL-SCIENCE` | Environmental Science |
-| EE | 4 | `X-CAPSTONE-DESIGN-PROJEC` | Capstone Design Project |
-| EE | 4 | `X-NCC-NSS-OTHER-CLUBS-SO` | NCC / NSS / other Clubs & Society |
 | EE | 5 | `X-CAPSTONE-DESIGN-PROJEC` | Capstone Design Project |
 | EE | 5 | `X-MOOCS-SWAYAM-NPTEL-COU` | MOOCs / SWAYAM / NPTEL Courses - 2 |
 | EE | 5 | `X-PROFESSIONAL-ELECTIVE-` | Professional Elective Laboratory - 1 |
 | EE | 5 | `X-SUMMER-ENTREPRENEURSHI` | Summer Entrepreneurship - II |
-| MECH | 4 | `X-ENVIRONMENTAL-SCIENCE` | Environmental Science |
 | MECH | 5 | `X-CONSTITUTION-OF-INDIA-` | Constitution of India / Essence of Indian |
 | MECH | 5 | `X-SUMMER-ENTREPRENEURSHI` | Summer Entrepreneurship-II |
 | MECH | 5 | `X-OPEN-ELECTIVE-I-MOOCS-` | Open Elective- I (MOOCs / SWAYAM / NPTEL |
 | MECH | 5 | `X-GRADUATE-EMPLOYABILITY` | Graduate Employability Skills and |
-| CIVIL | 4 | `X-OPEN-ELECTIVE-I-HUMANI` | Open Elective-I (Humanities) MOOC |
-| CIVIL | 4 | `X-MANAGEMENT-I-ORGANIZAT` | Management I (Organizational |
 | CIVIL | 5 | `X-SUMMER-ENTREPRENEURSHI` | Summer Entrepreneurship-II |
 | CIVIL | 6 | `100604P` | NPTEL Courses-2 |
 | EEE | 6 | `103601P` | Power Systems-II Lab |
 
-18 of the 19 are one-off elective/skill baskets BEU never published a unit
-list for; the remaining `100604P` appears twice, as CSE and CIVIL Sem 6
-`NPTEL Courses-2`, and is empty in both.
+11 of the 13 are one-off elective/skill baskets BEU never published a unit list
+for; the remaining `100604P` appears twice, as CSE and CIVIL Sem 6
+`NPTEL Courses-2`, and is empty in both. The Sem 4 rows that used to sit here
+(EE's HSMC/Environmental Science/NCC baskets, MECH's Environmental Science,
+CIVIL's Open Elective and Management I) left with the 2022-26 scheme: the
+2024-28 Semester-IV documents carry no such rows, and their unit text is
+published for every row that remains.
 
 **The one fillable-looking stub that is not fillable:** `sylpy/civil_6.json`
 holds a candidate body for CIVIL Sem 6 `100604P NPTEL Courses-2`, but the text
@@ -127,7 +132,7 @@ it would print the wrong syllabus under the right code, so it stays empty and is
 recorded here instead of being "fixed". A wrong page is worse than an honest
 gap.
 
-## 5. Semesters that do not exist upstream: 16
+## 5. Semesters that do not exist upstream: 15
 
 | Branch | Published | Missing upstream |
 |---|---|---|
@@ -136,7 +141,7 @@ gap.
 | EE | 1–5 | 6, 7, 8 |
 | MECH | 1–6 | 7, 8 |
 | CIVIL | 1–6 | 7, 8 |
-| EEE | 1, 2, 3, 6 | 4, 5, 7, 8 |
+| EEE | 1, 2, 3, 4, 6 | 5, 7, 8 |
 
 The site prints nothing for these, so the app prints nothing either: the
 semester rail lists only published semesters, and a deep link to an unpublished
@@ -145,11 +150,11 @@ semester is invented to fill the grid. A batch-23 student (Sem 7 in the 2026–2
 session) therefore lands on their own semester and sees that honest state, with
 one tap to Sem 6.
 
-## 6. Blank codes: 18 rows, normalised into stable ids
+## 6. Blank codes: 10 rows, normalised into stable ids
 
-18 site rows print `"-"` as their code (EE 4 ×5 incl. Biology-I and
-`PCC-EEE14 Power Systems - I Lab`, EE 5 ×5, MECH 4 ×1, MECH 5 ×4, CIVIL 4 ×2,
-CIVIL 5 ×1). The 18 ids are baked into the shipped wire by the pack step, using
+10 site rows print `"-"` as their code (EE 5 ×5 incl. Biology-I and
+`PCC-EEE14 Power Systems - I Lab`, MECH 5 ×4, CIVIL 5 ×1). The ids are baked
+into the shipped wire by the pack step, using
 `decode.ts` `derivedCode()`: `X-<SLUG>` from the name — the slug is upper-cased,
 non-alphanumerics become `-`, and it is capped at **22** characters, so the code
 itself is at most 24 (`-P` is appended for a practical). The same rule runs at
@@ -157,20 +162,22 @@ decode, so a blank code in a future refresh gets the same treatment. Those
 papers get a stable, searchable id (`X-ENVIRONMENTAL-SCIENCE`,
 `X-SUMMER-ENTREPRENEURSHI`, …). The site keeps `"-"`.
 
-The 18 rows carry **14 distinct ids**: the same placeholder name recurs in
-different semesters (Summer Entrepreneurship-II in EE, MECH and CIVIL Sem 5;
-Environmental Science in EE and MECH Sem 4; Capstone Design Project in EE Sem 4
-and 5). Every id is unique **inside its semester**, which is what the app keys
-on — `branch|semester|code` — so saves, marks, notes and PYQ links stay
-separate. No minted id can collide with a real code, because no real code
-starts with `X-`.
+The 10 rows carry **8 distinct ids**: the same placeholder name recurs in
+different semesters (Summer Entrepreneurship-II in EE, MECH and CIVIL Sem 5).
+Every id is unique **inside its semester**, which is what the app keys on —
+`branch|semester|code` — so saves, marks, notes and PYQ links stay separate. No
+minted id can collide with a real code, because no real code starts with `X-`.
+
+The Sem 4 half of this list left with the 2022-26 scheme: the 2024-28
+Semester-IV documents name every row, so CIVIL, ECE and MECH Sem 4 no longer
+carry a blank code at all.
 
 ## 7. Upstream source quirks (documented, not copied)
 
 | Quirk | Where | App behaviour |
 |---|---|---|
-| `branch: "ece"` on the EE file | `ee.json` | ignored; the filename is the branch |
-| `branch: "ece"` on the EEE file | `eee.json` | ignored; the filename is the branch |
+| `branch: "ece"` on the EE file | `ee.json` | fixed to `"ee"`; the filename was already the branch |
+| `branch: "ece"` on the EEE file | `eee.json` | fixed to `"eee"`; the filename was already the branch |
 | No `name` field in any branch file | all six | names come from `src/assets/data/config.json` (`BRANCH_META`) |
 | `cse copy.json` (a duplicate of CSE) | data dir | not packed |
 | `branch: "CSE"` uppercase | `cse.json` | normalised to the code `cse` |
@@ -213,7 +220,7 @@ uv run python scripts/verify.py             # assets/data ↔ source PDFs
 
 `qa/data.test.ts` checks that every branch on the shelf decodes into subjects
 and units, and `bun scripts/data/verify-packs.ts` pins the numbers in this file:
-per-branch and per-semester subject counts, per-branch units and topics, the 19
-stubs, the 18 minted codes, the 206/934 reference shape, the three completed
+per-branch and per-semester subject counts, per-branch units and topics, the 13
+stubs, the 10 minted codes, the 1,822 reference entries, the three completed
 titles and the 30 GATE papers. A data refresh that changes any of them fails the
 gate and points back here.

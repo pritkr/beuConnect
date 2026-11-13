@@ -16,7 +16,7 @@ export function FeedbackFooter() {
   return (
     <View class="mt-1 w-full items-center border-t border-border pt-3">
       <View
-        class="min-h-11 justify-center rounded-full px-4 active:bg-muted focus:ring-2 focus:ring-ring"
+        class="min-h-11 justify-center rounded-full px-4 transition-colors duration-150 ease-out motion-reduce:transition-none active:bg-muted focus:ring-2 focus:ring-ring"
         testID="feedback-footer"
         onPress={() => openFeedback({ route: currentRoute() })}
         role="button"

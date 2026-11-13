@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 1st Semester Exam-2022",
+    "subject": "Mathematics-1 (Calculus & Linear Algebra)",
+    "subject_slug": "mathematics-1-calculus-linear-algebra",
+    "subject_code": "105102",
+    "year": 2022,
+    "semester": 1,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven Question\n                    only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Lagrange's mean value theorem can be proved for a function f(x) by applying Roll's mean value\n                        theorem</p>",
+          "options": [
+            "\\( \\varphi(x) = f(x) + kx^2 \\)",
+            "\\( \\varphi(x) = f(x) - kx^2 \\)",
+            "\\( \\varphi(x) = f(x) + kx \\)",
+            "\\( \\varphi(x) = \\{f(x)\\}^2 + kx^2 \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The function \\( f(x) = x(x + 3) e^{-\\frac{x}{2}} \\) satisfy all conditions of Roll's mean\n                        value theorem in the interval [-3, 0]. Then the value of c is:</p>",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "-2"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>if \\( \\begin{bmatrix} 4/3 \\\\ 1 \\end{bmatrix} \\) is an eigenvector of \\( \\begin{bmatrix} 3\n                        &amp; 4 \\\\ 3 &amp; 1 \\end{bmatrix} \\). What is the associated eigenvalue?</p>",
+          "options": [
+            "4/3",
+            "5",
+            "-2",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>if f is continuous on [-2.354, 2.354] then</p>",
+          "options": [
+            "\\( \\int_{-2.354}^{2.354} f(\\cos x) dx = 0 \\)",
+            "\\( \\int_{-2.354}^{2.354} f(\\cos x) dx = 2 \\int_{0}^{2.354} f(\\cos x) dx \\)",
+            "2.354",
+            "none of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>let \\( f(x) = |x|^{\\frac{3}{2}}, x \\in R \\) then</p>",
+          "options": [
+            "f is uniformly continuous",
+            "f is continuous, but not differentiable at \\( x = 0 \\)",
+            "f is differentiable, and derivative of f is continuous",
+            "f is differentiable, but derivative of \\( x \\) is discontinuous at \\( x = 0 \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>if \\( A(2) = 2i - j + 2k, A(3) = 4i - 2j + 3k \\), then \\( \\int_{2}^{3} A \\cdot\n                        \\frac{dA}{dt} dt \\) is</p>",
+          "options": [
+            "5",
+            "10",
+            "15",
+            "20"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>if \\( \\nabla \\times \\vec{F} \\). Then it is called.</p>",
+          "options": [
+            "solenoidal",
+            "Rotational",
+            "irrotational",
+            "None"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>if \\( 3x + 2y + z = 0, x + 4y + z = 0, 2x + y + 4z = 0 \\) be a system of equations, then</p>",
+          "options": [
+            "It is inconsistent",
+            "It has only the trivial solution \\( x = 0 \\), \\( y = 0 \\), \\( z = 0 \\)",
+            "Determinant of the matrix of coefficients is zero",
+            "None of these"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>If f(x) is continuous in the closed interval [a,b] and f(x) exists in (a,b) and f(a) = f(b), then\n                        there exist at least one value \\( c(a &lt; c &lt; b) \\) Such that \\( f'(c)=0 \\) is called\n                    </p>",
+          "options": [
+            "Taylor's theorem",
+            "Mac Laurin's theorem",
+            "Rolle's theorem",
+            "Lagrange's mean value theorem"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>The rank of the matrix \\( \\begin{bmatrix} 1 &amp; 2 &amp; 3 \\\\ 2 &amp; 4 &amp; 6 \\\\ 3 &amp;\n                        6 &amp; 9\n                        \\end{bmatrix} \\) is</p>",
+          "options": [
+            "3",
+            "2",
+            "1",
+            "none of these"
+          ],
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>show that : \\( \\int_{0}^{\\infty} x^2 e^{-x^4} dx \\times \\int_{\\infty}^{\\infty} e^{-x^4} dx\n                        = \\frac{\\pi}{8\\sqrt{2}} \\)</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Use L' Hospital rule to find the following limits. \\( \\lim_{x \\to 0} \\frac{\\cos - \\ln (1+x)\n                        - 1 + xy^x}{\\sin^2 x} \\)</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Test the convergence of \\( 1 + \\frac{3}{7} x + \\frac{3.6}{7.10} x^2 + \\frac{3.6.9}{7.10.13}\n                        x^3 + \\frac{3.6.9.12}{7.10.13.16} x^4 + \\ldots \\)</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Examine the convergence of the series of which the general term is \\( 2^2 4^2 6^2 \\cdots\n                        \\frac{(2n-2)^2}{3.4.5 \\cdots (2n-1)2n} x^{2n} \\)</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 8
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Obtain the fourth-degree Taylor's polynomial approximation to \\( f(x) = e^{2x} \\) about \\( x =\n                        0 \\). Find the maximum error when \\( 0 \\leq x \\leq 0.5 \\)</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>It is given the Rolle's theorem holds the function \\( f(x) = x^3 + bx^2 + cx, 1 \\leq x \\leq 2\n                        \\) at the Point \\( x = 4/3 \\). Find the value of b and c.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Evaluate \\( \\int_{0}^{\\infty} \\log \\left( x + \\frac{1}{x} \\right) \\frac{dx}{1+x^2} \\)\n                    </p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Discuss the convergence of the sequence whose n-th term is \\( a_n = \\frac{(-1)^n}{n} + 1 \\).\n                    </p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 8
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>if \\( f(x) = \\log (1 + x), x &gt; 0 \\) using Maclaurin's theorem, show that for \\( 0 &lt;\n                        \\theta &lt;\n                        1 \\), \\( \\log (1 + x)=x - \\frac{x^2}{2} + \\frac{x^3}{3(1+\\theta x)^3} \\). Deduce that\n                        \\( \\log (1+x)=&lt; x - \\frac{x^2}{2} + \\frac{x^3}{3} \\) for \\( x&gt; 0 \\)</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Using Taylor's theorem, express the polynomial \\( 2x^3 + 7x^2 + x - 6 \\) in powers of (x - 1).\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Find the values of a,b,c if A = \\( \\begin{bmatrix} 0 &amp; 2b &amp; c \\\\ a &amp; b &amp; -c\n                        \\\\ a &amp; -b &amp; c\n                        \\end{bmatrix} \\) is orthogonal?</p>",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Verify Cayley-Hamilton theorem for the matrix A = \\( \\begin{bmatrix} 1 &amp; 4 \\\\ 2 &amp; 3\n                        \\end{bmatrix} \\) and find its inverse. Also express \\( A^5 - 4A^4 - 7A^3 + 11A^2 - A - 10I\n                        \\) as a linear polynomial in A.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Expand \\( \\ln x \\) in power of \\( (x - 1) \\) by Taylor's theorem.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>By using Beta function evaluate \\( \\int_{0}^{1} x^5 (1 + x^3)^{10} dx \\).</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Find the Fourier series to represent the function defined as \\( f(x) = \\begin{cases} x +\n                        \\frac{\\pi}{2}, &amp; -\\pi &lt; x &lt; 0 \\\\ \\frac{\\pi}{2} - x, &amp; 0 &lt; x &lt; \\pi\n                        \\end{cases} \\)</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Evaluate: (i) div F and Curl F, where F= grad \\( (x^3 + y^3 + z^3 - 3xyz) \\). (ii) If \\( F =\n                        (x + y + z) i + j - (x + y)k \\) show that \\( F \\cdot \\text{Curl} F = 0 \\).</p>"
+        }
+      ]
+    }
+  ]
+}

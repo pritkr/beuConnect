@@ -1,5 +1,5 @@
 /**
- * The GEC Sheikhpura register, indexed once for the five student screens.
+ * The GEC Sheikhpura register, indexed once for the six student screens.
  *
  * `./roster-data.ts` carries the packed rows and expands them on the first
  * `decodeRoster()` call; this file adds the batch label, the branch table and
@@ -19,7 +19,8 @@ import {
   ROSTER_TOTAL,
   decodeRoster,
 } from "./roster-data";
-import { rankStudents } from "./rank";
+import { filterIndex, indexStudents, rankIndexed } from "./rank";
+import type { StudentIndex } from "./rank";
 
 export type BranchSlug = "cse" | "ece" | "ee" | "mech" | "civil" | "met";
 
@@ -118,6 +119,31 @@ export function branchByCode(code: string): BranchDef | null {
   return BRANCHES.find((branch) => branch.code !== "" && branch.code === wanted) ?? null;
 }
 
+/*
+ * Search indexes, built once.
+ *
+ * Every keystroke ranks up to 1,784 rows; the rows never change after decode,
+ * so the normalised name, words and codes are computed here, not in the search
+ * box. A session chip narrows a pool by copying index entries — no row is
+ * re-normalised — and the copy is memoised per branch + session.
+ */
+
+const NO_STUDENTS: StudentIndex<Student> = indexStudents<Student>([]);
+const INDEX_ALL: StudentIndex<Student> = indexStudents(ALL_STUDENTS);
+const INDEX_BY_BRANCH = new Map<BranchSlug, StudentIndex<Student>>();
+for (const [slug, rows] of BY_BRANCH) INDEX_BY_BRANCH.set(slug, indexStudents(rows));
+
+const INDEX_SLICES = new Map<string, StudentIndex<Student>>();
+
+function sessionSlice(base: StudentIndex<Student>, branch: string, session: string): StudentIndex<Student> {
+  const key = `${branch}|${session}`;
+  const cached = INDEX_SLICES.get(key);
+  if (cached) return cached;
+  const sliced = filterIndex(base, (student) => student.session === session);
+  INDEX_SLICES.set(key, sliced);
+  return sliced;
+}
+
 /** A registration number as the register stores it: uppercase, letters and digits only. */
 export function cleanReg(value: string): string {
   return value.trim().toUpperCase().replace(/[^0-9A-Z]/g, "");
@@ -136,6 +162,29 @@ export function studentsInSession(session: string): readonly Student[] {
   return BY_SESSION.get(session.trim()) ?? [];
 }
 
+/** `2024-28` → `2K24`, the batch label the register itself prints. */
+export function batchLabel(session: string): string {
+  return session ? `2K${session.slice(2, 4)}` : "";
+}
+
+/**
+ * Branch counts inside one batch: `BRANCH_COUNTS_BY_SESSION["2024-28"].cse`.
+ *
+ * Built once from the decoded register, not re-counted per paint. The slugs add
+ * up to `SESSION_COUNTS[session]`, and the whole table to `TOTAL`; the college
+ * screen's accordion reads it on every expand.
+ */
+export const BRANCH_COUNTS_BY_SESSION: Readonly<Record<string, Readonly<Record<string, number>>>> = (() => {
+  const table: Record<string, Record<string, number>> = {};
+  for (const session of SESSIONS) table[session] = {};
+  for (const student of ALL_STUDENTS) {
+    const bucket = table[student.session];
+    if (!bucket) continue;
+    bucket[student.branch] = (bucket[student.branch] ?? 0) + 1;
+  }
+  return table;
+})();
+
 /** `CSE`, `MECH`, or the raw value when it is not one of the six branches. */
 export function branchShort(value: string): string {
   return branchBySlug(value)?.short ?? value.trim().toUpperCase();
@@ -145,9 +194,16 @@ export function searchStudents(
   query: string,
   options: { branch?: string; session?: string } = {},
 ): readonly Student[] {
-  let pool: readonly Student[] = options.branch ? studentsInBranch(options.branch) : ALL_STUDENTS;
-  if (options.session) pool = pool.filter((student) => student.session === options.session);
-  return rankStudents(pool, query);
+  let pool = INDEX_ALL;
+  let branchKey = "";
+  if (options.branch) {
+    const branch = branchBySlug(options.branch);
+    if (!branch) return [];
+    pool = INDEX_BY_BRANCH.get(branch.slug) ?? NO_STUDENTS;
+    branchKey = branch.slug;
+  }
+  const session = options.session ?? "";
+  return rankIndexed(session ? sessionSlice(pool, branchKey, session) : pool, query);
 }
 
 export interface SessionGroup {

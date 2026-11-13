@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2020",
+    "subject": "Mechanics of Materials",
+    "subject_slug": "mechanics-of-materials",
+    "subject_code": "101506",
+    "year": 2020,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The property of a body to return to its original shape after removal of the force is known as</p>",
+          "options": [
+            "plasticity",
+            "elasticity",
+            "ductility",
+            "malleability"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The materials which have the same elastic properties in all directions are known as</p>",
+          "options": [
+            "isotropic",
+            "brittle",
+            "homogeneous",
+            "hard"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which point on the stress-strain curve occurs after yield plateau?</p>",
+          "options": [
+            "Lower yield point",
+            "Upper yield point",
+            "Ultimate point",
+            "Breaking point"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Elastic limit is the point</p>",
+          "options": [
+            "up to which stress is proportional to strain",
+            "at which elongation takes place without application of additional load",
+            "up to which if the load is removed, original volume and shapes are regained",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the bending moment at end supports of a simply supported beam?</p>",
+          "options": [
+            "Maximum",
+            "Minimum",
+            "Zero",
+            "Uniform"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Torsional sectional modulus is also known as</p>",
+          "options": [
+            "polar modulus",
+            "sectional modulus",
+            "torsion modulus",
+            "torsional rigidity"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which property is undesirable for shaft materials?</p>",
+          "options": [
+            "High shear and tensile strength",
+            "Good machinability",
+            "High fatigue strength",
+            "Good castability"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>The bending stress is</p>",
+          "options": [
+            "directly proportional to the distance of layer from the neutral layer",
+            "inversely proportional to the distance of layer from the neutral layer",
+            "directly proportional to the moment of area",
+            "not dependent on the distance of layer from the neutral layer"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Which stress comes when there is an eccentric load applied?</p>",
+          "options": [
+            "Shear stress",
+            "Bending stress",
+            "Tensile stress",
+            "Thermal stress"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Maximum slope in a cantilever beam of length L with a moment M at the free end will be</p>",
+          "options": [
+            "\\( 3ML/EI \\)",
+            "\\( 2ML/EI \\)",
+            "\\( ML/EI \\)",
+            "None of the above"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>State of stress around a point on a thick bar is defined as \\( \\sigma_{xx}=100 \\text{ MPa}\n                        \\), \\( \\sigma_{yy}=-86 \\text{ MPa} \\), \\( \\sigma_{zz}=55 \\text{ MPa} \\), \\(\n                        \\tau_{xy}=60 \\text{ MPa} \\), \\( \\tau_{yz}=\\tau_{zx}=0 \\). Calculate principal stresses,\n                        principal planes, maximum shear stress and associated planes.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>The bar having a diameter of 20 mm is fixed connected at its ends and supports the axial load P.\n                        If the material is elastic perfectly plastic as shown by the stress-strain diagram (Fig. 1),\n                        determine the smallest load P needed to cause segment CB to yield. If this load is released,\n                        determine the permanent displacement of point C.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/98.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>A 2014-T6 aluminum tube having a cross-sectional area of \\( 500 \\text{ mm}^2 \\) is used as a\n                        sleeve for an A-36 steel bolt having a cross-sectional area of \\( 300 \\text{ mm}^2 \\). When\n                        the temperature is \\( T_1=30^{\\circ}\\text{C} \\), the nut holds the assembly in a snug\n                        position such that the axial force in the bolt is negligible. If the temperature increases to\n                        \\( T_2=100^{\\circ}\\text{C} \\), determine the force in the bolt and sleeve. Take \\(\n                        \\alpha_{bolt}=12 \\times 10^{-6}/^{\\circ}\\text{C} \\), \\( \\alpha_{sleeve}=23 \\times\n                        10^{-6}/^{\\circ}\\text{C} \\), \\( E_{bolt}=200 \\text{ GPa} \\), \\( E_{sleeve}=73 \\text{\n                        GPa} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>A motor is connected to a speed reducer by the tubular shaft and coupling. If the motor supplies\n                        20 HP and rotates the shaft at a rate of 600 r.p.m., determine the minimum inner and outer\n                        diameters \\( d_i \\) and \\( d_o \\) of the shaft if \\( d_i/d_o=0.75 \\). The shaft is made\n                        from a material having an allowable shear stress of \\( \\tau_{allow}=12 \\text{ kPa} \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Derive Euler's buckling formula for a column with one end clamped and other end free and obtain\n                        the effective length as well. Draw the free body diagram with buckled configuration.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>If the wide-flange beam is subjected to a shear of \\( V=20 \\text{ kN} \\), determine the shear\n                        stress on the web at A (Fig. 2). Indicate the shear-stress components on a volume element\n                        located at this point.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/96.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Determine the maximum deflection of the simply supported beam using double integration method.\n                        The beam is made of wood having a modulus of elasticity of \\( E=210 \\text{ GPa} \\) and\n                        cross-section \\( 3 \\text{ mm} \\times 4 \\text{ mm} \\) in dimension (Fig. 3).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/97.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>Derive an expression for an equivalent bending moment \\( M_e \\) that, if applied alone to a\n                        solid bar with a circular cross-section, would cause the same maximum shear stress as the\n                        combination of an applied moment M and torque T. Assume that the principal stresses are of\n                        opposite algebraic signs.</p>"
+        }
+      ]
+    }
+  ]
+}

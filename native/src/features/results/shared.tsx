@@ -16,14 +16,17 @@ import { View, Clipboard, batch, cleanup, effect, signal, type JSX, type Signal 
 import type { Nav } from "../../app/router";
 import { param } from "../../app/router";
 import { Btn, Field } from "../../ui";
+import { EVENTS, track } from "../../lib/analytics";
+import { useProfile, useProfileReady, type Profile } from "../settings/profile";
 import { BatchChips, BranchChips, SemChips } from "./components";
 import {
   BRANCHES,
+  BRANCH_CODE_BY_PATH,
   batches,
   branchesFor,
   currentSemester,
   parseReg,
-  readTablePrefs,
+  readSavedTablePrefs,
   semsFor,
   writeTablePrefs,
 } from "./data";
@@ -133,6 +136,7 @@ export function CopyButton(props: { text: string; label?: string; class?: string
     try {
       await Clipboard.writeText(props.text);
       copied.set(true);
+      track(EVENTS.resultShare, { method: "clipboard" });
       setTimeout(() => copied.set(false), 2200);
     } catch {
       /* No clipboard on this host: nothing to tell the user. */
@@ -205,8 +209,9 @@ export function normalizeSelection(input: {
 
 /**
  * The selection shared by the table and the merit list: route params win,
- * otherwise the last choice this device saved. `apply` normalizes, persists
- * and lets the screen fetch.
+ * otherwise the last choice this device saved, otherwise the student's own
+ * table from the saved profile. `apply` normalizes, persists and lets the
+ * screen fetch.
  */
 export function useTableSelection(nav: Nav): {
   selection: Signal<TableSelection>;
@@ -222,18 +227,26 @@ export function useTableSelection(nav: Nav): {
       sem: param(nav, "sem"),
     }),
   );
+  const person = useProfile();
+  const personReady = useProfileReady();
   const ready = signal(fromParams);
+  let started = false;
 
   if (!fromParams) {
     effect(() => {
+      // Wait for the profile read: a table that opened on the fallback before
+      // Storage answered would ignore the registration number it just loaded.
+      if (started || !personReady()) return;
+      started = true;
+      const student = person();
       let alive = true;
       cleanup(() => {
         alive = false;
       });
-      void readTablePrefs().then((prefs) => {
+      void readSavedTablePrefs().then((saved) => {
         if (!alive) return;
         batch(() => {
-          selection.set(normalizeSelection(prefs));
+          selection.set(normalizeSelection(saved ?? profileSelection(student)));
           ready.set(true);
         });
       });
@@ -247,6 +260,21 @@ export function useTableSelection(nav: Nav): {
   };
 
   return { selection, ready, apply };
+}
+
+/**
+ * The table a saved registration number belongs to: its batch, its branch and
+ * the semester the student is actually in. Empty when the profile knows
+ * nothing, so `normalizeSelection` falls back to the published default.
+ */
+export function profileSelection(profile: Profile): Partial<TableSelection> {
+  const info = parseReg(profile.reg);
+  if (!info) return {};
+  return {
+    batch: info.batch,
+    branch: BRANCH_CODE_BY_PATH[profile.branch] ?? info.branch,
+    sem: profile.sem,
+  };
 }
 
 /** The batch / branch / semester chip stacks both data screens share. */

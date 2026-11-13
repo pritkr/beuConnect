@@ -1,0 +1,341 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech Examination, 2021",
+    "subject": "Heat Transfer",
+    "subject_slug": "heat-transfer",
+    "subject_code": "102502",
+    "year": 2021,
+    "semester": 0,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Questions",
+      "questions": [
+        {
+          "text": "Choose the correct answer of the following (any seven):",
+          "marks": null,
+          "id": "1",
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "Heat transfer takes place according to ______ law of thermodynamics.",
+              "options": [
+                "(i) zeroth",
+                "(ii) first",
+                "(iii) second",
+                "(iv) third"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(b)",
+              "text": "In $M\\text{-}L\\text{-}T\\text{-}\\theta$ system ($T$ being time and $\\theta$ temperature), what is the dimension of thermal conductivity?",
+              "options": [
+                "(i) $ML^{-1}T^{-1}\\theta^{-3}$",
+                "(ii) $ML\\theta^{-1}T^{-3}$",
+                "(iii) $MLT^{-1}\\theta^{-1}$",
+                "(iv) $MLT^{-2}\\theta^{-1}$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(c)",
+              "text": "With an increase in the thickness of insulation around a circular pipe, heat loss to surroundings is due to",
+              "options": [
+                "(i) convection increases while that due to conduction decreases",
+                "(ii) convection decreases while that due to conduction increases",
+                "(iii) convection and conduction decrease",
+                "(iv) convection and conduction increase"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(d)",
+              "text": "The thermal conductivity of thermal insulation applied to a hollow spherical vessel containing very hot material is $0.5\\text{ W/m-K}$. The convective heat transfer at the outer surface of insulation is $10\\text{ W/m}^2\\text{-K}$. What is the critical radius of the sphere?",
+              "options": [
+                "(i) $0.1\\text{ m}$",
+                "(ii) $0.2\\text{ m}$",
+                "(iii) $1.0\\text{ m}$",
+                "(iv) $2.0\\text{ m}$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(e)",
+              "text": "The time constant of a thermocouple is the time taken to attain",
+              "options": [
+                "(i) the final temperature to be measured",
+                "(ii) $50\\%$ of the value of initial temperature difference",
+                "(iii) $63.2\\%$ of the value of initial temperature difference",
+                "(iv) to reach $100\\text{ }^\\circ\\text{C}$ from $0\\text{ }^\\circ\\text{C}$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(f)",
+              "text": "A radiation shield should",
+              "options": [
+                "(i) have high transmissivity",
+                "(ii) absorb all the radiations",
+                "(iii) have high reflective power",
+                "(iv) partly absorb and partly transmit the incident radiation"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(g)",
+              "text": "In a counter flow heat exchange, cold fluid enters at $40\\text{ }^\\circ\\text{C}$ and leaves at $60\\text{ }^\\circ\\text{C}$, whereas the hot fluid enters at $160\\text{ }^\\circ\\text{C}$ and leaves at $140\\text{ }^\\circ\\text{C}$. The mean temperature difference for this case is",
+              "options": [
+                "(i) $20\\text{ }^\\circ\\text{C}$",
+                "(ii) $80\\text{ }^\\circ\\text{C}$",
+                "(iii) $100\\text{ }^\\circ\\text{C}$",
+                "(iv) indeterminate"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(h)",
+              "text": "Which of the following numbers represents the ratio of kinematic viscosity to thermal diffusivity?",
+              "options": [
+                "(i) Grashof number",
+                "(ii) Prandtl number",
+                "(iii) Mach number",
+                "(iv) Nusselt number"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(i)",
+              "text": "The reciprocity theorem states that",
+              "options": [
+                "(i) $F_{12} = F_{21}$",
+                "(ii) $A_1 F_{12} = A_2 F_{21}$",
+                "(iii) $A_1 F_{12} = A_2 F_{12}$",
+                "(iv) $A_2 F_{12} = A_1 F_{21}$"
+              ],
+              "id": "1_sub",
+              "marks": null
+            },
+            {
+              "number": "(j)",
+              "text": "$\\epsilon\\text{-NTU}$ method is particularly useful in thermal design of heat exchangers when",
+              "options": [
+                "(i) the outlet temperatures of the fluid streams are not known as a priori",
+                "(ii) the outlet temperature of the fluid streams are known as a priori",
+                "(iii) the outlet temperature of the hot fluid stream is known but that of cold fluid stream is not known as a priori",
+                "(iv) inlet temperature of the fluid streams are not known as a priori"
+              ],
+              "id": "1_sub",
+              "marks": null
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "How does the slope of the temperature profile in a wall depend on its thermal conductivity?",
+              "marks": null,
+              "id": "2_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "What is thermal contact resistance? A wall consists of two layers of insulation pressed against each other. Do you need to be concerned about the contact resistance at the interface in a heat transfer analysis or can we just ignore it? Justify your answer.",
+              "marks": null,
+              "id": "2_sub"
+            },
+            {
+              "number": "(c)",
+              "text": "Consider a large plane wall of thickness $L = 0.2\\text{ m}$, thermal conductivity $K = 1.2\\text{ W/m K}$, and surface area $A = 15\\text{ m}^2$. The two sides of the wall are maintained at constant temperatures of $T_1 = 120\\text{ }^\\circ\\text{C}$ and $T_2 = 50\\text{ }^\\circ\\text{C}$, respectively. Determine, (i) the variation of temperature within the wall and the value of temperature $x = 0.1\\text{ m}$ and (ii) the rate of heat conduction through the wall under steady conditions.",
+              "marks": null,
+              "id": "2_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "3",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "What is the physical significance of critical radius of insulation?",
+              "marks": null,
+              "id": "3_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "Show that the critical radius of insulation for a cylindrical body can be represented as $r_{cr} = k/h\\text{ (m)}$.",
+              "marks": null,
+              "id": "3_sub"
+            },
+            {
+              "number": "(c)",
+              "text": "Consider a $0.8\\text{ m}$ high and $1.5\\text{ m}$ wide glass window with a thickness of $8\\text{ mm}$ and thermal conductivity of $K = 0.78\\text{ W/m-K}$. Determine the steady rate of heat transfer through this glass window and the temperature of its inner surface for a day during which the room is maintained at $20\\text{ }^\\circ\\text{C}$ while the temperature of the outdoors is $-10\\text{ }^\\circ\\text{C}$. Take the heat transfer coefficients on the inner and outer surfaces of the window to be $h_1 = 10\\text{ W/m}^2\\text{-K}$ and $h_2 = 40\\text{ W/m}^2\\text{-K}$, which includes the effects of radiation.",
+              "marks": null,
+              "id": "3_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "4",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "How do fins affect the heat transfer rate?",
+              "marks": null,
+              "id": "4_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "What is the difference between the fin efficiency and the fin effectiveness?",
+              "marks": null,
+              "id": "4_sub"
+            },
+            {
+              "number": "(c)",
+              "text": "Derive the expression of $1\\text{-D}$ steady fin equation with no heat generation. Also show from the same that the temperature distribution for an infinitely long fin along the axial direction can be represented as\n$$\\frac{T(x) - T_\\infty}{T_b - T_\\infty} = e^{-x \\sqrt{hp/k A_c}}$$",
+              "marks": null,
+              "id": "4_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "5",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "What is the physical significance of Biot number $(\\text{Bi})$? Represent diagrammatically the effect of $\\text{Bi}$ on steady-state temperature distribution in a plane wall with surface convection.",
+              "marks": null,
+              "id": "5_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "What is lumped system analysis? When is it applicable?",
+              "marks": null,
+              "id": "5_sub"
+            },
+            {
+              "number": "(c)",
+              "text": "The temperature of a gas steam is measured with a thermocouple. The junction may be approximated as a sphere of diameter $D = 1\\text{ mm}$, $k = 25\\text{ W/(m }^\\circ\\text{C)}$, $\\rho = 8400\\text{ kg/m}^3$ and $c_p = 0.4\\text{ kJ/(kg }^\\circ\\text{C)}$. The heat transfer coefficient between the junction and the gas steam is $h = 560\\text{ W/(m}^2\\text{ }^\\circ\\text{C)}$. How long will it take for the thermocouple to record $99$ percent of the applied temperature difference?",
+              "marks": null,
+              "id": "5_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "6",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "What is the physical significance of the Nusselt number?",
+              "marks": null,
+              "id": "6_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "'In a liquid to gas heat exchanger the fins are commonly used on the liquid side to enhance the heat transfer.' Write True of False. Justify with explanation.",
+              "marks": null,
+              "id": "6_sub"
+            },
+            {
+              "number": "(c)",
+              "text": "What is the difference between evaporation and boiling? Draw the boiling curve and identify the different boiling regimes.",
+              "marks": null,
+              "id": "6_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "7",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "Physically, what does the Grashof number represent? What is the value for critical Grashof number for flow over a vertical plate?",
+              "marks": null,
+              "id": "7_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "Atmospheric air at $T_\\infty = 250\\text{ K}$ and a free-stream velocity $u_\\infty = 30\\text{ m/s}$ flows across a circular cylinder of diameter $D = 2.5\\text{ cm}$. The surface of the cylinder is maintained at a uniform temperature $T_w = 350\\text{ K}$.\n(i) Calculate the average heat transfer coefficient $h_m$.\n(ii) Determine the heat transfer rate $Q$ per $1\\text{ m}$ length of the cylinder.\n(iii) Find the average drag coefficient $C_D$.\n(iv) Calculate the drag force $F$ acting per $1\\text{ m}$ length of the cylinder.",
+              "marks": null,
+              "id": "7_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "8",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "Classify heat exchanger according to flow type and construction.",
+              "marks": null,
+              "id": "8_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "A counter flow, concentric tube heat exchanger is used to cool the lubricating oil for a large industrial gas turbine engine. The flow rate of cooling water through the inner tube $(D_i = 25\\text{ mm})$ is $0.2\\text{ kg/s}$, while the flow rate of oil through the outer annulus $(D_o = 45\\text{ mm})$ is $0.1\\text{ kg/s}$. The oil and water enter at temperatures of $100\\text{ }^\\circ\\text{C}$ and $30\\text{ }^\\circ\\text{C}$, respectively. How long must the tube be made if the outlet temperature of the oil is to be $60\\text{ }^\\circ\\text{C}$?",
+              "marks": null,
+              "id": "8_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        },
+        {
+          "id": "9",
+          "marks": null,
+          "sub_questions": [
+            {
+              "number": "(a)",
+              "text": "Define a gray body. What is the criterion to call a body gray?",
+              "marks": null,
+              "id": "9_sub"
+            },
+            {
+              "number": "(b)",
+              "text": "What is the view factor? Write the reciprocity relation for view factor.",
+              "marks": null,
+              "id": "9_sub"
+            },
+            {
+              "number": "(c)",
+              "text": "Consider the $5\\text{ m} \\times 5\\text{ m} \\times 5\\text{ m}$ cubical furnace, whose surfaces closely approximate black surfaces. The base, top and side surfaces of the furnace are maintained at uniform temperatures of $800\\text{ K}$, $1500\\text{ K}$ and $500\\text{ K}$ respectively. Determine, (i) the net rate of radiation heat transfer between the base and the top surface, (ii) the net rate of radiation heat transfer between the base and the side surfaces and (iii) the net radiation heat transfer from the base surface.",
+              "marks": null,
+              "id": "9_sub"
+            }
+          ],
+          "text": "Answer the following:"
+        }
+      ]
+    }
+  ]
+}

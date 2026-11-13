@@ -238,7 +238,7 @@ export function BattleScreen(props: { nav: Nav }) {
               placeholder="23105157102"
             />
 
-            <Fresh when={`sem:${sem()}`} build={() => <SemChips value={sem()} onChange={sem.set} />} />
+            <Fresh when={`sem:${sem()}`} build={() => <SemChips value={sem()} onChange={(next) => sem.set(next)} />} />
 
             {formError() ? <Text class="text-[12px] font-medium text-destructive">{formError()}</Text> : null}
 
@@ -411,13 +411,13 @@ export function BattleScreen(props: { nav: Nav }) {
                   <SectionHeader title="Paper by paper" />
                   <Card class="gap-0 p-0">
                     <Row class="items-center gap-2 px-4 py-2">
-                      <Text class="w-16 text-[11px] font-semibold text-foreground" numberOfLines={1}>
+                      <Text class="w-16 text-[11px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
                         {`A · ${left.name || "A"}`}
                       </Text>
                       <Text class="flex-1 text-center text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
                         Paper
                       </Text>
-                      <Text class="w-16 text-right text-[11px] font-semibold text-foreground" numberOfLines={1}>
+                      <Text class="w-16 text-right text-[11px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
                         {`${right.name || "B"} · B`}
                       </Text>
                     </Row>
@@ -500,7 +500,7 @@ function SideCard(props: { side: "a" | "b"; data: ResultData; sem: number; onPre
         <View class={`h-2 w-2 rounded-full ${dot}`} />
         <Label>{props.side === "a" ? "Student A" : "Student B"}</Label>
       </Row>
-      <Text class="text-[14px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+      <Text class="text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
         {data.name || data.reg}
       </Text>
       <Muted class="tabular-nums" numberOfLines={1}>

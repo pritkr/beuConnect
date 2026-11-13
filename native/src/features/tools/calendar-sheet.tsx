@@ -43,9 +43,8 @@ export function CalendarSheet(props: { onOpen: () => void }) {
       </View>
       <Image
         src={sheet}
-        resizeMode="contain"
         class="w-full rounded-2xl border border-border bg-card"
-        style={{ aspectRatio: SHEET_RATIO }}
+        style={{ objectFit: "contain", aspectRatio: SHEET_RATIO }}
         accessibilityElementsHidden
       />
     </Card>
@@ -57,8 +56,8 @@ export function CalendarReader(props: { open: boolean; onChange: (open: boolean)
   return (
     <Dialog
       open={props.open}
-      animation="fade"
-      onOpenChange={(open) => props.onChange(open)}
+      animation="slide"
+      onOpenChange={({ open }) => props.onChange(open)}
       class="flex-1 bg-background"
       backdropClass="bg-foreground/40"
       testID="holidays-sheet-reader"
@@ -84,7 +83,7 @@ export function CalendarReader(props: { open: boolean; onChange: (open: boolean)
           centerContent
           contentClass="p-1"
         >
-          <Image src={sheet} resizeMode="contain" class="w-full" style={{ aspectRatio: SHEET_RATIO }} />
+          <Image src={sheet} class="w-full" style={{ objectFit: "contain", aspectRatio: SHEET_RATIO }} />
         </Scroll>
       </View>
     </Dialog>

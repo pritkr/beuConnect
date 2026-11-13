@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2017",
+    "subject": "Database System",
+    "subject_slug": "database-system",
+    "subject_code": "051509",
+    "year": 2017,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Fill in the blanks (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>A description of data in terms of a data model is called a _____</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Information about the conceptual, external, and physical schemas is stored in the _____</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>The weak entity set must have participation in the _____ identifying relationship set.</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>The _____ also called arity, of a relation is the number of fields.</p>"
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>In relational algebra renaming operation is denoted by _____ operator.</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>SQL queries are optimized by decomposing them into a collection of smaller units, called _____\n                    </p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>The set of all functional dependencies (FDs) implied by a given set F of FDs is called the _____\n                        F,\n                        denoted by _____</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>X→→Y is a trivial MVD if _____ or _____</p>"
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>_____ allows us to identify a point in a transaction and selectively roll back operations carried\n                        out\n                        after this point.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Design a generalization-specialization hierarchy for a motor-vehicle sales company. The company\n                        sells\n                        motor-cycles, passenger cars, vans, and buses. Justify your placement of attributes at each\n                        level of\n                        the hierarchy.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Explain the difference between condition-defined and user-defined constraints. Which of these\n                        constraints can the system check automatically? Explain your answer.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>List two reasons why we may choose to define a view.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>List two major problems with processing update operations expressed in terms of views.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Consider the relations below:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Passengers (Name, Address, Age)<br/>\n                        Reservations (Name, FlightNum, Seat)<br/>\n                        Flights (FlightNum, DepartCity, DestinationCity, DepartureTime, ArrivalTime, MinutesLate)<br/>\n                        Write the following queries in relational algebra:<br/>\n                        (a) Get the names of passengers who had a reservation on a flight that was more than 30 minutes\n                        late.<br/>\n                        (b) Get the names of passengers who had reservations on all flights that were more than 60\n                        minutes\n                        late.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What is the dependency closure \\( F^+ \\) of a set F of FDs? How can you compute the closure of\n                        a\n                        given set F of FDs?</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>What is the attribute closure \\( X^+ \\) of a set of attributes X with respect to a set of FDs\n                        F?\n                        Give the algorithm for computing the attribute closure of a set X of attributes.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>When is the decomposition of a relation schema R into two relation schemas X and Y said to be a\n                        lossless-join decomposition? Why is the property so important? Give a necessary and sufficient\n                        condition to test whether a decomposition is lossless-join.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Describe how a query block is translated into extended relational algebra. Describe and motivate\n                        the\n                        extensions to relational algebra. Why are \\( \\sigma\\pi x \\) expressions the focus of an\n                        optimizer?\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>When do two actions on the same data object conflict? Explain with example the anomalies that can\n                        be\n                        caused by conflicting actions.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What transaction characteristics can a programmer control in SQL? Explain in brief the different\n                        access modes and isolation levels in particular. How can the isolation level and access mode be\n                        set\n                        in the transaction? Show with example.</p>"
+        }
+      ]
+    }
+  ]
+}

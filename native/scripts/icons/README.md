@@ -6,7 +6,7 @@ One font, one component. Every mark in the app is a Boxicons glyph rendered by
 
 ```
 src/ui/icons.tsx                 the map: name → codepoint (regular, solid)
-assets/fonts/boxicons.ttf        the subset the app bundles (16,832 B)
+assets/fonts/boxicons.ttf        the subset the app bundles (17,988 B)
 assets/fonts/boxicons.LICENSE    Boxicons' MIT licence
 build-boxicons.py                rebuild the subset from the map
 verify.mjs                       the gate: font and map must agree
@@ -30,8 +30,8 @@ generated from each other, and a missing glyph is invisible at runtime.
 
 ## Why a font and not SVGs
 
-- **Bytes.** The full TTF is 320,944 B; the 93-codepoint subset the app
-  actually uses is 16,832 B (8,235 B gzipped) against a 12,000,000 B APK
+- **Bytes.** The full TTF is 320,944 B; the 99-codepoint subset the app
+  actually uses is 17,988 B (8,890 B gzipped) against a 12,000,000 B APK
   budget.
 - **One family.** Every glyph shares the same stroke weight, so a row of them
   reads as one system instead of a scrapbook.

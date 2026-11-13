@@ -1,0 +1,270 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Examination, 2025 (Old Course)",
+    "subject": "Programming for Problem Solving",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100204",
+    "year": 2025,
+    "semester": 2,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option/answer the following (Any seven question\n                    only):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>Which of the following cannot be a variable name in C?</p>",
+          "options": [
+            "volatile",
+            "true",
+            "friend",
+            "export"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following typecasting is accepted by C language</p>",
+          "options": [
+            "Widening conversions",
+            "Narrowing conversions",
+            "Widening &amp; Narrowing conversions",
+            "None of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Which of the following is NOT possible with any 2 operators in C?</p>",
+          "options": [
+            "Different precedence, same associativity",
+            "Different precedence, different associativity",
+            "Same precedence, different associativity",
+            "All of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Functions can return enumeration constants in C?</p>",
+          "options": [
+            "true",
+            "false",
+            "depends on the compiler",
+            "depends on the standard"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>C preprocessors can have compiler specific features.</p>",
+          "options": [
+            "True",
+            "False",
+            "Depends on the standard",
+            "Depends on the platform"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>How many number of pointer (*) does C have against a pointer variable declaration?</p>",
+          "options": [
+            "7",
+            "127",
+            "255",
+            "No limits"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which of the following is not possible statically in C language?</p>",
+          "options": [
+            "Jagged Array",
+            "Rectangular Array",
+            "Cuboidal Array",
+            "Multidimensional Array"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>What will be the value of the following assignment expression?<br/>\n                        (x = foo())!=1 considering foo() returns 2</p>",
+          "options": [
+            "2",
+            "True",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Comment on the following C statement<br/>\n                        n=1; printf(\"%d, %d\n\", 3*n, n++);</p>",
+          "options": [
+            "Output will be 3, 2",
+            "Output will be 3, 1",
+            "Output will be 6, 1",
+            "Output is compiler dependent"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>What are the elements present in the array of the following C code?<br/>\n                        int array[5]={5};</p>",
+          "options": [
+            "5, 5, 5, 5, 5",
+            "5, 0, 0, 0, 0",
+            "5, NULL, NULL, NULL, NULL",
+            "5"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Explain the major components of a computer system. How does the operating system help in program\n                        execution?</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Write an algorithm and flowchart to find the largest of three numbers.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Explain the different arithmetic operators in C. Write the rules for evaluating arithmetic\n                        expressions with precedence and associativity.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>Write a program to reverse a number using a loop. Explain the concept of an infinite loop with\n                        examples. Why do infinite loops occur?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Explain array declaration and initialization with examples for 1-D and 2-D arrays. Also explain\n                        the concept of bound checking.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Write a C program to perform Binary Search on a sorted array.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What is call by reference? How is passing an array to a function an example of call by reference?\n                        Explain with code.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Write a program that reads marks of 5 students into an array and uses a function to compute the\n                        average. Demonstrate passing an array to a function.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Define a structure Student with name, roll, marks. Write a C program to input data for 3 students\n                        and print it.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Write a note on accessing structure elements using (a) dot operator, (b) pointer-to-structure.\n                        Give examples.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the concept of pointers in C. How are pointers defined and used? Illustrate with a\n                        program that swaps two numbers using pointers.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Write a C program using pointers to reverse an array in-place. Explain how pointers are used in\n                        the program.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Write a recursive C program to find the factorial of a number. Also explain base case and\n                        recursive case.</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>Explain the Ackermann function. Write a recursive program for it. Why is it not suitable for\n                        large values?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": []
+    }
+  ]
+}

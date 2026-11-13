@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech. 3rd Semester Examination, 2023",
+    "subject": "Data Structure and Algorithms",
+    "subject_slug": "data-structure-and-algorithms",
+    "subject_code": "100304",
+    "year": 2023,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (Any seven question\n                    only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "What is the time complexity of the following code snippet?",
+          "options": [
+            "\\( O(n) \\)",
+            "\\( O(n^2) \\)",
+            "\\( O(log n) \\)",
+            "\\( O(1) \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "Which type of traversal of binary search tree outputs the value in sorted order?",
+          "options": [
+            "Pre-order",
+            "In-order",
+            "Post-order",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "Suppose a circular queue of capacity \\( (n-1) \\) elements is implemented with an array of n\n                        elements. Assume that the insertion and deletion operations are carried out using REAR and FRONT\n                        as array index variables, respectively. Initially, REAR=FRONT=0. The conditions to detect queue\n                        full and queue empty are",
+          "options": [
+            "Full: FRONT = (REAR-1) mod n. Empty: REAR=FRONT",
+            "Full: FRONT = (REAR+1) mod n. Empty: REAR=(FRONT+1) mod n",
+            "Full: REAR = FRONT. Empty: FRONT = (REAR+1) mod n",
+            "Full: REAR = (FRONT+1) mod n. Empty: REAR=FRONT"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "Which of the following data structures can be used for parentheses matching?",
+          "options": [
+            "Tree",
+            "Queue",
+            "Stack",
+            "Priority queue"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "What is the worst-case time complexity of inserting n elements into an empty linked list, if the\n                        linked list needs to be maintained in sorted order?",
+          "options": [
+            "\\( \\Theta(n) \\)",
+            "\\( \\Theta(n log n) \\)",
+            "\\( \\Theta(n^2) \\)",
+            "\\( \\Theta(1) \\)"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "What will be the postfix expression for the given infix expression: \\( (a+b)*c-d \\)",
+          "options": [
+            "*+abcd",
+            "ab+c*d-",
+            "ab+cd-*",
+            "abc*+d-"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "What is the outcome of the prefix expression + - * 3 2 / 8 4 1 ?",
+          "options": [
+            "12",
+            "11",
+            "5",
+            "4"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "Where will the new element be inserted in the linked list implementation of the queue?",
+          "options": [
+            "At the middle position of the linked list",
+            "At the head position of the linked list",
+            "At the tail position of the linked list",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "Let us consider a list of numbers (34, 16, 2, 93, 80, 77, 51) and a hash table size of 10. What\n                        is the order of elements (from index 0 to size-1) in the hash table?",
+          "options": [
+            "null, null, 77, 16, null, 34, 93, 2, 51, 80",
+            "80, 51, 2, 93, 34, null, 16, 77, null, null",
+            "77, 16, 34, 93, 2, 51, 80",
+            "80, 51, 2, 93, 34, 16, 77"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "The height of a binary tree is the maximum number of edges in any root to leaf path. The maximum\n                        number of nodes in a binary tree of height h is:",
+          "options": [
+            "\\( 2^h-1 \\)",
+            "\\( 2^{h-1}-1 \\)",
+            "\\( 2^{h+1}-1 \\)",
+            "\\( 2^{h+1} \\)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Why do we need an asymptotic notation? Explain the different asymptotic notations with\n                        definitions and examples."
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Write the worst-case run time complexity of the following algorithms: linear search, bubble sort,\n                        merge sort, and push operation in the stack."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Write push() and pop() functions of a stack."
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Evaluate the following postfix expression using STACK. Show all the steps. 8, 2, /, 3, *, 4, -,\n                        6, 2, /, +"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Write the algorithm to count the total elements in a singly linked list."
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "How a doubly linked list is better than a singly linked list? Explain deletion on a doubly linked\n                        list using an example."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "The following values are to be stored in a hash table: 25, 42, 96, 101, 102, 162, 197. Describe\n                        how the values are hashed by using the division method of hashing with a table size of 7. Use\n                        chaining as the method of collision resolution."
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "Apply the merge sort on the following numbers: 10, 15, 50, 17, 20, 25, 30, 16, 70, 6."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "Differentiate between stack and queue. Explain different types of queues with examples."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Write the properties of a binary search tree. Create a binary search tree using the following\n                        elements: 45, 15, 79, 90, 10, 55, 12, 20, 50."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Consider the in-order and pre-order traversal of a binary search tree are (1, 2, 3, 4, 5, 6, 8,\n                        10, 25) and (4, 3, 1, 2, 10, 8, 5, 6, 25) respectively. Construct a unique binary search tree\n                        for the given in-order and pre-order traversals."
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Explain the insertion in the AVL tree using an example."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Explain the Heap sort algorithm. Create a heap for the following elements and then sort them: 13,\n                        102, 405, 136, 15, 105, 390, 432, 28, 444."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write the short note on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Circular Queue</li>\n<li>Adjacency matrix</li>\n<li>Depth first search</li>\n<li>B tree</li>\n</ul>",
+          "options": [
+            "Circular Queue",
+            "Adjacency matrix",
+            "Depth first search",
+            "B tree"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -92,7 +92,7 @@ export function PostScreen(props: { nav: Nav }) {
                 <Panel tone="amber" class="gap-3">
                   <Row class="flex-wrap items-center gap-1.5">
                     <Badge tone="amber">PDF</Badge>
-                    <Text class="flex-1 text-[14px] font-semibold text-foreground" numberOfLines={1}>Official attachment</Text>
+                    <Text class="flex-1 text-[14px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>Official attachment</Text>
                   </Row>
                   <Muted>Opens in the app.</Muted>
                   <Btn onPress={() => props.nav.push("notices.pdf", { url: attachment() ?? "", title: item.title })}>

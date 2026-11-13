@@ -6,7 +6,7 @@ app by hand.
 
 ```sh
 cd native
-./scripts/shots.sh            # 20 screens, light, 390×844
+./scripts/shots.sh            # 21 screens, light, 390×844
 ```
 
 Output lands in `.nsh/shots/` (gitignored):
@@ -20,17 +20,25 @@ shot-05-more.png            shot-15-data.png
 shot-06-pyqs.png            shot-16-wifi.png
 shot-07-notices.png         shot-17-profile.png
 shot-08-calculator.png      shot-18-settings.png
-shot-09-rank.png            shot-19-feedback.png
-shot-10-merit.png           shot-20-about.png
+shot-09-rank.png            shot-19-notifications.png
+shot-10-merit.png           shot-20-feedback.png
+                            shot-21-about.png
 manifest.txt                logs/shots.log
 ```
 
-`manifest.txt` is one row per file: `file  route  entry  scheme  viewport  bytes`.
+`manifest.txt` is one row per file — `file  route  entry  scheme  viewport  bytes`
+— and always describes the run that just finished. A numbered file from an older
+route table (a label since renamed) can sit beside the current set in the same
+gitignored folder.
 Every PNG is the app window at 2×: **780×1688** for the default 390×844 frame.
 
-A full run takes about **4 minutes** — each screen is a fresh app launch, and
-each navigation step costs ~4 s while the host waits for the app to settle.
-Use `--only` while iterating.
+A full run takes **2–5 minutes**: ≈5 s per screen on a quiet machine (a fresh
+app launch, plus ~1 s per navigation press), and longer when another agent holds
+the shared `.nsh` lock. Use `--only` while iterating.
+
+The first-run intro is skipped: the script seeds `beu.onboarding`
+(`{"done":true}`), the flag `src/app/shell.tsx` gates on. Without it every tab
+press misses, because the app opens on “Open BEUConnect”.
 
 ## Options
 
@@ -46,7 +54,9 @@ Use `--only` while iterating.
 | `./scripts/shots.sh --list` | the route table and its file numbers, nothing is built |
 
 Exit codes: `0` every screen captured, `1` build/run/capture failure (nothing is
-left running), `2` captured, but at least one route rendered “No screen for …”.
+left running), `2` captured, but with a warning: a route rendered “No screen
+for …”, or two routes produced pixel-identical files (a press landed on the
+wrong row while the host was busy — rerun those with `--only`).
 
 ## What a good screenshot looks like
 
@@ -112,34 +122,46 @@ below) or add a route that accepts defaults.
 deep-link support — it always starts at `home` and keeps routes in a JS stack.
 
 The only programmatic route into the host is the test runner, with the real
-platform attached:
+platform attached, one screen per run:
 
 ```sh
-nsh test --target macos .nsh/shots/.plan/.shots.test.tsx
+./scripts/check.sh test-only --target macos .nsh/shots/.plan/.shots.test.tsx
 ```
 
-That generated file (written by the script, deleted afterwards) holds one
-`test()` per screen, each with its own app and timeout:
+The plan is rewritten before each screen, so it holds exactly one `test()` for
+the screen being shot, with its own app and timeout:
 
 ```ts
-const app = await open(APP, { width: 390, height: 844, network: "live" });
+const app = await open(APP, { width: 390, height: 844, network: "live", storage: SEED });
 await app.setColorScheme("light");       // open({ colorScheme }) does NOT repaint the real host
 await app.press("More");
 await app.press("University rank");
 await app.screenshot(`${OUT}/shot-09-rank.png`);  // writes the app window as PNG
 ```
 
-Before any window opens, the script runs `nsh build App.tsx` as a preflight, so a
-broken bundle fails in ~0.1 s with the real diagnostic instead of 20 cryptic
-failures. If the bundle breaks *while* shooting (another agent saving a file),
-the remaining screens fail fast and the script prints the same diagnostic and
-exits 1.
+One process per screen, not one for the whole set, for three reasons: progress
+is visible as it goes, a wedged host cannot take the remaining screens down,
+and every `nsh` call must go through `scripts/check.sh`, which serialises the
+shared `.nsh` build cache with a lock (parallel agents build the same tree). The
+lock wait is counted in `SHOTS_SCREEN_TIMEOUT` (300 s per screen); the screen's
+own test gets `SHOTS_TEST_TIMEOUT` (40 s).
 
-Ad-hoc single shot, no script:
+A screen that produces no PNG is logged with its real diagnostic (file, symbol,
+line — for example `<Presets> names nothing in scope` in
+`src/features/tools/calculator.tsx`) and collected into one **retry pass** at the
+end. A *compile* error stops the pass immediately and queues the remaining
+screens: every one of them would print the same error. A module saved mid-write
+is usually settled a few seconds later, so the retry is what makes a sweep
+survive a repo that several agents are editing at once; a screen that still has
+no PNG after the retry fails the run with exit 1 and the hint to rerun when
+`./scripts/check.sh` passes.
+
+Ad-hoc single shot, no script (still through the lock wrapper; stdin runs get
+one 30 s budget, so this is one screen only):
 
 ```sh
 printf 'await app.setColorScheme("light")\nawait app.press("More")\nawait app.screenshot("/tmp/x.png")\n' \
-  | nsh test --target macos App.tsx
+  | ./scripts/check.sh test-only --target macos App.tsx
 ```
 
 ## Limitations found on this machine
@@ -158,6 +180,16 @@ These are measured, not guessed — they shape the script.
   usable array; `swift` (Xcode CLT) reading `CGWindowListCopyWindowInfo` works.
   The dev host's owner is `nsh-macos-host`; the window title is `nsh.json`'s
   `name` (`BEUConnect`).
+- **A busy host can move the list under the tap.** While another agent's
+  `nsh test` held the lock, two routes came out **byte-identical** (rank and
+  Routine twice), which no pair of screens should. The script hashes every PNG,
+  prints the pair, re-shoots a file identical to an earlier screen, and exits 2
+  if it happens again; rerun that label with `--only rank`.
+- **Every host window is titled `BEUConnect`.** Dev hosts (`nsh run`) and test
+  hosts share the title, so with another one on screen a capture cannot be
+  proven to be this run’s window. The script warns when another `nsh run` /
+  `nsh test` is alive before it starts; for a set that has to be trusted, close
+  other hosts and do not run two sweeps at once.
 - **`screencapture` includes chrome.** For `--window-size 390x844` the window is
   390×872, so a `-l` capture is 780×1744 with the title bar. The test runner's
   screenshot is exactly the 390×844 content, hence the default mode.
@@ -173,14 +205,14 @@ These are measured, not guessed — they shape the script.
   `40` means 40 ms, not 40 s. The script passes seconds × 1000.
 - **`open({ colorScheme })` is not the host appearance.** It changes what the
   app reads, not how macOS paints; `app.setColorScheme()` is required.
-- **`nsh test` hides build errors**: only `building App.tsx failed` with exit 1.
-  `nsh build App.tsx` prints the OXC diagnostic (`[MISSING_EXPORT]`, file, line),
-  which is what the preflight and the failure path show.
-- **Hot reload races.** `nsh run` rebuilds on every save (*“✓ rebuilt App.tsx …
-  1 device”*), and this repository is edited by several agents at once. Today
-  `src/features/tools/index.tsx` and `src/features/results/*.tsx` were mid-write:
-  the script reports the failing import and exits 1 instead of hanging, and the
-  set is complete only once the tree builds.
+- **Build errors are only readable in file mode.** A test *file* prints the full
+  OXC diagnostic (`[MISSING_EXPORT]`, file, line, snippet) when `open(APP)`
+  fails; stdin entry mode prints only `building App.tsx failed`.
+- **The tree is edited while you shoot.** Several agents share this checkout and
+  `nsh` rebuilds on every save. A module saved mid-write (`tools/index.tsx`,
+  `results/rank.tsx`, `notices/api.ts` all were on 2026-10-28) fails that screen
+  with the real compile error — never a hang — and the retry pass picks it up
+  once the file settles. If it is still broken, the run exits 1.
 - **Font warning noise.** Each launch prints `warn macOS: font family “System” is
   not available; using the system font`; the script filters it from the console
   and keeps the raw log at `.nsh/shots/logs/shots.log`.

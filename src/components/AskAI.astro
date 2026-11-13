@@ -1,0 +1,343 @@
+---
+/**
+ * Ask AI for one syllabus unit: a link that works as a ChatGPT deep link on its
+ * own, plus a single page-level dialog (variant="dialog") that offers the other
+ * providers. Gemini ignores ?prompt=, so it gets the clipboard and a toast.
+ */
+import Icon from "./Icon.astro";
+
+interface Props {
+	variant?: "trigger" | "dialog";
+	prompt?: string;
+	unit?: string;
+	subject?: string;
+}
+
+const { variant = "trigger", prompt = "", unit = "", subject = "" } = Astro.props;
+
+const chatGptUrl = prompt
+	? `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`
+	: "https://chatgpt.com/";
+const triggerLabel = [unit, subject].filter(Boolean).join(" · ");
+---
+
+{
+	variant === "dialog" ? (
+		<dialog id="askAiDialog" class="ask-dialog" aria-labelledby="askAiTitle">
+			<form method="dialog" class="ask-close-form">
+				<button type="submit" class="btn-icon btn-ghost" aria-label="Close">
+					<Icon name="x" size={16} />
+				</button>
+			</form>
+
+			<div class="ask-body">
+				<h2 id="askAiTitle">Ask AI</h2>
+				<p class="ask-context" data-ai-context />
+				<div class="ask-providers">
+					<button
+						type="button"
+						class="btn-sm btn-primary ask-provider"
+						data-ai-provider="gpt"
+					>
+						ChatGPT
+					</button>
+					<button
+						type="button"
+						class="btn-sm btn-ghost ask-provider"
+						data-ai-provider="gemini"
+					>
+						Gemini
+					</button>
+					<button
+						type="button"
+						class="btn-sm btn-ghost ask-provider"
+						data-ai-provider="claude"
+					>
+						Claude
+					</button>
+				</div>
+				<div class="ask-tools">
+					<button type="button" class="btn-sm btn-ghost" data-ai-copy>
+						Copy prompt
+					</button>
+					<p class="ask-status" data-ai-status role="status" aria-live="polite" />
+				</div>
+			</div>
+		</dialog>
+	) : (
+		<a
+			class="ask-ai"
+			href={chatGptUrl}
+			target="_blank"
+			rel="noopener"
+			data-ai-trigger
+			data-ai-prompt={prompt}
+			data-ai-unit={unit}
+			data-ai-subject={subject}
+			aria-label={triggerLabel ? `Ask AI about ${triggerLabel}` : "Ask AI"}
+		>
+			Ask AI
+		</a>
+	)
+}
+
+<style>
+	.ask-ai {
+		flex: 0 0 auto;
+		color: var(--faint);
+		font-size: 0.7rem;
+		line-height: 1.4;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	.ask-ai:hover {
+		color: var(--paper);
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+	}
+
+	.ask-dialog {
+		width: min(100% - 2rem, 26rem);
+		padding: var(--s5);
+		border: 1px solid var(--line-strong);
+		border-radius: var(--r-lg);
+		background: var(--surface);
+		color: var(--paper);
+	}
+
+	.ask-dialog::backdrop {
+		background: var(--scrim);
+	}
+
+	.ask-close-form {
+		position: absolute;
+		top: 0.6rem;
+		right: 0.6rem;
+		margin: 0;
+	}
+
+	.ask-body {
+		display: grid;
+		gap: var(--s3);
+	}
+
+	.ask-body h2 {
+		font-family: var(--font-sans);
+		font-size: 0.78rem;
+		font-weight: 650;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		color: var(--faint);
+	}
+
+	.ask-context {
+		margin: 0;
+		max-width: 100%;
+		color: var(--paper);
+		font-size: 0.9rem;
+		line-height: 1.4;
+		overflow-wrap: anywhere;
+	}
+
+	.ask-providers {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--s2);
+	}
+
+	.ask-provider {
+		flex: 1 1 6.5rem;
+	}
+
+	.ask-tools {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--s2) var(--s3);
+		padding-top: var(--s2);
+		border-top: 1px solid var(--line);
+	}
+
+	.ask-status {
+		min-height: 1.1rem;
+		margin: 0;
+		color: var(--ok);
+		font-size: 0.78rem;
+	}
+
+	@media (max-width: 380px) {
+		.ask-dialog {
+			padding: var(--s4);
+		}
+
+		.ask-provider {
+			flex-basis: 100%;
+		}
+	}
+</style>
+
+<style is:global>
+	/* Runtime toast: Astro scoped styles never reach it. */
+	.ask-toast {
+		position: fixed;
+		bottom: 1.5rem;
+		left: 50%;
+		z-index: 9999;
+		max-width: calc(100% - 2rem);
+		padding: 0.5rem 0.85rem;
+		border: 1px solid var(--line-strong);
+		border-radius: var(--r);
+		background: var(--surface);
+		color: var(--paper);
+		font-size: 0.8rem;
+		transform: translateX(-50%);
+	}
+</style>
+
+<script>
+	const GEMINI_APP = "https://gemini.google.com/app";
+	const dialog = document.getElementById("askAiDialog");
+
+	if (dialog instanceof HTMLDialogElement) {
+		const modal: HTMLDialogElement = dialog;
+		const context = modal.querySelector("[data-ai-context]");
+		const status = modal.querySelector("[data-ai-status]");
+		const copyButton = modal.querySelector("[data-ai-copy]");
+		let prompt = "";
+		let opener: HTMLElement | null = null;
+
+		const setStatus = (message: string) => {
+			if (status) status.textContent = message;
+		};
+
+		const legacyCopy = (value: string) => {
+			const active = document.activeElement;
+			const area = document.createElement("textarea");
+			area.value = value;
+			area.setAttribute("readonly", "");
+			area.setAttribute("aria-hidden", "true");
+			area.style.position = "fixed";
+			area.style.top = "0";
+			area.style.opacity = "0";
+			document.body.appendChild(area);
+			area.select();
+			const copied = document.execCommand("copy");
+			area.remove();
+			if (
+				active instanceof HTMLElement &&
+				active.isConnected &&
+				active.offsetParent !== null
+			) {
+				active.focus({ preventScroll: true });
+			}
+			return copied
+				? Promise.resolve()
+				: Promise.reject(new Error("Copy unavailable"));
+		};
+
+		const copyText = (value: string) => {
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				return navigator.clipboard
+					.writeText(value)
+					.catch(() => legacyCopy(value));
+			}
+			return legacyCopy(value);
+		};
+
+		const toast = (message: string) => {
+			const node = document.createElement("div");
+			node.className = "ask-toast";
+			node.setAttribute("role", "status");
+			node.textContent = message;
+			document.body.appendChild(node);
+			window.setTimeout(() => node.remove(), 3200);
+		};
+
+		const providerUrl = (kind: string) => {
+			if (kind === "claude") return `https://claude.ai/new?q=${encodeURIComponent(prompt)}`;
+			return `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
+		};
+
+		const openProvider = (kind: string) => {
+			if (!prompt) return;
+
+			if (kind === "gemini") {
+				// Open inside the click gesture; copying resolves later and is not
+				// allowed to carry the gesture with it.
+				const returnTo = opener;
+				window.open(GEMINI_APP, "_blank", "noopener");
+				copyText(prompt)
+					.then(() => toast("Prompt copied. Paste it in Gemini."))
+					.catch(() => toast("Copy failed."))
+					.finally(() => {
+						if (!modal.open && returnTo?.isConnected) returnTo.focus();
+					});
+				modal.close();
+				return;
+			}
+
+			window.open(providerUrl(kind), "_blank", "noopener");
+			modal.close();
+		};
+
+		document.addEventListener("click", (event) => {
+			// Modified clicks keep the plain ChatGPT deep link (open in new tab).
+			if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+				return;
+			}
+			const target = event.target;
+			if (!(target instanceof Element)) return;
+			const trigger = target.closest("[data-ai-trigger]");
+			if (!(trigger instanceof HTMLAnchorElement)) return;
+
+			const nextPrompt = trigger.dataset.aiPrompt || "";
+			if (!nextPrompt) return;
+
+			event.preventDefault();
+			prompt = nextPrompt;
+			opener = trigger;
+			if (context) {
+				context.textContent = [trigger.dataset.aiUnit, trigger.dataset.aiSubject]
+					.filter(Boolean)
+					.join(" · ");
+			}
+			setStatus("");
+			if (!modal.open) modal.showModal();
+		});
+
+		for (const button of modal.querySelectorAll("[data-ai-provider]")) {
+			button.addEventListener("click", () => {
+				if (!(button instanceof HTMLElement)) return;
+				openProvider(button.dataset.aiProvider || "");
+			});
+		}
+
+		copyButton?.addEventListener("click", () => {
+			if (!prompt) return;
+			copyText(prompt)
+				.then(() => setStatus("Prompt copied."))
+				.catch(() => setStatus("Copy failed."));
+		});
+
+		// Same conventions as the footer dialogs: backdrop click closes, Escape is
+		// native, and focus goes back to the unit that opened it.
+		modal.addEventListener("click", (event) => {
+			const bounds = modal.getBoundingClientRect();
+			const inside =
+				event.clientX >= bounds.left &&
+				event.clientX <= bounds.right &&
+				event.clientY >= bounds.top &&
+				event.clientY <= bounds.bottom;
+			if (!inside) modal.close();
+		});
+
+		modal.addEventListener("close", () => {
+			setStatus("");
+			prompt = "";
+			const target = opener;
+			opener = null;
+			if (target?.isConnected) target.focus();
+		});
+	}
+</script>

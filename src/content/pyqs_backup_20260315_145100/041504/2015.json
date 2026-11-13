@@ -1,0 +1,225 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2015",
+    "subject": "Analog Electronics",
+    "subject_slug": "analog-electronics",
+    "subject_code": "041504",
+    "year": 2015,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer of the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Current mirror circuit is used to",
+              "marks": 2,
+              "options": [
+                "establish constant current",
+                "establish constant voltage",
+                "increase output current",
+                "decrease input current"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "When $V_{BE} = 0.7\\text{ V}$ and $V_{CE} = 0.2\\text{ V}$, a silicon NPN transistor is operating in",
+              "marks": 2,
+              "options": [
+                "active region",
+                "cutoff region",
+                "saturation region",
+                "reverse active region"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "Slew rate of an ideal op-amp is",
+              "marks": 2,
+              "options": [
+                "infinite",
+                "zero",
+                "1",
+                "0.5"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "For low bias current op-amp, the input stage should use",
+              "marks": 2,
+              "options": [
+                "differential amplifier using BJT",
+                "differential amplifier using FET",
+                "common-emitter amplifier",
+                "common-collector amplifier"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "Monostable multivibrator is also called",
+              "marks": 2,
+              "options": [
+                "bistable multivibrator",
+                "astable multivibrator",
+                "free-running multivibrator",
+                "one-shot multivibrator"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "Integrator uses",
+              "marks": 2,
+              "options": [
+                "active-low pass filter",
+                "active-high pass filter",
+                "band-pass filter",
+                "all-pass filter"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "Negative feedback in an amplifier decreases",
+              "marks": 2,
+              "options": [
+                "stability",
+                "input impedance",
+                "voltage gain",
+                "bandwidth"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "The value of modulation index $m_f$ in FM is",
+              "marks": 2,
+              "options": [
+                "$m_f = 0$",
+                "$m_f > 1$",
+                "$m_f < 1$",
+                "Both (ii) and (iii)"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "The number of $10\\text{ kHz}$ voice channels can be routed over a broadband $5\\text{ MHz}$ microwave channel is",
+              "marks": 2,
+              "options": [
+                "$200$",
+                "$500$",
+                "$5000$",
+                "$10000$"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "Which stage follows the mixer in a typical superheterodyne receiver?",
+              "marks": 2,
+              "options": [
+                "IF amplifier",
+                "Audio amplifier",
+                "Demodulator",
+                "Local oscillator"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2",
+          "text": "Explain the terms:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "2i",
+              "text": "Thermal runaway"
+            },
+            {
+              "id": "2ii",
+              "text": "Thermal resistance"
+            },
+            {
+              "id": "2iii",
+              "text": "Input bias current"
+            },
+            {
+              "id": "2iv",
+              "text": "CMRR"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "text": "Draw the small-signal model of FET and find expressions for $g_m$ and voltage gain.",
+          "marks": 14
+        },
+        {
+          "id": "4a",
+          "text": "Derive an expression for close-loop gain of a non-inverting amplifier.",
+          "marks": 7
+        },
+        {
+          "id": "4b",
+          "text": "Design a practical differentiator circuit to differentiate a $1\\text{ kHz}$ sinusoidal signal of amplitude $2\\text{ V}$.",
+          "marks": 7
+        },
+        {
+          "id": "5",
+          "text": "Define oscillators. Derive an expression for the frequency of oscillation of an RC phase-shift oscillator. Explain the principle of operation of RC phase-shift oscillator using Op-Amp 741.",
+          "marks": 14
+        },
+        {
+          "id": "6",
+          "text": "What is a 555 timer? Explain in brief. Write four practical applications of 555 timer. Also draw a circuit diagram of monostable multivibrator using 555 timer.",
+          "marks": 14
+        },
+        {
+          "id": "7",
+          "text": "What is modulation? Why is it required? Give some differences between FM and AM.",
+          "marks": 14
+        },
+        {
+          "id": "8",
+          "text": "With the help of block diagram, explain the operation of superheterodyne radio receiver. State the advantages and disadvantages of superheterodyne radio receiver.",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "text": "Write short notes on any two of the following:",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "9a",
+              "text": "Active filters"
+            },
+            {
+              "id": "9b",
+              "text": "Current mirror"
+            },
+            {
+              "id": "9c",
+              "text": "Early effect"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

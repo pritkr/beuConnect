@@ -2,25 +2,23 @@
  * Home's notice pager.
  *
  * The board is read through the same store the notices area uses, so a press
- * opens the full circular with its read state already known. The strip advances
- * itself every five seconds and stops for good once the student touches it; a
- * failed refresh keeps the last copy on screen and says how old it is.
+ * opens the full circular with its read state already known. The strip is moved
+ * by hand (swipe or the dots) and never advances on its own: a card that
+ * changes while it is being read is motion the student did not ask for.
  */
 
 import { Scroll, Text, View, effect, signal } from "nsh";
 import type { Nav } from "../../app/router";
-import { Btn, Card, Muted, Row, Skeleton } from "../../ui";
+import { Btn, Card, Muted, Row, Skeleton, scrollAnimated } from "../../ui";
 import { Icon } from "../../ui/icons";
 import { formatDate, relativeTime } from "../../lib/net";
 import { isRead, loadNotices, notices, noticesFetchedAt, refreshNotices } from "../notices/api";
 import type { Notice } from "../notices/api";
 
 const LIMIT = 8;
-const INTERVAL = 5000;
 const STALE = 30 * 60 * 1000;
 
 const page = signal(0);
-const paused = signal(false);
 const width = signal(0);
 const loading = signal(true);
 const refreshing = signal(false);
@@ -59,11 +57,12 @@ function ensureBoard(force = false): Promise<void> {
     });
 }
 
-/** The eight rows the strip shows: pinned first, then newest. */
+/** The eight rows the strip shows: pinned first, then the newest of the rest. */
 function items(): Notice[] {
   const board = notices();
   const pinned = board.filter((notice) => notice.important);
-  return (pinned.length > 0 ? pinned : board).slice(0, LIMIT);
+  const rest = board.filter((notice) => !notice.important);
+  return [...pinned, ...rest].slice(0, LIMIT);
 }
 
 /** "" while the board is fresh; the date once it is being read from cache. */
@@ -72,19 +71,19 @@ export function boardAsOf(at = noticesFetchedAt()): string {
   return `As of ${formatDate(at)}`;
 }
 
-function go(next: number, animated = true): void {
+function go(next: number, animated = scrollAnimated()): void {
   page.set(next);
   if (strip && typeof strip.scrollTo === "function") strip.scrollTo({ x: next * width(), animated });
 }
 
 export function NoticePager(props: { nav: Nav; onRefresh: () => void }) {
+  // A refresh can replace the board with fewer rows; never leave the strip
+  // pointing past the end of the list it now shows.
   effect(() => {
-    const timer = setInterval(() => {
-      const rows = items();
-      if (rows.length < 2 || width() <= 0 || paused() || loading()) return;
-      go((page() + 1) % rows.length);
-    }, INTERVAL);
-    return () => clearInterval(timer);
+    const last = items().length - 1;
+    if (last < 0 || page() <= last) return;
+    page.set(0);
+    if (strip && typeof strip.scrollTo === "function") strip.scrollTo({ x: 0, animated: false });
   });
 
   return (
@@ -139,14 +138,13 @@ export function NoticePager(props: { nav: Nav; onRefresh: () => void }) {
                 disableIntervalMomentum
                 scrollEventThrottle={16}
                 contentClass="flex-row"
-                onLayout={(bounds) => width.set(bounds.size.width)}
+                onLayout={({ bounds }) => width.set(bounds.size.width)}
                 onScroll={(event) => {
                   const pageWidth = width();
                   if (!pageWidth) return;
                   const next = Math.max(0, Math.min(rows.length - 1, Math.round(event.offset.x / pageWidth)));
                   if (next !== page()) page.set(next);
                 }}
-                onScrollDragStart={() => paused.set(true)}
                 ref={(node: unknown) => {
                   strip = node as typeof strip;
                 }}
@@ -156,7 +154,6 @@ export function NoticePager(props: { nav: Nav; onRefresh: () => void }) {
                     class="min-h-[136px] justify-between gap-2 p-4 active:bg-muted"
                     style={{ width: Math.max(1, width()) }}
                     onPress={() => {
-                      paused.set(true);
                       props.nav.push("notices.detail", { id: notice.id });
                     }}
                     role="button"
@@ -169,7 +166,7 @@ export function NoticePager(props: { nav: Nav; onRefresh: () => void }) {
                       </Row>
                       <Muted class="text-[11px] tabular-nums">{notice.date ? relativeTime(notice.date) : "Undated"}</Muted>
                     </Row>
-                    <Text class="text-[15px] font-semibold leading-5 text-foreground" numberOfLines={3}>
+                    <Text class="text-[15px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 3 }}>
                       {notice.title}
                     </Text>
                     <Row class="justify-between">
@@ -185,14 +182,23 @@ export function NoticePager(props: { nav: Nav; onRefresh: () => void }) {
 
               <View class="h-px w-full bg-border" />
               <View class="min-h-11 flex-row items-center justify-between gap-2 px-4">
-                <Row class="gap-1.5">
-                  {rows.map((notice, index) => (
-                    <View class={`h-1.5 rounded-full ${index === Math.min(page(), rows.length - 1) ? "w-4 bg-primary" : "w-1.5 bg-border"}`} />
+                <View class="flex-row items-center">
+                  {rows.map((_, index) => (
+                    <View
+                      class="h-11 min-w-5 items-center justify-center active:opacity-60"
+                      onPress={() => go(index)}
+                      role="button"
+                      hitSlop={12}
+                      accessibilityLabel={`Notice ${index + 1} of ${rows.length}`}
+                      accessibilityState={{ selected: index === Math.min(page(), rows.length - 1) }}
+                    >
+                      <View class={`h-1.5 rounded-full ${index === Math.min(page(), rows.length - 1) ? "w-4 bg-primary" : "w-1.5 bg-border"}`} />
+                    </View>
                   ))}
-                </Row>
+                </View>
                 <Row class="gap-2">
                   {() => (boardAsOf() && !refreshing() ? <Muted class="text-[11px]">{boardAsOf()}</Muted> : null)}
-                  <View class="min-h-11 min-w-11 items-center justify-center rounded-full px-2 active:bg-muted" onPress={props.onRefresh} role="button" accessibilityLabel="Reload notices">
+                  <View class="min-h-11 min-w-11 items-center justify-center rounded-full active:bg-muted" onPress={props.onRefresh} role="button" accessibilityLabel="Reload notices">
                     <Text class="text-[12px] font-semibold text-muted-foreground">{() => (refreshing() ? "Updating…" : problem() ? "Retry" : "Refresh")}</Text>
                   </View>
                 </Row>

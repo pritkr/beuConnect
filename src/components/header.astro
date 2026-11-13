@@ -1,143 +1,315 @@
 ---
-import HomeIcon from "../assets/Vector.svg";
+import Icon from "./Icon.astro";
+import Logo from "./Logo.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 
 const currentPath = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
 
-const navLinks = [
-    { href: "syllabus", label: "Syllabus", vtName: "sylla" },
-    { href: "pyqs", label: "PYQs", vtName: "pyqs" },
-    { href: "result", label: "Result", vtName: "resu" },
-    { href: "routine", label: "Routine", vtName: "routi" },
-    { href: "result-table", label: "Table", vtName: "tabl" }
+type NavItem = {
+	href: string;
+	label: string;
+	match: string[];
+};
+
+const navLinks: NavItem[] = [
+	{ href: "syllabus", label: "Syllabus", match: ["syllabus", "gate-syllabus"] },
+	{ href: "pyqs", label: "PYQs", match: ["pyqs", "gate-pyqs"] },
+	{
+		href: "result",
+		label: "Results",
+		match: [
+			"result",
+			"result-table",
+			"merit-list",
+			"rank",
+			"battle",
+			"data-browser",
+			"listofstudents",
+		],
+	},
+	{ href: "routine", label: "Routine", match: ["routine", "attendance", "holidays"] },
+	{
+		href: "notices",
+		label: "Notices",
+		match: ["notices", "notice-board", "announcements"],
+	},
 ];
+
+const isActive = (item: NavItem) =>
+	item.match.some((segment) => currentPath.startsWith(`${base}${segment}`));
+
+const allToolsHref = `${base}#tools`;
 ---
 
 <header class="site-header">
-    <nav class="nav-inner">
-        <a href={base} class="nav-logo" style="view-transition-name:hom">
-            <img src={HomeIcon.src} alt="BEUConnect" class="logo-icon" />
-        </a>
-        <ul class="nav-links">
-            {
-                navLinks.map((link) => (
-                    <li>
-                        <a
-                            href={`${base}${link.href}`}
-                            class:list={[
-                                "nav-link",
-                                { active: currentPath.includes(link.href) },
-                            ]}
-                            style={`view-transition-name:${link.vtName}`}
-                        >
-                            {link.label}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
-    </nav>
+	<div class="bar">
+		<Logo />
+
+		<nav class="primary" aria-label="Primary">
+			<ul>
+				{
+					navLinks.map((item) => (
+						<li>
+							<a
+								href={`${base}${item.href}`}
+								aria-current={isActive(item) ? "page" : undefined}
+							>
+								{item.label}
+							</a>
+						</li>
+					))
+				}
+				<li class="all-tools">
+					<a href={allToolsHref}>
+						All tools
+						<Icon name="grid" size={13} />
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div class="theme-slot">
+			<ThemeToggle />
+		</div>
+
+		<details class="mobile" id="site-menu">
+			<summary>
+				<Icon name="menu" size={16} />
+				<span>Menu</span>
+			</summary>
+			<nav aria-label="Mobile">
+				<ul>
+					{
+						navLinks.map((item) => (
+							<li>
+								<a
+									href={`${base}${item.href}`}
+									aria-current={isActive(item) ? "page" : undefined}
+								>
+									{item.label}
+								</a>
+							</li>
+						))
+					}
+					<li>
+						<a href={allToolsHref}>
+							All tools
+							<Icon name="grid" size={13} />
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</details>
+	</div>
 </header>
 
 <style>
-    .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        padding: 0.65rem 1rem;
-        background: var(--bg-glass);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border-bottom: 1px solid var(--border-subtle);
-        transform: translateZ(0); /* Hardware accelerate sticky header */
-        will-change: transform;
-    }
+	.site-header {
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		border-bottom: 1px solid var(--line);
+		background: var(--bg);
+	}
 
-    .nav-inner {
-        max-width: 960px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-    }
+	.bar {
+		display: flex;
+		align-items: center;
+		gap: var(--s5);
+		width: min(100% - 2.5rem, 1380px);
+		min-height: 3.6rem;
+		margin-inline: auto;
+	}
 
-    .nav-logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        min-width: 2.8rem;
-        min-height: 2.4rem;
-        padding: 0.3rem 0.45rem;
-        border-radius: 10px;
-        background: rgba(15, 23, 42, 0.85);
-        border: 1px solid rgba(148, 163, 184, 0.25);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
-    }
+	.theme-slot {
+		display: flex;
+		align-items: center;
+	}
 
-    .nav-logo:hover {
-        transform: scale(1.08);
-        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
-    }
+	.primary {
+		margin-left: auto;
+	}
 
-    .logo-icon {
-        height: 2rem;
-        width: 2rem;
-        min-width: 2rem;
-        display: block;
-        filter: brightness(1.45) saturate(1.15)
-            drop-shadow(0 0 8px rgba(59, 130, 246, 0.35));
-    }
+	.primary ul {
+		display: flex;
+		align-items: center;
+		gap: var(--s5);
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
 
-    .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 0.25rem;
-        margin: 0;
-        padding: 0;
-    }
+	.primary a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.25rem 0;
+		border-bottom: 2px solid transparent;
+		color: var(--muted);
+		font-size: 0.875rem;
+		font-weight: 500;
+		text-decoration: none;
+	}
 
-    .nav-link {
-        display: inline-block;
-        padding: 0.4rem 0.85rem;
-        border-radius: var(--radius-sm);
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: var(--text-secondary);
-        text-decoration: none;
-        transition: color 0.3s ease, background-color 0.3s ease;
-        position: relative;
-    }
+	.primary a:hover {
+		color: var(--paper);
+	}
 
-    .nav-link:hover {
-        color: var(--text-primary);
-        background: rgba(59, 130, 246, 0.1);
-    }
+	.primary a[aria-current="page"] {
+		border-bottom-color: var(--accent);
+		color: var(--paper);
+	}
 
-    .nav-link.active {
-        color: var(--accent-blue);
-        background: rgba(59, 130, 246, 0.12);
-    }
+	.primary .all-tools {
+		padding-left: var(--s5);
+		border-left: 1px solid var(--line);
+	}
 
-    .nav-link.active::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60%;
-        height: 2px;
-        background: var(--accent-gradient);
-        border-radius: 1px;
-    }
+	.primary .all-tools a {
+		color: var(--accent);
+	}
 
-    @media (max-width: 600px) {
-        .nav-link {
-            padding: 0.35rem 0.55rem;
-            font-size: 0.8rem;
-        }
-        .nav-inner {
-            gap: 0.75rem;
-        }
-    }
+	.mobile {
+		display: none;
+		margin-left: 0;
+		position: relative;
+	}
+
+	.mobile summary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.4rem 0.55rem;
+		border: 1px solid var(--line-strong);
+		border-radius: var(--r);
+		color: var(--paper);
+		font-size: 0.8rem;
+		font-weight: 600;
+		list-style: none;
+		cursor: pointer;
+	}
+
+	.mobile summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.mobile[open] summary {
+		border-color: var(--accent);
+	}
+
+	.mobile summary:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+	}
+
+	.mobile nav {
+		position: absolute;
+		right: 0;
+		top: calc(100% + 0.6rem);
+		width: min(17rem, calc(100vw - 1.5rem));
+		border: 1px solid var(--line-strong);
+		border-radius: var(--r-lg);
+		background: var(--surface);
+		box-shadow: var(--shadow-md);
+	}
+
+	.mobile[open] nav {
+		transform-origin: top right;
+		animation: menu-in var(--dur-ui) var(--ease-out) both;
+	}
+
+	@keyframes menu-in {
+		from {
+			opacity: 0;
+			transform: scale(0.96);
+		}
+	}
+
+	@keyframes menu-fade {
+		from {
+			opacity: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.mobile[open] nav {
+			animation: menu-fade 120ms ease both !important;
+		}
+	}
+
+	.mobile ul {
+		display: grid;
+		gap: 0.1rem;
+		margin: 0;
+		padding: 0.4rem;
+		list-style: none;
+	}
+
+	.mobile li {
+		margin: 0;
+		padding: 0;
+		line-height: 1.4;
+	}
+
+	.mobile a {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		padding: 0.65rem 0.7rem;
+		border-radius: var(--r);
+		color: var(--paper);
+		font-size: 0.9rem;
+		text-decoration: none;
+	}
+
+	.mobile a:hover {
+		background: var(--surface-2);
+	}
+
+	.mobile a[aria-current="page"] {
+		color: var(--accent);
+	}
+
+	@media (max-width: 900px) {
+		.bar {
+			width: min(100% - 1.5rem, 1380px);
+			gap: var(--s3);
+		}
+
+		.primary {
+			display: none;
+		}
+
+		.theme-slot {
+			margin-left: auto;
+		}
+
+		.mobile {
+			display: block;
+		}
+	}
 </style>
+
+<script>
+	const menu = document.getElementById("site-menu") as HTMLDetailsElement | null;
+
+	if (menu) {
+		menu.addEventListener("click", (event) => {
+			const target = event.target as HTMLElement;
+			if (target.closest("a")) menu.open = false;
+		});
+
+		document.addEventListener("click", (event) => {
+			if (menu.open && !menu.contains(event.target as Node)) menu.open = false;
+		});
+
+		document.addEventListener("keydown", (event) => {
+			if (event.key === "Escape" && menu.open) {
+				menu.open = false;
+				menu.querySelector("summary")?.focus();
+			}
+		});
+	}
+</script>

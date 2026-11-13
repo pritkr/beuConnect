@@ -163,7 +163,7 @@ export function ResultView(props: { data: ResultData; onRank?: () => void; onBat
           <View class="flex-1 gap-0.5">
             <Text
               class="text-[38px] font-bold leading-none tabular-nums tracking-tight text-foreground"
-              numberOfLines={1}
+              style={{ numberOfLines: 1 }}
               adjustsFontSizeToFit
               minimumFontScale={0.7}
             >
@@ -175,7 +175,7 @@ export function ResultView(props: { data: ResultData; onRank?: () => void; onBat
           <View class="flex-1 items-end gap-0.5">
             <Text
               class="text-[38px] font-bold leading-none tabular-nums tracking-tight text-foreground"
-              numberOfLines={1}
+              style={{ numberOfLines: 1 }}
               adjustsFontSizeToFit
               minimumFontScale={0.7}
             >

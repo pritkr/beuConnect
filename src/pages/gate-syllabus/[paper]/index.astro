@@ -1,8 +1,6 @@
 ---
 export const prerender = true;
 import Layout from "../../../layouts/Layout.astro";
-import Header from "../../../components/header.astro";
-import Footer from "../../../components/footer.astro";
 import papersList from "../../../assets/data/gate-papers.json";
 
 export async function getStaticPaths() {
@@ -20,34 +18,75 @@ const syllabus = await import(`../../../assets/data/gate/${paper}.json`).catch(
 const data = syllabus ? syllabus.default : null;
 ---
 
-<Layout title={`GATE ${paper} Syllabus`}>
-    <Header />
-    <h1>
-        <a
-            href={import.meta.env.BASE_URL + "gate-syllabus/"}
-            style="view-transition-name:gatesyl">←GATE Syllabus</a
-        >
-    </h1>
-    <h2 style={`view-transition-name:${paper}`}>{paper} — {paperName} Syllabus</h2>
+<Layout
+    title={`GATE ${paper} syllabus`}
+    description={`GATE ${paper} ${paperName} syllabus, section by section.`}
+>
+    <header class="page-head">
+        <div>
+            <p class="back"><a href={`${import.meta.env.BASE_URL}gate-syllabus/`}>GATE syllabus</a></p>
+            <h1>{paperName || paper}</h1>
+            <p class="meta num">{paper}</p>
+        </div>
+    </header>
 
     {
         data ? (
-            <section>
+            <div class="sections">
                 {data.sections.map((sec) => (
                     <details>
-                        <summary>
-                            <strong>{sec.title}</strong>
-                        </summary>
-                        <p style="white-space: pre-wrap;">{sec.content}</p>
+                        <summary>{sec.title}</summary>
+                        <p>{sec.content}</p>
                     </details>
                 ))}
-            </section>
+            </div>
         ) : (
-            <p>
-                <em>Syllabus not available.</em>
-            </p>
+            <p class="empty">Syllabus is not available for this paper.</p>
         )
     }
 
-    <Footer />
+    <style>
+        .back {
+            margin: 0 0 var(--s2);
+            font-size: 0.78rem;
+        }
+
+        .back a {
+            color: var(--faint);
+            text-decoration: none;
+        }
+
+        .back a:hover {
+            color: var(--paper);
+        }
+
+        .sections {
+            margin-top: var(--s5);
+            border-top: 1px solid var(--line-strong);
+        }
+
+        details {
+            padding: var(--s3) 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        summary {
+            color: var(--paper);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        details p {
+            max-width: var(--measure);
+            margin: var(--s3) 0 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+        }
+
+        .empty {
+            margin: var(--s5) 0;
+            color: var(--faint);
+        }
+    </style>
 </Layout>

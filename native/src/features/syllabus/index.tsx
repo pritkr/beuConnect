@@ -18,69 +18,31 @@
 import { List, Scroll, Text, View, cleanup, computed, effect, signal } from "nsh";
 import type { Nav, RouteDef } from "../../app/router";
 import { numParam, param } from "../../app/router";
-import { Btn, EmptyState, Label, ListBar, Muted, Row, Screen, SectionHeader, Search } from "../../ui";
+import { Btn, EmptyState, Label, ListBar, Marquee, Row, Screen, SectionHeader, Search, scrollAnimated } from "../../ui";
 import { Icon } from "../../ui/icons";
+import { branchIcon } from "../../ui/branch-icon";
 import { FeedbackFooter } from "../feedback/footer";
 import { BRANCH_META, GATE_META } from "./data/packs";
 import type { Unit } from "./parse";
 import { isOwnCourse, ownLine, ownSemesterFirst } from "./you";
 import { copyText } from "./topic-actions";
 import {
-  ContinueCard,
-  CourseRail,
-  GateHeader,
-  GateLineView,
-  HitRow,
-  MatchList,
-  NoticePanel,
-  OwnBranchCard,
-  Pick,
-  ProgressCard,
-  SavedLineView,
-  SourceBox,
-  SubjectCard,
-  SubjectRow,
-  UndoLine,
-  UnitBlock,
-  branchName,
-  chooseCourse,
-  course,
-  dismissRemoval,
-  entriesOf,
-  gatePack,
-  gateRows,
-  lastRemoval,
-  lastSubject,
-  matchesIn,
-  once,
-  own,
-  pack,
-  pinCourse,
-  rememberSubject,
-  removeSaved,
-  saved,
-  savedItems,
-  searchHits,
-  semesterStats,
-  semestersOf,
-  setUnitOpen,
-  setUnitsOpen,
-  shortBranch,
-  subjectKey,
-  subjectOf,
-  subjectsOf,
-  subjectProgress,
-  toggleOpen,
-  toggleSaved,
-  undoSaved,
-  unitKey,
-  unitOpen,
-  unitsOf,
-  type GateLine,
-  type Hit,
-  type SavedLine,
-  type SubjectEntry,
-  type SubjectMatch,
+  ContinueCard, CourseRail, GateLineView,
+  HitRow, MatchList, NoticePanel, OwnBranchCard,
+  Pick, ProgressCard, RecentRow, SavedLineView, SourceBox,
+  SubjectCard, SubjectRow, UndoLine, UnitBlock,
+  branchName, chooseCourse, course, dismissRemoval,
+  entriesOf, filterEntries, filterGateRows, focusGateRows,
+  gatePack, gateRows, lastRemoval,
+  lastSubject, matchesIn, once, own, pack,
+  pinCourse, printedHours, recentItems, rememberSubject,
+  removeSaved, saved, savedItems, searchHits, semesterStats,
+  openSyllabusSubject,
+  semestersOf, setOpen, setUnitOpen, setUnitsOpen, shortBranch,
+  subjectKey, subjectOf, subjectsOf, subjectProgress, toggleOpen,
+  toggleSaved, undoSaved, unitKey, unitOpen, unitsOf,
+  type GateLine, type Hit, type RecentItem, type SavedLine,
+  type SubjectEntry, type SubjectFilter, type SubjectMatch,
 } from "./parts";
 
 /* ---------------------------------------------------------------- landing */
@@ -106,6 +68,23 @@ function LandingScreen(props: { nav: Nav }) {
     return item ? subjectProgress(item.branch, item.sem, item.code) : null;
   });
   const savedTotal = computed(() => Object.keys(saved()).length);
+  // The list can be narrowed to one facet. Search stays its own screen because
+  // it reaches every topic, not just this semester's titles.
+  const facet = signal<SubjectFilter>("all");
+  const shown = computed(() => filterEntries(entries(), facet()));
+  const facets = computed(() => {
+    const list = entries();
+    let theory = 0;
+    let practical = 0;
+    let elective = 0;
+    for (const entry of list) {
+      const type = entry.subject.type.trim().toLowerCase();
+      if (type === "theory") theory += 1;
+      if (type === "practical") practical += 1;
+      if (entry.subject.elective === true) elective += 1;
+    }
+    return { theory, practical, elective };
+  });
 
   /**
    * A paper of the semester on screen that is also a paper of the student's
@@ -170,7 +149,7 @@ function LandingScreen(props: { nav: Nav }) {
   };
 
   const openEntry = (entry: SubjectEntry): void =>
-    props.nav.push("syllabus.subject", { code: entry.subject.code, branch: entry.branch, sem: entry.sem });
+    openSyllabusSubject(props.nav, { code: entry.subject.code, branch: entry.branch, sem: entry.sem }, "list");
 
   return (
     <Screen>
@@ -178,7 +157,7 @@ function LandingScreen(props: { nav: Nav }) {
         <List
         testID="syllabus-subjects"
         class="flex-1"
-        each={entries()}
+        each={shown()}
         keyExtractor={(entry: SubjectEntry) => entry.key}
         estimatedItemSize={92}
         contentClass="gap-2 px-4 pb-10"
@@ -187,10 +166,17 @@ function LandingScreen(props: { nav: Nav }) {
           // repeating the same fact under the header would say it twice.
           semNotice() ? (
             <View />
+          ) : facet() !== "all" ? (
+            <EmptyState
+              title={`No ${facet()} papers here`}
+              hint={`Sem ${sem()} has ${entries().length} ${entries().length === 1 ? "paper" : "papers"}; this facet hides all of them.`}
+              action="Show every paper"
+              onAction={() => facet.set("all")}
+            />
           ) : (
             <EmptyState
               title="No papers in this semester"
-              hint="Not every branch publishes every semester. Pick another semester in the rail above."
+              hint="Not every branch publishes every semester."
             />
           )
         }
@@ -236,7 +222,7 @@ function LandingScreen(props: { nav: Nav }) {
                 total={lastStats()?.topics ?? 0}
                 onOpen={() => {
                   const item = last();
-                  if (item) props.nav.push("syllabus.subject", { code: item.code, branch: item.branch, sem: item.sem });
+                  if (item) openSyllabusSubject(props.nav, { code: item.code, branch: item.branch, sem: item.sem }, "continue");
                 }}
               />
             ) : null}
@@ -256,6 +242,21 @@ function LandingScreen(props: { nav: Nav }) {
               own={() => onOwn()}
             />
 
+            {/* The quickest jump to a paper: its full name, unclipped, in a
+                strip that can always be dragged by hand. */}
+            {() =>
+              entries().length > 1 ? (
+                <Marquee
+                  label={`Sem ${sem()}`}
+                  items={entries().map((entry) => entry.subject.name)}
+                  onPressItem={(_name, index) => {
+                    const entry = entries()[index];
+                    if (entry) openEntry(entry);
+                  }}
+                />
+              ) : null
+            }
+
             <View
               class="min-h-11 flex-row items-center gap-2 rounded-full border border-border-strong bg-card px-4 active:bg-muted"
               onPress={() => props.nav.push("syllabus.search")}
@@ -265,6 +266,32 @@ function LandingScreen(props: { nav: Nav }) {
               <Icon name="search" size={16} class="text-muted-foreground" />
               <Text class="text-[13px] text-muted-foreground">Search every topic or code…</Text>
             </View>
+
+            {/* Facets, not a second search: the semester is small enough to
+                narrow with one tap, and a typed query belongs on the screen
+                that can reach a topic's body. */}
+            {() => (
+              <Row class="flex-wrap items-center gap-2">
+                <Pick active={facet() === "all"} label="Every paper" onPress={() => facet.set("all")}>
+                  {`All · ${entries().length}`}
+                </Pick>
+                {facets().theory > 0 ? (
+                  <Pick active={facet() === "theory"} label="Theory papers" onPress={() => facet.set("theory")}>
+                    {`Theory · ${facets().theory}`}
+                  </Pick>
+                ) : null}
+                {facets().practical > 0 ? (
+                  <Pick active={facet() === "practical"} label="Practical papers" onPress={() => facet.set("practical")}>
+                    {`Practical · ${facets().practical}`}
+                  </Pick>
+                ) : null}
+                {facets().elective > 0 ? (
+                  <Pick active={facet() === "elective"} label="Elective papers" onPress={() => facet.set("elective")}>
+                    {`Elective · ${facets().elective}`}
+                  </Pick>
+                ) : null}
+              </Row>
+            )}
 
             <SectionHeader title="Subjects" />
           </View>
@@ -294,6 +321,8 @@ function LandingScreen(props: { nav: Nav }) {
 function SubjectScreen(props: { nav: Nav }) {
   const routeBranch = param(props.nav, "branch");
   const routeSem = numParam(props.nav, "sem");
+  const routeUnit = param(props.nav, "unit");
+  const routeTopic = param(props.nav, "topic");
   const code = param(props.nav, "code");
   const branch = computed(() => routeBranch || course().branch);
   const sem = computed(() => routeSem || course().sem);
@@ -303,7 +332,7 @@ function SubjectScreen(props: { nav: Nav }) {
   const key = computed(() => subjectKey(branch(), sem(), code));
   const tab = signal<"topics" | "text">("topics");
   const query = signal("");
-  const focus = signal("");
+  const focus = signal(routeTopic);
   const paperNote = signal("");
   // The copy banner clears itself; leaving the paper cancels the timer so a
   // late tick cannot write into a screen that is gone.
@@ -325,7 +354,7 @@ function SubjectScreen(props: { nav: Nav }) {
   const scrollToUnit = (index: number): void => {
     const y = offsets[index];
     if (y === undefined || !scroller || typeof scroller.scrollTo !== "function") return;
-    scroller.scrollTo({ y: Math.max(0, y - 8), animated: true });
+    scroller.scrollTo({ y: Math.max(0, y - 8), animated: scrollAnimated() });
   };
 
   /** `branch|sem|code|unitId`, always built from the live course. */
@@ -360,11 +389,22 @@ function SubjectScreen(props: { nav: Nav }) {
   once(() => {
     const item = subject();
     if (item) rememberSubject(branch(), sem(), code, item.name);
-    // Open the first unit that prints topics, so the paper is readable without
-    // a first tap but a 12-unit paper still starts as a list of units.
-    const first = units().find((unit) => unit.topics.length > 0);
-    const mark = first ? markOf(first.id) : "";
-    if (first && unitOpen()[mark] === undefined) setUnitOpen(mark, true);
+
+    // A hit from search or the saved shelf names the unit it lives in: open it
+    // and scroll there. Without one, open the first unit that prints topics, so
+    // the paper reads at once while a 12-unit paper still starts as a list.
+    const target = routeUnit || (routeTopic ? routeTopic.split("-")[0] : "");
+    const at = units().findIndex((unit) => (target ? unit.id === target : unit.topics.length > 0));
+    if (at < 0) return;
+    const mark = markOf(units()[at].id);
+    if (unitOpen()[mark] === undefined) setUnitOpen(mark, true);
+    if (!target) return;
+    focus.set(routeTopic);
+    if (jumpTimer !== undefined) clearTimeout(jumpTimer);
+    jumpTimer = setTimeout(() => {
+      jumpTimer = undefined;
+      scrollToUnit(at);
+    }, 60);
   });
 
   return (
@@ -386,7 +426,7 @@ function SubjectScreen(props: { nav: Nav }) {
                 <EmptyState
                   icon="search"
                   title="Subject not found"
-                  hint={`“${code || "No code given"}” is not a paper in ${branchName(branch())} · Sem ${sem()}. Try the search if it belongs to another branch.`}
+                  hint={`“${code || "No code given"}” is not a paper in ${branchName(branch())} · Sem ${sem()}.`}
                   action="Search the syllabus"
                   onAction={() => props.nav.push("syllabus.search", { q: code })}
                 />
@@ -397,6 +437,7 @@ function SubjectScreen(props: { nav: Nav }) {
                 subject={item}
                 sem={sem()}
                 progress={progress}
+                hours={printedHours(units())}
                 saved={() => saved()[key()] === true}
                 onToggleSaved={() => toggleSaved(key())}
                 onNotes={() =>
@@ -406,6 +447,23 @@ function SubjectScreen(props: { nav: Nav }) {
               />
             );
           }}
+
+          {/* A long paper's unit names, unclipped: tapping one opens that unit
+              and scrolls to it, which beats hunting the accordion below. */}
+          {() =>
+            units().length > 1 ? (
+              <Marquee
+                label="Units"
+                items={units().map((unit, index) => unit.title || `Unit ${index + 1}`)}
+                onPressItem={(_title, index) => {
+                  const unit = units()[index];
+                  if (!unit) return;
+                  setUnitOpen(markOf(unit.id), true);
+                  scrollToUnit(index);
+                }}
+              />
+            ) : null
+          }
 
           {() =>
             subject() ? (
@@ -430,6 +488,31 @@ function SubjectScreen(props: { nav: Nav }) {
             ) : null
           }
 
+          {/* A paper the snapshot names but did not parse: an empty tab would
+              read as a broken screen, so say which gap this is and hand the
+              student the nearest thing that works. */}
+          {() => {
+            const item = subject();
+            if (!item || tab() !== "topics" || units().length > 0) return null;
+            const source = (item.content ?? "").trim();
+            return (
+              <EmptyState
+                icon="book-open"
+                title="No units in this paper"
+                hint={
+                  source
+                    ? "The source text for this paper did not break into units. Read it as the university printed it."
+                    : "The snapshot names this paper and its code but carries no syllabus text for it. Its notes and previous papers are still here."
+                }
+                action={source ? "Read the full text" : "Search the syllabus"}
+                onAction={() => {
+                  if (source) tab.set("text");
+                  else props.nav.push("syllabus.search", { q: code });
+                }}
+              />
+            );
+          }}
+
           {/*
             Kept mounted across tab and query changes on purpose: the native
             text input must keep its instance while `query` changes, or a
@@ -441,13 +524,13 @@ function SubjectScreen(props: { nav: Nav }) {
             style={{ display: subject() && tab() === "topics" && units().length > 0 ? "flex" : "none" }}
           >
             <View class="gap-2">
-              <Search value={query()} onChange={query.set} placeholder="Find a topic in this paper" />
+              <Search value={query()} onChange={(value) => query.set(value)} placeholder="Find a topic in this paper" />
               <Row class="items-center gap-2">
                 <Label class="flex-1">
                   {() =>
                     query().trim().length >= 2
                       ? `${matches().length} ${matches().length === 1 ? "match" : "matches"}`
-                      : `${units().length} units · ${progress().topics} topics`
+                      : `${progress().topics} topics`
                   }
                 </Label>
                 {() =>
@@ -489,7 +572,9 @@ function SubjectScreen(props: { nav: Nav }) {
                     code={code}
                     name={subject()?.name ?? code}
                     open={() => unitOpen()[markOf(unit().id)] === true}
-                    onToggle={() => setUnitOpen(markOf(unit().id), unitOpen()[markOf(unit().id)] !== true)}
+                    onToggle={() =>
+                      setUnitOpen(markOf(unit().id), unitOpen()[markOf(unit().id)] !== true, true)
+                    }
                     onMeasure={(y: number) => {
                       offsets[index()] = y;
                     }}
@@ -533,11 +618,19 @@ function SearchScreen(props: { nav: Nav }) {
 
   const branches = computed(() => (everywhere() ? BRANCH_META.map((meta) => meta.code) : [course().branch]));
   const result = computed(() => searchHits(term(), branches()));
-  const settled = computed(() => query().trim() === term().trim());
   const short = computed(() => term().trim().length < 2);
 
   const openHit = (hit: Hit): void =>
-    props.nav.push("syllabus.subject", { code: hit.code, branch: hit.branch, sem: hit.sem });
+    openSyllabusSubject(
+      props.nav,
+      {
+        code: hit.code,
+        branch: hit.branch,
+        sem: hit.sem,
+        ...(hit.topic ? { unit: hit.topic.split("-")[0], topic: hit.topic } : {}),
+      },
+      "search",
+    );
 
   return (
     <Screen>
@@ -550,22 +643,20 @@ function SearchScreen(props: { nav: Nav }) {
       */}
       <ListBar title="Search" meta={short() ? "every paper" : `${result().total} matches`} />
       <View class="gap-3 pb-2 pt-3">
-        <Search value={query()} onChange={query.set} placeholder="Topic, paper or code" />
+        <Search value={query()} onChange={(value) => query.set(value)} placeholder="Topic, paper or code" />
         <Row class="items-center gap-2">
-          <Pick active={!everywhere()} label="My branch" onPress={() => everywhere.set(false)}>
+          <Pick
+            active={!everywhere()}
+            icon={branchIcon(course().branch)}
+            label="My branch"
+            onPress={() => everywhere.set(false)}
+          >
             {shortBranch(course().branch)}
           </Pick>
           <Pick active={everywhere()} label="All branches" onPress={() => everywhere.set(true)}>
             All branches
           </Pick>
-          <View class="flex-1" />
-          <Muted class="text-[11px] tabular-nums">{settled() ? `${result().hits.length}/${result().total}` : "…"}</Muted>
         </Row>
-        <Muted class="text-[11px]">
-          {settled()
-            ? "Code first, then paper names, then topics. Tap a hit to open the paper."
-            : "Searching…"}
-        </Muted>
       </View>
       {() => (
         <List
@@ -583,10 +674,10 @@ function SearchScreen(props: { nav: Nav }) {
               title={short() ? "Search the whole syllabus" : `Nothing matched “${term().trim()}”`}
               hint={
                 short()
-                  ? "Two letters is enough: a code like 105301, a paper name, or any word inside a topic."
+                  ? "A code, a paper name, or any word inside a topic."
                   : everywhere()
-                    ? "Try a shorter word, or the paper's code. Every title and topic body is searched."
-                    : "Nothing in this branch matched. The other branches carry their own papers."
+                    ? "Try a shorter word or the paper's code."
+                    : "Nothing in this branch matched."
               }
               action={short() ? undefined : everywhere() ? "Clear search" : "Search all branches"}
               onAction={() => (everywhere() ? query.set("") : everywhere.set(true))}
@@ -607,9 +698,29 @@ function SavedScreen(props: { nav: Nav }) {
   const lines = computed(() => savedItems());
   const removal = computed(() => lastRemoval());
   const total = computed(() => lines().filter((line) => line.kind === "row").length);
+  const recent = computed(() => recentItems());
 
-  const openLine = (line: SavedLine): void =>
-    props.nav.push("syllabus.subject", { code: line.code, branch: line.branch, sem: line.sem });
+  const openLine = (line: SavedLine): void => {
+    // A saved GATE topic knows its paper; it lands on that paper with the topic
+    // open, not on a branch it never had.
+    if (line.branch === "gate") {
+      props.nav.push("syllabus.gate", { paper: line.code, ...(line.topic ? { topic: line.topic } : {}) });
+      return;
+    }
+    openSyllabusSubject(
+      props.nav,
+      {
+        code: line.code,
+        branch: line.branch,
+        sem: line.sem,
+        ...(line.topic ? { unit: line.topic.split("-")[0], topic: line.topic } : {}),
+      },
+      "recent",
+    );
+  };
+
+  const openRecent = (item: RecentItem): void =>
+    openSyllabusSubject(props.nav, { code: item.code, branch: item.branch, sem: item.sem }, "recent");
 
   return (
     <Screen>
@@ -622,11 +733,24 @@ function SavedScreen(props: { nav: Nav }) {
         keyExtractor={(line: SavedLine) => line.key}
         estimatedItemSize={76}
         contentClass="gap-2 p-4 pb-10"
+        header={
+          // History first: a student who has not starred anything still has a
+          // way back to last night's paper, and the progress bar says where
+          // they stopped.
+          recent().length > 0 ? (
+            <View class="gap-2 pb-2">
+              <SectionHeader title="Recently viewed" />
+              <Each of={recent()} key={(item: RecentItem) => item.key}>
+                {(item: () => RecentItem) => <RecentRow item={item} onOpen={openRecent} />}
+              </Each>
+            </View>
+          ) : null
+        }
         empty={
           <EmptyState
             icon="star"
             title="Nothing saved yet"
-            hint="Tap the star beside a topic, or save a whole paper from its header. What you keep lands here, grouped by branch."
+            hint="Tap the star on a topic, or save a paper from its header."
             action="Browse the syllabus"
             onAction={() => props.nav.push("syllabus")}
           />
@@ -643,24 +767,108 @@ function SavedScreen(props: { nav: Nav }) {
 
 function GateScreen(props: { nav: Nav }) {
   const paper = signal(param(props.nav, "paper") || GATE_META[0]?.code || "CS");
-  const rows = computed(() => gateRows(paper()));
-  const sections = computed(() => rows().filter((line) => line.kind === "section").length);
-  const topics = computed(() => rows().filter((line) => line.kind === "topic").length);
+  const focus = signal(param(props.nav, "topic"));
+  const query = signal("");
+  const term = signal("");
+
+  // Debounced like the cross-subject search: the list follows what the student
+  // stopped typing, not every keystroke.
+  effect(() => {
+    const text = query();
+    const timer = setTimeout(() => term.set(text), 180);
+    cleanup(() => clearTimeout(timer));
+  });
+
+  const all = computed(() => gateRows(paper()));
+  const focused = computed(() => focus() !== "");
+  const shown = computed(() => {
+    const narrowed = filterGateRows(all(), term());
+    return focused() ? focusGateRows(narrowed, focus()) : narrowed;
+  });
+  const topics = computed(() => shown().filter((line) => line.kind === "topic").length);
+  const searching = computed(() => term().trim().length >= 2);
+
+  once(() => {
+    const mark = focus();
+    if (mark) setOpen(mark, true);
+  });
+
+  const pickPaper = (code: string): void => {
+    focus.set("");
+    paper.set(code);
+  };
 
   return (
     <Screen>
-      <ListBar title="GATE syllabus" meta={`${sections()} sections · ${topics()} topics`} />
+      <ListBar
+        title={gatePack(paper())?.name ?? `GATE ${paper()}`}
+        meta={`${topics()} ${topics() === 1 ? "topic" : "topics"}`}
+      />
+      {/*
+        The field is outside the reactive List on purpose: a re-mounted list
+        re-creates its Input, and a pending native text event then lands on a
+        disposed signal. Same shape as `SearchScreen`.
+      */}
+      <View class="gap-2 pb-2 pt-3">
+        <Search
+          value={query()}
+          onChange={(value) => {
+            query.set(value);
+            if (value.trim().length >= 2) focus.set("");
+          }}
+          placeholder="Find a GATE topic"
+        />
+        <Scroll horizontal scrollbar={false} bounces={false} contentClass="flex-row gap-2 pr-4">
+          <Each of={GATE_META} key={(meta) => meta.code}>
+            {(meta: () => (typeof GATE_META)[number]) => (
+              <Pick active={meta().code === paper()} label={meta().name} onPress={() => pickPaper(meta().code)}>
+                {meta().code}
+              </Pick>
+            )}
+          </Each>
+        </Scroll>
+        {() =>
+          focused() ? (
+            <Row class="items-center gap-2 rounded-2xl border border-accent/30 bg-accent/10 px-3">
+              <Text class="flex-1 text-[12px] text-foreground">Saved topic</Text>
+              <Btn variant="link" class="min-h-11 px-2" label="Show every topic in this paper" onPress={() => focus.set("")}>
+                Show all
+              </Btn>
+            </Row>
+          ) : null
+        }
+      </View>
       {() => (
         <List
         class="flex-1"
-        each={rows()}
+        each={shown()}
         keyExtractor={(line: GateLine) => line.key}
         estimatedItemSize={72}
         contentClass="gap-2 px-4 pb-10"
-        empty={<EmptyState title="Paper not available" hint="Pick another GATE paper above." />}
-        header={<GateHeader paper={paper} onPick={paper.set} />}
+        empty={
+          <EmptyState
+            icon="search"
+            title={focused() ? "That topic has moved" : searching() ? `Nothing matched “${term().trim()}”` : "Paper not available"}
+            hint={
+              focused()
+                ? "The saved topic is not in this paper's current text. Show the whole paper, or search another."
+                : searching()
+                  ? "Try a shorter word, or another GATE paper."
+                  : "Pick another GATE paper above."
+            }
+            action={focused() ? "Show every topic" : searching() ? "Clear search" : undefined}
+            onAction={() => (focused() ? focus.set("") : query.set(""))}
+          />
+        }
       >
-        {(line: () => GateLine) => <GateLineView item={line} onToggle={toggleOpen} />}
+        {(line: () => GateLine) => (
+          <GateLineView
+            item={line}
+            onToggle={toggleOpen}
+            saved={() => saved()[line().mark] === true}
+            onSave={(mark) => toggleSaved(mark)}
+          />
+        )}
         </List>
       )}
     </Screen>

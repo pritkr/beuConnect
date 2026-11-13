@@ -10,7 +10,8 @@
  *
  * Nothing here touches the filesystem, so the rules below — which branch a
  * paper belongs to, which duplicated file wins, which year a paper is — are
- * testable in `qa/unit/pyq-pdfs.test.ts` without an app, a network or a disk.
+ * pure functions, exercised by `scripts/build-pyq-pdfs.mjs --check` and by
+ * `qa/data.test.ts` (every archived paper resolves to a URL the app can open).
  *
  * Three source quirks drive most of the code:
  *

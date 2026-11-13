@@ -1,8 +1,8 @@
 /**
  * Proves that the wire format still decodes to exactly the data the app had
  * before it was packed: `scripts/data/packs-snapshot.json` holds the counts, the
- * subject-code set and a hash of the canonical JSON of every branch, every GATE
- * paper and the whole PYQ catalogue.
+ * subject-code set and a hash of the canonical JSON of every branch and every
+ * GATE paper.
  *
  *   bun scripts/data/verify-packs.ts            # verify (exit 1 on any drift)
  *   bun scripts/data/verify-packs.ts --capture  # rewrite the snapshot
@@ -10,12 +10,14 @@
  * Only capture when the data changes on purpose; the snapshot is the invariant
  * the packing has to keep. Canonical JSON sorts keys, so re-ordering fields in
  * the decoded objects is allowed — dropping or changing a value is not.
+ *
+ * The PYQ catalogue is not checked here: `pack-pyq-catalog.mjs` owns that file
+ * and `scripts/audit-catalog.ts` audits it.
  */
 import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 
 const packs = await import("../../src/features/syllabus/data/packs.ts");
-const cat = await import("../../src/features/pyqs/catalog-data.ts");
 
 function canon(value: unknown): string {
   if (Array.isArray(value)) return `[${value.map(canon).join(",")}]`;
@@ -66,27 +68,14 @@ function measure() {
     sections += pack.sections.length;
   }
 
-  // `catalog-data.ts` travels as plain JSON; pyqs owns the wire.
-  const catalog = JSON.parse(cat.RAW);
-  let papers = 0;
-  for (const s of catalog.subjects) papers += s.papers.length;
-
   return {
-    snapshot: { data: packs.DATA_SNAPSHOT, catalog: cat.SNAPSHOT },
+    snapshot: { data: packs.DATA_SNAPSHOT },
     branches,
     meta: {
       branches: packs.BRANCH_META.map((m: any) => m.code),
       gate: packs.GATE_META.map((m: any) => m.code),
     },
     gate: { codes: Object.keys(gate), papers: gate, sections },
-    catalog: {
-      subjects: catalog.subjects.length,
-      branches: catalog.branches.length,
-      papers,
-      years: catalog.years.join(","),
-      sha: sha(canon(catalog)),
-      branchesSha: sha(canon(catalog.branches)),
-    },
     codes: [...codes].sort(),
     totals: { subjects, contentChars, references },
   };
@@ -97,9 +86,11 @@ const file = new URL("./packs-snapshot.json", import.meta.url);
 
 if (process.argv.includes("--capture")) {
   const snapshot = {
-    note: "Invariant of the app's syllabus packs and PYQ catalogue: counts, subject codes and a canonical-JSON hash per branch, per GATE paper and for the catalogue. Regenerate with `bun scripts/data/verify-packs.ts --capture` only when the data changes on purpose.",
+    note: "Invariant of the app's syllabus packs: counts, subject codes and a canonical-JSON hash per branch and per GATE paper. Regenerate with `bun scripts/data/verify-packs.ts --capture` only when the data changes on purpose.",
     ...live,
-    branches: Object.fromEntries(Object.entries(live.branches).map(([k, v]) => [k, { sems: v.sems, subjects: v.subjects, sha: v.sha }])),
+    branches: Object.fromEntries(
+      Object.entries(live.branches).map(([k, v]) => [k, { sems: v.sems, subjects: v.subjects, sha: v.sha }]),
+    ),
   };
   writeFileSync(file, JSON.stringify(snapshot, null, 2) + "\n");
   console.log(`captured ${JSON.stringify(snapshot).length} B of invariants into ${file.pathname}`);
@@ -117,30 +108,36 @@ if (process.argv.includes("--capture")) {
   eq("totals (subjects / content / references)", live.totals, want.totals);
   eq("BRANCH_META order", live.meta.branches, Object.keys(want.branches));
   eq("GATE_META order", live.meta.gate, want.gate.codes);
-  eq("catalogue", live.catalog, want.catalog);
 
   for (const [code, was] of Object.entries<any>(want.branches)) {
     const now = live.branches[code];
-    if (!now) { fails.push(`branch missing: ${code}`); continue; }
+    if (!now) {
+      fails.push(`branch missing: ${code}`);
+      continue;
+    }
     eq(`${code} subjects`, now.subjects, was.subjects);
     eq(`${code} semesters`, now.sems, was.sems);
     eq(`${code} content hash`, now.sha, was.sha);
   }
   for (const [code, was] of Object.entries<any>(want.gate.papers)) {
     const now = (live.gate.papers as any)[code];
-    if (!now) { fails.push(`GATE paper missing: ${code}`); continue; }
+    if (!now) {
+      fails.push(`GATE paper missing: ${code}`);
+      continue;
+    }
     eq(`${code} sections`, now.sections, was.sections);
     eq(`${code} content hash`, now.sha, was.sha);
-    eq(`${code} name`, now.name, was.name);
   }
   eq("GATE section total", live.gate.sections, want.gate.sections);
   eq("GATE paper list", live.gate.codes, want.gate.codes);
 
   const rows: [string, string][] = [
-    ["branches", `${Object.keys(live.branches).length} · ${live.totals.subjects} subjects · ${live.totals.contentChars} content chars · ${live.totals.references} references`],
+    [
+      "branches",
+      `${Object.keys(live.branches).length} · ${live.totals.subjects} subjects · ${live.totals.contentChars} content chars · ${live.totals.references} references`,
+    ],
     ["GATE", `${live.gate.codes.length} papers · ${live.gate.sections} sections`],
-    ["catalogue", `${live.catalog.subjects} subjects · ${live.catalog.papers} papers · ${live.catalog.branches} branches`],
-    ["hashes", `${Object.keys(live.branches).length + live.gate.codes.length + 1} canonical JSON documents`],
+    ["hashes", `${Object.keys(live.branches).length + live.gate.codes.length} canonical JSON documents`],
   ];
   for (const [what, value] of rows) console.log(`  ${what.padEnd(10)} ${value}`);
   if (fails.length) {

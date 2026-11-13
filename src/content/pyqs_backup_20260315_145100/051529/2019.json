@@ -1,0 +1,267 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2019",
+    "subject": "INTRODUCTION TO JAVA PROGRAMMING LANGUAGE",
+    "subject_slug": "introduction-to-java-programming-language",
+    "subject_code": "051529",
+    "year": 2019,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct option (any seven) :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "<p>Which of the following is a valid declaration of an object of class Box?</p>",
+          "options": [
+            "Box obj = new Box();",
+            "Box obj = new Box;",
+            "obj = new Box();",
+            "new Box obj;"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "<p>Which operator is used to invert all the digits in a binary representation of a number?</p>",
+          "options": [
+            "<<<",
+            ">>>",
+            "~",
+            "^"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "<p>Which of these cannot be declared static?</p>",
+          "options": [
+            "Class",
+            "Object",
+            "Variable",
+            "Method"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "<p>Which polymorphism concept is applied to inheritance relationship in Java programming?</p>",
+          "options": [
+            "Method overloading",
+            "Constructor overloading",
+            "Method overriding",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "<p>Which of the following operators can operate on a Boolean variable?</p>\n<ol>\n<li>&&</li>\n<li>--</li>\n<li>?:</li>\n<li>+=</li>\n</ol>",
+          "options": [
+            "3 and 2",
+            "1 and 4",
+            "1, 2 and 4",
+            "1, 2 and 3"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "<p>Which of these is a process of converting a simple data type into a class?</p>",
+          "options": [
+            "Type wrapping",
+            "Type conversion",
+            "Type casting",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "<p>Which of these methods of thread class is used to suspend a thread for a period of time?</p>",
+          "options": [
+            "sleep()",
+            "terminate()",
+            "suspend()",
+            "stop()"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "<p>Which of these functions is called to display the output of an applet?</p>",
+          "options": [
+            "display()",
+            "paint()",
+            "displayApplet()",
+            "printApplet()"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "<p>Which of the following is the advantage of using PreparedStatement in Java?</p>",
+          "options": [
+            "Slow performance",
+            "Encourages SQL injection",
+            "Prevents SQL injection",
+            "More memory usage"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "<p>Which of the following is a method of JDBC batch process?</p>",
+          "options": [
+            "setBatch()",
+            "deleteBatch()",
+            "removeBatch()",
+            "addBatch()"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "theory",
+          "text": "<p>What are the drawbacks of procedural languages? Explain the need of object-oriented programming with suitable program.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q2_b",
+          "type": "theory",
+          "text": "<p>What are the wrapper classes? Write a Java program to find the GCD of two numbers.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "<p>Write an iterative Java program to reverse digits of a number.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q3_b",
+          "type": "theory",
+          "text": "<p>Write a Java program to check whether a given number is a happy number or unhappy number. Happy number : Starting with any positive integer, replace the number by the sum of the squares of its digits and repeat the process until the number equals 1, or it loops endlessly in a cycle which does not include 1. Unhappy number : A number that is not happy. The first few unhappy numbers are 2, 3, 4, 5, 6, 8, 9, 11, 12, 14, 15, 16, 17, 18, 20.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "<p>With suitable code segments, illustrate various uses of 'super' keyword.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q4_b",
+          "type": "theory",
+          "text": "<p>Write a Java program to demonstrate working of Arrays.equals() for user-defined objects.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5",
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "<p>What is constructor? Write a Java program to find the area of the circle using constructor.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q5_b",
+          "type": "theory",
+          "text": "<p>Write a Java program to find the maximum occurring character in a string. The given string is \"test string\".</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "<p>What is JVM? Write the functionality of each component with the help of block diagram. [Note: Question text reconstructed/partially unreadable]</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q6_b",
+          "type": "theory",
+          "text": "<p>Discuss about polymorphism. Explain run-time polymorphism with a program.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7",
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "theory",
+          "text": "<p>Write the differences between method overloading and method overriding with suitable example of each.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q7_b",
+          "type": "theory",
+          "text": "<p>Write a Java program to demonstrate example of hierarchical inheritance to get square and cube of a number.</p>",
+          "total_marks": 7
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8",
+      "questions": [
+        {
+          "id": "q8_a",
+          "type": "theory",
+          "text": "<p>Design an abstract class named Vegetable with three subclasses named Potato, Brinjal and Tomato. Use appropriate data members and member functions to display the output of each vegetable. [Note: Question text reconstructed/partially unreadable]</p>",
+          "total_marks": 14
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9",
+      "questions": [
+        {
+          "id": "q9_a",
+          "type": "theory",
+          "text": "<p>Write a JDBC program to update the amount balance in an account after every withdrawal. Assume the necessary database table.</p>",
+          "total_marks": 7
+        },
+        {
+          "id": "q9_b",
+          "type": "theory",
+          "text": "<p>Write an Applet to draw a smiley picture that accepts user name as a parameter and displays 'welcome' message.</p>",
+          "total_marks": 7
+        }
+      ]
+    }
+  ]
+}

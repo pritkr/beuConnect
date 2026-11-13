@@ -1,31 +1,65 @@
 ---
-import Footer from "../components/footer.astro";
-import Header from "../components/header.astro";
 import Layout from "../layouts/Layout.astro";
-import {
-	buildRowCells,
-	hasLabGroups,
-	istDayIndex,
-	primaryAndRest,
-	segmentsFor,
-} from "../lib/routine/layout";
 import { RoutineLookupError, resolveRoutineFromRegNo } from "../lib/routine/resolver";
 import type {
 	ResolvedStudentRoutine,
 	RoutineBlock,
 	RoutineDay,
-	RoutineLabGroup,
-	RoutineSlot,
 } from "../lib/routine/types";
 
 export const prerender = false;
 
-const WEEK = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+type TableCell =
+	| { kind: "empty"; span: number }
+	| { kind: "block"; span: number; block: RoutineBlock };
 
-const reg = Astro.url.searchParams.get("reg")?.trim() || "";
-const groupParam = (Astro.url.searchParams.get("group") || "").trim().toUpperCase();
-const explicitGroup: RoutineLabGroup | null =
-	groupParam === "A" || groupParam === "B" ? groupParam : null;
+type PageErrorCode = RoutineLookupError["code"] | "unknown";
+
+function buildSegmentCells(
+	day: RoutineDay,
+	segmentStart: number,
+	segmentEnd: number,
+): TableCell[] {
+	const cells: TableCell[] = [];
+	let cursor = segmentStart;
+	const blocks = day.blocks
+		.filter(
+			(block) =>
+				block.startSlot >= segmentStart &&
+				block.startSlot <= segmentEnd,
+		)
+		.sort((left, right) => left.startSlot - right.startSlot);
+
+	for (const block of blocks) {
+		if (block.startSlot > cursor) {
+			cells.push({ kind: "empty", span: block.startSlot - cursor });
+		}
+
+		cells.push({ kind: "block", span: block.span, block });
+		cursor = block.startSlot + block.span;
+	}
+
+	if (cursor <= segmentEnd) {
+		cells.push({ kind: "empty", span: segmentEnd - cursor + 1 });
+	}
+
+	return cells;
+}
+
+/** Short, page-facing copy. The resolver's own messages stay untouched. */
+const DISPLAY_ERROR: Record<string, string> = {
+	upstream_unavailable: "Routine source did not respond.",
+};
+
+function displayError(code: PageErrorCode | null, message: string): string {
+	return (code && DISPLAY_ERROR[code]) || message;
+}
+
+const params = Astro.url.searchParams;
+const reg = params.get("reg")?.trim() || "";
+const wantsProbe =
+	params.get("probe") === "1" &&
+	(Astro.request.headers.get("accept") || "").includes("application/json");
 
 Astro.response.headers.set(
 	"Cache-Control",
@@ -33,15 +67,12 @@ Astro.response.headers.set(
 );
 
 let errorMessage = "";
-let errorCode: string | null = null;
+let errorCode: PageErrorCode | null = null;
 let routineResult: ResolvedStudentRoutine | null = null;
 
 if (reg) {
 	try {
-		routineResult = await resolveRoutineFromRegNo(
-			reg,
-			explicitGroup ? { labGroup: explicitGroup } : undefined,
-		);
+		routineResult = await resolveRoutineFromRegNo(reg);
 	} catch (error) {
 		if (error instanceof RoutineLookupError) {
 			errorMessage = error.message;
@@ -53,70 +84,30 @@ if (reg) {
 	}
 }
 
-const routine = routineResult?.routine ?? null;
-const labGroup: RoutineLabGroup = routineResult?.labGroup ?? explicitGroup ?? "A";
-const slotById = new Map<number, RoutineSlot>(
-	(routine?.slots ?? []).map((slot) => [slot.id, slot]),
-);
-const segments = segmentsFor(routine?.recessAfterSlot ?? null, [...slotById.keys()]);
-const splitsClass = routine ? hasLabGroups(routine) : false;
-
-const headerCells: Array<{ kind: "slot"; slot: RoutineSlot } | { kind: "break" }> = [];
-for (const segment of segments) {
-	if (segment.kind === "break") {
-		headerCells.push({ kind: "break" });
-		continue;
-	}
-	for (let id = segment.from; id <= segment.to; id += 1) {
-		const slot = slotById.get(id);
-		if (slot) headerCells.push({ kind: "slot", slot });
-	}
+/*
+ * Preflight for the client. The routine is server-rendered from `?reg=`, so
+ * loading a saved number needs a navigation; this tells the client whether
+ * that navigation would actually land on a routine before it commits.
+ */
+if (wantsProbe) {
+	return new Response(
+		JSON.stringify({
+			ok: Boolean(routineResult),
+			code: errorCode,
+			message: errorMessage ? displayError(errorCode, errorMessage) : "",
+		}),
+		{
+			status: 200,
+			headers: {
+				"content-type": "application/json; charset=utf-8",
+				"cache-control": "no-store",
+			},
+		},
+	);
 }
 
-type CellView =
-	| { kind: "empty"; span: number }
-	| { kind: "block"; span: number; primary: RoutineBlock; rest: RoutineBlock[] };
-
-function viewCells(day: RoutineDay, from: number, to: number): CellView[] {
-	const cells: CellView[] = [];
-	for (const cell of buildRowCells(day, from, to)) {
-		if (cell.kind === "empty") {
-			cells.push({ kind: "empty", span: cell.span });
-			continue;
-		}
-		const { primary, rest } = primaryAndRest(cell.blocks, labGroup);
-		if (!primary) {
-			cells.push({ kind: "empty", span: cell.span });
-			continue;
-		}
-		cells.push({ kind: "block", span: cell.span, primary, rest });
-	}
-	return cells;
-}
-
-const todayName = WEEK[istDayIndex()] ?? "";
-const rows = (routine?.days ?? []).map((day) => ({
-	name: day.day,
-	isToday: day.day.trim().toLowerCase() === todayName.toLowerCase(),
-	parts: segments.map((segment) =>
-		segment.kind === "break"
-			? { kind: "break" as const }
-			: { kind: "cells" as const, cells: viewCells(day, segment.from, segment.to) },
-	),
-}));
-
-const hasGrid =
-	Boolean(routine) && rows.length > 0 && headerCells.some((cell) => cell.kind === "slot");
-const student = hasGrid ? routineResult : null;
-
-const routineHref = (group: RoutineLabGroup): string => {
-	const base = import.meta.env.BASE_URL.replace(/\/+$/, "");
-	const who = routineResult?.regNo ?? reg;
-	return `${base}/routine?reg=${encodeURIComponent(who)}&group=${group}`;
-};
-
-const stateMessage =
-	errorMessage || (routineResult ? "Nothing is published for this routine yet." : "");
+const retryable =
+	errorCode === "upstream_unavailable" || errorCode === "unknown";
 
 const pageTitle = routineResult
 	? `${routineResult.branchName} Routine | BEUConnect`
@@ -127,135 +118,81 @@ const description = routineResult
 ---
 
 <Layout title={pageTitle} description={description} wide={true}>
-	<Header />
 
-	<section class="routine-shell">
+	<div class="routine-shell">
 		{
-			student ? (
+			routineResult ? (
 				<>
-					<section class="glass-card routine-topbar">
-						<div class="title-row">
+					<header class="page-head">
+						<div>
 							<h1>Routine</h1>
-							{student.routine.isStale && <span class="status-pill warn">Cached</span>}
+							<p class="meta">
+								<span id="routineStudentName" hidden />
+								{routineResult.sourceBranchLabel} · Sem {routineResult.semester} · {routineResult.batchLabel}
+								{routineResult.routine.roomLabel ? ` · Room ${routineResult.routine.roomLabel}` : ""}
+							</p>
 						</div>
-						<div class="meta-row">
-							<span class="meta-pill strong">{student.sourceBranchLabel}</span>
-							<span class="meta-pill">Sem {student.semester}</span>
-							<span class="meta-pill">{student.batchLabel}</span>
-							{student.routine.effectiveFrom && (
-								<span class="meta-pill">From {student.routine.effectiveFrom}</span>
-							)}
-							{student.routine.roomLabel && (
-								<span class="meta-pill">Room {student.routine.roomLabel}</span>
-							)}
-							{splitsClass && (
-								<div class="group-switch" role="group" aria-label="Lab group">
-									{(["A", "B"] as const).map((group) => (
-										<a
-											class:list={["group-choice", labGroup === group && "is-active"]}
-											href={routineHref(group)}
-											aria-current={labGroup === group ? "true" : undefined}
-											title={`Lab group ${group}`}
-										>
-											{group}
-										</a>
-									))}
-								</div>
-							)}
-						</div>
-					</section>
+						{routineResult.routine.isStale && <p class="stale">Cached copy</p>}
+					</header>
 
-					<section class="glass-card routine-table-card">
+					<section class="timetable" aria-labelledby="timetable-heading">
 						<div class="section-head">
-							<h2>Week</h2>
-							{student.routine.sourceUrl && (
-								<a
-									href={student.routine.sourceUrl}
-									target="_blank"
-									rel="noreferrer"
-									class="external-link"
-								>
+							<h2 id="timetable-heading">Weekly timetable</h2>
+							{routineResult.routine.sourceUrl && (
+								<a href={routineResult.routine.sourceUrl} target="_blank" rel="noreferrer" class="external-link">
 									Source
 								</a>
 							)}
 						</div>
-						<div class="table-wrap">
+						<div class="table-wrap" tabindex="0">
 							<table class="routine-table">
 								<thead>
 									<tr>
 										<th scope="col">Day</th>
-										{headerCells.map((cell) =>
-											cell.kind === "break" ? (
-												<th scope="col" class="recess-head">
-													Break
-												</th>
-											) : (
-												<th scope="col">
-													P{cell.slot.id}
-													<br />
-													<small>
-														{cell.slot.start}-{cell.slot.end}
-													</small>
-												</th>
-											),
-										)}
+										<th scope="col">P1<br /><small>10:00-11:00</small></th>
+										<th scope="col">P2<br /><small>11:00-12:00</small></th>
+										<th scope="col">P3<br /><small>12:00-13:00</small></th>
+										<th scope="col" class="recess-head">Break</th>
+										<th scope="col">P4<br /><small>14:00-15:00</small></th>
+										<th scope="col">P5<br /><small>15:00-16:00</small></th>
+										<th scope="col">P6<br /><small>16:00-17:00</small></th>
 									</tr>
 								</thead>
 								<tbody>
-									{rows.map((row) => (
-										<tr class:list={["routine-row", row.isToday && "is-today"]}>
-											<th scope="row">{row.name}</th>
-											{row.parts.map((part) =>
-												part.kind === "break" ? (
-													<td class="recess-cell" />
+									{routineResult.routine.days.map((day) => (
+										<tr>
+											<th scope="row">{day.day}</th>
+											{buildSegmentCells(day, 1, 3).map((cell) =>
+												cell.kind === "empty" ? (
+													<td colspan={cell.span} class="slot-empty">-</td>
 												) : (
-													part.cells.map((cell) =>
-														cell.kind === "empty" ? (
-															<td colspan={cell.span} class="slot-empty">
-																-
-															</td>
-														) : (
-															<td colspan={cell.span} class="slot-block">
-																<div class="block-subject">{cell.primary.subject}</div>
-																{(cell.primary.type ||
-																	cell.primary.room ||
-																	cell.primary.durationLabel ||
-																	(splitsClass && cell.primary.group)) && (
-																	<div class="block-meta">
-																		{splitsClass && cell.primary.group && (
-																			<span class="group-badge">
-																				Group {cell.primary.group}
-																			</span>
-																		)}
-																		{cell.primary.type && (
-																			<span class="type-badge">{cell.primary.type}</span>
-																		)}
-																		{cell.primary.room && (
-																			<span>Room {cell.primary.room}</span>
-																		)}
-																		{cell.primary.durationLabel && (
-																			<span>{cell.primary.durationLabel}</span>
-																		)}
-																	</div>
-																)}
-																{cell.rest.map((entry) => (
-																	<div class="block-alt">
-																		{entry.group ? (
-																			<span class="alt-label">
-																				Group {entry.group}
-																			</span>
-																		) : (
-																			<span class="alt-label" aria-hidden="true">
-																				↔
-																			</span>
-																		)}
-																		<span class="alt-subject">{entry.subject}</span>
-																		{entry.room && <span>Room {entry.room}</span>}
-																	</div>
-																))}
-															</td>
-														),
-													)
+													<td colspan={cell.span} class="slot-block">
+														<div class="block-subject">{cell.block.subject}</div>
+														{(cell.block.room || cell.block.durationLabel || cell.block.type) && (
+															<div class="block-meta">
+																{cell.block.type && <span class="type-badge">{cell.block.type}</span>}
+																{cell.block.room && <span>Room {cell.block.room}</span>}
+																{cell.block.durationLabel && <span>{cell.block.durationLabel}</span>}
+															</div>
+														)}
+													</td>
+												),
+											)}
+											<td class="recess-cell">-</td>
+											{buildSegmentCells(day, 4, 6).map((cell) =>
+												cell.kind === "empty" ? (
+													<td colspan={cell.span} class="slot-empty">-</td>
+												) : (
+													<td colspan={cell.span} class="slot-block">
+														<div class="block-subject">{cell.block.subject}</div>
+														{(cell.block.room || cell.block.durationLabel || cell.block.type) && (
+															<div class="block-meta">
+																{cell.block.type && <span class="type-badge">{cell.block.type}</span>}
+																{cell.block.room && <span>Room {cell.block.room}</span>}
+																{cell.block.durationLabel && <span>{cell.block.durationLabel}</span>}
+															</div>
+														)}
+													</td>
 												),
 											)}
 										</tr>
@@ -265,13 +202,13 @@ const description = routineResult
 						</div>
 					</section>
 
-					{student.routine.papers.length > 0 && (
-						<section class="glass-card papers-card">
+					{routineResult.routine.papers.length > 0 && (
+						<section class="papers" aria-labelledby="papers-heading">
 							<div class="section-head">
-								<h2>Papers</h2>
+								<h2 id="papers-heading">Subjects and faculty</h2>
 							</div>
 							<div class="paper-grid">
-								{student.routine.papers.map((paper) => (
+								{routineResult.routine.papers.map((paper) => (
 									<div class="paper-item">
 										<div class="paper-topline">
 											<span class="paper-abbr">{paper.abbr}</span>
@@ -291,556 +228,523 @@ const description = routineResult
 					)}
 				</>
 			) : (
-				<section class:list={["glass-card state-card", errorCode ? "error" : "idle"]}>
+				<div class={errorCode ? "state error" : "state"}>
 					<h1>Routine</h1>
-					<p id="routineStateMessage" data-error={errorCode ? "1" : undefined}>
-						{stateMessage || "Enter your registration number to see your class routine."}
+					<p id="routineStateMessage" role="status">
+						{errorMessage ? displayError(errorCode, errorMessage) : ""}
 					</p>
-					<div id="saveInputContainer" class="routine-save">
-						<input
-							type="text"
-							id="routineRegInput"
-							placeholder="Registration no."
-							autocomplete="on"
-							inputmode="numeric"
-						/>
-						<button type="button" id="routineRegBtn">Save</button>
+					<button type="button" id="routineRetryBtn" class="btn btn-secondary" hidden={!retryable}>
+						Retry
+					</button>
+					<div id="saveInputContainer" hidden={!errorCode}>
+						<form id="routineSaveForm" class="save" novalidate>
+							<label class="field-label" for="routineRegInput">Registration number</label>
+							<div class="save-row">
+								<input
+									type="text"
+									id="routineRegInput"
+									name="reg"
+									value={reg}
+									placeholder="23105157001"
+									autocomplete="off"
+									inputmode="numeric"
+									maxlength="11"
+									spellcheck="false"
+									enterkeyhint="go"
+									aria-describedby="routineRegError"
+								/>
+								<button type="submit" id="routineRegBtn" class="btn btn-primary">Save and load</button>
+							</div>
+							<p id="routineRegError" class="field-error" role="alert" hidden />
+						</form>
 					</div>
-				</section>
+				</div>
 			)
 		}
-	</section>
+	</div>
 
-	<Footer />
 </Layout>
 
 <script>
+	import { inferCurrentSemester } from "../lib/beuReg";
+	import { fetchStudent } from "../lib/students/client";
 	import { getProfile, parseRegNo, saveProfile } from "../utils/profileManager";
 
-	const GROUP_KEY = "beu_routine_group";
-	const params = new URLSearchParams(window.location.search);
+	const stateMessage = document.getElementById("routineStateMessage");
+	const saveContainer = document.getElementById("saveInputContainer");
+	const saveForm = document.getElementById("routineSaveForm");
+	const regInput = document.querySelector<HTMLInputElement>("#routineRegInput");
+	const saveBtn = document.querySelector<HTMLButtonElement>("#routineRegBtn");
+	const retryBtn = document.querySelector<HTMLButtonElement>("#routineRetryBtn");
+	const regError = document.getElementById("routineRegError");
+	const nameEl = document.getElementById("routineStudentName");
 
-	const readSavedGroup = (): string | null => {
+	const urlReg = (new URL(window.location.href).searchParams.get("reg") ?? "").trim();
+	let storedReg = (getProfile()?.regNo ?? "").trim();
+	let busy = false;
+
+	const routineHref = (value: string) => {
+		const next = new URL(window.location.href);
+		next.searchParams.set("reg", value);
+		next.searchParams.delete("probe");
+		return next;
+	};
+
+	function setBusy(next: boolean) {
+		busy = next;
+		if (saveBtn) saveBtn.disabled = next;
+		if (retryBtn) retryBtn.disabled = next;
+	}
+
+	function setRegError(message: string) {
+		if (regError) {
+			regError.textContent = message;
+			regError.hidden = !message;
+		}
+		if (regInput) {
+			if (message) regInput.setAttribute("aria-invalid", "true");
+			else regInput.removeAttribute("aria-invalid");
+		}
+	}
+
+	function showState(
+		message: string,
+		options: { error?: boolean; retry?: boolean } = {},
+	) {
+		if (!stateMessage) return;
+		stateMessage.textContent = message;
+		stateMessage.closest(".state")?.classList.toggle("error", Boolean(options.error));
+		if (retryBtn) retryBtn.hidden = !options.retry;
+	}
+
+	function offerSave(value: string) {
+		if (!saveContainer) return;
+		saveContainer.hidden = false;
+		if (regInput && !regInput.value) regInput.value = value;
+	}
+
+	async function probeRoutine(value: string) {
+		const target = routineHref(value);
+		target.searchParams.set("probe", "1");
 		try {
-			const value = localStorage.getItem(GROUP_KEY);
-			return value === "A" || value === "B" ? value : null;
+			const response = await fetch(target.toString(), {
+				headers: { accept: "application/json" },
+				cache: "no-store",
+			});
+			if (!response.ok) return null;
+			const payload = (await response.json()) as {
+				ok?: boolean;
+				code?: string | null;
+				message?: string;
+			};
+			return {
+				ok: payload?.ok === true,
+				code: typeof payload?.code === "string" ? payload.code : "",
+				message: typeof payload?.message === "string" ? payload.message : "",
+			};
 		} catch {
 			return null;
 		}
-	};
+	}
 
-	// Landing with an explicit choice makes it the remembered one.
-	const groupParam = (params.get("group") || "").trim().toUpperCase();
-	if (groupParam === "A" || groupParam === "B") {
-		try {
-			localStorage.setItem(GROUP_KEY, groupParam);
-		} catch {
-			// Private mode: the choice still rides along in the URL.
+	async function resolveName(value: string) {
+		if (!nameEl) return;
+		const student = await fetchStudent(value);
+		if (!student?.name) return;
+		nameEl.textContent = `${student.name} · `;
+		nameEl.hidden = false;
+		if (storedReg === value && getProfile()?.name !== student.name) {
+			saveProfile({ name: student.name });
 		}
 	}
 
-	const stateMessage = document.getElementById("routineStateMessage") as HTMLParagraphElement | null;
-	const saveInputContainer = document.getElementById("saveInputContainer") as HTMLDivElement | null;
-	const routineRegInput = document.getElementById("routineRegInput") as HTMLInputElement | null;
-	const routineRegBtn = document.getElementById("routineRegBtn") as HTMLButtonElement | null;
-
-	const profile = getProfile();
-
-	if (!params.has("reg")) {
-		if (profile?.regNo) {
-			const nextUrl = new URL(window.location.href);
-			nextUrl.searchParams.set("reg", profile.regNo);
-			if (!nextUrl.searchParams.has("group")) {
-				const savedGroup = readSavedGroup();
-				if (savedGroup) nextUrl.searchParams.set("group", savedGroup);
-			}
-			window.location.replace(nextUrl.toString());
-		} else {
-			if (stateMessage) {
-				stateMessage.textContent =
-					"Enter your registration number to see your class routine.";
-			}
-			if (saveInputContainer) {
-				saveInputContainer.style.display = "flex";
-			}
+	async function openRoutine(value: string) {
+		if (busy) return;
+		if (stateMessage) {
+			showState("Loading…");
 		}
-	} else if (!profile?.regNo && saveInputContainer) {
-		// A shared routine should still offer to become the visitor's own.
-		if (stateMessage && stateMessage.dataset.error !== "1") {
-			stateMessage.textContent =
-				"Viewing a shared routine. Enter your registration number to save it.";
-		}
-		saveInputContainer.style.display = "flex";
-	}
+		setBusy(true);
 
-	const handleSave = async () => {
-		if (!routineRegInput) return;
-		const regNo = routineRegInput.value.trim();
-		if (regNo.length < 10) {
-			routineRegInput.style.animation = "shake 0.4s ease";
-			setTimeout(() => {
-				if (routineRegInput) routineRegInput.style.animation = "";
-			}, 400);
+		const outcome = await probeRoutine(value);
+		if (outcome?.ok) {
+			window.location.replace(routineHref(value).toString());
 			return;
 		}
 
-		const parsed = parseRegNo(regNo);
-		if (!parsed || !parsed.regNo) return;
-		saveProfile(parsed);
+		// Keep this page: show what went wrong and make the number correctable.
+		window.history.replaceState(null, "", routineHref(value).toString());
+		const retry =
+			outcome === null ||
+			outcome.code === "upstream_unavailable" ||
+			outcome.code === "unknown";
+		showState(
+			outcome === null
+				? "Could not reach the server."
+				: outcome.message || "Routine could not be loaded right now.",
+			{ error: true, retry },
+		);
+		offerSave(value);
+		setBusy(false);
+	}
 
-		// Fire off background fetch to hydrate name if we can
-		let fetchSem = 1;
-		if (parsed.batchYear) {
-			if (parsed.batchYear === 2025) fetchSem = 1;
-			else if (parsed.batchYear === 2024) fetchSem = 2;
-			else if (parsed.batchYear === 2023) fetchSem = 4;
-			else if (parsed.batchYear === 2022) fetchSem = 7;
-			else if (parsed.batchYear <= 2021) fetchSem = 8;
+	async function handleSave() {
+		if (busy) return;
+		const value = (regInput?.value ?? "").replace(/\D+/g, "").slice(0, 11);
+		if (regInput) regInput.value = value;
+
+		if (value.length !== 11) {
+			setRegError("Enter the 11-digit registration number.");
+			regInput?.focus();
+			return;
 		}
 
-		const baseUrl = import.meta.env.BASE_URL;
-		fetch(`${baseUrl}api/result?reg=${encodeURIComponent(regNo)}&sem=${fetchSem}&format=json`)
-			.then((res) => res.json())
-			.then((data) => {
-				if (data.status === 200 && data.data && data.data.name) {
-					saveProfile({
-						name: data.data.name,
-						lastSgpa:
-							data.data.sgpa && Array.isArray(data.data.sgpa)
-								? data.data.sgpa[fetchSem - 1]
-								: undefined,
-						lastCgpa: data.data.cgpa || undefined,
-					});
-				}
-			})
-			.catch((error) => console.log("Background hydrate failed", error));
+		setRegError("");
+		const previous = getProfile();
+		const parsed = parseRegNo(value);
+		if (typeof parsed.batchYear === "number") {
+			parsed.currentSem = inferCurrentSemester(parsed.batchYear);
+		}
+		// A different number must not inherit the previous student's name or scores.
+		saveProfile(
+			previous?.regNo && previous.regNo !== value
+				? { ...parsed, name: undefined, lastSgpa: undefined, lastCgpa: undefined }
+				: parsed,
+		);
+		storedReg = value;
 
-		const nextUrl = new URL(window.location.href);
-		nextUrl.searchParams.set("reg", parsed.regNo);
-		window.location.replace(nextUrl.toString());
-	};
+		setBusy(true);
+		const student = await fetchStudent(value);
+		if (student?.name) saveProfile({ name: student.name });
+		setBusy(false);
 
-	if (routineRegBtn) {
-		routineRegBtn.addEventListener("click", handleSave);
+		await openRoutine(value);
 	}
-	if (routineRegInput) {
-		routineRegInput.addEventListener("keypress", (event) => {
-			if (event.key === "Enter") {
-				handleSave();
-			}
-		});
+
+	if (nameEl) {
+		void resolveName(urlReg || storedReg);
 	}
+
+	if (!urlReg && storedReg) {
+		void openRoutine(storedReg);
+	} else if (!urlReg && !storedReg) {
+		// No helper sentence: the labelled field and its button are the state.
+		showState("");
+		offerSave("");
+	} else if (urlReg && !storedReg) {
+		// Shared link: keep the resolver's error, offer to save the number.
+		offerSave(urlReg);
+	}
+
+	regInput?.addEventListener("input", () => {
+		const digits = regInput.value.replace(/\D+/g, "").slice(0, 11);
+		if (regInput.value !== digits) regInput.value = digits;
+		if (regError && !regError.hidden) setRegError("");
+	});
+
+	// maxlength would otherwise truncate a pasted "24-105 157-010" at 11 chars.
+	regInput?.addEventListener("paste", (event) => {
+		const text = event.clipboardData?.getData("text/plain") ?? "";
+		const digits = text.replace(/\D+/g, "").slice(0, 11);
+		if (!digits) return;
+		event.preventDefault();
+		regInput.value = digits;
+		setRegError("");
+	});
+
+	saveForm?.addEventListener("submit", (event) => {
+		event.preventDefault();
+		void handleSave();
+	});
+
+	retryBtn?.addEventListener("click", () => {
+		const value = (urlReg || storedReg || regInput?.value || "").replace(/\D+/g, "");
+		if (value) void openRoutine(value);
+	});
 </script>
 
 <style>
 	.routine-shell {
-		padding: 0.4rem 0 1rem;
 		display: grid;
-		gap: 0.5rem;
+		gap: var(--s5);
 	}
 
-	.routine-topbar,
-	.routine-table-card,
-	.papers-card,
-	.state-card {
-		padding: 0.65rem 0.75rem;
-	}
-
-	.title-row,
-	.meta-row {
+	.page-head {
 		display: flex;
-		align-items: center;
-		gap: 0.45rem;
-		flex-wrap: wrap;
-	}
-
-	.title-row {
+		align-items: baseline;
 		justify-content: space-between;
-		margin-bottom: 0.4rem;
+		gap: var(--s4);
 	}
 
-	.title-row h1,
-	.state-card h1 {
+	.page-head .meta {
 		margin: 0;
-		font-size: 1rem;
-		line-height: 1.1;
 	}
 
-	.meta-pill,
-	.status-pill,
-	.block-meta span {
-		display: inline-flex;
-		align-items: center;
-		padding: 0.16rem 0.42rem;
-		border-radius: 999px;
-		background: rgba(148, 163, 184, 0.1);
-		border: 1px solid rgba(148, 163, 184, 0.12);
-		font-size: 0.69rem;
-		color: var(--text-secondary);
-		line-height: 1.2;
+	#routineStudentName {
+		color: var(--paper);
+		font-weight: 600;
 	}
 
-	.meta-pill.strong {
-		background: rgba(59, 130, 246, 0.16);
-		border-color: rgba(59, 130, 246, 0.2);
-		color: var(--text-primary);
-		font-weight: 700;
+	.stale {
+		margin: 0;
+		color: var(--warn);
+		font-size: 0.75rem;
 	}
 
-	.status-pill.warn {
-		background: rgba(245, 158, 11, 0.14);
-		border-color: rgba(245, 158, 11, 0.2);
-		color: #fbbf24;
+	.timetable,
+	.papers,
+	.state {
+		display: grid;
+		gap: var(--s3);
+		padding-top: var(--s4);
+		border-top: 1px solid var(--line-strong);
 	}
 
-	.group-switch {
-		margin-left: auto;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.12rem;
-		padding: 0.12rem;
-		border-radius: 999px;
-		background: rgba(148, 163, 184, 0.1);
-		border: 1px solid var(--border-subtle);
+	.section-head {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: var(--s3);
 	}
 
-	.group-choice {
-		min-width: 1.5rem;
-		padding: 0.12rem 0.4rem;
-		border-radius: 999px;
-		font-size: 0.69rem;
-		font-weight: 700;
-		line-height: 1.2;
-		text-align: center;
-		color: var(--text-secondary);
+	.section-head h2 {
+		margin: 0;
+		color: var(--faint);
+		font-family: var(--font-sans);
+		font-size: 0.72rem;
+		font-weight: 650;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
 	}
 
-	.group-choice:hover {
-		color: var(--text-primary);
+	.external-link {
+		color: var(--faint);
+		font-size: 0.78rem;
+		text-decoration: none;
 	}
 
-	.group-choice.is-active {
-		background: rgba(59, 130, 246, 0.24);
-		color: var(--text-primary);
+	.external-link:hover {
+		color: var(--paper);
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
 	}
 
 	.table-wrap {
 		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-		padding-bottom: 0.1rem;
+		border: 1px solid var(--line);
+		border-radius: var(--r);
+		background: var(--surface);
 	}
 
 	.routine-table {
 		width: 100%;
-		min-width: 700px;
-		border-collapse: separate;
-		border-spacing: 0;
+		min-width: 720px;
 		margin: 0;
-		font-size: 0.76rem;
+		border-collapse: collapse;
+		font-size: 0.78rem;
+		font-variant-numeric: tabular-nums;
 	}
 
 	.routine-table th,
 	.routine-table td {
-		padding: 0.42rem;
+		padding: 0.5rem;
+		border-right: 1px solid var(--line);
+		border-bottom: 1px solid var(--line);
 		text-align: left;
 		vertical-align: top;
-		border-right: 1px solid var(--border-subtle);
-		border-bottom: 1px solid var(--border-subtle);
 	}
 
 	.routine-table thead th {
-		position: sticky;
-		top: 0;
-		z-index: 1;
-		background: rgba(15, 23, 42, 0.94);
-		font-size: 0.68rem;
-		line-height: 1.2;
+		background: var(--surface-2);
+		color: var(--faint);
+		font-size: 0.66rem;
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
 	}
 
 	.routine-table thead th small {
-		font-size: 0.62rem;
-		color: var(--text-muted);
+		color: var(--faint);
+		font-size: 0.6rem;
+		font-weight: 400;
+		letter-spacing: 0;
+		text-transform: none;
 	}
 
 	.routine-table tbody th {
-		min-width: 2.8rem;
-		font-size: 0.7rem;
-		background: rgba(255, 255, 255, 0.03);
+		min-width: 3.2rem;
+		background: var(--surface-2);
+		color: var(--muted);
+		font-size: 0.72rem;
+		font-weight: 500;
 	}
 
-	.routine-table tr > :first-child,
-	.routine-table thead tr:first-child > * {
-		border-left: 1px solid var(--border-subtle);
-		border-top: 1px solid var(--border-subtle);
+	.routine-table tr > :last-child {
+		border-right: 0;
 	}
 
-	.routine-row.is-today > th[scope="row"] {
-		background: rgba(59, 130, 246, 0.16);
-		box-shadow: inset 3px 0 0 var(--accent-blue);
-		color: var(--text-primary);
-	}
-
-	.routine-row.is-today > td {
-		border-bottom-color: rgba(59, 130, 246, 0.22);
+	.routine-table tbody tr:last-child > * {
+		border-bottom: 0;
 	}
 
 	.slot-block {
-		background: linear-gradient(145deg, rgba(59, 130, 246, 0.13), rgba(6, 182, 212, 0.06));
+		border-left: 2px solid var(--accent);
+		background: var(--accent-soft);
 	}
 
 	.slot-empty,
 	.recess-cell,
 	.recess-head {
+		background: var(--bg);
+		color: var(--faint);
 		text-align: center;
-		color: var(--text-muted);
-		background: rgba(148, 163, 184, 0.05);
 	}
 
 	.block-subject {
-		font-weight: 700;
-		line-height: 1.2;
-		color: var(--text-primary);
+		color: var(--paper);
+		font-size: 0.78rem;
+		font-weight: 600;
+		line-height: 1.3;
 	}
 
 	.block-meta {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.2rem;
-		margin-top: 0.22rem;
-	}
-
-	.block-meta .type-badge {
-		background: rgba(59, 130, 246, 0.18);
-		border-color: rgba(59, 130, 246, 0.25);
-		color: var(--accent-blue);
-		font-weight: 700;
-	}
-
-	.block-meta .group-badge {
-		background: rgba(139, 92, 246, 0.18);
-		border-color: rgba(139, 92, 246, 0.28);
-		color: #c4b5fd;
-		font-weight: 700;
-	}
-
-	.block-alt {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: 0.22rem;
-		margin-top: 0.28rem;
-		padding-top: 0.24rem;
-		border-top: 1px dashed rgba(148, 163, 184, 0.18);
+		gap: 0.35rem;
+		margin-top: 0.25rem;
+		color: var(--faint);
 		font-size: 0.66rem;
-		line-height: 1.25;
-		color: var(--text-muted);
 	}
 
-	.alt-label {
-		color: var(--text-secondary);
-		font-weight: 600;
-	}
-
-	.alt-subject {
-		color: var(--text-secondary);
-	}
-
-	.section-head {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 0.6rem;
-		margin-bottom: 0.6rem;
-	}
-
-	.section-head h2 {
-		margin: 0;
-		font-size: 0.95rem;
-		line-height: 1.2;
-	}
-
-	.external-link {
-		font-size: 0.72rem;
-		color: var(--accent-cyan);
-		text-decoration: none;
-		padding: 0.18rem 0.45rem;
-		border-radius: 999px;
-		background: rgba(6, 182, 212, 0.1);
-		border: 1px solid rgba(6, 182, 212, 0.18);
-	}
-
-	.external-link:hover {
-		background: rgba(6, 182, 212, 0.18);
+	.type-badge {
+		color: var(--accent);
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
 	}
 
 	.paper-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 0.55rem;
+		grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+		gap: 0;
+		border-top: 1px solid var(--line);
 	}
 
 	.paper-item {
-		padding: 0.55rem 0.6rem;
-		border-radius: 12px;
-		background: rgba(255, 255, 255, 0.025);
-		border: 1px solid var(--border-subtle);
+		padding: var(--s3) var(--s3) var(--s3) 0;
+		border-bottom: 1px solid var(--line);
 	}
 
 	.paper-topline {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 0.4rem;
-		margin-bottom: 0.35rem;
+		align-items: baseline;
+		gap: var(--s2);
+		margin-bottom: 0.3rem;
 	}
 
 	.paper-abbr {
-		font-weight: 800;
-		font-size: 0.82rem;
-		color: var(--text-primary);
+		color: var(--accent);
+		font-size: 0.7rem;
+		font-weight: 650;
+		letter-spacing: 0.04em;
 	}
 
 	.paper-code {
-		font-size: 0.72rem;
-		color: var(--text-muted);
-	}
-
-	.paper-item h3 {
-		margin: 0;
-		font-size: 0.82rem;
-		line-height: 1.25;
-	}
-
-	.paper-item p {
-		margin: 0.18rem 0 0;
-		font-size: 0.72rem;
-		color: var(--text-secondary);
+		color: var(--faint);
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
 	}
 
 	.paper-hours {
 		display: flex;
-		gap: 0.25rem;
+		gap: var(--s2);
+		margin-left: auto;
+		color: var(--faint);
+		font-size: 0.65rem;
+		font-variant-numeric: tabular-nums;
 	}
 
-	.paper-hours span {
-		font-size: 0.62rem;
-		padding: 0.12rem 0.3rem;
-		border-radius: 999px;
-		background: rgba(148, 163, 184, 0.08);
-		color: var(--text-muted);
+	.paper-item h3 {
+		margin: 0;
+		color: var(--paper);
+		font-size: 0.85rem;
+		font-weight: 500;
+		line-height: 1.35;
 	}
 
-	.state-card p {
-		margin: 0.35rem 0 0;
-		font-size: 0.88rem;
-		color: var(--text-secondary);
+	.paper-item p {
+		margin: 0.15rem 0 0;
+		color: var(--faint);
+		font-size: 0.75rem;
 	}
 
-	.state-card.error {
-		border-left: 3px solid #ef4444;
+	.state {
+		max-width: 34rem;
+		justify-items: start;
 	}
 
-	.state-card.idle {
-		border-left: 3px solid var(--accent-blue);
+	.state h1 {
+		margin: 0;
 	}
 
-	.routine-save {
+	.state p {
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.9rem;
+	}
+
+	.state p:empty {
 		display: none;
-		align-items: center;
-		gap: 0.4rem;
-		width: 100%;
-		max-width: 420px;
-		margin-top: 0.7rem;
-		padding: 0.28rem;
-		border-radius: 50px;
-		border: 1px solid var(--border-accent);
-		background: rgba(255, 255, 255, 0.02);
 	}
 
-	.routine-save input {
+	.state.error p {
+		color: var(--bad);
+	}
+
+	#routineRetryBtn {
+		justify-self: start;
+	}
+
+	#saveInputContainer {
+		display: grid;
+		width: 100%;
+	}
+
+	.save {
+		display: grid;
+		gap: var(--s2);
+		margin: 0;
+	}
+
+	.save-row {
+		display: flex;
+		gap: var(--s2);
+	}
+
+	.save-row input {
 		flex: 1;
 		min-width: 0;
 		margin: 0;
-		padding: 0.4rem 0.4rem 0.4rem 1rem;
-		border: none;
-		background: transparent;
-		box-shadow: none;
-		outline: none;
-		font-size: 0.85rem;
-		color: var(--text-primary);
+		font-variant-numeric: tabular-nums;
 	}
 
-	.routine-save button {
+	.save-row .btn {
+		flex: 0 0 auto;
+	}
+
+	.field-error {
 		margin: 0;
-		padding: 0.45rem 1.2rem;
-		border: none;
-		border-radius: 40px;
-		background: var(--accent-gradient);
-		color: white;
-		font-size: 0.8rem;
-		font-weight: 700;
-		cursor: pointer;
+		color: var(--bad);
+		font-size: 0.78rem;
 	}
 
 	@media (max-width: 640px) {
-		.routine-shell {
-			padding-top: 0.2rem;
-		}
-
-		.routine-topbar,
-		.routine-table-card,
-		.papers-card,
-		.state-card {
-			padding: 0.55rem 0.6rem;
-		}
-
-		.title-row h1,
-		.state-card h1 {
-			font-size: 0.92rem;
-		}
-
-		.meta-row {
-			gap: 0.32rem;
-		}
-
-		.group-switch {
-			margin-left: 0;
-		}
-
-		.meta-pill,
-		.status-pill,
-		.block-meta span {
-			padding: 0.14rem 0.36rem;
-			font-size: 0.63rem;
-		}
-
 		.routine-table {
 			min-width: 640px;
-			font-size: 0.68rem;
+			font-size: 0.7rem;
 		}
 
-		.routine-table th,
-		.routine-table td {
-			padding: 0.34rem;
+		.save-row {
+			flex-direction: column;
 		}
-
-		.routine-table thead th {
-			font-size: 0.62rem;
-		}
-
-		.routine-table thead th small {
-			font-size: 0.56rem;
-		}
-
-		.block-subject {
-			font-size: 0.67rem;
-		}
-	}
-
-	@keyframes shake {
-		0%, 100% { transform: translateX(0); }
-		25% { transform: translateX(-5px); }
-		50% { transform: translateX(5px); }
-		75% { transform: translateX(-5px); }
 	}
 </style>

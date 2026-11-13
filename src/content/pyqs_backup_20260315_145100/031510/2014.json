@@ -1,0 +1,246 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2014",
+    "subject": "SIGNAL AND SYSTEM",
+    "subject_slug": "signal-and-system",
+    "subject_code": "031510",
+    "year": 2014,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "1. Choose the correct answer any seven of the following :",
+      "questions": [
+        {
+          "id": "q1_a",
+          "type": "mcq",
+          "text": "The period of the signal $x(t) = \\cos 60\\pi t + \\sin 50\\pi t$ is",
+          "options": [
+            "$\\frac{1}{5}$ sec",
+            "5 sec",
+            "$10\\pi$ sec",
+            "Not periodic"
+          ]
+        },
+        {
+          "id": "q1_b",
+          "type": "mcq",
+          "text": "The value of the following integral $x(t) = \\int_{-\\infty}^{\\infty} e^{-\\alpha t^2} \\cdot \\delta(t-10) dt$ is",
+          "options": [
+            "$e^{-10\\alpha}$",
+            "$e^{-\\alpha t^2}$",
+            "$e^{-100\\alpha}$",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_c",
+          "type": "mcq",
+          "text": "Which of the following is causal?",
+          "options": [
+            "$y(n) = x(n+1)$",
+            "$y(n) = x(2n)$",
+            "$y(n) = e^{x(n^2)}$",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_d",
+          "type": "mcq",
+          "text": "Which of the following is linear?",
+          "options": [
+            "$y(n) = nx^2(n)$",
+            "$y(n) = x(n^2)$",
+            "$y(n) = e^{x(n)}$",
+            "$y(n) = Ax(n) + B$"
+          ]
+        },
+        {
+          "id": "q1_e",
+          "type": "mcq",
+          "text": "The Fourier transform of the function shown below [Diagram: Step function at -1 and 1] is",
+          "options": [
+            "purely real",
+            "purely imaginary",
+            "complex",
+            "Does not exist"
+          ]
+        },
+        {
+          "id": "q1_f",
+          "type": "mcq",
+          "text": "The inverse Laplace transform of $X(s) = \\frac{1}{s(s+2)}$ is",
+          "options": [
+            "$e^{-t} u(t)$",
+            "$e^{-2t} u(t)$",
+            "$e^{2t} u(t)$",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_g",
+          "type": "mcq",
+          "text": "z-transform of convolution of two signals is equal to the —— of their z-transform.",
+          "options": [
+            "addition",
+            "subtraction",
+            "division",
+            "multiplication"
+          ]
+        },
+        {
+          "id": "q1_h",
+          "type": "mcq",
+          "text": "Which one of the following represents the impulse response of a system is defined by $H(z) = z^{-m}$?",
+          "options": [
+            "$u(n-m)$",
+            "$\\delta(n-m)$",
+            "$\\delta(m)$",
+            "$\\delta(m-n)$"
+          ]
+        },
+        {
+          "id": "q1_i",
+          "type": "mcq",
+          "text": "A system with input $x(t)$ and output $y(t)$ is described by the relation $y(t) = tx(t)$. The system is",
+          "options": [
+            "linear and time-variant",
+            "linear and time-invariant",
+            "non-linear and time-invariant",
+            "non-linear and time-variant"
+          ]
+        },
+        {
+          "id": "q1_j",
+          "type": "mcq",
+          "text": "The step response of the system whose impulse response $h(t) = tu(t)$ is given by",
+          "options": [
+            "$t^2 u(t)$",
+            "$\\frac{t^2}{2} u(t)$",
+            "$\\frac{t^3}{3} u(t)$",
+            "$\\frac{3t^2}{2} u(t)$"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2",
+      "questions": [
+        {
+          "id": "q2_a",
+          "type": "numerical",
+          "text": "Define z-transform. What is/are its application(s)? Find z-transform and ROC of the following signal :\n\n$x(n) = [3(3)^n - 4(2)^n] u(n)$"
+        },
+        {
+          "id": "q2_b",
+          "type": "numerical",
+          "text": "Determine all possible signals $x(n)$ associated with z-transform\n\n$X(z) = \\frac{5z^{-1}}{(1 - 2z^{-1})(1 - 3z^{-1})}$"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3",
+      "questions": [
+        {
+          "id": "q3_a",
+          "type": "theory",
+          "text": "Explain the conditions under which any periodic waveform can be expressed using Fourier series."
+        },
+        {
+          "id": "q3_b",
+          "type": "numerical",
+          "text": "Find trigonometric Fourier series representation of the triangular wave shown below : [Diagram: Triangular wave]"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4",
+      "questions": [
+        {
+          "id": "q4_a",
+          "type": "theory",
+          "text": "Define Fourier transform for a periodic signal. What are the conditions required for existence of Fourier transform?"
+        },
+        {
+          "id": "q4_b",
+          "type": "numerical",
+          "text": "Find Fourier transform of—\n(i) $x(t) = e^{-at} u(t)$;\n(ii) $x(t) = e^{-3t} [u(t+2) - u(t-3)]$."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5",
+      "questions": [
+        {
+          "id": "q5_a",
+          "type": "theory",
+          "text": "Define Laplace transform. What is region of convergence? What is the necessary condition for existence of the Laplace transform? What is the difference between Laplace transform and Fourier transform?"
+        },
+        {
+          "id": "q5_b",
+          "type": "numerical",
+          "text": "Find Laplace transform and ROC of the signal\n\n$x(t) = e^{-at} u(t) + e^{-bt} u(-t)$"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6",
+      "questions": [
+        {
+          "id": "q6_a",
+          "type": "theory",
+          "text": "Define convolution sum."
+        },
+        {
+          "id": "q6_b",
+          "type": "numerical",
+          "text": "Find the convolution of $x(t)$ and $h(t)$ :\n\n$x(t) = 1, 0 \\le t < 2; = 0, \\text{otherwise}$\n$h(t) = 1, 0 \\le t \\le 3; = 0, \\text{otherwise}$"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7",
+      "questions": [
+        {
+          "id": "q7_a",
+          "type": "numerical",
+          "text": "(i) Define Discrete Time Fourier Transform (DTFT). What is the condition for the existence of DTFT? Does Fourier transform of sequence $x(n) = 3^n u(n)$ exist? If not, why?\n(ii) Find Fourier transform of the following sequence :\n\n$x(n) = \\delta(n+2) - \\delta(n-2)$"
+        },
+        {
+          "id": "q7_b",
+          "type": "numerical",
+          "text": "Find 4-point DFT of the following sequence :\n\n$x(n) = \\sin \\frac{n\\pi}{2}$"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8",
+      "questions": [
+        {
+          "id": "q8",
+          "type": "numerical",
+          "text": "For the given mechanical system, draw the electrical analogous circuit using f-v (force-voltage) and f-i (force-current) analogies : [Diagram: Mechanical system with masses $M_1, M_2, M_3$, springs $k_1, k_2, k_3$, dashpot $B_1$, force $F$]"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9",
+      "questions": [
+        {
+          "id": "q9",
+          "type": "theory",
+          "text": "Write short notes on any two of the following :\n(a) Energy signal and power signal\n(b) Classification of system\n(c) Analogous system\n(d) Fast Fourier Transform (FFT)"
+        }
+      ]
+    }
+  ]
+}

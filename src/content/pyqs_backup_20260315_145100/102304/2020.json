@@ -1,0 +1,277 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Examination, 2020",
+    "subject": "Thermodynamics",
+    "subject_slug": "thermodynamics",
+    "subject_code": "102304",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer from the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>For reversible adiabatic compression in a steady flow process, the work transfer per unit mass is\n                    </p>",
+          "options": [
+            "\\( \\int pdv \\)",
+            "\\( -\\int vdp \\)",
+            "\\( \\int TdS \\)",
+            "\\( -\\int sdT \\)"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Ice kept in a well insulated thermoflask is an example of which system?</p>",
+          "options": [
+            "Closed system",
+            "Open system",
+            "Isolated system",
+            "Non-flow adiabatic system"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Pressure reaches a value of absolute zero</p>",
+          "options": [
+            "at a temperature of -273K",
+            "under vacuum condition",
+            "at the earth's center",
+            "when molecular momentum of system becomes zero"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Work done in a free expansion process is</p>",
+          "options": [
+            "zero",
+            "negative",
+            "positive",
+            "maximum"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Two blocks which are at different states are brought into contact with each other and allowed to\n                        reach a final state of thermal equilibrium. The final temperature attained is specified by the\n                    </p>",
+          "options": [
+            "zeroth law of thermodynamics",
+            "first law of thermodynamics",
+            "second law of thermodynamics",
+            "third law of thermodynamics"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>A gas is compressed in a cylinder by a movable piston to a volume one-half of its original\n                        volume.\n                        During the process, 300 kJ heat left the gas and the internal energy remained same. What is the\n                        work\n                        done on the gas?</p>",
+          "options": [
+            "100 kN-m",
+            "150 kN-m",
+            "200 kN-m",
+            "300 kN-m"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>A series combination of two Carnot's engines operates between the temperatures of \\(\n                        180^\\circ\\text{C} \\) and \\( 20^\\circ\\text{C} \\). If the engines produce equal amount of\n                        work,\n                        then what is the intermediate temperature?</p>",
+          "options": [
+            "\\( 80^\\circ\\text{C} \\)",
+            "\\( 90^\\circ\\text{C} \\)",
+            "\\( 100^\\circ\\text{C} \\)",
+            "\\( 110^\\circ\\text{C} \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>If a closed system is undergoing an irreversible process, the entropy of the system</p>",
+          "options": [
+            "must increase",
+            "always remains constant",
+            "must decrease",
+            "can increase, decrease or remain constant"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The entropy of a mixture of ideal gases is the sum of the entropies of constituents evaluated at\n                    </p>",
+          "options": [
+            "temperature and volume of the mixture",
+            "temperature of the mixture and the partial pressure of the constituents",
+            "temperature and pressure of the mixture",
+            "pressure and volume of the mixture"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Increase in entropy of a system represents</p>",
+          "options": [
+            "increase in availability of energy",
+            "increase in temperature",
+            "decrease in pressure",
+            "degradation of energy"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define a thermodynamic system. Differentiate between open system, closed system and an isolated\n                        system with examples.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>1 kg of a fluid is compressed reversibly according to a law \\( pv = 0.25 \\) where p is in bar\n                        and v\n                        is in \\( \\text{m}^3/\\text{kg} \\). The final volume is \\( \\frac{1}{4} \\) of the initial\n                        volume. Calculate the work done on the fluid and sketch the process on a p-v diagram.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>0.15 \\( \\text{m}^3 \\) of an ideal gas at a pressure of 15 bar and 550 K is expanded\n                        isothermally\n                        to 4 times the initial volume. It is then cooled to 290 K at constant volume and then compressed\n                        back polytropically to its initial state. Calculate net work done and heat transferred during\n                        the\n                        cycle.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>0.2 \\( \\text{m}^3 \\) of air at 4 bar and \\( 130^\\circ\\text{C} \\) is contained in a system.\n                        A\n                        reversible adiabatic expansion takes place till the pressure falls to 1.02 bar. The gas is then\n                        heated at constant pressure till enthalpy increases by 72.5 kJ. Calculate (i) the work done and\n                        (ii)\n                        the index of expansion, if the above processes are replaced by a single reversible polytropic\n                        process giving the same work between the same.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>With the help of p-v, T-s and p-T diagram, explain the nature of common salt (NaCl).</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>A spherical vessel of 0.9 \\( \\text{m}^3 \\) capacity contains steam at 8 bar and 0.9 dryness\n                        fraction. Steam is blown off until the pressure drops to 4 bar. The valve is then closed and the\n                        steam is allowed to cool until the pressure falls to 3 bar. Assuming that the enthalpy of steam\n                        in\n                        the vessel remains constant during blowing-off periods, determine (i) the mass of steam\n                        blown-off;\n                        (ii) the dryness fraction of steam in the vessel after cooling and (iii) the heat lost by steam\n                        per\n                        kg during cooling.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Give the following statements of second law of thermodynamics: (i) Clausius statement (ii)\n                        Kelvin-Planck statement</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>A reversible heat engine operates between two reservoirs at temperatures \\( 700^\\circ\\text{C}\n                        \\)\n                        and \\( 50^\\circ\\text{C} \\). The engine drives a reversible refrigerator which operates\n                        between\n                        reservoirs at temperatures of \\( 50^\\circ\\text{C} \\) and \\( -25^\\circ\\text{C} \\). The\n                        heat\n                        transfer to the engine is 2500 kJ and the net work output of the combined engine refrigerator\n                        plant\n                        is 400 kJ. (i) Determine the heat transfer to the refrigerant and the net heat transfer to the\n                        reservoir at \\( 50^\\circ\\text{C} \\); (ii) Reconsider (i) above given that the efficiency of\n                        the\n                        heat engine and the COP of the refrigerator are each 45 per cent of their maximum possible\n                        values.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What do you mean by Clausius inequality? Explain with a practical example.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>1 kg of air initially at 8 bar pressure and 380 K expands polytropically (\\( pv^{1.2} =\n                        \\text{constant} \\)) until the pressure is reduced to one-fifth value. Calculate (i) final\n                        specific\n                        volume and temperature; (ii) change of internal energy, work done and heat interaction and (iii)\n                        change in entropy. Take \\( R = 0.287 \\text{ kJ/kg K} \\) and \\( \\gamma = 1.4 \\).</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Explain the concept of available and unavailable energy. When does the system become dead?</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Calculate the decrease in available energy when 20 kg of water at \\( 90^\\circ\\text{C} \\)\n                        mixes\n                        with 30 kg of water at \\( 30^\\circ\\text{C} \\), the pressure being taken as constant and the\n                        temperature of the surroundings being \\( 10^\\circ\\text{C} \\). Take \\( C_p \\) of water as\n                        4.18\n                        kJ/kg K.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Differentiate between ideal and real gas with the help of equation of state.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>(i) 1 kg of air at a pressure of 8 bar and a temperature of \\( 100^\\circ\\text{C} \\) undergoes\n                        a\n                        reversible polytropic process following the law \\( pv^{1.2} = \\text{constant} \\). If the\n                        final\n                        pressure is 1.8 bar, determine- (1) the final specific volume, temperature and increase in\n                        entropy;\n                        (2) the work done and the heat transfer. Assume \\( R = 0.287 \\text{ kJ/kg K} \\) and \\(\n                        \\gamma =\n                        1.4 \\). (ii) Repeat (a) assuming the process to be irreversible and adiabatic between end\n                        states.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>The readings from a sling psychrometer are as follows: Dry-bulb temperature = \\(\n                        30^\\circ\\text{C}\n                        \\), Barometer reading = 740 mm of Hg. Using steam tables, determine (i) dew point temperature;\n                        (ii)\n                        relative humidity; (iii) specific humidity; (iv) degree of saturation; (v) vapour density and\n                        (vi)\n                        enthalpy of mixture per kg of dry air.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>39.6 \\( \\text{m}^3/\\text{min} \\) of a mixture of recirculated room air and outdoor air enters\n                        cooling coil at \\( 31^\\circ\\text{C} \\) dry-bulb temperature and \\( 18.5^\\circ\\text{C} \\)\n                        wet-bulb temperature. The effective surface temperature of the coil is \\( 4.4^\\circ\\text{C}\n                        \\).\n                        The surface area of the coil is such as would give 12.5 kW of refrigeration with the given\n                        entering\n                        air state. Determine the dry- and wet-bulb temperatures of the air leaving the coil and the\n                        by-pass\n                        factor.</p>"
+        }
+      ]
+    }
+  ]
+}

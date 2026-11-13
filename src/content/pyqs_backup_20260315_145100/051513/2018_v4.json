@@ -1,0 +1,276 @@
+{
+  "metadata": {
+    "university": "Aryabhatta Knowledge University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2018",
+    "subject": "Computer Network",
+    "subject_slug": "computer-network",
+    "subject_code": "051513",
+    "year": 2018,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "All questions carry equal marks.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>The IETF standard documents are called</p>",
+          "options": [
+            "RFC",
+            "RCF",
+            "ID",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>The ____ is the physical path over which a message travels.</p>",
+          "options": [
+            "path",
+            "medium",
+            "protocol",
+            "route"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>The structure or format of data is called</p>",
+          "options": [
+            "syntax",
+            "semantics",
+            "struct",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Transport layer is implemented in</p>",
+          "options": [
+            "end system",
+            "NIC",
+            "ethernet",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>The functionalities of presentation layer includes</p>",
+          "options": [
+            "data compression",
+            "data encryption",
+            "data description",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Header of a frame generally contains</p>",
+          "options": [
+            "synchronization bytes",
+            "addresses",
+            "frame identifier",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>Which one of the following is the multiple access protocol for channel access control?</p>",
+          "options": [
+            "CSMA/CD",
+            "CSMA/CA",
+            "Both CSMA/CD and CSMA/CA",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>User datagram protocol is called connectionless because</p>",
+          "options": [
+            "all UDP packets are treated independently by transport layer",
+            "it sends data as a stream of related packets",
+            "it is received in the same order as sent order",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>Transport layer protocols deals with</p>",
+          "options": [
+            "application to application communication",
+            "process to process communication",
+            "node to node communication",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Which one of the following is not a function of network layer?</p>",
+          "options": [
+            "Routing",
+            "Internetworking",
+            "Congestion control",
+            "None of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>The ISO reference model defines seven protocol layers, each of which is responsible for a\n                        specific\n                        range of functions. By considering this model, explain the main functions performed by a\n                        protocol\n                        operating at- (a) the physical layer; (b) the transport layer; (c) the network layer.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Based on the single-bit parity error-detection code devise a new code to detect and correct a\n                        single\n                        1-bit error in 4 bytes of data. How many parity bits do you require? You may assume that parity\n                        bits\n                        are error-free.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>In the context of Transmission Control Protocol (TCP), briefly describe the purpose of TCP as\n                        well as\n                        the layer of the TCP/IP protocol architecture where it is found.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>TCP implements a mechanism called the three-way handshake. Indicate the purpose of such mechanism\n                        and\n                        using a diagram, give an example on how it works emphasising the values of the TCP flags used as\n                        well as the sequence number.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>With the help of neat diagrams, explain the term 'exponential backoff' in reference to CSMA/CD.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>List various congestion control mechanisms. Explain any one in detail.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve this question:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>State the need for an IP address. Also, explain various classes of IP addressing scheme.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>(a) Peer to peer networks</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>(b) Distance vector routing algorithm</p>"
+        },
+        {
+          "id": "q8_3",
+          "type": "theory",
+          "text": "<p>(c) OSPF routing protocol</p>"
+        },
+        {
+          "id": "q8_4",
+          "type": "theory",
+          "text": "<p>(d) E-mail</p>"
+        },
+        {
+          "id": "q8_5",
+          "type": "theory",
+          "text": "<p>(e) ALOHA</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Distinguish between the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>(a) TCP vs. UDP</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>(b) Static routing vs. Dynamic routing</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q9_3",
+          "type": "theory",
+          "text": "<p>(c) IMAP vs. PoP</p>"
+        }
+      ]
+    }
+  ]
+}

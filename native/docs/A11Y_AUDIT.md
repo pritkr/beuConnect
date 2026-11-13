@@ -1,324 +1,320 @@
-# BEUConnect native — accessibility & small-screen audit
+# BEUConnect native — accessibility status
 
-Read-only review of `native/src` on 2026-10-26. No source file was modified.
-Scope: `src/ui/index.tsx`, `src/app/{tabbar,shell,more,coming-soon}.tsx`, every
-`src/features/*/index.tsx` and the shared components they lean on
-(`results/components.tsx`, `notices/parts.tsx`, `tools/kit.tsx`,
-`pyqs/components.tsx`).
+Status document, 2026-10-28. Supersedes the 2026-10-26 read-only audit. The
+theme, the design system (`src/ui/index.tsx`) and the app shell (`src/app/`) are
+fixed and measured. Feature screens are handed off as one mechanical sweep plus
+two spoken-status patches, because five agents were editing `src/features/**`
+when this landed.
+
+Gate, 2026-10-28:
+
+```
+bun scripts/contrast.ts            OK — 112 gated pairs, every one at or above its threshold
+./scripts/accent-ink-sweep.sh      dry run — 26 replacements in 17 of 75 files (last run)
+```
+
+The sweep count is a snapshot: feature agents were still writing, and two runs
+minutes apart differed by a file. Re-run the dry run before applying; it is
+idempotent and reports only what is left.
 
 Method
-- Contrast: WCAG 2.x relative-luminance maths over the hex tokens in `nsh.json`
+- Contrast: WCAG 2.x relative luminance over the hex tokens in `nsh.json`
   (`cssVars.theme.light|dark`). Alpha tints are composited over their base
-  surface first. Text under 18.66 px bold needs 4.5:1 (3:1 above that — the 30 pt
-  `Stat` and 40–44 pt headlines are judged as large text), non-text UI needs 3:1.
-- Touch: 44 × 44 pt (Apple HIG / WCAG 2.5.5) as the bar, 24 pt as the absolute
-  floor (2.5.8).
+  surface first (`primary/12` over `card`, etc.). Text needs 4.5:1 (3:1 at
+  ≥ 18.66 px bold or ≥ 24 px), non-text UI 3:1.
+- Touch: 44 × 44 pt (Apple HIG / WCAG 2.5.5); 24 pt is the absolute floor
+  (2.5.8), and nothing in `src/ui` or `src/app` relies on it.
 - Layout: 320 pt viewport, `fontScale` 1.0 / 1.3 / 2.0.
 
-Severity: **blocker** = content is unreadable or unusable for a group of users;
-**major** = a primary task is hard or a standard is clearly breached;
-**minor** = real but survivable.
+---
 
-17 findings: **3 blocker, 8 major, 6 minor**.
+## Verdict — all 24 findings
+
+| # | Finding | Status | Where |
+|---|---|---|---|
+| A1 | Dark `text-accent` invisible | **Fixed + sweep** | `accent-ink` token; remaining feature sites swept |
+| A2 | Light `muted-foreground` failed every surface | **Fixed** | token `#6A5E4F`, 4.85–6.31 |
+| A3 | Light `primary` as ink and button fill | **Fixed + sweep** | `primary-ink`, `primary-foreground`; remaining sites swept |
+| A4 | Control outlines at 1.2–1.5:1 | **Fixed + sweep** | `border-strong`, 3.53–4.14; feature controls swept |
+| A5 | Light `chart-3` as text / progress fill | **Fixed + sweep** | token `#B26A00`, 3.62 on track; text uses swept |
+| T1 | `Chip` 36 pt | **Fixed** | `min-h-11 px-4` in `src/ui` |
+| T2 | `SectionHeader` action 36 pt | **Fixed** | `-mr-3 min-h-11 px-3` |
+| T3 | Search clear 24 pt, unlabelled | **Fixed** | `h-11 w-11`, `role="button"`, label |
+| T4 | Header back 40 pt | **Fixed** | `h-11 w-11`, hint, focus ring |
+| T5 | Syllabus topic controls 24/32 pt | **Fixed + sweep** | checkbox 44 pt + `hitSlop`; studied box swept |
+| S1 | Fixed 48 px line box clipped the rank number | **Fixed** | `leading-[48px]` gone (0 hits) |
+| S2 | Truncation cut distinguishing text | **Fixed + sweep** | results fixed; notice/routine lines swept |
+| S3 | 9 px type | **Fixed + sweep** | remaining 9 px labels swept to 11 px |
+| S4 | 7-column holiday grid 33.7 pt wide | **Accepted** | see exception below |
+| S5 | Rank caption / 52 pt time column | **Fixed** | `flex-wrap` on the rank row; clock column swept to `min-w` |
+| R1 | `Progress` silent to a screen reader | **Fixed** | `role`, `accessibilityValue`, `label` prop |
+| R2 | Async loads never announce | **Fixed** 2026-10-30 | lookup, notices board and announcement feed announce the load; background hydration stays quiet |
+| T6 | Attendance month cells 40 pt tall | **Fixed** 2026-10-30 | `h-11` + `active:opacity-70`; width stays 39 pt at 320 (7 columns) |
+| T7 | Syllabus undo bar 36 pt (Undo, dismiss) | **Fixed** 2026-10-30 | `min-h-11` / `h-11 w-11` |
+| P1 | Pressables that gave no touch feedback | **Fixed** 2026-10-30 | syllabus topic + saved row, calendar cells, routine grid, Wi-Fi switch now take `active:` |
+| N1 | Text overflowed its row at 320 pt | **Fixed** 2026-10-30 | home next-break value ellipsized, attendance "Target" label moved above its chips, data-browser placeholder shortened |
+| N2 | Screen title repeated under the nav header | **Fixed** 2026-10-30 | More + six settings screens (Settings, Profile, Appearance, Reminders, Storage, About, Offline data) |
+| N3 | Title truncation cut the differentiator | **Fixed** 2026-10-30 | notice title 2 → 3 lines, college name 1 → 2, settings profile title 1 → 2, result-table name 1 → 2 |
+| N4 | Horizontal `Scroll` given `flex-1` in a column painted zero height | **Fixed** 2026-10-30 | `ChipRail`, recently-opened papers and the leads session rail now `min-h-11` |
+
+Count: 23 of 24 fixed, 1 accepted exception (S4). No partials.
 
 ---
 
-## 1. Colour and contrast
+## Tokens — before → after, measured
 
-### A1 — Dark mode: every `text-accent` is invisible · **blocker**
-`nsh.json` → `cssVars.theme.dark.accent` is `#123B34` (a *surface* colour), but
-19 call sites use it as ink.
+Tokens live in `nsh.json` → `theme.cssVars.light|dark`. Light `primary`
+stays `#E4572E` as the ember **fill**; `primary-ink` is the readable form.
+`accent` / `accent-foreground` stay the surface pair.
 
-| pair | ratio | needs |
-|---|---|---|
-| accent on card `#1A1714` | **1.45** | 4.5 |
-| accent on background `#0E0C0A` | **1.58** | 4.5 |
-| accent on accent/12 badge | **1.40** | 4.5 |
+### Light
 
-Hits: `src/ui/index.tsx:185` (`Chip` mint), `:359` (`Badge` mint), `:394`
-(`Stat` mint); `src/features/tools/kit.tsx:115,156`; `src/features/pyqs/components.tsx:31,52`;
-`src/features/results/components.tsx:325,356`; `src/features/results/battle.tsx:40,254,286`;
-`src/features/home/index.tsx:235`; `src/features/pyqs/gate.tsx:310`;
-`src/features/settings/index.tsx:289`; `src/features/tools/index.tsx:971`.
+| Token | Before | After | Measured |
+|---|---|---|---|
+| `muted-foreground` | `#8A7D6D` | `#6A5E4F` | 5.96 bg · 6.31 card · 5.39 muted · 5.25 secondary (was 3.34–4.01) |
+| `primary-foreground` | `#FFF9F4` | `#241008` | 4.95 on `primary` (was 3.53) |
+| `sidebar-primary-foreground` | `#FFF9F4` | `#241008` | 4.95 (was 3.53) |
+| `primary-ink` | — (used `primary`, 3.19–3.68) | `#B0401D` | 5.51 bg · 5.84 card · 4.98 muted · 4.85 secondary |
+| `accent-ink` | — (used `accent`) | `#0E6B5C` | 6.05 bg · 6.41 card · 5.47 muted · 5.33 secondary |
+| `border-strong` | — (used `border`, 1.32) | `#8B7A66` | 3.91 bg · 4.14 card · 3.53 muted |
+| `chart-3` | `#E9A23B` | `#B26A00` | 4.24 card · 3.62 on the muted track (was 2.17 / 1.85) |
 
-The dark mint badge is *darker* than the card, so "mint" reads as a muddy hole
-and the label disappears. Light mode is fine (5.36–6.41).
+### Dark
 
-Fix — add a dedicated ink token per theme and swap the 19 `text-accent` uses to
-it. Do **not** recolour `accent` itself: `accent-foreground` on `accent` is
-already correct (light 6.24, dark 9.21) and `bg-accent` is a fill in the
-studied-topic checkbox.
+| Token | Before | After | Measured |
+|---|---|---|---|
+| `muted-foreground` | `#A99C8B` | `#B2A493` | 8.02 bg · 7.33 card · 6.86 muted · 6.71 secondary |
+| `primary-ink` | — (used `primary`) | `#FF7A4D` | 7.57 bg · 6.92 card |
+| `accent-ink` | — (used `accent`, 1.40–1.58) | `#6FE3C9` | 12.56 bg · 11.48 card |
+| `border-strong` | — (used `border`, 1.23) | `#7E7164` | 4.12 bg · 3.77 card · 3.53 muted |
 
-```jsonc
-// nsh.json
-"light": { "accent-ink": "#0E6B5C" },   // = today's accent, 6.05 on background
-"dark":  { "accent-ink": "#6FE3C9" }    // 11.48 on card, 12.56 on background
-```
+`ring` was already compliant and is unchanged: 3.68 light / 6.92 dark, both
+against the card. Decorative `border` stays at 1.32 / 1.23 — WCAG 1.4.11 does
+not gate decoration, only the outline that *is* a control's affordance. The
+gate prints it as INFO and does not fail on it.
 
-```diff
-- props.tone === "mint" ? "text-accent" : "text-foreground"
-+ props.tone === "mint" ? "text-accent-ink" : "text-foreground"
-```
+`bun scripts/contrast.ts --json` emits the same pairs for tooling;
+`--quiet` prints only failures; `--help` documents the flags. Exit 1 on any
+gated failure, so it can run in CI unchanged.
 
-### A2 — Light mode: `muted-foreground` fails on every surface · **blocker**
-`nsh.json` → light `muted-foreground` `#8A7D6D`. It is the app's most-used text
-colour (`Muted` `src/ui/index.tsx:83`, `Label` `:92`, `Subtitle` `:75`), so this
-is most of the secondary copy in the app.
+---
 
-| on | ratio |
+## Shell changes
+
+### `src/ui/index.tsx`
+
+- `Label` is `role="header"`; `SectionHeader` has a spoken heading, a
+  `trailing` slot, a 44 pt action in `primary-ink`, and `numberOfLines={1}`.
+- `Chip` is 44 pt (`min-h-11 px-4`), `border-border-strong` when inactive,
+  `text-accent-ink` for mint, focus ring, bold-when-active and a selected state
+  that is not colour-only.
+- `Btn` carries colour in one place (`ink`), adds `focus:ring-2 ring-ring`,
+  disables press when `disabled`, and reports `accessibilityState`.
+- `Field` and `Search` use `border-strong` plus `focus-within:ring-2 ring-ring`;
+  the clear control is a labelled 44 pt button.
+- `Card` is only interactive when it has a handler: then 44 pt,
+  `border-strong`, `role="button"`, label.
+- `Loading` groups its skeletons into one polite live region; `ErrorState`
+  uses `role="alert"`.
+- `Badge` and `Stat` use `primary-ink` / `accent-ink`; `Stat` is
+  `adjustsFontSizeToFit`, `minimumFontScale={0.6}`, `tabular-nums`.
+- `Progress` is a real `progressbar` with `accessibilityValue` and an optional
+  `label`; the fill animates `transform: scaleX`, not `width`, so it stays on
+  the compositor and never re-lays-out the row; the mint fill is `accent-ink`
+  (the dark `accent` surface reads as empty on the card).
+- `Ring` draws with `chart-1` / `chart-2`, not the surface tokens.
+- `Marquee` is a button only when it has `onPressItem`, with `hitSlop`.
+
+### `src/app/`
+
+- `tabbar.tsx`: `role="tablist"`, 52 pt tabs, `role="tab"` +
+  `accessibilityState.selected`, focus ring, 11 px labels capped at
+  `maxFontSizeMultiplier={1.4}`. Selected reads as pill + solid icon + bold
+  label + 3 px ember bar, so it survives greyscale.
+- `shell.tsx`: back is `h-11 w-11` with a hint and focus ring, header is
+  `min-h-12`, title is `role="header"` and one line, glyphs use `primary-ink`.
+- `more.tsx`: four spoken groups, 20 pt between groups / 8 pt inside, every row
+  `min-h-11` with a hint and `numberOfLines={2}`, chevron present.
+- `coming-soon.tsx`: 404 uses `primary-ink`; the fallback action is a secondary
+  `Btn`.
+
+No router or route-table change was needed.
+
+---
+
+## Platform layer — 2026-10-30
+
+### Reduce Motion
+
+`src/ui/motion.ts` exports `motionOn()` (`!reduceMotion()`) and
+`scrollAnimated()` for `scrollTo` / `scrollToIndex`. nsh already lands
+`createMotion` presets without moving, but every hand-rolled scroll was
+hard-coded `animated: true`, and every CSS transition ran regardless.
+
+Hand-rolled scrolls that jump instead of gliding when the setting is on:
+
+| File | What it jumps |
 |---|---|
-| background `#FBF8F4` | **3.79** |
-| card `#FFFFFF` | **4.01** |
-| muted `#F3ECE3` | **3.42** |
-| secondary `#F1E9DF` | **3.34** |
-| accent/12 over card | **3.35** |
+| `src/features/home/pager.tsx` | `go()` from a dot; nothing advances on a timer |
+| `src/features/syllabus/index.tsx` | `scrollToUnit` |
+| `src/features/results/table.tsx` | jump to a student's row |
+| `src/features/pyqs/data-table.tsx` | jump to a table row |
+| `src/features/pyqs/paper.tsx` | jump to a question |
 
-Dark is fine across the board (6.08–7.27).
+Class-level motion uses the `motion-reduce:` variant, which nsh maps to
+`reduce_motion()` and so reacts the moment the setting changes:
+`motion-reduce:transition-none` on every press and focus transition
+(`Card`, `Chip`, `Btn`, `Row`, `Check`, `Search`) and
+`motion-safe:animate-pulse` on `Skeleton`. Neither the `Marquee` nor the Home
+notice strip advances on a timer: a strip that moves while a student reads takes
+the page away from them. The notice strip is moved by swiping it or pressing a
+dot.
 
-Fix — `muted-foreground: "#6E6252"` → 5.62 / 5.95 / 5.07 / 4.94 on the four
-opaque surfaces. `#756858` is the lightest value that still clears 4.5 on
-`secondary` (4.50) if you want to keep it warm and faint.
+Entrances have one convention, `Enter` (`src/ui/enter.tsx`): content that
+replaces a skeleton arrives over 240 ms from `opacity: 0` and `translateY: 8`
+on the shared curve (`EASE` in `src/ui/motion.ts` — the same
+`cubic-bezier(0.23, 1, 0.32, 1)` the progress fill uses). The motion is created
+once per mount, so a signal changing inside it never replays. It is not used on
+a tab root: Home's focus card is opened many times a day and simply appears.
+With Reduce Motion the motion lands at rest: nothing moves and nothing is left
+invisible.
 
-### A3 — Light mode: `primary` as ink and as a button fill · **blocker**
-`nsh.json` → light `primary` `#E4572E`.
+A confirmation line that is inserted into the page (`flash()` in
+`features/notices/parts.tsx`) appears in one frame and goes in one three seconds
+later. It is the last child of its container, so nothing below it moves — a
+label is data, not an entrance.
 
-| pair | ratio | where |
+### Rails that painted nothing
+
+Three horizontal rails put `class="flex-1"` on the `Scroll` itself. A scroll
+view is the viewport and takes its size from its parent; inside a **column**,
+`flex-1` sets the *height* to zero, so the label and the row gaps painted and
+the chips did not. The chips were on screen for `app.texts()` and invisible to
+the student — a rendering test could not see it either.
+
+| File | Rail |
+|---|---|
+| `src/features/pyqs/components.tsx` | `ChipRail` (sort, batch, branch, semester, GATE year) |
+| `src/features/pyqs/browse.tsx` | recently opened papers |
+| `src/features/students/leads.tsx` | session chips |
+
+All three now use `class="min-h-11"`: a horizontal scroll takes its height from
+its content, and the floor is one chip. The notice rails already did this
+(`class="h-11"`), which is why they worked.
+
+### One title per screen
+
+The nav header already names the route on every platform, so no screen repeats
+its own name as the first thing in the body. `more.tsx` lost its
+"BEUConnect / More" block, and the settings area lost `ScreenIntro` — a
+label + title pair ("The app / About", "On this phone / Storage") that opened
+seven screens: Settings, Your profile, Appearance, Reminders, Storage, About and
+Offline data. Every one of those now opens on its first real control.
+
+### 320 pt pass — 2026-10-30
+
+`./scripts/shots.sh --width 320` shoots all 22 routes at 320×844. Three layout
+breaks showed up only at that width:
+
+- **Home, next break** — `9 days · Diwali / Bhai Dooj / Chhath Puja` ran off the
+  right edge. The label is now `shrink-0` and the value `flex-1 text-right` with
+  `numberOfLines={1}`, so it ellipsizes inside the card instead of leaving it.
+- **Attendance, target** — "Target" was squeezed into "TARG / ET" by three
+  chips in one row. The label now sits above the chips, which wrap.
+- **Data browser, search** — the placeholder "College, branch, batch or
+  semester" was cut mid-word by the field; it reads "College, branch or batch".
+
+Four truncation limits were also raised, because the word that tells two rows
+apart was the one being cut: a notice title (2 → 3 lines), a college name in the
+register (1 → 2), the settings profile title (1 → 2), a student name in a result
+table (1 → 2 — "PAPPU KUMAR Y…" now reads in full).
+
+---
+
+## Deferred sweep — `scripts/accent-ink-sweep.sh`
+
+Feature files are owned by other agents, so their fix is a script, not an edit
+here. It touches only `src/features/**/*.tsx` and never `*.test.tsx`,
+`src/ui/**` or `src/app/**`.
+
+```sh
+./scripts/accent-ink-sweep.sh            # dry run, prints file + rule + count
+./scripts/accent-ink-sweep.sh --apply    # rewrite in place
+bun scripts/contrast.ts && ./scripts/check.sh test
+```
+
+Every rule is a pure substitution and stops matching after it applies, so a
+second run is zero changes. Rules already fixed by a feature agent report
+nothing.
+
+Dry runs on 2026-10-28 reported 26–30 replacements in 17–20 of 74–75 files.
+The number moved on every run because feature agents were still editing, so this
+document does not pin it: the dry run prints the authoritative per-file list and
+per-rule totals, and only that output should be used when applying.
+
+| Rule | Replaces | Why |
 |---|---|---|
-| primary text on background (13 px) | **3.48** | `ui/index.tsx:161` — every `SectionHeader` action |
-| primary text on card (12–15 px) | **3.68** | `home/index.tsx:332` ("Open"), `notices/index.tsx:281` (in-body link), `tools/index.tsx:2388` |
-| primary text on primary/12 (11 px) | **3.19** | `ui/index.tsx:358` — `Badge` ember |
-| primary-foreground on primary (15 px) | **3.53** | `ui/index.tsx:210` + `:225` — the label inherits `text-primary-foreground` from the View, so **every primary `Btn`** is at 3.53 |
+| `text-accent` → `text-accent-ink` | mint ink | dark mint was a surface used as ink (A1) |
+| `text-primary` → `text-primary-ink` | ember ink | light ember text was 3.19–3.68 (A3) |
+| `text-chart-3` → `text-foreground` | amber ink | amber is a wash, not ink (A5) |
+| `bg-accent/70` → `bg-accent-ink` | battle meter | would read as empty in dark |
+| filter chip `min-h-10` → `min-h-11` | 44 pt | T1 |
+| calendar prev/next → `border-border-strong` | control outline | A4 |
+| `text-[9px]` → `text-[11px]` | legibility floor | S3 |
+| `w-[52px]` → `min-w-[52px]` | clock column | grows instead of clipping (S5) |
+| post title 2 → 3 lines, excerpt 3 → 2 | truncation | the differentiator is at the end (S2) |
 
-That last one is the main call to action on Home, Results, Syllabus and every
-empty state.
-
-Fix — darken the light ember fill to `#B8431F`. One token fixes all four:
-5.14 on background, 5.44 on card, 4.55 on primary/12, and `#FFF9F4` on the fill
-= 5.21. Dark already passes (5.78–7.57), leave it.
-
-### A4 — Interactive outlines sit at 1.2–1.5:1 · **major**
-`border-border` is `#E9DFD3` (light) / `#2E2822` (dark), i.e. a 1.24–1.34:1
-hairline. It is decorative on cards, but it is also the *only* affordance on
-real controls, where WCAG 1.4.11 wants 3:1:
-
-- `src/ui/index.tsx:188` — inactive `Chip` (`border-border bg-card`)
-- `src/ui/index.tsx:254` — `Field` input box
-- `src/features/tools/index.tsx:2153,2160` — calendar prev/next buttons
-- `src/features/syllabus/index.tsx:383` — unchecked studied-topic checkbox
-  (checked is `border-accent bg-accent`: **1.45** against the dark card, so the
-  box outline vanishes in dark mode and only the ✓ glyph distinguishes state)
-- `src/features/tools/kit.tsx:61,75` — Stepper −/+
-
-Fix — add `--border-strong` and use it where the border *is* the control.
-`#9C8B78` = 3.29 on card / 3.11 on background; dark `#71655A` = 3.15 / 3.45.
-Leave card and divider borders on `border-border`.
-
-```diff
-- class="min-h-9 flex-row items-center rounded-full border px-3.5 ..."
-+ class="min-h-11 flex-row items-center rounded-full border border-border-strong px-4 ..."
-```
-
-### A5 — Light mode: `chart-3` as text and as a progress fill · **minor**
-`#E9A23B` is 2.17 on card and 2.05 on background. `tools/kit.tsx:156` renders
-an 18 px bold metric in it — 18 px bold is just under the 18.66 px "large text"
-line, so it needs 4.5 and has 2.17. As a 2 pt fill on the `bg-muted` track it is
-**1.85** (`tools/index.tsx:1628`, the attendance risk bar) where 3:1 applies.
-
-Fix — text: `text-foreground` on an amber wash; `Badge` amber already does the
-right thing (`bg-chart-3/20 text-foreground`). Fill: `bg-[#B26A00]` → 3.62 vs
-`#F3ECE3`. Dark mode is fine (9.34–10.91).
+The script also keeps zero-match guard rules for the studied-topic checkbox
+(`accent-ink` outline + `border-strong` unchecked), `hitSlop` on the syllabus
+checkbox and save star, the 44 pt stepper, the destructive icon button, the
+routine subject (2 lines) and the rank headline (`leading-[48px]`). Those are
+already applied; the rules stay so a regression is caught by the next run.
+The clock rule earned its keep: it caught a `w-[52px]` reintroduced in
+`tools/routine.tsx` during the feature work.
 
 ---
 
-## 2. Touch targets
+## Manual patches (not substitutions)
 
-### T1 — `Chip` is 36 pt, and it is the app's primary filter control · **major**
-`src/ui/index.tsx:188` — `min-h-9` (36 pt), used **49 times** across every
-feature (branch, semester, batch, mode, category, year). Next to a 4 pt gap it
-is a miss-tap generator on a 5" phone.
+### R2 — announce async loads (applied 2026-10-30)
 
-Fix: `min-h-9` → `min-h-11`, and `px-3.5` → `px-4` so the 44 pt pill doesn't
-look squat. `Btn` (`:217`) already uses `min-h-11`, so this also makes the two
-consistent.
+`results/rank.tsx` and `results/battle.tsx` already announced. Three more
+screens swapped loading for content in silence:
 
-### T2 — `SectionHeader` action is 36 pt · **major**
-`src/ui/index.tsx:160` — `min-h-9` on the "See all" / "Refresh" link that heads
-33 sections.
+- `results/lookup.tsx` — right after `state.set({ status: "ready", … })` it now
+  speaks the SGPA and the PASS/FAIL word when there is one, else "Result
+  loaded."
+- `notices/parts.tsx` `syncNotices` — captures `wasLoaded` before the fetch and
+  announces only on a first load or an explicit refresh (`force || !wasLoaded`),
+  so the background hydration of a stale board stays quiet.
+- `notices/parts.tsx` `syncAnnouncements` — the same guard, worded for the feed.
 
-Fix: `min-h-11 justify-center rounded-full px-3` (keep `-mr-3` to keep the text
-optically aligned to the gutter, and add `accessibilityLabel={props.action}`).
+Never announced: an error. The error card is text the reader reaches, and a
+spoken alert over it would double the message.
 
-### T3 — Search clear button is 24 pt and unlabelled · **major**
-`src/ui/index.tsx:296-297` — `h-6 w-6` around a 12 px `✕`, no `role`, no label.
-Worst target in the app, on the control used to recover from a bad query.
+### S4 — accepted exception: holiday month grid
 
-```diff
-- <View class="h-6 w-6 items-center justify-center rounded-full bg-muted active:bg-border" onPress={() => props.onChange("")}>
--   <Text class="text-[12px] text-muted-foreground">✕</Text>
-+ <View class="h-11 w-11 -mr-3 items-center justify-center rounded-full active:bg-muted"
-+   onPress={() => props.onChange("")} role="button" accessibilityLabel="Clear search">
-+   <Text class="text-[13px] text-muted-foreground" accessibilityElementsHidden>✕</Text>
-```
+`src/features/tools/holidays.tsx` renders seven `flex-1` cells inside
+`Row gap-1` → `Card p-3.5` → `Body p-4`. At 320 pt each cell is
+(320 − 32 − 28 − 24) / 7 = **33.7 pt wide**, 44 pt tall, 4 pt apart. Height
+passes; width cannot reach 44 without dropping a weekday.
 
-### T4 — Header back button is 40 pt · **major**
-`src/app/shell.tsx:26` — `h-10 w-10`. It is the only way back on macOS/Windows/
-web (`NavPage` header) and the visual fallback on Android. 4 pt short, and the
-`h-12` row (`:23`) leaves no slack.
-
-Fix: `h-11 w-11 -ml-1` (44 pt, and `-ml-1` keeps the glyph on the optical
-margin). Same for the placeholder at `:34`.
-
-### T5 — Syllabus topic controls are 24 pt and 32 pt · **major**
-`src/features/syllabus/index.tsx:382` — the studied checkbox is `h-6 w-6`
-(24 pt) with `role="checkbox"`; `:409` — the save star is `h-8 w-8` (32 pt).
-Both sit inside a row where the *neighbouring* text block is also pressable
-(`:396`), so a near-miss toggles the accordion instead of the checkbox.
-
-Cheapest correct fix — keep the glyph size, expand the touch area:
-
-```diff
-- <View class="mt-0.5 h-6 w-6 items-center justify-center rounded-full border ..."
-+ <View class="mt-0.5 h-6 w-6 items-center justify-center rounded-full border ..." hitSlop={10}
-```
-
-`hitSlop` is a `HostProps` field (`.nsh/types/nsh/types.d.ts:559`), so it costs
-no layout. Do the same with `hitSlop={6}` on the star. If you prefer a real
-44 pt box, `h-11 w-11` + `-my-2.5` preserves the row height.
+Accepted, because hiding the day dots to gain width removes the only signal
+that a day is a holiday. Day cells are 44 pt tall and their neighbours are
+4 pt apart, so the target is usable; the spoken label is the full date.
+If the exception ever has to go, switch the month to week rows of four
+columns — do not shrink the dots.
 
 ---
 
-## 3. Type scale, truncation and small screens
+## Re-check before release
 
-### S1 — A 44 px number in a 48 px line box clips at any font scale · **major**
-`src/features/results/components.tsx:296` —
-`text-[44px] font-bold leading-[48px]`. `leading-[48px]` is a fixed pixel
-line-height: the glyphs scale with the OS font setting, the line box does not.
-At `fontScale: 1.3` the text is 57 px inside 48 px → clipped ascenders and a
-touching row below. This is the rank headline on the Rank screen.
-
-Fix: `text-[44px] font-bold tabular-nums tracking-tight` and delete the
-`leading-[48px]` (nsh's default leading is relative), or use `leading-tight`.
-Grep shows this is the only `leading-[Npx]` in `src` — everywhere else already
-uses unitless leading.
-
-### S2 — `numberOfLines` cuts the only distinguishing text · **major**
-- `src/features/results/components.tsx:263` — student name, 1 line. Two students
-  with the same first name and a long surname are indistinguishable in the table
-  and the merit list.
-- `src/features/results/components.tsx:267` — the reg number is `Mono` with **no**
-  `numberOfLines` and no `shrink`, inside a `flex-row` with a flexible college
-  name. At `fontScale ≥ 1.3` on 320 pt a 12-digit reg wraps **mid-number**.
-- `src/features/notices/parts.tsx:276,302` — notice titles, 2 lines. BEU notices
-  put the differentiator at the end ("… (B.Tech 3rd Sem)").
-- `src/features/tools/index.tsx:2006` — routine subject, 1 line; long subject
-  names become identical prefixes.
-
-Fixes: name → `numberOfLines={2}`; reg → `numberOfLines={1}` **plus**
-`class="shrink-0"` on the `Mono` and `flex-1` on the name so the number never
-breaks; notice title → `numberOfLines={3}` with the excerpt dropped to 2 (the
-card is already tall); routine subject → `numberOfLines={2}`.
-
-### S3 — 9 px type in seven places · **minor**
-`text-[9px]` sites: `home/index.tsx:255`, `syllabus/index.tsx:271` (the only
-place a subject's credits appear), `pyqs/components.tsx:94`,
-`pyqs/{gate:167,data:321,data-table:300,browse:81}`. 9 px at `fontScale: 1.0`
-is 12 px physical on a 3× device — under the ~11 px legibility floor, and it is
-never the decorative case: it is credits, paper variant and semester.
-
-Fix: bump all seven to `text-[11px]`; `Badge` already renders at 11 px, so they
-stay visually subordinate without being unreadable.
-
-### S4 — Seven-column holiday grid is 34 pt wide at 320 pt · **minor**
-`src/features/tools/index.tsx:2186` — `min-h-11 flex-1` cells inside `Row gap-1`
-inside `Card p-3.5` inside `Body p-4`. At 320 pt: (320 − 32 − 28 − 24) / 7 =
-**33.7 pt**. Height passes (44), width does not, and neighbours are 4 pt apart.
-
-Fix: `gap-0.5` + `p-2` on the card buys ~3.4 pt per cell (→ 37.1) — still short of
-44, which is a genuine limit of a 7-column month on 320 pt. If 44 pt is a hard
-requirement, switch the month to a 4-column grid of week rows, or accept 37 pt
-and record the exception. Do **not** hide the day dots to gain width: they are
-the only signal that a day has a holiday.
-
-### S5 — The "of 1,234" rank caption and the 52 pt time column · **minor**
-`src/features/results/components.tsx:297` puts `#1234` (44 px) beside
-`of 1,234` (13 px) in an `items-end` row with no `flex-wrap` and no `shrink`;
-`src/features/tools/index.tsx:1965` and `:2005` reserve a hard `w-[52px]` for a
-start/end time rendered at 14 px and 10–11 px — at `fontScale: 1.3` "10:45"
-needs ~59 pt and is either clipped or pushes the subject column.
-
-Fixes: add `flex-wrap` to the rank row (it degrades gracefully) and let the
-`#` value `shrink`; change `w-[52px]` to `min-w-[52px]` in both places so the
-column can grow instead of truncating the clock.
-
----
-
-## 4. Semantics
-
-### R1 — `Progress` is invisible to a screen reader · **minor**
-`src/ui/index.tsx:370-379` — a `View` pair with a percentage width, no `role`,
-no value. It is used at 7 sites, including `results/rank.tsx:191` (percentile)
-and `tools/index.tsx:1628` (attendance risk), where the bar is the message.
-`ProgressBar` in `syllabus/index.tsx:161` happens to print the percentage; the
-raw uses do not.
-
-```diff
-- <View class={`h-2 w-full overflow-hidden rounded-full bg-muted ${props.class ?? ""}`}>
-+ <View class={`h-2 w-full overflow-hidden rounded-full bg-muted ${props.class ?? ""}`}
-+   role="progressbar" accessibilityValue={{ min: 0, max: 100, now: pct }}
-+   accessibilityLabel={props.label ?? "Progress"}>
+```sh
+bun scripts/contrast.ts
+./scripts/accent-ink-sweep.sh          # expect 0 after --apply
+./scripts/check.sh test
+./scripts/shots.sh --scheme both       # visual check at fontScale 1.3
 ```
 
-`Progress` has no `label` prop today — add `label?: string`, or drop that line
-and let the surrounding `ProgressBar` (`syllabus/index.tsx:161`) carry the text.
-
-### R2 — Async results and notices never announce themselves · **minor**
-`announce()` from `nsh` is not called anywhere in `src` (0 hits). Results
-lookup (`results/lookup.tsx`), rank search (`results/rank.tsx`) and notice
-refresh (`notices/index.tsx`) replace a loading state with content silently —
-with VoiceOver/TalkBack the user hears nothing and cannot tell whether the tap
-registered. The error path is fine (it renders text the reader reaches).
-
-Fix: one call where the request resolves, e.g.
-
-```ts
-announce(`Result loaded. SGPA ${data.sgpa}, ${data.status.toLowerCase()}.`);
-```
-
-Keep it short and never announce a failure — the error card already has focus.
-
----
-
-## What already passes (checked, no action)
-
-- `TabBar` (`src/app/tabbar.tsx:80-82`) has `role="tab"`,
-  `accessibilityState.selected` and a label; the active pill uses a background
-  *and* weight, not colour alone. Only nit: the tabs are not wrapped in a
-  `tablist`. Its 10 px text (`:86`) is the smallest type in the frame — fine for
-  a tab bar, since each tab also carries `accessibilityLabel`.
-- The studied-topic checkbox has a real `accessibilityState.checked` and a
-  ✓-vs-number cue (`syllabus/index.tsx:386-391`) — state is not colour-only, and
-  the label is written out (`:388`).
-- The unread notice dot (`notices/parts.tsx:270`) is backed by a spoken
-  "Unread." prefix (`:268`), so the state survives without colour.
-- Dark `muted-foreground`, both themes' `accent-foreground` on `accent`, dark
-  `primary`, and `foreground` on every tinted wash are all ≥ 6:1.
-- `Field` is `min-h-12` and `Btn` is `min-h-11`; no fixed-height text containers
-  outside S1, so `fontScale: 1.3` does not clip anywhere else.
-
----
-
-## Fix order
-
-1. `nsh.json` light `muted-foreground` → `#6E6252` (A2, fixes ~90% of secondary text).
-2. `nsh.json` light `primary` → `#B8431F` (A3, fixes the main CTA and every ember label).
-3. Add `accent-ink` per theme, swap the 19 `text-accent` uses (A1, unreadable in dark).
-4. Add `border-strong`, apply to Chip / Field / Stepper / calendar nav / checkbox (A4).
-5. `Chip` → `min-h-11 px-4` (T1, 49 call sites, one line).
-6. `Search` clear → 44 pt + `role` + `accessibilityLabel` (T3, worst target).
-7. `SectionHeader` action → `min-h-11` (T2); `PageHeader` back → `h-11 w-11` (T4).
-8. `hitSlop={10}` on the syllabus checkbox, `hitSlop={6}` on the star (T5).
-9. Delete `leading-[48px]` in the rank headline (S1); loosen `numberOfLines` and
-   pin the reg number (S2).
-10. Sweep `text-[9px]` → `text-[11px]`, add `role="progressbar"` to `Progress`,
-    and one `announce()` per async load (S3, R1, R2) — then re-check S4/S5 at
-    320 pt on a real device.
+Touch and layout still need one pass on a 320 pt device at `fontScale 1.3` for
+the screens the sweep touches; the token and semantics gates are automated.

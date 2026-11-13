@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 6th Semester Exam., 2016",
+    "subject": "Signals and Systems",
+    "subject_slug": "signals-and-systems",
+    "subject_code": "031610",
+    "year": 2016,
+    "semester": 6,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "Let $\\delta(t)$ denote the delta function. The value of the integral $\\int_{-\\infty}^{\\infty} \\delta(t) \\cos(\\frac{3t}{2}) dt$ is",
+              "marks": 2,
+              "options": [
+                "1",
+                "-1",
+                "0",
+                "$\\pi/2$"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "If a signal $f(t)$ has energy $E$, the energy of signal $f(2t)$ is equal to",
+              "marks": 2,
+              "options": [
+                "$E$",
+                "$E/2$",
+                "$2E$",
+                "$4E$"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "The system $y(t) = e^{x(t)}$ is",
+              "marks": 2,
+              "options": [
+                "stable and causal",
+                "non-causal and stable",
+                "unstable and causal",
+                "unstable and non-causal"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "The system represented by $h(n) = (0.99)^n u(n+2)$ is",
+              "marks": 2,
+              "options": [
+                "unstable because it is an FIR system",
+                "stable because it is an IIR system",
+                "unstable because it does not obey BIBO stability criteria",
+                "stable because it obeys BIBO stability criteria"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "The impulse response of a system is $h(t) = \\delta(t-0.5)$. If two such systems are cascaded, the impulse response of the overall system will be",
+              "marks": 2,
+              "options": [
+                "$0.5\\delta(t-0.25)$",
+                "$\\delta(t-0.25)$",
+                "$\\delta(t-1)$",
+                "$0.5\\delta(t-1)$"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "If $x(t)$ is odd, then its Fourier series coefficients must be",
+              "marks": 2,
+              "options": [
+                "real and odd",
+                "imaginary and odd",
+                "real and even",
+                "imaginary and even"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "The Laplace transform of a unit ramp function starting at $t=a$ is",
+              "marks": 2,
+              "options": [
+                "$\\frac{1}{(s+a)^2}$",
+                "$\\frac{e^{-as}}{(s+a)^2}$",
+                "$\\frac{e^{-as}}{s^2}$",
+                "$\\frac{a}{s^2}$"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "If $L[f(t)] = \\frac{2(s+1)}{s^2 + 2s + 5}$, then $f(0^+)$ and $f(\\infty)$ are given by",
+              "marks": 2,
+              "options": [
+                "0, 2 respectively",
+                "2, 0 respectively",
+                "0, 1 respectively",
+                "2/5, 0 respectively"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "If the impulse response of a discrete time system is $h(n) = -5^n u(-n-1)$, then the system function $H(z)$ is equal to",
+              "marks": 2,
+              "options": [
+                "$\\frac{-z}{z-5}$ and the system is stable",
+                "$\\frac{z}{z-5}$ and the system is stable",
+                "$\\frac{-z}{z-5}$ and the system is unstable",
+                "$\\frac{z}{z-5}$ and the system is unstable"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "The output of discrete LTI system is always identical to the input signal, when the unit impulse response $h(n)$ is",
+              "marks": 2,
+              "options": [
+                "unit step",
+                "unit impulse",
+                "all ones",
+                "ramp"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "For the signal $x(t)$ shown in the figure below, find the signals (i) $x(t-2)$, (ii) $x(2t+3)$, (iii) $x(\\frac{3}{2}t)$ and (iv) $x(-t+1)$:",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "Find whether the following signals are periodic or not :\n(i) $x(t) = 2\\cos(10t+1) - \\sin(4t+1)$\n(ii) $\\cos 60\\pi t + \\sin 50\\pi t$\n(iii) $2u(t) + 2\\sin 2t$\n(iv) $3\\cos 4t + 2\\sin 2\\pi t$\n(v) $u(t) - \\frac{1}{2}$\n(vi) $\\sin^2 t$",
+          "marks": 7
+        },
+        {
+          "id": "3a",
+          "text": "Check whether the following systems are linear or not :\n(i) $\\frac{dy}{dt} + 3ty(t) = t^2 x(t)$\n(ii) $\\frac{dy(t)}{dt} + 2y(t) = x^2(t)$\n(iii) $y(t) = \\int_{-\\infty}^t x(\\tau) d\\tau$\n(iv) $\\frac{dy}{dt} + 2y(t) = x(t) \\frac{dx(t)}{dt}$\n(v) $y(n) = Ax(n) + B$\n(vi) $y(n) = 2x(n) + \\frac{1}{x(n-1)}$\n(vii) $y(n) = nx(n)$",
+          "marks": 7
+        },
+        {
+          "id": "3b",
+          "text": "For each of the following systems, determine whether the system is time-invariant :\n(i) $y(t) = tx(t)$\n(ii) $y(t) = x(t)\\cos(50\\pi t)$\n(iii) $y(t) = x(t^2)$\n(iv) $y(t) = x(-t)$\n(v) $y(t) = e^{x(t)}$\n(vi) $y(n) = x(2n)$\n(vii) $y(n) = x(n) + nx(n-1)$\n(viii) $y(n) = x^2(n-1)$",
+          "marks": 7
+        },
+        {
+          "id": "4a",
+          "text": "Prove that the output of a discrete time system can be represented as a weighted sum of shifted impulse responses.",
+          "marks": 7
+        },
+        {
+          "id": "4b",
+          "text": "Obtain the convolution of the following sequence :\n$x(n) = u(n) - u(n-7)$, $h(n) = u(n-1) - u(n-4)$",
+          "marks": 7
+        },
+        {
+          "id": "5",
+          "text": "Obtain the differential equations governing the following systems :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "5a",
+              "text": "A mechanical translational system consisting of a mass $M$, a spring with constant $k$, and a damper with constant $B$, with a force $f(t)$ applied and displacement $x(t)$ indicated."
+            },
+            {
+              "id": "5b",
+              "text": "A series RLC circuit with resistor $R$, inductor $L$, and capacitor $C$ driven by a voltage source $v(t)$."
+            },
+            {
+              "id": "5c",
+              "text": "An electrical network with a $2\\Omega$ resistor, a $1\\text{ H}$ inductor, and a $2\\text{ F}$ capacitor, with input voltage $v(t)$ and output $y(t)$."
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "text": "Find cosine Fourier series of half-wave rectified sine function.",
+          "marks": 14
+        },
+        {
+          "id": "7a",
+          "text": "For the waveform shown in the figure below (a periodic rectangular pulse train), find the Laplace transform.",
+          "marks": 7
+        },
+        {
+          "id": "7b",
+          "text": "For the waveform shown in the figure below (a single triangular pulse), find the Laplace transform.",
+          "marks": 7
+        },
+        {
+          "id": "8",
+          "text": "Using Laplace transform, solve the following differential equation :\n$\\frac{d^3y(t)}{dt^3} + 7\\frac{d^2y(t)}{dt^2} + 16\\frac{dy(t)}{dt} + 12y(t) = x(t)$\nif $\\frac{dy(0^-)}{dt} = 0$; $\\frac{d^2y(0^-)}{dt^2} = 0$, $y(0^-) = 0$ and $x(t) = \\delta(t)$",
+          "marks": 14
+        },
+        {
+          "id": "9",
+          "text": "Find the impulse response and step response for the following system :\n$y(n) - \\frac{3}{4}y(n-1) + \\frac{1}{8}y(n-2) = x(n)$",
+          "marks": 14
+        }
+      ]
+    }
+  ]
+}

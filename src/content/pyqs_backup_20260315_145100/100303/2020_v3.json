@@ -1,0 +1,245 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 3rd Semester Exam., 2020 (New Course)",
+    "subject": "BASIC ELECTRONICS ENGINEERING",
+    "subject_slug": "basic-electronics-engineering",
+    "subject_code": "100303",
+    "year": 2020,
+    "semester": 3,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer the following questions (any seven) :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>Why is negative feedback desired in amplifier application?</p>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>Draw the voltage transfer curve of op-amp.</p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "theory",
+          "text": "<p>State the Barkhausen's criteria for electronic system to oscillate with feedback.</p>"
+        },
+        {
+          "id": "q1_4",
+          "type": "theory",
+          "text": "<p>How is amplifier different from the oscillator?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_5",
+          "type": "theory",
+          "text": "<p>Why is the reception in the case of amplitude modulation usually noisy?</p>"
+        },
+        {
+          "id": "q1_6",
+          "type": "theory",
+          "text": "<p>What is cell splitting and how does it increase the capacity of cellular network?</p>"
+        },
+        {
+          "id": "q1_7",
+          "type": "theory",
+          "text": "<p>Justify that BJT is current controlled while FET is voltage-controlled device.</p>"
+        },
+        {
+          "id": "q1_8",
+          "type": "theory",
+          "text": "<p>Name the breakdown mechanism in the lightly doped P-N junction diode under reverse biased\n                        condition.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "theory",
+          "text": "<p>Why is Gray code also called as reflected code? Convert \\( (396)_{10} \\) to Gray code.</p>"
+        },
+        {
+          "id": "q1_10",
+          "type": "theory",
+          "text": "<p>For the logical circuit shown in the figure below, derive the simplified Boolean expression for\n                        output Y.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/244.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Draw the waveform of output \\( V_0 \\) and explain the operation of circuit in the figure given\n                        below.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/234.jpg\"/>",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Calculate the value of \\( R_1 \\) in the biasing circuit in the figure given below, so that the\n                        Q-point is fixed at \\( I_C = 8 \\text{ mA} \\) and \\( V_{CE} = 3 \\text{ V} \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/231.jpg\"/>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Calculate the maximum DC voltage and DC current available from a half-wave rectifier shown in the\n                        figure given below. What is the PIV of the diode used in the rectifier?</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/243.jpg\"/>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>In the figure given below, calculate the load current \\( I_L \\) and Zener diode current \\( I_Z\n                        \\).</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/242.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Minimize the given Boolean function F using K map in SOP and implement using NAND gate: \\(\n                        F(A,B,C,D) = AB\\overline{C}D + \\overline{A}BCD \\) + \\(\n                        \\overline{A}\\overline{B}\\overline{C} +\n                        \\overline{A}\\overline{B}\\overline{D} + A\\overline{C} + A\\overline{B}C + \\overline{B}C \\)\n                    </p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>The circuit given below is the basic application of op-amp to perform the addition operation:\n                        Explain the operation of circuit and derive the expression of output voltage.</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/245.jpg\"/>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Design the voltage follower using op-amp and explain the operation.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>Draw the circuit diagram of voltage-shunt feedback amplifier and derive the expression of\n                        closed-loop voltage gain.</p>",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of cellular network and briefly explain its operation.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Draw the functional block diagram of AM transmitter and receiver.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Design Schmitt trigger using IC 555 timer and explain its operation with the help of functional\n                        diagram.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>Draw the basic circuit of an R-C phase-shift oscillator and explain its operation. If \\(\n                        R_1=R_2=R_3=450 \\text{ k}\\Omega \\) and \\( C_1=C_2=C_3=60 \\text{ pF} \\), determine the\n                        frequency of oscillation in phase-shift oscillator.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>A new clocked X-Y flip-flop is defined with inputs X and Y in addition to the clock input. The\n                        flip-flop functions are as follows:<br/>\n                        If \\( XY=00 \\) the flip-flop changes state with each clock pulse.<br/>\n                        If \\( XY=01 \\) the flip-flop state Q becomes 1 with the next clock pulse.<br/>\n                        If \\( XY=10 \\), the flip-flop state Q becomes 0 with the next clock pulse.<br/>\n                        If \\( XY=11 \\), no change of state occurs with the clock pulse.<br/>\n                        Write the truth table and excitation table of X-Y flip-flop. Implement the X-Y flip-flop using a\n                        J-K flip-flop.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is the race around condition in J-K flip-flop? What are the methods to resolve the race\n                        around condition in J-K flip-flop? Explain each method with the help of example.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What are the problems with normal encoder? How can these problems be solved by the priority\n                        decoder? Design 2 to 4 lines priority encoder.</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Draw the block diagram of micro-controller and briefly explain each block.</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    }
+  ]
+}

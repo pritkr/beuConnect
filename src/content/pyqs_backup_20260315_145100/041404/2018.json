@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2018",
+    "subject": "ANALOG ELECTRONICS",
+    "subject_slug": "analog-electronics",
+    "subject_code": "041404",
+    "year": 2018,
+    "semester": 4,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Section 1",
+      "questions": [
+        {
+          "id": "1",
+          "text": "Choose the correct answer from the following (any seven) :",
+          "marks": 14,
+          "sub_questions": [
+            {
+              "id": "1a",
+              "text": "When there is no base current in a transistor switch, the output voltage from the transistor is",
+              "options": [
+                "low",
+                "high",
+                "unchanged",
+                "unknown"
+              ]
+            },
+            {
+              "id": "1b",
+              "text": "If the emitter resistance increases, the collector voltage",
+              "options": [
+                "decreases",
+                "stays the same",
+                "increases",
+                "breaks down the transistor"
+              ]
+            },
+            {
+              "id": "1c",
+              "text": "Consider 49 cascaded amplifiers having individual rise time as 2 n sec, 3 n sec, ..., 50 n sec. The input waveform rise time is 1 n sec. Then the output signal rise time is given by (assume output signal rise time is measured within 10 percent range of the final output signal)",
+              "options": [
+                "39-28 $\\mu$ sec",
+                "2.28 $\\mu$ sec",
+                "0.228 $\\mu$ sec",
+                "39.28 $\\mu$ sec"
+              ]
+            },
+            {
+              "id": "1d",
+              "text": "Which capacitance(s) in hybrid $\\pi$ model represent(s) the storage of excess minority carriers at the base emitter junction?",
+              "options": [
+                "Diffusion capacitance",
+                "Transition capacitance",
+                "Both (i) and (ii)",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1e",
+              "text": "Why do the internal capacitances of transistor at low frequencies treated as open circuits by completely neglecting their effects in analysis?",
+              "options": [
+                "Due to high reactance",
+                "Due to low reactance",
+                "Due to moderate reactance",
+                "None of the above"
+              ]
+            },
+            {
+              "id": "1f",
+              "text": "Which among the below assertions is not a salient feature/property of CE amplifier?",
+              "options": [
+                "High voltage gain",
+                "High current gain",
+                "High input resistance",
+                "High output resistance"
+              ]
+            },
+            {
+              "id": "1g",
+              "text": "In a power amplifier, the collector current flows for $270^\\circ$ of the input cycle. The operation is",
+              "options": [
+                "class A",
+                "class B",
+                "class AB",
+                "class C"
+              ]
+            },
+            {
+              "id": "1h",
+              "text": "Which capacitor is used to block DC portion by allowing to pass only AC portion of the amplified signal to load?",
+              "options": [
+                "Input coupling capacitor",
+                "Bypass capacitor",
+                "Output coupling capacitor",
+                "All of the above"
+              ]
+            },
+            {
+              "id": "1i",
+              "text": "When the circuit is switched on, the loop gain of an Wien bridge oscillator is",
+              "options": [
+                "1",
+                "more than 1",
+                "less than 1",
+                "about 0.5"
+              ]
+            },
+            {
+              "id": "1j",
+              "text": "If Q of an L-C circuit increases, then bandwidth",
+              "options": [
+                "increases",
+                "decreases",
+                "remains the same",
+                "Insufficient data"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Section 2",
+      "questions": [
+        {
+          "id": "2a",
+          "text": "Explain the frequency distortion in amplifier and list the various causes for distortion.",
+          "marks": 7
+        },
+        {
+          "id": "2b",
+          "text": "Draw the approximate small-signal equivalent circuit at low frequency for common-collector amplifier with load resistance $R_L$. Compute the input resistance in terms of $h$ parameters.",
+          "marks": 7
+        },
+        {
+          "id": "3a",
+          "text": "Draw and explain the working of low-frequency small-signal equivalent circuit of common base BJT.",
+          "marks": 6
+        },
+        {
+          "id": "3b",
+          "text": "Compute the input impedance $R_i'$ using the equivalent circuit diagram given in figure below at frequency $f = 30 \\text{ MHz}$, where $g_m = 50 \\text{ mA/V}$, $R_L = 2 \\text{ k}\\Omega$ and $C_L = 20 \\text{ pF}$. [Diagram: Hybrid-pi model with $V_s$, $50 \\Omega$, $100 \\Omega$, $1 \\text{ k}\\Omega$, $R_L$, $C_L$, $V_i$, $V_o$, $100 \\text{ pF}$ and $3 \\text{ pF}$ capacitances, and current source $g_m V_{b'e}$.]",
+          "marks": 8
+        },
+        {
+          "id": "4a",
+          "text": "Draw and explain the working of Bootstrapped Darlington circuit.",
+          "marks": 7
+        },
+        {
+          "id": "4b",
+          "text": "Explain the $f_\\beta$ and $f_T$, which are bandwidths of the circuit and short circuit current-gain bandwidth product respectively.",
+          "marks": 7
+        },
+        {
+          "id": "5a",
+          "text": "The input to a low-pass amplifier is a pulse of width $t_p$. Sketch the output waveform and explain the intermediate steps involved to achieve the output.",
+          "marks": 10
+        },
+        {
+          "id": "5b",
+          "text": "What must be the relationship between $t_p$ and high 3-dB frequency $f_H$ in order to amplify the pulse without excessive distortion?",
+          "marks": 4
+        },
+        {
+          "id": "6a",
+          "text": "Compute overall upper 3-dB frequency for four interacting stages amplifier having individual stage upper 3-dB frequency, $f_1 = 4 \\text{ MHz}$, $f_2 = 4.2 \\text{ MHz}$, $f_3 = 4.1 \\text{ MHz}$ and $f_4 = 3.9 \\text{ MHz}$.",
+          "marks": 8
+        },
+        {
+          "id": "6b",
+          "text": "Define tilt. How is the tilt related to the low 3-dB frequency $f_L$?",
+          "marks": 6
+        },
+        {
+          "id": "7a",
+          "text": "Explain thermal and shot noises associated to the amplifier and briefly discuss the thermal-resistance noise voltage and mean-square shot-noise current in the context of thermal and shot noises respectively.",
+          "marks": 7
+        },
+        {
+          "id": "7b",
+          "text": "Compute the expression for current gain using small-signal equivalent circuit at high frequency for common-source FET amplifier with load resistance $R_L$.",
+          "marks": 7
+        },
+        {
+          "id": "8a",
+          "text": "Explain the working of phase-shift oscillator.",
+          "marks": 7
+        },
+        {
+          "id": "8b",
+          "text": "Derive expression for the oscillation frequency of a Colpitts oscillator and compute its value for given $L = 10 \\text{ mH}$, $C_1 = 24 \\text{ nF}$ and $C_2 = 240 \\text{ nF}$.",
+          "marks": 7
+        },
+        {
+          "id": "9a",
+          "text": "Explain the working of class-B push-pull amplifier and compute the maximum conversion efficiency.",
+          "marks": 7
+        },
+        {
+          "id": "9b",
+          "text": "Compute the bandwidth for single-tuned BJT amplifier using one parallel tuned circuit as load.",
+          "marks": 7
+        }
+      ]
+    }
+  ]
+}

@@ -9,6 +9,7 @@
 import { Scroll, Text, View } from "nsh";
 import { Badge, Chip, Label, Muted, Skeleton } from "../../ui";
 import { Icon } from "../../ui/icons";
+import { branchIcon } from "../../ui/branch-icon";
 import { BRANCH_META } from "../syllabus/data/packs";
 import {
   KIND_LABEL,
@@ -36,6 +37,7 @@ export function BranchRail(props: { value: () => string; onPick: (branch: string
             <Chip
               label={branch.short}
               active={props.value() === branch.code}
+              icon={branchIcon(branch.code)}
               onPress={() => props.onPick(branch.code)}
             >
               {branch.short}
@@ -83,11 +85,11 @@ export function SubjectRow(props: { subject: NoteSubject; onPress: () => void })
       accessibilityLabel={`${subject.name}, ${plural(subject.vvi.length, "VVI topic")}, ${plural(subject.files.length, "note")}`}
     >
       <View class="flex-1 gap-1">
-        <Text class="text-[15px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+        <Text class="text-[15px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
           {subject.name}
         </Text>
         {lead ? (
-          <Text class="text-[12px] leading-4 text-muted-foreground" numberOfLines={1}>
+          <Text class="text-[12px] leading-4 text-muted-foreground" style={{ numberOfLines: 1 }}>
             {lead.topic}
           </Text>
         ) : null}
@@ -130,7 +132,7 @@ export function VviCard(props: {
       </View>
 
       {topic.note ? (
-        <Text class="text-[15px] leading-6 text-foreground" selectable>
+        <Text class="text-[15px] leading-6 text-foreground" style={{ userSelect: "text" }}>
           {topic.note}
         </Text>
       ) : (
@@ -145,7 +147,7 @@ export function VviCard(props: {
           accessibilityLabel={`Copy ${topic.topic}`}
         >
           <Icon name={props.copied() ? "check" : "note"} size={14} class="text-primary-ink" />
-          <Text class="text-[13px] font-semibold text-primary-ink" numberOfLines={1}>
+          <Text class="text-[13px] font-semibold text-primary-ink" style={{ numberOfLines: 1 }}>
             {props.copied() ? "Copied" : "Copy topic"}
           </Text>
         </View>
@@ -171,7 +173,7 @@ export function NoteFileRow(props: { file: NoteFile; onPress: () => void }) {
         <Icon name="file-pdf" size={18} class="text-primary-ink" />
       </View>
       <View class="flex-1 gap-1">
-        <Text class="text-[14px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+        <Text class="text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
           {file.title}
         </Text>
         <View class="flex-row flex-wrap items-center gap-2">

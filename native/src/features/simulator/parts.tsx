@@ -130,7 +130,7 @@ export function PaperRow(props: {
       <Row class="min-h-[68px] items-center gap-3 px-4 py-2">
         <Col class="flex-1 gap-1">
           <Row class="items-start gap-2">
-            <Text class="flex-1 text-[14px] font-semibold leading-[18px] text-foreground" numberOfLines={2}>
+            <Text class="flex-1 text-[14px] font-semibold leading-[18px] text-foreground" style={{ numberOfLines: 2 }}>
               {name}
             </Text>
             <View class={`min-w-7 items-center justify-center rounded-full border px-1.5 py-0.5 ${CHIP_SURFACE[tone()]}`}>
@@ -139,7 +139,7 @@ export function PaperRow(props: {
               </Text>
             </View>
           </Row>
-          <Text class="text-[11px] leading-4 tabular-nums text-muted-foreground" numberOfLines={1}>
+          <Text class="text-[11px] leading-4 tabular-nums text-muted-foreground" style={{ numberOfLines: 1 }}>
             {meta()}
           </Text>
         </Col>
@@ -149,7 +149,7 @@ export function PaperRow(props: {
             <Input
               class="min-h-11 w-full bg-transparent text-center text-[16px] font-semibold tabular-nums text-foreground"
               value={props.mark()}
-              onChange={props.onMark}
+              onChange={({ value }) => props.onMark(value)}
               onBlur={props.onBlur}
               keyboardType="number-pad"
               maxLength={2}
@@ -238,7 +238,7 @@ export function TargetCard(props: { plan: () => TargetPlan; onStep: (tenths: num
         <Text class="text-[14px] font-semibold leading-5 text-foreground">{planHeadline(props.plan())}</Text>
         <Each of={alternatives(props.plan())} key={(option) => `${option.index}-${option.need}`}>
           {(option) => (
-            <Text class="text-[13px] leading-5 text-muted-foreground" numberOfLines={1}>
+            <Text class="text-[13px] leading-5 text-muted-foreground" style={{ numberOfLines: 1 }}>
               {`or ${option().need}/${option().max} in ${option().name}`}
             </Text>
           )}

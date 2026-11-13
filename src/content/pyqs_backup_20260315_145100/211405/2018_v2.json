@@ -1,0 +1,282 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Exam., 2018",
+    "subject": "Discrete Mathematical Structure and Graph Theory",
+    "subject_slug": "discrete-mathematical-structure-and-graph-theory",
+    "subject_code": "211405",
+    "year": 2018,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer (any seven):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "For any three sets A, B and C, which of the following statements is wrong?",
+          "options": [
+            "\\( A \\cup (B \\cup C) = (A \\cup B) \\cap C \\)",
+            "\\( A \\cup (B \\cup C) = A \\cup (B \\cup C) \\)",
+            "\\( A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C) \\)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "Let A and B be two non-empty sets. Then the set of all ordered pairs (a, b), where \\( a \\in A\n                        \\)\n                        and \\( b \\in B \\) is called",
+          "options": [
+            "product set",
+            "poset",
+            "binary set",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "If \\( (a,a) \\in R \\) or equivalently \\( a R a \\), \\( \\forall a \\in A \\), then a relation\n                        R\n                        on a set A is called",
+          "options": [
+            "equivalent",
+            "reflexive",
+            "symmetric",
+            "anti-symmetric"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "Let A and B be finite sets with \\( |A| = n \\) and \\( |B| = m \\). How many functions are\n                        possible\n                        from A to B with A as the domain?",
+          "options": [
+            "n",
+            "\\( m^m \\)",
+            "m",
+            "\\( m^n \\)"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "For the functions f and g defined by \\( f(x) = x^3 \\) and \\( g(x) = x^2 + 1 \\; \\forall x\n                        \\in R\n                        \\), the value of \\( (g \\circ f)(x) \\) is",
+          "options": [
+            "\\( x^2 + 1 \\)",
+            "\\( x^3 + 1 \\)",
+            "\\( x^6 + 1 \\)",
+            "\\( x^5 + 1 \\)"
+          ],
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "A group G is said to be Abelian (or commutative) if for every",
+          "options": [
+            "\\( a, b \\in G \\)",
+            "\\( a \\cdot b = b \\cdot a \\)",
+            "Both (i) and (ii)",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "If \\( f : G \\rightarrow G' \\) is a homomorphism, then which of the following it true?",
+          "options": [
+            "\\( f(e) = e \\)",
+            "\\( f(e) = e' \\)",
+            "\\( f(e) &gt;= \\Phi \\)",
+            "\\( f(e) = 1 \\)"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "For which of the following does there exist a tree satisfying the specified constraints?",
+          "options": [
+            "A full binary tree with 31 leaves, each leaf of height 5",
+            "A rooted tree of height 3 where every vertex has atmost 3 children and there are 41 total\n                            vertices",
+            "A full binary tree with 11 vertices and height 6",
+            "A binary tree with 2 leaves and height 100"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "For which of the following does there exist a graph \\( G(V, E) \\) satisfying the specified\n                        conditions?",
+          "options": [
+            "A tree with 9 vertices and the sum of the degrees of all the vertices is 18",
+            "A graph with 5 components, 12 vertices and 7 edges",
+            "A graph with 5 components, 30 vertices and 24 edges",
+            "A graph with 9 vertices, 9 edges and no cycles"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "The number of simple digraphs with \\( |V| = 3 \\) is",
+          "options": [
+            "\\( 2^9 \\)",
+            "\\( 2^8 \\)",
+            "\\( 2^7 \\)",
+            "\\( 2^6 \\)"
+          ],
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Let \\( f(x) = ax^2 + b \\) and \\( g(x) = cx^2 + d \\), where a, b, c and d are constants.\n                        Determine\n                        for which constants a, b, c and d the following equation holds: \\( f \\circ g = g \\circ f \\)"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Show that the relation \\( (x, y) R (a, b) \\) such that \\( x^2 + y^2 = a^2 + b^2 \\) is an\n                        equivalence relation on the plane and describe the equivalence classes."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Let \\( (G, \\cdot) \\) be a group, where \\( \\cdot \\) is usual multiplication operation on G.\n                        Then\n                        show that for any \\( x, y \\in G \\) following equations hold:<br/>\n                        (i) \\( (x^{-1})^{-1} = x \\)<br/>\n                        (ii) \\( (xy)^{-1} = y^{-1}x^{-1} \\)"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Construct the truth table for \\( [(p \\vee q) \\wedge (p \\rightarrow r) \\wedge (q \\rightarrow\n                        r)]\n                        \\rightarrow r \\). Also show that above statement is a tautology by developing a series of\n                        logical\n                        equivalences."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 6,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "If \\( A = \\{1, 2, 4\\} \\), \\( B = \\{2, 5, 7\\} \\) and \\( C = \\{1, 3, 7\\} \\), find \\(\n                        (A\n                        \\times B) \\cup (A \\times C) \\).",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "List the ordered pairs in the relation R from \\( A = \\{1, 2, 3, 4\\} \\) to \\( B = \\{2, 3, 4,\n                        5\\} \\), where \\( (a, b) \\in R \\) if and only if-<br/>\n                        (i) \\( a = b \\)<br/>\n                        (ii) \\( a + b = 5 \\)"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Show that the set of integers with the composition \\( \\circ \\) and * defined by \\( a \\circ b\n                        = a\n                        + b + 1 \\) and \\( a * b = ab + a + b \\) is a ring."
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "State and prove Lagrange's theorem.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "Define a relation R on the set Z of all integers as follows: \\( m R n \\Leftrightarrow m+n \\)\n                        is\n                        even for all \\( m, n \\in Z \\). Is R a partial order relation? Prove or give a counter\n                        example."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Show that the group<br/>\n                        (i) \\( \\{1, 2, 3, 4\\}, X_5 \\)<br/>\n                        (ii) \\( \\{1, 2, 3, 4, 5, 6\\}, X_7 \\)<br/>\n                        is cyclic."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Let \\( A = \\{0, 1, 2, 3\\} \\), \\( R = \\{(x, y) : x+y=3\\} \\), \\( S = \\{(x, y) :\n                        3|(x+y)\\}\n                        \\), \\( T = \\{(x, y) : \\max(x,y)=3\\} \\). Compute (i) \\( R \\circ T \\), (ii) \\( T \\circ\n                        R\n                        \\) and (iii) \\( S \\circ S \\)."
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "In a group of 70 cars tested by a garage in Delhi, 15 had faulty tyres, 20 had faulty breaks and\n                        18\n                        exceeded the allowable emission limits. Also, 5 cars had faulty tyres and brakes, 6 failed on\n                        tyres\n                        and emission, 10 failed on brakes and emissions, and 4 cars were unsatisfactory in all three\n                        respects. How many cars had no faults in these three checks? Draw an appropriate Venn diagram."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Define the vertex connectivity and edge connectivity of a graph. Prove that for a graph G with n\n                        vertices and e edges, vertex connectivity \\( \\le \\) edge connectivity \\( \\le 2e/n \\)."
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "Define the adjacency matrix of a graph. Find the rank of the regular graph with n vertices and\n                        with\n                        degree \\( p (&lt; n) \\) of every vertex."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any three of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Multigraphs</li>\n<li>Planar graphs</li>\n<li>Cosets</li>\n<li>Ring polynomials</li>\n</ul>",
+          "options": [
+            "Multigraphs",
+            "Planar graphs",
+            "Cosets",
+            "Ring polynomials"
+          ]
+        }
+      ]
+    }
+  ]
+}

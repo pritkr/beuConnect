@@ -1,0 +1,326 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 2nd Semester Examination, 2025",
+    "subject": "Programming for Problem Solving",
+    "subject_slug": "programming-for-problem-solving",
+    "subject_code": "100203",
+    "year": 2025,
+    "semester": 2,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct option for the following questions (Answer any\n                    seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "The correct syntax for an if-statement is",
+          "options": [
+            "if condition() { }",
+            "if (condition) {}",
+            "if (condition) []",
+            "if {condition}"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "C function execution always begins from",
+          "options": [
+            "main()",
+            "constructor",
+            "user-defined function",
+            "header file"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "Which storage class has the default value of a variable as zero?",
+          "options": [
+            "auto",
+            "static",
+            "extern",
+            "register"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "Relational operators always return",
+          "options": [
+            "Float value",
+            "0 or 1",
+            "Character",
+            "None"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "Which of the following is an exit-controlled loop?",
+          "options": [
+            "while loop",
+            "for loop",
+            "do-while loop",
+            "None"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "Binary search works only on",
+          "options": [
+            "Unsorted list",
+            "Doubly linked list",
+            "Sorted list",
+            "Any list"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "break keyword is used to",
+          "options": [
+            "Restart loop",
+            "Terminate loop",
+            "Skip iteration",
+            "Exit program"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "In a union, memory allocated is equal to the size of",
+          "options": [
+            "Sum of all members",
+            "Smallest member",
+            "Largest member",
+            "Twice the size"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "fopen(\"abc.txt\",\"r\") opens file in",
+          "options": [
+            "Write mode",
+            "Append mode",
+            "Read mode",
+            "Read + Write mode"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "Which of the following problems can be solved using recursion?",
+          "options": [
+            "Fibonacci",
+            "Factorial",
+            "GCD",
+            "All of the above"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "Write an algorithm and draw the flowchart for checking whether a number is prime or not.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "Differentiate between syntax errors, logical errors, compile-time errors, and run-time errors.\n                        Provide suitable examples."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Explain function declaration, definition, and calling conventions in C. Discuss call by value and\n                        call by reference with examples.",
+          "metadata": {
+            "stars": 5,
+            "freq": 5
+          }
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "Differentiate between while and do-while loop construct. Write a program for generating Fibonacci\n                        series using loop."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "Write the differences between if, if-else, and switch statements with examples.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Explain the use of break, continue, and goto statements with examples.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "How are arrays declared and initialized in C? What is bound checking? Why is it important in\n                        array programming?",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "What is recursion? Explain how recursion works with stack memory. Write a recursive program for\n                        finding the factorial of a number."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "Write a program to perform linear search in an array. Also find its complexity in Best, Average\n                        and Worst cases.",
+          "metadata": {
+            "stars": 5,
+            "freq": 6
+          }
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "Describe the selection sort algorithm and implement it in C language.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "Explain various storage classes in C with proper examples.",
+          "metadata": {
+            "stars": 3,
+            "freq": 3
+          }
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Write a program to copy the contents of one file into another and explain each step of file IO.",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Explain arithmetic, relational, logical, bitwise and assignment operators in C along with their\n                        precedence rules and examples.",
+          "metadata": {
+            "stars": 4,
+            "freq": 4
+          }
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "What is the difference between structure and union? Explain with an example.",
+          "metadata": {
+            "stars": 5,
+            "freq": 13
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write Short notes on any two of the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>Type Casting</li>\n<li>Compiler and Interpreter</li>\n<li>Quick Sort</li>\n<li>String Functions</li>\n</ul>",
+          "options": [
+            "Type Casting",
+            "Compiler and Interpreter",
+            "Quick Sort",
+            "String Functions"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -139,7 +139,7 @@ export function HolidaysScreen() {
               return (
                 <View class="gap-1">
                   <Row class="items-end gap-3">
-                    <Text class="text-[40px] font-bold leading-10 tabular-nums tracking-tight text-primary">
+                    <Text class="text-[40px] font-bold leading-10 tabular-nums tracking-tight text-primary-ink">
                       {countdown.value}
                     </Text>
                     <View class="gap-0.5 pb-1">
@@ -200,7 +200,7 @@ export function HolidaysScreen() {
         <Card class="gap-3 p-3.5">
           <Row class="justify-between gap-2">
             <View
-              class="h-11 w-11 items-center justify-center rounded-full border border-border active:bg-muted"
+              class="h-11 w-11 items-center justify-center rounded-full border border-border-strong active:bg-muted"
               onPress={() => shiftMonth(-1)}
               role="button"
               accessibilityLabel="Previous month"
@@ -212,7 +212,7 @@ export function HolidaysScreen() {
               <Muted class="text-[11px]">{`${monthHolidays().length} holiday${monthHolidays().length === 1 ? "" : "s"}`}</Muted>
             </Col>
             <View
-              class="h-11 w-11 items-center justify-center rounded-full border border-border active:bg-muted"
+              class="h-11 w-11 items-center justify-center rounded-full border border-border-strong active:bg-muted"
               onPress={() => shiftMonth(1)}
               role="button"
               accessibilityLabel="Next month"
@@ -242,7 +242,7 @@ export function HolidaysScreen() {
                     const isToday = cell.iso === today();
                     return (
                       <View
-                        class={`min-h-11 flex-1 items-center justify-center gap-0.5 rounded-xl ${
+                        class={`min-h-11 flex-1 items-center justify-center gap-0.5 rounded-xl active:opacity-70 ${
                           active ? "bg-foreground" : isToday ? "bg-primary/10" : items.length > 0 ? "bg-muted" : ""
                         }`}
                         onPress={() => selected.set(active ? "" : cell.iso)}
@@ -302,7 +302,7 @@ export function HolidaysScreen() {
                   <Muted class="text-[10px]">{shortParts(holiday().start).month}</Muted>
                 </Col>
                 <Col class="flex-1">
-                  <Text class="text-[14px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+                  <Text class="text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
                     {holiday().label}
                   </Text>
                   <Muted class="text-[11px]">{`${spanOf(holiday())} · ${holidayDaysLabel(holiday())}`}</Muted>
@@ -338,7 +338,7 @@ export function HolidaysScreen() {
                       >
                         <View class={`h-2 w-2 shrink-0 rounded-full ${categoryDot(holiday().category)}`} />
                         <Col class="flex-1">
-                          <Text class="text-[13px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+                          <Text class="text-[13px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
                             {holiday().label}
                           </Text>
                           <Muted class="text-[11px]">

@@ -1,0 +1,272 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 4th Semester Examination, 2024",
+    "subject": "Operating System",
+    "subject_slug": "operating-system",
+    "subject_code": "105403",
+    "year": 2024,
+    "semester": 4,
+    "time": "03 Hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven question\n                    only):",
+      "total_marks": 2,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "<p>A _____ process is moved to the ready state when its time quantum expires.</p>",
+          "options": [
+            "Blocked",
+            "New",
+            "Running",
+            "Suspended"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "<p>Which of the following is also called job scheduler?</p>",
+          "options": [
+            "DMA controller",
+            "Short-term scheduler",
+            "CPU scheduler",
+            "Long-term scheduler"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>Compaction is used to solve the problem of</p>",
+          "options": [
+            "External fragmentation",
+            "Internal fragmentation",
+            "both (i) and (ii)",
+            "None of these"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which process can be affected by other processes executing in the system?</p>",
+          "options": [
+            "Independent process",
+            "Co-operative process",
+            "Dependent Process",
+            "child process"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>What is the drawback of banker's algorithm?</p>",
+          "options": [
+            "in advance processes rarely know how much resource they will need",
+            "the number of processes changes as time progresses",
+            "resource once available can disappear",
+            "all of the mentioned"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>An I/O port typically consists of four registers- status, control, _____ and _____ registers.</p>",
+          "options": [
+            "system in, system out",
+            "flow in, flow out",
+            "data in, data out",
+            "input, output"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>The address loaded into the memory address register of the memory is referred to as</p>",
+          "options": [
+            "Physical address",
+            "IP address",
+            "Port address",
+            "Logical address"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Consider a disk queue with requests for I/O to blocks on cylinders: 98, 183, 37, 122, 14, 124,\n                        65, 67. Considering FCFS (first cum first served) scheduling, the total number of head movements\n                        is, if the disk head is initially at 53 is?</p>",
+          "options": [
+            "600",
+            "630",
+            "620",
+            "640"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The Trap mode bit changes from 0 to 1 when _____ mode switches to _____ mode.</p>",
+          "options": [
+            "Kernel, User",
+            "User, User",
+            "Kernel, Kernel",
+            "User, Kernel"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>Waiting Time is calculated as</p>",
+          "options": [
+            "Turnaround Time - Burst Time",
+            "Turnaround Time - Arrival Time",
+            "Completion Time - Arrival Time",
+            "Completion Time - Burst Time"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Define Thread? List some of the benefits of multithreading. Demonstrate the three methods to\n                        implement Threads.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Assume the following workload in a system:</p>\n<table border=\"1\" style=\"border-collapse: collapse; width: 100%; text-align: center; margin-top: 10px; margin-bottom: 10px;\">\n<tbody><tr>\n<th>Process</th>\n<th>Arrival Time</th>\n<th>Burst Time</th>\n</tr>\n<tr>\n<td>P0</td>\n<td>1</td>\n<td>3</td>\n</tr>\n<tr>\n<td>P1</td>\n<td>0</td>\n<td>6</td>\n</tr>\n<tr>\n<td>P2</td>\n<td>3</td>\n<td>2</td>\n</tr>\n<tr>\n<td>P3</td>\n<td>4</td>\n<td>7</td>\n</tr>\n<tr>\n<td>P4</td>\n<td>2</td>\n<td>8</td>\n</tr>\n<tr>\n<td>P5</td>\n<td>6</td>\n<td>5</td>\n</tr>\n</tbody></table>\n<p>Illustrating the execution of these job using Round Robin Scheduling algorithm calculate when\n                        given Time Quantum = 3:<br/>\n                        (i) Average Turn Around Time<br/>\n                        (ii) Average Waiting Time</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>Differentiate between:<br/>\n                        (i) User level Thread and Kernel level Thread<br/>\n                        (ii) Contiguous and Indexed allocation method<br/>\n                        (iii) Preemptive scheduling and Non-preemptive scheduling</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>How is a process different from a program? With an example explain why Process synchronization is\n                        necessary in multiprocessing operating system?</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Describe the techniques for recovery from deadlock? Explain briefly resource allocation graph\n                        with examples.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Consider a disk queue with requests for I/O to blocks on cylinders: 98, 183, 37, 122, 14, 124,\n                        65, 67. Considering SSTF (shortest seek time first) scheduling, the total number of head\n                        movements is, if the disk head is initially at 53 is?</p>",
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>What is the difference between fixed partition and variable partition also explains the need of\n                        compaction.</p>"
+        },
+        {
+          "id": "q5_2",
+          "type": "theory",
+          "text": "<p>What is virtual memory? How is it implemented? Explain TLB in virtual memory with neat diagram.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>What is Reader-Writer problem? Explain how Semaphore is used to resolve the problem of process\n                        synchronization.</p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>What is Belady's Anomaly? Why LRU and Optimal Page Replacement algorithm doesn't suffer from this\n                        problem.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>Compare and contrast Deadlock Prevention and Deadlock Avoidance. Can a system be in a state that\n                        is neither deadlock nor safe? If so, give an example. If not, prove that all states are either\n                        deadlock or safe.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>Consider the following page reference string: 3, 4, 2, 1, 5, 5, 6, 2, 1, 2, 3, 7, 6, 3, 3, 2, 1,\n                        2, 3, 6. Compare the page faults occur for the following replacement algorithms using four\n                        frames? Assume, initially all the frames are empty.<br/>\n                        (i) LRU replacement<br/>\n                        (ii) FIFO Replacement</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on any two of the following:-",
+      "total_marks": 7,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "",
+          "options": [
+            "Dispatcher and Scheduler",
+            "Starvation and Aging",
+            "Paging and Segmentation",
+            "Semaphore and Mutex"
+          ]
+        }
+      ]
+    }
+  ]
+}

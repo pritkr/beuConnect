@@ -1,0 +1,249 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2020",
+    "subject": "Database Management System",
+    "subject_slug": "database-management-system",
+    "subject_code": "105502",
+    "year": 2020,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Choose the correct answer of the following (any seven):",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "mcq",
+          "text": "The way a particular application views the data from the database that the application uses is a",
+          "options": [
+            "module",
+            "relational model",
+            "schema",
+            "subschema"
+          ]
+        },
+        {
+          "id": "q1_2",
+          "type": "mcq",
+          "text": "A relational database developer refers to a record as",
+          "options": [
+            "a criterion",
+            "a relation",
+            "a tuple",
+            "an attribute"
+          ]
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "Key to represent relationship between tables is called",
+          "options": [
+            "primary key",
+            "secondary key",
+            "foreign key",
+            "None of the above"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "It is better to use files than a DBMS when there are",
+          "options": [
+            "stringent real-time requirements",
+            "multiple users wish to access the data",
+            "complex relationships among data",
+            "All of the above"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "Which of the following are the five built-in functions provided by SQL?",
+          "options": [
+            "COUNT, SUM, AVG, MAX, MIN",
+            "SUM, AVG, MIN, MAX, MULT",
+            "SUM, AVG, MULT, DIV, MIN",
+            "SUM, AVG, MIN, MAX, NAME"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "A B-tree of order 4 and of height 3 will have a maximum of keys.",
+          "options": [
+            "255",
+            "63",
+            "127",
+            "188"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "Consider the following action: TRANSACTION..... Commit; ROLLBACK; What does rollback do?",
+          "options": [
+            "Undoes the transactions before commit",
+            "Clears all transactions",
+            "Redoes the transactions before commit",
+            "No action"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "Which of the following is used to get back all the transactions back after rollback?",
+          "options": [
+            "Commit",
+            "Rollback",
+            "Flashback",
+            "Redo"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "_____ is an attack which forces an end user to execute unwanted actions on a Web application in\n                        which\n                        he/she is currently authenticated.",
+          "options": [
+            "Two-factor authentication",
+            "Cross-site request forgery",
+            "Cross-site scripting",
+            "Cross-site scoring scripting"
+          ]
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "_____ allows a system administrator to associate a function with a relation; the function returns\n                        a\n                        predicate that must be added to any query that uses the relation.",
+          "options": [
+            "OpenID",
+            "Single-site System",
+            "Security Assertion Markup Language (SAML)",
+            "Virtual Private Database (VPD)"
+          ]
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "What are the five main functions of a database administrator?"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "What are four main differences between file-processing system and a DBMS?"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "Construct an E-R diagram for a university registrar's office. The office maintains data about\n                        each\n                        class, including the instructor, the enrollment, and the time and place of the class meetings.\n                        For\n                        each class pair, a grade is recorded. Document all assumptions that you make about the mapping\n                        constraints."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "What is the use of relational query language in DBMS? Use the example to explain tuple and domain\n                        relational calculus."
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "Explain the following operations with the help of examples: (i) Generalized projection (ii) Outer\n                        join (iii) Aggregate function"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "Construct the B+ tree for the following set of key values: (2, 3, 5, 7, 11, 17, 19, 23, 29, 31).\n                        Assume that tree is initially empty and values are added in ascending order. Construct B+ tree\n                        for\n                        the cases where the number of pointers that will fit in one node is as follows: (a) Four (b) Six\n                        (c)\n                        Eight"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "List the ACID properties. Explain the usefulness of each."
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "What benefit is provided by rigorous two-phase locking? How does it compare with other forms of\n                        two-phase locking?"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "What is the purpose of having separate categories for index authorization and resource\n                        authorization?"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "Explain the data mining and data warehousing related to DBMS."
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "Compute the closure (F+) of the following set of functional dependencies for the relational\n                        schema\n                        (A, B, C, D, E) = R. List the candidate keys for R:<br/>\n                        \\( A \\rightarrow BC \\)<br/>\n                        \\( CD \\rightarrow E \\)<br/>\n                        \\( B \\rightarrow D \\)<br/>\n                        \\( E \\rightarrow A \\)"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Write short notes on the following:",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "mcq",
+          "text": "<ul class=\"options-list\" style=\"list-style-type: lower-alpha; padding-left: 20px;\">\n<li>RBAC model</li>\n<li>Concurrency control</li>\n</ul>",
+          "options": [
+            "RBAC model",
+            "Concurrency control"
+          ]
+        }
+      ]
+    }
+  ]
+}

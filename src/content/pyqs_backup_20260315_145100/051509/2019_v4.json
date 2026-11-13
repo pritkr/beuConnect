@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "university": "Bihar Engineering University, Patna",
+    "exam_title": "B.Tech 5th Semester Exam., 2019",
+    "subject": "Database System",
+    "subject_slug": "database-system",
+    "subject_code": "051509",
+    "year": 2019,
+    "semester": 5,
+    "time": "3 hours",
+    "full_marks": 70
+  },
+  "instructions": [
+    "The marks are indicated in the right-hand margin.",
+    "There are NINE questions in this paper.",
+    "Attempt FIVE questions in all.",
+    "Question No. 1 is compulsory."
+  ],
+  "sections": [
+    {
+      "section_title": "Q.1 Answer the following as directed (any seven) :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q1_1",
+          "type": "theory",
+          "text": "<p>_____ play an important role in defining and maintaining a database for an organization. (Fill in\n                        the\n                        blank)</p>"
+        },
+        {
+          "id": "q1_2",
+          "type": "theory",
+          "text": "<p>The strong entity type and weak entity type participate in _____ relationship. (Fill in the\n                        blank)\n                    </p>"
+        },
+        {
+          "id": "q1_3",
+          "type": "mcq",
+          "text": "<p>A level that describes how a record is stored is</p>",
+          "options": [
+            "physical",
+            "logical",
+            "user",
+            "view"
+          ]
+        },
+        {
+          "id": "q1_4",
+          "type": "mcq",
+          "text": "<p>Which of the following is true?</p>",
+          "options": [
+            "Every relation in 3NF is also in BCNF",
+            "A relation R is in 3NF if very non-prime attribute of R is fully functionally dependent on\n                            every\n                            key of R",
+            "Every relation in BCNF is also in 3NF",
+            "No relation can be in both BCNF and 3NF"
+          ]
+        },
+        {
+          "id": "q1_5",
+          "type": "mcq",
+          "text": "<p>Consider the relation scheme R={E,F,G,H,I,J,K,L,M,N} and the set of functional dependencies \\(\n                        \\{E,F\\} \\rightarrow \\{G\\} \\), \\( \\{F\\} \\rightarrow \\{I,J\\} \\), \\( \\{E,H\\}\n                        \\rightarrow \\{K,\n                        L\\}\n                        \\), \\( \\{K\\} \\rightarrow \\{M\\} \\), \\( \\{L\\} \\rightarrow \\{N\\} \\) on R. What is\n                        the key for\n                        R?\n                    </p>",
+          "options": [
+            "{E, F}",
+            "{E, F, H}",
+            "{E, F, H, K, L}",
+            "{E}"
+          ]
+        },
+        {
+          "id": "q1_6",
+          "type": "mcq",
+          "text": "<p>Given the Students' relation as shown below (StudentName, StudentAge) to be the key for this\n                        instance, the value X should not be equal to</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/208.jpg\"/>",
+          "options": [
+            "18",
+            "19",
+            "15",
+            "20"
+          ]
+        },
+        {
+          "id": "q1_7",
+          "type": "mcq",
+          "text": "<p>From the instance of a relation scheme R (A, B, C) we can conclude that</p>\n<img alt=\"Question Diagram\" class=\"question-diagram\" src=\"img/beu/diagram/2nd3rd/207.jpg\"/>",
+          "options": [
+            "A functionally determines B and B does not functionally determine C",
+            "B does not functionally determine C",
+            "A does not functionally determine B and B does not functionally determine C",
+            "A functionally determines B and B functionally determines C"
+          ]
+        },
+        {
+          "id": "q1_8",
+          "type": "mcq",
+          "text": "<p>Date base is generally</p>",
+          "options": [
+            "system centered",
+            "user centered",
+            "company centered",
+            "data centered"
+          ]
+        },
+        {
+          "id": "q1_9",
+          "type": "mcq",
+          "text": "<p>The restriction placed on data is said to be</p>",
+          "options": [
+            "relation",
+            "attribute",
+            "parameter",
+            "constraint"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        },
+        {
+          "id": "q1_10",
+          "type": "mcq",
+          "text": "<p>An object in databases is equal to _____ + relationships.</p>",
+          "options": [
+            "data",
+            "attribute",
+            "entity",
+            "constraint"
+          ],
+          "metadata": {
+            "stars": 2,
+            "freq": 2
+          }
+        }
+      ]
+    },
+    {
+      "section_title": "Q.2 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q2_1",
+          "type": "theory",
+          "text": "<p>Draw and explain the three-level architecture of the database system.</p>"
+        },
+        {
+          "id": "q2_2",
+          "type": "theory",
+          "text": "<p>Compare the traditional file-based systems and relational database management system approaches.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.3 Solve all questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q3_1",
+          "type": "theory",
+          "text": "<p>What is a view? Can we update a view? Justify your answer.</p>"
+        },
+        {
+          "id": "q3_2",
+          "type": "theory",
+          "text": "<p>When we try to modify any table in database system, we encounter some side-effects if the tables\n                        are\n                        insufficiently normalized. Can you explain those side-effects with the respective examples?</p>"
+        },
+        {
+          "id": "q3_3",
+          "type": "theory",
+          "text": "<p>List out various constraints in relational model and explain in short.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.4 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q4_1",
+          "type": "theory",
+          "text": "<p>Discuss the correspondence between E-R model construct and the relation model construct. Show how\n                        each E-R model construct can be append to the relational model using the following description\n                        of an\n                        organization: An organization uses number of items of an equipment to produce goods. Each item\n                        is at\n                        one LOCATION, of one TYPE and has a DETAILED_DISCRIPTION. Faults on the equipment are identified\n                        by\n                        a unique FAULT_ID and are reported at a TIME_REPORTED. Any number of persons may be assigned to\n                        a\n                        fault and work on the fault until it is fixed. The TIME_FIXED is recorded as the TIME_SPENT by\n                        each\n                        person on a fault. Any number of parts may be used to repair a fault. The QTY_USED of each part\n                        is\n                        recorded against the fault. Each part is identified by a PART_ID and has a given weight and\n                        MAX_DIMENSION and can have any number of colors.</p>"
+        },
+        {
+          "id": "q4_2",
+          "type": "theory",
+          "text": "<p>Write a short note on types of attributes and their representation in E-R model with neat\n                        figures.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.5 Solve this question :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q5_1",
+          "type": "theory",
+          "text": "<p>Considering the following schema, create the appropriate tables and insert at least 5 records:\n                        <br/>\n                        AUTHOR (author-id, name, city, country)<br/>\n                        PUBLISHER (publisher-id, name, city, country)<br/>\n                        CATALOG (book-id, title, author-id, publisher-id, category-id, year, price)<br/>\n                        CATEGORY (category-id, description)<br/>\n                        ORDER-DETAILS (order-no, book-id, quantity)<br/>\n                        Write each of the following queries in SQL and relational algebra :<br/>\n                        (a) Obtain the names of authors who have 2 or more books in the catalog.<br/>\n                        (b) Find the author of the book which has maximum sales.<br/>\n                        (c) Obtain the names of author who have maximum number of publisher.<br/>\n                        (d) Obtain the name of the city, author, publisher where publisher and author belong to same\n                        city.<br/>\n                        (e) Obtain the title of books which has maximum sales.<br/>\n                        (f) Obtain the book-id, description for the author who have exactly 3 books in the catalog.<br/>\n                        (g) Obtain the author and publisher who have published books in more than or equal to 2\n                        categories.\n                    </p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.6 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q6_1",
+          "type": "theory",
+          "text": "<p>You are given the following set F of functional dependencies for a relation: \\(\n                        R(A,B,C,D,E,F):F=\\{ABC\\rightarrow D, AB \\rightarrow DE, CD\\rightarrow F, \\) \\(\n                        CDF\\rightarrow B,\n                        BF\n                        \\rightarrow D\\} \\)<br/>\n                        (i) Find all keys of R based on these functional dependencies.<br/>\n                        (ii) Is this relation in Boyce-Codd normal form? Is it 3NF? Explain your answer.<br/>\n                        (iii) Can the set F be simplified (by removing functional dependencies or by removing attributes\n                        from the left-hand side of functional dependencies) without changing the closure of F (i.e. F+)?\n                    </p>"
+        },
+        {
+          "id": "q6_2",
+          "type": "theory",
+          "text": "<p>Compute the closure of the following set F of functional dependencies for relation schema: \\(\n                        R=(A,B,C,D,E).A\\rightarrow BC,CD\\rightarrow E,B\\rightarrow D,E\\rightarrow A \\). List the\n                        candidate\n                        keys for R.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.7 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q7_1",
+          "type": "theory",
+          "text": "<p>What is the need of normalization? How many types of normalization exist? Explain in detail with\n                        suitable examples.</p>"
+        },
+        {
+          "id": "q7_2",
+          "type": "theory",
+          "text": "<p>What is trigger? When are they used and why? Explain.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.8 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q8_1",
+          "type": "theory",
+          "text": "<p>For the following set of key values construct a B+ tree with a degree 4: 5, 10, 15, 29, 35, 46,\n                        58,\n                        63, 67, 89. Initially tree is empty. Values must be added in ascending order. Show the\n                        step-by-step\n                        construction.</p>"
+        },
+        {
+          "id": "q8_2",
+          "type": "theory",
+          "text": "<p>What is multilevel indexing? Explain in detail.</p>"
+        }
+      ]
+    },
+    {
+      "section_title": "Q.9 Solve both questions :",
+      "total_marks": 14,
+      "questions": [
+        {
+          "id": "q9_1",
+          "type": "theory",
+          "text": "<p>What is two-phase locking protocol? Explain its working in detail. How can it guarantee\n                        serializability?</p>"
+        },
+        {
+          "id": "q9_2",
+          "type": "theory",
+          "text": "<p>Discuss the various approaches for handling the deadlocks in dbms.</p>"
+        }
+      ]
+    }
+  ]
+}

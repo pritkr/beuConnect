@@ -16,11 +16,13 @@ import { Text, View } from "nsh";
 import type { Children } from "../../ui";
 import { Badge, Card, Chip, Divider, Label, Mono, Muted, Panel, Progress, Row, Skeleton, Subtitle } from "../../ui";
 import { Icon, type IconName } from "../../ui/icons";
+import { branchIcon } from "../../ui/branch-icon";
 import { NetError, formatDate } from "../../lib/net";
 import type { BranchDef, ResultSource, ResultSubject, RankRow } from "./data";
 import { branchShort, fixed } from "./data";
 import { shortCollegeName } from "./colleges";
-import { rankNumeral } from "./ranking";
+import { rankLabel, rankNumeral, bandEdge, cgpaBandIndex, missingSentence, students } from "./ranking";
+import type { CgpaBand } from "./ranking";
 import type { Trend } from "./trend";
 import { trendProvenance, trendSpoken, trendSummary } from "./trend";
 
@@ -110,7 +112,11 @@ export function BranchChips(props: {
   return (
     <Chips label={props.label ?? "Branch"}>
       {props.branches.map((branch) => (
-        <Chip active={props.value === branch.code} onPress={() => props.onChange(branch.code)}>
+        <Chip
+          active={props.value === branch.code}
+          icon={branchIcon(branch.code)}
+          onPress={() => props.onChange(branch.code)}
+        >
           {branch.short}
         </Chip>
       ))}
@@ -232,7 +238,7 @@ export function SubjectRows(props: { subjects: ResultSubject[]; class?: string }
             >
               <View class="flex-row items-center gap-2">
                 <View class="flex-1 gap-0.5">
-                  <Text class="text-[13px] font-semibold leading-4 text-foreground" numberOfLines={2}>
+                  <Text class="text-[13px] font-semibold leading-4 text-foreground" style={{ numberOfLines: 2 }}>
                     {subject.name || (subject.code ? `Paper ${subject.code}` : "Paper")}
                   </Text>
                   {subject.code ? (
@@ -240,7 +246,7 @@ export function SubjectRows(props: { subjects: ResultSubject[]; class?: string }
                   ) : null}
                 </View>
                 <View class="w-7 items-end">
-                  <Text class="text-[12px] tabular-nums text-foreground" numberOfLines={1}>
+                  <Text class="text-[12px] tabular-nums text-foreground" style={{ numberOfLines: 1 }}>
                     {subject.credit || "—"}
                   </Text>
                 </View>
@@ -250,7 +256,7 @@ export function SubjectRows(props: { subjects: ResultSubject[]; class?: string }
                 <View class="w-9 items-end">
                   <Text
                     class={`text-[14px] tabular-nums ${failed ? "font-bold text-destructive" : "font-semibold text-foreground"}`}
-                    numberOfLines={1}
+                    style={{ numberOfLines: 1 }}
                   >
                     {subject.total || "—"}
                   </Text>
@@ -313,7 +319,7 @@ export function SgpaTrend(props: { trend: Trend; active: number; class?: string 
                 class={`text-[9px] leading-3 tabular-nums ${
                   active ? "font-bold text-foreground" : "text-muted-foreground"
                 }`}
-                numberOfLines={1}
+                style={{ numberOfLines: 1 }}
               >
                 {known ? fixed(point.value as number) : "—"}
               </Text>
@@ -322,7 +328,7 @@ export function SgpaTrend(props: { trend: Trend; active: number; class?: string 
                 class={`text-[10px] leading-3 tabular-nums ${
                   active ? "font-bold text-foreground" : "text-muted-foreground"
                 }`}
-                numberOfLines={1}
+                style={{ numberOfLines: 1 }}
               >
                 {String(point.sem)}
               </Text>
@@ -341,8 +347,72 @@ export function SgpaTrend(props: { trend: Trend; active: number; class?: string 
   );
 }
 
-/* ------------------------------------------------------------------- rows */
+/* -------------------------------------------------------------- histogram */
 
+/**
+ * The CGPA spread of the roster the rank is counted in.
+ *
+ * A rank says where one student is; the shape says whether the class is a
+ * cluster (everyone within half a point) or a slope. The student's own column
+ * is the only one in primary, so the card answers "am I with the pack?" without
+ * a legend. Only a real CGPA is drawn: a row BEU published without one is
+ * counted in the caption, never piled into a zero column.
+ */
+export function CgpaSpread(props: {
+  bands: CgpaBand[];
+  /** The student's CGPA; null when BEU published none for this row. */
+  mine: number | null;
+  /** "the branch" / "your college", for the spoken label. */
+  scopeLabel: string;
+  /** Rows BEU published without a CGPA: named, never drawn. */
+  unranked?: number;
+  class?: string;
+}) {
+  const mineIndex = cgpaBandIndex(props.mine);
+  const ranked = props.bands.reduce((sum, band) => sum + band.count, 0);
+  const peak = props.bands.reduce((most, band) => Math.max(most, band.count), 0);
+  const myBand = mineIndex === null ? null : props.bands[mineIndex];
+  const spoken = myBand
+    ? `CGPA spread in ${props.scopeLabel}. ${students(ranked)} ranked. Your band ${bandEdge(myBand.from)} to ${bandEdge(myBand.to)} holds ${students(myBand.count)}.`
+    : `CGPA spread in ${props.scopeLabel}. ${students(ranked)} ranked, and no CGPA for this student.`;
+  return (
+    <View class={`gap-3 ${props.class ?? ""}`} testID="cgpa-spread" accessibilityLabel={spoken}>
+      <Row class="flex-wrap justify-between gap-2">
+        <Label>CGPA spread</Label>
+        <Muted class="text-[11px] tabular-nums">{`${students(ranked)} ranked`}</Muted>
+      </Row>
+
+      <View class="flex-row items-end gap-0.5" style={{ height: 72 }}>
+        {props.bands.map((band, index) => (
+          <View
+            class={`flex-1 rounded-t-[3px] ${
+              index === mineIndex ? "bg-primary" : band.count === 0 ? "bg-border" : "bg-chart-2/45"
+            }`}
+            style={{ height: ranked === 0 ? 2 : Math.max(2, Math.round((band.count / Math.max(1, peak)) * 68)) }}
+          />
+        ))}
+      </View>
+
+      <Row class="justify-between">
+        <Muted class="text-[9px] tabular-nums">{bandEdge(props.bands[0]?.from ?? 0)}</Muted>
+        <Muted class="text-[9px] tabular-nums">{bandEdge(props.bands[props.bands.length - 1]?.to ?? 10)}</Muted>
+      </Row>
+
+      <View class="gap-1">
+        <Text class="text-[12px] font-medium leading-4 text-foreground">
+          {myBand
+            ? `Your band ${bandEdge(myBand.from)}–${bandEdge(myBand.to)} · ${students(myBand.count)} here`
+            : "No CGPA on this row, so no band."}
+        </Text>
+        {props.unranked && props.unranked > 0 ? (
+          <Muted class="text-[10px] leading-4">{missingSentence(props.unranked)}</Muted>
+        ) : null}
+      </View>
+    </View>
+  );
+}
+
+/* ------------------------------------------------------------------- rows */
 /** A rank as a filled badge for the podium, a plain numeral for everyone else. */
 export function RankMedal(props: { rank: number | null; tied?: number; class?: string }) {
   const rank = props.rank ?? 0;
@@ -398,7 +468,7 @@ export function StudentRowView(props: {
 
       <View class="flex-1 gap-0.5">
         <Row class="gap-2">
-          <Text class="flex-1 text-[14px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+          <Text class="flex-1 text-[14px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
             {row.name}
           </Text>
           {props.highlight ? <Badge tone="ember">You</Badge> : null}
@@ -408,7 +478,7 @@ export function StudentRowView(props: {
             {row.reg}
           </Mono>
           {props.showCollege ? (
-            <Text class="flex-1 text-[11px] text-muted-foreground" numberOfLines={1}>
+            <Text class="flex-1 text-[11px] text-muted-foreground" style={{ numberOfLines: 1 }}>
               {shortCollegeName(row.collegeCode)}
             </Text>
           ) : null}
@@ -418,7 +488,7 @@ export function StudentRowView(props: {
 
       {props.showSgpa ? (
         <View class="w-11 items-end gap-0.5">
-          <Text class="text-[13px] font-semibold tabular-nums text-foreground" numberOfLines={1}>
+          <Text class="text-[13px] font-semibold tabular-nums text-foreground" style={{ numberOfLines: 1 }}>
             {row.sgpaText}
           </Text>
           <Muted class="text-[10px]">SGPA</Muted>
@@ -426,7 +496,7 @@ export function StudentRowView(props: {
       ) : null}
 
       <View class="w-12 items-end gap-0.5">
-        <Text class="text-[15px] font-bold tabular-nums text-foreground" numberOfLines={1}>
+        <Text class="text-[15px] font-bold tabular-nums text-foreground" style={{ numberOfLines: 1 }}>
           {row.cgpaText}
         </Text>
         <Muted class="text-[10px]">CGPA</Muted>
@@ -455,11 +525,11 @@ export function VersusRow(props: {
   return (
     <View class="gap-1 px-4 py-2.5">
       <Row class="items-center gap-2">
-        <Text class={`${text(outcome === "a")} text-left`} numberOfLines={1}>
+        <Text class={`${text(outcome === "a")} text-left`} style={{ numberOfLines: 1 }}>
           {props.a}
         </Text>
         <View class="flex-1 items-center gap-0.5">
-          <Text class="text-center text-[11px] leading-4 text-foreground" numberOfLines={2}>
+          <Text class="text-center text-[11px] leading-4 text-foreground" style={{ numberOfLines: 2 }}>
             {props.label}
           </Text>
           {props.hint ? (
@@ -468,7 +538,7 @@ export function VersusRow(props: {
             </Muted>
           ) : null}
         </View>
-        <Text class={`${text(outcome === "b")} text-right`} numberOfLines={1}>
+        <Text class={`${text(outcome === "b")} text-right`} style={{ numberOfLines: 1 }}>
           {props.b}
         </Text>
       </Row>
@@ -517,16 +587,22 @@ export function PositionCard(props: {
       </Row>
 
       <Row class="flex-wrap items-end gap-x-2 gap-y-1">
-        <Text class="text-[40px] font-bold leading-tight tabular-nums tracking-tight text-primary">
-          {props.rank !== null && props.rank > 0 ? rankNumeral(props.rank, tied) : "—"}
+        <Text class="text-[40px] font-bold leading-tight tabular-nums tracking-tight text-primary-ink">
+          {props.rank !== null && props.rank > 0 ? rankLabel(props.rank, tied) : "—"}
         </Text>
         <Text class="pb-2 text-[13px] text-muted-foreground">
-          {props.total !== null ? `of ${props.total} ranked` : "in this page of the list"}
+          {props.rank !== null && props.rank > 0
+            ? props.total !== null
+              ? `of ${props.total} ranked`
+              : "in this page of the list"
+            : props.total !== null && props.total > 0
+              ? `not ranked · ${props.total} ranked here`
+              : "not ranked · no CGPA here"}
         </Text>
       </Row>
 
       <View class="gap-0.5">
-        <Text class="text-[16px] font-semibold leading-5 text-foreground" numberOfLines={2}>
+        <Text class="text-[16px] font-semibold leading-5 text-foreground" style={{ numberOfLines: 2 }}>
           {props.name || "Semester result"}
         </Text>
         <Muted class="tabular-nums" numberOfLines={1}>
@@ -557,19 +633,30 @@ export function BattleMeter(props: { winsA: number; winsB: number; ties: number;
     counted === 0
       ? "No paper has a total on both sides."
       : `${props.nameA} won ${props.winsA} papers, ${props.nameB} won ${props.winsB}, ${props.ties} level.`;
+  /* The tally is drawn rather than printed, at its value from the first frame:
+     a bar that grows after the numbers have landed animates data the student is
+     already reading. Names, wins and ties are text the whole time. */
+  const sideA = { transform: [{ scaleX: Math.max(0, Math.min(1, left / 100)) }] };
+  const sideB = { transform: [{ scaleX: Math.max(0, Math.min(1, (100 - left) / 100)) }] };
   return (
     <View class="gap-2" accessibilityLabel={label}>
       <Row class="justify-between gap-3">
-        <Text class="flex-1 text-[13px] font-semibold text-foreground" numberOfLines={1}>
+        <Text class="flex-1 text-[13px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
           {props.nameA}
         </Text>
-        <Text class="flex-1 text-right text-[13px] font-semibold text-foreground" numberOfLines={1}>
+        <Text class="flex-1 text-right text-[13px] font-semibold text-foreground" style={{ numberOfLines: 1 }}>
           {props.nameB}
         </Text>
       </Row>
-      <View class={`h-3 flex-row overflow-hidden rounded-full bg-muted ${counted > 0 ? "" : "opacity-40"}`}>
-        <View class="h-full bg-primary" style={{ width: `${left}%` }} />
-        <View class="h-full bg-accent/70" style={{ width: `${100 - left}%` }} />
+      <View class={`h-3 overflow-hidden rounded-full bg-muted ${counted > 0 ? "" : "opacity-40"}`}>
+        <View
+          class="absolute h-full w-full bg-accent/70"
+          style={{ ...sideB, transformOrigin: "right" }}
+        />
+        <View
+          class="absolute h-full w-full bg-primary"
+          style={{ ...sideA, transformOrigin: "left" }}
+        />
       </View>
       <Row class="justify-between gap-2">
         <Muted class="tabular-nums">{`A · ${props.winsA}`}</Muted>
@@ -590,7 +677,7 @@ export function Line(props: { label: string; value: string; strong?: boolean }) 
       <Muted class="text-[12px]">{props.label}</Muted>
       <Text
         class={`flex-1 text-right text-[13px] ${props.strong ? "font-semibold text-foreground" : "text-foreground"}`}
-        numberOfLines={2}
+        style={{ numberOfLines: 2 }}
       >
         {props.value || "—"}
       </Text>
