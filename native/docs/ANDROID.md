@@ -1,6 +1,6 @@
 # Android build and install
 
-The APK is **17,463,356 B (17.46 MB)** — arm64, stripped, deflated, signed with
+The APK is **17,479,740 B (17.48 MB)** — arm64, stripped, deflated, signed with
 the release key — built by `scripts/package-android.sh` and measured by
 `scripts/size-report.sh`. Details of where the bytes go: `docs/SIZE.md`.
 
@@ -76,7 +76,7 @@ step 5's deflate: Android extracts the library at install time instead of mmappi
 it out of the APK. The stock manifest sets it to `false`, so the stock host's
 staging APK stores every ABI's runtime uncompressed.
 
-The result is 17.46 MB for the phone build, 43.07 MB unpacked. It installs
+The result is 17.48 MB for the phone build, 43.10 MB unpacked. It installs
 identically; the only difference is the install-time extraction. 76% of the
 download is the runtime, which is itself built from the app's feature set (see
 §2.1) — the app-side bytes are `classes.dex` 3.09 MB, the bundle 0.71 MB and
@@ -150,6 +150,23 @@ ln -sfn ~/.nsh/runtime/android/dev     ~/.nsh/source/target/runtime/android/dev
 Do not set `NSH_RUNTIME` for this: `package.rs` treats it as "a prebuilt runtime
 was asked for" and skips the app's own library, so the APK quietly ships the
 full runtime again.
+
+**The Java runtime must be the same commit as the library.** `nsh package`
+builds only the Rust half; `classes.jar` still comes from the AAR. A library from
+`main` paired with 0.5.0's `classes.jar` starts and then dies on the first
+mount with
+
+```
+java.lang.IllegalStateException: nsh: unknown mount opcode -1
+    at com.longbridge.nsh.Mounter.apply(Mounter.java:608)
+```
+
+because the newer Rust emits a mount opcode the older Java does not know. Build
+both from one checkout: `cargo xtask android --release --abi arm64-v8a` writes
+`target/android/release/classes.jar`, and the host build accepts it through an
+AAR made from that directory (`NSH_AAR=… ./scripts/build-android-host.sh`). The
+release AAR (`nsh-embed-android.zip`) is only an option once a tagged release
+contains the trim.
 
 The build and package scripts source `~/.config/beuconnect/signing.env`, so
 `./scripts/package-android.sh` signs with the release key with no arguments. To

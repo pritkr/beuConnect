@@ -8,23 +8,25 @@ build: nsh `main` after 0.5.1 (`589a251`) cross-compiling the app's own
 
 | | bytes | share |
 |---|---|---|
-| APK file | 17,463,356 | 100% |
-| `lib/arm64-v8a/libnsh.so` (deflated) | 13,269,601 | 76.0% |
-| `classes.dex` (deflated) | 3,093,741 | 17.7% |
+| APK file | 17,479,740 | 100% |
+| `lib/arm64-v8a/libnsh.so` (deflated) | 13,269,601 | 75.9% |
+| `classes.dex` (deflated) | 3,107,717 | 17.8% |
 | `assets/nsh/bundle.nshc` (deflated) | 705,205 | 4.0% |
 | `holidays-2026.png` (deflated) | 87,237 | 0.5% |
-| icons, font, manifest, `resources.arsc`, signature | 284,337 | 1.6% |
-| zip directory + signing block | 23,235 | 0.1% |
+| icons, font, manifest, `resources.arsc`, signature | 284,335 | 1.6% |
+| zip directory + signing block | 25,645 | 0.1% |
 
-Unpacked it is 43.07 MB (32.27 MB of that is the runtime), which is what a
+Unpacked it is 43.10 MB (32.27 MB of that is the runtime), which is what a
 device writes on install; downloading it takes ≈7.0 s at 20 Mbps.
 
 The runtime is no longer a fixed prebuilt. Since `longbridge/nsh#2060`, `nsh
 package --target android` builds `libnsh.so` from the features the bundle can
 reach, so this library is 32.27 MB stripped and 13.27 MB deflated instead of
 0.5.0's 48.86 / 19.95 MB. The same app on the 0.5.0 prebuilt was 24,143,932 B,
-so the trim is worth 6,680,576 B (−27.7%) and the ceiling moved with it
-(see [the 18.5 MB ceiling](#the-185-mb-ceiling)).
+so the trim is worth 6,664,192 B (−27.6%); 13,976 B of that is the newer Java
+runtime's `classes.dex`, which has to match the library (see
+`docs/ANDROID.md` §2.1). The ceiling moved with the file (see
+[the 18.5 MB ceiling](#the-185-mb-ceiling)).
 
 ## Where the bytes go
 
@@ -106,7 +108,7 @@ of embedded text is ≈37 KB of APK, and a new release to fix a typo in it.
 
 | budget | limit | current | headroom |
 |---|---|---|---|
-| APK file | 18,500,000 B | 17,463,356 B (94.4%) | 1,036,644 B |
+| APK file | 18,500,000 B | 17,479,740 B (94.5%) | 1,020,260 B |
 | bundle bytecode, as shipped | 2,350,000 B | 1,894,306 B (80.6%) | 455,694 B |
 
 The APK ceiling moved to **18,500,000 B** on 2026-11-15, with the trimmed
@@ -114,7 +116,7 @@ runtime:
 
 - **APK 25,600,000 → 18,500,000 B.** The library built from this app's features is
   13,269,601 B deflated instead of 19,948,514 B; the APK moved from 24,143,932 B
-  to 17,463,356 B (−6,680,576 B), and the limit is the measured file plus ≈6%
+  to 17,479,740 B (−6,664,192 B), and the limit is the measured file plus ≈6%
   headroom for app code. Keeping 25.6 MB would have let the app spend the
   runtime's savings unnoticed.
 - **Bundle stays at 2,350,000 B.** The shipped bundle is 1,894,306 B, to the byte
@@ -325,8 +327,8 @@ the gate; the catalogue packer refuses to write unless its round-trip is exact.
 
 The runtime is 76% of the download, so it was the only lever with a large
 payoff. It is now built per package from the app's reachable features, and the
-measured result is **−16,595,048 B stripped, −6,678,913 B deflated, −6,680,576 B
-of APK (−27.7%)**. The 0.3.0-era estimate here guessed 13–18% of the library; the
+measured result is **−16,595,048 B stripped, −6,678,913 B deflated, −6,664,192 B
+of APK (−27.6%)**. The 0.3.0-era estimate here guessed 13–18% of the library; the
 real figure on 0.5.0's doubled engine was 34% of it, because `shader` alone is
 wgpu, naga and generated shader tables, and `term`/`editor`/`rich-editor`/`plot`
 bring their own heavy crates.
