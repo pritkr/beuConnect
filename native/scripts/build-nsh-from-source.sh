@@ -27,8 +27,10 @@ ROOT="$(pwd)"
 ABI="${1:-arm64-v8a}"
 
 # The pinned upstream. A build from an arbitrary HEAD is not reproducible, so a
-# tag or commit is required, not a branch.
-NSH_REV="${NSH_REV:-v0.5.0}"
+# tag or commit is required, not a branch. This commit is `main` after 0.5.1 and
+# carries longbridge/nsh#2060: the Android runtime is built from the features the
+# bundle reaches (24.1 → 17.5 MB APK). Move the pin to a tag once one has it.
+NSH_REV="${NSH_REV:-589a2519c82b29895cda9b295ffdf053d1665047}"
 
 find_nsh() {
   local candidate
@@ -76,7 +78,7 @@ build-nsh-from-source: $NSH_SRC is at $HAVE, which is neither a tag nor $NSH_REV
 An app that cannot name the revision it was built from cannot be rebuilt, so
 check the checkout out first:
 
-  git -C $NSH_SRC fetch --depth 1 origin tag $NSH_REV
+  git -C $NSH_SRC fetch --depth 1 origin $NSH_REV
   git -C $NSH_SRC checkout $NSH_REV
 
 NSH_ALLOW_UNPINNED=1 builds the working tree anyway, for a local experiment.

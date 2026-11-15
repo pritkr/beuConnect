@@ -65,6 +65,10 @@ if [ ! -f "$AAR" ] && [ -z "${NSH_AAR:-}" ]; then
   # the same binary this build packages with.
   AAR="$(NSH_BIN="$NSH" ./scripts/fetch-nsh-embed.sh)"
 fi
+# Which CLI and which AAR: the pair decides whether the library is trimmed, and
+# both have a default that can be the wrong one (`nsh` on PATH, a cached AAR).
+echo "▸ nsh ${NSH} ($("$NSH" --version 2>/dev/null | sed 's/^nsh //'))"
+echo "▸ embed $(basename "$AAR") $AAR"
 
 # The version lives in exactly one place — `nsh.json` — and this reads it for
 # the APK's versionCode/versionName. Hard-coding it here once already meant a
