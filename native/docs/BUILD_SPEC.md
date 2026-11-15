@@ -180,7 +180,7 @@ A screen is done when all of these are true:
 8. **No new dependency.** `native/` has no `package.json`; anything imported is
    bundled into `assets/nsh/bundle.nshc` and counted against the size budget.
 9. **APK budget respected** — `.nsh/out/BEUConnect.apk` stays under
-   `scripts/size-report.sh`'s 12,300,000 B APK budget (and the source bundle
+   `scripts/size-report.sh`'s 18,500,000 B APK budget (and the source bundle
    under its 2,350,000 B budget) after `./scripts/package-android.sh`. The
    script is the check and the two overrides are `APK_BUDGET` / `BUNDLE_BUDGET`;
    raising either needs a reason in `docs/SIZE.md`.

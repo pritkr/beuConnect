@@ -20,10 +20,15 @@ set -euo pipefail
 CHECK=0
 [ "${1:-}" = "--check" ] && CHECK=1
 
+# Which CLI decides the release to match. `build-android-host.sh` passes the
+# binary it will package with, so a nightly earlier on PATH cannot pull a
+# mismatched AAR.
+NSH="${NSH_BIN:-nsh}"
+
 version="${NSH_EMBED_VERSION:-}"
 if [ -z "$version" ]; then
-  raw="$(nsh --version 2>/dev/null | awk '{print $2}')"
-  [ -n "$raw" ] || { echo "fetch-nsh-embed: no nsh on PATH" >&2; exit 1; }
+  raw="$("$NSH" --version 2>/dev/null | awk '{print $2}')"
+  [ -n "$raw" ] || { echo "fetch-nsh-embed: no nsh ($NSH) to read a version from" >&2; exit 1; }
   # `nsh 0.5.0 (f4d68f7)` and a nightly build both name a tag: `v0.5.0` and
   # `nightly`. A dev build from a checkout has no release to match.
   case "$raw" in

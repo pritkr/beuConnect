@@ -330,6 +330,28 @@
         "bundle": 2350000
       },
       "pass": true
+    },
+    {
+      "at": "2026-11-15T07:49:14Z",
+      "abi": "arm64-v8a",
+      "apkBytes": 17463356,
+      "payloadBytes": 17440121,
+      "unpackedBytes": 43070284,
+      "entries": 107,
+      "bundle": {
+        "entry": "assets/nsh/bundle.nshc",
+        "bytecodeBytes": 1894306,
+        "compressedBytes": 705205
+      },
+      "source": {
+        "jsBytes": 1608307,
+        "bytecodeBytes": 1894306
+      },
+      "budgets": {
+        "apk": 18500000,
+        "bundle": 2350000
+      },
+      "pass": true
     }
   ]
 }

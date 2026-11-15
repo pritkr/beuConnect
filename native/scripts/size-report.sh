@@ -25,7 +25,7 @@ cd "$(dirname "$0")/.."
 APK="${APK:-.nsh/out/BEUConnect.apk}"
 HISTORY="${HISTORY:-docs/size-history.json}"
 BUNDLE_ENTRY="assets/nsh/bundle.nshc"
-APK_BUDGET="${APK_BUDGET:-25600000}"
+APK_BUDGET="${APK_BUDGET:-18500000}"
 BUNDLE_BUDGET="${BUNDLE_BUDGET:-2350000}"
 
 RECORD=0

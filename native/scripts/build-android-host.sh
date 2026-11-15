@@ -17,6 +17,11 @@ cd "$(dirname "$0")/.."
 ROOT="$(pwd)"
 
 ABI="${1:-arm64-v8a}"
+# Which `nsh` drives the bundle. The trimmed runtime needs an nsh with
+# longbridge/nsh#2060, which a nightly or a release older than it lacks; when a
+# second install sits on PATH (say a nightly in ~/.local/bin), naming the one to
+# use is the difference between a trimmed library and the full prebuilt.
+NSH="${NSH_BIN:-nsh}"
 ENTRY="${ENTRY:-App.tsx}"
 SUFFIX="${SUFFIX:-}"
 SDK="${ANDROID_HOME:-${ANDROID_SDK:-$HOME/Library/Android/sdk}}"
@@ -26,6 +31,13 @@ if [ -z "$NDK" ] && [ -d "$SDK/ndk" ]; then
   NDK="$(find "$SDK/ndk" -maxdepth 1 -mindepth 1 -type d | sort -V | tail -1)"
 fi
 HOST_TAG="$(uname -s | tr '[:upper:]' '[:lower:]')-x86_64"
+# `nsh package` builds the app's own libnsh.so from the features the bundle
+# reaches when cargo and the NDK are reachable; without them it warns and the
+# package keeps the prebuilt one. The SDK, NDK and cargo are handed to it here
+# rather than assumed to be exported by the caller's shell.
+export PATH="$HOME/.cargo/bin:$PATH"
+export ANDROID_HOME="$SDK"
+if [ -n "${NDK:-}" ]; then export ANDROID_NDK_HOME="$NDK"; fi
 # The newest platform installed, not a pinned one: a build server and a laptop
 # rarely have the same set, and `android-35` is a fine target for a `minSdk 28`
 # app. The target SDK follows whichever platform is found.
@@ -49,7 +61,9 @@ fi
 # when it is there, and fetch the release's otherwise.
 AAR="${NSH_AAR:-$HOME/.nsh/embed/android/nsh.aar}"
 if [ ! -f "$AAR" ] && [ -z "${NSH_AAR:-}" ]; then
-  AAR="$(./scripts/fetch-nsh-embed.sh)"
+  # The AAR must match the CLI that will build the library, so the fetch reads
+  # the same binary this build packages with.
+  AAR="$(NSH_BIN="$NSH" ./scripts/fetch-nsh-embed.sh)"
 fi
 
 # The version lives in exactly one place — `nsh.json` — and this reads it for
@@ -102,7 +116,12 @@ mkdir -p "$WORK/classes" "$WORK/dex" "$WORK/res" "$WORK/app" "$WORK/gen"
 if [ "${SKIP_BUNDLE:-0}" = "1" ] && [ -f "$OUT/raw/BEUConnect.apk" ]; then
   echo "  reusing the existing bundle (SKIP_BUNDLE=1)"
 else
-  nsh package "$ENTRY" --target android -o "$OUT/raw" >/dev/null
+  # One ABI builds one libnsh.so; `all` leaves the CLI's default set. Without
+  # this the CLI cross-compiles the runtime twice and the second library is
+  # dropped on the floor two steps later.
+  PKG_ABI=()
+  [ "$ABI" = "all" ] || PKG_ABI=(--abi "$ABI")
+  "$NSH" package "$ENTRY" --target android -o "$OUT/raw" "${PKG_ABI[@]}" >/dev/null
 fi
 unzip -q -o "$OUT/raw/BEUConnect.apk" "assets/nsh/*" -d "$WORK/app"
 
@@ -181,11 +200,29 @@ mkdir -p "$STAGE/assets"
 cp -R "$WORK/app/assets/nsh" "$STAGE/assets/"
 
 unzip -q "$AAR" 'jni/*' -d "$WORK/aar"
+# nsh on `main` after 0.5.1 builds `libnsh.so` from the app's own imports, so
+# it carries only the native features this app reaches (no wgpu, vte, ropey or
+# RaTeX). `nsh package` puts that library in the APK it just wrote; the AAR's
+# is the prebuilt one with every feature, used only when the app's did not
+# build (no Rust or NDK on the machine, which the CLI warns about).
+OWNLIB="$WORK/ownlib"
+rm -rf "$OWNLIB"
+mkdir -p "$OWNLIB"
+unzip -q -o "$OUT/raw/BEUConnect.apk" 'lib/*' -d "$OWNLIB" 2>/dev/null || true
 for abi in arm64-v8a armeabi-v7a x86_64; do
-  [ -d "$WORK/aar/jni/$abi" ] || continue
+  [ -d "$WORK/aar/jni/$abi" ] || [ -d "$OWNLIB/lib/$abi" ] || continue
   [ "$ABI" = "all" ] || [ "$ABI" = "$abi" ] || continue
   mkdir -p "$STAGE/lib/$abi"
-  cp "$WORK/aar/jni/$abi/libnsh.so" "$STAGE/lib/$abi/libnsh.so"
+  if [ -f "$OWNLIB/lib/$abi/libnsh.so" ]; then
+    cp "$OWNLIB/lib/$abi/libnsh.so" "$STAGE/lib/$abi/libnsh.so"
+    echo "  libnsh.so: the app's own (trimmed)"
+  else
+    cp "$WORK/aar/jni/$abi/libnsh.so" "$STAGE/lib/$abi/libnsh.so"
+    echo "  libnsh.so: the AAR's prebuilt one (every native feature)"
+    echo "  ⚠ \`nsh package\` did not build the app's own library, so this APK carries" >&2
+    echo "    the full runtime (48.9 MB stripped / ~20 MB deflated). It needs an nsh" >&2
+    echo "    with longbridge/nsh#2060 (main after 0.5.1), cargo and the NDK." >&2
+  fi
   "$STRIP" --strip-unneeded "$STAGE/lib/$abi/libnsh.so"
 done
 [ -d "$STAGE/lib" ] || { echo "no lib/ for ABI $ABI" >&2; exit 1; }

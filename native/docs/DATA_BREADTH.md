@@ -28,9 +28,10 @@ published. It is a delivery problem.**
 
 ## 2. Why it can't be bundled
 
-The APK is **12,143,415 B** against a **12,300,000 B** budget — 1.3 % headroom
-(`docs/SIZE.md`). The whole dataset is 23 MB, roughly twice the app. Even the
-single largest college pack (804 KB) is five times the remaining headroom.
+The APK is **17,463,356 B** against an **18,500,000 B** budget — 1,036,644 B of
+headroom (`docs/SIZE.md`). The whole dataset is 23 MB, larger than the app. Even
+the single largest college pack (804 KB) would take 78% of the remaining
+headroom.
 
 So breadth has exactly one shape: **the APK ships an index, the data arrives on
 demand, and what arrives stays cached.**

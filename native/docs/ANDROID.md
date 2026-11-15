@@ -1,6 +1,6 @@
 # Android build and install
 
-The APK is **12,143,415 B (12.14 MB)** — arm64, stripped, deflated, signed with
+The APK is **17,463,356 B (17.46 MB)** — arm64, stripped, deflated, signed with
 the release key — built by `scripts/package-android.sh` and measured by
 `scripts/size-report.sh`. Details of where the bytes go: `docs/SIZE.md`.
 
@@ -42,16 +42,15 @@ prints the certificate fingerprint to keep.
 ```sh
 ./scripts/package-android.sh            # arm64-v8a, the phone build → .nsh/out/BEUConnect.apk
 ./scripts/package-android.sh x86_64     # Intel emulator
-./scripts/package-android.sh all        # every ABI, 34.3 MB, testing only
+./scripts/package-android.sh all        # every ABI, testing only
 INSTALL=1 ./scripts/package-android.sh  # build, adb install, launch
 ```
 
 `package-android.sh` runs the compile gate, then `build-android-host.sh`, which
 is the only Android build path. The stock `nsh package` host is only a staging
 step: its APK carries every ABI and — because its manifest says
-`extractNativeLibs="false"` — stores each runtime uncompressed (90.66 MB /
-90,657,923 B for the three it carries). The host build replaces everything
-around the bundle:
+`extractNativeLibs="false"` — stores each ABI's runtime uncompressed. The host
+build replaces everything around the bundle:
 
 1. **Bundle once.** `nsh package App.tsx --target android -o .nsh/out/raw`; only
    `assets/nsh/*` is kept. The manifest, resources and signature are the host's,
@@ -63,11 +62,11 @@ around the bundle:
 3. **Keep one ABI** (`arm64-v8a`). arm64 is every current Android phone, and an
    Apple Silicon emulator is arm64 too, so nothing is lost in development. Every
    additional ABI adds another copy of the same engine.
-4. **`llvm-strip --strip-unneeded libnsh.so`** — 32.28 → 24.70 MB. Symbol names
-   are not needed at runtime; the unstripped library stays in
-   `~/.nsh/runtime/android/release/lib/<abi>/libnsh.so` if a native stack ever
-   needs reading.
-5. **Re-zip, align, sign.** `zip -9` deflates the library 24.70 → 11.06 MB;
+4. **`llvm-strip --strip-unneeded libnsh.so`** — 56,017,848 → 32,266,536 B.
+   Symbol names are not needed at runtime; the cargo artifact with them stays in
+   `~/.nsh/source/target/<triple>/release/libnsh.so` if a native stack ever needs
+   reading.
+5. **Re-zip, align, sign.** `zip -9` deflates the library 32.27 → 13.27 MB;
    `resources.arsc` is added stored (`-0`) because Android mmaps it and targetSdk
    30+ expects it aligned; then `zipalign -f 4` and `apksigner sign` with the
    release key from `~/.config/beuconnect/signing.env`.
@@ -75,13 +74,13 @@ around the bundle:
 The host manifest sets `android:extractNativeLibs="true"`, which is what permits
 step 5's deflate: Android extracts the library at install time instead of mmapping
 it out of the APK. The stock manifest sets it to `false`, so the stock host's
-staging APK stores all three runtimes uncompressed and is 90.66 MB.
+staging APK stores every ABI's runtime uncompressed.
 
-The result is 12.11 MB for the phone build; the same host with every ABI is
-34.3 MB. It installs identically; the only difference is the install-time
-extraction. 91.3% of the download is the runtime, so going lower means a custom
-runtime built without unused engine features (investigated, not implemented —
-`docs/SIZE.md`).
+The result is 17.46 MB for the phone build, 43.07 MB unpacked. It installs
+identically; the only difference is the install-time extraction. 76% of the
+download is the runtime, which is itself built from the app's feature set (see
+§2.1) — the app-side bytes are `classes.dex` 3.09 MB, the bundle 0.71 MB and
+resources 0.37 MB.
 
 ### 2.1 The custom host, and the PDF page
 
@@ -121,6 +120,36 @@ installed `nsh --version` into
 `${XDG_CACHE_HOME:-~/.cache}/beuconnect/nsh-embed/v<version>/nsh.aar` and checks
 the release's sha256. `NSH_AAR` still overrides both, for
 `build-nsh-from-source.sh`.
+
+The AAR's `libnsh.so` is no longer the one that ships. Since `nsh` on `main`
+after 0.5.1 (`longbridge/nsh#2060`) `nsh package --target android`
+cross-compiles the app's own library with only the native features its bundle
+can reach: `shader` (wgpu), `term`, `editor`, `rich-editor`, `plot` and
+`emoji-picker` drop out because nothing imports them, `TextView` keeps
+`highlight` and `math`, and `js`, `net` and `svg` always stay.
+`build-android-host.sh` takes that library from the APK `nsh package` just
+wrote and falls back to the AAR's prebuilt one — every feature — only when the
+app's did not build. Building it needs `cargo` and the NDK (the script exports
+both); without them the CLI warns and the APK keeps the old, full runtime.
+
+Two environment variables decide *which* `nsh` does that, and both exist because
+a second install on `PATH` silently changes the answer. `NSH_BIN` names the
+binary to package with (`NSH_BIN=~/.nsh/bin/nsh ./scripts/build-android-host.sh`);
+`fetch-nsh-embed.sh` reads the same variable, so the AAR and the CLI are always
+the same release. A build from a source checkout looks for its runtime next to
+`target/release`, not in `~/.nsh/runtime`, and a missing one makes it rebuild
+the whole prebuilt runtime for every ABI with every feature: symlink the
+installed one instead —
+
+```sh
+mkdir -p ~/.nsh/source/target/runtime/android
+ln -sfn ~/.nsh/runtime/android/release ~/.nsh/source/target/runtime/android/release
+ln -sfn ~/.nsh/runtime/android/dev     ~/.nsh/source/target/runtime/android/dev
+```
+
+Do not set `NSH_RUNTIME` for this: `package.rs` treats it as "a prebuilt runtime
+was asked for" and skips the app's own library, so the APK quietly ships the
+full runtime again.
 
 The build and package scripts source `~/.config/beuconnect/signing.env`, so
 `./scripts/package-android.sh` signs with the release key with no arguments. To
@@ -221,7 +250,7 @@ Mac architectures; the binaries are universal. Do not "fix" the path.
 
 `./scripts/package-android.sh all` always works because it keeps every ABI, and
 is the fastest way to tell an ABI problem from a code problem. It is not the
-shipping artifact: it carries three runtimes and is 34.3 MB.
+shipping artifact: it carries three runtimes.
 
 ### 4.3 Signature mismatch
 

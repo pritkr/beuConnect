@@ -13,7 +13,7 @@ nothing here needs its own logic:
 |---|---|---|
 | 1 | `scripts/check.sh test` | types, bundle and all tests pass on one lock (no two builds race) |
 | 2 | `scripts/package-android.sh` | arm64 only, `llvm-strip`, deflated runtime, `extractNativeLibs`, aligned, signed |
-| 3 | `scripts/size-report.sh --no-build --record` | the APK is under **12,300,000 B**, and the run is appended to `docs/size-history.json` |
+| 3 | `scripts/size-report.sh --no-build --record` | the APK is under **18,500,000 B**, and the run is appended to `docs/size-history.json` |
 | 4 | verify | `zipalign -c`, `apksigner verify`, `unzip -t`, badging, package + version |
 | 5 | ship | a copy at `dist/BEUConnect-<version>-arm64-v8a.apk` with its sha256, then the GitHub release |
 
@@ -53,7 +53,7 @@ the About screen read those, so `nsh.json` and `app-info.ts` are bumped together
 | failure | cause | fix |
 |---|---|---|
 | `check.sh` red | a type error or a failing test | fix the tree; packaging a red tree is how a broken screen ships |
-| `size-report.sh` over budget | bundle growth (the runtime is fixed) | `docs/SIZE.md` has the arithmetic; trim embedded data before screens |
+| `size-report.sh` over budget | bundle growth, or a new import that pulls a native feature | `docs/SIZE.md` has the arithmetic; trim embedded data before screens |
 | `apksigner` — no keystore | this machine has no release identity | restore `~/.config/beuconnect/` from the backup, or run `scripts/signing.sh` for a fork (new key = no upgrades) |
 | `zipalign` missing | no build-tools | `sdkmanager "build-tools;36.1.0" "platforms;android-36"` |
 | install rejects the APK | `extractNativeLibs` not flipped | `package-android.sh` does it; check its log line `android:extractNativeLibs=true` |
