@@ -19,6 +19,26 @@ nothing here needs its own logic:
 
 `--skip-tests` skips step 1 for iteration; never for a release.
 
+## On hold: the next release waits for an nsh tag
+
+Version stays **1.3.0 / build 11** until upstream tags a release that contains
+[`longbridge/nsh#2060`](https://github.com/longbridge/nsh/pull/2060). That is the
+change that builds `libnsh.so` from the app's features and takes the APK from
+24.1 MB to 17.5 MB (`docs/SIZE.md`); until a tag exists, the artifact depends on
+a commit pin (`589a2519` in `scripts/build-nsh-from-source.sh`), which is not a
+build anyone can reproduce from a version number.
+
+Check before cutting the release:
+
+```sh
+gh release list -R longbridge/nsh --limit 3    # a v0.5.2+ with #2060 is the trigger
+```
+
+When it lands: build and install the release's AAR (`./scripts/fetch-nsh-embed.sh`
+after updating `nsh`), package once, confirm `libnsh.so: the app's own (trimmed)`
+in the log, then bump `nsh.json` and run `./scripts/release.sh`. The commit pin
+in `build-nsh-from-source.sh` moves to the tag at the same time.
+
 ## What "verified" means here
 
 The checks are byte-level, not visual, so a CI run and a laptop run agree:
