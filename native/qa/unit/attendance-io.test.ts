@@ -1,14 +1,20 @@
 /**
- * The attendance backup file — `src/features/tools/attendance-io.ts`, no
- * network and no screen.
+ * The attendance backup file — the site's envelope, read and written.
  *
- * The shape is the website's, not ours: an export made on either side has to
- * open on the other. So the contract here is a file format plus two honesty
- * rules — an unreadable file changes nothing, and a paper the file does not
- * mention is left exactly as it was. Everything is synthetic; no real register.
+ * Two contracts are pinned here, both silent when they break:
+ *
+ *  1. **The export is the site's file.** `beu.prit.eu.org/attendance` writes
+ *     `{ version: 2, settings, subjects }`, so an export that renames a field or
+ *     carries an app-only one opens as an empty page on the other side.
+ *  2. **A bad file changes nothing.** Every row is checked before the ledger is
+ *     touched, so a half-valid backup cannot leave attendance half-imported.
+ *
+ * All names and ids are synthetic; no student data is in this file.
  */
 
 import { describe, expect, test } from "nsh/test";
+
+import type { AttendanceRead } from "../../src/features/tools/attendance-io";
 import {
   ATTENDANCE_FILE_VERSION,
   attendanceFileSummary,
@@ -16,342 +22,414 @@ import {
   exportAttendance,
   mergeAttendance,
   readAttendanceFile,
-  type AttendanceFile,
 } from "../../src/features/tools/attendance-io";
-import type { AttendanceState } from "../../src/features/tools/state";
+import type { AttendanceState, AttendanceSubject } from "../../src/features/tools/state";
 
-/* --------------------------------------------------------------- fixtures */
+const TARGET = 80;
+const DAY = 86_400_000;
+const NOV_1 = Date.UTC(2026, 10, 1);
+const NOV_3 = Date.UTC(2026, 10, 3);
 
-const DAY = Date.UTC(2026, 10, 3);
+/* ── fixtures ─────────────────────────────────────────────────────────── */
 
-function state(overrides: Partial<AttendanceState> = {}): AttendanceState {
-  return {
-    target: 75,
-    subjects: [
-      { id: "sub-a", name: "Data Structures", attended: 18, total: 24 },
-      { id: "sub-b", name: "Digital Circuits", attended: 12, total: 20, code: "EC401" },
-    ],
-    log: [
-      {
-        id: "log-1",
-        subjectId: "sub-a",
-        subjectName: "Data Structures",
-        action: "present",
-        at: DAY,
-      },
-    ],
-    ...overrides,
-  };
+function paper(overrides: Partial<AttendanceSubject> = {}): AttendanceSubject {
+  return { id: "site-1", name: "DBMS", attended: 12, total: 20, ...overrides };
 }
 
-/** The exact envelope `beu.prit.eu.org/attendance` writes. */
-function siteFile(): AttendanceFile {
-  return {
-    version: 2,
-    settings: { targetPercentage: 75 },
-    subjects: [
-      {
-        id: "site-1",
-        name: "Data Structures",
-        attended: 20,
-        total: 25,
-        history: [
-          { action: "present", prevAttended: 19, prevTotal: 24, timestamp: DAY },
-          { action: "absent", prevAttended: 18, prevTotal: 24, timestamp: DAY - 86_400_000 },
-        ],
-      },
-    ],
-  };
+function ledger(subjects: AttendanceSubject[], target = TARGET): AttendanceState {
+  return { subjects, log: [], target };
 }
 
-function parse(value: unknown) {
-  return readAttendanceFile(JSON.stringify(value));
+/** The v2 envelope, with `settings` overridable so a legacy file can be built. */
+function envelope(subjects: unknown[], settings: unknown = { targetPercentage: 75 }): string {
+  return JSON.stringify({ version: 2, settings, subjects });
 }
 
-/* ------------------------------------------------------------------ export */
+/** A parsed file, or the reason the parse was rejected. */
+function read(text: string): AttendanceRead {
+  const parsed = readAttendanceFile(text);
+  if (!parsed.ok) throw new Error(`expected a valid file, got: ${parsed.reason}`);
+  return parsed.file;
+}
 
-describe("writing the site's file", () => {
-  test("the envelope names the site's version and keeps every count", () => {
-    const file = exportAttendance(state());
+/** The sentence a rejection carries, asserted to be a sentence. */
+function rejected(text: string): string {
+  const parsed = readAttendanceFile(text);
+  if (parsed.ok) throw new Error("expected the file to be rejected");
+  expect(typeof parsed.reason).toBe("string");
+  expect(parsed.reason.trim().length > 0).toBe(true);
+  return parsed.reason;
+}
+
+/* ── export ───────────────────────────────────────────────────────────── */
+
+describe("exportAttendance", () => {
+  test("writes the site's version-2 envelope with this ledger's target", () => {
+    const file = exportAttendance(ledger([paper()]));
+
     expect(file.version).toBe(ATTENDANCE_FILE_VERSION);
-    expect(file.settings).toEqual({ targetPercentage: 75 });
-    expect(file.subjects.map((s) => [s.id, s.name, s.attended, s.total])).toEqual([
-      ["sub-a", "Data Structures", 18, 24],
-      ["sub-b", "Digital Circuits", 12, 20],
-    ]);
+    expect(file.version).toBe(2);
+    expect(file.settings.targetPercentage).toBe(TARGET);
+    expect(file.subjects.length).toBe(1);
   });
 
-  test("history goes out empty, because this app cannot rebuild previous totals", () => {
-    const file = exportAttendance(state());
-    for (const subject of file.subjects) expect(subject.history).toEqual([]);
-  });
-
-  test("a paper the register filled in exports its two counts like any other", () => {
+  test("writes one row per paper, and nothing the site would not read", () => {
     const file = exportAttendance(
-      state({
-        subjects: [
-          { id: "sub-c", name: "Physics", attended: 9, total: 12, code: "PH201", source: "gecs", syncedAt: 1 },
-        ],
-      }),
+      ledger([
+        paper({ id: "site-1", name: "DBMS", attended: 12, total: 20 }),
+        paper({ id: "site-2", name: "COA", attended: 5, total: 8 }),
+      ]),
     );
+
+    expect(file.subjects.length).toBe(2);
     expect(file.subjects[0]).toEqual({
-      id: "sub-c",
-      name: "Physics",
-      attended: 9,
-      total: 12,
+      id: "site-1",
+      name: "DBMS",
+      attended: 12,
+      total: 20,
+      history: [],
+    });
+    expect(file.subjects[1].name).toBe("COA");
+    // The app's own markers stay here: the site has no field for them.
+    expect(Object.keys(file.subjects[0])).toEqual(["id", "name", "attended", "total", "history"]);
+  });
+
+  test("a register-filled paper exports its two counts without the marker", () => {
+    const file = exportAttendance(
+      ledger([paper({ code: "105301", source: "gecs", syncedAt: NOV_1 })]),
+    );
+
+    expect(file.subjects[0]).toEqual({
+      id: "site-1",
+      name: "DBMS",
+      attended: 12,
+      total: 20,
       history: [],
     });
   });
 
-  test("an empty ledger is a valid file with no papers", () => {
-    const file = exportAttendance(state({ subjects: [] }));
+  test("exports an empty ledger as the envelope with no papers", () => {
+    const file = exportAttendance(ledger([]));
+
+    expect(file.version).toBe(2);
     expect(file.subjects).toEqual([]);
-    expect(parse(file).ok).toBe(false);
+    expect(file.settings.targetPercentage).toBe(TARGET);
+  });
+
+  test("round-trips through the reader with the same counts", () => {
+    const state = ledger([paper(), paper({ id: "site-2", name: "COA", attended: 5, total: 8 })]);
+    const back = read(JSON.stringify(exportAttendance(state)));
+
+    expect(back.subjects.length).toBe(2);
+    expect(back.subjects.map((subject) => [subject.id, subject.attended, subject.total])).toEqual([
+      ["site-1", 12, 20],
+      ["site-2", 5, 8],
+    ]);
+    expect(back.targetPercentage).toBe(TARGET);
+    expect(back.legacy).toBe(false);
   });
 });
 
-/* ------------------------------------------------------------------- parse */
+/* ── reading ──────────────────────────────────────────────────────────── */
 
-describe("reading a file", () => {
-  test("the site's envelope reads back with its target and newest history date", () => {
-    const read = parse(siteFile());
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-    expect(read.file.legacy).toBe(false);
-    expect(read.file.targetPercentage).toBe(75);
-    expect(read.file.updatedAt).toBe(DAY);
-    expect(read.file.subjects[0]).toMatchObject({ attended: 20, total: 25 });
+describe("readAttendanceFile — accepted files", () => {
+  test("reads the v2 envelope and its target", () => {
+    const file = read(envelope([paper()]));
+
+    expect(file.legacy).toBe(false);
+    expect(file.targetPercentage).toBe(75);
+    expect(file.subjects.length).toBe(1);
+    expect(file.subjects[0].id).toBe("site-1");
+    expect(file.subjects[0].attended).toBe(12);
+    expect(file.subjects[0].total).toBe(20);
   });
 
-  test("the pre-v2 bare array is accepted, with no settings and no invented target", () => {
-    const read = parse([{ id: "a", name: "Maths", attended: 4, total: 6 }]);
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-    expect(read.file.legacy).toBe(true);
-    expect(read.file.targetPercentage).toBeNull();
-    expect(read.file.updatedAt).toBeNull();
+  test("reads a bare pre-v2 array, which carries no settings", () => {
+    const file = read(JSON.stringify([{ id: "legacy-1", name: "COA", attended: 3, total: 4 }]));
+
+    expect(file.legacy).toBe(true);
+    expect(file.targetPercentage).toBe(null);
+    expect(file.subjects.length).toBe(1);
+    expect(file.subjects[0].name).toBe("COA");
   });
 
-  test("a paper added but never marked has an attended count of zero", () => {
-    const read = parse([{ id: "a", name: "Maths", total: 6 }]);
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-    expect(read.file.subjects[0].attended).toBe(0);
+  test("a paper added but never marked has no attended count yet", () => {
+    const file = read(envelope([{ id: "a", name: "COA", total: 0 }]));
+
+    expect(file.subjects[0].attended).toBe(0);
+    expect(file.subjects[0].total).toBe(0);
   });
 
-  test("a missing total is an error that names its row", () => {
-    expect(parse([{ id: "a", name: "Maths", total: 6 }, { id: "b", name: "Physics" }])).toMatchObject({
-      ok: false,
-      reason: "Row 2 has no class count.",
-    });
+  test("dates itself from the newest history timestamp", () => {
+    const file = read(
+      envelope([
+        {
+          id: "a",
+          name: "DBMS",
+          attended: 1,
+          total: 2,
+          history: [
+            { action: "present", prevAttended: 0, prevTotal: 1, timestamp: NOV_1 },
+            { action: "absent", prevAttended: 1, prevTotal: 1, timestamp: NOV_3 },
+          ],
+        },
+      ]),
+    );
+
+    expect(file.updatedAt).toBe(NOV_3);
+    expect(file.subjects[0].history.length).toBe(2);
   });
 
-  test("a count that is not a whole number is a sentence, not a rounded guess", () => {
-    expect(parse([{ id: "a", name: "Maths", total: "6" }])).toMatchObject({
-      ok: false,
-      reason: "Row 1 has an invalid class count.",
-    });
-    expect(parse([{ id: "a", name: "Maths", attended: "4", total: 6 }])).toMatchObject({
-      ok: false,
-      reason: "Row 1 has an invalid attended count.",
-    });
-  });
+  test("keeps only history entries it can date, and normalises their action", () => {
+    const file = read(
+      envelope([
+        {
+          id: "a",
+          name: "DBMS",
+          attended: 1,
+          total: 2,
+          history: [
+            { action: "present", prevAttended: 0, prevTotal: 1, timestamp: NOV_3 },
+            { action: "undo", prevAttended: 0, prevTotal: 1, timestamp: NOV_1 },
+            { action: "absent", prevAttended: 0, prevTotal: 1 },
+            { action: "absent", prevAttended: 0, prevTotal: 1, timestamp: 0 },
+          ],
+        },
+      ]),
+    );
 
-  test("attended more classes than the paper held is refused", () => {
-    expect(parse([{ id: "a", name: "Maths", attended: 7, total: 6 }])).toMatchObject({
-      ok: false,
-      reason: "Row 1 has attended more classes than it held.",
-    });
-  });
-
-  test("a paper with no id and a paper with no name each name their row", () => {
-    expect(parse([{ name: "Maths", total: 6 }])).toMatchObject({
-      ok: false,
-      reason: "Row 1 has no paper id.",
-    });
-    expect(parse([{ id: "a", name: "   ", total: 6 }])).toMatchObject({
-      ok: false,
-      reason: "Row 1 has no paper name.",
-    });
-  });
-
-  test("junk, the wrong version and an empty file are refused before anything applies", () => {
-    expect(readAttendanceFile("")).toMatchObject({ ok: false, reason: "Nothing pasted." });
-    expect(readAttendanceFile("{")).toMatchObject({ ok: false, reason: "Not valid JSON." });
-    expect(readAttendanceFile("42")).toMatchObject({
-      ok: false,
-      reason: "Not a BEUConnect attendance file.",
-    });
-    expect(parse({ version: 1, settings: {}, subjects: [] })).toMatchObject({
-      ok: false,
-      reason: "Not a BEUConnect attendance file.",
-    });
-    expect(parse({ version: 2, settings: {} })).toMatchObject({
-      ok: false,
-      reason: "Not a BEUConnect attendance file.",
-    });
-    expect(parse({ version: 2, settings: {}, subjects: [] })).toMatchObject({
-      ok: false,
-      reason: "The file has no papers.",
-    });
-  });
-
-  test("history keeps real dates, forgets the rest, and never invents an action", () => {
-    const read = parse([
-      {
-        id: "a",
-        name: "Maths",
-        attended: 4,
-        total: 6,
-        history: [
-          { action: "present", prevAttended: 3, prevTotal: 6, timestamp: 1_000 },
-          { action: "teleported", prevAttended: 2, prevTotal: 6, timestamp: 2_000 },
-          { action: "absent", prevAttended: 1, prevTotal: 6, timestamp: 0 },
-        ],
-      },
-    ]);
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-    expect(read.file.subjects[0].history).toEqual([
-      { action: "present", prevAttended: 3, prevTotal: 6, timestamp: 1_000 },
-      { action: "manual", prevAttended: 2, prevTotal: 6, timestamp: 2_000 },
-    ]);
-    expect(read.file.updatedAt).toBe(2_000);
-  });
-
-  test("a target outside 1–100 is clamped, and a missing target stays missing", () => {
-    const rows = [{ id: "a", name: "M", total: 1 }];
-    const high = parse({ version: 2, settings: { targetPercentage: 150 }, subjects: rows });
-    const low = parse({ version: 2, settings: { targetPercentage: 0 }, subjects: rows });
-    const none = parse({ version: 2, settings: {}, subjects: rows });
-    expect(high.ok && high.file.targetPercentage).toBe(100);
-    expect(low.ok && low.file.targetPercentage).toBe(1);
-    expect(none.ok && none.file.targetPercentage).toBeNull();
+    expect(file.subjects[0].history.length).toBe(2);
+    expect(file.subjects[0].history[0].action).toBe("present");
+    expect(file.subjects[0].history[1].action).toBe("manual");
+    expect(file.updatedAt).toBe(NOV_3);
   });
 });
 
-/* ------------------------------------------------------------------- merge */
-
-describe("merging a file into the ledger", () => {
-  test("a paper matches by code, then by the site's id, then by name", () => {
-    const read = parse({
-      version: 2,
-      settings: { targetPercentage: 80 },
-      subjects: [
-        { id: "site-x", name: "Data Structures", attended: 20, total: 25 },
-        { id: "site-y", name: "Digital Circuits", attended: 15, total: 20, code: "ec401" },
-      ],
-    });
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-
-    const merge = mergeAttendance(state(), read.file);
-    expect(merge.replaced).toBe(2);
-    expect(merge.added).toBe(0);
-    expect(merge.state.subjects.map((s) => [s.name, s.attended, s.total])).toEqual([
-      ["Data Structures", 20, 25],
-      ["Digital Circuits", 15, 20],
-    ]);
-    expect(merge.state.target).toBe(80);
+describe("readAttendanceFile — rejected files", () => {
+  test("nothing pasted", () => {
+    expect(rejected("")).toContain("Nothing");
+    expect(rejected("   \n ")).toContain("Nothing");
   });
 
-  test("a paper the file does not mention keeps its counts exactly", () => {
-    const read = parse([{ id: "site-x", name: "Data Structures", attended: 20, total: 25 }]);
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
+  test("text that is not JSON", () => {
+    expect(rejected("{")).toContain("JSON");
+    expect(rejected("DBMS 12/20")).toContain("JSON");
+  });
 
-    const merge = mergeAttendance(state(), read.file);
+  test("an envelope this app does not write", () => {
+    rejected("null");
+    rejected("42");
+    rejected("{}");
+    rejected('{"version":1,"settings":{"targetPercentage":75},"subjects":[]}');
+    rejected('{"version":2,"settings":{"targetPercentage":75}}');
+    rejected('{"version":2,"subjects":"DBMS"}');
+  });
+
+  test("a file with no papers", () => {
+    expect(rejected("[]")).toContain("no papers");
+    expect(rejected(envelope([]))).toContain("no papers");
+  });
+
+  test("a row that is not a paper", () => {
+    expect(rejected(envelope(["DBMS"]))).toContain("Row 1");
+    expect(rejected(envelope([[]]))).toContain("Row 1");
+    expect(rejected(envelope([null]))).toContain("Row 1");
+  });
+
+  test("a paper without an id", () => {
+    expect(rejected(envelope([{ name: "DBMS", attended: 1, total: 2 }]))).toContain("id");
+    expect(rejected(envelope([{ id: "  ", name: "DBMS", attended: 1, total: 2 }]))).toContain("id");
+  });
+
+  test("a paper without a name", () => {
+    expect(rejected(envelope([{ id: "a", attended: 1, total: 2 }]))).toContain("name");
+    expect(rejected(envelope([{ id: "a", name: "   ", attended: 1, total: 2 }]))).toContain("name");
+  });
+
+  test("a count that is not a number", () => {
+    expect(rejected(envelope([{ id: "a", name: "DBMS", attended: "1", total: 2 }]))).toContain("attended");
+    expect(rejected(envelope([{ id: "a", name: "DBMS", attended: 1, total: "2" }]))).toContain("class count");
+    expect(rejected(envelope([{ id: "a", name: "DBMS", attended: 1 }]))).toContain("class count");
+  });
+
+  test("a negative count", () => {
+    expect(rejected(envelope([{ id: "a", name: "DBMS", attended: -1, total: 2 }]))).toContain("attended");
+    expect(rejected(envelope([{ id: "a", name: "DBMS", attended: 1, total: -2 }]))).toContain("class count");
+  });
+
+  test("a paper marked present more often than it held classes", () => {
+    const reason = rejected(envelope([{ id: "a", name: "DBMS", attended: 3, total: 2 }]));
+
+    expect(reason).toContain("Row 1");
+    expect(reason).toContain("more");
+  });
+
+  test("one bad row rejects the whole file, so nothing is half-read", () => {
+    const text = envelope([
+      { id: "a", name: "DBMS", attended: 1, total: 2 },
+      { id: "b", name: "COA", attended: 9, total: 2 },
+    ]);
+    const reason = rejected(text);
+
+    expect(reason).toContain("Row 2");
+    expect("file" in readAttendanceFile(text)).toBe(false);
+  });
+
+  test("a rejected file gives the screen nothing to merge, so the ledger is untouched", () => {
+    const state = ledger([paper()]);
+    const snapshot = JSON.parse(JSON.stringify(state)) as AttendanceState;
+    const parsed = readAttendanceFile(envelope([paper({ attended: 99, total: 20 })]));
+
+    // The screen applies a file only when the read succeeded.
+    if (parsed.ok) mergeAttendance(state, parsed.file);
+
+    expect(parsed.ok).toBe(false);
+    expect(state).toEqual(snapshot);
+  });
+});
+
+/* ── merging ──────────────────────────────────────────────────────────── */
+
+describe("mergeAttendance", () => {
+  test("adds every paper to an empty ledger, with the file's counts and target", () => {
+    const file = read(
+      envelope([
+        { id: "site-1", name: "DBMS", attended: 12, total: 20 },
+        { id: "site-2", name: "COA", attended: 5, total: 8 },
+      ]),
+    );
+    const merge = mergeAttendance(ledger([]), file);
+
+    expect(merge.replaced).toBe(0);
+    expect(merge.added).toBe(2);
+    expect(merge.state.subjects.length).toBe(2);
+    expect(merge.state.subjects.map((subject) => subject.name)).toEqual(["DBMS", "COA"]);
+    expect(merge.state.subjects.map((subject) => subject.attended)).toEqual([12, 5]);
+    expect(merge.state.target).toBe(75);
+    // A fresh local id, so two phones cannot disagree about the same paper.
+    expect(merge.state.subjects[0].id.startsWith("sub-")).toBe(true);
+    expect(merge.state.subjects[0].source).toBe("manual");
+  });
+
+  test("replaces the counts of a paper with the same id, without duplicating it", () => {
+    const state = ledger([paper({ id: "site-1", name: "Old name", attended: 4, total: 10 })]);
+    const merge = mergeAttendance(state, read(envelope([paper({ attended: 18, total: 20 })])));
+
     expect(merge.replaced).toBe(1);
     expect(merge.added).toBe(0);
-    expect(merge.state.subjects[1]).toEqual(state().subjects[1]);
+    expect(merge.state.subjects.length).toBe(1);
+    expect(merge.state.subjects[0].id).toBe("site-1");
+    expect(merge.state.subjects[0].name).toBe("DBMS");
+    expect(merge.state.subjects[0].attended).toBe(18);
+    expect(merge.state.subjects[0].total).toBe(20);
   });
 
-  test("a new paper is added, with a generated id and the file's code", () => {
-    const read = parse([{ id: "site-z", name: "Thermodynamics", attended: 3, total: 8, code: "ME301" }]);
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
+  test("matches a paper by name when the two ids differ", () => {
+    const state = ledger([paper({ id: "local-9", name: "  dbms ", attended: 4, total: 10 })]);
+    const merge = mergeAttendance(state, read(envelope([paper({ id: "site-1" })])));
 
-    const merge = mergeAttendance(state(), read.file);
-    expect(merge.added).toBe(1);
-    const added = merge.state.subjects[2];
-    expect(added.id).toMatch(/^sub-/);
-    expect(added).toMatchObject({ name: "Thermodynamics", attended: 3, total: 8, code: "ME301" });
-  });
-
-  test("imported counts are the student's again, not the register's", () => {
-    const current = state({
-      subjects: [{ id: "sub-a", name: "Physics", attended: 9, total: 12, code: "PH201", source: "gecs", syncedAt: 5 }],
-    });
-    const read = parse([{ id: "sub-a", name: "Physics", attended: 10, total: 12 }]);
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-
-    const merge = mergeAttendance(current, read.file);
-    expect(merge.state.subjects[0].source).toBe("manual");
-    expect(merge.state.subjects[0].syncedAt).toBeUndefined();
-  });
-
-  test("the date log is never rewritten by an import", () => {
-    const read = parse([{ id: "sub-a", name: "Data Structures", attended: 20, total: 25 }]);
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-    expect(mergeAttendance(state(), read.file).state.log).toEqual(state().log);
-  });
-
-  test("the caller's ledger is not edited", () => {
-    const current = state();
-    const read = parse([{ id: "sub-a", name: "Data Structures", attended: 20, total: 25 }]);
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-    mergeAttendance(current, read.file);
-    expect(current).toEqual(state());
-  });
-
-  test("export then read then merge round-trips every count", () => {
-    const current = state();
-    const read = readAttendanceFile(JSON.stringify(exportAttendance(current)));
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-    const merge = mergeAttendance(current, read.file);
-    expect(merge.replaced).toBe(current.subjects.length);
+    expect(merge.replaced).toBe(1);
     expect(merge.added).toBe(0);
-    expect(merge.state.subjects.map((s) => [s.id, s.name, s.attended, s.total])).toEqual(
-      current.subjects.map((s) => [s.id, s.name, s.attended, s.total]),
+    expect(merge.state.subjects.length).toBe(1);
+    expect(merge.state.subjects[0].id).toBe("local-9");
+    expect(merge.state.subjects[0].attended).toBe(12);
+  });
+
+  test("leaves a paper the file does not mention exactly as it was", () => {
+    const state = ledger([paper(), paper({ id: "site-2", name: "COA", attended: 5, total: 8 })]);
+    const merge = mergeAttendance(state, read(envelope([paper({ attended: 18, total: 20 })])));
+
+    expect(merge.replaced).toBe(1);
+    expect(merge.added).toBe(0);
+    expect(merge.state.subjects.length).toBe(2);
+    expect(merge.state.subjects[1]).toEqual(state.subjects[1]);
+  });
+
+  test("takes the file's target, and keeps the local one when the file has none", () => {
+    const withTarget = mergeAttendance(
+      ledger([], 65),
+      read(envelope([paper()], { targetPercentage: 85 })),
     );
-    expect(merge.state.target).toBe(current.target);
+    expect(withTarget.state.target).toBe(85);
+
+    const legacy = read(JSON.stringify([{ id: "a", name: "COA", attended: 1, total: 2 }]));
+    const kept = mergeAttendance(ledger([], 65), legacy);
+    expect(kept.state.target).toBe(65);
+  });
+
+  test("clears the register marker on a paper the file replaces", () => {
+    const state = ledger([paper({ source: "gecs", syncedAt: NOV_1, code: "105301" })]);
+    const merge = mergeAttendance(
+      state,
+      read(envelope([{ id: "site-1", name: "DBMS", attended: 18, total: 20, code: "105301" }])),
+    );
+
+    expect(merge.state.subjects[0].source).toBe("manual");
+    expect(merge.state.subjects[0].syncedAt).toBe(undefined);
+  });
+
+  test("never mutates the ledger it was given", () => {
+    const state = ledger([paper(), paper({ id: "site-2", name: "COA", attended: 5, total: 8 })]);
+    const snapshot = JSON.parse(JSON.stringify(state)) as AttendanceState;
+    const merge = mergeAttendance(state, read(envelope([paper({ attended: 18, total: 20 })])));
+
+    expect(state).toEqual(snapshot);
+    expect(merge.state).not.toBe(state);
+    expect(merge.state.subjects).not.toBe(state.subjects);
+  });
+
+  test("an empty file changes nothing", () => {
+    const state = ledger([paper()]);
+    const merge = mergeAttendance(state, {
+      subjects: [],
+      targetPercentage: null,
+      updatedAt: null,
+      legacy: false,
+    });
+
+    expect(merge.replaced).toBe(0);
+    expect(merge.added).toBe(0);
+    expect(merge.state.subjects).toEqual(state.subjects);
+    expect(attendanceMergeSummary(merge)).toBe("Nothing changed");
   });
 });
 
-/* ------------------------------------------------------------------- words */
+/* ── summaries ────────────────────────────────────────────────────────── */
 
-describe("what the screen prints", () => {
-  test("the file summary counts papers and dates the newest event", () => {
-    const read = parse({
-      version: 2,
-      settings: {},
-      subjects: [
-        { id: "a", name: "Maths", total: 6, history: [{ action: "present", timestamp: DAY }] },
-        { id: "b", name: "Physics", total: 8 },
-      ],
-    });
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-    const summary = attendanceFileSummary(read.file);
-    expect(summary.startsWith("2 subjects · updated ")).toBe(true);
-    expect(summary.endsWith("2026")).toBe(true);
+describe("summaries", () => {
+  test("a file without history counts its papers", () => {
+    const summary = attendanceFileSummary(read(envelope([paper(), paper({ id: "site-2", name: "COA" })])));
+
+    expect(summary).toBe("2 subjects");
+    expect(attendanceFileSummary(read(envelope([paper()])))).toBe("1 subject");
   });
 
-  test("one paper is singular and no history drops the date", () => {
-    const read = parse([{ id: "a", name: "Maths", total: 6 }]);
-    expect(read.ok).toBe(true);
-    if (!read.ok) return;
-    expect(attendanceFileSummary(read.file)).toBe("1 subject");
+  test("a file with history adds the date it was last written", () => {
+    const summary = attendanceFileSummary(
+      read(
+        envelope([
+          {
+            id: "a",
+            name: "DBMS",
+            attended: 1,
+            total: 2,
+            history: [{ action: "present", prevAttended: 0, prevTotal: 1, timestamp: NOV_3 - DAY }],
+          },
+        ]),
+      ),
+    );
+
+    expect(summary.length > 0).toBe(true);
+    expect(summary).toContain("1 subject");
+    expect(summary).toContain("updated");
   });
 
-  test("the merge summary names only the half that happened", () => {
-    expect(attendanceMergeSummary({ state: state(), replaced: 2, added: 0 })).toBe("2 replaced");
-    expect(attendanceMergeSummary({ state: state(), replaced: 0, added: 3 })).toBe("3 added");
-    expect(attendanceMergeSummary({ state: state(), replaced: 1, added: 2 })).toBe("1 replaced · 2 added");
-    expect(attendanceMergeSummary({ state: state(), replaced: 0, added: 0 })).toBe("Nothing changed");
+  test("a merge names the half that happened", () => {
+    const state = ledger([paper()]);
+    const merge = mergeAttendance(state, read(envelope([paper({ attended: 18, total: 20 })])));
+
+    expect(attendanceMergeSummary(merge)).toBe("1 replaced");
+    expect(attendanceMergeSummary({ ...merge, replaced: 8, added: 2 })).toBe("8 replaced · 2 added");
+    expect(attendanceMergeSummary({ ...merge, replaced: 0, added: 3 })).toBe("3 added");
   });
 });

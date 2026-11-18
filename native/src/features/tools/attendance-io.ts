@@ -271,6 +271,7 @@ export function mergeAttendance(state: AttendanceState, file: AttendanceRead): A
       name: imported.name,
       attended: imported.attended,
       total: imported.total,
+      source: "manual",
       ...(imported.code ? { code: imported.code } : {}),
     });
     added += 1;
