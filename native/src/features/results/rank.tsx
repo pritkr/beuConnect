@@ -48,7 +48,7 @@ import {
 import type { RankScope } from "./components";
 import { Line, PositionCard, RowsSkeleton, ScopeChips, SemChips, StudentRowView, aheadOf, CgpaSpread } from "./components";
 import type { RankRow } from "./data";
-import { branchShort, currentSemester, digits, loadRoster, parseReg, semsFor } from "./data";
+import { branchShort, currentSemester, digits, loadRoster, parseReg, publishedSem, semsFor } from "./data";
 import { shortCollegeName } from "./colleges";
 import { cachedIdentity } from "./identity";
 import { rankLabel, tieSentence, tieSize, unrankedCount, cgpaDistribution } from "./ranking";
@@ -65,17 +65,6 @@ import {
   rosterError,
   suggestedSem,
 } from "./shared";
-
-/** A semester BEU has published for this batch + branch, or the closest it has. */
-function publishedSem(rawSem: number, batch: string, branch: string): number {
-  const available = semsFor(batch, branch);
-  const fallback =
-    Number.isFinite(rawSem) && rawSem >= 1 && rawSem <= 8
-      ? Math.floor(rawSem)
-      : Math.max(1, ...(available.length ? available : [1]));
-  if (available.length === 0) return fallback;
-  return available.indexOf(fallback) >= 0 ? fallback : Math.max(...available);
-}
 
 /**
  * What one roster says about one registration number. `student` is null when

@@ -19,25 +19,30 @@ nothing here needs its own logic:
 
 `--skip-tests` skips step 1 for iteration; never for a release.
 
-## On hold: the next release waits for an nsh tag
+## The trimmed runtime is in a tagged release
 
-Version stays **1.3.0 / build 11** until upstream tags a release that contains
-[`longbridge/nsh#2060`](https://github.com/longbridge/nsh/pull/2060). That is the
-change that builds `libnsh.so` from the app's features and takes the APK from
-24.1 MB to 17.5 MB (`docs/SIZE.md`); until a tag exists, the artifact depends on
-a commit pin (`589a2519` in `scripts/build-nsh-from-source.sh`), which is not a
-build anyone can reproduce from a version number.
+`nsh v0.6.0` (2026-11-18, `5541637`) is the first tag containing
+[`longbridge/nsh#2060`](https://github.com/longbridge/nsh/pull/2060). It ships
+`nsh-embed-android.zip` from the same commit, so the CLI and the Java runtime
+now come from one version number instead of a commit pin.
 
-Check before cutting the release:
+Verified on 2026-11-18 with the release assets only:
 
 ```sh
-gh release list -R longbridge/nsh --limit 3    # a v0.5.2+ with #2060 is the trigger
+./scripts/fetch-nsh-embed.sh                    # v0.6.0 AAR, checked against the release sha256
+NSH_BIN=~/.nsh/bin/nsh ./scripts/build-android-host.sh
+# → libnsh.so: the app's own (trimmed)
+# → .nsh/out/BEUConnect.apk — 17,717,308 B
 ```
 
-When it lands: build and install the release's AAR (`./scripts/fetch-nsh-embed.sh`
-after updating `nsh`), package once, confirm `libnsh.so: the app's own (trimmed)`
-in the log, then bump `nsh.json` and run `./scripts/release.sh`. The commit pin
-in `build-nsh-from-source.sh` moves to the tag at the same time.
+`nsh package --target android` builds that library from crates.io in `.nsh/rust`
+(the release CLI carries no Android runtime source), so no checkout is needed.
+`scripts/build-nsh-from-source.sh` pins the same `v0.6.0` tag for the
+from-source path.
+
+Version is **1.3.1 / build 12**: `nsh.json` and `src/lib/app-info.ts` move
+together, then `./scripts/release.sh`. The artifact is 782,692 B under the
+18,500,000 B ceiling.
 
 ## What "verified" means here
 

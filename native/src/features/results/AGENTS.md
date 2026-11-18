@@ -35,6 +35,12 @@ batch's admission (odd from July, even from January; the 2024 batch started in
 January 2025). `defaultSem()` is a different question — the newest published
 roster — and must never be a screen's default.
 
+A **lookup** is the exception that proves the rule: it opens on
+`publishedSem(currentSemester(...), batch, branch)`, the newest semester BEU
+has a table for, because a class in Sem 7 with only Sem 4 results out has
+nothing to fetch otherwise. The chips still offer the class semester, and
+`currentSemester` remains what identity and rank context report.
+
 ## Captcha rules
 
 - The captcha is solved by the student in the page.

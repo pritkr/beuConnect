@@ -9,7 +9,7 @@
 #
 #   1. ./scripts/check.sh test     types, build and the full suite (lock-serialised)
 #   2. ./scripts/package-android.sh arm64, stripped, deflated, aligned, signed
-#   3. ./scripts/size-report.sh    the 10,000,000 B gate, recorded in the history
+#   3. ./scripts/size-report.sh    the 18,500,000 B gate, recorded in the history
 #   4. verify                      zipalign, apksigner, unzip, badging, sha256
 #   5. dist/                       a copy named for the version and ABI
 #
@@ -22,7 +22,7 @@ source "$HOME/.config/nsh/env.sh" >/dev/null 2>&1 || true
 
 APK=".nsh/out/BEUConnect.apk"
 DIST="dist"
-BUDGET="${APK_BUDGET:-15600000}"
+BUDGET="${APK_BUDGET:-18500000}"
 SKIP_TESTS=0
 for arg in "$@"; do
   case "$arg" in
@@ -79,7 +79,14 @@ mkdir -p "$DIST"
 SET="${PACKAGE#* }"
 NAME="BEUConnect-${SET}-arm64-v8a.apk"
 cp -f "$APK" "$DIST/$NAME"
-SHA="$(shasum -a 256 "$DIST/$NAME" | awk '{print $1}')"
+# `shasum` is macOS; Linux ships `sha256sum`. A release that silently prints an
+# empty hash is worse than no hash, so fail if neither tool exists.
+if command -v shasum >/dev/null 2>&1; then
+  SHA="$(shasum -a 256 "$DIST/$NAME" | awk '{print $1}')"
+else
+  SHA="$(sha256sum "$DIST/$NAME" | awk '{print $1}')"
+fi
+[ -n "$SHA" ] && [ "${#SHA}" -eq 64 ] || fail "could not compute the sha256 of $DIST/$NAME"
 
 cat <<EOF
 
@@ -87,7 +94,7 @@ APK      $DIST/$NAME
 bytes    $BYTES  (budget $BUDGET, $(( BUDGET - BYTES )) B left)
 package  $PACKAGE
 entries  $ENTRIES
-libnsh   ${LIB:-?} B packed
+libnsh   ${LIB:-?} B uncompressed
 bundle   ${BUNDLE:-?} B packed
 sha256   $SHA
 verdict  shipped

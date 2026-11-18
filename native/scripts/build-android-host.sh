@@ -225,7 +225,7 @@ for abi in arm64-v8a armeabi-v7a x86_64; do
     echo "  libnsh.so: the AAR's prebuilt one (every native feature)"
     echo "  ⚠ \`nsh package\` did not build the app's own library, so this APK carries" >&2
     echo "    the full runtime (48.9 MB stripped / ~20 MB deflated). It needs an nsh" >&2
-    echo "    with longbridge/nsh#2060 (main after 0.5.1), cargo and the NDK." >&2
+    echo "    with longbridge/nsh#2060 (v0.6.0 or newer), cargo and the NDK." >&2
   fi
   "$STRIP" --strip-unneeded "$STAGE/lib/$abi/libnsh.so"
 done

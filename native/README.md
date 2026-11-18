@@ -13,7 +13,7 @@ development host.
   page is read on the phone, and the result is saved natively — when neither
   works. A registration number is resolved to a name and CGPA for Home without
   ever solving a captcha.
-- The Android APK is **17.48 MB** (17,479,740 B), down from 24.14 MB when the
+- The Android APK is **17.72 MB** (17,717,308 B), down from 24.14 MB when the
   runtime was a fixed prebuilt: `nsh` now builds `libnsh.so` from the features
   this bundle reaches. It installs the same way: `docs/ANDROID.md`.
 

@@ -223,6 +223,24 @@ export function hasCoverage(batch: string, branch: string, sem: number): boolean
 }
 
 /**
+ * A semester BEU has published for this batch + branch, or the closest it has.
+ *
+ * The class semester is what the student is attending; the published one is
+ * what a lookup can actually answer. Default to the latter and let the chips
+ * offer the former, so a batch whose current semester has no result yet opens
+ * on its latest marks instead of an error.
+ */
+export function publishedSem(rawSem: number, batch: string, branch: string): number {
+  const available = semsFor(batch, branch);
+  const fallback =
+    Number.isFinite(rawSem) && rawSem >= 1 && rawSem <= 8
+      ? Math.floor(rawSem)
+      : Math.max(1, ...(available.length ? available : [1]));
+  if (available.length === 0) return fallback;
+  return available.indexOf(fallback) >= 0 ? fallback : Math.max(...available);
+}
+
+/**
  * The semester a batch is sitting in today.
  *
  * BEU runs two semesters a year — the odd one from July, the even one from

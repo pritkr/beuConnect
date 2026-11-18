@@ -27,10 +27,10 @@ ROOT="$(pwd)"
 ABI="${1:-arm64-v8a}"
 
 # The pinned upstream. A build from an arbitrary HEAD is not reproducible, so a
-# tag or commit is required, not a branch. This commit is `main` after 0.5.1 and
-# carries longbridge/nsh#2060: the Android runtime is built from the features the
-# bundle reaches (24.1 → 17.5 MB APK). Move the pin to a tag once one has it.
-NSH_REV="${NSH_REV:-589a2519c82b29895cda9b295ffdf053d1665047}"
+# tag or commit is required, not a branch. v0.6.0 is the first tag with
+# longbridge/nsh#2060: the Android runtime is built from the features the bundle
+# reaches (24.1 → 17.7 MB APK). Older tags ship the full runtime.
+NSH_REV="${NSH_REV:-v0.6.0}"
 
 find_nsh() {
   local candidate

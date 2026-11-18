@@ -39,7 +39,7 @@ import { EVENTS, track } from "../../lib/analytics";
 import type { FailureKind } from "./components";
 import { ActionTile, ResultSkeleton, SemChips, failureKind } from "./components";
 import type { RecentLookup, ResultData } from "./data";
-import { branchShort, forgetRecent, loadResult, parseReg, readRecent, rememberLookup, savedCopy } from "./data";
+import { branchShort, forgetRecent, loadResult, parseReg, publishedSem, readRecent, rememberLookup, savedCopy } from "./data";
 import { shortCollegeName } from "./colleges";
 import { ResultView } from "./result-view";
 import type { Async } from "./shared";
@@ -153,7 +153,13 @@ export function ResultsScreen(props: { nav: Nav }) {
   const onReg = (next: string) => {
     reg.set(next);
     formError.set("");
-    if (!semChosen() && isValidReg(next)) sem.set(suggestedSem(next));
+    if (!semChosen() && isValidReg(next)) {
+      /* Open on a semester BEU has actually published: a batch in Sem 7 still
+         wants its Sem 4 marks when Sem 7 has no result yet. The chips keep the
+         class semester one tap away. */
+      const parsed = parseReg(next);
+      sem.set(parsed ? publishedSem(suggestedSem(next), parsed.batch, parsed.branch) : suggestedSem(next));
+    }
   };
 
   const onSem = (next: number) => {

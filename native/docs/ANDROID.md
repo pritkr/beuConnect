@@ -1,6 +1,6 @@
 # Android build and install
 
-The APK is **17,479,740 B (17.48 MB)** — arm64, stripped, deflated, signed with
+The APK is **17,717,308 B (17.72 MB)** — arm64, stripped, deflated, signed with
 the release key — built by `scripts/package-android.sh` and measured by
 `scripts/size-report.sh`. Details of where the bytes go: `docs/SIZE.md`.
 
@@ -76,7 +76,7 @@ step 5's deflate: Android extracts the library at install time instead of mmappi
 it out of the APK. The stock manifest sets it to `false`, so the stock host's
 staging APK stores every ABI's runtime uncompressed.
 
-The result is 17.48 MB for the phone build, 43.10 MB unpacked. It installs
+The result is 17.72 MB for the phone build, 43.72 MB unpacked. It installs
 identically; the only difference is the install-time extraction. 76% of the
 download is the runtime, which is itself built from the app's feature set (see
 §2.1) — the app-side bytes are `classes.dex` 3.09 MB, the bundle 0.71 MB and
@@ -121,12 +121,12 @@ installed `nsh --version` into
 the release's sha256. `NSH_AAR` still overrides both, for
 `build-nsh-from-source.sh`.
 
-The AAR's `libnsh.so` is no longer the one that ships. Since `nsh` on `main`
-after 0.5.1 (`longbridge/nsh#2060`) `nsh package --target android`
-cross-compiles the app's own library with only the native features its bundle
-can reach: `shader` (wgpu), `term`, `editor`, `rich-editor`, `plot` and
-`emoji-picker` drop out because nothing imports them, `TextView` keeps
-`highlight` and `math`, and `js`, `net` and `svg` always stay.
+The AAR's `libnsh.so` is no longer the one that ships. Since `nsh v0.6.0`
+(`longbridge/nsh#2060`) `nsh package --target android` cross-compiles the app's
+own library with only the native features its bundle can reach: `shader`
+(wgpu), `term`, `editor`, `rich-editor`, `plot` and `emoji-picker` drop out
+because nothing imports them, `TextView` keeps `highlight` and `math`, and
+`js`, `net` and `svg` always stay.
 `build-android-host.sh` takes that library from the APK `nsh package` just
 wrote and falls back to the AAR's prebuilt one — every feature — only when the
 app's did not build. Building it needs `cargo` and the NDK (the script exports
@@ -164,9 +164,10 @@ java.lang.IllegalStateException: nsh: unknown mount opcode -1
 because the newer Rust emits a mount opcode the older Java does not know. Build
 both from one checkout: `cargo xtask android --release --abi arm64-v8a` writes
 `target/android/release/classes.jar`, and the host build accepts it through an
-AAR made from that directory (`NSH_AAR=… ./scripts/build-android-host.sh`). The
-release AAR (`nsh-embed-android.zip`) is only an option once a tagged release
-contains the trim.
+AAR made from that directory (`NSH_AAR=… ./scripts/build-android-host.sh`).
+Since `v0.6.0` the release AAR already contains a matching `classes.jar`, so the
+normal path is `./scripts/fetch-nsh-embed.sh` with the same `NSH_BIN` that
+packages; the hand-built AAR is only for a source build ahead of a tag.
 
 The build and package scripts source `~/.config/beuconnect/signing.env`, so
 `./scripts/package-android.sh` signs with the release key with no arguments. To

@@ -15,7 +15,7 @@
 import { describe, expect, test } from "nsh/test";
 
 import type { RankRow } from "../../src/features/results/data";
-import { currentSemester, ranked, sortByCgpa } from "../../src/features/results/data";
+import { currentSemester, publishedSem, ranked, sortByCgpa } from "../../src/features/results/data";
 import { cgpa, gradeForMarks, requiredSgpa, sgpa } from "../../src/features/tools/engine";
 import { attendanceAdvice, attendanceStatus } from "../../src/features/tools/engine";
 
@@ -191,6 +191,18 @@ describe("semester", () => {
 
   test("the 2024 batch started in January 2025, one semester late", () => {
     expect(currentSemester("24", false, new Date(2025, 1, 10))).toBe(1);
+  });
+
+  test("a lookup opens on a semester with a published table", () => {
+    // The 2023 class is in Sem 7; BEU has published up to Sem 4 for it.
+    expect(publishedSem(7, "23", "101")).toBe(4);
+    // A published semester is kept, even an older one.
+    expect(publishedSem(3, "23", "101")).toBe(3);
+    // 2024 is in Sem 4, published to Sem 2.
+    expect(publishedSem(7, "24", "101")).toBe(2);
+    // Nothing published: the class semester is still the best answer.
+    expect(publishedSem(5, "99", "101")).toBe(5);
+    expect(publishedSem(9, "99", "101")).toBe(1);
   });
 
   test("lateral entry joins two semesters in, and never below one", () => {

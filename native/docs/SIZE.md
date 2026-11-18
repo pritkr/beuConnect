@@ -2,31 +2,31 @@
 
 The Android artifact is `.nsh/out/BEUConnect.apk`, built by
 `scripts/package-android.sh` and measured by `scripts/size-report.sh`; every APK
-number below can be reproduced with that script. The table is the 2026-11-15
-build: nsh `main` after 0.5.1 (`589a251`) cross-compiling the app's own
-`libnsh.so`.
+number below can be reproduced with that script. The table is the 2026-11-18
+build: nsh `v0.6.0` (`5541637`), the first tagged release with
+`longbridge/nsh#2060`, cross-compiling the app's own `libnsh.so`.
 
 | | bytes | share |
 |---|---|---|
-| APK file | 17,479,740 | 100% |
-| `lib/arm64-v8a/libnsh.so` (deflated) | 13,269,601 | 75.9% |
-| `classes.dex` (deflated) | 3,107,717 | 17.8% |
+| APK file | 17,717,308 | 100% |
+| `lib/arm64-v8a/libnsh.so` (deflated) | 13,486,129 | 76.1% |
+| `classes.dex` (deflated) | 3,127,497 | 17.7% |
 | `assets/nsh/bundle.nshc` (deflated) | 705,205 | 4.0% |
 | `holidays-2026.png` (deflated) | 87,237 | 0.5% |
-| icons, font, manifest, `resources.arsc`, signature | 284,335 | 1.6% |
-| zip directory + signing block | 25,645 | 0.1% |
+| icons, font, manifest, `resources.arsc`, signature | 284,338 | 1.6% |
+| zip directory + signing block | 26,902 | 0.2% |
 
-Unpacked it is 43.10 MB (32.27 MB of that is the runtime), which is what a
-device writes on install; downloading it takes ≈7.0 s at 20 Mbps.
+Unpacked it is 43.72 MB (32.85 MB of that is the runtime), which is what a
+device writes on install; downloading it takes ≈7.1 s at 20 Mbps.
 
-The runtime is no longer a fixed prebuilt. Since `longbridge/nsh#2060`, `nsh
-package --target android` builds `libnsh.so` from the features the bundle can
-reach, so this library is 32.27 MB stripped and 13.27 MB deflated instead of
-0.5.0's 48.86 / 19.95 MB. The same app on the 0.5.0 prebuilt was 24,143,932 B,
-so the trim is worth 6,664,192 B (−27.6%); 13,976 B of that is the newer Java
-runtime's `classes.dex`, which has to match the library (see
-`docs/ANDROID.md` §2.1). The ceiling moved with the file (see
-[the 18.5 MB ceiling](#the-185-mb-ceiling)).
+The runtime is no longer a fixed prebuilt. Since `longbridge/nsh#2060` — first
+tagged in `v0.6.0` — `nsh package --target android` builds `libnsh.so` from the
+features the bundle can reach, so this library is 32.85 MB stripped and 13.49 MB
+deflated instead of 0.5.0's 48.86 / 19.95 MB. The same app on the 0.5.0 prebuilt
+was 24,143,932 B, so the trim is worth 6,426,624 B (−26.6%). `v0.6.0`'s runtime
+is 216,528 B larger deflated than the `main` commit first measured here
+(`589a251`), because it carries the 196 commits merged between them. The ceiling
+moved with the file (see [the 18.5 MB ceiling](#the-185-mb-ceiling)).
 
 ## Where the bytes go
 
@@ -35,27 +35,27 @@ on the shipped `libnsh.so` (stripped, exactly what is in the APK):
 
 | section | bytes | why it is there |
 |---|---|---|
-| `.text` | 20,877,380 | the Rust/QuickJS engine and everything statically linked into it |
-| `.rodata` | 3,530,956 | brotli's static dictionaries, strings and embedded defaults |
-| `.eh_frame` + `.eh_frame_hdr` | 3,162,472 | unwinding metadata for every function in the binary |
-| `.rela.dyn` | 1,689,552 | ~70k relocations from static linking |
-| `.gcc_except_table` | 1,559,740 | C++ exception landing pads |
-| `.data.rel.ro` | 1,388,256 | vtables, function tables, constants |
-| everything else | 75,860 | symbols, notes, got/plt, section headers |
+| `.text` | 21,296,332 | the Rust/QuickJS engine and everything statically linked into it |
+| `.rodata` | 3,549,260 | brotli's static dictionaries, strings and embedded defaults |
+| `.eh_frame` + `.eh_frame_hdr` | 3,235,216 | unwinding metadata for every function in the binary |
+| `.rela.dyn` | 1,709,784 | ~70k relocations from static linking |
+| `.gcc_except_table` | 1,594,708 | C++ exception landing pads |
+| `.data.rel.ro` | 1,404,024 | vtables, function tables, constants |
+| everything else | 58,220 | symbols, notes, got/plt, section headers |
 
 Every section shrank with the feature set, which is the point of the change:
 
 | section | 0.5.0 prebuilt | this build | saved |
 |---|---|---|---|
-| `.text` | 32,214,824 | 20,877,380 | 11,337,444 |
-| `.rodata` | 5,247,804 | 3,530,956 | 1,716,848 |
-| `.eh_frame` + `.eh_frame_hdr` | 4,756,424 | 3,162,472 | 1,593,952 |
-| `.rela.dyn` | 2,333,736 | 1,689,552 | 644,184 |
-| `.gcc_except_table` | 2,332,540 | 1,559,740 | 772,800 |
-| `.data.rel.ro` | 1,912,208 | 1,388,256 | 523,952 |
-| **stripped library** | **48,861,584** | **32,266,536** | **16,595,048** |
+| `.text` | 32,214,824 | 21,296,332 | 10,918,492 |
+| `.rodata` | 5,247,804 | 3,549,260 | 1,698,544 |
+| `.eh_frame` + `.eh_frame_hdr` | 4,756,424 | 3,235,216 | 1,521,208 |
+| `.rela.dyn` | 2,333,736 | 1,709,784 | 623,952 |
+| `.gcc_except_table` | 2,332,540 | 1,594,708 | 737,832 |
+| `.data.rel.ro` | 1,912,208 | 1,404,024 | 508,184 |
+| **stripped library** | **48,861,584** | **32,847,544** | **16,014,040** |
 
-Stripping still matters: the cargo artifact is 56,017,848 B and loses 23.75 MB
+Stripping still matters: the cargo artifact is 49,035,224 B and loses 16.19 MB
 of `.symtab`/`.strtab` on the way into the APK. What changed is that the input
 is now built for this app — `js`, `net`, `svg`, `highlight` and `math` stay,
 `shader` (wgpu), `term`, `editor`, `rich-editor`, `plot`, `emoji-picker`, `zlib`,
@@ -108,15 +108,15 @@ of embedded text is ≈37 KB of APK, and a new release to fix a typo in it.
 
 | budget | limit | current | headroom |
 |---|---|---|---|
-| APK file | 18,500,000 B | 17,479,740 B (94.5%) | 1,020,260 B |
+| APK file | 18,500,000 B | 17,717,308 B (95.8%) | 782,692 B |
 | bundle bytecode, as shipped | 2,350,000 B | 1,894,306 B (80.6%) | 455,694 B |
 
 The APK ceiling moved to **18,500,000 B** on 2026-11-15, with the trimmed
 runtime:
 
 - **APK 25,600,000 → 18,500,000 B.** The library built from this app's features is
-  13,269,601 B deflated instead of 19,948,514 B; the APK moved from 24,143,932 B
-  to 17,479,740 B (−6,664,192 B), and the limit is the measured file plus ≈6%
+  13,486,129 B deflated instead of 19,948,514 B; the APK moved from 24,143,932 B
+  to 17,717,308 B (−6,426,624 B), and the limit is the measured file plus ≈4%
   headroom for app code. Keeping 25.6 MB would have let the app spend the
   runtime's savings unnoticed.
 - **Bundle stays at 2,350,000 B.** The shipped bundle is 1,894,306 B, to the byte
@@ -153,10 +153,9 @@ exceeded; raise a limit only with a paragraph like this one.
 
 The library is still 76% of the file, so the floor is set by what the app
 imports, not by what it renders. With this feature set (`js`, `net`, `svg`,
-`highlight`, `math`) `libnsh.so` is 13,269,601 B deflated; deleting the bundle,
-the PNG and every icon would still leave a 16.4 MB APK. The remaining 2 MB above
-that floor is the app: `classes.dex` 3.1 MB, bundle 0.7 MB, resources and icons
-0.4 MB.
+`highlight`, `math`) `libnsh.so` is 13,486,129 B deflated; everything else is
+4,231,179 B: `classes.dex` 3.13 MB, the bundle 0.71 MB, resources and icons
+0.38 MB.
 
 `highlight` and `math` are the two features that would not obviously be there:
 they are kept because `TextView` links `nsh_part_text_view`, which carries both.
@@ -327,14 +326,14 @@ the gate; the catalogue packer refuses to write unless its round-trip is exact.
 
 The runtime is 76% of the download, so it was the only lever with a large
 payoff. It is now built per package from the app's reachable features, and the
-measured result is **−16,595,048 B stripped, −6,678,913 B deflated, −6,664,192 B
-of APK (−27.6%)**. The 0.3.0-era estimate here guessed 13–18% of the library; the
-real figure on 0.5.0's doubled engine was 34% of it, because `shader` alone is
-wgpu, naga and generated shader tables, and `term`/`editor`/`rich-editor`/`plot`
-bring their own heavy crates.
+measured result is **−6,426,624 B of APK (−26.6%)**, with a 32.85 MB stripped
+library instead of 0.5.0's 48.86 MB. The 0.3.0-era estimate here guessed 13–18%
+of the library; the real figure on 0.5.0's doubled engine was 34% of it, because
+`shader` alone is wgpu, naga and generated shader tables, and
+`term`/`editor`/`rich-editor`/`plot` bring their own heavy crates.
 
-What the estimate got right: `.text` dominates (20.9 of 32.3 MB), and the unwind
-metadata shrinks only in proportion to the code that leaves — 3.16 MB of
+What the estimate got right: `.text` dominates (21.3 of 32.85 MB), and the unwind
+metadata shrinks only in proportion to the code that leaves — 4.5 MB of
 `.eh_frame` plus `.gcc_except_table` stays because the remaining C++ (QuickJS,
 brotli, the rasteriser) still unwinds. Removing it wholesale is still not
 shippable, and it is no longer where the weight is.
