@@ -123,7 +123,7 @@ missing state is **major**, not a nit.
 | C2 | No `any` in an exported signature; no `as any` to silence a real mismatch | review (`grep -rn ": any\|as any" src/`) | — |
 | C3 | No `@ts-ignore` / `@ts-expect-error` without a one-line reason | review | — |
 | C4 | No dead export that claims a route the registry does not merge (e.g. an area module that exists but is not in `ALL_ROUTES`) | `qa/registry.test.ts` + `qa/integration.test.tsx` harness-coverage check | — |
-| C5 | Generated files are untouched by hand (`assets/data/*`, `pyqs/catalog-data.ts`, `students/roster-data.ts`, `qa/push-targets.ts`) | review + regenerate | — |
+| C5 | Generated files are untouched by hand (`assets/data/*`, `pyqs/catalog-data.ts`, `students/roster-data.ts`, `students/college-index.ts`, `qa/push-targets.ts`) | review + regenerate | — |
 | C6 | New route → a row in `docs/ARCHITECTURE.md` §4, a line in `docs/SITE_PARITY.md`, and a screenshot entry | review | — |
 
 ## 8. Android device behaviour
@@ -169,7 +169,8 @@ Full sequence and commands: `docs/ANDROID_TEST_PLAN.md`.
 | `scripts/lint-list-height.mjs` | `check.sh` | L1/L2 |
 | `scripts/lint-rail-height.mjs` | `check.sh` | L7 |
 | `scripts/icons/verify.mjs` | `check.sh` | icon names exist in the subset font |
-| `scripts/data/publish-feed.ts --check` | `check.sh` | D5 (feed hashes current) |
+| `scripts/data/publish-feed.ts --check` | `check.sh` | (feed hashes current) |
+| `scripts/build-college-index.mjs --check` | `check.sh` | (the college roster index matches the published files) |
 | `scripts/verify.py` | `check.sh` | D4 (dataset counts and contracts) + no contact/email/caste column in a public CSV |
 | `qa/scan-push-targets.mjs --check` | `qa/run-tests.sh` | R3 |
 | `qa/registry.test.ts` | suite | R1, R2, R3, R5, R7 (static), C4 (static) |

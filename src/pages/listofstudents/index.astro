@@ -30,7 +30,6 @@ const collegeCount = collegesData.length;
 					class="college-card"
 					data-name={college.Name.toLowerCase()}
 					data-code={college.CollegeCode}
-					style={`view-transition-name:${college.abbreviations}`}
 				>
 					<span class="college-code num">{college.CollegeCode}</span>
 					<span class="college-name">{college.Name}</span>
@@ -64,7 +63,14 @@ const collegeCount = collegesData.length;
 			text-decoration: none;
 		}
 
-		.college-card:hover .college-name {
+		@media (hover: hover) and (pointer: fine) {
+			.college-card:hover .college-name {
+				text-decoration: underline;
+				text-underline-offset: 0.2em;
+			}
+		}
+
+		.college-card:active .college-name {
 			text-decoration: underline;
 			text-underline-offset: 0.2em;
 		}

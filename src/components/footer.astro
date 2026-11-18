@@ -3,10 +3,15 @@ import Icon from "./Icon.astro";
 import Logo from "./Logo.astro";
 import UpiLogo from "./UpiLogo.astro";
 import UpiQr from "../assets/upiqr.svg";
+import { featureOf } from "../lib/analytics";
 
 const base = import.meta.env.BASE_URL;
 const year = new Date().getFullYear();
 const upiId = "pritkr@cnrb";
+
+const apkUrl =
+	"https://github.com/pritkr/beuconnect/releases/latest/download/BEUConnect.apk";
+const fdroidUrl = "https://pritkr.github.io/beuconnect-fdroid/";
 
 const columns = [
 	{
@@ -21,8 +26,8 @@ const columns = [
 	{
 		title: "Results",
 		links: [
-			{ href: "result", label: "Check result" },
 			{ href: "result-table", label: "Result tables" },
+			{ href: "result", label: "Check result" },
 			{ href: "merit-list", label: "Merit list" },
 			{ href: "data-browser", label: "Data browser" },
 			{ href: "rank", label: "University rank" },
@@ -53,6 +58,32 @@ const columns = [
 				Student-run tools for Bihar Engineering University. Not an official
 				BEU service.
 			</p>
+
+			<div class="footer-app">
+				<p class="footer-app-name">
+					<Icon name="phone" size={14} class="icon" />
+					BEUConnect for Android
+				</p>
+				<div class="footer-app-links">
+					<a
+						class="btn btn-primary btn-sm"
+						href={apkUrl}
+						target="_blank"
+						rel="noopener"
+					>
+						<Icon name="download" size={14} />
+						Download APK
+					</a>
+					<a
+						class="btn btn-ghost btn-sm"
+						href={fdroidUrl}
+						target="_blank"
+						rel="noopener"
+					>
+						F-Droid
+					</a>
+				</div>
+			</div>
 		</div>
 
 		{
@@ -62,7 +93,14 @@ const columns = [
 					<ul>
 						{column.links.map((link) => (
 							<li>
-								<a href={`${base}${link.href}`}>{link.label}</a>
+								<a
+									href={`${base}${link.href}`}
+									data-ga="feature_open"
+									data-ga-params={JSON.stringify({
+										feature: featureOf(`/${link.href}`),
+										source: "footer",
+									})}
+								>{link.label}</a>
 							</li>
 						))}
 					</ul>
@@ -74,7 +112,8 @@ const columns = [
 	<div class="footer-base">
 		<p>
 			Built by <a href="https://prit.eu.org/">Prit</a> at GEC Sheikhpura.
-			<a href={`${base}privacy`}>Privacy</a>.
+			<a href={`${base}privacy`}>Privacy</a> ·
+			<a href={`${base}terms/`}>Terms of service</a>.
 		</p>
 		<div class="footer-actions">
 			<button
@@ -86,7 +125,13 @@ const columns = [
 				<Icon name="message" size={14} />
 				Report a problem
 			</button>
-			<button type="button" class="btn-ghost btn-sm" id="supportOpen">
+			<button
+				type="button"
+				class="btn-ghost btn-sm"
+				id="supportOpen"
+				command="show-modal"
+				commandfor="supportDialog"
+			>
 				<Icon name="award" size={14} />
 				Support
 			</button>
@@ -95,7 +140,12 @@ const columns = [
 	</div>
 </footer>
 
-<dialog id="supportDialog" class="support-dialog" aria-labelledby="support-title">
+<dialog
+	id="supportDialog"
+	class="support-dialog"
+	aria-labelledby="support-title"
+	closedby="any"
+>
 	<form method="dialog" class="support-close-form">
 		<button type="submit" class="btn-icon btn-ghost" aria-label="Close">
 			<Icon name="x" size={16} />
@@ -111,7 +161,7 @@ const columns = [
 		<div class="support-upi">
 			<UpiLogo width={64} class="support-upi-logo" />
 			<code id="supportUpi">{upiId}</code>
-			<button type="button" class="btn-sm" id="supportCopy">Copy UPI ID</button>
+			<button type="button" class="btn-sm" id="supportCopy" autofocus>Copy UPI ID</button>
 		</div>
 		<p class="support-status" id="supportStatus" role="status" aria-live="polite"></p>
 	</div>
@@ -132,11 +182,42 @@ const columns = [
 		padding: var(--s7) 0 var(--s6);
 	}
 
-	.footer-brand p {
+	.footer-brand > p {
 		margin-top: var(--s3);
 		max-width: 26ch;
 		font-size: 0.85rem;
 		line-height: 1.5;
+	}
+
+	.footer-app {
+		margin-top: var(--s4);
+		padding-top: var(--s3);
+		border-top: 1px solid var(--line);
+	}
+
+	.footer-app-name {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		margin: 0 0 var(--s3);
+		color: var(--muted);
+		font-family: var(--font-mono);
+		font-size: 0.66rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		line-height: 1.3;
+		text-transform: uppercase;
+	}
+
+	.footer-app-name .icon {
+		flex: none;
+		color: var(--accent);
+	}
+
+	.footer-app-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--s2);
 	}
 
 
@@ -178,10 +259,12 @@ const columns = [
 		text-decoration: none;
 	}
 
-	.footer-grid nav a:hover {
-		color: var(--paper);
-		text-decoration: underline;
-		text-underline-offset: 0.16em;
+	@media (hover: hover) and (pointer: fine) {
+		.footer-grid nav a:hover {
+			color: var(--paper);
+			text-decoration: underline;
+			text-underline-offset: 0.16em;
+		}
 	}
 
 	.footer-base {
@@ -191,7 +274,7 @@ const columns = [
 		gap: var(--s4);
 		width: min(100% - 2.5rem, var(--max));
 		margin-inline: auto;
-		padding: var(--s4) 0 var(--s5);
+		padding: var(--s4) 0 calc(var(--s5) + var(--safe-bottom));
 		border-top: 1px solid var(--line);
 	}
 
@@ -278,6 +361,18 @@ const columns = [
 		color: var(--ok);
 	}
 
+	@media (pointer: coarse) {
+		dialog.support-dialog {
+			width: 100%;
+			max-height: min(88dvh, calc(var(--vvh, 100dvh) - 1.5rem));
+			margin: 0;
+			border-radius: var(--r-lg) var(--r-lg) 0 0;
+			padding-bottom: calc(var(--s5) + var(--safe-bottom));
+			overflow-y: auto;
+			overscroll-behavior: contain;
+		}
+	}
+
 	@media (max-width: 900px) {
 		.footer-grid {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -294,6 +389,17 @@ const columns = [
 		.footer-grid {
 			grid-template-columns: 1fr 1fr;
 			padding-top: var(--s6);
+		}
+
+		/* Stacked footer links sit 5px apart as inline text, so a thumb lands on
+		   the neighbour. Make each one a block with its own padding instead. */
+		.footer-grid nav ul {
+			gap: 0;
+		}
+
+		.footer-grid nav a {
+			display: block;
+			padding-block: 0.4rem;
 		}
 
 		.footer-brand {
@@ -313,7 +419,11 @@ const columns = [
 	const copyButton = document.getElementById("supportCopy");
 	const status = document.getElementById("supportStatus");
 
-	openButton?.addEventListener("click", () => dialog?.showModal());
+	/* The button carries `command="show-modal"` / `commandfor`; only browsers
+	   without Invoker Commands need this listener. */
+	if (!("commandForElement" in HTMLButtonElement.prototype)) {
+		openButton?.addEventListener("click", () => dialog?.showModal());
+	}
 
 	copyButton?.addEventListener("click", async () => {
 		try {
@@ -325,15 +435,19 @@ const columns = [
 		}
 	});
 
-	dialog?.addEventListener("click", (event) => {
-		const bounds = dialog.getBoundingClientRect();
-		const inside =
-			event.clientX >= bounds.left &&
-			event.clientX <= bounds.right &&
-			event.clientY >= bounds.top &&
-			event.clientY <= bounds.bottom;
-		if (!inside) dialog.close();
-	});
+	/* `closedby="any"` gives light dismiss, Esc and the back gesture natively.
+	   This branch is only for browsers that have not shipped it (Safari). */
+	if (!("closedBy" in HTMLDialogElement.prototype)) {
+		dialog?.addEventListener("click", (event) => {
+			const bounds = dialog.getBoundingClientRect();
+			const inside =
+				event.clientX >= bounds.left &&
+				event.clientX <= bounds.right &&
+				event.clientY >= bounds.top &&
+				event.clientY <= bounds.bottom;
+			if (!inside) dialog.close();
+		});
+	}
 
 	dialog?.addEventListener("close", () => {
 		if (status) status.textContent = "";

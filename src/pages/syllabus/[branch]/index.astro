@@ -2,6 +2,7 @@
 export const prerender = true;
 import branchConfig from "../../../assets/data/config.json";
 import Layout from "../../../layouts/Layout.astro";
+import BranchIcon from "../../../components/BranchIcon.astro";
 
 export async function getStaticPaths() {
 	return branchConfig.branches.map((branch) => ({
@@ -30,9 +31,9 @@ const semesters = Array.from({ length: 8 }, (_, i) => {
     <header class="page-head">
         <div>
             <p class="back">
-                <a href={`${import.meta.env.BASE_URL}syllabus/`} style="view-transition-name:beusyl">Syllabus</a>
+                <a href={`${import.meta.env.BASE_URL}syllabus/`}>Syllabus</a>
             </p>
-            <h1 style={`view-transition-name:${branch}`}>{branchInfo.name}</h1>
+            <h1><BranchIcon branch={branch} size="0.7em" />{branchInfo.name}</h1>
             <p class="meta">Semesters 1–8</p>
         </div>
     </header>
@@ -43,7 +44,8 @@ const semesters = Array.from({ length: 8 }, (_, i) => {
                 <li>
                     <a
                         href={`${import.meta.env.BASE_URL}syllabus/${branch}/${entry.sem}/`}
-                        style={`view-transition-name:sem${entry.sem}`}
+                        data-ga="syllabus_select"
+                        data-ga-params={JSON.stringify({ branch, sem: entry.sem, scope: "semester" })}
                     >
                         <span class="num">Semester {entry.sem}</span>
                         {entry.subjects > 0 && (
@@ -70,8 +72,10 @@ const semesters = Array.from({ length: 8 }, (_, i) => {
             text-decoration: none;
         }
 
-        .back a:hover {
-            color: var(--paper);
+        @media (hover: hover) and (pointer: fine) {
+            .back a:hover {
+                color: var(--paper);
+            }
         }
 
         .semester-list {
@@ -96,7 +100,15 @@ const semesters = Array.from({ length: 8 }, (_, i) => {
             text-decoration: none;
         }
 
-        .semester-list a:hover .num {
+        @media (hover: hover) and (pointer: fine) {
+            .semester-list a:hover .num {
+                text-decoration: underline;
+                text-underline-offset: 0.2em;
+            }
+        }
+
+        /* Touch: the row confirms the tap while the next page loads. */
+        .semester-list a:active .num {
             text-decoration: underline;
             text-underline-offset: 0.2em;
         }

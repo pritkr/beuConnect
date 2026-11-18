@@ -130,10 +130,12 @@ function readHeading(line: string) {
 	const match = line.match(HEADING);
 	if (!match) return null;
 	const { tail, hours } = takeHours(collapseWhitespace(match[3] ?? ""));
+	// "(8 hrs)" leaves an empty bracket pair behind once the hours are out.
+	const cleaned = collapseWhitespace(tail.replace(/[(（]\s*[)）]/g, " "));
 	return {
 		number: Number(match[1]),
 		hours,
-		tail: trimEdges(tail),
+		tail: trimEdges(cleaned),
 	};
 }
 
@@ -158,13 +160,20 @@ function splitHeadingTail(tail: string) {
 
 const NUMBERED = /^\d+\.\s/;
 
+/** Lab courses list experiments as "LE-1 Diffraction Grating." */
+const LAB_ITEM = /^LE-\d+\b/;
+
 /** A stray ". " opening a paragraph is a PDF bullet, not part of the sentence. */
 function stripLeadDot(line: string) {
 	return /^\.\s/.test(line) ? line.slice(1).trimStart() : line;
 }
 
-export function parseSyllabusContent(content: string): SyllabusUnit[] {
+export function parseSyllabusContent(
+	content: string,
+	options: { splitLists?: boolean } = {},
+): SyllabusUnit[] {
 	const text = typeof content === "string" ? content : "";
+	const splitLists = options.splitLists ?? true;
 	const units: SyllabusUnit[] = [];
 	let current: SyllabusUnit | null = null;
 	let topicOpen = false;
@@ -173,13 +182,16 @@ export function parseSyllabusContent(content: string): SyllabusUnit[] {
 		units.push(unit);
 		current = unit;
 		topicOpen = false;
+		return unit;
 	};
 
+	/** Read through a function so the checker cannot narrow `current` to `null`. */
+	const currentUnit = (): SyllabusUnit | null => current;
+
 	const openTopic = (line: string) => {
-		if (!current) {
-			openUnit({ number: 0, hours: null, title: null, topics: [] });
-		}
-		current.topics.push(stripLeadDot(line));
+		const unit =
+			currentUnit() ?? openUnit({ number: 0, hours: null, title: null, topics: [] });
+		unit.topics.push(stripLeadDot(line));
 		topicOpen = true;
 	};
 
@@ -206,18 +218,22 @@ export function parseSyllabusContent(content: string): SyllabusUnit[] {
 			continue;
 		}
 
-		if (NUMBERED.test(line) || !topicOpen || !current) {
+		const unit = currentUnit();
+		if (NUMBERED.test(line) || LAB_ITEM.test(line) || !topicOpen || !unit) {
 			openTopic(line);
 		} else {
-			const index = current.topics.length - 1;
-			current.topics[index] = `${current.topics[index]} ${line}`;
+			const index = unit.topics.length - 1;
+			unit.topics[index] = `${unit.topics[index]} ${line}`;
 		}
 	}
 
 	// Paragraphs are assembled first so a wrapped line cannot look like a list
-	// of its own; only then is each paragraph cut into checkable items.
-	for (const unit of units) {
-		unit.topics = unit.topics.flatMap(splitTopic);
+	// of its own; only then is each paragraph cut into checkable items. A lab
+	// experiment is one checkbox, so practical subjects keep their lines whole.
+	if (splitLists) {
+		for (const unit of units) {
+			unit.topics = unit.topics.flatMap(splitTopic);
+		}
 	}
 
 	return units;

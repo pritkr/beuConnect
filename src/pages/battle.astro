@@ -142,6 +142,13 @@ import Layout from "../layouts/Layout.astro";
     const form = document.getElementById('battleForm') as HTMLFormElement;
     const loading = document.getElementById('battleLoading') as HTMLDivElement;
     const resultsArea = document.getElementById('battleResults') as HTMLDivElement;
+
+    // `display: none` cannot transition, so let the box be laid out first and
+    // only then drop the fade — otherwise the form reappears with a snap.
+    const revealForm = () => {
+        form.classList.remove('hidden');
+        requestAnimationFrame(() => requestAnimationFrame(() => form.classList.remove('fade-out')));
+    };
     const statusMsg = document.getElementById('formStatusMsg') as HTMLDivElement;
     const baseUrl = import.meta.env.BASE_URL;
 
@@ -166,14 +173,15 @@ import Layout from "../layouts/Layout.astro";
                     loadedP1 = true;
                     
                     if (profile.batchYear) {
-                        let defaultSem = 1;
-                        if (profile.batchYear === 2024) defaultSem = 2;
-                        else if (profile.batchYear === 2023) defaultSem = 4;
-                        else if (profile.batchYear === 2022) defaultSem = 7;
-                        else if (profile.batchYear <= 2021) defaultSem = 8;
-                        else defaultSem = Math.max(1, (profile.currentSem || 2) - 1);
-                        
-                        semInput.value = String(defaultSem);
+                        const { inferCurrentSemester } = await import("../lib/beuReg");
+                        const { publishedSemester } = await import("../lib/result-table/defaults");
+                        // Compare a semester that has a published table, so the
+                        // battle opens on real results instead of "no result".
+                        const session = String(profile.batchYear).slice(-2);
+                        semInput.value = publishedSemester(
+                            session,
+                            String(inferCurrentSemester(profile.batchYear)),
+                        );
                     } else if (profile.currentSem) {
                         semInput.value = String(Math.max(1, profile.currentSem - 1));
                     }
@@ -279,6 +287,10 @@ import Layout from "../layouts/Layout.astro";
             return;
         }
 
+        // Whether a battle actually resolved is the useful signal; neither
+        // registration number is ever sent.
+        window.beuTrack?.('battle_start', { semester: sem });
+
         form.classList.add('fade-out');
         setTimeout(() => {
             form.classList.add('hidden');
@@ -307,16 +319,14 @@ import Layout from "../layouts/Layout.astro";
 
         } catch(error) {
             loading.classList.add('hidden');
-            form.classList.remove('hidden');
-            form.classList.remove('fade-out');
+            revealForm();
             statusMsg.textContent = "Could not reach the result service. Try again.";
         }
     });
 
     document.getElementById('newBattleBtn')?.addEventListener('click', () => {
         resultsArea.classList.add('hidden');
-        form.classList.remove('hidden');
-        form.classList.remove('fade-out');
+        revealForm();
         statusMsg.textContent = '';
         
         document.getElementById('p1Card')!.className = 'player-card p1-card';
@@ -401,7 +411,7 @@ import Layout from "../layouts/Layout.astro";
         ovP2Stat.className = `ov-badge ${r2.status === 'PASS' ? 'pass-bg' : 'fail-bg'}`;
 
         const tbody = document.getElementById('subjectComparisonBody')!;
-        tbody.innerHTML = '';
+        tbody.replaceChildren();
 
         const subjectMap = new Map();
         const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -461,6 +471,9 @@ import Layout from "../layouts/Layout.astro";
 <style>
     .battle-container { display: grid; gap: var(--s4); }
 
+    /* The grid's gap is the space under the header. */
+    .battle-container > .page-head { margin-bottom: 0; }
+
     .battle-setup {
         margin: 0;
         padding: var(--s4) var(--s5);
@@ -489,6 +502,22 @@ import Layout from "../layouts/Layout.astro";
 
     .loading-state { padding: var(--s7) 0; }
     .loading-text { margin: 0; color: var(--faint); font-size: 0.9rem; }
+
+    /* Loading and results both start hidden, so this plays on every reveal. */
+    .loading-state,
+    .results-arena {
+        transition:
+            opacity 200ms var(--ease-out),
+            transform 200ms var(--ease-out);
+    }
+
+    @starting-style {
+        .loading-state,
+        .results-arena {
+            opacity: 0;
+            transform: translateY(4px);
+        }
+    }
 
     .battle-verdict {
         display: flex;
@@ -591,6 +620,7 @@ import Layout from "../layouts/Layout.astro";
 
     .table-scroll {
         overflow-x: auto;
+        overscroll-behavior-x: contain;
         border: 1px solid var(--line);
         border-radius: var(--r-lg);
         background: var(--surface);
@@ -634,7 +664,7 @@ import Layout from "../layouts/Layout.astro";
     .sub-row.tie .vs-ind { background: var(--line-strong); }
 
     .hidden { display: none !important; }
-    .fade-out { opacity: 0; pointer-events: none; transition: opacity 0.2s ease; }
+    .fade-out { opacity: 0; pointer-events: none; transition: opacity 200ms var(--ease-out); }
 
     @media (max-width: 860px) {
         .setup-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); }

@@ -8,32 +8,45 @@
 	--font-display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", serif;
 	--font-mono: ui-monospace, "SFMono-Regular", "Cascadia Mono", Menlo, Consolas, monospace;
 
-	--bg: #0c1310;
-	--surface: #121c16;
-	--surface-2: #17241c;
-	--surface-3: #1d2c22;
-	--paper: #f2ede2;
-	--muted: #c4bdae;
-	--faint: #938d80;
-	--line: #29372e;
-	--line-strong: #3b4c40;
-	--accent: #f0a63c;
-	--accent-soft: rgba(240, 166, 60, 0.12);
+	--bg: #151b18;
+	--surface: #1d2520;
+	--surface-2: #252f29;
+	--surface-3: #2e3932;
+	--paper: #e7e1d5;
+	--muted: #cac4b6;
+	--faint: #a5a399;
+	--line: #3a4941;
+	--line-strong: #4a5e51;
+	/* A control's edge carries meaning, so it must clear 3:1 against --surface
+	   and --surface-2 (WCAG 1.4.11). Decorative rules keep --line/--line-strong. */
+	--line-field: #6b8074;
+	--accent: #e3a049;
+	--accent-soft: rgba(227, 160, 73, 0.13);
 	--accent-ink: #1a1206;
-	--brand: #6ba5d6;
+	--brand: #79a8ce;
 	--ok: #8fbf9a;
 	--warn: #e8b65a;
 	--bad: #e88a78;
 
 	/* Derived surfaces. Every rule below reads these, never a raw colour. */
-	--accent-hover: #ffc266;
-	--accent-line: rgba(240, 166, 60, 0.35);
+	--accent-hover: #f2b862;
+	--accent-line: rgba(227, 160, 73, 0.38);
 	--bad-line: rgba(232, 138, 120, 0.45);
 	--bad-soft: rgba(232, 138, 120, 0.1);
-	--row-hover: rgba(242, 237, 226, 0.03);
-	--scrim: rgba(4, 8, 6, 0.72);
-	--shadow-md: 0 8px 24px rgba(0, 0, 0, 0.28);
+	--row-hover: rgba(231, 225, 213, 0.045);
+	--scrim: rgba(8, 14, 11, 0.74);
+	/* Depth does not read on a dark desk, so the ring carries the edge and the
+	   blur only softens the drop. Same token name everywhere. */
+	--shadow-md: 0 0 0 1px oklch(1 0 0 / 0.08), 0 8px 24px oklch(0 0 0 / 0.55);
+	--image-outline: oklch(1 0 0 / 0.1);
 	color-scheme: dark;
+
+	/* Motion. One curve for anything arriving, so no component invents its
+	   own easing. UI motion stays under 300ms. */
+	--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+	--ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+	--dur-fast: 120ms;
+	--dur-ui: 200ms;
 
 	--r: 4px;
 	--r-lg: 8px;
@@ -47,11 +60,6 @@
 	--s8: 4.5rem;
 	--max: 1180px;
 	--measure: 68ch;
-
-	/* Motion. Colour changes keep their 120ms; movement uses these. */
-	--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-	--dur-fast: 160ms;
-	--dur-ui: 200ms;
 }
 
 /* Light is the same desk under a window lamp: warm paper, ink-green text and a
@@ -66,6 +74,7 @@
 	--faint: #5f6a61;
 	--line: #ded5c3;
 	--line-strong: #c5bba6;
+	--line-field: #8a7d63;
 	--accent: #935400;
 	--accent-soft: rgba(147, 84, 0, 0.1);
 	--accent-ink: #fffaf0;
@@ -80,15 +89,35 @@
 	--bad-soft: rgba(163, 58, 36, 0.08);
 	--row-hover: rgba(20, 32, 26, 0.04);
 	--scrim: rgba(22, 32, 26, 0.45);
-	--shadow-md: 0 10px 28px rgba(52, 42, 22, 0.12);
+	--shadow-md:
+		0 0 0 1px oklch(0 0 0 / 0.06),
+		0 1px 2px -1px oklch(0 0 0 / 0.08),
+		0 10px 28px oklch(0.35 0.02 80 / 0.12);
+	--image-outline: oklch(0 0 0 / 0.1);
 	color-scheme: light;
 }
 
 /* Pico reads these on :root once; the values resolve against whichever theme
    tokens are active, so light and dark share one bridge. */
 :root {
+	/* The header is sticky, so its height is the offset every anchored rule has
+	   to clear. It carries the notch inset, so consumers read the token instead
+	   of guessing 3.6rem. */
+	--safe-top: env(safe-area-inset-top, 0px);
+	--header-h: calc(3.6rem + var(--safe-top));
+	--safe-bottom: env(safe-area-inset-bottom, 0px);
+	/* Landscape puts the notch on a side, so the insets are not just vertical. */
+	--safe-left: env(safe-area-inset-left, 0px);
+	--safe-right: env(safe-area-inset-right, 0px);
+	/* The smallest thing a finger should have to hit. */
+	--tap: 2.75rem;
+	/* One row of a virtualised data table. The table measures this value, so
+	   touch density and the scroll maths can never disagree. */
+	--db-row-h: 28px;
+
 	/* Pico bridge */
-	--pico-font-family: var(--font-sans);	--pico-background-color: var(--bg);
+	--pico-font-family: var(--font-sans);
+	--pico-background-color: var(--bg);
 	--pico-color: var(--paper);
 	--pico-primary: var(--accent);
 	/* A bare <button> is a neutral control. Accent belongs to .btn-primary. */
@@ -103,7 +132,7 @@
 	--pico-card-border-color: var(--line);
 	--pico-card-sectioning-background-color: var(--surface-2);
 	--pico-form-element-background-color: var(--surface);
-	--pico-form-element-border-color: var(--line-strong);
+	--pico-form-element-border-color: var(--line-field);
 	--pico-form-element-color: var(--paper);
 	--pico-form-element-placeholder-color: var(--faint);
 	--pico-form-element-focus-color: var(--accent);
@@ -145,19 +174,26 @@
 
 html {
 	background: var(--bg);
-	scroll-padding-top: 5.5rem;
+	scroll-padding-top: calc(var(--header-h) + 1.9rem);
 	-webkit-text-size-adjust: 100%;
+	/* The browser's tap flash fights the press state the button already draws. */
+	-webkit-tap-highlight-color: transparent;
+	/* The page owns its top and bottom edges; a pull-to-refresh gesture or a
+	   rubber-band bounce reads as a web page, not an app. */
+	overscroll-behavior: none;
 }
 
 body {
 	margin: 0;
 	min-height: 100vh;
+	/* Safari 15.4+/iOS 15.4+ understand dvh; the vh line above is the floor. */
+	min-height: 100dvh;
 	background: var(--bg);
 	color: var(--paper);
 	font-family: var(--font-sans);
 	font-size: 1rem;
 	line-height: 1.6;
-	font-synthesis: none;
+	font-synthesis: weight style;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: clip;
@@ -241,12 +277,52 @@ a {
 	text-decoration-thickness: 1px;
 	text-decoration-color: var(--accent-line);
 	text-underline-offset: 0.16em;
-	transition: color 120ms ease, text-decoration-color 120ms ease;
+	transition-property: color, text-decoration-color;
+	transition-duration: 150ms;
+	transition-timing-function: ease-out;
 }
 
-a:hover {
-	color: var(--paper);
-	text-decoration-color: var(--paper);
+/* Markup hovers are gated on a real pointer below; this reset keeps the tap
+   flash from doubling the press state the app now draws itself. */
+@media (hover: hover) and (pointer: fine) {
+	a:hover {
+		color: var(--paper);
+		text-decoration-color: var(--paper);
+	}
+}
+
+/* Touch is not hover. A control answers on press, never on a hover state it
+   cannot undo, and a tap never waits to see whether a second one is coming.
+   Selection is off for labels that are really controls, and stays on for text
+   a student might want to copy: addresses, marks, error messages. */
+a,
+button,
+[role="button"],
+summary,
+.tab,
+.segmented a {
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+
+button,
+[role="button"],
+summary,
+.tab,
+.segmented a,
+.btn,
+.mobile a,
+.index-group a,
+.directory-list a {
+	-webkit-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+}
+
+/* The tap flash is gone, so a link answers on press instead. Opacity is
+   colour-agnostic: it reads the same on text, rows, cards and images. */
+a:where(:not(.btn):not([role="button"])):active {
+	opacity: 0.72;
 }
 
 strong,
@@ -306,7 +382,11 @@ hr {
 	border-radius: 2px;
 }
 
-/* Pico stretches dialogs edge to edge; these are cards in the top layer. */
+/* Pico stretches dialogs edge to edge; these are cards in the top layer.
+   They arrive from their own centre (a modal is not anchored to a trigger)
+   with the scrim fading alongside, so card and backdrop read as one surface.
+   `display`/`overlay` are transitioned discretely so the closing fade is
+   actually visible before the top layer is dropped. */
 dialog {
 	position: fixed;
 	inset: 0;
@@ -318,14 +398,95 @@ dialog {
 	max-height: calc(100dvh - 2rem);
 	margin: auto;
 	overflow: auto;
+	overscroll-behavior: contain;
+	/* Pico's own keyframe drops the box in from above; not this design. */
+	animation: none;
+	opacity: 0;
+	transform: scale(0.96);
+	transition:
+		opacity 250ms var(--ease-out),
+		transform 250ms var(--ease-out),
+		display 250ms allow-discrete,
+		overlay 250ms allow-discrete;
+}
+
+dialog > article {
+	animation: none;
+}
+
+dialog[open] {
+	opacity: 1;
+	transform: none;
+}
+
+@starting-style {
+	dialog[open] {
+		opacity: 0;
+		transform: scale(0.96);
+	}
+}
+
+dialog::backdrop {
+	opacity: 0;
+	/* A scroll gesture that starts on the scrim must not chain to the page
+	   behind it. `::backdrop` is not a scroll container, so it needs both. */
+	overflow: hidden;
+	overscroll-behavior: contain;
+	transition:
+		opacity 250ms var(--ease-out),
+		display 250ms allow-discrete,
+		overlay 250ms allow-discrete;
+}
+
+dialog:modal {
+	overscroll-behavior: contain;
+}
+
+dialog[open]::backdrop {
+	opacity: 1;
+}
+
+@starting-style {
+	dialog[open]::backdrop {
+		opacity: 0;
+	}
+}
+
+/* On a finger screen a modal is a sheet: it rises from the edge the thumb
+   already rests on, pads clear of the home indicator, and its height follows
+   the visual viewport so the keyboard shortens it instead of covering it. */
+@media (pointer: coarse) {
+	dialog {
+		inset: auto 0 0;
+		width: 100%;
+		/* The notch can be on either side in landscape, and a narrower sheet
+		   (`width` from its own component rule) must stay centred rather than
+		   pinning itself to the left edge once `margin` stops being auto. */
+		max-width: calc(100% - var(--safe-left) - var(--safe-right));
+		margin: 0 auto;
+		border-radius: var(--r-lg) var(--r-lg) 0 0;
+		max-height: min(88dvh, calc(var(--vvh, 100dvh) - 1.5rem));
+		padding-bottom: var(--safe-bottom);
+		transform: translateY(100%);
+	}
+
+	dialog[open] {
+		transform: translateY(0);
+	}
+
+	@starting-style {
+		dialog[open] {
+			transform: translateY(100%);
+		}
+	}
 }
 
 /* ---- Shell -------------------------------------------------------------- */
 
 .skip-link {
 	position: fixed;
-	top: 0.5rem;
-	left: 0.5rem;
+	top: calc(0.5rem + var(--safe-top));
+	left: calc(0.5rem + var(--safe-left));
 	z-index: 1000;
 	padding: 0.6rem 0.9rem;
 	border-radius: var(--r);
@@ -346,13 +507,25 @@ dialog {
 	min-height: 100vh;
 	min-height: 100dvh;
 	flex-direction: column;
+	/* The page owns the full screen (`viewport-fit=cover`), so the notch has to
+	   be taken out of the flow here instead of guessed per component. */
+	padding-inline: var(--safe-left) var(--safe-right);
 }
 
 #main-content {
 	flex: 1;
 	width: min(100% - 2.5rem, var(--max));
 	margin-inline: auto;
-	padding: var(--s6) 0 var(--s8);
+	/* The page owns the gap under the header. Blocks that follow must not add
+	   a second top gap of their own, or the page opens on an empty band. */
+	padding: var(--s4) 0 var(--s6);
+}
+
+/* Pico gives every <section> a bottom margin. On these pages the bands already
+   space themselves, so that margin lands as an unexplained gap between them.
+   Only the bottom is reset — pages space sections from the top on purpose. */
+#main-content section {
+	margin-block-end: 0;
 }
 
 #main-content.wide {
@@ -418,6 +591,33 @@ dialog {
 	color: var(--faint);
 }
 
+/* ---- Branch marks ------------------------------------------------------- */
+
+/* A glyph never stands alone: the branch name beside it carries the meaning.
+   Sits inline, not in a flex row, so a wrapped name keeps its first-line
+   baseline level with the code column next to it. */
+.branch-icon {
+	flex-shrink: 0;
+	margin-right: 0.4em;
+	color: var(--faint);
+	vertical-align: -0.14em;
+}
+
+/* Links hand their hover to the mark, so the whole row reads as one target. */
+@media (hover: hover) and (pointer: fine) {
+	a:hover .branch-icon {
+		color: var(--accent);
+	}
+}
+
+/* Beside a page title the mark earns the marigold: it is that page's subject,
+   not decoration on a list. */
+.page-head h1 .branch-icon {
+	margin-right: 0.28em;
+	color: var(--accent);
+	vertical-align: -0.02em;
+}
+
 [hidden] {
 	display: none !important;
 }
@@ -441,7 +641,7 @@ dialog {
 	align-items: flex-end;
 	justify-content: space-between;
 	gap: var(--s4);
-	margin-bottom: var(--s5);
+	margin-bottom: var(--s4);
 	padding-bottom: var(--s4);
 	border-bottom: 1px solid var(--line);
 }
@@ -515,10 +715,12 @@ dialog {
 }
 
 .callout {
-	border-left: 3px solid var(--accent);
+	border-inline-start: 3px solid var(--accent);
 	padding: var(--s3) var(--s4);
 	background: var(--accent-soft);
-	border-radius: 0 var(--r) var(--r) 0;
+	border-radius: var(--r);
+	border-start-start-radius: 0;
+	border-end-start-radius: 0;
 }
 
 .callout p {
@@ -549,7 +751,7 @@ input[type="button"],
 	min-height: 2.5rem;
 	margin: 0;
 	padding: 0.6rem 0.95rem;
-	border: 1px solid var(--line-strong);
+	border: 1px solid var(--line-field);
 	border-radius: var(--r);
 	background: var(--surface);
 	color: var(--paper);
@@ -561,27 +763,32 @@ input[type="button"],
 	text-decoration: none;
 	box-shadow: none;
 	cursor: pointer;
-	transition:
-		background-color 120ms ease,
-		border-color 120ms ease,
-		color 120ms ease,
-		transform var(--dur-fast) var(--ease-out);
+	-webkit-tap-highlight-color: transparent;
+	transition-property: scale, background-color, border-color, color;
+	transition-duration: 150ms;
+	transition-timing-function: ease-out;
 }
 
-button:hover,
-[role="button"]:hover,
-input[type="submit"]:hover,
-.btn:hover {
-	border-color: var(--faint);
-	background: var(--surface-2);
-	color: var(--paper);
-	text-decoration: none;
+@media (hover: hover) and (pointer: fine) {
+	button:hover,
+	[role="button"]:hover,
+	input[type="submit"]:hover,
+	.btn:hover {
+		border-color: var(--faint);
+		background: var(--surface-2);
+		color: var(--paper);
+		text-decoration: none;
+	}
 }
 
-button:active,
-.btn:active {
-	/* The only feedback a tap gets before the page changes. */
-	transform: scale(0.97);
+/* The press is the only feedback a touch user gets before the network answers. */
+button:not(:disabled):active,
+button[type]:not(:disabled):active,
+[role="button"]:not([aria-disabled="true"]):active,
+input[type="submit"]:not(:disabled):active,
+input[type="button"]:not(:disabled):active,
+.btn:not(:disabled):not([aria-disabled="true"]):active {
+	scale: 0.96;
 }
 
 .btn-primary,
@@ -593,50 +800,52 @@ input[type="submit"].primary {
 	color: var(--accent-ink);
 }
 
-.btn-primary:hover,
-button.primary:hover,
-[role="button"].primary:hover,
-input[type="submit"].primary:hover {
-	border-color: var(--accent-hover);
-	background: var(--accent-hover);
-	color: var(--accent-ink);
-}
-
 .btn-ghost,
 button.outline,
 [role="button"].outline {
-	border-color: var(--line-strong);
+	border-color: var(--line-field);
 	background: transparent;
 	color: var(--paper);
 }
 
-.btn-ghost:hover,
-button.outline:hover,
-[role="button"].outline:hover {
-	border-color: var(--paper);
-	background: transparent;
+@media (hover: hover) and (pointer: fine) {
+	.btn-primary:hover,
+	button.primary:hover,
+	[role="button"].primary:hover,
+	input[type="submit"].primary:hover {
+		border-color: var(--accent-hover);
+		background: var(--accent-hover);
+		color: var(--accent-ink);
+	}
+
+	.btn-ghost:hover,
+	button.outline:hover,
+	[role="button"].outline:hover {
+		border-color: var(--paper);
+		background: transparent;
+	}
+
+	.btn-secondary:hover {
+		border-color: var(--paper);
+		background: transparent;
+	}
+
+	.btn-danger:hover {
+		border-color: var(--bad);
+		background: var(--bad-soft);
+		color: var(--bad);
+	}
 }
 
 .btn-secondary {
-	border-color: var(--line-strong);
+	border-color: var(--line-field);
 	background: transparent;
 	color: var(--paper);
-}
-
-.btn-secondary:hover {
-	border-color: var(--paper);
-	background: transparent;
 }
 
 .btn-danger {
 	border-color: var(--bad-line);
 	background: transparent;
-	color: var(--bad);
-}
-
-.btn-danger:hover {
-	border-color: var(--bad);
-	background: var(--bad-soft);
 	color: var(--bad);
 }
 
@@ -692,7 +901,7 @@ textarea {
 	min-height: 2.5rem;
 	margin: 0;
 	padding: 0.55rem 0.7rem;
-	border: 1px solid var(--line-strong);
+	border: 1px solid var(--line-field);
 	border-radius: var(--r);
 	background: var(--surface);
 	color: var(--paper);
@@ -761,6 +970,7 @@ input[type="radio"] {
 .table-wrap {
 	width: 100%;
 	overflow-x: auto;
+	overscroll-behavior-x: contain;
 	border: 1px solid var(--line);
 	border-radius: var(--r-lg);
 	background: var(--surface);
@@ -780,7 +990,7 @@ td {
 	padding: 0.6rem 0.75rem;
 	border: 0;
 	border-bottom: 1px solid var(--line);
-	text-align: left;
+	text-align: start;
 	vertical-align: top;
 }
 
@@ -802,8 +1012,10 @@ tbody tr:last-child th {
 	border-bottom: 0;
 }
 
-tbody tr:hover {
-	background: var(--row-hover);
+@media (hover: hover) and (pointer: fine) {
+	tbody tr:hover {
+		background: var(--row-hover);
+	}
 }
 
 td {
@@ -836,10 +1048,12 @@ th strong {
 	font-weight: 600;
 }
 
-.tab:hover {
-	background: transparent;
-	border-color: var(--line-strong);
-	color: var(--paper);
+@media (hover: hover) and (pointer: fine) {
+	.tab:hover {
+		background: transparent;
+		border-color: var(--line-field);
+		color: var(--paper);
+	}
 }
 
 .tab.is-active,
@@ -850,7 +1064,7 @@ th strong {
 
 .segmented {
 	display: inline-flex;
-	border: 1px solid var(--line-strong);
+	border: 1px solid var(--line-field);
 	border-radius: var(--r);
 	overflow: hidden;
 }
@@ -868,14 +1082,28 @@ th strong {
 
 .segmented button + button,
 .segmented a + a {
-	border-left: 1px solid var(--line);
+	border-inline-start: 1px solid var(--line);
 }
 
 .segmented button.is-active,
 .segmented button.active,
 .segmented a.is-active {
 	background: var(--surface-2);
+	box-shadow: inset 0 -2px 0 var(--accent);
 	color: var(--paper);
+}
+
+/* Shrinking inside a capsule or under a tab underline reads as a glitch. */
+.tabs .tab:not(:disabled):active,
+.segmented button:active,
+.segmented a:active {
+	scale: none;
+}
+
+/* The capsule clips overflow, so an outset focus ring would be cut off. */
+.segmented button:focus-visible,
+.segmented a:focus-visible {
+	outline-offset: -2px;
 }
 
 /* ---- States ------------------------------------------------------------- */
@@ -885,7 +1113,7 @@ th strong {
 	border: 1px solid var(--line);
 	border-radius: var(--r-lg);
 	background: var(--surface);
-	text-align: left;
+	text-align: start;
 }
 
 .state h2,
@@ -900,15 +1128,15 @@ th strong {
 }
 
 .state-error {
-	border-left: 3px solid var(--bad);
+	border-inline-start: 3px solid var(--bad);
 }
 
 .state-empty {
-	border-left: 3px solid var(--line-strong);
+	border-inline-start: 3px solid var(--line-strong);
 }
 
 .state-loading {
-	border-left: 3px solid var(--accent);
+	border-inline-start: 3px solid var(--accent);
 }
 
 .status {
@@ -986,14 +1214,17 @@ th strong {
 	font-size: 0.92rem;
 	font-weight: 500;
 	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .directory-list li:last-child a {
 	border-bottom: 0;
 }
 
-.directory-list a:hover {
-	color: var(--accent);
+@media (hover: hover) and (pointer: fine) {
+	.directory-list a:hover {
+		color: var(--accent);
+	}
 }
 
 .directory-list a:focus-visible {
@@ -1005,27 +1236,34 @@ th strong {
 	color: var(--faint);
 }
 
-.directory-list a:hover .icon {
-	color: var(--accent);
+@media (hover: hover) and (pointer: fine) {
+	.directory-list a:hover .icon {
+		color: var(--accent);
+	}
 }
 
 .directory-list .go {
-	margin-left: auto;
+	margin-inline-start: auto;
 	color: var(--line-strong);
 	font-size: 0.8rem;
 }
 
-.directory-list a:hover .go {
+@media (hover: hover) and (pointer: fine) {
+	.directory-list a:hover .go {
+		color: var(--accent);
+	}
+}
+
+/* Touch has no hover: the row confirms the tap instead of navigating silently. */
+.directory-list a:active {
 	color: var(--accent);
 }
 
 /* ---- Legacy safeties ----------------------------------------------------
-   These classes came from the old template. Pages are being migrated, but
-   the reset keeps any remaining instance from reintroducing the old look. */
+   Old-template classes still present in markup. `.glass-card` survives in the
+   battle page; the badge list keeps the remaining badges monochrome. */
 
-.glass-card,
-.glass-panel,
-.glass-card-strong {
+.glass-card {
 	border: 1px solid var(--line) !important;
 	border-radius: var(--r-lg) !important;
 	background: var(--surface) !important;
@@ -1034,32 +1272,30 @@ th strong {
 	box-shadow: none !important;
 }
 
-.glass-card:hover,
-.glass-panel:hover,
-.glass-card-strong:hover {
-	border-color: var(--line-strong) !important;
-	box-shadow: none !important;
-	transform: none !important;
+@media (hover: hover) and (pointer: fine) {
+	.glass-card:hover {
+		border-color: var(--line-strong) !important;
+		box-shadow: none !important;
+		transform: none !important;
+	}
 }
 
-.gradient-text {
+.badge,
+.ov-badge,
+.type-badge,
+.rank-badge {
+	padding: 0 !important;
+	border: 0 !important;
+	border-radius: 0 !important;
 	background: none !important;
-	background-clip: border-box !important;
-	-webkit-background-clip: border-box !important;
-	-webkit-text-fill-color: currentColor !important;
-	color: var(--accent) !important;
+	color: var(--faint) !important;
+	font-size: 0.75rem !important;
+	font-weight: 600 !important;
+	letter-spacing: 0 !important;
+	text-transform: none !important;
 }
 
-.glitch-text {
-	animation: none !important;
-	text-shadow: none !important;
-}
-
-.glitch-text::before,
-.glitch-text::after {
-	content: none !important;
-	display: none !important;
-}
+/* ---- Text roles --------------------------------------------------------- */
 
 .eyebrow {
 	margin: 0;
@@ -1080,39 +1316,6 @@ th strong {
 	max-width: var(--measure);
 }
 
-.badge,
-.new-pill,
-.new-chip,
-.badge-meta,
-.important-chip,
-.subject-code-badge,
-.paper-count-badge,
-.year-tag,
-.year-badge,
-.set-badge,
-.code-badge,
-.code-badge-outline,
-.status-pill,
-.meta-pill,
-.type-badge,
-.ov-badge,
-.rank-badge {
-	padding: 0 !important;
-	border: 0 !important;
-	border-radius: 0 !important;
-	background: none !important;
-	color: var(--faint) !important;
-	font-size: 0.75rem !important;
-	font-weight: 600 !important;
-	letter-spacing: 0 !important;
-	text-transform: none !important;
-}
-
-.ticker-shell,
-.latest-strip {
-	display: none !important;
-}
-
 /* Pico details styling, tuned for syllabus accordions. */
 details {
 	margin: 0;
@@ -1122,7 +1325,6 @@ details {
 details > summary {
 	padding: 0.8rem 0;
 	cursor: pointer;
-	cover: var(--paper);
 }
 
 details[open] > summary {
@@ -1131,22 +1333,6 @@ details[open] > summary {
 
 details > summary::marker {
 	color: var(--faint);
-}
-
-/* A disclosure body fades in instead of snapping; the chevron carries the open
-   state. Height is deliberately not tweened — syllabus bodies run thousands of
-   pixels tall, and layout on every frame costs more than the reveal buys. */
-@supports selector(::details-content) {
-	details[open]:not(.mobile)::details-content {
-		animation: details-reveal var(--dur-fast) var(--ease-out) both;
-	}
-}
-
-@keyframes details-reveal {
-	from {
-		opacity: 0;
-		transform: translateY(-4px);
-	}
 }
 
 /* ---- Responsive --------------------------------------------------------- */
@@ -1197,25 +1383,47 @@ details > summary::marker {
 	.panel {
 		padding: var(--s4);
 	}
-
-	#main-content {
-		padding-top: var(--s5);
-	}
 }
 
+/* Reduced motion keeps what carries meaning without travelling: colour,
+   opacity and shadow cross-fade, everything positional lands instantly. */
 @media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
+	/* `:root *` outranks Pico's `:not([aria-busy=true])` reset, which would
+	   otherwise cut the 150ms cross-fade down to zero. */
+	:root *,
+	:root *::before,
+	:root *::after {
 		animation-duration: 0.001ms !important;
 		animation-iteration-count: 1 !important;
-		transition-duration: 0.001ms !important;
+		transition-property: opacity, color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, box-shadow !important;
+		transition-duration: 150ms !important;
+		transition-timing-function: ease-out !important;
 		scroll-behavior: auto !important;
 	}
 
-	/* The pseudo-element wrapper is outside the universal selector above. */
-	details[open]:not(.mobile)::details-content {
-		animation: none !important;
+	/* Colour still confirms the press; the shrink is movement, so drop it. */
+	button:not(:disabled):active,
+	button[type]:not(:disabled):active,
+	[role="button"]:not([aria-disabled="true"]):active,
+	input[type="submit"]:not(:disabled):active,
+	input[type="button"]:not(:disabled):active,
+	.btn:not(:disabled):not([aria-disabled="true"]):active {
+		scale: none;
+		transform: none;
+	}
+
+	/* The dialog's own transition carries display/overlay; without them the
+	   closing frame would linger, so let this one pair opt back in. */
+	dialog[open],
+	dialog[open]::backdrop {
+		transition-property: opacity, display, overlay !important;
+		transition-duration: 150ms !important;
+	}
+
+	@starting-style {
+		dialog[open] {
+			transform: none;
+		}
 	}
 }
 
@@ -1235,12 +1443,49 @@ details > summary::marker {
 	padding-block: 0.2rem;
 }
 
-/* iOS zooms the page when a focused control is smaller than 16px. Keep form
-   text at 1rem on small screens so tapping a field never shifts the layout. */
-@media (max-width: 768px) {
+/* iOS zooms the page when a focused control is smaller than 16px, and never
+   zooms back out. The trigger is the input device, not the width: a phone held
+   sideways is 850px wide and still zooms. */
+@media (pointer: coarse) {
 	input:not([type="checkbox"]):not([type="radio"]),
 	select,
 	textarea {
 		font-size: 1rem;
+	}
+}
+
+/* A finger has no cursor to aim with. Give every control the 44px the platform
+   guidelines ask for, while the eye keeps the same type and spacing. */
+@media (pointer: coarse) {
+	button,
+	button[type],
+	[role="button"],
+	input[type="submit"],
+	input[type="button"],
+	.btn,
+	.tab,
+	.segmented button,
+	.segmented a,
+	.sem-btn,
+	.paper-btn {
+		min-height: var(--tap);
+	}
+
+	.btn-sm {
+		min-height: var(--tap);
+	}
+
+	.btn-icon {
+		width: var(--tap);
+		min-width: var(--tap);
+	}
+
+	.sem-btn {
+		font-size: 0.9rem;
+	}
+
+	/* Rows in the data browser are rows you tap, not just read. */
+	:root {
+		--db-row-h: 44px;
 	}
 }

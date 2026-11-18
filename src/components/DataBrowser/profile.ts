@@ -41,7 +41,7 @@ export function openProfileView(
     
     // Reset state
     detailsWrap.open = false;
-    historyContent.innerHTML = "";
+    historyContent.replaceChildren();
     historyLoading.style.display = "none";
     historyError.style.display = "none";
 

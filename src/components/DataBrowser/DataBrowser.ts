@@ -23,8 +23,8 @@ export function initDataBrowser() {
     const errorUI = document.getElementById("dbError")!;
     const exportBtn = document.getElementById("dbExportBtn") as HTMLButtonElement;
     const searchInput = document.getElementById("dbSearch") as HTMLInputElement;
-    const dbSortBy = document.getElementById("dbSortBy") as HTMLSelectElement;
-    const dbSortDir = document.getElementById("dbSortDir") as HTMLSelectElement;
+    const dbSortBy = document.getElementById("dbSortBy")! as unknown as HTMLSelectElement;
+    const dbSortDir = document.getElementById("dbSortDir")! as unknown as HTMLSelectElement;
 
     // 1. Initialize Web Worker via Vite query
     worker = new Worker(new URL('./parser.worker.ts', import.meta.url), { type: 'module' });
@@ -44,8 +44,10 @@ export function initDataBrowser() {
             
             // Build the Native Virtualizer
             tableRender.initData(currentColumns, activeIndices.length);
+            document.getElementById("dbTableContainer")?.removeAttribute("data-loading");
             
             loadingUI.style.display = "none";
+            document.getElementById("dbFilterForm")?.setAttribute("aria-busy", "false");
             exportBtn.disabled = false;
             searchInput.disabled = false;
             dbSortBy.disabled = false;
@@ -184,9 +186,17 @@ export function initDataBrowser() {
     });
 
     // 4. Attach Listeners
+    let searchTrackedAt = 0;
     searchInput.addEventListener("input", (e) => {
         const val = (e.target as HTMLInputElement).value;
         worker.postMessage({ type: "SEARCH", payload: val } as WorkerRequest);
+        // The register holds names and registration numbers; the query is never
+        // sent, only whether the field is being used and how long it is.
+        const now = Date.now();
+        if (val.trim().length >= 2 && now - searchTrackedAt > 2000) {
+            searchTrackedAt = now;
+            (window as any).beuTrack?.("search_query", { feature: "data", query_length: val.trim().length });
+        }
     });
 
     const triggerSort = () => {
@@ -199,7 +209,11 @@ export function initDataBrowser() {
     async function fetchTargetData(state: AppState) {
         loadingUI.style.display = "flex";
         errorUI.style.display = "none";
-        document.getElementById("dbTableContainer")!.style.display = "none";
+        // Keep the previous rows mounted and dim them instead of collapsing the
+        // container: unmounting it dropped the page back to the reserved screen
+        // and threw the reader's scroll position around.
+        const tableContainer = document.getElementById("dbTableContainer")!;
+        tableContainer.dataset.loading = "true";
 
         try {
             let rawCSV: string;
@@ -225,13 +239,14 @@ export function initDataBrowser() {
             loadingUI.style.display = "none";
             errorUI.style.display = "block";
             errorUI.textContent = "Download Error: " + err.message;
+            tableContainer.removeAttribute("data-loading");
         }
     }
 
     // Fetch ALL per-college CSVs for a batch+branch+semester and merge into one giant CSV
     async function fetchAndMergeAllColleges(state: AppState): Promise<string> {
         // Discover available college codes from the manifest-derived college list in the filter
-        const dbCollege = document.getElementById("dbCollege") as HTMLSelectElement;
+        const dbCollege = document.getElementById("dbCollege")! as unknown as HTMLSelectElement;
         const collegeCodes: string[] = [];
         for (let i = 0; i < dbCollege.options.length; i++) {
             const val = dbCollege.options[i].value;

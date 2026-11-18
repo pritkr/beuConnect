@@ -58,6 +58,7 @@ export function parseLegacyHtmlToJson(html: string): ResultPayload | null {
 	if (sgpaText) {
 		const semIdx = Number.parseInt(data.semester || "1", 10) - 1;
 		if (semIdx >= 0 && semIdx < 8) {
+			data.sgpa ??= [];
 			data.sgpa[semIdx] = sgpaText;
 		}
 	}

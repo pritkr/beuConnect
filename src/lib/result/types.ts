@@ -4,7 +4,8 @@ export type SpecialCase = {
 	year: string;
 	semester: string;
 	examHeld: string;
-	legacyTarget?: string;
+	/** The portal's own exam row id; sent with the result request when known. */
+	examId?: string;
 };
 
 export type ResultPayload = {

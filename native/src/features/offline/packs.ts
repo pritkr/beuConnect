@@ -119,7 +119,8 @@ export const PACKS: readonly Pack[] = [
       key.startsWith("pyqs.csv.") ||
       key === "pyqs.manifest.v1" ||
       key.startsWith("wide:") ||
-      key.startsWith("roster:"),
+      key.startsWith("roster:") ||
+      key.startsWith("corpus:"),
     effect: "Rank, merit and table screens download them again when you next open them.",
     dialog: "Clear downloaded tables?",
     confirm: "Clear tables",

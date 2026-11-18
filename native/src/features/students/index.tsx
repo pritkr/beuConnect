@@ -47,7 +47,7 @@ export const studentsRoutes: RouteDef[] = [
     name: "students.college",
     title: (params) => {
       const code = str(params, "college");
-      return code && code !== COLLEGE_CODE ? `College ${code}` : shortCollegeName(COLLEGE_CODE);
+      return code ? shortCollegeName(code) : shortCollegeName(COLLEGE_CODE);
     },
     render: (nav) => <CollegeScreen nav={nav} />,
   },

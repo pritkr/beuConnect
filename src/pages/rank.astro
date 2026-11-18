@@ -1,175 +1,41 @@
 ---
 export const prerender = false;
 import Layout from "../layouts/Layout.astro";
+import { lookupRank } from "../lib/rank/lookup";
 
-const regParam = Astro.url.searchParams.get("reg")?.trim();
+const regParam = Astro.url.searchParams.get("reg")?.trim() ?? "";
+const digits = regParam.replace(/\D/g, "");
+
+/* Every batch sits in one semester, so the register alone picks the file. */
+const SEMESTER_BY_BATCH: Record<string, number> = {
+	"21": 8,
+	"22": 6,
+	"23": 4,
+	"24": 2,
+	"25": 1,
+};
+
 let errorMsg = "";
 let studentData = null;
 
-let batch = "";
-let branch = "";
-let targetSem = "";
-
-let branchRank = 0;
-let totalBranchStudents = 0;
-let overallRank = 0;
-let totalStudents = 0;
-
-let cseCode = "";
-
-if (regParam) {
-	const numericReg = regParam.replace(/\D/g, "");
-	if (numericReg.length >= 8) {
-		batch = numericReg.substring(0, 2);
-		branch = numericReg.substring(2, 5);
-		
-		if (batch === "25") targetSem = "1";
-		else if (batch === "24") targetSem = "2";
-		else if (batch === "23") targetSem = "4";
-		else if (batch === "22") targetSem = "6";
-		else if (batch === "21") targetSem = "8";
-		else errorMsg = "we don't have your data";
-
-		if (targetSem) {
-			const baseUrl = Astro.url.origin;
-			const branchesToFetch = ["101", "102", "103", "104", "105", "106", "110", "161"];
-			
-			const allStudents = [];
-			
-			await Promise.all(branchesToFetch.map(async (b) => {
-				try {
-					const res = await fetch(`${baseUrl}/data/students_${batch}_all_${b}_sem${targetSem}.csv`);
-					if (res.ok) {
-						const text = await res.text();
-						const lines = text.split(/\r?\n/).filter(line => line.trim() !== "");
-						for (let i = 1; i < lines.length; i++) {
-							let cur = "";
-							let inQuotes = false;
-							const row = [];
-							const line = lines[i];
-							for (let j = 0; j < line.length; j++) {
-								const char = line[j];
-								if (inQuotes) {
-									if (char === '"') {
-										if (j + 1 < line.length && line[j+1] === '"') {
-											cur += '"';
-											j++;
-										} else inQuotes = false;
-									} else cur += char;
-								} else {
-									if (char === '"') inQuotes = true;
-									else if (char === ',') { row.push(cur); cur = ""; }
-									else cur += char;
-								}
-							}
-							row.push(cur);
-							
-							if (row.length >= 5) {
-								const cgpaText = row[4];
-								const sgpaText = row[3];
-								
-								const cgpa = cgpaText && cgpaText !== "N/A" && cgpaText !== "NULL" ? parseFloat(cgpaText) : null;
-								const sgpa = sgpaText && sgpaText !== "N/A" && sgpaText !== "NULL" ? parseFloat(sgpaText) : null;
-
-								if (!isNaN(cgpa)) {
-									allStudents.push({
-										reg: row[1],
-										name: row[2],
-										sgpa: isNaN(sgpa) ? null : sgpa,
-										cgpa: isNaN(cgpa) ? null : cgpa,
-										branch: b,
-										collegeCode: row[5],
-										collegeName: row[6]
-									});
-								}
-							}
-						}
-					}
-				} catch (e) {
-					// Ignore missing branches
-				}
-			}));
-			
-
-			if (allStudents.length === 0) {
-				errorMsg = "we don't have your data";
-			} else {
-				// Remove duplicates based on reg number
-				const uniqueMap = new Map();
-				allStudents.forEach(s => {
-					if (!uniqueMap.has(s.reg)) {
-						uniqueMap.set(s.reg, s);
-					}
-				});
-				const uniqueStudents = Array.from(uniqueMap.values());
-				
-				// Sort by CGPA desc, then SGPA desc, then RegNo (to match result-table exactly)
-				uniqueStudents.sort((a, b) => {
-					if (a.cgpa === null && b.cgpa === null) return a.reg.localeCompare(b.reg);
-					if (a.cgpa === null) return 1;
-					if (b.cgpa === null) return -1;
-					if (b.cgpa !== a.cgpa) return b.cgpa - a.cgpa;
-					
-					if (a.sgpa === null && b.sgpa === null) return a.reg.localeCompare(b.reg);
-					if (a.sgpa === null) return 1;
-					if (b.sgpa === null) return -1;
-					if (b.sgpa !== a.sgpa) return b.sgpa - a.sgpa;
-					
-					return a.reg.localeCompare(b.reg);
-				});
-				
-				// Assign ranks
-				let currentOverallRank = 0;
-				let overallRankableCount = 0;
-				let previousOverallCgpa = null;
-				for (let i = 0; i < uniqueStudents.length; i++) {
-					overallRankableCount++;
-					if (previousOverallCgpa === null || Math.abs(uniqueStudents[i].cgpa - previousOverallCgpa) > 1e-9) {
-						currentOverallRank = overallRankableCount;
-						previousOverallCgpa = uniqueStudents[i].cgpa;
-					}
-					uniqueStudents[i].overallRank = currentOverallRank;
-				}
-				
-				// Filter branch students and assign branch ranks
-				const branchStudents = uniqueStudents.filter(s => s.branch === branch);
-				let currentBranchRank = 0;
-				let branchRankableCount = 0;
-				let previousBranchCgpa = null;
-				for (let i = 0; i < branchStudents.length; i++) {
-					branchRankableCount++;
-					if (previousBranchCgpa === null || Math.abs(branchStudents[i].cgpa - previousBranchCgpa) > 1e-9) {
-						currentBranchRank = branchRankableCount;
-						previousBranchCgpa = branchStudents[i].cgpa;
-					}
-					branchStudents[i].branchRank = currentBranchRank;
-				}
-				
-				const userStudent = uniqueStudents.find(s => s.reg.replace(/\D/g, "") === numericReg);
-				if (!userStudent) {
-					errorMsg = "No result data is available for this registration number yet.";
-				} else {
-					studentData = userStudent;
-					overallRank = userStudent.overallRank;
-					totalStudents = uniqueStudents.length;
-					branchRank = userStudent.branchRank;
-					totalBranchStudents = branchStudents.length;
-					
-					// Map branch code to result-table format
-					if (branch === "105") cseCode = "cse";
-					else if (branch === "104") cseCode = "ece";
-					else if (branch === "103") cseCode = "ee";
-					else if (branch === "102") cseCode = "mech";
-					else if (branch === "101") cseCode = "civil";
-					else if (branch === "110" || branch === "161") cseCode = "eee";
-					else cseCode = "cse"; // fallback
-				}
-			}
-		}
+if (digits.length >= 8) {
+	const semester = SEMESTER_BY_BATCH[digits.slice(0, 2)];
+	if (!semester) {
+		errorMsg = "we don't have your data";
 	} else {
-		errorMsg = "Enter a valid BEU registration number.";
+		const result = await lookupRank(Astro.url.origin, digits, semester);
+		if (result.status === "ok") {
+			studentData = result.data;
+		} else if (result.status === "not_found") {
+			errorMsg = "No result data is available for this registration number yet.";
+		} else {
+			errorMsg = "we don't have your data";
+		}
 	}
+} else if (regParam) {
+	errorMsg = "Enter a valid BEU registration number.";
 }
+
 ---
 
 <Layout
@@ -219,33 +85,33 @@ if (regParam) {
 				<dl class="rank-stats">
 					<div>
 						<dt>University rank</dt>
-						<dd class="num">#{overallRank}</dd>
-						<dd class="sub num">of {totalStudents}</dd>
+						<dd class="num">#{studentData.universityRank}</dd>
+						<dd class="sub num">of {studentData.universityTotal.toLocaleString("en-IN")}</dd>
 					</div>
 					<div>
 						<dt>Branch rank</dt>
-						<dd class="num">#{branchRank}</dd>
-						<dd class="sub num">of {totalBranchStudents}</dd>
+						<dd class="num">#{studentData.branchRank}</dd>
+						<dd class="sub num">of {studentData.branchTotal.toLocaleString("en-IN")}</dd>
 					</div>
 					<div>
 						<dt>CGPA</dt>
 						<dd class="num">{studentData.cgpa.toFixed(2)}</dd>
 					</div>
 					<div>
-						<dt>Sem {targetSem} SGPA</dt>
-						<dd class="num">{studentData.sgpa.toFixed(2)}</dd>
+						<dt>Sem {studentData.semester} SGPA</dt>
+						<dd class="num">{studentData.sgpa === null ? "—" : studentData.sgpa.toFixed(2)}</dd>
 					</div>
 				</dl>
 
 				<div class="rank-actions">
 					<a
-						href={`${import.meta.env.BASE_URL}result-table?session=${batch}&branch=${cseCode}&semester=${targetSem}&college=${studentData.collegeCode}`}
+						href={`${import.meta.env.BASE_URL}result-table?session=${studentData.batch}&branch=${studentData.branchSlug}&semester=${studentData.semester}&college=${studentData.collegeCode}`}
 						class="btn btn-ghost"
 					>
 						Result table
 					</a>
 					<a
-						href={`${import.meta.env.BASE_URL}result?reg=${studentData.reg}&sem=${targetSem}`}
+						href={`${import.meta.env.BASE_URL}result?reg=${studentData.reg}&sem=${studentData.semester}`}
 						class="btn btn-primary"
 					>
 						Full result

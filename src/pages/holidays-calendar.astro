@@ -2,6 +2,12 @@
 export const prerender = true;
 import Layout from "../layouts/Layout.astro";
 import 'vanilla-calendar-pro/styles/index.css';
+import { filterHolidays, holidayRowHTML, HOLIDAYS_2026 } from "../lib/holidays/data";
+
+// The schedule is part of the page, not something the browser builds after
+// load: 38 rows appearing late pushed the rest of the page down by thousands of
+// pixels, which is the largest layout shift on the site.
+const scheduleRows = filterHolidays(HOLIDAYS_2026).map(holidayRowHTML);
 ---
 
 <Layout title="Holidays 2026" description="Academic and festival holiday calendar for Bihar Engineering University, 2026.">
@@ -56,7 +62,9 @@ import 'vanilla-calendar-pro/styles/index.css';
 
 		<section class="schedule" aria-labelledby="schedule-heading">
 			<h2 id="schedule-heading">Full schedule</h2>
-			<div id="holidayListAll" class="holiday-list"></div>
+			<div id="holidayListAll" class="holiday-list">
+				{scheduleRows.map((row) => <Fragment set:html={row} />)}
+			</div>
 		</section>
 
 		<section class="notes" aria-labelledby="notes-heading">
@@ -71,110 +79,36 @@ import 'vanilla-calendar-pro/styles/index.css';
 	</div>
 
 	<script>
-		import { Calendar } from 'vanilla-calendar-pro';
-
-		type HolidayCategory = "festival" | "national" | "vacation" | "academic";
-		type HolidayEntry = {
-			id: number;
-			name: string;
-			start: string;
-			end?: string;
-			category: HolidayCategory;
-			moonBased?: boolean;
-			teacherOnly?: boolean;
-		};
-
-		const holidays2026: HolidayEntry[] = [
-			{ id: 1, name: "नव वर्ष", start: "2026-01-01", category: "festival" },
-			{ id: 2, name: "मकर संक्रांति", start: "2026-01-14", category: "festival" },
-			{ id: 3, name: "बसंत पंचमी", start: "2026-01-23", category: "festival" },
-			{ id: 4, name: "कर्पूरी ठाकुर जयंती", start: "2026-01-24", category: "national" },
-			{ id: 5, name: "गणतंत्र दिवस", start: "2026-01-26", category: "national" },
-			{ id: 6, name: "संत रविदास जयन्ती", start: "2026-02-01", category: "festival" },
-			{ id: 7, name: "शब-ए-बरात", start: "2026-02-04", category: "festival", moonBased: true },
-			{ id: 8, name: "महाशिवरात्रि", start: "2026-02-15", category: "festival" },
-			{ id: 9, name: "होलिकादहन / होली", start: "2026-03-02", end: "2026-03-04", category: "festival" },
-			{ id: 10, name: "ईद-उल-फितर (ईद)", start: "2026-03-21", category: "festival", moonBased: true },
-			{ id: 11, name: "बिहार दिवस", start: "2026-03-22", category: "national" },
-			{ id: 12, name: "सम्राट अशोक जयन्ती (अष्टमी)", start: "2026-03-26", category: "festival" },
-			{ id: 13, name: "राम नवमी", start: "2026-03-27", category: "festival" },
-			{ id: 14, name: "महावीर जयन्ती", start: "2026-03-31", category: "festival" },
-			{ id: 15, name: "गुड फ्राईडे", start: "2026-04-03", category: "festival" },
-			{ id: 16, name: "भीमराव अम्बेडकर जयन्ती", start: "2026-04-14", category: "national" },
-			{ id: 17, name: "वीर कुंवर सिंह जयन्ती", start: "2026-04-23", category: "national" },
-			{ id: 18, name: "जानकी नवमी", start: "2026-04-25", category: "festival" },
-			{ id: 19, name: "मई दिवस (श्रम दिवस) / बुद्ध पूर्णिमा", start: "2026-05-01", category: "national" },
-			{ id: 20, name: "ईद-उल-जोहा (बकरीद)", start: "2026-05-28", end: "2026-05-29", category: "festival", moonBased: true },
-			{ id: 21, name: "मुहर्रम", start: "2026-06-26", end: "2026-06-27", category: "festival", moonBased: true },
-			{ id: 22, name: "कबीर जयन्ती", start: "2026-06-29", category: "festival" },
-			{ id: 23, name: "चेहल्लुम", start: "2026-08-04", category: "festival" },
-			{ id: 24, name: "स्वतंत्रता दिवस", start: "2026-08-15", category: "national" },
-			{ id: 25, name: "अंतिम श्रावणी सोमवार", start: "2026-08-24", category: "festival" },
-			{ id: 26, name: "हज़रत मोहम्मद साहब का जन्म दिवस", start: "2026-08-26", category: "festival" },
-			{ id: 27, name: "रक्षाबंधन", start: "2026-08-28", category: "festival" },
-			{ id: 28, name: "श्री कृष्ण जन्माष्टमी", start: "2026-09-04", category: "festival" },
-			{ id: 29, name: "विश्वकर्मा पूजा", start: "2026-09-17", category: "festival" },
-			{ id: 30, name: "अनन्त चतुर्दशी", start: "2026-09-25", category: "festival" },
-			{ id: 31, name: "महात्मा गाँधी जयन्ती", start: "2026-10-02", category: "national" },
-			{ id: 32, name: "दुर्गा पूजा (कलश स्थापन) / जय प्रकाश नारायण जयन्ती", start: "2026-10-11", category: "festival" },
-			{ id: 33, name: "दुर्गा पूजा / श्रीकृष्ण सिंह जयन्ती", start: "2026-10-17", end: "2026-10-21", category: "vacation" },
-			{ id: 34, name: "दीपावली / चित्रगुप्त पूजा / भाई दूज / छठ पूजा", start: "2026-11-08", end: "2026-11-16", category: "vacation" },
-			{ id: 35, name: "गुरू नानक जयन्ती / कार्तिक पूर्णिमा", start: "2026-11-24", category: "festival" },
-			{ id: 36, name: "डॉ. राजेन्द्र प्रसाद जयन्ती", start: "2026-12-03", category: "national" },
-			{ id: 37, name: "क्रिसमस दिवस", start: "2026-12-25", category: "festival" },
-			{ id: 38, name: "शीतकालीन अवकाश", start: "2026-12-26", end: "2026-12-31", category: "vacation" },
-			{
-				id: 39,
-				name: "ग्रीष्मावकाश (केवल शिक्षकों के लिए)",
-				start: "2026-05-23",
-				end: "2026-06-21",
-				category: "vacation",
-				teacherOnly: true,
-			},
-		];
+		import { Calendar, annotations, months } from 'vanilla-calendar-pro';
+		import {
+			filterHolidays,
+			formatHolidayDate,
+			holidayCategoryLabel,
+			holidayRangeText,
+			holidayRowHTML,
+			HOLIDAYS_2026,
+			type HolidayEntry,
+		} from '../lib/holidays/data';
 
 		const holidayListAll = document.getElementById("holidayListAll") as HTMLDivElement;
 		const selectedDayInfo = document.getElementById("selectedDayInfo") as HTMLDivElement;
 		const searchInput = document.getElementById("searchInput") as HTMLInputElement;
 		const teacherOnlyToggle = document.getElementById("teacherOnlyToggle") as HTMLInputElement;
 
-		function formatDate(iso: string): string {
-			const [y, m, d] = iso.split("-").map(Number);
-			return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-IN", {
-				timeZone: "UTC",
-				day: "2-digit",
-				month: "short",
-				year: "numeric",
-			});
-		}
-
-		function categoryLabel(category: HolidayCategory): string {
-			if (category === "national") return "National";
-			if (category === "festival") return "Festival";
-			if (category === "vacation") return "Vacation";
-			return "Academic";
-		}
-
 		function renderHolidayList(entries: HolidayEntry[]) {
-			const sorted = [...entries].sort((a, b) => a.start.localeCompare(b.start));
-			if (!sorted.length) {
-				holidayListAll.innerHTML = '<p class="empty">No holidays match this search.</p>';
+			if (!entries.length) {
+				holidayListAll.replaceChildren(
+					Object.assign(document.createElement("p"), {
+						className: "empty",
+						textContent: "No holidays match this search.",
+					}),
+				);
 				return;
 			}
 
-			holidayListAll.innerHTML = sorted
-				.map((entry) => {
-					const rangeText = entry.end ? `${formatDate(entry.start)} – ${formatDate(entry.end)}` : formatDate(entry.start);
-					return `<article class="holiday-row ${entry.category}">
-						<span class="range num">${rangeText}</span>
-						<span class="name">${entry.name}${entry.moonBased ? " *" : ""}</span>
-						<span class="tags">
-							<span>${categoryLabel(entry.category)}</span>
-							${entry.teacherOnly ? "<span>Teachers only</span>" : ""}
-						</span>
-					</article>`;
-				})
-				.join("");
+			// The same markup the page shipped with, so filtering re-uses the
+			// rows' boxes instead of replacing the list with a different shape.
+			holidayListAll.innerHTML = entries.map(holidayRowHTML).join("");
 		}
 
 		function updateYearProgress() {
@@ -195,30 +129,30 @@ import 'vanilla-calendar-pro/styles/index.css';
 
 			const barFill = document.getElementById("progressBarFill");
 			const percentText = document.getElementById("progressPercent");
-			if (barFill) barFill.style.width = `${progress}%`;
+			if (barFill) barFill.style.transform = `scaleX(${progress / 100})`;
 			if (percentText) percentText.innerText = `${Math.round(progress)}%`;
 		}
 
 		function updateSelectedInfo(date: string) {
-			const visible = holidays2026.filter(h => {
+			const visible = HOLIDAYS_2026.filter(h => {
 				const start = h.start;
 				const end = h.end || h.start;
 				return date >= start && date <= end;
 			});
 
 			if (!visible.length) {
-				selectedDayInfo.innerHTML = `<p class="empty">No holiday on ${formatDate(date)}.</p>`;
+				selectedDayInfo.innerHTML = `<p class="empty">No holiday on ${formatHolidayDate(date)}.</p>`;
 				return;
 			}
 
 			selectedDayInfo.innerHTML = visible
 				.map((entry) => {
-					const rangeText = entry.end ? `${formatDate(entry.start)} – ${formatDate(entry.end)}` : formatDate(entry.start);
+					const rangeText = holidayRangeText(entry);
 					return `<article class="picked-row">
 						<span class="name">${entry.name}${entry.moonBased ? " *" : ""}</span>
 						<span class="range num">${rangeText}</span>
 						<span class="tags">
-							<span>${categoryLabel(entry.category)}</span>
+							<span>${holidayCategoryLabel(entry.category)}</span>
 							${entry.teacherOnly ? "<span>Teachers only</span>" : ""}
 						</span>
 					</article>`;
@@ -237,7 +171,7 @@ import 'vanilla-calendar-pro/styles/index.css';
 
 			const popups: Record<string, any> = {};
 
-			holidays2026.forEach((h) => {
+			HOLIDAYS_2026.forEach((h) => {
 				if (h.teacherOnly && !showTeacherOnly) return;
 				if (query && !h.name.toLowerCase().includes(query)) return;
 
@@ -264,50 +198,62 @@ import 'vanilla-calendar-pro/styles/index.css';
 				}
 			});
 
-			if (calendar) {
-				try {
-					calendar.destroy();
-				} catch (e) {
-					console.error("Error destroying calendar:", e);
-				}
-			}
+			// `popups` and `displayMonthsCount` moved into extensions in
+			// vanilla-calendar-pro 3; without registering them the constructor
+			// throws and the grid stays empty.
+			const options = {
+				extensions: [annotations, months],
+				type: "multiple" as const,
+				displayMonthsCount: 12 as const,
+				selectedYear: 2026,
+				selectedMonth: 0,
+				locale: "en",
+				selectionDatesMode: "single" as const,
+				selectionMonthsMode: false,
+				selectionYearsMode: false,
+				selectedTheme: "dark" as const,
+				selectedWeekends: [0], // Only Sundays
+				popups: popups,
+				onClickDate(self: any) {
+					// The selection lives on the instance context in v3, not on
+					// the instance itself.
+					const picked = self.context?.selectedDates?.[0];
+					if (picked) updateSelectedInfo(picked);
+				},
+			};
 
 			try {
-				calendar = new Calendar(calendarEl as HTMLElement, {
-					type: "multiple",
-					displayMonthsCount: 12,
-					selectedYear: 2026,
-					selectedMonth: 0,
-					locale: "en",
-					selectionDatesMode: "single",
-					selectionMonthsMode: false,
-					selectionYearsMode: false,
-					selectedTheme: "dark",
-					selectedWeekends: [0], // Only Sundays
-					popups: popups,
-					onClickDate(self) {
-						if (self.selectedDates && self.selectedDates[0]) {
-							updateSelectedInfo(self.selectedDates[0]);
-						}
-					},
-				});
+				if (calendar) {
+					// `destroy()` empties the container for good, and the library
+					// memoizes the element it was handed, so the next instance
+					// needs a clean node addressed by selector instead.
+					calendar.destroy();
+					const fresh = document.createElement("div");
+					fresh.id = "calendar";
+					(calendarEl as HTMLElement).replaceWith(fresh);
+				}
+				calendar = new Calendar("#calendar", options);
 				calendar.init();
 			} catch (e: any) {
-				console.error("Error initializing calendar:", e);
+				console.error("Error rendering calendar:", e);
 			}
 
 			renderHolidayList(
-				holidays2026.filter((h) => {
-					if (h.teacherOnly && !showTeacherOnly) return false;
-					if (query && !h.name.toLowerCase().includes(query))
-						return false;
-					return true;
-				}),
+				filterHolidays(HOLIDAYS_2026, { query, includeTeacherOnly: showTeacherOnly }),
 			);
 		};
 
-		searchInput.addEventListener("input", initCalendar);
-		teacherOnlyToggle.addEventListener("change", initCalendar);
+		// Each rebuild lays out twelve month grids (441 day cells), so typing
+		// waits for a pause instead of rebuilding on every keystroke.
+		let searchTimer = 0;
+		searchInput.addEventListener("input", () => {
+			clearTimeout(searchTimer);
+			searchTimer = window.setTimeout(initCalendar, 150);
+		});
+		teacherOnlyToggle.addEventListener("change", () => {
+			clearTimeout(searchTimer);
+			initCalendar();
+		});
 
 		// For Astro view transitions and initial load
 		document.addEventListener("astro:page-load", initCalendar);
@@ -323,6 +269,9 @@ import 'vanilla-calendar-pro/styles/index.css';
 			display: grid;
 			gap: var(--s4);
 		}
+
+		/* The grid's gap is the space under the header. */
+		.calendar-shell > .page-head { margin-bottom: 0; }
 
 		.year-progress {
 			display: grid;
@@ -341,16 +290,26 @@ import 'vanilla-calendar-pro/styles/index.css';
 			text-transform: uppercase;
 		}
 
+		/* "0%" and "88%" are different widths, and the number replaced the
+		   placeholder after load. The box holds the widest value ("100%") from
+		   the first frame, so writing the real percentage moves nothing. */
+		#progressPercent {
+			min-inline-size: 4ch;
+			text-align: end;
+		}
+
 		.progress-bar {
 			height: 3px;
 			background: var(--line);
 		}
 
 		.progress-fill {
-			width: 0;
+			width: 100%;
 			height: 100%;
 			background: var(--accent);
-			transition: width 600ms ease;
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: transform 600ms linear;
 		}
 
 		.toolbar {
@@ -428,8 +387,15 @@ import 'vanilla-calendar-pro/styles/index.css';
 
 		.calendar-wrapper {
 			overflow-x: auto;
+			overscroll-behavior-x: contain;
 			padding-bottom: var(--s3);
 			scrollbar-width: thin;
+			/* The library builds the month grid after load. Reserving the first
+			   screen here keeps the schedule and the summary underneath out of
+			   the first layout, so filling in the months cannot shove them
+			   down — and a screen is a floor, not a guess: the grid is far
+			   taller than this. */
+			min-height: calc(100dvh - var(--header-h));
 		}
 
 		/* vanilla-calendar-pro overrides */
@@ -527,8 +493,10 @@ import 'vanilla-calendar-pro/styles/index.css';
 			border-color: color-mix(in srgb, var(--muted) 35%, transparent) !important;
 		}
 
-		.vc-day:hover .vc-date__btn.holiday-mark {
-			filter: brightness(1.25);
+		@media (hover: hover) and (pointer: fine) {
+			.vc-day:hover .vc-date__btn.holiday-mark {
+				filter: brightness(1.25);
+			}
 		}
 
 		.vc-day_selected .vc-date__btn {

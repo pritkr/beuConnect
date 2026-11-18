@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
+import BranchIcon from "../../components/BranchIcon.astro";
 import pyqData from "../../data/gate-pyqs.json";
 import {
   gatePyqSubjectOrder,
@@ -43,7 +44,7 @@ const paperCount = subjects.reduce((total, subject) => total + subject.paperCoun
     {subjects.map((subject) => (
       <a href={`${base}gate-pyqs/${subject.code}`} class="subject-card">
         <span class="subject-code num">{subject.code}</span>
-        <span class="subject-name">{subject.name}</span>
+        <span class="subject-name"><BranchIcon branch={subject.code} size={15} />{subject.name}</span>
         <span class="subject-count num">{subject.paperCount}</span>
       </a>
     ))}
@@ -70,7 +71,14 @@ const paperCount = subjects.reduce((total, subject) => total + subject.paperCoun
     text-decoration: none;
   }
 
-  .subject-card:hover .subject-name {
+  @media (hover: hover) and (pointer: fine) {
+    .subject-card:hover .subject-name {
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+  }
+
+  .subject-card:active .subject-name {
     text-decoration: underline;
     text-underline-offset: 0.2em;
   }

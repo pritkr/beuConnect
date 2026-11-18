@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
+import BranchIcon from "../../components/BranchIcon.astro";
 import papers from "../../assets/data/gate-papers.json";
 
 const base = import.meta.env.BASE_URL;
@@ -18,12 +19,9 @@ const base = import.meta.env.BASE_URL;
         {
             papers.map((p) => (
                 <li>
-                    <a
-                        href={`${base}gate-syllabus/${p.code}/`}
-                        style={`view-transition-name:${p.code}`}
-                    >
+                    <a href={`${base}gate-syllabus/${p.code}/`}>
                         <span class="code num">{p.code}</span>
-                        <span class="name">{p.name}</span>
+                        <span class="name"><BranchIcon branch={p.code} />{p.name}</span>
                     </a>
                 </li>
             ))
@@ -40,6 +38,7 @@ const base = import.meta.env.BASE_URL;
 
         .paper-list li {
             border-bottom: 1px solid var(--line);
+            list-style: none;
         }
 
         .paper-list a {
@@ -52,7 +51,14 @@ const base = import.meta.env.BASE_URL;
             text-decoration: none;
         }
 
-        .paper-list a:hover .name {
+        @media (hover: hover) and (pointer: fine) {
+            .paper-list a:hover .name {
+                text-decoration: underline;
+                text-underline-offset: 0.2em;
+            }
+        }
+
+        .paper-list a:active .name {
             text-decoration: underline;
             text-underline-offset: 0.2em;
         }

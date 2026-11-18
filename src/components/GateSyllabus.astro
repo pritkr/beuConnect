@@ -1,0 +1,487 @@
+---
+/**
+ * A GATE paper: one collapsed block per syllabus section, each holding the
+ * narrow topics the section is cut into (see `lib/gate/parse`). Every topic is
+ * a checkbox whose state lives in localStorage, every labelled group carries
+ * its own Ask AI link, and the section header keeps a live count so a student
+ * can see progress without opening anything.
+ */
+import type { GateSection } from "../lib/gate/parse";
+import AskAI from "./AskAI.astro";
+
+interface Props {
+	paper: string;
+	paperName: string;
+	sections: GateSection[];
+}
+
+const { paper, paperName, sections } = Astro.props;
+
+const totalTopics = sections.reduce((sum, section) => sum + section.count, 0);
+
+/** Enough prompt for the model, short enough to keep 200 links off the page. */
+const PROMPT_LIMIT = 340;
+const PROMPT_TAIL =
+	" Teach it with worked examples and say what to revise first.";
+
+function promptFor(lead: string, topics: string[]) {
+	const full = `${lead}: ${topics.join("; ")}.${PROMPT_TAIL}`;
+	if (full.length <= PROMPT_LIMIT) return full;
+
+	// Drop whole topics from the tail rather than cutting a word in half.
+	let head = "";
+	for (const topic of topics) {
+		const next = head ? `${head}; ${topic}` : topic;
+		if (`${lead}: ${next}…${PROMPT_TAIL}`.length > PROMPT_LIMIT) break;
+		head = next;
+	}
+	return head ? `${lead}: ${head}…${PROMPT_TAIL}` : `${lead}.${PROMPT_TAIL}`;
+}
+
+function sectionLead(section: GateSection) {
+	const label =
+		section.number != null
+			? `Section ${section.number}, ${section.title}`
+			: section.title;
+	return `Explain the GATE ${paperName} (${paper}) syllabus for ${label}`;
+}
+
+function groupLead(section: GateSection, label: string) {
+	const where =
+		section.number != null
+			? ` from Section ${section.number} (${section.title})`
+			: "";
+	return `Explain the GATE ${paperName} (${paper}) topic "${label}"${where}`;
+}
+
+const sectionTopics = (section: GateSection) =>
+	section.groups.flatMap((group) => group.topics);
+---
+
+<div class="gate" data-gate data-paper={paper}>
+	<div class="gate-bar">
+		<p class="gate-total">
+			<span class="num" data-gate-done>0</span>
+			<span class="num">/{totalTopics}</span>
+			<span class="gate-total-label">topics done</span>
+		</p>
+		<button type="button" class="clear-progress" data-clear-gate hidden>
+			Clear progress
+		</button>
+	</div>
+
+	<div class="sections">
+		{
+			sections.map((section, sectionIndex) => (
+				<details class="section" data-section-block data-section-index={sectionIndex}>
+					<summary class="section-head">
+						<span class="section-name">
+							<span class="section-label num">
+								{section.number != null ? `Section ${section.number}` : "Section"}
+							</span>
+							<span class="section-title">{section.title}</span>
+						</span>
+						<span class="section-meta">
+							<AskAI
+								prompt={promptFor(sectionLead(section), sectionTopics(section))}
+								unit={section.number != null ? `Section ${section.number}` : section.title}
+								subject={`GATE ${paper}`}
+							/>
+							<span class="section-count num" data-section-progress>
+								{`0/${section.count}`}
+							</span>
+						</span>
+					</summary>
+
+					<div class="section-body">
+						{section.groups.map((group, groupIndex) =>
+							group.topics.length ? (
+								<div class="group" data-group-block>
+									{group.label ? (
+										<div class="group-head">
+											<span class="group-label">{group.label}</span>
+											<span class="group-count num" data-group-progress>
+												{`0/${group.topics.length}`}
+											</span>
+											<AskAI
+												prompt={promptFor(groupLead(section, group.label), group.topics)}
+												unit={group.label}
+												subject={`GATE ${paper}`}
+											/>
+										</div>
+									) : null}
+
+									<div class="topic-list">
+										{group.topics.map((topic, topicIndex) => (
+											<label class="topic">
+												<input
+													type="checkbox"
+													data-topic-id={`${paper}:${sectionIndex}:${groupIndex}:${topicIndex}`}
+												/>
+												<span class="topic-text">{topic}</span>
+											</label>
+										))}
+									</div>
+								</div>
+							) : (
+								<p class="part">{group.label}</p>
+							),
+						)}
+					</div>
+				</details>
+			))
+		}
+	</div>
+</div>
+
+<script>
+	// One delegated listener for the whole paper. The same conventions as the
+	// branch syllabus: a tick is stored by topic id and restored on the next
+	// visit, and the counters are recomputed from the DOM instead of kept in
+	// a parallel structure.
+	const STORAGE_KEY = "beu_gate_done";
+	const root = document.querySelector("[data-gate]");
+
+	if (root instanceof HTMLElement) {
+		const paper = root.dataset.paper || "";
+
+		const readDone = () => {
+			try {
+				const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+				return new Set(
+					Array.isArray(parsed)
+						? parsed.filter((id): id is string => typeof id === "string")
+						: [],
+				);
+			} catch {
+				return new Set<string>();
+			}
+		};
+
+		const writeDone = (done: Set<string>) => {
+			try {
+				localStorage.setItem(STORAGE_KEY, JSON.stringify([...done]));
+			} catch {
+				// Private mode or a full quota: the checkbox still works for this visit.
+			}
+		};
+
+		const done = readDone();
+		const boxes = root.querySelectorAll<HTMLInputElement>(
+			'input[type="checkbox"][data-topic-id]',
+		);
+
+		for (const box of boxes) {
+			box.checked = done.has(box.dataset.topicId || "");
+		}
+
+		const countChecked = (scope: Element) => {
+			const all = scope.querySelectorAll('input[type="checkbox"][data-topic-id]');
+			let checked = 0;
+			for (const box of all) {
+				if (box instanceof HTMLInputElement && box.checked) checked += 1;
+			}
+			return { checked, total: all.length };
+		};
+
+		const refreshGroup = (group: Element) => {
+			const out = group.querySelector("[data-group-progress]");
+			if (!(out instanceof HTMLElement)) return;
+			const { checked, total } = countChecked(group);
+			out.textContent = `${checked}/${total}`;
+			out.classList.toggle("is-done", total > 0 && checked === total);
+		};
+
+		const refreshSection = (section: Element) => {
+			const { checked, total } = countChecked(section);
+			const out = section.querySelector("[data-section-progress]");
+			if (out instanceof HTMLElement) {
+				out.textContent = `${checked}/${total}`;
+				out.classList.toggle("is-done", total > 0 && checked === total);
+			}
+			for (const group of section.querySelectorAll("[data-group-block]")) {
+				refreshGroup(group);
+			}
+		};
+
+		const refreshPaper = () => {
+			const { checked } = countChecked(root);
+			const out = root.querySelector("[data-gate-done]");
+			if (out instanceof HTMLElement) out.textContent = String(checked);
+			const clear = root.querySelector("[data-clear-gate]");
+			if (clear instanceof HTMLElement) clear.hidden = checked === 0;
+		};
+
+		for (const section of root.querySelectorAll("[data-section-block]")) {
+			refreshSection(section);
+		}
+		refreshPaper();
+
+		// `toggle` does not bubble, so it is caught on the way down.
+		root.addEventListener(
+			"toggle",
+			(event) => {
+				const details = event.target;
+				if (!(details instanceof HTMLDetailsElement) || !details.open) return;
+				const block = details.closest("[data-section-block]");
+				window.beuTrack?.("syllabus_subject_open", {
+					paper,
+					section: block?.getAttribute("data-section-index") || "",
+				});
+			},
+			true,
+		);
+
+		root.addEventListener("change", (event) => {
+			const box = event.target;
+			if (!(box instanceof HTMLInputElement) || box.type !== "checkbox") return;
+			const id = box.dataset.topicId;
+			if (!id) return;
+
+			if (box.checked) done.add(id);
+			else done.delete(id);
+			writeDone(done);
+
+			const section = box.closest("[data-section-block]");
+			if (section) refreshSection(section);
+			refreshPaper();
+
+			// A tick is the one thing that shows reading actually happened.
+			window.beuTrack?.("syllabus_topic_toggle", {
+				paper,
+				label: box.checked ? "mark" : "unmark",
+			});
+		});
+
+		root.addEventListener("click", (event) => {
+			const target = event.target;
+			if (!(target instanceof Element)) return;
+			const button = target.closest("[data-clear-gate]");
+			if (!(button instanceof HTMLElement)) return;
+
+			for (const box of boxes) {
+				const id = box.dataset.topicId || "";
+				if (!id.startsWith(`${paper}:`)) continue;
+				box.checked = false;
+				done.delete(id);
+			}
+			writeDone(done);
+
+			for (const section of root.querySelectorAll("[data-section-block]")) {
+				refreshSection(section);
+			}
+			refreshPaper();
+		});
+	}
+</script>
+
+<style>
+	.gate-bar {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: var(--s3);
+		margin: 0;
+		padding-bottom: var(--s2);
+	}
+
+	.gate-total {
+		margin: 0;
+		color: var(--faint);
+		font-size: 0.72rem;
+		font-variant-numeric: tabular-nums;
+		line-height: 1.4;
+	}
+
+	.gate-total span[data-gate-done] {
+		color: var(--paper);
+	}
+
+	.gate-total-label {
+		margin-left: 0.25em;
+	}
+
+	button.clear-progress {
+		width: auto;
+		min-height: 0;
+		margin: 0;
+		padding: 0.2rem 0;
+		border: 0;
+		background: transparent;
+		color: var(--faint);
+		font-size: 0.72rem;
+		font-weight: 500;
+		line-height: 1.4;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		button.clear-progress:hover {
+			border: 0;
+			background: transparent;
+			color: var(--paper);
+			text-decoration: underline;
+			text-underline-offset: 0.18em;
+		}
+	}
+
+	.sections {
+		border-top: 1px solid var(--line-strong);
+	}
+
+	.section {
+		border-bottom: 1px solid var(--line);
+	}
+
+	.section-head {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: var(--s3);
+		cursor: pointer;
+	}
+
+	.section-name {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0 var(--s2);
+		min-width: 0;
+	}
+
+	.section-label {
+		flex: 0 0 auto;
+		color: var(--faint);
+		font-size: 0.68rem;
+		letter-spacing: 0.04em;
+		white-space: nowrap;
+	}
+
+	.section-title {
+		color: var(--paper);
+		font-size: 0.92rem;
+		font-weight: 600;
+		line-height: 1.35;
+	}
+
+	.section-count,
+	.group-count {
+		flex: 0 0 auto;
+		font-size: 0.7rem;
+		color: var(--faint);
+		font-variant-numeric: tabular-nums;
+		white-space: nowrap;
+	}
+
+	.section-meta {
+		display: flex;
+		align-items: baseline;
+		gap: var(--s3);
+		margin-left: auto;
+	}
+
+	.section-meta :global(.ask-ai) {
+		position: relative;
+		z-index: 1;
+	}
+
+	.section-count.is-done {
+		color: var(--ok);
+	}
+
+	.group-count.is-done {
+		color: var(--ok);
+	}
+
+	.section-body {
+		padding-bottom: var(--s2);
+	}
+
+	.group + .group {
+		margin-top: var(--s3);
+	}
+
+	.group-head {
+		display: flex;
+		align-items: baseline;
+		gap: var(--s2);
+		margin: 0 0 var(--s1);
+	}
+
+	.group-label {
+		color: var(--paper);
+		font-size: 0.8rem;
+		font-weight: 600;
+		line-height: 1.4;
+		overflow-wrap: anywhere;
+	}
+
+	.group-head :global(.ask-ai) {
+		margin-left: auto;
+	}
+
+	.part {
+		margin: var(--s4) 0 var(--s2);
+		padding-top: var(--s3);
+		border-top: 1px solid var(--line);
+		color: var(--faint);
+		font-size: 0.68rem;
+		font-weight: 650;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+	}
+
+	.section-body > .part:first-child {
+		margin-top: 0;
+		padding-top: 0;
+		border-top: 0;
+	}
+
+	.topic-list {
+		display: grid;
+		gap: 0.05rem;
+	}
+
+	.topic {
+		display: grid;
+		grid-template-columns: 1rem minmax(0, 1fr);
+		align-items: start;
+		gap: var(--s2);
+		margin: 0;
+		padding: 0.16rem 0;
+		cursor: pointer;
+	}
+
+	.topic input[type="checkbox"] {
+		appearance: auto;
+		-webkit-appearance: checkbox;
+		width: 1rem;
+		height: 1rem;
+		margin: 0.22rem 0 0;
+		padding: 0;
+		border: 0;
+		background: none;
+		accent-color: var(--accent);
+		cursor: pointer;
+	}
+
+	.topic-text {
+		color: var(--muted);
+		font-size: 0.85rem;
+		line-height: 1.55;
+		overflow-wrap: anywhere;
+	}
+
+	.topic input:checked + .topic-text {
+		color: var(--faint);
+		text-decoration: line-through;
+		text-decoration-color: var(--faint);
+		text-decoration-thickness: 1px;
+	}
+
+	@media (max-width: 560px) {
+		.section-name {
+			display: grid;
+			gap: 0.1rem;
+		}
+	}
+</style>

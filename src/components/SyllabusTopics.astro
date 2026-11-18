@@ -13,6 +13,7 @@ interface Props {
 		name?: string;
 		code?: string;
 		summary?: { lecture?: number; tutorial?: number; practical?: number } | null;
+		type?: string;
 		content?: string;
 	};
 	branch: string;
@@ -22,7 +23,9 @@ interface Props {
 const { subject, branch, sem } = Astro.props;
 
 const content = typeof subject?.content === "string" ? subject.content : "";
-const units = parseSyllabusContent(content);
+const units = parseSyllabusContent(content, {
+	splitLists: subject?.type !== "Practical",
+});
 const totalTopics = units.reduce((sum, unit) => sum + unit.topics.length, 0);
 
 const branchName =
@@ -278,11 +281,13 @@ function unitPrompt(unit: (typeof units)[number]) {
 		line-height: 1.4;
 	}
 
-	button.clear-progress:hover {
-		border: 0;
-		background: transparent;
-		color: var(--paper);
-		text-decoration: underline;
-		text-underline-offset: 0.18em;
+	@media (hover: hover) and (pointer: fine) {
+		button.clear-progress:hover {
+			border: 0;
+			background: transparent;
+			color: var(--paper);
+			text-decoration: underline;
+			text-underline-offset: 0.18em;
+		}
 	}
 </style>

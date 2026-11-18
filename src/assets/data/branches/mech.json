@@ -5,6 +5,46 @@
 			"subjects": [
 				{
 					"code": "100101",
+					"name": "Communication Skills",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Communicative English for Nitin Bhatnagar, Publisher: Pearson Education Engineers and Professionals Mamta Bhatnagar Edition: 1st Edition, Year: 2010",
+						"2. Oxford Communicative Oxford University Edition: Latest Revised Edition English Press Year: 2014, ISBN: 978- 0198076018",
+						"3. Technical Communication: Meenakshi Raman, Edition: 3rd Edition Year: 2015 Principles and Practice Sangeeta Sharma ISBN: 978-0199452132",
+						"4. Communication Skills in Dr. Anjana Tiwari Khanna Publishers, New Delhi English",
+						"5. Business Communication Dr. Nishith Rajaram Indra Publishing House, 2023 Dubey, Anupam Singh ISBN- 978-93-93577-69-6",
+						"6. Employability Skills Dr. Nishith Rajaram Indra Publishing House, 2023 Dubey, Anupam Singh ISBN 978-93-93577-68-9",
+						"7. Essential English Grammar Raymond Murphy Cambridge University Press in Use"
+					],
+					"content": "Unit-1.0: Vocabulary Enrichment (8 hrs)\n1.1 Technical Vocabulary Development\n1.2 Nature of Word Formation\n1.3 Root Word and Morpheme, Prefix, and Suffix\n1.4 Foreign Expressions in English\n1.5 Synonyms and Antonyms, Homophones and Homographs, Abbreviations and Acronyms\nUnit-2.0: Basics of English Grammar (10 hrs)\n2.1 Parts of Speech,\n2.2 Articles, Prepositions\n2.3 Subject Verb Agreement,\n2.4 Phrase and Clause\n2.5 Formation of Questions using Primary Auxiliaries, Modals, and Wh-Words.\n2.6 Tenses, Voice\n2.7 Redundancies/Clichés\nUnit-3.0: Technical Communication (8 hrs)\n3.1 Communication: Role and Relevance,\n3.2 Process / Steps, Types: formal and informal/verbal and non-verbal (Kinesics, Chronemics, Proxemics, Haptics, Vocalics/Paralanguage\n3.3 Barriers to Communication:\n3.4 Pattern/channels of communication\n3.5 7C’s, for effective communication\nUnit-4.0: Techniques of Professional Writing (8 hrs)\n4.1 Letter Writing (formal/informal/ cover letter/application)\n4.2 Report Writing, Proposal, Notice, Agenda, and Minutes of Meeting\n4.3 Memorandum\n4.4 Bio-Data/Resume/Curriculum Vitae\n4.5 Essay Writing, Email Writing\nUnit-5.0: Comprehension and Interpretation Skills (8 hrs)\n5.1 If (Poem) by Rudyard Kipling\n5.2 Of Studies (Essay) by Sir Francis Bacon\n5.3 India: Our Motherland (Essay) by Swami Vivekananda\n5.4 A Devoted Son (Story) by Anita Desai\n5.5 Unseen/Untaught passage"
+				},
+				{
+					"code": "100102",
+					"name": "Engineering Mathematics-I",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Higher Engineering B. S. Grewal Khanna Publishers, 44 Ed. ISBN Mathematics No:9788174091154",
+						"2. Higher Engineering B. V. Ramana Tata McGraw Hill New Delhi, 11th Ed, Mathematics 2010, ISBN-13-978-0070634190",
+						"3. Advanced Engineering Erwing Kreyszig John Wiley & Sons, 10th Ed, ISBN-978- Mathematics 0470-15836-5",
+						"4. A Textbook of N. P. Bali & Dr. University Science Press, 13th Ed, ISBN- Engineering Mathematics Manish Goyal 978-93-83828-63-0",
+						"5. Understanding John Bird Routledge; First Edition ISBN Engineering Mathematics 9780415662840"
+					],
+					"content": "Unit-1.0: Basic Linear Algebra (8 hrs)\n1.1 Elementary transformations and Rank of Matrix, Rank by using Echelon and Normal form of Matrices. Linear dependence & independence of vectors in 𝑛 space 𝑅\n1.2 Consistency of System of Linear Equations\n1.3 Eigenvalues & Eigenvectors, Cayley- Hamilton Theorem.\n1.4 Similarity of Matrices & Diagonalization of Square Matrices. Quadratic Form, Canonical Form of Matrices.\nUnit-2.0: Differential Calculus: Single Variable (8 hrs)\n2.1 Higher order derivatives; Successive differentiation and Leibnitz’s Theorem\n2.2 Mean Value Theorems (Rolle’s; Lagrange’s; Cauchy)\n2.3 Indeterminate Forms; L’ Hopital Rule\n2.4 Tangents & Normal of Algebraic & Polar Curves, Curvature situation.\nUnit-3.0: Differential Calculus: Several Variables (9 hrs)\n3.1 Partial differentiations; Euler’s theorems\n3.2 Limit, Continuity and differentiability of functions of Several Variables\n3.3 Taylor’s theorem with various forms of remainders, Maclaurin's theorem and related problems\n3.4 Maxima & Minima for functions of several variables; Lagrange’s Multiplier Method\nUnit-4.0: Integral Calculus (9 hrs)\n4.1 Differentiation under the integral sign; Leibnitz’s rule\n4.2 Double integral; Change the order of integration; Evaluation of double integration by changing it into polar co- ordinates\n4.3 Triple Integral; Evaluation of Triple integral by changing to Spherical Polar co-ordinates & Cylindrical polar co- ordinates\n4.4 Beta; Gamma; Elliptic integral; Relation between Beta & Gamma functions, General Properties and related problems.\nUnit-5.0: Vector Calculus (8 hrs)\n5.1 Scalar and vector valued functions; Concepts of gradient, divergence and curl and their geometrical and physical significance; tangent plane; directional derivative;\n5.2 Line, surface and volume integrals - integral. Statement of Green’s, Stokes’ and Gauss divergence theorems -verification and evaluation of vector integrals using them."
+				},
+				{
+					"code": "100103",
 					"name": "Engineering Chemistry",
 					"type": "Theory",
 					"credits": 3,
@@ -14,46 +54,16 @@
 						"practical": 0
 					},
 					"references": [
-						"1. University Chemistry, B.H. Mahan,Pearson",
-						"2. Chemistry, principles and application, M.J. Sienko and R.A. Plane, McGraw Hill",
-						"International",
-						"3. Fundamentals of molecular Spectroscopy, C.N. Banwell , McGraw Hill",
-						"International",
-						"4. Engineering Chemistry (NPTEL Web- Book), B.L. Tembe, Kamaluddin and M.S.",
-						"Krishnan, NPTEL",
-						"5. Physical Chemistry, P.W. Atkins, Oxford University Press",
-						"6. A text book of engineering chemistry, S. Chawala, Dhanpat Rai Publication",
-						"7. General Chemistry Part 1, R. Sarkar, New Central Book agency"
+						"1. Engineering Chemistry Jain and Jain Dhanpat Rai Publishing Co., 17th Ed. (ISBN: 978-9383182626)",
+						"2. A Textbook of Engineering Shashi Chawla Dhanpat Rai & Co., 2024 Ed. (ISBN: Chemistry 978-8127262143)",
+						"3. Principles of Materials Science William F. Smith McGraw-Hill Education, 3rd Ed. and Engineering (ISBN: 978-0070592025)",
+						"4. Concise Inorganic Chemistry J.D. Lee Oxford University Press, 5th Ed. (ISBN: 978-0632052936)"
 					],
-					"content": "Unit 1.0- Atomic and Molecular Structure 8 hrs\nElectromagnetic radiations, Dual nature of electron and Heisenberg uncertainty Principle. Photoelectric effect, Planck's theory. Principles for the combination of atomic orbitals to form a molecular diagram of molecular orbitals. Bent's rule, VSEPR theory (typical example) co- ordination numbers and geometries. Isomerism in transition metal compounds. Metal Carbonyls; Synthesis and Structure.\nUnit 2.0- Spectroscopy 6 hrs\nPrinciple of rotational and vibrational spectroscopy, selection rule for application in diatomic molecules, elementary idea of electronic spectroscopy, UV-VIS spectroscopy with related to rules and its applications. Basic Principle of nuclear Magnetic resonance spectroscopy with applications.\nUnit 3.0 -Electrochemistry and Fuels 6 hrs\nNernst equation, EMF and electrochemical cell, the introduction of corrosion, corrosion mechanism, types of corrosion, water line corrosion, stress corrosion, pitting corrosion, Lead acid storage cell, leclanche cell. Calorific value of fuels, proximate and ultimate analysis of coals, fuel cells, Bio fuels.\nUnit 4.0- Water Chemistry 8 hrs\nHardness of water, estimation of water hardness by EDTA and Alkalinity method. Removal of the hardness of water- soda lime process, zeolite process, Ion exchange process, Boiler problem, sludge, and scale formation, priming and foaming, Boiler corrosion, and Caustic embrittlement.\nUnit 5.0 - Polymer and Plastics 8 hrs\nPolymerization techniques (free radical, ionic, and co-ordination mechanism)Preparation properties, and technical application of phenol-formaldehyde resins, elastomers, synthetic rubbers (Buna-S, Buna-N, neoprene). Inorganic polymers, Silicones, adhesives, epoxy resins. the structural difference between thermoplastic and thermosetting Plastics, the Importance of commercially important thermoplastics and thermosets; Poly ethylene, Polyvinyl chloride, Polystyrene.\nUnit 6.0- Organic Reactions and Synthesis of A Drug Molecule 6 hrs\nIntroduction to intermediate and reaction involving Substitution, addition, elimination, oxidation-reduction. Diels Elder cyclization and epoxide ring opening reactions, synthesis of commonly used drug molecules like aspirin."
+					"content": "Unit-1.0: Quantum Mechanics & Molecular Structure (9 hrs)\n1.1 Planck's theory, photoelectric effect, dual nature of electrons.\n1.2 Wave Mechanics: Heisenberg Uncertainty Principle, Schrödinger's wave equation (concept & particle-in-a-box).\n1.3 LCAO Method, MO diagrams of diatomics, VSEPR theory (geometries / Bent's Rule).\n1.4 Coordination number, isomerism in transition-metal compounds; CFT (octahedral, tetrahedral and Square Planer).\nUnit-2.0: Spectroscopy & Smart Materials Science (8 hrs)\n2.1 Spectroscopy: fundamentals of rotational, vibrational & electronic spectra; Beer– Lambert law.\n2.2 Analytical Tools: UV-Vis, IR (fingerprint region) & NMR principles; applications in identifying organic functional groups.\n2.3 Smart Materials: chemical sensors, piezoelectric materials used in MEMS & spectrum of a given simple instrumentation molecule.\nUnit-3.0: Industrial Polymers & Advanced Materials (8 hrs)\n3.1 Introduction of Organic reactions, Polymerization: free-radical, ionic and condensation mechanisms; degree of polymerization.\n3.2 Classification: thermoplastics vs. thermosets (PVC, PS, PMMA, PTFE).\n3.3 Engineering Synthetics: Phenol- formaldehyde, Epoxy resins and Silicones.\n3.4 Elastomers: synthetic rubbers (Buna-S, Buna-N, Neoprene).\nUnit-4.0: Electrochemistry, Corrosion & Colloidal (9 hrs)\n4.1 Electrochemical Theory: EMF, electrode potential, Nernst equation; numerical problems.\n4.2 Storage Systems: primary & secondary cells, Li-ion batteries, Pb-storage and Ni-Cd batteries.\n4.3 Next-Gen Energy: H₂-O₂ and methanol, (fuel cells, solar cells), Lubricants (Flash point, Fire point, acid value.\n4.4 Material Durability: corrosion -waterline, stress, pitting, galvanic; protection, cathodic, anodic, coatings, e-coat.\n4.5 Colloidal and adsorption\nUnit-5.0: Water Chemistry & Environmental Sustainability (8 hrs)\nestimation and alkalinity determination. 5.1 Water Analysis: unit of concentration, estimation of hardness by EDTA, and alkalinity.\n5.2 Purification: lime-soda, zeolite & ion- exchange softening; measurement of BOD and COD.\n5.3 Industrial Challenges: boiler scales, sludge, priming, foaming, caustic embrittlement.\n5.4 Green Chemistry & Sustainability: principles, air/water pollution, adulteration (fat butter, sugar, turmeric powder and chilli powder), E-waste management. environment and health."
 				},
 				{
-					"code": "100102",
-					"name": "Engineering Mathematics–I",
-					"type": "Theory",
-					"credits": 4,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 1,
-						"practical": 0
-					},
-					"references": [
-						"1. AICTE’s Prescribed Textbook: Mathematics-I (Calculus & Linear Algebra), Reena",
-						"Garg, Khanna Book Publishing Co. ISBN-10 9391505171",
-						"2. Advanced Engineering Mathematics, Chandrika Prasad & Reena Garg, Khanna Book",
-						"Publishing Co., 2021. ISBN 10: 9386173522 / ISBN 13: 9789386173522.",
-						"3. Higher Engineering Mathematics, B.V. Ramana, Tata McGraw Hill New Delhi, 11th",
-						"Reprint, 2010,ISBN-10 007063419X ISBN-13978- 0070634190.",
-						"4. Advanced Engineering Mathematics, SrkIyengar Rk Jain,Narosa,5thEdition,ISBN-10",
-						"8184875606 ISBN-13978-8184875607",
-						"5. Advanced Engineering Mathematics, Erwin Kreyszig, 9th Edition, John Wiley &",
-						"Sons, 2006."
-					],
-					"content": "Unit- 1.0: Linear Algebra-I 7 hrs\nElementary Row operations, Gauss -Jordan Method for finding the inverse of Matrix, Complex Matrix : Hermitian , Skew Hermitian and Unitary Matrix, Vector space, Sub Spaces, Linear dependence and Independences of Vectors, Linear Span, Basis, Dimension, Extension of basis of subspace, The rank of a matrix, Row and column space, Solvability of system of linear equations.\nUnit- 2.0: Linear Algebra-II 7 hrs\nLinear Transformations, Kernel and Range of linear transformation, Matrix Representation of a linear transformation, Rank-Nullity Theorem, Eigen Value and Eigen Vectors, Properties of Eigen vectors, Eigen Bases, Orthogonal Transformation, Similarity Transformation, Matrix Diagonalization, Cayley- Hamilton Theorem.\nUnit- 3.0: Calculus for single variable 7 hrs\nInderminate form, L’Hospital Rule, Rolle’s Theorem, Mean Value Theorem, Expansion of function (single variable), Taylor and Maclaurin Series, Riemann Integration, Riemann Sum, Improper Integrals, Beta and Gamma function and their properties.\nUnit- 4.0 : Multivariable Calculus (Differentiation) 7 hrs\nFunction with two or more variable, Limit, continuity and Partial differentiation, Total Differentiation Taylor’s series and Maclaurin’s series for function with two variable, Jacobian, Maxima and Minima, Method of Lagrange’s multiplier.\nUnit-5.0: Multivariable Calculus (Integration) 7 hrs\nDouble Integral, change of order of integration, Triple integral, Change of Variable in a Double and Triple Integrals, Change to polar coordinate, Change to cylindrical coordinate, Change to spherical polar coordinate, Application to area and volume using double and triple integral\nUnit- 6.0: Vector Calculus 7 hrs\nScalar and vector fields, Gradient, Directional derivative, Divergence, Curl and their properties, Line integral, Green’s theorem in plane (without proof), Surface integral, Stoke’s theorem (without proof), Volume Integral, Gauss-Divergence’ theorem (without proof)."
-				},
-				{
-					"code": "100103",
-					"name": "Communicative English",
+					"code": "100105",
+					"name": "Introduction to AI",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
@@ -62,19 +72,39 @@
 						"practical": 0
 					},
 					"references": [
-						"1. English language and communication skills for engineers, Sanjay Kumar,Pushp lata,",
-						"Oxford university Press",
-						"2. Communicative English for Technical student, Dr. Bijay Bhadur Singh and Dr.",
-						"Kalpana Sinha, Foundation publishing House (FPM)",
-						"Oxford University Press",
-						"4. A course in Listening & Speaking, V. Sasi Kumar ,P. Kiranmai Dutt and Geetha",
-						"Rajeevan, Foundation Books"
+						"1. Artificial Intelligence: A Modern Stuart Russell, Peter Norvig Pearson; 4th Ed., 2020. ISBN: 978- Approach 0134610993",
+						"2. AI for everyone Saptarsi Goswami, Amit Pearson Education: SBN-10: Kumar Das, Amlan 9361591754, ISBN-13: 978-9361591754 Chakrabarti",
+						"3. Introduction to Artificial Dan W. Patterson PHI Learning; 2015. ISBN: 978- Intelligence and Expert Systems 8120307775",
+						"4. Artificial Intelligence Elaine Rich, Kevin Knight, McGraw-Hill; 3rd Ed., 2017. ISBN: 978- Shivashankar B. Nair 1259029420",
+						"5. Artificial Intelligence - A Modern Dilip Narayan Sahu, ISBN-10: 9355151446 Approach Kishore Kumar Dash, ISBN-13: 978-9355151445 Abahy Kolhe, Agilandeswari Devarajan",
+						"6. Machine Learning Essentials Dhairya Parikh Vibrant Publishers: ISBN-10: 1636513778, ISBN-13: 978-1636513775"
 					],
-					"content": "Unit-1.0: Vocabulary Building 7 hrs\nNature of Word Formation; Root Word and Morpheme; Prefix and Suffix; Foreign Expressions in English; Synonym and Antonym; Homophone and Homograph; Abbreviation and Acronym.\nUnit-2.0: Basic Writing Skills 7 hrs\nParts of Speech: Types of Words; Structures of Sentence; Kind of Sentence; Phrase and Clause; Punctuation Marks; Capitalization; Tenses: Present, Past and Future; Voices: Active and Passive; Formation of Questions using Primary Auxiliaries, Modals and Wh-Words.\nUnit-3.0: Common Errors in English 7 hrs\nArticles; Prepositions; Modifiers; Subject-Verb Agreement; Noun-Pronoun agreement; Redundancies; Cliches; Spelling Error.\nUnit-4.0: Principles of Appropriate Writi 7 hrs\nDefining: Describing, Classifying and Exemplifying; Introduction, Body, and Conclusion; References, Quotations and Illustrations; Organizing the Paragraphs in a Document; 7Cs of the Professional Writing: Clear, Concise, Concrete, Correct, Coherent, Complete and Courteous.\nUnit-5.0: Practices of Formal Writing 7 hrs\nFormal Letter: Cover-Letter and Application; Resume Writing; Report Writing; Minutes of Meeting; Memorandum; Notice; Essay Writing: Personal and Impersonal; Email Writing Etiquettes; Article Writing; Writing for Current Social Media.\nUnit-6.0: Comprehension of Written English 7 hrs\nOf Studies (Essay) by Sir Francis Bacon; The Sun Rising (Poem) by John Donne; The Last Leaf (Story) by O Henry; Unseen/Untaught Passage."
+					"content": "Unit-1.0: Introduction to Artificial Intelligence (8 hrs)\n1.1 What is AI? History and evolution of AI\n1.2 Foundations of AI: philosophy, mathematics, and cognitive-science influences\n1.3 Intelligent agents: agent–environment interaction, PEAS (Performance measure, Environment, Actuators, and Sensors) description\n1.4 Types of environments (observable, deterministic, episodic, static, discrete, single/multi-agent)\n1.5 Types of agents: simple reflex, model- based, goal-based, utility-based, learning agents\n1.6 Overview of AI application domains across engineering disciplines\nUnit-2.0: Problem Solving by Search (9 hrs)\n2.1 Problem formulation and state-space representation\n2.2 Uninformed search: BFS, DFS, Uniform Cost Search, Depth-Limited and Iterative Deepening Search\n2.3 Informed (heuristic) search: Greedy Best- First Search, A* algorithm\n2.4 Heuristic function design and admissibility/consistency\n2.5 Local search algorithms: Hill Climbing, Simulated Annealing (concept)\n2.6 Adversarial search: Minimax algorithm, Alpha-Beta pruning\n2.7 Constraint Satisfaction Problems (CSP): concept, backtracking (overview)\nUnit-3.0: Knowledge Representation and Reasoning (8 hrs)\n3.1 Knowledge representation issues; propositional logic — syntax and semantics\n3.2 Inference in propositional logic: resolution\n3.3 First-order predicate logic — syntax, quantifiers (concept)\n3.4 Inference in first-order logic: forward chaining, backward chaining, resolution (concept)\n3.5 Structured knowledge representation: semantic networks, frames\n3.6 Rule-based (production) systems\nUnit-4.0: Reasoning Under Uncertainty (7 hrs)\n4.1 Sources of uncertainty; review of basic probability theory\n4.2 Bayes' theorem and its application to AI reasoning\n4.3 Bayesian networks: representation and manual inference (overview)\n4.4 Introduction to fuzzy logic and fuzzy sets\n4.5 Certainty factors and rule-based uncertainty (overview)\nUnit-5.0: Introduction to Machine Learning and AI Applications (10 hrs)\n5.1 Machine learning paradigms: supervised, unsupervised, reinforcement learning (concept)\n5.2 Overview of regression and classification concepts (linear regression, k-NN, decision trees)\n5.3 Overview of clustering concept (k-means)\n5.4 Introduction to artificial neural networks: perceptron, basic architecture (concept)\n5.5 Overview of Natural Language Processing (NLP): concept and applications\n5.6 Overview of Computer Vision: concept and applications\n5.7 Expert systems: architecture and applications\n5.8 Robotics and AI: overview of intelligent robotic systems\n5.9 Ethics, bias, and responsible AI; societal and multidisciplinary impact; AI and Sustainable Development engineering contexts. Goals (SDGs)"
 				},
 				{
-					"code": "100109P",
-					"name": "Sports/Yoga/NCC/NSS",
+					"code": "100107",
+					"name": "Engineering Graphics and Design",
+					"type": "Theory",
+					"credits": 2,
+					"summary": {
+						"lecture": 2,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Engineering Drawing N. D. Bhatt Charotar Publishing House",
+						"2. Engineering Drawing P.J. Shah S. Chand Publisher",
+						"3. Engineering Drawing K.Venu Gopal & New Age Publications V.Prabu Raja",
+						"4. Engineering Drawing and Venugopal K. New age International Publishers, Delhi, Graphics + AutoCAD 2022, ISBN: 978-8122472752",
+						"5. Engineering Drawing Basant Agrawal and Tata McGraw Hill, New Delhi, 2013 Agrawal C. M. ISBN: 978-1259062889",
+						"6. Engineering Graphics Khanna Book Publishing Company Pvt. S. K. Pradhan K.K. Jain Ltd., New Delhi ASIN: B0BM5BMMXT ISBN-10: 9355381891",
+						"7. Bureau of Indian Standards, BIS, Government of BIS, Government of India, Engineering Drawing Practice India, Third Reprint, October 1998; for Schools and Colleges IS: SP- ISBN: 81-7061-091-2. 46, BIS,"
+					],
+					"content": "Unit-1.0: Fundamentals of Engineering Constructions and Scales Drawing, Geometrical (6 hrs)\n1.1 Principles, significance, BIS conventions, drawing instruments, sheet layout, technical drawings, and dimensioning.\n1.2 Drawing Conventions- Different types of lines, lettering, dimensioning systems, symbols.\n1.3 Geometric construction related to line, circle, regular Polygons by general method.\n1.4 Engineering Scales- Scales on Drawings, Plain scale, Diagonal scale, Vernier scale.\n1.5 Engineering Curves- Construction of conic sections (Ellipse, Parabola, and Hyperbola) using General Methods. Cycloidal curves, Involute curves.\nUnit-2.0: Orthographic Projection (Multiview Projections) (6 hrs)\n2.1 Principles of Orthographic Projections multi-view projection (First angle and Third angle) conventions. angle projection.\n2.2 Conventions - Projections of Points and lines inclined to both planes\n2.3 Projections of planes, inclined Planes - Auxiliary Planes. Traces of lines.\n2.4 Construction of orthographic projections.\nUnit-3.0: Projection of Regular Solids and Sectional View (6 hrs)\n3.1 Orthographic Projections of regular solids\n3.2 Sectional View of Solid when sectional plane is parallel to HP (Horizontal Plane).\n3.3 Sectional View of Solid when sectional plane is perpendicular to HP (Horizontal Plane).\n3.4 Sectional View of a regular solid when the sectional plane is inclined to HP (Horizontal Plane).\nUnit-4.0: Development of Surfaces & Isometric Projection (5 hrs)\n4.1 Development of lateral surfaces of right regular prisms, cylinders, pyramids and cones resting on HP.\n4.2 Parallel Line Method- Used for prisms and cylinders, where all sides or elements are parallel to each other.\n4.3 Radial Line Method- Used for pyramids and cones, where the lines or elements radiate outward from a central vertex or apex.\n4.4 Isometric Views– conventions – Plane figures, simple and compound solids.\nUnit-5.0: 2D and 3D Drawings Using CAD\n(Computer-Aided Drafting) Software (5 hrs)\n5.1 2D drawings for a given orthographic projection of objects like screw, nut, bolt etc.\n5.2 2D drawings for a given isometric projection of a plumber block.\n5.3 2D drawings of physical objects such as screw, nut, bolt, plumber block, washer etc.\n5.4 Solid Modeling for a given isometric CO(s) Relevant Units/ Body of Knowledge (BoK) projection.\n5.5 Solid Modeling a given physical object."
+				},
+				{
+					"code": "100101P",
+					"name": "Communication Skills Lab",
 					"type": "Practical",
 					"credits": 1,
 					"summary": {
@@ -83,54 +113,10 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Course Objectives: (a) Encouraging creativity and innovation: The course could aim to foster a culture of creativity and innovation among engineering students. It could provide opportunities for students to generate and develop new ideas, think critically, and come up with innovative solutions to real-worldproblems. This objective could be achieved through brainstorming sessions, design thinking exercises, and hands-on projects. (b) Enhancing problem-solving skills: The course could focus on enhancing the problem- solving skills of engineering students. It could provide training on various problem-solving techniques, such as root cause analysis, critical thinking, and decision-making. Students may learn how to identify and analyse complex problems, develop feasible solutions, and implement them effectively. (c) Developing project management skills: The course could aim to develop project management skills among engineering students. It could cover topics such as project planning, scheduling, budgeting, and risk management. Students may learn how to manage resources, communicate effectively, and work collaboratively in a project-based environment. (d) Promoting interdisciplinary collaboration: The course could encourage interdisciplinary collaboration among engineering students. It could provide opportunities for students from different engineering disciplines to work together on innovative projects. This could foster cross-disciplinary learning, encourage diverse perspectives, and promote teamwork and collaboration skills. (e) Facilitating practical application of engineering concepts: The course could focus on the\npractical application of engineering concepts and principles. It could provide students with opportunities to apply their theoretical knowledge to real-world projects, prototypes, or simulations. Students may learn how to translate engineering theories into practical solutions and develop hands-on experience in implementing innovative projects. Pre-requisite: Nil Course Outcome:\n1. Developed innovative projects: Students may have successfully developed innovative projects that demonstrate their creativity, problem-solving skills, and technical competence. These projects could be prototypes, models, simulations, or practical solutions to real-world problems, showcasing their ability to apply engineering concepts in a creative and innovative manner.\n2. Improved critical thinking and problem-solving skills: Students may have honed their critical thinking and problem-solving skills through various course activities, such as brainstorming, design thinking, and project development. They may have learned to analyse complex problems, identify viable solutions, and make informed decisions based on technical, economic, and social considerations.\n3. Enhanced project management and teamwork skills: Students may have gained practical experience in managing projects, including planning, scheduling, budgeting, and risk management. They may have learned how to work effectively in a team, collaborate with diverse team members, and communicate project progress and results professionally.\n4. Increased interdisciplinary knowledge and collaboration: Students may have gained exposure to interdisciplinary concepts and collaborated with peers from different engineering disciplines. They may have learned to appreciate diverse perspectives, leverage interdisciplinary knowledge, and work collaboratively to develop innovative solutions that integrate multiple domains of engineering.\n5. Cultivated a mindset of innovation and entrepreneurship: Students may have developed a mindset of innovation and entrepreneurship, recognizing the importance of creativity, adaptability, and continuous improvement in engineering practice. They may have learned to identify opportunities, think critically, and take risks to develop and implement innovative projects with commercial or societal potential. List of Reports: Any topics related to innovative project."
+					"content": "LE-1 Skills of Communication (LSRW) • Listening to audio/video lectures and summarizing, Reading comprehension with group discussion. • Role play on workplace Scenarios, Story/narrative reconstruction from audio input • Group presentations based on reading materials, note-taking, and report writing from lectures\nLE-2 Introduction: Social, Academic, and Professional • Self-introduction and introducing others. • Face-to-face conversation practice. • Role plays (workplace interactions, daily situations) • Group presentations, Group discussion, and practice • Debate and panel discussion, Seminar presentation with Q&A • Situational communication (office, social, academic contexts)\nLE-3 Oral Presentation ➢ Oral presentation: Audience • Selection, Presentation Techniques ➢ Posture, gesture, and stage presence • Facial expressions • Eye contact techniques ➢ Basics of slide design • Text vs visuals, • Using an image and icon, • Slide timing and pacing, • Common slide mistakes\nLE-4 Anchoring and Addressing ➢ Role of an anchor vs speaker • Types of anchoring Laboratory Experiment/ Practical Titles • Event flow management ➢ Formal vs. informal introduction • Avoiding common mistakes • Building audience interest ➢ Emotional connection, • Voice modulation • Movement on stage • Managing nervous habits.\nLE-5 Interview ➢ Interviews: Types, • Employer vs candidate • Common interview mistakes • SWOT Analysis ➢ Structuring clear and concise answers • Avoiding memorized/robotic answers. ➢ Listening to questions cautiously • Non-verbal listening cues (nodding, eye contact), • Avoiding interruptions ➢ First impressions in interviews, • Professional greetings (verbal + non- verbal)\nLE-6 Group Discussion ➢ GD: types • (academic, professional, selection- based) • Do’s and Don’ts in GD ➢ Role of initiator • Role of participant • Role of moderator/leader • Managing interruptions, • Handling conflicts and disagreements ➢ Structuring arguments logically, • Supporting points with examples/data.\nLE-7 Debate, Seminar, Symposium, Conference Laboratory Experiment/ Practical Titles ➢ Debate • Seminar, • Symposium, • Conference. ➢ Paraphrasing and summarizing • Avoiding interruptions • Constructive feedback techniques • Identifying reliable sources (websites, journals, reports), • Note-taking and organizing information, • Plagiarism • Converting research into speaking points, • Using data/examples\nLE-8 Just A Minute Technique with Out of the Box Thinking ➢ Techniques for Idea Generation • Brainstorming, • Mind mapping • SCAMPER technique (Substitute, Combine, Adapt, Modify, put to other use, Eliminate, Reverse) ➢ Storytelling • Creating mental images through words • Emotional connection and expression ➢ Speaking within time limits • Organizing thoughts quickly,\nLE-9 Sounds, Intonation, and IPA ➢ Phonetics • Sounds: Vowels and consonants, • Syllables and word stress • Common pronunciation errors influenced by mother tongue) ➢ IPA symbols for English sounds, • IPA for vowels (short, long, diphthongs), • IPA for consonants, using a dictionary with IPA Stress marks in IPA Laboratory Experiment/ Practical Titles ➢ Word stress and sentence stress, • Commonly mispronounced words, • Rhythm and fluency • Self-correction techniques,\nLE-10 Activities: Role Play, Peer Activities, and Group Activities • Role Play • Group Activities ➢ Role-Based Communication • Situational Communication • Tone, language, and • Behaviour adjustment, • Verbal and non-verbal • adaptation, ➢ Problem-solving • Creative thinking techniques • Decision-making • Evaluating multiple • solutions, • Real-life problem • Innovation and idea • generation."
 				},
 				{
-					"code": "100104",
-					"name": "Engineering Graphics and Design",
-					"type": "Theory",
-					"credits": 1,
-					"summary": {
-						"lecture": 1,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"1. Engineering Drawing, N.D. Bhatt, Charotar Publishing House, 53rd Edition, ISBN:",
-						"978-9380358277",
-						"2. A Textbook of Engineering Drawing, R.K. Dhawan, S. Chand Publishing, Revised",
-						"Edition, ISBN: 978-8121929571",
-						"3. Engineering Drawing and Graphics, K. Venugopal, V. Prabhu Raja, New Age",
-						"International Publishers, 3rd Edition, ISBN: 978-8122430120",
-						"4. Engineering Graphics with AutoCAD, D.M. Kulkarni, A.P. Rastogi, A.K. Sarkar, PHI",
-						"Learning Pvt. Ltd., 1stEdition, ISBN: 978-8120337834"
-					],
-					"content": "Unit- 1.0: Introduction to Engineering Drawing 7hrs\nPrinciples of Engineering Graphics and Their Significance, Usage of Drawing Instruments, Lettering, Conic Sections including the Rectangular Hyperbola (General Method Only); Cycloid, Epicycloid, Hypocycloid and Involute; Scales Plain, Diagonal and Vernier Scales\nUnit- 2.0 Orthographic Projections 7hrs\nPrinciples of Orthographic Projections - Conventions -Projections of Points and Lines Inclined to Both Planes; Projections of Planes Inclined Planes Auxiliary Planes.\nUnit- 3.0 Projections of Regular Solids 7hrs\nTypes of Solids, Projects of Solids (Prism, pyramids, cone, and cylinder): Inclined to Both the Planes- Auxiliary Views; Draw Simple Annotation, Dimensioning and Scale.\nUnit- 4.0 Sections and Sectional Views of Right Angular Solids 7hrs\nSection of Solids (Prism, Cylinder, Pyramid, Cone), Auxiliary Views; Development of Surfaces Of Right Regular Solids- Prism, Pyramid, Cylinder And Cone; Draw The Sectional Orthographic Views of Geometrical Solids, Objects From Industry And Dwellings (Foundation To Slab Only).\nUnit- 5.0 Isometric Projections 7hrs\nIsometric Views, Compound Solids; Principles of Isometric Projection Isometric Scale, Conventions; Isometric Views of Lines, Planes, Simple and Conversion of Isometric Views toOrthographic Views And Vice-Versa, Conventions.\nUnit- 6.0 Overview of Computer Graphics 7hrs\nListing the Computer Technologies that Impact on Graphical Communication, Demonstrating Knowledge of the Theory of CAD Software [Such As: The Menu System, Toolbars (Standard, Object Properties, Draw, Modify And Dimension), Drawing Area (Background, Crosshairs, Coordinate System), Dialog Boxes And Windows, Shortcut Menus (Button Bars), The Command Line (Where Applicable), The Status Bar, Different Methods of Zoom as Used in CAD, Select and Erase Objects.; Isometric Views of Lines, Planes, Simple And Compound Solids."
-				},
-				{
-					"code": "100106",
-					"name": "Basic Electrical Engineering",
-					"type": "Theory",
-					"credits": 3,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"1. Basic Electrical Engineering, D.P. Kothari et al,McGraw-Hill Education 4th",
-						"Edition,2019",
-						"2. Electrical and Electronic Technology Edward Hughes, 12th edition, 2016",
-						"3. Principles Electrical Engineering and Electronics, V.K Mehata, Rohit Mehta, S Chand",
-						"and Company 2nd edition, 2015",
-						"4. Basic Electrical Engineering, J. B. Gupta, Katson Publication",
-						"5. A textbook of Electrical Technology B. L. Thereja, A. K. Thereja Vol. 1, 2, and 3 S",
-						"Chand Publication"
-					],
-					"content": "Unit- 1.0 8 hrs\nDC Circuit Analysis and Network Theorems: Concepts of Network, Active and Passive elements, voltage and current sources, concept of linearity and linear network, unilateral and bilateral elements. R L and C as linear elements. Source Transformation. Kirchhoff’s Law, loop and nodal methods of analysis; star – delta transformation; Network Theorems: Superposition Theorem, Thevenin’s Theorem, Norton’s Theorem, Maximum Power Transfer Theorem. (Simple Numerical Problems)\nUnit- 2.0 5 hrs\nMagnetic Circuit: Magnetic circuit concepts, analogy between Electric & Magnetic circuits, Magnetic circuits with DC and AC excitation, Magnetic leakage. B-H curve, Hysteresis and Eddy Current losses, Magnetic circuit calculations.\nUnit- 3.0 8 hrs\nSteady State Analysis of Single-Phase AC Circuits: Sinusoidal, Square and Triangular waveforms–average and effective values, form and peak factors, concept of phasors, phasor representation of sinusoidally varying voltage and current. Analysis of series, parallel, and series – parallel RLC Circuits: Apparent, Active & Reactive Powers, Power factor, causes and problems of low power factor, power factor improvement. Resonance in Series and Parallel Circuits. (Simple Numerical Problems)\nUnit- 4.0 5 hrs\nThree Phase AC Circuits: Three Phase System – its necessity and advantages, meaning of phase sequence and star and delta connections, balanced supply and balanced load, line and phase voltage/ current relations, three phase power and its measurement. (Simple Numerical Problems)\nUnit- 5.0 10 hrs\nIntroduction to DC Machines:Principal, Operation, Construction, and types of DC machines, e.m.f. equation of generator and torque equation of motor. Single Phase Transformer: Principle of Operation, Construction, e.m.f. equation, losses in transformer, efficiency. Three Phase Induction Motor:Principal, Operation, and Construction (Simple Numerical Problems)\nUnit- 6.0 6 hrs\nSoldering- Soldering and desoldering techniques, breadboard wiring, general-purpose PCB soldering/wiring. Wiring-Types of residential and commercial wiring systems, general rules and guidelines for installation, loadcalculation and sizing of wire, rating of main switch, distribution board."
-				},
-				{
-					"code": "100101P",
+					"code": "100103P",
 					"name": "Engineering Chemistry Lab",
 					"type": "Practical",
 					"credits": 1,
@@ -140,23 +126,10 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform any 10 Experiments\n1. To estimate hardness of water by alkalinity method\n2. To estimate hardness of water by EDTA method\n3. To remove hardness of water by ion exchange method\n4. Determination of pH of a given acid solution using a standard sodium hydroxide solution\n5. Determination of surface tension and viscosity\n6. Chemical analysis of salt (Acid radical and basic radical)\n7. Adsorption of acetic acid by charcoal\n8. Test of adulteration of fat butter, sugar, turmeric powder, chilli powder and pepper\n9. Saponification/ acid value of an oil\n10. Identification of organic substances and their functional groups\n11. Potentiometric determination of redox potentials and emf\n12. Synthesis of drug/ polymer like ASPRIN/ Urea- formaldehyde resin\n13. Thin layer chromatography\n14. Analysis of flue gas by orsat apparatus"
+					"content": "LE-1 Determination of pH of a given acid solution using a standard sodium hydroxide solution.\nLE-2 Estimation of hardness of water by the EDTA method.\nLE-3 Removal of hardness of water by ion exchange method.\nLE-4 Estimation of the hardness of water by the alkalinity method\nLE-5 Potentiometric determination of redox potentials and emf.\nLE-6 Identification of organic substances and their functional groups.\nLE-7 Test of adulteration of fat butter, sugar, turmeric powder and chilli powder\nLE-8 Saponification/acid value of an oil.\nLE-9 Estimation of Residual Chlorine in a water sample by Colourimetric analysis.\nLE-10 Identification of organic functional groups in an unknown sample using FT-IR Spectroscopy. Laboratory Experiment/ Practical Titles\nLE-11 Qualitative analysis of a mixture of amino acids by TLC and visualisation under UV light.\nLE-12 Determination of Flash point, Pour point.\nLE-13 Synthesis of polymer like Urea- formaldehyde resin."
 				},
 				{
-					"code": "100103P",
-					"name": "Communicative English Lab",
-					"type": "Practical",
-					"credits": 1,
-					"summary": {
-						"lecture": 0,
-						"tutorial": 0,
-						"practical": 2
-					},
-					"references": [],
-					"content": "Perform any 10 Experiments Introduction: Language Lab of English includes Listening Comprehension, Reading Comprehension, Speaking Skills: Phonetics, International Phonetic Alphabet Symbols (IPAS), Sounds: Vowels and Consonants, Pronunciation, Intonation, Stress and Rhythm, Just A Minute Technique (JAM), Communication: Verbal and Non-Verbal; Ethical Usage of Artificial Intelligence, Self-Introduction: Social, Academic and Professional; Interview: Brainstorming Vocabulary Activities.\n1. Listening Comprehension and Speed (Software)\n2. Reading Comprehension and Speed (Software)\n3. Pronunciation: Learning and Test (Software)\n4. Self-Introduction: Social, Academic and Professional\n5. English Typing: Microsoft Word Document (MS Word), and Microsoft Power Point Presentation (PPT)\n6. Oral Presentation\n7. Interview: Online and Offline\n8. Just A Minute Technique (JAM) and Extempore\n9. Debate\n10. Group Discussion\n11. Activities: Role Play, Peer Activities, and Group Activities\n12. Anchoring and Addressing: an Assembly, a Meeting, a Seminar, a Party"
-				},
-				{
-					"code": "100104P",
+					"code": "100107P",
 					"name": "Engineering Graphics and Design Lab",
 					"type": "Practical",
 					"credits": 2,
@@ -166,11 +139,11 @@
 						"practical": 4
 					},
 					"references": [],
-					"content": "Perform any 10 Experiments\n1. (Which includes dimensioning methods, different types of line, construction of different polygon, divide the line and angle in parts, use of stencil)\n2. Construction of Plane, Diagonal & Vernier Scales.\n3. Construction of Ellipses, Parabolas, and Hyperbolas using the general method.\n4. Construction of cycloid, epicycloid, hypocycloid, and involute of a circle.\n5. Projection of Points and Lines inclined to both planes.\n6. Projections of Planes (e.g., rectangular, triangular) in inclined positions.\n7. Projection of Solids (prisms,pyramids, cones, and cylinders)\n8. Drawing of Sections of Prisms, Cylinders, Pyramids, and Cones.\n9. Development of Surfaces for prisms, pyramids, cylinders, and cones.\n10. Construction of Isometric views of lines, planes, and simple solids.\n11. Introduction to CAD Software.\n12. Use of CAD software to draw basic geometric shapes, apply dimensions, and modify objects."
+					"content": "LE-1 Basics of Engineering Drawing.\nLE-2 Geometrical constructions of lines, circles, curves, tangents and regular polygons.\nLE-3 Orthographic Projection First/Third Angle method of projections, projection of points & projection of lines in different positions.\nLE-4 Drawing views of objects (plane and solid) using Orthographic Method of Projection.\nLE-5 Orthographic Projection of solids (prisms, pyramids, cylinders, cones and auxiliary views) and also sectional view.\nLE-6 Conversion between pictorial and orthographic views.\nLE-7 Drawing objects using Isometric Projections.\nLE-8 Orthographic–isometric conversion.\nLE-9 Drawing objects using Development of surfaces (prisms, pyramids, cylinders and cones)\nLE-10 Introduction to AutoCAD – 2D drawing.\nLE-11 Develop 2D drawings using CAD software for a given engineering drawing – drawings of like screw, nut, bolt. Laboratory Experiment/ Practical Titles\nLE-12 Develop 2D drawings using CAD software for a given engineering drawing – drawing of engineering components.\nLE-13 Preparation of orthographic, sectional and isometric drawings of engineering components/layouts.\nLE-14 Preparation of basic 3D models and engineering drawings of machine components,"
 				},
 				{
-					"code": "100106P",
-					"name": "Basic Electrical Engineering Lab",
+					"code": "100112P",
+					"name": "Programming for Problem Solving Lab",
 					"type": "Practical",
 					"credits": 1,
 					"summary": {
@@ -179,7 +152,20 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform all 10 Experiments\n1. Verification of Kirchhoff’s laws.\n2. Verification of Superposition Theorem.\n3. Verification of Thevenin’s Theorem.\n4. Verification of Norton’s Theorem.\n5. Verification of Maximum Power Transfer Theorem.\n6. Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor.\n7. Star to Delta and Delta to Star conversion of the three circuit.\n8. Determination of Efficiency by load test of a 1 – Ø Transformer.\n9. To study the typical BHK house wiring\n10. Study of safety precautions while working on electrical installations and necessity of earthing"
+					"content": "LE-1 Algorithmic Logic & Basic I/O • Write a C program to calculate the area of various geometrical shapes (circle, triangle, rectangle) using appropriate data types and type casting, accompanied by a flowchart.\nLE-2 Decision Making Systems • Develop a Student Grading and Classification System using an if-else ladder and a switch- case to handle marks for grading and classify eligible fee waivers by category.\nLE-3 Iterative Problem Solving • Develop a C program to perform the following tasks by using while and for loops: i) Find all prime numbers between 1 and N ii) Generate the Fibonacci sequence for the value of N.\nLE-4 1-D Array Operations • Write a C program to: i) Find the maximum/ minimum element using Linear Search ii) Calculate the average of elements in a 1-D array.\nLE-5 Matrix Manipulation (2-D Arrays) Laboratory Experiment/ Practical Titles • Write a C program to perform the following tasks: i) Matrix Multiplication ii) Find the transpose of a matrix using 2-D arrays\nLE-6 Pointer Arithmetic & Strings • Write a C program to perform the following tasks without using pointer arithmetic: i) Reverse a string ii) Count vowels/consonants of the given string using pointers\nLE-7 Recursion vs. Iteration • Write a C program to perform the following tasks by using both iterative and recursive functions to compare logic flow: i) Find the factorial value for the given number ii) Find the Greatest Common Divisor (GCD)\nLE-8 Parameter Passing Mechanisms • Develop a C program that swaps two values and updates an array using both Call by Value and Call by Reference.\nLE-9 User-Defined Data Types • Create an \"Employee Payroll System\" using Structures and Unions in C to store employee details and compare memory allocation between them.\nLE-10 File Handling Operations • Write a program to create a text file and perform the following tasks: i) Write student records ii) Read the student records and display records\nLE-11 Classes, Objects & Encapsulation • Design a Bank Account class with private data members for balance and public member functions for deposit, withdraw, and display. Laboratory Experiment/ Practical Titles\nLE-12 Constructors & Memory Management • Implement a String class that utilizes Constructors (Default, Parameterized, and Copy) and a Destructor to manage the memory dynamically.\nLE-13 Static Members & Friend Functions • Develop a program that uses a static member to track the number of objects created and a friend function to compare private data of two different classes.\nLE-14 Implementation of Inheritances • Write a C++ program to demonstrate the various arithmetic operations using the following different inheritance concepts: i) Single Inheritance ii) Multiple Inheritance iii) Multilevel Inheritance iv) Hierarchical Inheritance v) Hybrid/virtual Inheritance\nLE-15 Polymorphism & Abstract Classes • Write C++ programs to demonstrate the following: i) Create an Abstract Class Shape with a pure virtual function draw (). ii) Find the area of the shape using function overloading. iii) Perform the addition of two complex numbers using operator overloading.\nLE-16 Robust Error Management • Write a C++ program to demonstrate the exception handling process using try, catch, and throw blocks to handle exceptions such as \"Division by Zero\" or \"Negative Stock Input.\" Laboratory Experiment/ Practical Titles\nLE-17 Template Implementation • Write a C++ program using template functions and class templates: a function to find the max of two values, and a class template like pair to store values of any data type."
+				},
+				{
+					"code": "100113P",
+					"name": "Sports/Yoga/NCC/NSS",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "LE-1 Assessment of Body Mass Index (BMI), resting heart rate and physical fitness parameters\nLE-2 Evaluate Flexibility using standard fitness tests.\nLE-3 Evaluate Endurance using standard fitness tests.\nLE-4 Evaluate muscular strength using standard fitness tests.\nLE-5 Evaluate agility using standard fitness tests.\nLE-6 Practice of warm-up, stretching and cool-down exercises\nLE-7 Develop a simple fitness and healthy lifestyle plan based on personal fitness assessment.\nLE-8 Perform Standing Asanas (Tadasana, Trikonasana, Vrikshasana\nLE-9 Perform Sitting Asanas (Vajrasana, Paschimottanasana, Pavanamuktasana)\nLE-10 Practice of Prone Asanas (Bhujangasana, Shalabhasana, Makarasana Laboratory Experiment/ Practical Titles\nLE-11 Practice of Pranayama (Deep Breathing, Anulom-Vilom, Bhramari and Kapalbhati)\nLE-12 Practice of Mindfulness Meditation\nLE-13 Practice of Om Chanting and Breath Awareness Meditation\nLE-14 Practice of Shavasana and Guided Relaxation (Yoga Nidra)\nLE-15 Daily Meditation Log and Stress Self- Assessment\nLE-16 Practice fundamental skills in Athletics (Sprint, Relay, Long Jump or Throw Events)\nLE-17 Practice fundamental skills in one Team Game (Volleyball, Football, Basketball, Cricket or Kho-Kho)\nLE-18 Officiating and Conduct of Mini Sports Competition\nLE-19 Preparation and presentation of a Personal Lifelong Fitness and Wellness Programme including Stress Management Practices"
 				}
 			]
 		},
@@ -591,41 +577,7 @@
 		"4": {
 			"subjects": [
 				{
-					"code": "PCC-ME 203",
-					"name": "Fluid Mechanics",
-					"type": "Theory",
-					"credits": 4.5,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 0,
-						"practical": 3
-					},
-					"references": [
-						"➔ Frank M. White, Fluid Mechanics (Sixth Edition), Tata McGraw-Hill, New Delhi",
-						"(2008).",
-						"➔ J. O. Wilkes, Fluid Mechanics for Chemical Engineers, Prentice Hall (1999).",
-						"➔ Som and Biswas; Fluid Mechanics and machinery; TMH",
-						"➔ Cengal; Fluid Mechanics; TMH",
-						"➔ Modi & Seth; Fluid Mechanics; Standard Book House, Delhi",
-						"2",
-						"Practical:",
-						"➔ Determination of density & viscosity of oil.",
-						"➔ To determine the meta-centric height of a floating body.",
-						"➔ Measurement of Coefficient of Discharge of given Orifice and Venturimeter",
-						"➔ To determine the coefficient of discharge of Notch (Vand Rectangular types)",
-						"➔ To determine the friction factor for the pipes.",
-						"➔ To verify Bernoulli's Theorem.",
-						"➔ To find a critical Reynolds number for a pipe flow.",
-						"➔ To determine the minor losses due to sudden enlargement, sudden contraction",
-						"and bends.",
-						"➔ To show the velocity and pressure variation with radius in a free and forced",
-						"vortex",
-						"*At Least 8 experiments should be performed from above list"
-					],
-					"content": "Detailed contents:\nModule 1 Definition of fluid, Units and dimensions, Newton’s law of viscosity, Properties of fluids, mass, density, specific volume, specific gravity, viscosity, surface tension and capillarity, vapor pressure, compressibility and bulk modulus. 1 Hydrostatics; fluid force on plane and curved surfaces, manometers, buoyancy, uniformly accelerated motion.\nModule 2 Kinematics of fluid flow: Generalized continuity equation, Irrotational motion and solution to Laplace equation. Concept of stream lines, Equipotential Lines, Flow Nets.\nModule 3 Dynamics of fluid flow: Control volume and control surface, application of continuity equation and momentum equation, Bernoulli’s equation and its applications.\nModule 4 Concept of boundary layer, boundary layer thickness, Displacement thickness, momentum thickness, energy thickness.\nModule 5 Laminar viscous flow through circular conduits, Couette and Poiseuille flow, Turbulent flow through pipes, Darcy Weisbach equation, friction factor for smooth and rough pipes, Moody’s diagram.\nModule 6 Need for dimensional analysis, methods of dimensional analysis, Similitude and types of similitude, Dimensionless parameters, application of dimensionless parameters Model analysis.\nModule 7 Forces on immersed bodies, concepts of separation, drag force, circulation and lift force."
-				},
-				{
-					"code": "PCC-ME 204",
+					"code": "102401",
 					"name": "Applied Thermodynamics",
 					"type": "Theory",
 					"credits": 4,
@@ -635,102 +587,141 @@
 						"practical": 0
 					},
 					"references": [
-						"➔ Sonntag, R.E., Borgnakke, C. and Van Wylen, G. J., 2003, 6th Edition,",
-						"Fundamentals of Thermodynamics, John Wiley andSons.",
-						"➔ Jones, J. B. and Duggan, R. E., 1996, Engineering Thermodynamics,",
-						"Prentice-Hall of India",
-						"4",
-						"➔ Moran, M. J. and Shapiro, H. N., 1999, Fundamentals of Engineering",
-						"Thermodynamics, John Wiley and Sons.",
-						"➔ Nag, P. K, 1995, Engineering Thermodynamics, Tata McGraw-Hill Publishing Co.",
-						"Ltd"
+						"1. Sonntag, R. E, Borgnakke, C. and Van Wylen, G. J., 2003, 6 th Edition, Fundamentals of Thermodynamics, John Wiley and Sons.",
+						"2. Jones, J. B. and Duggan, R. E., 1996, Engineering Thermodynamics, Prentice-Hall of India.",
+						"3. Moran, M. J. and Shapiro, H. N., 1999, Fundamentals of Engineering Thermodynamics, John Wiley and Sons.",
+						"4. Nag, P.K, 1995, Engineering Thermodynamics, Tata McGraw-Hill Publishing Co. Ltd."
 					],
-					"content": "Detailed contents: 3\nModule 1 Introduction to solid, liquid and gaseous fuels: Stoichiometry, exhaust gas analysis- First law analysis of combustion reactions. Heat calculations using enthalpy tables. Adiabatic flame temperature. Chemical equilibrium and equilibrium composition calculations using free energy.\nModule 2 Thermodynamic cycles, Gas power cycles: Air standard Otto, Diesel and Dual Cycles. Air standard Brayton cycle, effect of reheat, regeneration and intercooling. Combined gas and vapor power cycles. Vapor compression refrigeration cycles and comparison with Carnot cycle, refrigerants and their properties.\nModule 3: Vapor power cycles: Basic Rankine cycle, Rankine cycle with superheat, reheat and regeneration, exergy analysis. Super- critical and ultra-super-critical Rankine cycle.\nModule 4 Basics of compressible flow. Stagnation properties, Isentropic flow of a perfect gas through a nozzle, choked flow, subsonic and supersonic flows- normal shocks- use of ideal gas tables for isentropic flow and normal shock flow- Flow of steam and refrigerant through nozzle, super saturation - compressible flow in diffusers, efficiency of nozzle and diffuser.\nModule 5 Analysis of steam turbines, velocity and pressure compounding of steam turbines.\nModule 6 Reciprocating compressors, staging of reciprocating compressors, optimal stage pressure ratio, effect of intercooling, minimum work for multistage reciprocating compressors."
+					"content": "Unit- 1.0 7 hrs\nIntroduction to solid, liquid and gaseous fuels – Stoichiometry, exhaust gas analysis- First law analysis of combustion reactions- Heat calculations using enthalpy tables- Adiabatic flame temperature Chemical equilibrium and equilibrium composition calculations using free energy.\n\nUnit- 2.0 8 hrs\nThermodynamic cycles: Air standard Otto, Diesel and Dual Cycles, Air standard Brayton cycle, effect of reheat, regeneration and intercooling- Combined gas and vapor power cycles-. Vapor power cycles Rankine cycle with superheat, reheat and regeneration, exergy analysis. Supercritical and ultra-super-critical Rankine cycle- Gas power cycles,\n\nUnit- 3.0 6 hrs\nRefrigeration System: Simple Vapor compression refrigeration cycle and Vapor Absorption Cycle, refrigerants and their properties.\n\nUnit- 4.0 7 hrs\nReciprocating compressors, staging of reciprocating compressors, optimal stage pressure ratio, effect of intercooling, minimum work for multistage reciprocating compressors.\n\nUnit- 5.0 6 hrs\nAnalysis of steam turbines, velocity and pressure compounding of steam turbines.\n\nUnit- 6.0 8 hrs\nBasics of compressible flow. Stagnation properties, Isentropic flow of a perfect gas through a nozzle, choked flow, subsonic and supersonic flows- normal shocks- use of ideal gas tables for isentropic flow and normal shock flow- Flow of steam and refrigerant through nozzle, super saturation compressible flow in diffusers, efficiency of nozzle and diffuser."
 				},
 				{
-					"code": "PCC-ME 205",
-					"name": "Strength of Materials",
-					"type": "Theory",
-					"credits": 4.5,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 0,
-						"practical": 3
-					},
-					"references": [
-						"➔ Egor P. Popov, Engineering Mechanics of Solids, Prentice Hall of India, New",
-						"Delhi,2001.",
-						"➔ R. Subramanian, Strength of Materials, Oxford University Press,2007.",
-						"➔ Ferdinand P. Been, Russel Johnson Jr. and John J. Dewole, Mechanics of",
-						"Materials, Tata MCGraw Hill Publishing Co. Ltd., New Delhi 2005.",
-						"Practical:",
-						"➔ Hooke’s Law",
-						"➔ Hardness Test: Rockwell, Brinell, Vicker",
-						"➔ Izod & Charpy Impact Test",
-						"➔ Bending Test",
-						"➔ Torsion Test",
-						"➔ Shear test",
-						"➔ Compressive strength test",
-						"➔ Fatigue Test",
-						"➔ Verification of Maxwell’s reciprocal theorem",
-						"➔ Continuous beam deflection test",
-						"➔ Strain Measurement",
-						"*At Least 8 experiments should be performed from above list"
-					],
-					"content": "Detailed contents:\nModule 1 Deformation in solids: Hooke’s law, stress and strain- tension, compression and shear stresses-elastic constants and their relations- volumetric, linear and shear strains- principal stresses and principal planes- Mohr’s circle, theories of failure,\nModule 2 Beams and types transverse loading on beams: shear force and bend moment diagrams- Types of beam supports, simply supported and overhanging beams, cantilevers. Theory of bending of beams, bending stress distribution and neutral axis, shear stress distribution, point and distributed loads.\nModule 3 5 Moment of inertia about an axis and polar moment of inertia, deflection of a beam using double integration method, computation of slopes and deflection in beams, Maxwell’s reciprocal Theorems.\nModule 4 Torsion, stresses and deformation in circular and hollow shafts, stepped shafts, deflection of shafts fixed at both ends, stresses and deflection of helical springs.\nModule 5 Axial and hoop stresses in cylinders subjected to internal pressure, deformation of thick and thin cylinders, deformation in spherical shells subjected to internal pressure."
-				},
-				{
-					"code": "PCC-ME 206",
-					"name": "Engineering Materials",
+					"code": "102402",
+					"name": "Fluid Mechanics and Hydraulic Machines",
 					"type": "Theory",
 					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"1. S.S. Rattan, Fluid Mechanics & Hydraulic Machines, Khanna Book Publishing, 2019.",
+						"2. P.J. Pritchard, A.T. McDonald and R.W. Fox , “Introduction to Fluid Mechanics,” Wiley India,",
+						"2012.",
+						"3. F.M. White, “Fluid Mechanics,” Tata McGraw Hill, 2011.",
+						"4. S. K. Som, G. Biswas and S. Chakraborty, “Introduction to Fluid Mechanics and Fluid Machines, Tata McGraw Hill, 2017.",
+						"5. R. K. Bansal, “A Textbook of Fluid Mechanics and Hydraulic Machines,” Laxmi Publication,",
+						"2005. 6. Mechanics of Fluids, Shames, McGraw Hill Book Co., New Delhi, 1988."
+					],
+					"content": "Unit- 1.0: 5 hrs\nProperties of Fluid: Definition of fluid; Newton‟s law of viscosity; Units and dimensions; Physical properties of fluids; Control volume; Continuity equation and momentum equation; Incompressible flow; Bernoulli‟s equation and its applications.\n\nUnit- 2.0: 7 hrs\nDimensional Analysis: Dimensionally homogeneous equations; Buckingham Pi Theorem; Calculation of dimensionless parameters. Similitude and complete similarity; Model scales; Basic boundary layer theory and analysis.\n\nUnit- 3.0: 6 hrs\nFluid Kinematics: Different approaches; Reynolds transport theorem; Flow visualization; Types of flow; Strain rate, stream line, streak line, path lines and stream tubes; Continuity equation in Cartesian coordinates in 3D forms; Velocity and acceleration of fluid particles; Velocity potential function and stream function.\n\nUnit- 4.0: 6 hrs\nMomentum Equation: Momentum equation; Nervier Stoke equation; Development of Euler‟s equation; Bernoulli‟s equation and application; Steady and unsteady flow through orifi ce; Orifice placed in pipe; Venturimeter; Flow over triangular and rectangular notches; Pitot tube.\n\nUnit- 5.0: 8 hrs\nLaminar and Turbulent Flow: Viscous/Laminar flow – Plane Poiseuille flow and Coutte flow; Laminar flow through circular pipes; Loss of head and power absorbed in viscous flow; Turbulent flow – Reynolds experiment; Frictional losses in pipe flow; Shear stress in turbulent flow; Major and minor losses (Darcy‟s and Chezy‟s equation); Flow t hrough siphon pipes; Branching pipes and equivalent pipe.\n\nUnit- 6.0: 10 hrs\nRotodynamic Machines: Euler‟s equation; Theory of Rotodynamic machines; Various efficiencies; Velocity components at entry and exit of the rotor; Velocity triangles; Centrifugal pumps – working principle, work done by the impeller and performance curves; Cavitation in pumps; Reciprocating pump – working principle. Hydraulic Turbines: Classification of water turbines; Heads and efficiencies; Velocity triangles; Axial, radial and mixed flow turbines; Pelton wheel, Francis turbine and Kaplan turbines – working and design principles."
+				},
+				{
+					"code": "102403",
+					"name": "Strength of Material",
+					"type": "Theory",
+					"credits": 4,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 1,
+						"practical": 0
+					},
+					"references": [
+						"1. Egor P.Popov, Engineering Mechanics of Solids, Prentice Hall of India,NewDelhi,2001.",
+						"2. R.Subramanian, Strength of Materials, Oxford UniversityPress,2007.",
+						"3. Ferdinand P.Been, Russel Johnson Jr. and John J.Dewole, Mechanics of Materials, Tata McGraw Hill Publishing Co. Ltd., New Delhi2005."
+					],
+					"content": "Unit- 1.0: 7 hrs\nDeformation in solids- Hooke‟s law, stress and strain - tension, compression and shear stresses- elastic constants and their relations- volumetric, linear and shear strains- principal stresses and principal planes- Mohr‟s circle, theories of failure,\n\nUnit- 2.0: 6 hrs\nBeams and types transverse loading on beams- shear force and bend moment diagrams- Types of beam supports, simply supported and over-hanging beams, cantilevers.\n\nUnit- 3.0: 6 hrs\nTheory of bending of beams, bending stress distribution and neutral axis, shear stress distribution, point and distributed loads.\n\nUnit- 3.0: 8 hrs\nMoment of inertia about an axis and polar moment of inertia, deflection of a beam using double integration method, computation of slopes and deflection in beams, Maxwell‟s reciprocal theorems.\n\nUnit- 4.0: 7 hrs\nTorsion, stresses and deformation in circular and hollow shafts, stepped shafts, deflection of shafts fixed at both ends, stresses and deflection of helical springs.\n\nUnit- 5.0: 8 hrs\nAxial and hoop stresses in cylinders subjected to internal pressure, deformation of thick and thin cylinders, deformation in spherical shells subjected to internal pressure."
+				},
+				{
+					"code": "102404",
+					"name": "Kinematics of Machine",
+					"type": "Theory",
+					"credits": 3,
 					"summary": {
 						"lecture": 3,
 						"tutorial": 0,
 						"practical": 0
 					},
 					"references": [
-						"➔ W. D. Callister, 2006, “Materials Science and Engineering-An Introduction”,",
-						"6th Edition, Wiley India.",
-						"➔ Kenneth G. Budinski and Michael K. Budinski, “Engineering Materials”, Prentice",
-						"Hall of India Private Limited, 4th Indian Reprint, 2002.",
-						"➔ V. Raghavan, “Material Science and Engineering’, Prentice Hall of India",
-						"Private Limited, 1999.",
-						"➔ U. C. Jindal, “Engineering Materials and Metallurgy”, Pearson, 2011."
+						"1. Thomas Bevan, “Theory of Machines,” CBS Publishers & Distributors, 2005.",
+						"2. W. L. Cleghorn, “Mechanisms of Machines,” Oxford University Press, 2005.",
+						"3. R. L. Norton, “Kinematics and Dynamics of Machinery,” Tata McGraw Hill, 2009.",
+						"4. A. Ghosh and A.K. Mallick, “Theory of Mechanisms and Machines,” Affiliated East -West Pvt. Ltd, New Delhi, 1988."
 					],
-					"content": "Detailed contents:\nModule 1 Crystal Structure: Unit cells, Metallic crystal structures, Ceramics. Imperfection in solids: Point, line, interfacial and volume defects; dislocation strengthening mechanisms and slip systems, critically resolved shear stress.\nModule 2 Alloys, substitutional and interstitial solid solutions: Phase diagrams: Interpretation of binary phase diagrams and microstructure development; eutectic, peritectic, peritectoid and monotectic reactions. Iron-carbide phase diagram and microstructural aspects of ledeburite, austenite, ferrite and cementite, cast iron.\nModule 3 Mechanical Property measurement: Tensile, compression and torsion tests; Young’s modulus, relations between true and engineering stress-strain curves, generalized Hooke’s law, yielding and yield strength, ductility, resilience, toughness and elastic recovery; Hardness: Rockwell, Brinell and Vickers and their relation to strength, Introduction to non-destructive testing (NDT).\nModule 4 Heat treatment of Steel: Annealing, tempering, normalising and spheroidising, isothermal transformation diagrams for Fe-C alloys and microstructure development. Continuous cooling curves, T-T-T diagram and interpretation of final microstructures 7 and properties- austempering, martempering, case hardening, carburizing, nitriding, cyaniding, carbo-nitriding, flame and induction hardening, vacuum and plasma hardening.\nModule 5 Alloying of steel, properties of stainless steel and tool steels, maraging steels- cast irons; grey, white, malleable and spheroidal cast irons- copper and copper alloys; brass, bronze and cupro-nickel; Aluminium and Al-Cu – Mg alloys- Nickel based superalloys and Titanium alloys."
+					"content": "Unit- 1.0: 7 hrs\nMechanisms Definition and types of joints; Lower and higher pairs; Classification of mechanisms based on function and constraints; Common mechanisms such as slider crank and 4-bar mechanisms and their inversions; Quick return mechanism, Straight line generators, rocker mechanisms, universal joints, steering mechanisms, etc. Basic Kinematic Concepts and Definitions Degree of freedom and Grübler‟s formula; Grashof‟s rule and rotatability limits; Mechanical advantage.\n\nUnit- 2.0: 6 hrs\nGeometric Design of Mechanisms Kinematic Analysis of Simple Mechanisms Displacement, velocity, and acceleration analysis; Velocity analysis using instantaneous centers; Position, velocity and acceleration analysis using loop closure equations; Coincident points; Coriolis component of acceleration.\n\nUnit- 3.0: 8 hrs\nBelt, Rope and Chain drives: Types of belt drives, Velocity ratio, Slip, Creep, Length of belt, Power transmitted, Ratio of tensions, Angle of contact, Centrifugal tension, Maximum tension, Initial tension, V belt drive, Ratio of Tensions in V belt and Rope drives, Kinematics of chain drive, Classifications of chains, Chain length. Brakes – Types of brakes, Block brake, Band brake, Band and Block brake, Internal expanding brake,Condition of self-locking, Power transmitted and Heat generated\n\nUnit- 4.0: 9 hrs\nGears Gear terminology, Involute and Cycloidal gear profiles, gear parameters, fundamental law of gearing and conjugate action, spur gear contact ratio and interference/undercutting. Gear Train: Analysis of simple, compound, reverted and epicyclic gear train with problems.\n\nUnit- 5.0: 6 hrs\nBalancing of rotating masses: Balancing of rotating masses in the same plane by a single revolving mass. Balancing of several rotating masses in the same plane. Balancing of several rotating masses in different planes by two revolving masses in suitable planes.\n\nUnit- 6.0: 6 hr\nGovernors: Watt, Porter, Proel & Hartnell Governors, Effect of friction, controlling force, governor effort and power, sensitivity and isochronisms."
 				},
 				{
-					"code": "PCC-ME 207",
-					"name": "Instrumentation & Control",
+					"code": "102405",
+					"name": "Project Management",
 					"type": "Theory",
-					"credits": 4,
+					"credits": 3,
 					"summary": {
 						"lecture": 3,
 						"tutorial": 0,
 						"practical": 0
 					},
 					"references": [
-						"➔ Instrumentation and control systems by W. Bolton, 2nd edition, Newnes, 2000",
-						"➔ Thomas G. Beckwith, Roy D. Marangoni, John H. Lienhard V, Mechanical",
-						"Measurements (6 th Edition) 6th Edition, Pearson Education India, 2007",
-						"➔ Gregory K. McMillan, Process/Industrial Instruments and Controls Handbook,",
-						"Fifth Edition, McGraw-Hill: New York, 1999."
+						"1. Gido: Effective Project Management, 2e, Thomson,2007 „ .",
+						"2. Prasanna odelin, “Projects, Planning, Analysis, Selection, Financing‟ Implernentation and Review”, TataMcGraw Hill Company Pvt. Ltd‟, New Delhi 1998‟ .",
+						"3. Damodaran , “Corporate Finance”, Johy Wiley Publications‟.",
+						"4. Erhardt & Brigham, “Principles of Corporate Finance”, Thomson‟ 2006.‟",
+						"5. Singh M.K, “Project Evaluation and Management” .",
+						"6. Prasad l.l.K, ,‟Principles and Practice of Cost accounting”, B. Pahwa, IIPS, Ploject Irinancing.‟",
+						"7. Clifi”orci F. Gray, Erik Vr‟. Larson, “Project Management, the Malragerial [mphasis”, McCraw Iiill‟ 2000‟."
 					],
-					"content": "Module 1 Measurement systems and performance: configuration of a measuring system, Methods for correction for interfering and modifying inputs– accuracy, range, 8 resolution, error sources, precision, error sensitivity etc.Classification of errors and statistical analysis of experimental data.\nModule 2 Instrumentation system elements: sensors for common engineering measurements. Transducers based on variable resistance, variable induction, variable capacitance and piezo-electric effects, Displacement transducer.\nModule 3 Signal processing and conditioning; correction elements- actuators: pneumatic, hydraulic, electric.\nModule 4 Control systems: basic elements, open/closed loop, design of block diagram; control method – P, PI, PID, when to choose what, tuning of controllers.\nModule 5 System models, transfer function and system response, frequency response; Nyquist diagrams and their use. Practical group based project utilizing above concepts."
+					"content": "Unit- 1.0: 7 hrs\nBasics of project Management: concept- Project Environment – Types of Projects- Project life Cycle project proposals – Monitoring project program.\n\nUnit- 2.0: 7 hrs\nProject appraisal and project selection- Identification of investment opportunities- Source of new project ideas, preliminary screening of projects Feasibility studies and reports.\n\nUnit- 3.0: 7 hrs\nMarket feasibility: Market survey – categories of Market survey – steps involved in conducting arket survey – Demand forecasting techniques‟ sales projections.‟\n\nUnit- 4.0: 7 hrs\nTechnical feasibility: Production technology, materials and inputs, plant capacity, site selection, plant layout, site preparation, Managerial Feasibility Project organization and responsibilities. Development of program evaluation & Review Technique (PERT)- Benefits of PERT.\n\nUnit- 5.0: 7 hrs\nFinancial Analysis: capital Expenditure – criteria and Investment strategies – capital Investment Appraisal Techniques (Non DCF and DCF) – Risk analysis – Cost of project and means of financing Estimation of cash flows – Estimation of Capital costs and operating costs; Forecasting income Preparation of detailed financ ial projections Breakeven point‟\n\nUnit- 6.0: 7 hrs\nproject Management: Project implementation and review – project planning – project control – human aspects of project management – prerequisites for successful project implementation – project r eview‟"
 				},
 				{
-					"code": "-",
-					"name": "Environmental Science",
-					"type": "Theory",
-					"credits": 0,
+					"code": "102402P",
+					"name": "Fluid Mechanics and Hydraulic Machines Lab",
+					"type": "Practical",
+					"credits": 1,
 					"summary": {
-						"lecture": 2,
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any ten experiments\nList of Experiments:\n\n1. Determination of density & viscosity of oil.\n\n2. To determine the meta-centric height of a floating body.\n\n3. Measurement of Coefficient of Discharge of given Orifice and Venturimeter\n\n4. To determine the coefficient of discharge of Notch (V and Rectangular types)\n\n5. To determine the friction factor for the pipes.\n\n6. To verify the Bernoulli‟s Theorem.\n\n7. To find critical Reynolds number for a pipe flow.\n\n8. To determine the minor losses due to sudden enlargement, sudden contraction and bends.\n\n9. To show the velocity and pressure variation with radius in a free and forced vortex.\n\n10. Performance on hydraulic turbines: a. Pelton wheel b. Francis turbine c. Kaplan turbine.\n\n11. Performance on hydraulic pumps: a. Single stage and multi stage centrifugal pumps. b. Reciprocating pump. c. Performance test of a two stage reciprocating air compressor. d. Performance test on an air blower."
+				},
+				{
+					"code": "102403P",
+					"name": "Strength of Material Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any ten experiments\nList of Experiments:\n\n1. Hooke‟s Law.\n\n2. Hardness Test: Rockwell, Brinell, Vicker.\n\n3. Izod & Charpy Impact Test.\n\n4. Bending Test.\n\n5. Torsion Test.\n\n6. Shear test.\n\n7. Compressive strength test.\n\n8. Fatigue Test.\n\n9. Verification of Maxwell‟s reciprocal theorem.\n\n10. Continuous beam deflection test.\n\n11. Strain Measurement."
+				},
+				{
+					"code": "102404P",
+					"name": "Kinematics of Machine Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform all experiments\nList of Experiments:\n\n1. To study various types of Links, Pairs, Chain and Mechanism.\n\n2. To study inversion of Four Bar Mechanism.\n\n3. To plot slider displacement, velocity and acceleration against crank rotation for single slider crank mechanism.\n\n4. To find coefficient of friction between belt and pulley.\n\n5. To generate spur gear involutes tooth profile using simulated gear shaping process.\n\n6. To study various types of gears- Helical, cross helical worm and bevel gear.\n\n7. Estimation of Velocity ratios of simple, compound, epicyclic and differential gear trains\n\n8. To fabricate the innovative models based on inversions, Gear trains, etc.\n\n9. To perform the experiment of Balancing of rotating parts and find the unbalanced couple and forces.\n\n10. To Perform Experiment on Watt, Porter, Proell and Hartnell Governors and prepare Performance Characteristic Curves also analyze Stability & Sensitivity"
+				},
+				{
+					"code": "102406",
+					"name": "NPTEL-I (Open Course)",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 0,
 						"tutorial": 0,
 						"practical": 0
 					},
 					"references": [],
-					"content": ""
+					"content": "NPTEL (Open Course) should be taken from the course other than core subjects of the branch"
 				}
 			]
 		},

@@ -24,6 +24,8 @@ const OWNED: [string, string][] = [
   ["pyqs.manifest.v1", "tables"],
   ["wide:cse", "tables"],
   ["roster:157", "tables"],
+  ["roster:21:107:101:8", "tables"],
+  ["corpus:21101107003:8", "tables"],
 ];
 
 const FACTS: Facts = { subjects: 100, papersTotal: 50, papers: 2, gateBranches: 6, gatePapers: 30 };

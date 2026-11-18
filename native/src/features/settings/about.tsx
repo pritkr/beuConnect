@@ -142,15 +142,15 @@ export function AboutScreen() {
         </Panel>
 
         <Panel tone="mint" class="gap-2">
-          <Label>Your data stays on this phone</Label>
+          <Label>What is kept here</Label>
           <Text class="text-[13px] leading-5 text-foreground">
-            No account, no advertising, no tracking SDK. Your profile, results, read marks and attendance live in this
-            device's storage.
+            No account, no advertising, no tracking SDK. Your profile, read marks and attendance live in this device's
+            storage.
           </Text>
           <Text class="text-[12px] leading-5 text-muted-foreground">
-            The one thing that leaves is an anonymous count of which screens and buttons get used, so the app can be
-            built around what students actually open. It carries no name, registration number or typed text, and the
-            switch below stops it.
+            Usage analytics leave as an anonymous count of which screens and buttons get used, so the app can be built
+            around what students actually open. It carries no name, registration number or typed text, and the switch
+            below stops it.
           </Text>
         </Panel>
 

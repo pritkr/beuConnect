@@ -75,7 +75,14 @@ const base = import.meta.env.BASE_URL;
     text-decoration: none;
   }
 
-  .post-row h2 a:hover {
+  @media (hover: hover) and (pointer: fine) {
+    .post-row h2 a:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.16em;
+    }
+  }
+
+  .post-row h2 a:active {
     text-decoration: underline;
     text-underline-offset: 0.16em;
   }

@@ -201,7 +201,14 @@ const formatDate = (value: string | null) =>
 		}
 
 
-		:global(.notice-row:hover span:first-child) {
+		@media (hover: hover) and (pointer: fine) {
+			:global(.notice-row:hover span:first-child) {
+				text-decoration: underline;
+				text-underline-offset: 0.18em;
+			}
+		}
+
+		:global(.notice-row:active span:first-child) {
 			text-decoration: underline;
 			text-underline-offset: 0.18em;
 		}
@@ -223,6 +230,7 @@ const formatDate = (value: string | null) =>
 
 		.table-scroll {
 			overflow-x: auto;
+			overscroll-behavior-x: contain;
 			border-top: 1px solid var(--line-strong);
 		}
 

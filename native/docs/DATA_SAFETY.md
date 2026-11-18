@@ -7,9 +7,10 @@ here disagrees with `src/lib/analytics.ts`, `src/lib/student-context.ts`,
 this file is wrong.
 
 - **Privacy policy URL** — `https://beu.prit.eu.org/privacy`
-  (`src/pages/privacy.astro`, the same words the app links from Settings → About)
+  (`src/pages/privacy.astro`; its results section links to
+  `https://beu.prit.eu.org/terms/#results`, which is the only copy of that text)
 - **Data deletion contact** — `pritform@gmail.com`
-- **Last reviewed** — 2026-10-31, tree at `1.2.4` + the unreleased `reg` fix
+- **Last reviewed** — 2026-11-18, tree at `1.3.3` + the result corpus
 
 ## 1. The three yes/no answers
 
@@ -27,18 +28,44 @@ our processor.
 
 | Play row | Collected | Shared | Optional | Purpose | Evidence |
 |---|---|---|---|---|---|
-| Personal info → **User IDs** | Yes | No | Yes | App functionality, Analytics | `student-context.ts` `x-beu-reg` on our API; the 10-hex `student` hash to GA4 |
+| Personal info → **User IDs** | Yes | **Yes** | **No** | App functionality, Analytics | `student-context.ts` `x-beu-reg` on our API; the 10-hex `student` hash to GA4; the number is also typed into BEU's portal (`results/web.tsx`, `portal.tsx`) and posted to `/api/corpus` |
 | Personal info → **Phone number** | Yes | **Yes** (attendance service) | Yes | App functionality | `features/tools/gecs.ts` sends the guardian mobile to the GECS Supabase project, then drops it |
-| Personal info → **Other info** | Yes | No | Yes | App functionality | free-text feedback and the optional contact in `api/feedback.ts` |
-| App activity → **Other actions** | Yes | No | Yes | Analytics | `lib/analytics.ts` screen and action events |
-| Device or other IDs → **Device or other IDs** | Yes | No | Yes | Analytics | the random `client_id` in `lib/analytics.ts` |
+| Personal info → **Other info** | Yes | **Yes** | **No** | App functionality | free-text feedback and the optional contact in `api/feedback.ts`; plus the **result payload** stored by `/api/corpus` (see §2.1) |
+| App activity → **Other actions** | Yes | No | **No** | Analytics | `lib/analytics.ts` screen and action events, on until Settings → About turns them off |
+| Device or other IDs → **Device or other IDs** | Yes | **Yes** (Google, FCM) | **No** | Analytics, App functionality | the random `client_id` in `lib/analytics.ts`; the FCM token that Google issues and `NotificationSetup.java` subscribes to a topic with |
 | Everything else | **No** | — | — | — | see §3 |
 
-Rows Play offers that must stay **No**: location, name, email address, address,
-race and ethnicity, political or religious beliefs, sexual orientation,
-financial info, health and fitness, messages, photos and videos, audio, files
-and docs, calendar, contacts, web browsing, in-app search history (search sends
-a word count), installed apps, crash logs (no SDK), and performance data.
+### 2.1 The result corpus — the row Play will ask about
+
+Added 2026-11-18 (`docs/RESULT_CORPUS.md`). A result the student looks up is
+posted to `/api/corpus` and can be read by anyone who knows the registration
+number and semester (`access-control-allow-origin: *`, five-minute cache). That
+is **User IDs + Other info**, collected, **shared**, and **not optional** —
+there is no in-app toggle by the owner's decision; the terms of service say so
+and say the way out is not to use result lookup.
+
+The form answers follow from that:
+
+- User IDs → *collected, shared, required for app functionality*.
+- Other info → *collected, shared, app functionality*.
+- Deletion → email a registration number; the corpus row is deleted with it.
+
+Do not answer "optional" for either. Play's definition is whether the user can
+use the app without it; they can use every feature except result lookup.
+
+Rows Play offers that must stay **No**: location, name, address, race and
+ethnicity, political or religious beliefs, sexual orientation, financial info,
+health and fitness, messages, photos and videos, audio, calendar, contacts, web
+browsing, in-app search history (search sends a word count), installed apps,
+crash logs (no SDK), and performance data.
+
+**Email address** stays *No* even though the feedback form invites a contact:
+that field is free text, not an account identifier, and it is answered under
+"Other info". **Files and docs** stays *No*: the attendance import reads a file
+the student picks through the system picker and never uploads it. The
+`WRITE_EXTERNAL_STORAGE maxSdk 28` entry in `AndroidManifest.xml` is the only
+file permission and it is capped below API 29 — note it in the console's
+comments if a reviewer asks.
 
 ### Why the registration number is "User IDs", not "Other info"
 
@@ -57,9 +84,19 @@ under-declaring is what gets apps pulled.
 
 ## 3. What the app does not have
 
-No account, no password, no advertising SDK, no crash-reporting SDK, no
-location, no contacts, no camera, no microphone, no file access, no ad ID. The
-only permissions are the ones a screen visibly uses.
+No account, no advertising SDK, no crash-reporting SDK, no location, no
+contacts, no camera, no microphone, no ad ID, and no access to your files
+beyond one file you pick yourself for attendance import.
+
+Two things are exceptions a reviewer may ask about, and both are local:
+
+- **Campus Wi-Fi.** `src/features/tools/wifi-auto.ts` ships the campus's shared
+  Omada account (`24105157049` / `123456`, editable on the screen) and the
+  Android runner stores what you enter in app preferences so it can sign back in
+  while the app is closed. It goes to the campus portal and nowhere else.
+- **Storage permission.** `WRITE_EXTERNAL_STORAGE` is declared with
+  `maxSdkVersion="28"` only, for devices older than API 29; it is not requested
+  on any current Android.
 
 ## 4. Deletion, in practice
 
@@ -69,8 +106,9 @@ There is no account and no server-side profile, so deletion is:
    Apps → BEUConnect → Storage → Clear data. Removes profile, saved results,
    attendance, reminders, cached packs and the analytics queue.
 2. **In our systems** — email `pritform@gmail.com` with the registration number.
-   Removes the GA4 hash from future reporting, any feedback thread, and a row in
-   a published table if one exists. Answered within 30 days.
+   Removes the GA4 hash from future reporting, any feedback thread, the
+   `corpus_rows` row for that number, and a row in a published table if one
+   exists. Answered within 30 days.
 3. **In GA4** — the hash cannot be deleted per-user from a GA4 property without
    User-ID deletion tooling; the honest answer is that the row stops being
    useful and the property's retention (14 months) expires it. Say this in the
@@ -92,6 +130,10 @@ grep -rnE 'https://[a-z0-9.-]+' src/lib/net.ts src/features/tools/gecs.ts | sort
 
 # the policy still names every one of them
 grep -nE 'https://' ../src/pages/privacy.astro
+
+# the corpus answers stay as they are: required, shared, and stated in one place
+grep -n 'access-control-allow-origin' ../src/pages/api/corpus.ts
+grep -n 'on by default' ../src/pages/terms.astro
 ```
 
 A new host, a new event parameter carrying a string, or a new permission is a

@@ -40,8 +40,8 @@ NSH_BIN=~/.nsh/bin/nsh ./scripts/build-android-host.sh
 `scripts/build-nsh-from-source.sh` pins the same `v0.6.0` tag for the
 from-source path.
 
-Version is **1.3.2 / build 13**: `nsh.json` and `src/lib/app-info.ts` move
-together, then `./scripts/release.sh`. The artifact is 766,308 B under the
+Version is **1.3.3 / build 14**: `nsh.json` and `src/lib/app-info.ts` move
+together, then `./scripts/release.sh`. The artifact is 745,828 B under the
 18,500,000 B ceiling.
 
 ## What "verified" means here

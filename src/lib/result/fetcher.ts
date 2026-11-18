@@ -7,47 +7,23 @@ export const HTML_HEADERS = {
 
 export const SEM_ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 
-export const SPECIAL_CASES: Record<string, SpecialCase> = {
-	"25-1": {
-		year: "2025",
-		semester: "I",
-		examHeld: "January/2026",
-	},
-	"22-7": {
-		year: "2025",
-		semester: "VII",
-		examHeld: "February/2026",
-	},
-	"24-1": { year: "2024", semester: "I", examHeld: "May/2025" },
-	"24-2": { year: "2025", semester: "II", examHeld: "November/2025" },
-	"23-4": { year: "2025", semester: "IV", examHeld: "December/2025" },
-	"22-6": { year: "2025", semester: "VI", examHeld: "November/2025" },
-	"23-3": { year: "2024", semester: "III", examHeld: "July/2025" },
-	"22-5": { year: "2024", semester: "V", examHeld: "July/2025" },
-	"21-8": { year: "2025", semester: "VIII", examHeld: "May/2025" },
-};
-
 export async function fetchWithTimeout(
 	url: string,
 	init: RequestInit = {},
 	timeoutMs = 15000,
 	fetchImpl: typeof fetch = fetch,
 ): Promise<Response> {
-	const controller = new AbortController();
-	const timer = setTimeout(() => controller.abort(), timeoutMs);
-	try {
-		return await fetchImpl(url, { ...init, signal: controller.signal });
-	} finally {
-		clearTimeout(timer);
-	}
+	return await fetchImpl(url, { ...init, signal: AbortSignal.timeout(timeoutMs) });
 }
 
 export function isAbortError(error: unknown): boolean {
-	return (
+	const name =
 		error instanceof DOMException
-			? error.name === "AbortError"
-			: Boolean((error as { name?: string } | null)?.name === "AbortError")
-	);
+			? error.name
+			: (error as { name?: string } | null)?.name;
+	// AbortSignal.timeout() rejects with TimeoutError; a caller-supplied abort
+	// rejects with AbortError. Both mean "no answer in time" to this code.
+	return name === "AbortError" || name === "TimeoutError";
 }
 
 export function buildSpecialCaseCandidates(specialCase: SpecialCase): SpecialCase[] {

@@ -1,6 +1,7 @@
 ---
 export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
+import BranchIcon from "../../components/BranchIcon.astro";
 import { allStudents, type RosterStudent } from "../../lib/students/register";
 
 type BranchGroup = {
@@ -83,7 +84,7 @@ const searchText = (student: RosterStudent) =>
             {group.branches.map((branch) => (
               <div class="branch" data-group>
                 <h2 class="branch-head">
-                  <span>{branch.label}</span>
+                  <span><BranchIcon branch={branch.label} size={13} />{branch.label}</span>
                   <span class="count num">{branch.students.length.toLocaleString("en-IN")}</span>
                 </h2>
 
@@ -133,8 +134,10 @@ const searchText = (student: RosterStudent) =>
       text-decoration: none;
     }
 
-    .back a:hover {
-      color: var(--paper);
+    @media (hover: hover) and (pointer: fine) {
+      .back a:hover {
+        color: var(--paper);
+      }
     }
 
     .search-wrap {
@@ -206,6 +209,7 @@ const searchText = (student: RosterStudent) =>
     .table-wrap {
       max-width: 100%;
       overflow-x: auto;
+      overscroll-behavior-x: contain;
       border: 1px solid var(--line);
       border-radius: var(--r);
       -webkit-overflow-scrolling: touch;

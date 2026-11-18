@@ -23,7 +23,7 @@ the code wins — then fix the doc in the same change.
 | `RELEASE.md` | the release sequence | a step changes |
 | `PLAY_STORE.md` | what Play requires, the AAB path, the store listing | a store requirement or upload step changes |
 | `DATA_SAFETY.md` | the Play Data safety form answers, mapped to code | the form, a data type, or a collection path changes |
-| `RESULT_CORPUS.md` | the consent-gated result corpus: schema, API, read path | the corpus ships or its schema/consent changes |
+| `RESULT_CORPUS.md` | the shared result corpus: policy, schema, API, read path | the corpus ships or its policy/schema changes |
 | `DATA_BREADTH.md` | pack model and the data-coverage plan | a pack is added or the manifest changes |
 | `size-history.json` | append-only size runs | written by `size-report.sh --record`, never by hand |
 

@@ -52,6 +52,7 @@ WORK="$OUT/bundle"
 MODULE="$WORK/module"
 APK="$OUT/BEUConnect-play.apk"
 NAME="$OUT/BEUConnect-$APP_VERSION.aab"
+LIBS="$ROOT/android/libs"
 
 for tool in "$AAPT2" "$PLATFORM"; do
   [ -e "$tool" ] || { echo "missing: $tool (sdkmanager \"platforms;android-36\")" >&2; exit 1; }
@@ -80,6 +81,22 @@ echo "▸ compiling resources (proto)"
 rm -rf "$WORK"
 mkdir -p "$WORK/res" "$MODULE"
 "$AAPT2" compile --dir android/res -o "$WORK/res/resources.zip"
+# Library resources are part of the app's resource table, not of the manifest
+# alone: play-services-basement supplies `@integer/google_play_services_version`,
+# which AndroidManifest.xml reads, and the other AARs supply attrs and colours
+# the host uses. The APK link compiles every AAR's res in
+# build-android-host.sh; the Play link must do the same or aapt2 fails on the
+# manifest before the bundle is built.
+RES_ARGS=(-R "$WORK/res/resources.zip")
+mkdir -p "$WORK/aar"
+for aar in "$LIBS"/*.aar; do
+  name="$(basename "$aar" .aar)"
+  unzip -q -o "$aar" -d "$WORK/aar/$name"
+  if [ -d "$WORK/aar/$name/res" ]; then
+    "$AAPT2" compile --dir "$WORK/aar/$name/res" -o "$WORK/res/lib-$name.zip"
+    RES_ARGS+=(-R "$WORK/res/lib-$name.zip")
+  fi
+done
 "$AAPT2" link \
   -o "$WORK/base.apk" \
   -I "$PLATFORM" \
@@ -87,7 +104,7 @@ mkdir -p "$WORK/res" "$MODULE"
   --manifest android/AndroidManifest.xml \
   --min-sdk-version 28 --target-sdk-version 36 \
   --version-code "$APP_BUILD" --version-name "$APP_VERSION" \
-  -R "$WORK/res/resources.zip" \
+  "${RES_ARGS[@]}" \
   --auto-add-overlay
 
 echo "▸ assembling the base module"

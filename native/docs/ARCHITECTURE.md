@@ -273,7 +273,7 @@ returns.
 | 51 | `search` | `q?`, `kind?` (seed) | Search | `features/search/index.tsx` |
 | 52 | `students` | — | Students | `features/students/index.tsx` |
 | 53 | `students.colleges` | — | Colleges | `features/students/index.tsx` |
-| 54 | `students.college` | `college?` | college name / `College N` | `features/students/index.tsx` |
+| 54 | `students.college` | `college?` | the college's short name (`GEC Sheikhpura`, `MIT Muzaffarpur`) | `features/students/index.tsx` |
 | 55 | `students.branch` | `branch?`, `college?`, `session?` | `<BRANCH> students` / `<BRANCH> · <session>` | `features/students/index.tsx` |
 | 56 | `students.student` | `reg?` | the student's name | `features/students/index.tsx` |
 | 57 | `students.leads` | — | Top by CGPA | `features/students/index.tsx` |
@@ -347,7 +347,9 @@ Cache keys (`beu.cache.` prefix), all through `lib/net.ts`:
 | `result:<digits>:<sem>` | one saved result (live, CSV or captcha) |
 | `identity:<digits>` | resolved name / CGPA, no expiry |
 | `roster:<batch>:<branch>:<sem>` | a published branch roster |
+| `roster:<batch>:<college>:<branch>:<sem>` | one college's published roster (`features/students/remote.ts`, a week) |
 | `wide:<batch>:<college>:<branch>:<sem>` | a published per-student wide table |
+| `corpus:<digits>:<sem>` | a result read back from the shared corpus |
 | `pyqs.manifest.v1`, `pyqs.csv.<id>`, `pyqs.page.<slug>` | data browser + paper pages |
 | `notices.board.v1`, `notices.important.v1`, `announcements.feed.v1` | the three notice feeds |
 | `announcement.<slug>.v1` | one announcement post's page |
@@ -373,10 +375,11 @@ from.
         ▼                                      ├─ saved copy < 10 min → cache
    csvRecords() → ranked()              ├─ GET /api/result → payloadFrom()
         │                                      ├─ saved copy, any age → cache
+        │                                      ├─ GET /api/corpus → corpus
         │                                      └─ wide_…csv → wideFromRecord()
         └───────────────┬──────────────────────┘
                         ▼
-             ResultData { source: live | cache | csv }
+             ResultData { source: live | cache | corpus | csv }
                         ▼
       Storage: beu.cache.result:<digits(reg)>:<sem>
 
@@ -399,21 +402,35 @@ from.
 3. **Saved copy, any age** — after a failed live call it reads Storage with
    `cacheMaxAge: 0`, which never expires. Anything ever seen (live, CSV or
    captcha) is here, so a screen that worked once keeps working offline.
-4. **Published CSV** — `students_{batch}_all_{branch}_sem{n}.csv` is the whole
+4. **The shared corpus** — `GET /api/corpus?reg=…&sem=…` answers with another
+   student's captured copy of the same result, keyed `(reg, sem)`. The app reads
+   it only after both local copies miss, and caches it under
+   `beu.cache.corpus:<digits>:<sem>`. Contribution is the other half and is on by
+   default: every result the app captures (a live answer, or the portal the
+   student solved) is posted there with no prompt, no toggle and no screen of its
+   own. `docs/RESULT_CORPUS.md` is the contract and `/terms/#results` is the only
+   place it is described to the student.
+5. **Published CSV** — `students_{batch}_all_{branch}_sem{n}.csv` is the whole
    branch roster: table, rank, merit and identity. `wide_{batch}_{college}_{branch}_sem{n}.csv`
    is one student with per-paper ESE / IA / total / grade, eight-semester SGPA
    history, state rank and college rank, and is the last resort for a result
    while BEU's API is down. `COVERAGE` in `results/data.ts` lists which
    batch/branch/semester tables exist, so the app offers only real combinations.
-5. **The captcha page** — BEU answers its token endpoint with
+6. **The other 51 colleges** — `features/students/remote.ts` reads the generated
+   `college-index.ts` as a map of the `students_<batch>_<college>_<branch>_sem<n>.csv`
+   files BEU has actually published, and fetches exactly one of them when a
+   student opens it (`beu.cache.roster:<batch>:<college>:<branch>:<sem>`, a week).
+   A combination the index does not name is never requested. GEC Sheikhpura keeps
+   its bundled register as the offline first paint. See `docs/DATA_BREADTH.md` §3.
+7. **The captcha page** — BEU answers its token endpoint with
    `403` and puts Cloudflare Turnstile in front of its result page. The screen
    the app links to is `results.portal` (`features/results/portal.tsx`): lookup
    and battle push it, it loads `https://beu-bih.ac.in/result-three` in a
    `WebView`, and a hook installed before the page's own scripts captures the
    `result/get-result` XHR/fetch body and normalises it with `payloadFrom()` /
    `captureResult()`.
-   `results.web` (`features/results/web.tsx`) is the page-walker: registered and
-   mounted by QA, but nothing pushes it yet. It loads `/result-one`, opens the
+   `results.web` (`features/results/web.tsx`) is the page-walker: the portal's
+   error phase offers it as the second door. It loads `/result-one`, opens the
    row for the student's semester, fills `#reg`, and posts the markup of
    `app-result-three` once to `parseResultHtml()` / `saveParsedResult()`. The
    three result routes are one Angular document and the data is in router state,
@@ -421,7 +438,7 @@ from.
    markup is read. Either screen writes the same cache key as the fast path. The
    captcha is solved by the student in the page; the app never solves, bypasses
    or replays it.
-6. **Identity** — `results/identity.ts` turns a registration number into a
+8. **Identity** — `results/identity.ts` turns a registration number into a
    person, cheapest first: the identity cache (`identity:<digits>`, permanent) →
    any result already saved for that number (semester 8 down to 1) → BEU's
    published roster for the batch + branch, newest three semesters, first `RegNo`
@@ -431,19 +448,20 @@ from.
    the answer arrives after first paint; the hero's greeting and avatar initial
    re-read it. With no match, Home falls back to the profile name or a nameless
    greeting — never a guessed name.
-7. **Bundled data** — `assets/data/manifest.json` + 12 files: six subject packs
+9. **Bundled data** — `assets/data/manifest.json` + 12 files: six subject packs
    (343 subjects, 1,405 units, 2,324 topics), the branch list (6 branches), 30
    GATE papers, 39 holidays, 52 colleges, 7 grades and the GEC register.
    Generated by `scripts/extract.py`, packed by `scripts/data/build-packs.ts` and
    validated by `scripts/verify.py` / `scripts/data/verify-packs.ts` — never
-   edited by hand.
-8. **Live feed** — the published difference over step 7: a ~2 KB manifest plus
+   edited by hand. The college index is generated the same way but compiles into
+   the students feature rather than `assets/data`.
+10. **Live feed** — the published difference over step 9: a ~2 KB manifest plus
    content-addressed payloads at `https://beu.prit.eu.org/data/app/`, applied
    whole or not at all (`src/features/data-feed/`). A corrected topic or a new
    paper year reaches every installed app without a store release, while
    unchanged prose keeps the hash this build already carries and costs no bytes.
    Published by `scripts/data/publish-feed.ts`; see `docs/OFFLINE.md`.
-9. **Notes** — `notes` fetches `https://beu.prit.eu.org/data/notes.json`, one
+11. **Notes** — `notes` fetches `https://beu.prit.eu.org/data/notes.json`, one
    manifest of subjects, VVI topics and PDF links, into
    `beu.cache.notes.manifest`. A copy younger than 30 minutes renders with no
    request; an older copy renders at once and refreshes behind the screen, and a

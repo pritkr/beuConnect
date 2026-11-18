@@ -4,16 +4,19 @@
  * student's own college lifted above the rest when the saved registration
  * number names one.
  *
- * The search field filters the fifty-one "no register" colleges by name or code
- * and never the register itself — hiding the one row that opens is the opposite
- * of what a filter is for. A query that names the register (its short form, its
- * full name, `157`) leaves it standing alone instead of printing "no college
- * matches" beneath the row it just found. Only the register row is pressable,
- * and only it carries counts. A college with no register has no number, no
- * chevron and nowhere to go — printing a zero or opening an empty screen would
- * be a claim about data that does not exist. The list is static bundled data, so
- * there is no loading or error state; the ordering and the filter are pure and
- * live in `college-list.ts`.
+ * The search field filters the other colleges by name or code and never the
+ * register itself — hiding the one row that always opens is the opposite of what
+ * a filter is for. A query that names the register (its short form, its full
+ * name, `157`) leaves it standing alone instead of printing "no college matches"
+ * beneath the row it just found.
+ *
+ * A college opens when BEU has published a roster for it: the row carries a
+ * "Roster" badge and its batch count, and `students.college` fetches that roster
+ * on demand (`docs/DATA_BREADTH.md` §3). A college with no published roster has
+ * no number, no chevron and nowhere to go — printing a zero or opening an empty
+ * screen would be a claim about data that does not exist. The list is static
+ * bundled data, so there is no loading or error state; the ordering and the
+ * filter are pure and live in `college-list.ts`.
  */
 
 import { List, Text, View, computed, signal } from "nsh";
@@ -25,6 +28,7 @@ import { EVENTS, track } from "../../lib/analytics";
 import { profileCollege, useProfile } from "../settings/profile";
 import type { CollegeEntry } from "./college-list";
 import { COLLEGE_ENTRIES, collegesByPriority, filterColleges, matchesCollege } from "./college-list";
+import { batchesFor } from "./remote";
 import { Fresh } from "./components";
 
 type CollegeItem =
@@ -50,15 +54,26 @@ function SectionRow(props: { title: string; meta: string }) {
 
 function CollegeRow(props: { entry: CollegeEntry; register: boolean; onPress?: () => void }) {
   const entry = props.entry;
+  const rosterBatches = batchesFor(entry.code).length;
   // The short form is often the whole name (no "Government Engineering
   // College," prefix), so the second line carries the code, and the official
   // name only when it adds something.
-  const meta = props.register ? REGISTER_META : entry.short === entry.name ? entry.code : `${entry.code} · ${entry.name}`;
+  const meta = props.register
+    ? REGISTER_META
+    : rosterBatches > 0
+      ? `${entry.code} · ${rosterBatches} ${rosterBatches === 1 ? "batch" : "batches"}`
+      : entry.short === entry.name
+        ? entry.code
+        : `${entry.code} · ${entry.name}`;
   return (
     <Row
       class={`min-h-14 gap-3 bg-card px-4 py-2.5 ${props.onPress ? "active:bg-muted" : ""}`}
       onPress={props.onPress}
-      label={props.onPress ? `${entry.short}, register, ${formatCount(TOTAL)} students, ${BRANCHES.length} branches` : undefined}
+      label={
+        props.onPress
+          ? `${entry.short}, ${props.register ? "register" : "roster"}, ${rosterBatches} ${rosterBatches === 1 ? "batch" : "batches"}`
+          : undefined
+      }
     >
       <View class="flex-1 gap-0.5">
         <Text class="text-[15px] font-semibold text-foreground" style={{ numberOfLines: 2 }}>
@@ -70,8 +85,10 @@ function CollegeRow(props: { entry: CollegeEntry; register: boolean; onPress?: (
       </View>
       {props.register ? (
         <Badge tone="ember">Register</Badge>
+      ) : rosterBatches > 0 ? (
+        <Badge tone="neutral">Roster</Badge>
       ) : (
-        <Text class="text-[11px] font-medium text-muted-foreground">No register</Text>
+        <Text class="text-[11px] font-medium text-muted-foreground">No roster</Text>
       )}
       {props.onPress ? <Icon name="chevron-right" size={14} class="text-muted-foreground" /> : null}
     </Row>
@@ -163,7 +180,12 @@ export function CollegesScreen(props: { nav: Nav }) {
                               track(EVENTS.studentsCollegeOpen, { college: COLLEGE_CODE });
                               nav.push("students.college", { college: COLLEGE_CODE });
                             }
-                          : undefined
+                          : batchesFor(row.entry.code).length > 0
+                            ? () => {
+                                track(EVENTS.studentsCollegeOpen, { college: row.entry.code });
+                                nav.push("students.college", { college: row.entry.code });
+                              }
+                            : undefined
                       }
                     />
                   );

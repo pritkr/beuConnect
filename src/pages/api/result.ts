@@ -1,4 +1,6 @@
 import type { APIRoute } from "astro";
+import { env } from "cloudflare:workers";
+import { contributeInline } from "../../lib/corpus/store";
 import {
 	readCachedResult,
 	type ResultCacheKeyParts,
@@ -11,7 +13,6 @@ import {
 	fetchWithTimeout,
 	HTML_HEADERS,
 	isAbortError,
-	SPECIAL_CASES,
 } from "../../lib/result/fetcher";
 import {
 	buildCaptchaHTML,
@@ -28,12 +29,15 @@ import {
 	parseLegacyHtmlToJson,
 } from "../../lib/result/parser";
 import {
+	candidateFromExam,
 	fetchPortalResult,
-	OFFICIAL_PORTAL_URL,
 	redactPortalResultUrl,
 	requestPortalToken,
+	resolveOfficialExamLink,
+	resolvePortalExam,
+	type OfficialExamLink,
 } from "../../lib/result/portal";
-import type { ResultPayload, ViewMode } from "../../lib/result/types";
+import type { ResultPayload, SpecialCase, ViewMode } from "../../lib/result/types";
 import { classifyUpstream, type UpstreamFailureKind } from "../../lib/result/upstream";
 
 export const prerender = false;
@@ -55,6 +59,13 @@ type ResultFailure = {
 	message: string;
 	retryable: boolean;
 	officialUrl?: string;
+	/** The exact exam the official link opens, when it could be matched. */
+	officialExamName?: string | null;
+	/** Why there is, or is not, a direct link. */
+	officialStatus?: "matched" | "not_published" | "unavailable";
+	/** Carried into the card so the student only has to paste it. */
+	registrationNo?: string;
+	semester?: number;
 	title: string;
 };
 
@@ -69,16 +80,28 @@ type ResponseContext = {
 };
 
 const CAPTCHA_TITLE = "BEU asks for a captcha";
-const CAPTCHA_BODY =
-	"The university result portal requires a captcha before it returns data. Open the portal, complete the check, and read the result there.";
 
-function captchaFailure(): ResultFailure {
+function captchaFailure(
+	official: OfficialExamLink,
+	registrationNo: string,
+	semester: number,
+): ResultFailure {
+	const message =
+		official.status === "matched"
+			? `Results sit behind BEU's captcha. Open the semester ${semester} exam, paste registration number ${registrationNo}, and solve the check.`
+			: official.status === "not_published"
+				? `BEU has not published the semester ${semester} exam for this batch yet. Registration number ${registrationNo} is ready for when it is.`
+				: `BEU's exam list did not answer, so the semester ${semester} exam link could not be built. Try again in a minute.`;
 	return {
 		code: "upstream_captcha",
 		status: 503,
-		message: CAPTCHA_BODY,
+		message,
 		retryable: false,
-		officialUrl: OFFICIAL_PORTAL_URL,
+		officialUrl: official.status === "matched" ? official.url : undefined,
+		officialExamName: official.examName,
+		officialStatus: official.status,
+		registrationNo,
+		semester,
 		title: CAPTCHA_TITLE,
 	};
 }
@@ -181,6 +204,10 @@ function respondFailure(failure: ResultFailure, ctx: ResponseContext): Response 
 			retryable: failure.retryable,
 		};
 		if (failure.officialUrl) payload.officialUrl = failure.officialUrl;
+		if (failure.officialExamName) payload.examName = failure.officialExamName;
+		if (failure.officialStatus) payload.examStatus = failure.officialStatus;
+		if (failure.registrationNo) payload.registrationNo = failure.registrationNo;
+		if (failure.semester) payload.semester = failure.semester;
 		return new Response(JSON.stringify(payload), {
 			status: failure.status,
 			headers: { "content-type": "application/json", "cache-control": "no-store" },
@@ -189,7 +216,18 @@ function respondFailure(failure: ResultFailure, ctx: ResponseContext): Response 
 
 	const html =
 		failure.code === "upstream_captcha"
-			? buildCaptchaHTML({ retryHref: ctx.retryHref, theme: ctx.theme })
+			? buildCaptchaHTML({
+					// A matched exam keeps asking for its captcha however often the
+					// page reloads, so a retry there is a dead end; an unreadable
+					// exam list is worth asking again.
+					retryHref: failure.officialStatus === "unavailable" ? ctx.retryHref : undefined,
+					theme: ctx.theme,
+					officialUrl: failure.officialUrl,
+					examName: failure.officialExamName,
+					status: failure.officialStatus,
+					registrationNo: failure.registrationNo,
+					semester: failure.semester,
+				})
 			: buildErrorHTML(
 					failure.title,
 					failure.message,
@@ -284,7 +322,29 @@ export const GET: APIRoute = async ({ request }) => {
 		return respondPayload(cached.data, ctx, semester, "cache");
 	}
 
-	const specialCase = !isCarry ? SPECIAL_CASES[`${effectiveBatchYY}-${semester}`] : undefined;
+	// What can be fetched is whatever the portal currently publishes. Asking its
+	// exam list, rather than keeping a table of batches by hand, is what lets a
+	// newly published result work without a code change.
+	let candidate: SpecialCase | null = null;
+	if (!isCarry) {
+		const published = await resolvePortalExam(semester, 2000 + effectiveBatchYY);
+		if (published.ok && published.exam) {
+			candidate = candidateFromExam(published.exam, semester);
+		}
+	}
+
+	// Resolving the exam is only worth it when the challenge blocks us; the
+	// fetch starts lazily and is reused if the portal asks again later.
+	let officialExam: Promise<OfficialExamLink> | null = null;
+	const captchaResponse = async (): Promise<Response> => {
+		officialExam ??= resolveOfficialExamLink(semester, 2000 + effectiveBatchYY);
+		return respondFailure(captchaFailure(await officialExam, registrationNo, semester), ctx);
+	};
+
+	// Nothing published for this batch and semester (or the list itself did not
+	// answer): a token could not be spent on anything, so the card that opens
+	// BEU is the whole answer. Carry papers are left on the legacy route below.
+	if (!candidate && !isCarry) return captchaResponse();
 
 	// The portal issues the only working token and is fronted by a captcha. One
 	// probe decides whether the portal can be read at all.
@@ -293,33 +353,38 @@ export const GET: APIRoute = async ({ request }) => {
 
 	if (!portal.ok && portal.kind === "captcha") {
 		// A challenge cannot be solved from here, and the legacy host is dead.
-		return respondFailure(captchaFailure(), ctx);
+		return captchaResponse();
 	}
 
 	let portalSaidNoResult = false;
 	let portalHardFailure = false;
 	let portalRejectedToken = false;
 
-	if (specialCase) {
-		for (const [index, candidate] of buildSpecialCaseCandidates(specialCase).entries()) {
+	if (candidate) {
+		for (const [index, attempt] of buildSpecialCaseCandidates(candidate).entries()) {
 			// The probe above already asked for the first token; later candidates
 			// need their own because a token is single-use.
 			const tokenOutcome = index === 0 ? portal : await requestPortalToken();
 			if (!tokenOutcome.ok) {
 				logUpstreamFailure(`portal token #${index + 1}`, tokenOutcome.kind, tokenOutcome.status);
-				if (tokenOutcome.kind === "captcha") return respondFailure(captchaFailure(), ctx);
+				if (tokenOutcome.kind === "captcha") return captchaResponse();
 				portalHardFailure = true;
 				break;
 			}
 
 			logChosenFetchUrl(
 				`portal result #${index + 1}`,
-				redactPortalResultUrl(candidate, registrationNo),
+				redactPortalResultUrl(attempt, registrationNo),
 			);
-			const outcome = await fetchPortalResult(candidate, registrationNo, tokenOutcome.token);
+			const outcome = await fetchPortalResult(attempt, registrationNo, tokenOutcome.token);
 			if (outcome.ok) {
 				if (hasResultData(outcome.data)) {
 					await writeCachedResult(cacheParts, { data: outcome.data, source: "json" });
+					// One best-effort copy into the corpus; it can never change this response.
+					void contributeInline(env.DB, numericReg, semester, {
+						status: 200,
+						data: outcome.data,
+					});
 					return respondPayload(outcome.data, ctx, semester, "json");
 				}
 				portalSaidNoResult = true;
@@ -327,7 +392,7 @@ export const GET: APIRoute = async ({ request }) => {
 			}
 
 			logUpstreamFailure(`portal result #${index + 1}`, outcome.kind, outcome.status);
-			if (outcome.kind === "captcha") return respondFailure(captchaFailure(), ctx);
+			if (outcome.kind === "captcha") return captchaResponse();
 			if (outcome.kind === "no_result") {
 				portalSaidNoResult = true;
 				continue;
@@ -346,8 +411,12 @@ export const GET: APIRoute = async ({ request }) => {
 		return respondFailure(notFoundFailure(), ctx);
 	}
 
-	const legacyTarget =
-		specialCase?.legacyTarget || buildLegacyTarget(registrationNo, semester, effectiveBatchYY, isCarry);
+	const legacyTarget = buildLegacyTarget(
+		registrationNo,
+		semester,
+		effectiveBatchYY,
+		isCarry,
+	);
 	logChosenFetchUrl("legacy source", legacyTarget);
 
 	let legacyResponse: Response;
@@ -409,7 +478,7 @@ export const GET: APIRoute = async ({ request }) => {
 				"legacy",
 			);
 		}
-		return responseHtml(injectCssIntoHtmlDocument(legacyBody, MODERN_CSS), 200, "legacy");
+		return responseHtml(injectCssIntoHtmlDocument(legacyBody, MODERN_CSS, ctx.theme), 200, "legacy");
 	}
 
 	const cleanedLegacy = extracted.replace(
@@ -425,5 +494,5 @@ export const GET: APIRoute = async ({ request }) => {
 		);
 	}
 
-	return responseHtml(`${MODERN_CSS}${cleanedLegacy}`, 200, "legacy");
+	return responseHtml(injectCssIntoHtmlDocument(cleanedLegacy, MODERN_CSS, ctx.theme), 200, "legacy");
 };

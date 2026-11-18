@@ -1,0 +1,40 @@
+---
+/**
+ * A branch's mark, inline. Decorative: the branch name always sits next to it.
+ *
+ * Pass whichever identifier the page already holds — a slug (`cse`), a BEU
+ * code (`105`), a GATE paper code (`CS`) or a display name. Unknown values draw
+ * nothing, so a stray label never gets the wrong mark.
+ */
+import { BRANCH_ICON_BODIES, branchIconName } from "../utils/branchIcons";
+
+interface Props {
+	branch: string;
+	/** Pixels, or any CSS length so a mark can track its heading's size. */
+	size?: number | string;
+	class?: string;
+}
+
+const { branch, size = 16, class: className } = Astro.props;
+const icon = branchIconName(branch);
+---
+
+{
+	icon && (
+		<svg
+			class:list={["branch-icon", className]}
+			width={size}
+			height={size}
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.7"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<Fragment set:html={BRANCH_ICON_BODIES[icon]} />
+		</svg>
+	)
+}

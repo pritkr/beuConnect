@@ -2,42 +2,15 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import PYQRenderer from '../../components/PYQRenderer.astro';
-import { getCanonicalPyqSubject, getPyqSubjectRouteAliases } from '../../utils/pyqSubjects';
+import { getCanonicalPyqSubject, groupPyqPapersByRoute } from '../../utils/pyqSubjects';
 
 export async function getStaticPaths() {
   const allPapers = await getCollection('pyqs');
 
-  const groupedBySlug = allPapers.reduce((acc, paper) => {
-    const canonicalSubject = getCanonicalPyqSubject(paper.data.metadata);
-
-    if (!acc[canonicalSubject.slug]) {
-      acc[canonicalSubject.slug] = [];
-    }
-
-    acc[canonicalSubject.slug].push(paper);
-    return acc;
-  }, {} as Record<string, any[]>);
-
-  return Object.entries(groupedBySlug).flatMap(([canonicalSlug, papers]) => {
-    const sortedPapers = papers.sort((a, b) => {
-      const byYear = b.data.metadata.year - a.data.metadata.year;
-      if (byYear !== 0) return byYear;
-      return String(a.data.metadata.subject_code).localeCompare(String(b.data.metadata.subject_code));
-    });
-    const canonicalSubject = getCanonicalPyqSubject(sortedPapers[0].data.metadata);
-    const routeSlugs = new Set<string>([canonicalSlug]);
-
-    sortedPapers.forEach((paper) => {
-      getPyqSubjectRouteAliases(paper.data.metadata).forEach((alias) => {
-        routeSlugs.add(alias);
-      });
-    });
-
-    return [...routeSlugs].map((slug) => ({
-      params: { subject: slug },
-      props: { subjectPapers: sortedPapers, canonicalSubject }
-    }));
-  });
+  return groupPyqPapersByRoute(allPapers).map(({ slug, papers, canonicalSubject }) => ({
+    params: { subject: slug },
+    props: { subjectPapers: papers, canonicalSubject }
+  }));
 }
 
 const { subjectPapers, canonicalSubject } = Astro.props;
@@ -189,8 +162,10 @@ const structuredData = {
     text-decoration: none;
   }
 
-  .back a:hover {
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .back a:hover {
+      color: var(--paper);
+    }
   }
 
   .subject-container {
@@ -203,9 +178,10 @@ const structuredData = {
 
   .sidebar {
     position: sticky;
-    top: 4.5rem;
-    max-height: calc(100vh - 5.5rem);
+    top: calc(var(--header-h) + 0.9rem);
+    max-height: calc(100dvh - var(--header-h) - 1.9rem);
     overflow-y: auto;
+    overscroll-behavior: contain;
     scrollbar-width: thin;
     padding-top: var(--s2);
   }
@@ -228,10 +204,12 @@ const structuredData = {
     text-overflow: ellipsis;
   }
 
-  .anchor-link:hover,
-  .anchor-link.active {
-    border-left-color: var(--accent);
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .anchor-link:hover,
+    .anchor-link.active {
+      border-left-color: var(--accent);
+      color: var(--paper);
+    }
   }
 
   .content-area {
@@ -241,7 +219,7 @@ const structuredData = {
   .mobile-jump-wrapper {
     display: none;
     position: sticky;
-    top: 3.6rem;
+    top: var(--header-h);
     z-index: 50;
     padding: var(--s2) 0;
     margin-bottom: var(--s3);
@@ -265,6 +243,7 @@ const structuredData = {
     padding: var(--s2);
     max-height: 50vh;
     overflow-y: auto;
+    overscroll-behavior: contain;
     border: 1px solid var(--line);
     border-radius: var(--r);
     background: var(--surface);
@@ -277,9 +256,11 @@ const structuredData = {
     text-decoration: none;
   }
 
-  .mobile-links a:hover,
-  .mobile-links a.active {
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .mobile-links a:hover,
+    .mobile-links a.active {
+      color: var(--paper);
+    }
   }
 
   .papers-stack {
@@ -288,7 +269,7 @@ const structuredData = {
   }
 
   .paper-block {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: calc(var(--header-h) + 1.4rem);
   }
 
   .paper-head {

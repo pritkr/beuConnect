@@ -25,6 +25,7 @@ type Subject = {
 	code?: string;
 	name?: string;
 	content?: string;
+	type?: "Theory" | "Practical" | string;
 };
 
 function subjectList() {
@@ -205,6 +206,23 @@ describe("parseSyllabusContent topics", () => {
 		expect(units[0].topics).toHaveLength(3);
 	});
 
+	it("gives every LE experiment its own topic", () => {
+		const units = parseSyllabusContent(
+			[
+				"LE-1 Diffraction Grating.",
+				"LE-2 Newton’s Ring Experiment",
+				"LE-3 Resolving Power of Telescope",
+			].join("\n"),
+		);
+
+		expect(units).toHaveLength(1);
+		expect(units[0].topics).toEqual([
+			"LE-1 Diffraction Grating.",
+			"LE-2 Newton’s Ring Experiment",
+			"LE-3 Resolving Power of Telescope",
+		]);
+	});
+
 	it("keeps a unit that has no topics", () => {
 		const units = parseSyllabusContent(
 			["Unit- 1.0: Introduction 5 hrs", "Unit- 2.0: Next 5 hrs", "1. Only topic"].join(
@@ -286,8 +304,8 @@ describe("splitTopic", () => {
 });
 
 describe("parseSyllabusContent over every branch and semester", () => {
-	it("covers all 343 subjects", () => {
-		expect(SUBJECTS).toHaveLength(343);
+	it("covers all 361 subjects", () => {
+		expect(SUBJECTS).toHaveLength(361);
 	});
 
 	it("never loses a body line", () => {
@@ -321,7 +339,7 @@ describe("parseSyllabusContent over every branch and semester", () => {
 		}
 
 		expect(missing).toEqual([]);
-		expect(parsedSubjects).toBe(343);
+		expect(parsedSubjects).toBe(361);
 		expect(units).toBeGreaterThan(1000);
 		expect(topics).toBeGreaterThan(2000);
 	});
@@ -358,11 +376,15 @@ describe("parseSyllabusContent over every branch and semester", () => {
 	});
 
 	it("reports the parsed shape", () => {
-		const units = SUBJECTS.flatMap((row) => parseSyllabusContent(row.content));
+		// The page keeps a practical subject's lines whole: one experiment is
+		// one checkbox, so its comma lists are never cut into separate items.
+		const parseRow = (row: (typeof SUBJECTS)[number]) =>
+			parseSyllabusContent(row.content, {
+				splitLists: row.subject.type !== "Practical",
+			});
+		const units = SUBJECTS.flatMap(parseRow);
 		const headless = SUBJECTS.filter(
-			(row) =>
-				row.content.trim() &&
-				parseSyllabusContent(row.content).every((unit) => unit.number === 0),
+			(row) => row.content.trim() && parseRow(row).every((unit) => unit.number === 0),
 		);
 		const emptyContent = SUBJECTS.filter((row) => !row.content.trim());
 
@@ -370,9 +392,9 @@ describe("parseSyllabusContent over every branch and semester", () => {
 			`subjects=${SUBJECTS.length} units=${units.length} topics=${topicTotal(units)} headless=${headless.length} empty=${emptyContent.length}`,
 		);
 
-		expect(units.length).toBe(1440);
-		expect(topicTotal(units)).toBe(8007);
-		expect(headless).toHaveLength(107);
-		expect(emptyContent).toHaveLength(20);
+		expect(units.length).toBe(1441);
+		expect(topicTotal(units)).toBe(7730);
+		expect(headless).toHaveLength(125);
+		expect(emptyContent).toHaveLength(14);
 	});
 });

@@ -11,10 +11,11 @@
  * shared row/group/switch) and one file per screen.
  */
 
-import { Text, View } from "nsh";
+import { Clipboard, Text, View, announce } from "nsh";
 import type { Nav, RouteDef } from "../../app/router";
 import { Badge, Body, Muted, Screen, SectionHeader } from "../../ui";
 import { Icon } from "../../ui/icons";
+import { openExternal } from "../../lib/link";
 import { APP_VERSION } from "./about";
 import { AboutScreen } from "./about";
 import { AppearanceScreen } from "./appearance";
@@ -30,7 +31,21 @@ import { SettingsGroup, SettingsRow } from "./ui";
 import { ShareAppRow, UpdateRow, UpdatePanel } from "./release-rows";
 import { isPlay } from "../../lib/channel";
 
+/** The site's terms page. */
+const TERMS_URL = "https://beu.prit.eu.org/terms";
+
 /* --------------------------------------------------------------------- hub */
+
+/**
+ * Opens the terms in the browser, and copies the address when this host has no
+ * browser to hand it to — the fallback About's source rows already use.
+ */
+function openTerms(): void {
+  void openExternal(TERMS_URL).then((opened) => {
+    if (opened) return;
+    void Clipboard.writeText(TERMS_URL).then(() => announce("Terms link copied"));
+  });
+}
 
 function ProfileCard(props: { nav: Nav }) {
   const profile = useProfile();
@@ -138,8 +153,8 @@ function SettingsHome(props: { nav: Nav }) {
             title="About BEUConnect"
             value={`v${APP_VERSION}`}
             onPress={() => props.nav.push("settings.about")}
-            last
           />
+          <SettingsRow title="Terms of service" onPress={openTerms} last />
         </SettingsGroup>
 
         <SectionHeader title="Share" />

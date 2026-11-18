@@ -41,13 +41,7 @@ async function fetchWithTimeout(
 	init: RequestInit = {},
 	timeoutMs = FETCH_TIMEOUT_MS,
 ): Promise<Response> {
-	const controller = new AbortController();
-	const timer = setTimeout(() => controller.abort(), timeoutMs);
-	try {
-		return await fetch(url, { ...init, signal: controller.signal });
-	} finally {
-		clearTimeout(timer);
-	}
+	return await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) });
 }
 
 async function fetchChallengeAwareHtml(url: string): Promise<{ html: string; finalUrl: string }> {

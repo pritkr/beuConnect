@@ -1,7 +1,12 @@
 ---
 export const prerender = true;
-import Layout from "../../../layouts/Layout.astro";
+
 import papersList from "../../../assets/data/gate-papers.json";
+import AskAI from "../../../components/AskAI.astro";
+import BranchIcon from "../../../components/BranchIcon.astro";
+import GateSyllabus from "../../../components/GateSyllabus.astro";
+import Layout from "../../../layouts/Layout.astro";
+import { parseGateSections } from "../../../lib/gate/parse";
 
 export async function getStaticPaths() {
 	const papers = (await import("../../../assets/data/gate-papers.json"))
@@ -10,83 +15,72 @@ export async function getStaticPaths() {
 }
 
 const { paper } = Astro.params;
-const paperInfo = papersList.find(p => p.code === paper);
+const paperInfo = papersList.find((p) => p.code === paper);
 const paperName = paperInfo ? paperInfo.name : "";
-const syllabus = await import(`../../../assets/data/gate/${paper}.json`).catch(
-    () => null,
+
+/**
+ * The combined papers ship as `XE-2026.json`: the file carries the year the
+ * outline was published in, while the route and the paper code do not.
+ */
+async function loadSyllabus(code: string) {
+	const direct = await import(`../../../assets/data/gate/${code}.json`).catch(
+		() => null,
+	);
+	if (direct) return direct.default;
+	const dated = await import(
+		`../../../assets/data/gate/${code}-2026.json`
+	).catch(() => null);
+	return dated ? dated.default : null;
+}
+
+const data = await loadSyllabus(paper);
+const sections = parseGateSections(data?.sections).filter(
+	(section) => section.groups.length > 0,
 );
-const data = syllabus ? syllabus.default : null;
 ---
 
 <Layout
     title={`GATE ${paper} syllabus`}
-    description={`GATE ${paper} ${paperName} syllabus, section by section.`}
+    description={`GATE ${paper} ${paperName} syllabus, topic by topic, with a checklist for every topic.`}
 >
     <header class="page-head">
         <div>
             <p class="back"><a href={`${import.meta.env.BASE_URL}gate-syllabus/`}>GATE syllabus</a></p>
-            <h1>{paperName || paper}</h1>
-            <p class="meta num">{paper}</p>
+            <h1><BranchIcon branch={paper} size="0.7em" />{paperName || paper}</h1>
+            <p class="meta num">{sections.length ? `${sections.length} sections` : paper}</p>
         </div>
     </header>
 
     {
-        data ? (
-            <div class="sections">
-                {data.sections.map((sec) => (
-                    <details>
-                        <summary>{sec.title}</summary>
-                        <p>{sec.content}</p>
-                    </details>
-                ))}
-            </div>
+        sections.length ? (
+            <GateSyllabus paper={paper} paperName={paperName || paper} sections={sections} />
         ) : (
             <p class="empty">Syllabus is not available for this paper.</p>
         )
     }
 
-    <style>
-        .back {
-            margin: 0 0 var(--s2);
-            font-size: 0.78rem;
-        }
+    <AskAI variant="dialog" />
+</Layout>
 
-        .back a {
-            color: var(--faint);
-            text-decoration: none;
-        }
+<style>
+    .back {
+        margin: 0 0 var(--s2);
+        font-size: 0.78rem;
+    }
 
+    .back a {
+        color: var(--faint);
+        text-decoration: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
         .back a:hover {
             color: var(--paper);
         }
+    }
 
-        .sections {
-            margin-top: var(--s5);
-            border-top: 1px solid var(--line-strong);
-        }
-
-        details {
-            padding: var(--s3) 0;
-            border-bottom: 1px solid var(--line);
-        }
-
-        summary {
-            color: var(--paper);
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        details p {
-            max-width: var(--measure);
-            margin: var(--s3) 0 0;
-            color: var(--muted);
-            font-size: 0.9rem;
-            white-space: pre-wrap;
-        }
-
-        .empty {
-            margin: var(--s5) 0;
-            color: var(--faint);
-        }
-    </style>
-</Layout>
+    .empty {
+        margin: var(--s5) 0;
+        color: var(--faint);
+    }
+</style>

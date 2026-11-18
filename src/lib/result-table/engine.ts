@@ -130,7 +130,7 @@ export function normalizeRows(
 	const collegeNameKey = getActualKey(["CollegeName", "College Name"]);
 
 	return rows
-		.map((row) => {
+		.map((row): NormalizedStudent | null => {
 			const regNo = regNoKey && row[regNoKey] ? row[regNoKey].trim() : "";
 			const name = nameKey && row[nameKey] ? row[nameKey].trim() : "";
 			if (!regNo || !name) return null;
@@ -159,11 +159,11 @@ export function normalizeRows(
 				CollegeRank: null,
 			} satisfies NormalizedStudent;
 		})
-		.filter((row): row is NormalizedStudent => Boolean(row));
+		.filter((row): row is NormalizedStudent => row !== null);
 }
 
 export function sortRowsByCgpa(rows: NormalizedStudent[]): NormalizedStudent[] {
-	return [...rows].sort((a, b) => {
+	return rows.toSorted((a, b) => {
 		if (a.CGPAValue === null && b.CGPAValue === null) return a.RegNo.localeCompare(b.RegNo);
 		if (a.CGPAValue === null) return 1;
 		if (b.CGPAValue === null) return -1;

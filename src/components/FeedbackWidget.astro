@@ -1,4 +1,6 @@
 ---
+import Icon from "./Icon.astro";
+
 const baseUrl = import.meta.env.BASE_URL;
 // Turnstile is intentionally disabled for now.
 // const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
@@ -10,7 +12,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
 	<dialog id="feedbackDialog" class="feedback-dialog">
 		<button type="button" class="feedback-close" id="feedbackCloseBtn" aria-label="Close feedback form">
-			&times;
+			<Icon name="x" size={16} />
 		</button>
 
 		<div class="feedback-panel">
@@ -124,8 +126,8 @@ const baseUrl = import.meta.env.BASE_URL;
 
 	.feedback-toast {
 		position: fixed;
-		right: 1rem;
-		bottom: 1rem;
+		right: max(1rem, var(--safe-right));
+		bottom: calc(1rem + var(--safe-bottom));
 		z-index: 150;
 		max-width: min(24rem, calc(100vw - 2rem));
 		padding: var(--s3) var(--s4);
@@ -137,13 +139,15 @@ const baseUrl = import.meta.env.BASE_URL;
 		font-size: 0.82rem;
 		opacity: 0;
 		pointer-events: none;
-		transform: translateY(12px);
-		transition: opacity 0.2s ease, transform 0.2s ease;
+		translate: 0 12px;
+		transition-property: opacity, translate;
+		transition-duration: 150ms;
+		transition-timing-function: var(--ease-out);
 	}
 
 	.feedback-toast.show {
 		opacity: 1;
-		transform: translateY(0);
+		translate: 0 0;
 	}
 
 	.feedback-close {
@@ -151,6 +155,8 @@ const baseUrl = import.meta.env.BASE_URL;
 		top: var(--s2);
 		right: var(--s2);
 		z-index: 2;
+		display: grid;
+		place-items: center;
 		width: 1.9rem;
 		height: 1.9rem;
 		padding: 0;
@@ -158,12 +164,23 @@ const baseUrl = import.meta.env.BASE_URL;
 		border-radius: var(--r);
 		background: transparent;
 		color: var(--faint);
-		font-size: 1.1rem;
 		line-height: 1;
 		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
+		transition-property: color, border-color;
+		transition-duration: 150ms;
+		transition-timing-function: ease-out;
 	}
 
-	.feedback-close:hover {
+	@media (hover: hover) and (pointer: fine) {
+		.feedback-close:hover {
+			color: var(--paper);
+			border-color: var(--line);
+		}
+	}
+
+	/* The press is the only feedback the button gets on a touch screen. */
+	.feedback-close:active {
 		color: var(--paper);
 		border-color: var(--line);
 	}
@@ -173,6 +190,8 @@ const baseUrl = import.meta.env.BASE_URL;
 		gap: var(--s4);
 		padding: var(--s5);
 		overflow: auto;
+		overscroll-behavior: contain;
+		overscroll-behavior: contain;
 	}
 
 	.feedback-copy h2 {
@@ -223,11 +242,13 @@ const baseUrl = import.meta.env.BASE_URL;
 	.feedback-field textarea {
 		margin: 0;
 		padding: 0.45rem 0.55rem;
-		border: 1px solid var(--line-strong);
+		border: 1px solid var(--line-field);
 		border-radius: var(--r);
 		background: var(--bg);
 		color: var(--paper);
-		font-size: 0.82rem;
+		/* 16px is the floor: below it iOS zooms the page on focus and leaves it
+		   zoomed when the keyboard closes. */
+		font-size: 1rem;
 	}
 
 	.feedback-field textarea {
@@ -282,14 +303,16 @@ const baseUrl = import.meta.env.BASE_URL;
 	}
 
 	.feedback-secondary {
-		border: 1px solid var(--line-strong);
+		border: 1px solid var(--line-field);
 		background: transparent;
 		color: var(--muted);
 	}
 
-	.feedback-secondary:hover {
-		color: var(--paper);
-		border-color: var(--muted);
+	@media (hover: hover) and (pointer: fine) {
+		.feedback-secondary:hover {
+			color: var(--paper);
+			border-color: var(--muted);
+		}
 	}
 
 	.feedback-primary {
@@ -299,9 +322,11 @@ const baseUrl = import.meta.env.BASE_URL;
 		font-weight: 600;
 	}
 
-	.feedback-primary:hover {
-		background: var(--accent-hover);
-		border-color: var(--accent-hover);
+	@media (hover: hover) and (pointer: fine) {
+		.feedback-primary:hover {
+			background: var(--accent-hover);
+			border-color: var(--accent-hover);
+		}
 	}
 
 	.feedback-primary:disabled {
@@ -317,19 +342,42 @@ const baseUrl = import.meta.env.BASE_URL;
 
 	@media (max-width: 560px) {
 		.feedback-toast {
-			left: 0.75rem;
-			right: 0.75rem;
-			bottom: 0.75rem;
+			left: max(0.75rem, var(--safe-left));
+			right: max(0.75rem, var(--safe-right));
+			bottom: calc(0.75rem + var(--safe-bottom));
 			max-width: none;
 		}
 
+		/* A sheet, not a floating card: full width, anchored to the bottom
+		   edge, and shorter than the visual viewport so the keyboard cannot
+		   hide the Send button. */
 		.feedback-dialog {
-			width: calc(100% - 1rem);
-			max-height: min(90dvh, 34rem);
+			width: 100%;
+			max-height: min(90dvh, calc(var(--vvh, 100dvh) - 1.5rem));
+			border-radius: var(--r-lg) var(--r-lg) 0 0;
 		}
 
 		.feedback-panel {
-			padding: var(--s4);
+			padding: var(--s4) var(--s4) calc(var(--s4) + var(--safe-bottom));
+		}
+	}
+
+	@media (pointer: coarse) {
+		.feedback-dialog {
+			/* A sheet sits on the screen edge, so its bottom corners are square
+			   even when the width rule above does not fire (a tablet). */
+			border-radius: var(--r-lg) var(--r-lg) 0 0;
+		}
+
+		.feedback-close {
+			width: var(--tap);
+			height: var(--tap);
+			top: 0.35rem;
+			right: 0.35rem;
+		}
+
+		.feedback-actions button {
+			min-height: var(--tap);
 		}
 	}
 </style>
@@ -415,13 +463,20 @@ const baseUrl = import.meta.env.BASE_URL;
 
 	function openDialog(trigger) {
 		prepareDialog(trigger);
+		window.beuTrack?.("feedback_open", { type: typeInput.value || "other" });
 		if (typeof dialog.showModal === "function") {
 			dialog.showModal();
-			messageInput.focus();
+			// Raising the keyboard on open hides the sheet's own copy behind it
+			// and scrolls the page on iOS. A touch user taps the field when ready.
+			if (window.matchMedia("(pointer: fine)").matches) {
+				messageInput.focus();
+			}
 			return;
 		}
 		dialog.setAttribute("open", "open");
-		messageInput.focus();
+		if (window.matchMedia("(pointer: fine)").matches) {
+			messageInput.focus();
+		}
 	}
 
 	function closeDialog() {
@@ -507,6 +562,9 @@ const baseUrl = import.meta.env.BASE_URL;
 			localStorage.setItem(cooldownKey, String(Date.now()));
 			setStatus("success", result.message || "Sent. I'll check this.");
 			showToast(result.message || "Sent. I'll check this.");
+			// The type is the only thing worth knowing here: the message itself is
+			// a person's words and never leaves this form's own channel.
+			window.beuTrack?.("feedback_submit", { type: formData.get("type") || "other" });
 			const preservedRegNo = regInput.value;
 			form.reset();
 			regInput.value = preservedRegNo;

@@ -23,8 +23,16 @@ import { Text, View, computed, signal } from "nsh";
 import { Haptics } from "nsh/mobile";
 import { EVENTS, track } from "../../lib/analytics";
 import { formatDate } from "../../lib/net";
+import { shareOrCopy } from "../../lib/share";
 import { Badge, Body, Btn, Card, Chip, Col, Divider, EmptyState, Field, Label, Muted, Progress, Ring, Row, Screen, SectionHeader } from "../../ui";
 import { Icon, type IconName } from "../../ui/icons";
+import {
+  attendanceFileSummary,
+  attendanceMergeSummary,
+  exportAttendance,
+  mergeAttendance,
+  readAttendanceFile,
+} from "./attendance-io";
 import type { AttendanceAdvice } from "./engine";
 import { addDays, attendanceAdvice, dayLabel, parseIso } from "./engine";
 import { WEEKDAYS, monthCells, monthLabel } from "./calendar";
@@ -69,6 +77,12 @@ const gridMonth = signal(todayIso().slice(0, 7));
 /** Which paper's counts are being typed in, by id ("" = none). */
 const editingCounts = signal("");
 const showWholeLog = signal(false);
+/** The backup card: open, the pasted file, and the one line it answered with. */
+const backupOpen = signal(false);
+const backupText = signal("");
+const backupResult = signal("");
+/** Whether `backupResult` is a rejection rather than a receipt. */
+const backupBad = signal(false);
 
 /* ------------------------------------------------------------------ gecs */
 
@@ -164,12 +178,70 @@ async function resetAttendance(): Promise<void> {
   if (!ok) return;
   attendance.set({ subjects: [], log: [], target: attendance().target });
   persistAttendance();
+  backupOpen.set(false);
+  backupText.set("");
+  backupResult.set("");
+  backupBad.set(false);
   void clearGecsCache();
   gecsCache.set(null);
   gecsPhase.set("idle");
   gecsNote.set("");
   gecsMobile.set("");
   gecsRegDraft.set(null);
+}
+
+/* --------------------------------------------------------------- backup */
+
+/**
+ * The site's file, out through the share sheet the rest of the app uses. The
+ * clipboard is `shareOrCopy`'s fallback, so a host without a sheet still ends
+ * with the JSON copied instead of a dead button.
+ *
+ * The body is the file and nothing else: the fallback copies title, blank line
+ * and text, so a title here would put a filename above the JSON and the paste
+ * field would refuse its own export.
+ */
+function exportAttendanceBackup(): void {
+  backupResult.set("");
+  backupBad.set(false);
+  const text = JSON.stringify(exportAttendance(attendance()), null, 2);
+  void shareOrCopy({ text }).then((outcome) => {
+    if (outcome === "failed") {
+      backupBad.set(true);
+      backupResult.set("Could not share");
+      return;
+    }
+    if (outcome !== "copied") return;
+    backupResult.set("Copied");
+    setTimeout(() => {
+      if (backupResult() === "Copied") backupResult.set("");
+    }, 2000);
+  });
+}
+
+/**
+ * A file is applied as a whole: `readAttendanceFile` rejects it before the first
+ * paper is touched, so nothing is ever half-imported, and `mergeAttendance`
+ * adds the new papers without removing a paper the file did not mention.
+ */
+function importAttendanceBackup(): void {
+  const read = readAttendanceFile(backupText());
+  if (!read.ok) {
+    // The panel already prints the reason on the line above the button; the
+    // header must not repeat it.
+    Haptics.notification("error");
+    backupBad.set(false);
+    backupResult.set("");
+    return;
+  }
+  const merge = mergeAttendance(attendance(), read.file);
+  attendance.set(merge.state);
+  persistAttendance();
+  backupText.set("");
+  backupOpen.set(false);
+  backupBad.set(false);
+  backupResult.set(attendanceMergeSummary(merge));
+  Haptics.notification("success");
 }
 
 /* ------------------------------------------------------------ gecs sync */
@@ -447,6 +519,7 @@ export function AttendanceScreen() {
         </Card>
 
         <GecsSyncCard />
+        <AttendanceBackup />
 
         <Card class="gap-2 p-3.5">
           <Row class="justify-between gap-2">
@@ -619,6 +692,89 @@ function GecsSyncCard() {
         <Btn onPress={() => void syncFromGecs()} disabled={gecsPhase() === "checking"}>
           {gecsPhase() === "checking" ? "Checking…" : "Sync"}
         </Btn>
+      </If>
+    </Card>
+  );
+}
+
+/**
+ * The file in and out, in the schema `beu.prit.eu.org/attendance` writes.
+ *
+ * Export hands the JSON to the system share sheet. Import is a paste field by
+ * necessity — a file picker is not a capability this build has — and it states
+ * what the file holds before anything is applied, so a wrong file is visible
+ * before it is merged instead of after.
+ */
+function AttendanceBackup() {
+  const preview = computed(() => {
+    if (backupText().trim() === "") return { text: "", bad: false };
+    const read = readAttendanceFile(backupText());
+    return read.ok
+      ? { text: attendanceFileSummary(read.file), bad: false }
+      : { text: read.reason, bad: true };
+  });
+
+  return (
+    <Card class="gap-3 p-3.5">
+      <Row class="justify-between gap-2">
+        <Label>Backup</Label>
+        <If when={backupResult().length > 0}>
+          <Muted class={`text-[11px] ${backupBad() ? "text-destructive" : "text-muted-foreground"}`}>
+            {backupResult()}
+          </Muted>
+        </If>
+      </Row>
+
+      <Row class="gap-2">
+        <Btn
+          variant="secondary"
+          class="flex-1"
+          icon="up-arrow-alt"
+          disabled={attendance().subjects.length === 0}
+          onPress={exportAttendanceBackup}
+        >
+          Export
+        </Btn>
+        <Btn
+          variant="secondary"
+          class="flex-1"
+          icon="cloud-download"
+          onPress={() => {
+            backupOpen.update((open) => !open);
+            backupResult.set("");
+            backupBad.set(false);
+          }}
+        >
+          {backupOpen() ? "Close" : "Import"}
+        </Btn>
+      </Row>
+
+      <If when={backupOpen()}>
+        <Field
+          label="Attendance JSON"
+          multiline
+          value={backupText()}
+          onChange={(value) => backupText.set(value)}
+          placeholder='{"version": 2, "settings": …}'
+        />
+        <If when={preview().text.length > 0}>
+          <Muted class={`px-1 text-[11px] ${preview().bad ? "text-destructive" : ""}`}>{preview().text}</Muted>
+        </If>
+        <Row class="gap-2">
+          <Btn
+            variant="secondary"
+            class="flex-1"
+            onPress={() => {
+              backupOpen.set(false);
+              backupText.set("");
+            }}
+          >
+            Cancel
+          </Btn>
+          <Btn class="flex-1" disabled={backupText().trim().length === 0} onPress={importAttendanceBackup}>
+            Merge
+          </Btn>
+        </Row>
       </If>
     </Card>
   );

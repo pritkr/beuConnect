@@ -3,7 +3,7 @@
 import Icon from "./Icon.astro";
 ---
 
-<div id="pwa-install-banner" class="hidden install-banner" aria-hidden="true">
+<div id="pwa-install-banner" class="hidden install-banner">
   <div class="banner-content">
     <p class="banner-text">Install BEUConnect</p>
     <div class="banner-actions">
@@ -38,11 +38,12 @@ import Icon from "./Icon.astro";
     left: 0;
     z-index: 9999;
     width: 100%;
-    padding: var(--s3) var(--s4);
+    /* Bottom-fixed: clear the home indicator, not just the contents. */
+    padding: var(--s3) max(var(--s4), var(--safe-right)) calc(var(--s3) + var(--safe-bottom)) max(var(--s4), var(--safe-left));
     border-top: 1px solid var(--line-strong);
     background: var(--surface);
     transform: translateY(100%);
-    transition: transform 0.25s ease;
+    transition: transform 250ms var(--ease-drawer);
   }
 
   .install-banner.visible {
@@ -97,9 +98,11 @@ import Icon from "./Icon.astro";
     cursor: pointer;
   }
 
-  .banner-close:hover {
-    color: var(--paper);
-    background: var(--surface-2);
+  @media (hover: hover) and (pointer: fine) {
+    .banner-close:hover {
+      color: var(--paper);
+      background: var(--surface-2);
+    }
   }
 
   .ios-modal {
@@ -151,9 +154,11 @@ import Icon from "./Icon.astro";
     cursor: pointer;
   }
 
-  .modal-close:hover {
-    color: var(--paper);
-    background: var(--surface-2);
+  @media (hover: hover) and (pointer: fine) {
+    .modal-close:hover {
+      color: var(--paper);
+      background: var(--surface-2);
+    }
   }
 
   .ios-modal ol {
@@ -163,6 +168,28 @@ import Icon from "./Icon.astro";
     padding-left: 1.1rem;
     color: var(--muted);
     font-size: 0.88rem;
+  }
+
+  /* The two controls on a bottom bar are the whole interaction; neither is
+     allowed to be a 30px target. */
+  @media (pointer: coarse) {
+    #pwa-install-btn {
+      min-height: var(--tap);
+      padding-inline: 1.15rem;
+    }
+
+    .banner-close,
+    .modal-close {
+      width: var(--tap);
+      height: var(--tap);
+    }
+
+    .ios-modal {
+      width: 100%;
+      margin: 0;
+      border-radius: var(--r-lg) var(--r-lg) 0 0;
+      padding-bottom: var(--safe-bottom);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -181,10 +208,13 @@ import Icon from "./Icon.astro";
   const iosModal = document.getElementById('ios-install-modal');
   const closeIosModal = document.getElementById('close-ios-modal');
 
-  // 1. Detect iOS
+  // 1. Detect iOS. iPadOS reports a Macintosh user agent, so platform alone
+  //    misses every iPad; a touch-capable Mac is the tell.
   const isIos = () => {
-    const userAgent = window.navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod/.test(userAgent);
+    const nav = window.navigator;
+    const userAgent = nav.userAgent.toLowerCase();
+    if (/iphone|ipad|ipod/.test(userAgent)) return true;
+    return /macintosh/.test(userAgent) && nav.maxTouchPoints > 1;
   };
 
   // 2. Check if already running as standalone (installed)
@@ -214,20 +244,37 @@ import Icon from "./Icon.astro";
     }
   };
 
-  // 5. Listen for the native prompt event (Android/Desktop)
+  // 5. Wait for intent instead of a timer: a banner that slides in three
+  //    seconds after load lands on top of whatever the student was reading,
+  //    and can steal a tap already in progress.
+  const armBanner = () => {
+    let shown = false;
+    const reveal = () => {
+      if (shown) return;
+      shown = true;
+      window.removeEventListener('scroll', onScroll);
+      clearTimeout(timer);
+      showBanner();
+    };
+    const onScroll = () => {
+      if (window.scrollY > window.innerHeight * 0.5) reveal();
+    };
+    const timer = setTimeout(reveal, 25000);
+    window.addEventListener('scroll', onScroll, { passive: true });
+  };
+
+  // 6. Listen for the native prompt event (Android/Desktop)
   window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
-
-    // Show our custom UI after a 3 second delay (so it doesn't block initial page load)
-    setTimeout(showBanner, 3000);
+    armBanner();
   });
 
   // Handle iOS specifically (since beforeinstallprompt doesn't fire on iOS)
   if (isIos() && !isStandalone()) {
-    setTimeout(showBanner, 3000);
+    armBanner();
   }
 
   // 6. Handle Install Button Click
@@ -235,7 +282,7 @@ import Icon from "./Icon.astro";
     installBtn.addEventListener('click', async () => {
       if (isIos()) {
         // Show iOS instruction modal
-        if (iosModal) iosModal.setAttribute('open', 'true');
+        if (iosModal && !iosModal.open) iosModal.showModal();
         if (installBanner) installBanner.classList.remove('visible');
         return;
       }
@@ -249,6 +296,7 @@ import Icon from "./Icon.astro";
 
         // Wait for the user to respond to the prompt
         const { outcome } = await deferredPrompt.userChoice;
+        window.beuTrack?.('pwa_install', { outcome: outcome, platform: isIos() ? 'ios' : 'other' });
         if (outcome === 'accepted') {
           // Clear the prompt variable
           deferredPrompt = null;
@@ -281,12 +329,13 @@ import Icon from "./Icon.astro";
   // Handle iOS modal close
   if (closeIosModal) {
     closeIosModal.addEventListener('click', () => {
-      if (iosModal) iosModal.removeAttribute('open');
+      if (iosModal) iosModal.close();
     });
   }
 
   // Track successful installation to hide UI
   window.addEventListener('appinstalled', () => {
+    window.beuTrack?.('pwa_install', { outcome: 'installed' });
     if (installBanner) {
       installBanner.classList.remove('visible');
       installBanner.classList.add('hidden');

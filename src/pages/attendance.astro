@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <Layout title="Attendance Tracker - BEUConnect">
@@ -32,6 +33,7 @@ import Layout from "../layouts/Layout.astro";
 
         <section class="controls-section">
             <form id="addSubjectForm" class="add-subject-form">
+                <label class="sr-only" for="subjectName">Subject name</label>
                 <input type="text" id="subjectName" placeholder="Subject name" required autofocus />
                 <button type="submit" class="btn-primary">Add</button>
             </form>
@@ -56,7 +58,7 @@ import Layout from "../layouts/Layout.astro";
                         <button id="exportBtn" class="btn-ghost" title="Export JSON">Export</button>
                         <label class="btn-ghost file-upload-label" title="Import JSON">
                             Import
-                            <input type="file" id="importFile" accept=".json" class="hidden-file-input" />
+                            <input type="file" id="importFile" accept=".json" class="hidden-file-input" aria-label="Import attendance data from a JSON file" />
                         </label>
                         <button id="resetBtn" class="btn-danger" title="Reset All">Reset</button>
                     </div>
@@ -70,11 +72,11 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <!-- Modal System -->
-    <div id="editModal" class="attendance-container-modal-overlay hidden">
+    <div id="editModal" class="attendance-container-modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Edit Subject</h2>
-                <button class="modal-close" id="closeEditModal">&times;</button>
+                <h2 id="editModalTitle">Edit Subject</h2>
+                <button type="button" class="modal-close" id="closeEditModal" aria-label="Close"><Icon name="x" size={18} /></button>
             </div>
             <form id="editSubjectForm">
                 <input type="hidden" id="editSubjectId" />
@@ -101,25 +103,33 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <!-- Toast Container -->
-    <div id="toastContainer" class="attendance-container-toast-container"></div>
+    <div id="toastContainer" class="attendance-container-toast-container" role="status" aria-live="polite"></div>
 
 </Layout>
 
 <script>
     import { AttendanceState } from '../lib/attendance/tracker';
     import type { AttendanceAction, Subject } from '../lib/attendance/tracker';
+    import { EVENTS, track } from '../lib/analytics';
 
     class AttendanceTrackerUI {
         private state: AttendanceState;
         private readonly STORAGE_KEY = 'beuconnect_attendance_v2';
         private readonly LEGACY_KEY = 'beuconnect_attendance';
         private readonly SETTINGS_KEY = 'beuconnect_attendance_settings';
+        private restoreFocusTo: HTMLElement | null = null;
 
         constructor() {
             this.state = new AttendanceState();
             this.loadData();
             this.initEventListeners();
             this.render();
+
+            // Turn on the ring's transition only after the saved value has
+            // painted, so opening the page does not run an entrance animation.
+            requestAnimationFrame(() => {
+                document.querySelector('.attendance-container')?.setAttribute('data-ready', '');
+            });
         }
 
         private loadData() {
@@ -179,12 +189,15 @@ import Layout from "../layouts/Layout.astro";
 
             const toast = document.createElement('div');
             toast.className = `toast toast-${type}`;
+            toast.setAttribute('role', type === 'error' ? 'alert' : 'status');
             const content = document.createElement('div');
             content.className = 'toast-content';
             content.textContent = message;
             const toastCloseBtn = document.createElement('button');
+            toastCloseBtn.type = 'button';
             toastCloseBtn.className = 'toast-close';
-            toastCloseBtn.innerHTML = '&times;';
+            toastCloseBtn.setAttribute('aria-label', 'Dismiss');
+            toastCloseBtn.innerHTML = '<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"/></svg>';
 
             toast.appendChild(content);
             toast.appendChild(toastCloseBtn);
@@ -193,20 +206,43 @@ import Layout from "../layouts/Layout.astro";
             void toast.offsetWidth;
             toast.classList.add('show');
 
+            let removeTimer: ReturnType<typeof setTimeout> | null = null;
+            let closing = false;
+
             const removeToast = () => {
+                if (closing) return;
+                closing = true;
+                if (removeTimer) clearTimeout(removeTimer);
                 toast.classList.remove('show');
                 setTimeout(() => {
                     if (toast.parentElement) toast.parentElement.removeChild(toast);
-                }, 300);
+                }, 220);
             };
 
+            // A message is only worth showing while it can be read.
+            const holdToast = () => {
+                if (removeTimer) clearTimeout(removeTimer);
+            };
+            const armToast = () => {
+                if (closing) return;
+                holdToast();
+                removeTimer = setTimeout(removeToast, 3500);
+            };
+
+            toast.addEventListener('mouseenter', holdToast);
+            toast.addEventListener('focusin', holdToast);
+            toast.addEventListener('mouseleave', armToast);
+            toast.addEventListener('focusout', armToast);
+
             toastCloseBtn.addEventListener('click', removeToast);
-            setTimeout(removeToast, 3000);
+            armToast();
         }
 
         private openEditModal(subject: Subject) {
             const modal = document.getElementById('editModal');
             if (!modal) return;
+
+            this.restoreFocusTo = document.activeElement as HTMLElement | null;
 
             (document.getElementById('editSubjectId') as HTMLInputElement).value = subject.id;
             (document.getElementById('editSubjectName') as HTMLInputElement).value = subject.name;
@@ -214,15 +250,53 @@ import Layout from "../layouts/Layout.astro";
             (document.getElementById('editTotal') as HTMLInputElement).value = subject.total.toString();
 
             modal.classList.remove('hidden');
-            setTimeout(() => modal.classList.add('visible'), 10);
+            // Two frames: one to paint the closed state, one to start the
+            // transition from it.
+            requestAnimationFrame(() =>
+                requestAnimationFrame(() => {
+                    modal.classList.add('visible');
+                    (document.getElementById('editSubjectName') as HTMLInputElement | null)?.focus();
+                })
+            );
         }
 
         private closeEditModal() {
             const modal = document.getElementById('editModal');
             if (!modal) return;
             modal.classList.remove('visible');
-            setTimeout(() => modal.classList.add('hidden'), 300);
+            setTimeout(() => modal.classList.add('hidden'), 200);
+            this.restoreFocusTo?.focus();
+            this.restoreFocusTo = null;
         }
+
+        /* Holds Tab inside the dialog and lets Escape close it, so keyboard
+           users cannot wander into the page behind the scrim. */
+        private readonly handleModalKeys = (e: KeyboardEvent) => {
+            const modal = document.getElementById('editModal');
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                this.closeEditModal();
+                return;
+            }
+            if (e.key !== 'Tab') return;
+
+            const focusables = Array.from(
+                modal.querySelectorAll<HTMLElement>('button, input, select, textarea, a[href]')
+            ).filter((el) => !el.hasAttribute('disabled'));
+            if (focusables.length === 0) return;
+
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        };
 
         private handleExport() {
             const data = {
@@ -286,6 +360,8 @@ import Layout from "../layouts/Layout.astro";
         }
 
         private initEventListeners() {
+            document.addEventListener('keydown', this.handleModalKeys);
+
             const targetInput = document.getElementById('targetPercentage') as HTMLSelectElement;
             if (targetInput) {
                 targetInput.value = this.state.settings.targetPercentage.toString();
@@ -352,6 +428,7 @@ import Layout from "../layouts/Layout.astro";
                     this.render();
                     this.showToast(`Added ${name}`, 'success');
                     input.value = '';
+                    track(EVENTS.attendanceSubjectAdd, { subjects: this.state.subjects.length });
                 }
             });
 
@@ -380,6 +457,7 @@ import Layout from "../layouts/Layout.astro";
                         this.showToast(`Marked Present for ${sub?.name}`, 'success');
                         this.saveData();
                         this.render();
+                        track(EVENTS.attendanceMark, { status: 'present', subjects: this.state.subjects.length });
                     }
                 } else if (target.classList.contains('btn-absent') || target.closest('.btn-absent')) {
                     if (this.state.updateAttendance(id, 'absent')) {
@@ -387,6 +465,7 @@ import Layout from "../layouts/Layout.astro";
                         this.showToast(`Marked Absent for ${sub?.name}`, 'info');
                         this.saveData();
                         this.render();
+                        track(EVENTS.attendanceMark, { status: 'absent', subjects: this.state.subjects.length });
                     }
                 } else if (target.classList.contains('btn-undo') || target.closest('.btn-undo')) {
                     if (this.state.undoAction(id)) {
@@ -445,7 +524,7 @@ import Layout from "../layouts/Layout.astro";
             const container = document.getElementById('subjectsContainer');
             if (!container) return;
 
-            container.innerHTML = '';
+            container.replaceChildren();
 
             if (this.state.subjects.length === 0) {
                 container.innerHTML = '<div class="empty-state"><p>No subjects yet.</p></div>';
@@ -511,7 +590,6 @@ import Layout from "../layouts/Layout.astro";
     .attendance-container {
         max-width: 60rem;
         margin: 0 auto;
-        padding-bottom: var(--s7);
     }
 
     .attendance-container .overview-section {
@@ -563,6 +641,16 @@ import Layout from "../layouts/Layout.astro";
         stroke-linecap: butt;
         stroke-dasharray: 226.19;
         stroke-dashoffset: 226.19;
+    }
+
+    /* Paint only, no layout: the ring is the one place a non-transform
+       property is worth animating, because it is the state readout. Enabled
+       after the first paint so a saved percentage does not fill in on every
+       visit — only the taps animate it. */
+    .attendance-container[data-ready] .ring-progress {
+        transition:
+            stroke-dashoffset 300ms var(--ease-out),
+            stroke 200ms linear;
     }
 
     .attendance-container .stat-value {
@@ -621,6 +709,8 @@ import Layout from "../layouts/Layout.astro";
         align-items: stretch;
         gap: var(--s2);
         padding: var(--s2);
+        /* Outer curve = inner control curve + its inset, so the corners nest. */
+        border-radius: calc(var(--r) + var(--s2));
     }
 
     .attendance-container .add-subject-form input {
@@ -666,9 +756,11 @@ import Layout from "../layouts/Layout.astro";
         color: var(--accent-ink);
     }
 
-    .attendance-container .btn-primary:hover {
-        background: var(--accent-hover);
-        border-color: var(--accent-hover);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container .btn-primary:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
     }
 
     .attendance-container .btn-secondary,
@@ -678,10 +770,12 @@ import Layout from "../layouts/Layout.astro";
         color: var(--muted);
     }
 
-    .attendance-container .btn-secondary:hover,
-    .attendance-container .btn-ghost:hover {
-        border-color: var(--muted);
-        color: var(--paper);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container .btn-secondary:hover,
+        .attendance-container .btn-ghost:hover {
+            border-color: var(--muted);
+            color: var(--paper);
+        }
     }
 
     .attendance-container .btn-ghost {
@@ -689,14 +783,16 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .attendance-container .btn-danger {
-        border: 1px solid var(--line-strong);
+        border: 1px solid var(--line-field);
         background: transparent;
         color: var(--bad);
         padding: 0.3rem 0.55rem;
     }
 
-    .attendance-container .btn-danger:hover {
-        border-color: var(--bad);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container .btn-danger:hover {
+            border-color: var(--bad);
+        }
     }
 
     .attendance-container .settings-card {
@@ -728,7 +824,7 @@ import Layout from "../layouts/Layout.astro";
         min-width: 4.5rem;
         margin: 0;
         padding: 0.25rem 0.4rem;
-        border: 1px solid var(--line-strong);
+        border: 1px solid var(--line-field);
         border-radius: var(--r);
         background: var(--bg);
         color: var(--paper);
@@ -741,14 +837,30 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .attendance-container .file-upload-label {
+        position: relative;
         display: inline-flex;
         align-items: center;
         margin: 0;
         cursor: pointer;
     }
 
+    .attendance-container .file-upload-label:focus-within {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+    }
+
+    /* Visually hidden but still focusable. display:none would delete the only
+       keyboard route to importing a backup. */
     .attendance-container .hidden-file-input {
-        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
     }
 
     /* Subjects */
@@ -814,12 +926,16 @@ import Layout from "../layouts/Layout.astro";
         cursor: pointer;
     }
 
-    .attendance-container .icon-btn:hover {
-        color: var(--paper);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container .icon-btn:hover {
+            color: var(--paper);
+        }
     }
 
-    .attendance-container .btn-delete:hover {
-        color: var(--bad);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container .btn-delete:hover {
+            color: var(--bad);
+        }
     }
 
     .attendance-container .subject-stats {
@@ -853,9 +969,11 @@ import Layout from "../layouts/Layout.astro";
         text-underline-offset: 2px;
     }
 
-    .attendance-container .stat-fraction.clickable:hover {
-        color: var(--paper);
-        text-decoration-color: var(--line-strong);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container .stat-fraction.clickable:hover {
+            color: var(--paper);
+            text-decoration-color: var(--line-strong);
+        }
     }
 
     .attendance-container .subject-msg {
@@ -885,16 +1003,20 @@ import Layout from "../layouts/Layout.astro";
         color: var(--ok);
     }
 
-    .attendance-container .btn-present:hover {
-        border-color: var(--ok);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container .btn-present:hover {
+            border-color: var(--ok);
+        }
     }
 
     .attendance-container .btn-absent {
         color: var(--bad);
     }
 
-    .attendance-container .btn-absent:hover {
-        border-color: var(--bad);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container .btn-absent:hover {
+            border-color: var(--bad);
+        }
     }
 
     .attendance-container .btn-undo {
@@ -902,9 +1024,11 @@ import Layout from "../layouts/Layout.astro";
         color: var(--faint);
     }
 
-    .attendance-container .btn-undo:hover:not(:disabled) {
-        border-color: var(--muted);
-        color: var(--paper);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container .btn-undo:hover:not(:disabled) {
+            border-color: var(--muted);
+            color: var(--paper);
+        }
     }
 
     .attendance-container .btn-undo:disabled {
@@ -922,7 +1046,7 @@ import Layout from "../layouts/Layout.astro";
         justify-content: center;
         background: var(--scrim);
         opacity: 0;
-        transition: opacity 0.15s ease;
+        transition: opacity 180ms var(--ease-out);
     }
 
     .attendance-container-modal-overlay.hidden {
@@ -939,6 +1063,16 @@ import Layout from "../layouts/Layout.astro";
         margin: var(--s4);
         padding: var(--s5);
         background: var(--surface);
+        opacity: 0;
+        transform: scale(0.96);
+        transition:
+            opacity 180ms var(--ease-out),
+            transform 180ms var(--ease-out);
+    }
+
+    .attendance-container-modal-overlay.visible .modal-content {
+        opacity: 1;
+        transform: none;
     }
 
     .attendance-container-modal-overlay .modal-header {
@@ -956,18 +1090,26 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .attendance-container-modal-overlay .modal-close {
+        display: grid;
+        place-items: center;
         margin: 0;
-        padding: 0;
+        padding: 0.2rem;
         border: 0;
+        border-radius: var(--r);
         background: none;
         color: var(--faint);
-        font-size: 1.2rem;
         line-height: 1;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition-property: color;
+        transition-duration: 150ms;
+        transition-timing-function: ease-out;
     }
 
-    .attendance-container-modal-overlay .modal-close:hover {
-        color: var(--paper);
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container-modal-overlay .modal-close:hover {
+            color: var(--paper);
+        }
     }
 
     .attendance-container-modal-overlay .form-group {
@@ -995,7 +1137,7 @@ import Layout from "../layouts/Layout.astro";
         border-radius: var(--r);
         background: var(--bg);
         color: var(--paper);
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .attendance-container-modal-overlay .form-group input:focus {
@@ -1014,8 +1156,8 @@ import Layout from "../layouts/Layout.astro";
     /* Toasts */
     .attendance-container-toast-container {
         position: fixed;
-        right: var(--s4);
-        bottom: var(--s4);
+        right: max(var(--s4), var(--safe-right));
+        bottom: calc(var(--s4) + var(--safe-bottom));
         z-index: 2000;
         display: flex;
         flex-direction: column;
@@ -1032,12 +1174,14 @@ import Layout from "../layouts/Layout.astro";
         border-radius: var(--r);
         background: var(--surface);
         color: var(--paper);
-        transform: translateX(120%);
-        transition: transform 0.2s ease;
+        translate: 120% 0;
+        transition-property: translate;
+        transition-duration: 150ms;
+        transition-timing-function: var(--ease-out);
     }
 
     .attendance-container-toast-container .toast.show {
-        transform: translateX(0);
+        translate: 0 0;
     }
 
     .attendance-container-toast-container .toast-success { border-left-color: var(--ok); }
@@ -1049,17 +1193,28 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .attendance-container-toast-container .toast-close {
+        display: grid;
+        place-items: center;
         margin: 0;
         padding: 0;
         border: 0;
         background: none;
         color: var(--faint);
-        font-size: 1rem;
         line-height: 1;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition-property: color;
+        transition-duration: 150ms;
+        transition-timing-function: ease-out;
     }
 
-    .attendance-container-toast-container .toast-close:hover {
+    @media (hover: hover) and (pointer: fine) {
+        .attendance-container-toast-container .toast-close:hover {
+            color: var(--paper);
+        }
+    }
+
+    .attendance-container-toast-container .toast-close:active {
         color: var(--paper);
     }
 
@@ -1067,7 +1222,6 @@ import Layout from "../layouts/Layout.astro";
         .attendance-container .total-stats {
             padding: var(--s3);
         }
-
         .attendance-container .settings-body {
             align-items: flex-start;
         }
@@ -1081,16 +1235,37 @@ import Layout from "../layouts/Layout.astro";
         }
 
         .attendance-container-toast-container {
-            left: var(--s3);
-            right: var(--s3);
-            bottom: var(--s3);
+            left: max(var(--s3), var(--safe-left));
+            right: max(var(--s3), var(--safe-right));
+            bottom: calc(var(--s3) + var(--safe-bottom));
         }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        .attendance-container-modal-overlay,
-        .attendance-container-toast-container .toast {
-            transition: none;
+    /* A modal on a phone is a sheet: anchored to the bottom edge, clear of the
+       home indicator, and never taller than the visible area above the
+       keyboard (--vvh is published by the layout). */
+    @media (pointer: coarse) {
+        .attendance-container-modal-overlay {
+            align-items: flex-end;
+            padding-bottom: var(--safe-bottom);
+            padding-inline: var(--safe-left) var(--safe-right);
+        }
+
+        .attendance-container-modal-overlay .modal-content {
+            max-width: 100%;
+            max-height: calc(var(--vvh, 100dvh) - 2rem);
+            margin: 0;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            border-radius: var(--r-lg) var(--r-lg) 0 0;
+            padding-bottom: calc(var(--s5) + var(--safe-bottom));
+        }
+
+        .attendance-container-modal-overlay .modal-close,
+        .attendance-container-toast-container .toast-close {
+            min-width: var(--tap);
+            min-height: var(--tap);
         }
     }
+
 </style>

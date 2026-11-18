@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BranchIcon from "../components/BranchIcon.astro";
 import { RoutineLookupError, resolveRoutineFromRegNo } from "../lib/routine/resolver";
 import type {
 	ResolvedStudentRoutine,
@@ -128,7 +129,7 @@ const description = routineResult
 							<h1>Routine</h1>
 							<p class="meta">
 								<span id="routineStudentName" hidden />
-								{routineResult.sourceBranchLabel} · Sem {routineResult.semester} · {routineResult.batchLabel}
+								<BranchIcon branch={routineResult.sourceBranchLabel} size={13} />{routineResult.sourceBranchLabel} · Sem {routineResult.semester} · {routineResult.batchLabel}
 								{routineResult.routine.roomLabel ? ` · Room ${routineResult.routine.roomLabel}` : ""}
 							</p>
 						</div>
@@ -468,6 +469,9 @@ const description = routineResult
 		gap: var(--s5);
 	}
 
+	/* The shell's gap is the space under the header. */
+	.routine-shell > .page-head { margin-bottom: 0; }
+
 	.page-head {
 		display: flex;
 		align-items: baseline;
@@ -522,14 +526,17 @@ const description = routineResult
 		text-decoration: none;
 	}
 
-	.external-link:hover {
-		color: var(--paper);
-		text-decoration: underline;
-		text-underline-offset: 0.2em;
+	@media (hover: hover) and (pointer: fine) {
+		.external-link:hover {
+			color: var(--paper);
+			text-decoration: underline;
+			text-underline-offset: 0.2em;
+		}
 	}
 
 	.table-wrap {
 		overflow-x: auto;
+		overscroll-behavior-x: contain;
 		border: 1px solid var(--line);
 		border-radius: var(--r);
 		background: var(--surface);

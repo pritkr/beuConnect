@@ -4,7 +4,26 @@
 		"1": {
 			"subjects": [
 				{
-					"code": "100110",
+					"code": "100102",
+					"name": "Engineering Mathematics - I",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1 Higher Engineering B. S. Grewal Khanna Publishers, 44 Ed. ISBN Mathematics No:9788174091154",
+						"2 Higher Engineering B. V. Ramana Tata McGraw Hill New Delhi, 11th Ed, 2010, Mathematics ISBN-13-978-0070634190",
+						"3 Advanced Engineering Erwing Kreyszig John Wiley & Sons, 10th Ed, ISBN-978-0470- Mathematics 15836-5",
+						"4 A Textbook of Engineering N. P. Bali & Dr. University Science Press, 13th Ed, ISBN-978-93- Mathematics Manish Goyal 83828-63-0",
+						"5 Understanding Engineering John Bird Routledge; First Edition ISBN 9780415662840 Mathematics"
+					],
+					"content": "Unit-1.0: Basic Linear Algebra (8 hrs)\n1.1 Elementary transformations and Rank of Matrix, Rank by using Echelon and Normal form of Matrices. Linear dependence & independence of vectors in 𝑅 𝑛 space\n1.2 Consistency of System of Linear Equations\n1.3 Eigenvalues & Eigenvectors, Cayley- Hamilton Theorem.\n1.4 Similarity of Matrices & Diagonalization of Square Matrices. Quadratic Form, Canonical Form of Matrices.\nUnit-2.0: Differential Calculus: Single Variable (8 hrs)\n2.1 Higher order derivatives; Successive differentiation and Leibnitz’s Theorem\n2.2 Mean Value Theorems (Rolle’s; Lagrange’s; Cauchy)\n2.3 Indeterminate Forms; L’ Hopital Rule\n2.4 Tangents & Normal of Algebraic & Polar Curves, Curvature Rule.\nUnit-3.0: Differential Calculus: Several Variables (9 hrs)\n3.1 Partial differentiations; Euler’s theorems\n3.2 Limit, Continuity and differentiability of functions of Several Variables\n3.3 Taylor’s theorem with various forms of remainders, Maclaurin's theorem and related problems\n3.4 Maxima & Minima for functions of several variables; Lagrange’s Multiplier Method\nUnit-4.0: Integral Calculus (9 hrs)\n4.1 Differentiation under the integral sign; Leibnitz’s rule\n4.2 Double integral; Change the order of integration; Evaluation of double integration by changing it into polar co-ordinates\n4.3 Triple Integral; Evaluation of Triple integral by changing to Spherical Polar co-ordinates & Cylindrical polar co-ordinates\n4.4 Beta; Gamma; Elliptic integral; Relation between Beta & Gamma functions, General Properties and related problems.\nUnit-5.0: Vector Calculus (8 hrs)\n5.1 Scalar and vector valued functions; Concepts of gradient, divergence and curl and their geometrical and physical significance; tangent plane; directional derivative;\n5.2 Line, surface and volume integrals - Statement of Green’s, Stokes’ and Gauss into volume integral. divergence theorems -verification and evaluation of vector integrals using them."
+				},
+				{
+					"code": "100104",
 					"name": "Engineering Physics",
 					"type": "Theory",
 					"credits": 3,
@@ -14,53 +33,22 @@
 						"practical": 0
 					},
 					"references": [
-						"1. Quantum Physics of Atoms, Molecules, Solids, Nuclei and Particles, R. Eisberg R.",
-						"Resnick, Wiley India Pvt. Ltd ISBN 978-81-265-0818-1",
-						"2. Theory of Vibration with Application, W.T. Thomson M. D. Dahleh, Pearson India",
-						"ISBN 978-81-317-0482-0",
-						"3. Introduction to Electrodynamics, D.J. Griffiths, Pearson India, ISBN 978-93-325-",
-						"5044-5",
-						"4. Electromagnetism, I.S. Grant, W. R. Phillips, Wiley India Pvt. Ltd ISBN 978-04-",
-						"719-2712-9",
-						"5. The Feynman Lectures on Physics, R.P. Feynman R. B. Leighton, Pearson India",
-						"ISBN 978-00-710-7458-2",
-						"6. Optics, Ajay Ghatak ,McGraw Hill ISBN 978-93-901-1359-0",
-						"7. Physics of Vibration and Waves, H. J. Pain, Wiley India Pvt. Ltd, ISBN 978-04-700-",
-						"1296-3",
-						"8. Concept of Modern Physics, Arthur Beiser, McGraw Hill ISBN 978-93-513-4185-7",
-						"9. Introduction to Solid State Physics, C. Kittle , Wiley India Pvt. Ltd, ISBN 978-81-",
-						"265-7843-6"
+						"1. Optics Ajay Ghatak Mcgraw Hill Education,2012, 5th Edition,",
+						"2. Principles of Lasers O.svelto Springer Science &Business Media,2010, 5th Ed, ISBN-10: 1441913017",
+						"3. Introduction to electrodynamics David J. Griffiths Pearson Education Cambridge University Press, 2023, 5th Edition, ISBN-10: 1009397729",
+						"4. Principles of Electronic Materials S.O. Kasap McGraw Hill Education, Third Edition, 2006, and Devices ISBN-10: 0073104647",
+						"5. Semiconductor Physics and Donald A. Neuman McGraw-Hill Education, Fourth Edition, 2011, Devices ISBN-10: 0073529583",
+						"6. Introduction to Quantum David J. Griffiths Pearson Education Cambridge University Press, Mechanics 2016, 2nd Edition, ISBN-10: 1107179866",
+						"7. Nanotechnology: Principles and Sulabha K. Kulkarni Springer Nature, Third Edition,2014, ISBN-10: Practices. 3319091700",
+						"8. Concepts of Engineering Physics S.K. Roy Novelty Publication, 1st Edition, 2016-17",
+						"9. Concepts of Engineering Physics Kumari Mamta and CRC Press-Taylor and Francis, United Raj Kumar Singh Kingdom, 1st Edition, ISBN 9781041191834",
+						"10. Physics Practical for Engineers S.K. Roy Novelty Publication, 1st Edition, 2018"
 					],
-					"content": "Unit- 1.0\n1. Frame of Reference: 2 hrs\nNon-Inertial frame of reference, rotating coordinate system, centripetal and Coriolis acceleration and its application in weather system.\n2. Oscillations: 3 hrs\nHarmonic Oscillator, Damped Harmonic motion – overdamped, critically Damped and lightly damped oscillators, Force Oscillators and Resonance.\nUnit- 2.0\n1. Optics: 4 hrs\nHuygens’s Principle, Superposition of Waves and interference of Light by wave front- splitting and amplitude-splitting; Young’s double slit experiment, Michelson interferometer, Fraunhofer diffraction from single slit and circular aperture, Diffraction Grating and their resolving power\n2. LASER: 4 hrs\nEinstein’s theory of matter-radiations interaction, Einstein’s Coefficients (A and B), Amplification by population inversion, Different types of lasers – Gas Laser, Helium-Neon Laser, Solid State Laser (Ruby, Neodymium), Semiconductor Laser.\nUnit- 3.0\n1. Quantum Mechanics: 5 hrs\nCompton Effect, Photoelectric Effect, Wave Particle duality, de Broglie’s hypothesis, Heisenberg’s Uncertainty Principle, Wave function and wave packets, phase and group velocities, Schrodinger’s Wave Equation, Normalization, Expectation values, Eigenvalues and Eigenfunction.\n2. Applications in One dimensions: 2 hrs\nApplication of Schrodinger Wave Equation for particle in one dimensional box – its wavefunction and eigenvalue of energy and momentum.\nUnit- 4.0\n1. Vector Calculus: 2 hrs\nGradient, Divergence and Curl, Line, Surface and Volume integrals, Gauss’s Divergence theorem and Stokes’ theorem in Cartesian Coordinate.\n2. Electrostatics: 4 hrs\nGauss’s Law and its applications, Divergence and Curl of Electrostatic fields, Electrostatic Potential, Boundary Conditions, Poisson’s and Laplace’s equations, Dielectrics, Polarization, Bound Charges, Electric displacement, Boundary Conditions in dielectrics.\nUnit- 5.0\n1. Magnetostatics: 4 hrs\nLorentz force, Biot-Savart and Ampere’s circuital laws and their applications, Divergence and Curl of Magneto static fields, Magnetic vector potential, Force and torque on a magnetic dipole, Magnetic Materials, Magnetization, Bound currents, Boundary conditions.\n2. Electrodynamics and Electromagnetic Waves: 4 hrs\nOhm’s law, Motional EMF, Faraday’s Law, Lenz’s law, Self and mutual inductance, Energy stored in magnetic field, Maxwell’s equations in vacuum and nonconducting medium, Continuity Equation, Poynting Theorem, Wave Equations: plain electromagnetic wave in vacuum and their transverse nature and Polarization.\nUnit- 6.0\n1. Introduction to Solids and Semi-Conductors: 3 hrs\nFree electron theory of metal, fermi level, Bloch’s theorem for particle in a periodic Potential, Kroning-Penney model and origin of energy band.\n2. Electronic Materials: 3 hrs\nMetals, semiconductors and insulators, intrinsic and extrinsic semiconductors,Carriertransport, diffusion and drift, P-N junction."
+					"content": "Unit-1.0: Wave Optics (8 hrs)\n1.1 Interference, Division of amplitude, Newton’s Ring experiment, Michelson interferometer.\n1.2 Diffraction, Fraunhofer diffraction, Single and double slit, & Circular aperture\n1.3 Diffraction, Grating,\n1.4 Rayleigh criterion, resolving power of telescope.\n1.5 Polarization, double-refracting crystal, Nicol prism.\nUnit-2.0: Lasers and Optical Fiber (8 hrs)\n2.1 Characteristics of laser light, Einstein’s A & B coefficients, Population inversion, pumping mechanism, Optical resonator\n2.2 Ruby laser, He-Ne laser, and Semiconductor laser\n2.3 Structure of optical fibre, Basic principles (TIR, Acceptance angle and Numerical Aperture), Types of optical fibres.\n2.4 Propagation mechanism of light in fibre, Attenuation in optical fibres.\n2.5 Applications of optical fibres, Fibre optic sensors\nUnit-3.0: Electromagnetism & Propagation of Waves (8 hrs)\n3.1 Electric fields, Gauss’ Law, Dielectrics and Capacitors.\n3.2 Magnetic fields & Magnetic Materials.\n3.3 Maxwell’s Equations.\n3.4 Electromagnetic waves & Poynting Theorem\nUnit-4.0: Quantum Mechanics (8 hrs)\n4.1 Introduction to Quantum Mechanics.\n4.2 De-Broglie hypothesis, Heisenberg uncertainty principle\n4.3 Wave function and its characteristics\n4.4 Schrödinger’s equation (time-dependent and independent)\n4.5 Particle in a box, Energy Eigen values and Eigen functions\n4.6 Potential barrier and Tunneling\nUnit-5.0: Semiconductors & Nano-materials (10 hrs)\n5.1 Introduction, Types of materials (metal, semiconductor and insulator)\n5.2 Intrinsic and extrinsic semiconductors, P-type and N-type semiconductors, Diffusion, Drift and Fermi level\n5.3 Photodiode, P-N junction transistor, LED\n5.4 Hall effect\n5.5 Solar cell and its characteristics.\n5.6 Introduction to nanoscience& nanotechnology, the significance of nanoscale\n5.7 Unique Properties: Comparison of bulk and nanomaterials, large surface-to-volume ratio, change in band gap, and optical/electrical/mechanical properties at the nanoscale.\n5.8 Classification of Nanostructured Materials: 0D (Quantum Dot), 1D (Nanowire"
 				},
 				{
-					"code": "100102",
-					"name": "Engineering Mathematics–I",
-					"type": "Theory",
-					"credits": 4,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 1,
-						"practical": 0
-					},
-					"references": [
-						"1. AICTE’s Prescribed Textbook: Mathematics-I (Calculus & Linear Algebra),",
-						"ReenaGarg, Khanna Book Publishing Co. ISBN-10 9391505171",
-						"2. Advanced Engineering Mathematics, Chandrika Prasad &ReenaGarg, Khanna Book",
-						"Publishing Co., 2021. ISBN 10: 9386173522 / ISBN 13: 9789386173522.",
-						"3. Higher Engineering Mathematics, B.V. Ramana, Tata McGraw Hill New Delhi,",
-						"11th Reprint, 2010,ISBN-10 007063419X ISBN-13978- 0070634190.",
-						"4. Advanced Engineering Mathematics, SrkIyengarRk Jain,Narosa,5thEdition,ISBN-10",
-						"8184875606I",
-						"SBN-13978-8184875607",
-						"5. Advanced Engineering Mathematics, Erwin Kreyszig, 9th Edition, John Wiley &",
-						"Sons, 2006."
-					],
-					"content": "Unit- 1.0: Linear Algebra-I 7 hrs\nElementary Row operations, Gauss -Jordan Method for finding the inverse of Matrix, Complex Matrix : Hermitian , Skew Hermitian and Unitary Matrix, Vector space, Sub Spaces, Linear dependence and Independences of Vectors, Linear Span, Basis, Dimension, Extension of basis of subspace, The rank of a matrix, Row and column space, Solvability of system of linear equations.\nUnit- 2.0: Linear Algebra-II 7 hrs\nLinear Transformations, Kernel and Range of linear transformation, Matrix Representation of a linear transformation, Rank-Nullity Theorem, Eigen Value and Eigen Vectors, Properties of Eigen vectors, Eigen Bases, Orthogonal Transformation, Similarity Transformation, Matrix Diagonalization, Cayley- Hamilton Theorem.\nUnit- 3.0: Calculus for single variable 7 hrs\nInderminate form, L’Hospital Rule, Rolle’s Theorem, Mean Value Theorem, Expansion of function (single variable), Taylor and Maclaurin Series, Riemann Integration, Riemann Sum, Improper Integrals, Beta and Gamma function and their properties.\nUnit- 4.0 : Multivariable Calculus (Differentiation) 7 hrs\nFunction with two or more variable, Limit, continuity and Partial differentiation, Total Differentiation Taylor’s series and Maclaurin’s series for function with two variable, Jacobian, Maxima and Minima, Method of Lagrange’s multiplier.\nUnit-5.0: Multivariable Calculus (Integration) 7 hrs\nDouble Integral, change of order of integration, Triple integral, Change of Variable in a Double and Triple Integrals, Change to polar coordinate, Change to cylindrical coordinate, Change to spherical polar coordinate, Application to area and volume using double and triple integral\nUnit- 6.0: Vector Calculus 7 hrs\nScalar and vector fields, Gradient, Directional derivative, Divergence, Curl and their properties, Line integral, Green’s theorem in plane (without proof), Surface integral, Stoke’s theorem (without proof), Volume Integral, Gauss-Divergence’ theorem (without proof)."
-				},
-				{
-					"code": "100111",
-					"name": "Programming for Problem Solving",
+					"code": "100105",
+					"name": "Introduction to AI",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
@@ -69,31 +57,40 @@
 						"practical": 0
 					},
 					"references": [
-						"1. Programming in ANSI C 4th Ed,EBalagurusamy, McGraw Hill Education India",
-						"Private Limited, ISBN-978-9339219666, 7th Edition",
-						"2. The C Programming Language 2e,W. Kernighan / Dennis Ritchie,Pearson Education",
-						"India, 978-9332549449, 2nd Edition",
-						"3. Computer Fundamentals and Programming in C,ReemaThareja,Oxford University",
-						"Press, ISBN- 978-9354977893, 3rd Edition"
+						"1. Artificial Intelligence: A Stuart Russell, Peter Norvig Pearson; 4th Ed., 2020. ISBN: 978- Modern Approach 0134610993",
+						"2. AI for everyone Saptarsi Goswami, Amit Pearson Education: SBN-10: Kumar Das, Amlan 9361591754, ISBN-13: 978-9361591754 Chakrabarti",
+						"3. Introduction to Artificial Dan W. Patterson PHI Learning; 2015. ISBN: 978- Intelligence and Expert 8120307775 Systems",
+						"4. Artificial Intelligence Elaine Rich, Kevin Knight, McGraw-Hill; 3rd Ed., 2017. ISBN: 978- Shivashankar B. Nair 1259029420",
+						"5. Artificial Intelligence - A Dilip Narayan Sahu, ISBN-10: 9355151446 Modern Approach Kishore Kumar Dash, Abahy Kolhe, Agilandeswari Devarajan",
+						"6. Machine Learning Dhairya Parikh Vibrant Publishers: ISBN-10: Essentials 1636513778, ISBN-13: 978-1636513775"
 					],
-					"content": "Unit- 1.0 Introduction to Programming 6 hrs\nIntroduction to components of a computer system (disks, memory, processor, where a program is stored and executed, operating system, compilers etc.). Idea of Algorithm: steps to solve logical and numerical problems. Representation of Algorithm: Flowchart/ Pseudo code with examples. From algorithms to programs; source code, variables (with data types) variables and memory locations, Syntax and Logical Errors in compilation, object and executable code.\nUnit- 2.0 Operators, Conditional Branching and Loops 8 hrs\nArithmetic expressions/arithmetic operators, relational operators, logical operators, bitwise operators and precedence.Writing and evaluation of conditionals and consequent branching, Iteration and loops.\nUnit- 3.0 Arrays and String 6 hrs\nArray declaration & initialization, bound checking arrays (1-d, 2-d), character arrays and strings.\nUnit- 4.0 Function, Recursion and Pointers 9 hrs\nFunctions (including using built in libraries), Parameter passing in functions, call by value, passing arrays to functions: Recursion, as a different way of solving problems. Example programs, such as Finding Factorial, Fibonacci series, Ackerman function etc. Idea of pointers, Defining pointers, Use of Pointers in self- referential structures, idea of call by reference.\nUnit- 5.0 User defined Data Types and File handling 8 hrs\nStructure- defining, declaring, initializing; accessing structure members, processing of structure, array of structures, structures within structure, structure and function, type definition; Union— definition, declaration, accessing union members, initializing union. Introduction, file declaration, opening and closing a file, working with text and binary files, I/O operations on file, error handling, random access to files\nUnit- 6.0 Basic Algorithms 5 hrs\nSearching, Basic Sorting Algorithms (Bubble, Insertion and Selection), Finding roots of equations, notion of order of complexity through example programs (no formal definition required)"
+					"content": "Unit-1.0: Introduction to Artificial Intelligence (8 hrs)\n1.1 What is AI? History and evolution of AI\n1.2 Foundations of AI: philosophy, mathematics, and cognitive-science influences\n1.3 Intelligent agents: agent–environment interaction, PEAS (Performance measure, Environment, Actuators, and Sensors) description\n1.4 Types of environments (observable, deterministic, episodic, static, discrete, single/multi-agent)\n1.5 Types of agents: simple reflex, model- based, goal-based, utility-based, learning agents\n1.6 Overview of AI application domains across engineering disciplines\nUnit-2.0: Problem Solving by Search problem. (9 hrs)\n2.1 Problem formulation and state-space representation\n2.2 Uninformed search: BFS, DFS, Uniform Cost Search, Depth-Limited and Iterative Deepening Search\n2.3 Informed (heuristic) search: Greedy Best- First Search, A* algorithm\n2.4 Heuristic function design and admissibility/consistency\n2.5 Local search algorithms: Hill Climbing, Simulated Annealing (concept)\n2.6 Adversarial search: Minimax algorithm, Alpha-Beta pruning\n2.7 Constraint Satisfaction Problems (CSP): concept, backtracking (overview)\nUnit-3.0: Knowledge Representation and Reasoning (8 hrs)\n3.1 Knowledge representation issues; propositional logic — syntax and semantics\n3.2 Inference in propositional logic: resolution\n3.3 First-order predicate logic — syntax, quantifiers (concept)\n3.4 Inference in first-order logic: forward chaining, backward chaining, resolution (concept)\n3.5 Structured knowledge representation: semantic networks, frames\n3.6 Rule-based (production) systems\nUnit-4.0: Reasoning Under Uncertainty (7 hrs)\n4.1 Sources of uncertainty; review of basic probability theory\n4.2 Bayes' theorem and its application to AI reasoning\n4.3 Bayesian networks: representation and manual inference (overview)\n4.4 Introduction to fuzzy logic and fuzzy sets\n4.5 Certainty factors and rule-based uncertainty operations. (overview)\nUnit-5.0: Introduction to Machine Learning and AI Applications (10 hrs)\n5.1 Machine learning paradigms: supervised, unsupervised, reinforcement learning (concept)\n5.2 Overview of regression and classification concepts (linear regression, k-NN, decision trees)\n5.3 Overview of clustering concept (k-means)\n5.4 Introduction to artificial neural networks: perceptron, basic architecture (concept)\n5.5 Overview of Natural Language Processing (NLP): concept and applications\n5.6 Overview of Computer Vision: concept and applications\n5.7 Expert systems: architecture and applications\n5.8 Robotics and AI: overview of intelligent multidisciplinary engineering robotic systems contexts.\n5.9 Ethics, bias, and responsible AI; societal impact; AI and Sustainable Development Goals (SDGs)"
 				},
 				{
-					"code": "100115P",
-					"name": "Swatch Bharat Mission",
-					"type": "Practical",
-					"credits": 1,
+					"code": "100108",
+					"name": "Computer Fundamentals & Emerging Technologies",
+					"type": "Theory",
+					"credits": 3,
 					"summary": {
-						"lecture": 0,
+						"lecture": 3,
 						"tutorial": 0,
-						"practical": 2
+						"practical": 0
 					},
-					"references": [],
-					"content": "Objectives:\n1. Understanding the importance of cleanliness and sanitation: The course could aim to create awareness about the significance of cleanliness and sanitation in maintaining personal health, environmental sustainability, and community well-being. It could cover topics such as waste management, sanitation practices, and the impact of poor sanitation on public health.\n2. Developing skills for effective waste management: The course could provide training on various waste management techniques, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. It could also emphasize the importance of reducing waste generation and promoting sustainable waste management practices.\n3. Promoting behavioural change towards cleanliness: The course could focus on influencing positivebehavioural change among individuals and communities towards cleanliness. It could include modules on promoting good hygiene practices, creating awareness about the harmful effects of littering and open defecation, and encouraging responsible waste disposal habits.\n4. Creating awareness about Swachh Bharat Mission initiatives: The course could provide information about the Swachh Bharat Mission initiatives and campaigns launched by the Government of India to promote cleanliness and sanitation, such as SwachhSurvekshan, Swachh Bharat Abhiyan, and Clean India Campaign. It could also discuss the progress made, challenges faced, and future prospects of the Swachh Bharat Mission.\n5. Engaging in community participation and advocacy: The course could emphasize the importance of community participation in the Swachh Bharat Mission and provide tools and strategies for engaging with local communities to promote cleanliness and sanitation. It could also encourage advocacy for policy changes and innovations to address sanitation-related issues at the community, regional, and national levels.\n6. Pre-requisite: Nil\n7. Course Outcome:\n8. Increased awareness and knowledge about cleanliness and sanitation: Participants of the course may gain a deeper understanding of the importance of cleanliness and sanitation, including the impact on personal health, environmental sustainability, and community well- being. They may learn about various waste management techniques, hygiene practices, and the initiatives of the Swachh Bharat Mission.\n9. Enhanced skills for effective waste management: Participants may acquire practical skills related to waste management, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. They may also develop skills in reducing waste generation and promoting sustainable waste management practices in their communities or workplaces.\n10. Positive behavioral change towards cleanliness: The course may influence participants to adopt positive behavioral changes towards cleanliness, such as avoiding littering, practicing good hygiene habits, and promoting responsible waste disposal. Participants may develop a sense of responsibility towards maintaining cleanliness in their surroundings and actively contribute towards creating a cleaner environment.\n11. Increased community participation and advocacy: Participants may become actively engaged in community participation and advocacy efforts related to cleanliness and sanitation. They may collaborate with local communities, government bodies, and non- governmental organizations (NGOs) to raise awareness, implement cleanliness initiatives, and advocate for policy changes or innovations to address sanitation-related issues.\n12. Contribution towards Swachh Bharat Mission objectives: Participants may contribute towards the objectives of the Swachh Bharat Mission, such as promoting cleanliness, ensuring proper waste management, and eliminating open defecation. They may actively participate in Swachh Bharat Mission campaigns, initiatives, and activities, and make a positive impact on their communities and society at large.\n13. List of Reports:\n14. Any topics related to Swatch Bharat Mission"
+					"references": [
+						"1. Computer Fundamentals P. K. Sinha and Priti Sinha BPB Publications, 6 th Edition, ISBN: 978- 8176567527",
+						"2. Introduction to Computers Peter Norton McGraw Hill, 7 th Edition, ISBN: 978- 0070636774",
+						"3. Data Representation and Computer Charles M. Gilmore McGraw Hill, ISBN: 978-0070245754 Logic",
+						"4. Wiley, 10 th Edition, ISBN: 978- Operating System Concepts Abraham Silberschatz, 1119456339 Peter B. Galvin and Greg Gagne",
+						"5. Data Communications and Behrouz A. Forouzan McGraw Hill, 5 th Edition, ISBN: 978- Networking 0073376226",
+						"6. IoT for Beginners: Architecture, Amita Kapoor, Vinay BPB Publications, 1 st Edition, ISBN: 978- Principles and Applications Chopra 9355510063",
+						"7. Fundamentals of Cyber Security Mayank Bhushan, BPB Publications, 1 st Edition, ISBN: Rajkumar Singh Rathore, 9789386551559 Aatif Jamshed",
+						"8. Artificial Intelligence: A Guide for Melanie Mitchell Farrar, Straus and Giroux, 1 st Edition, Thinking Humans ISBN: 9780374257835"
+					],
+					"content": "Unit-1.0: Fundamentals of Computer Systems (8 hrs)\n1.1 Classification of computers, Functional units\n1.2 Central Processing Unit (CPU) organization and working\n1.3 Memory: Architecture, Memory Representation, Memory Hierarchy\n1.4 CPU Registers, Impact of Cache Memory on System Performance\n1.5 Motherboard and its components\n1.6 The Von-Neumann architecture\n1.7 Machine language, assembly language, high-level programming languages Compiler, Interpreter\nUnit-2.0: Data Representation (8 hrs)\nin computers. 2.1 Data Representation & Number Systems.\n2.2 Conversion between decimal and binary systems.\n2.3 Conversion among binary, octal, and hexadecimal systems.\n2.4 Binary arithmetic (addition, subtraction)\n2.5 Signed number representation (1’s complement).\n2.6 Signed number representation (2’s complement).\n2.7 American Standard Code for Information Interchange (ASCII), Unicode Data representation in memory.\nUnit-3.0: Computer Software and Operating Systems (9 hrs)\n3.1 Introduction to Software, Types of Software\n3.2 System Software\n3.3 Application Software\n3.4 Operating System (OS), Objectives of Operating System\n3.5 Types of OS (Batch, Time-sharing, Distributed, Real- time)\n3.6 Functions of OS (Process, Memory Management)\n3.7 User Interface (Command Line Interface Vs Graphical User Interface)\n3.8 File system basics examples: Windows, Linux, macOS.\nUnit-4.0: Computer Networks and Internet Basics (9 hrs)\n4.1 Introduction to Computer Networks.\n4.2 Importance of Networking.\n4.3 Data Transmission Media, Data Transmission across Media.\n4.4 Data Transmission in a Network.\n4.5 Network Types: Local Area Network (LAN), Wide Area Network (WAN), Metropolitan Area Network (MAN).\n4.6 Network Topologies (Star, Bus, Ring, Mesh), Communication Protocol.\n4.7 Network Devices (Hub, Switch, Router, Modem, Gateway), Wireless Networking.\n4.8 Introduction to Internet: Internet Protocol (IP) Address.\n4.9 Transmission Control Protocol (TCP), User Datagram Protocol (UDP), Hypertext Transfer Protocol (HTTP), File Transfer Protocol (FTP), Domain Name System (DNS), Uniform Resource Locator (URL), Client- Server Architecture.\nUnit-5.0: Emerging Technologies (8 hrs)\n5.1 Internet of Things (IoT): Concept and architecture, Applications (Smart homes, Smart cities)\n5.2 Cyber Security: Basic security Terminologies, CIA Triad, Types of cyber threats and countermeasures\n5.3 Artificial Intelligence (AI): Introduction, AI agents, Applications.\n5.4 Machine Learning (ML): Types of learning paradigms, Real-world applications.\n5.5 Blockchain: Concept of distributed ledger, Blocks, hashing, decentralization.\n5.6 Data Science: Data Lifecycle, Role of data in decision making. ledger."
 				},
 				{
-					"code": "100113",
-					"name": "IT Workshop",
+					"code": "100109",
+					"name": "Universal Human Values",
 					"type": "Theory",
 					"credits": 2,
 					"summary": {
@@ -101,19 +98,25 @@
 						"tutorial": 0,
 						"practical": 0
 					},
-					"references": [
-						"1. The Complete Computer upgrade and repair book, Cheryl A Schmidt, 3rd edition,",
-						"WILEY Dream tech",
-						"2. Introduction to Information Technology, ITL Education Solutions limited,",
-						"Pearson Education.",
-						"3. PC Hardware – A, Handbook – Kate J., Chase PHI",
-						"4. LaTeX Beginner's Guide, Stefan Kottwitz, Packt Publishing"
-					],
-					"content": "Unit- 1.0 PC HARDWARE(6 lectures): Identification of the peripherals of a computer, components in a CPU and its functions. Block diagram of the CPU along with the configuration of each peripheral. Functions of Motherboard. Assembling and Disassembling of PC. Installation of OS. Basic Linux commands.\nUnit- 2.0 INTERNET(4 lectures) Web Browsers, Access of websites, Surfing the Web, Search Engines, Customization of web browsers, proxy settings, bookmarks, search toolbars, pop-up blockers.Antivirus types, Protection from various threats.\nUnit- 3.0 MICROSOFT WORD(4 lectures) Overview of MS word features. Usage of Hyperlink, Symbols, Spell Check, Track Changes. Table of Content, Newspaper columns, Images from files and clipart, Drawing toolbar and Word Art, Formatting Images, Textboxes, Paragraphs and Mail Merge in word. Using Word to create Project Certificate, Project Abstract, News Letter, Resume.\nUnit- 4.0 LaTeX(6 lectures) Word Orientation: Overview of LaTeX and tool word: Importance of LaTeX and MS office or equivalent (FOSS) tool Word as word Processors, Details of the four tasks and features that would be covered in each, Using LaTeX and word – Accessing, overview of toolbars, saving files, Using help and resources, rulers, format painter in word. Using LaTeX and Word to create a project certificate. Features to be covered:- Formatting Fonts in word, Drop Cap in word, Applying Text effects, Using Character Spacing, Borders and Colors, Inserting Header and Footer, Using Date and Time option in both LaTeX. Creating project abstract Features to be covered:-Formatting Styles, Inserting table, Bullets and Numbering, Changing Text Direction, Cell alignment, Footnote, Hyperlink, Symbols, Spell Check, Track Changes. Creating a Newsletter: Features to be covered:- Table of Content, Newspaper columns, Images from files and clipart, Drawing toolbar and Word Art, Formatting Images, Textboxes, Paragraphs and Mail Merge in word.\nUnit- 5.0 MICROSOFT EXCEL( 4 lectures) Overview of Excel Features Excel formulae & Functions, conditional formatting, Charts, Hyper linking, Renaming and Inserting worksheets, Data Analysis functions. Creating a Scheduler (Features: - Gridlines, Format Cells, Summation, auto fill, Formatting) Calculating GPA (Features: - Cell Referencing, Formulae and functions in excel.\nUnit- 6.0 MICROSOFT POWER POINT( 4 lectures) Overview of PowerPoint features, Insertion of images, slide transition, Custom animation, Hyperlinks."
+					"references": [],
+					"content": "Unit-1.0: Self-Exploration, Happiness and Prosperity (5 hrs)\n1.1 Self-Exploration\n1.2 Continuous Happiness and Prosperity\n1.3 Right Understanding:\nUnit-2.0: Relationship, Physical Facility and Human Being (5 hrs)\n2.1 Right Understanding, Relationship and Physical Facility\n2.2 Happiness and Prosperity\n2.3 Human being as a co-existence of the sentient ‘Self’ and the material ‘Body’\nUnit-3.0: Values in Human Relationships and Harmony in Society (5 hrs)\n3.1 Values in human-human relationship Relevant Units/ Body of Knowledge (BoK)\n3.2 Harmony in the Society\nUnit-4.0: Harmony in Nature and Existence (6 hrs)\n4.1 Harmony in the Nature\n4.2 Interconnectedness and mutual fulfilment among the four orders of nature\n4.3 Existence as Co-existence of mutually interacting units in all-pervasive space\n4.4 Holistic perception of harmony at all levels of existence\nUnit-5.0: Implications of Holistic Understanding on Professional Ethics (7 hrs)\n5.1 Natural acceptance of human values\n5.2 Definitiveness of Ethical Human Conduct\n5.3 Basis for Humanistic Education, Humanistic Constitution and Humanistic Universal Order\n5.4 Competence in professional ethics\n5.5 Strategy for transition from the present state to Universal Human Order: a. At the level of individual b. At the level of society Universal Human Order at individual and society levels."
 				},
 				{
-					"code": "100106",
-					"name": "Basic Electrical Engineering",
+					"code": "100110",
+					"name": "Essence of Indian Constitution",
+					"type": "Theory",
+					"credits": 0,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": "Unit-1.0: Constitution and Preamble (8 hrs)\n1.1 Meaning of the constitution of India.\n1.2 Historical perspective of the Constitution of India.\n1.3 Salient features and characteristics of the Constitution of India.\n1.4 Preamble to the Constitution of India.\nUnit-2.0: Fundamental Rights and Duties (8 hrs)\n2.1 Fundamental Rights under Part-III.\n2.2 Fundamental duties and their significance.\nUnit-3.0: Directive Principles (8 hrs)\n3.1 Relevance of Directive Principles of State Policy under part-IV.\n3.2 Different articles of State policies under part- IV\nUnit-4.0: Governance (9 hrs)\n4.1 Governance under part-VI\n4.2 State Legislature, Legislative Assembly & Legislative Council.\nUnit-5.0: Amendments of Constitution (9 hrs)\n5.1 Amendment of Constitutional Powers and Procedure.\n5.2 Major Constitutional Amendment procedure - Important amendments. 42nd, 44th, 74th, 76th, 86th and 91st"
+				},
+				{
+					"code": "100111",
+					"name": "Basics of Electrical & Electronics Engineering",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
@@ -122,19 +125,18 @@
 						"practical": 0
 					},
 					"references": [
-						"1. Basic Electrical Engineering, D.P. Kothari et al,McGraw-Hill Education 4th",
-						"Edition,2019",
-						"2. Electrical and Electronic Technology Edward Hughes, 12th edition, 2016",
-						"3. Principles Electrical Engineering and Electronics, V.K Mehata, Rohit Mehta, S",
-						"Chand and Company 2nd edition, 2015",
-						"4. Basic Electrical Engineering, J. B. Gupta, Katson Publication",
-						"5. A textbook of Electrical Technology B. L. Thereja, A. K. Thereja Vol. 1, 2, and 3 S",
-						"Chand Publication"
+						"1. Basic Electrical Engineering D. P. Kothari, I. J. Nagrath McGraw-Hill Education, 2019,",
+						"2. Electronic Device & Circuit theory Robert L. Boylestad and Pearson, 2013, Louis Nashelsky",
+						"3. Digital Logic and Computer M. Morris Mano Pearson India, 2017, Design",
+						"4. Electrical Machinery P. S. Bimbhra Khanna Publishers, 2024,",
+						"5. A Course in Electrical and A. K. Sawhney Dhanpat Rai & Co., 19th Edition, ISBN: Electronic Measurements and 978-8177001006 Instrumentation",
+						"6. Electrical Safety of Low Voltage Massimo Mitolo McGraw-Hill, 1st Edition, 2009 ISBN: Systems 978-0071508186",
+						"7. Fundamentals of Electric Circuits Charles K. Alexander and McGraw-Hill, 7th Edition, Matthew N. O. Sadiku"
 					],
-					"content": "Unit- 1.0 8 hrs\nDC Circuit Analysis and Network Theorems: Concepts of Network, Active and Passive elements, voltage and current sources, concept of linearity and linear network, unilateral and bilateral elements. R L and C as linear elements.Source Transformation. Kirchhoff’s Law, loop and nodal methods of analysis; star – delta transformation; Network Theorems: Superposition Theorem, Thevenin’s Theorem, Norton’s Theorem, Maximum Power Transfer Theorem. (Simple Numerical Problems)\nUnit- 2.0 5 hrs\nMagnetic Circuit: Magnetic circuit concepts, analogy between Electric & Magnetic circuits, Magnetic circuits with DC and AC excitation, Magnetic leakage. B-H curve, Hysteresis and Eddy Current losses, Magnetic circuit calculations.\nUnit- 3.0 8 hrs\nSteady State Analysis of Single-Phase AC Circuits: Sinusoidal, Square and Triangular waveforms–average and effective values, form and peak factors, concept of phasors, phasor representation of sinusoidally varying voltage and current. Analysis of series, parallel, and series – parallel RLC Circuits: Apparent, Active & Reactive Powers, Power factor, causes and problems of low power factor, power factor improvement. Resonance in Series and Parallel Circuits. (Simple Numerical Problems)\nUnit- 4.0 5 hrs\nThree Phase AC Circuits: Three Phase System – its necessity and advantages, meaning of phase sequence and star and delta connections, balanced supply and balanced load, line and phase voltage/ current relations, three phase power and its measurement. (Simple Numerical Problems)\nUnit- 5.0 10 hrs\nIntroduction to DC Machines:Principal, Operation, Construction, and types of DC machines, e.m.f. equation of generator and torque equation of motor. Single Phase Transformer: Principle of Operation, Construction, e.m.f. equation, losses in transformer, efficiency. Three Phase Induction Motor:Principal, Operation, and Construction (Simple Numerical Problems)\nUnit- 6.0 6 hrs\nSoldering- Soldering and desoldering techniques, breadboard wiring, general-purpose PCB soldering/wiring. Wiring-Types of residential and commercial wiring systems, general rules and guidelines for installation, loadcalculation and sizing of wire, rating of main switch, distribution board."
+					"content": "Unit-1.0: Basic Electrical Circuits (8 hrs)\n1.1 Electrical Circuit Elements: Resistance, inductance, and capacitance as active and passive elements\n1.2 Classification of Elements: Unilateral and bilateral elements; linear and nonlinear elements\n1.3 Basic Circuit Laws: Ohm’s law and Kirchhoff’s current and voltage laws\n1.4 Circuit Configurations: Series and parallel circuits, voltage sources, current sources, and source transformation\n1.5 Circuit Analysis Methods: Mesh analysis and nodal analysis techniques\n1.6 Network Theorems and Transformations: Current divider rule, voltage divider rule, and star-delta transformation\nUnit-2.0: A.C. Circuits (8 hrs)\n2.1 Signals and Waveforms: Common electrical signals and their waveform characteristics\n2.2 AC Quantities: Instantaneous, peak, average, and RMS values of alternating in AC circuits. signals\n2.3 Waveform Factors: Peak factor and form factor of sinusoidal waves\n2.4 Phase and Phasors: Phase difference, lagging, leading, in-phase quantities, and phasor representation in rectangular and polar forms\n2.5 AC Circuit Parameters: Impedance, admittance, power factor, and power triangle\n2.6 Three-Phase Systems: Necessity, advantages, phase sequence, and balanced/unbalanced supply and load concepts\nUnit-3.0: Basic Electrical Machines (8 hrs)\n3.1 Electromagnetic Principles: Basic laws of electromagnetism, self-inductance, and mutual inductance\n3.2 DC Machines: Principle of operation, construction, classification, and applications of DC machines\n3.3 Single-Phase Transformers: Necessity, working principle, construction, and E.M.F. equation of transformers\n3.4 Transformer Performance: Voltage ratio, current ratio, and voltage regulation with significance\n3.5 Induction Motors: Overview of single- phase and three-phase induction motors and their working principles\n3.6 Motor Applications: Applications of induction motors and fractional horsepower motors\nUnit-4.0: Semiconductor Devices (8 hrs)\n4.1 Semiconductor Materials: Intrinsic and extrinsic semiconductor types\n4.2 p-n Junction Diode: Construction, characteristics, forward bias, and reverse bias operation\n4.3 Diode Behavior: Temperature effects and breakdown mechanisms in diodes\n4.4 Diode Applications: Half-wave rectifier, full- wave rectifier, filters, and Zener diode as voltage regulator\n4.5 BJT Fundamentals: PNP and NPN transistors, construction, and operating principles\n4.6 BJT Applications: CE configuration as amplifier and transistor as a switch\nUnit-5.0: Fundamentals of Digital, Analog Electrical Safety Electronics, Measurement and (10 hrs)\n5.1 Binary, octal, and hexadecimal number systems; binary addition and basic number operations\n5.2 Basic logic gates, universal gates, and Boolean algebra\n5.3 LEDs, seven-segment display and truth table; overview of digital and analog integrated circuits\n5.4 Functions and applications of IC 7805 and IC 7912; basic features and applications of multimeter and CRO\n5.5 Fundamentals, types, and uses of sensors and transducers; generation, transmission, and distribution of electrical power\n5.6 Safe handling practices, prevention of electrical hazards; functions and applications of fuse, MCB, and MCCB\n5.7 Purpose, importance, and methods of earthing systems"
 				},
 				{
-					"code": "100110P",
+					"code": "100104P",
 					"name": "Engineering Physics Lab",
 					"type": "Practical",
 					"credits": 1,
@@ -144,10 +146,23 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform any 10 Experiments\n1. Determination of the capacitance and permittivity of the given material.\n2. Determination of e/m of electron.\n3. Determination of Planck’s constant and Photoelectric Work Function using Photoelectric cell.\n4. Verification of inverse square law using photocell.\n5. Determination of Wavelength of (He-Ne) LASER using Diffraction Grating Method.\n6. Calculation of Energy Band Gap of a semiconductor.\n7. Determination of Dielectric constant using resonance method.\n8. Determination of Wavelength of Sodium light by measuring the diameter of the Newton’s Ring.\n9. Determination of curvature of convex surface of a lens by Newton’s ring.\n10. Verification of existence of Bohr’s Energy level with Frank-Hertz apparatus.\n11. Determination of the Earth’s horizontal magnetic field intensity and magnetic Moment of a magnet by employing magnetometer.\n12. Verification of Faraday’s Law and Lenz’s Law of Electromagnetic Induction."
+					"content": "LE-1 Diffraction Grating.\nLE-2 Newton’s Ring Experiment\nLE-3 Resolving Power of Telescope\nLE-4 Polarimeter\nLE-5 Numerical Aperture Optical Fiber (Virtual Lab)\nLE-6 Dielectric Constant\nLE-7 Measurement of Plank’s Constant\nLE-8 LE-8 Stern-Gerlach Experiment (Virtual Lab)\nLE-9 p-n junction\nLE-10 Hall effect experiment\nLE-11 Energy Band Gap Measurement\nLE-12 Changing nanoparticle size alters light absorption."
 				},
 				{
 					"code": "100111P",
+					"name": "Basics of Electrical & Electronics Engineering Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "LE-1 Identification of active and passive components and Ohm’s Law verification\nLE-2 Application of Kirchhoff’s Laws in series and parallel circuits\nLE-3 Improvement of power factor of a single-phase load using a capacitor\nLE-4 Determination of voltage and turns ratios of a single-phase transformer\nLE-5 Identification of main parts of DC machines and induction machines using cut-section models\nLE-6 Determination of V–I characteristics of a P–N junction diode\nLE-7 Performance of half-wave and full- wave rectifiers with and without filters using sinusoidal input\nLE-8 Analysis of the operation of a voltage regulator using a Zener Diode Laboratory Experiment/ Practical Titles\nLE-9 Input and output characterization of common emitter (CE) bipolar junction transistor\nLE-10 Implementation of logic gates (AND, OR, NOT, XOR) using Universal gates\nLE-11 Measurement of signal parameters using a CRO\nLE-12 Identification of different types of cable, wires and fuses\nLE-13 Operation of protection devices such as fuse, MCB, and MCCB\nLE-14 Demonstration of earthing techniques and electrical safety practices\nLE-15 Wiring of single lamp and fan with regulator controlled by a switch with fuse/MCB protection\nLE-16 Handling of Meggers and measurement of earth resistance."
+				},
+				{
+					"code": "100112P",
 					"name": "Programming for Problem Solving Lab",
 					"type": "Practical",
 					"credits": 1,
@@ -157,33 +172,7 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform any 10 Experiments\n1. Tutorial 1: Problem solving using computers: Lab1: Familiarization with programming environment\n2. Tutorial 2: Variable types and type conversions: Lab 2: Simple computational problems using arithmetic expressions\n3. Tutorial 3: Branching and logical expressions: Lab 3: Problems involving if-then-else structures\n4. Tutorial 4: Loops, while and for loops: Lab 4: Iterative problems e.g., sum of series\n5. Tutorial 5: 1D Arrays: searching, sorting: Lab 5: 1D Array manipulation\n6. Tutorial 6: 2D arrays and Strings Lab 6: Matrix problems, String operations\n7. Tutorial 7: Functions, call by value: Lab 7: Simple functions\n8. Tutorial 8 &9: Numerical methods (Root finding, numerical differentiation, numerical integration): Lab 8 and 9: Programming for solving Numerical methods problems\n9. Tutorial 10: Recursion, structure of recursive calls Lab 10: Recursive functions\n10. Tutorial 11: Pointers, structures and dynamic memory allocation Lab 11: Pointers and structures\n11. Tutorial 12: File handling: Lab 12: File operations"
-				},
-				{
-					"code": "100113P",
-					"name": "IT Workshop Lab",
-					"type": "Practical",
-					"credits": 1,
-					"summary": {
-						"lecture": 0,
-						"tutorial": 0,
-						"practical": 2
-					},
-					"references": [],
-					"content": "Unit- 1: PC Hardware Task 1: Identify the peripherals of a computer, components in a CPU and its functions. Different types of printer. Task 2: Every student should disassemble and assemble the PC back to working condition. Lab instructors should verify the work and follow it up with a Viva. Also students need to go through the video which shows the process of assembling a PC. A video would be given as part of the course content.\nUnit 2: Task 1: Every student should individually install MS windows on the personal computer. Lab instructor should verify the installation and follow it up with a Viva. Task 2: Every student should install Linux on the computer. This computer should have windows installed. The system should be configured as dual boot with both Windows and Linux. Lab instructors should verify the installation and follow it up with a Viva. Task 3: Different commands of DOS and Linux.\nUnit- 3:Internet& World Wide Web Task1: Orientation & Connectivity Boot Camp: Students should get connected to their Local Area Network and access the Internet. In the process they configure the TCP/IP setting. Finally students should demonstrate, to the instructor, how to access the websites and email. If there is no internet connectivity preparations need to be made by the instructors to simulate the WWW on the LAN. Task 2: Web Browsers, Surfing the Web: Students customize their web browsers with the LAN proxy settings, bookmarks, search toolbars and pop up blockers. Also, plug-ins like Macromedia Flash and JRE for applets should be configured. Task 3: Search Engines & Netiquette: Students should know what search engines are and how to use the search engines. A few topics would be given to the students for which they need to search on Google. This should be demonstrated to the instructors by the student. Task 4: Cyber Hygiene: Students would be exposed to the various threats on the internet and would be asked to configure their computer to be safe on the internet. They need to customize their browsers to block pop ups, block active x downloads to avoid viruses and/or worms.\nUnit- 4.0: LaTeX Task 1 – Word Orientation: The mentor needs to give an overview of LaTeX and tool word: Importance of LaTeX and MS office or equivalent (FOSS) tool Word as word Processors, Details of the four tasks and features that would be covered in each, Using LaTeX and word – Accessing, overview of toolbars, saving files, Using help and resources, rulers, format painter in word. Task 2: Using LaTeX and Word to create a project certificate. Features to be covered:- Formatting Fonts in word, Drop Cap in word, Applying Text effects, Using Character Spacing, Borders and Colors, Inserting Header and Footer, Using Date and Time option in both LaTeX. Task 3: Creating project abstract Features to be covered:-Formatting Styles, Inserting table, Bullets and Numbering, Changing Text Direction, Cell alignment, Footnote, Hyperlink, Symbols, Spell Check, Track Changes. Task 4: Creating a Newsletter: Features to be covered:- Table of Content, Newspaper columns, Images from files and clipart, Drawing toolbar and Word Art, Formatting Images, Textboxes, Paragraphs and Mail Merge in word.\nUnit- 5.0 : Excel Orientation: The mentor needs to tell the importance of MS office or equivalent (FOSS) tool Excel as a Spreadsheet tool, give the details of the four tasks and features that would be covered in each. Using Excel – Accessing, overview of toolbars, saving excel files, Using help and resources. Task 1: Creating a Scheduler - Features to be covered: Gridlines, Format Cells, Summation, auto fill, Formatting Text Task 2 : Calculating GPA - .Features to be covered:- Cell Referencing, Formulae in excel – average, std. deviation, Charts, Renaming and Inserting worksheets, Hyper linking, Count function, LOOKUP/VLOOKUP Task 3: Split cells, freeze panes, group and outline, Sorting, Boolean and logical operators, Conditional formatting\nUnit- 6.0 : Powerpoint: Task 1: Students will be working on basic power point utilities and tools which help them create basic powerpoint presentations. PPT Orientation, Slide Layouts, Inserting Text, Word Art, Formatting Text, Bullets and Numbering, Auto Shapes, Lines and Arrows in PowerPoint. Task 2: Interactive presentations - Hyperlinks, Inserting –Images, Clip Art, Audio, Video, Objects, Tables and Charts. Task 3: Master Layouts (slide, template, and notes), Types of views (basic, presentation, slide slotter, notes etc), and Inserting – Background, textures, Design Templates, Hidden slides."
-				},
-				{
-					"code": "100106P",
-					"name": "Basic Electrical Engineering Lab",
-					"type": "Practical",
-					"credits": 1,
-					"summary": {
-						"lecture": 0,
-						"tutorial": 0,
-						"practical": 2
-					},
-					"references": [],
-					"content": "Perform any 10 Experiments\n1. Verification of Kirchhoff’s laws.\n2. Verification of Superposition Theorem.\n3. Verification of Thevenin’s Theorem.\n4. Verification of Norton’s Theorem.\n5. Verification of Maximum Power Transfer Theorem.\n6. Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor.\n7. Star to Delta and Delta to Star conversion of the three circuit.\n8. Determination of Efficiency by load test of a 1 – Ø Transformer.\n9. To study the typical BHK house wiring\n10. Study of safety precautions while working on electrical installations and necessity of earthing"
+					"content": "LE-1 Algorithmic Logic & Basic I/O • Write a C program to calculate the area of various geometrical shapes (circle, triangle, rectangle) using appropriate data types and type casting, accompanied by a flowchart.\nLE-2 Decision Making Systems • Develop a Student Grading and Classification System using an if-else ladder and a switch-case to handle marks for grading and classify eligible fee waivers by category.\nLE-3 Iterative Problem Solving • Develop a C program to perform the following tasks by using while and for loops: i) Find all prime numbers between 1 and N ii) Generate the Fibonacci sequence for the value of N. Laboratory Experiment/ Practical Titles\nLE-4 1-D Array Operations • Write a C program to: i) Find the maximum/ minimum element using Linear Search ii) Calculate the average of elements in a 1-D array.\nLE-5 Matrix Manipulation (2-D Arrays) • Write a C program to perform the following tasks: i) Matrix Multiplication ii) Find the transpose of a matrix using 2-D arrays\nLE-6 Pointer Arithmetic & Strings • Write a C program to perform the following tasks without using pointer arithmetic: i) Reverse a string ii) Count vowels/consonants of the given string using pointers\nLE-7 Recursion vs. Iteration • Write a C program to perform the following tasks by using both iterative and recursive functions to compare logic flow: i) Find the factorial value for the given number ii) Find the Greatest Common Divisor (GCD)\nLE-8 Parameter Passing Mechanisms • Develop a C program that swaps two values and updates an array using both Call by Value and Call by Reference.\nLE-9 User-Defined Data Types • Create an \"Employee Payroll System\" using Structures and Unions in C to store employee details and compare memory allocation between them.\nLE-10 File Handling Operations Laboratory Experiment/ Practical Titles • Write a program to create a text file and perform the following tasks: i) Write student records ii) Read the student records and display records\nLE-11 Classes, Objects & Encapsulation • Design a Bank Account class with private data members for balance and public member functions for deposit, withdraw, and display.\nLE-12 Constructors & Memory Management • Implement a String class that utilizes Constructors (Default, Parameterized, and Copy) and a Destructor to manage the memory dynamically.\nLE-13 Static Members & Friend Functions • Develop a program that uses a static member to track the number of objects created and a friend function to compare private data of two different classes.\nLE-14 Implementation of Inheritances • Write a C++ program to demonstrate the various arithmetic operations using the following different inheritance concepts: i) Single Inheritance ii) Multiple Inheritance iii) Multilevel Inheritance iv) Hierarchical Inheritance v) Hybrid/virtual Inheritance\nLE-15 Polymorphism & Abstract Classes Laboratory Experiment/ Practical Titles • Write C++ programs to demonstrate the following: i) Create an Abstract Class Shape with a pure virtual function draw (). ii) Find the area of the shape using function overloading. iii) Perform the addition of two complex numbers using operator overloading.\nLE-16 Robust Error Management • Write a C++ program to demonstrate the exception handling process using try, catch, and throw blocks to handle exceptions such as \"Division by Zero\" or \"Negative Stock Input.\"\nLE-17 Template Implementation • Write a C++ program using template functions and class templates: a function to find the max of two values, and a class template like pair to store values of any data type."
 				}
 			]
 		},
@@ -626,8 +615,27 @@
 		"4": {
 			"subjects": [
 				{
-					"code": "100404",
-					"name": "Discrete Mathematics",
+					"code": "105401",
+					"name": "Computer Organization and Architecture",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. ―Computer Organization and Design: The Hardware/Software Interface‖, 5th Edition by David A. Patterson and John L. Hennessy, Elsevier.",
+						"2. ―Computer Organization and Embedded Systems‖, 6th Edition by Carl Hamacher, McGraw Hill Higher Education.",
+						"3. ―Computer Architecture and Organization‖, 3rd Edition by John P. Hayes, WCB/McGraw-Hill",
+						"4. ―Computer Organization and Architecture: Designing for Performance‖, 10th Edition by William Stallings, Pearson Education.",
+						"5. ―Computer System Design and Architecture‖, 2nd Edition by Vincent P. Heuring and Harry F. Jordan, Pearson Education"
+					],
+					"content": "Unit-1.0 (7 hrs)\nFunctional blocks of a computer: CPU, memory, input-output subsystems, control unit. Instruction set architecture of a CPU–registers, instruction execution cycle, RTL interpretation of instructions, addressing modes, instruction set. Case study – instruction sets of some common CPUs.\nUnit-2.0 (7 hrs)\nData representation: signed number representation, fixed and floating point representations, character representation. Computer arithmetic – integer addition and subtraction, ripple carry adder, carry look-ahead adder, etc. multiplication – shift-and-add, Booth multiplier, carry save multiplier, etc. Division restoring and non-restoring techniques, floating point arithmetic.\nUnit-3.0 (7 hrs)\nIntroduction to x86 architecture. CPU control unit design: hardwired and micro- programmed design approaches, Case study – design of a simple hypothetical CPU. Memory system design: semiconductor memory technologies, memory organization.\nUnit-4.0 (7 hrs)\nPeripheral devices and their characteristics: Input-output subsystems, I/O device interface, I/O transfers–program controlled, interrupt driven and DMA, privileged and non- privileged instructions, software interrupts and exceptions. Programs and processes–role of interrupts in process state transitions, I/O device interfaces – SCII, USB.\nUnit-5.0 (7 hrs)\nPipelining: Basic concepts of pipelining, throughput and speedup, pipeline hazards. Parallel Processors: Introduction to parallel processors, Concurrent access to memory and cache coherency.\nUnit-6.0 (7 hrs)\nMemory organization: Memory interleaving, concept of hierarchical memory organization, cache memory, cache size vs. Block size, mapping functions, replacement algorithms, write policies."
+				},
+				{
+					"code": "105402",
+					"name": "Formal Language and Automata Theory",
 					"type": "Theory",
 					"credits": 4,
 					"summary": {
@@ -636,73 +644,16 @@
 						"practical": 0
 					},
 					"references": [
-						"1. J.P. Tremblay and R. Manohar, Discrete Mathematical Structure and",
-						"It’s Application to Computer Science”, TMGEdition,TataMcgraw-Hill",
-						"2. Norman L. Biggs, Discrete Mathematics, 2nd Edition, Oxford University",
-						"Press. Schaum’s Outlines Series, Seymour Lipschutz, MarcLipson,",
-						"3. Discrete Mathematics, Tata McGraw -Hill",
-						"3"
+						"1. John E. Hopcroft, Rajeev Motwani and Jeffrey D. Ullman, Introduction to Automata Theory, Languages, and Computation, Pearson Education Asia.",
+						"2. Harry R. Lewis and Christos H. Papadimitriou, Elements of the Theory of Computation, Pearson EducationAsia.",
+						"3. Dexter C. Kozen, Automata and Computability, Undergraduate Texts in Computer Science, Springer.",
+						"4. Michael Sipser, Introduction to the Theory of Computation, PWS Publishing.",
+						"5. John Martin, Introduction to Languages and the Theory of Computation, Tata McGraw Hill."
 					],
-					"content": "Unit-1.0 6 hrs.\nSets, Relation and Function: Operations and Laws of Sets, Cartesian Products, Binary Relation, Partial Ordering Relation, Equivalence Relation, Image of a Set, Sum and Product of Functions, Bijective functions, Inverse and Composite Function, Size of a Set, Finite and infinite Sets, Countable and uncountable Sets, Cantor's diagonal argument and The Power Set theorem, Schroeder-Bernstein theorem.\nUnit-2.0 8 hrs.\nPrinciples of Mathematical Induction: The Well-Ordering Principle, Recursive definition, The Division algorithm: Prime Numbers, The Greatest Common Divisor: Euclidean Algorithm, The Fundamental Theorem of Arithmetic. Basic counting techniques-inclusion and exclusion, pigeon-hole principle, permutation and combination.\nUnit-3.0 6 hrs.\nPropositional Logic: Syntax, Semantics, Validity and Satisfiability, Basic Connectives and Truth Tables, Logical Equivalence: The Laws of Logic, Logical Implication, Rules of Inference, The use of Quantifiers.\nUnit-4.0 4 hrs.\nProof Techniques: Some Terminology, Proof Methods and Strategies, Forward Proof, Proof by Contradiction, Proof by Contraposition, Proof of Necessity and Sufficiency.\nUnit-5.0 8 hrs.\nAlgebraic Structures and Morphism: Algebraic Structures with one Binary Operation, Semi Groups, Monoids, Groups, Congruence Relation and Quotient Structures, Free and Cyclic Monoids and Groups, Permutation Groups, Substructures, Normal Subgroups, Algebraic Structures with two Binary Operation, Rings, Integral Domain and Fields. Boolean Algebraand Boolean Ring, Identities of Boolean Algebra, Duality, Representation of Boolean Function, Disjunctive and Conjunctive Normal Form\nUnit-6.0 10 hrs.\nGraphs and Trees: Graphs and their properties, Degree, Connectivity, Path, Cycle, Sub Graph, Isomorphism, Eulerian and Hamiltonian Walks, Graph Coloring, Coloring maps and Planar Graphs, Coloring Vertices, Coloring Edges, List Coloring, Perfect Graph, definition properties and Example, rooted trees, trees and sorting, weighted trees and prefix codes, Bi-connected component and Articulation Points, Shortest distances. Computer Oriented Approach, 3rd Edition by, Tata McGraw –Hill."
-				},
-				{
-					"code": "105401",
-					"name": "Computer Organization & Architecture",
-					"type": "Theory",
-					"credits": 3,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"1. “Computer Organization and Design: The Hardware/Software Interface”, 5th",
-						"Edition by David A. Patterson and John L. Hennessy, Elsevier.",
-						"2. “Computer Organization and Embedded Systems”, 6th Edition by Carl Hamacher,",
-						"McGraw Hill Higher Education.",
-						"Suggested reference books:",
-						"1. “Computer Architecture and Organization”, 3rd Edition by John P. Hayes,",
-						"WCB/McGraw-Hill",
-						"2. “Computer Organization and Architecture: Designing for Performance”, 10th",
-						"Edition by William Stallings, Pearson Education.",
-						"3. “Computer System Design and Architecture”, 2nd Edition by Vincent P. Heuring",
-						"and Harry F. Jordan, Pearson Education",
-						"4"
-					],
-					"content": "Unit-1.0 7 hrs.\nFunctional blocks of a computer: CPU, memory, input-output subsystems, control unit. Instruction set architecture of a CPU–registers, instruction execution cycle, RTL interpretation of instructions, addressing modes, instruction set. Case study – instruction sets of some common CPUs.\nUnit-2.0 7 hrs.\nData representation: signed number representation, fixed and floating point representations, character representation. Computer arithmetic – integer addition and subtraction, ripple carry adder, carry look-ahead adder, etc. multiplication – shift-and- add, Booth multiplier, carry save multiplier, etc. Division restoring and non-restoring techniques, floating point arithmetic.\nUnit-3.0 7 hrs.\nIntroduction to x86 architecture. CPU control unit design: hardwired and micro- programmed design approaches, Case study – design of a simple hypothetical CPU. Memory system design: semiconductor memory technologies, memory organization.\nUnit-4.0 7 hrs.\nPeripheral devices and their characteristics: Input-output subsystems, I/O device interface, I/O transfers–program controlled, interrupt driven and DMA, privileged and non- privileged instructions, software interrupts and exceptions. Programs and processes– role of interrupts in process state transitions, I/O device interfaces – SCII, USB.\nUnit-5.0 7 hrs.\nPipelining: Basic concepts of pipelining, throughput and speedup, pipeline hazards. Parallel Processors: Introduction to parallel processors, Concurrent access to memory and cache coherency.\nUnit-6.0 7 hrs.\nMemory organization: Memory interleaving, concept of hierarchical memory organization, cache memory, cache size vs. Block size, mapping functions, replacement algorithms, write policies."
+					"content": "Unit-1.0: Introduction: (5 hrs)\nAlphabet, languages and grammars, productions and derivation, Chomsky hierarchy of languages.\nUnit-2.0: Regular languages and finite automata (9 hrs)\nRegular expressions and languages, deterministic finite automata (DFA) and equivalence with regular expressions, nondeterministic finite automata (NFA) and equivalence with DFA, regular grammars and equivalence with finite automata, properties of regular languages, pumping lemma for regular languages, minimization of finite automata\nUnit-3.0: Context-free languages and pushdown automata: (8 hrs)\nContext-free grammars (CFG) and Context-free languages (CFL), Chomsky and Greibach normal forms, nondeterministic pushdown automata (PDA) and equivalence with CFG, parse trees, ambiguity in CFG, pumping lemma for context-free languages, deterministic pushdown automata, closure properties of CFLs.\nUnit-4.0: Context-sensitive languages: (5 hrs)\nContext-sensitive grammars (CSG) and Context-sensitive languages, linear bounded automata and equivalence with CSG.\nUnit-5.0: Turing machines: (8 hrs)\nThe basic model for Turing machines (TM), Turing recognizable (Recursively enumerable) and Turing-decidable (recursive) languages and their closure properties, variants of Turing machines, nondeterministic TMs and equivalence with deterministic TMs, unrestricted grammars and equivalence with Turing machines, TMs as enumerators.\nUnit-6.0: Undecidability: (7 hrs)\nChurch-Turing thesis, universal Turing machine, the universal and diagonalization languages, reduction between languages and Rice’s theorem, undecidable problems about languages."
 				},
 				{
 					"code": "105403",
-					"name": "Operating Systems",
-					"type": "Theory",
-					"credits": 3,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"1. Operating System Concepts Essentials, 9th Edition by Avi Silberschatz, Peter",
-						"Galvin, Greg Gagne, Wiley Asia Student Edition.",
-						"2. Operating Systems: Internals and Design Principles, 5th Edition, William",
-						"Stallings, Prentice Hall of India.",
-						"3. Operating Systems: Design and Implementation 3rd Edition, 3rd Edition,",
-						"Andrew S. Tanenbaum",
-						"Suggested reference books:",
-						"1. Modern Operating Systems, 4th Edition, Andrew S. Tanenbaum",
-						"2. Operating System: A Design-oriented Approach, 1st Edition by Charles Crowley,",
-						"Irwin PublishingOperating Systems: A Modern Perspective, 2nd Edition by",
-						"Gary J. Nutt, Addison- Wesley",
-						"3. Design of the Unix Operating Systems, 8th Edition by Maurice Bach, Prentice-",
-						"Hall of India",
-						"4. Understanding the Linux Kernel, 3rd Edition, Daniel P. Bovet, Marco Cesati,",
-						"O'Reilly and Associates",
-						"6"
-					],
-					"content": "Unit-1.0 7 hrs.\nIntroduction: Concept of Operating Systems, Generations of Operating systems, Types of Operating Systems, OS Services, System Calls, Structure of an OS-Layered, Monolithic, Microkernel Operating Systems, Concept of Virtual Machine. Case study on UNIX and WINDOWS Operating System.\nUnit-2.0 8 hrs.\nProcesses: Definition, Process Relationship, Different states of a Process, Process State transitions, Process Control Block (PCB), Context switching. Thread: Definition, Various states, Benefits of threads, Types of threads, Concept of multithreads Process Scheduling: Foundation and Scheduling objectives, Types of Schedulers, Scheduling criteria: CPU utilization, Throughput, Turnaround Time, Waiting Time, Response Time; Scheduling algorithms: Pre-emptive and Non pre-emptive, FCFS, SJF, RR; Multiprocessor scheduling: Real Time scheduling: RM and EDF.\nUnit-3.0 8 hrs.\nInter-process Communication: Critical Section, Race Conditions, Mutual Exclusion, Hardware Solution, Strict Alternation, Peterson’s Solution, The Producer - Consumer Problem, Semaphores, Event Counters, Monitors, Message Passing, Shared Memory, Classical IPC Problems: Reader’s & Writer Problem, Dinning Philosopher Problem etc.\nUnit-4.0 5 hrs.\nDeadlocks: Definition, Necessary and sufficient conditions for Deadlock, Deadlock Prevention, and Deadlock Avoidance: Banker’s algorithm, Deadlock detection and Recovery.\nUnit-5.0 7 hrs.\nMemory Management: Basic concept, Logical and Physical address map, Memory allocation: Contiguous Memory allocation – Fixed and variable partition–Internal and External fragmentation and Compaction; Paging and Segmentation: Principle of Advantages and Disadvantages of paging and segmentation. Virtual Memory: Basics of Virtual Memory – Hardware and control structures – Not recently used (NRU) and Least Recently used (LRU).\nUnit-6.0 7 hrs.\nFile Management: Concept of File, Access methods, File types, File operation, Directory structure, File System structure, Allocation methods (contiguous, linked, indexed), Free- space management (bit vector, linked list, grouping), directory implementation (linear list, hash table), efficiency and performance. Disk Management: Disk structure, Disk scheduling - FCFS, SSTF, SCAN, C-SCAN, 5 Disk reliability, Disk formatting, Boot-block, Bad blocks I/O Hardware: I/O devices, Device controllers, Direct memory access, Principles of I/O Software: Goals of Interrupt handlers, Device drivers, Device independent I/O software, Secondary-Storage Structure."
-				},
-				{
-					"code": "105402",
 					"name": "Design and Analysis of Algorithms",
 					"type": "Theory",
 					"credits": 3,
@@ -712,21 +663,18 @@
 						"practical": 0
 					},
 					"references": [
-						"1. Introduction to Algorithms, 4th Edition, Thomas H Cormen, Charles E",
-						"Lieserson, Ronald L Rivest and Clifford Stein, MITPress/McGraw-Hill.",
+						"1. Introduction to Algorithms, 4 Edition, Thomas H Cormen, Charles E Lieserson, Ronald L Rivest and Clifford Stein, MITPress/McGraw-Hill.",
 						"2. Horowitz & Sahani, \"Fundamental of Computer Algorithm\", Galgotia.",
-						"3. Basse, \"Computer Algorithms: Introduction to Design & Analysis\",",
-						"Addision Wesley.",
-						"Suggested reference books",
-						"1. Algorithm Design, 1st Edition, Jon Kleinberg and Éva Tardos, Pearson.",
-						"2. Algorithm Design: Foundations, Analysis, and Internet Examples, Second",
-						"7"
+						"3. Basse, \"Computer Algorithms: Introduction to Design & Analysis\", Addision Wesley.",
+						"4. Algorithm Design, 1 st Edition, Jon Kleinberg and Éva Tardos, Pearson.",
+						"5. Algorithm Design: Foundations, Analysis, and Internet Examples, Second Edition, Michael T Goodrich and Roberto Tamassia, Wiley.",
+						"6. Algorithms—A Creative Approach, 3RD Edition, UdiManber, Addison-Wesley, Reading, MA."
 					],
-					"content": "Unit-1.0 7 hrs.\nIntroduction: Characteristics of algorithm. Analysis of algorithm: Asymptotic analysis of complexity bounds – best, average and worst-case behavior; Performance measurements of Algorithm, Time and space trade-offs, Analysis of recursive algorithms through recurrence relations: Substitution method, Recursion tree method and Masters’ theorem.\nUnit-2.0 7 hrs.\nIntroduction to Divide and Conquer paradigm: Binary Search, Quick and Merge sorting techniques, linear time selection algorithm, Strassen’s Matrix Multiplication, Karatsuba Algorithm for fast multiplication etc. Introduction to Heap: Min and Max Heap, Build Heap, Heap Sort\nUnit-3.0 7 hrs.\nOverview of Brute-Force, GreedyProgramming, Dynamic Programming, Branch- and- Bound and Backtrackingmethodologies. Greedy paradigm examples of exact optimization solution: Minimum Cost Spanning Tree, Knapsack problem, Job Sequencing Problem, Huffman Coding, Single source shortest path problem.\nUnit-4.0 7 hrs.\nDynamic Programming, difference between dynamic programming and divide and conquer, Applications: Fibonacci Series, Matrix Chain Multiplication, 0-1 Knapsack Problem, Longest Common Subsequence, Travelling Salesman Problem, Rod Cutting, Bin Packing. Heuristics – characteristics and their application domains.\nUnit-5.0 7 hrs.\nGraph and Tree Algorithms:Representational issues in graphs, Traversal algorithms: Depth First Search (DFS) and Breadth First Search (BFS); Shortest path algorithms: Bellman- Ford algorithm,Dijkstra’s algorithm & Analysis of Dijkstra’s algorithm using heaps, Floyd-Warshall’s all pairs shortest path algorithm.Transitive closure, Topological sorting, Network Flow Algorithm, Connected Component\nUnit-6.0 7 hrs.\nTractable and Intractable Problems: Computability of Algorithms, Computability classes – P, NP, NP-complete and NP-hard. Cook’s theorem, Standard NP-complete problems and Reduction techniques.Approximation algorithms, Randomized algorithms Edition, Michael T Goodrich and Roberto Tamassia, Wiley.\n3. Algorithms—A Creative Approach, 3RD Edition, UdiManber, Addison- Wesley, Reading, MA. 8"
+					"content": "Unit-1.0 (7 hrs)\nIntroduction: Characteristics of algorithm. Analysis of algorithm: Asymptotic analysis of complexity bounds – best, average and worst-case behavior; Performance measurements of Algorithm, Time and space trade-offs, Analysis of recursive algorithms through recurrence relations: Substitution method, Recursion tree method and Masters’ theorem.\nUnit-2.0 (7 hrs)\nIntroduction to Divide and Conquer paradigm: Binary Search, Quick and Merge sorting techniques, linear time selection algorithm, Strassen’s Matrix Multiplication, Karatsuba Algorithm for fast multiplication etc. Introduction to Heap: Min and Max Heap, Build Heap, Heap Sort\nUnit-3.0 (7 hrs)\nOverview of Brute-Force, GreedyProgramming, Dynamic Programming, Branch- and-Bound and Backtrackingmethodologies. Greedy paradigm examples of exact optimization solution: Minimum Cost Spanning Tree, Knapsack problem, Job Sequencing Problem, Huffman Coding, Single source shortest path problem.\nUnit-4.0 (7 hrs)\nDynamic Programming, difference between dynamic programming and divide and conquer, Applications: Fibonacci Series, Matrix Chain Multiplication, 0-1 Knapsack Problem, Longest Common Subsequence, Travelling Salesman Problem, Rod Cutting, Bin Packing. Heuristics – characteristics and their application domains.\nUnit-5.0 (7 hrs)\nin graphs, Traversal Graph and Tree Algorithms: Representational issues First Search (BFS); algorithms: Depth First Search (DFS) and Breadth Shortest path algorithms: Bellman- Ford algorithm,Dijkstra’s algorithm & Analysis of Dijkstra’s algorithm using heaps, Floyd-Warshall’s all pairs shortest path algorithm.Transitive closure, Topological sorting, Network Flow Algorithm, Connected Component\nUnit-6.0 (7 hrs)\nTractable and Intractable Problems: Computability of Algorithms, Computability classes – P, NP, NP-complete and NP-hard. Cook’s theorem, Standard NP-complete problems and Reduction techniques.Approximation algorithms, Randomized algorithms"
 				},
 				{
-					"code": "100403",
-					"name": "Digital Electronics",
+					"code": "105404",
+					"name": "Database Management System",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
@@ -735,16 +683,16 @@
 						"practical": 0
 					},
 					"references": [
-						"1. R. P. Jain, \"Modern Digital Electronics\", McGraw Hill Education, 2009.",
-						"2. M. M. Mano, \"Digital logic and Computer design\", Pearson Education India, 2016.",
-						"3. A. Kumar, \"Fundamentals of Digital Circuits\", Prentice Hall India, 2016.",
-						"10"
+						"1. ―Database System Concepts‖, 6th Edition by Abraham Silberschatz, Henry F. Korth, S. Sudarshan, McGraw-Hill.",
+						"2. ―Principles of Database and Knowledge – Base Systems‖, Vol 1 by J. D. Ullman, Computer Science Press.",
+						"3. ―Fundamentals of Database Systems‖, 5th Edition by R. Elmasri and S. Navathe, Pearson Education",
+						"4. ―Foundations of Databases‖, Reprint by Serge Abiteboul, Richard Hull, Victor Vianu, Addison -Wesley."
 					],
-					"content": "Unit-1.0 7 hrs.\nFundamentals of Digital Systems and logic families: Digital signals, digital circuits, AND, OR, NOT, NAND, NOR and Exclusive-OR operations, Boolean algebra, examples of IC gates, number systems-binary, signed binary, octal hexadecimal number, binary arithmetic, one’s and two’s complements arithmetic, codes, error detecting and correcting codes, characteristics of digital lCs, digital logic families, TTL, Schottky TTL and CMOS logic, interfacing CMOS and TTL, Tri - state logic.\nUnit-2.0 7 hrs.\nCombinational Digital Circuits: Standard representation for logic functions K-map representation, simplification of logic functions using K-map, minimization of logical functions. Don’t care conditions, Multiplexer, DeMultiplexer/Decoders, Adders, Subtractors, BCD arithmetic, carry look ahead adder, serial adder, ALU, elementary ALU design, popular MSI chips, digital comparator, parity checker/generator, code converters, priority encoders, decoders/drivers for display devices, Q-M method of function realization.\nUnit-3.0 7 hrs.\nSequential circuits and systems: A 1-bit memory, the circuit properties of Bistable latch, the clocked SR flip flop, J- K-T and D types flip flops, applications of flip flops, shift registers, applications of shift registers, serial to parallel converter, parallel to serial converter, ring counter, sequence generator, ripple (Asynchronous) counters, synchronous counters, counters design using flip flops, special counter IC’s, asynchronous sequential counters, applications of counters.\nUnit-4.0 7 hrs.\nA/D and D/A Converters: Digital to analog converters: weighted resistor/converter, R- 2RLadder D/A converter, specifications for D/A converters, examples of D/A converter lCs, sample and hold circuit, analog to digital converters: quantization and encoding, parallel comparator A/D converter, successive approximation A/D converter, counting A/D converter, dual slope A/D converter, A/D converter using Voltage to frequency and voltage to time conversion, specifications of A/D converters, example of A/D converter ICs.\nUnit-5.0 7 hrs.\nSemiconductor memories: Memory organization and operation, expanding memory size, classification and characteristics of memories, sequential memory, read only memory (ROM), read and write memory(RAM), content addressable memory (CAM), charge de coupled device memory (CCD), commonly used memory chips, ROM as a PLD.\nUnit-6.0 7 hrs.\nProgrammable logic devices Programmable logic array, Programmable array logic, complex Programmable logic devices (CPLDS), Field Programmable Gate Array (FPGA). 9"
+					"content": "Unit-1.0: - Database system architecture (8 hrs)\nData Abstraction, Data Independence, Data Definition Language (DDL), Data Manipulation Language (DML). Data models: Entity-relationship model, network model, relational and object oriented data models, integrity constraints, data manipulation operations.\nUnit-2.0: - Relational query languages: (10 hrs)\nRelational algebra, Tuple and domain relational calculus, SQL3, DDL and DML constructs, Open source and Commercial DBMS - MYSQL, ORACLE, DB2, SQL server. Relational database design: Domain and data dependency, Armstrong’s axioms, Normal forms, Dependency preservation, Lossless design. Query processing and optimization: Evaluation of relational algebra expressions, Query equivalence, Join strategies, Query optimization algorithms.\nUnit-3.0: – Storage strategies: Indices, B-trees, hashing. (4 hrs)\nUnit-4.0: - Transaction processing: (8 hrs)\nConcurrency control, ACID property, Serializability of scheduling, Locking and timestamp based schedulers, Multi-version and optimistic Concurrency Control schemes, Database recovery.\nUnit-5.0: – Database Security: (6 hrs)\nAuthentication, Authorization and access control, DAC, MAC and RBAC models, Intrusion detection, SQL injection.\nUnit-6.0: - Advanced topics: (6 hrs)\nObject oriented and object relational databases, Logical databases, Web databases, Distributed databases, Data warehousing and data mining."
 				},
 				{
-					"code": "100407",
-					"name": "Human Resource Development and  Organizational Behavior",
+					"code": "105405",
+					"name": "Effective Technical Communication",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
@@ -753,36 +701,39 @@
 						"practical": 0
 					},
 					"references": [
-						"1. Gary Dessler, “Human Resource Management” - (8th ed.,) Pearson Education, Delhi.",
-						"2. Robbins, S.P., Judge &T.A., “Organizational Behavior”, Pearson Education, 15th Edn.",
-						"Suggested reference books:",
-						"1. Decenzo& Robbins, Personnel Human Resource Management, 3rd ed., John Wiley &",
-						"Sons (Pvt.) Ltd.",
-						"2. BiswajeetPatanayak, Human Resource Management, PHI, New Delhi",
-						"3. Luis R. Gomez, Mejia, Balkin and Cardy, Managing Human Resources PHI, New Delhi",
-						"4. Luthans, Fred: Organizational Behavior, McGraw Hill, 12th Edn.",
-						"5. Shukla, Madhukar: Understanding Organizations - Organizational Theory & Practice in",
-						"India, PHI",
-						"11"
+						"1. David F. Beer and David McMurrey, Guide to writing as an Engineer, John Willey. New York, 2004.",
+						"2. Kulbhushan Kumar, Effective Communication Skills, Khanna Publishing House, 2019.",
+						"3. Diane Hacker, Pocket Style Manual, Bedford Publication, New York, 2003. (ISBN 0312406843).",
+						"4. Shiv Khera, You Can Win, Macmillan Books, New York, 2003.",
+						"5. Raman Sharma, Technical Communications, Oxford Publication, London, 2004.",
+						"6. Dale Jungk, Applied Writing for Technicians, McGraw Hill, New York, 2004. (ISBN: 07828357-4).",
+						"7. Sharma, R. and Mohan, K. Business Correspondence and Report Writing, TMH New Delhi 2002.",
+						"8. Xebec, Presentation Book, TMH New Delhi, 2000 (ISBN 0402213)"
 					],
-					"content": "Unit-1.0 7 hrs.\nIntroduction: HR Role and Functions, Concept and Significance of HR, Changing role of HR managers - HR functions and Global Environment, role of a HR Manager. Human Resources Planning: HR Planning andRecruitment: Planning Process - planning at different levels - Job Analysis\nUnit-2.0 7 hrs.\nRecruitment and selection processes - Restructuring strategies - Recruitment-Sources of Recruitment-Selection Process-Placement and Induction-Retention of Employees. Training and Development: need for skill upgradation - Assessment of training needs - Retraining and Redeployment methods and techniques of training employees and executives – performance appraisal systems.\nUnit-3.0 7 hrs.\nPerformance Management System: Definition, Concepts and Ethics-Different methods of Performance Appraisal- Rating Errors Competency management. Industrial Relations : Factors influencing industrial relations - State Interventions and Legal Framework - Role of Trade unions - Collective Bargaining - Workers; participation in management.\nUnit-4.0 7 hrs.\nOrganizational Behaviour: Definition, Importance, Historical Background, Fundamental Concepts of OB, Challenges and Opportunities for OB.\nUnit-5.0 7 hrs.\nPersonality and Attitudes: Meaning of personality, Personality Determinants and Traits, Development of Personality, Types of Attitudes, Job Satisfaction.\nUnit-6.0 7 hrs.\nLeadership: Definition, Importance, Theories of Leadership Styles. Organizational Politics: Definition, Factors contributing to Political Behavior. Conflict Management: Traditional vis-a-vis Modern View of Conflict, Functional and Dysfunctional Conflict, Conflict Process, Negotiation - Bargaining Strategies, Negotiation Process."
+					"content": "Unit-1.0: - Information Design and Development (8 hrs)\nDifferent kinds of technical documents,Information development life cycle, Organization structures, factors affecting information and document design, Strategies for organization, Information design and writing for print and for online media.\nUnit-2.0: - Technical Writing, Grammar and Editing (10 hrs)\nTechnical writing process, forms of discourse, Writing drafts and revising, Collaborative writing, creating indexes, technical writing style and language. Basics of grammar, study of advanced grammar, editing strategies to achieve appropriate technical style. Introduction to advanced technical communication, Usability, Human factors, Managing technical communication projects, time estimation, Single sourcing, Localization.\nUnit-3.0: – Self-development and Assessment (4 hrs)\nSelf assessment, Awareness, Perception and Attitudes, Values and belief, Personal goal setting, career planning, Self-esteem. Managing Time; Personal memory, Rapid reading, taking notes; Complex problem solving; Creativity.\nUnit-4.0: - Communication (8 hrs)\nPublic speaking, Group discussion, Oral; presentation, Interviews, Graphic presentation, Presentation aids, Personality Development.\nUnit-5.0: – Technical Writing (6 hrs)\nWriting reports, project proposals, brochures, newsletters, technical articles, manuals, official notes, business letters, memos, progress reports, minutes of meetings, event report.\nUnit-6.0: - Ethics (6 hrs)\nBusiness ethics, Etiquettes in social and office settings, Email etiquettes, Telephone Etiquettes, Engineering ethics, managing time, Role and responsibility of engineer, Work culture in jobs, Personal memo"
 				},
 				{
-					"code": "105410",
-					"name": "Environmental Science",
+					"code": "105406",
+					"name": "Computer Networks",
 					"type": "Theory",
-					"credits": 0,
+					"credits": 3,
 					"summary": {
 						"lecture": 3,
 						"tutorial": 0,
 						"practical": 0
 					},
-					"references": [],
-					"content": "We as human being are not an entity separate from the environment around us rather we are a constituent seamlessly integrated and co-exist with the environment around us. We are not an entity so separate from the environment that we can think of mastering and controlling it rather we must understand that each and every action of ours reflects on the environment and vice versa. Ancient wisdom drawn from Vedas about environment and its sustenance reflects these ethos. There is a direct application of this wisdom even in modern times. Idea of an activity based course on environment protection is to sensitize the students on the above issues through following two type of activities: (a) Awareness Activities: i) Small group meetings about water management, promotion of recycle use, generation of less waste, avoiding electricity waste ii) Slogan making events iii) Poster making events iv) Cycle rally v) Lectures from experts (b) Actual Activities: i) Plantation ii) Gifting a tree to see its full growth iii) Cleanliness drive iv) Drive for segregation of waste v) To live some big environmentalist for a week or so to understand his work vi) To work in kitchen garden for mess vii) To know about the different varieties of plants viii) Shutting down the fans and ACs of the campus for an hour or so 12"
+					"references": [
+						"1. B. Forouzan, ―Data Communication and Network‖, McGraw-Hill Publications. 4th ed.",
+						"2. A. S. Tanenbaum., ―Computer Networks‖, Pearson Education Asia. 5th ed.",
+						"3. W. Stalling, ―Data and Computer Communication‖, PHI (EEE). 8th ed.",
+						"4. A. L. Garcia and I. Widjaja, ―Communication Networks: Fundamental Concepts and Key Architectures‖, Tata McGraw-Hill. 2nd ed.",
+						"5. S. Sharma, ―A course in Computer Networks‖, Kataria. 3rd ed."
+					],
+					"content": "Unit-1.0 (4 hrs)\nOverview of Data Communication and Networking: OSI Reference Model, TCP/IP Protocol Suite; Network Architecture and Physical Topology.\nUnit-2.0 (10 hrs)\nPhysical Layer: Analog and Digital Signals, Transmission Impairment, Data Rate Limits, Performance Analysis of a Network; Representation and Synchronization of Bits, Analog and Digital Transmission; Multiplexing and Spreading Techniques; Guided Transmission Media; Circuit, Packet and Virtual Circuit. Switching\nUnit-3.0 (10 hrs)\nData Link Layer: Framing, Flow and Error Control (Noiseless and Noisy Channels Protocols), PointToPoint Protocol; Random Access protocols (Pure/slotted ALOHA, CSMA/CD, CSMA/CA), Controlled Access Protocol (Bit-Map, Polling and Token Passing), Channelization (TDMA, FDMA, CDMA); Physical Addressing and Ethernet; Connecting LANs and Virtual LANs.\nUnit-4.0 (7 hrs)\nNetwork Layer: Internet Protocol version 4 and 6; Address Mapping (ARP, RARP, BOOTP and DHCP), ICMP and IGMP, Routing Algorithms.\nUnit-5.0 (7 hrs)\nTransport Layer: UDP, TCP; Congestion Control and QoS; Client-Server Model and Socket Interface.\nUnit-6.0 (4 hrs)\nApplication Layer: DNS, Remote Logging, Electronic Mail (SMTP, POP), FTP, Introduction to WWW and HTTP."
 				},
 				{
 					"code": "105401P",
-					"name": "Computer Organization & Architecture Lab",
+					"name": "Computer Organization and Architecture Lab",
 					"type": "Practical",
 					"credits": 1,
 					"summary": {
@@ -791,23 +742,10 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Preform any ten Experiments\n1. Given a 4-variable logic expression, simplify it using appropriate technique and simulate the same using basic gates.\n2. Design a 4 bit full adder and subtractor and simulate the same using basic gates.\n3. Design Verilog HDL to implement simple circuits using structural, Data flow and Behavioural model.\n4. Design Verilog HDL to implement Binary Adder-Subtractor Half and Full Adder, Half and Full Subtractor.\n5. Design Verilog HDL to implement Decimal adder.\n6. Design Verilog program to implement Different types of multiplexer like 2:1, 4:1 and 8:1.\n7. Design Verilog program to implement types of De-Multiplexer.\n8. Design Verilog program for implementing various types of Flip-Flops such as SR, JK and D.\n9. Develop an ALP to multiply two 16-bit binary numbers.\n10. Develop an ALP to find the sum of first 10 integer numbers.\n11. Develop an ALP to find the largest/smallest number in an array of 32 numbers.\n12. Develop an ALP to count the number of ones and zeros in two consecutive memory locations. 13"
+					"content": "1. Given a 4-variable logic expression, simplify it using appropriate technique and simulate the same using basic gates.\n2. Design a 4 bit full adder and subtractor and simulate the same using basic gates.\n3. Design Verilog HDL to implement simple circuits using structural, data flow and behavioural model.\n4. Design Verilog HDL to implement binary adder-subtractor, half and full adder, half and full subtractor.\n5. Design Verilog HDL to implement decimal adder.\n6. Design Verilog program to implement different types of multiplexer like 2:1, 4:1 and 8:1.\n7. Design Verilog program to implement types of de-multiplexer.\n8. Design Verilog program for implementing various types of flip-flops such as SR, JK and D.\n9. Develop an ALP to multiply two 16-bit binary numbers.\n10. Develop an ALP to find the sum of first 10 integer numbers.\n11. Develop an ALP to find the largest/smallest number in an array of 32 numbers.\n12. Develop an ALP to count the number of ones and zeros in two consecutive memory locations."
 				},
 				{
 					"code": "105403P",
-					"name": "Operating Systems Lab",
-					"type": "Practical",
-					"credits": 1,
-					"summary": {
-						"lecture": 0,
-						"tutorial": 0,
-						"practical": 2
-					},
-					"references": [],
-					"content": "Preform all Experiments Operating System Lab: -\n1. Write a program to implement FCFS scheduling algorithm.\n2. Write a program to implement SJF scheduling algorithm.\n3. Write a program to implement priority scheduling algorithm.\n4. Write a program to implement round robin scheduling.\n5. Write a program to implement banker’s algorithm.\n6. Write a device driver for any device or peripheral.\n7. Write a program to implement disk scheduling algorithm.\n8. Write a program to implement dining philosopher problem.\n9. Write a program to implement producer consumer problem.\n10. Write a program to implement LRU page replacement algorithm. 14"
-				},
-				{
-					"code": "105402P",
 					"name": "Design and Analysis of Algorithms Lab",
 					"type": "Practical",
 					"credits": 1,
@@ -817,11 +755,11 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Preform any ten Experiments\n1. Sort a given set of elements using the Quick sort method and determine the time required to sort the elements. Repeat the experiment for different values of n, the number of elements in the list to be sorted. The elements can be read from a file or can be generated using the random number generator.\n2. Implement a Merge Sort algorithm to sort a given set of elements and determine the time required to sort the elements. Repeat the experiment for different values of n, the number of elements in the list to be sorted .The elements can be read from a file or can be generated using the random number generator.\n3. Compute the transitive closure of a given directed graph using Warshall's algorithm.\n4. Implement 0/1 Knapsack problem using Dynamic Programming.\n5. From a given vertex in a weighted connected graph, find shortest paths to other vertices using Dijikstra’s algorithm.\n6. Find Minimum Cost Spanning Tree of a given undirected graph using Kruskal’s algorithm.\n7. Print all the nodes reachable from a given starting node in a digraph using the BFS method.\n8. Check whether a given graph is connected or not using the DFS method.\n9. Find a subset of a given set S = {s1, s2,....., sN} of n positive integers whose sum is equal to a given positive integer d. For example, if S= {1, 2, 5, 6, 8} and d = 9 there are two solutions {1,2,6}and{1,8}.A suitable message is to be displayed if the given problem instance doesn't have a solution.\n10. Implement any scheme to find the optimal solution for the Travelling Salesperson problem and then solve the same problem instance using any approximation algorithm and determine the error in the approximation.\n11. Find Minimum Cost Spanning Tree of a given undirected graph using Prim’s algorithm.\n12. Implement N Queen's problem using Backtracking. 15"
+					"content": "1. Sort a given set of elements using the Quick sort method and determine the time required to sort the elements. Repeat the experiment for different values of n, the number of elements in the list to be sorted. The elements can be read from a file or can be generated using the random number generator.\n2. Implement a Merge Sort algorithm to sort a given set of elements and determine the time required to sort the elements. Repeat the experiment for different values of n, the number of elements in the list to be sorted. The elements can be read from a file or can be generated using the random number generator.\n3. Compute the transitive closure of a given directed graph using Warshall's algorithm.\n4. Implement 0/1 Knapsack problem using Dynamic Programming.\n5. From a given vertex in a weighted connected graph, find shortest paths to other vertices using Dijkstra’s algorithm.\n6. Find Minimum Cost Spanning Tree of a given undirected graph using Kruskal’s algorithm.\n7. Print all the nodes reachable from a given starting node in a digraph using the BFS method.\n8. Check whether a given graph is connected or not using the DFS method.\n9. Find a subset of a given set S = {s1, s2,....., sN} of n positive integers whose sum is equal to a given positive integer d. For example, if S= {1, 2, 5, 6, 8} and d = 9 there are two solutions {1,2,6} and {1,8}. A suitable message is to be displayed if the given problem instance doesn't have a solution.\n10. Implement any scheme to find the optimal solution for the Travelling Salesperson problem and then solve the same problem instance using any approximation algorithm and determine the error in the approximation.\n11. Find Minimum Cost Spanning Tree of a given undirected graph using Prim’s algorithm.\n12. Implement N Queen's problem using Backtracking."
 				},
 				{
-					"code": "100403P",
-					"name": "Digital Electronics Lab",
+					"code": "105404P",
+					"name": "Database Management System Lab",
 					"type": "Practical",
 					"credits": 1,
 					"summary": {
@@ -830,7 +768,33 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform any ten Experiments\n1. Universal Gates (i) Identification and verification of NAND gate (IC #7400) and NOR gate (IC #7402). (ii) Construction and Verification of all other gate (AND, OR, NOT, XOR) USING a) Only NAND gate b) Only NOR gate\n2. Code Convertor & Parity Generator and checker. (i) Identification & verification of NOT (7404), AND (7408) OR (7432) & XOR (7486) gates. (ii) Design, construction and verification of 3-bit Binary to Gray convertor and 3-bit Grey to Binary convertor circuit. (iii) Design, construction and verification of 3-bit odd/even Parity Generator and 4-bit odd/even parity checker circuit.\n3. Adder, Subtractor & Magnitude comparator circuits. (i) Design, construction and verification of Half Adder and Half Subtractor circuit. (ii) Design, construction and verification of Full Adder and Full Subtractor circuit. (iii) Design, construction and verification of 1-bit and 4-bit Magnitude comparator. (iv) BCD Adder/Subtractor\n4. Decoder, MUX & DMUX (i) Construction and verification of BCD to 7-segment decoder using IC # 7447 (ii) Verification of 4:1 MUX, 8:1 MUX & 16:1 MUX. (iii) Verification of 1:4 DMUX, 1:8 DMUX (iv) Cascading of MUIX and Cascading of Decoders.\n5. Latches and Flip Flops (i)Construction and Verification of a Latch circuit using NAND/NOR gates. (ii) Construction and Verification of S-R Flip Flop using above Latch circuits. (iii) Verification of J-K Flip Flop using IC # 7476 (Dual J-KFF) (iv) Construction and Verification of D-Flip Flop and T-Flip Flop using J-K FF (IC #7476). (v) Construction and Verification of Master Slave J-K Flip Flop.\n6. Shift Registers (i) Verification of D-FF using IC # 7474 (Dual D- FF). (ii) Construction and verification of a 2-bit Shift Right Register using IC # 7474 (iii) Construction and verification of a 2-bit Shift Left Register using IC # 7474 (iv) Verification of SISO, SIPO, PISO & PIPO Shift Registers.\n7. Synchronous & Asynchronous Counters (i) Construction and verification of 2-bit Ripple counter using J-K FF. (ii) Construction and verification of Mod-3 up and Mod-3 down synchronous counter. (iii) Construction and verification of 2-bit Ring counter using J-K FF. (iv) Construction and verification of 2-bit twisted Ring (Johnson) counter using J-K FF.\n8. Design and construction of a 4 bit sequence generator\n9. Digital to Analog Converter (DAC). Construction & Verification of D/A converters using following methods. a) Weighted Resistor type b) R-2R ladder network type\n10. Analog to Digital Converter (ADC). Construction & Verification of A/D Converter using following methods. a) Counter type b) Successive Approximation type\n11. Familiarization with multisim. Design of various Digital Circuits using Multisim. 16"
+					"content": "1. Student should decide on a case study and formulate the problem statement.\n2. Conceptual Designing using ER Diagrams (Identifying entities, attributes, keys and relationships between entities, cardinalities, generalization, specialization etc.) Note: Student is required to submit a document by drawing ER Diagram to the Lab teacher.\n3. Converting ER Model to Relational Model (Represent entities and relationships in Tabular form, Represent attributes as columns, identifying keys) Note: Student is required to submit a document showing the database tables created from ER Model.\n4. Normalization -To remove the redundancies and anomalies in the above relational tables, Normalize up to Third Normal Form.\n5. Creation of Tables using SQL- Overview of using SQL tool, Data types in SQL, Creating Tables (along with Primary and Foreign keys), Altering Tables and Dropping Tables.\n6. Practicing DML commands- Insert, Select, Update, Delete.\n7. Practicing Queries using ANY, ALL, IN, EXISTS, NOT EXISTS, UNION, INTERSECT, CONSTRAINTS etc.\n8. Practicing Sub queries (Nested, Correlated) and Joins (Inner, Outer and Equi).\n9. Practice Queries using COUNT, SUM, AVG, MAX, MIN, GROUP BY, HAVING, VIEWS Creation and Dropping.\n10. Practicing on Triggers - creation of trigger, Insertion using trigger, Deletion using trigger, Updating using trigger."
+				},
+				{
+					"code": "105406P",
+					"name": "Computer Networks Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "1. Write a report that includes a diagram showing the topology, type of connection devices, and speed of the wired and wireless LAN in your organization. Also find out the MAC and IP addresses and the subnet mask of your computer.\n2. Install and run a network diagnosis tool such as TCP dump or Wireshark. Start capturing packets on an active interface, open a browser and type the address of your favourite search engine. Wait till the page loads and stop capture. List out the type and number of each type of packets captured.\n3. Write a program to create a server that listens to port 53 using stream sockets. Write a simple client program to connect to the server. Send a simple text message \"Hello\" from the client to the server and the server to the client and close the connection.\n4. Write a program to create a chat server that listens to port 54 using stream sockets. Write a simple client program to connect to the server. Send multiple text messages from the client to the server and vice versa. When either party types \"Bye\", close the connection.\n5. Write a program to create a server that listens to port 55 using stream sockets. Write a simple client program to connect to the server. The client should request for a text file and the server should return the file before terminating the connection.\n6. Write a program to create a server that listens to port 56 using stream sockets. Write a simple client program to connect to the server. Run multiple clients that request the server for binary files. The server should service each client one after the other before terminating the connection\n7. Write a program to create a server that listens to port 57 using stream sockets. Write a simple client program to connect to the server. Run multiple clients that request the server for text files. The server should service all clients concurrently.\n8. Write a program to create a server that listens to port 59 using datagram sockets. Write a simple client program that requests the server for a binary file. The server should service multiple clients concurrently and send the requested files in response.\n9. Creation of sample network topologies using CISCO packet tracer.\n10. Creation of a subnet, assignment of addresses and communication within and outside the subnet.\n11. Error Detection using CRC (Python/Java): Implement the Cyclic Redundancy Check (CRC) algorithm for error detection in data transmission.\n12. Hamming Code for Error Correction (Python/Java): Implement the Hamming Code algorithm to detect and correct single-bit errors in transmitted data.\n13. Sliding Window Protocol (Python/Java): Simulate Stop-and-Wait and Go-Back-N ARQ protocols to demonstrate flow control in a network.\n14. Selective Repeat ARQ (Python/Java): Implement the Selective Repeat ARQ protocol for reliable data transmission.\n15. CSMA/CD and CSMA/CA Simulation (Python/Java): Simulate Carrier Sense Multiple Access with Collision Detection (CSMA/CD) and Collision Avoidance (CSMA/CA).\n16. IPv4 and IPv6 Addressing (Python/Java): Implement a program to validate and classify IP addresses as IPv4 or IPv6.\n17. ARP and RARP Implementation (Python/Java): Simulate Address Resolution Protocol (ARP) and Reverse Address Resolution Protocol (RARP).\n18. BOOTP and DHCP Simulation (Python/Java): Implement the BOOTP and DHCP mechanisms for dynamic IP address allocation.\n19. Routing Algorithms (Python/Java): Implement the Distance Vector Routing (DVR) and Link State Routing (LSR) algorithms.\n20. TCP and UDP Simulation (Python/Java): Implement a client-server model to demonstrate TCP and UDP socket programming.\n21. Congestion Control using Leaky Bucket Algorithm (Python/Java): Simulate the Leaky Bucket algorithm for congestion control.\n22. Congestion Control using Token Bucket Algorithm (Python/Java): Implement the Token Bucket algorithm to regulate network traffic.\n23. FTP and HTTP Simulation (Python/Java): Implement a program to simulate FTP file transfer and send HTTP GET/POST requests.\n24. DNS Query Resolution (Python/Java): Write a program to perform DNS resolution and retrieve IP addresses for given domain names.\n25. Email Client Simulation (Python/Java): Implement a basic email client that can send and receive messages using SMTP and POP3 protocols."
+				},
+				{
+					"code": "105407",
+					"name": "NPTEL-I (Open Course)",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": ""
 				}
 			]
 		},

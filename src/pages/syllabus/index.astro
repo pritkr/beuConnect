@@ -2,6 +2,7 @@
 export const prerender = true;
 import Layout from "../../layouts/Layout.astro";
 import Icon from "../../components/Icon.astro";
+import BranchIcon from "../../components/BranchIcon.astro";
 import branchConfig from "../../assets/data/config.json";
 
 const base = import.meta.env.BASE_URL;
@@ -27,11 +28,15 @@ const base = import.meta.env.BASE_URL;
 		{
 			branchConfig.branches.map((branch) => (
 				<li>
-					<a href={`${base}syllabus/${branch.code}/`}>
-						<span class="branch-name">{branch.name}</span>
+					<a
+						href={`${base}syllabus/${branch.code}/`}
+						data-ga="syllabus_select"
+						data-ga-params={JSON.stringify({ branch: branch.code, scope: "branch" })}
+					>
+						<span class="branch-name"><BranchIcon branch={branch.code} size={17} />{branch.name}</span>
 						<span class="branch-code mono">{branch.code.toUpperCase()}</span>
 						<span class="branch-sem">Sem 1–8</span>
-						<Icon name="arrow-right" size={16} />
+						<Icon name="arrow-right" size={16} class="go" />
 					</a>
 				</li>
 			))
@@ -76,7 +81,14 @@ const base = import.meta.env.BASE_URL;
 		text-decoration: none;
 	}
 
-	.branch-list a:hover {
+	@media (hover: hover) and (pointer: fine) {
+		.branch-list a:hover {
+			color: var(--accent);
+		}
+	}
+
+	/* A tap has no hover to inherit, so the row lights up while pressed. */
+	.branch-list a:active {
 		color: var(--accent);
 	}
 
@@ -99,11 +111,17 @@ const base = import.meta.env.BASE_URL;
 		text-align: right;
 	}
 
-	.branch-list svg {
+	.branch-list .go {
 		color: var(--line-strong);
 	}
 
-	.branch-list a:hover svg {
+	@media (hover: hover) and (pointer: fine) {
+		.branch-list a:hover .go {
+			color: var(--accent);
+		}
+	}
+
+	.branch-list a:active .go {
 		color: var(--accent);
 	}
 
@@ -122,7 +140,7 @@ const base = import.meta.env.BASE_URL;
 			text-align: left;
 		}
 
-		.branch-list svg {
+		.branch-list .go {
 			grid-row: 1 / span 2;
 			grid-column: 2;
 		}

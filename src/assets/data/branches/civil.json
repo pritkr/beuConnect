@@ -5,6 +5,46 @@
 			"subjects": [
 				{
 					"code": "100101",
+					"name": "Communication Skills",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Communicative English for Nitin Bhatnagar, Publisher: Pearson Education Engineers and Professionals Mamta Bhatnagar Edition: 1st Edition, Year: 2010",
+						"2. Oxford Communicative Oxford University Edition: Latest Revised Edition English Press Year: 2014, ISBN: 978- 0198076018",
+						"3. Technical Communication: Meenakshi Raman, Edition: 3rd Edition Year: 2015 Principles and Practice Sangeeta Sharma ISBN: 978-0199452132",
+						"4. Communication Skills in Dr. Anjana Tiwari Khanna Publishers, New Delhi English",
+						"5. Business Communication Dr. Nishith Rajaram Indra Publishing House, 2023 Dubey, Anupam Singh ISBN- 978-93-93577-69-6",
+						"6. Employability Skills Dr. Nishith Rajaram Indra Publishing House, 2023 Dubey, Anupam Singh ISBN 978-93-93577-68-9",
+						"7. Essential English Grammar Raymond Murphy Cambridge University Press in Use"
+					],
+					"content": "Unit-1.0: Vocabulary Enrichment (8 hrs)\n1.1 Technical Vocabulary Development\n1.2 Nature of Word Formation\n1.3 Root Word and Morpheme, Prefix, and Suffix\n1.4 Foreign Expressions in English\n1.5 Synonyms and Antonyms, Homophones and Homographs, Abbreviations and Acronyms\nUnit-2.0: Basics of English Grammar (10 hrs)\n2.1 Parts of Speech,\n2.2 Articles, Prepositions\n2.3 Subject Verb Agreement,\n2.4 Phrase and Clause\n2.5 Formation of Questions using Primary Auxiliaries, Modals, and Wh-Words.\n2.6 Tenses, Voice\n2.7 Redundancies/Clichés\nUnit-3.0: Technical Communication (8 hrs)\n3.1 Communication: Role and Relevance,\n3.2 Process / Steps, Types: formal and informal/verbal and non-verbal (Kinesics, Chronemics, Proxemics, Haptics, Vocalics/Paralanguage\n3.3 Barriers to Communication:\n3.4 Pattern/channels of communication\n3.5 7C’s, for effective communication\nUnit-4.0: Techniques of Professional Writing (8 hrs)\n4.1 Letter Writing (formal/informal/ cover letter/application)\n4.2 Report Writing, Proposal, Notice, Agenda, and Minutes of Meeting\n4.3 Memorandum\n4.4 Bio-Data/Resume/Curriculum Vitae\n4.5 Essay Writing, Email Writing\nUnit-5.0: Comprehension and Interpretation Skills (8 hrs)\n5.1 If (Poem) by Rudyard Kipling\n5.2 Of Studies (Essay) by Sir Francis Bacon\n5.3 India: Our Motherland (Essay) by Swami Vivekananda\n5.4 A Devoted Son (Story) by Anita Desai\n5.5 Unseen/Untaught passage"
+				},
+				{
+					"code": "100102",
+					"name": "Engineering Mathematics-I",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Higher Engineering B. S. Grewal Khanna Publishers, 44 Ed. ISBN Mathematics No:9788174091154",
+						"2. Higher Engineering B. V. Ramana Tata McGraw Hill New Delhi, 11th Ed, Mathematics 2010, ISBN-13-978-0070634190",
+						"3. Advanced Engineering Erwing Kreyszig John Wiley & Sons, 10th Ed, ISBN-978- Mathematics 0470-15836-5",
+						"4. A Textbook of N. P. Bali & Dr. University Science Press, 13th Ed, ISBN- Engineering Mathematics Manish Goyal 978-93-83828-63-0",
+						"5. Understanding John Bird Routledge; First Edition ISBN Engineering Mathematics 9780415662840"
+					],
+					"content": "Unit-1.0: Basic Linear Algebra (8 hrs)\n1.1 Elementary transformations and Rank of Matrix, Rank by using Echelon and Normal form of Matrices. Linear dependence & independence of vectors in 𝑛 space 𝑅\n1.2 Consistency of System of Linear Equations\n1.3 Eigenvalues & Eigenvectors, Cayley- Hamilton Theorem.\n1.4 Similarity of Matrices & Diagonalization of Square Matrices. Quadratic Form, Canonical Form of Matrices.\nUnit-2.0: Differential Calculus: Single Variable (8 hrs)\n2.1 Higher order derivatives; Successive differentiation and Leibnitz’s Theorem\n2.2 Mean Value Theorems (Rolle’s; Lagrange’s; Cauchy)\n2.3 Indeterminate Forms; L’ Hopital Rule\n2.4 Tangents & Normal of Algebraic & Polar Curves, Curvature situation.\nUnit-3.0: Differential Calculus: Several Variables (9 hrs)\n3.1 Partial differentiations; Euler’s theorems\n3.2 Limit, Continuity and differentiability of functions of Several Variables\n3.3 Taylor’s theorem with various forms of remainders, Maclaurin's theorem and related problems\n3.4 Maxima & Minima for functions of several variables; Lagrange’s Multiplier Method\nUnit-4.0: Integral Calculus (9 hrs)\n4.1 Differentiation under the integral sign; Leibnitz’s rule\n4.2 Double integral; Change the order of integration; Evaluation of double integration by changing it into polar co- ordinates\n4.3 Triple Integral; Evaluation of Triple integral by changing to Spherical Polar co-ordinates & Cylindrical polar co- ordinates\n4.4 Beta; Gamma; Elliptic integral; Relation between Beta & Gamma functions, General Properties and related problems.\nUnit-5.0: Vector Calculus (8 hrs)\n5.1 Scalar and vector valued functions; Concepts of gradient, divergence and curl and their geometrical and physical significance; tangent plane; directional derivative;\n5.2 Line, surface and volume integrals - integral. Statement of Green’s, Stokes’ and Gauss divergence theorems -verification and evaluation of vector integrals using them."
+				},
+				{
+					"code": "100103",
 					"name": "Engineering Chemistry",
 					"type": "Theory",
 					"credits": 3,
@@ -14,46 +54,16 @@
 						"practical": 0
 					},
 					"references": [
-						"1. University Chemistry, B.H. Mahan,Pearson",
-						"2. Chemistry, principles and application, M.J. Sienko and R.A. Plane, McGraw Hill",
-						"International",
-						"3. Fundamentals of molecular Spectroscopy, C.N. Banwell , McGraw Hill",
-						"International",
-						"4. Engineering Chemistry (NPTEL Web- Book), B.L. Tembe, Kamaluddin and M.S.",
-						"Krishnan, NPTEL",
-						"5. Physical Chemistry, P.W. Atkins, Oxford University Press",
-						"6. A text book of engineering chemistry, S. Chawala, Dhanpat Rai Publication",
-						"7. General Chemistry Part 1, R. Sarkar, New Central Book agency"
+						"1. Engineering Chemistry Jain and Jain Dhanpat Rai Publishing Co., 17th Ed. (ISBN: 978-9383182626)",
+						"2. A Textbook of Engineering Shashi Chawla Dhanpat Rai & Co., 2024 Ed. (ISBN: Chemistry 978-8127262143)",
+						"3. Principles of Materials Science William F. Smith McGraw-Hill Education, 3rd Ed. and Engineering (ISBN: 978-0070592025)",
+						"4. Concise Inorganic Chemistry J.D. Lee Oxford University Press, 5th Ed. (ISBN: 978-0632052936)"
 					],
-					"content": "Unit 1.0- Atomic and Molecular Structure 8 hrs\nElectromagnetic radiations, Dual nature of electron and Heisenberg uncertainty Principle. Photoelectric effect, Planck's theory. Principles for the combination of atomic orbitals to form a molecular diagram of molecular orbitals. Bent's rule, VSEPR theory (typical example) co- ordination numbers and geometries. Isomerism in transition metal compounds. Metal Carbonyls; Synthesis and Structure.\nUnit 2.0- Spectroscopy 6 hrs\nPrinciple of rotational and vibrational spectroscopy, selection rule for application in diatomic molecules, elementary idea of electronic spectroscopy, UV-VIS spectroscopy with related to rules and its applications. Basic Principle of nuclear Magnetic resonance spectroscopy with applications.\nUnit 3.0 -Electrochemistry and Fuels 6 hrs\nNernst equation, EMF and electrochemical cell, the introduction of corrosion, corrosion mechanism, types of corrosion, water line corrosion, stress corrosion, pitting corrosion, Lead acid storage cell, leclanche cell. Calorific value of fuels, proximate and ultimate analysis of coals, fuel cells, Bio fuels.\nUnit 4.0- Water Chemistry 8 hrs\nHardness of water, estimation of water hardness by EDTA and Alkalinity method. Removal of the hardness of water- soda lime process, zeolite process, Ion exchange process, Boiler problem, sludge, and scale formation, priming and foaming, Boiler corrosion, and Caustic embrittlement.\nUnit 5.0 - Polymer and Plastics 8 hrs\nPolymerization techniques (free radical, ionic, and co-ordination mechanism)Preparation properties, and technical application of phenol-formaldehyde resins, elastomers, synthetic rubbers (Buna-S, Buna-N, neoprene). Inorganic polymers, Silicones, adhesives, epoxy resins. the structural difference between thermoplastic and thermosetting Plastics, the Importance of commercially important thermoplastics and thermosets; Poly ethylene, Polyvinyl chloride, Polystyrene.\nUnit 6.0- Organic Reactions and Synthesis of A Drug Molecule 6 hrs\nIntroduction to intermediate and reaction involving Substitution, addition, elimination, oxidation-reduction. Diels Elder cyclization and epoxide ring opening reactions, synthesis of commonly used drug molecules like aspirin."
+					"content": "Unit-1.0: Quantum Mechanics & Molecular Structure (9 hrs)\n1.1 Planck's theory, photoelectric effect, dual nature of electrons.\n1.2 Wave Mechanics: Heisenberg Uncertainty Principle, Schrödinger's wave equation (concept & particle-in-a-box).\n1.3 LCAO Method, MO diagrams of diatomics, VSEPR theory (geometries / Bent's Rule).\n1.4 Coordination number, isomerism in transition-metal compounds; CFT (octahedral, tetrahedral and Square Planer).\nUnit-2.0: Spectroscopy & Smart Materials Science (8 hrs)\n2.1 Spectroscopy: fundamentals of rotational, vibrational & electronic spectra; Beer– Lambert law.\n2.2 Analytical Tools: UV-Vis, IR (fingerprint region) & NMR principles; applications in identifying organic functional groups.\n2.3 Smart Materials: chemical sensors, piezoelectric materials used in MEMS & spectrum of a given simple instrumentation molecule.\nUnit-3.0: Industrial Polymers & Advanced Materials (8 hrs)\n3.1 Introduction of Organic reactions, Polymerization: free-radical, ionic and condensation mechanisms; degree of polymerization.\n3.2 Classification: thermoplastics vs. thermosets (PVC, PS, PMMA, PTFE).\n3.3 Engineering Synthetics: Phenol- formaldehyde, Epoxy resins and Silicones.\n3.4 Elastomers: synthetic rubbers (Buna-S, Buna-N, Neoprene).\nUnit-4.0: Electrochemistry, Corrosion & Colloidal (9 hrs)\n4.1 Electrochemical Theory: EMF, electrode potential, Nernst equation; numerical problems.\n4.2 Storage Systems: primary & secondary cells, Li-ion batteries, Pb-storage and Ni-Cd batteries.\n4.3 Next-Gen Energy: H₂-O₂ and methanol, (fuel cells, solar cells), Lubricants (Flash point, Fire point, acid value.\n4.4 Material Durability: corrosion -waterline, stress, pitting, galvanic; protection, cathodic, anodic, coatings, e-coat.\n4.5 Colloidal and adsorption\nUnit-5.0: Water Chemistry & Environmental Sustainability (8 hrs)\nestimation and alkalinity determination. 5.1 Water Analysis: unit of concentration, estimation of hardness by EDTA, and alkalinity.\n5.2 Purification: lime-soda, zeolite & ion- exchange softening; measurement of BOD and COD.\n5.3 Industrial Challenges: boiler scales, sludge, priming, foaming, caustic embrittlement.\n5.4 Green Chemistry & Sustainability: principles, air/water pollution, adulteration (fat butter, sugar, turmeric powder and chilli powder), E-waste management. environment and health."
 				},
 				{
-					"code": "100102",
-					"name": "Engineering Mathematics–I",
-					"type": "Theory",
-					"credits": 4,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 1,
-						"practical": 0
-					},
-					"references": [
-						"1. AICTE’s Prescribed Textbook: Mathematics-I (Calculus & Linear Algebra), Reena",
-						"Garg, Khanna Book Publishing Co. ISBN-10 9391505171",
-						"2. Advanced Engineering Mathematics, Chandrika Prasad & Reena Garg, Khanna Book",
-						"Publishing Co., 2021. ISBN 10: 9386173522 / ISBN 13: 9789386173522.",
-						"3. Higher Engineering Mathematics, B.V. Ramana, Tata McGraw Hill New Delhi, 11th",
-						"Reprint, 2010,ISBN-10 007063419X ISBN-13978- 0070634190.",
-						"4. Advanced Engineering Mathematics, SrkIyengar Rk Jain,Narosa,5thEdition,ISBN-10",
-						"8184875606 ISBN-13978-8184875607",
-						"5. Advanced Engineering Mathematics, Erwin Kreyszig, 9th Edition, John Wiley &",
-						"Sons, 2006."
-					],
-					"content": "Unit- 1.0: Linear Algebra-I 7 hrs\nElementary Row operations, Gauss -Jordan Method for finding the inverse of Matrix, Complex Matrix : Hermitian , Skew Hermitian and Unitary Matrix, Vector space, Sub Spaces, Linear dependence and Independences of Vectors, Linear Span, Basis, Dimension, Extension of basis of subspace, The rank of a matrix, Row and column space, Solvability of system of linear equations.\nUnit- 2.0: Linear Algebra-II 7 hrs\nLinear Transformations, Kernel and Range of linear transformation, Matrix Representation of a linear transformation, Rank-Nullity Theorem, Eigen Value and Eigen Vectors, Properties of Eigen vectors, Eigen Bases, Orthogonal Transformation, Similarity Transformation, Matrix Diagonalization, Cayley- Hamilton Theorem.\nUnit- 3.0: Calculus for single variable 7 hrs\nInderminate form, L’Hospital Rule, Rolle’s Theorem, Mean Value Theorem, Expansion of function (single variable), Taylor and Maclaurin Series, Riemann Integration, Riemann Sum, Improper Integrals, Beta and Gamma function and their properties.\nUnit- 4.0 : Multivariable Calculus (Differentiation) 7 hrs\nFunction with two or more variable, Limit, continuity and Partial differentiation, Total Differentiation Taylor’s series and Maclaurin’s series for function with two variable, Jacobian, Maxima and Minima, Method of Lagrange’s multiplier.\nUnit-5.0: Multivariable Calculus (Integration) 7 hrs\nDouble Integral, change of order of integration, Triple integral, Change of Variable in a Double and Triple Integrals, Change to polar coordinate, Change to cylindrical coordinate, Change to spherical polar coordinate, Application to area and volume using double and triple integral\nUnit- 6.0: Vector Calculus 7 hrs\nScalar and vector fields, Gradient, Directional derivative, Divergence, Curl and their properties, Line integral, Green’s theorem in plane (without proof), Surface integral, Stoke’s theorem (without proof), Volume Integral, Gauss-Divergence’ theorem (without proof)."
-				},
-				{
-					"code": "100103",
-					"name": "Communicative English",
+					"code": "100105",
+					"name": "Introduction to AI",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
@@ -62,19 +72,39 @@
 						"practical": 0
 					},
 					"references": [
-						"1. English language and communication skills for engineers, Sanjay Kumar,Pushp lata,",
-						"Oxford university Press",
-						"2. Communicative English for Technical student, Dr. Bijay Bhadur Singh and Dr.",
-						"Kalpana Sinha, Foundation publishing House (FPM)",
-						"Oxford University Press",
-						"4. A course in Listening & Speaking, V. Sasi Kumar ,P. Kiranmai Dutt and Geetha",
-						"Rajeevan, Foundation Books"
+						"1. Artificial Intelligence: A Modern Stuart Russell, Peter Norvig Pearson; 4th Ed., 2020. ISBN: 978- Approach 0134610993",
+						"2. AI for everyone Saptarsi Goswami, Amit Pearson Education: SBN-10: Kumar Das, Amlan 9361591754, ISBN-13: 978-9361591754 Chakrabarti",
+						"3. Introduction to Artificial Dan W. Patterson PHI Learning; 2015. ISBN: 978- Intelligence and Expert Systems 8120307775",
+						"4. Artificial Intelligence Elaine Rich, Kevin Knight, McGraw-Hill; 3rd Ed., 2017. ISBN: 978- Shivashankar B. Nair 1259029420",
+						"5. Artificial Intelligence - A Modern Dilip Narayan Sahu, ISBN-10: 9355151446 Approach Kishore Kumar Dash, ISBN-13: 978-9355151445 Abahy Kolhe, Agilandeswari Devarajan",
+						"6. Machine Learning Essentials Dhairya Parikh Vibrant Publishers: ISBN-10: 1636513778, ISBN-13: 978-1636513775"
 					],
-					"content": "Unit-1.0: Vocabulary Building 7 hrs\nNature of Word Formation; Root Word and Morpheme; Prefix and Suffix; Foreign Expressions in English; Synonym and Antonym; Homophone and Homograph; Abbreviation and Acronym.\nUnit-2.0: Basic Writing Skills 7 hrs\nParts of Speech: Types of Words; Structures of Sentence; Kind of Sentence; Phrase and Clause; Punctuation Marks; Capitalization; Tenses: Present, Past and Future; Voices: Active and Passive; Formation of Questions using Primary Auxiliaries, Modals and Wh-Words.\nUnit-3.0: Common Errors in English 7 hrs\nArticles; Prepositions; Modifiers; Subject-Verb Agreement; Noun-Pronoun agreement; Redundancies; Cliches; Spelling Error.\nUnit-4.0: Principles of Appropriate Writi 7 hrs\nDefining: Describing, Classifying and Exemplifying; Introduction, Body, and Conclusion; References, Quotations and Illustrations; Organizing the Paragraphs in a Document; 7Cs of the Professional Writing: Clear, Concise, Concrete, Correct, Coherent, Complete and Courteous.\nUnit-5.0: Practices of Formal Writing 7 hrs\nFormal Letter: Cover-Letter and Application; Resume Writing; Report Writing; Minutes of Meeting; Memorandum; Notice; Essay Writing: Personal and Impersonal; Email Writing Etiquettes; Article Writing; Writing for Current Social Media.\nUnit-6.0: Comprehension of Written English 7 hrs\nOf Studies (Essay) by Sir Francis Bacon; The Sun Rising (Poem) by John Donne; The Last Leaf (Story) by O Henry; Unseen/Untaught Passage."
+					"content": "Unit-1.0: Introduction to Artificial Intelligence (8 hrs)\n1.1 What is AI? History and evolution of AI\n1.2 Foundations of AI: philosophy, mathematics, and cognitive-science influences\n1.3 Intelligent agents: agent–environment interaction, PEAS (Performance measure, Environment, Actuators, and Sensors) description\n1.4 Types of environments (observable, deterministic, episodic, static, discrete, single/multi-agent)\n1.5 Types of agents: simple reflex, model- based, goal-based, utility-based, learning agents\n1.6 Overview of AI application domains across engineering disciplines\nUnit-2.0: Problem Solving by Search (9 hrs)\n2.1 Problem formulation and state-space representation\n2.2 Uninformed search: BFS, DFS, Uniform Cost Search, Depth-Limited and Iterative Deepening Search\n2.3 Informed (heuristic) search: Greedy Best- First Search, A* algorithm\n2.4 Heuristic function design and admissibility/consistency\n2.5 Local search algorithms: Hill Climbing, Simulated Annealing (concept)\n2.6 Adversarial search: Minimax algorithm, Alpha-Beta pruning\n2.7 Constraint Satisfaction Problems (CSP): concept, backtracking (overview)\nUnit-3.0: Knowledge Representation and Reasoning (8 hrs)\n3.1 Knowledge representation issues; propositional logic — syntax and semantics\n3.2 Inference in propositional logic: resolution\n3.3 First-order predicate logic — syntax, quantifiers (concept)\n3.4 Inference in first-order logic: forward chaining, backward chaining, resolution (concept)\n3.5 Structured knowledge representation: semantic networks, frames\n3.6 Rule-based (production) systems\nUnit-4.0: Reasoning Under Uncertainty (7 hrs)\n4.1 Sources of uncertainty; review of basic probability theory\n4.2 Bayes' theorem and its application to AI reasoning\n4.3 Bayesian networks: representation and manual inference (overview)\n4.4 Introduction to fuzzy logic and fuzzy sets\n4.5 Certainty factors and rule-based uncertainty (overview)\nUnit-5.0: Introduction to Machine Learning and AI Applications (10 hrs)\n5.1 Machine learning paradigms: supervised, unsupervised, reinforcement learning (concept)\n5.2 Overview of regression and classification concepts (linear regression, k-NN, decision trees)\n5.3 Overview of clustering concept (k-means)\n5.4 Introduction to artificial neural networks: perceptron, basic architecture (concept)\n5.5 Overview of Natural Language Processing (NLP): concept and applications\n5.6 Overview of Computer Vision: concept and applications\n5.7 Expert systems: architecture and applications\n5.8 Robotics and AI: overview of intelligent robotic systems\n5.9 Ethics, bias, and responsible AI; societal and multidisciplinary impact; AI and Sustainable Development engineering contexts. Goals (SDGs)"
 				},
 				{
-					"code": "100109P",
-					"name": "Sports/Yoga/NCC/NSS",
+					"code": "100107",
+					"name": "Engineering Graphics and Design",
+					"type": "Theory",
+					"credits": 2,
+					"summary": {
+						"lecture": 2,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Engineering Drawing N. D. Bhatt Charotar Publishing House",
+						"2. Engineering Drawing P.J. Shah S. Chand Publisher",
+						"3. Engineering Drawing K.Venu Gopal & New Age Publications V.Prabu Raja",
+						"4. Engineering Drawing and Venugopal K. New age International Publishers, Delhi, Graphics + AutoCAD 2022, ISBN: 978-8122472752",
+						"5. Engineering Drawing Basant Agrawal and Tata McGraw Hill, New Delhi, 2013 Agrawal C. M. ISBN: 978-1259062889",
+						"6. Engineering Graphics Khanna Book Publishing Company Pvt. S. K. Pradhan K.K. Jain Ltd., New Delhi ASIN: B0BM5BMMXT ISBN-10: 9355381891",
+						"7. Bureau of Indian Standards, BIS, Government of BIS, Government of India, Engineering Drawing Practice India, Third Reprint, October 1998; for Schools and Colleges IS: SP- ISBN: 81-7061-091-2. 46, BIS,"
+					],
+					"content": "Unit-1.0: Fundamentals of Engineering Constructions and Scales Drawing, Geometrical (6 hrs)\n1.1 Principles, significance, BIS conventions, drawing instruments, sheet layout, technical drawings, and dimensioning.\n1.2 Drawing Conventions- Different types of lines, lettering, dimensioning systems, symbols.\n1.3 Geometric construction related to line, circle, regular Polygons by general method.\n1.4 Engineering Scales- Scales on Drawings, Plain scale, Diagonal scale, Vernier scale.\n1.5 Engineering Curves- Construction of conic sections (Ellipse, Parabola, and Hyperbola) using General Methods. Cycloidal curves, Involute curves.\nUnit-2.0: Orthographic Projection (Multiview Projections) (6 hrs)\n2.1 Principles of Orthographic Projections multi-view projection (First angle and Third angle) conventions. angle projection.\n2.2 Conventions - Projections of Points and lines inclined to both planes\n2.3 Projections of planes, inclined Planes - Auxiliary Planes. Traces of lines.\n2.4 Construction of orthographic projections.\nUnit-3.0: Projection of Regular Solids and Sectional View (6 hrs)\n3.1 Orthographic Projections of regular solids\n3.2 Sectional View of Solid when sectional plane is parallel to HP (Horizontal Plane).\n3.3 Sectional View of Solid when sectional plane is perpendicular to HP (Horizontal Plane).\n3.4 Sectional View of a regular solid when the sectional plane is inclined to HP (Horizontal Plane).\nUnit-4.0: Development of Surfaces & Isometric Projection (5 hrs)\n4.1 Development of lateral surfaces of right regular prisms, cylinders, pyramids and cones resting on HP.\n4.2 Parallel Line Method- Used for prisms and cylinders, where all sides or elements are parallel to each other.\n4.3 Radial Line Method- Used for pyramids and cones, where the lines or elements radiate outward from a central vertex or apex.\n4.4 Isometric Views– conventions – Plane figures, simple and compound solids.\nUnit-5.0: 2D and 3D Drawings Using CAD\n(Computer-Aided Drafting) Software (5 hrs)\n5.1 2D drawings for a given orthographic projection of objects like screw, nut, bolt etc.\n5.2 2D drawings for a given isometric projection of a plumber block.\n5.3 2D drawings of physical objects such as screw, nut, bolt, plumber block, washer etc.\n5.4 Solid Modeling for a given isometric CO(s) Relevant Units/ Body of Knowledge (BoK) projection.\n5.5 Solid Modeling a given physical object."
+				},
+				{
+					"code": "100101P",
+					"name": "Communication Skills Lab",
 					"type": "Practical",
 					"credits": 1,
 					"summary": {
@@ -83,54 +113,10 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Course Objectives: (a) Encouraging creativity and innovation: The course could aim to foster a culture of creativity and innovation among engineering students. It could provide opportunities for students to generate and develop new ideas, think critically, and come up with innovative solutions to real-worldproblems. This objective could be achieved through brainstorming sessions, design thinking exercises, and hands-on projects. (b) Enhancing problem-solving skills: The course could focus on enhancing the problem- solving skills of engineering students. It could provide training on various problem-solving techniques, such as root cause analysis, critical thinking, and decision-making. Students may learn how to identify and analyse complex problems, develop feasible solutions, and implement them effectively. (c) Developing project management skills: The course could aim to develop project management skills among engineering students. It could cover topics such as project planning, scheduling, budgeting, and risk management. Students may learn how to manage resources, communicate effectively, and work collaboratively in a project-based environment. (d) Promoting interdisciplinary collaboration: The course could encourage interdisciplinary collaboration among engineering students. It could provide opportunities for students from different engineering disciplines to work together on innovative projects. This could foster cross-disciplinary learning, encourage diverse perspectives, and promote teamwork and collaboration skills. (e) Facilitating practical application of engineering concepts: The course could focus on the\npractical application of engineering concepts and principles. It could provide students with opportunities to apply their theoretical knowledge to real-world projects, prototypes, or simulations. Students may learn how to translate engineering theories into practical solutions and develop hands-on experience in implementing innovative projects. Pre-requisite: Nil Course Outcome:\n1. Developed innovative projects: Students may have successfully developed innovative projects that demonstrate their creativity, problem-solving skills, and technical competence. These projects could be prototypes, models, simulations, or practical solutions to real-world problems, showcasing their ability to apply engineering concepts in a creative and innovative manner.\n2. Improved critical thinking and problem-solving skills: Students may have honed their critical thinking and problem-solving skills through various course activities, such as brainstorming, design thinking, and project development. They may have learned to analyse complex problems, identify viable solutions, and make informed decisions based on technical, economic, and social considerations.\n3. Enhanced project management and teamwork skills: Students may have gained practical experience in managing projects, including planning, scheduling, budgeting, and risk management. They may have learned how to work effectively in a team, collaborate with diverse team members, and communicate project progress and results professionally.\n4. Increased interdisciplinary knowledge and collaboration: Students may have gained exposure to interdisciplinary concepts and collaborated with peers from different engineering disciplines. They may have learned to appreciate diverse perspectives, leverage interdisciplinary knowledge, and work collaboratively to develop innovative solutions that integrate multiple domains of engineering.\n5. Cultivated a mindset of innovation and entrepreneurship: Students may have developed a mindset of innovation and entrepreneurship, recognizing the importance of creativity, adaptability, and continuous improvement in engineering practice. They may have learned to identify opportunities, think critically, and take risks to develop and implement innovative projects with commercial or societal potential. List of Reports: Any topics related to innovative project."
+					"content": "LE-1 Skills of Communication (LSRW) • Listening to audio/video lectures and summarizing, Reading comprehension with group discussion. • Role play on workplace Scenarios, Story/narrative reconstruction from audio input • Group presentations based on reading materials, note-taking, and report writing from lectures\nLE-2 Introduction: Social, Academic, and Professional • Self-introduction and introducing others. • Face-to-face conversation practice. • Role plays (workplace interactions, daily situations) • Group presentations, Group discussion, and practice • Debate and panel discussion, Seminar presentation with Q&A • Situational communication (office, social, academic contexts)\nLE-3 Oral Presentation ➢ Oral presentation: Audience • Selection, Presentation Techniques ➢ Posture, gesture, and stage presence • Facial expressions • Eye contact techniques ➢ Basics of slide design • Text vs visuals, • Using an image and icon, • Slide timing and pacing, • Common slide mistakes\nLE-4 Anchoring and Addressing ➢ Role of an anchor vs speaker • Types of anchoring Laboratory Experiment/ Practical Titles • Event flow management ➢ Formal vs. informal introduction • Avoiding common mistakes • Building audience interest ➢ Emotional connection, • Voice modulation • Movement on stage • Managing nervous habits.\nLE-5 Interview ➢ Interviews: Types, • Employer vs candidate • Common interview mistakes • SWOT Analysis ➢ Structuring clear and concise answers • Avoiding memorized/robotic answers. ➢ Listening to questions cautiously • Non-verbal listening cues (nodding, eye contact), • Avoiding interruptions ➢ First impressions in interviews, • Professional greetings (verbal + non- verbal)\nLE-6 Group Discussion ➢ GD: types • (academic, professional, selection- based) • Do’s and Don’ts in GD ➢ Role of initiator • Role of participant • Role of moderator/leader • Managing interruptions, • Handling conflicts and disagreements ➢ Structuring arguments logically, • Supporting points with examples/data.\nLE-7 Debate, Seminar, Symposium, Conference Laboratory Experiment/ Practical Titles ➢ Debate • Seminar, • Symposium, • Conference. ➢ Paraphrasing and summarizing • Avoiding interruptions • Constructive feedback techniques • Identifying reliable sources (websites, journals, reports), • Note-taking and organizing information, • Plagiarism • Converting research into speaking points, • Using data/examples\nLE-8 Just A Minute Technique with Out of the Box Thinking ➢ Techniques for Idea Generation • Brainstorming, • Mind mapping • SCAMPER technique (Substitute, Combine, Adapt, Modify, put to other use, Eliminate, Reverse) ➢ Storytelling • Creating mental images through words • Emotional connection and expression ➢ Speaking within time limits • Organizing thoughts quickly,\nLE-9 Sounds, Intonation, and IPA ➢ Phonetics • Sounds: Vowels and consonants, • Syllables and word stress • Common pronunciation errors influenced by mother tongue) ➢ IPA symbols for English sounds, • IPA for vowels (short, long, diphthongs), • IPA for consonants, using a dictionary with IPA Stress marks in IPA Laboratory Experiment/ Practical Titles ➢ Word stress and sentence stress, • Commonly mispronounced words, • Rhythm and fluency • Self-correction techniques,\nLE-10 Activities: Role Play, Peer Activities, and Group Activities • Role Play • Group Activities ➢ Role-Based Communication • Situational Communication • Tone, language, and • Behaviour adjustment, • Verbal and non-verbal • adaptation, ➢ Problem-solving • Creative thinking techniques • Decision-making • Evaluating multiple • solutions, • Real-life problem • Innovation and idea • generation."
 				},
 				{
-					"code": "100104",
-					"name": "Engineering Graphics and Design",
-					"type": "Theory",
-					"credits": 1,
-					"summary": {
-						"lecture": 1,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"1. Engineering Drawing, N.D. Bhatt, Charotar Publishing House, 53rd Edition, ISBN:",
-						"978-9380358277",
-						"2. A Textbook of Engineering Drawing, R.K. Dhawan, S. Chand Publishing, Revised",
-						"Edition, ISBN: 978-8121929571",
-						"3. Engineering Drawing and Graphics, K. Venugopal, V. Prabhu Raja, New Age",
-						"International Publishers, 3rd Edition, ISBN: 978-8122430120",
-						"4. Engineering Graphics with AutoCAD, D.M. Kulkarni, A.P. Rastogi, A.K. Sarkar, PHI",
-						"Learning Pvt. Ltd., 1stEdition, ISBN: 978-8120337834"
-					],
-					"content": "Unit- 1.0: Introduction to Engineering Drawing 7hrs\nPrinciples of Engineering Graphics and Their Significance, Usage of Drawing Instruments, Lettering, Conic Sections including the Rectangular Hyperbola (General Method Only); Cycloid, Epicycloid, Hypocycloid and Involute; Scales Plain, Diagonal and Vernier Scales\nUnit- 2.0 Orthographic Projections 7hrs\nPrinciples of Orthographic Projections - Conventions -Projections of Points and Lines Inclined to Both Planes; Projections of Planes Inclined Planes Auxiliary Planes.\nUnit- 3.0 Projections of Regular Solids 7hrs\nTypes of Solids, Projects of Solids (Prism, pyramids, cone, and cylinder): Inclined to Both the Planes- Auxiliary Views; Draw Simple Annotation, Dimensioning and Scale.\nUnit- 4.0 Sections and Sectional Views of Right Angular Solids 7hrs\nSection of Solids (Prism, Cylinder, Pyramid, Cone), Auxiliary Views; Development of Surfaces Of Right Regular Solids- Prism, Pyramid, Cylinder And Cone; Draw The Sectional Orthographic Views of Geometrical Solids, Objects From Industry And Dwellings (Foundation To Slab Only).\nUnit- 5.0 Isometric Projections 7hrs\nIsometric Views, Compound Solids; Principles of Isometric Projection Isometric Scale, Conventions; Isometric Views of Lines, Planes, Simple and Conversion of Isometric Views toOrthographic Views And Vice-Versa, Conventions.\nUnit- 6.0 Overview of Computer Graphics 7hrs\nListing the Computer Technologies that Impact on Graphical Communication, Demonstrating Knowledge of the Theory of CAD Software [Such As: The Menu System, Toolbars (Standard, Object Properties, Draw, Modify And Dimension), Drawing Area (Background, Crosshairs, Coordinate System), Dialog Boxes And Windows, Shortcut Menus (Button Bars), The Command Line (Where Applicable), The Status Bar, Different Methods of Zoom as Used in CAD, Select and Erase Objects.; Isometric Views of Lines, Planes, Simple And Compound Solids."
-				},
-				{
-					"code": "100105",
-					"name": "Engineering Mechanics",
-					"type": "Theory",
-					"credits": 3,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"1. Engineering Mechanics statics and dynamics R. C. Hibbeler Pearson Publication, 12th",
-						"Edition. ISBN-10: 0-13-814929-1 ISBN-13:978-0-13-814929-1",
-						"2. Engineering Mechanics statics and dynamics, J. L. Meriam and L. G. Craige, John",
-						"Willey and Son’s publication. 9th Edition. ISBN: 978-1-119-39098-5",
-						"3. Engineering Mechanics, S. P. Timoshenko, D. H. Young, J. V. Rao & S.Pati,",
-						"McGraw- Hill publication, 5th Edition ISBN-10:9781259062667",
-						"4. Engineering Mechanics statics and dynamics,A. K. Dhiman, P. Dhiman & D.",
-						"Kulshreshtha, McGraw-Hill publication ISBN-10:9789339219178"
-					],
-					"content": "Unit- 1.0: Fundamentals of Mechanics 7hrs\nOverview of engineering mechanics. Vector and scalar quantities. Units of physical quantities. Dimensions of physical quantities. Units and Dimensions. Dimensional analysis.\nUnit- 2.0: Force Systems and Equilibrium 7hrs\nForce Systems Basic Concepts, Particle Equilibrium in 2-D & 3-D, Rigid Body Equilibrium, System of Forces: oplanar Concurrent Forces, Components in Space, Resultant and Moment of Forces and its Application, Couples and Resultant of Force System, Free Body Diagrams, Equations of Equilibrium of Coplanar Systems and Spatial Systems.\nUnit- 3.0: Friction and Structural Analysis 7hrs\nTypes of Friction: Limiting, Static, and Dynamic, Laws of Friction, Motion of Bodies and Wedge Friction, Equilibrium in Three Dimensions, Method of Sections and Method of Joints, Tension and Compression in Members, Simple Trusses, Zero Force Members, Beams, Types of Beams, Frames and Machines.\nUnit- 4.0: Centroid, Centre of Gravity, and Moment of Inertia 7hrs\nCentroid of Simple Figures from First Principle, Centroid of Composite Sections, Centre of Gravity and Its Implications, Area Moment of Inertia: Definition and Theorems Moment of Inertia of Plane Sections, Standard Sections, and Composite Sections, Mass Moment Inertia of Circular Plate, Cylinder, Cone, Sphere, Hook.\nUnit- 5.0: Virtual Work, Energy Method, and Particle Dynamics 7hrs\nVirtual Displacements and Principle of Virtual Work, Degrees of Freedom and Active Force Diagram, Conservative Forces and Potential Energy, Energy Equation for Equilibrium, Applications of Energy Method for Equilibrium, Stability of Equilibrium, Review of Particle Dynamics: Rectilinear and Plane Curvilinear Motion, Relative and Constrained Motion, Newton’s 2nd Law Work-Kinetic Energy, Power, Potential Energy Impulse-Momentum and Impact.\nUnit- 6.0: Kinetics of Rigid Bodies 7hrs\nIntroduction to Kinetics of Rigid Bodies Basic Terms and General Principles in Dynamics Types of Motion and Instantaneous Centre of Rotation in Plane Motion Simple Problems D’Alembert’s Principle and Its Applications in Plane Motion and Connected Bodies Work- Energy Principle and Its Application in Plane Motion of Connected Bodies Kinetics of Rigid Body Rotation."
-				},
-				{
-					"code": "100101P",
+					"code": "100103P",
 					"name": "Engineering Chemistry Lab",
 					"type": "Practical",
 					"credits": 1,
@@ -140,23 +126,10 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform any 10 Experiments\n1. To estimate hardness of water by alkalinity method\n2. To estimate hardness of water by EDTA method\n3. To remove hardness of water by ion exchange method\n4. Determination of pH of a given acid solution using a standard sodium hydroxide solution\n5. Determination of surface tension and viscosity\n6. Chemical analysis of salt (Acid radical and basic radical)\n7. Adsorption of acetic acid by charcoal\n8. Test of adulteration of fat butter, sugar, turmeric powder, chilli powder and pepper\n9. Saponification/ acid value of an oil\n10. Identification of organic substances and their functional groups\n11. Potentiometric determination of redox potentials and emf\n12. Synthesis of drug/ polymer like ASPRIN/ Urea- formaldehyde resin\n13. Thin layer chromatography\n14. Analysis of flue gas by orsat apparatus"
+					"content": "LE-1 Determination of pH of a given acid solution using a standard sodium hydroxide solution.\nLE-2 Estimation of hardness of water by the EDTA method.\nLE-3 Removal of hardness of water by ion exchange method.\nLE-4 Estimation of the hardness of water by the alkalinity method\nLE-5 Potentiometric determination of redox potentials and emf.\nLE-6 Identification of organic substances and their functional groups.\nLE-7 Test of adulteration of fat butter, sugar, turmeric powder and chilli powder\nLE-8 Saponification/acid value of an oil.\nLE-9 Estimation of Residual Chlorine in a water sample by Colourimetric analysis.\nLE-10 Identification of organic functional groups in an unknown sample using FT-IR Spectroscopy. Laboratory Experiment/ Practical Titles\nLE-11 Qualitative analysis of a mixture of amino acids by TLC and visualisation under UV light.\nLE-12 Determination of Flash point, Pour point.\nLE-13 Synthesis of polymer like Urea- formaldehyde resin."
 				},
 				{
-					"code": "100103P",
-					"name": "Communicative English Lab",
-					"type": "Practical",
-					"credits": 1,
-					"summary": {
-						"lecture": 0,
-						"tutorial": 0,
-						"practical": 2
-					},
-					"references": [],
-					"content": "Perform any 10 Experiments Introduction: Language Lab of English includes Listening Comprehension, Reading Comprehension, Speaking Skills: Phonetics, International Phonetic Alphabet Symbols (IPAS), Sounds: Vowels and Consonants, Pronunciation, Intonation, Stress and Rhythm, Just A Minute Technique (JAM), Communication: Verbal and Non-Verbal; Ethical Usage of Artificial Intelligence, Self-Introduction: Social, Academic and Professional; Interview: Brainstorming Vocabulary Activities.\n1. Listening Comprehension and Speed (Software)\n2. Reading Comprehension and Speed (Software)\n3. Pronunciation: Learning and Test (Software)\n4. Self-Introduction: Social, Academic and Professional\n5. English Typing: Microsoft Word Document (MS Word), and Microsoft Power Point Presentation (PPT)\n6. Oral Presentation\n7. Interview: Online and Offline\n8. Just A Minute Technique (JAM) and Extempore\n9. Debate\n10. Group Discussion\n11. Activities: Role Play, Peer Activities, and Group Activities\n12. Anchoring and Addressing: an Assembly, a Meeting, a Seminar, a Party"
-				},
-				{
-					"code": "100104P",
+					"code": "100107P",
 					"name": "Engineering Graphics and Design Lab",
 					"type": "Practical",
 					"credits": 2,
@@ -166,11 +139,11 @@
 						"practical": 4
 					},
 					"references": [],
-					"content": "Perform any 10 Experiments\n1. (Which includes dimensioning methods, different types of line, construction of different polygon, divide the line and angle in parts, use of stencil)\n2. Construction of Plane, Diagonal & Vernier Scales.\n3. Construction of Ellipses, Parabolas, and Hyperbolas using the general method.\n4. Construction of cycloid, epicycloid, hypocycloid, and involute of a circle.\n5. Projection of Points and Lines inclined to both planes.\n6. Projections of Planes (e.g., rectangular, triangular) in inclined positions.\n7. Projection of Solids (prisms,pyramids, cones, and cylinders)\n8. Drawing of Sections of Prisms, Cylinders, Pyramids, and Cones.\n9. Development of Surfaces for prisms, pyramids, cylinders, and cones.\n10. Construction of Isometric views of lines, planes, and simple solids.\n11. Introduction to CAD Software.\n12. Use of CAD software to draw basic geometric shapes, apply dimensions, and modify objects."
+					"content": "LE-1 Basics of Engineering Drawing.\nLE-2 Geometrical constructions of lines, circles, curves, tangents and regular polygons.\nLE-3 Orthographic Projection First/Third Angle method of projections, projection of points & projection of lines in different positions.\nLE-4 Drawing views of objects (plane and solid) using Orthographic Method of Projection.\nLE-5 Orthographic Projection of solids (prisms, pyramids, cylinders, cones and auxiliary views) and also sectional view.\nLE-6 Conversion between pictorial and orthographic views.\nLE-7 Drawing objects using Isometric Projections.\nLE-8 Orthographic–isometric conversion.\nLE-9 Drawing objects using Development of surfaces (prisms, pyramids, cylinders and cones)\nLE-10 Introduction to AutoCAD – 2D drawing.\nLE-11 Develop 2D drawings using CAD software for a given engineering drawing – drawings of like screw, nut, bolt. Laboratory Experiment/ Practical Titles\nLE-12 Develop 2D drawings using CAD software for a given engineering drawing – drawing of engineering components.\nLE-13 Preparation of orthographic, sectional and isometric drawings of engineering components/layouts.\nLE-14 Preparation of basic 3D models and engineering drawings of machine components,"
 				},
 				{
-					"code": "100105P",
-					"name": "Engineering Mechanics Lab",
+					"code": "100112P",
+					"name": "Programming for Problem Solving Lab",
 					"type": "Practical",
 					"credits": 1,
 					"summary": {
@@ -179,7 +152,20 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform any 10 Experiments\n1. Practical based on mechanical advantage of different machines.\n2. Verification of triangle law & parallelogram law of forces.\n3. Verification of polygon law of forces.\n4. Determination of moment of inertia of a flywheel.\n5. Crank Lever apparatus.\n6. Verification of support reactions of a simply supported beam.\n7. Verification of condition of equilibrium of a system of forces.\n8. Verification of axial forces in the members of a truss.\n9. Verification of equilibrium of three dimensional forces.\n10. Determination of coefficient of friction between two surfaces.\n11. Verification of centroid of different laminae.\n12. Verification of Newton’s laws of motion."
+					"content": "LE-1 Algorithmic Logic & Basic I/O • Write a C program to calculate the area of various geometrical shapes (circle, triangle, rectangle) using appropriate data types and type casting, accompanied by a flowchart.\nLE-2 Decision Making Systems • Develop a Student Grading and Classification System using an if-else ladder and a switch- case to handle marks for grading and classify eligible fee waivers by category.\nLE-3 Iterative Problem Solving • Develop a C program to perform the following tasks by using while and for loops: i) Find all prime numbers between 1 and N ii) Generate the Fibonacci sequence for the value of N.\nLE-4 1-D Array Operations • Write a C program to: i) Find the maximum/ minimum element using Linear Search ii) Calculate the average of elements in a 1-D array.\nLE-5 Matrix Manipulation (2-D Arrays) Laboratory Experiment/ Practical Titles • Write a C program to perform the following tasks: i) Matrix Multiplication ii) Find the transpose of a matrix using 2-D arrays\nLE-6 Pointer Arithmetic & Strings • Write a C program to perform the following tasks without using pointer arithmetic: i) Reverse a string ii) Count vowels/consonants of the given string using pointers\nLE-7 Recursion vs. Iteration • Write a C program to perform the following tasks by using both iterative and recursive functions to compare logic flow: i) Find the factorial value for the given number ii) Find the Greatest Common Divisor (GCD)\nLE-8 Parameter Passing Mechanisms • Develop a C program that swaps two values and updates an array using both Call by Value and Call by Reference.\nLE-9 User-Defined Data Types • Create an \"Employee Payroll System\" using Structures and Unions in C to store employee details and compare memory allocation between them.\nLE-10 File Handling Operations • Write a program to create a text file and perform the following tasks: i) Write student records ii) Read the student records and display records\nLE-11 Classes, Objects & Encapsulation • Design a Bank Account class with private data members for balance and public member functions for deposit, withdraw, and display. Laboratory Experiment/ Practical Titles\nLE-12 Constructors & Memory Management • Implement a String class that utilizes Constructors (Default, Parameterized, and Copy) and a Destructor to manage the memory dynamically.\nLE-13 Static Members & Friend Functions • Develop a program that uses a static member to track the number of objects created and a friend function to compare private data of two different classes.\nLE-14 Implementation of Inheritances • Write a C++ program to demonstrate the various arithmetic operations using the following different inheritance concepts: i) Single Inheritance ii) Multiple Inheritance iii) Multilevel Inheritance iv) Hierarchical Inheritance v) Hybrid/virtual Inheritance\nLE-15 Polymorphism & Abstract Classes • Write C++ programs to demonstrate the following: i) Create an Abstract Class Shape with a pure virtual function draw (). ii) Find the area of the shape using function overloading. iii) Perform the addition of two complex numbers using operator overloading.\nLE-16 Robust Error Management • Write a C++ program to demonstrate the exception handling process using try, catch, and throw blocks to handle exceptions such as \"Division by Zero\" or \"Negative Stock Input.\" Laboratory Experiment/ Practical Titles\nLE-17 Template Implementation • Write a C++ program using template functions and class templates: a function to find the max of two values, and a class template like pair to store values of any data type."
+				},
+				{
+					"code": "100113P",
+					"name": "Sports/Yoga/NCC/NSS",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "LE-1 Assessment of Body Mass Index (BMI), resting heart rate and physical fitness parameters\nLE-2 Evaluate Flexibility using standard fitness tests.\nLE-3 Evaluate Endurance using standard fitness tests.\nLE-4 Evaluate muscular strength using standard fitness tests.\nLE-5 Evaluate agility using standard fitness tests.\nLE-6 Practice of warm-up, stretching and cool-down exercises\nLE-7 Develop a simple fitness and healthy lifestyle plan based on personal fitness assessment.\nLE-8 Perform Standing Asanas (Tadasana, Trikonasana, Vrikshasana\nLE-9 Perform Sitting Asanas (Vajrasana, Paschimottanasana, Pavanamuktasana)\nLE-10 Practice of Prone Asanas (Bhujangasana, Shalabhasana, Makarasana Laboratory Experiment/ Practical Titles\nLE-11 Practice of Pranayama (Deep Breathing, Anulom-Vilom, Bhramari and Kapalbhati)\nLE-12 Practice of Mindfulness Meditation\nLE-13 Practice of Om Chanting and Breath Awareness Meditation\nLE-14 Practice of Shavasana and Guided Relaxation (Yoga Nidra)\nLE-15 Daily Meditation Log and Stress Self- Assessment\nLE-16 Practice fundamental skills in Athletics (Sprint, Relay, Long Jump or Throw Events)\nLE-17 Practice fundamental skills in one Team Game (Volleyball, Football, Basketball, Cricket or Kho-Kho)\nLE-18 Officiating and Conduct of Mini Sports Competition\nLE-19 Preparation and presentation of a Personal Lifelong Fitness and Wellness Programme including Stress Management Practices"
 				}
 			]
 		},
@@ -604,235 +590,131 @@
 		"4": {
 			"subjects": [
 				{
-					"code": "ESC 209",
-					"name": "Mechanical Engineering",
+					"code": "101401",
+					"name": "Transportation Engineering",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
-						"lecture": 2,
-						"tutorial": 1,
+						"lecture": 3,
+						"tutorial": 0,
 						"practical": 0
 					},
 					"references": [
-						"➔ Nag.P.K., “Engineering Thermodynamics”, Tata McGraw-Hill, New Delhi.",
-						"➔ Cengel, Thermodynamics – An Engineering Approach Tata McGraw Hill, New Delhi.",
-						"➔ Sonntag, R. E., Borgnakke, C., & Wylen, G. J. V. Fundamentals of",
-						"thermodynamics: Wiley.",
-						"➔ Moran, M. J., Shapiro, H. N., Boettner, D. D., & Bailey, M. Fundamentals of",
-						"Engineering",
-						"➔ Thermodynamics: John Wiley & Sons.",
-						"➔ Jones, J. B., & Dugan, R. E. Engineering thermodynamics: Prentice Hall.",
-						"➔ Potter, M. C., & Somerton, C. W. Schaum's Outline of Thermodynamics for",
-						"Engineers, McGraw-Hill."
+						"1. Khanna, S.K., Justo, C.E.G and Veeraragavan, A, 'Highway Engineering', Revised 10th Edition, Nem Chand & Bros, 2017.",
+						"2. Kadiyalai, L.R., ' Traffic Engineering and Transport Planning', Khanna Publishers.",
+						"3. Partha Chakraborty, ' Principles of Transportation Engineering, PHI Learning.",
+						"4. Fred L. Mannering, Scott S. Washburn, Walter P. Kilareski,'Principles of Highway Engineering and Traffic Analysis', 4th Edition, John Wiley.",
+						"5. Srinivasa Kumar, R, Textbook of Highway Engineering, Universities Press, 2011.",
+						"6. Paul H. Wright and Karen K. Dixon, Highway Engineering, 7th Edition, Wiley Student Edition, 2009."
 					],
-					"content": "Module 1 Basic Concepts: Basic concepts - concept of continuum, macroscopic approach, Thermodynamic systems - closed, open and isolated. Property, state, path and process, quasistatic process, work, modes of work. Zeroth law of thermodynamics, concept of temperature and heat. Concept of ideal and real gases.\nModule 2 First Law of Thermodynamics: Concepts of Internal Energy, Specific Heat Capacities, Enthalpy. Energy Balance for Closed and Open Systems, Energy Balance for 1 Steady-Flow Systems. Steady-Flow Engineering Devices. Energy Balance for Unsteady-Flow\nModule 3 Second Law of Thermodynamics: Thermal energy reservoirs, heat engines energy conversion, Kelvin and Clausius statements of second law, the Carnot cycle, the Carnot Theorem, the thermodynamic temperature scale, the Carnot heat engine, efficiency, the Carnot refrigerator and heat pump, COP. Clausius inequality, concept of entropy, principle of increase of entropy – availability, the increase of entropy principle, perpetual-motion machines, reversible and irreversible processes, Entropy change of pure substances, isentropic processes, property diagrams involving entropy, entropy change of liquids and solids, the entropy change of ideal gases, reversible steady- flow work, minimizing the compressor work, isentropic efficiencies of steady-flow devices, and entropy balance. Energy - a measure of work potential, including work potential of energy, reversible work and irreversibility, second-law efficiency, exergy change of a system, energy transfer by heat, work, and mass, the decrease of exergy principle and exergy destruction, energy balance: closed systems and control volumes energy balance.\nModule 4 Properties Of Pure Substance: Properties of pure substances. Thermodynamic properties of pure substances in solid, liquid and vapour phases. Phase rule, P-V, P- T, T-V, T-S, H-S diagrams, PVT surfaces. Thermodynamic properties of steam. Calculations of work done and heat transfer in non- flow and flow processes.\nModule 5 Power Cycles: Vapour and combined power cycles, including the Carnot vapor cycle, Rankine cycle: the ideal cycle for vapor power, the ideal reheat and regenerative and the second- law analysis of vapour power cycles. Gas power cycles, including basic considerations in the analysis of power cycles, the Carnot cycle and its value in engineering, an overview of reciprocating engines, air standard assumptions, gasoline engine Otto cycle, diesel engine cycle, gas-turbine Brayton cycle, and the second-law analysis of gas power cycles.\nModule 6 Ideal and Real Gases and Thermodynamic Relations: Gas mixtures – properties ideal and real gases. Equation of state, Avogadro’s Law, Van Der Waals equation of state, Compressibility factor, compressibility chart. Dalton’s law of partial pressure. Exact differentials, T-D relations, Maxwell’s relations. Clausius Clapeyron equations, Joule – Thomson coefficient.\nModule 7 2 Psychrometry and psychrometric charts, property calculations of air vapour mixtures. Psychrometric process – Sensible heat exchange processes. Latent heat exchange processes. Adiabatic mixing, evaporative cooling. Use of standard thermodynamic tables, Mollier diagram, Psychrometric chart and Refrigerant property tables. Refrigeration cycles, including refrigerators and heat pumps, the ideal reversed Carnot vapour-compression refrigeration cycle, actual vapor- compression refrigeration cycles, heat pump systems, gas refrigeration cycles, and absorption refrigeration systems."
+					"content": "Unit- 1.0 8 hrs\nHighway development and planning-Classification of roads, road development in India, Current road projects in India; highway alignment and project preparation.\n\nUnit- 2.0 5 hrs\nGeometric design of highways-: Introduction; highway cross section elements; sight distance, design of horizontal alignment; design of vertical alignment; design of intersections, problems.\n\nUnit- 3.0 6 hrs\nTraffic engineering & control- Traffic Characteristics, traffic engineering studies, traffic flow and capacity.\n\nUnit- 4.0 8 hrs\nTraffic regulation and control; design of road intersections; design of parking facilities; highway lighting; problems.\n\nUnit- 5.0 5 hrs\nPavement materials- Materials used in Highway Construction- Soils, Stone aggregates, bituminous binders, bituminous paving mixes; Portland cement and cement concrete: desirable properties, tests, requirements for different types of pavements. Problems.\n\nUnit- 6.0 10 hrs\nDesign of pavements- Introduction; flexible pavements, factors affecting design and performance; stresses in flexible pavements; design of flexible pavements as per IRC; rigid pavements- components and functions; factors affecting design and performance of CC pavements; stresses in rigid pavements; design of concrete pavements as per IRC; problems."
 				},
 				{
-					"code": "PCC CE 202",
+					"code": "101402",
+					"name": "Building Planning and Computer-Aided Civil Engineering Drawing",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. M.G.Shah, Kale, Patki, Building Drawing with an Integrated Approach to Built Environment, Tata McGraw-Hill Education India, 5th edition, 2011, (ISBN: 9780071077873, 0071077871).",
+						"2. Building Services Environmental And Electro Mechanical Services, Second Revised, 2014, (ISBN: 9788175259805).",
+						"3. Bureau of Indian Standards, \" HAND BOOK OF FUNCTIONAL REQUIREMENTS OF BUILDINGS, (SP-41 & SP- 32)\", BIS 1987 and 1989, (SP-41: ISBN:",
+						"8170610117).",
+						"4. Croome, J. D. & Roberts, B. M., \"AIR-CONDITIONING AND VENTILATION OF BUILDINGS VOL-1\". Pergamon Press, (ISBN: 0080247792).",
+						"5. SP-35 (1987): Handbook of Water supply & drainage-BIS, (SP- 35: ISBN:",
+						"8170610095).",
+						"6. N.B.C.-2016, Volume 1 & 2, BIS, (ISBN: 8170610990)"
+					],
+					"content": "Unit- 1.0 6 hrs\nPrinciples of Residential and Public Buildings: Concept of built environment and its application in planning. Recommendation of National building code., Green building, Introduction-Benefits, National priorities, rating system, check list, Site selection and planning, Water efficiency, Energy efficiency, Materials, Indoor environmental quality, Innovation and design process.\n\nUnit- 2.0 9 hrs\nPrinciple of Planning for differently abled publics : Standardization and Contextualization of accessibility in built environment, Overview of accessibility codes (National and International Perspectives), Design for Inclusion : A holistic Approach ( User centric approach to design, WINIT Model), Accessibility Elements of Built Environment in urban and rural Contexts (Kerb Ramps, Bollards, Level and gratings, Ramps, Gradients and other relevant elements) Principle of site planning and approaches for accessibility, Accessibility in public Sanitation System (Washroom typologies and Accessibility perspectives emergency evacuation systems and codes)\n\nUnit- 3.0 9 hrs\nPlanning of Building: Preparation of constructional details and drawings-plan, elevation, section, site plan, foundation plan, terrace plan, waterproofing treatment, typical door and window. Planning of building such as Residential building – Load bearing structure, RCC framed structure. Building for Education – school, college. Library Building for health – Dispensary, Hospital Industrial structure Building for entertainment-Theatre, club house, sports club. Other structure-Office, Hostel, Guest house. Building’s Water Supply and Drainage & Solid Waste C ollection and Disposal System: Design of water supply, waste water and storm water collection system for various types of buildings. Pumps and Pump House. Wet and dry solid waste segregation, Vermi-composting etc. Provision of Chutes. Accessibility in public Sanitation Systems.\n\nUnit- 4.0 8 hrs\nElectrical Services: Domestic Supply, Distribution Circuits, basic wiring systems. Design and planning: - Lighting of staircase, corridors. Automatic Water Level controller, Closed Circuit Security Monitors with Intercom/ EPBX facility, Common Dish TV antenna, Use of Solar Panels as source of power, Lightening Conductor for High-rise Buildings. Fire Protection System: Introduction, Fire protection, requirement of water quantity estimation. Systems of firefighting external and internal. Wet and dry risers, smoke alarm, Sprinkler system. Safety corridors in Highrise structures.\n\nUnit- 5.0 4 hrs\nElevators: Introduction, types of elevators. Essential features of lifts its size and requirement of minimum numbers, norms for safety doors, Operation and maintenance, Safety norms. Control systems, electrical requirement, and generator back-up, Escalators in Industry and in malls-multiplex. Design of Accessible Circulation System for differently abled publics.\n\nUnit- 6.0 6 hrs\nHeating Ventilation and Air Conditioning: Ventilation, functional requirement, Heat balance system of ventilation, General rules and regulations in artificial ventilation system, Central air conditioning: - ducting and glass claddings. Operation and maintenance. Building Management System: Secur ity Guard’s Cabin, Postage collection boxes, Parking space."
+				},
+				{
+					"code": "101403",
+					"name": "Geotechnical Engineering-I",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Soil Mechanics by Craig R.F., Chapman & Hall",
+						"2. Fundamentals of Soil Engineering by Taylor, John Wiley & Sons",
+						"3. An Introduction to Geotechnical Engineering, by Holtz R.D. and Kovacs, W.D., Prentice Hall, NJ",
+						"4. Principles of Geotechnical Engineering, by Braja M. Das, Cengage Learning",
+						"5. Principles of Foundation Engineering, by Braja M. Das, Cengage Learning",
+						"6. Essentials of Soil Mechanics and Foundations: Basic Geotechnics by David F. McCarthy",
+						"7. Soil Mechanics in Engineering Practice by Karl Terzaghi, Ralph B. Peck, and Gholamreza Mesri.",
+						"8. Geotechnical Engineering: Principles and Practices of Soil Mechanics and Foundation Engineering (Civil and Environmental Engineering) by V.N.S. Murthy."
+					],
+					"content": "Unit- 1.0: 7hrs\nIntroduction – Types of soils, their formation and deposition, Definitions: soil mechanics, soil engineering, rock mechanics, geotechnical engineering. Scope of soil engineering. Comparison and difference between soil and rock. Basic Definitions and Relationships-Soil as three-phase system in terms of weight, volume, voids ratio, and porosity. Definitions: moisture content, unit weights, degree of saturation, voids ratio, porosity, specific gravity, mass specific gravity, etc. Relationship between volume weight, voids ratio- moisture content, unit weight- percent air voids, saturation- moisture content, moisture content-specific gravity etc. Determination of various parameters such as: Moisture content by oven dry method, pycnometer, sand bath method, torsional balance method,nuclear method, alcohol method and sensors. Specific gravity by density bottle method, pycnometer method, measuring flask method. Unit weight by water displacement method, submerged weight method, core-cutter method, sand-replacement method . On completion of this Unit-, the students must be able to: • Understand the different types of soil based on their formation mechanism; • Understand the various phase diagrams and derive various phase relationships of the soil; Perform various laboratory experiments to determine moisture content, specific gravity; Perform field experiments to estimate the field density of the soil mass\n\nUnit- 2.0 7hrs\nPlasticity Characteristics of Soil - Introduction to definitions of: plasticity of soil, consistency limits-liquid limit, plastic limit, shrinkage limit, plasticity, liquidity and consistency indices, flow & toughness indices, definitions of activity and sensitivity. Determination of: liquid limit, plastic limit and shrinkage limit. Use of consistency limits. Classification of Soils- Introduction of soil classification: particle size classification, textural classification, unified soil classification system, Indian standard soil classification system. Identification: field identification of soils, general characteristics of soil in different groups. On completion of this Unit-, the students must be able to: • Understand the behaviour of soils based on their moisture contents; • Perform laboratory experiments to estimate various Atterberg limits and evaluate index properties of soils; • Classify any soils based on their particle size distribution and index properties\n\nUnit- 3.0 7hrs\nPermeability of Soil - Darcy’s law, validity of Darcy’s law. Determination of coefficient of permeability: Laboratory method: constant-head method, falling-head method. Field method: pumping- in test, pumping- out test. Permeability aspects: permeability of stratified soils, factors affecting permeability of soil. Seepage Analysis- Introduction, stream and potential functions, characteristics of flow nets, graphical method to plot flow nets. On completion of this Unit-, the student must be able to: • Determine the permeability of soils through various laboratory and field tests; • Analytically calculate the effective permeability of anisotropic soil mass; • Determine the seepage quantities and pore water pressures below the ground; • Graphically plot the equipotential lines and flow lines in a seepage flow\n\nUnit- 4.0 7hrs\nEffective Stress Principle - Introduction, effective stress principle, nature of effective stress, effect of water table. Fluctuations of effective stress, effective stress in soils saturated by capillary action, seepage pressure, quick sand condition. On completion of this Unit-, the student must be able to: • Understand the physical significance of effective stress and its relation with pore pressure; • Plot various stress distribution diagrams along the depth of the soil mass; • Understand the effect of capillary action and seepage flow direction on the effective stress at a point in the soil mass.\n\nUnit- 5.0 7hrs\nCompaction of Soil-Introduction, theory of compaction, laboratory determination of optimum moisture content and maximum dry density. Compaction in field, compaction specifications and field control. On completion of this Unit-, the student must be able to: • Perform laboratory tes t to determine the maximum dry density and optimum moisture content of the soil; • Variation in compaction curve with compaction effort and soil type; • Determine the compactive effort required to obtain necessary degree of compaction in-situ; • Differentiate among various field methods of compaction and their usage based on the type of soil.\n\nUnit- 6.0 7hrs\nStresses in soils – Introduction, stresses due to point load, line load, strip load, uniformly loaded circular area, rectangular loaded area. Influence factors, Isobars, Boussinesq’s equation, Newmark’s Influence Chart. Contact pressure under rigid and flexible area, computation of displacements from elastic theory. On completion of this Unit-, the student must be able to: • Analyti cally compute the vertical stress in a semi-infinite soil mass due to various loading conditions; Plot isobars due various loading conditions."
+				},
+				{
+					"code": "101404",
+					"name": "Hydraulic Engineering",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Hydraulics and Fluid Mechanics, P.M. Modi and S.M. Seth, Standard Book House",
+						"2. Theory and Applications of Fluid Mechanics, K. Subramanya, Tata McGraw Hill.",
+						"3. Open channel Flow, K. Subramanya, Tata McGraw Hill.",
+						"4. Open Channel Hydraulics, Ven Te Chow, Tata McGraw Hill.",
+						"5. Burnside, C.D., “Electromagnetic Distance Measurement,” Beekman Publishers,",
+						"1971."
+					],
+					"content": "Unit- 1.0: 5 hrs\nBoundary Layer Analysis-Assumption and concept of boundary layer theory. Boundary-layer thickness, displacement, momentum & energy thickness, laminar and Turbulent boundary layers on a flat plate; Laminar sub-layer, smooth and rough boundaries. Local and average friction coefficients. Separation and Control.\n\nUnit- 2.0: 4 hrs\nIntroduction to Open Channel Flow-Comparison between open channel flow and pipe flow, geometrical parameters of a channel, classification of open channels, classification of open channel flow, Velocity Distribution of channel section.\n\nUnit- 3.0: 5 hrs\nUniform Flow-Continuity Equation, Energy Equation and Momentum Equation, Characteristics of uniform flow, Chezy’s formula, Manning’s formula. Factors affecting Manning’s Roughness Coefficient “n .Most economical section of channel. Computation of Uniform flow, Normal depth.\n\nUnit- 4.0 : 6 hrs\nNon-Uniform Flow- Specific energy, Specific energy curve, critical flow, discharge curve Specific force Specific depth, and Critical depth. Channel Transitions. Measurement of Discharge and Velocity – Venturi Flume, Standing Wave Flume, Parshall Flume, Broad Crested Weir. Measurement of Velocity- Current meter, Floats, Hot-wire anemometer. Gradually Varied Flow-Dynamic Equation of Gradually Varied Flow, Classification of channel bottom slopes, Classification of surface profile, Characteristics of surface profile. Computation of water surface profile by graphical, numerical and analytical approaches. Direct Step method, Graphical Integration method and Direct integration method.\n\nUnit-5.0: 4 hrs\nHydraulic Jump- Theory of hydraulic jump, Elements and characteristics of hydraulic jump in a rectangular Channel, length and height of jump, location of jump, Types,applications and location of hydraulic jump. Energy dissipation and other uses, surge as a moving hydraulic jump. Positive and negative surges.\n\nUnit- 6.0: 4 hrs\nComputational Fluid Dynamics: Basic equations of fluid dynamics, Grid generation, Introduction to in viscid incompressible flow, Boundary layer flow as applicable to C.F.D. Hydro informatics: Concept of hydro informatics – scope of internet and web based modeling in water resources engineering."
+				},
+				{
+					"code": "101405",
+					"name": "Structural Analysis",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. C.S. Reddy, Basic Structural Analysis, Second Edition, Tata McGraw Hill, 2005.",
+						"2. R.C. Hibbeler, Structural Analysis, Pearson Education, 6th edition, 2009.",
+						"3. C.K. Wang, Intermediate Structural Analysis, Tata McGraw Hill, 1984."
+					],
+					"content": "Unit- 1.0 8 hrs\nAnalysis of indeterminate structures by force methods, flexibility coefficients. unit load method, Influence line and Rolling loads, beam, frames and arches.\n\nUnit- 2.0 5 hrs\nEnergy Methods: Principle of minimum potential energy, principle of virtual work, Castigliano’s theorems, Reciprocal theorem.\n\nUnit- 3.0 6 hrs\nMuller Breslau Principles and its applications to determinate and indeterminate structures.\n\nUnit- 4.0 8 hrs\nAnalysis of Beams and Frames: Moment Area method, Slope deflection method, Three Moment Equation.\n\nUnit- 5.0 5 hrs\nMoments distribution methods, effect of symmetry and ant symmetry, sway correction.\n\nUnit- 6.0 10 hrs\nLateral load analysis: Portal and Cantilever methods, Matrix method of structural analysis, Displacement/Stiffness methods."
+				},
+				{
+					"code": "101406",
 					"name": "Engineering Geology",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
-						"lecture": 2,
-						"tutorial": 0,
-						"practical": 2
-					},
-					"references": [
-						"➔ Engineering and General Geology, Parbin Singh, 8th Edition (2010), S K Kataria",
-						"& Sons.",
-						"➔ Text Book of Engineering Geology, N. Chenna Kesavulu, 2nd Edition (2009),",
-						"Macmillan Publishers India.",
-						"➔ Geology for Geotechnical Engineers, J.C.Harvey, Cambridge University Press",
-						"(1982)."
-					],
-					"content": "Detailed contents:\nModule 1 3 Introduction: Branches of geology useful to civil engineering, scope of geological studies in various civil engineering projects. Department dealing with this subject in India and their scope of work- GSI, Granite Dimension Stone Cell, NIRM. Mineralogy-Mineral, Origin and composition. Physical properties of minerals, susceptibility of minerals to alteration, basic of optical mineralogy, SEM, XRD., Rock forming minerals, megascopic identification of common primary & secondary minerals.\nModule 2 Petrology: Rock forming processes. Specific gravity of rocks. Ternary diagram. Igneous petrology- Volcanic Phenomenon and different materials ejected by volcanoes. Types of volcanic eruption. Concept of Hot spring and Geysers. Characteristics of different types of magma. Division of rock on the basis of depth of formation, and their characteristics. Chemical and Mineralogical Composition. Texture and its types. Various forms of rocks. IUGS Classification of phaneritic and volcanic rock.. Field Classification chart. Structures. Classification of Igneous rocks on the basis of Chemical composition. Detailed study of Acidic Igneous rocks like Granite, Rhyolite or Tuff, Felsite, Pegmatite, Hornfels. Metamorphic Aureole, Kaolinization. Landform as Tors. Engineering aspect to granite. Basic Igneous rocks Like Gabbro, Dolerite, Basalt. Engineering aspect to Basalt. Sedimentary petrology- mode of formation, Mineralogical Composition. Texture and its types, Structures, Gradation of Clastic rocks. Classification of sedimentary rocks and their characteristics. Detailed study of Conglomerate, Breccia, Sandstone, Mudstone and Shale, Limestone Metamorphic petrology- Agents and types of metamorphism, metamorphic grades, Mineralogical composition, structures & textures in metamorphic rocks. Important Distinguishing features of rocks as Rock cleavage, Schistosity, Foliation. Classification. Detailed study of Gneiss, Schist, Slate with engineering consideration.\nModule 3 Physical Geology: Weathering. Erosion and Denudation. Factors affecting weathering and product of weathering. Engineering consideration. Superficial deposits and its geotechnical importance: Waterfall and Gorges, River meandering, Alluvium, Glacial deposits, Laterite (engineering aspects), Desert Landform, Loess, Residual deposits of Clay with flints, Solifluction deposits, mudflows, Coastal deposits.\nModule 4 Strength Behavior of Rocks: Stress and Strain in rocks. Concept of Rock Deformation & Tectonics. Dip and Strike. Outcrop and width of outcrop. Inliers and Outliers. Main types of discontinuities according to size. Fold- Types and nomenclature, Criteria for their recognition in the field. Faults: Classification, recognition in field, effects on outcrops. Joints & Unconformity; Types, Stresses responsible, geotechnical importance. Importance of structural elements in 4 engineering operations. Consequences of failure as land sliding, Earthquake and Subsidence. Strength of Igneous rock structures.\nModule 5 Geological Hazards: Rock Instability and Slope movement: Concept of sliding blocks. Different controlling factors. Instability in vertical rock structures and measures to prevent collapse. Types of landslide. Prevention by surface drainage, slope reinforcement by Rock bolting and Rock anchoring, retaining wall, Slope treatment. Case study on black clay. Ground water: Factors controlling water bearing capacity of rock. Pervious & impervious rocks and ground water. Lowering of water table and Subsidence. Earthquake: Magnitude and intensity of earthquake. Seismic sea waves. Revelation from Seismic Records of structure of earth. Case Study on Elevation and Subsidence in Himalayan region in India. Seismic Zone in India.\nModule 6 Rock masses as construction material: Definition of Rock masses. Main features constitute rock mass. Main features that affect the quality of rock engineering and design. Basic elements and structures of rock are relevant in civil engineering areas. Main types of works connected to rocks and rock masses. Important variables influencing rock properties and behavior such as Fresh rock Influence from some minerals. Effect of alteration and weathering. Measurement of velocity of sound in rock. Classification of Rock material strength. Core logging .Rock Quality Designation. Rock mass description.\nModule 7 Geology of dam and reservoir site: Required geological consideration for selecting dam and reservoir site. Failure of Reservoir. Favorable & unfavorable conditions in different types of rocks in presence of various structural features, precautions to be taken to counteract unsuitable conditions, significance of discontinuities on the dam site and treatment given to such structures.\nModule 8 Rock Mechanics: Subsurface investigations in rocks and engineering characteristics or rocks masses; Structural geology of rocks. Classification of rocks, Field & laboratory tests on rocks, Stress deformation of rocks, Failure theories and shear strength of rocks, Bearing capacity of rocks.\nPracticals: ➔ Study of physical properties of minerals. ➔ Study of different groups of minerals. ➔ Study of Crystal and Crystal system. 5 ➔ Identification of minerals: Silica group: Quartz, Amethyst, Opal; Feldspar group: Orthoclase, Plagioclase; Cryptocrystalline group: Jasper; Carbonate group: Calcite; Element group: Graphite; Pyroxene group: Talc; Mica group: Muscovite; Amphibole group: Asbestos, Olivine, Hornblende, Magnetite, Hematite, Corundum, Kyanite, Garnet, Galena, Gypsum. ➔ Identification of rocks (Igneous Petrology): Acidic Igneous rock: Granite and its varieties, Syenite, Rhyolite, Pumice, Obsidian, Scoria, Pegmatite, Volcanic Tuff. Basic rock: Gabbro, Dolerite, Basalt and its varieties, Trachyte. ➔ Identification of rocks (Sedimentary Petrology): Conglomerate, Breccia, Sandstone and its varieties , Laterite, Limestone and its varieties, Shales and its varieties. ➔ Identification of rocks (Metamorphic Petrology): Marble, slate, Gneiss and its varieties, Schist and its varieties. Quartzite, Phyllite. ➔ Study of topographical features from Geological maps. Identification of symbols in maps."
-				},
-				{
-					"code": "PCC CE 203",
-					"name": "Disaster Preparedness & Planning",
-					"type": "Theory",
-					"credits": 2,
-					"summary": {
-						"lecture": 1,
-						"tutorial": 1,
-						"practical": 0
-					},
-					"references": [
-						"➔ http://www.ndmindia.nic.in/ (National Disaster management in India, Ministry",
-						"of Home Affairs).",
-						"➔ Pradeep Sahni, 2004, Disaster Risk Reduction in South Asia, Prentice Hall.",
-						"➔ Singh B.K., 2008, Handbook of Disaster Management: Techniques & Guidelines,",
-						"Rajat Publication.",
-						"➔ Ghosh G.K., 2006, Disaster Management, APH Publishing Corporation",
-						"➔ Disaster Medical Systems Guidelines. Emergency Medical Services Authority,",
-						"State of California, EMSA no.214, June 2003 Inter Agency Standing Committee",
-						"7",
-						"(IASC) (Feb. 2007). IASC Guidelines on Mental Health and Psychosocial Support",
-						"in Emergency Settings. Geneva: IASC"
-					],
-					"content": "Detailed contents:\nModule 1 Introduction: Concepts and definitions: disaster, hazard, vulnerability, risks- severity, frequency and details, capacity, impact, prevention, mitigation). 6\nModule 2 Disasters: Disasters classification; natural disasters (floods, draught, cyclones, volcanoes, earthquakes, tsunami, landslides, coastal erosion, soil erosion, forest fires etc.); man made disasters (industrial pollution, artificial flooding in urban areas, nuclear radiation, chemical spills, transportation accidents, terrorist strikes, etc.); hazard and vulnerability profile of India, mountain and coastal areas, ecological fragility.\nModule 3 Disaster Impacts: Disaster impacts (environmental, physical, social, ecological, economic, political, etc.); health, psycho-social issues; demographic aspects (gender, age, special needs); hazard locations; global and national disaster trends; climate change and urban disasters.\nModule 4 Disaster Risk Reduction (DRR): Disaster management cycle – its phases; prevention, mitigation, preparedness, relief and recovery; structural and non-structural measures; risk analysis, vulnerability and capacity assessment; early warning systems, Post Disaster environmental response (water, sanitation, food safety, waste management, disease control, security, communications); Roles and responsibilities of government, community, local institutions, NGOs and other stakeholders; Policies and legislation for disaster risk reduction, DRR programmes in India and the activities of National Disaster Management Authority.\nModule 5 Disasters, Environment and Development: Factors affecting vulnerability such as impact of developmental projects and environmental modifications (including of dams, land use changes, urbanization etc.), sustainable and environmental friendly recovery; reconstruction and development methods."
-				},
-				{
-					"code": "PCC CE 204",
-					"name": "Introduction to Fluid Mechanics",
-					"type": "Theory",
-					"credits": 4,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 0,
-						"practical": 2
-					},
-					"references": [
-						"➔ Fluid Mechanics and Machinery, C. S. P. Ojha, R. Berndtsson and P. N.",
-						"Chandramouli, Oxford University Press, 2010",
-						"9",
-						"➔ Hydraulics and Fluid Mechanics, P M Modi and S M Seth, Standard Book House",
-						"➔ Theory and Applications of Fluid Mechanics, K. Subramanya, Tata McGraw Hill",
-						"➔ Fluid Mechanics with Engineering Applications, R.L. Daugherty, J.B. Franzini",
-						"and E.J. Finnemore, International Student Edition, McGraw Hill."
-					],
-					"content": "Module 1 Basic Concepts and Definitions: Distinction between a fluid and a solid; Density, Specific weight, Specific gravity, Kinematic and dynamic viscosity; variation of viscosity with temperature, Newton law of viscosity; vapour pressure, boiling point, cavitation; surface tension, capillarity, Bulk modulus of elasticity, compressibility.\nModule 2 Fluid Statics: Fluid Pressure: Pressure at a point, Pascal's law, pressure variation with temperature, density and altitude. Piezometer, U-Tube Manometer, Single Column Manometer, U-Tube Differential Manometer, Micromanometers. pressure gauges, Hydrostatic pressure and force: horizontal, vertical and inclined surfaces. Buoyancy and stability of floating bodies.\nModule 3 Fluid Kinematics: Classification of fluid flow : steady and unsteady flow; uniform and non-uniform flow; laminar and turbulent flow; rotational and irrotational flow; compressible and incompressible flow; ideal and real fluid flow; one, two and three dimensional flows; Streamline, path line, streak line and stream tube; stream function, velocity potential function. One-, two- and three -dimensional continuity equations in Cartesian coordinates\nModule 4 8 Fluid Dynamics: Surface and body forces; Equations of motion - Euler’s equation; Bernoulli’s equation – derivation; Energy Principle; Practical applications of Bernoulli’s equation : venturimeter, orifice meter and pitot tube; Momentum principle; Forces exerted by fluid flow on pipe bend; Vortex Flow – Free and Forced; Dimensional Analysis and Dynamic Similitude - Definitions of Reynolds Number, Froude Number, Mach Number, Weber Number and Euler Number; Buck ingham’s π-Theorem.\nModule 5 Laminar Flow: Laminar flow through :circular pipes, annulus and parallel plates. Stoke’s law, Measurement of viscosity Module6: Dimensional Analysis and Hydraulic Similitude: Dimensional homogeneity, Rayleigh method, Buckingham’s Pi method and other methods. Dimensionless groups. Similitude, Model studies, Types of models. Application of dimensional analysis and model Studies to fluid flow problem. Dynamic Similitude- Definitions of ReynoldsNumber, Froude Number, MachNumber, Weber Number and EulerNumber. Module7: Flow through Pipes:Loss of head through pipes, Darcy-Wiesbatch equation, minor losses, total energy equation, hydraulic gradient line,Pipes in series, equivalent pipes, pipes in parallel, flow through laterals, flows in dead end pipes, siphon, power transmission through pipes, nozzles. Analysis of pipe networks: Hardy Cross method, water hammer in pipes and control measures, branching of pipes, three reservoir problem Module8: Turbulent Flow- Reynolds\nexperiment, Transition from laminar to turbulent flow. Definition of turbulence, scale and intensity, Causes of turbulence, instability, mechanism of turbulence and effect of turbulent flow in pipes. Reynolds stresses semi-empirical theories of turbulence, Prandtl’s mixing length theory, universal velocity distribution equation. Resistance to flow of fluid in smooth and rough pipes, Moody’s diagram Lab Experiments: ➔ Measurement of viscosity ➔ Study of Pressure Measuring Devices ➔ Stability of Floating Body ➔ Hydrostatics Force on Flat Surfaces/Curved Surfaces ➔ Verification of Bernoulli’s Theorem ➔ Venturimeter ➔ Orifice meter ➔ Impacts of jets ➔ Flow Visualisation -Ideal Flow ➔ Length of establishment of flow ➔ Velocity distribution in pipes ➔ Laminar Flow"
-				},
-				{
-					"code": "PCC CE 205",
-					"name": "Introduction to Solid Mechanics",
-					"type": "Theory",
-					"credits": 3,
-					"summary": {
 						"lecture": 3,
 						"tutorial": 0,
 						"practical": 0
 					},
 					"references": [
-						"➔ Timoshenko, S. and Young, D. H., “Elements of Strength of Materials”, DVNC,",
-						"New York, USA.",
-						"➔ Kazmi, S. M. A., “Solid Mechanics” TMH, Delhi, India.",
-						"➔ Hibbeler, R. C. Mechanics of Materials. 6th ed. East Rutherford, NJ: Pearson",
-						"Prentice Hall, 2004",
-						"➔ Crandall, S. H., N. C. Dahl, and T. J. Lardner. An Introduction to the",
-						"Mechanics of Solids. 2nd ed. New York, NY: McGraw Hill, 1979",
-						"➔ Laboratory Manual of Testing Materials - William Kendrick Hall",
-						"➔ Mechanics of Materials - Ferdinand P. Beer, E. Russel Jhonston Jr., John T.",
-						"DEwolf – TMH 2002.",
-						"➔ Strength of Materials by R. Subramanian, Oxford University Press, New Delhi."
+						"1. Engineering Geology by N. Chennakesavulu, McMillan, India Ltd. 2005",
+						"2. Engineering and General Geology, Parbin Singh, 8th Edition (2010), S K Kataria & Sons.",
+						"3. Engineering Geology by S K Duggal, H K Pandey Mc Graw Hill Education Pvt Ltd",
+						"4. Principles of Engineering Geology by K.V.G.K. Gokhale – B.S publications.",
+						"5. F.G. Bell, Fundamental of Engineering B.S. Publications, 2005.",
+						"6. Krynine & Judd, Principles of Engineering Geology & Geotechnics, CBS Publishers & Distribution.",
+						"7. Engineering Geology by Subinoy Gangopadhyay, Oxford university press.",
+						"8. Engineering Geology for Civil Engineers – P.C. Varghese PHI."
 					],
-					"content": "Detailed contents:\nModule1 Simple Stresses and Strains: Concept of stress and strain, St. Venant’s principle, stress and strain diagram, Elasticity and plasticity – Types of stresses and strains, Hooke’s law – stress – strain diagram for mild steel – Working stress – Factor of safety – Lateral strain, Poisson’s ratio and volumetric strain – Elastic moduli and the relationship between them – Bars of varying section – composite bars – Temperature stresses. Strain Energy – Resilience – Gradual, sudden, impact and shock loadings – simple applications.\nModule 2 Compound Stresses and Strains: Two dimensional system, stress at a point on a plane, principal stresses and principal planes, Mohr circle of stress, ellipse of stress and their applications. Two dimensional stress-strain system, principal strains and principal axis of strain, circle of strain and ellipse of strain. Relationship between elastic constants.\nModule 3 10 Bending moment and Shear Force Diagrams: Bending moment (BM) and shear force (SF) diagrams.BM and SF diagrams for cantilevers simply supported and fixed beams with or without overhangs. Calculation of maximum BM and SF and the point of contra flexure under concentrated loads, uniformly distributed loads over the whole span or part of span, combination of concentrated loads (two or three) and uniformly distributed loads, uniformly varying loads, application of moments.\nModule 4 Flexural Stresses: Theory of simple bending – Assumptions – Derivation of bending equation: M/I = f/y = E/R - Neutral axis – Determination of bending stresses – Section modulus of rectangular and circular sections (Solid and Hollow), I,T, Angle and Channel sections – Design of simple beam sections.\nModule 5 Shear Stresses: Derivation of formula – Shear stress distribution across various beam sections like rectangular, circular, triangular, I, T angle sections.\nModule 6 Slope and deflection: Relationship between moment, slope and deflection, Moment area method, Macaulay’s method. Use of these methods to calculate slope and deflection for determinate beams.\nModule 7 Torsion: Derivation of torsion equation and its assumptions. Applications of the equation of the hollow and solid circular shafts, torsional rigidity, Combined torsion and bending of circular shafts, principal stress and maximum shear stresses under combined loading of bending and torsion. Analysis of close-coiled-helical springs.\nModule 8 Thin Cylinders and Spheres: Derivation of formulae and calculations of hoop stress, longitudinal stress in a cylinder, and sphere subjected to internal pressures. List of Experiments: ➔ Tension test ➔ Bending tests on simply supported beam and Cantilever beam. ➔ Compression test on concrete ➔ Impact test ➔ Shear test 11 ➔ Investigation of Hooke's law that is the proportional relation between force and stretching in elastic deformation ➔ Determination of torsion and deflection, ➔ Measurement of forces on supports in statically determinate beam, ➔ Determination of shear forces in beams, ➔ Determination of bending moments in beams, ➔ Measurement of deflections in statically determinate beam, ➔ Measurement of strain in a bar ➔ Bend test steel bar; ➔ Yield/tensile strength of steel bar;"
+					"content": "Unit-1.0: 6 hrs\nIntroduction-Branches of geology useful to civil engineering, scope of geological studies in various civil engineering projects, Brief study of case histories of failure of some Civil Engineering constructions due to geological draw backs. Mineralogy -Fundamental of Physical and Optical Mineralogy, minerals alteration, SEM, XRD., methods of identification of identification of common minerals.\n\nUnit-2.0: 8 hrs\nPetrology -Rock cycle and rock forming processes. Igneous petrology - Types of magma and their characteristics. Forms, Textures, structures and classification of igneous rocks. Sedimentary petrology - Mode of formation, Texture, Structures and Classification of sedimentary rocks and their characteristics. Metamorphic petrology - Agents and types of metamorphism, metamorphic grades, Texture, structures and classification of metamorphic rocks. Detailed study of Granite, Rhyolite, Pegmatite, Gabbro, Dolerite, Basalt, Conglomerate, Breccia, Sandstone, Mudstone, Shale, Limestone, Gneiss, Schist and Slate with engineering consideration.\n\nUnit-3.0: 7 hrs\nGeomorphology and Hydrology - Weathering, Erosion and Denudation. Factors affecting weathering and erosion, products of weathering. Geomorphic agents viz river, wind, glacier and ocean and their action. Ground water : Hydrological cycle, Factors controlling water bearing capacity of rock. Types of aquifers and its characteristi cs, Darcy’s law. Geological investigation of Ground water.\n\nUnit-4.0: 7 hrs\nStructural Geology - Stress and Strain in rocks. Concept of Rock Deformation & Tectonics. Dip and Strike. Outcrop and width of outcrop. Inliers and Outliers. Fold - classification, Causes and criteria for their recognition in field. Faults: classification, major causes and criteria for their recognition in field, Joints & Unconformity ; Types, Stresses responsible, geotechnical importance. Core logging, Rock core Characterization and Rock Quality Designation .\n\nUnit-5.0: 7 hrs\nGeological Hazards - Mass movement - Types and causes, Prevention and mitigation techniques. Earthquake: Magnitude and intensity of earthquake . Seismic waves. Revelation from Seismic Records of structure of earth. Seismic Zone in India. Tsunami : Causes and occurrence, Volcanic Phenomenon and volcanic products. Types of volcanic eruption. effects of hazards on construction and desirable design solutions, Concept of Hot spring and Geysers .\n\nUnit-6.0: 7 hrs\nGeology of dam, reservoir and tunnel - Required geological consideration for selecting dam, reservoir and tunnel site. Failure of Reservoir. Favorable & unfavorable conditions in different types of rocks in presence of various structural features, precautions to be taken to counteract unsuitable conditions, significance of discontinuities on the dam and tunnel site and treatment giving to such structures. tunneling over break and lining in tunnels. Case studies: related to dams, reservoirs and tunnels."
 				},
 				{
-					"code": "PCC CE 208",
-					"name": "Structural Analysis",
-					"type": "Theory",
-					"credits": 4,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 1,
-						"practical": 0
-					},
-					"references": [
-						"➔ C.S. Reddy, Basic Structural Analysis, Second Edition, Tata McGraw Hill, 2005.",
-						"➔ R.C. Hibbeler, Structural Analysis, Pearson Education, 6th edition, 2009.",
-						"➔ C.K. Wang, Intermediate Structural Analysis, Tata McGraw Hill, 1984.",
-						"12"
-					],
-					"content": "Analysis of indeterminate structures by force methods, flexibility coefficients, Energy methods: Principle of minimum potential energy, principle of virtual work, Castigliano’s theorems, Reciprocal theorem, unit load method, Influence line and Rolling loads, beam, frames and arches, Muller- Breslau Principles and its applications to determinate and indeterminate structures. Analysis of Beams and Frames: Moment Area method, Slope deflection method, Three Moment Equation, Moments distribution methods, effect of symmetry and antisymmetry, sway correction, Lateral load analysis: Portal and Cantilever methods, Matrix method of structural analysis, Displacement/Stiffness methods."
-				},
-				{
-					"code": "PCC CE 207",
-					"name": "Materials, Testing & Evaluation",
-					"type": "Theory",
-					"credits": 3,
-					"summary": {
-						"lecture": 1,
-						"tutorial": 1,
-						"practical": 2
-					},
-					"references": [
-						"➔ Chudley, R., Greeno (2006), 'Building Construction Handbook' (6th ed.),R.",
-						"Butterworth- Heinemann",
-						"➔ Khanna, S.K., Justo, C.E.G and Veeraragavan, A, ' Highway Materials and",
-						"Pavement",
-						"➔ Testing', Nem Chand & Bros, Fifth Edition",
-						"➔ Various related updated & recent standards of BIS, IRC, ASTM, RILEM, AASHTO,",
-						"➔ Kyriakos Komvopoulos (2011), Mechanical Testing of Engineering Materials,",
-						"Cognella",
-						"➔ E.N. Dowling (1993), Mechanical Behaviour of Materials,Prentice Hall",
-						"International Edition",
-						"➔ American Society for Testing and Materials (ASTM), Annual Book of ASTM",
-						"Standards (post 2000)",
-						"➔ Related papers published in international journals"
-					],
-					"content": "practical application of mechanical characteristics. ➔ Provide physical observations to complement concepts learnt ➔ Introduce experimental procedures and common measurement instruments, equipment, devices. ➔ Exposure to a variety of established material testing procedures and techniques ➔ Different methods of evaluation and inferences drawn from observations The course reviews also the current testing technology and examines force applications systems, force measurement, strain measurement, important instrument considerations, equipment for environmental testing, and computers applications for materials testing provide an introductory treatment of basic skills in material engineering towards (i) selecting material for the design, and (ii) evaluating the mechanical and structural properties of material, as well as the knowledge necessary for a civil engineer. The knowledge acquired lays a good foundation for analysis and design of various civil engineering structures/systems in a reliable manner. What will I learn? ➔ Different materials used in civil engineering applications ➔ Planning an experimental program, selecting the test configuration, selecting the test specimens and collecting raw data ➔ Documenting the experimental program including the test procedures, collected data, method of interpretation and final results ➔ Operating the laboratory equipment including the electronic instrumentation, the test apparatus and the data collection system ➔ Measuring physical properties of common structural and geotechnical construction materials ➔ Interpreting the laboratory data including conversion of the measurements into engineering values and derivation of material properties (strength and stiffness) from the engineering values ➔ Observing various modes of failure in compression, tension, and shear ➔ Observing various types of material behavior under similar loading conditions\nDetailed contents: 13\nModule 1 Introduction to Engineering Materials covering, Cements, M-Sand, Concrete (plain, reinforced and steel fibre/ glass fibre-reinforced, light-weight concrete, High Performance Concrete, Polymer Concrete) Ceramics, and Refractories, Bitumen and asphaltic materials, Timbers, Glass and Plastics, Structural Steel and other Metals, Paints and Varnishes, Acoustical material and geo-textiles, rubber and asbestos, laminates and adhesives, Graphene, Carbon composites and other engineering materials including properties and uses of these\nModule 2 Introduction to Material Testing covering, What is the “ Material Engineering” ?; Mechanical behavior and mechanical characteristics; Elasticity – principle and characteristics; Plastic deformation of metals; Tensile test –standards for different material (brittle, quasi-brittle, elastic and so on) True stress – strain interpretation of tensile test; hardness tests; Bending and torsion test; strength of ceramic; Internal friction, creep – fundamentals and characteristics; Brittle fracture of steel – temperature transition approach; Background of fracture mechanics; Discussion of fracture toughness testing –different materials; concept of fatigue of materials; Structural integrity assessment procedure and fracture mechanics\nModule 3 Standard Testing & Evaluation Procedures covering, Laboratory for mechanical testing; Discussion about mechanical testing; Naming systems for various irons, steels and nonferrous metals; Discussion about elastic deformation; Plastic deformation; Impact test and transition temperatures; Fracture mechanics –background; Fracture toughness – different materials; Fatigue of material; Creep. Tutorials from the above modules covering, understanding i) Tests & testing of bricks, ii) Tests & testing of sand, iii) Tests & testing of concrete, iv) Tests & testing of soils, v) Tests & testing of bitumen & bituminous mixes, vi) Tests & testing of polymers and polymer based materials, vii) Tests & testing of metals & viii) Tests & testing of other special materials, composites and cementitious materials. Explanation of mechanical behavior of these materials.\nPracticals: ➔ Gradation of coarse and fine aggregates ➔ Different corresponding tests and need/application of these tests in design and quality control ➔ Tensile Strength of materials & concrete composites ➔ Compressive strength test on aggregates ➔ Tension I - Elastic Behaviour of metals & materials 14 ➔ Tension II - Failure of Common Materials ➔ Concrete I - Early Age Properties ➔ Concrete II - Compression and Indirect Tension ➔ Compression – Directionality ➔ Consolidation and Strength Tests ➔ Tension III - Heat Treatment ➔ Torsion test ➔ Hardness tests (Brinnel’s and Rockwell) ➔ Tests on closely coiled and open coiled springs ➔ Theories of Failure and Corroboration with Experiments ➔ Concrete Mix Design as per BIS"
-				},
-				{
-					"code": "HSMC 252",
-					"name": "Civil Engineering - Societal & Global",
-					"type": "Theory",
-					"credits": 2,
-					"summary": {
-						"lecture": 2,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"3 in: Fischinger M. (eds) Performance-Based Seismic Engineering: Vision for an",
-						"Earthquake Resilient Society. Geotechnical, Geological and Earthquake",
-						"Engineering, Vol. 32. Springer, Dordrecht",
-						"➔ Brito, Ciampi, Vasconcelos, Amarol, Barros (2013) Engineering impacting",
-						"Social, Economical and Working Environment, 120th ASEE Annual Conference and",
-						"Exposition",
-						"➔ NAE Grand Challenges for Engineering (2006), Engineering for the Developing",
-						"World, The Bridge, Vol 34, No.2, Summer 2004.",
-						"➔ Allen M. (2008) Cleansing the city. Ohio University Press. Athens Ohio.",
-						"➔ Ashley R., Stovin V., Moore S., Hurley L., Lewis L., Saul A. (2010). London",
-						"Tideway Tunnels Programme – Thames Tunnel Project Needs Report – Potential",
-						"source control and SUDS applications: Land use and retrofit options",
-						"➔ http://www.thamestunnelconsultation.co.uk/consultation-documents.aspx",
-						"➔ Ashley R M., Nowell R., Gersonius B., Walker L. (2011). Surface Water",
-						"Management and Urban Green Infrastructure. Review of Current Knowledge.",
-						"Foundation for Water Research FR/R0014",
-						"➔ Barry M. (2003) Corporate social responsibility – unworkable paradox or",
-						"sustainable paradigm? Proc ICE Engineering Sustainability 156. Sept Issue ES3",
-						"paper 13550. p 129-130",
-						"➔ Blackmore J M., Plant R A J. (2008). Risk and resilience to enhance",
-						"sustainability with application to urban water systems. J. Water Resources",
-						"Planning and Management. ASCE. Vol. 134, No. 3, May.",
-						"➔ Bogle D. (2010) UK’s engineering Council guidance on sustainability. Proc ICE",
-						"Engineering Sustainability 163. June Issue ES2 p 61-63",
-						"➔ Brown R R., Ashley R M., Farrelly M. (2011). Political and Professional Agency",
-						"Entrapment: An Agenda for Urban Water Research. Water Resources Management.",
-						"Vol. 23, No.4. European Water Resources Association (EWRA) ISSN 0920-4741.",
-						"18",
-						"➔ Brugnach M., Dewulf A., Pahl-Wostl C., Taillieu T. (2008) Toward a relational",
-						"concept of uncertainty: about knowing too little, knowing too differently and",
-						"accepting not to know. Ecology and Society (2): 30",
-						"➔ Butler D., Davies J. (2011). Urban Drainage. Spon. 3rd Ed.",
-						"➔ Cavill S., Sohail M. (2003) Accountability in the provision of urban services.",
-						"Proc. ICE. Municipal Engineer 156. Issue ME4 paper 13445, p235-244.",
-						"➔ Centre for Water Sensitive Cities (2012) Blueprint for a water sensitive city.",
-						"Monash University.",
-						"➔ Charles J A. (2009) Robert Rawlinson and the UK public health revolution. Proc",
-						"ICE Eng History and Heritage. 162 Nov. Issue EH4. p 199-206.",
-						"****",
-						"19"
-					],
-					"content": "Module 1 Introduction to Course and Overview; Understanding the past to look into the future: Pre-industrial revolution days, Agricultural revolution, first and second and innovations; Present day world and future projections, Ecosystems in Society and in Nature; the steady erosion in Sustainability; Global warming, its impact and possible causes; Evaluating future requirements for various resources; GIS and applications for monitoring systems; Human Development Index and Ecological Footprint of India Vs other countries and analysis;\nModule 2 the world; The ancient and modern Marvels and Wonders in the field of Civil\nModule 3 Infrastructure: Habitats, Megacities, Smart Cities, futuristic visions; Transportation (Roads, Railways & Metros, Airports, Seaports, River ways, Sea canals, Tunnels (below ground, under water); Futuristic systems (ex, HyperLoop)); Energy generation (Hydro, Solar (Photovoltaic, Solar Chimney), Wind, Wave, Tidal, Geothermal, Thermal energy); Water provisioning; Telecommunication needs (towers, above-ground and underground cabling); Awareness of various Codes & Standards governing Infrastructure development; Innovations and methodologies for ensuring Sustainability;\nModule 4 Environment: Traditional & futuristic methods; Solid waste management, Water purification, Wastewater treatment & Recycling, Hazardous waste treatment; Flood control (Dams, Canals, River interlinking), Multi-purpose water projects, Atmospheric pollution; Global warming phenomena and Pollution Mitigation measures, Stationarity and nonstationarity; Environmental Metrics & Monitoring; Other Sustainability measures; Innovations and methodologies for ensuring Sustainability.\nModule 5 Built environment: Facilities management, Climate control; Energy efficient built environments and LEED ratings, Recycling, Temperature/ Sound control in built environment, Security systems; Intelligent/ Smart Buildings; Aesthetics of built environment, Role of Urban Arts Commissions; Conservation, Repairs & Rehabilitation 16 of Structures & Heritage structures; Innovations and methodologies for ensuring Sustainability\nModule 6 (materials, manpower, equipment) avoidance/ Efficiency increase; Advanced construction techniques for better sustainability; Techniques for reduction of Project Management paradigms & Systems (Ex. Lean Construction), contribution of Civil Engineering to GDP, Contribution to employment(projects, facilities management), Quality of products, Health & Safety aspects for stakeholders; Innovations and methodologies for ensuring Sustainability during Project development;\nModule 7A Population Dynamics covering, Population ecology- Population characteristics, ecotypes; Population genetics- Concept of gene pool and genetic diversity in populations, polymorphism and heterogeneity; (3 Lectures)\nModule 8B Environmental Management covering, Principles: Perspectives, concerns and management strategies; Policies and legal aspects- Environment Protection Acts and modification, International Treaties; Environmental Impact Assessment- Case studies (International Airport, thermal power plant); (3 Lectures)\nModule 9A Molecular Genetics covering, Structures of DNA and RNA; Concept of Gene, Gene regulation, e.g., Operon concept; (3 Lectures)\nModule 9B Biotechnology covering, Basic concepts: Totipotency and Cell manipulation; Plant & Animal tissue culture- Methods and uses in agriculture, medicine and health; Recombinant DNA Technology- Techniques and applications; (3 Lectures)\nModule 10A Biostatistics covering, Introduction to Biostatistics:-Terms used, types of data; Measures of Central Tendencies- Mean, Median, Mode, Normal and Skewed distributions; Analysis of Data- Hypothesis testing and ANOVA (single factor) (4 Lectures) 17 ORGANISATION OF COURSE (2-0-0) 1 Introduction 3 2 Understanding the Importance of Civil 3 Engineering 3 Infrastructure 8 4 Environment 7 5 Built Environment 5"
-				},
-				{
-					"code": "-",
-					"name": "Open Elective-I (Humanities) MOOC",
-					"type": "Theory",
-					"credits": 2,
-					"summary": {
-						"lecture": 2,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [],
-					"content": ""
-				},
-				{
-					"code": "-",
-					"name": "Management I (Organizational",
+					"code": "101407",
+					"name": "Civil Engineering – Societal & Global Impact",
 					"type": "Theory",
 					"credits": 0,
 					"summary": {
@@ -840,8 +722,103 @@
 						"tutorial": 0,
 						"practical": 0
 					},
+					"references": [
+						"1. Žiga Turk (2014), Global Challenges and the Role of Civil Engineering, Chapter 3 in: Fischinger M. (eds) Performance-Based Seismic Engineering: Vision for an Earthquake Resilient Society. Geotechnical, Geological and Earthquake Engineering, Vol. 32. Springer, Dordrecht",
+						"2. Brito, Ciampi, Vasconcelos, Amarol, Barros (2013) Engineering impacting Social, Economical and Working Environment, 120th ASEE Annual Conference and Exposition",
+						"3. NAE Grand Challenges for Engineering (2006), Engineering for the Developing World, The Bridge, Vol 34, No.2, Summer 2004.",
+						"4. Allen M. (2008) Cleansing the city. Ohio University Press. Athens Ohio.",
+						"5. Ashley R., Stovin V., Moore S., Hurley L., Lewis L., Saul A. (2010). London Tideway Tunnels Programme – Thames Tunnel Project Needs Report – Potential source control and SUDS applications: Land use and retrofit options",
+						"6. http://www.thamestunnelconsultation.co.uk/consultation-documents.aspx",
+						"7. Ashley R M., Nowell R., Gersonius B., Walker L. (2011). Surface Water Management and Urban Green Infrastructure. Review of Current Knowledge. Foundation for Water Research FR/R0014",
+						"8. Barry M. (2003) Corporate social responsibility – unworkable paradox or sustainable paradigm? Proc ICE Engineering Sustainability 156. Sept Issue ES3 paper 13550. p 129-130",
+						"9. Blackmore J M., Plant R A J. (2008). Risk and resilience to enhance sustainability with application to urban water systems. J. Water Resources Planning and Management. ASCE.Vol. 134, No. 3, May.",
+						"10. Bogle D. (2010) UK’s engineering Council guidance on sustainability. Proc ICE Engineering Sustainability 163. June Issue ES2 p61-63",
+						"11. Brown R R., Ashley R M., Farrelly M. (2011). Political and Professional Agency Entrapment: An Agenda for Urban Water Research. Water Resources Management. Vol. 23, No.4. European Water Resources Association (EWRA) ISSN 0920-4741.",
+						"12. Brugnach M., Dewulf A., Pahl-Wostl C., Taillieu T. (2008) Toward a relational concept of uncertainty: about knowing too little, knowing too differently and accepting not to know. Ecology and Society 13 (2): 30",
+						"13. Butler D., Davies J. (2011). Urban Drainage. Spon. 3rd Ed.",
+						"14. Cavill S., Sohail M. (2003) Accountability in the provision of urban services. Proc. ICE. Municipal Engineer 156. Issue ME4 paper 13445, p235-244.",
+						"15. Centre for Water Sensitive Cities (2012) Blueprint for a water sensitive city. Monash University.",
+						"16. Charles J A. (2009) Robert Rawlinson and the UK public health revolution. Proc ICE Eng History and Heritage. 162 Nov. Issue EH4. p 199-206"
+					],
+					"content": "Unit- 1.0 3 hrs\nIntroduction to Course and Overview; Understanding the past to look into the future: Pre-industrial revolution days, Agricultural revolution, first and second industrial revolutions, IT revolution; Recent major Civil Engineering breakthroughs and innovations; Present day world and future projections, Ecosystems in Society and in Nature; the steady erosion in Sustainability; Global warming, its impact and possible causes; Evaluating future requirements for various resources; GIS and applications for monitoring systems; Human Development Index and Ecological Footprint of India Vs other countries and analysis.\n\nUnit- 2.0 5 hrs\nUnderstanding the importance of Civil Engineering in shaping and impacting the world; The ancient and modern Marvels and Wonders in the field of Civil Engineering; Future Vision for Civil Engineering. Infrastructure - Habitats, Megacities, Smart Cities, futuristic visions; Transportation (Roads, Railways & Metros, Airports, Seaports, River ways, Sea canals, Tunnels (below ground, under water); Futuristic systems (ex, Hyper Loop)); Energy generation (Hydro, Solar (Photovoltaic, Solar Chimney), Wind, Wave, Tidal, Geothermal, Thermal energy); Water provisioning; Telecommunication needs (towers, above-ground and underground cabling); Awareness of various Codes & Standards governing Infrastructure development; Innovations and methodologies for ensuring Sustainability.\n\nUnit-3.0 6 hrs\nEnvironment- Traditional & futuristic methods; Solid waste management, Water purification, Wastewater treatment & Recycling, Hazardous waste treatment; Flood control (Dams, Canals, River interlinking), Multi-purpose water projects, Atmospheric pollution; Global warming phenomena and Pollution Mitigation measures, Stationarity and nonstationarity; Environmental Metrics & Monitoring; Other Sustainability measures; Innovations and methodologies for ensuring Sustainability. Built environment – Facilities management, Climate control; Energy efficient built environments and LEED ratings, Recycling, Temperature/ Sound control in built environment, Security systems; Intelligent/ Smart Buildings; Aesthetics of built environment, Role of Urban Arts Commissions; Conservation, Repairs & Rehabilitation of Structures & Heritage structures; Innovations and methodologies for ensuring Sustainability.\n\nUnit- 4.0 5 hrs\nCivil Engineering Projects – Environmental Impact Analysis procedures; Waste (materials, manpower, equipment) avoidance/ Efficiency increase; Advanced construction techniques for better sustainability; Techniques for reduction of Green House Gas emissions in various aspects of Civil Engineering Projects; New Project Management paradigms & Systems (Ex. Lean Construction), contribution of Civil Engineering to GDP, Contribution to employment(projects, facilities management), Quality of products, Health & Safety aspects for stakeholders; Innovations and methodologies for ensuring Sustainability during Project development.\n\nUnit- 5.0 5 hrs\nPopulation Dynamics covering, Population ecology- Population characteristics, ecotypes; Population genetics- Concept of gene pool and genetic diversity in populations, polymorphism and heterogeneity; Environmental Management covering, Principles: Perspectives, concerns and management strategies; Policies and legal aspects- Environment Protection Acts and modification, International Treaties; Environmental Impact Assessment- Case studies (International Airport, thermal power plant).\n\nUnit- 6.0 4 hrs\nMolecular Genetics covering, Structures of DNA and RNA; Concept of Gene, Gene regulation, e.g., Operon concept; Biotechnology covering, Basic concepts: Totipotency and Cell manipulation; Plant & Animal tissue culture- Methods and uses in agriculture, medicine and health; Recombinant DNA Technology- Techniques and applications; Biostatistics covering, Introduction to Biostatistics:-Terms used, types of data; Measures of Central Tendencies- Mean, Median, Mode, Normal and Skewed distributions; Analysis of Data- Hypothesis testing and ANNOVA (single factor)."
+				},
+				{
+					"code": "101401P",
+					"name": "Transportation Engineering Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
 					"references": [],
-					"content": ""
+					"content": "Perform all Experiments\nList of Experiments:\n\n1. To determine the Impact Test Value of an aggregate.\n\n2. To determine the percent wear of aggregate when subjected to abrasion by the Los Angeles Abrasion test\n\n3. To find %wear due to relative rubbing action between the cylindrical stone specimen and the abrading agent as the sand by using the Dorry abrasion test.\n\n4. To determine the specific gravity and water absorbed by the given aggregate\n\n5. To determine the specific gravity of the bitumen sample by balance method.\n\n6. To determine the softening point of bitumen sample using Ring and Ball test.\n\n7. To determine the CBR value of a given soil sample.\n\n8. Determine the Flakiness and elongation index of coarse aggregates."
+				},
+				{
+					"code": "101402P",
+					"name": "Building Planning and Computer-Aided Civil Engineering Drawing Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform all Experiments\nList of Experiments:\n\n1. Preparation of detailed constructional plan of a residential building.\n\n2. Preparation of front elevation, detailed sectional view, site plan, foundation plan, terrace plan, waterproofing treatment, typical door and window.\n\n3. Concept of perspective drawing- one point, two-point, three point and uses.\n\n4. Preparation of line plans of various public buildings like:Building for Education – School, College. Library Building for health – Dispensary, Hospital Industrial structure Building for entertainment-Theatre, Club House, Sports Club. Other Structure- Office, Hostel, Guest house.\n\n5. Prepare layout for water supply and drainage for a residential building and for multistoried buildings.\n\n6. Building’s Solid Waste Collection and disp osal system: Wet and dry solid waste segregation, Vermi-composting etc. Provision of Chutes.\n\n7. Fire Protection System: Design of emergency exits and emergency vehicle routes with fire protection symbols"
+				},
+				{
+					"code": "101403P",
+					"name": "Geotechnical Engineering-I Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments\nList of Experiments:\n\n1. Field Density using Core Cutter method.\n\n2. Field Density using Sand replacement method.\n\n3. Natural moisture content using Oven Drying method.\n\n4. Field identification of Fine Grained soils.\n\n5. Specific gravity of Soils.\n\n6. Grain size distribution by Sieve Analysis.\n\n7. Grain size distribution by Hydrometer Analysis.\n\n8. Consistency limits by Liquid limit\n\n9. Consistency limits by Plastic limit\n\n10. Consistency limits by Shrinkage limit.\n\n11. Permeability test using Constant-head test method.\n\n12. Permeability test using Falling-head method.\n\n13. Compaction test: Standard Proctor test.\n\n14. Compaction test: Modified Proctor test."
+				},
+				{
+					"code": "101404P",
+					"name": "Hydraulic Engineering Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any 10 Experiments\nList of Experiments:\n\n1. Flow Visualization\n\n2. Studies in Wind Tunnel\n\n3. Boundary Layer\n\n4. Flow around an Aerofoil / circular cylinder\n\n5. Uniform Flow\n\n6. Velocity Distribution in Open channel flow\n\n7. Venturi Flume\n\n8. Standing Wave Flume\n\n9. Gradually Varied Flow\n\n10. Hydraulic Jump\n\n11. Flow under Sluice Gate\n\n12. Flow through pipes\n\n13. Turbulent flow through pipes\n\n14. Flow visualization\n\n15. Laminar flow through pipes\n\n16. Major losses / Minor losses in pipe."
+				},
+				{
+					"code": "101406P",
+					"name": "Engineering Geology Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform all Experiments\nList of Experiments:\n\n1. Study of physical properties of minerals.\n\n2. Study of different group of minerals.\n\n3. Study of Crystal and Crystal system.\n\n4. Identification of minerals: Silica group : Quartz, Amethyst, Opal; Feldspar group : Orthoclase, Plagioclase; Cryptocrystalline group : Jasper; Carbonate group : Calcite; Pyroxene group : Augite, Diopside, Mica group : Biotite, Muscovite; Amphibole group : Hornblende, other silicates- Olivine, Asbestos, Magnetite, Hematite, Corundum, Kyanite, Garnet, Galena, Gypsum.\n\n5. Identification of rocks (Igneous Petrology) : Acidic Igneous rock: Granite and its varieties, Syenite, Rhyolite, Pumice, Obsidian, Scoria, Pegmatite, Volcanic Tuff. Basic rock: Gabbro, Dolerite, Basalt and its varieties, Trachyte.\n\n6. Identification of rocks (Sedimentary Petrology) : Conglomerate, Breccia, Sandstone and its varieties, Laterite, Limestone and its varieties, Shales and its varieties.\n\n7. Identification of rocks (Metamorphic Petrology) : Marble, slate, Gneiss and its varieties, Schist and its varieties. Quartzite, Phyllite.\n\n8. Study of topographical features from Geological maps. Identification of symbols in maps."
+				},
+				{
+					"code": "101408",
+					"name": "NPTEL (Open Course)",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": "NPTEL (Open Course) should be taken from the course other than core subjects of the branch"
 				}
 			]
 		},

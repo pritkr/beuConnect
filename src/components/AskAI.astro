@@ -23,7 +23,12 @@ const triggerLabel = [unit, subject].filter(Boolean).join(" · ");
 
 {
 	variant === "dialog" ? (
-		<dialog id="askAiDialog" class="ask-dialog" aria-labelledby="askAiTitle">
+		<dialog
+			id="askAiDialog"
+			class="ask-dialog"
+			aria-labelledby="askAiTitle"
+			closedby="any"
+		>
 			<form method="dialog" class="ask-close-form">
 				<button type="submit" class="btn-icon btn-ghost" aria-label="Close">
 					<Icon name="x" size={16} />
@@ -38,6 +43,7 @@ const triggerLabel = [unit, subject].filter(Boolean).join(" · ");
 						type="button"
 						class="btn-sm btn-primary ask-provider"
 						data-ai-provider="gpt"
+						autofocus
 					>
 						ChatGPT
 					</button>
@@ -91,10 +97,12 @@ const triggerLabel = [unit, subject].filter(Boolean).join(" · ");
 		white-space: nowrap;
 	}
 
-	.ask-ai:hover {
-		color: var(--paper);
-		text-decoration: underline;
-		text-underline-offset: 0.18em;
+	@media (hover: hover) and (pointer: fine) {
+		.ask-ai:hover {
+			color: var(--paper);
+			text-decoration: underline;
+			text-underline-offset: 0.18em;
+		}
 	}
 
 	.ask-dialog {
@@ -104,6 +112,14 @@ const triggerLabel = [unit, subject].filter(Boolean).join(" · ");
 		border-radius: var(--r-lg);
 		background: var(--surface);
 		color: var(--paper);
+	}
+
+	@media (pointer: coarse) {
+		.ask-dialog {
+			width: 100%;
+			border-radius: var(--r-lg) var(--r-lg) 0 0;
+			padding-bottom: calc(var(--s5) + var(--safe-bottom));
+		}
 	}
 
 	.ask-dialog::backdrop {
@@ -181,10 +197,10 @@ const triggerLabel = [unit, subject].filter(Boolean).join(" · ");
 	/* Runtime toast: Astro scoped styles never reach it. */
 	.ask-toast {
 		position: fixed;
-		bottom: 1.5rem;
+		bottom: calc(1.5rem + var(--safe-bottom));
 		left: 50%;
 		z-index: 9999;
-		max-width: calc(100% - 2rem);
+		max-width: calc(100% - 2rem - var(--safe-left) - var(--safe-right));
 		padding: 0.5rem 0.85rem;
 		border: 1px solid var(--line-strong);
 		border-radius: var(--r);
@@ -320,17 +336,19 @@ const triggerLabel = [unit, subject].filter(Boolean).join(" · ");
 				.catch(() => setStatus("Copy failed."));
 		});
 
-		// Same conventions as the footer dialogs: backdrop click closes, Escape is
-		// native, and focus goes back to the unit that opened it.
-		modal.addEventListener("click", (event) => {
-			const bounds = modal.getBoundingClientRect();
-			const inside =
-				event.clientX >= bounds.left &&
-				event.clientX <= bounds.right &&
-				event.clientY >= bounds.top &&
-				event.clientY <= bounds.bottom;
-			if (!inside) modal.close();
-		});
+		// `closedby="any"` handles light dismiss, Esc and the back gesture. The
+		// branch below only runs in browsers without it (Safari).
+		if (!("closedBy" in HTMLDialogElement.prototype)) {
+			modal.addEventListener("click", (event) => {
+				const bounds = modal.getBoundingClientRect();
+				const inside =
+					event.clientX >= bounds.left &&
+					event.clientX <= bounds.right &&
+					event.clientY >= bounds.top &&
+					event.clientY <= bounds.bottom;
+				if (!inside) modal.close();
+			});
+		}
 
 		modal.addEventListener("close", () => {
 			setStatus("");

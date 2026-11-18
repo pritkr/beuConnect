@@ -7,5 +7,5 @@
  * `nsh.json` before packaging.
  */
 
-export const APP_VERSION = "1.3.2";
-export const APP_BUILD = 13;
+export const APP_VERSION = "1.3.3";
+export const APP_BUILD = 14;

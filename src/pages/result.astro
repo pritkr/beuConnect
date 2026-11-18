@@ -15,6 +15,7 @@ import Layout from "../layouts/Layout.astro";
 				<p class="student-line" id="resultStudentName" hidden></p>
 			</div>
 			<div class="actions">
+				<button id="shareBtn" type="button" class="btn-sm" disabled>Share</button>
 				<button id="printBtn" type="button" class="btn-sm" disabled>Print</button>
 				<button id="saveBtn" type="button" class="btn-sm" disabled>Save HTML</button>
 			</div>
@@ -30,6 +31,8 @@ import Layout from "../layouts/Layout.astro";
 						inputmode="numeric"
 						autocomplete="on"
 						maxlength="11"
+						enterkeyhint="search"
+						aria-describedby="status"
 						placeholder="22105123019"
 					/>
 				</div>
@@ -70,10 +73,19 @@ import Layout from "../layouts/Layout.astro";
 			Enter a registration number to load a result.
 		</p>
 
+		<div id="statusTrack" class="status-track" aria-hidden="true">
+			<span></span>
+		</div>
+
 		<div id="savePrompt" class="save-prompt" style="display: none;">
 			<h2>Save to this device?</h2>
-			<button id="confirmSaveBtn" type="button" class="btn-sm btn-primary">Save</button>
+			<div class="save-prompt-actions">
+				<button id="dismissSavePromptBtn" type="button" class="btn-sm btn-ghost">Not now</button>
+				<button id="confirmSaveBtn" type="button" class="btn-sm btn-primary">Save</button>
+			</div>
 		</div>
+
+		<a id="rankBand" class="rank-band" hidden aria-live="polite"></a>
 
 		<div class="frame-wrap">
 			<iframe id="resultBox" title="BEU result output"></iframe>
@@ -83,16 +95,38 @@ import Layout from "../layouts/Layout.astro";
 	<script>
 		import { inferCurrentSemester } from "../lib/beuReg";
 		import { fetchStudent } from "../lib/students/client";
+		import { EVENTS, track } from "../lib/analytics";
 		import { parseRegNo, saveProfile, getProfile } from "../utils/profileManager";
+		import type { RankData } from "../lib/rank/lookup";
 		const baseUrl = import.meta.env.BASE_URL;
 		const regInput = document.getElementById("reg") as HTMLInputElement;
 		const printBtn = document.getElementById("printBtn") as HTMLButtonElement;
 		const saveBtn = document.getElementById("saveBtn") as HTMLButtonElement;
+		const shareBtn = document.getElementById("shareBtn") as HTMLButtonElement;
 		const savePrompt = document.getElementById("savePrompt") as HTMLDivElement;
 		const confirmSaveBtn = document.getElementById("confirmSaveBtn") as HTMLButtonElement;
+		const dismissSavePromptBtn = document.getElementById("dismissSavePromptBtn") as HTMLButtonElement;
+		const SAVE_PROMPT_KEY = "beu_save_prompt_dismissed";
+		const savePromptDismissed = () => {
+			try {
+				return localStorage.getItem(SAVE_PROMPT_KEY) === "1";
+			} catch {
+				return false;
+			}
+		};
+		dismissSavePromptBtn?.addEventListener("click", () => {
+			savePrompt.classList.remove("is-visible");
+			savePrompt.style.display = "none";
+			try {
+				localStorage.setItem(SAVE_PROMPT_KEY, "1");
+			} catch {
+				/* storage blocked — the prompt simply returns next visit */
+			}
+		});
 		const frame = document.getElementById("resultBox") as HTMLIFrameElement;
 		const frameWrap = document.querySelector(".frame-wrap") as HTMLDivElement;
 		const statusEl = document.getElementById("status") as HTMLParagraphElement;
+		const statusTrack = document.getElementById("statusTrack") as HTMLDivElement | null;
 		const studentNameEl = document.getElementById("resultStudentName") as HTMLParagraphElement | null;
 
 		let selectedSem = 1;
@@ -166,7 +200,30 @@ import Layout from "../layouts/Layout.astro";
 		function setStatus(type: "muted" | "loading" | "ok" | "error", text: string) {
 			statusEl.className = `status ${type}`;
 			statusEl.textContent = text;
+			// The sweep is the only thing on the page moving while the portal
+			// is scraped; it exists for the wait, and leaves with it.
+			statusTrack?.classList.toggle("is-loading", type === "loading");
 		}
+
+		/* Marking the field invalid is only honest when the number itself is the
+		   problem. A slow BEU or a missing record is not the reader's typo. */
+		function setRegistrationInvalid(invalid: boolean) {
+			if (invalid) {
+				regInput.setAttribute("aria-invalid", "true");
+			} else {
+				regInput.removeAttribute("aria-invalid");
+			}
+		}
+
+		// The result document is rendered with the theme baked in at request
+		// time. A switch afterwards would leave an ink panel on a paper page,
+		// so carry the change into the frame instead of re-scraping it.
+		window.addEventListener("beu:theme", (event) => {
+			const theme = (event as CustomEvent<{ theme?: string }>).detail?.theme;
+			if (theme !== "light" && theme !== "dark") return;
+			if (!frame.getAttribute("src")) return;
+			frame.contentDocument?.documentElement?.setAttribute("data-theme", theme);
+		});
 
 		function resizeResultFrame() {
 			const doc = frame.contentDocument;
@@ -246,9 +303,20 @@ import Layout from "../layouts/Layout.astro";
 				frameWrap.classList.remove("is-visible");
 				printBtn.disabled = true;
 				saveBtn.disabled = true;
+				shareBtn.disabled = true;
+				hideRank();
+				setRegistrationInvalid(true);
 				setStatus("muted", "Enter registration number to load result.");
 				return;
 			}
+
+			setRegistrationInvalid(false);
+
+			/* Rank and result travel separately: the rank comes from our own
+			   tables and is usually on screen long before BEU replies. */
+			void refreshRank(reg.replace(/\D/g, ""), selectedSem);
+
+			track(EVENTS.resultLookup, { semester: selectedSem, view: selectedView });
 
 			// We do NOT auto-save profile here anymore if anonymous. 
 			// We only allow save via the prompt after it loads.
@@ -266,8 +334,8 @@ import Layout from "../layouts/Layout.astro";
 			setStatus(
 				"loading",
 				isLe
-					? "LE auto-detected (9xx serial). Fetching using adjusted batch year..."
-					: `Loading semester ${selectedSem} result (${selectedView} view)...`,
+					? `Loading semester ${selectedSem} for a lateral-entry batch…`
+					: `Loading semester ${selectedSem} result…`,
 			);
 
 			const theme =
@@ -321,6 +389,9 @@ import Layout from "../layouts/Layout.astro";
 			if (regInput.value !== digits) regInput.value = digits;
 			renderStudentLine();
 			updateUrl();
+			// The error clears as soon as the field holds a plausible number,
+			// instead of waiting for the next request to come back.
+			if (regInput.value.trim().length >= MIN_REG_LENGTH) setRegistrationInvalid(false);
 			if (debounceTimer) {
 				clearTimeout(debounceTimer);
 			}
@@ -330,6 +401,9 @@ import Layout from "../layouts/Layout.astro";
 		});
 
 		regInput.addEventListener("keydown", (event) => {
+			// Enter during an IME composition commits the candidate; it is not a
+			// request to load anything.
+			if (event.isComposing || event.keyCode === 229) return;
 			if (event.key === "Enter") {
 				event.preventDefault();
 				loadResult();
@@ -355,8 +429,6 @@ import Layout from "../layouts/Layout.astro";
 		frame.addEventListener("load", async () => {
 			if (!frame.getAttribute("src")) return;
 			frameWrap.classList.add("is-visible");
-			printBtn.disabled = false;
-			saveBtn.disabled = false;
 			if (timeoutTimer) {
 				clearTimeout(timeoutTimer);
 				timeoutTimer = null;
@@ -364,14 +436,43 @@ import Layout from "../layouts/Layout.astro";
 			resizeResultFrame();
 
 			const doc = frame.contentDocument;
-			const errorCard = doc?.querySelector(".error-card");
-			if (errorCard) {
+			const card = doc?.querySelector(".result-card");
+			const cardKind = card?.getAttribute("data-card-kind");
+
+			if (cardKind === "handoff") {
+				// BEU keeps every result behind a captcha; this card is the way
+				// there, not a failure. Name it as what it is, keep the number of
+				// the outcome honest, and leave print and save for a result that
+				// is actually on the page.
+				const reason = card?.getAttribute("data-card-reason") ?? "matched";
+				printBtn.disabled = true;
+				saveBtn.disabled = true;
+				shareBtn.disabled = false;
+				setStatus(
+					"muted",
+					reason === "not_published"
+						? "This result is not out yet."
+						: reason === "unavailable"
+							? "BEU did not answer. Try again in a minute."
+							: "Your result opens on BEU.",
+				);
+				track(EVENTS.resultOutcome, { outcome: "handoff", reason, semester: selectedSem });
+				return;
+			}
+
+			printBtn.disabled = false;
+			saveBtn.disabled = false;
+			shareBtn.disabled = false;
+
+			if (cardKind === "error" || doc?.querySelector(".error-card")) {
 				// The card in the frame carries the full sentence and the way out;
 				// the page status only says there is nothing to show.
 				setStatus("muted", "No result to show.");
+				track(EVENTS.resultOutcome, { outcome: "not_found", semester: selectedSem });
 				return;
 			}
-			const viewLabel = selectedView === "official" ? "Official" : "Modern";
+			track(EVENTS.resultOutcome, { outcome: "success", semester: selectedSem, view: selectedView });
+			const viewLabel = selectedView === "official" ? "Official" : "Readable";
 			let extractedName = "";
 			let extractedSgpa = "";
 			let extractedCgpa = "";
@@ -441,9 +542,9 @@ import Layout from "../layouts/Layout.astro";
 
 			setStatus("ok", `${viewLabel} result loaded.`);
 
-			if (shouldPromptToSave) {
+			if (shouldPromptToSave && !savePromptDismissed()) {
 				savePrompt.style.display = "flex";
-				savePrompt.style.animation = "fadeInUp 0.3s ease";
+				savePrompt.classList.add("is-visible");
 				confirmSaveBtn.onclick = async () => {
 					try {
 						const { parseRegNo, saveProfile } = await import("../utils/profileManager");
@@ -493,6 +594,165 @@ import Layout from "../layouts/Layout.astro";
 				timeoutTimer = null;
 			}
 			setStatus("error", "Failed to load result.");
+			track(EVENTS.resultOutcome, { outcome: "error", semester: selectedSem });
+		});
+
+		/* Rank band ------------------------------------------------------------
+		   The CSVs behind /rank already hold every student's CGPA, so once the
+		   register resolves we can say where it places — usually before BEU
+		   answers. /api/rank reads the same files /rank does, which is why the
+		   two pages can never quote different numbers. */
+		const rankBand = document.getElementById("rankBand") as HTMLAnchorElement | null;
+		let rankRequest = 0;
+
+		function clearRank() {
+			if (!rankBand) return;
+			rankBand.hidden = true;
+			rankBand.removeAttribute("href");
+			rankBand.removeAttribute("aria-label");
+			rankBand.replaceChildren();
+		}
+
+		function hideRank() {
+			rankRequest += 1;
+			clearRank();
+		}
+
+		const span = (className: string, text: string) => {
+			const node = document.createElement("span");
+			node.className = className;
+			node.textContent = text;
+			return node;
+		};
+
+		function renderRank(data: RankData) {
+			if (!rankBand) return;
+
+			const batch = /^\d{2}$/.test(data.batch) ? `20${data.batch}` : data.batch;
+			const number = (value: number) => value.toLocaleString("en-IN");
+
+			const kicker = document.createElement("p");
+			kicker.className = "rank-kicker";
+			kicker.append(
+				span("rank-kicker-text", `Batch ${batch} · by CGPA ${data.cgpa.toFixed(2)}`),
+				span("rank-pct", `Top ${data.branchTopPercent}%`),
+			);
+
+			const stats = document.createElement("div");
+			stats.className = "rank-stats";
+
+			const stat = (label: string, rank: number, total: number) => {
+				const item = document.createElement("span");
+				item.className = "rank-stat";
+				item.append(
+					span("rank-stat-label", label),
+					span("rank-stat-value", `#${number(rank)}`),
+					span("rank-stat-of", `of ${number(total)}`),
+				);
+				return item;
+			};
+
+			stats.append(
+				stat("Branch", data.branchRank, data.branchTotal),
+				stat("University", data.universityRank, data.universityTotal),
+			);
+
+			const go = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+			go.setAttribute("class", "rank-go");
+			go.setAttribute("viewBox", "0 0 16 16");
+			go.setAttribute("aria-hidden", "true");
+			const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+			path.setAttribute("d", "M6 3.5 10.5 8 6 12.5");
+			path.setAttribute("fill", "none");
+			path.setAttribute("stroke", "currentColor");
+			path.setAttribute("stroke-width", "1.5");
+			path.setAttribute("stroke-linecap", "round");
+			path.setAttribute("stroke-linejoin", "round");
+			go.append(path);
+			stats.append(go);
+
+			rankBand.replaceChildren(kicker, stats);
+			rankBand.href = `${baseUrl}rank?reg=${encodeURIComponent(data.reg)}`;
+			rankBand.setAttribute(
+				"aria-label",
+				`Rank ${number(data.branchRank)} of ${number(data.branchTotal)} in ${data.branchShort}, ${number(data.universityRank)} of ${number(data.universityTotal)} in the university. Open the rank page.`,
+			);
+			rankBand.hidden = false;
+		}
+
+		async function refreshRank(reg: string, semester: number) {
+			if (!rankBand) return;
+			const token = ++rankRequest;
+
+			try {
+				const response = await fetch(
+					`${baseUrl}api/rank?reg=${encodeURIComponent(reg)}&sem=${semester}`,
+					{ headers: { accept: "application/json" } },
+				);
+				if (token !== rankRequest) return;
+				if (!response.ok) {
+					clearRank();
+					return;
+				}
+				const payload = await response.json();
+				if (token !== rankRequest) return;
+				if (payload?.status !== 200 || !payload.data) {
+					clearRank();
+					return;
+				}
+				renderRank(payload.data);
+			} catch {
+				// Offline or blocked: a missing band is better than a wrong one.
+				if (token === rankRequest) clearRank();
+			}
+		}
+
+		/* The address bar already tracks the lookup, so a shared link opens the
+		   same student and semester instead of an empty form. */
+		function buildShareUrl() {
+			const url = new URL(window.location.href);
+			url.searchParams.set("reg", regInput.value.replace(/\D/g, ""));
+			url.searchParams.set("sem", String(selectedSem));
+			if (selectedView === "modern") {
+				url.searchParams.set("view", "modern");
+			} else {
+				url.searchParams.delete("view");
+			}
+			return url.toString();
+		}
+
+		shareBtn.addEventListener("click", async () => {
+			const reg = regInput.value.replace(/\D/g, "");
+			if (reg.length < MIN_REG_LENGTH) {
+				setRegistrationInvalid(true);
+				setStatus("error", "Enter a registration number first.");
+				return;
+			}
+
+			const url = buildShareUrl();
+
+			if (typeof navigator.share === "function") {
+				try {
+					await navigator.share({
+						title: "BEUConnect result",
+						text: `Semester ${selectedSem} result`,
+						url,
+					});
+					track(EVENTS.share, { feature: "results", method: "native" });
+					return;
+				} catch (error) {
+					// Closing the sheet is a decision, not a failure.
+					if ((error as DOMException)?.name === "AbortError") return;
+				}
+			}
+
+			try {
+				await navigator.clipboard.writeText(url);
+				setStatus("ok", "Link copied. Paste it in WhatsApp.");
+				track(EVENTS.share, { feature: "results", method: "copy" });
+			} catch {
+				setStatus("error", "Could not copy the link.");
+			}
 		});
 
 		printBtn.addEventListener("click", () => {
@@ -504,6 +764,7 @@ import Layout from "../layouts/Layout.astro";
 			}
 			win.focus();
 			win.print();
+			track(EVENTS.share, { feature: "results", method: "print" });
 		});
 
 		saveBtn.addEventListener("click", () => {
@@ -518,6 +779,7 @@ import Layout from "../layouts/Layout.astro";
 			a.href = URL.createObjectURL(blob);
 			a.download = `BEU_Result_${reg}_Sem${selectedSem}.html`;
 			a.click();
+			track(EVENTS.resultSave, { semester: selectedSem });
 			URL.revokeObjectURL(a.href);
 		});
 
@@ -537,6 +799,9 @@ import Layout from "../layouts/Layout.astro";
 			display: grid;
 			gap: var(--s4);
 		}
+
+		/* The grid's gap is the space under the header. */
+		.result-shell > .page-head { margin-bottom: 0; }
 
 		.student-line {
 			margin: 0.35rem 0 0;
@@ -588,21 +853,41 @@ import Layout from "../layouts/Layout.astro";
 		.sem-row {
 			display: grid;
 			grid-template-columns: repeat(8, minmax(0, 1fr));
-			gap: 2px;
+			gap: 0;
+			border: 1px solid var(--line-field);
+			border-radius: var(--r);
+			background: var(--surface);
+			overflow: hidden;
 		}
 
 		.sem-btn {
 			min-height: 2.5rem;
 			padding: 0;
+			border: 0;
 			border-radius: 0;
+			background: transparent;
 			font-size: 0.8rem;
 			font-variant-numeric: tabular-nums;
+		}
+
+		.sem-btn + .sem-btn {
+			border-left: 1px solid var(--line);
 		}
 
 		.sem-btn.active {
 			border-color: var(--accent);
 			background: var(--accent);
 			color: var(--accent-ink);
+		}
+
+		/* A shrink inside a shared capsule reads as the whole control breaking. */
+		.sem-row .sem-btn:active {
+			scale: none;
+		}
+
+		/* The capsule clips its children, so keep the focus ring inside it. */
+		.sem-btn:focus-visible {
+			outline-offset: -2px;
 		}
 
 		.view-btn {
@@ -619,7 +904,9 @@ import Layout from "../layouts/Layout.astro";
 
 		.view-btn.active {
 			background: var(--surface-2);
+			box-shadow: inset 0 -2px 0 var(--accent);
 			color: var(--paper);
+			font-weight: 650;
 		}
 
 		.save-prompt {
@@ -633,12 +920,205 @@ import Layout from "../layouts/Layout.astro";
 			border-left: 3px solid var(--accent);
 			border-radius: 0 var(--r) var(--r) 0;
 			background: var(--accent-soft);
+			opacity: 0;
+			transform: translateY(4px);
+			transition:
+				opacity 200ms var(--ease-out),
+				transform 200ms var(--ease-out);
+		}
+
+		.save-prompt.is-visible {
+			opacity: 1;
+			transform: none;
+		}
+
+		@starting-style {
+			.save-prompt.is-visible {
+				opacity: 0;
+				transform: translateY(4px);
+			}
 		}
 
 		.save-prompt h2 {
 			font-family: var(--font-sans);
 			font-size: 0.85rem;
 			font-weight: 650;
+		}
+
+		.save-prompt-actions {
+			display: flex;
+			gap: var(--s2);
+			margin-inline-start: auto;
+		}
+
+		/* An 8–20s scrape behind a static line of text reads as a dead page.
+		   The hairline reserves its pixel when idle (invisible) and sweeps only
+		   while the portal is being read. */
+		.status-track {
+			position: relative;
+			height: 1px;
+			margin: -0.35rem 0 var(--s4);
+			background: var(--line);
+			overflow: hidden;
+			opacity: 0;
+			transition: opacity 200ms var(--ease-out);
+		}
+
+		.status-track.is-loading {
+			opacity: 1;
+		}
+
+		.status-track > span {
+			position: absolute;
+			inset: 0 auto 0 0;
+			width: 32%;
+			background: var(--accent);
+			transform: translateX(-100%);
+		}
+
+		.status-track.is-loading > span {
+			animation: status-sweep 1.4s linear infinite;
+		}
+
+		@keyframes status-sweep {
+			from {
+				transform: translateX(-100%);
+			}
+			to {
+				transform: translateX(320%);
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			/* No travel: a steady accent rule still says "working". */
+			.status-track.is-loading > span {
+				animation: none;
+				transform: none;
+				width: 100%;
+			}
+		}
+
+		/* The rank is the one number BEU never shows a student. It sits above
+		   the result rather than under it: the payoff should not be a scroll
+		   past a 90dvh frame.
+		   Everything inside is built at runtime, so those selectors are
+		   :global() — Astro's scope attribute only lands on markup it can see
+		   at build time. */
+		.rank-band {
+			display: grid;
+			gap: var(--s2);
+			padding: var(--s3) var(--s4);
+			border: 1px solid var(--line);
+			border-radius: var(--r-lg);
+			background: var(--surface);
+			color: inherit;
+			text-decoration: none;
+			animation: result-in 240ms var(--ease-out) both;
+		}
+
+		/* `display: grid` above would otherwise beat the UA's [hidden]. */
+		.rank-band[hidden] {
+			display: none;
+		}
+
+		.rank-band :global(.rank-kicker) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: var(--s3);
+			/* theme.css caps every <p> at --measure; a kicker is not prose. */
+			max-width: none;
+			margin: 0;
+		}
+
+		.rank-band :global(.rank-kicker-text) {
+			color: var(--faint);
+			font-size: 0.72rem;
+			letter-spacing: 0.03em;
+			font-variant-numeric: tabular-nums;
+		}
+
+		.rank-band :global(.rank-pct) {
+			flex: none;
+			padding: 0.1rem 0.5rem;
+			border-radius: 999px;
+			background: var(--accent-soft);
+			color: var(--accent);
+			font-size: 0.68rem;
+			font-weight: 650;
+			letter-spacing: 0.02em;
+			white-space: nowrap;
+		}
+
+		.rank-band :global(.rank-stats) {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: baseline;
+			gap: var(--s2) var(--s3);
+		}
+
+		.rank-band :global(.rank-stat) {
+			display: inline-flex;
+			align-items: baseline;
+			gap: 0.4rem;
+		}
+
+		.rank-band :global(.rank-stat-label) {
+			color: var(--faint);
+			font-size: 0.68rem;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+		}
+
+		.rank-band :global(.rank-stat-value) {
+			color: var(--paper);
+			font-family: var(--font-display);
+			font-size: 1.45rem;
+			line-height: 1;
+		}
+
+		.rank-band :global(.rank-stat-of) {
+			color: var(--muted);
+			font-size: 0.78rem;
+			font-variant-numeric: tabular-nums;
+		}
+
+		.rank-band :global(.rank-go) {
+			width: 1rem;
+			height: 1rem;
+			margin-inline-start: auto;
+			align-self: center;
+			color: var(--faint);
+		}
+
+		/* A phone cannot hold both stats on one line without shrinking the
+		   numbers to noise, so they become an aligned two-row table instead of
+		   a wrapped flex line. Labels share a column, numbers share an edge. */
+		@media (max-width: 520px) {
+			.rank-band :global(.rank-stats) {
+				display: grid;
+				gap: 0.4rem;
+			}
+
+			.rank-band :global(.rank-stat) {
+				display: grid;
+				grid-template-columns: 5.25rem auto 1fr;
+			}
+
+			.rank-band :global(.rank-go) {
+				display: none;
+			}
+		}
+
+		@media (hover: hover) and (pointer: fine) {
+			.rank-band:hover {
+				border-color: var(--line-strong);
+				background: var(--surface-2);
+			}
+
+			.rank-band:hover :global(.rank-go) {
+				color: var(--accent);
+			}
 		}
 
 		.frame-wrap {
@@ -651,16 +1131,7 @@ import Layout from "../layouts/Layout.astro";
 
 		.frame-wrap.is-visible {
 			display: block;
-			transition:
-				opacity var(--dur-ui) var(--ease-out),
-				transform var(--dur-ui) var(--ease-out);
-		}
-
-		@starting-style {
-			.frame-wrap.is-visible {
-				opacity: 0;
-				transform: translateY(6px);
-			}
+			animation: result-in 240ms var(--ease-out) both;
 		}
 
 		.frame-wrap.is-card {
@@ -671,14 +1142,20 @@ import Layout from "../layouts/Layout.astro";
 		#resultBox {
 			display: block;
 			width: 100%;
-			height: min(90vh, 1300px);
+			/* dvh, not vh: the iframe is its own scroll context, so a viewport
+			   taller than the screen is a trap the page cannot rescue. */
+			height: min(90dvh, 1300px);
 			border: 0;
 			background: transparent;
 		}
 
-		@keyframes fadeInUp {
-			from { opacity: 0; transform: translateY(6px); }
-			to { opacity: 1; transform: none; }
+		/* The result is the page's payoff: it rises into place instead of
+		   appearing mid-layout after the wait. Height is left to the iframe. */
+		@keyframes result-in {
+			from {
+				opacity: 0;
+				transform: translateY(6px);
+			}
 		}
 
 		@media (max-width: 900px) {
@@ -691,12 +1168,9 @@ import Layout from "../layouts/Layout.astro";
 			.sem-row {
 				grid-template-columns: repeat(4, minmax(0, 1fr));
 			}
-		}
 
-		@media (prefers-reduced-motion: reduce) {
-			.frame-wrap.is-visible {
-				transition-property: opacity;
-				transition-duration: 120ms !important;
+			.sem-btn:nth-child(n + 5) {
+				border-top: 1px solid var(--line);
 			}
 		}
 	</style>

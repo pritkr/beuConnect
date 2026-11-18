@@ -55,7 +55,10 @@ const GROUPS: readonly Group[] = [
     confirm: "Clear tables",
     noun: "table",
     plural: "tables",
-    match: (key) => key.startsWith("beu.cache.wide:") || key.startsWith("beu.cache.roster:"),
+    match: (key) =>
+      key.startsWith("beu.cache.wide:") ||
+      key.startsWith("beu.cache.roster:") ||
+      key.startsWith("beu.cache.corpus:"),
   },
   {
     id: "saved",

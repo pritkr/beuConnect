@@ -1,8 +1,8 @@
 # Blockers
 
-Ranked, evidence-first, 2026-10-28; re-ranked 2026-10-30 when B1 and B2 were closed. The
-suite was **green** when this was written (`./qa/run-tests.sh`, exit 0) and again
-on the re-rank (406/406); a red gate outranks everything below.
+Ranked, evidence-first, 2026-11-18; re-ranked when the corpus, the college
+rosters and the attendance backup landed. The gate is the count — `./scripts/check.sh
+test` is the only number that matters here; a red gate outranks everything below.
 
 What each level means:
 
@@ -17,81 +17,79 @@ What each level means:
 
 | # | ID | Severity | Area | What is wrong | Evidence |
 |---:|---|---|---|---|---|
-| 1 | B3 | **S1** | Results | The live path is upstream-broken: `/api/result` returns 502 and BEU's token endpoint 403; only the in-WebView captcha, a saved copy, or a published CSV can produce a result | §1 |
-| 2 | B4 | **S2** | Release | APK is 12,110,647 B against a 12,300,000 B budget — **1.54 % headroom**; the next bundled asset fails the size gate | `docs/SIZE.md`, `./scripts/size-report.sh` |
-| 3 | B5 | **S2** | Results | `results.web` is registered, tested and allowed to open BEU's page, but no screen links to it: a second result path that ships bytes and no student can reach | `grep -rn '"results.web"' src` → only its own registration |
-| 4 | B6 | **S2** | Tools | Attendance has no JSON import/export (the site does); counts sync from the GECS register instead — an accepted deviation, not a bug, but it is the one parity gap a student can notice | `docs/SITE_PARITY.md` #8 |
-| 5 | B7 | **S3** | Docs | Stale counts and claims: `qa/README.md` and `qa/AGENTS.md` said ~130 tests (the suite passes over 200) and "8 mounted areas" (harness lists 13); `PLAY_STORE.md` rows 1–2 described the AAB and API 36 as unbuilt after both landed | fixed in this pass, §2 |
+| 1 | B3 | **S1** | Results | The live path is upstream-broken: `/api/result` answers 503 `upstream_captcha` and BEU's token endpoint 403; only the in-WebView captcha, a saved copy, the shared corpus or a published CSV can produce a result | §1 |
+| 2 | B4 | **S2** | Release | APK is 17,754,172 B against an 18,500,000 B budget — **745,828 B (4.0 %) headroom**; one bundled asset can still close that gap | `docs/size-history.json`, `./scripts/size-report.sh` |
+| 3 | B8 | **S2** | Release | The Play side is not published: the listing URL returns 404 and the Data safety answers in `docs/DATA_SAFETY.md` are not entered in Play Console yet | §2 |
+| 4 | B9 | **S2** | Privacy | The pre-2026-10-30 roster blob (with phone, DOB, gender, category) is still reachable in commit `4963c60`; the current file is clean, the history is not | §3 |
+| 5 | B10 | **S3** | Data | Three CSV readers exist: `src/lib/csv.ts` (roster + tables), `features/results/data.ts` and `features/pyqs/pdf-build.ts`. Behaviour agrees today; a fix in one is not a fix in the others | §4 |
+| 6 | B11 | **S3** | Docs | `TAB_ROUTES` in `qa/routes.contract.ts` lists four roots and leaves `more` to `SHELL_ROUTES`, while the tab bar draws five tabs | §4 |
 
 ## 1. B3 — the live result path depends on the captcha
 
-Probed 2026-10-28:
+Probed 2026-11-18:
 
 ```sh
 curl -s -o /dev/null -w '%{http_code}\n' \
-  'https://beu.prit.eu.org/api/result?reg=…&sem=3&format=json'   # 502
+  'https://beu.prit.eu.org/api/result?reg=…&sem=3&format=json'   # 503
 curl -s -o /dev/null -w '%{http_code}\n' \
   'https://beu-bih.ac.in/backend/v1/result/token'                # 403 Access denied.
 ```
 
-The app degrades in the documented order — live, saved copy, published CSV —
-then offers `results.portal`, which loads BEU's page in a WebView and captures
-the result the student's own captcha produces (`docs/SITE_PARITY.md` §1). That
-is honest but it is still a manual step for a student with no cache and no CSV
-row. Nothing in QA can fix the upstream; the risk is unproven device behaviour,
-so the gate is rubric **A8** (complete the captcha flow on a real phone) plus
-the 10-second "the challenge did not load" probe the screen already reports.
+The app degrades in the documented order — live, saved copy, shared corpus,
+published CSV — then offers `results.portal`, which loads BEU's page in a
+WebView and captures the result the student's own captcha produces
+(`docs/SITE_PARITY.md` §1). Since 1.3.3 the corpus also answers for a result
+another student has already captured, so a common paper no longer needs the
+captcha. A result nobody has captured still does. Nothing in QA can fix the
+upstream; the gate is rubric **A8** (complete the captcha flow on a real phone)
+plus the 10-second "the challenge did not load" probe the screen already reports.
 
-## 2. Fixed in this pass (B1, B2, B7)
+## 2. B8 — the Play side is a release task, not a bug
 
-- **B2 (was S0) — the roster no longer carries personal data as of 2026-10-30.**
-  `build-students-data.py` serializes identity and affiliation only: `id, name,
-  rollNo, regNo, provisionalReg, batch, session, branch, branchLabel, section,
-  guardian, hosteller, admissionType, status`. The six sensitive keys (`phone`,
-  `guardianPhone`, `email`, `dob`, `gender`, `category`) are read from the
-  private dump and dropped. Three guards hold it: `PRIVATE_FIELDS` +
-  `assert_private_free()` before any write, `--check` against the committed file
-  and `verify.py` in the data check. The file went 471,724 → 346,726 B; `--check`
-  is green and the retained fields are byte-identical to the old records.
-  Two items remain open: the old blob is still in commit `4963c60`, so a full
-  purge needs a history rewrite and a force push, and Play still needs a privacy
-  policy plus its Data safety declaration (`docs/PLAY_STORE.md` §4).
+`docs/PLAY_STORE.md` §3–§5 is the sequence; two items are still open:
 
-- **B1 (was S0) — the students directory is reachable as of 2026-10-30.** Both
-  doors named in the fix are now in feature code, not QA:
+- **The listing is not live.** `https://play.google.com/store/apps/details?id=org.beuconnect.app`
+  returns 404, so the Share row's Play link is dead for every student until the
+  first upload.
+- **Data safety is written but not entered.** `docs/DATA_SAFETY.md` is the
+  answer sheet, corrected for the corpus (§2.1), the analytics/FCM collection,
+  the campus Wi-Fi credential and the capped `WRITE_EXTERNAL_STORAGE`
+  declaration. Play Console still needs those values typed in.
 
-  ```sh
-  grep -n 'route: "students"' src/app/more.tsx src/features/search/rank.ts
-  # src/app/more.tsx:47:  { title: "Student register", … route: "students", … }
-  # src/features/search/rank.ts:  { title: "Student register", … route: "students", … }
-  ```
+Neither is a code defect. Both block a store release.
 
-  More's row sits under **Results & records**; the search tile is in
-  `DESTINATIONS`, which the search screen pushes through `nav.push(target.route)`
-  (`src/features/search/index.tsx:368`). No students screen is a harness-only
-  mount any more. `docs/SITE_PARITY.md` #17 stays **partial** for a different
-  reason — only the GEC Sheikhpura roster is bundled, so another college's own
-  roster is still reachable only as a dataset. That is a data gap, not a door.
+## 3. B9 — the old roster blob is still in git history
 
-- `PLAY_STORE.md` §1 rows 1–3 now match the tree: `build-android-host.sh` and
-  `bundle-android.sh` link **API 36**, `bundle-android.sh` builds a signed
-  `.aab` with bundletool, and `App.play.tsx` sets the Play channel so Share and
-  Update point at the listing. The two real Play blockers left are B2 and the
-  listing assets in §4 of that file.
-- `qa/README.md` / `qa/AGENTS.md`: test count and mounted-area count re-stated
-  without a number that will drift again.
-- `qa/routes.contract.ts`: `notes.file` was never a route (notes pushes
-  `pyqs.pdf`); the contract was exported but **read by no test**, while its
-  header promised missing names become `test.todo`. It is now consumed by
-  `qa/registry.test.ts`, so a required name that is missing shows up in the run.
+`build-students-data.py` now writes identity and affiliation only; the committed
+file and `verify.py` are clean. The six sensitive keys (`phone`,
+`guardianPhone`, `email`, `dob`, `gender`, `category`) remain in the blob from
+before 2026-10-30, so a clone can still read them. Closing it needs a history
+rewrite and a force push to the public repository — an owner decision, not an
+agent one.
 
-## 3. Watch, not ranked
+## 4. The S3s — drift with no user-visible break
 
-- `src/features/simulator/` is untracked work in progress (created 2026-10-27
-  22:30). The module defines `results.simulate`, but it is not merged and
-  nothing pushes it. If it lands, register it in `registry.tsx`, add the door in
-  the same change, and run `bun qa/scan-push-targets.mjs`; an unregistered
-  screen is exactly how B5 happened.
-- `TAB_ROUTES` in `qa/routes.contract.ts` lists four roots and leaves `more` to
+- **B10, three CSV readers.** `src/lib/csv.ts` was written for the college
+  rosters and is the one to extend; `features/results/data.ts` and
+  `features/pyqs/pdf-build.ts` carry their own, written earlier. Consolidating
+  them changes parsing under the table, rank, merit and paper screens at once,
+  so it needs its own change and its own fixtures.
+- **B11, tab naming.** `TAB_ROUTES` lists four roots and leaves `more` to
   `SHELL_ROUTES`, while the tab bar draws five tabs. The tests are consistent
-  (shell reads `TABS` from `tabbar.tsx`), so this is naming debt, not a bug.
+  (the shell reads `TABS` from `tabbar.tsx`), so this is naming debt.
+
+## 5. Closed in this pass
+
+- **B5 (was S2) — `results.web` now has a door.** The portal's error phase
+  pushes it (`features/results/portal.tsx`), so the page-walker is reachable
+  without a code path that only QA knows.
+- **B6 (was S2) — attendance has a JSON backup.** `features/tools/attendance-io.ts`
+  reads and writes the website's `{ version: 2, settings, subjects }` envelope,
+  the card exports through the system share sheet and refuses an unreadable file
+  before it applies anything. `docs/SITE_PARITY.md` #8 is done.
+- **B1, B2, B7** — closed in the 2026-10-30 pass: the students directory has
+  two doors, the roster is PII-free, and the stale counts in `qa/README.md`,
+  `qa/AGENTS.md` and `PLAY_STORE.md` were corrected.
+- **The simulator is gone.** It was untracked work in progress with no route and
+  no door; it was deleted rather than shipped, and the store listing no longer
+  claims it.

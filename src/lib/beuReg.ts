@@ -115,15 +115,22 @@ export function inferLateralEntry(numericReg: string): boolean {
 }
 
 /**
+ * Batches whose first semester opened in January rather than the usual July.
+ *
+ * BEU admitted the 2024 batch late: its session began in January 2025, so the
+ * whole batch runs one term behind the July cycle. Left uncorrected the formula
+ * below would put them in semester 5 in the autumn of 2026, while they are in
+ * fact sitting semester 4.
+ */
+const JANUARY_START_BATCHES = new Set([2024]);
+
+/**
  * Semester a batch is sitting in right now.
  *
  * BEU runs on a July–June academic year: odd semesters Jul–Dec, even semesters
  * Jan–Jun. A batch admitted in July N is in semester 1 that autumn, semester 2
- * the following spring, and so on, capped at 8. The 2024 batch is the
- * exception: those admissions ran late and their first semester began in
- * January 2025. Counting sessions from that start is what a student is
- * actually attending, which no published roster can say — the roster only knows
- * what BEU has already published, and publication lags the class.
+ * the following spring, and so on, capped at 8. A batch that opened in January
+ * counts one term less (see JANUARY_START_BATCHES).
  */
 export function inferCurrentSemester(
 	batchYear: number,
@@ -131,13 +138,14 @@ export function inferCurrentSemester(
 ): number {
 	if (!Number.isFinite(batchYear)) return 1;
 
-	// A session is its year and half: July is the odd semester, January the
-	// even one, so January 2025 → 4050 and July 2026 → 4053.
-	const session = (when: Date): number =>
-		when.getFullYear() * 2 + (when.getMonth() >= 6 ? 1 : 0);
-	const first = batchYear === 2024 ? (batchYear + 1) * 2 : batchYear * 2 + 1;
+	const year = now.getFullYear();
+	const month = now.getMonth() + 1;
+	const isOddTerm = month >= 7;
+	const academicYear = isOddTerm ? year : year - 1;
+	const lag = JANUARY_START_BATCHES.has(batchYear) ? 1 : 0;
+	const semester = 2 * (academicYear - batchYear) + (isOddTerm ? 1 : 2) - lag;
 
-	return Math.min(8, Math.max(1, session(now) - first + 1));
+	return Math.min(8, Math.max(1, semester));
 }
 
 export function parseBeuRegNo(regNo: string): ParsedBeuRegNo | null {

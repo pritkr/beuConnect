@@ -16,8 +16,14 @@ export class VirtualTable {
     private columns: string[] = [];
     private visibleColumns: string[] = [];
     
-    private itemHeight = 28; // Tightly mapped to compact CSS row height
+    private itemHeight = VirtualTable.readRowHeight(); // Measured from --db-row-h so the scroll maths and the CSS cannot drift
     private overscan = 20;   // Buffer rows to render outside viewport (increased relative to shorter rows)
+
+    private static readRowHeight(): number {
+        const value = getComputedStyle(document.documentElement).getPropertyValue("--db-row-h").trim();
+        const parsed = Number.parseFloat(value);
+        return Number.isFinite(parsed) && parsed > 0 ? parsed : 28;
+    }
     
     private rowCount = 0;
     private renderCallback: (startIndex: number, endIndex: number) => string;
@@ -113,7 +119,7 @@ export class VirtualTable {
             tr.appendChild(th);
         });
 
-        this.thead.innerHTML = "";
+        this.thead.replaceChildren();
         this.thead.appendChild(tr);
     }
 

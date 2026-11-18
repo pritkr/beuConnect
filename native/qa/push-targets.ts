@@ -18,163 +18,163 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "notes",
     "file": "src/app/more.tsx",
-    "line": 35,
+    "line": 36,
     "kind": "route-literal"
   },
   {
     "target": "pyqs",
     "file": "src/app/more.tsx",
-    "line": 36,
-    "kind": "route-literal"
-  },
-  {
-    "target": "planner",
-    "file": "src/app/more.tsx",
     "line": 37,
     "kind": "route-literal"
   },
   {
-    "target": "search",
+    "target": "planner",
     "file": "src/app/more.tsx",
     "line": 38,
     "kind": "route-literal"
   },
   {
-    "target": "results.rank",
+    "target": "search",
     "file": "src/app/more.tsx",
-    "line": 44,
+    "line": 39,
     "kind": "route-literal"
   },
   {
-    "target": "results.merit",
+    "target": "results.rank",
     "file": "src/app/more.tsx",
     "line": 45,
     "kind": "route-literal"
   },
   {
-    "target": "results.battle",
+    "target": "results.merit",
     "file": "src/app/more.tsx",
     "line": 46,
     "kind": "route-literal"
   },
   {
-    "target": "students",
+    "target": "results.battle",
     "file": "src/app/more.tsx",
     "line": 47,
     "kind": "route-literal"
   },
   {
-    "target": "tools.calculator",
+    "target": "students",
     "file": "src/app/more.tsx",
     "line": 48,
     "kind": "route-literal"
   },
   {
-    "target": "results.table",
+    "target": "tools.calculator",
     "file": "src/app/more.tsx",
     "line": 49,
     "kind": "route-literal"
   },
   {
-    "target": "data",
+    "target": "results.table",
     "file": "src/app/more.tsx",
     "line": 50,
     "kind": "route-literal"
   },
   {
-    "target": "notices",
+    "target": "data",
     "file": "src/app/more.tsx",
-    "line": 56,
+    "line": 51,
     "kind": "route-literal"
   },
   {
-    "target": "tools.attendance",
+    "target": "notices",
     "file": "src/app/more.tsx",
     "line": 57,
     "kind": "route-literal"
   },
   {
-    "target": "tools.routine",
+    "target": "tools.attendance",
     "file": "src/app/more.tsx",
     "line": 58,
     "kind": "route-literal"
   },
   {
-    "target": "tools.holidays",
+    "target": "tools.routine",
     "file": "src/app/more.tsx",
     "line": 59,
     "kind": "route-literal"
   },
   {
-    "target": "tools.wifi",
+    "target": "tools.holidays",
     "file": "src/app/more.tsx",
     "line": 60,
     "kind": "route-literal"
   },
   {
-    "target": "settings.profile",
+    "target": "tools.wifi",
     "file": "src/app/more.tsx",
-    "line": 66,
+    "line": 61,
     "kind": "route-literal"
   },
   {
-    "target": "settings",
+    "target": "settings.profile",
     "file": "src/app/more.tsx",
     "line": 67,
     "kind": "route-literal"
   },
   {
-    "target": "feedback",
+    "target": "settings",
     "file": "src/app/more.tsx",
     "line": 68,
     "kind": "route-literal"
   },
   {
-    "target": "settings.about",
+    "target": "feedback",
     "file": "src/app/more.tsx",
     "line": 69,
     "kind": "route-literal"
   },
   {
+    "target": "settings.about",
+    "file": "src/app/more.tsx",
+    "line": 70,
+    "kind": "route-literal"
+  },
+  {
     "target": "search",
     "file": "src/features/home/index.tsx",
-    "line": 131,
+    "line": 132,
     "kind": "push"
   },
   {
     "target": "tools.routine",
     "file": "src/features/home/index.tsx",
-    "line": 176,
+    "line": 177,
     "kind": "route-literal"
   },
   {
     "target": "tools.routine",
     "file": "src/features/home/index.tsx",
-    "line": 188,
+    "line": 189,
     "kind": "route-literal"
   },
   {
     "target": "planner",
     "file": "src/features/home/index.tsx",
-    "line": 202,
+    "line": 203,
     "kind": "route-literal"
   },
   {
     "target": "results",
     "file": "src/features/home/index.tsx",
-    "line": 217,
+    "line": 218,
     "kind": "route-literal"
   },
   {
     "target": "planner",
     "file": "src/features/home/index.tsx",
-    "line": 231,
+    "line": 232,
     "kind": "route-literal"
   },
   {
     "target": "settings.profile",
     "file": "src/features/home/index.tsx",
-    "line": 241,
+    "line": 242,
     "kind": "route-literal"
   },
   {
@@ -300,43 +300,43 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "notices.pdf",
     "file": "src/features/notices/detail.tsx",
-    "line": 44,
+    "line": 46,
     "kind": "push"
   },
   {
     "target": "notices.search",
     "file": "src/features/notices/detail.tsx",
-    "line": 128,
+    "line": 130,
     "kind": "push"
   },
   {
     "target": "notices.detail",
     "file": "src/features/notices/parts.tsx",
-    "line": 704,
+    "line": 696,
     "kind": "push"
   },
   {
     "target": "notices.post",
     "file": "src/features/notices/parts.tsx",
-    "line": 715,
+    "line": 707,
     "kind": "push"
   },
   {
     "target": "notices.pdf",
     "file": "src/features/notices/post.tsx",
-    "line": 46,
+    "line": 47,
     "kind": "push"
   },
   {
     "target": "notices.pdf",
     "file": "src/features/notices/post.tsx",
-    "line": 98,
+    "line": 99,
     "kind": "push"
   },
   {
     "target": "notices.announcements",
     "file": "src/features/notices/post.tsx",
-    "line": 119,
+    "line": 130,
     "kind": "push"
   },
   {
@@ -378,19 +378,19 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "pyqs.paper",
     "file": "src/features/pyqs/components.tsx",
-    "line": 574,
+    "line": 573,
     "kind": "push"
   },
   {
     "target": "data",
     "file": "src/features/pyqs/data-table.tsx",
-    "line": 469,
+    "line": 482,
     "kind": "replace"
   },
   {
     "target": "data",
     "file": "src/features/pyqs/data-table.tsx",
-    "line": 591,
+    "line": 604,
     "kind": "replace"
   },
   {
@@ -420,31 +420,31 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "pyqs.pdf",
     "file": "src/features/pyqs/paper.tsx",
-    "line": 469,
+    "line": 477,
     "kind": "push"
   },
   {
     "target": "pyqs.site",
     "file": "src/features/pyqs/paper.tsx",
-    "line": 475,
+    "line": 483,
     "kind": "push"
   },
   {
     "target": "syllabus.subject",
     "file": "src/features/pyqs/paper.tsx",
-    "line": 483,
+    "line": 491,
     "kind": "push"
   },
   {
     "target": "pyqs",
     "file": "src/features/pyqs/paper.tsx",
-    "line": 593,
+    "line": 601,
     "kind": "replace"
   },
   {
     "target": "pyqs",
     "file": "src/features/pyqs/paper.tsx",
-    "line": 632,
+    "line": 640,
     "kind": "replace"
   },
   {
@@ -486,43 +486,43 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "results.portal",
     "file": "src/features/results/lookup.tsx",
-    "line": 238,
+    "line": 247,
     "kind": "push"
   },
   {
     "target": "results.rank",
     "file": "src/features/results/lookup.tsx",
-    "line": 380,
+    "line": 390,
     "kind": "push"
   },
   {
     "target": "results.battle",
     "file": "src/features/results/lookup.tsx",
-    "line": 381,
+    "line": 391,
     "kind": "push"
   },
   {
     "target": "results.table",
     "file": "src/features/results/lookup.tsx",
-    "line": 397,
+    "line": 407,
     "kind": "push"
   },
   {
     "target": "results.rank",
     "file": "src/features/results/lookup.tsx",
-    "line": 404,
+    "line": 414,
     "kind": "push"
   },
   {
     "target": "results.merit",
     "file": "src/features/results/lookup.tsx",
-    "line": 413,
+    "line": 423,
     "kind": "push"
   },
   {
     "target": "results.battle",
     "file": "src/features/results/lookup.tsx",
-    "line": 419,
+    "line": 429,
     "kind": "push"
   },
   {
@@ -564,67 +564,73 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "results.rank",
     "file": "src/features/results/portal.tsx",
-    "line": 235,
+    "line": 239,
     "kind": "push"
   },
   {
     "target": "results.battle",
     "file": "src/features/results/portal.tsx",
-    "line": 239,
+    "line": 243,
     "kind": "push"
   },
   {
     "target": "results",
     "file": "src/features/results/portal.tsx",
-    "line": 272,
+    "line": 276,
     "kind": "replace"
+  },
+  {
+    "target": "results.web",
+    "file": "src/features/results/portal.tsx",
+    "line": 295,
+    "kind": "push"
   },
   {
     "target": "results.table",
     "file": "src/features/results/rank.tsx",
-    "line": 637,
+    "line": 626,
     "kind": "push"
   },
   {
     "target": "results",
     "file": "src/features/results/rank.tsx",
-    "line": 665,
+    "line": 654,
     "kind": "push"
   },
   {
     "target": "results",
     "file": "src/features/results/rank.tsx",
-    "line": 714,
+    "line": 703,
     "kind": "push"
   },
   {
     "target": "results",
     "file": "src/features/results/rank.tsx",
-    "line": 768,
+    "line": 757,
     "kind": "push"
   },
   {
     "target": "results",
     "file": "src/features/results/rank.tsx",
-    "line": 778,
+    "line": 767,
     "kind": "push"
   },
   {
     "target": "results",
     "file": "src/features/results/rank.tsx",
-    "line": 785,
+    "line": 774,
     "kind": "push"
   },
   {
     "target": "results.merit",
     "file": "src/features/results/rank.tsx",
-    "line": 808,
+    "line": 797,
     "kind": "push"
   },
   {
     "target": "results.battle",
     "file": "src/features/results/rank.tsx",
-    "line": 822,
+    "line": 811,
     "kind": "push"
   },
   {
@@ -654,55 +660,49 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "settings.profile",
     "file": "src/features/settings/index.tsx",
-    "line": 55,
+    "line": 70,
     "kind": "push"
   },
   {
     "target": "settings.appearance",
     "file": "src/features/settings/index.tsx",
-    "line": 112,
+    "line": 127,
     "kind": "push"
   },
   {
     "target": "settings.reminders",
     "file": "src/features/settings/index.tsx",
-    "line": 118,
+    "line": 133,
     "kind": "push"
   },
   {
     "target": "settings.notifications",
     "file": "src/features/settings/index.tsx",
-    "line": 123,
+    "line": 138,
     "kind": "push"
   },
   {
     "target": "settings.offline",
     "file": "src/features/settings/index.tsx",
-    "line": 132,
+    "line": 147,
     "kind": "push"
   },
   {
     "target": "settings.storage",
     "file": "src/features/settings/index.tsx",
-    "line": 135,
+    "line": 150,
     "kind": "push"
   },
   {
     "target": "settings.about",
     "file": "src/features/settings/index.tsx",
-    "line": 140,
+    "line": 155,
     "kind": "push"
   },
   {
     "target": "tools.holidays",
     "file": "src/features/settings/reminders.tsx",
     "line": 208,
-    "kind": "push"
-  },
-  {
-    "target": "results",
-    "file": "src/features/simulator/index.tsx",
-    "line": 171,
     "kind": "push"
   },
   {
@@ -720,14 +720,8 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "students.student",
     "file": "src/features/students/college.tsx",
-    "line": 54,
+    "line": 55,
     "kind": "push"
-  },
-  {
-    "target": "students.college",
-    "file": "src/features/students/college.tsx",
-    "line": 73,
-    "kind": "replace"
   },
   {
     "target": "students.branch",
@@ -738,7 +732,13 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "students.college",
     "file": "src/features/students/colleges.tsx",
-    "line": 164,
+    "line": 181,
+    "kind": "push"
+  },
+  {
+    "target": "students.college",
+    "file": "src/features/students/colleges.tsx",
+    "line": 186,
     "kind": "push"
   },
   {
@@ -746,6 +746,12 @@ export const PUSH_TARGETS: PushTarget[] = [
     "file": "src/features/students/leads.tsx",
     "line": 269,
     "kind": "push"
+  },
+  {
+    "target": "students.colleges",
+    "file": "src/features/students/remote-college.tsx",
+    "line": 73,
+    "kind": "replace"
   },
   {
     "target": "students",
@@ -834,25 +840,25 @@ export const PUSH_TARGETS: PushTarget[] = [
   {
     "target": "notes.subject",
     "file": "src/features/syllabus/index.tsx",
-    "line": 584,
+    "line": 590,
     "kind": "push"
   },
   {
     "target": "syllabus.gate",
     "file": "src/features/syllabus/index.tsx",
-    "line": 707,
+    "line": 713,
     "kind": "push"
   },
   {
     "target": "syllabus",
     "file": "src/features/syllabus/index.tsx",
-    "line": 755,
+    "line": 761,
     "kind": "push"
   },
   {
     "target": "syllabus.subject",
     "file": "src/features/syllabus/parts.tsx",
-    "line": 232,
+    "line": 233,
     "kind": "push"
   },
   {

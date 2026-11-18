@@ -18,7 +18,11 @@ export const prerender = true;
 	</header>
 
 	<section id="data-browser-app" aria-label="Student data browser">
-		<form id="dbFilterForm" class="controls">
+		<!-- The controls render disabled from the first paint instead of being
+		     hidden until the manifest arrives. Showing them late grew the page by
+		     ~350px after the first frame (CLS 0.67); a disabled row is also the
+		     honest state while the data loads. -->
+		<form id="dbFilterForm" class="controls" aria-busy="true">
 			<div class="filter">
 				<label for="dbBatch">Batch</label>
 				<select id="dbBatch" name="batch" disabled>
@@ -66,7 +70,7 @@ export const prerender = true;
 
 			<div class="filter filter-search">
 				<label for="dbSearch">Search</label>
-				<input type="search" id="dbSearch" placeholder="Name or reg no." />
+				<input type="search" id="dbSearch" placeholder="Name or reg no." disabled />
 			</div>
 
 			<div class="filter filter-export">
@@ -80,7 +84,7 @@ export const prerender = true;
 		<div
 			id="dbTableContainer"
 			class="table-container"
-			style="display: none; overflow-x: auto; position: relative;"
+			style="display: none; overflow-x: auto; overscroll-behavior-x: contain; position: relative;"
 		>
 			<table id="dbTable">
 				<thead id="dbThead"></thead>
@@ -135,6 +139,19 @@ export const prerender = true;
 		margin: var(--s5) 0 var(--s3);
 		padding-bottom: var(--s3);
 		border-bottom: 1px solid var(--line);
+	}
+
+	/* The virtualised table mounts after the manifest and the CSV arrive. Reserving
+	   the first screen means the footer is already below the fold when that
+	   happens, so the page never shifts under the reader mid-load. */
+	#data-browser-app {
+		min-height: calc(100dvh - var(--header-h));
+	}
+
+	/* A filter change keeps the old rows on screen, dimmed, until the new ones
+	   replace them. */
+	#dbTableContainer[data-loading="true"] {
+		opacity: 0.45;
 		transition: opacity var(--dur-fast) var(--ease-out);
 	}
 
@@ -198,7 +215,6 @@ export const prerender = true;
 		border: 1px solid var(--line);
 		border-radius: var(--r);
 		background: var(--surface);
-		will-change: scroll-position;
 	}
 
 	:global(#dbTable) {
@@ -207,6 +223,9 @@ export const prerender = true;
 		margin: 0;
 		font-size: 0.78rem;
 		line-height: 1.15;
+		/* Sticky cells do not stick in Chrome while the table is `collapse`d. */
+		border-collapse: separate;
+		border-spacing: 0;
 	}
 
 	:global(#dbThead) {
@@ -222,7 +241,7 @@ export const prerender = true;
 
 	:global(#dbTable th),
 	:global(#dbTable td) {
-		height: 28px;
+		height: var(--db-row-h, 28px);
 		padding: 0.25rem 0.45rem;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -245,8 +264,10 @@ export const prerender = true;
 		cursor: pointer;
 	}
 
-	:global(#dbTable tbody tr:hover) {
-		background: var(--surface-2);
+	@media (hover: hover) and (pointer: fine) {
+		:global(#dbTable tbody tr:hover) {
+			background: var(--surface-2);
+		}
 	}
 
 	:global(#dbThead th.sticky-col),
@@ -271,16 +292,6 @@ export const prerender = true;
 	}
 	:global(.grade-row-borderline) td {
 		border-left: 2px solid var(--warn);
-	}
-
-	:global(#dbTable tbody tr.row-mine) {
-		background: var(--accent-soft);
-	}
-	:global(#dbTable tbody tr.row-mine td) {
-		font-weight: 600;
-	}
-	:global(#dbTable tbody tr.row-mine td.sticky-col) {
-		background: var(--accent-soft);
 	}
 
 	@media (max-width: 768px) {
@@ -316,26 +327,6 @@ export const prerender = true;
 		border: 1px solid var(--line);
 		border-radius: var(--r-lg);
 		background: var(--surface);
-		animation: profile-in var(--dur-ui) var(--ease-out) both;
-	}
-
-	@keyframes profile-in {
-		from {
-			opacity: 0;
-			transform: translateY(6px);
-		}
-	}
-
-	@keyframes profile-fade {
-		from {
-			opacity: 0;
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.profile {
-			animation: profile-fade 120ms ease both !important;
-		}
 	}
 
 	.profile-close {

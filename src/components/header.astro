@@ -2,6 +2,7 @@
 import Icon from "./Icon.astro";
 import Logo from "./Logo.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+import { featureOf } from "../lib/analytics";
 
 const currentPath = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
@@ -18,16 +19,9 @@ const navLinks: NavItem[] = [
 	{
 		href: "result",
 		label: "Results",
-		match: [
-			"result",
-			"result-table",
-			"merit-list",
-			"rank",
-			"battle",
-			"data-browser",
-			"listofstudents",
-		],
+		match: ["result", "merit-list", "rank", "battle", "data-browser", "listofstudents"],
 	},
+	{ href: "result-table", label: "Result table", match: ["result-table"] },
 	{ href: "routine", label: "Routine", match: ["routine", "attendance", "holidays"] },
 	{
 		href: "notices",
@@ -37,7 +31,10 @@ const navLinks: NavItem[] = [
 ];
 
 const isActive = (item: NavItem) =>
-	item.match.some((segment) => currentPath.startsWith(`${base}${segment}`));
+	item.match.some(
+		(segment) =>
+			currentPath === `${base}${segment}` || currentPath.startsWith(`${base}${segment}/`),
+	);
 
 const allToolsHref = `${base}#tools`;
 ---
@@ -54,6 +51,8 @@ const allToolsHref = `${base}#tools`;
 							<a
 								href={`${base}${item.href}`}
 								aria-current={isActive(item) ? "page" : undefined}
+								data-ga="feature_open"
+								data-ga-params={JSON.stringify({ feature: featureOf(`/${item.href}`), source: "header" })}
 							>
 								{item.label}
 							</a>
@@ -61,7 +60,11 @@ const allToolsHref = `${base}#tools`;
 					))
 				}
 				<li class="all-tools">
-					<a href={allToolsHref}>
+					<a
+						href={allToolsHref}
+						data-ga="feature_open"
+						data-ga-params={JSON.stringify({ feature: "tools", source: "nav" })}
+					>
 						All tools
 						<Icon name="grid" size={13} />
 					</a>
@@ -86,6 +89,8 @@ const allToolsHref = `${base}#tools`;
 								<a
 									href={`${base}${item.href}`}
 									aria-current={isActive(item) ? "page" : undefined}
+									data-ga="feature_open"
+									data-ga-params={JSON.stringify({ feature: featureOf(`/${item.href}`), source: "menu" })}
 								>
 									{item.label}
 								</a>
@@ -93,7 +98,11 @@ const allToolsHref = `${base}#tools`;
 						))
 					}
 					<li>
-						<a href={allToolsHref}>
+						<a
+						href={allToolsHref}
+						data-ga="feature_open"
+						data-ga-params={JSON.stringify({ feature: "tools", source: "nav" })}
+					>
 							All tools
 							<Icon name="grid" size={13} />
 						</a>
@@ -109,6 +118,9 @@ const allToolsHref = `${base}#tools`;
 		position: sticky;
 		top: 0;
 		z-index: 100;
+		/* The bar paints the inset itself, so the notch sits on the header's
+		   background instead of on a letterboxed strip of page. */
+		padding-top: env(safe-area-inset-top, 0px);
 		border-bottom: 1px solid var(--line);
 		background: var(--bg);
 	}
@@ -145,29 +157,29 @@ const allToolsHref = `${base}#tools`;
 		align-items: center;
 		gap: 0.35rem;
 		padding: 0.25rem 0;
-		border-bottom: 2px solid transparent;
-		color: var(--muted);
+		color: var(--paper);
 		font-size: 0.875rem;
 		font-weight: 500;
 		text-decoration: none;
 	}
 
-	.primary a:hover {
-		color: var(--paper);
+	@media (hover: hover) and (pointer: fine) {
+		.primary a:hover {
+			color: var(--accent);
+		}
+	}
+
+	.primary a:active {
+		color: var(--accent);
 	}
 
 	.primary a[aria-current="page"] {
-		border-bottom-color: var(--accent);
-		color: var(--paper);
+		color: var(--accent);
 	}
 
 	.primary .all-tools {
 		padding-left: var(--s5);
 		border-left: 1px solid var(--line);
-	}
-
-	.primary .all-tools a {
-		color: var(--accent);
 	}
 
 	.mobile {
@@ -181,7 +193,7 @@ const allToolsHref = `${base}#tools`;
 		align-items: center;
 		gap: 0.4rem;
 		padding: 0.4rem 0.55rem;
-		border: 1px solid var(--line-strong);
+		border: 1px solid var(--line-field);
 		border-radius: var(--r);
 		color: var(--paper);
 		font-size: 0.8rem;
@@ -208,33 +220,28 @@ const allToolsHref = `${base}#tools`;
 		right: 0;
 		top: calc(100% + 0.6rem);
 		width: min(17rem, calc(100vw - 1.5rem));
+		/* A landscape phone has ~390px of height; the menu must scroll inside
+		   itself rather than run off the bottom of the screen. */
+		max-height: calc(100dvh - var(--header-h) - 1.5rem);
+		overflow-y: auto;
+		overscroll-behavior: contain;
 		border: 1px solid var(--line-strong);
 		border-radius: var(--r-lg);
 		background: var(--surface);
 		box-shadow: var(--shadow-md);
 	}
 
+	/* The panel belongs to the button that opened it, so it grows from that
+	   corner instead of flashing into place. */
 	.mobile[open] nav {
 		transform-origin: top right;
-		animation: menu-in var(--dur-ui) var(--ease-out) both;
+		animation: menu-in 150ms var(--ease-out);
 	}
 
 	@keyframes menu-in {
 		from {
 			opacity: 0;
 			transform: scale(0.96);
-		}
-	}
-
-	@keyframes menu-fade {
-		from {
-			opacity: 0;
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.mobile[open] nav {
-			animation: menu-fade 120ms ease both !important;
 		}
 	}
 
@@ -264,7 +271,13 @@ const allToolsHref = `${base}#tools`;
 		text-decoration: none;
 	}
 
-	.mobile a:hover {
+	@media (hover: hover) and (pointer: fine) {
+		.mobile a:hover {
+			background: var(--surface-2);
+		}
+	}
+
+	.mobile a:active {
 		background: var(--surface-2);
 	}
 
@@ -272,7 +285,7 @@ const allToolsHref = `${base}#tools`;
 		color: var(--accent);
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 960px) {
 		.bar {
 			width: min(100% - 1.5rem, 1380px);
 			gap: var(--s3);
@@ -288,6 +301,19 @@ const allToolsHref = `${base}#tools`;
 
 		.mobile {
 			display: block;
+		}
+	}
+
+	/* A finger needs a bigger target than a cursor; the global layer raises
+	   buttons, this raises the two header controls that are links. */
+	@media (pointer: coarse) {
+		.mobile summary {
+			min-height: var(--tap);
+			padding-inline: 0.75rem;
+		}
+
+		.mobile a {
+			min-height: var(--tap);
 		}
 	}
 </style>

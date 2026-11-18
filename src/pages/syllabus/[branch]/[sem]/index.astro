@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import Layout from "../../../../layouts/Layout.astro";
 import branchConfig from "../../../../assets/data/config.json";
 import AskAI from "../../../../components/AskAI.astro";
-import Icon from "../../../../components/Icon.astro";
+import BranchIcon from "../../../../components/BranchIcon.astro";
 import SyllabusTopics from "../../../../components/SyllabusTopics.astro";
 import { getCanonicalPyqSubject, getPyqSubjectLookupKeys, slugifySubjectName } from "../../../../utils/pyqSubjects";
 
@@ -84,7 +84,7 @@ const groups = [
     <header class="page-head">
         <div>
             <p class="back">
-                <a href={`${import.meta.env.BASE_URL}syllabus/${branchInfo.code}/`} style={`view-transition-name:${branchInfo.code}`}>{branchInfo.name}</a>
+                <a href={`${import.meta.env.BASE_URL}syllabus/${branchInfo.code}/`}><BranchIcon branch={branchInfo.code} size={13} />{branchInfo.name}</a>
             </p>
             <h1>Semester {sem}</h1>
         </div>
@@ -92,30 +92,29 @@ const groups = [
 
     {
         groups.length ? (
-            <section class="subjects" data-syllabus>
+            <section class="subjects" data-syllabus data-branch={branch} data-sem={sem}>
                 {groups.map((group) => (
                     <section class="subject-group">
                         <h2>{group.label}</h2>
                         {group.subjects.map((sub: any) => (
-                            <details class="subject" data-subject>
+                            <details class="subject" data-subject data-code={sub.code}>
                                 <summary class="subject-summary">
                                     <span class="subject-title">
                                         <strong>{sub.name}</strong>
                                         {sub.code ? ` (${sub.code})` : ""}
                                         {` - ${sub.credits} Credits`}
                                     </span>
-                                    <span class="subject-tail">
-                                        {getPyqSlug(sub) ? (
-                                            <a
-                                                href={`${import.meta.env.BASE_URL}pyqs/${getPyqSlug(sub)}`}
-                                                class="pyq-link"
-                                                onclick="event.stopPropagation();"
-                                            >
-                                                PYQs
-                                            </a>
-                                        ) : null}
-                                        <Icon name="chevron-down" size={14} class="subject-chevron" />
-                                    </span>
+                                    {getPyqSlug(sub) ? (
+                                        <a
+                                            href={`${import.meta.env.BASE_URL}pyqs/${getPyqSlug(sub)}`}
+                                            class="pyq-link"
+                                            onclick="event.stopPropagation();"
+                                            data-ga="pyq_subject_open"
+                                            data-ga-params={JSON.stringify({ subject: sub.code, branch, sem, source: "syllabus" })}
+                                        >
+                                            PYQs
+                                        </a>
+                                    ) : null}
                                 </summary>
                                 <SyllabusTopics subject={sub} branch={branch} sem={sem} />
                                 {Array.isArray(sub.references) && sub.references.length ? (
@@ -210,6 +209,22 @@ const groups = [
             }
         }
 
+        // `toggle` does not bubble, so it is caught on the way down: one listener
+        // for every subject on the page, and only an opening counts.
+        root.addEventListener(
+            "toggle",
+            (event) => {
+                const details = event.target;
+                if (!(details instanceof HTMLDetailsElement) || !details.open) return;
+                window.beuTrack?.("syllabus_subject_open", {
+                    branch: root.dataset.branch || "",
+                    sem: root.dataset.sem || "",
+                    subject: details.dataset.code || "",
+                });
+            },
+            true,
+        );
+
         root.addEventListener("change", (event) => {
             const box = event.target;
             if (!(box instanceof HTMLInputElement) || box.type !== "checkbox") return;
@@ -224,6 +239,13 @@ const groups = [
             if (unit) refreshUnit(unit);
             const subject = box.closest("[data-subject]");
             if (subject) refreshSubject(subject);
+            // A tick is the one thing that shows reading actually happened, as
+            // opposed to the page merely being opened.
+            window.beuTrack?.("syllabus_topic_toggle", {
+                branch: root.dataset.branch || "",
+                sem: root.dataset.sem || "",
+                label: box.checked ? "mark" : "unmark",
+            });
         });
 
         root.addEventListener("click", (event) => {
@@ -266,8 +288,10 @@ const groups = [
         text-decoration: none;
     }
 
-    .back a:hover {
-        color: var(--paper);
+    @media (hover: hover) and (pointer: fine) {
+        .back a:hover {
+            color: var(--paper);
+        }
     }
 
     h2 {
@@ -319,29 +343,11 @@ const groups = [
         white-space: nowrap;
     }
 
-    .pyq-link:hover {
-        text-decoration: underline;
-        text-underline-offset: 0.2em;
-    }
-
-    .subject-tail {
-        display: inline-flex;
-        flex: 0 0 auto;
-        align-items: center;
-        /* The summary aligns on baseline; the tail centres itself instead so the
-           chevron keeps its place on rows that have no PYQ link to take a baseline from. */
-        align-self: center;
-        gap: var(--s3);
-    }
-
-    .subject-chevron {
-        flex: none;
-        color: var(--faint);
-        transition: transform var(--dur-ui) var(--ease-out);
-    }
-
-    details[open] .subject-chevron {
-        transform: rotate(180deg);
+    @media (hover: hover) and (pointer: fine) {
+        .pyq-link:hover {
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+        }
     }
 
     .references {

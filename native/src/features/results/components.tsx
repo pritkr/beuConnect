@@ -165,6 +165,9 @@ export function ScopeChips(props: {
 const SOURCE_TEXT: Record<ResultSource, { label: string; tone: "mint" | "amber" | "neutral" }> = {
   live: { label: "Live from BEU", tone: "mint" },
   cache: { label: "Saved copy", tone: "amber" },
+  // A corpus row is another lookup's saved copy of the same result: the same
+  // provenance, so it reads as one, with no extra line about where it came from.
+  corpus: { label: "Saved copy", tone: "amber" },
   csv: { label: "Published table", tone: "neutral" },
 };
 
@@ -175,14 +178,14 @@ export function SourceNote(props: { source: ResultSource; savedAt: number; class
   const note =
     props.source === "live"
       ? "Fetched from the BEU result server just now."
-      : props.source === "cache"
-        ? `BEU could not be reached, so this is the copy saved here on ${when}.`
+      : props.source === "cache" || props.source === "corpus"
+        ? `BEU could not be reached, so this is the copy saved on ${when}.`
         : "BEU's published semester table. It has the marks, not the paper names.";
   return (
-    <Panel tone={props.source === "live" ? "mint" : props.source === "cache" ? "amber" : "plain"} class={props.class}>
+    <Panel tone={props.source === "live" ? "mint" : props.source === "cache" || props.source === "corpus" ? "amber" : "plain"} class={props.class}>
       <Row class="gap-2">
         <Badge tone={meta.tone}>{meta.label}</Badge>
-        {when && props.source !== "cache" ? <Muted class="text-[11px]">{when}</Muted> : null}
+        {when && props.source !== "cache" && props.source !== "corpus" ? <Muted class="text-[11px]">{when}</Muted> : null}
       </Row>
       <Subtitle class="mt-1 text-[12px] leading-5">{note}</Subtitle>
     </Panel>

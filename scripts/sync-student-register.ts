@@ -13,6 +13,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { homedir } from "node:os";
 
 const DUMPS = resolve(homedir(), "gecs-cli/dumps");
@@ -34,7 +35,7 @@ function latestDump(): string {
 
 const source = process.argv[2] ?? latestDump();
 const target = resolve(
-	import.meta.dir,
+	dirname(fileURLToPath(import.meta.url)),
 	"../src/assets/data/students/gecs-register.json",
 );
 

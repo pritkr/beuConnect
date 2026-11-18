@@ -122,6 +122,8 @@ const yearLabels: Record<string, string> = {
                 class="subject-card"
                 data-name={subject.name.toLowerCase()}
                 data-codes={Array.from(subject.codes).join(',')}
+                data-ga="pyq_subject_open"
+                data-ga-params={JSON.stringify({ subject: subject.slug, year: yearLabels[acYear], papers: subject.count })}
               >
                 <h3>{subject.name}</h3>
                 <p class="subject-meta">
@@ -143,6 +145,8 @@ const yearLabels: Record<string, string> = {
 </Layout>
 
 <script>
+  import { EVENTS, track } from "../../lib/analytics";
+
   const searchInput = document.getElementById("subjectSearch") as HTMLInputElement | null;
   const filterBtns = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
   const sections = Array.from(document.querySelectorAll<HTMLElement>(".ac-year-section"));
@@ -174,9 +178,24 @@ const yearLabels: Record<string, string> = {
     if (empty) empty.hidden = visibleSections > 0;
   }
 
+  let searchTimer: ReturnType<typeof setTimeout> | undefined;
+
   searchInput?.addEventListener("input", () => {
     searchTerm = searchInput.value.trim().toLowerCase();
     applyFilters();
+    // The term itself never leaves the browser — a student typing a subject
+    // code is harmless, but the same field could hold a name. Length and the
+    // answer are what tell us whether search works.
+    if (searchTimer) clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      const visible = document.querySelectorAll<HTMLElement>(".subject-card:not([hidden])").length;
+      track(EVENTS.searchQuery, {
+        feature: "pyqs",
+        query_length: searchTerm.length,
+        results_count: visible,
+        has_results: visible > 0,
+      });
+    }, 600);
   });
 
   for (const btn of Array.from(filterBtns)) {
@@ -186,6 +205,7 @@ const yearLabels: Record<string, string> = {
         other.setAttribute("aria-pressed", String(other === btn));
       }
       applyFilters();
+      track(EVENTS.pyqSelect, { year: yearLabels[currentFilter] ?? "all" });
     });
   }
 </script>
@@ -257,7 +277,15 @@ const yearLabels: Record<string, string> = {
     text-decoration: none;
   }
 
-  .subject-card:hover {
+  @media (hover: hover) and (pointer: fine) {
+    .subject-card:hover {
+      border-color: var(--line-strong);
+      background: var(--surface-2);
+      color: var(--paper);
+    }
+  }
+
+  .subject-card:active {
     border-color: var(--line-strong);
     background: var(--surface-2);
     color: var(--paper);

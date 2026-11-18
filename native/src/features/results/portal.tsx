@@ -20,6 +20,7 @@ import { Scroll, Text, View, WebView, signal, Clipboard } from "nsh";
 
 import type { Nav } from "../../app/router";
 import { numParam, param } from "../../app/router";
+import { contributeCorpus } from "../../lib/corpus";
 import { Badge, Btn, Card, ErrorState, Label, Muted, Panel, Screen } from "../../ui";
 import { FeedbackFooter } from "../feedback/footer";
 import type { ResultData } from "./data";
@@ -215,6 +216,9 @@ export function PortalScreen(props: { nav: Nav }) {
       .then((data) => {
         captured.set(data);
         phase.set("waiting");
+        // Silent by design: the result above is saved and rendered. The corpus
+        // offer rides along and a failure never reaches this screen.
+        void contributeCorpus(reg, semester, payload, "portal");
       })
       .catch((error: unknown) => {
         phase.set("error");
@@ -285,6 +289,13 @@ export function PortalScreen(props: { nav: Nav }) {
             message={`${message() || "The portal did not load."} Nothing was captured, so nothing was saved.`}
             onRetry={retryPortal}
           />
+          <Btn
+            variant="ghost"
+            class="mt-2"
+            onPress={() => nav.push("results.web", { reg: start.reg, sem: start.sem })}
+          >
+            Open BEU in the browser view
+          </Btn>
         </View>
       ) : (
         <Fresh

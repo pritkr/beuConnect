@@ -1,7 +1,7 @@
 /**
  * Results area — the data layer.
  *
- * Three upstream shapes are folded into one native model:
+ * Four upstream shapes are folded into one native model:
  *
  *  1. `/api/result?format=json` — the live BEU lookup. Slow, occasionally 502;
  *     every call is retried once and then falls back to the last good copy.
@@ -11,12 +11,16 @@
  *     per-paper ESE / IA / total / grade, eighth-semester history, the state
  *     rank and the college rank. This is what keeps a result readable when the
  *     university server is down.
+ *  4. `/api/corpus?reg&sem` — the shared copy of a result another lookup already
+ *     captured, read between the saved copy and the wide table
+ *     (`docs/RESULT_CORPUS.md`).
  *
  * Everything here is dependency-free, strict, and safe to call offline: the
  * helpers in `lib/net` serve the last cached copy when a request fails.
  */
 
 import { noteStudent } from "../../lib/analytics";
+import { contributeCorpus, readCorpus } from "../../lib/corpus";
 import { NetError, SITE, fetchJson, fetchText, getCache, putCache, readStore, writeStore } from "../../lib/net";
 import { collegeName } from "./colleges";
 import type { ParsedResult } from "./parse-html";
@@ -29,7 +33,7 @@ export interface BranchDef {
   short: string;
 }
 
-export type ResultSource = "live" | "cache" | "csv";
+export type ResultSource = "live" | "cache" | "corpus" | "csv";
 
 export interface ResultSubject {
   code: string;
@@ -804,9 +808,25 @@ async function rememberIdentity(data: ResultData): Promise<void> {
 }
 
 /**
+ * The fallback chain of `docs/RESULT_CORPUS.md` §4, as a pure list: the saved
+ * copy, then the shared corpus row, then the published wide table. A source is
+ * listed only when it can answer, and the list stops at that answer — so a warm
+ * saved copy never reaches the corpus, and a corpus hit never reads a CSV.
+ *
+ * `loadResult` walks the same order with fall-through on a miss; this function
+ * states it so the order is testable without a network (`qa/corpus.test.ts`).
+ */
+export function sourcesFor(hasCache: boolean, hasCorpus: boolean, hasWide: boolean): ResultSource[] {
+  if (hasCache) return ["cache"];
+  if (hasCorpus) return ["corpus"];
+  if (hasWide) return ["csv"];
+  return [];
+}
+
+/**
  * The one entry point for "show me my result": a fresh saved copy, then the live
- * API, then the last saved copy, then the published wide table. Throws only when
- * all of them fail.
+ * API, then the last saved copy, then the shared corpus row, then the published
+ * wide table. Throws only when all of them fail.
  *
  * A result for a finished semester cannot change, so a copy saved in the last ten
  * minutes is served without touching the network at all — repeat lookups are
@@ -845,6 +865,9 @@ export async function loadResult(rawReg: string, sem: number): Promise<ResultDat
     const data = fromPayload(info, sem, live);
     await putCache(resultKey(info.reg, sem), JSON.stringify({ at: data.savedAt, data } satisfies CacheEnvelope));
     await rememberIdentity(data);
+    // Silent by design: the result is saved and about to render. A contribution
+    // that fails is not the student's problem and never reaches the screen.
+    void contributeCorpus(info.reg, sem, live, "api");
     return data;
   }
 
@@ -862,18 +885,44 @@ export async function loadResult(rawReg: string, sem: number): Promise<ResultDat
     }
   }
 
+  // The shared copy sits between the saved copy and the wide table, and only
+  // when both of those missed. A miss falls through without touching the
+  // message the student eventually sees, so a dead corpus is invisible.
   try {
-    const rows = await loadWide(info.batch, info.college, info.branch, sem);
-    const numeric = digits(info.reg);
-    const wide = rows.find((row) => digits(row.reg) === numeric);
-    if (wide) {
-      const data = fromWide(info, sem, wide);
-      await putCache(resultKey(info.reg, sem), JSON.stringify({ at: data.savedAt, data } satisfies CacheEnvelope));
+    const shared = await readCorpus(info.reg, sem);
+    const payload = shared ? payloadFrom(shared.payload) : null;
+    if (shared && payload) {
+      const data: ResultData = {
+        ...fromPayload(info, sem, payload),
+        source: "corpus",
+        savedAt: shared.capturedAt,
+      };
+      await putCache(
+        resultKey(info.reg, sem),
+        JSON.stringify({ at: shared.capturedAt, data } satisfies CacheEnvelope),
+      );
       await rememberIdentity(data);
       return data;
     }
   } catch {
-    /* not published for that college: keep the original failure below */
+    /* the corpus is an optimisation: the published table below still answers */
+  }
+
+  // Nothing has answered yet; the published table is the last source that can.
+  if (sourcesFor(false, false, hasCoverage(info.batch, info.branch, sem)).includes("csv")) {
+    try {
+      const rows = await loadWide(info.batch, info.college, info.branch, sem);
+      const numeric = digits(info.reg);
+      const wide = rows.find((row) => digits(row.reg) === numeric);
+      if (wide) {
+        const data = fromWide(info, sem, wide);
+        await putCache(resultKey(info.reg, sem), JSON.stringify({ at: data.savedAt, data } satisfies CacheEnvelope));
+        await rememberIdentity(data);
+        return data;
+      }
+    } catch {
+      /* not published for that college: keep the original failure below */
+    }
   }
 
   throw explain(failure);

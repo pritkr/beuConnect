@@ -114,7 +114,7 @@ screen and every clear action read the same matchers.
 | BEU PYQ papers | `pyqs.papers.v2.*` | yes |
 | Notes & VVI | `notes.*` | yes |
 | Notices & announcements | `notices.*`, `announcements.*` | yes |
-| Result tables | `pyqs.csv.*`, `pyqs.manifest.v1`, `wide:*`, `roster:*` | yes |
+| Result tables | `pyqs.csv.*`, `pyqs.manifest.v1`, `wide:*`, `roster:*`, `corpus:*` | yes |
 
 `Storage` allows 5 MB for the whole app, shared with the student's profile,
 attendance, read marks and bookmarks. The cache therefore takes a **budget**,

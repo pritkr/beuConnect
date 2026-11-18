@@ -94,6 +94,10 @@ run_check() {
   # would make every phone re-download its own syllabus.
   echo "── data: live feed hashes ──"
   bun scripts/data/publish-feed.ts --check || return 1
+  # The college index claims which of BEU's rosters exist; a stale index builds
+  # a URL that 404s on a student, or hides one that does.
+  echo "── data: college index ──"
+  bun scripts/build-college-index.mjs --check || return 1
   # Every bundled dataset is decoded and counted, and every public CSV is
   # scanned for a contact, email, DOB, gender or caste column. A missing file or
   # a stale count is a silent failure no screen test can see.

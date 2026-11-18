@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import NotificationOptIn from "../components/NotificationOptIn.astro";
 import { getNoticeBoard } from "../lib/beuNotices";
-import { cleanNoticeText, noticeKey } from "../notifications/notice";
 
 export const prerender = false;
 
@@ -17,9 +16,6 @@ const notices = boardItems.map((item) => {
 
 	return {
 		id: item.id,
-		// The same `n<hash>` the app uses for read state and for the id a push
-		// notification deep-links to, so `#notice-…` is stable on both surfaces.
-		anchor: noticeKey(cleanNoticeText(item.title), item.date),
 		title: item.title,
 		category: item.isImportant ? "Important" : "General",
 		date: item.date,
@@ -31,7 +27,7 @@ const notices = boardItems.map((item) => {
 	};
 });
 
-const sortedNotices = [...notices].sort(
+const sortedNotices = notices.toSorted(
 	(a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime(),
 );
 
@@ -119,7 +115,6 @@ const resolveNoticeLink = (link: string) =>
 				const meta = filterById.get(notice.id);
 				return (
 					<li
-						id={`notice-${notice.anchor}`}
 						class="notice-card"
 						data-title={notice.title.toLowerCase()}
 						data-category={notice.category}
@@ -158,6 +153,8 @@ const resolveNoticeLink = (link: string) =>
 </Layout>
 
 	<script>
+		import { EVENTS, track } from "../lib/analytics";
+
 		const searchInput = document.getElementById("noticeSearch") as HTMLInputElement;
 		const categorySelect = document.getElementById("noticeCategory") as HTMLSelectElement;
 		const courseSelect = document.getElementById("noticeCourse") as HTMLSelectElement;
@@ -192,10 +189,26 @@ const resolveNoticeLink = (link: string) =>
 			if (noticeEmpty) noticeEmpty.hidden = visibleCount > 0;
 		}
 
-		searchInput.addEventListener("input", applyFilters);
-		categorySelect.addEventListener("change", applyFilters);
-		courseSelect.addEventListener("change", applyFilters);
-		semesterSelect.addEventListener("change", applyFilters);
+		let noticeSearchTimer: ReturnType<typeof setTimeout> | undefined;
+		searchInput.addEventListener("input", () => {
+			applyFilters();
+			if (noticeSearchTimer) clearTimeout(noticeSearchTimer);
+			noticeSearchTimer = setTimeout(() => {
+				track(EVENTS.noticesSearch, { query_length: searchInput.value.trim().length });
+			}, 600);
+		});
+		categorySelect.addEventListener("change", () => {
+			applyFilters();
+			track(EVENTS.noticesSearch, { filter: "category", value: categorySelect.value });
+		});
+		courseSelect.addEventListener("change", () => {
+			applyFilters();
+			track(EVENTS.noticesSearch, { filter: "course", value: courseSelect.value });
+		});
+		semesterSelect.addEventListener("change", () => {
+			applyFilters();
+			track(EVENTS.noticesSearch, { filter: "semester", value: semesterSelect.value });
+		});
 		applyFilters();
 	</script>
 
@@ -254,7 +267,15 @@ const resolveNoticeLink = (link: string) =>
 			text-decoration: none;
 		}
 
-		.notice-body h2 a:hover {
+		@media (hover: hover) and (pointer: fine) {
+			.notice-body h2 a:hover {
+				color: var(--accent);
+				text-decoration: underline;
+				text-underline-offset: 0.16em;
+			}
+		}
+
+		.notice-body h2 a:active {
 			color: var(--accent);
 			text-decoration: underline;
 			text-underline-offset: 0.16em;

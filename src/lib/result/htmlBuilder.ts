@@ -1,52 +1,80 @@
 import type { ResultPayload, SubjectRow, ViewMode } from "./types";
 import { normalizeFailedSubjects, getLegacyDocumentBase, absolutizeAssetUrls } from "./parser";
-import { OFFICIAL_PORTAL_URL } from "./portal";
+import { OFFICIAL_PORTAL_URL, type OfficialExamStatus } from "./portal";
 
 export const MODERN_CSS = `
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+	/* Restyles BEU's own result markup into the site's "exam desk" system:
+	   Instrument Serif display, Public Sans body, marigold marker, hairlines.
+	   Same palette as the site sheet, so a shared card reads as BEUConnect. */
+	@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap');
 
 	:root {
-		color-scheme: light dark;
-		--bg: #f4f8fb;
-		--fg: #142331;
-		--muted: #526b80;
-		--card: #ffffff;
-		--card-2: #f6fbff;
-		--border: #d9e6f0;
-		--accent: #0d9488;
-		--accent-2: #0ea5e9;
-		--danger: #b91c1c;
-		--danger-bg: #fff1f2;
-		--shadow: 0 14px 32px rgba(8, 24, 39, 0.1);
+		color-scheme: dark;
+		--bg: #151b18;
+		--fg: #e7e1d5;
+		--muted: #cac4b6;
+		--faint: #a5a399;
+		--card: #1d2520;
+		--card-2: #252f29;
+		--border: #3a4941;
+		--accent: #e3a049;
+		--accent-2: #e3a049;
+		--accent-ink: #1a1206;
+		--accent-soft: rgba(227, 160, 73, 0.13);
+		--danger: #e88a78;
+		--danger-bg: rgba(232, 138, 120, 0.12);
+		--shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+		--sans: "Public Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+		--serif: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", serif;
 	}
 
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--bg: #0b1722;
-			--fg: #e6f2fb;
-			--muted: #a9c1d3;
-			--card: #0f2232;
-			--card-2: #11293d;
-			--border: #29445b;
-			--accent: #22d3ee;
-			--accent-2: #38bdf8;
-			--danger: #fca5a5;
-			--danger-bg: #3a171d;
-			--shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+	[data-theme="light"] {
+		color-scheme: light;
+		--bg: #f6f2e8;
+		--fg: #14201a;
+		--muted: #4a564d;
+		--faint: #5f6a61;
+		--card: #fdfaf2;
+		--card-2: #efe9dc;
+		--border: #ded5c3;
+		--accent: #935400;
+		--accent-2: #935400;
+		--accent-ink: #fffaf0;
+		--accent-soft: rgba(147, 84, 0, 0.1);
+		--danger: #a33a26;
+		--danger-bg: rgba(163, 58, 38, 0.08);
+		--shadow: 0 10px 28px rgba(52, 42, 22, 0.12);
+	}
+
+	@media (prefers-color-scheme: light) {
+		:root:not([data-theme]) {
+			color-scheme: light;
+			--bg: #f6f2e8;
+			--fg: #14201a;
+			--muted: #4a564d;
+			--faint: #5f6a61;
+			--card: #fdfaf2;
+			--card-2: #efe9dc;
+			--border: #ded5c3;
+			--accent: #935400;
+			--accent-2: #935400;
+			--accent-ink: #fffaf0;
+			--accent-soft: rgba(147, 84, 0, 0.1);
+			--danger: #a33a26;
+			--danger-bg: rgba(163, 58, 38, 0.08);
+			--shadow: 0 10px 28px rgba(52, 42, 22, 0.12);
 		}
 	}
 
 	body {
-		font-family: 'Outfit', system-ui, sans-serif !important;
-		background:
-			radial-gradient(circle at 10% 0%, color-mix(in oklab, var(--accent) 12%, transparent), transparent 45%),
-			radial-gradient(circle at 90% 100%, color-mix(in oklab, var(--accent-2) 10%, transparent), transparent 42%),
-			var(--bg) !important;
+		font-family: var(--sans) !important;
+		background: var(--bg) !important;
 		color: var(--fg) !important;
 		line-height: 1.6;
 		margin: 0;
 		padding: 1.25rem;
+		-webkit-font-smoothing: antialiased;
 	}
 
 	#container, .rnd {
@@ -61,59 +89,63 @@ export const MODERN_CSS = `
 	}
 
 	#printarea {
-		background: var(--card);
-		border: 1px solid var(--border);
-		border-radius: 24px;
+		background: var(--card) !important;
+		border: 1px solid var(--border) !important;
+		border-radius: 8px;
 		box-shadow: var(--shadow);
 		padding: 1.2rem;
 	}
 
 	.modern-title {
-		font-size: clamp(1.15rem, 3.2vw, 1.95rem);
-		font-weight: 800;
-		letter-spacing: 0.02em;
 		margin: 0 0 0.4rem;
-		text-transform: uppercase;
-		background: linear-gradient(90deg, var(--accent), var(--accent-2));
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
+		color: var(--fg);
+		font-family: var(--serif);
+		font-size: clamp(1.5rem, 3.4vw, 2.35rem);
+		font-weight: 400;
+		letter-spacing: -0.01em;
+		line-height: 1.05;
+		text-transform: none;
 	}
 
 	.modern-subtitle {
 		margin: 0 0 1rem;
-		font-size: 0.97rem;
+		font-size: 0.95rem;
 		color: var(--muted);
 	}
 
 	.modern-grid {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 0.7rem;
+		gap: 0.6rem;
 		margin-bottom: 1rem;
 	}
 
 	.modern-chip {
 		border: 1px solid var(--border);
 		background: var(--card-2);
-		border-radius: 14px;
-		padding: 0.65rem 0.8rem;
-		font-size: 0.93rem;
+		border-radius: 4px;
+		padding: 0.6rem 0.75rem;
+		font-size: 0.92rem;
 	}
 
 	.modern-chip strong {
-		color: var(--muted);
+		color: var(--faint);
+		font-family: var(--sans);
+		font-size: 0.72rem;
 		font-weight: 600;
-		margin-right: 0.35rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		margin-right: 0.4rem;
 	}
 
 	.modern-section-title {
 		margin: 1rem 0 0.5rem;
-		padding-left: 0.7rem;
-		border-left: 4px solid var(--accent);
-		font-weight: 700;
-		font-size: 0.96rem;
-		letter-spacing: 0.02em;
+		padding-inline-start: 0.7rem;
+		border-inline-start: 3px solid var(--accent);
+		color: var(--fg);
+		font-weight: 650;
+		font-size: 0.86rem;
+		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
 
@@ -123,27 +155,28 @@ export const MODERN_CSS = `
 		border-spacing: 0;
 		margin-bottom: 1rem !important;
 		background: var(--card);
-		border-radius: 14px;
+		border-radius: 4px;
 		overflow: hidden;
-		box-shadow: 0 6px 14px rgba(8, 24, 39, 0.08);
+		box-shadow: none;
 		border: 1px solid var(--border) !important;
 	}
 
 	th, td {
-		padding: 0.64rem 0.72rem !important;
+		padding: 0.6rem 0.75rem !important;
 		border: none !important;
 		border-bottom: 1px solid var(--border) !important;
 		text-align: center !important;
 		font-size: 0.9rem;
+		font-variant-numeric: tabular-nums;
 	}
 
 	th {
-		background: color-mix(in oklab, var(--accent) 12%, var(--card)) !important;
-		font-weight: 700 !important;
-		color: var(--fg) !important;
+		background: var(--card-2) !important;
+		color: var(--faint) !important;
+		font-weight: 600 !important;
 		text-transform: uppercase;
-		font-size: 0.72rem !important;
-		letter-spacing: 0.08em;
+		font-size: 0.7rem !important;
+		letter-spacing: 0.1em;
 	}
 
 	tr:last-child td {
@@ -151,58 +184,57 @@ export const MODERN_CSS = `
 	}
 
 	td:nth-child(2), td.style5 {
-		text-align: left !important;
+		text-align: start !important;
 	}
 
 	.modern-kpi {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 0.8rem;
+		gap: 0.7rem;
 		margin: 0.2rem 0 1rem;
 	}
 
 	.modern-kpi-card {
-		border-radius: 16px;
+		border-radius: 4px;
 		border: 1px solid var(--border);
-		background: linear-gradient(
-			145deg,
-			color-mix(in oklab, var(--accent) 15%, var(--card)),
-			color-mix(in oklab, var(--accent-2) 8%, var(--card))
-		);
-		padding: 0.8rem 0.9rem;
+		border-inline-start: 3px solid var(--accent);
+		background: var(--card-2);
+		padding: 0.7rem 0.85rem;
 	}
 
 	.modern-kpi-card span {
 		display: block;
-		font-size: 0.8rem;
-		color: var(--muted);
+		font-size: 0.72rem;
+		color: var(--faint);
 		text-transform: uppercase;
-		letter-spacing: 0.08em;
+		letter-spacing: 0.1em;
 	}
 
 	.modern-kpi-card strong {
 		display: block;
 		margin-top: 0.2rem;
-		font-size: 1.18rem;
+		color: var(--fg);
+		font-size: 1.35rem;
+		font-variant-numeric: tabular-nums;
 	}
 
 	.modern-remark {
 		border: 1px solid var(--border);
-		border-radius: 14px;
-		padding: 0.75rem 0.9rem;
+		border-radius: 4px;
+		padding: 0.7rem 0.85rem;
 		background: var(--card-2);
 		margin: 0.35rem 0 0.8rem;
 	}
 
 	.modern-failed {
-		border: 1px solid color-mix(in oklab, var(--danger) 35%, var(--border));
+		border: 1px solid var(--danger);
 		background: var(--danger-bg);
-		border-radius: 14px;
-		padding: 0.75rem 0.9rem;
+		border-radius: 4px;
+		padding: 0.7rem 0.85rem;
 	}
 
 	.modern-failed-title {
-		font-size: 0.82rem;
+		font-size: 0.78rem;
 		text-transform: uppercase;
 		letter-spacing: 0.09em;
 		font-weight: 700;
@@ -225,7 +257,7 @@ export const MODERN_CSS = `
 		}
 
 		#printarea {
-			border-radius: 18px;
+			border-radius: 4px;
 			padding: 0.78rem;
 		}
 
@@ -235,7 +267,7 @@ export const MODERN_CSS = `
 
 		th, td {
 			font-size: 0.8rem;
-			padding: 0.52rem 0.55rem !important;
+			padding: 0.5rem 0.55rem !important;
 		}
 	}
 
@@ -365,15 +397,15 @@ const CARD_CSS = `
 	@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap');
 
 	:root {
-		--bg: #0c1310;
-		--surface: #121c16;
-		--paper: #f2ede2;
-		--muted: #c4bdae;
-		--faint: #938d80;
-		--line: #29372e;
-		--line-strong: #3b4c40;
-		--accent: #f0a63c;
-		--accent-hover: #ffc266;
+		--bg: #151b18;
+		--surface: #1d2520;
+		--paper: #e7e1d5;
+		--muted: #cac4b6;
+		--faint: #a5a399;
+		--line: #3a4941;
+		--line-strong: #4a5e51;
+		--accent: #e3a049;
+		--accent-hover: #f2b862;
 		--accent-ink: #1a1206;
 		--shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 		--sans: "Public Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -424,6 +456,10 @@ const CARD_CSS = `
 		color: var(--paper);
 		font-family: var(--sans);
 		-webkit-font-smoothing: antialiased;
+		/* This document is embedded at 90dvh inside the result page, so it is
+		   always its own scroll context. Stop its ends from dragging the page
+		   behind it. */
+		overscroll-behavior: contain;
 	}
 
 	.result-card {
@@ -482,8 +518,21 @@ const CARD_CSS = `
 		transition: border-color 120ms ease, background-color 120ms ease, color 120ms ease;
 	}
 
-	.result-card-actions .action:hover {
-		border-color: var(--paper);
+	@media (hover: hover) and (pointer: fine) {
+		.result-card-actions .action:hover {
+			border-color: var(--paper);
+		}
+
+		.result-card-actions .action-primary:hover {
+			border-color: var(--accent-hover);
+			background: var(--accent-hover);
+			color: var(--accent-ink);
+		}
+
+		.result-card-actions .action-quiet:hover {
+			border-color: transparent;
+			color: var(--paper);
+		}
 	}
 
 	.result-card-actions .action:focus-visible {
@@ -497,12 +546,6 @@ const CARD_CSS = `
 		color: var(--accent-ink);
 	}
 
-	.result-card-actions .action-primary:hover {
-		border-color: var(--accent-hover);
-		background: var(--accent-hover);
-		color: var(--accent-ink);
-	}
-
 	.result-card-actions .action-quiet {
 		border-color: transparent;
 		color: var(--faint);
@@ -510,18 +553,60 @@ const CARD_CSS = `
 		padding-inline: 0.5rem;
 	}
 
-	.result-card-actions .action-quiet:hover {
-		border-color: transparent;
+	.result-card-actions button.action {
+		cursor: pointer;
+	}
+
+	.captcha-number {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.15rem 0.55rem;
+		margin: 1.15rem 0 0;
+		padding: 0.7rem 0.8rem;
+		border: 1px solid var(--line);
+		border-radius: 4px;
+		background: var(--bg);
+	}
+
+	.captcha-number span {
+		color: var(--faint);
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.captcha-number code {
 		color: var(--paper);
+		font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+		font-size: 1rem;
+		font-weight: 600;
+		letter-spacing: 0.07em;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.captcha-note {
+		margin: 0.6rem 0 0;
+		font-size: 0.78rem;
+		line-height: 1.45;
+		color: var(--faint);
+	}
+
+	.captcha-note[data-copied="true"] {
+		color: var(--accent);
 	}
 </style>
 `;
 
 type CardAction = {
 	label: string;
-	href: string;
+	href?: string;
 	variant?: "primary" | "quiet";
 	external?: boolean;
+	/** Written to the clipboard by the captcha card's inline script. */
+	copy?: string;
+	id?: string;
 };
 
 function renderCardActions(actions: CardAction[]): string {
@@ -535,8 +620,13 @@ function renderCardActions(actions: CardAction[]): string {
 			]
 				.filter(Boolean)
 				.join(" ");
-			const external = action.external ? ' target="_blank" rel="noopener"' : "";
-			return `<a class="${classes}" href="${escapeHtml(action.href)}"${external}>${escapeHtml(action.label)}</a>`;
+			const id = action.id ? ` id="${escapeHtml(action.id)}"` : "";
+			const copy = action.copy ? ` data-copy="${escapeHtml(action.copy)}"` : "";
+			if (action.href) {
+				const external = action.external ? ' target="_blank" rel="noopener"' : "";
+				return `<a class="${classes}" href="${escapeHtml(action.href)}"${id}${copy}${external}>${escapeHtml(action.label)}</a>`;
+			}
+			return `<button type="button" class="${classes}"${id}${copy}>${escapeHtml(action.label)}</button>`;
 		})
 		.join("\n");
 	return `<div class="result-card-actions">${items}</div>`;
@@ -545,6 +635,19 @@ function renderCardActions(actions: CardAction[]): string {
 /** A card carries the site theme it was opened under. Omitted means "follow
  * the reader's system", which is what a shared link should do. */
 export type CardTheme = "light" | "dark";
+
+type CardExtras = {
+	/** Content between the error sentence and the actions. */
+	details?: string;
+	/** Inline behaviour for the card; runs after its markup exists. */
+	script?: string;
+	/** What the card is: a dead end, or the way to the result BEU keeps behind
+	 * its captcha. `result.astro` reads it so a handoff is never counted as a
+	 * failure. */
+	kind?: "error" | "handoff";
+	/** Why the handoff is the answer. Only meaningful with `kind: "handoff"`. */
+	reason?: "matched" | "not_published" | "unavailable";
+};
 
 /** Standalone card document. It carries CARD_CSS alone — the result stylesheet
  * is for BEU's own markup and would only fight it.
@@ -557,8 +660,11 @@ function buildCardHTML(
 	body: string,
 	actions: CardAction[] = [],
 	theme?: CardTheme,
+	extras: CardExtras = {},
 ): string {
 	const themeAttr = theme ? ` data-theme="${theme}"` : "";
+	const kindAttr = ` data-card-kind="${extras.kind ?? "error"}"`;
+	const reasonAttr = extras.reason ? ` data-card-reason="${extras.reason}"` : "";
 	return `<!doctype html>
 <html lang="en"${themeAttr}>
 <head>
@@ -569,12 +675,14 @@ function buildCardHTML(
 	${CARD_CSS}
 </head>
 <body>
-	<div class="result-card">
+	<div class="result-card"${kindAttr}${reasonAttr}>
 		<div class="error-card">
 			<h1>${escapeHtml(title)}</h1>
 			<p>${escapeHtml(body)}</p>
 		</div>
+		${extras.details ?? ""}
 		${renderCardActions(actions)}
+		${extras.script ?? ""}
 	</div>
 </body>
 </html>`;
@@ -595,27 +703,127 @@ export function buildErrorHTML(
 	);
 }
 
-/** The portal cannot be read without a human solving its challenge. */
-export function buildCaptchaHTML(
-	options: { retryHref?: string; theme?: CardTheme } = {},
-): string {
-	const actions: CardAction[] = [
-		{
-			href: OFFICIAL_PORTAL_URL,
-			label: "Open BEU portal",
+const CAPTCHA_COPY_SCRIPT = `<script>
+	(function () {
+		var note = document.getElementById("captchaNote");
+		function legacyCopy(value) {
+			var area = document.createElement("textarea");
+			area.value = value;
+			area.setAttribute("readonly", "");
+			area.style.position = "fixed";
+			area.style.top = "0";
+			area.style.opacity = "0";
+			document.body.appendChild(area);
+			area.select();
+			var ok = false;
+			try { ok = document.execCommand("copy"); } catch (error) {}
+			document.body.removeChild(area);
+			return ok;
+		}
+		function copy(value) {
+			var ok = legacyCopy(value);
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				navigator.clipboard.writeText(value).catch(function () {});
+			}
+			return ok;
+		}
+		function say(text) {
+			if (!note) return;
+			note.textContent = text;
+			note.setAttribute("data-copied", "true");
+		}
+		var targets = document.querySelectorAll("[data-copy]");
+		for (var index = 0; index < targets.length; index += 1) {
+			targets[index].addEventListener("click", function () {
+				var value = this.getAttribute("data-copy") || "";
+				if (!value) return;
+				var ok = copy(value);
+				say(ok ? "Number copied. Paste it on BEU." : "Select the number above and copy it.");
+			});
+		}
+	})();
+</script>`;
+
+export type CaptchaOptions = {
+	retryHref?: string;
+	theme?: CardTheme;
+	/** The exact `/result-two/:exam?d=…` link. */
+	officialUrl?: string;
+	/** The published exam's own name, e.g. "B.Tech. 4th Semester Examination, 2025". */
+	examName?: string | null;
+	registrationNo?: string;
+	semester?: number;
+	/** Why `officialUrl` is what it is. Defaults to "matched" when an exam name
+	 * was given, so an unlabelled link is never described as published. */
+	status?: OfficialExamStatus;
+};
+
+/** The portal cannot be read without a human solving its challenge. The card
+ * opens the semester's own exam directly — never a list to pick from — and
+ * carries the number: it is copied on the way out so only a paste is left. */
+export function buildCaptchaHTML(options: CaptchaOptions = {}): string {
+	const semester = options.semester;
+	const semesterLabel = semester ? `semester ${semester}` : "your semester";
+	const examName = options.examName?.trim() || "";
+	const status: OfficialExamStatus =
+		options.status ?? (examName ? "matched" : "not_published");
+	const number = (options.registrationNo ?? "").replace(/[^0-9A-Za-z]/g, "");
+
+	const title =
+		status === "matched"
+			? "Your result is on BEU"
+			: status === "not_published"
+				? "This result is not out yet"
+				: "BEU did not answer";
+
+	const body =
+		status === "matched"
+			? number
+				? `BEU asks for a captcha before it shows the marks. Your number is copied when you tap.`
+				: `BEU asks for a captcha before it shows the marks.`
+			: status === "not_published"
+				? `BEU has not published the ${semesterLabel} exam for your batch yet.`
+				: `BEU's exam list did not answer, so the ${semesterLabel} exam could not be opened.`;
+
+	const actions: CardAction[] = [];
+	if (status === "matched") {
+		actions.push({
+			href: options.officialUrl ?? OFFICIAL_PORTAL_URL,
+			label: `Open ${semesterLabel} exam`,
 			variant: "primary",
 			external: true,
-		},
-	];
+			copy: number || undefined,
+			id: "captchaOpen",
+		});
+		if (number) {
+			actions.push({ label: "Copy number", copy: number, id: "captchaCopy" });
+		}
+	} else if (status === "unavailable") {
+		// The list is the only thing that could not be reached, so it stays
+		// reachable by hand; a published exam would never land here.
+		actions.push({
+			href: options.officialUrl ?? OFFICIAL_PORTAL_URL,
+			label: "Open BEU",
+			variant: "primary",
+			external: true,
+		});
+	}
 	if (options.retryHref) {
 		actions.push({ href: options.retryHref, label: "Try again", variant: "quiet" });
 	}
-	return buildCardHTML(
-		"BEU asks for a captcha",
-		"The university result portal requires a captcha before it returns data. Open the portal, complete the check, and read the result there.",
-		actions,
-		options.theme,
-	);
+
+	const showNumber = status === "matched" && number.length > 0;
+	const details = showNumber
+		? `<p class="captcha-number"><span>Registration number</span><code>${escapeHtml(number)}</code></p>
+		<p class="captcha-note" id="captchaNote" role="status" aria-live="polite">Copied when you open BEU — paste it in their box.</p>`
+		: "";
+
+	return buildCardHTML(title, body, actions, options.theme, {
+		details,
+		script: showNumber ? CAPTCHA_COPY_SCRIPT : "",
+		kind: "handoff",
+		reason: status,
+	});
 }
 
 export function getSemOrdinal(semester: number): string {
@@ -657,14 +865,26 @@ export function renderSgpaCells(sgpa: Array<string | null> | undefined): string 
 	}).join("");
 }
 
-export function injectCssIntoHtmlDocument(html: string, css: string): string {
+export function injectCssIntoHtmlDocument(
+	html: string,
+	css: string,
+	theme?: "light" | "dark",
+): string {
+	const themeScript = theme
+		? `<script>document.documentElement.setAttribute("data-theme","${theme}")</script>`
+		: "";
 	if (/<\/head>/i.test(html)) {
-		return html.replace(/<\/head>/i, `${css}</head>`);
+		return html.replace(/<\/head>/i, `${themeScript}${css}</head>`);
 	}
 	if (/<html/i.test(html)) {
-		return `${css}${html}`;
+		const themed = theme
+			? html.replace(/<html([^>]*)>/i, (_match, attrs: string) =>
+					/data-theme=/i.test(attrs) ? `<html${attrs}>` : `<html${attrs} data-theme="${theme}">`,
+				)
+			: html;
+		return `${themed}${themeScript}${css}`;
 	}
-	return `${css}<div class="rnd">${html}</div>`;
+	return `${themeScript}${css}<div class="rnd">${html}</div>`;
 }
 
 export function buildOfficialLegacyDocument(

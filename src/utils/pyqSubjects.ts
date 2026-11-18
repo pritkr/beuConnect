@@ -32,6 +32,7 @@ const SUBJECT_GROUPS: SubjectGroup[] = [
     aliases: [
       'object oriented programming using java',
       'object oriented programming',
+      'object oriental programming',
       'introduction to java programming language'
     ]
   },
@@ -54,6 +55,16 @@ const SUBJECT_GROUPS: SubjectGroup[] = [
     canonicalName: 'Universal Human Values',
     canonicalSlug: 'universal-human-values',
     aliases: ['universal human values', 'human values']
+  },
+  {
+    canonicalName: 'Engineering Graphics and Design',
+    canonicalSlug: 'engineering-graphics-and-design',
+    aliases: ['engineering graphics and design', 'engineering graphics design']
+  },
+  {
+    canonicalName: 'Engineering Chemistry',
+    canonicalSlug: 'engineering-chemistry',
+    aliases: ['engineering chemistry', 'engg chemistry']
   }
 ];
 
@@ -89,7 +100,11 @@ export function getCanonicalPyqSubject(subject: SubjectMetadataLike) {
   }
 
   const fallbackName = subject.subject?.trim() || subject.subject_slug?.replace(/-/g, ' ') || 'PYQ Subject';
-  const fallbackSlug = subject.subject_slug || slugifySubjectName(fallbackName);
+  // The name is the source of truth: `&` and `and`, double spaces and dashes
+  // all slugify to one URL, so spellings of the same paper land together.
+  // `subject_slug` stays as the fallback for papers that carry no name, and
+  // the old slug survives as a route alias either way.
+  const fallbackSlug = slugifySubjectName(fallbackName) || subject.subject_slug || 'pyq-subject';
 
   return {
     name: fallbackName,
@@ -135,4 +150,78 @@ export function getPyqSubjectRouteAliases(subject: SubjectMetadataLike) {
   }
 
   return [...aliases].filter(Boolean);
+}
+
+type PyqPaperMetadataLike = SubjectMetadataLike & {
+  year?: number;
+  subject_code?: string;
+};
+
+type PyqPaperLike = {
+  data: { metadata: PyqPaperMetadataLike };
+};
+
+export type PyqSubjectRoute<T extends PyqPaperLike> = {
+  slug: string;
+  papers: T[];
+  canonicalSubject: { name: string; slug: string };
+};
+
+/**
+ * One route per slug, never two.
+ *
+ * Two subjects can hand out the same slug: an alias from one (`subject_slug`,
+ * or a name that slugifies the same) can equal another subject's canonical
+ * slug, and the build then drops one page with a route-collision warning.
+ * Canonical slugs are reserved first, so a subject always owns its own URL;
+ * an alias may only claim a slug nobody owns yet. First in collection order
+ * wins, which keeps the output deterministic.
+ */
+export function groupPyqPapersByRoute<T extends PyqPaperLike>(papers: T[]): PyqSubjectRoute<T>[] {
+  const groups = new Map<string, PyqSubjectRoute<T>>();
+
+  for (const paper of papers) {
+    const canonicalSubject = getCanonicalPyqSubject(paper.data.metadata);
+    const group = groups.get(canonicalSubject.slug) ?? {
+      slug: canonicalSubject.slug,
+      papers: [],
+      canonicalSubject
+    };
+
+    group.papers.push(paper);
+    groups.set(canonicalSubject.slug, group);
+  }
+
+  for (const group of groups.values()) {
+    group.papers.sort((a, b) => {
+      const byYear = (b.data.metadata.year ?? 0) - (a.data.metadata.year ?? 0);
+      if (byYear !== 0) {
+        return byYear;
+      }
+
+      return String(a.data.metadata.subject_code ?? '').localeCompare(
+        String(b.data.metadata.subject_code ?? '')
+      );
+    });
+  }
+
+  const routes = new Map<string, PyqSubjectRoute<T>>(groups);
+
+  for (const group of groups.values()) {
+    for (const paper of group.papers) {
+      for (const alias of getPyqSubjectRouteAliases(paper.data.metadata)) {
+        if (routes.has(alias)) {
+          continue;
+        }
+
+        routes.set(alias, group);
+      }
+    }
+  }
+
+  return [...routes.entries()].map(([slug, group]) => ({
+    slug,
+    papers: group.papers,
+    canonicalSubject: group.canonicalSubject
+  }));
 }

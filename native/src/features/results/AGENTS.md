@@ -3,17 +3,22 @@
 Results are the feature students judge the app by. Almost every bug here is a
 data-provenance bug, not a layout bug.
 
-## Four sources, one model
+## Sources, one model
 
-`ResultData` carries `source: "live" | "cache" | "csv"`; the UI says where a
-number came from.
+`ResultData` carries `source: "live" | "cache" | "corpus" | "csv"`; the UI says
+where a number came from.
 
 | Source | Path | Rule |
 |---|---|---|
 | Live JSON | `GET /api/result?reg=…&sem=…&format=json` | accept `{ status: 200, data }`; retry once only on `status 0`, never on 4xx/5xx |
 | Saved copy | `beu.cache.result:<digits>:<sem>` | any age; a copy younger than 10 min skips the network |
+| Shared corpus | `GET /api/corpus?reg=…&sem=…` | only when the live call and the saved copy both miss; `src/lib/corpus.ts`, contract `docs/RESULT_CORPUS.md` |
 | Published CSV | `students_<batch>_all_<branch>_sem<n>.csv`, `wide_<batch>_<college>_<branch>_sem<n>.csv` | roster = table/rank/merit; wide = one student, last resort |
 | BEU captcha page | `results.web` in a WebView | the student solves it; the app reads the markup once and saves it |
+
+A live success and a portal capture also **contribute** that payload to the
+corpus (`via: "api"` / `"portal"`): `void contributeCorpus(...)`, never awaited,
+never shown. A failure is silent by design; the local result is already saved.
 
 `COVERAGE` in `data.ts` is the only list of real batch/branch/semester
 combinations. Offer nothing outside it.

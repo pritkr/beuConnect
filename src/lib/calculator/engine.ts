@@ -32,8 +32,10 @@ export function calculateGrade(totalMarks: number, ia: number, ese: number): str
     if (perc >= 70) return 'B';
     if (perc >= 60) return 'C';
     if (perc >= 50) return 'D';
-    if (perc >= 35) return 'P';
-    
+    // 40% aggregate, not 35%: the 35% above is the ESE floor alone. A paper at
+    // 38% with a valid ESE is a fail, which is what BEU's own result sheets show.
+    if (perc >= 40) return 'P';
+
     return 'F';
 }
 

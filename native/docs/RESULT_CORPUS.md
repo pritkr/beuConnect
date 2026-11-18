@@ -1,229 +1,185 @@
-# Result corpus — from a captcha dead end to a dataset
+# Result corpus — the contract
 
-Status: **plan, not built**. Written 2026-10-31 against `1.2.5`. Read
-`docs/SITE_PARITY.md` §1 and `docs/RESULT_COVERAGE.md` first; this file assumes
-both.
+Status: **shipped in `1.3.3` (2026-11-18)**. This file is the single source for
+the endpoint, the row shape, the native read path and the policy. Change it only
+with the code.
 
-## 1. The problem this solves
+Read `docs/RESULT_COVERAGE.md` first — it defines the six-step fallback chain
+this file inserts into.
 
-BEU's result token endpoint returns `403`, so the live path is dead and every
-student who has no saved copy and no published CSV row hits a captcha page they
-have to solve themselves. That is honest, and it is also the moment the app
-stops being better than the website.
+## 1. Policy (owner's decision, 2026-11-18)
 
-But the captcha produces something valuable: a real result, in a clean JSON
-shape, on the student's own phone. Today that payload is saved locally, rendered,
-and forgotten. Multiply it by a batch and you have the dataset that rank, merit
-and every analytics feature needs — the thing no competitor can buy.
+**Contribution is on by default. There is no consent screen.**
 
-**The corpus is the result of one student's captcha, contributed with consent,
-read back instantly by the next student in the same batch.**
+- The student looks up a result. The payload BEU returned is saved locally and
+  posted to the corpus. This happens without a prompt, a toggle or a note on the
+  result screen.
+- The only place the app explains this is the **terms of service**
+  (`https://beu.prit.eu.org/terms`, section "Results you look up"). No other
+  surface in the app carries that copy — not onboarding, not Settings, not the
+  result screen, not the corpus read path.
+- A student who does not want their result shared does not use result lookup.
+  Every other feature works without it. The ToS says exactly that; there is no
+  in-app opt-out and no deletion endpoint. Removal is by email
+  (`pritform@gmail.com`, 30 days), as the privacy policy already promises.
+- The privacy policy **links** to the ToS section rather than restating it, so
+  there is one copy of the sentence. Play requires the disclosure to exist, not
+  to be duplicated.
 
-## 2. What already exists
+What is stored is only what BEU already publishes to that student: the result
+payload for one `(reg, sem)`. No name field is written by the app, no device id,
+no account, no IP in a durable column.
 
-| Piece | Where | What it does today |
+## 2. Endpoints
+
+Both live on the Astro worker, `src/pages/api/corpus.ts`, D1 binding `DB` (the
+same database as notifications — `cloudflare.config.ts`).
+
+### POST /api/corpus
+
+```json
+{ "reg": "24105157010", "sem": 2, "payload": {}, "via": "portal" }
+```
+
+`payload` is the BEU `result/get-result` body as captured, normally
+`{"status":200,"data":{…}}`.
+
+| Case | Status | Body |
 |---|---|---|
-| Capture hook | `features/results/portal.tsx` (`CAPTURE_HOOK`) | wraps `fetch`/XHR before page scripts, posts `{url, body}` for `result/get-result` |
-| Parser | `features/results/data.ts` (`payloadFrom`) | walks `{status, data}` envelopes up to four levels, returns a typed result |
-| Save path | `features/results/data.ts` | writes `result:{reg}:{sem}` through `lib/net` cache |
-| Fallback order | `docs/RESULT_COVERAGE.md` | live → fresh cache → any cache → wide CSV → roster → honest miss |
-| Published tables | `public/data/wide_*.csv` | 1,308 files, 56 columns, `Source`-less, authoritative where present |
+| stored (new row, or newer payload for the row) | 200 | `{"status":"stored"}` |
+| same row, same `sha`, or older `captured_at` | 200 | `{"status":"duplicate"}` |
+| bad reg / sem / payload / size | 400 | `{"status":"invalid","reason":"reg"\|"sem"\|"payload"\|"size"}` |
+| over the write guard | 429 | `{"status":"rate"}` |
+| no `DB` binding | 503 | `{"status":"unavailable"}` |
 
-The gap is between "saved on this phone" and "available to anyone". Everything
-else is already wired.
+Rules:
 
-## 3. The loop
+- `reg`: digits only after stripping spaces and letters, length 8–12, batch
+  `21`–`32`, branch in the known set (`101`–`105`, `110`, `161`), college
+  3 digits. Reuse the same slice as the app: batch `[0,2)`, branch `[2,5)`,
+  college `[5,8)`.
+- `sem`: integer 1–8.
+- `payload`: a JSON object, serialized ≤ 32 768 bytes, no HTML string, and it
+  must contain a result — either a `data` key (the `{status, data}` envelope) or
+  a subject/paper collection. Reject `{"status":>=400}` and empty objects.
+- `via`: `portal` or `api`, default `portal`.
+- `captured_at`: set server-side to `Date.now()`. A later POST for the same
+  `(reg, sem)` replaces the payload only when the new `sha256` differs. Never
+  delete on a failed validation.
+- Write guard: `corpus_writes(ip_hash, bucket, n)` where `bucket` is the hour
+  (`floor(now/3600e3)`). `sha256(ip + day_salt)`, first 16 hex chars, pruned
+  after 48 h by the same handler. 60 writes per IP per hour; over that, 429.
+  A register row also gets at most one successful write per hour regardless
+  (`corpus_rows.updated_at`).
+
+### GET /api/corpus?reg=…&sem=…
 
 ```
-student solves the captcha
-        ↓
-portal.tsx captures the result JSON
-        ↓
-        ├── saves locally (today)
-        └── asks: "add this to the public table?"   ← new, default OFF
-                    ↓ consent
-              POST /api/corpus
-                    ↓ validate · dedupe · store
-              D1 `corpus_rows`
-                    ↓
-        read path step 5: /api/corpus?reg=&sem=
-                    ↓
-        every student in that batch gets an instant result
-                    ↓
-        coverage grows → rank and merit get real
+200 {"status":"ok","payload":{…},"capturedAt":1763…,"via":"portal"}
+404 {"status":"miss"}
+400 {"status":"invalid","reason":"reg"|"sem"}
 ```
 
-## 4. Data model
+`cache-control: public, max-age=300`, `access-control-allow-origin: *` (the row
+is public by design). No `etag` work beyond what the platform adds.
 
-D1, one table. D1 is the right size: the rows are small (a result is ~5 KB of
-JSON), the queries are point lookups and counts, and the free tier covers
-100,000 row writes a day — far more than this will ever see.
+### Schema — `migrations/0002_corpus.sql`
 
 ```sql
-CREATE TABLE corpus_rows (
-  reg          TEXT NOT NULL,          -- 11 digits, as typed
-  sem          INTEGER NOT NULL,       -- 1..8
-  batch        INTEGER NOT NULL,       -- derived from reg, 2000+YY
-  college      TEXT NOT NULL,          -- reg[5:8]
-  branch       TEXT NOT NULL,          -- reg[2:5]
-  payload      TEXT NOT NULL,          -- the BEU result JSON, normalised
-  sgpa         REAL,
-  cgpa         REAL,
-  captured_at  INTEGER NOT NULL,
-  app_version  TEXT NOT NULL,
-  consent_at   INTEGER NOT NULL,       -- when the student agreed
-  ip_hash      TEXT,                   -- rate limiting only, never joined to reg
-  state        TEXT NOT NULL DEFAULT 'live',  -- live | hidden | rejected
+CREATE TABLE IF NOT EXISTS corpus_rows (
+  reg         TEXT NOT NULL,
+  sem         INTEGER NOT NULL,
+  batch       TEXT NOT NULL,
+  branch      TEXT NOT NULL,
+  college     TEXT NOT NULL,
+  payload     TEXT NOT NULL,
+  sha         TEXT NOT NULL,
+  bytes       INTEGER NOT NULL,
+  via         TEXT NOT NULL DEFAULT 'portal',
+  captured_at INTEGER NOT NULL,
+  created_at  INTEGER NOT NULL,
+  updated_at  INTEGER NOT NULL,
   PRIMARY KEY (reg, sem)
 );
-CREATE INDEX corpus_coverage ON corpus_rows (batch, college, branch, sem, state);
+CREATE INDEX IF NOT EXISTS idx_corpus_batch ON corpus_rows (batch, branch, sem);
+CREATE INDEX IF NOT EXISTS idx_corpus_college ON corpus_rows (college, branch, sem);
+CREATE INDEX IF NOT EXISTS idx_corpus_updated ON corpus_rows (updated_at);
+
+CREATE TABLE IF NOT EXISTS corpus_writes (
+  ip_hash TEXT NOT NULL,
+  bucket  INTEGER NOT NULL,
+  n       INTEGER NOT NULL DEFAULT 0,
+  at      INTEGER NOT NULL,
+  PRIMARY KEY (ip_hash, bucket)
+);
 ```
 
-- `PRIMARY KEY (reg, sem)` makes the endpoint idempotent: a re-capture updates
-  the row instead of adding a second one.
-- `state` is the moderation lever. `hidden` keeps a row for review without
-  serving it; `rejected` keeps the audit trail.
-- Nothing here is a field BEU does not already publish. No phone, no email, no
-  DOB, no gender, no category — the roster purge (`docs/PLAY_STORE.md` §3.4) is
-  the precedent and `scripts/verify.py` is the guard.
+`batch`/`branch`/`college` are stored so rank and merit can count coverage
+without parsing 32 KB of JSON per row.
 
-## 5. Endpoint
+### Server-side contribution too
 
-`POST /api/corpus` — same worker, no new service.
+When `/api/result` successfully fetches from the portal path it should POST the
+same payload into the corpus inside the worker (a direct D1 insert, not a
+subrequest), with `via: "api"`. The live path is upstream-dead as of
+2026-11-18, so this is cheap insurance, not the main source.
 
-```jsonc
-{
-  "reg": "24105157010",
-  "sem": 3,
-  "payload": { /* the captured BEU response, unchanged */ },
-  "consent": true,
-  "app_version": "1.2.5"
-}
-```
+## 3. Native contribution (`features/results`)
 
-Answers: `201 {stored: true}`, `200 {stored: false, reason: "duplicate"}`,
-`400 {reason: "shape" | "reg_mismatch" | "sem_mismatch"}`, `429` on rate limit.
+- `captureResult(reg, sem, payload)` keeps doing what it does (local save).
+  Immediately after it resolves, fire `contributeCorpus(reg, sem, payload)` —
+  `void`, never awaited by the UI, no toast, no banner, no error path. A failure
+  is silent by design; the local result is already on screen.
+- The same silent post runs after a **live** `/api/result` success, so the two
+  paths share it.
+- `src/lib/corpus.ts` owns the client: URL, `postJson`, 8 s timeout, one retry
+  on a transport error, `fetchJson` for reads, `beu.cache.corpus.{reg}.{sem}`
+  for the read cache (30 days, the payload never changes once published).
+- No new Storage key outside `beu.` / `beu.cache.`; `lib/net.ts` is the only
+  fetch surface.
 
-Validation, in order — reject at the first failure:
+## 4. Read path
 
-1. `reg` is 11 digits and `sem` is 1–8.
-2. `consent === true`. No consent, no row. Not a checkbox buried in settings.
-3. `payloadFrom(payload)` returns a result, and its registration number and
-   semester match the request. This reuses the parser the app already trusts.
-4. At least one paper with a non-empty code and a mark or grade.
-5. `SGPA`/`CGPA`, when present, are 0–10.
-6. The row is not an obvious outlier against the same `(batch, college, branch,
-   sem)` median — flag to `hidden`, never auto-reject. A whole batch is not
-   going to fake a 9.8 together.
+`loadResult` in `features/results/data.ts` becomes:
 
-`GET /api/corpus?reg=&sem=` returns the same shape as `/api/result` with
-`"source": "corpus"`, so the app's existing parser handles it unchanged.
+1. live `/api/result` (one retry)
+2. `result:{reg}:{sem}` local cache
+3. **corpus** `GET /api/corpus?reg&sem` — only when 1 and 2 miss, 8 s budget
+4. wide CSV row
+5. college roster (name + SGPA/CGPA only)
+6. branch roster for rank only
+7. honest miss with the nearest published semester
 
-Rate limit: 10 writes per `ip_hash` per hour, 3 per `reg` per day.
+A corpus hit is written to the local cache under the same key with `source:
+"corpus"` and its `capturedAt`, so the next launch paints instantly. The payload
+goes through the existing `payloadFrom` — no second parser.
 
-## 6. Consent, in the app
+## 5. Tests (`native/qa` and root `vitest`)
 
-After a capture succeeds and before the result renders, one card:
-
-> **Add this to the public table?**
-> It's your result, published by BEU already. Sharing it means the next student
-> in your batch doesn't have to solve a captcha. You can take it back anytime.
-
-Two buttons: **Add it** / **Not now**. The choice is per capture, stored under
-`beu.corpus.consent`, and the result renders either way — never gate the result
-on the answer.
-
-Settings → About gets one line: *"Results you shared: N · Remove all"*.
-Removal calls `DELETE /api/corpus?reg=` and clears the local flag.
-
-## 7. Read path change
-
-One new step, inserted before the honest miss:
-
-```
-1 live /api/result
-2 fresh cache (<10 min)
-3 any cache
-4 published wide CSV
-5 corpus  ← new: GET /api/corpus?reg=&sem=
-6 honest "not published" + offer the portal
-```
-
-A corpus row renders with a badge: **"Shared by a student · not BEU's copy"**,
-and a link to the official page. Never present a corpus row as official, and
-never let it overwrite a wide CSV row — official wins on every conflict.
-
-## 8. Publication
-
-Two tracks, in this order:
-
-1. **API-first (week 1).** Rows are served from D1 at step 5. No CSV changes, no
-   deploy of data, reversible in one command.
-2. **Baked (later).** A monthly job merges `state='live'` rows into
-   `public/data/wide_*.csv` where no official row exists, adds a
-   `Source=corpus` column value, and commits the diff. This is what makes the
-   corpus survive the API being down, and what feeds `result-table` and
-   `merit-list` without a query.
-
-Do not start with the baked track. It is irreversible in a way the API is not.
-
-## 9. Coverage, made visible
-
-A new screen `results.coverage` (door: Results → the miss state, and More):
-
-- per batch → college → branch → semester: how many rows exist vs how many
-  students the roster says are in that branch;
-- "Your result is missing" → the portal flow, with the consent card;
-- a leaderboard is tempting here. Don't. It rewards fake rows.
-
-The honest metric is **hit rate**: of all lookups that had no official row, how
-many resolved from the corpus. That number is the feature.
-
-## 10. Metrics
-
-| Event | Params | Answers |
+| Test | Where | Proves |
 |---|---|---|
-| `corpus_offer` | `sem`, `batch`, `branch` | how often we ask |
-| `corpus_accept` | `sem`, `batch`, `branch` | consent rate (expect 10–30 %) |
-| `corpus_result` | `source`, `outcome` | hit rate at step 5 |
-| `corpus_revoke` | `rows` | trust |
+| reg/sem validation, size cap, envelope extraction | `src/pages/api/corpus.test.ts` (root) | the endpoint accepts what the app sends and rejects the rest |
+| upsert: new, duplicate, newer | same | one row per `(reg, sem)`, no data loss |
+| client posts silently to the right URL and swallows failure | `native/qa/corpus.test.ts` | no UI path depends on it |
+| chain order: cache before corpus before CSV | `native/qa/corpus.test.ts` | a dead corpus never blocks a result |
 
-All of these are already in the GA4 vocabulary rules (`docs/ANALYTICS.md`): add
-them to `src/lib/analytics/events.json`, run the sync script, use them.
+## 6. Not in scope
 
-## 11. Work breakdown
+- No coverage dashboard, no merge UI, no per-college counts screen.
+- No deletion endpoint, no consent toggle, no "shared with 3 students" badge.
+- No change to `DATA_SAFETY.md` beyond the row that names this collection; the
+  ToS is the canonical sentence.
 
-| # | Work | Done when |
-|---|---|---|
-| 1 | D1 binding + `corpus_rows` migration | `cf d1 execute` creates the table in staging |
-| 2 | `POST /api/corpus` + validation | a curl with a real captured payload returns 201, a replay returns duplicate |
-| 3 | `GET /api/corpus` + `source: "corpus"` | the app's parser renders it with no changes |
-| 4 | Consent card in `results/portal.tsx` | the result renders whichever button is pressed |
-| 5 | Read path step 5 + provenance badge | a second device resolves a result it never fetched |
-| 6 | Revoke from Settings → About | `DELETE` removes the row, the badge stops |
-| 7 | Moderation: `hidden` + a review query | an outlier never reaches a student |
-| 8 | Coverage screen | counts match a `SELECT COUNT(*)` |
+## 7. Before this ships
 
-Phase 1 is items 1–6 and is the whole feature. 7–8 are the parts that keep it
-honest once it has volume.
-
-## 12. Risks
-
-| Risk | Why it bites | Mitigation |
-|---|---|---|
-| Fake rows | a corpus row is unverifiable by construction | schema + cross-field checks, outlier → `hidden`, official row always wins, revoke + report |
-| Someone scrapes the corpus | it is a list of results by registration number | it is the same data BEU publishes; rate limit reads, no bulk endpoint, no auth bypass |
-| Legal (DPDP) | republishing third-party personal data | already the site's posture for `wide_*`; consent recorded per row, deletion honoured, policy names it (`/privacy` §"Public data we republish") |
-| D1 limits | free tier write cap | 10 writes/IP/hour; the real volume is a few thousand rows a semester |
-| The corpus is empty for months | consent rate is low early | it compounds per batch; show the coverage screen so the gap is visible, not hidden |
-| A contributed row disagrees with BEU later | two sources of truth | official CSV wins on every read; corpus never overwrites |
-
-## 13. What this unlocks
-
-Once a batch has coverage, three things stop being aspirational:
-
-- `results.rank` and `results.merit` for batches with no published roster;
-- `result-table` for colleges outside GEC Sheikhpura;
-- subject difficulty analytics — the roadmap item that needs marks, not SGPA.
-
-That is the moat: not the screen, the rows.
+1. **Apply the migration to the production database.** `migrations/0002_corpus.sql`
+   against the D1 database bound as `DB` (`c0a6953e-1fec-4c75-8a58-4ac0a80e9057`).
+   Until it is applied the endpoint fails closed: the app's writes are dropped
+   and reads fall through to the CSV path, so nothing breaks and nothing is
+   collected.
+2. **Deploy the worker** (`bun run deploy`). `GET /api/corpus` on the deployed
+   host is the smoke test: a known `(reg, sem)` returns `{"status":"ok",…}` and
+   an unknown one returns `404 {"status":"miss"}`.
+3. **Optional:** set a `CORPUS_SALT` secret. Without it the rate-limit digest
+   uses the day as its salt, which still rotates daily but does not separate two
+   deployments writing to the same table.

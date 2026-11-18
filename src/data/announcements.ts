@@ -55,7 +55,7 @@ export const announcementPosts: AnnouncementPost[] = [
   },
 ];
 
-export const sortedAnnouncementPosts = [...announcementPosts].sort(
+export const sortedAnnouncementPosts = announcementPosts.toSorted(
   (a, b) =>
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
 );

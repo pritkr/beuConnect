@@ -1,6 +1,8 @@
 ---
 import "@picocss/pico/css/pico.min.css";
+import "../styles/fonts.css";
 import "../styles/theme.css";
+import Analytics from "../components/Analytics.astro";
 import FeedbackWidget from "../components/FeedbackWidget.astro";
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
@@ -15,6 +17,10 @@ import {
 	resolveOgPage,
 } from "../utils/og";
 
+/* Hashed at build time so the preload and the @font-face URL can never differ. */
+import instrumentSerifCore from "../assets/fonts/instrument-serif-core.woff2?url";
+import publicSansCore from "../assets/fonts/public-sans-core.woff2?url";
+
 export interface Props {
 	title?: string;
 	description?: string;
@@ -27,7 +33,7 @@ const pathname = Astro.url.pathname;
 const title = resolveMetaTitle(Astro.props.title);
 const description = resolveMetaDescription(pathname, Astro.props.description);
 const wide = Astro.props.wide ?? false;
-const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+const publicAsset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 const serviceWorkerUrl = publicAsset("swwe.js");
 const favicon =
 	"%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect x=%226%22 y=%223%22 width=%2220%22 height=%2226%22 rx=%223%22 fill=%22%23f0a63c%22/%3E%3Cpath d=%22M26 10h-3.5A1.5 1.5 0 0 1 21 8.5V3z%22 fill=%22%23ffc266%22/%3E%3Cpath d=%22M11.5 3v26%22 stroke=%22%231a1206%22 stroke-opacity=%22.35%22/%3E%3Cpath d=%22M15 11h6.5M15 16h6.5M15 21h4%22 stroke=%22%231a1206%22 stroke-width=%221.9%22 stroke-linecap=%22round%22/%3E%3C/svg%3E";
@@ -45,17 +51,13 @@ const structuredData =
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="color-scheme" content="dark light" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+		<meta name="color-scheme" content="light dark" />
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 		<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 		<link rel="canonical" href={canonicalURL} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="preload" href={publicSansCore} as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href={instrumentSerifCore} as="font" type="font/woff2" crossorigin />
 		<link rel="icon" type="image/svg+xml" href={`data:image/svg+xml,${favicon}`} />
 
 		<!-- Open Graph / Facebook -->
@@ -81,7 +83,10 @@ const structuredData =
 		<meta name="twitter:image:alt" content={ogPage.imageAlt} />
 
 		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content="#0c1310" />
+		<meta name="theme-color" content="#151b18" />
+		<!-- Registration numbers are long digit strings, and iOS would turn each
+		     one into a tappable phone number. -->
+		<meta name="format-detection" content="telephone=no,address=no,email=no,date=no" />
 		<script is:inline>
 			(function () {
 				var root = document.documentElement;
@@ -97,15 +102,47 @@ const structuredData =
 					theme = "dark";
 				}
 				root.setAttribute("data-theme", theme);
+				/* Native UI (scrollbars, form controls, the canvas behind the page)
+				   keys off color-scheme. Pin it to the theme that actually painted so
+				   a dark page never gets light scrollbars, and so it is right before
+				   the stylesheet arrives. The toggle keeps it in sync afterwards. */
+				var scheme = document.querySelector('meta[name="color-scheme"]');
+				if (scheme) scheme.setAttribute("content", theme);
 				var meta = document.querySelector('meta[name="theme-color"]');
-				if (meta) meta.setAttribute("content", theme === "light" ? "#f6f2e8" : "#0c1310");
+				if (meta) meta.setAttribute("content", theme === "light" ? "#f6f2e8" : "#151b18");
+
+				/* 100vw includes a classic scrollbar, so a full-bleed band built on it
+				   overflows the visible area by that width. Publish the real difference. */
+				var syncScrollbar = function () {
+					root.style.setProperty("--sbw", window.innerWidth - root.clientWidth + "px");
+				};
+				syncScrollbar();
+				window.addEventListener("resize", syncScrollbar, { passive: true });
+				window.addEventListener("load", syncScrollbar, { once: true });
 			})();
 		</script>
 		<link rel="icon" href={publicAsset("favicon.ico")} sizes="48x48" />
 		<link rel="apple-touch-icon" href={publicAsset("apple-touch-icon-180x180.png")} />
+		<meta name="apple-mobile-web-app-title" content="BEUConnect" />
 		<meta name="description" content={description} />
 		<link rel="manifest" href={publicAsset("manifest.webmanifest")} />
 		<title>{title}</title>
+		<script is:inline>
+			/* The software keyboard shrinks the visual viewport but not the layout
+			   viewport on iOS, so a bottom sheet would keep its full height and sit
+			   behind the keyboard. Publish the real height as --vvh. */
+			(function () {
+				var root = document.documentElement;
+				var viewport = window.visualViewport;
+				if (!viewport) return;
+				var apply = function () {
+					root.style.setProperty("--vvh", viewport.height + "px");
+				};
+				apply();
+				viewport.addEventListener("resize", apply);
+				viewport.addEventListener("scroll", apply);
+			})();
+		</script>
 		<script is:inline>
 			try {
 				if (localStorage.getItem("beu_profile")) {
@@ -139,5 +176,6 @@ const structuredData =
 					});
 			}
 		</script>
+		<Analytics />
 	</body>
 </html>

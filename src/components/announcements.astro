@@ -28,6 +28,8 @@ const isExternal = latest ? /^https?:\/\//.test(latest.link) : false;
 				href={resolveLink(latest.link)}
 				target={isExternal ? "_blank" : undefined}
 				rel={isExternal ? "noopener" : undefined}
+				data-ga="announcement_open"
+				data-ga-params={JSON.stringify({ source: "home" })}
 			>
 				<span id="latestNoticeText">{latest.text}</span>
 				<Icon name="arrow-right" size={14} />
@@ -107,7 +109,10 @@ const isExternal = latest ? /^https?:\/\//.test(latest.link) : false;
 		flex-wrap: wrap;
 		align-items: baseline;
 		gap: 0.35rem var(--s4);
-		padding: var(--s3) 0;
+		/* The page already opens with space under the header; the strip only
+		   needs room below its text, above the rule. */
+		margin: 0;
+		padding: 0 0 var(--s3);
 		border-bottom: 1px solid var(--line);
 	}
 
@@ -131,10 +136,12 @@ const isExternal = latest ? /^https?:\/\//.test(latest.link) : false;
 		text-decoration: none;
 	}
 
-	.latest a:hover {
-		color: var(--accent);
-		text-decoration: underline;
-		text-underline-offset: 0.16em;
+	@media (hover: hover) and (pointer: fine) {
+		.latest a:hover {
+			color: var(--accent);
+			text-decoration: underline;
+			text-underline-offset: 0.16em;
+		}
 	}
 
 	.latest a :global(svg) {

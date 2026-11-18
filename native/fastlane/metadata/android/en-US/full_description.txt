@@ -1,23 +1,30 @@
-Syllabus, previous-year papers, results, rank, attendance and notices for Bihar
-Engineering University students, with the syllabus, papers and notices kept on
-the device so most of it works without a connection.
+Unofficial student project. Not affiliated with Bihar Engineering University.
 
-Features:
-* Syllabus for every BEU branch and semester, split into topics, with GATE
-  papers and a saved list.
-* Previous year papers with PDFs and a paper finder.
-* Results fetched from BEU, a saved copy, the published result tables, or BEU's
-  own result page.
-* University rank, merit list and a side-by-side result comparison.
-* Attendance tracker, SGPA calculator and predictor, routine and holiday
-  calendar.
-* Notes, planner, notices and search across the bundled data.
-* Published college and branch rosters and CGPA leaders.
+Syllabus
+The BEU syllabus by branch and semester, split into subjects and topics, with credits and the official subject codes. The GATE syllabus is included by paper and topic. A subject can be saved, and one search finds a subject, a paper, a college or a notice.
 
-Data and privacy:
-A registration number is stored on the device and sent only to BEU's result
-endpoints to resolve a name and result. No account is required and there are no
-ads or analytics. Feedback is sent only when you submit it.
+Previous-year papers
+BEU question papers by branch, semester and subject, with a paper finder and the questions shown as text. GATE papers keep their official PDFs. A branch's papers can be downloaded from Settings and read offline.
 
-Source code: https://github.com/pritkr/beuConnect (AGPL-3.0-or-later).
-Not an official BEU app.
+Results
+Look up a result with a registration number and a semester. The app asks a result service that reads BEU's result server. BEU now puts a captcha in front of the result, so the app also opens BEU's own result page: solve the captcha once and the result is read back into the app. A fetched result shows the paper rows, SGPA and CGPA, and stays on the phone.
+
+Published tables
+Result tables from the published college and branch data, in CGPA order and sortable by SGPA or name.
+
+Rank and merit
+University rank and a merit list from those tables, and a side-by-side comparison of two results. A college or branch that has not been published has no rank.
+
+Attendance and routine
+Subject-wise attendance with the classes needed to reach a given percentage, JSON import and export for it, the weekly routine, a holiday calendar and an SGPA calculator.
+
+Notices
+The BEU notice board with search, announcement posts and the official PDFs.
+
+Notes and rosters
+Subject notes, a study planner, and the published college and branch rosters with CGPA and branch leaders.
+
+Offline
+The syllabus, the GATE set and the paper catalog are built into the app and open with no connection. Papers, result tables, notes and notices you have opened stay readable offline, and Settings can download every paper for a branch and semester.
+
+No account is required and there are no ads. Usage analytics can be turned off in Settings. Feedback is sent only when you submit it.

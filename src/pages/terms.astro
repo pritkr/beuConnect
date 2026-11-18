@@ -1,0 +1,186 @@
+---
+export const prerender = true;
+import Layout from "../layouts/Layout.astro";
+
+const CONTACT = "pritform@gmail.com";
+const UPDATED = "18 November 2026";
+---
+
+<Layout
+	title="Terms of service"
+	description="The rules behind BEUConnect: an unofficial student project, what a result lookup shares, and how to have it removed."
+>
+	<article class="terms">
+		<header class="terms-head">
+			<p class="eyebrow">Terms of service</p>
+			<h1>The rules, in plain words</h1>
+			<p class="lede">
+				Using BEUConnect means accepting these terms. They are short because the app is
+				small: no account, no payment, no advertising.
+			</p>
+		</header>
+
+		<section aria-labelledby="what">
+			<h2 id="what">What this is</h2>
+			<p>
+				BEUConnect is an unofficial student project, built and run by one person — Prit, at
+				GEC Sheikhpura. It is <strong>not affiliated with Bihar Engineering University</strong>
+				and is not an official BEU service. Results, notices and papers are copied from
+				BEU's own published pages so they are easier to read on a phone.
+			</p>
+		</section>
+
+		<section aria-labelledby="results">
+			<h2 id="results">Results you look up</h2>
+			<p>
+				Looking up a result sends that result, keyed by your registration number and semester,
+				to a shared store that any student can read by looking up the same number and semester.
+			</p>
+			<p>
+				This is on by default, and there is no setting to turn it off. If you do not want
+				your result shared, do not use result lookup. Every other feature — syllabus,
+				papers, notices, routine, attendance, calculators — works without it.
+			</p>
+			<p>
+				To have your row removed, email <a href={`mailto:${CONTACT}`}>{CONTACT}</a> with the
+				registration number. It is removed within 30 days, and you do not have to explain
+				why.
+			</p>
+		</section>
+
+		<section aria-labelledby="leaves">
+			<h2 id="leaves">What leaves your phone</h2>
+			<ul>
+				<li>The result you looked up, keyed by your registration number and semester.</li>
+				<li>The guardian mobile number you enter, when you sync attendance.</li>
+				<li>The text you send as feedback.</li>
+				<li>
+					Anonymous app-activity events — the screen, the action, branch/college/batch
+					codes, app version — and a random client id.
+				</li>
+			</ul>
+			<p>
+				That is the whole list. The <a href="/privacy/">privacy policy</a> explains what is
+				never collected and how to switch analytics off.
+			</p>
+		</section>
+
+		<section aria-labelledby="no">
+			<h2 id="no">No account, no ads, no selling</h2>
+			<p>
+				There is no sign-up, no password and no payment. There are no ads and no ad
+				trackers. We do not sell data and do not share it for advertising.
+			</p>
+		</section>
+
+		<section aria-labelledby="accuracy">
+			<h2 id="accuracy">Accuracy</h2>
+			<p>
+				Results are copied from BEU and can be wrong, incomplete or late. They are a
+				convenience, not the record. Always check the official BEU portal before relying
+				on a result for anything that matters.
+			</p>
+		</section>
+
+		<section aria-labelledby="changes">
+			<h2 id="changes">Changes to these terms</h2>
+			<p>
+				Last updated <strong>{UPDATED}</strong>. If a change matters, the date changes and
+				the app's About screen says so.
+			</p>
+		</section>
+
+		<section class="card contact" aria-labelledby="contact">
+			<h2 id="contact">Questions</h2>
+			<p>
+				<a href={`mailto:${CONTACT}`}>{CONTACT}</a>
+			</p>
+			<p class="fine">
+				Unofficial student project. Not affiliated with Bihar Engineering University.
+			</p>
+		</section>
+	</article>
+</Layout>
+
+<style>
+	.terms {
+		max-width: 48rem;
+		margin-inline: auto;
+		padding-block: var(--s6) var(--s8);
+	}
+
+	.terms-head {
+		margin-bottom: var(--s5);
+	}
+
+	.eyebrow {
+		margin: 0 0 var(--s2);
+		color: var(--accent);
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	.terms h1 {
+		margin: 0 0 var(--s3);
+		font-size: clamp(2rem, 5vw, 2.9rem);
+		line-height: 1.05;
+	}
+
+	.lede {
+		margin: 0;
+		color: var(--muted);
+		font-size: 1.05rem;
+	}
+
+	.terms h2 {
+		margin-top: var(--s6);
+		margin-bottom: var(--s3);
+		font-size: 1.35rem;
+	}
+
+	.terms p,
+	.terms li {
+		line-height: 1.65;
+	}
+
+	.terms ul {
+		padding-left: 1.1rem;
+	}
+
+	.terms li + li {
+		margin-top: var(--s1);
+	}
+
+	.card {
+		padding: var(--s4) var(--s5);
+		border: 1px solid var(--line);
+		border-radius: 14px;
+		background: var(--surface-2);
+	}
+
+	.contact {
+		margin-top: var(--s7);
+	}
+
+	.contact h2 {
+		margin-top: 0;
+	}
+
+	.contact p {
+		margin: 0;
+	}
+
+	.fine {
+		margin-top: var(--s2) !important;
+		color: var(--muted);
+		font-size: 0.85rem;
+	}
+
+	@media (max-width: 640px) {
+		.card {
+			padding: var(--s3) var(--s4);
+		}
+	}
+</style>

@@ -9,10 +9,10 @@
  * or a registration number replaces the accordion with one ranked list, scoped
  * by the same filter.
  *
- * The register in this build is GEC Sheikhpura's, so `college` defaults to 157.
- * A route that names another college is not an error the student caused, and it
- * is not an empty register either: it says plainly that this build carries one
- * college, and offers the one it has.
+ * The register in this build is GEC Sheikhpura's, and `college` defaults to
+ * 157. Every other college opens its published roster through
+ * `RemoteCollegeScreen` (`remote.ts`), driven by the generated index; a college
+ * the index does not name explains itself rather than offering a dead button.
  */
 
 import { List, Scroll, Text, View, computed, signal, type ViewRef } from "nsh";
@@ -25,13 +25,13 @@ import { EVENTS, track } from "../../lib/analytics";
 import { LAYOUT_SPRING_PANEL } from "../../lib/motion";
 import { branchIcon } from "../../ui/branch-icon";
 import { Fresh, StudentRow } from "./components";
+import { RemoteCollegeScreen } from "./remote-college";
 import type { Student } from "./data";
 import {
   BRANCHES,
   BRANCH_COUNTS,
   BRANCH_COUNTS_BY_SESSION,
   COLLEGE_CODE,
-  COLLEGE_NAME,
   SESSIONS,
   TOTAL,
   batchLabel,
@@ -62,21 +62,10 @@ export function CollegeScreen(props: { nav: Nav }) {
   const requested = param(nav, "college").trim() || COLLEGE_CODE;
   const known = requested === COLLEGE_CODE;
 
-  if (!known) {
-    return (
-      <Screen>
-        <View class="p-4">
-          <EmptyState
-            icon="building"
-            title={`No register for college ${requested}`}
-            hint={`This build carries ${COLLEGE_NAME} only.`}
-            action="Open GEC Sheikhpura"
-            onAction={() => nav.replace("students.college", { college: COLLEGE_CODE })}
-          />
-        </View>
-      </Screen>
-    );
-  }
+  // Every college BEU has published a roster for opens the same way: the
+  // index drives the chips and the roster arrives on demand. GEC Sheikhpura
+  // keeps its bundled register below, which is why it is checked first.
+  if (!known) return <RemoteCollegeScreen nav={nav} college={requested} />;
 
   const query = signal("");
   const branch = signal("");

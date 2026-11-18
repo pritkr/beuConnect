@@ -1,0 +1,136 @@
+<!doctype html>
+<!--
+  The Play feature graphic: 1024x500, no alpha.
+
+  Render it from the repo root with a 1024x500 viewport at 1x, then measure:
+
+    agent-browser open "file://$PWD/native/scripts/store/feature-graphic.html"
+    agent-browser set viewport 1024 500
+    agent-browser screenshot native/.nsh/out/play/feature-graphic-1024x500.png
+    sips -g pixelWidth -g pixelHeight -g hasAlpha native/.nsh/out/play/feature-graphic-1024x500.png
+
+  The icon path in the page is resolved from this file, so keep the file here.
+  Palette: the Ink & Ember light theme in native/nsh.json; the mark is
+  native/icon.png, the same file `store-assets.sh` shrinks for the listing.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>BEUConnect feature graphic</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 1024px; height: 500px; overflow: hidden; }
+      body {
+        background: #fbf8f4;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        color: #17130f;
+        position: relative;
+      }
+      /* warm paper grain: two soft lights, no image needed */
+      .glow {
+        position: absolute;
+        width: 720px;
+        height: 720px;
+        right: -180px;
+        top: -260px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(228, 87, 46, 0.16), rgba(228, 87, 46, 0) 62%);
+      }
+      .glow.second {
+        left: -260px;
+        bottom: -420px;
+        right: auto;
+        top: auto;
+        background: radial-gradient(circle, rgba(14, 107, 92, 0.10), rgba(14, 107, 92, 0) 62%);
+      }
+      .frame {
+        position: absolute;
+        inset: 0;
+        border: 1px solid rgba(139, 122, 102, 0.22);
+      }
+      .content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 76px;
+      }
+      .copy { width: 580px; }
+      .eyebrow {
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        color: #b0401d;
+        margin-bottom: 22px;
+      }
+      h1 {
+        font-family: ui-serif, "New York", Georgia, "Times New Roman", serif;
+        font-size: 84px;
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        font-weight: 600;
+      }
+      .dot { color: #0e6b5c; }
+      .rule {
+        width: 72px;
+        height: 6px;
+        border-radius: 999px;
+        background: #e4572e;
+        margin: 26px 0 24px;
+      }
+      p {
+        font-size: 25px;
+        line-height: 1.34;
+        color: #4d4337;
+        letter-spacing: -0.01em;
+      }
+      p strong { color: #17130f; font-weight: 600; }
+      .mark { position: relative; width: 300px; height: 300px; flex: none; margin-left: 24px; }
+      .mark::before {
+        content: "";
+        position: absolute;
+        inset: -34px -34px auto auto;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: #0e6b5c;
+        opacity: 0.14;
+      }
+      .mark::after {
+        content: "";
+        position: absolute;
+        left: -40px;
+        bottom: -30px;
+        width: 108px;
+        height: 108px;
+        border-radius: 50%;
+        border: 10px solid rgba(228, 87, 46, 0.24);
+      }
+      .icon {
+        position: absolute;
+        inset: 0;
+        border-radius: 74px;
+        overflow: hidden;
+        box-shadow: 0 34px 70px rgba(64, 33, 16, 0.24), 0 4px 0 rgba(255, 255, 255, 0.35) inset;
+      }
+      .icon img { width: 100%; height: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="glow second"></div>
+    <div class="content">
+      <div class="copy">
+        <div class="eyebrow">FOR BEU STUDENTS</div>
+        <h1>BEUConnect<span class="dot">.</span></h1>
+        <div class="rule"></div>
+        <p><strong>Syllabus, previous-year papers, results and rank.</strong><br />Offline. No account. No ads.</p>
+      </div>
+      <div class="mark">
+        <div class="icon"><img src="../../icon.png" alt="" /></div>
+      </div>
+    </div>
+    <div class="frame"></div>
+  </body>
+</html>

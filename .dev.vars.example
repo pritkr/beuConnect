@@ -2,3 +2,7 @@ TELEGRAM_BOT_TOKEN=
 TELEGRAM_CHAT_ID=
 # Turnstile is disabled for now.
 # TURNSTILE_SECRET_KEY=
+
+# Google Analytics 4 — used by /api/track for the native app's events.
+# GA_MEASUREMENT_ID=G-XXXXXXXXXX
+# GA_API_SECRET=

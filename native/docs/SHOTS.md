@@ -6,23 +6,24 @@ app by hand.
 
 ```sh
 cd native
-./scripts/shots.sh            # 21 screens, light, 390×844
+./scripts/shots.sh            # 23 screens, light, 390×844
 ```
 
 Output lands in `.nsh/shots/` (gitignored):
 
 ```
-shot-01-home.png            shot-11-battle.png
-shot-02-syllabus.png        shot-12-attendance.png
-shot-03-results.png         shot-13-routine.png
-shot-04-tools.png           shot-14-holidays.png
-shot-05-more.png            shot-15-data.png
-shot-06-pyqs.png            shot-16-wifi.png
-shot-07-notices.png         shot-17-profile.png
-shot-08-calculator.png      shot-18-settings.png
-shot-09-rank.png            shot-19-notifications.png
-shot-10-merit.png           shot-20-feedback.png
-                            shot-21-about.png
+shot-01-home.png            shot-13-colleges.png
+shot-02-syllabus.png        shot-14-attendance.png
+shot-03-results.png         shot-15-routine.png
+shot-04-tools.png           shot-16-holidays.png
+shot-05-more.png            shot-17-data.png
+shot-06-pyqs.png            shot-18-wifi.png
+shot-07-notices.png         shot-19-profile.png
+shot-08-calculator.png      shot-20-settings.png
+shot-09-rank.png            shot-21-notifications.png
+shot-10-merit.png           shot-22-feedback.png
+shot-11-battle.png          shot-23-about.png
+shot-12-students.png
 manifest.txt                logs/shots.log
 ```
 

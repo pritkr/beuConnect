@@ -19,70 +19,153 @@ import Icon from "./Icon.astro";
 
 <style>
 	.theme-toggle {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
+		display: inline-grid;
+		grid-template-areas: "icon";
+		place-items: center;
 		width: 2.1rem;
 		height: 2.1rem;
 		padding: 0;
-		border: 1px solid var(--line);
+		border: 1px solid var(--line-field);
 		border-radius: var(--r);
 		background: transparent;
 		color: var(--muted);
 		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
 	}
 
-	.theme-toggle:hover {
-		border-color: var(--line-strong);
-		background: var(--surface);
-		color: var(--paper);
+	@media (hover: hover) and (pointer: fine) {
+		.theme-toggle:hover {
+			border-color: var(--line-strong);
+			background: var(--surface);
+			color: var(--paper);
+		}
+	}
+
+	/* Both glyphs share one cell, so the swap is a cross-fade in place rather
+	   than the button changing width or blinking between two icons. */
+	@media (pointer: coarse) {
+		.theme-toggle {
+			width: var(--tap);
+			height: var(--tap);
+		}
 	}
 
 	.theme-slot {
 		display: flex;
+		grid-area: icon;
+		transition:
+			opacity 300ms cubic-bezier(0.2, 0, 0, 1),
+			scale 300ms cubic-bezier(0.2, 0, 0, 1),
+			filter 300ms cubic-bezier(0.2, 0, 0, 1);
 	}
 
-	.theme-slot-light {
-		display: none;
-	}
-
+	.theme-slot-dark,
 	:global([data-theme="light"]) .theme-slot-light {
-		display: flex;
+		opacity: 1;
+		scale: 1;
+		filter: blur(0);
 	}
 
+	.theme-slot-light,
 	:global([data-theme="light"]) .theme-slot-dark {
-		display: none;
+		opacity: 0;
+		scale: 0.25;
+		filter: blur(4px);
+		pointer-events: none;
 	}
 </style>
 
 <script>
+	type Theme = "light" | "dark";
+
 	const root = document.documentElement;
 	const toggle = document.getElementById("themeToggle");
-	const meta = document.querySelector('meta[name="theme-color"]');
+	const themeColor = document.querySelector('meta[name="theme-color"]');
+	const schemeMeta = document.querySelector('meta[name="color-scheme"]');
+	const system = window.matchMedia("(prefers-color-scheme: dark)");
 
-	const paint = (theme: "light" | "dark") => {
+	const storedTheme = (): Theme | null => {
+		try {
+			const saved = localStorage.getItem("beu_theme");
+			return saved === "light" || saved === "dark" ? saved : null;
+		} catch {
+			return null;
+		}
+	};
+
+	/** What the OS currently asks for. An unset `beu_theme` means "follow it". */
+	const systemTheme = (): Theme => (system.matches ? "dark" : "light");
+
+	/** Repaint native UI alongside the page so scrollbars and controls match. */
+	const paint = (theme: Theme) => {
+		root.setAttribute("data-theme", theme);
+		schemeMeta?.setAttribute("content", theme);
+		themeColor?.setAttribute("content", theme === "light" ? "#f6f2e8" : "#151b18");
 		toggle?.setAttribute(
 			"aria-label",
 			theme === "light" ? "Switch to dark theme" : "Switch to light theme",
 		);
-		meta?.setAttribute("content", theme === "light" ? "#f6f2e8" : "#0c1310");
+	};
+
+	const apply = (theme: Theme) => {
+		// A theme flip is a repaint, not a movement: freeze every transition
+		// except the toggle's own cross-fade so the page swaps palettes at once
+		// instead of cross-fading for a quarter of a second.
+		const freeze = document.createElement("style");
+		freeze.textContent =
+			"html.theme-switching *:not(.theme-toggle):not(.theme-toggle *){transition:none !important}";
+		document.head.append(freeze);
+		root.classList.add("theme-switching");
+
+		paint(theme);
+		// Flush the recolour while transitions are still frozen.
+		void document.body.offsetHeight;
+
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => {
+				root.classList.remove("theme-switching");
+				freeze.remove();
+			});
+		});
+
+		// Iframes and runtime-built markup listen for this instead of guessing.
+		window.dispatchEvent(new CustomEvent("beu:theme", { detail: { theme } }));
 	};
 
 	paint(root.getAttribute("data-theme") === "light" ? "light" : "dark");
 
 	toggle?.addEventListener("click", () => {
-		const next =
+		const next: Theme =
 			root.getAttribute("data-theme") === "light" ? "dark" : "light";
-		root.setAttribute("data-theme", next);
+
+		/* Two states, three settings: the toggle is a temporary override, so
+		   landing back on the value the OS already wants clears the override
+		   instead of pinning it. Otherwise the reader could never return to
+		   following their system again. */
 		try {
-			localStorage.setItem("beu_theme", next);
+			if (next === systemTheme()) {
+				localStorage.removeItem("beu_theme");
+			} else {
+				localStorage.setItem("beu_theme", next);
+			}
 		} catch {
 			/* private mode: the choice just does not persist */
 		}
-		paint(next);
-		// Iframes and runtime-built markup listen for this instead of guessing.
-		window.dispatchEvent(
-			new CustomEvent("beu:theme", { detail: { theme: next } }),
-		);
+
+		apply(next);
+	});
+
+	/* Another tab flipped the theme. */
+	window.addEventListener("storage", (event) => {
+		if (event.key !== "beu_theme" && event.key !== null) return;
+		const theme = storedTheme() ?? systemTheme();
+		if (theme !== root.getAttribute("data-theme")) apply(theme);
+	});
+
+	/* The OS switched schemes while no override is set. A stored override is a
+	   decision and must survive the OS changing (it often follows a schedule). */
+	system.addEventListener("change", () => {
+		if (storedTheme()) return;
+		apply(systemTheme());
 	});
 </script>

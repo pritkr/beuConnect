@@ -1,0 +1,34 @@
+---
+/**
+ * The GA4 tag, and the reason it is a component rather than two lines in
+ * `Layout.astro`: when `PUBLIC_GA_MEASUREMENT_ID` is unset (local dev, a fork,
+ * a preview build) nothing is emitted at all, so no request leaves the page and
+ * no third-party script is downloaded for no reason.
+ */
+import { GA_MEASUREMENT_ID } from "../lib/analytics";
+
+const measurementId = GA_MEASUREMENT_ID;
+---
+
+{
+	measurementId && (
+		<>
+			<script is:inline define:vars={{ measurementId }}>
+				window.dataLayer = window.dataLayer || [];
+				function gtag() {
+					window.dataLayer.push(arguments);
+				}
+				window.gtag = gtag;
+				gtag("js", new Date());
+				// The page_view is sent by the tracker with feature dimensions and a
+				// query-free page_location; the automatic one would leak `?reg=`.
+				gtag("config", measurementId, { send_page_view: false });
+			</script>
+			<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} />
+			<script>
+				import { initAnalytics } from "../lib/analytics";
+				initAnalytics();
+			</script>
+		</>
+	)
+}

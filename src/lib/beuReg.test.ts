@@ -1,26 +1,30 @@
-import { describe, expect, test } from "vitest";
-
+import { describe, expect, it } from "vitest";
 import { inferCurrentSemester } from "./beuReg";
 
-/** October 2026 — the middle of the odd semester that began in July. */
-const OCTOBER_2026 = new Date(2026, 9, 29);
+const autumn = new Date("2026-10-28T00:00:00Z");
+const spring = new Date("2026-03-01T00:00:00Z");
 
 describe("inferCurrentSemester", () => {
-	test("counts sessions from the batch's own first semester", () => {
-		expect(inferCurrentSemester(2026, OCTOBER_2026)).toBe(1);
-		expect(inferCurrentSemester(2025, OCTOBER_2026)).toBe(3);
-		expect(inferCurrentSemester(2023, OCTOBER_2026)).toBe(7);
+	it("puts the 2024 batch in semester 4 this autumn, because its session started in January", () => {
+		expect(inferCurrentSemester(2024, autumn)).toBe(4);
 	});
 
-	test("the 2024 batch started in January 2025, a session late", () => {
-		expect(inferCurrentSemester(2024, OCTOBER_2026)).toBe(4);
-		expect(inferCurrentSemester(2024, new Date(2025, 0, 15))).toBe(1);
-		expect(inferCurrentSemester(2024, new Date(2025, 11, 20))).toBe(2);
+	it("keeps the 2024 batch in semester 3 last spring", () => {
+		expect(inferCurrentSemester(2024, spring)).toBe(3);
 	});
 
-	test("never runs past semester 8 or below 1", () => {
-		expect(inferCurrentSemester(2019, OCTOBER_2026)).toBe(8);
-		expect(inferCurrentSemester(2030, OCTOBER_2026)).toBe(1);
-		expect(inferCurrentSemester(Number.NaN, OCTOBER_2026)).toBe(1);
+	it("puts a July-started batch in semester 1 in its first autumn", () => {
+		expect(inferCurrentSemester(2026, autumn)).toBe(1);
+	});
+
+	it("advances every other batch on the July cycle", () => {
+		expect(inferCurrentSemester(2023, autumn)).toBe(7);
+		expect(inferCurrentSemester(2025, autumn)).toBe(3);
+	});
+
+	it("never leaves the 1-8 range", () => {
+		expect(inferCurrentSemester(2020, autumn)).toBe(8);
+		expect(inferCurrentSemester(2027, autumn)).toBe(1);
+		expect(inferCurrentSemester(Number.NaN, autumn)).toBe(1);
 	});
 });

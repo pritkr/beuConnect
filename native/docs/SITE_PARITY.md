@@ -1,10 +1,10 @@
 # Site ↔ native parity
 
-Snapshot: **2026-10-31** · site `https://beu.prit.eu.org` · app `native/`
+Snapshot: **2026-10-31**, re-checked 2026-11-18 · site
+`https://beu.prit.eu.org` · app `native/`
 Site side read from `src/pages/**`: **42 files — 33 page files + 9 API
-endpoints**. App side re-counted from `src/app/registry.tsx` + every feature
-module on 2026-10-31: **61 registered routes** across thirteen modules
-(including the first-run `onboarding`), plus the shell-owned `more` screen.
+endpoints**. App side: `src/app/registry.tsx` and the feature modules are the
+count; do not restate a route total here.
 
 Statuses: **done** = the feature exists natively and does the same job ·
 **partial** = exists, one capability is missing or narrowed ·
@@ -14,13 +14,13 @@ Statuses: **done** = the feature exists natively and does the same job ·
 | # | Site feature | Native route | Status | Implemented in |
 |---:|---|---|---|---|
 | 1 | `/` home: tiles, latest notices | `home` | done | `features/home/index.tsx` |
-| 2 | `/result`: lookup, BEU page in an **iframe** | `results` + `results.portal` (linked); `results.web` registered but unlinked, `docs/BLOCKERS.md` B5 | done | `features/results/lookup.tsx`, `portal.tsx`, `web.tsx` |
+| 2 | `/result`: lookup, BEU page in an **iframe** | `results` + `results.portal` (linked); `results.web` linked from the portal's error phase | done | `features/results/lookup.tsx`, `portal.tsx`, `web.tsx` |
 | 3 | `/result-table`: branch roster ranked by CGPA | `results.table` | done | `features/results/table.tsx` |
 | 4 | `/rank`: one student's branch + college standing | `results.rank` | done | `features/results/rank.tsx` |
 | 5 | `/merit-list`: toppers by branch/semester | `results.merit` | done | `features/results/merit.tsx` |
 | 6 | `/battle`: 1v1 result comparison | `results.battle` | done | `features/results/battle.tsx` |
 | 7 | `/calculator`: SGPA, CGPA, target planner | `tools.calculator` | done | `features/tools/index.tsx` |
-| 8 | `/attendance`: subjects, target %, safe-bunk maths | `tools.attendance` | partial — no JSON file import/export; counts sync from the GECS register | `features/tools/index.tsx`, `features/tools/gecs.ts` |
+| 8 | `/attendance`: subjects, target %, safe-bunk maths | `tools.attendance` | done — counts sync from the GECS register, and the ledger exports/imports the site's own JSON file, so a phone and the website can be kept in step | `features/tools/index.tsx`, `gecs.ts`, `attendance-io.ts` |
 | 9 | `/routine`: timetable resolved from a registration number | `tools.routine` | done | `features/tools/index.tsx` |
 | 10 | `/holidays`: 2025 + 2026 calendar **images** | — | not planned | superseded by #11 |
 | 11 | `/holidays-calendar`: interactive 2026 calendar | `tools.holidays` | done | `features/tools/index.tsx` |
@@ -29,7 +29,7 @@ Statuses: **done** = the feature exists natively and does the same job ·
 | 14 | `/notice-board`: curated static notices | `notices` (merged feed) | done | `features/notices/api.ts` |
 | 15 | `/announcements`, `/[slug]`: editorial posts | `notices.announcements`, `notices.post` | done | `features/notices/index.tsx` |
 | 16 | `/data-browser`: filter/sort/export any published dataset | `data`, `data.table` | done | `features/pyqs/data.tsx`, `data-table.tsx` |
-| 17 | `/listofstudents`, `/[college]`, `/gecs`, `/gecscv`: college directory | `students`, `.colleges`, `.college`, `.branch`, `.student`, `.leads`; `data` | partial — More opens the GEC Sheikhpura register, and `students.colleges` names every BEU college with the register first and "No register" on the rest; another college's own roster is reachable only as a dataset | `features/students/index.tsx`, `features/pyqs/data.tsx` |
+| 17 | `/listofstudents`, `/[college]`, `/gecs`, `/gecscv`: college directory | `students`, `.colleges`, `.college`, `.branch`, `.student`, `.leads`; `data` | done — `students.colleges` names every BEU college; GEC Sheikhpura opens its bundled register, and every college BEU has published a roster for opens batch → branch → semester chips and fetches that roster on demand (cached a week). A college with no published roster says so and offers no button. See `docs/DATA_BREADTH.md` §3 | `features/students/index.tsx`, `colleges.tsx`, `remote-college.tsx`, `features/pyqs/data.tsx` |
 | 18 | `/syllabus`, `/[branch]`, `/[branch]/[sem]`, `/x` | `syllabus`, `.subject`, `.search`, `.saved` | done | `features/syllabus/index.tsx` |
 | 19 | `/gate-syllabus`, `/[paper]`: 30 papers | `syllabus.gate` | done | `features/syllabus/index.tsx` |
 | 20 | `/gate-pyqs`, `/[branch]`: GATE PDFs | `pyqs.gate` | done | `features/pyqs/gate.tsx` |
@@ -47,7 +47,7 @@ Statuses: **done** = the feature exists natively and does the same job ·
 | 32 | — (native-only) | `settings.offline` | done | `features/offline/index.tsx` |
 | 33 | — (native-only) | `onboarding`: one registration number resolves a name before a profile exists | done | `features/onboarding/index.tsx` |
 
-Counts: **26 done · 3 partial · 1 different-by-design · 3 not planned**.
+Counts: **28 done · 1 partial · 1 different-by-design · 3 not planned**.
 
 ## 1. The result path: the captcha page
 
@@ -64,9 +64,10 @@ GET https://beu.prit.eu.org/api/result?reg=…&sem=…&format=json
 ```
 
 The native app tries this phone's fresh saved copy first (under ten minutes),
-then the live fast path, then any saved copy, then the published `wide_*.csv`
-row. When all four miss, the error state offers **`results.portal`**, and lookup
-and battle push that route.
+then the live fast path, then any saved copy, then the shared corpus, then the
+published `wide_*.csv` row. When all five miss, the error state offers
+**`results.portal`**, and lookup and battle push that route. The portal's own
+error state offers `results.web` as the second door.
 
 BEU's result flow is three Angular routes in one document:
 

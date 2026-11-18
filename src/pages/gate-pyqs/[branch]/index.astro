@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 import Layout from '../../../layouts/Layout.astro';
+import BranchIcon from '../../../components/BranchIcon.astro';
 import Icon from '../../../components/Icon.astro';
 import pyqData from '../../../data/gate-pyqs.json';
 import {
@@ -29,6 +30,7 @@ export function getStaticPaths() {
 }
 
 const { branchName, papers } = Astro.props;
+const branchCode = Astro.params.branch ?? '';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -36,7 +38,7 @@ const base = import.meta.env.BASE_URL;
   <header class="page-head">
     <div>
       <p class="back"><a href={`${base}gate-pyqs`}>GATE PYQs</a></p>
-      <h1>{branchName}</h1>
+      <h1><BranchIcon branch={branchCode} size="0.7em" />{branchName}</h1>
       <p class="meta num">{papers.length} papers</p>
     </div>
   </header>
@@ -147,13 +149,15 @@ const base = import.meta.env.BASE_URL;
     text-decoration: none;
   }
 
-  .back a:hover {
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .back a:hover {
+      color: var(--paper);
+    }
   }
 
   .pyq-wrapper {
     display: flex;
-    height: calc(100dvh - 12rem);
+    height: calc(100dvh - var(--header-h) - 8.4rem);
     min-height: 26rem;
     margin-top: var(--s4);
     overflow: hidden;
@@ -166,8 +170,13 @@ const base = import.meta.env.BASE_URL;
     width: 13rem;
     flex: 0 0 auto;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     border-right: 1px solid var(--line);
     background: var(--surface);
+    transition-property: transform, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: var(--ease-drawer);
   }
 
   .papers-grid {
@@ -194,9 +203,11 @@ const base = import.meta.env.BASE_URL;
     cursor: pointer;
   }
 
-  .paper-btn:hover {
-    border-color: var(--muted);
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .paper-btn:hover {
+      border-color: var(--muted);
+      color: var(--paper);
+    }
   }
 
   .paper-btn.active {
@@ -255,8 +266,10 @@ const base = import.meta.env.BASE_URL;
     color: var(--faint);
   }
 
-  .download-btn:hover {
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .download-btn:hover {
+      color: var(--paper);
+    }
   }
 
   .iframe-container {
@@ -305,14 +318,16 @@ const base = import.meta.env.BASE_URL;
     cursor: pointer;
   }
 
-  .mobile-back-btn:hover {
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .mobile-back-btn:hover {
+      color: var(--paper);
+    }
   }
 
   @media (max-width: 767px) {
     .pyq-wrapper {
       position: relative;
-      height: calc(100dvh - 11rem);
+      height: calc(100dvh - var(--header-h) - 7.4rem);
     }
 
     .sidebar {
@@ -325,6 +340,8 @@ const base = import.meta.env.BASE_URL;
 
     .sidebar.mobile-hidden {
       transform: translateX(-100%);
+      /* Off-canvas must also leave the tab order, or Tab walks into a hidden panel. */
+      visibility: hidden;
     }
 
     .viewer-area {
@@ -333,7 +350,7 @@ const base = import.meta.env.BASE_URL;
       z-index: 1;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.2s ease;
+      transition: opacity 200ms var(--ease-out);
     }
 
     .viewer-area.mobile-visible {

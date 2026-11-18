@@ -133,8 +133,10 @@ import Layout from "../layouts/Layout.astro";
 			cursor: pointer;
 		}
 
-		.copy-link:hover {
-			color: var(--paper);
+		@media (hover: hover) and (pointer: fine) {
+			.copy-link:hover {
+				color: var(--paper);
+			}
 		}
 
 		details {
@@ -150,6 +152,7 @@ import Layout from "../layouts/Layout.astro";
 
 		pre {
 			overflow-x: auto;
+			overscroll-behavior-x: contain;
 			margin: var(--s3) 0 0;
 			padding: var(--s3);
 			background: var(--surface-2);
@@ -198,6 +201,9 @@ import Layout from "../layouts/Layout.astro";
 				link.href = code;
 				rawCode.textContent = code;
 				resultArea.removeAttribute("hidden");
+				// Never the registration number or password in the payload: this is a
+				// login credential, and the only useful fact is that someone used it.
+				window.beuTrack?.("wifi_login", { action: "generate" });
 			});
 
 			form?.addEventListener("submit", (event) => event.preventDefault());
@@ -206,6 +212,7 @@ import Layout from "../layouts/Layout.astro";
 				event.preventDefault();
 				await navigator.clipboard.writeText(rawCode.textContent ?? "");
 				copyBtn.textContent = "Copied";
+				window.beuTrack?.("wifi_login", { action: "copy" });
 			});
 		});
 	</script>

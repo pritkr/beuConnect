@@ -1,5 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import BranchIcon from "../../../components/BranchIcon.astro";
 import collegesData from "../../../data/colleges.json";
 import configData from "../../../assets/data/config.json";
 import { allStudents } from "../../../lib/students/register";
@@ -246,8 +247,8 @@ const totalStudents = sortedSessions.reduce(
     <>
       <header class="page-head">
         <div>
-          <p class="back"><a href={import.meta.env.BASE_URL + "listofstudents/"} style="view-transition-name:los">Student registry</a></p>
-          <h1 style={`view-transition-name:${collegeData.abbreviations}`}>{collegeData.Name}</h1>
+          <p class="back"><a href={import.meta.env.BASE_URL + "listofstudents/"}>Student registry</a></p>
+          <h1>{collegeData.Name}</h1>
           <p class="meta num">{totalStudents} students · {sortedSessions.length} batches</p>
         </div>
       </header>
@@ -277,7 +278,7 @@ const totalStudents = sortedSessions.reduce(
                       return (
                         <details class="branch">
                           <summary class="branch-summary">
-                            <span>{branchInfo.name}</span>
+                            <span><BranchIcon branch={branchInfo.code} size={14} />{branchInfo.name}</span>
                             <span class="num count">{students.length}</span>
                           </summary>
 
@@ -328,8 +329,10 @@ const totalStudents = sortedSessions.reduce(
     text-decoration: none;
   }
 
-  .back a:hover {
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .back a:hover {
+      color: var(--paper);
+    }
   }
 
   .sessions {
@@ -380,6 +383,7 @@ const totalStudents = sortedSessions.reduce(
 
   .table-wrap {
     overflow-x: auto;
+    overscroll-behavior-x: contain;
     margin-bottom: var(--s3);
     border: 1px solid var(--line);
     border-radius: var(--r);
@@ -415,8 +419,10 @@ const totalStudents = sortedSessions.reduce(
     border-bottom: 0;
   }
 
-  tbody tr:hover {
-    background: var(--surface-2);
+  @media (hover: hover) and (pointer: fine) {
+    tbody tr:hover {
+      background: var(--surface-2);
+    }
   }
 
   .col-index {

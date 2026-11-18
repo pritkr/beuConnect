@@ -55,15 +55,18 @@ const BRANCH_MAP: Record<string, string> = {
 let collegeNames: Record<string, string> = {};
 
 export async function initFilters(onFilterSubmit: (state: AppState) => void) {
-    const dbBatch = document.getElementById("dbBatch") as HTMLSelectElement;
-    const dbBranch = document.getElementById("dbBranch") as HTMLSelectElement;
-    const dbSemester = document.getElementById("dbSemester") as HTMLSelectElement;
-    const dbCollege = document.getElementById("dbCollege") as HTMLSelectElement;
-    const dbForm = document.getElementById("dbFilterForm") as HTMLFormElement;
+    const dbBatch = document.getElementById("dbBatch") as unknown as HTMLSelectElement;
+    const dbBranch = document.getElementById("dbBranch") as unknown as HTMLSelectElement;
+    const dbSemester = document.getElementById("dbSemester") as unknown as HTMLSelectElement;
+    const dbCollege = document.getElementById("dbCollege") as unknown as HTMLSelectElement;
+    const dbForm = document.getElementById("dbFilterForm") as unknown as HTMLFormElement;
 
     // Load College Names config
     try {
-        const fetchColleges = await fetch('/src/data/colleges.json').then(r => r.json());
+        const fetchColleges = (await fetch('/src/data/colleges.json').then((r) => r.json())) as Array<{
+            CollegeCode: string;
+            Name: string;
+        }>;
         for (const col of fetchColleges) {
             collegeNames[col.CollegeCode] = col.Name;
         }

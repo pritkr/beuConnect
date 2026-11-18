@@ -8,20 +8,21 @@ build: nsh `v0.6.0` (`5541637`), the first tagged release with
 
 | | bytes | share |
 |---|---|---|
-| APK file | 17,733,692 | 100% |
-| `lib/arm64-v8a/libnsh.so` (deflated) | 13,486,129 | 76.0% |
-| `classes.dex` (deflated) | 3,127,497 | 17.6% |
-| `assets/nsh/bundle.nshc` (deflated) | 724,823 | 4.1% |
+| APK file | 17,754,172 | 100% |
+| `lib/arm64-v8a/libnsh.so` (deflated) | 13,568,348 | 76.4% |
+| `classes.dex` (deflated) | 3,051,587 | 17.2% |
+| `assets/nsh/bundle.nshc` (deflated) | 732,252 | 4.1% |
 | `holidays-2026.png` (deflated) | 87,237 | 0.5% |
-| icons, font, manifest, `resources.arsc`, signature | 284,338 | 1.6% |
-| zip directory + signing block | 23,691 | 0.1% |
+| `resources.arsc` (deflated) | 162,604 | 0.9% |
+| icons, font, manifest, signature | 124,641 | 0.7% |
+| zip directory + signing block | 27,503 | 0.2% |
 
-Unpacked it is 43.77 MB (32.85 MB of that is the runtime), which is what a
+Unpacked it is 43.87 MB (32.85 MB of that is the runtime), which is what a
 device writes on install; downloading it takes ≈7.1 s at 20 Mbps.
 
 The runtime is no longer a fixed prebuilt. Since `longbridge/nsh#2060` — first
 tagged in `v0.6.0` — `nsh package --target android` builds `libnsh.so` from the
-features the bundle can reach, so this library is 32.85 MB stripped and 13.49 MB
+features the bundle can reach, so this library is 32.85 MB stripped and 13.57 MB
 deflated instead of 0.5.0's 48.86 / 19.95 MB. The same app on the 0.5.0 prebuilt
 was 24,143,932 B, so the trim is worth 6,426,624 B (−26.6%). `v0.6.0`'s runtime
 is 216,528 B larger deflated than the `main` commit first measured here
@@ -108,8 +109,8 @@ of embedded text is ≈37 KB of APK, and a new release to fix a typo in it.
 
 | budget | limit | current | headroom |
 |---|---|---|---|
-| APK file | 18,500,000 B | 17,733,692 B (95.9%) | 766,308 B |
-| bundle bytecode, as shipped | 2,350,000 B | 1,948,630 B (82.9%) | 401,370 B |
+| APK file | 18,500,000 B | 17,754,172 B (96.0%) | 745,828 B |
+| bundle bytecode, as shipped | 2,350,000 B | 1,973,697 B (84.0%) | 376,303 B |
 
 The APK ceiling moved to **18,500,000 B** on 2026-11-15, with the trimmed
 runtime:

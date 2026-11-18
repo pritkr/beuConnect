@@ -1,5 +1,6 @@
 ---
 import Icon from "./Icon.astro";
+import { featureOf } from "../lib/analytics";
 
 const base = import.meta.env.BASE_URL;
 
@@ -16,8 +17,8 @@ const groups = [
 	{
 		title: "Results",
 		items: [
-			{ href: "result", label: "Check result", icon: "search" },
 			{ href: "result-table", label: "Result tables", icon: "table" },
+			{ href: "result", label: "Check result", icon: "search" },
 			{ href: "merit-list", label: "Merit list", icon: "trophy" },
 			{ href: "data-browser", label: "Data browser", icon: "database" },
 			{ href: "rank", label: "University rank", icon: "award" },
@@ -33,6 +34,16 @@ const groups = [
 			{ href: "notices", label: "Notices", icon: "bell" },
 			{ href: "holidays", label: "Holidays", icon: "calendar" },
 			{ href: "listofstudents", label: "Student list", icon: "users" },
+		],
+	},
+	{
+		title: "App",
+		items: [
+			{
+				href: "https://github.com/pritkr/beuconnect/releases/latest/download/BEUConnect.apk",
+				label: "Android app",
+				icon: "download",
+			},
 		],
 	},
 ] as const;
@@ -64,6 +75,27 @@ const figures = [
 					))
 				}
 			</ul>
+
+			<div class="intro-actions">
+				<a
+					class="btn btn-primary"
+					href={`${base}result-table`}
+					data-ga="feature_open"
+					data-ga-params={JSON.stringify({
+						feature: featureOf("/result-table"),
+						source: "hero",
+					})}
+				>
+					Open result table
+					<Icon name="arrow-right" size={15} />
+				</a>
+				<a
+					class="btn btn-ghost"
+					href={`${base}result`}
+					data-ga="feature_open"
+					data-ga-params={JSON.stringify({ feature: featureOf("/result"), source: "hero" })}
+				>Check result</a>
+			</div>
 		</div>
 
 		<aside class="card" aria-label="Your registration number">
@@ -112,10 +144,21 @@ const figures = [
 				</p>
 
 				<div class="card-actions">
-					<a id="dash-syllabus-link" class="btn btn-primary" href={`${base}syllabus`}>
+					<a
+						id="dash-syllabus-link"
+						class="btn btn-primary"
+						href={`${base}syllabus`}
+						data-ga="feature_open"
+						data-ga-params={JSON.stringify({ feature: "syllabus", source: "dashboard" })}
+					>
 						Open syllabus
 					</a>
-					<a class="btn btn-ghost" href={`${base}result`}>Check result</a>
+					<a
+						class="btn btn-ghost"
+						href={`${base}result`}
+						data-ga="feature_open"
+						data-ga-params={JSON.stringify({ feature: "results", source: "dashboard" })}
+					>Check result</a>
 				</div>
 			</div>
 		</aside>
@@ -138,16 +181,29 @@ const figures = [
 						{group.title}
 					</h3>
 					<ul>
-						{group.items.map((item) => (
-							<li>
-								<a href={`${base}${item.href}`}>
-									<Icon name={item.icon} size={15} class="icon" />
-									<span class="row-label">{item.label}</span>
-									<span class="row-leader" aria-hidden="true" />
-									<Icon name="arrow-right" size={14} class="go" />
-								</a>
-							</li>
-						))}
+						{group.items.map((item) => {
+							const external = item.href.startsWith("http");
+							return (
+								<li>
+									<a
+										href={external ? item.href : `${base}${item.href}`}
+										target={external ? "_blank" : undefined}
+										rel={external ? "noopener" : undefined}
+										data-ga="feature_open"
+										data-ga-params={JSON.stringify({
+											feature: external ? "app" : featureOf(`/${item.href}`),
+											source: "home",
+											label: item.label,
+										})}
+									>
+										<Icon name={item.icon} size={15} class="icon" />
+										<span class="row-label">{item.label}</span>
+										<span class="row-leader" aria-hidden="true" />
+										<Icon name="arrow-right" size={14} class="go" />
+									</a>
+								</li>
+							);
+						})}
 					</ul>
 				</div>
 			))
@@ -161,8 +217,10 @@ const figures = [
 	   ruled texture is the only decoration on the site. */
 	.desk {
 		position: relative;
-		width: 100vw;
-		margin-inline: calc(50% - 50vw);
+		/* Span the scrollport, not 100vw — which counts the scrollbar and would
+		   push the band (and its centred column) past the right edge. */
+		width: calc(100vw - var(--sbw, 0px));
+		margin-inline: calc(50% - 50vw + var(--sbw, 0px) / 2);
 		border-top: 1px solid var(--line-strong);
 		border-bottom: 1px solid var(--line-strong);
 		background-color: var(--surface-2);
@@ -180,7 +238,7 @@ const figures = [
 		gap: var(--s7);
 		width: min(100% - 2.5rem, var(--max));
 		margin-inline: auto;
-		padding: var(--s7) 0 var(--s7);
+		padding: var(--s6) 0;
 	}
 
 	.kicker {
@@ -251,6 +309,18 @@ const figures = [
 		text-transform: uppercase;
 	}
 
+	.intro-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--s2);
+		margin-top: var(--s5);
+	}
+
+	.intro-actions .btn {
+		margin: 0;
+	}
+
 	.card {
 		margin-top: 1.7rem;
 		padding: var(--s5);
@@ -291,7 +361,7 @@ const figures = [
 		margin: 0;
 		padding: 0.5rem 0;
 		border: 0;
-		border-bottom: 1.5px solid var(--line-strong);
+		border-bottom: 1.5px solid var(--line-field);
 		border-radius: 0;
 		background: transparent;
 		box-shadow: none;
@@ -304,6 +374,7 @@ const figures = [
 
 	.card-field input:focus {
 		border-bottom-color: var(--accent);
+		box-shadow: 0 1px 0 0 var(--accent);
 		outline: none;
 	}
 
@@ -391,35 +462,6 @@ const figures = [
 		margin: 0;
 	}
 
-	/* The card swaps between "enter a number" and "your desk". Only after the
-	   visitor acts: a returning visitor's saved profile must not fade in on load. */
-	.card.is-live #profileEmpty,
-	.card.is-live #profileFilled {
-		transition:
-			opacity var(--dur-ui) var(--ease-out),
-			transform var(--dur-ui) var(--ease-out);
-	}
-
-	@starting-style {
-		.card.is-live #profileFilled:not([hidden]) {
-			opacity: 0;
-			transform: translateY(6px);
-		}
-
-		.card.is-live #profileEmpty:not([hidden]) {
-			opacity: 0;
-			transform: translateY(-4px);
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.card.is-live #profileEmpty,
-		.card.is-live #profileFilled {
-			transition-property: opacity;
-			transition-duration: 120ms !important;
-		}
-	}
-
 	.card-head {
 		display: flex;
 		align-items: baseline;
@@ -445,15 +487,17 @@ const figures = [
 		text-underline-offset: 0.2em;
 	}
 
-	.btn-link:hover {
-		color: var(--bad);
-		text-decoration-color: var(--bad);
+	@media (hover: hover) and (pointer: fine) {
+		.btn-link:hover {
+			color: var(--bad);
+			text-decoration-color: var(--bad);
+		}
 	}
 
 	/* ---- Tools ------------------------------------------------------------ */
 
 	.tools {
-		padding: var(--s7) 0 0;
+		padding: var(--s6) 0 0;
 	}
 
 	.tools-head {
@@ -487,7 +531,7 @@ const figures = [
 	.index {
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 0 var(--s6);
+		gap: var(--s5) var(--s6);
 	}
 
 	.index-group h3 {
@@ -532,6 +576,7 @@ const figures = [
 		font-size: 0.92rem;
 		font-weight: 500;
 		text-decoration: none;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	.index-group .icon {
@@ -556,33 +601,36 @@ const figures = [
 	.index-group .go {
 		flex: none;
 		color: var(--line-strong);
-		transition:
-			color 120ms ease,
-			transform 120ms ease;
+		transition: color 120ms ease;
 	}
 
-	.index-group a:hover {
+	@media (hover: hover) and (pointer: fine) {
+		.index-group a:hover {
+			color: var(--accent);
+		}
+
+		.index-group a:hover .icon,
+		.index-group a:hover .go {
+			color: var(--accent);
+		}
+
+		.index-group a:hover .row-leader {
+			border-bottom-color: var(--accent-line);
+		}
+	}
+
+	/* Touch has no hover row, so the tap confirms on its own. */
+	.index-group a:active,
+	.index-group a:active .icon,
+	.index-group a:active .go {
 		color: var(--accent);
-	}
-
-	.index-group a:hover .icon,
-	.index-group a:hover .go {
-		color: var(--accent);
-	}
-
-	.index-group a:hover .go {
-		transform: translateX(2px);
-	}
-
-	.index-group a:hover .row-leader {
-		border-bottom-color: var(--accent-line);
 	}
 
 	@media (max-width: 900px) {
 		.desk-inner {
 			grid-template-columns: 1fr;
 			gap: var(--s5);
-			padding: var(--s6) 0 var(--s6);
+			padding: var(--s5) 0;
 		}
 
 		.intro-copy h1 {
@@ -632,7 +680,9 @@ const figures = [
 
 <script>
 	import { inferCurrentSemester } from "../lib/beuReg";
+	import { EVENTS, track } from "../lib/analytics";
 	import { fetchStudent } from "../lib/students/client";
+	import { branchIconSvg } from "../utils/branchIcons";
 	import {
 		clearProfile,
 		getProfile,
@@ -644,7 +694,6 @@ const figures = [
 	const emptyState = document.getElementById("profileEmpty");
 	const filledState = document.getElementById("profileFilled");
 	const form = document.getElementById("heroProfileForm") as HTMLFormElement | null;
-	const card = document.querySelector("aside.card");
 	const input = document.getElementById("heroRegInput") as HTMLInputElement | null;
 	const errorEl = document.getElementById("heroRegError");
 	const nameEl = document.getElementById("dash-name");
@@ -659,21 +708,49 @@ const figures = [
 	/** Bumped per lookup so a slow answer never overwrites a newer number. */
 	let lookupToken = 0;
 
-	const render = (profile: BEUProfile | null) => {
+	/** Read from the stylesheet so there is one curve, not two. */
+	const EASE_OUT =
+		getComputedStyle(document.documentElement).getPropertyValue("--ease-out").trim() ||
+		"cubic-bezier(0.23, 1, 0.32, 1)";
+
+	/**
+	 * The card fills in place: the panel that replaces the other gets a short
+	 * rise. Only user actions animate — the saved profile paints on every visit
+	 * and must not move under someone who opens the page daily.
+	 */
+	const reveal = (panel: HTMLElement | null) => {
+		if (!panel || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+		panel.animate(
+			[
+				{ opacity: 0, transform: "translateY(4px)" },
+				{ opacity: 1, transform: "none" },
+			],
+			{ duration: 200, easing: EASE_OUT },
+		);
+	};
+
+	const render = (profile: BEUProfile | null, options: { animate?: boolean } = {}) => {
 		if (!emptyState || !filledState) return;
 
 		if (!profile || (!profile.branchPath && !profile.name && !profile.currentSem)) {
+			const wasFilled = !filledState.hidden;
 			emptyState.hidden = false;
 			filledState.hidden = true;
+			if (options.animate && wasFilled) reveal(emptyState);
 			return;
 		}
 
+		const wasEmpty = !emptyState.hidden;
 		emptyState.hidden = true;
 		filledState.hidden = false;
 
 		const name = (profile.name ?? "").replace(/\s+/g, " ").trim();
 		if (nameEl) nameEl.textContent = name || "Student";
-		if (branchEl) branchEl.textContent = profile.branchName ?? "Branch";
+		if (branchEl) {
+			// The mark rides with the name, so re-rendering the card keeps both.
+			const mark = branchIconSvg(profile.branchName ?? "", 13);
+			branchEl.innerHTML = `${mark}${(profile.branchName ?? "Branch").replace(/[&<>"]/g, (ch) => `&#${ch.charCodeAt(0)};`)}`;
+		}
 		if (semEl) semEl.textContent = profile.currentSem ? String(profile.currentSem) : "—";
 
 		if (sgpaEl) {
@@ -690,6 +767,9 @@ const figures = [
 		if (syllabusLink && profile.branchPath && profile.currentSem) {
 			syllabusLink.href = `${base}syllabus/${profile.branchPath}/${profile.currentSem}`;
 		}
+
+		// Revealed once the panel is filled, so the rise carries real content.
+		if (options.animate && wasEmpty) reveal(filledState);
 	};
 
 	/**
@@ -771,7 +851,6 @@ const figures = [
 
 		if (errorEl) errorEl.textContent = "";
 		input.removeAttribute("aria-invalid");
-		card?.classList.add("is-live");
 
 		const previous = getProfile();
 		if (previous?.regNo === parsed.regNo) {
@@ -788,7 +867,8 @@ const figures = [
 		}
 
 		const profile = getProfile();
-		render(profile);
+		render(profile, { animate: true });
+		track(EVENTS.profileSave, { source: "hero" });
 		if (profile?.regNo) void resolveIdentity(profile.regNo);
 	});
 
@@ -823,8 +903,7 @@ const figures = [
 		if (!confirm("Remove your saved branch and semester from this device?")) return;
 		lookupToken += 1;
 		clearProfile();
-		card?.classList.add("is-live");
-		render(null);
+		render(null, { animate: true });
 		if (input) input.value = "";
 	});
 

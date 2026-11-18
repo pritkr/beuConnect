@@ -15,10 +15,10 @@ closed.
 | # | Play requirement | In this tree | Fix |
 |---|---|---|---|
 | 1 | Target API 36 for new apps and updates since 2026-08-31 | `build-android-host.sh` and `bundle-android.sh` link `--target-sdk-version 36` against `platforms/android-36` | none — landed 2026-10-28 |
-| 2 | New apps ship as an **AAB** | `scripts/bundle-android.sh` builds, signs and validates `.nsh/out/BEUConnect-<version>.aab` with bundletool; `--install` proves the splits launch | run it on a clean tree (§3.2) |
+| 2 | New apps ship as an **AAB** | `scripts/bundle-android.sh` builds, signs and validates `.nsh/out/BEUConnect-<version>.aab` with bundletool; `--install` proves the splits launch | built 2026-11-18: `.nsh/out/BEUConnect-1.3.3.aab`, 17,690,529 B, versionCode 14 (§3.2) |
 | 3 | No self-update or link to an APK outside Play (Device & Network Abuse) | `App.play.tsx` sets the Play channel before boot; Share and Update return `PLAY_LISTING`, so the AAB contains no off-Play path | build the AAB with `bundle-android.sh`, never the APK entry (§3.3) |
 | 4 | No third-party personal data published or bundled | the APK carries only `reg\|name\|roll`; the repo roster is identity + affiliation only as of 2026-10-30 (contact, DOB, gender and caste are dropped by the generator) | §3.4 |
-| 5 | Privacy policy, Data safety, content rating, 512 px icon, feature graphic, screenshots | none of it exists | §4 |
+| 5 | Privacy policy, Data safety, content rating, 512 px icon, feature graphic, screenshots | privacy policy is live; the icon, feature graphic and five 1080 px screenshots are built; Data safety answers are written; neither form is submitted | §4 |
 
 Already compliant, do not re-litigate: `libnsh.so` LOAD segments are
 `p_align 0x4000`, so the 16 KB page-size rule is met; the package is arm64-only
@@ -137,6 +137,13 @@ dumps `targetSdkVersion 36`, `versionCode 3`, `versionName 1.2.0` and the base
 module's res, dex, assets and `lib/arm64-v8a/libnsh.so`, and its split APKs
 install over the signed app and launch.
 
+Rebuilt on 2026-11-18 for 1.3.3 / versionCode 14: `.nsh/out/BEUConnect-1.3.3.aab`,
+**17,690,529 B**, signed with the upload key and validated. That run also fixed
+a link gap the APK path did not have: `aapt2` now compiles every
+`android/libs/*.aar` resource archive, because the manifest reads
+`@integer/google_play_services_version` from play-services-basement and the Play
+link previously passed only `android/res`.
+
 `bundletool` is a jar pinned at `1.18.3` and cached under `~/.nsh/tools/`. The
 manifest keeps `extractNativeLibs="true"` — identical to the shipping APK, one
 less variable. Revisit `false` (uncompressed, aligned libs) only after the first
@@ -219,8 +226,8 @@ Two items remain before the repository is linked from the listing:
 
 ### 3.5 Version and signing
 
-- `nsh.json` → `"version": "1.2.0", "build": 3`. versionCode is monotonic
-  forever; 3 clears the sideloaded build 2.
+- `nsh.json` → `"version": "1.3.3", "build": 14`. versionCode is monotonic
+  forever; 14 clears the last build 13.
 - Mirror both in `src/lib/app-info.ts` (it is not generated).
 - **Play App Signing, existing key as the app-signing key.** `scripts/signing.sh`
   already produced `~/.config/beuconnect/beuconnect-release.jks`; upload that in
@@ -236,17 +243,20 @@ Two items remain before the repository is linked from the listing:
 
 ## 4. Store presence
 
-Needed before the first review, none of it in the tree:
+Status on 2026-11-18: the policy and the answer sheet are written, the icon,
+feature graphic and five screenshots are built, and the listing copy is in
+`fastlane/metadata/android/en-US/`. What is left is Console data entry, not an
+asset.
 
-| Asset / form | Spec | Source |
+| Asset / form | Spec | Status / source |
 |---|---|---|
-| Icon | 512×512 PNG, 32-bit | `./scripts/store-assets.sh` → `.nsh/out/play/icon-512.png`, from `icon.png` (1024²) |
-| Feature graphic | 1024×500 PNG | new, Ink & Ember palette |
-| Phone screenshots | 2–8, 1080 px wide | `./scripts/shots.sh` at 540×960, 2× density |
+| Icon | 512×512 PNG, 32-bit | **built** — `./scripts/store-assets.sh` → `.nsh/out/play/icon-512.png`, from `icon.png` (1024²) |
+| Feature graphic | 1024×500 PNG, no alpha | **built** — source `scripts/store/feature-graphic.html`, output `.nsh/out/play/feature-graphic-1024x500.png` (regeneration command in the HTML header) |
+| Phone screenshots | 2–8, 1080 px wide | **built** — five in `.nsh/out/play/screenshots/` at 1080×1688: home, syllabus, previous papers, notices, holidays. `SHOTS_ONLY=home,syllabus,pyqs,notices,tools.holidays SHOTS_WIDTH=540 SHOTS_HEIGHT=844 ./scripts/shots.sh` reproduces them (the host draws at 2×), then `magick <file> -background '#FBF8F4' -alpha remove -alpha off -define png:color-type=2 <file>` drops the alpha channel Play rejects. Never ship a screen that shows a student: `students`, `students.branch`, `results`, `results.rank` and the ticket screens are out, because they render a real registration number or name |
 | Tablet screenshots | optional | same sweep, wider |
 | Privacy policy | public URL | **live** — `https://beu.prit.eu.org/privacy/` (deployed 2026-10-31) |
-| Data safety | form | §4.1 |
-| Content rating | IARC questionnaire | Education, no UGC, no ads → everyone |
+| Data safety | form | answers in `docs/DATA_SAFETY.md`; **not entered in Play Console** |
+| Content rating | IARC questionnaire | Education, no UGC, no ads → everyone; **not submitted** |
 | App access | no login | declare "all functionality available without an account" |
 | Ads | none | declare none |
 | Target audience | 18+ | avoids the Families policy entirely |

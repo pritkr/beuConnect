@@ -28,7 +28,7 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 	<div class="table-shell">
 		<header class="page-head">
 			<div>
-				<h1 style="view-transition-name:restab">Result table</h1>
+				<h1>Result table</h1>
 			</div>
 		</header>
 
@@ -78,7 +78,7 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 
 		<div id="toppers" class="toppers" style="display:none;"></div>
 
-		<div id="results" style="display:none;"></div>
+		<div id="results"></div>
 	</div>
 
 </Layout>
@@ -90,7 +90,12 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 		sortRowsByCgpa, assignCgpaRanks, assignCollegeRanks 
 	} from "../lib/result-table/engine";
 	import type { NormalizedStudent } from "../lib/result-table/engine";
-	import { collegeOrder, pickOption, publishedSemester, tableDefaults } from "../lib/result-table/defaults";
+	import {
+		collegeOrder,
+		pickOption,
+		publishedSemester,
+		tableDefaults,
+	} from "../lib/result-table/defaults";
 	const baseUrl = import.meta.env.BASE_URL;
 	const formElement = document.getElementById("resultForm") as HTMLFormElement;
 	const colleges = JSON.parse(formElement.dataset.colleges || "[]") as Array<{ code: string; name: string }>;
@@ -249,6 +254,7 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 
 		let defaults = tableDefaults(params, null);
 		try {
+			// Smart Defaults from Profile
 			const { getProfile } = await import("../utils/profileManager");
 			defaults = tableDefaults(params, getProfile());
 		} catch (e) {
@@ -278,14 +284,26 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 		loading.style.display = state === "loading" ? "block" : "none";
 		if (state === "error") error.textContent = message;
 		if (state !== "ready") {
-			results.style.display = "none";
+			// Clearing (rather than hiding) keeps the reserved empty shell in the
+			// layout, so a filter change never collapses the page under the reader.
+			results.replaceChildren();
 			toppers.style.display = "none";
 		}
 	}
 
+	// Boxicons (MIT) trophy / award marks, vendored like the site Icon component.
+	const RANK_MARKS = [
+		'<path d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3c0 4.31 1.799 6.91 4.819 7.012A6.001 6.001 0 0 0 11 17.91V20H9v2h6v-2h-2v-2.09a6.01 6.01 0 0 0 4.181-2.898C20.201 14.91 22 12.31 22 8V5a1 1 0 0 0-1-1zM4 8V6h2v6.83C4.216 12.078 4 9.299 4 8zm8 8c-2.206 0-4-1.794-4-4V4h8v8c0 2.206-1.794 4-4 4zm6-3.17V6h2v2c0 1.299-.216 4.078-2 4.83z"/>',
+		'<path d="M5 8.999c0 1.902.765 3.627 2 4.89V21a.998.998 0 0 0 1.447.895L12 20.118l3.553 1.776a.992.992 0 0 0 .972-.043c.295-.183.475-.504.475-.851v-7.11a6.976 6.976 0 0 0 2-4.891C19 5.14 15.86 2 12 2S5 5.14 5 8.999zm7.447 9.106a1 1 0 0 0-.895 0L9 19.382v-4.067c.911.434 1.926.685 3 .685s2.089-.25 3-.685v4.066l-2.553-1.276zM12 4c2.756 0 5 2.242 5 4.999A5.006 5.006 0 0 1 12 14c-2.757 0-5-2.243-5-5.001A5.005 5.005 0 0 1 12 4z"/>',
+	];
+
+	function rankMark(rank: number) {
+		return `<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">${RANK_MARKS[Math.min(rank, 2) - 1]}</svg>`;
+	}
+
 	function renderToppers(rows: NormalizedStudent[]) {
 		const showCollegeName = allCollegesCheck.checked;
-		toppers.innerHTML = "";
+		toppers.replaceChildren();
 		const topRows = rows.filter((row) => row.Rank !== null).slice(0, 3);
 		if (topRows.length === 0) {
 			toppers.style.display = "none";
@@ -293,18 +311,29 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 		}
 
 		for (const [index, row] of topRows.entries()) {
+			const rank = index + 1;
 			const card = document.createElement("article");
-			card.className = "topper-card";
+			card.className = `topper-card topper-card-${rank}`;
 			card.innerHTML = `
-				<span class="topper-rank num">#${index + 1}</span>
+				<span class="topper-badge" role="img" aria-label="Rank ${rank}">
+					${rankMark(rank)}
+					<span class="topper-rank num" aria-hidden="true">#${rank}</span>
+				</span>
 				<span class="topper-name">${row.Name}</span>
-				<span class="topper-reg mono">${row.RegNo}</span>
-				<span class="topper-score num">CG ${row.CGPAText} · SG ${row.SGPAText}</span>
-				${showCollegeName ? `<span class="topper-college">${row.CollegeName}</span>` : ""}
+				<span class="topper-meta">
+					<span class="topper-reg mono">${row.RegNo}</span>
+					${showCollegeName ? `<span class="topper-college">${row.CollegeName}</span>` : ""}
+				</span>
+				<span class="topper-score num">
+					<span class="topper-score-label">CGPA</span>
+					<span class="topper-cgpa">${row.CGPAText}</span>
+					<span class="topper-sgpa">SGPA ${row.SGPAText}</span>
+				</span>
 			`;
 			toppers.appendChild(card);
 		}
 
+		toppers.dataset.count = String(topRows.length);
 		toppers.style.display = "grid";
 	}
 
@@ -462,7 +491,16 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 	.table-shell {
 		display: grid;
 		gap: var(--s4);
+		/* The table mounts after the CSV arrives. Reserving the first screen keeps
+		   the footer below the fold from the start, so the rows land in space that
+		   already exists instead of pushing the page around. `start` keeps the
+		   reserve as space at the end rather than stretching the rows above it. */
+		align-content: start;
+		min-height: calc(100dvh - var(--header-h));
 	}
+
+	/* The grid's gap is the space under the header. */
+	.table-shell > .page-head { margin-bottom: 0; }
 
 	.controls {
 		display: flex;
@@ -541,60 +579,182 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 	}
 
 	.toppers {
+		--topper-cols: minmax(0, 1.35fr) repeat(2, minmax(0, 1fr));
+
 		display: grid;
+		grid-template-columns: var(--topper-cols);
 		gap: 0;
+		margin-bottom: var(--s5);
 		border-top: 1px solid var(--line-strong);
+		border-bottom: 1px solid var(--line-strong);
+	}
+
+	.toppers[data-count="2"] {
+		--topper-cols: minmax(0, 1.3fr) minmax(0, 1fr);
+	}
+
+	.toppers[data-count="1"] {
+		--topper-cols: minmax(0, 1fr);
 	}
 
 	:global(.topper-card) {
 		display: grid;
-		grid-template-columns: 2.5rem minmax(0, 1fr) 8rem 10rem auto;
-		align-items: baseline;
-		gap: var(--s3);
-		padding: var(--s3) 0;
-		border-bottom: 1px solid var(--line);
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-areas:
+			"badge score"
+			"name score"
+			"meta score";
+		column-gap: var(--s4);
+		row-gap: 0.15rem;
+		align-items: center;
+		min-width: 0;
+		padding: var(--s4);
+		border-left: 1px solid var(--line);
+	}
+
+	/* The winner's column gets the marigold rule and a wider measure. */
+	:global(.topper-card:first-child) {
+		padding-left: 0;
+		border-left: 0;
+		box-shadow: inset 0 2px 0 var(--accent);
+	}
+
+	:global(.topper-card:last-child) {
+		padding-right: 0;
+	}
+
+	:global(.topper-badge) {
+		grid-area: badge;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		color: var(--faint);
+		line-height: 1;
+	}
+
+	:global(.topper-badge svg) {
+		width: 15px;
+		height: 15px;
+	}
+
+	:global(.topper-card:first-child .topper-badge) {
+		color: var(--accent);
+	}
+
+	:global(.topper-card:first-child .topper-badge svg) {
+		width: 17px;
+		height: 17px;
 	}
 
 	:global(.topper-rank) {
-		color: var(--accent);
-		font-size: 0.75rem;
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
 	}
 
 	:global(.topper-name) {
+		grid-area: name;
 		overflow: hidden;
 		color: var(--paper);
-		font-size: 0.88rem;
+		font-size: 0.86rem;
 		font-weight: 500;
+		line-height: 1.3;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
-	:global(.topper-reg) {
-		color: var(--faint);
-		font-size: 0.72rem;
+	:global(.topper-card:first-child .topper-name) {
+		font-size: 1rem;
+		font-weight: 600;
+		letter-spacing: -0.005em;
 	}
 
-	:global(.topper-score) {
-		color: var(--muted);
-		font-size: 0.75rem;
-		font-variant-numeric: tabular-nums;
-		white-space: nowrap;
+	:global(.topper-meta) {
+		grid-area: meta;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0 0.5rem;
+		min-width: 0;
+		overflow: hidden;
+	}
+
+	:global(.topper-reg) {
+		color: var(--faint);
+		font-size: 0.68rem;
+		line-height: 1.3;
 	}
 
 	:global(.topper-college) {
 		overflow: hidden;
 		color: var(--faint);
-		font-size: 0.72rem;
-		text-align: right;
+		font-size: 0.68rem;
+		line-height: 1.3;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
+	:global(.topper-college::before) {
+		content: "·";
+		margin-right: 0.5rem;
+	}
+
+	:global(.topper-score) {
+		grid-area: score;
+		display: grid;
+		justify-items: end;
+		align-content: center;
+		gap: 0.1rem;
+		line-height: 1;
+		text-align: right;
+	}
+
+	:global(.topper-score-label) {
+		color: var(--faint);
+		font-size: 0.55rem;
+		font-weight: 650;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	:global(.topper-cgpa) {
+		color: var(--muted);
+		font-size: 1.1rem;
+		font-weight: 500;
+		letter-spacing: -0.015em;
+	}
+
+	:global(.topper-sgpa) {
+		color: var(--faint);
+		font-size: 0.66rem;
+		letter-spacing: 0.01em;
+		white-space: nowrap;
+	}
+
+	:global(.topper-card:first-child .topper-cgpa) {
+		color: var(--accent);
+		font-size: 1.6rem;
+		font-weight: 600;
+	}
+
+	:global(.topper-card:first-child .topper-sgpa) {
+		color: var(--muted);
+		font-size: 0.7rem;
+	}
+
 	#results {
 		overflow: auto;
+		overscroll-behavior: contain;
 		border: 1px solid var(--line);
 		border-radius: var(--r);
 		background: var(--surface);
+	}
+
+	/* The table is the page. Until its rows arrive the shell is empty, so it must
+	   not paint a hollow card above the fold. */
+	#results:empty {
+		border-color: transparent;
+		background: transparent;
 	}
 
 	table {
@@ -625,8 +785,10 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 		white-space: nowrap;
 	}
 
-	tbody tr:hover {
-		background: var(--surface-2);
+	@media (hover: hover) and (pointer: fine) {
+		tbody tr:hover {
+			background: var(--surface-2);
+		}
 	}
 
 	td a {
@@ -636,9 +798,11 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 		text-decoration: none;
 	}
 
-	td a:hover {
-		text-decoration: underline;
-		text-underline-offset: 0.18em;
+	@media (hover: hover) and (pointer: fine) {
+		td a:hover {
+			text-decoration: underline;
+			text-underline-offset: 0.18em;
+		}
 	}
 
 	.name-cell {
@@ -756,12 +920,30 @@ const semesters = Array.from({ length: 8 }, (_, i) => ({
 		font-size: 0.75rem;
 	}
 
-	@media (max-width: 960px) {
-		:global(.topper-card) {
-			grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+	@media (max-width: 860px) {
+		.toppers[data-count] {
+			--topper-cols: minmax(0, 1fr);
 		}
 
-		:global(.topper-reg),
+		:global(.topper-card) {
+			padding: var(--s3) 0;
+			border-left: 0;
+			border-top: 1px solid var(--line);
+		}
+
+		:global(.topper-card:first-child) {
+			border-top: 0;
+			box-shadow: inset 0 2px 0 var(--accent);
+		}
+
+		:global(.topper-card:last-child) {
+			padding-right: 0;
+		}
+
+		:global(.topper-card:first-child .topper-cgpa) {
+			font-size: 1.4rem;
+		}
+
 		:global(.topper-college) {
 			display: none;
 		}

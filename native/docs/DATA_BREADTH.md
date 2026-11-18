@@ -1,6 +1,9 @@
-# Data breadth — 53 colleges already exist, the app ships one
+# Data breadth — the shipped shape
 
-Status: **plan, not built**. Written 2026-10-31 against `1.2.5`.
+Status: **shipped in `1.3.3` (2026-11-18)**. §1–§2 are
+the measured case (kept from the 2026-10-31 pass). §3 replaces the "college
+pack" plan with what actually ships: a bundled index plus the site's
+already-published CSVs, fetched on demand and cached.
 
 ## 1. What the data says
 
@@ -10,131 +13,120 @@ Counted from `public/data/` on 2026-10-31:
 |---|---|---|
 | Result tables (`wide_*.csv`, 56 columns) | 1,308 files | 13 MB |
 | Rosters (`students_*.csv`, ranked rows) | 1,452 files | 8.5 MB |
-| College codes | **53** (52 colleges + `all`) | — |
+| College-specific rosters (`students_<batch>_<college>_<branch>_sem<n>.csv`) | 1,345 files | — |
+| College codes | 53 (52 colleges + `all`) | — |
 | Branch codes | 7 (`101`–`105`, `110`, `161`) | — |
 | Batches | 5 (`21`–`25`) | — |
-| Everything in `public/data` | 2,764 files | 23 MB |
 
-The largest single college — GEC Sheikhpura (`157`) — is **141 files, 804 KB**,
-and its bundled roster is 346,726 B of JSON that gzips to **33 KB**.
+The app bundles one roster: GEC Sheikhpura, 1,323 students
+(`assets/data/students-gecs.json`). Every other college's directory, college
+rank and merit list had nothing to rank, even though the site publishes the rows.
 
-Meanwhile the app bundles exactly **one** roster: GEC Sheikhpura, 1,323 students
-(`native/assets/data/students-gecs.json`). Every other college is reachable only
-as a dataset in the data browser, and its rank and merit screens have nothing to
-rank.
+**This is not a scraping problem. It is a delivery problem.**
 
-**This is not a scraping problem. The data for 52 more colleges is already
-published. It is a delivery problem.**
+## 2. Why it cannot be bundled
 
-## 2. Why it can't be bundled
+APK headroom is ≈746 KB against the 18.5 MB ceiling (`docs/SIZE.md`). The
+college-specific rosters alone are 1,345 files. Even one college's full set is
+larger than the headroom. Breadth has exactly one shape: an index in the APK,
+the rows on demand, the rows stay cached.
 
-The APK is **17,717,308 B** against an **18,500,000 B** budget — 782,692 B of
-headroom (`docs/SIZE.md`). The whole dataset is 23 MB, larger than the app. Even
-the single largest college pack (804 KB) would take 105% of the remaining
-headroom.
+## 3. The shipped shape — index + published CSV
 
-So breadth has exactly one shape: **the APK ships an index, the data arrives on
-demand, and what arrives stays cached.**
-
-## 3. The pack model
-
-A **college pack** is everything needed for one college at one batch:
+Do **not** invent a pack format. The site already serves the exact files the
+directory needs:
 
 ```
-pack(batch, college) =
-  roster/{branch}/sem{N}.csv      ← rank, merit, directory
-  wide/{branch}/sem{N}.csv        ← papers, SGPA, CGPA, official ranks
-  meta.json                       ← counts, bytes, sha, generated_at
+SITE/data/students_{batch}_{college}_{branch}_sem{n}.csv   # 5 cols: Session,RegNo,Name,SGPA,Cur. CGPA
+SITE/data/students_{batch}_all_{branch}_sem{n}.csv         # 7 cols, +CollegeCode,CollegeName
+SITE/data/wide_{batch}_{college}_{branch}_sem{n}.csv       # 56 cols, papers + ranks
 ```
 
-- **Budget:** 0.5–1 MB on disk per college-batch, ~150–250 KB gzipped. GEC
-  Sheikhpura is the top of that range; most will be smaller.
-- **Fetch:** first time a student opens their college, or explicitly from the
-  college screen. One request, resumable by file.
-- **Cache:** `Storage` under `beu.pack.{batch}.{college}.{file}`, with a
-  `meta.json` holding the sha. Verify before use; a mismatch refetches one file,
-  not the pack.
-- **Evict:** a cap of **25 MB** across packs, least-recently-used first. The
-  student's own college is pinned and never evicted.
-- **Offline:** a downloaded pack is complete for that college — no partial
-  screens. That is the whole point of a pack over per-screen fetches.
+### 3.1 The index
 
-The pieces already exist: `features/offline` for the budget and the UI,
-`features/data-feed/store` for the manifest state, `lib/net` for cache and
-timeouts.
+`scripts/build-college-index.mjs` reads the repo root's `public/data` and writes
+`src/features/students/college-index.ts` (**generated — never hand-edited**).
+It is a TS module, not a file in `assets/data`, so it is bundled by the compiler
+with the students feature and needs no runtime JSON parse:
 
-## 4. The manifest is broken; fix it first
-
-`docs/RESULT_COVERAGE.md` records that `/data/manifest/index.json` lists paths
-that **404** (`24/105/sem1_157.json` under two prefixes), so nothing may build
-URLs from it. A pack model cannot exist on top of a manifest nobody can trust.
-
-New shape, one file per college-batch, plus one index:
-
-```jsonc
-// /data/packs/index.json  (~5 KB gzipped)
-{
-  "generated_at": "2026-10-31T00:00:00Z",
-  "packs": [
-    { "batch": 24, "college": "157", "files": 141, "bytes": 804000,
-      "gzip": 210000, "sha": "…", "path": "/data/packs/24/157/" }
-  ]
-}
+```ts
+export const COLLEGE_INDEX_SNAPSHOT = "2026-11-18";
+export const COLLEGE_INDEX_SKIPPED = 6;
+export const COLLEGE_INDEX = {
+  "107": { "21": { "101": [8], "102": [8] } },
+};
 ```
 
-The generator is a script under `scripts/` that walks `public/data`, groups by
-`(batch, college)`, writes the per-pack `meta.json`, and appends the index. It
-runs in the data pipeline, never by hand (`scripts/AGENTS.md`).
+- Built by listing `public/data/students_*.csv`, dropping `_all_`, and parsing
+  `students_<batch>_<college>_<branch>_sem<n>.csv`. A malformed name is skipped
+  and counted in `COLLEGE_INDEX_SKIPPED`; it never becomes a URL.
+- `sem0` is skipped, not indexed: the six such files are the enrolment register
+  (`Session,RegNo,Name,Branch`, no SGPA), not a result.
+- Sorted keys, integer semesters, no whitespace. Written only when the content
+  changes, so a re-run is idempotent; `--check` diffs everything except the date.
+- Measured 2026-11-18: **1,339 files → 704 (college, batch, branch) pairs,
+  52 colleges, 9,721 B raw / 462 B gzip**. The budget is **24 KB gzipped**; the
+  script prints both numbers and fails above it.
+- `scripts/check.sh` runs `--check` before the build, like the live-feed hashes.
 
-Acceptance: every path in the index returns 200; a test walks the index and
-fails on a 404. That test is the difference between a manifest and a wish.
+`scripts/package-android.sh` is unchanged: the module compiles into the bundle
+and shows up in `size-report.sh` with the rest of the bytecode.
 
-## 5. Phases
+### 3.2 The reader
 
-| # | Work | Done when |
-|---|---|---|
-| 1 | Manifest generator + the 404 test | `bun qa/…` fails today, passes after |
-| 2 | `lib/packs.ts`: fetch, verify, cache, evict | a pack downloads once and survives a relaunch |
-| 3 | College picker in onboarding + Settings | a student from college `117` lands on their own branch |
-| 4 | Roster screens read from the pack | `students.branch` works for a non-GECS college |
-| 5 | `results.rank` / `results.merit` from a pack | a rank renders for a batch with no bundled roster |
-| 6 | Coverage screen: which colleges have a pack, which don't | counts match the index |
-| 7 | Background refresh when `generated_at` moves | a stale pack updates without a reinstall |
+`src/features/students/remote.ts` — the index is a map, never data:
 
-Phases 1–4 are the feature. 5 is what makes it worth downloading; 6–7 are
-maintenance.
+- `batchesFor(college)`, `branchesFor(college, batch)`, `semsFor(college, batch,
+  branch)` — straight out of `college-index.ts`. An empty list is the honest
+  answer: "BEU has not published a roster for this combination."
+- `hasRosters(college)` / `branchesOfCollege(college)` — what the directory row
+  and the screen's branch rail are built from.
+- `rosterUrl(...)` — `null` unless the index names the combination, so the app
+  never builds a URL that 404s on a student.
+- `loadRoster(...)` — `fetchText` on
+  `SITE/data/students_<batch>_<college>_<branch>_sem<s>.csv` with
+  `cacheKey: roster:<batch>:<college>:<branch>:<sem>`, 20 s timeout,
+  `cacheMaxAge: 7 days`. It parses with `src/lib/csv.ts` (`csvRecords`) and does
+  **not** re-rank from raw marks: the file already carries `SGPA` and
+  `Cur. CGPA`, and a blank cell stays `null` and sorts last.
+- `parseRoster` / `rankRoster` / `cgpaCount` are pure and unit-tested in
+  `qa/college-index.test.ts`.
 
-## 6. Metrics
+A `students_<batch>_all_<branch>_sem<n>.csv` fetch stays in `results/`, for
+branch rank, exactly as before.
 
-| Event | Answers |
+### 3.3 The screens
+
+`students.colleges` lists every BEU college; what opens depends on the index:
+
+1. **Named college, indexed** — `students.college` renders
+   `remote-college.tsx`: batch chips → branch chips → semester chips, all driven
+   by the index, then a virtualised `List` of the ranked roster with a local
+   name/registration filter. A combination that was never published cannot be
+   selected; a lookup that fails shows the error and its retry, and a fetch the
+   cache already answered paints before the network.
+2. **Named college, not indexed** — "No roster for college N", one line on what
+   BEU has published, and a button back to the directory. No spinner.
+3. **GEC Sheikhpura** — keeps its bundled register as the offline first paint
+   (`college.tsx`); the index path is what every other code opens.
+4. **The directory row** — a college with rosters is tappable, carries a
+   "Roster" badge and its batch count; one without says "No roster" and is not a
+   button.
+
+## 4. Acceptance
+
+| Check | Pass |
 |---|---|
-| `pack_offer` | how often a college with no bundle is opened |
-| `pack_download` (`outcome`, `bytes`, `ms`) | whether the network can carry it |
-| `pack_hit` | downloads that were used, not just fetched |
-| `college_selected` (`college`, `source`) | whether the picker is used or ignored |
+| `bun scripts/build-college-index.mjs --check` | exit 0 |
+| gzip of the index | ≤ 24 KB, printed by the script (measured 462 B) |
+| `./scripts/check.sh test` | green |
+| `./scripts/size-report.sh` | APK still under its budget, delta recorded by the script |
+| A college with an index (e.g. `107`) | roster loads, ranks, caches; second open paints before the network |
+| A college with no index | explains itself, no spinner, no fabricated rows |
+| Airplane mode after one successful load | the same roster still paints |
 
-The number that matters: **share of students whose college resolves to a pack.**
-Today it is 1 of 52. The target for the first quarter is the top ten colleges by
-result-table traffic — measured, not guessed.
+## 5. Not in scope
 
-## 7. Risks
-
-| Risk | Why it bites | Mitigation |
-|---|---|---|
-| Device storage | 25 MB of packs on a 32 GB phone | LRU cap, pinned own college, visible in Settings → Storage |
-| Data cost | a pack on 2G is real money | gzip, per-file fetch, "download on Wi-Fi" default |
-| Stale packs | a new semester publishes, the pack doesn't | `generated_at` check on open, background refresh |
-| Manifest drift | the exact failure that exists today | the 404 test in the pipeline, not a doc |
-| Privacy | rosters are the sensitive file | the same projection as `students-gecs.json`: identity and affiliation only, `verify.py` guard |
-| Rank across colleges | different colleges publish different columns | rank within a pack only; never mix colleges in one ranking without a stated basis |
-
-## 8. Why this order
-
-The corpus (`docs/RESULT_CORPUS.md`) makes results exist where BEU publishes
-none. Breadth makes the ones that already exist reachable. They meet at the same
-place: a student from any BEU college opens the app and their branch, rank and
-merit are already there.
-
-Breadth first is the cheaper win — the data is already published, the work is
-delivery. The corpus is the compounding one. Do 1–4 here, then start the corpus;
-they share the manifest and the offline layer, so neither is wasted.
+- Downloading 23 MB of data or a "download all" button.
+- A pack format, a manifest of manifests, or per-college deltas.
+- Scraping. The rows are already published; the work is delivery.

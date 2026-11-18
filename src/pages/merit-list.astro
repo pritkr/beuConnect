@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BranchIcon from "../components/BranchIcon.astro";
 import collegesData from "../data/colleges.json";
 import configData from "../assets/data/config.json";
 
@@ -248,7 +249,7 @@ const defaultBatch = publishedBatches[0] ?? batches[0];
 			defaultBatch.branches.map((branch) => (
 				<section class="branch-section">
 					<div class="branch-header">
-						<h2>{branch.name}</h2>
+						<h2><BranchIcon branch={branch.name} size={15} />{branch.name}</h2>
 						<span class="branch-count num">{branch.students.length} students</span>
 					</div>
 					<div class="table-wrap">
@@ -286,6 +287,8 @@ const defaultBatch = publishedBatches[0] ?? batches[0];
 </Layout>
 
 <script>
+	import { branchIconSvg } from '../utils/branchIcons';
+
 	const batchBtns = document.querySelectorAll('.batch-btn') as NodeListOf<HTMLButtonElement>;
 	const dataEl = document.getElementById('batch-data') as HTMLElement;
 	const batches = JSON.parse(dataEl.dataset.batches || '[]');
@@ -308,7 +311,7 @@ const defaultBatch = publishedBatches[0] ?? batches[0];
 			html += `
 				<div class="branch-section">
 					<div class="branch-header">
-						<h2>${branch.name}</h2>
+						<h2>${branchIconSvg(branch.name, 15)}${branch.name}</h2>
 						<span class="branch-count">${branch.students.length} students</span>
 					</div>
 					<div class="table-wrap">
@@ -339,6 +342,7 @@ const defaultBatch = publishedBatches[0] ?? batches[0];
 		btn.addEventListener('click', () => {
 			setActiveBatch(idx);
 			renderBatch(idx);
+			window.beuTrack?.('merit_filter', { batch: batches[idx]?.batch || String(idx) });
 		});
 	});
 
@@ -462,6 +466,7 @@ const defaultBatch = publishedBatches[0] ?? batches[0];
 
 		.table-wrap {
 			overflow-x: auto;
+			overscroll-behavior-x: contain;
 			border: 1px solid var(--line);
 			border-radius: var(--r);
 		}

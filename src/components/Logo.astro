@@ -37,12 +37,18 @@ const size = Astro.props.size ?? 26;
 		display: inline-flex;
 		align-items: center;
 		gap: 0.45rem;
+		/* The mark and wordmark are 26px; the padding makes the home link a
+		   thumb-sized target without changing where the header line sits. */
+		margin-block: -0.5rem;
+		padding-block: 0.5rem;
 		color: var(--paper);
 		text-decoration: none;
 	}
 
-	.brand:hover {
-		color: var(--paper);
+	@media (hover: hover) and (pointer: fine) {
+		.brand:hover {
+			color: var(--paper);
+		}
 	}
 
 	.brand-mark {

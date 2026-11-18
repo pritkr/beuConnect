@@ -261,6 +261,27 @@ function getAiUrl(type: 'gpt' | 'claude' | 'gemini', fullPrompt: string) {
 </div>
 
 <script>
+  // One toast, reused: copying several prompts in a row refreshes the message
+  // instead of stacking identical copies in the same spot. Created on first
+  // copy so the page never ships an empty live region.
+  let copyToast: HTMLDivElement | null = null;
+  let copyToastTimer: ReturnType<typeof setTimeout> | null = null;
+
+  const showCopyToast = () => {
+    if (!copyToast) {
+      copyToast = document.createElement('div');
+      copyToast.className = 'copy-toast';
+      copyToast.setAttribute('role', 'status');
+      document.body.appendChild(copyToast);
+    }
+
+    const toast = copyToast;
+    toast.textContent = 'Prompt copied. Paste it in Gemini.';
+    toast.classList.add('is-visible');
+    if (copyToastTimer) clearTimeout(copyToastTimer);
+    copyToastTimer = setTimeout(() => toast.classList.remove('is-visible'), 3500);
+  };
+
   // Copy the prompt where the target needs it, then open the assistant.
   document.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
@@ -277,11 +298,7 @@ function getAiUrl(type: 'gpt' | 'claude' | 'gemini', fullPrompt: string) {
 
     if (isGemini) {
       navigator.clipboard.writeText(prompt).then(() => {
-        const toast = document.createElement('div');
-        toast.className = 'copy-toast';
-        toast.textContent = 'Prompt copied. Paste it in Gemini.';
-        document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 3000);
+        showCopyToast();
         window.open('https://gemini.google.com/app', '_blank');
       }).catch(() => {
         window.open(url, '_blank');
@@ -298,7 +315,7 @@ function getAiUrl(type: 'gpt' | 'claude' | 'gemini', fullPrompt: string) {
     max-width: 100%;
     height: auto;
     margin: var(--s3) 0;
-    border: 1px solid var(--line);
+    border: 1px solid var(--image-outline);
     border-radius: var(--r);
   }
 
@@ -317,17 +334,17 @@ function getAiUrl(type: 'gpt' | 'claude' | 'gemini', fullPrompt: string) {
     background: var(--surface);
     color: var(--paper);
     font-size: 0.8rem;
-    transform: translateX(-50%);
-    animation: toast-in 0.2s ease both;
+    opacity: 0;
+    transform: translate(-50%, 0.4rem);
+    pointer-events: none;
+    transition:
+      opacity 200ms var(--ease-out),
+      transform 200ms var(--ease-out);
   }
 
-  @keyframes toast-in {
-    from { opacity: 0; transform: translate(-50%, 0.4rem); }
-    to { opacity: 1; transform: translate(-50%, 0); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .copy-toast { animation: none; }
+  .copy-toast.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 </style>
 
@@ -530,9 +547,11 @@ function getAiUrl(type: 'gpt' | 'claude' | 'gemini', fullPrompt: string) {
     display: none;
   }
 
-  .ai summary:hover,
-  .ai[open] summary {
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .ai summary:hover,
+    .ai[open] summary {
+      color: var(--paper);
+    }
   }
 
   .ai summary:focus-visible {
@@ -566,9 +585,11 @@ function getAiUrl(type: 'gpt' | 'claude' | 'gemini', fullPrompt: string) {
     cursor: pointer;
   }
 
-  .ai-menu button:hover {
-    background: var(--surface-2);
-    color: var(--paper);
+  @media (hover: hover) and (pointer: fine) {
+    .ai-menu button:hover {
+      background: var(--surface-2);
+      color: var(--paper);
+    }
   }
 
   @media (max-width: 700px) {

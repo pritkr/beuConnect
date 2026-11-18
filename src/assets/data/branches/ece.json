@@ -4,7 +4,47 @@
 		"1": {
 			"subjects": [
 				{
-					"code": "100110",
+					"code": "100101",
+					"name": "Communication Skills",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Communicative English for Nitin Bhatnagar, Mamta Publisher: Pearson Education Engineers and Professionals Bhatnagar Edition: 1st Edition, Year: 2010",
+						"2. Oxford Communicative English Oxford University Press Edition: Latest Revised Edition Year: 2014, ISBN: 978-0198076018",
+						"3. Technical Communication: Meenakshi Raman, Edition: 3rd Edition Year: 2015 Principles and Practice Sangeeta Sharma",
+						"4. Communication Skills in English Dr. Anjana Tiwari Khanna Publishers, New Delhi",
+						"5. Business Communication Dr. Nishith Rajaram Indra Publishing House, 2023 ISBN- Dubey, Anupam Singh 978-93-93577-69-6",
+						"6. Employability Skills Dr. Nishith Rajaram Indra Publishing House, 2023 ISBN Dubey, Anupam Singh 978-93-93577-68-9",
+						"7. Essential English Grammar in Raymond Murphy Cambridge University Press Use"
+					],
+					"content": "Unit-1.0: Vocabulary Enrichment (8 hrs)\n1.1 Technical Vocabulary Development\n1.2 Nature of Word Formation\n1.3 Root Word and Morpheme, Prefix, and Suffix\n1.4 Foreign Expressions in English\n1.5 Synonyms and Antonyms, Homophones and Homographs, Abbreviations and Acronyms\nUnit-2.0: Basics of English Grammar (10 hrs)\n2.1 Parts of Speech,\n2.2 Articles, Prepositions\n2.3 Subject Verb Agreement,\n2.4 Phrase and Clause\n2.5 Formation of Questions using Primary Auxiliaries, Modals, and Wh-Words.\n2.6 Tenses, Voice\n2.7 Redundancies/Clichés\nUnit-3.0: Technical Communication (8 hrs)\n3.1 Communication: Role and Relevance,\n3.2 Process / Steps, Types: formal and informal/verbal and non-verbal (Kinesics, Chronemics, Proxemics, Haptics, Vocalics/Paralanguage\n3.3 Barriers to Communication:\n3.4 Pattern/channels of communication and experience\n3.5 7C’s, for effective communication\nUnit-4.0: Techniques of Professional Writing (8 hrs)\n4.1 Letter Writing (formal/informal/ cover letter/application)\n4.2 Report Writing, Proposal, Notice, Agenda, and Minutes of Meeting\n4.3 Memorandum\n4.4 Bio-Data/Resume/Curriculum Vitae\n4.5 Essay Writing, Email Writing\nUnit-5.0: Comprehension and Interpretation Skills (8 hrs)\n5.1 If (Poem) by Rudyard Kipling\n5.2 Of Studies (Essay) by Sir Francis Bacon\n5.3 India: Our Motherland (Essay) by Swami Vivekananda\n5.4 A Devoted Son (Story) by Anita Desai\n5.5 Unseen/Untaught passage"
+				},
+				{
+					"code": "100102",
+					"name": "Engineering Mathematics-I",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Higher Engineering Mathematics B. S. Grewal Khanna Publishers, 44 Ed. ISBN No:9788174091154",
+						"2. Higher Engineering Mathematics B. V. Ramana Tata McGraw Hill New Delhi, 11th Ed, 2010, ISBN-13-978-0070634190",
+						"3. Advanced Engineering Erwing Kreyszig John Wiley & Sons, 10th Ed, ISBN-978- Mathematics 0470-15836-5",
+						"4. A Textbook of Engineering N. P. Bali & Dr. Manish University Science Press, 13th Ed, ISBN- Mathematics Goyal 978-93-83828-63-0",
+						"5. Understanding Engineering John Bird Routledge; First Edition ISBN Mathematics 9780415662840"
+					],
+					"content": "Unit-1.0: Basic Linear Algebra (8 hrs)\n1.1 Elementary transformations and Rank of Matrix, Rank by using Echelon and Normal form of Matrices. Linear dependence & independence of vectors in 𝑛 space 𝑅\n1.2 Consistency of System of Linear Equations\n1.3 Eigenvalues & Eigenvectors, Cayley-Hamilton Theorem.\n1.4 Similarity of Matrices & Diagonalization of Square Matrices. Quadratic Form, Canonical Form of Matrices.\nUnit-2.0: Differential Calculus: Single Variable (8 hrs)\n2.1 Higher order derivatives; Successive differentiation and Leibnitz’s Theorem\n2.2 Mean Value Theorems (Rolle’s; Lagrange’s; Cauchy)\n2.3 Indeterminate Forms; L’ Hopital Rule\n2.4 Tangents & Normal of Algebraic & Polar Curves, Curvature\nUnit-3.0: Differential Calculus: Several Variables independent variables of degree n. (9 hrs)\n3.1 Partial differentiations; Euler’s theorems Relevant Units/ Body of Knowledge (BoK)\n3.2 Limit, Continuity and differentiability of functions of Several Variables\n3.3 Taylor’s theorem with various forms of remainders, Maclaurin's theorem and related problems\n3.4 Maxima & Minima for functions of several variables; Lagrange’s Multiplier Method\nUnit-4.0: Integral Calculus (9 hrs)\n4.1 Differentiation under the integral sign; Leibnitz’s rule\n4.2 Double integral; Change the order of integration; Evaluation of double integration by changing it into polar co-ordinates\n4.3 Triple Integral; Evaluation of Triple integral by changing to Spherical Polar co-ordinates & Cylindrical polar co-ordinates\n4.4 Beta; Gamma; Elliptic integral; Relation between Beta & Gamma functions, General Properties and related problems.\nUnit-5.0: Vector Calculus (8 hrs)\n5.1 Scalar and vector valued functions; Concepts of gradient, divergence and curl and their geometrical and physical significance; tangent plane; directional derivative;\n5.2 Line, surface and volume integrals - Statement of Green’s, Stokes’ and Gauss divergence theorems - integral. verification and evaluation of vector integrals using them."
+				},
+				{
+					"code": "100104",
 					"name": "Engineering Physics",
 					"type": "Theory",
 					"credits": 3,
@@ -14,52 +54,22 @@
 						"practical": 0
 					},
 					"references": [
-						"1. Quantum Physics of Atoms, Molecules, Solids, Nuclei and Particles, R. Eisberg R.",
-						"Resnick, Wiley India Pvt. Ltd ISBN 978-81-265-0818-1",
-						"2. Theory of Vibration with Application, W.T. Thomson M. D. Dahleh, Pearson India ISBN",
-						"978-81-317-0482-0",
-						"3. Introduction to Electrodynamics, D.J. Griffiths, Pearson India, ISBN 978-93-325-5044-5",
-						"4. Electromagnetism, I.S. Grant, W. R. Phillips, Wiley India Pvt. Ltd ISBN 978-04-719-",
-						"2712-9",
-						"5. The Feynman Lectures on Physics, R.P. Feynman R. B. Leighton, Pearson India ISBN",
-						"978-00-710-7458-2",
-						"6. Optics, Ajay Ghatak ,McGraw Hill ISBN 978-93-901-1359-0",
-						"7. Physics of Vibration and Waves, H. J. Pain, Wiley India Pvt. Ltd, ISBN 978-04-700-",
-						"1296-3",
-						"8. Concept of Modern Physics, Arthur Beiser, McGraw Hill ISBN 978-93-513-4185-7",
-						"9. Introduction to Solid State Physics, C. Kittle , Wiley India Pvt. Ltd, ISBN 978-81-265-",
-						"7843-6"
+						"1. Optics Ajay Ghatak Mcgraw Hill Education,2012, 5th Edition, ISBN- 10: 1259004340",
+						"2. Principles of Lasers O.svelto Springer Science &Business Media,2010, 5th Ed,",
+						"3. Introduction to David J. Griffiths Pearson Education Cambridge University Press, electrodynamics 2023, 5th Edition, ISBN-10: 1009397729",
+						"4. Principles of Electronic S.O. Kasap McGraw Hill Education, Third Edition, 2006, Materials and Devices ISBN-10: 0073104647",
+						"5. Semiconductor Physics and Donald A. Neuman McGraw-Hill Education, Fourth Edition, 2011, Devices ISBN-10: 0073529583",
+						"6. Introduction to Quantum David J. Griffiths Pearson Education Cambridge University Press, Mechanics 2016, 2nd Edition, ISBN-10: 1107179866",
+						"7. Nanotechnology: Principles Sulabha K. Kulkarni Springer Nature, Third Edition,2014, ISBN-10: and Practices. 3319091700",
+						"8. Concepts of Engineering S.K. Roy Novelty Publication, 1st Edition, 2016-17 Physics",
+						"9. Concepts of Engineering Kumari Mamta and CRC Press-Taylor and Francis, United Kingdom, Physics Raj Kumar Singh 1st Edition, ISBN 9781041191834",
+						"10 Physics Practical for S.K. Roy Novelty Publication, 1st Edition, 2018 Engineers"
 					],
-					"content": "Unit- 1.0\n1. Frame of Reference: 2 hrs\nNon-Inertial frame of reference, rotating coordinate system, centripetal and Coriolis acceleration and its application in weather system.\n2. Oscillations: 3 hrs\nHarmonic Oscillator, Damped Harmonic motion – overdamped, critically Damped and lightly damped oscillators, Force Oscillators and Resonance.\nUnit- 2.0\n1. Optics: 4 hrs\nHuygens’s Principle, Superposition of Waves and interference of Light by wave front-splitting and amplitude-splitting; Young’s double slit experiment, Michelson interferometer, Fraunhofer diffraction from single slit and circular aperture, Diffraction Grating and their resolving power\n2. LASER: 4 hrs\nEinstein’s theory of matter-radiations interaction, Einstein’s Coefficients (A and B), Amplification by population inversion, Different types of lasers – Gas Laser, Helium-Neon Laser, Solid State Laser (Ruby, Neodymium), Semiconductor Laser.\nUnit- 3.0\n1. Quantum Mechanics: 5 hrs\nCompton Effect, Photoelectric Effect, Wave Particle duality, de Broglie’s hypothesis, Heisenberg’s Uncertainty Principle, Wave function and wave packets, phase and group velocities, Schrodinger’s Wave Equation, Normalization, Expectation values, Eigenvalues and Eigenfunction.\n2. Applications in One dimensions: 2 hrs\nApplication of Schrodinger Wave Equation for particle in one dimensional box – its wavefunction and eigenvalue of energy and momentum.\nUnit- 4.0\n1. Vector Calculus: 2 hrs\nGradient, Divergence and Curl, Line, Surface and Volume integrals, Gauss’s Divergence theorem and Stokes’ theorem in Cartesian Coordinate.\n2. Electrostatics: 4 hrs\nGauss’s Law and its applications, Divergence and Curl of Electrostatic fields, Electrostatic Potential, Boundary Conditions, Poisson’s and Laplace’s equations, Dielectrics, Polarization, Bound Charges, Electric displacement, Boundary Conditions in dielectrics.\nUnit- 5.0\n1. Magnetostatics: 4 hrs\nLorentz force, Biot-Savart and Ampere’s circuital laws and their applications, Divergence and Curl of Magneto static fields, Magnetic vector potential, Force and torque on a magnetic dipole, Magnetic Materials, Magnetization, Bound currents, Boundary conditions.\n2. Electrodynamics and Electromagnetic Waves: 4 hrs\nOhm’s law, Motional EMF, Faraday’s Law, Lenz’s law, Self and mutual inductance, Energy stored in magnetic field, Maxwell’s equations in vacuum and nonconducting medium, Continuity Equation, Poynting Theorem, Wave Equations: plain electromagnetic wave in vacuum and their transverse nature and Polarization.\nUnit- 6.0\n1. Introduction to Solids and Semi-Conductors: 3 hrs\nFree electron theory of metal, fermi level, Bloch’s theorem for particle in a periodic Potential, Kroning-Penney model and origin of energy band.\n2. Electronic Materials: 3 hrs\nMetals, semiconductors and insulators, intrinsic and extrinsic semiconductors,Carriertransport, diffusion and drift, P-N junction."
+					"content": "Unit-1.0: Wave Optics (8 hrs)\n1.1 Interference, Division of amplitude, Newton’s Ring experiment, Michelson interferometer.\n1.2 Diffraction, Fraunhofer diffraction, Single and double slit, & Circular aperture\n1.3 Diffraction, Grating,\n1.4 Rayleigh criterion, resolving power of telescope.\n1.5 Polarization, double-refracting crystal, Nicol prism.\nUnit-2.0: Lasers and Optical Fiber (8 hrs)\n2.1 Characteristics of laser light, Einstein’s A & B coefficients, Population inversion, pumping mechanism, Optical resonator\n2.2 Ruby laser, He-Ne laser, and Semiconductor laser\n2.3 Structure of optical fiber, Basic principles (TIR, Acceptance angle and Numerical Aperture), Types of optical fibers.\n2.4 Propagation mechanism of light in fiber, Attenuation in optical fibers. Relevant Units/ Body of Knowledge (BoK)\n2.5 Applications of optical fibres, Fibre optic sensors\nUnit-3.0: Electromagnetism & Propagation\nof Waves (8 hrs)\n3.1 Electric fields, Gauss’ Law, Dielectrics and Capacitors.\n3.2 Magnetic fields & Magnetic Materials.\n3.3 Maxwell’s Equations.\n3.4 Electromagnetic waves & Poynting Theorem\nUnit-4.0: Quantum Mechanics (8\nhrs)\n4.1 Introduction to Quantum Mechanics.\n4.2 De-Broglie hypothesis, Heisenberg uncertainty principle\n4.3 Wave function and its characteristics\n4.4 Schrödinger’s equation (time-dependent and independent)\n4.5 Particle in a box, Energy Eigen values and Eigen functions\n4.6 Potential barrier and Tunneling\nUnit-5.0: Semiconductors & Nano-materials (10 hrs)\nsemiconductors to explain the differences in their electrical 5.1 Introduction, Types of materials (metal, behavior. semiconductor and insulator) Relevant Units/ Body of Knowledge (BoK)\n5.2 Intrinsic and extrinsic semiconductors, P- type and N-type semiconductors, Diffusion, Drift and Fermi level\n5.3 Photodiode, P-N junction transistor, LED\n5.4 Hall effect\n5.5 Solar cell and its characteristics.\n5.6 Introduction to nanoscience& nanotechnology, the significance of nanoscale\n5.7 Unique Properties: Comparison of bulk and nanomaterials, large surface-to-volume ratio, change in band gap, and optical/electrical/mechanical properties at the nanoscale.\n5.8 Classification of Nanostructured Materials: 0D (Quantum Dot), 1D (Nanowire"
 				},
 				{
-					"code": "100102",
-					"name": "Engineering Mathematics–I",
-					"type": "Theory",
-					"credits": 4,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 1,
-						"practical": 0
-					},
-					"references": [
-						"1. AICTE’s Prescribed Textbook: Mathematics-I (Calculus & Linear Algebra), ReenaGarg,",
-						"Khanna Book Publishing Co. ISBN-10 9391505171",
-						"2. Advanced Engineering Mathematics, Chandrika Prasad &ReenaGarg, Khanna Book",
-						"Publishing Co., 2021. ISBN 10: 9386173522 / ISBN 13: 9789386173522.",
-						"3. Higher Engineering Mathematics, B.V. Ramana, Tata McGraw Hill New Delhi, 11th",
-						"Reprint, 2010,ISBN-10 007063419X ISBN-13978- 0070634190.",
-						"4. Advanced Engineering Mathematics, SrkIyengarRk Jain,Narosa,5thEdition,ISBN-10",
-						"8184875606I",
-						"SBN-13978-8184875607",
-						"5. Advanced Engineering Mathematics, Erwin Kreyszig, 9th Edition, John Wiley & Sons,",
-						"2006."
-					],
-					"content": "Unit- 1.0: Linear Algebra-I 7 hrs\nElementary Row operations, Gauss -Jordan Method for finding the inverse of Matrix, Complex Matrix : Hermitian , Skew Hermitian and Unitary Matrix, Vector space, Sub Spaces, Linear dependence and Independences of Vectors, Linear Span, Basis, Dimension, Extension of basis of subspace, The rank of a matrix, Row and column space, Solvability of system of linear equations.\nUnit- 2.0: Linear Algebra-II 7 hrs\nLinear Transformations, Kernel and Range of linear transformation, Matrix Representation of a linear transformation, Rank-Nullity Theorem, Eigen Value and Eigen Vectors, Properties of Eigen vectors, Eigen Bases, Orthogonal Transformation, Similarity Transformation, Matrix Diagonalization, Cayley- Hamilton Theorem.\nUnit- 3.0: Calculus for single variable 7 hrs\nInderminate form, L’Hospital Rule, Rolle’s Theorem, Mean Value Theorem, Expansion of function (single variable), Taylor and Maclaurin Series, Riemann Integration, Riemann Sum, Improper Integrals, Beta and Gamma function and their properties.\nUnit- 4.0 : Multivariable Calculus (Differentiation) 7 hrs\nFunction with two or more variable, Limit, continuity and Partial differentiation, Total Differentiation Taylor’s series and Maclaurin’s series for function with two variable, Jacobian, Maxima and Minima, Method of Lagrange’s multiplier.\nUnit-5.0: Multivariable Calculus (Integration) 7 hrs\nDouble Integral, change of order of integration, Triple integral, Change of Variable in a Double and Triple Integrals, Change to polar coordinate, Change to cylindrical coordinate, Change to spherical polar coordinate, Application to area and volume using double and triple integral\nUnit- 6.0: Vector Calculus 7 hrs\nScalar and vector fields, Gradient, Directional derivative, Divergence, Curl and their properties, Line integral, Green’s theorem in plane (without proof), Surface integral, Stoke’s theorem (without proof), Volume Integral, Gauss-Divergence’ theorem (without proof)."
-				},
-				{
-					"code": "100111",
-					"name": "Programming for Problem Solving",
+					"code": "100105",
+					"name": "Introduction to AI",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
@@ -68,14 +78,14 @@
 						"practical": 0
 					},
 					"references": [
-						"1. Programming in ANSI C 4th Ed,EBalagurusamy, McGraw Hill Education India",
-						"Private Limited, ISBN-978-9339219666, 7th Edition",
-						"2. The C Programming Language 2e,W. Kernighan / Dennis Ritchie,Pearson Education",
-						"India, 978-9332549449, 2nd Edition",
-						"3. Computer Fundamentals and Programming in C,ReemaThareja,Oxford University Press,",
-						"ISBN- 978-9354977893, 3rd Edition"
+						"1. Artificial Intelligence: A Modern Stuart Russell, Peter Norvig Pearson; 4th Ed., 2020. ISBN: 978- Approach 0134610993",
+						"2. AI for everyone Saptarsi Goswami, Amit Pearson Education: SBN-10: Kumar Das, Amlan 9361591754, ISBN-13: 978-9361591754 Chakrabarti",
+						"3. Introduction to Artificial Dan W. Patterson PHI Learning; 2015. ISBN: 978- Intelligence and Expert Systems 8120307775",
+						"4. Artificial Intelligence Elaine Rich, Kevin Knight, McGraw-Hill; 3rd Ed., 2017. ISBN: 978- Shivashankar B. Nair 1259029420",
+						"5. Artificial Intelligence - A Modern Dilip Narayan Sahu, ISBN-10: 9355151446 Approach Kishore Kumar Dash, Abahy Kolhe, Agilandeswari Devarajan",
+						"6. Machine Learning Essentials Dhairya Parikh Vibrant Publishers: ISBN-10: 1636513778, ISBN-13: 978-1636513775"
 					],
-					"content": "Unit- 1.0 Introduction to Programming 6 hrs\nIntroduction to components of a computer system (disks, memory, processor, where a program is stored and executed, operating system, compilers etc.). Idea of Algorithm: steps to solve logical and numerical problems. Representation of Algorithm: Flowchart/ Pseudo code with examples. From algorithms to programs; source code, variables (with data types) variables and memory locations, Syntax and Logical Errors in compilation, object and executable code.\nUnit- 2.0 Operators, Conditional Branching and Loops 8 hrs\nArithmetic expressions/arithmetic operators, relational operators, logical operators, bitwise operators and precedence.Writing and evaluation of conditionals and consequent branching, Iteration and loops.\nUnit- 3.0 Arrays and String 6 hrs\nArray declaration & initialization, bound checking arrays (1-d, 2-d), character arrays and strings.\nUnit- 4.0 Function, Recursion and Pointers 9 hrs\nFunctions (including using built in libraries), Parameter passing in functions, call by value, passing arrays to functions: Recursion, as a different way of solving problems. Example programs, such as Finding Factorial, Fibonacci series, Ackerman function etc. Idea of pointers, Defining pointers, Use of Pointers in self- referential structures, idea of call by reference.\nUnit- 5.0 User defined Data Types and File handling 8 hrs\nStructure- defining, declaring, initializing; accessing structure members, processing of structure, array of structures, structures within structure, structure and function, type definition; Union— definition, declaration, accessing union members, initializing union. Introduction, file declaration, opening and closing a file, working with text and binary files, I/O operations on file, error handling, random access to files\nUnit- 6.0 Basic Algorithms 5 hrs\nSearching, Basic Sorting Algorithms (Bubble, Insertion and Selection), Finding roots of equations, notion of order of complexity through example programs (no formal definition required)"
+					"content": "Unit-1.0: Introduction to Artificial Intelligence (8 hrs)\n1.1 What is AI? History and evolution of AI\n1.2 Foundations of AI: philosophy, mathematics, and cognitive-science influences\n1.3 Intelligent agents: agent–environment interaction, PEAS (Performance measure, Environment, Actuators, and Sensors) description\n1.4 Types of environments (observable, deterministic, episodic, static, discrete, single/multi-agent)\n1.5 Types of agents: simple reflex, model- based, goal-based, utility-based, learning agents\n1.6 Overview of AI application domains across engineering disciplines\nUnit-2.0: Problem Solving by Search (9 hrs)\n2.1 Problem formulation and state-space representation\n2.2 Uninformed search: BFS, DFS, Uniform Cost Search, Depth-Limited and Iterative Deepening Search\n2.3 Informed (heuristic) search: Greedy Best- First Search, A* algorithm\n2.4 Heuristic function design and admissibility/consistency\n2.5 Local search algorithms: Hill Climbing, Simulated Annealing (concept)\n2.6 Adversarial search: Minimax algorithm, Alpha-Beta pruning\n2.7 Constraint Satisfaction Problems (CSP): concept, backtracking (overview)\nUnit-3.0: Knowledge Representation and Reasoning (8 hrs)\n3.1 Knowledge representation issues; propositional logic — syntax and semantics\n3.2 Inference in propositional logic: resolution\n3.3 First-order predicate logic — syntax, quantifiers (concept)\n3.4 Inference in first-order logic: forward chaining, backward chaining, resolution (concept)\n3.5 Structured knowledge representation: semantic networks, frames\n3.6 Rule-based (production) systems\nUnit-4.0: Reasoning Under Uncertainty (7 hrs)\n4.1 Sources of uncertainty; review of basic probability theory\n4.2 Bayes' theorem and its application to AI reasoning\n4.3 Bayesian networks: representation and manual inference (overview)\n4.4 Introduction to fuzzy logic and fuzzy sets\n4.5 Certainty factors and rule-based uncertainty (overview)\nUnit-5.0: Introduction to Machine Learning and AI Applications (10 hrs)\n5.1 Machine learning paradigms: supervised, unsupervised, reinforcement learning (concept)\n5.2 Overview of regression and classification concepts (linear regression, k-NN, decision trees)\n5.3 Overview of clustering concept (k-means)\n5.4 Introduction to artificial neural networks: perceptron, basic architecture (concept)\n5.5 Overview of Natural Language Processing (NLP): concept and applications\n5.6 Overview of Computer Vision: concept and applications\n5.7 Expert systems: architecture and applications\n5.8 Robotics and AI: overview of intelligent robotic systems\n5.9 Ethics, bias, and responsible AI; societal and multidisciplinary impact; AI and Sustainable Development engineering contexts. Goals (SDGs)"
 				},
 				{
 					"code": "100106",
@@ -88,43 +98,23 @@
 						"practical": 0
 					},
 					"references": [
-						"1. Basic Electrical Engineering, D.P. Kothari et al,McGraw-Hill Education 4th Edition,2019",
-						"2. Electrical and Electronic Technology Edward Hughes, 12th edition, 2016",
-						"3. Principles Electrical Engineering and Electronics, V.K Mehata, Rohit Mehta, S Chand",
-						"and Company 2nd edition, 2015",
-						"4. Basic Electrical Engineering, J. B. Gupta, Katson Publication",
-						"5. A textbook of Electrical Technology B. L. Thereja, A. K. Thereja Vol. 1, 2, and 3 S",
-						"Chand Publication"
+						"1. Basic Electrical and Electronics Vinoth Kumar K., Wiley India, New Delhi, 2nd Ed., 2022, Engineering Saravanakumar R., Jegathesan V., Kowsalya M., Mahesh M.",
+						"2. Fundamentals of Electrical and Susan S. Mathew and Saji Khanna Book Publishing Co., 2021, Electronics Engineering (with Lab T. Chacko ISBN: 978-9391505592 Manual)",
+						"3. Basic Electrical Engineering V. Mittle, Arvind Mittle McGraw Hill Education, 2017",
+						"4. Basic Electrical Engineering D.C. Kulshreshtha Tata McGraw-Hill, 3rd Ed., 2019,",
+						"5. Basic Electrical and Electronics D.P. Kothari & I.J. Nagrath Tata McGraw Hill, 2nd Ed., 2020 Engineering",
+						"6. Principles of Electrical V.K. Mehta and Rohit S. Chand & Co., 2nd Ed., 2018, Engineering Mehta",
+						"7. Basic Electrical and Electronics M.S. Sukhija, T. K. Oxford University press,2012 Engineering Nagsarkar",
+						"8. A Course in Electrical and A.K. Sawhney and Puneet Dhanpat Rai & Co., 19th Ed., 2018, Electronic Measurements and Sawhney ISBN: 978-8177001006 Instrumentation",
+						"9. Basic Electrical Engineering. C.L. Wadhwa New Age International, 2007",
+						"10. Textbook of Electrical Technology B.L. Theraja& A.K S. Chand Publication, 2022, – Volume I Theraja, 23 edition, ISBN-10: 8121924405",
+						"11. Textbook of Electrical Technology B.L. Theraja& A.K S. Chand Publication,2025 AC and DC Machines –Volume II Theraja,"
 					],
-					"content": "Unit- 1.0 8 hrs\nDC Circuit Analysis and Network Theorems: Concepts of Network, Active and Passive elements, voltage and current sources, concept of linearity and linear network, unilateral and bilateral elements. R L and C as linear elements.Source Transformation. Kirchhoff’s Law, loop and nodal methods of analysis; star – delta transformation; Network Theorems: Superposition Theorem, Thevenin’s Theorem, Norton’s Theorem, Maximum Power Transfer Theorem. (Simple Numerical Problems)\nUnit- 2.0 5 hrs\nMagnetic Circuit: Magnetic circuit concepts, analogy between Electric & Magnetic circuits, Magnetic circuits with DC and AC excitation, Magnetic leakage. B-H curve, Hysteresis and Eddy Current losses, Magnetic circuit calculations.\nUnit- 3.0 8 hrs\nSteady State Analysis of Single-Phase AC Circuits: Sinusoidal, Square and Triangular waveforms–average and effective values, form and peak factors, concept of phasors, phasor representation of sinusoidally varying voltage and current. Analysis of series, parallel, and series – parallel RLC Circuits: Apparent, Active & Reactive Powers, Power factor, causes and problems of low power factor, power factor improvement. Resonance in Series and Parallel Circuits. (Simple Numerical Problems)\nUnit- 4.0 5 hrs\nThree Phase AC Circuits: Three Phase System – its necessity and advantages, meaning of phase sequence and star and delta connections, balanced supply and balanced load, line and phase voltage/ current relations, three phase power and its measurement. (Simple Numerical Problems)\nUnit- 5.0 10 hrs\nIntroduction to DC Machines:Principal, Operation, Construction, and types of DC machines, e.m.f. equation of generator and torque equation of motor. Single Phase Transformer: Principle of Operation, Construction, e.m.f. equation, losses in transformer, efficiency. Three Phase Induction Motor:Principal, Operation, and Construction (Simple Numerical Problems)\nUnit- 6.0 6 hrs\nSoldering- Soldering and desoldering techniques, breadboard wiring, general-purpose PCB soldering/wiring. Wiring-Types of residential and commercial wiring systems, general rules and guidelines for installation, loadcalculation and sizing of wire, rating of main switch, distribution board."
+					"content": "Unit-1.0: Electrical fundamentals and DC Circuits (8 hrs)\n1.1 Concept of Charge, Current, Voltage, Resistance, Inductance and Capacitance, EMF\n1.2 Ohm's Law and Kirchhoff’s Current and Voltage Laws\n1.3 Effect of Temperature on Resistance\n1.4 Resistor, Inductor & Capacitor: Properties and Applications\n1.5 Series, parallel and series parallel resistor circuits,\n1.6 Current and Voltage Divider Rules\n1.7 Star-Delta and Delta-star transformations\nUnit-2.0: AC Circuits (10 hrs)\n2.1 Generation of sinusoidal EMF; Peak, RMS, average values; form factor; Wave and phasor representation\n2.2 Impedance of R, L, C circuits; RL, RC, RLC series and parallel circuits; series and parallel resonance.\n2.3 Power in AC circuits: Active, reactive, apparent power\n2.4 Power factor - Unity, lag, lead, Power factor improvement, advantages\n2.5 Harmonics, source and its impact\n2.6 Three-phase systems, concept need and advantages\n2.7 Single Phase vs Three Phase System (Advantages), Phase sequence\n2.8 Balanced and unbalanced supply and load and line-phase relationships\n2.9 Voltage, Current relationship and power in Star and Delta connections\n2.10 Power in balanced three phase circuits\nUnit-3.0: Magnetic Circuits and Electromagnetic induction (10 hrs)\n3.1 Magnetic circuits - Magnetic Flux, Magnetic intensity, Flux Density(B), Magnetomotive Force (MMF)\n3.2 Reluctance, Permeability, simple numerical\n3.3 Analogy between Electric and Magnetic circuits\n3.4 Basic Properties of Magnetic materials\n3.5 Magnetic Circuits with DC Excitation\n3.6 Magnetic Leakage\n3.7 B-H Curve\n3.8 Hysteresis and Eddy Current Losses\n3.9 Magnetic Circuit Calculations\n3.10 Electromagnetic induction - Faradays Laws, Fleming's right hand and left-hand Rules,\n3.11 Statically and dynamically induced EMF; Concepts of self-inductance, mutual inductance and coefficient of coupling; Energy stored in magnetic fields.\nUnit-4.0: Transformer (8 hrs)\n4.1 Transformer - Construction, principle of operation, Single phase v/s three phase transformer\n4.2 Emf equation\n4.3 Transformer performance – Load test -Voltage regulation, losses and efficiency.\n4.4 Single phase v/s 3 phase transformer and its uses\n4.5 Special purpose transformers- Introduction and applications only- Audio transformer, Radio Frequency (RF) Transformer, Intermediate Frequency (IF) transformer, Pulse transformer, Isolation transformer, Impedance matching transformer\nUnit-5.0: Electrical and Special Purpose Machines (6 hrs)\n5.1 DC machines: construction, EMF equation, types of DC Motor and applications, need of DC motor starter\n5.2 AC machines: Three-phase induction motor construction, working, types, slip, need of starter, DOL, star-delta starter\n5.3 Construction, working principle of single-phase induction motors, Starting methods\n5.4 Construction, working and applications of - (i) BLDC motor (ii) Servo motor (iii) Stepper motor a given special electrical (iv) Switched Reluctance motor machine. (v) Universal motor (vi) Coreless motor"
 				},
 				{
-					"code": "100112",
-					"name": "Workshop Practices",
-					"type": "Theory",
-					"credits": 2,
-					"summary": {
-						"lecture": 2,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"1. HajraChoudhury S.K., HajraChoudhury A.K. And Nirjhar Roy S.K., ―ElementsOf Workshop",
-						"Technology‖, Vol. I 2008 And Vol. Ii 2010, Media PromotersAnd Publishers Private Limited,",
-						"Mumbai.",
-						"2. Kalpakjian S. And Steven S. Schmid, ―Manufacturing Engineering AndTechnology‖, 4th Edition,",
-						"Pearson Education India Edition, 2002.",
-						"3. Gowri P. HariharanAnd A. Suresh Babu,‖Manufacturing Technology – I‖Pearson Education,",
-						"2008.",
-						"4. Roy A. Lindberg, ―Processes And Materials Of Manufacture‖, 4th Edition,Prentice Hall India,",
-						"1998.",
-						"5. Rao P.N., ―Manufacturing Technology‖, Vol. I And Vol. Ii, Tata McgrawhillHouse, 2017."
-					],
-					"content": "Unit-1 Sheet Metal Working: 6 hrs\nSheet material: GI sheets, aluminium, tin plate, copper, brass etc; Tools: steel rule, verniercallipers, micrometer, sheet metal gauge, scriber, divider, punches, chisels, hammers, snips, pliers, stakes etc.; operations: scribing, bending, shearing, punching etc; Product development: hexagonal box with cap, funnel etc.\nUnit-2 Joining: 6 hrs\nClassifications of joining processes; Brazing, Soldering, and Mechanical Joints, Arc welding, Gas welding etc.\nUnit-3 Pattern Making and Foundry Practice: 6 hrs\nPattern material: wood, cast iron, brass, aluminium, waxes etc.; Types of patterns: split, single piece, match plate etc; Tools: cope, drag, core, core prints, shovel, riddle, rammer, trowel, slick, lifter, sprue pin, bellow, mallet, vent rod, furnace etc. Moulding sands: green sand, dry sand, loam sand, facing sand etc., Sand casting: Sand preparation, mould making, melting, pouring, and cleaning\nUnit-4 Fitting Shop 10 hrs\nIntroduction to Fitting; Fitting Tools: Files and their classification, Holding Tools, Cutting Tools, Measuring and Marking Tools, Thread Making Tools, Various Fitting Power Tools; Methods Of Filing: Cross Filling and Draw Filing, Other associated operations Marking. Sawing and Chipping; Safety and Precautions in Fitting Shop.\nUnit-5 Carpentry Shop 7 hrs\nIntroduction to Carpentry Shop; Types of Wood; Seasoning of Wood: Ty[es of Seasoning Methods; Defects in wood; Structure of Wood; Car[entry Tools; Measuring Tools, Marking Tools, Cutting Tools, Planning Tools, Drilling and Boring Tools, Holding Tools, Striking Tools, Auxiliary tools and materials used in Carpentry; Wood working Processes; Carpentry joints; wood Working Machines: Wood Working Lathe, Circular Saw, Thickness Planer, Band sawSafety and precautions in Carpentry Shop.\nUnit-6 Smithy Shop 5 hrs\nIntroduction to Smithy Sho; Forging Tools and Equipment; Forging Operations: Drawing, Upsetting, Swaging, Punching, Drifting, Fullering, Bending; Hot Working Processes: Rolling, Drop Forging, Press Forging, Hot Extrusion, Hot Drawing, Cold Working Process, Safety and Precautions in Smithy Shop."
-				},
-				{
-					"code": "100115P",
-					"name": "Swatch Bharat Mission",
+					"code": "100101P",
+					"name": "Communication Skills Lab",
 					"type": "Practical",
 					"credits": 1,
 					"summary": {
@@ -133,10 +123,10 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Objectives:\n1. Understanding the importance of cleanliness and sanitation: The course could aim to create awareness about the significance of cleanliness and sanitation in maintaining personal health, environmental sustainability, and community well-being. It could cover topics such as waste management, sanitation practices, and the impact of poor sanitation on public health.\n2. Developing skills for effective waste management: The course could provide training on various waste management techniques, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. It could also emphasize the importance of reducing waste generation and promoting sustainable waste management practices.\n3. Promoting behavioural change towards cleanliness: The course could focus on influencing positivebehavioural change among individuals and communities towards cleanliness. It could include modules on promoting good hygiene practices, creating awareness about the harmful effects of littering and open defecation, and encouraging responsible waste disposal habits.\n4. Creating awareness about Swachh Bharat Mission initiatives: The course could provide information about the Swachh Bharat Mission initiatives and campaigns launched by the Government of India to promote cleanliness and sanitation, such as SwachhSurvekshan, Swachh Bharat Abhiyan, and Clean India Campaign. It could also discuss the progress made, challenges faced, and future prospects of the Swachh Bharat Mission.\n5. Engaging in community participation and advocacy: The course could emphasize the importance of community participation in the Swachh Bharat Mission and provide tools and strategies for engaging with local communities to promote cleanliness and sanitation. It could also encourage advocacy for policy changes and innovations to address sanitation-related issues at the community, regional, and national levels.\n6. Pre-requisite: Nil\n7. Course Outcome:\n8. Increased awareness and knowledge about cleanliness and sanitation: Participants of the course may gain a deeper understanding of the importance of cleanliness and sanitation, including the impact on personal health, environmental sustainability, and community well- being. They may learn about various waste management techniques, hygiene practices, and the initiatives of the Swachh Bharat Mission.\n9. Enhanced skills for effective waste management: Participants may acquire practical skills related to waste management, such as waste segregation, composting, recycling, and proper disposal of hazardous waste. They may also develop skills in reducing waste generation and promoting sustainable waste management practices in their communities or workplaces.\n10. Positive behavioral change towards cleanliness: The course may influence participants to adopt positive behavioral changes towards cleanliness, such as avoiding littering, practicing good hygiene habits, and promoting responsible waste disposal. Participants may develop a sense of responsibility towards maintaining cleanliness in their surroundings and actively contribute towards creating a cleaner environment.\n11. Increased community participation and advocacy: Participants may become actively engaged in community participation and advocacy efforts related to cleanliness and sanitation. They may collaborate with local communities, government bodies, and non- governmental organizations (NGOs) to raise awareness, implement cleanliness initiatives, and advocate for policy changes or innovations to address sanitation-related issues.\n12. Contribution towards Swachh Bharat Mission objectives: Participants may contribute towards the objectives of the Swachh Bharat Mission, such as promoting cleanliness, ensuring proper waste management, and eliminating open defecation. They may actively participate in Swachh Bharat Mission campaigns, initiatives, and activities, and make a positive impact on their communities and society at large.\n13. List of Reports:\n14. Any topics related to Swatch Bharat Mission"
+					"content": "LE-1 Skills of Communication (LSRW) • Listening to audio/video lectures and summarizing, Reading comprehension with group discussion. • Role play on workplace Scenarios, Story/narrative reconstruction from audio input • Group presentations based on reading materials, note-taking, and report writing from lectures\nLE-2 Introduction: Social, Academic, and Professional • Self-introduction and introducing others. • Face-to-face conversation practice. • Role plays (workplace interactions, daily situations) • Group presentations, Group discussion, and practice • Debate and panel discussion, Seminar presentation with Q&A • Situational communication (office, social, academic contexts)\nLE-3 Oral Presentation ➢ Oral presentation: Audience • Selection, Presentation Techniques ➢ Posture, gesture, and stage presence • Facial expressions • Eye contact techniques ➢ Basics of slide design • Text vs visuals, • Using an image and icon, • Slide timing and pacing, • Common slide mistakes\nLE-4 Anchoring and Addressing ➢ Role of an anchor vs speaker • Types of anchoring Laboratory Experiment/ Practical Titles • Event flow management ➢ Formal vs. informal introduction • Avoiding common mistakes • Building audience interest ➢ Emotional connection, • Voice modulation • Movement on stage • Managing nervous habits.\nLE-5 Interview ➢ Interviews: Types, • Employer vs candidate • Common interview mistakes • SWOT Analysis ➢ Structuring clear and concise answers • Avoiding memorized/robotic answers. ➢ Listening to questions cautiously • Non-verbal listening cues (nodding, eye contact), • Avoiding interruptions ➢ First impressions in interviews, • Professional greetings (verbal + non-verbal)\nLE-6 Group Discussion ➢ GD: types • (academic, professional, selection-based) • Do’s and Don’ts in GD ➢ Role of initiator • Role of participant • Role of moderator/leader • Managing interruptions, • Handling conflicts and disagreements ➢ Structuring arguments logically, • Supporting points with examples/data.\nLE-7 Debate, Seminar, Symposium, Conference Laboratory Experiment/ Practical Titles ➢ Debate • Seminar, • Symposium, • Conference. ➢ Paraphrasing and summarizing • Avoiding interruptions • Constructive feedback techniques • Identifying reliable sources (websites, journals, reports), • Note-taking and organizing information, • Plagiarism • Converting research into speaking points, • Using data/examples\nLE-8 Just A Minute Technique with Out of the Box Thinking ➢ Techniques for Idea Generation • Brainstorming, • Mind mapping • SCAMPER technique (Substitute, Combine, Adapt, Modify, put to other use, Eliminate, Reverse) ➢ Storytelling • Creating mental images through words • Emotional connection and expression ➢ Speaking within time limits • Organizing thoughts quickly,\nLE-9 Sounds, Intonation, and IPA ➢ Phonetics • Sounds: Vowels and consonants, • Syllables and word stress • Common pronunciation errors influenced by mother tongue) ➢ IPA symbols for English sounds, • IPA for vowels (short, long, diphthongs), • IPA for consonants, using a dictionary with IPA Stress marks in IPA Laboratory Experiment/ Practical Titles ➢ Word stress and sentence stress, • Commonly mispronounced words, • Rhythm and fluency • Self-correction techniques,\nLE-10 Activities: Role Play, Peer Activities, and Group Activities • Role Play • Group Activities ➢ Role-Based Communication • Situational Communication • Tone, language, and • Behaviour adjustment, • Verbal and non-verbal • adaptation, ➢ Problem-solving • Creative thinking techniques • Decision-making • Evaluating multiple • solutions, • Real-life problem • Innovation and idea • generation."
 				},
 				{
-					"code": "100110P",
+					"code": "100104P",
 					"name": "Engineering Physics Lab",
 					"type": "Practical",
 					"credits": 1,
@@ -146,20 +136,7 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform any 10 Experiments\n1. Determination of the capacitance and permittivity of the given material.\n2. Determination of e/m of electron.\n3. Determination of Planck’s constant and Photoelectric Work Function using Photoelectric cell.\n4. Verification of inverse square law using photocell.\n5. Determination of Wavelength of (He-Ne) LASER using Diffraction Grating Method.\n6. Calculation of Energy Band Gap of a semiconductor.\n7. Determination of Dielectric constant using resonance method.\n8. Determination of Wavelength of Sodium light by measuring the diameter of the Newton’s Ring.\n9. Determination of curvature of convex surface of a lens by Newton’s ring.\n10. Verification of existence of Bohr’s Energy level with Frank-Hertz apparatus.\n11. Determination of the Earth’s horizontal magnetic field intensity and magnetic Moment of a magnet by employing magnetometer.\n12. Verification of Faraday’s Law and Lenz’s Law of Electromagnetic Induction."
-				},
-				{
-					"code": "100111P",
-					"name": "Programming for Problem Solving Lab",
-					"type": "Practical",
-					"credits": 1,
-					"summary": {
-						"lecture": 0,
-						"tutorial": 0,
-						"practical": 2
-					},
-					"references": [],
-					"content": "Perform any 10 Experiments\n1. Tutorial 1: Problem solving using computers: Lab1: Familiarization with programming environment\n2. Tutorial 2: Variable types and type conversions: Lab 2: Simple computational problems using arithmetic expressions\n3. Tutorial 3: Branching and logical expressions: Lab 3: Problems involving if-then-else structures\n4. Tutorial 4: Loops, while and for loops: Lab 4: Iterative problems e.g., sum of series\n5. Tutorial 5: 1D Arrays: searching, sorting: Lab 5: 1D Array manipulation\n6. Tutorial 6: 2D arrays and Strings Lab 6: Matrix problems, String operations\n7. Tutorial 7: Functions, call by value: Lab 7: Simple functions\n8. Tutorial 8 &9: Numerical methods (Root finding, numerical differentiation, numerical integration): Lab 8 and 9: Programming for solving Numerical methods problems\n9. Tutorial 10: Recursion, structure of recursive calls Lab 10: Recursive functions\n10. Tutorial 11: Pointers, structures and dynamic memory allocation Lab 11: Pointers and structures\n11. Tutorial 12: File handling: Lab 12: File operations"
+					"content": "LE-1 Diffraction Grating.\nLE-2 Newton’s Ring Experiment\nLE-3 Resolving Power of Telescope\nLE-4 Polarimeter\nLE-5 Numerical Aperture Optical Fiber (Virtual Lab)\nLE-6 Dielectric Constant\nLE-7 Measurement of Plank’s Constant\nLE-8 LE-8 Stern-Gerlach Experiment (Virtual Lab)\nLE-9 p-n junction\nLE-10 Hall effect experiment\nLE-11 Energy Band Gap Measurement\nLE-12 Changing nanoparticle size alters light absorption."
 				},
 				{
 					"code": "100106P",
@@ -172,11 +149,11 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform any 10 Experiments\n1. Verification of Kirchhoff’s laws.\n2. Verification of Superposition Theorem.\n3. Verification of Thevenin’s Theorem.\n4. Verification of Norton’s Theorem.\n5. Verification of Maximum Power Transfer Theorem.\n6. Measurement of power in 3 – Ø circuit by Two Watt meter method and determination of its power factor.\n7. Star to Delta and Delta to Star conversion of the three circuit.\n8. Determination of Efficiency by load test of a 1 – Ø Transformer.\n9. To study the typical BHK house wiring\n10. Study of safety precautions while working on electrical installations and necessity of earthing"
+					"content": "LE-1 Measurement of various electrical parameters\nLE-2 Verification of ohm’s law in a nonlinear circuit\nLE-3 Verification of Kirchhoff’s Current Law and Voltage Law\nLE-4 Measurement of AC signal parameters\nLE-5 Measurement of impedance, current, and power factor\nLE-6 Measurement of power and power factor in a single-phase ac series in a - (i) Resistive circuit (ii) Inductive circuit.\nLE-7 Energy efficient lamp - Measurement of power consumption of an Incandescent lamp, fluorescent lamp (tube light) and a LED light of same rating.\nLE-8 Line and Phase voltage measurement of star - delta connection circuit in a 3 phase AC circuit\nLE-9 Determination of (i) Voltage ratio (ii) Polarity of a single-phase Transformer\nLE-10 Autotransformer specification\nLE-11 Variation of input supply voltage using a single-phase autotransformer Laboratory Experiment/ Practical Titles\nLE-12 Determination of the voltage ratio and polarity of a single-phase transformer.\nLE-13 Determination of the performance of a single-phase transformer by direct load test\nLE-14 Determination of the performance of a single-phase transformer OC and SC test\nLE-15 Operation of induction motor and starter.\nLE-16 Demonstration of cut-out sections of machines: DC machine, three phase induction machine, Single phase induction machine and synchronous machine.\nLE-17 Reverse the direction of a given three phase induction motor by reversing the Phase sequence\nLE-18 Identification of different parts of a single-phase induction motor and reversing the direction of rotation"
 				},
 				{
 					"code": "100112P",
-					"name": "Workshop Practices Lab",
+					"name": "Programming for Problem Solving Lab",
 					"type": "Practical",
 					"credits": 1,
 					"summary": {
@@ -185,7 +162,20 @@
 						"practical": 2
 					},
 					"references": [],
-					"content": "Perform all Experiments List of Practical:\n1. Learn and apply of different fitting tools –like work holding, marking, measuring, cutting, finishing and miscellaneous. Student will also prepare the report with sketch, specifications and applications of fitting tools demonstrated.\n2. Prepare one simple and another male-female type fitting jobs as per given drawings- 2 jobs\n3. Learn and apply of different tin smithy tools. Student will also prepare the report with sketch, specifications and applications of tin smithy tools demonstrated.\n4. Learn and apply of welding equipments and making minimum one model.\n5. Learn and apply of foundry tools and making minimum one model.\n6. Learn and apply of carpentry tools and making minimum one model.\n7. Learn and apply of Sheet Metal tools and making minimum one model.\n8. Learn and apply of Lathe Tools & operations for making a job.\n9. Learn and apply the application of measuring tools.\n10. Learn and apply any casting process for making a model"
+					"content": "LE-1 Algorithmic Logic & Basic I/O • Write a C program to calculate the area of various geometrical shapes (circle, triangle, rectangle) using appropriate data types and type casting, accompanied by a flowchart.\nLE-2 Decision Making Systems • Develop a Student Grading and Classification System using an if-else ladder and a switch- case to handle marks for grading and classify eligible fee waivers by category.\nLE-3 Iterative Problem Solving • Develop a C program to perform the following tasks by using while and for loops: i) Find all prime numbers between 1 and N ii) Generate the Fibonacci sequence for the value of N.\nLE-4 1-D Array Operations • Write a C program to: i) Find the maximum/ minimum element using Linear Search ii) Calculate the average of elements in a 1-D array. Laboratory Experiment/ Practical Titles\nLE-5 Matrix Manipulation (2-D Arrays) • Write a C program to perform the following tasks: i) Matrix Multiplication ii) Find the transpose of a matrix using 2-D arrays\nLE-6 Pointer Arithmetic & Strings • Write a C program to perform the following tasks without using pointer arithmetic: i) Reverse a string ii) Count vowels/consonants of the given string using pointers\nLE-7 Recursion vs. Iteration • Write a C program to perform the following tasks by using both iterative and recursive functions to compare logic flow: i) Find the factorial value for the given number ii) Find the Greatest Common Divisor (GCD)\nLE-8 Parameter Passing Mechanisms • Develop a C program that swaps two values and updates an array using both Call by Value and Call by Reference.\nLE-9 User-Defined Data Types • Create an \"Employee Payroll System\" using Structures and Unions in C to store employee details and compare memory allocation between them.\nLE-10 File Handling Operations • Write a program to create a text file and perform the following tasks: i) Write student records ii) Read the student records and display records\nLE-11 Classes, Objects & Encapsulation Laboratory Experiment/ Practical Titles • Design a Bank Account class with private data members for balance and public member functions for deposit, withdraw, and display.\nLE-12 Constructors & Memory Management • Implement a String class that utilizes Constructors (Default, Parameterized, and Copy) and a Destructor to manage the memory dynamically.\nLE-13 Static Members & Friend Functions • Develop a program that uses a static member to track the number of objects created and a friend function to compare private data of two different classes.\nLE-14 Implementation of Inheritances • Write a C++ program to demonstrate the various arithmetic operations using the following different inheritance concepts: i) Single Inheritance ii) Multiple Inheritance iii) Multilevel Inheritance iv) Hierarchical Inheritance v) Hybrid/virtual Inheritance\nLE-15 Polymorphism & Abstract Classes • Write C++ programs to demonstrate the following: i) Create an Abstract Class Shape with a pure virtual function draw (). ii) Find the area of the shape using function overloading. iii) Perform the addition of two complex numbers using operator overloading.\nLE-16 Robust Error Management Laboratory Experiment/ Practical Titles • Write a C++ program to demonstrate the exception handling process using try, catch, and throw blocks to handle exceptions such as \"Division by Zero\" or \"Negative Stock Input.\"\nLE-17 Template Implementation • Write a C++ program using template functions and class templates: a function to find the max of two values, and a class template like pair to store values of any data type."
+				},
+				{
+					"code": "100113P",
+					"name": "Sports/Yoga/NCC/NSS",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "LE-1 Assessment of Body Mass Index (BMI), resting heart rate and physical fitness parameters\nLE-2 Evaluate Flexibility using standard fitness tests.\nLE-3 Evaluate Endurance using standard fitness tests.\nLE-4 Evaluate muscular strength using standard fitness tests.\nLE-5 Evaluate agility using standard fitness tests.\nLE-6 Practice of warm-up, stretching and cool- down exercises\nLE-7 Develop a simple fitness and healthy lifestyle plan based on personal fitness assessment.\nLE-8 Perform Standing Asanas (Tadasana, Trikonasana, Vrikshasana\nLE-9 Perform Sitting Asanas (Vajrasana, Paschimottanasana, Pavanamuktasana)\nLE-10 Practice of Prone Asanas (Bhujangasana, Shalabhasana, Makarasana Laboratory Experiment/ Practical Titles LE-11Practice of Pranayama (Deep Breathing, Anulom-Vilom, Bhramari and Kapalbhati)\nLE-12 Practice of Mindfulness Meditation\nLE-13 Practice of Om Chanting and Breath Awareness Meditation\nLE-14 Practice of Shavasana and Guided Relaxation (Yoga Nidra)\nLE-15 Daily Meditation Log and Stress Self- Assessment\nLE-16 Practice fundamental skills in Athletics (Sprint, Relay, Long Jump or Throw Events)\nLE-17 Practice fundamental skills in one Team Game (Volleyball, Football, Basketball, Cricket or Kho-Kho)\nLE-18 Officiating and Conduct of Mini Sports Competition\nLE-19 Preparation and presentation of a Personal Lifelong Fitness and Wellness Programme including Stress Management Practices"
 				}
 			]
 		},
@@ -570,67 +560,62 @@
 		"4": {
 			"subjects": [
 				{
-					"code": "EC104",
+					"code": "104401",
+					"name": "Analog Electronics and Integrated Circuits",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. Roy Choudhury. D., Shail Jain, “Linear Integrated Circuits”, New Age International Publications, 4th Edition, 2010.",
+						"2. S ergio Franco, “Design with Operational Amplifiers and Analog Integrated Circuits”, 3rd Edition, Tata McGraw -Hill, 2007.",
+						"3. Integrated devices & circuits by Millman & Halkias.",
+						"4. Electronic Devices & circuit theory by R. Boylestad.",
+						"5. Microelectronics by Sedra and Smith, Oxford University Press"
+					],
+					"content": "Unit- 1.0: Bipolar Junction transistor Amplifier Circuits: 9 hrs.\nSmall signal operation, hybrid and re model, frequency response analysis in different configurations, High frequency analysis of BJT. Miller effect, Analysis of Multistage amplifier, Frequency response of cascaded stages, Cascode amplifier, Darlington amplifier\n\nUnit- 2.0: Field Effect transistor Amplifier Circuits: 7 hrs.\nSmall signal operation, frequency response analysis in different configurations High frequency model of the MOSFET, High frequency response of CS and CE amplifiers.\n\nUnit- 3.0: Feedback Amplifiers and Oscillators\n: 10 hrs. Classification and representation of amplifiers, Feedback concept, General Characteristics of negative feedback amplifiers. Properties of feedback amplifier topologies, Oscillators: Sinusoidal oscillators, Barkhausen Criterion, Analysis and design of RC phase shift oscillator, Wien bridge oscillators. Resonant circuit oscillators, General form of oscillator circuit (Hartley & Colpitts), Crystal oscillators.\n\nUnit- 4.0: Power Amplifier: 6 hrs.\nSeries-Fed Class A Amplifier, Transformer coupled Class A Amplifier, Class B amplifier Circuit and Operation, Amplifier Distortion, Push-Pull and Complementary Push-Pull Amplifiers, Power Transistor Heat Sinking, Class C and Class D Amplifier.\n\nUnit- 5.0: Operational Amplifier: 4 hrs.\nIdeal Operational Amplifier characteristics, General operational amplifier stages and internal circuit diagrams of IC 741, DC and AC performance characteristics, Frequency response of OP-Amp, Applications of OP-Amp- Inverting and Non-inverting Amplifier, V to I and I to V converter, Logarithmic amplifier, Antilogarithmic amplifier, Instrumentation amplifier\n\nUnit- 6.0: Application of Op-Amp and special ICs: 6 hrs.\nComparator, Schmitt Trigger, 555 Timer, Multivibrators, Precision rectifier, First and Second Order Active Filters, Voltage Controlled Oscillator (IC 566), Phase Lock Loop (IC 565), LM 3805, IC8038"
+				},
+				{
+					"code": "104402",
 					"name": "Digital Circuits",
 					"type": "Theory",
 					"credits": 3,
+					"summary": {
+						"lecture": 3,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [
+						"1. M. Morris Mano and M. D. Ciletti, “Digital Design”, Pearson Education.",
+						"2. David J. Comer, “Digital Logic & State Machine Design”, O xford University Press.",
+						"3. RP Jain, “Modern Digital Electronics”, Tata McGraw Hill Publication.",
+						"4. A Anand Kumar Fundamental of digital circuits PHI 4 th edition"
+					],
+					"content": "Unit- 1.0: Number system: 4 hrs.\nBinary Codes: BCD code, Excess-3 code, Gray-code . Complements: Signed magnitude, r‟s complement, (r- 1)‟s complement.\n\nUnit- 2.0: Boolean laws and theorems: 6 hrs.\nLogic Gate: Basic, Universal and Others, Truth TableLogic Functions, Conversion of Logic Functions into truth table and vice versa. SOP and POS forms of Representation, Canonical form, minterm and maxterms, Simplification of Logic Functions by Theorems and Karnaugh‟s Map, Don‟t Care Conditions.\n\nUnit- 3.0: Combinational circuits: 9 hrs.\nAdders: Half Adder, Full Adder, Parallel Adder, Carry Look ahead Adder. Subtractors: Half subtractor, Full subtractor. Multiplexer: 2x1, 4x1 and design of 8x1 multiplexer. Demultiplexer, Decoder, Encoder and comparator\n\nUnit- 4.0: Sequential circuit: 9 hrs.\nLatches, Flip-Flops SR, JK, D and T Flip Flop, Race around Condition, Master-Slave flip flop, Shift Registers, Counters- Synchronous and Asynchronous: Design of Ripple Counter.finite state machines.\n\nUnit- 5.0: Data converter: 6 hrs.\nDigital to Analog Converter, Binary-Weighted Resistors DAC, R-2R Ladder DAC, Analog to digital converters, Counter types ADC, Successive Approximation ADC, Dual Slope ADC, Flash ADC.\n\nUnit- 6.0: Logic families & semiconductor memories: 8 hrs.\nCharacteristics of Digital ICs: Propagation delay, Power dissipation, Figure of Merit, Fan-out, Noise immunity, Wired-logic capability. Transistor-Transistor Logic, Emitter-Coupled Logic, MOS Logic, CMOS Logic, Transmission Gate, Comparison between logic families RAM, ROM, PLA, PAL; Circuit Implementation using ROM, PLA and PAL"
+				},
+				{
+					"code": "104403",
+					"name": "Electromagnetic Field Theory",
+					"type": "Theory",
+					"credits": 4,
 					"summary": {
 						"lecture": 3,
 						"tutorial": 1,
 						"practical": 0
 					},
 					"references": [
-						"➔ “Digital Fundamentals”, Floyd And Jain., Pearson",
-						"➔ “Digital Logic And Computer Design”, M.Morris Mano, Pearson",
-						"➔ “Fundamentals Of Digital Circuits”, A.Anand Kumar, Phi",
-						"➔ “Digital Systems”, Ronald J.Tocci, Neal S.Widmer, Pearson."
+						"1. Matthew N.O. Sadiku: “Elements of Engineering Electromagnetics” Oxford University Press.",
+						"2. Engineering Electromagnetics by William Hayt, TATA McGraw-Hill.",
+						"3. Narayana Rao, N: “Elements of Engineering Electromagnetics”, Pearson Education.",
+						"4. Electromagnetics, JD Kraus, McGraw-Hill."
 					],
-					"content": "Detailed contents:\nModule 1 Digital Principle: Analog Vs Digital, Number System, Computer Codes,Digital Signals, Waveforms Positive And Negative Logic, Logic Gate : Basic,Universal And Others, Truth Table, Logic Functions, Ic Chips, Timing Diagram,Electrical Analogy.\nModule 2 Boolean Laws And Theorems: Logic Functions, Conversion Of Logic Functions Into Truth Table And Vice Versa. Sop And Pos Forms Of Representation, Canonical Form, Minterms And Maxterms, Simplification Of Logic Functions By Theorems And Karnaugh’s Map, Don’t Care Conditions.\nModule 3 Analysis And Synthesis Of Combinational Logic Circuits: Comparators, Multiplexers, Encoder, Decoder, 7 Segment Display, Half Adder And Full Adder, Subtractors, Serial And Parallel Adders, Bcd Adder.\nModule 4 1 Sequential Circuit Blocks And Latches: Flip-Flops-Race Around Condition, Master-Slave And Edge Triggered Sr, Jk, D And T Flip Flop, Shift Registers, Counters - Synchronous And Asynchronous: Design Of Ripple Counter\nModule 5 Timing Circuit: Multivibrators, Monostable And Astable Timer: Lm555.\nModule 6 Integrated Circuit Logic Families: RTL, DTL, TTL, CMOS, IIL/I2L (Integrated Injection Logic And Emitter Coupled Logic).\nModule 7 Use Of Building Blocks: Designing Larger Systems Such As Digital-To-Analog Converters (DAC) : Weighted Resistors And R-2R, Analog-To-Digital(ADC)Converter, Counter And Succession."
+					"content": "Unit- 1.0: Vector calculus and Coordinate system: 6 hrs.\nIntroduction to Vector Algebra, Coordinate Systems (rectangular, cylindrical, and spherical) and Transformation, Vector calculus-differentiation, partial differentiation, integration, vector operator del, gradient, divergence, and curl; integral theorems of vectors.\n\nUnit- 2.0: Electrostatics: 8 hrs.\nCoulomb‟s law, Gauss‟s law and its applications, Electric field intensity, Electrical field due to point charges, Line, Surface and Volume charge distributions, Absolute Electric potential, Potential difference, Calculation of potential differences for different configurations. Poisson‟s and Laplace‟s equation, Applications (solution for some sim ple cases), Capacitance, Electrostatic energy, Conductor properties and Uniqueness Theorem.\n\nUnit- 3.0: Magnetostatics: 7 hrs.\nBiot-Savart law, Ampere‟s circuital law, Magnetic flux and magnetic flux density, Energy stored in magnetic field, Ampere‟s force law, Magnetic vector potential, Analogy between electric and magnetic field. Maxwell‟s equations in differential and integral form\n\nUnit- 4.0:\nMaxwell’s Equations and Time -Varying Field: 7 hrs. Faraday‟s law, transformer and motional EMF, displacement current, Maxwell‟s equations in time static and time varying field, time harmonic field. Dielectric and Magnetic boundary condition.\n\nUnit- 5.0: Electromagnetic Wave Propagation in Different Media: 8 hrs.\nUniform Plane Wave Propagation, Wave Propagation in Free Space, Dielectric and Conductor; Skin Effect; Wave Polarization, plane of incidence, Reflection of Plane wave (at normal and oblique) for conductor and dielectric, surface Impedance, Poynting Vector: Poynting Theorem, Instantaneous, Average and Complex Poynting Vector, Power Loss in Plane Conductor\n\nUnit- 6.0: Transmission Lines: 6 hrs.\nIntroduction, Concept of distributed elements, Equations of voltage and current, standing waves and Reflection Coefficient, Lossless and low-loss transmission lines, Power transfer on a transmission line, Transmission line calculations with the help of Smith chart, Applications of transmission line, Impedance matching using transmission lines."
 				},
 				{
-					"code": "EC105",
-					"name": "Analog Circuits",
-					"type": "Theory",
-					"credits": 3,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"➔ “Electronic Devices And Circuit Theory”, Boylestad And Nashelsky, Pearson",
-						"Publication.",
-						"➔ “Electronic Devices And Circuits”, Salivahanan, Suresh Kumar, Vallavaraj, Tmh,",
-						"1999",
-						"➔ “Integrated Electronics, Analog And Digital Circuits And Systems”, J. Millman",
-						"And Halkias, Tmh, 2000",
-						"➔ “Micro Electronic Circuits”, Sedra And Smith, Oxford University Press, 2000",
-						"➔ “Electronic Devices And Circuits”, David A Bell, Oxford University Press, 2000"
-					],
-					"content": "Detailed contents:\nModule 1 Small Signal Amplifiers: CB, CE, CC Configurations, Hybrid Model For Transistor At Low Frequencies, Rc Coupled Amplifiers, Mid Band Model, Gain And Impedance, Comparisons Of Different Configurations, Emitter Follower, DAR-Lington Pair (Derive Voltage Gain, Current Gain, Input And Output Impedance).Hybrid-Model At High Frequencies (PI - Model).\nModule 2 Multistage Amplifiers: Cascade And Cascode Amplifiers, Calculations Of Gain, Impedance And Bandwidth. Design Of Multistage Amplifiers. Feedback Amplifiers: 2 Feedback Concept, Classification Of Feedback Amplifiers, Properties Of Negative Feedback Amplifiers, Impedance Considerations In Different Configurations. Analysis Of Feedback Amplifiers.\nModule 3 Field Effect Transistor: Introduction, Classification, Fet Characteristics, Operating Point, Biasing, Fet Small Signal Model, Enhancement And Depletion Type Mosfets, Fet Amplifier Configurations (Cd,Cg And Cs).\nModule 4 Oscillators: Barkhausen Criterion , Sinusoidal Oscillators, The RC Phase-Shift Oscillator, Resonant Circuit Oscillators, A General Form Of Oscillator Circuit,The Wien -Bridge Oscillator, Crystal Oscillators, Hartley, Colpitts And Clapp’s Oscillator.\nModule 5 Power Amplifiers: Power Dissipations In Transistors, Amplifiers Classification, (Class-A, Class-B, Class-C, Class-Ab) Efficiency Analysis, Push-Pull And Complementary Push-Pull Amplifiers, Cross Over Distortion And Harmonic Distortion In Push-Pull Amplifier. Tuned Amplifiers (Single, Double And Stagger Tuned Amplifier)."
-				},
-				{
-					"code": "EC106",
-					"name": "Semiconductor Physics And Devices",
-					"type": "Theory",
-					"credits": 3,
-					"summary": {
-						"lecture": 3,
-						"tutorial": 0,
-						"practical": 0
-					},
-					"references": [
-						"➔ “Semiconductor Device Fundamentals”, By R. F. Pierret, Addison-Wesley",
-						"Publishing Company, 1996",
-						"➔ “Semiconductor Physics And Devices: Basic Principles”, By Donald A. Neamen,",
-						"➔ 3rd Edition, 2003",
-						"4",
-						"➔ “Physics Of Semiconductor Devices” S. M. Sze, 2nd Edition, 1981"
-					],
-					"content": "Detailed contents:\nModule 1 Basics Of Semiconductor Physics: Semiconductor Carrier Modelling-Bonding Model, Energy Band Model, Carriers, Band Gap, Carrier Properties (Effective Mass, 3 Intrinsic Carrier Concentration, Doping), Density Of States, Fermi Function, Equilibrium Carrier Concentration (Formula For N And P And Np Product), Charge Neutrality Relationship, Determination Of Fermi Level, Carrier Concentration, Temperature Dependence.Carrier Action - Drift, Mobility, Drift Current, Resistivity, Mobility (Einstein’s Relationship), Recombination-Generation (Band- To-Band, R-G Centres, Auger, Impact Ionization). Equation Of State, Continuity Equation, Minority Carrier. Diffusion Equation.\nModule 2 P-N Junction Diode: Step Junction, Built-In Potential, Depletion Width, Depletion Approximation, Electrostatic Relationship (Charge Density, Depletion Width, Potential, Electric Field) For Va = 0, Va ¡ 0 And Va ¿ 0, Ideal Diode Equation (Qualitative And Quantitative Derivation : Band Model, Assumptions, Approximation, Boundary Condition), Deviation From Ideal (R-G Current, Series Resistance, High Level Injection ), Junction Breakdown (Avalanche And Zener), Reverse Bias Junction Capacitance, Forward Bias Diffusion Capacitance, Qualitative Understanding Of Turn On And Turn-Off Transients. Zener Diode, Tunnel Diode, Varactor Diode, Schottky Diode.\nModule 3 Physics And Technologies Of BJT: Operational Considerations, Modes And Configurations, Performance Parameters (Emitter Efficiency, Base Transport Factor, Common Base Current Gain, Common Emitter Current Gain And Their Derivation For An Ideal Transistor, Deviation From Ideal (Base Width Modulation Punch Through, Avalanche Breakdown, Geometrical Effects, R-G Current), Small Signal Modelling.\nModule 4 Physics And Technologies Of FET: Junction Fet (Theory Of Operation, I-V Relationship), Mos Capacitor (Energy Band Diagram, Gate-Voltage Relationship, Capacitance-Voltage Characteristics), Mosfet (Theory Of Operation, Threshold Voltage, I-V Characteristics), Non Ideal Mos (M-S Work Function Difference, Oxide Charges, Threshold Adjustment And Considerations)\nModule 5 Introduction To UJT, SCR, Triac And DIAC (Construction, Working, Characteristics And Application), Ujt Relaxation Oscillator. Optoelectronic Devices: Photo Diodes (Pin And Avalanche), Solar Cell, LED, Solid State Laser Diodes."
-				},
-				{
-					"code": "EC107",
+					"code": "104404",
 					"name": "Analog Communication",
 					"type": "Theory",
 					"credits": 3,
@@ -640,35 +625,96 @@
 						"practical": 0
 					},
 					"references": [
-						"➔ “Electronic Communication System”, By Kennedy. Tmh.",
-						"➔ “Communication System”, By Haykin, Wiley",
-						"➔ “Communication System”, By Bruce Carison . Tmh.",
-						"➔ “Modern Digital And Analog Communication”, B.P.Lathi Oxford."
+						"1. Electronic communication systems by George Kennedy.",
+						"2. Principle of communication systems by Taub and schilling.",
+						"3. B. P. Lathi and Z. Ding, “Modern Digital and Analog Communication Systems”, 4th Ed., Oxford University Press, 2009.",
+						"4. J. G. Proakis, and M. Salehi, „Fundamentals of Communication Systems‟, Fifteenth Impression, Pearson Education Inc., India, 2013."
 					],
-					"content": "Detailed contents:\nModule 1 Introduction To The Communication System: Block Diagram Of Communication System And Comparative Study Of Analog And Digital Communication.\nModule 2 Modulation(Upward Frequency Translation) And Demodulation (Downward Frequency Translation) And The Need For Modulation: Broad Classification Of Modulation [Linear (Amplitude-Am) And Exponential (Frequency-Fm And Phase-Pm)].\nModule 3 Generation Of Double Side Band (DSB) With Carrier, Double Sideband With Suppressed Carrier (DSB-SC) And Single Sideband With Suppressed Carrier: De-Modulation Of Double Sideband With Carrier –Incoherent Detector Or Envelope Detector, Peak Diode Detector, Coherent Or Synchronous Detection Of DSBSC And Single Sideband With Suppressed Carrier.\nModule 4 Superheterodyne Receivers: Characteristics , Intermediate Frequency And Its Advantages, Image Rejection Of The Receiver.\nModule 5 Generation Of Fm Signals(Direct And Indirect Methods) And Demodulation.\nModule 6 Noise: Different Types Of Noise, Snr In Am, Fm And Pm System And Use Of Emphasis Circuit In Fm For Snr Optimization.\nModule 7 Analog Pulse Modulation: Pam, Pwm, Ppm And Demodulation; Comparative Study Of Various Analog Pulse Modulation 5"
+					"content": "Unit- 1.0: Introduction to Communication Systems: 4 hrs.\nBasic components of communication systems; Types of communication: Analog vs. Digital; Bandwidth requirements and frequency spectrum and Modulation and its necessity.\n\nUnit- 2.0: Amplitude Modulation (AM) Systems: 8 hrs.\nPrinciples of amplitude modulation; AM, DSB-SC, SSB, and VSB modulation techniques; Generation and detection of AM and DSB; AM waveforms and frequency spectrum; Modulation index and power relations and AM transmitters and receivers.\n\nUnit- 3.0: Angle Modulation: 10 hrs.\nFM and PM, Transmission FM spectra, Carson „s rule, Narrow band, and wide band FM Generation of FM by Direct Methods. Indirect Generation of FM; The Armstrong Method, Direct Methods of Frequency Demodulation; Slope Detector, Foster Seely or Phase Discriminator, Indirect methods of FM Demodulation; FM Detector using PLL, Comparison of FM and PM\n\nUnit- 4.0: Receivers: 8 hrs.\nTuned Radio Frequency (TRF) Receiver, Basic Elements of AM Super-heterodyne receiver; RF Amplifiers Characteristics Sensitivity, Selectivity, Image Frequency Rejection, Mixers Tracking and Alignment, Local Oscillator, IF Amplifier, AGC, AM Receiver using Transistors Communication Receiver. FM Receiver\n\nUnit- 5.0: Noise in Communication Systems: 6 hrs.\nTypes of noise: thermal, shot, and flicker noise; Signal-to-noise ratio (SNR) and its impact on system performance; Noise figure and noise temperature and Noise in AM and FM systems Pre emphasis and de-emphasis\n\nUnit- 6.0: Pulse Modulation Technique: 6 hrs.\nPulse Modulation techniques – Sampling Process, PAM, PWM and PPM concepts, Methods of generation and detection. Noise performance"
 				},
 				{
-					"code": "EC108",
-					"name": "Electromagnetic Theory",
+					"code": "104405",
+					"name": "Electronics Materials and Instrumentation",
 					"type": "Theory",
 					"credits": 3,
 					"summary": {
 						"lecture": 3,
-						"tutorial": 1,
+						"tutorial": 0,
 						"practical": 0
 					},
 					"references": [
-						"➔ “Time-Harmonic Electromagnetic Fields”, R. F. Harrington, Wiley-Ieee Press,",
-						"2001",
-						"➔ “Fields And Waves In Communication Electronics”, Ramo, S., Whinnery, J.R., And",
-						"Van Duzer, T., 3rd Ed., John Wiley And Sons, 1994",
-						"➔ “Advanced Engineering Electromagnetics”, Balanis, Ce Wiley India Pvt. Ltd.,",
-						"Reprint, 2008",
-						"➔ “Microwave Engineering”, Pozar, D.M., 3rd Ed., John Wiley And Sons, 2004.",
-						"****",
-						"7"
+						"1. Bell DA, “Electronic Instrumentation and Measurements,” Prentice Hall2.",
+						"2. Sawhney A.K., “Electrical and Electronic Measurements and Instrumentation,” Dhanpat Rai and Sons.",
+						"3. “Solid State Physics”, by Kittel, McGraw Hill.",
+						"4. “Principles of Electric Engineering Materials & Devices”, by S.O. Kasp, Mc - Graw Hill.",
+						"5. “Structure & properties of materials (VOL VI), Electronic Properties”, by Robert M. Rose, Lawrence A. Shepherd & John Wulf, Wiley Eastern Ltd."
 					],
-					"content": "Detailed contents:\nModule 1 Introduction To Vector Algebra, Coordinate Systems And Transformation, Vector Calculus. Electrostatics : Coulomb’s Law, Gauss’s Law And Its Applications, The Potential Functions, Equipotential Surface, Poisson’s And Laplace’s Equation, Applications (Solution For Some Simple Cases), Capacitance, Electrostatic Energy, Conductor Properties And Boundary Conditions Between Dielectrics And Dielectric - Conductor Interface, Uniqueness Theorem.\nModule 2 Magnetostatics: Biot-Savart Law, Ampere’s Circuital Law, Curl, Stoke’s Theorem, Magnetic Flux And Magnetic Flux Density, Energy Stored In Magnetic Field, Ampere’s Force Law, Magnetic Vector Potential, Analogy Between Electric And Magnetic Field.\nModule 3 Maxwell’s Equations, Equation Of Continuity For Time Varying Field. Inconsistency Of Ampere’s Circuital Law, Maxwell’s Equations In Differential And Integral Form. Electromagnetic Waves : Solution Of Wave Equation In Free Space, Uniform Plane Wave Propagation, Uniform Plane Waves, The Wave Equation For Conducting Medium, Wave Propagation In Lossless Medium And In Conductive Medium,Conductors And Dielectrics, Polarization.\nModule 4 Reflections And Refractions: Reflection By A Perfect Conductor With Normal As Well As Oblique Incidence. Reflection And Refraction By Perfect Dielectrics With Normal And Oblique Incidence. Surface Impedance. Poynting Vector : Poynting Theorem, Instantaneous, Average And Complex Poynting Vector, Power Loss In A Plane Conductor. 6\nModule 5 Transmission Lines: Transmission Line Theory, Low Loss Radio-Frequency And UHF Transmission Line. UHF Line As A Transformer, Voltage Step Up Of The Quarter Wave Transformer. Transmission Line Chart (Smith Chart)."
+					"content": "Unit- 1.0: Electronic Materials: 8 hrs.\nAtomic structure and bonding in materials. Crystal structure of materials, Crystal systems, Unit cells and space lattices, Determination of structures of simple crystals by X-ray diffraction, Miller indices of planes and directions, Packing geometry in Metallic, Ionic and Covalent solids. Concept of amorphous, single and polycrystalline structures and their effect on properties of materials.Insulator, semiconductor, and conductor.\n\nUnit- 2.0: Electronic Material Properties: 8 hrs.\nPolarization, Dielectric constant at low frequency & high frequency, Dielectric loss, Piezoelectricity & Ferroelectricity, Origin of magnetism in metallic and ceramic materials, Para magnetism, Diamagnetism, Antiferromagnetism, Ferromagnetism, Ferrimagnetism, magnetic hysteresis, Influence of temperature on magnetic behavior, domains and Hysteresis. Superconductors, Meissner effect, Applications.\n\nUnit- 3.0: Measurement and Error: 7 hrs.\nSensitivity, Resolution, Accuracy and Precision, Absolute and Relative types of errors, Statistical analysis, Probability of Limiting errors, Linearity. Instruments: Current and Resistance in instruments, Analog and Digital Multimeters, Measurement of time and Frequency – Digital Frequency Meter and applications.\n\nUnit- 4.0: Impedance Measurement: 8 hrs.\nKelvin Bridge; Megger; Maxwell, Hay and Sheering Bridges. Q-meter; Noise and Interference reduction techniques in Measurement Systems, Wave Analyzer, Spectrum Analyzer, FFT Analyzer, Oscilloscopes: Pulse Measurements, Delayed Time Base, Analog Storage, Sampling and Digital Storage Oscilloscopes.\n\nUnit- 5.0: Transducers: 8 hrs.\nClassification and selection of Transducers, Introduction to Strain, Load, Force, Displacement, Velocity, Acceleration, Pressure and Temperature Measurements; Introduction to Smart sensors and MEMS.\n\nUnit- 6.0: Introduction to Data Acquisition Systems (DAS): 3 hrs.\nBlock Diagram, Specifications and various components of DAS, applications of DAS in various fields"
+				},
+				{
+					"code": "104401P",
+					"name": "Analog Electronics and Integrated Circuits Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform all Experiments\nList of Experiments:\n\n1. Study of single stage RC coupled amplifier. Its frequency response and effect of emitter bypass capacitor.\n\n2. (a) Design of a first order RC Low Pass filter circuit & observing its frequency response and time response. (b) Design of a first order RC high pass filter circuit & observing its frequency response and time response.\n\n3. Study of class B push-pull amplifier\n\n4. Study inverting amplifier, non-inverting amplifier and voltage follower using op amp IC741.\n\n5. (a) To measure slew rate of Op-Amp, (b) To measure full-power & unity gain bandwidth of Op-Amp\n\n6. Application to Op-Amp (a) adder, (b) subtractor, (c) integrator and differentiator using op-amp IC741and observe output waveform for different input waveform.\n\n7. To study the performance of instrumentation amplifier using op-amp IC741.\n\n8. To study RC phase-shift oscillators using op-amp IC741.\n\n9. To study the Wien-bridge oscillators using op-amp IC741.\n\n10. To study Schmitt trigger circuits using op-amp IC741"
+				},
+				{
+					"code": "104402P",
+					"name": "Digital Circuits Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform all Experiments\nList of Experiments :\n\n1. To Implement Logic Gates – NAND, AND, NOR, EX-OR, EX-NOR – Construct and test the fundamental logic gates using digital ICs and verify their truth tables by applying various input combinations.\n\n2. To Construct the Basic Gates Using Universal Gates – Design and implement AND, OR, and NOT gates using only NAND and NOR gates and validate their functionality with truth table verification.\n\n3. To Verify the Truth Table of Half Adder and Full Adder – Implement half adder and full adder circuits using logic gates, observe their outputs for different binary inputs, and confirm their addition properties.\n\n4. To Verify the Truth Table of Half and Full Subtractor – Construct and test the half subtractor and full subtractor circuits, analyze their outputs for various input conditions, and verify their correctness against theoretical truth tables.\n\n5. To Convert Binary Numbers to Gray-Number Codes and Vice Versa – Develop and test a combinational circuit that converts binary numbers to gray code and vice versa, ensuring correctness through truth table validation.\n\n6. To Verify the Truth Table of Multiplexer Using IC & Demultiplexer Using IC and Design Full Adder & Full Subtractor Using Multiplexer – Demonstrate the working of multiplexer and demultiplexer ICs, verify their functionality with truth tables, and use multiplexers to design a full adder and full subtractor.\n\n7. To Convert a Given Octal Input to the Binary Output and to Study the LED Display Using 7-Segment Decoder/Driver – Implement a logic circuit that converts octal numbers to binary and analyze the working of the decoder by displaying outputs on a 7-segment display.\n\n8. Truth Table Verification of Flip-Flops: (a) JK Master-Slave, (b) D-Type, (c) T-Type – Construct and test different types of flip-flops, observe their state changes for various input conditions, and verify their characteristic equations.\n\n9. Design and Testing of Ring Counter/Johnson Counter – Design, implement, and analyze the working of ring and Johnson counters, verify their sequence of outputs, and compare them with theoretical predictions.\n\n10. Realize the following shift registers using IC7474/IC 7495. (a)SISO (b) SIPO (c) PISO (d) PIPO ."
+				},
+				{
+					"code": "104404P",
+					"name": "Analog Communication Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform all Experiments\nList of Experiments:\n\n1. To study the function of Amplitude Modulation & Demodulation (under modulation, perfect modulation & over modulation) and calculate the modulation index.\n\n2. To study the working of the Balanced Modulator and demodulator.\n\n3. To generate SSB using phase method and detection of SSB signal using Synchronous detector.\n\n4. To study the process of frequency modulation and demodulation and calculate the depth of modulation by varying the modulating voltage.\n\n5. To verify the spectrum of AM and FM signals using spectrum analyzer.\n\n6. To study the frequency response of Pre-Emphasis and De-Emphasis circuits.\n\n7. To study the frequency division multiplexing and De multiplexing Techniques.\n\n8. To study the Pulse amplitude modulation & demodulation Techniques.\n\n9. To study the Pulse Width Modulation (PWM) and Demodulation Techniques.\n\n10. To study the generation Pulse Position Modulation (PPM) and Demodulation."
+				},
+				{
+					"code": "104405P",
+					"name": "Electronics Materials and Instrumentation Lab",
+					"type": "Practical",
+					"credits": 1,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 2
+					},
+					"references": [],
+					"content": "Perform any ten Experiments\nList of Experiments:\n\n1. Measurement of the Hall voltage developed across the sample material and estimation of the Hall coefficient.\n\n2. Calculate the carrier concentration of the sample material (n-type and p-type semiconductor).\n\n3. Characteristics of LDR, Photodiode, and Phototransistor.\n\n4. Study the phenomena of magnetic hysteresis of a material.\n\n5. Calculate the retentivity, coercivity, and saturation magnetization of a material.\n\n6. Measurement of the resistivity of a semiconductor at room temperature.\n\n7. Verification of the temperature coefficient of resistance of a semiconductor and metal.\n\n8. Measurement of an unknown Inductance of medium-Q coil using Maxwell Bridge.\n\n9. Measurement of Frequency using Wein‟s Bridge.\n\n10. Measurement of R, L, & C using RLC Bridge.\n\n11. Measurement of Displacement using LVDT.\n\n12. Measurement of Pressure using Strain Gauge.\n\n13. Measurement of Temperature using RTD, Thermistor and Thermocouple.\n\n14. Perform actuations using the Pneumatic Actuator Trainer.\n\n15. Calibration of pressure instruments using dead weight pressure gauge tester."
+				},
+				{
+					"code": "104406",
+					"name": "NPTEL-I (Open Course)",
+					"type": "Theory",
+					"credits": 3,
+					"summary": {
+						"lecture": 0,
+						"tutorial": 0,
+						"practical": 0
+					},
+					"references": [],
+					"content": "NPTEL (Open Course) should be taken from the course other than core subjects of the branch."
 				}
 			]
 		},
