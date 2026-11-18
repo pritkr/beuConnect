@@ -11,11 +11,11 @@ build: nsh `v0.6.0` (`5541637`), the first tagged release with
 | APK file | 17,754,172 | 100% |
 | `lib/arm64-v8a/libnsh.so` (deflated) | 13,568,348 | 76.4% |
 | `classes.dex` (deflated) | 3,051,587 | 17.2% |
-| `assets/nsh/bundle.nshc` (deflated) | 732,252 | 4.1% |
+| `assets/nsh/bundle.nshc` (deflated) | 732,272 | 4.1% |
 | `holidays-2026.png` (deflated) | 87,237 | 0.5% |
 | `resources.arsc` (deflated) | 162,604 | 0.9% |
-| icons, font, manifest, signature | 124,641 | 0.7% |
-| zip directory + signing block | 27,503 | 0.2% |
+| icons, font, manifest, signature | 124,638 | 0.7% |
+| zip directory + signing block | 27,486 | 0.2% |
 
 Unpacked it is 43.87 MB (32.85 MB of that is the runtime), which is what a
 device writes on install; downloading it takes ≈7.1 s at 20 Mbps.
@@ -110,7 +110,7 @@ of embedded text is ≈37 KB of APK, and a new release to fix a typo in it.
 | budget | limit | current | headroom |
 |---|---|---|---|
 | APK file | 18,500,000 B | 17,754,172 B (96.0%) | 745,828 B |
-| bundle bytecode, as shipped | 2,350,000 B | 1,973,697 B (84.0%) | 376,303 B |
+| bundle bytecode, as shipped | 2,350,000 B | 1,973,739 B (84.0%) | 376,261 B |
 
 The APK ceiling moved to **18,500,000 B** on 2026-11-15, with the trimmed
 runtime:

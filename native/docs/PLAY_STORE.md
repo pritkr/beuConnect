@@ -15,7 +15,7 @@ closed.
 | # | Play requirement | In this tree | Fix |
 |---|---|---|---|
 | 1 | Target API 36 for new apps and updates since 2026-08-31 | `build-android-host.sh` and `bundle-android.sh` link `--target-sdk-version 36` against `platforms/android-36` | none — landed 2026-10-28 |
-| 2 | New apps ship as an **AAB** | `scripts/bundle-android.sh` builds, signs and validates `.nsh/out/BEUConnect-<version>.aab` with bundletool; `--install` proves the splits launch | built 2026-11-18: `.nsh/out/BEUConnect-1.3.3.aab`, 17,690,529 B, versionCode 14 (§3.2) |
+| 2 | New apps ship as an **AAB** | `scripts/bundle-android.sh` builds, signs and validates `.nsh/out/BEUConnect-<version>.aab` with bundletool; `--install` proves the splits launch | built 2026-11-18: `.nsh/out/BEUConnect-1.3.3.aab`, 17,690,547 B, versionCode 14 (§3.2) |
 | 3 | No self-update or link to an APK outside Play (Device & Network Abuse) | `App.play.tsx` sets the Play channel before boot; Share and Update return `PLAY_LISTING`, so the AAB contains no off-Play path | build the AAB with `bundle-android.sh`, never the APK entry (§3.3) |
 | 4 | No third-party personal data published or bundled | the APK carries only `reg\|name\|roll`; the repo roster is identity + affiliation only as of 2026-10-30 (contact, DOB, gender and caste are dropped by the generator) | §3.4 |
 | 5 | Privacy policy, Data safety, content rating, 512 px icon, feature graphic, screenshots | privacy policy is live; the icon, feature graphic and five 1080 px screenshots are built; Data safety answers are written; neither form is submitted | §4 |
@@ -138,7 +138,7 @@ module's res, dex, assets and `lib/arm64-v8a/libnsh.so`, and its split APKs
 install over the signed app and launch.
 
 Rebuilt on 2026-11-18 for 1.3.3 / versionCode 14: `.nsh/out/BEUConnect-1.3.3.aab`,
-**17,690,529 B**, signed with the upload key and validated. That run also fixed
+**17,690,547 B**, signed with the upload key and validated. That run also fixed
 a link gap the APK path did not have: `aapt2` now compiles every
 `android/libs/*.aar` resource archive, because the manifest reads
 `@integer/google_play_services_version` from play-services-basement and the Play
