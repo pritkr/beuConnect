@@ -19,13 +19,14 @@
  * "continue" card.
  */
 
-import { LayoutAnimation, Scroll, Text, View, computed, effect, signal, untracked, type JSX } from "nsh";
+import { Scroll, Text, View, computed, effect, signal, untracked, type JSX, type ViewRef } from "nsh";
 
 import { EVENTS, track } from "../../lib/analytics";
 import type { Nav, RouteParams } from "../../app/router";
 import { readStore, writeStore } from "../../lib/net";
+import { LAYOUT_SPRING, LAYOUT_SPRING_PANEL } from "../../lib/motion";
 import { loadProfile, useProfile } from "../settings/profile";
-import { Badge, Btn, Card, Check, Divider, Label, Muted, Panel, Row, SectionHeader } from "../../ui";
+import { Badge, Btn, Card, Check, Divider, Enter, Label, Muted, Panel, Row, SectionHeader } from "../../ui";
 import { motionOn } from "../../ui/motion";
 import { Icon, type IconName } from "../../ui/icons";
 import { branchIcon } from "../../ui/branch-icon";
@@ -259,10 +260,16 @@ export function toggleSaved(key: string): void {
   });
 }
 
+/**
+ * Toggles one topic's body.
+ *
+ * The motion is the row's own: `TopicRow` (and `GateLineView`) call
+ * `ViewRef.animateLayout` on the view that owns the frames before they call
+ * here, so only the frames that tap moves are animated. A `LayoutAnimation`
+ * here would have no view to scope to, and would animate every frame the
+ * commit changes.
+ */
 export function toggleOpen(key: string): void {
-  // Opening a topic changes the height of the row and everything below it.
-  // NSH glides that reflow natively; with Reduce Motion on it snaps into place.
-  if (motionOn()) LayoutAnimation.easeInEaseOut();
   open.update((map) => ({ ...map, [key]: !map[key] }));
 }
 
@@ -277,13 +284,17 @@ export function unitKey(branch: string, sem: number, code: string, unitId: strin
 }
 
 /**
- * Opens or closes a unit. Only a tap passes `animate`: a search jump or a
- * restored bookmark expands while the page is moving, and a reflow animation
- * there would fight the scroll.
+ * Opens or closes a unit.
+ *
+ * `animate` is kept for the call sites that state their intent (a tap on the
+ * block, a unit chip, a search jump), but it no longer decides anything here:
+ * the motion belongs to the `UnitBlock` that owns the view and springs its own
+ * frames in the same turn. A jump that opens a unit while the page scrolls to
+ * it therefore moves nothing but the frames it must.
  */
 export function setUnitOpen(key: string, value: boolean, animate = false): void {
   if (unitOpen()[key] === value) return;
-  if (animate && motionOn()) LayoutAnimation.easeInEaseOut();
+  void animate;
   unitOpen.update((map) => ({ ...map, [key]: value }));
 }
 
@@ -1391,8 +1402,16 @@ export function TopicRow(props: {
   });
   const focused = computed(() => props.focus?.() === props.topic.id);
 
+  // The row's own frames: the body it opens and the rows it pushes below.
+  let row: ViewRef | null = null;
+
   return (
-    <View class={focused() ? "bg-primary/8" : ""}>
+    <View
+      class={focused() ? "bg-primary/8" : ""}
+      ref={(node: ViewRef) => {
+        row = node;
+      }}
+    >
       <Row class="items-start gap-1 py-1 pl-1 pr-3">
         {/* The checkbox is the progress control: 24 pt of box in a 44 pt
             target, so a tick is one thumb tap and never a reflow. */}
@@ -1404,7 +1423,11 @@ export function TopicRow(props: {
         />
         <View
           class="flex-1 gap-1 py-3 active:opacity-60"
-          onPress={() => toggleOpen(markKey)}
+          onPress={() => {
+            // Only this row's frames move: spring them, then commit the open.
+            if (motionOn()) row?.animateLayout(LAYOUT_SPRING);
+            toggleOpen(markKey);
+          }}
           role="button"
           accessibilityLabel={props.topic.title}
           accessibilityState={{ expanded: open()[markKey] === true }}
@@ -1439,7 +1462,7 @@ export function TopicRow(props: {
         </View>
       </Row>
       {open()[markKey] ? (
-        <View class="mb-2 ml-[48px] mr-3 gap-2 rounded-2xl bg-muted p-3">
+        <Enter class="mb-2 ml-[48px] mr-3 gap-2 rounded-2xl bg-muted p-3">
           {hasBody ? (
             <Text class="text-[13px] leading-6 text-foreground" style={{ userSelect: "text" }}>
               {props.topic.body}
@@ -1470,7 +1493,7 @@ export function TopicRow(props: {
               onShortNote={props.onShortNote}
             />
           </View>
-        </View>
+        </Enter>
       ) : null}
       {props.last ? null : <View class="ml-[48px] mr-3 h-px bg-border" />}
     </View>
@@ -1508,11 +1531,24 @@ export function UnitBlock(props: {
     new RegExp(`^(unit|module|part|section)\\s*0*${props.index + 1}$`, "i").test(props.unit().title.trim()),
   );
 
+  // The block's own frames: the card it opens and every unit it pushes below.
+  let block: ViewRef | null = null;
+
   return (
-    <View class="gap-2">
+    <View
+      class="gap-2"
+      ref={(node: ViewRef) => {
+        block = node;
+      }}
+    >
       <View
         class="min-h-11 flex-row items-start gap-3 rounded-3xl border border-border bg-card px-4 py-3 active:bg-muted"
-        onPress={props.onToggle}
+        onPress={() => {
+          // A tap springs this block only; a search jump or a restored bookmark
+          // goes straight to `onToggle` and expands while the page is moving.
+          if (motionOn()) block?.animateLayout(LAYOUT_SPRING_PANEL);
+          props.onToggle();
+        }}
         role="button"
         accessibilityLabel={`Unit ${props.index + 1}, ${props.unit().title}`}
         accessibilityState={{ expanded: props.open() }}
@@ -1546,29 +1582,31 @@ export function UnitBlock(props: {
       </View>
 
       {props.open() ? (
-        total() === 0 ? (
-          <Card class="mx-1">
-            <Muted>The source names this unit but prints no topic under it.</Muted>
-          </Card>
-        ) : (
-          <Card class="gap-0 p-0">
-            <Each of={props.unit().topics} key={(topic: Topic) => topic.id}>
-              {(topic: () => Topic, topicIndex: () => number) => (
-                <TopicRow
-                  topic={topic()}
-                  branch={props.branch}
-                  sem={props.sem}
-                  code={props.code}
-                  name={props.name}
-                  last={topicIndex() === total() - 1}
-                  query={props.query}
-                  focus={props.focus}
-                  onShortNote={props.onShortNote}
-                />
-              )}
-            </Each>
-          </Card>
-        )
+        <Enter>
+          {total() === 0 ? (
+            <Card class="mx-1">
+              <Muted>The source names this unit but prints no topic under it.</Muted>
+            </Card>
+          ) : (
+            <Card class="gap-0 p-0">
+              <Each of={props.unit().topics} key={(topic: Topic) => topic.id}>
+                {(topic: () => Topic, topicIndex: () => number) => (
+                  <TopicRow
+                    topic={topic()}
+                    branch={props.branch}
+                    sem={props.sem}
+                    code={props.code}
+                    name={props.name}
+                    last={topicIndex() === total() - 1}
+                    query={props.query}
+                    focus={props.focus}
+                    onShortNote={props.onShortNote}
+                  />
+                )}
+              </Each>
+            </Card>
+          )}
+        </Enter>
       ) : null}
     </View>
   );
@@ -1745,8 +1783,15 @@ export function GateLineView(props: {
   saved?: () => boolean;
   onSave?: (mark: string) => void;
 }) {
+  // The line's own frames: the text it opens and the rows it pushes below.
+  let line: ViewRef | null = null;
+
   return (
-    <View>
+    <View
+      ref={(node: ViewRef) => {
+        line = node;
+      }}
+    >
       {props.item().kind === "section" ? (
         <View class="gap-0.5 px-1 pb-1 pt-3">
           <Label>Section</Label>
@@ -1760,7 +1805,10 @@ export function GateLineView(props: {
           <Row class="items-center gap-1">
             <View
               class="min-h-11 flex-1 flex-row items-center gap-2 active:opacity-70"
-              onPress={() => props.onToggle(props.item().mark)}
+              onPress={() => {
+                if (motionOn()) line?.animateLayout(LAYOUT_SPRING);
+                props.onToggle(props.item().mark);
+              }}
               role="button"
               accessibilityLabel={props.item().title}
               accessibilityState={{ expanded: open()[props.item().mark] === true }}

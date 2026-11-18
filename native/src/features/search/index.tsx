@@ -9,11 +9,15 @@
  *
  * Five rules shape this file:
  *
- *  1. The index is built once per module load, lazily. `baseEntries()` parses
- *     the packs on the first keystroke that needs it and never again; the
- *     notice and dataset blocks arrive when their stores do. No JSX expression
- *     builds an index, and an empty query never touches one — browse mode is
- *     the destination table, which is already in memory.
+ *  1. The index is built once per module load, lazily, on the first keystroke
+ *     that needs it. Building it reads the bundled packs but does not parse
+ *     their prose: the unit headings ship precomputed in
+ *     `syllabus/data/headings.ts` (generated from the same packs by
+ *     `scripts/data/build-packs.ts`), and only a paper that table does not
+ *     carry — or one whose live text changed — is parsed here. The notice and
+ *     dataset blocks arrive when their stores do. No JSX expression builds an
+ *     index, and an empty query never touches one — browse mode is the
+ *     destination table, already in memory.
  *  2. A search pass is pure (`./rank.ts`) and capped at `HIT_LIMIT`, so a
  *     one-letter query cannot cost more than 60 rows however big the manifest.
  *  3. Opening a hit is one function: remember it in `beu.search.recent`, then
@@ -40,7 +44,9 @@ import { formatDate, readStore, relativeTime, writeStore } from "../../lib/net";
 import { EVENTS, track } from "../../lib/analytics";
 import { BRANCH_META, branchPack, gatePack } from "../syllabus/active";
 import { dataVersion } from "../data-feed/pyqs";
-import { parseGate, parseSyllabus, type BranchPack, type GatePack, type Subject } from "../syllabus/parse";
+import { liveGatePack } from "../data-feed/syllabus";
+import { gateSearchHeadings, parseGate, type BranchPack, type GatePack, type Subject } from "../syllabus/parse";
+import { precomputedGateHeadings, subjectHeadings } from "../syllabus/headings";
 import { branchLabel, collegeName, loadDatasets, shortBranchLabel, shortCollegeName, type Dataset } from "../pyqs/api";
 import { gateSubjects } from "../pyqs/gate-index";
 import { loadNotices, notices, type Notice } from "../notices/api";
@@ -87,14 +93,13 @@ function packOf(branch: string): BranchPack | null {
   }
 }
 
-/** "Unit 1" and "Course content" are headings, not names a student searches. */
-const GENERIC_SECTION = /^(course content|(unit|module|part|section)\s+[\divxlcdm.]+)$/i;
-
-function sectionsOf(subject: Subject): string[] {
-  if (typeof subject.content !== "string" || subject.content.length === 0) return [];
-  return parseSyllabus(subject.content)
-    .map((unit) => unit.title.trim())
-    .filter((title) => title.length > 2 && !GENERIC_SECTION.test(title));
+/**
+ * One paper's searchable headings: the precomputed list when the content still
+ * has the length its row was built from, the parser otherwise. `key` is the
+ * identity the merge below uses, and the one `build-packs.ts` writes.
+ */
+function sectionsOf(subject: Subject, key: string): readonly string[] {
+  return subjectHeadings(key, subject.content);
 }
 
 /**
@@ -129,7 +134,7 @@ function subjectEntries(): SearchEntry[] {
             branchShort: meta.short,
             branches: [meta.short],
             sem,
-            sections: sectionsOf(subject),
+            sections: sectionsOf(subject, id),
           },
         });
       }
@@ -139,26 +144,34 @@ function subjectEntries(): SearchEntry[] {
   return [...merged.values()].map((offer) => subjectEntry({ ...offer.input, branches: offer.branches }));
 }
 
+/**
+ * A GATE paper's searchable headings. The XH humanities paper is published as
+ * six codes (XH-C1…C6) against one syllabus pack, so the parent code is tried
+ * too. The precomputed row describes the bundled pack, so a paper the live feed
+ * has overridden — and any code the table does not carry — is parsed instead.
+ */
+function gateSections(code: string): readonly string[] {
+  const parent = code.split("-")[0] ?? "";
+  if (liveGatePack(code) === null && liveGatePack(parent) === null) {
+    const precomputed = precomputedGateHeadings(code) ?? precomputedGateHeadings(parent);
+    if (precomputed !== null) return precomputed;
+  }
+  const raw = gatePack(code) ?? gatePack(parent);
+  if (!raw) return [];
+  try {
+    return gateSearchHeadings(parseGate(JSON.parse(raw) as GatePack));
+  } catch {
+    return [];
+  }
+}
+
 function gateEntries(): SearchEntry[] {
   return gateSubjects().map((subject) => {
-    // The XH humanities paper is published as six codes (XH-C1…C6) against one
-    // syllabus pack, so the sections come from the parent code.
-    const raw = gatePack(subject.code) ?? gatePack(subject.code.split("-")[0] ?? "");
-    let sections: string[] = [];
-    if (raw) {
-      try {
-        sections = parseGate(JSON.parse(raw) as GatePack)
-          .map((unit) => unit.title.trim())
-          .filter((title) => title.length > 2);
-      } catch {
-        sections = [];
-      }
-    }
     const years = subject.papers.map((paper) => paper.year).filter((year) => Number.isFinite(year) && year > 0);
     return gateEntry({
       code: subject.code,
       name: subject.name,
-      sections,
+      sections: gateSections(subject.code),
       papers: subject.papers.length,
       oldest: years.length > 0 ? Math.min(...years) : 0,
       newest: years.length > 0 ? Math.max(...years) : 0,

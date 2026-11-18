@@ -10,7 +10,7 @@
  * never invented. A door with nothing to say says nothing.
  */
 
-import { Text, View, effect, signal, untracked } from "nsh";
+import { Text, View, effect, lifecycle, signal, untracked } from "nsh";
 import type { Nav, RouteDef, RouteParams } from "../../app/router";
 import { Body, Label, Row, Screen, SectionHeader, Skeleton } from "../../ui";
 import { Icon } from "../../ui/icons";
@@ -33,6 +33,7 @@ import type { HomeClass, HomeProfile } from "./state";
 import type { Identity } from "../results/identity";
 import { CampusSection, ResultsSection, StudySection } from "./tiles";
 import { ensureBoard } from "./pager";
+import { BOARD_TTL, boardAge } from "../notices/api";
 
 const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -338,9 +339,41 @@ function Today(props: { nav: Nav }) {
 
 function HomeScreen(props: { nav: Nav }) {
   const refreshing = signal(false);
+  /** True once the app left the foreground: the next `"active"` is a return. */
+  let away = false;
 
   effect(() => {
     untracked(() => {
+      void refreshHome();
+      void ensureBoard();
+    });
+  });
+
+  /**
+   * Refresh on return, not on pull.
+   *
+   * `lifecycle()` is a signal, so this effect runs on every phase change — and
+   * its first run is the mount, which the effect above already covers. Only a
+   * return to `"active"` after the app was away does anything, and only once
+   * the board is past `BOARD_TTL` (five minutes, the freshness window the
+   * notices layer already uses): inside it nothing on this screen can be old
+   * enough to ask for, so a quick app switch fetches nothing, and a pull to
+   * refresh — which stamps its own attempt — makes the next return a no-op.
+   *
+   * `ensureBoard()` is the existing path: `loadNotices()` serves the rows on
+   * screen and refreshes behind them, shares any fetch already running, and
+   * swallows a failure when it has a copy. So an offline return keeps the last
+   * board and shows no error; pull to refresh stays the one place that reports.
+   */
+  effect(() => {
+    if (lifecycle() !== "active") {
+      away = true;
+      return;
+    }
+    if (!away) return;
+    away = false;
+    untracked(() => {
+      if (boardAge() <= BOARD_TTL) return;
       void refreshHome();
       void ensureBoard();
     });

@@ -127,10 +127,11 @@ gated failure, so it can run in CI unchanged.
 
 ### `src/app/`
 
-- `tabbar.tsx`: `role="tablist"`, 52 pt tabs, `role="tab"` +
-  `accessibilityState.selected`, focus ring, 11 px labels capped at
-  `maxFontSizeMultiplier={1.4}`. Selected reads as pill + solid icon + bold
-  label + 3 px ember bar, so it survives greyscale.
+- `tabbar.tsx`: `role="tablist"`, 52 pt minimum destinations on a full-width
+  surface, `role="tab"` + `accessibilityState.selected`, focus ring, 11 px
+  labels capped at `maxFontSizeMultiplier={1.4}`. Selected reads as a 56 × 30
+  indicator plus a solid icon and a bold label, so it survives greyscale; a
+  change of tab plays the selection haptic.
 - `shell.tsx`: back is `h-11 w-11` with a hint and focus ring, header is
   `min-h-12`, title is `role="header"` and one line, glyphs use `primary-ink`.
 - `more.tsx`: four spoken groups, 20 pt between groups / 8 pt inside, every row

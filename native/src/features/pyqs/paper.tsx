@@ -3,8 +3,8 @@
  *
  * The site publishes structured questions inside a large server-rendered
  * subject page; `loadPaper` fetches that page once per subject and keeps the
- * parsed papers (~9 KB) on the device, so reopening one — online or off — is a
- * single storage read. A paper the parser cannot read
+ * parsed papers (~6 KB each) on the device, so reopening one — online or off —
+ * is a single storage read. A paper the parser cannot read
  * is not a dead end: the page itself opens in the WebView (`pyqs.site`), and
  * the subject's syllabus is one tap away.
  *
@@ -37,7 +37,7 @@ import {
 } from "../../ui";
 import { openExternal } from "../../lib/link";
 import { NetError } from "../../lib/net";
-import { type PaperTarget, type ParsedPaper, type ParsedQuestion } from "./paper-parse";
+import { pageAnchor, type PaperTarget, type ParsedPaper, type ParsedQuestion } from "./paper-parse";
 import { errorMessage, loadPaper, paperPageUrl } from "./api";
 import {
   findPaper,
@@ -200,6 +200,14 @@ function missingCopy(
     return {
       title: "No questions could be read on this paper",
       hint: `${seen}${pdf ? " The PDF copy is below." : " The site draws it in a way the app cannot read."}`,
+    };
+  }
+  if (paper?.reason === "unreadable") {
+    return {
+      title: "This paper's page could not be read",
+      hint: `The site still carries a paper block for it, but not in the markup this app knows.${
+        pdf ? " The PDF copy is below." : " Open the subject page to read it there."
+      }`,
     };
   }
   return {
@@ -474,7 +482,7 @@ function PaperScreen(props: {
   const openSite = () => {
     nav.push("pyqs.site", {
       slug: props.slug,
-      anchor: target.id ? `paper-${target.id}` : "",
+      anchor: target.id ? pageAnchor(target.code, target.id) : "",
       name: props.subject?.name || props.fallbackName || "Subject papers",
     });
   };

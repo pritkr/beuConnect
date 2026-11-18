@@ -99,7 +99,7 @@ const GROUPS: readonly Group[] = [
     confirm: "Delete papers",
     noun: "subject",
     plural: "subjects",
-    match: (key) => key.startsWith("beu.cache.pyqs.papers.v1."),
+    match: (key) => key.startsWith("beu.cache.pyqs.papers.v2."),
   },
   {
     id: "live",

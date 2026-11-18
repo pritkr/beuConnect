@@ -42,7 +42,7 @@ import {
   type GatePaper,
   type GateSubject,
 } from "./gate-index";
-import { Cell, ChipRail, CopyButton, Head, InfoRow } from "./components";
+import { Cell, ChipRail, Head, InfoRow, ShareButton } from "./components";
 import { rememberPaper } from "./state";
 
 /** The hosts `nsh.json` lets the WebView open. */
@@ -109,7 +109,7 @@ export function PdfProblem(props: {
           </Text>
         </View>
         <Row class="flex-wrap gap-2">
-          {props.raw ? <CopyButton text={props.raw} label="Copy link" /> : null}
+          {props.raw ? <ShareButton text={props.raw} label="Share link" /> : null}
           <Btn variant="ghost" onPress={() => props.nav.pop()} label="Go back">
             Go back
           </Btn>
@@ -146,7 +146,7 @@ function PdfViewer(props: { nav: Nav; url: string; host: string; library?: PdfLi
       <View class="gap-3 border-b border-border bg-card px-4 pb-3 pt-4">
         <Head label={`PDF · ${props.host}`} title={title} hint={file || subtitle || props.url} />
         <Row class="flex-wrap gap-2">
-          <CopyButton text={props.url} label="Copy link" />
+          <ShareButton text={props.url} label="Share link" />
           {remote ? (
             <Btn variant="secondary" onPress={() => void openExternal(props.url)} label="Open this PDF in the browser">
               Browser

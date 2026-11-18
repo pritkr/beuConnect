@@ -242,7 +242,16 @@ export function Shell() {
 
       {() =>
         stack.routes().length <= 1 && keyboardFrame().height === 0 ? (
-          <TabBar active={activeTab()} onSelect={(name: string) => stack.setRoutes([{ name, params: {} }])} />
+          <TabBar
+            active={activeTab()}
+            onSelect={(name: string) => {
+              /* The bar only shows at the root, so re-pressing the tab that is
+                 already on screen is a no-op: rebuilding the route remounts the
+                 page and throws away its scroll for nothing. */
+              if (activeTab() === name) return;
+              stack.setRoutes([{ name, params: {} }]);
+            }}
+          />
         ) : null
       }
     </View>

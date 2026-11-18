@@ -29,12 +29,13 @@ and writes nothing when the input is unchanged.
 
 ## Paper pages
 
-- `/pyqs/<slug>/` is ~390 KB of server-rendered HTML carrying every paper the
+- `/pyqs/<slug>/` is 0.3–4.5 MB of server-rendered HTML carrying every paper the
   subject has ever had.
 - `loadPaper` fetches once, runs `parseAllPapers` (`paper-parse.ts`), and stores
-  one cache row per subject: `pyqs.papers.v1.<slug>`.
+  one cache row per subject: `pyqs.papers.v2.<slug>`, keyed
+  `<paper code>-<year>[_variant]` (a year alone is not unique across codes).
 - Opening a second paper of the same subject is a `Storage` read.
-- The raw HTML is never persisted; parsed data is ~9 KB.
+- The raw HTML is never persisted; parsed data averages ~6 KB per paper.
 - A bundle older than 30 days refreshes in the background; failure keeps the
   old copy, because a past paper does not change.
 

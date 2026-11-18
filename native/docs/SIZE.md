@@ -8,15 +8,15 @@ build: nsh `v0.6.0` (`5541637`), the first tagged release with
 
 | | bytes | share |
 |---|---|---|
-| APK file | 17,717,308 | 100% |
-| `lib/arm64-v8a/libnsh.so` (deflated) | 13,486,129 | 76.1% |
-| `classes.dex` (deflated) | 3,127,497 | 17.7% |
-| `assets/nsh/bundle.nshc` (deflated) | 705,205 | 4.0% |
+| APK file | 17,733,692 | 100% |
+| `lib/arm64-v8a/libnsh.so` (deflated) | 13,486,129 | 76.0% |
+| `classes.dex` (deflated) | 3,127,497 | 17.6% |
+| `assets/nsh/bundle.nshc` (deflated) | 724,800 | 4.1% |
 | `holidays-2026.png` (deflated) | 87,237 | 0.5% |
 | icons, font, manifest, `resources.arsc`, signature | 284,338 | 1.6% |
-| zip directory + signing block | 26,902 | 0.2% |
+| zip directory + signing block | 23,691 | 0.1% |
 
-Unpacked it is 43.72 MB (32.85 MB of that is the runtime), which is what a
+Unpacked it is 43.77 MB (32.85 MB of that is the runtime), which is what a
 device writes on install; downloading it takes ≈7.1 s at 20 Mbps.
 
 The runtime is no longer a fixed prebuilt. Since `longbridge/nsh#2060` — first
@@ -85,7 +85,7 @@ its own `.text`, `.rodata` and unwind tables, so treat a new native import as a
 megabyte-scale decision and re-run `./scripts/size-report.sh`.
 
 **The bundle grows with app code.** In compressed terms it grows at roughly the
-deflate ratio it already has — 1,894,306 B of bytecode became 705,205 B in the
+deflate ratio it already has — 1,948,528 B of bytecode became 724,800 B in the
 APK, i.e. **≈2.7:1**:
 
 ```
@@ -108,8 +108,8 @@ of embedded text is ≈37 KB of APK, and a new release to fix a typo in it.
 
 | budget | limit | current | headroom |
 |---|---|---|---|
-| APK file | 18,500,000 B | 17,717,308 B (95.8%) | 782,692 B |
-| bundle bytecode, as shipped | 2,350,000 B | 1,894,306 B (80.6%) | 455,694 B |
+| APK file | 18,500,000 B | 17,733,692 B (95.9%) | 766,308 B |
+| bundle bytecode, as shipped | 2,350,000 B | 1,948,528 B (82.9%) | 401,472 B |
 
 The APK ceiling moved to **18,500,000 B** on 2026-11-15, with the trimmed
 runtime:

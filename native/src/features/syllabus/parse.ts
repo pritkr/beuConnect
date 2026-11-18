@@ -573,6 +573,37 @@ function splitGate(content: string): Topic[] {
   return topics;
 }
 
+/**
+ * "Unit 1", "Module 2" and "Course content" label a block, they do not name
+ * one, so a search alias built from them would match every paper in the pack.
+ */
+const GENERIC_SECTION = /^(course content|(unit|module|part|section)\s+[\divxlcdm.]+)$/i;
+
+/** Headings trimmed and long enough to narrow a query on the search screen. */
+function headingTitles(units: readonly Unit[]): string[] {
+  return units.map((unit) => unit.title.trim()).filter((title) => title.length > 2);
+}
+
+/**
+ * The BEU unit headings a search row can match, in source order. A bare
+ * "Unit 1" is dropped: it names the block's position, not its content.
+ *
+ * `build-packs.ts` ships this exact list in `data/headings.ts` so the first
+ * keystroke does not parse every paper; the screens fall back to this function
+ * for a paper that table does not carry.
+ */
+export function searchHeadings(units: readonly Unit[]): string[] {
+  return headingTitles(units).filter((title) => !GENERIC_SECTION.test(title));
+}
+
+/**
+ * GATE section titles are content names already ("Engineering Mathematics"),
+ * so only blank or one-character titles drop.
+ */
+export function gateSearchHeadings(units: readonly Unit[]): string[] {
+  return headingTitles(units);
+}
+
 /** A rough study-time estimate: 1 hour per annotated hour, else 25 min/topic. */
 export function estimateMinutes(units: Unit[]): number {
   return units.reduce(

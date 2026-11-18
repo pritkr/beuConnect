@@ -17,6 +17,14 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT" || exit 1
 source "$HOME/.config/nsh/env.sh" >/dev/null 2>&1 || true
 
+# A pinned CLI wins over whatever `env.sh` put on the PATH. `NSH_BIN` is the
+# binary the release packages with, so the types and the bytecode the gate
+# checks must come from that same build — not from an older nightly shim.
+if [ -n "${NSH_BIN:-}" ] && [ -x "$NSH_BIN" ]; then
+  PATH="$(dirname "$NSH_BIN"):$PATH"
+  export PATH
+fi
+
 LOCK="${TMPDIR:-/tmp}/beuconnect-nsh.lock"
 MODE="${1:-check}"
 DEADLINE=$(( $(date +%s) + ${CHECK_LOCK_WAIT:-900} ))

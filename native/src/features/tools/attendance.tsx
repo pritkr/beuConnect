@@ -20,6 +20,7 @@
  */
 
 import { Text, View, computed, signal } from "nsh";
+import { Haptics } from "nsh/mobile";
 import { EVENTS, track } from "../../lib/analytics";
 import { formatDate } from "../../lib/net";
 import { Badge, Body, Btn, Card, Chip, Col, Divider, EmptyState, Field, Label, Muted, Progress, Ring, Row, Screen, SectionHeader } from "../../ui";
@@ -382,6 +383,7 @@ export function AttendanceScreen() {
   /** Picking a day marks it and brings the grid to its month. */
   const pickDay = (iso: string): void => {
     if (iso > todayIso()) return;
+    Haptics.selection();
     logDate.set(iso);
     gridMonth.set(iso.slice(0, 7));
   };
@@ -428,7 +430,13 @@ export function AttendanceScreen() {
               <Row class="flex-wrap gap-1.5">
                 <Each of={ATTENDANCE_TARGETS as readonly number[]} key={(target: number) => String(target)}>
                   {(target) => (
-                    <Chip active={state().target === target()} onPress={() => setAttendanceTarget(target())}>
+                    <Chip
+                      active={state().target === target()}
+                      onPress={() => {
+                        Haptics.selection();
+                        setAttendanceTarget(target());
+                      }}
+                    >
                       {`${target()}%`}
                     </Chip>
                   )}
@@ -812,14 +820,20 @@ function AttendanceCard(props: { subject: () => AttendanceSubject; target: () =>
         <Btn
           variant="secondary"
           class="flex-1"
-          onPress={() => recordAttendance(props.subject(), "present", stampFor(props.date()))}
+          onPress={() => {
+            Haptics.selection();
+            recordAttendance(props.subject(), "present", stampFor(props.date()));
+          }}
         >
           Present
         </Btn>
         <Btn
           variant="secondary"
           class="flex-1"
-          onPress={() => recordAttendance(props.subject(), "absent", stampFor(props.date()))}
+          onPress={() => {
+            Haptics.selection();
+            recordAttendance(props.subject(), "absent", stampFor(props.date()));
+          }}
         >
           Absent
         </Btn>

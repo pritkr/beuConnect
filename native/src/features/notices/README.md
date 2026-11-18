@@ -103,8 +103,9 @@ Announcement posts share the read list under an `a:` prefix
 - **Attachments** — `pdfUrl` accepts only allow-listed hosts. A safe URL opens
   `notices.pdf`; anything else goes to the system opener and, failing that,
   the clipboard.
-- **Share** — share and copy-link write `title + link` to the clipboard; there
-  is no native share sheet in the runtime.
+- **Share** — a post opens the system sheet (`lib/share`: the title, the link
+  and one app line); where the host has none, the same text is copied. `Copy
+  link` is still a plain copy, and so is the detail screen's Share.
 - **Refresh** — board TTL 5 min, feed TTL 10 min; a stale open refetches in the
   background while the old rows stay on screen. Pull-to-refresh forces both.
 

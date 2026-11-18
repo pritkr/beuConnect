@@ -54,7 +54,7 @@ import { cachedIdentity } from "./identity";
 import { rankLabel, tieSentence, tieSize, unrankedCount, cgpaDistribution } from "./ranking";
 import type { Async, TableSelection } from "./shared";
 import {
-  CopyButton,
+  ShareButton,
   Fresh,
   RegField,
   SelectionChips,
@@ -696,7 +696,7 @@ export function RankScreen(props: { nav: Nav }) {
                     note={note()}
                   >
                     <Row class="gap-3">
-                      <CopyButton text={summary()} label="Copy rank" class="flex-1" />
+                      <ShareButton text={summary()} label="Share rank" class="flex-1" />
                       <Btn
                         variant="secondary"
                         class="flex-1"

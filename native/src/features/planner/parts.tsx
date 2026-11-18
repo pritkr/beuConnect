@@ -13,7 +13,8 @@
  * same studied mark the syllabus screens write, so the label says so.
  */
 
-import { Text, View, signal, type Accessor } from "nsh";
+import { Text, View, platform, signal, type Accessor } from "nsh";
+import { DateTimePicker } from "nsh/mobile";
 
 import { Badge, Btn, Card, Check, Chip, Divider, EmptyState, Field, Label, Muted, Panel, Progress, Stat } from "../../ui";
 import { branchIcon } from "../../ui/branch-icon";
@@ -68,6 +69,15 @@ const QUICK_DATES = [
   { label: "1 month", days: 30 },
   { label: "3 months", days: 90 },
 ];
+
+/**
+ * Whether the system draws the date picker.
+ *
+ * iOS and Android do (`nsh/mobile`: the platform's calendar dialog, with its
+ * own accessibility); the web and the desktops have none, so they keep the
+ * typed `YYYY-MM-DD` field. The platform never changes while the app runs.
+ */
+const SYSTEM_DATE_PICKER = platform.os === "ios" || platform.os === "android";
 
 /** "CSE" — the short name the rest of the app uses. */
 export function branchShort(code: string): string {
@@ -286,8 +296,11 @@ export function FeasibilityPanel(props: {
 /**
  * Exam date and daily pace — the two inputs the plan is a function of.
  *
- * The field keeps its own `draft` so a half-typed date is never written to the
- * store: typing above the JSX would freeze, so the draft is read inside it.
+ * The date is the system's picker on iOS and Android (a calendar dialog, never
+ * a `YYYY-MM-DD` keyboard) and the typed field elsewhere; both write the same
+ * stored `YYYY-MM-DD`. The field keeps its own `draft` so a half-typed date is
+ * never written to the store: typing above the JSX would freeze, so the draft
+ * is read inside it.
  */
 export function PlanSettings(props: {
   exam: Accessor<string>;
@@ -333,12 +346,35 @@ export function PlanSettings(props: {
         ) : null}
       </View>
 
-      <Field
-        value={draft() ?? props.exam()}
-        onChange={type}
-        placeholder="YYYY-MM-DD"
-        maxLength={10}
-      />
+      {SYSTEM_DATE_PICKER ? (
+        <View class="min-h-11 flex-row items-center">
+          <DateTimePicker
+            mode="date"
+            value={props.exam() || null}
+            // Today is the floor a plan can start from. If the saved date has
+            // since passed, the floor moves back to it: the system's picker is
+            // never handed a value outside its own range, and the student can
+            // still pick a new date from the day they are on.
+            min={props.exam() !== "" && props.exam() < props.today ? props.exam() : props.today}
+            accessibilityLabel="Exam date"
+            onChange={(event) => {
+              const day = parseDay(event.value);
+              if (!day) return;
+              // The picker has no half-typed state; drop the field's draft so the
+              // two paths can never disagree about what is stored.
+              draft.set(null);
+              props.onExam(isoDay(day));
+            }}
+          />
+        </View>
+      ) : (
+        <Field
+          value={draft() ?? props.exam()}
+          onChange={type}
+          placeholder="YYYY-MM-DD"
+          maxLength={10}
+        />
+      )}
 
       <View class="flex-row flex-wrap gap-2">
         {QUICK_DATES.map((quick) => (

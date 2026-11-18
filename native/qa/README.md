@@ -11,7 +11,9 @@ Everything under `qa/` is test code. It proves eight things and nothing else:
 4. the maths a student acts on is right (`unit/logic.test.ts`);
 5. the BEU result page is read correctly from real fixtures
    (`unit/result-parse.test.ts`);
-6. the four generated snapshots still add up (`data.test.ts`);
+6. the four generated snapshots still add up, and the search index's
+   precomputed headings are exactly what the parser produces (`data.test.ts`,
+   `unit/syllabus-headings.test.ts`);
 7. a cache key belongs to exactly one offline pack (`unit/offline.test.ts`);
 8. every merged route survives a cold, offline, param-less open, two entity
    screens render the entity their params name, and every More row pushes and
@@ -54,6 +56,7 @@ that includes the feature tests is ~13 s.
 | `qa/unit/result-parse.test.ts` | the Angular and ASP.NET result pages, and `null` for a page that is not a result | 0 |
 | `qa/data.test.ts` | syllabus packs, PYQ catalogue + PDFs, student register, notes manifest | 0 |
 | `qa/unit/offline.test.ts` | cache-key ownership across the offline packs, and the ledger's byte accounting | 0 |
+| `qa/unit/syllabus-headings.test.ts` | the precomputed search headings equal the parsed ones, and a paper the table lacks still gets headings | 0 |
 | `qa/harness.tsx` | mounts one route in isolation; records `nav.push`/`replace` into `qa.navlog` | — |
 | `qa/support.ts` | `openRoute`, `expectPage`, `navEntries`/`awaitNav`, `pressFirst`, `visible`/`snippet` | — |
 | `qa/routes.contract.ts` | the names the app *must* ship; a missing one is `test.todo`, never red | — |

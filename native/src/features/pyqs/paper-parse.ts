@@ -2,9 +2,19 @@
  * Extracts one paper out of the site's server-rendered subject page.
  *
  * The site does not publish its PYQ JSON, but it does render every structured
- * question into stable classes (`paper-block`, `section-group`, `q-box`,
- * `q-text`, `opt-item`, …). This parser reads those blocks without a DOM, so a
- * paper opens as native text instead of a web page.
+ * question into stable classes (`paper-block`, `paper-section`, `question`,
+ * `q-text`, `opt-item`, `marks`, …). This parser reads those blocks without a
+ * DOM, so a paper opens as native text instead of a web page.
+ *
+ * Two contracts are load-bearing and both are pinned by
+ * `qa/unit/paper-parse.test.ts`:
+ *
+ *  1. The selectors above are the site's current renderer. A redesign that
+ *     renames one makes every paper open as "not on the page" — the 2025
+ *     regression this parser exists to make impossible.
+ *  2. A block's page id is `paper-<code>-<year>[-variant]`, while the bundled
+ *     catalogue stores `<year>[_variant]`. `catalogueId` is the one conversion,
+ *     used both to find a block and to key the cache.
  */
 
 export interface ParsedOption {
@@ -38,6 +48,12 @@ export interface ParsedSection {
 
 export interface ParsedPaper {
   found: boolean;
+  /**
+   * Why a missing paper is missing: `"unreadable"` means the page carries
+   * paper blocks but none of them parsed (markup drift); `"absent"` means the
+   * page parsed and this id is not on it. Only set on a `found: false` stub.
+   */
+  reason?: "absent" | "unreadable";
   year: number;
   code: string;
   title: string;
@@ -159,6 +175,18 @@ function textByClass(html: string, className: string, tag = "div"): string {
   return fragmentToText(innerByClass(html, className, tag));
 }
 
+/** The inner HTML of every `<span>` in a fragment, in order. */
+function spansOf(fragment: string): string[] {
+  const out: string[] = [];
+  const pattern = /<span\b[^>]*>([\s\S]*?)<\/span>/gi;
+  let match = pattern.exec(fragment);
+  while (match !== null) {
+    out.push(match[1]);
+    match = pattern.exec(fragment);
+  }
+  return out;
+}
+
 function firstText(html: string, pattern: RegExp): string {
   const match = pattern.exec(html);
   return match ? fragmentToText(match[1]) : "";
@@ -167,6 +195,40 @@ function firstText(html: string, pattern: RegExp): string {
 function marksOf(html: string): number | null {
   const match = /\[(\d+(?:\.\d+)?)\s*marks?\]/i.exec(html);
   return match ? Number(match[1]) : null;
+}
+
+/** The number in a `<span class="marks">14 marks</span>`, or `[14 marks]`. */
+function marksIn(fragment: string): number | null {
+  const span = innerByClass(fragment, "marks", "span");
+  if (span !== "") {
+    const value = /(\d+(?:\.\d+)?)/.exec(fragmentToText(span));
+    if (value) return Number(value[1]);
+  }
+  return marksOf(fragment);
+}
+
+/**
+ * The first code of a cross-listed paper's label (`100103/100203`). The page
+ * id and the catalogue row both key on it; the label keeps the pair.
+ */
+function primaryCode(mono: string): string {
+  return mono.split("/")[0].trim() || mono;
+}
+
+/**
+ * The catalogue id for one page block. The site names a block
+ * `paper-<code>-<year>[-variant]`; the catalogue stores `<year>[_variant]`.
+ * `code` comes from the block's own `span.mono`, so a cross-listed paper whose
+ * code differs from the subject row still resolves.
+ */
+export function catalogueId(pageId: string, code: string): string {
+  const id = pageId.replace(/^paper-/, "");
+  const prefix = code === "" ? "" : `${code}-`;
+  const rest = prefix !== "" && id.startsWith(prefix) ? id.slice(prefix.length) : id;
+  // No usable code: drop the leading six-digit subject code instead.
+  const shaped = /^\d{4,6}-(\d{4})(?:-(.+))?$/.exec(rest);
+  if (shaped) return `${shaped[1]}${shaped[2] ? `_${shaped[2].replace(/-/g, "_")}` : ""}`;
+  return rest.replace(/-/g, "_");
 }
 
 function imagesOf(fragment: string): string[] {
@@ -213,7 +275,7 @@ function parseSubs(questionBox: string): ParsedSubQuestion[] {
       return {
         label: textByClass(item, "sub-lbl", "span"),
         text: textByClass(item, "sub-text"),
-        marks: marksOf(item),
+        marks: marksIn(item),
         options: parseOptions(item),
         parts,
         images: imagesOf(innerByClass(item, "sub-text")),
@@ -223,8 +285,8 @@ function parseSubs(questionBox: string): ParsedSubQuestion[] {
 }
 
 function parseQuestion(questionBox: string): ParsedQuestion {
-  const number = textByClass(questionBox, "q-num");
-  const content = innerByClass(questionBox, "q-content");
+  const number = textByClass(questionBox, "q-num", "p");
+  const content = innerByClass(questionBox, "q-body");
   const body = content || questionBox;
   const textBlock = innerByClass(body, "q-text");
   // Main options live above the sub-question list. `options-grid mini` inside
@@ -233,24 +295,34 @@ function parseQuestion(questionBox: string): ParsedQuestion {
   return {
     number,
     text: fragmentToText(textBlock),
-    marks: marksOf(innerByClass(questionBox, "q-actions")),
+    marks: marksIn(innerByClass(questionBox, "q-tools")),
     options: parseOptions(innerByClass(beforeSubs, "options-grid")),
     subs: parseSubs(body),
     images: imagesOf(textBlock),
   };
 }
 
+/** A question with no prose can still be an image, a set of choices or sub-parts. */
+function hasQuestionBody(question: ParsedQuestion): boolean {
+  return (
+    question.text.length > 0 ||
+    question.options.length > 0 ||
+    question.subs.length > 0 ||
+    question.images.length > 0
+  );
+}
+
 function parseSection(group: string): ParsedSection {
-  const rawTitle = textByClass(group, "heading-text") || firstText(group, /<h4[^>]*>([\s\S]*?)<\/h4>/i);
+  const rawTitle = textByClass(group, "section-title", "h3") || firstText(group, /<h4[^>]*>([\s\S]*?)<\/h4>/i);
   return {
     title: rawTitle.replace(/\[\s*\d+(?:\.\d+)?\s*marks?\s*\]\s*$/i, "").trim(),
-    marks: marksOf(innerByClass(group, "section-header-row")),
-    questions: splitByClass(group, "q-box").map(parseQuestion).filter((question) => question.text.length > 0),
+    marks: marksOf(innerByClass(group, "section-head")),
+    questions: splitByClass(group, "question", "li").map(parseQuestion).filter(hasQuestionBody),
   };
 }
 
 function parseInstructions(block: string): string[] {
-  const panel = innerByClass(block, "instructions-panel");
+  const panel = innerByClass(block, "instructions");
   if (!panel) return [];
   const out: string[] = [];
   const pattern = /<li[^>]*>([\s\S]*?)<\/li>/gi;
@@ -267,17 +339,20 @@ function parseInstructions(block: string): string[] {
 export function paperBlock(html: string, target: PaperTarget): string {
   const blocks = splitByClass(html, "paper-block", "section");
   const wanted = target.title.replace(/\s+/g, " ").trim().toLowerCase();
+  const wantedCode = primaryCode(target.code);
   let best = "";
   let bestScore = 0;
 
   for (const block of blocks) {
-    const id = /\bid="paper-([^"]+)"/i.exec(block)?.[1] ?? "";
-    if (id !== target.id) continue;
-    const code = textByClass(block, "code-badge-outline", "span");
+    const pageId = /\bid="paper-([^"]+)"/i.exec(block)?.[1] ?? "";
+    if (pageId === "") continue;
+    const code = primaryCode(textByClass(block, "mono", "span"));
+    // The catalogue id alone is not unique on a page: a year+variant can exist
+    // under several paper codes. The code is part of the identity.
+    if (wantedCode !== "" && wantedCode !== "---" && code !== wantedCode) continue;
+    if (catalogueId(`paper-${pageId}`, code) !== target.id) continue;
     const title = textByClass(block, "paper-title", "h2").replace(/\s+/g, " ").trim().toLowerCase();
-    let score = 1;
-    if (target.code && target.code !== "---" && code === target.code) score += 4;
-    if (wanted && title === wanted) score += 8;
+    const score = 1 + (wanted && title === wanted ? 8 : 0);
     if (score > bestScore) {
       best = block;
       bestScore = score;
@@ -285,15 +360,21 @@ export function paperBlock(html: string, target: PaperTarget): string {
   }
   if (best) return best;
 
-  // Fallback: match year + subject code + title inside every paper block.
+  // Fallback: the page id shape moved, so match the paper's own facts instead.
+  const targetVariant = target.id.includes("_") ? target.id.slice(target.id.indexOf("_") + 1) : target.variant;
   for (const block of blocks) {
-    const year = firstText(block, /class="year-badge"[^>]*>([\s\S]*?)<\/span>/i);
-    const code = firstText(block, /class="code-badge-outline"[^>]*>([\s\S]*?)<\/span>/i);
+    const pageId = /\bid="paper-([^"]+)"/i.exec(block)?.[1] ?? "";
+    if (pageId === "") continue;
+    const code = primaryCode(textByClass(block, "mono", "span"));
+    const id = catalogueId(`paper-${pageId}`, code);
+    const year = Number(textByClass(block, "year", "span")) || 0;
+    if (target.year > 0 && year !== target.year) continue;
+    const variant = id.includes("_") ? id.slice(id.indexOf("_") + 1) : "";
+    if (targetVariant !== "" && variant !== targetVariant) continue;
     const title = textByClass(block, "paper-title", "h2").replace(/\s+/g, " ").trim().toLowerCase();
-    const titleOk = !wanted || title === wanted;
-    if (year === String(target.year) && (target.code === "" || code === target.code) && titleOk) {
-      return block;
-    }
+    if (wanted && title !== wanted) continue;
+    if (wantedCode && wantedCode !== "---" && code !== wantedCode) continue;
+    return block;
   }
   return "";
 }
@@ -318,19 +399,17 @@ export function parsePaperHtml(html: string, target: PaperTarget): ParsedPaper {
 
 /** One `section.paper-block` as a readable paper. */
 export function parsePaperBlock(block: string, target: PaperTarget): ParsedPaper {
-  const sections = splitByClass(block, "section-group").map(parseSection).filter((section) => section.title || section.questions.length);
+  const sections = splitByClass(block, "paper-section", "section")
+    .map(parseSection)
+    .filter((section) => section.title || section.questions.length);
   const questionCount = sections.reduce((sum, section) => sum + section.questions.length, 0);
-  const yearText = textByClass(block, "year-badge", "span");
-  const codeText = textByClass(block, "code-badge-outline", "span");
-  const meta = block.match(/class="meta-item"[^>]*>\s*<span[^>]*class="label"[^>]*>([\s\S]*?)<\/span>\s*<span[^>]*class="val"[^>]*>([\s\S]*?)<\/span>/gi) ?? [];
-  let time = "";
-  let fullMarks = "";
-  for (const item of meta) {
-    const label = firstText(item, /class="label"[^>]*>([\s\S]*?)<\/span>/i).toLowerCase();
-    const value = firstText(item, /class="val"[^>]*>([\s\S]*?)<\/span>/i);
-    if (label.includes("time")) time = value;
-    if (label.includes("marks")) fullMarks = value;
-  }
+  const yearText = textByClass(block, "year", "span");
+  const codeText = textByClass(block, "mono", "span");
+  // The live head is `3 hours` then `70 marks`, with no label around either.
+  const meta = spansOf(innerByClass(block, "paper-meta", "p")).map(fragmentToText).filter((value) => value !== "");
+  const time = meta.find((value) => /\b(hour|minute)/i.test(value)) ?? "";
+  // The head says `70 marks`; the model (and the screen) wants the number.
+  const fullMarks = /(\d+(?:\.\d+)?)/.exec(meta.find((value) => /\bmarks?\b/i.test(value)) ?? "")?.[1] ?? "";
 
   return {
     found: sections.length > 0,
@@ -346,24 +425,60 @@ export function parsePaperBlock(block: string, target: PaperTarget): ParsedPaper
 }
 
 /**
- * Every readable paper on one subject page, keyed by the page's own paper id
- * (`paper-<id>`), which is the same id the bundled catalog stores.
+ * The key one paper occupies in its subject's cache, and the one `loadPaper`
+ * looks up: `<paper code>-<catalogue id>`.
  *
- * One subject page carries all of its papers (a 300–400 KB download), so this
- * is what makes an offline copy cheap: parse once, keep the questions, and
- * throw the markup away.
+ * The catalogue id alone (`2020`) is not unique on a page — one subject page
+ * carries papers from every branch's code (basic-electronics has three 2020
+ * papers, codes 041401, 101302 and 104301) — so the code has to ride along.
+ */
+export function paperKey(code: string, id: string): string {
+  return `${code}-${id}`;
+}
+
+/**
+ * The inverse of `catalogueId`: the in-page anchor the site gives one paper,
+ * `paper-<code>-<year>[-variant]`. "Open on the site" lands on the paper
+ * instead of the top of a thirty-paper page.
+ */
+export function pageAnchor(code: string, id: string): string {
+  const [year, ...variant] = id.split("_");
+  const suffix = variant.length > 0 ? `-${variant.join("_")}` : "";
+  return `paper-${primaryCode(code)}-${year}${suffix}`;
+}
+
+/** How many paper blocks a page carries, readable or not. */
+export function paperBlockCount(html: string): number {
+  return splitByClass(html, "paper-block", "section").length;
+}
+
+/**
+ * Every readable paper on one subject page, keyed by `paperKey` — the code and
+ * catalogue id `loadPaper` looks up, not the page's own
+ * `paper-<code>-<year>[-variant]` id.
+ *
+ * One subject page carries all of its papers, so this is what makes an offline
+ * copy cheap: parse once, keep the questions, and throw the markup away.
  */
 export function parseAllPapers(html: string): { id: string; paper: ParsedPaper }[] {
   const out: { id: string; paper: ParsedPaper }[] = [];
   for (const block of splitByClass(html, "paper-block", "section")) {
-    const id = /\bid="paper-([^"]+)"/i.exec(block)?.[1] ?? "";
-    if (!id) continue;
-    const code = textByClass(block, "code-badge-outline", "span");
-    const year = Number(textByClass(block, "year-badge", "span")) || 0;
-    const paper = parsePaperBlock(block, { id, code, year, variant: "", title: "" });
-    // A block with no questions is not worth a cache slot: the screen falls
+    const pageId = /\bid="paper-([^"]+)"/i.exec(block)?.[1] ?? "";
+    if (!pageId) continue;
+    const mono = textByClass(block, "mono", "span");
+    const code = primaryCode(mono);
+    const catalogue = catalogueId(`paper-${pageId}`, code);
+    const id = paperKey(code, catalogue);
+    const year = Number(textByClass(block, "year", "span")) || 0;
+    const paper = parsePaperBlock(block, { id: catalogue, code: mono, year, variant: "", title: "" });
+    // A block with no sections is not worth a cache slot: the screen falls
     // back to the PDF/site, and a later build of the page can still be read.
     if (!paper.found) continue;
+    const existing = out.find((entry) => entry.id === id);
+    if (existing) {
+      if (paper.questionCount > existing.paper.questionCount) existing.paper = paper;
+      continue;
+    }
     out.push({ id, paper });
   }
   return out;

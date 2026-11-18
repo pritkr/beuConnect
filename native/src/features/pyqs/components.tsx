@@ -14,7 +14,7 @@
  * no `WebView`, and `QuestionCard` is the only question renderer in the app.
  */
 
-import { Image, Scroll, Text, View, signal, Clipboard, type JSX } from "nsh";
+import { Image, Scroll, Text, View, signal, type JSX } from "nsh";
 
 import type { Nav } from "../../app/router";
 import { Badge, Btn, Card, Chip, Label, Muted, Row } from "../../ui";
@@ -24,6 +24,7 @@ import { paperPrompt } from "../../lib/ask-ai";
 import type { Children } from "../../ui";
 import { SITE, relativeTime } from "../../lib/net";
 import { EVENTS, track } from "../../lib/analytics";
+import { shareOrCopy } from "../../lib/share";
 import type { CatalogPaper, CatalogSubject } from "./catalog";
 import { paperLabel } from "./catalog";
 import type { ParsedOption, ParsedQuestion, ParsedSubQuestion } from "./paper-parse";
@@ -369,23 +370,23 @@ export function sectionLabel(title: string, index: number): string {
   return `Part ${index + 1}`;
 }
 
-/** Copies `text`; the label confirms for a couple of seconds. */
-export function CopyButton(props: { text: string; label?: string; class?: string }) {
-  const copied = signal(false);
+/** Shares the link, or copies it where the platform has no sheet. */
+export function ShareButton(props: { text: string; label?: string; class?: string }) {
+  const label = props.label ?? "Share link";
+  const done = signal<"" | "shared" | "copied">("");
 
-  const copy = async () => {
-    try {
-      await Clipboard.writeText(props.text);
-      copied.set(true);
-      setTimeout(() => copied.set(false), 2200);
-    } catch {
-      /* No clipboard on this host: leave the label alone. */
-    }
+  const share = async () => {
+    // This button only ever holds a link, so the sheet gets it as a link; a
+    // value the sheet cannot open still travels in the text (see `lib/share`).
+    const outcome = await shareOrCopy({ url: props.text });
+    if (outcome !== "shared" && outcome !== "copied") return;
+    done.set(outcome);
+    setTimeout(() => done.set(""), 2200);
   };
 
   return (
-    <Btn variant="secondary" class={props.class} onPress={copy} label={props.label ?? "Copy link"}>
-      {copied() ? "Copied" : (props.label ?? "Copy link")}
+    <Btn variant="secondary" class={props.class} onPress={share} label={label}>
+      {done() === "shared" ? "Shared" : done() === "copied" ? "Copied" : label}
     </Btn>
   );
 }

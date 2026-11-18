@@ -1,8 +1,9 @@
 # `syllabus` — generated syllabus and GATE packs
 
-`data/packs.ts` and `data/table/` are generated wire data. `data/decode.ts`
-documents the format and expands it on first read per branch. Editing a pack by
-hand is always wrong: the next `build-packs.ts` run erases it.
+`data/packs.ts`, `data/table/` and `data/headings.ts` are generated data.
+`data/decode.ts` documents the wire format and expands it on first read per
+branch. Editing a pack by hand is always wrong: the next `build-packs.ts` run
+erases it.
 
 ## Source of truth
 
@@ -36,7 +37,10 @@ pass, so it reports 0 when the site and the snapshot agree on substance.
   `beu.syllabus.saved` holds bookmarks; `beu.syllabus.course` holds the course.
   Clearing bundled data must not clear these.
 - **Search** covers subjects, units and topics from the decoded packs; do not
-  build a second index in the screen.
+  build a second index in the screen. The unit headings ship precomputed in
+  `data/headings.ts` (the same `searchHeadings` output, generated at pack time),
+  so the first query parses nothing; a paper the table does not carry still
+  falls back to `parseSyllabus` / `parseGate`.
 - **GATE** has 30 papers. The site ships `sections: []` for eight of them
   (DA, GG, MA, BM, PE, ST, XH, GE); the app fills those from the official 2026
   text, so no paper opens empty. The site-only gap is recorded in
@@ -47,11 +51,13 @@ pass, so it reports 0 when the site and the snapshot agree on substance.
 | File | Owns |
 |---|---|
 | `index.tsx` | route table and screens |
-| `data/packs.ts`, `data/table/`, `data/decode.ts` | generated data + wire format |
-| `parse.ts`, `course.ts`, `active.ts`, `you.ts` | parsing and saved-course logic |
+| `data/packs.ts`, `data/table/`, `data/headings.ts`, `data/decode.ts` | generated data + wire format |
+| `parse.ts`, `headings.ts`, `course.ts`, `active.ts`, `you.ts` | parsing, precomputed headings and saved-course logic |
 | `parts.tsx`, `topic-actions.tsx` | shared UI |
 
 ## Gate
 
-`bun scripts/data/verify-packs.ts`, `qa/data.test.ts` (the shelf decodes) and
-`qa/screens.test.tsx` (a paper and a topic render) then `./scripts/check.sh test`.
+`bun scripts/data/verify-packs.ts`, `qa/data.test.ts` (the shelf decodes),
+`qa/unit/syllabus-headings.test.ts` (precomputed headings equal the parsed ones)
+and `qa/screens.test.tsx` (a paper and a topic render) then
+`./scripts/check.sh test`.

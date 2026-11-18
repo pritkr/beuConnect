@@ -1,6 +1,8 @@
 /**
  * Packs the app's syllabus snapshot into the wire format that
- * `src/features/syllabus/data/packs.ts` ships.
+ * `src/features/syllabus/data/packs.ts` ships, and writes the search index's
+ * precomputed section headings to `src/features/syllabus/data/headings.ts`
+ * (`searchHeadings` in the syllabus `parse.ts` decides what a heading is).
  *
  * ── how to regenerate ───────────────────────────────────────────────────────
  *
@@ -25,6 +27,7 @@ import { mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "nod
 import { join } from "node:path";
 import { MAX_TOKENS, SEPARATOR, Table, literal, pack, rankPhrases, renderChunk, renderDict, symbol, wideChars } from "./wire-lib.ts";
 import { normalise } from "../../src/features/syllabus/data/decode.ts";
+import { gateSearchHeadings, parseGate, parseSyllabus, searchHeadings } from "../../src/features/syllabus/parse.ts";
 
 const DATA = new URL("../../src/features/syllabus/data/", import.meta.url);
 const SITE = new URL("../../../src/assets/data/", import.meta.url);
@@ -165,6 +168,48 @@ if (problems.length) {
   process.exit(1);
 }
 
+// ── search headings ─────────────────────────────────────────────────────────
+//
+// Search used to parse every paper's prose on its first keystroke just to get
+// the unit headings. They depend only on this snapshot, so they are computed
+// here and shipped beside it. The identity and the first-branch-wins order are
+// the ones `src/features/search/index.tsx` merges by, so the precomputed list is
+// the list that screen would have parsed. `n` is the length of the source
+// `content`; a live feed pack whose content length differs misses the table and
+// the screen parses it instead.
+
+interface SubjectHeadingsRow {
+  n: number;
+  h: string[];
+}
+
+const subjectHeadings: Record<string, SubjectHeadingsRow> = {};
+const gateHeadings: Record<string, string[]> = {};
+let headingTotal = 0;
+
+for (const meta of branchMeta) {
+  const pack = branches[meta.code];
+  for (const key of Object.keys(pack.semesters)) {
+    const sem = Number(key);
+    if (!Number.isFinite(sem) || sem <= 0) continue;
+    for (const subject of pack.semesters[key] ?? []) {
+      if (!subject || typeof subject.name !== "string" || typeof subject.code !== "string" || !subject.code) continue;
+      const id = `${subject.code}|${subject.name}|${sem}`;
+      if (id in subjectHeadings) continue; // first branch wins, as on the screen
+      const content = typeof subject.content === "string" ? subject.content : "";
+      const titles = content.length > 0 ? searchHeadings(parseSyllabus(content)) : [];
+      subjectHeadings[id] = { n: content.length, h: titles };
+      headingTotal += titles.length;
+    }
+  }
+}
+
+for (const meta of gateMeta) {
+  const titles = gateSearchHeadings(parseGate(gate[meta.code]));
+  gateHeadings[meta.code] = titles;
+  headingTotal += titles.length;
+}
+
 // ── render ──────────────────────────────────────────────────────────────────
 
 const chunks = table.chunk(LIMIT);
@@ -253,6 +298,35 @@ export const BRANCH_PACKS: Record<string, string> = lazy(BRANCH_WIRE, (code, wir
 export const GATE_PACKS: Record<string, string> = lazy(GATE_WIRE, (code, wire) => decodeGate(code, wire, table));
 `;
 
+files["headings.ts"] = `/* eslint-disable */
+/**
+ * GENERATED — do not hand-edit.
+ *
+ * The search index's section headings, computed from the packs above at build
+ * time so the first keystroke parses nothing: ${Object.keys(subjectHeadings).length} BEU papers and ${gateMeta.length} GATE papers,
+ * ${headingTotal} headings. Only \`src/features/syllabus/headings.ts\` reads this file.
+ *
+ * A subject's \`n\` is the length of the \`content\` its headings were read from.
+ * A live feed pack whose content length differs misses the table, and the search
+ * falls back to \`parseSyllabus\`; the same holds for a paper that is not here at
+ * all.
+ *
+ * Regenerate with \`bun scripts/data/build-packs.ts\`; \`--check\` reports it stale.
+ */
+export interface SubjectHeadings {
+  readonly n: number;
+  readonly h: readonly string[];
+}
+
+export const SUBJECT_HEADINGS: Record<string, SubjectHeadings> = {
+${Object.entries(subjectHeadings).map(([id, row]) => `  ${JSON.stringify(id)}: { n: ${row.n}, h: ${JSON.stringify(row.h)} },`).join("\n")}
+};
+
+export const GATE_HEADINGS: Record<string, readonly string[]> = {
+${Object.entries(gateHeadings).map(([code, titles]) => `  ${JSON.stringify(code)}: ${JSON.stringify(titles)},`).join("\n")}
+};
+`;
+
 // ── write, or compare ───────────────────────────────────────────────────────
 
 const tableDir = new URL("table/", DATA);
@@ -291,6 +365,7 @@ const dictChars = dict.reduce((n, p) => n + p.length, 0);
 console.log(`  prose      ${String(total).padStart(8)} chars in ${table.entries.length} strings`);
 console.log(`  packed     ${String(packed).padStart(8)} chars (${(packed / total * 100).toFixed(1)}%) + ${dict.length} tokens/${dictChars} chars, ${wide.length} wide escaped`);
 console.log(`  wires      ${String(wires).padStart(8)} chars for ${Object.keys(branchWires).length} branches + ${Object.keys(gateWires).length} papers`);
+console.log(`  headings   ${String(bytes(files["headings.ts"])).padStart(8)} B for ${headingTotal} titles in ${Object.keys(subjectHeadings).length} papers + ${gateMeta.length} GATE`);
 console.log(`  files      ${String(rendered).padStart(8)} B in ${Object.keys(files).length} modules (${chunks.length} chunks, max ${Math.max(...chunks.map((c) => bytes(files[`table/${c.name}.ts`])))} B)`);
 console.log(`  ${check ? (stale ? `✗ ${stale} file(s) out of date` : "✓ up to date") : `wrote ${stale} file(s)`}`);
 if (check && stale) process.exit(1);

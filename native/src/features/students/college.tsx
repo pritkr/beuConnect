@@ -15,13 +15,14 @@
  * college, and offers the one it has.
  */
 
-import { LayoutAnimation, List, Scroll, Text, View, computed, signal } from "nsh";
+import { List, Scroll, Text, View, computed, signal, type ViewRef } from "nsh";
 import type { Nav } from "../../app/router";
 import { param } from "../../app/router";
 import { Chip, Divider, EmptyState, Muted, Row, Screen, Search } from "../../ui";
 import { Icon } from "../../ui/icons";
 import { motionOn } from "../../ui/motion";
 import { EVENTS, track } from "../../lib/analytics";
+import { LAYOUT_SPRING_PANEL } from "../../lib/motion";
 import { branchIcon } from "../../ui/branch-icon";
 import { Fresh, StudentRow } from "./components";
 import type { Student } from "./data";
@@ -205,80 +206,91 @@ export function CollegeScreen(props: { nav: Nav }) {
                   onAction={() => branch.set("")}
                 />
               </If>
-              {batches().map((group) => (
-                <View class="overflow-hidden rounded-2xl border border-border bg-card">
-                  <Row
-                    class="min-h-12 gap-3 px-4 active:bg-muted"
-                    onPress={() => {
-                      // Expanding a session lists its students; glide the reflow.
-                      if (motionOn()) LayoutAnimation.easeInEaseOut();
-                      open.set(open() === group.session ? "" : group.session);
+              {batches().map((group) => {
+                // The group clips its own body (`overflow-hidden`), so this
+                // card's frame is the reveal: the tap springs the card that
+                // grows and the cards it pushes, not the whole screen.
+                let card: ViewRef | null = null;
+                return (
+                  <View
+                    class="overflow-hidden rounded-2xl border border-border bg-card"
+                    ref={(node: ViewRef) => {
+                      card = node;
                     }}
-                    label={`${group.session}, ${formatCount(group.total)} students, ${
-                      open() === group.session ? "collapse" : "expand"
-                    }`}
                   >
-                    <View class="flex-1 flex-row items-baseline gap-2">
-                      <Text class="text-[15px] font-semibold tabular-nums text-foreground">{group.session}</Text>
-                      <Text class="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                        {group.batch}
+                    <Row
+                      class="min-h-12 gap-3 px-4 active:bg-muted"
+                      onPress={() => {
+                        // This group alone moves: spring it, then commit the open.
+                        if (motionOn()) card?.animateLayout(LAYOUT_SPRING_PANEL);
+                        open.set(open() === group.session ? "" : group.session);
+                      }}
+                      label={`${group.session}, ${formatCount(group.total)} students, ${
+                        open() === group.session ? "collapse" : "expand"
+                      }`}
+                    >
+                      <View class="flex-1 flex-row items-baseline gap-2">
+                        <Text class="text-[15px] font-semibold tabular-nums text-foreground">{group.session}</Text>
+                        <Text class="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+                          {group.batch}
+                        </Text>
+                      </View>
+                      <Text class="text-[13px] font-semibold tabular-nums text-foreground">
+                        {formatCount(group.total)}
                       </Text>
-                    </View>
-                    <Text class="text-[13px] font-semibold tabular-nums text-foreground">
-                      {formatCount(group.total)}
-                    </Text>
-                    <If when={open() === group.session}>
-                      <Icon name="chevron-up" size={14} class="text-muted-foreground" />
-                    </If>
-                    <If when={open() !== group.session}>
-                      <Icon name="chevron-down" size={14} class="text-muted-foreground" />
-                    </If>
-                  </Row>
+                      <If when={open() === group.session}>
+                        <Icon name="chevron-up" size={14} class="text-muted-foreground" />
+                      </If>
+                      <If when={open() !== group.session}>
+                        <Icon name="chevron-down" size={14} class="text-muted-foreground" />
+                      </If>
+                    </Row>
 
-                  <If when={open() === group.session}>
-                    <Fresh
-                      when={branch()}
-                      build={() => (
-                        <View>
-                          {BRANCHES.filter((entry) => !branch() || branch() === entry.slug).map((entry) => {
-                            const count = (BRANCH_COUNTS_BY_SESSION[group.session] ?? {})[entry.slug] ?? 0;
-                            if (count === 0) return null;
-                            return (
-                              <Row
-                                class="min-h-12 gap-3 border-t border-border px-4 active:bg-muted"
-                                onPress={() => {
-                                  track(EVENTS.studentsBranchOpen, { branch: entry.slug, label: group.session });
-                                  nav.push("students.branch", {
-                                    branch: entry.slug,
-                                    college: COLLEGE_CODE,
-                                    session: group.session,
-                                  });
-                                }}
-                                label={`${entry.name}, ${group.session}, ${formatCount(count)} students`}
-                              >
-                                <Icon
-                                  name={branchIcon(entry.slug) ?? "category"}
-                                  size={15}
-                                  class="text-muted-foreground"
-                                />
-                                <View class="flex-1">
-                                  <Text class="text-[13px] font-medium text-foreground" style={{ numberOfLines: 1 }}>
-                                    {entry.name}
+                    <If when={open() === group.session}>
+                      <Fresh
+                        when={branch()}
+                        build={() => (
+                          <View>
+                            {BRANCHES.filter((entry) => !branch() || branch() === entry.slug).map((entry) => {
+                              const count = (BRANCH_COUNTS_BY_SESSION[group.session] ?? {})[entry.slug] ?? 0;
+                              if (count === 0) return null;
+                              return (
+                                <Row
+                                  class="min-h-12 gap-3 border-t border-border px-4 active:bg-muted"
+                                  onPress={() => {
+                                    track(EVENTS.studentsBranchOpen, { branch: entry.slug, label: group.session });
+                                    nav.push("students.branch", {
+                                      branch: entry.slug,
+                                      college: COLLEGE_CODE,
+                                      session: group.session,
+                                    });
+                                  }}
+                                  label={`${entry.name}, ${group.session}, ${formatCount(count)} students`}
+                                >
+                                  <Icon
+                                    name={branchIcon(entry.slug) ?? "category"}
+                                    size={15}
+                                    class="text-muted-foreground"
+                                  />
+                                  <View class="flex-1">
+                                    <Text class="text-[13px] font-medium text-foreground" style={{ numberOfLines: 1 }}>
+                                      {entry.name}
+                                    </Text>
+                                  </View>
+                                  <Text class="text-[13px] font-semibold tabular-nums text-foreground">
+                                    {formatCount(count)}
                                   </Text>
-                                </View>
-                                <Text class="text-[13px] font-semibold tabular-nums text-foreground">
-                                  {formatCount(count)}
-                                </Text>
-                                <Icon name="chevron-right" size={12} class="text-muted-foreground" />
-                              </Row>
-                            );
-                          })}
-                        </View>
-                      )}
-                    />
-                  </If>
-                </View>
-              ))}
+                                  <Icon name="chevron-right" size={12} class="text-muted-foreground" />
+                                </Row>
+                              );
+                            })}
+                          </View>
+                        )}
+                      />
+                    </If>
+                  </View>
+                );
+              })}
             </Scroll>
           )}
         />

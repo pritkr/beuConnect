@@ -84,9 +84,12 @@ export async function openRoute(
     clock: {},
     ...extra,
     storage: {
+      // A captured device snapshot may still hold the *previous* mount's
+      // route; the route this call names must win, or the harness silently
+      // reopens the old screen with the old params.
+      ...(extra.storage ?? {}),
       "qa.route": JSON.stringify(name),
       "qa.params": JSON.stringify(params),
-      ...(extra.storage ?? {}),
     },
   };
 

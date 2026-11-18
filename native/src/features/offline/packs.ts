@@ -85,7 +85,7 @@ export const PACKS: readonly Pack[] = [
     title: "BEU PYQ papers",
     hint: "Questions from the papers you have opened, or downloaded for your course.",
     bundled: false,
-    match: (key) => key.startsWith("pyqs.papers.v1."),
+    match: (key) => key.startsWith("pyqs.papers.v2."),
     effect: "Papers you have not opened since come back from the site when you next open them.",
     dialog: "Delete offline papers?",
     confirm: "Delete papers",
@@ -257,7 +257,7 @@ export const warmProgress = signal<WarmProgress>(EMPTY_PROGRESS);
 /** How stale a cached subject may be before "download" fetches it again. */
 const REFRESH_AFTER = 30 * 24 * 60 * 60 * 1000;
 
-/** A page costs ~390 KB of transfer; a semester has ~20. */
+/** A course plan fetches one page per subject with papers (median four, max eight). */
 export function coursePlan(profile: Profile): string[] {
   if (!isProfileComplete(profile) || profile.branch === "" || profile.sem < 1) return [];
   const slugs = subjectsOf(profile.branch, profile.sem)
@@ -373,9 +373,9 @@ export async function warmSmallFeeds(): Promise<void> {
       loadAnnouncements(),
       loadNotes(),
       loadDatasets(),
-      // Rows from the old page cache (1.x kept ~390 KB of markup per subject).
-      // Papers are parsed now, so those copies are dead weight on the budget.
-      clearCacheWhere((key) => key.startsWith("pyqs.page.")),
+      // Rows from the old page cache (1.x kept a subject's whole markup), and
+      // v1 bundles whose page-id keys no lookup could match.
+      clearCacheWhere((key) => key.startsWith("pyqs.page.") || key.startsWith("pyqs.papers.v1.")),
     ]);
     await writeStore(WARM_KEY, Date.now());
   } finally {

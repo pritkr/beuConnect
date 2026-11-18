@@ -26,9 +26,12 @@ Never `nsh test` directly. Budget: under 15 s.
 | `screens.test.tsx` | home, syllabus, results, notes, search, notices, onboarding |
 | `integration.test.tsx` | every route cold/offline, params vs entity, dark mode, More → back, harness/registry equality |
 | `crash.test.tsx` | the failure contract: a screen, the shell and a timer throw; fallbacks, retry and back |
+| `paper.test.tsx` | the native paper path: one page load, the subject bundle, cold offline opens, an absent row |
+| `fixtures/` | shared test data (the live paper markup), imported by unit and route tests |
 | `unit/logic.test.ts` | grades, SGPA/CGPA, target planner, attendance, ranking, semester |
 | `unit/result-parse.test.ts` | BEU result page reader, real Angular/ASP.NET fixtures |
 | `unit/offline.test.ts` | offline pack key ownership and byte accounting |
+| `unit/syllabus-headings.test.ts` | the precomputed search headings equal the parsed ones; the fallback |
 | `data.test.ts` | syllabus packs, PYQ catalogue + PDFs, roster, notes manifest |
 | `harness.tsx` | one route in isolation, curated to the areas `harness-routes.ts` lists |
 | `support.ts` | `openRoute`, `expectPage`, `navEntries`/`awaitNav`, `pressFirst` |

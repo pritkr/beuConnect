@@ -12,7 +12,7 @@
  * when no row carries a mark.
  */
 
-import { LayoutAnimation, List, Text, View, computed, effect, signal, cleanup } from "nsh";
+import { List, Text, View, computed, effect, signal, cleanup, type ViewRef } from "nsh";
 import type { RouteDef, RouteParams } from "../../app/router";
 import {
   Badge,
@@ -30,6 +30,7 @@ import {
   scrollAnimated,
 } from "../../ui";
 import { Icon, type IconName } from "../../ui/icons";
+import { LAYOUT_SPRING } from "../../lib/motion";
 import { motionOn } from "../../ui/motion";
 import { useProfile } from "../settings/profile";
 import { Cell, ChipRail, Head, type RailOption } from "./components";
@@ -113,7 +114,8 @@ function StudentRow(props: {
   position: number;
   /** This row carries the saved registration number. */
   mine?: boolean;
-  open: boolean;
+  /** Read in the tree, so the row survives an expand and its own frame can spring. */
+  open: () => boolean;
   onToggle: () => void;
 }) {
   const item = props.item;
@@ -132,6 +134,8 @@ function StudentRow(props: {
         : `Fail ${fail}`
       : "";
   const open = props.open;
+  // This row's own frames: the report it opens and the rows it pushes below.
+  let row: ViewRef | null = null;
   const fallback = props.summary
     .map((column) => `${niceLabel(column)} ${cell(item, names, column)}`.trim())
     .filter((line) => line.length > 0);
@@ -153,13 +157,22 @@ function StudentRow(props: {
 
   return (
     <View
-      class="min-h-14 gap-1.5 rounded-2xl border border-border bg-card px-3 py-2 active:bg-muted"
-      onPress={props.onToggle}
+      class="min-h-14 gap-1.5 overflow-hidden rounded-2xl border border-border bg-card px-3 py-2 active:bg-muted"
+      onPress={() => {
+        // Spring this row's frame and the rows it pushes; commit the open in the
+        // same turn. Insertions are not animated, and the clip above is what
+        // reveals the report as the frame grows.
+        if (motionOn()) row?.animateLayout(LAYOUT_SPRING);
+        props.onToggle();
+      }}
+      ref={(node: ViewRef) => {
+        row = node;
+      }}
       role="button"
       accessibilityLabel={`${name || reg || "Student"}, ${spokenRank}, ${
         headline ? `${sgpa ? "SGPA" : "CGPA"} ${headline}` : "no published score"
       }, tap for details`}
-      accessibilityState={{ expanded: open }}
+      accessibilityState={{ expanded: open() }}
     >
       <Row class="items-center gap-2.5">
         <View class="w-14 items-end">
@@ -192,10 +205,10 @@ function StudentRow(props: {
           </View>
         ) : null}
 
-        <Icon name={open ? "chevron-up" : "chevron-down"} size={14} class="text-muted-foreground" />
+        <Icon name={open() ? "chevron-up" : "chevron-down"} size={14} class="text-muted-foreground" />
       </Row>
 
-      <If when={open}>
+      <If when={open()}>
         <View class="gap-1.5 border-t border-border pt-2">
           {props.detail.map((column) => (
             <Row class="items-start justify-between gap-3">
@@ -556,7 +569,7 @@ function TableScreen(props: { nav: import("../../app/router").Nav; target: Targe
             <Cell
               row={row}
               id={(item) => item.key}
-              fresh={() => `${expanded() ?? ""}|${positions().get(row().key) ?? 0}|${myRow()?.key ?? ""}`}
+              fresh={() => `${positions().get(row().key) ?? 0}|${myRow()?.key ?? ""}`}
               build={(item) => (
                 <StudentRow
                   item={item}
@@ -565,11 +578,11 @@ function TableScreen(props: { nav: import("../../app/router").Nav; target: Targe
                   detail={detail()}
                   position={positions().get(item.key) ?? 0}
                   mine={item.key === myRow()?.key}
-                  open={expanded() === item.key}
-                  onToggle={() => {
-                    if (motionOn()) LayoutAnimation.easeInEaseOut();
-                    expanded.set(expanded() === item.key ? null : item.key);
-                  }}
+                  // A getter, not a value: the row must survive its own expand
+                  // for its frame to spring. Keying `fresh` on `expanded` used to
+                  // rebuild every visible row on every tap.
+                  open={() => expanded() === item.key}
+                  onToggle={() => expanded.set(expanded() === item.key ? null : item.key)}
                 />
               )}
             />

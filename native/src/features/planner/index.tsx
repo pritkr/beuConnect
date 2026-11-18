@@ -17,17 +17,18 @@
  * feeds it signals and renders what comes back.
  */
 
-import { LayoutAnimation, List, View, cleanup, computed, effect, signal, type Accessor, type JSX } from "nsh";
+import { List, View, cleanup, computed, effect, signal, type Accessor, type JSX, type ViewRef } from "nsh";
 
 import type { Nav, RouteDef } from "../../app/router";
 import { numParam, param } from "../../app/router";
 import { Badge, Body, Btn, Chip, Loading, Screen, SectionHeader } from "../../ui";
+import { LAYOUT_SPRING_PANEL } from "../../lib/motion";
 import { readStore, writeStore } from "../../lib/net";
 import { motionOn } from "../../ui/motion";
 import { BRANCH_META, branchPack } from "../syllabus/active";
 import { dataVersion } from "../data-feed/pyqs";
 import { parseSyllabus, type BranchPack, type Subject } from "../syllabus/parse";
-import { isoDay, parseDay, scheduleFor, type PlanUnitSeed, type Schedule } from "./plan";
+import { isoDay, parseDay, scheduleFor, type PlanUnitSeed, type Schedule, type ScheduleDay } from "./plan";
 import {
   Chooser,
   DayCard,
@@ -484,14 +485,21 @@ function PlannerContent(props: {
   const exam = (): string => planStore()?.exam ?? "";
   const pace = (): number => planStore()?.minutesPerDay || DEFAULT_MINUTES;
 
+  /**
+   * One unit opens or closes. The card clips its own body (`UnitCard` is
+   * `overflow-hidden`), so the card's frame is the reveal: the cell that owns
+   * it springs that frame and the rows it pushes, in the same turn.
+   */
   const toggleOpen = (key: string): void => {
-    // A unit body changing height reflows everything below it; NSH glides it.
-    if (motionOn()) LayoutAnimation.easeInEaseOut();
     open.update((value) => ({ ...value, [key]: !value[key] }));
   };
+  /** The day column as rendered; "Show all" moves its frame and the button's. */
+  let days: ViewRef | null = null;
   const toggleExpanded = (): void => {
-    // Seven days to the whole run is the largest reflow on the screen.
-    if (motionOn()) LayoutAnimation.easeInEaseOut();
+    // Seven days to the whole run is the largest reflow on the screen, and it
+    // is this column that grows: spring its frame and the button it pushes,
+    // not every frame on the screen.
+    if (motionOn()) days?.animateLayout(LAYOUT_SPRING_PANEL);
     expanded.update((value) => !value);
   };
 
@@ -593,17 +601,32 @@ function PlannerContent(props: {
                 <PlannerEmpty plan={props.plan} onDate={props.onToggleSettings} onCourse={props.onChangeCourse} />
               }
             >
-              {(row: () => UnitRow, index: () => number) => (
-                <UnitCard
-                  row={row()}
-                  plan={() => props.plan().units[index()]}
-                  dated={() => props.plan().feasibility !== null}
-                  studied={props.studied}
-                  open={open}
-                  onOpen={() => toggleOpen(row().key)}
-                  onTopic={toggleTopic}
-                />
-              )}
+              {(row: () => UnitRow, index: () => number) => {
+                // The ref lives with the row it belongs to: a tap on this card
+                // springs this card's frame and the rows it pushes, instead of
+                // every frame the update changes.
+                let card: ViewRef | null = null;
+                return (
+                  <View
+                    ref={(node: ViewRef) => {
+                      card = node;
+                    }}
+                  >
+                    <UnitCard
+                      row={row()}
+                      plan={() => props.plan().units[index()]}
+                      dated={() => props.plan().feasibility !== null}
+                      studied={props.studied}
+                      open={open}
+                      onOpen={() => {
+                        if (motionOn()) card?.animateLayout(LAYOUT_SPRING_PANEL);
+                        toggleOpen(row().key);
+                      }}
+                      onTopic={toggleTopic}
+                    />
+                  </View>
+                );
+              }}
             </List>
           );
         }
@@ -623,7 +646,6 @@ function PlannerContent(props: {
                   />
                 );
               }
-              const shown = expanded() ? schedule.days : schedule.days.slice(0, 7);
               return (
                 <View class="gap-2">
                   <SectionHeader
@@ -632,9 +654,25 @@ function PlannerContent(props: {
                       <Badge tone="mint">{`${schedule.target} topic${schedule.target === 1 ? "" : "s"} a day`}</Badge>
                     }
                   />
-                  {shown.map((day) => (
-                    <DayCard day={day} today={today()} studied={props.studied} onTopic={toggleTopic} />
-                  ))}
+                  {/* The card stack clips: "Show all" springs this frame taller
+                      and the clipped edge reveals the days that were below the
+                      fold, while the button under it is pushed down with it.
+                      Rows are keyed by date, so the first week stays mounted. */}
+                  <View
+                    class="gap-2 overflow-hidden"
+                    ref={(node: ViewRef) => {
+                      days = node;
+                    }}
+                  >
+                    <Each
+                      of={expanded() ? schedule.days : schedule.days.slice(0, 7)}
+                      key={(day: ScheduleDay) => day.date}
+                    >
+                      {(day: () => ScheduleDay) => (
+                        <DayCard day={day()} today={today()} studied={props.studied} onTopic={toggleTopic} />
+                      )}
+                    </Each>
+                  </View>
                   {schedule.days.length > 7 ? (
                     <Btn variant="ghost" onPress={toggleExpanded}>
                       {expanded() ? "Show the first week" : `Show all ${schedule.days.length} days`}

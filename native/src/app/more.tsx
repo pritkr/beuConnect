@@ -1,4 +1,5 @@
 import { Text, View } from "nsh";
+import { Haptics } from "nsh/mobile";
 import type { Nav } from "./router";
 import { Body, Card, Divider, Row, Screen, SectionHeader } from "../ui";
 import { Icon, type IconName } from "../ui/icons";
@@ -83,7 +84,10 @@ export function MoreScreen(props: { nav: Nav }) {
                 {group.items.map((item, index) => (
                   <View
                     class="min-h-11 flex-row items-center gap-3 px-4 py-2.5 active:bg-muted focus:ring-2 focus:ring-ring"
-                    onPress={() => props.nav.push(item.route, item.params ?? {})}
+                    onPress={() => {
+                      Haptics.selection();
+                      props.nav.push(item.route, item.params ?? {});
+                    }}
                     role="button"
                     accessibilityLabel={item.title}
                     accessibilityHint={item.hint}

@@ -12,11 +12,12 @@
  *    `<Each>` (also in this file: `Fresh`).
  */
 
-import { View, Clipboard, batch, cleanup, effect, signal, type JSX, type Signal } from "nsh";
+import { View, batch, cleanup, effect, signal, type JSX, type Signal } from "nsh";
 import type { Nav } from "../../app/router";
 import { param } from "../../app/router";
 import { Btn, Field } from "../../ui";
 import { EVENTS, track } from "../../lib/analytics";
+import { shareOrCopy } from "../../lib/share";
 import { useProfile, useProfileReady, type Profile } from "../settings/profile";
 import { BatchChips, BranchChips, SemChips } from "./components";
 import {
@@ -126,26 +127,24 @@ export function RegField(props: {
   );
 }
 
-/* ---------------------------------------------------------------- clipboard */
+/* ---------------------------------------------------------------- sharing */
 
-/** Copies `text`; the label confirms for a couple of seconds. */
-export function CopyButton(props: { text: string; label?: string; class?: string }) {
-  const copied = signal(false);
+/** Shares the text, or copies it where the platform has no sheet. */
+export function ShareButton(props: { text: string; label?: string; class?: string }) {
+  const label = props.label ?? "Share";
+  const done = signal<"" | "shared" | "copied">("");
 
-  const copy = async () => {
-    try {
-      await Clipboard.writeText(props.text);
-      copied.set(true);
-      track(EVENTS.resultShare, { method: "clipboard" });
-      setTimeout(() => copied.set(false), 2200);
-    } catch {
-      /* No clipboard on this host: nothing to tell the user. */
-    }
+  const share = async () => {
+    const outcome = await shareOrCopy({ text: props.text });
+    if (outcome !== "shared" && outcome !== "copied") return;
+    done.set(outcome);
+    track(EVENTS.resultShare, { method: outcome === "shared" ? "sheet" : "clipboard" });
+    setTimeout(() => done.set(""), 2200);
   };
 
   return (
-    <Btn variant="secondary" class={props.class} onPress={copy} label={props.label ?? "Copy"}>
-      {copied() ? "Copied" : (props.label ?? "Copy")}
+    <Btn variant="secondary" class={props.class} onPress={share} label={label}>
+      {done() === "shared" ? "Shared" : done() === "copied" ? "Copied" : label}
     </Btn>
   );
 }

@@ -7,7 +7,8 @@
  * once, plainly, and never implies an alarm that will not ring.
  */
 
-import { Text, View, signal } from "nsh";
+import { Text, View, platform, signal } from "nsh";
+import { DateTimePicker, Haptics } from "nsh/mobile";
 
 import { Badge, Btn, Card, Field, Label, Muted, Panel, SectionHeader } from "../../ui";
 import { Icon } from "../../ui/icons";
@@ -24,11 +25,21 @@ import {
   isoDay,
   isValidIsoDay,
   normalizeTitle,
+  parseIsoDay,
   removeDatedReminder,
   setDatedDone,
   shiftDay,
   useDatedReminders,
 } from "./dates";
+
+/**
+ * Whether the system draws the date picker.
+ *
+ * iOS and Android do (`nsh/mobile`); the web and the desktops have none, so
+ * they keep the typed `YYYY-MM-DD` field. The platform never changes while the
+ * app runs.
+ */
+const SYSTEM_DATE_PICKER = platform.os === "ios" || platform.os === "android";
 
 function QuickDate(props: { label: string; onPress: () => void }) {
   return (
@@ -49,6 +60,7 @@ function ReminderRow(props: { reminder: DatedReminder; today: string }) {
   const late = reminder.date < props.today;
 
   const toggle = (): void => {
+    Haptics.selection();
     void setDatedDone(reminder.id, !reminder.done);
   };
 
@@ -138,9 +150,11 @@ export function DatedReminders() {
     void addDatedReminder({ title: text, date: date(), kind: kind() }).then((ok) => {
       if (!ok) {
         problem.set("That reminder could not be saved. Try again.");
+        Haptics.notification("error");
         return;
       }
       saved.set(`Saved · ${dueLabel(date(), today())}`);
+      Haptics.notification("success");
       closeForm();
       title.set("");
     });
@@ -228,18 +242,42 @@ export function DatedReminders() {
             ))}
           </View>
 
-          <Field
-            label="Date"
-            value={date()}
-            onChange={(value: string) => {
-              date.set(formatDateInput(value));
-              if (problem()) problem.set("");
-            }}
-            placeholder="2026-11-14"
-            keyboard="number-pad"
-            maxLength={10}
-            onSubmit={save}
-          />
+          {SYSTEM_DATE_PICKER ? (
+            <View class="gap-1">
+              <Label>Date</Label>
+              <View class="min-h-11 flex-row items-center">
+                <DateTimePicker
+                  mode="date"
+                  value={date()}
+                  // A reminder still makes sense a year late ("Late" in the
+                  // list); five years out is past any BEU date this app knows.
+                  min={shiftDay(-365)}
+                  max={shiftDay(1825)}
+                  accessibilityLabel="Reminder date"
+                  onChange={(event) => {
+                    const day = parseIsoDay(event.value);
+                    if (!day) return;
+                    date.set(isoDay(day));
+                    Haptics.selection();
+                    if (problem()) problem.set("");
+                  }}
+                />
+              </View>
+            </View>
+          ) : (
+            <Field
+              label="Date"
+              value={date()}
+              onChange={(value: string) => {
+                date.set(formatDateInput(value));
+                if (problem()) problem.set("");
+              }}
+              placeholder="2026-11-14"
+              keyboard="number-pad"
+              maxLength={10}
+              onSubmit={save}
+            />
+          )}
 
           <View class="flex-row flex-wrap gap-2">
             <QuickDate label="Today" onPress={() => date.set(isoDay())} />

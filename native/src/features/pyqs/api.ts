@@ -11,10 +11,10 @@
  * so a paper or table opens offline once it has been seen.
  */
 
-import { SITE, fetchJson, fetchText, getCache, putCache, NetError } from "../../lib/net";
-import { listEntries } from "../../lib/cache";
+import { SITE, fetchJson, fetchText, putCache, NetError } from "../../lib/net";
+import { listEntries, readEntry } from "../../lib/cache";
 import { COLLEGE_NAMES } from "./colleges";
-import { parseAllPapers, type PaperTarget, type ParsedPaper } from "./paper-parse";
+import { parseAllPapers, paperBlockCount, type PaperTarget, type ParsedPaper } from "./paper-parse";
 
 /* ----------------------------------------------------------------- datasets */
 
@@ -291,26 +291,37 @@ export function loadDatasetCsv(dataset: Dataset): Promise<string> {
 /**
  * Papers are cached **parsed**, not as HTML.
  *
- * One subject page is ~390 KB of markup for every paper that subject has ever
- * had; the same page parsed into questions is ~9 KB. That ratio is what makes
- * "all my PYQs, offline" fit in a 5 MB device store: a semester of subjects
- * costs a few hundred kilobytes, not ten megabytes.
+ * One subject page is 0.3–4.5 MB of markup for every paper that subject has
+ * ever had; the same page parsed into questions averages 6.2 KB per paper
+ * (measured over 88 live papers). That ratio is what makes "all my PYQs,
+ * offline" fit in a 5 MB device store: the median course plan is 21 papers,
+ * about 130 KB.
  *
  * One cache row per subject, written once per page load:
  *
- *   beu.cache.pyqs.papers.v1.<slug> → "<id>" → ParsedPaper
+ *   beu.cache.pyqs.papers.v2.<slug> → "<paper code>-<catalogue id>" → ParsedPaper
  *
- * Bump the `v1` in the key whenever `ParsedPaper` changes shape: an old bundle
- * then stops being read, and the next open rewrites it. (The launch warm-up
- * also drops `pyqs.page.*`, the raw-HTML rows 1.x kept.)
+ * Bump the version in the key whenever `ParsedPaper` or the id contract
+ * changes: an old bundle then stops being read, and the next open rewrites it.
+ * v2 dropped v1's page-id keys (`paper-100403-2025`), which no lookup could
+ * ever match. (The launch warm-up drops `pyqs.page.*`, the raw-HTML rows 1.x
+ * kept, and any surviving v1 bundle.)
  *
  * Reading a paper is therefore one Storage read, with no network and no
  * parsing. A fresh copy is fetched when the row is older than `REFRESH_AFTER`,
  * and an old row is still served if the network fails — a paper from last year
  * does not change.
  */
-const PAPER_CACHE_PREFIX = "pyqs.papers.v1.";
+const PAPER_CACHE_PREFIX = "pyqs.papers.v2.";
 const REFRESH_AFTER = 30 * 24 * 60 * 60 * 1000;
+/**
+ * How long a fresh bundle's *silence* is trusted. Every readable paper on the
+ * page is in the bundle, so a miss right after a fetch means the page does not
+ * have that paper. An hour stops a catalogue row the site has dropped from
+ * re-downloading a few MB on every tap, while still letting a paper published
+ * today appear the same day.
+ */
+const MISS_TRUST = 60 * 60 * 1000;
 
 /** slug → papers, for the session; the Storage row is the durable copy. */
 const bundles = new Map<string, Record<string, ParsedPaper>>();
@@ -320,14 +331,19 @@ export function paperCacheKey(slug: string): string {
   return `${PAPER_CACHE_PREFIX}${slug}`;
 }
 
-function parseBundle(raw: string | null): { papers: Record<string, ParsedPaper>; at: number } | null {
+/**
+ * The papers a stored row holds, or null when the row is missing or not ours.
+ *
+ * `readEntry` (not `getCache`) because the bundle also needs the write time:
+ * `getCache` unwraps the row and returns only its value, which made every
+ * cold start read a bundle it could not recognise and re-download the page.
+ */
+function parseBundle(raw: string | null, at: number): { papers: Record<string, ParsedPaper>; at: number } | null {
   if (!raw) return null;
   try {
-    const parsed = JSON.parse(raw) as { at?: unknown; value?: unknown };
-    if (!parsed || typeof parsed.value !== "string") return null;
-    const papers = JSON.parse(parsed.value) as Record<string, ParsedPaper>;
+    const papers = JSON.parse(raw) as Record<string, ParsedPaper>;
     if (!papers || typeof papers !== "object" || Array.isArray(papers)) return null;
-    return { papers, at: typeof parsed.at === "number" ? parsed.at : 0 };
+    return { papers, at };
   } catch {
     return null;
   }
@@ -339,7 +355,8 @@ export async function readPapers(
 ): Promise<{ papers: Record<string, ParsedPaper>; at: number } | null> {
   const remembered = bundles.get(slug);
   if (remembered) return { papers: remembered, at: bundleAt.get(slug) ?? 0 };
-  const stored = parseBundle(await getCache(paperCacheKey(slug), 0));
+  const entry = await readEntry(paperCacheKey(slug));
+  const stored = entry ? parseBundle(entry.value, entry.at) : null;
   if (!stored) return null;
   bundles.set(slug, stored.papers);
   bundleAt.set(slug, stored.at);
@@ -370,42 +387,42 @@ export function errorMessage(error: unknown): string {
 }
 
 async function fetchSubjectPage(slug: string): Promise<string> {
-  // The markup is not kept: it is ~390 KB, and the parsed papers that follow
-  // are ~9 KB. One cache row per subject, not one big page plus a copy.
+  // The markup is not kept: one page is a few MB, and the parsed papers that
+  // follow average ~6 KB each. One cache row per subject, not a page plus a copy.
   return withRetry(() => fetchText(paperPageUrl(slug), { timeout: 35000 }));
 }
 
 /** Fetches one subject page, parses every paper on it and caches the result. */
-async function pullSubject(slug: string): Promise<number> {
+async function pullSubject(slug: string): Promise<{ count: number; blocks: number }> {
   const html = await fetchSubjectPage(slug);
   const parsed = parseAllPapers(html);
+  const blocks = paperBlockCount(html);
+  if (parsed.length === 0) return { count: 0, blocks };
   const papers: Record<string, ParsedPaper> = {};
   for (const entry of parsed) papers[entry.id] = entry.paper;
-  if (parsed.length === 0) return 0;
-  return writePapers(slug, papers);
+  return { count: await writePapers(slug, papers), blocks };
 }
 
-/** Fetches and parses one paper out of its subject page. */
-export async function loadPaper(slug: string, target: PaperTarget): Promise<ParsedPaper> {
-  const cached = await readPapers(slug);
-  if (cached) {
-    const hit = cached.papers[target.id];
-    if (hit) {
-      // A bundle older than the refresh window updates itself in the
-      // background; the paper on screen is readable immediately either way.
-      if (Date.now() - cached.at > REFRESH_AFTER) void pullSubject(slug).catch(() => undefined);
-      return hit;
-    }
+/**
+ * One paper out of a bundle. A target with a code uses the exact key; an old
+ * link without one falls back to a unique suffix match, never a guess between
+ * two codes that both published the same year.
+ */
+function findPaper(papers: Record<string, ParsedPaper>, target: PaperTarget): ParsedPaper | undefined {
+  if (target.code !== "") {
+    const exact = papers[`${target.code}-${target.id}`];
+    if (exact) return exact;
   }
-  await pullSubject(slug);
-  const fresh = await readPapers(slug);
-  const hit = fresh?.papers[target.id];
-  if (hit) return hit;
+  const suffix = `-${target.id}`;
+  const matches = Object.keys(papers).filter((key) => key.endsWith(suffix));
+  return matches.length === 1 ? papers[matches[0]] : undefined;
+}
 
-  // The page loaded but this paper is not on it: the screen says so, and the
-  // PDF/site links stay available.
+/** The paper the page did not give us, with the reason why. */
+function missingPaper(target: PaperTarget, reason: "absent" | "unreadable"): ParsedPaper {
   return {
     found: false,
+    reason,
     year: target.year,
     code: target.code,
     title: "",
@@ -417,13 +434,40 @@ export async function loadPaper(slug: string, target: PaperTarget): Promise<Pars
   };
 }
 
+/** Fetches and parses one paper out of its subject page. */
+export async function loadPaper(slug: string, target: PaperTarget): Promise<ParsedPaper> {
+  const cached = await readPapers(slug);
+  if (cached) {
+    const hit = findPaper(cached.papers, target);
+    if (hit) {
+      // A bundle older than the refresh window updates itself in the
+      // background; the paper on screen is readable immediately either way.
+      if (Date.now() - cached.at > REFRESH_AFTER) void pullSubject(slug).catch(() => undefined);
+      return hit;
+    }
+    // The bundle holds every readable paper on the page, so a recent miss is a
+    // fact: fetching the same page again cannot change it. Without this, a
+    // catalogue row the site has dropped re-downloads a few MB on every tap.
+    if (Date.now() - cached.at <= MISS_TRUST) return missingPaper(target, "absent");
+  }
+  const pulled = await pullSubject(slug);
+  const fresh = await readPapers(slug);
+  const hit = fresh ? findPaper(fresh.papers, target) : undefined;
+  if (hit) return hit;
+
+  // The page loaded but this paper is not on it: the screen says so, and the
+  // PDF/site links stay available. A page with blocks and no readable paper is
+  // markup drift, not an absent paper, and must not claim the latter.
+  return missingPaper(target, pulled.blocks > 0 && pulled.count === 0 ? "unreadable" : "absent");
+}
+
 /**
  * Downloads and caches every paper of one subject. Returns the paper count, or
  * 0 when the page has nothing the parser can read.
  */
 export async function prefetchSubject(slug: string): Promise<number> {
   try {
-    return await pullSubject(slug);
+    return (await pullSubject(slug)).count;
   } catch {
     return 0;
   }

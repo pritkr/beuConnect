@@ -16,7 +16,7 @@ import { PACKS, packOf, reportOf, type Facts } from "../../src/features/offline/
 
 /** One real key per downloaded pack, plus keys no pack may claim. */
 const OWNED: [string, string][] = [
-  ["pyqs.papers.v1.100110", "pyq"],
+  ["pyqs.papers.v2.100110", "pyq"],
   ["notes.manifest.v1", "notes"],
   ["notices.board.v1", "notices"],
   ["announcements.feed.v1", "notices"],
@@ -56,8 +56,8 @@ describe("offline packs", () => {
 
   test("the ledger counts only the pack's own rows, newest first", () => {
     const rows = [
-      row("pyqs.papers.v1.a", 2048, 10),
-      row("pyqs.papers.v1.b", 1024, 30),
+      row("pyqs.papers.v2.a", 2048, 10),
+      row("pyqs.papers.v2.b", 1024, 30),
       row("notes.manifest.v1", 500, 20),
     ];
 

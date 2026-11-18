@@ -8,6 +8,7 @@ import { TextView } from "nsh/base";
 import type { Nav } from "../../app/router";
 import { param } from "../../app/router";
 import { formatDate, SITE } from "../../lib/net";
+import { shareOrCopy } from "../../lib/share";
 import { Badge, Body, Btn, Card, EmptyState, ErrorState, Loading, Muted, Panel, Row, Screen, Title } from "../../ui";
 import { fetchAnnouncement, markPostRead, type AnnouncementPost } from "./api";
 import { copyText, flash, once, openExternal, reason } from "./parts";
@@ -111,7 +112,17 @@ export function PostScreen(props: { nav: Nav }) {
                 <Btn
                   class="flex-1 px-3"
                   variant="ghost"
-                  onPress={() => void copyText(`${item.title}\n${SITE}/announcements/${slug}/\n\nShared from BEUConnect`).then((ok) => toast.say(ok ? "Share text copied — paste it anywhere." : "Could not reach the clipboard."))}
+                  onPress={() =>
+                    void shareOrCopy({
+                      title: item.title,
+                      url: `${SITE}/announcements/${slug}/`,
+                      text: "Shared from BEUConnect",
+                    }).then((outcome) => {
+                      // A sheet speaks for itself; a copy has to say so.
+                      if (outcome === "copied") toast.say("Share text copied — paste it anywhere.");
+                      else if (outcome === "failed") toast.say("Could not reach the share sheet or the clipboard.");
+                    })
+                  }
                 >
                   Share
                 </Btn>

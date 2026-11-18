@@ -11,7 +11,7 @@ without the student asking for it by name.
 |---|---|---|---|
 | **Bundled** | BEU syllabus (all six branches), GATE syllabus and paper links, the PYQ catalog (subjects, codes, years, PDF links) | 0 bytes of device storage — it ships in the binary | `src/features/syllabus/data/`, `src/features/pyqs/catalog-data.ts`, `gate-data.ts` |
 | **Seen once** | PYQ questions, result tables, the notes list, the notice board, the Home ticker | Written on first view, then served from disk | `src/lib/cache.ts` |
-| **On request** | Every paper for the student's own branch + semester | ~390 KB per subject page, parsed to ~9 KB before it is stored | Settings → Offline data |
+| **On request** | Every paper for the student's own branch + semester | 0.3–4.5 MB per subject page, parsed to ~6 KB per paper before it is stored | Settings → Offline data |
 
 Bundled data is regenerated when the catalog changes (`DATA_SNAPSHOT` in
 `src/features/syllabus/data/packs.ts`), not at runtime. Nothing in this area
@@ -78,21 +78,24 @@ on its next check.
 
 ## Why papers are stored parsed
 
-One subject page (`https://beu.prit.eu.org/pyqs/<slug>/`) is ~390 KB of
+One subject page (`https://beu.prit.eu.org/pyqs/<slug>/`) is 0.3–4.5 MB of
 server-rendered HTML carrying every paper that subject has ever had, including
-variant sets. The same page parsed into question objects is ~9 KB.
+variant sets. The same page parsed into question objects averages ~6 KB per
+paper.
 
 So `loadPaper` fetches the page once, runs `parseAllPapers` (one pass, every
 `section.paper-block`), and writes **one cache row per subject**:
-`pyqs.papers.v1.<slug>` → `{ at, value: { "<paper-id>": ParsedPaper } }`.
+`pyqs.papers.v2.<slug>` → `{ at, value: { "<paper code>-<year>[_variant]": ParsedPaper } }`.
+The code is part of the key because a year on its own is ambiguous: one page
+carries papers under several subject codes.
 
 Consequences worth knowing:
 
 - Opening any paper of that subject afterwards is one `Storage` read: no
   network, no HTML parse, no flash of “loading”.
-- A semester of ~20 subjects is a few hundred KB, which is why “download my
-  course” fits comfortably inside the cache budget.
-- The raw HTML is never persisted. It would cost ~10 MB for the same semester.
+- The median course plan is 21 papers (~130 KB); the largest is 87 papers
+  (~530 KB), so “download my course” fits comfortably inside the cache budget.
+- The raw HTML is never persisted. It would cost several MB per subject page.
 - A bundle older than 30 days is refreshed in the background the next time a
   paper from it is opened. If the fetch fails, the old copy still serves: a
   2023 paper does not change.
@@ -108,7 +111,7 @@ screen and every clear action read the same matchers.
 |---|---|---|
 | BEU syllabus | — (bundled) | no |
 | GATE syllabus & papers | — (bundled) | no |
-| BEU PYQ papers | `pyqs.papers.v1.*` | yes |
+| BEU PYQ papers | `pyqs.papers.v2.*` | yes |
 | Notes & VVI | `notes.*` | yes |
 | Notices & announcements | `notices.*`, `announcements.*` | yes |
 | Result tables | `pyqs.csv.*`, `pyqs.manifest.v1`, `wide:*`, `roster:*` | yes |
@@ -140,7 +143,10 @@ no store release.
 - The board is treated as fresh for **5 minutes** (`BOARD_TTL`), the
   announcements feed for **10 minutes** (`ANNOUNCEMENT_TTL`). Opening Home,
   Notices, Search or the announcements screen after that starts a background
-  refresh while the rows already on screen stay put.
+  refresh while the rows already on screen stay put. Returning to the app after
+  it was in the background does the same, once the board is past its 5 minutes:
+  a quick app switch fetches nothing, and a failed return keeps the last copy
+  without an error.
 - Pull-to-refresh fetches immediately, whatever the age.
 - The last good board is kept forever on the device and served when the site
   cannot be reached; the screen says it is an offline copy and how old it is.

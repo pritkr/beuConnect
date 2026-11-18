@@ -371,7 +371,7 @@ export function Check(props: {
 }) {
   return (
     <View
-      class={`h-11 w-11 items-center justify-center rounded-xl active:scale-95 transition-transform duration-150 ease-out motion-reduce:transition-none focus:ring-2 focus:ring-ring ${props.class ?? ""}`}
+      class={`h-11 w-11 items-center justify-center rounded-xl active:bg-muted transition-colors duration-150 ease-out motion-reduce:transition-none focus:ring-2 focus:ring-ring ${props.class ?? ""}`}
       onPress={props.onPress}
       role="checkbox"
       accessibilityState={{ checked: props.checked }}

@@ -34,7 +34,7 @@ state rather than fetching with empty params.
 index.tsx        route table (spreads the five screens' arrays)
 browse.tsx       shelf: filters, debounced search, recents, GATE jump
 shelf.tsx        subject row + paper list inside a shelf row
-components.tsx   shared presentation: Head, Hero, chips, rows, question cards, CopyButton
+components.tsx   shared presentation: Head, Hero, chips, rows, question cards, ShareButton
 paper.tsx        paper screen, site fallback, PDF route
 paper-parse.ts   server-rendered subject page → ParsedPaper (no DOM)
 api.ts           manifest + CSV + subject page fetch/parse/cache
@@ -64,7 +64,7 @@ timeouts, in-flight dedupe and the cache. Host: `https://beu.prit.eu.org`.
 
 | Request | Shape | Used by |
 |---|---|---|
-| `GET /pyqs/<slug>/` | server-rendered HTML; `paper-block`, `section-group`, `q-box`, `q-text`, `opt-item` | `api.loadPaper` → `paper-parse.parseAllPapers` |
+| `GET /pyqs/<slug>/` | server-rendered HTML; `paper-block`, `paper-section`, `question`, `q-text`, `opt-item`, `marks` | `api.loadPaper` → `paper-parse.parseAllPapers` |
 | `GET /data/manifest/index.json` | `{ "<batch>": { "<branch>": ["<batch>/<branch>/sem<sem>_<college>.json", …] } }` | `api.loadDatasets` → one `Dataset` per row |
 | `GET /data/wide_<batch>_<college>_<branch>_sem<sem>.csv` | wide CSV, one student per row; `Session,RegNo,Name,…,SGPA,CGPA,FailAny,StateRank,CollegeRank,<code>_ESE,_IA,_Total,_Grade,…` | `data-table.tsx` |
 
@@ -93,15 +93,15 @@ a key directly.
 
 | Key | Content | Lifetime |
 |---|---|---|
-| `beu.cache.pyqs.papers.v1.<slug>` | parsed papers for one subject (~9 KB), with an `at` stamp | refreshed in the background after 30 days; old copy still served |
+| `beu.cache.pyqs.papers.v2.<slug>` | parsed papers for one subject (~6 KB each), keyed `<code>-<year>`, with an `at` stamp | refreshed in the background after 30 days; old copy still served |
 | `beu.cache.pyqs.manifest.v1` | dataset index | revalidated on open; last copy used offline |
 | `beu.cache.pyqs.csv.<batch\|branch\|sem\|college>` | one wide CSV | never expires — a published batch does not change |
 | `beu.pyqs.recents.v1` | 12 recently opened papers (BEU + GATE), deduped by key | until cleared from the shelf |
 | `beu.pyqs.prefs.v1` | shelf branch/semester when the student overrides their course | until changed |
 
-Raw subject HTML is **never** stored: one page is ~390 KB, the parsed papers are
-~9 KB. Opening a second paper of the same subject is a Storage read with no
-network.
+Raw subject HTML is **never** stored: one page is a few MB, while its parsed
+papers average ~6 KB each. Opening a second paper of the same subject is a
+Storage read with no network.
 
 `cachedPapers()` / `cachedPaperCount()` / `cachedPaperSlugs()` expose the offline
 paper set; the shelf uses the slug set for its "on device" badges, and one scan
@@ -109,7 +109,7 @@ serves every row.
 
 The download/clear UI is not in this folder: `src/features/offline/packs.ts`
 (route `settings.offline`) lists cached subject bundles, downloads one subject
-at a time through `prefetchSubject`, and clears `pyqs.papers.v1.*`,
+at a time through `prefetchSubject`, and clears `pyqs.papers.v2.*`,
 `pyqs.csv.*` and `pyqs.manifest.v1` when the student asks.
 
 ## Screen rules this area follows

@@ -418,6 +418,50 @@
         "bundle": 2350000
       },
       "pass": true
+    },
+    {
+      "at": "2026-11-18T08:08:12Z",
+      "abi": "arm64-v8a",
+      "apkBytes": 17733692,
+      "payloadBytes": 17710033,
+      "unpackedBytes": 43771831,
+      "entries": 107,
+      "bundle": {
+        "entry": "assets/nsh/bundle.nshc",
+        "bytecodeBytes": 1948576,
+        "compressedBytes": 724828
+      },
+      "source": {
+        "jsBytes": null,
+        "bytecodeBytes": null
+      },
+      "budgets": {
+        "apk": 18500000,
+        "bundle": 2350000
+      },
+      "pass": true
+    },
+    {
+      "at": "2026-11-18T08:21:57Z",
+      "abi": "arm64-v8a",
+      "apkBytes": 17733692,
+      "payloadBytes": 17710001,
+      "unpackedBytes": 43771783,
+      "entries": 107,
+      "bundle": {
+        "entry": "assets/nsh/bundle.nshc",
+        "bytecodeBytes": 1948528,
+        "compressedBytes": 724800
+      },
+      "source": {
+        "jsBytes": null,
+        "bytecodeBytes": null
+      },
+      "budgets": {
+        "apk": 18500000,
+        "bundle": 2350000
+      },
+      "pass": true
     }
   ]
 }

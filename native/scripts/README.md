@@ -55,7 +55,7 @@ none of the files it writes may be edited by hand.
 | `verify.py` | — (validates the above) | `uv run python native/scripts/verify.py` |
 | `build-students-data.py` | `assets/data/students-gecs.json`, site CSVs | `uv run python native/scripts/build-students-data.py [--check] [--source …]` |
 | `build-students-data.mjs` | `src/features/students/roster-data.ts` | `bun scripts/build-students-data.mjs [--check]` |
-| `data/build-packs.ts` | `src/features/syllabus/data/packs.ts`, `data/table/` | `bun scripts/data/build-packs.ts [--check] [--from-site]` |
+| `data/build-packs.ts` | `src/features/syllabus/data/packs.ts`, `data/table/`, `data/headings.ts` | `bun scripts/data/build-packs.ts [--check] [--from-site]` |
 | `data/verify-packs.ts` | — (decodes and compares to `packs-snapshot.json`) | `bun scripts/data/verify-packs.ts [--capture]` |
 | `pack-pyq-catalog.mjs` | `src/features/pyqs/catalog-data.ts` | `bun scripts/pack-pyq-catalog.mjs [--check]` |
 | `build-pyq-pdfs.mjs` | `src/features/pyqs/pdf-catalog.ts`, `public/PYQPDFs/`, `public/data/pyq-pdfs.json` | `bun scripts/build-pyq-pdfs.mjs [--check]` |

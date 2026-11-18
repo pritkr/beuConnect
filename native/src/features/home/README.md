@@ -85,6 +85,11 @@ Pull-to-refresh on the page body refreshes the local reads and forces the notice
 board fetch. The strip advances every five seconds until the student touches it,
 then stays put for the visit. There is no background polling.
 
+Returning to the app from the background re-reads the local stores and refreshes
+the board only once it is past `BOARD_TTL` (five minutes, `features/notices/api.ts`);
+a return inside that window does nothing, and a failed one keeps the rows on
+screen with no error of its own — pull-to-refresh is what reports a failure.
+
 ## Notes
 
 - **No tip line.** A rotating tip is filler the screen does not need; the

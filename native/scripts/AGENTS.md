@@ -42,7 +42,7 @@ saying "on" while nothing runs, so the scan reads the host's own facts.
 | `assets/data/*.json` | `uv run python native/scripts/extract.py` → `verify.py` |
 | `assets/data/students-gecs.json`, site CSVs | `uv run python native/scripts/build-students-data.py` |
 | `students/roster-data.ts` | `bun scripts/build-students-data.mjs` |
-| `syllabus/data/packs.ts`, `data/table/` | `bun scripts/data/build-packs.ts` → `verify-packs.ts` |
+| `syllabus/data/packs.ts`, `data/table/`, `data/headings.ts` | `bun scripts/data/build-packs.ts` → `verify-packs.ts` |
 | `pyqs/catalog-data.ts` | `generate_catalog.py` → `bun scripts/pack-pyq-catalog.mjs` |
 | `pyqs/pdf-catalog.ts`, `public/PYQPDFs/` | `bun scripts/build-pyq-pdfs.mjs` |
 | `public/data/notes.json` | `uv run native/scripts/notes/build-notes.py` |

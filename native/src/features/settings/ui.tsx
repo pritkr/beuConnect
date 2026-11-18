@@ -5,13 +5,25 @@
  * control — the nav header already names the route, so there is no intro block.
  */
 
-import { Text, View } from "nsh";
-import { AlertDialog } from "nsh/base";
+import { Text, View, platform } from "nsh";
+import { AlertDialog, Switch as DrawnSwitch } from "nsh/base";
+import { Switch as SystemSwitch } from "nsh/mobile";
 import { formatBytes, utf8Bytes } from "../../lib/bytes";
 import type { Children } from "../../ui";
 import { Icon } from "../../ui/icons";
 
 export { formatBytes, utf8Bytes };
+
+/**
+ * Whether the system draws the switch itself.
+ *
+ * iOS and Android have one (`nsh/mobile`): the platform's own control, with its
+ * look, motion, haptics and screen-reader behavior. The web and the desktops
+ * have none — there it takes no room — so the same row is drawn with
+ * `nsh/base`'s switch instead. The platform never changes while the app runs,
+ * so this answer is fixed for the session.
+ */
+const SYSTEM_SWITCH = platform.os === "ios" || platform.os === "android";
 
 /** A card that holds rows: hairline border, oversized radius, no inner padding. */
 export function SettingsGroup(props: { children?: Children; class?: string }) {
@@ -69,7 +81,16 @@ export function SettingsRow(props: {
   );
 }
 
-/** A native switch row: the whole 44 pt row toggles, with a mouth to tap. */
+/**
+ * A switch row.
+ *
+ * The switch owns the press: on a phone it is the system's own control, so
+ * TalkBack announces one switch and flips it, and the row is not a second,
+ * hand-drawn one to tap. Where the system has no switch (the web, the
+ * desktops), `nsh/base`'s drawn switch takes its place in the same spot, so the
+ * setting stays toggleable everywhere. The row keeps its 44 pt height, its
+ * label and hint, and the value the caller persists.
+ */
 export function SettingsToggle(props: {
   title: string;
   hint?: string;
@@ -78,24 +99,29 @@ export function SettingsToggle(props: {
   last?: boolean;
 }) {
   const row = (
-    <View
-      class="min-h-11 flex-row items-center gap-3 px-4 py-3 active:bg-muted"
-      onPress={() => props.onChange(!props.checked)}
-      role="switch"
-      accessibilityLabel={props.title}
-      accessibilityState={{ checked: props.checked }}
-    >
+    <View class="min-h-11 flex-row items-center gap-3 px-4 py-3">
       <View class="flex-1 gap-0.5">
         <Text class="text-[15px] font-semibold text-foreground">{props.title}</Text>
         {props.hint ? <Text class="text-[12px] leading-4 text-muted-foreground">{props.hint}</Text> : null}
       </View>
-      <View
-        class={`h-7 w-12 flex-row items-center rounded-full border px-1 ${
-          props.checked ? "justify-end border-primary bg-primary" : "justify-start border-border bg-muted"
-        }`}
-      >
-        <View class={`h-5 w-5 rounded-full ${props.checked ? "bg-primary-foreground" : "bg-card"}`} />
-      </View>
+      {SYSTEM_SWITCH ? (
+        <SystemSwitch
+          checked={props.checked}
+          accessibilityLabel={props.title}
+          onChange={(event) => props.onChange(event.checked)}
+          class="shrink-0"
+        />
+      ) : (
+        <DrawnSwitch
+          checked={props.checked}
+          accessibilityLabel={props.title}
+          onChange={(event) => props.onChange(event.checked)}
+          class="shrink-0"
+          hitSlop={8}
+          trackClass="h-7 w-12 items-center rounded-full border border-border bg-muted p-0.5 transition-colors checked:border-primary checked:bg-primary"
+          thumbClass="h-5 w-5 rounded-full bg-card transition-transform checked:translate-x-5 checked:bg-primary-foreground"
+        />
+      )}
     </View>
   );
 

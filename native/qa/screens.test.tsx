@@ -89,6 +89,12 @@ const BOARD_HTML = `
 </article>
 `;
 
+/** The two endpoints Home's notice strip reads, so a fetch can be counted. */
+const BOARD_NETWORK = {
+  "GET https://beu.prit.eu.org/notices/": { body: BOARD_HTML, headers: { "content-type": "text/html" } },
+  "GET https://beu.prit.eu.org/api/notices/important?limit=20": { body: { items: [] } },
+};
+
 const NOTES_MANIFEST = {
   updatedAt: "2026-10-26",
   subjects: [
@@ -185,6 +191,32 @@ describe("home", () => {
     expect(text).toContain(", Prit.");
     // The class line is the course the number implies, not a profile card.
     expect(text).toContain("CSE ·");
+  }, 20000);
+
+  test("revalidates on a return to the foreground, once past the board's five minutes", async () => {
+    // The board's own freshness window, `BOARD_TTL` in `features/notices/api.ts`.
+    const BOARD_TTL = 5 * 60 * 1000;
+    const app = await openRoute("home", {}, { network: BOARD_NETWORK, storage: {} });
+    const boardFetches = (): number =>
+      app.requests().filter((request) => request.url === "https://beu.prit.eu.org/notices/").length;
+
+    // First mount fetches once, and the row it parsed is on screen.
+    await app.waitUntil(() => boardFetches() === 1 && app.shows(`text:${NOTICE_TITLE}`), { timeout: 5000 });
+    expect(boardFetches()).toBe(1);
+
+    // Away and back inside the window: nothing is old enough to ask for.
+    await app.setLifecycle("background");
+    await app.setLifecycle("active");
+    expect(boardFetches()).toBe(1);
+
+    // Away and back after it: the board is asked for again, behind the row that
+    // is already on screen.
+    await app.clock!.fastForward(BOARD_TTL + 1000);
+    await app.setLifecycle("background");
+    await app.setLifecycle("active");
+    await app.waitUntil(() => boardFetches() === 2, { timeout: 5000 });
+    expect(boardFetches()).toBe(2);
+    expect(app.shows(`text:${NOTICE_TITLE}`)).toBe(true);
   }, 20000);
 });
 

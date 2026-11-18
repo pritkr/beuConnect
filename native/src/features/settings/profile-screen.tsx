@@ -16,6 +16,7 @@
 
 import { Keyboard, Text, View, computed, effect, signal } from "nsh";
 import type { JSX } from "nsh";
+import { Haptics } from "nsh/mobile";
 import { Badge, Body, Btn, Chip, Field, Label, Muted, Panel, Screen } from "../../ui";
 import { branchIcon } from "../../ui/branch-icon";
 import type { Identity } from "../results/identity";
@@ -263,6 +264,7 @@ export function ProfileScreen() {
     if (sameProfile(next, stored())) {
       draft.set(next);
       status.set("saved");
+      Haptics.notification("success");
       return;
     }
     busy.set(true);
@@ -271,10 +273,12 @@ export function ProfileScreen() {
       busy.set(false);
       if (!saved) {
         status.set("error");
+        Haptics.notification("error");
         return;
       }
       draft.set(next);
       status.set("saved");
+      Haptics.notification("success");
     })();
   };
 

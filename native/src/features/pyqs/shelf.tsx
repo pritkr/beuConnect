@@ -167,7 +167,7 @@ export function SubjectRow(props: {
  *
  * Opening a paper already caches its whole subject, but a student revising on a
  * train should not have to open each paper first. One page fetch saves every
- * paper of the subject — parsed, ~9 KB — and the row says how many are on the
+ * paper of the subject — parsed, ~6 KB each — and the row says how many are on
  * phone. Nothing here spends data until the student taps Download.
  */
 function OfflineSave(props: { slug: string; count: number; onSaved: () => void }) {

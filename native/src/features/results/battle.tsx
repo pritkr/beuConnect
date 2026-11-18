@@ -38,7 +38,7 @@ import type { BattleLine, BattleReport, ResultData } from "./data";
 import { fixed, loadBattle, savedCopy } from "./data";
 import { shortCollegeName } from "./colleges";
 import type { Async } from "./shared";
-import { CopyButton, Fresh, RegField, clampedSem, cleanReg, errorMessage, idle, isValidReg } from "./shared";
+import { Fresh, RegField, ShareButton, clampedSem, cleanReg, errorMessage, idle, isValidReg } from "./shared";
 import type { BattleVerdict } from "./verdict";
 import { battleVerdict } from "./verdict";
 
@@ -455,7 +455,7 @@ export function BattleScreen(props: { nav: Nav }) {
                 </Panel>
 
                 <View class="gap-2">
-                  <CopyButton text={summary} label="Copy battle summary" />
+                  <ShareButton text={summary} label="Share battle summary" />
                   <Row class="gap-3">
                     <Btn variant="secondary" class="flex-1" onPress={swap}>
                       Swap sides

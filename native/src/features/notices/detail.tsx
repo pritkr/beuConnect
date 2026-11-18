@@ -10,6 +10,7 @@ import { Text, View } from "nsh";
 import type { Nav } from "../../app/router";
 import { param } from "../../app/router";
 import { formatDate, SITE } from "../../lib/net";
+import { shareOrCopy } from "../../lib/share";
 import {
   Badge, Body, Btn, Card, Divider, EmptyState, ErrorState, Loading, Mono, Muted, Panel, Row, Screen, Title,
 } from "../../ui";
@@ -33,9 +34,10 @@ export function DetailScreen(props: { nav: Nav }) {
   };
 
   const share = async (notice: Notice): Promise<void> => {
-    const text = `${notice.title}\n${notice.link || `${SITE}/notices/`}\n\nShared from BEUConnect`;
-    const ok = await copyText(text);
-    toast.say(ok ? "Share text copied — paste it anywhere." : "Could not reach the clipboard — select the link and copy it.");
+    const link = notice.link || `${SITE}/notices/`;
+    const outcome = await shareOrCopy({ title: notice.title, url: link, text: "Shared from BEUConnect" });
+    if (outcome === "copied") toast.say("Share text copied — paste it anywhere.");
+    else if (outcome === "failed") toast.say("Could not reach the share sheet or the clipboard.");
   };
 
   const openAttachment = (notice: Notice): void => {

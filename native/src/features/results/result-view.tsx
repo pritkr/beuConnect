@@ -23,7 +23,7 @@ import type { ResultData } from "./data";
 import { branchName, fixed } from "./data";
 import { resolveIdentity } from "./identity";
 import { collegeName, shortCollegeName } from "./colleges";
-import { CopyButton, Fresh } from "./shared";
+import { Fresh, ShareButton } from "./shared";
 import type { Trend } from "./trend";
 import { buildTrend, readSavedTrend, trendIsDrawn } from "./trend";
 
@@ -253,7 +253,7 @@ export function ResultView(props: { data: ResultData; onRank?: () => void; onBat
         <Fresh
           when={`summary:${name()}`}
           build={() => (
-            <CopyButton class="flex-1" text={resultSummary(data, name())} label="Copy result summary" />
+            <ShareButton class="flex-1" text={resultSummary(data, name())} label="Share result summary" />
           )}
         />
         {props.onRank || props.onBattle ? (
