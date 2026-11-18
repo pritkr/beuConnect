@@ -521,7 +521,13 @@ function SubjectScreen(props: { nav: Nav }) {
           */}
           <View
             class="gap-3"
-            style={{ display: subject() && tab() === "topics" && units().length > 0 ? "flex" : "none" }}
+            style={{
+              // `display: "flex"` follows CSS and lays children out in a row
+              // unless the direction is stated: without `column`, every unit
+              // card sat in one horizontal rail and ran off the screen.
+              display: subject() && tab() === "topics" && units().length > 0 ? "flex" : "none",
+              flexDirection: "column",
+            }}
           >
             <View class="gap-2">
               <Search value={query()} onChange={(value) => query.set(value)} placeholder="Find a topic in this paper" />

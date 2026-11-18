@@ -65,6 +65,11 @@ run_lint() {
   # `List` without a height, and equally invisible to a rendering test.
   echo "── lint: rail heights ──"
   bun scripts/lint-rail-height.mjs || return 1
+  # `display: "flex"` follows CSS and lays children out in a row unless a
+  # direction is stated: the syllabus units shipped as one horizontal rail
+  # that ran off the screen, and no rendering test can see layout.
+  echo "── lint: flex direction ──"
+  bun scripts/lint-flex-direction.mjs || return 1
   # A signal setter passed bare (`onChange={query.set}`) loses its scope: the
   # first keystroke or tap throws "not a live signal" and the screen dies. No
   # rendering test can see it, because the screen mounts fine. This scan can.

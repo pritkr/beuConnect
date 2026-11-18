@@ -73,6 +73,7 @@ image, not a translation layer.
 | L5 | Rotate on D2 and D4 with a list scrolled and a row expanded | The screen stays, scroll position survives (the manifest handles config changes in-process); if a screen cannot rotate, that is recorded, not assumed | screen recording |
 | L6 | Open the longest subject name and the longest college name | Header truncates to one line; the body shows the full name | screenshot |
 | L7 | Holidays month grid at 320 dp | Cells are narrow but readable; this is the accepted exception in `docs/A11Y_AUDIT.md` S4 | screenshot |
+| L8 | Syllabus → a subject → Topics at 320 dp | Unit cards stack vertically, full width, one per row; each unit's topics sit beneath it — never a horizontal rail that runs off the screen | screenshot |
 
 ## 6. Offline and slow networks
 
@@ -107,7 +108,7 @@ Only two things may be a WebView: BEU's result page (captcha) and a PDF
 | A1 | TalkBack on Home, then a long list | Every actionable row is announced with its label and role, in reading order; no unlabelled icon button | screen recording + note |
 | A2 | TalkBack at font 1.3 | Announcements do not overlap or truncate mid-word | screen recording |
 | A3 | Thumb-test the More chevrons, chips, the tab bar and the result actions | Each target is at least 44 × 44 pt; no dead 24 pt target | note |
-| A4 | Keyboard: focus the registration field at the bottom of Results, then the feedback message box | The keyboard opens over the tab bar (never under it); the field stays visible; back closes the keyboard before it pops the screen | screen recording |
+| A4 | Keyboard: focus the registration field at the bottom of Results, then the feedback message box and its optional registration/contact fields | The keyboard opens over the tab bar (never under it); the field stays visible; back closes the keyboard before it pops the screen. The feedback sheet stays above the keyboard, its handle and title stay on screen, and the taller form scrolls under them | screen recording |
 
 ## 9. Performance and stability
 

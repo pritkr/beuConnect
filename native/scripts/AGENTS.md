@@ -25,6 +25,12 @@ nothing, and no rendering test can see it. Do not remove that step.
 `Scroll` that is `flex-1` inside a column sizes its own height to zero, so a
 rail's chips paint nowhere while `app.texts()` still reports them.
 
+`scripts/lint-flex-direction.mjs` follows: `display: "flex"` uses CSS's initial
+row direction, so a section meant to be a column turns into a horizontal rail
+that overflows the screen. The syllabus units shipped that way, and layout is
+invisible to `app.texts()`. State `flexDirection: "column"` or use a `flex-col`
+class.
+
 `scripts/lint-signal-setter.mjs` runs next: a signal setter passed bare
 (`onChange={query.set}`) mounts fine and then throws `not a live signal` on the
 first keystroke or tap, so it is a crash no rendering test reaches. The fix is

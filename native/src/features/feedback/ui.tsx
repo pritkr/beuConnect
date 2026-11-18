@@ -10,13 +10,12 @@
  * survive a 320 pt screen with the keyboard up.
  */
 
-import { LayoutAnimation, Text, View, cleanup, computed, effect, keyboardFrame, signal, untracked } from "nsh";
+import { Scroll, Text, View, cleanup, computed, effect, keyboardFrame, platform, safeArea, signal, untracked } from "nsh";
 import { Input, Sheet } from "nsh/base";
 
 import type { Nav } from "../../app/router";
 import { relativeTime } from "../../lib/net";
 import { Body, Btn, Card, Chip, Col, ErrorState, Field, Label, Mono, Muted, Panel, Row, Screen, SectionHeader } from "../../ui";
-import { motionOn } from "../../ui/motion";
 import {
   MAX_MESSAGE,
   MIN_MESSAGE,
@@ -204,30 +203,32 @@ export function FeedbackSheet() {
       closeOnSwipe
       backdropClass="bg-foreground/40"
       popupClass="rounded-t-[28px] border-t border-border bg-background pb-[env(safe-area-inset-bottom)]"
+      // Android resizes its surface for the keyboard (`adjustResize`), so this
+      // view's bottom is already the keyboard's top. The sheet still lifts by
+      // the keyboard's height on top of it, which pushed the panel off the top
+      // of the screen; pinning the panel to the surface cancels that lift.
+      popupStyle={platform.os === "android" ? { bottom: 0 } : undefined}
     >
-      <View class="gap-3 px-4 pb-5 pt-2">
+      {/* The handle and the title stay put: a downward drag on the handle
+          still closes the sheet while the form below it scrolls. */}
+      <View class="px-4 pt-2">
+        {/* A capped sheet starts at the top of the surface, behind the status
+            bar. While the keyboard is up, start the header below it instead. */}
+        {() => (keyboardFrame().height > 0 ? <View style={{ height: safeArea().top }} /> : null)}
         <View class="items-center py-1">
           <View class="h-1 w-10 rounded-full bg-border" />
         </View>
         <Text class="text-[18px] font-bold tracking-tight text-foreground">Feedback</Text>
-        <FeedbackComposer compact onDone={closeFeedback} />
-        {/* The sheet sits on the root view, so the keyboard covers it unless the
-            content lifts by exactly the keyboard's height. The spacer's arrival
-            rides the keyboard's own curve instead of jumping in one frame. */}
-        {() => {
-          const frame = keyboardFrame();
-          if (motionOn()) {
-            LayoutAnimation.configureNext({
-              // `keyboardFrame().duration` is milliseconds since 0.4.
-              duration: frame.duration,
-              create: { type: "keyboard" },
-              update: { type: "keyboard" },
-              delete: { type: "keyboard" },
-            });
-          }
-          return frame.height > 0 ? <View style={{ height: frame.height }} /> : null;
-        }}
       </View>
+      {/* The sheet caps itself; the form inside it has to shrink so the header
+          keeps its place and the fields scroll instead of overflowing. */}
+      <Scroll
+        class="min-h-0"
+        contentClass="gap-3 px-4 pb-5 pt-3"
+        keyboardShouldPersistTaps="handled"
+      >
+        <FeedbackComposer compact onDone={closeFeedback} />
+      </Scroll>
     </Sheet>
   );
 }

@@ -17,6 +17,7 @@ per-pipeline detail is in [`../docs/NOTES.md`](../docs/NOTES.md),
 |---|---|
 | `check.sh` | The only way to run `nsh check` / `nsh test`. Takes the `.nsh` lock, waits for the holder, always releases. `check`, `test`, `test-only [file…]`. Before the build it runs the list-height lint, the icon-font check and the feed-hash check. |
 | `lint-list-height.mjs` | Fails a `<List>` that has no height to inherit — it would paint nothing, and no rendering test can see that. |
+| `lint-flex-direction.mjs` | Fails an inline `display: "flex"` that states no direction: CSS's initial direction is a row, so a column of cards becomes a rail that runs off the screen. |
 | `icons/verify.mjs` | Reads `assets/fonts/boxicons.ttf`'s own `cmap` and fails when it and `src/ui/icons.tsx` disagree in either direction. |
 | `data/publish-feed.ts --check` | Fails when the bundled feed hashes are stale, which would make every phone re-download bytes it already has. |
 | `../qa/run-tests.sh` | Push-target freshness scan, then `check.sh test-only`. |
